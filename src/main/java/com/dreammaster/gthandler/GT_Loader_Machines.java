@@ -1,5 +1,33 @@
 package com.dreammaster.gthandler;
 
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_GENERATOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_GENERATOR_ZPM;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
@@ -34,34 +62,84 @@ import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.Gregtech
 
 public class GT_Loader_Machines {
 
+    public static long bitsd = GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.NOT_REMOVABLE
+            | GT_ModHandler.RecipeBits.REVERSIBLE
+            | GT_ModHandler.RecipeBits.BUFFERED;
+    private Materials LuVMat2;
+
     public void run() {
-        registerMachines1();
+        LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
+        registerMachineHulls();
+        registerPlasmaGenerators();
+        registerAlloySmelter();
+        registerMatterAmplifier();
+        registerAssemblingMachine();
+        registerAutoclave();
+        registerBendingMachine();
+        registerCompressor();
+        registerCuttingMachine();
+        registerDistillery();
+        registerElectricFurnace();
+        registerElectrolyzer();
+        registerElectromagneticSeparator();
+        registerExtractor();
+        registerExtruder();
+        registerFluidSolidifier();
+        registerFormingPress();
+        registerForgeHammer();
+        registerLathe();
+        registerPrecisionLaserEngraver();
+        registerMacerator();
+        registerMatterFabricator();
+        registerMicrowave();
+        registerOreWashingPlant();
+        registerPolarizer();
+        registerRecycler();
+        registerReplicator();
+        registerScanner();
+        registerSiftingMachine();
+        registerSlicingMachine();
+        registerThermalCentrifuge();
+        registerWiremill();
+        registerPump();
+        registerArcFurnace();
+        registerCentrifuge();
+        registerPlasmaArcFurnace();
+        registerWorldAccelerator();
+        registerBrewery();
+        registerCanningMachine();
+        registerChemicalBath();
+        registerChemicalReactor();
+        registerFermenter();
+        registerFluidCanner();
+        registerFluidExtractor();
+        registerFluidHeater();
+        registerMixer();
+        registerTransformer();
+        registerBatteryBuffer4By4();
+        registerBatteryBuffer3By3();
+        registerBatteryBuffer2By2();
+        registerBatteryBuffer1By1();
+        registerBatteryCharger4By4();
+        registerDynamoHatches();
+        registerEnergyHatches();
+        registerWetTransformer();
+        registerHighAmpTransformer();
+        registerAirFilter();
+        registerTurboCharger4By4();
+        registerChestBuffer();
+        registerRockBreaker();
+        registerCircuitAssembler();
+        registerInputHatch();
+        registerOutputHatches();
+
         registerMachines2();
+        recipes();
     }
 
-    private void registerMachines1() {
-        long bitsd = GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.NOT_REMOVABLE
-                | GT_ModHandler.RecipeBits.REVERSIBLE
-                | GT_ModHandler.RecipeBits.BUFFERED;
-
-        // TODO:While adding recipes look at GT_Loader_MetaTileEntities there is some useful info
-        // TODO:Add recipes where u see //TODO:recipes or null in the code
-
-        // MetaTileEntity ID Range: look at end of file
-        // GT 5.08.30
+    public void recipes() {
 
         Materials LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
-
-        // ===================================================================================================
-        // Hull
-        // ===================================================================================================
-        CustomItemList.Hull_UEV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        11230,
-                        "hull.tier.10",
-                        "UEV Machine Hull",
-                        10,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Hull_UEV.get(1L),
@@ -71,14 +149,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.plate.get(Materials.Bedrockium), 'P',
                         OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
 
-        CustomItemList.Hull_UIV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        11231,
-                        "hull.tier.11",
-                        "UIV Machine Hull",
-                        11,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Hull_UIV.get(1L),
                 bitsd,
@@ -86,14 +156,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.cableGt08.get(Materials.NetherStar), 'H',
                         OrePrefixes.plate.get(Materials.BlackPlutonium), 'P',
                         OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
-
-        CustomItemList.Hull_UMV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        11232,
-                        "hull.tier.12",
-                        "UMV Machine Hull",
-                        12,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Hull_UMV.get(1L),
@@ -103,14 +165,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime), 'P',
                         OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
 
-        CustomItemList.Hull_UXV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        11233,
-                        "hull.tier.13",
-                        "UXV Machine Hull",
-                        13,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Hull_UXV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
@@ -118,34 +172,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'H',
                         OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'P',
                         OrePrefixes.plateDense.get(MaterialsKevlar.Kevlar) });
-
-        CustomItemList.Hull_MAXV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        11234,
-                        "hull.tier.14",
-                        "MAX Machine Hull",
-                        14,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-        // TODO:recipes
-
-        // ===================================================================================================
-        // Plasma Generators
-        // ===================================================================================================
-
-        CustomItemList.Generator_Plasma_ZPMV.set(
-                new GT_MetaTileEntity_PlasmaGenerator(
-                        10752,
-                        "basicgenerator.plasmagenerator.tier.08",
-                        "Plasma Generator Mark IV",
-                        7).getStackForm(1L));
-
-        CustomItemList.Generator_Plasma_UV.set(
-                new GT_MetaTileEntity_PlasmaGenerator(
-                        10753,
-                        "basicgenerator.plasmagenerator.tier.09",
-                        "Ultimate Pocket Sun",
-                        8).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Generator_Plasma_ZPMV.get(1L),
@@ -163,16 +189,1145 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt12.get(Materials.SuperconductorUHV), 'U',
                         OrePrefixes.stick.get(Materials.Americium) });
 
-        // ===================================================================================================
-        // Alloy Smelter
-        // ===================================================================================================
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MassFabricatorLuV.get(1L),
+                bitsd,
+                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_LuV, 'F', ItemList.Field_Generator_LuV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MassFabricatorZPM.get(1L),
+                bitsd,
+                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_ZPM, 'F', ItemList.Field_Generator_ZPM, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MassFabricatorUV.get(1L),
+                bitsd,
+                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MassFabricatorUHV.get(1L),
+                bitsd,
+                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_MAX, 'F', ItemList.Field_Generator_UHV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MassFabricatorUEV.get(1L),
+                bitsd,
+                new Object[] { "CFC", "WMW", "CFC", 'M', CustomItemList.Hull_UEV, 'F', ItemList.Field_Generator_UEV,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MassFabricatorUIV.get(1L),
+                bitsd,
+                new Object[] { "CFC", "WMW", "CFC", 'M', CustomItemList.Hull_UIV, 'F', ItemList.Field_Generator_UIV,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MassFabricatorUMV.get(1L),
+                bitsd,
+                new Object[] { "CFC", "WMW", "CFC", 'M', CustomItemList.Hull_UMV, 'F', ItemList.Field_Generator_UMV,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ReplicatorLuV.get(1L),
+                bitsd,
+                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_LuV, 'F', ItemList.Field_Generator_LuV, 'E',
+                        ItemList.Emitter_LuV, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ReplicatorZPM.get(1L),
+                bitsd,
+                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_ZPM, 'F', ItemList.Field_Generator_ZPM, 'E',
+                        ItemList.Emitter_ZPM, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ReplicatorUV.get(1L),
+                bitsd,
+                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'E',
+                        ItemList.Emitter_UV, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ReplicatorUHV.get(1L),
+                bitsd,
+                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_MAX, 'F', ItemList.Field_Generator_UHV, 'E',
+                        ItemList.Emitter_UHV, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ReplicatorUEV.get(1L),
+                bitsd,
+                new Object[] { "EFE", "CMC", "EWE", 'M', CustomItemList.Hull_UEV, 'F', ItemList.Field_Generator_UEV,
+                        'E', ItemList.Emitter_UEV, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ReplicatorUIV.get(1L),
+                bitsd,
+                new Object[] { "EFE", "CMC", "EWE", 'M', CustomItemList.Hull_UIV, 'F', ItemList.Field_Generator_UIV,
+                        'E', ItemList.Emitter_UIV, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ReplicatorUMV.get(1L),
+                bitsd,
+                new Object[] { "EFE", "CMC", "EWE", 'M', CustomItemList.Hull_UMV, 'F', ItemList.Field_Generator_UMV,
+                        'E', ItemList.Emitter_UMV, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ScannerLuV.get(1L),
+                bitsd,
+                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_LuV, 'T', ItemList.Emitter_LuV, 'R',
+                        ItemList.Sensor_LuV, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ScannerZPM.get(1L),
+                bitsd,
+                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_ZPM, 'T', ItemList.Emitter_ZPM, 'R',
+                        ItemList.Sensor_ZPM, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ScannerUV.get(1L),
+                bitsd,
+                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_UV, 'T', ItemList.Emitter_UV, 'R',
+                        ItemList.Sensor_UV, 'C', OrePrefixes.circuit.get(Materials.Infinite), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ScannerUHV.get(1L),
+                bitsd,
+                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_MAX, 'T', ItemList.Emitter_UHV, 'R',
+                        ItemList.Sensor_UHV, 'C', OrePrefixes.circuit.get(Materials.Bio), 'W',
+                        OrePrefixes.cableGt01.get(Materials.Bedrockium) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ScannerUEV.get(1L),
+                bitsd,
+                new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UEV, 'T', ItemList.Emitter_UEV, 'R',
+                        ItemList.Sensor_UEV, 'C', OrePrefixes.circuit.get(Materials.Optical), 'W',
+                        OrePrefixes.cableGt01.get(Materials.Draconium) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ScannerUIV.get(1L),
+                bitsd,
+                new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UIV, 'T', ItemList.Emitter_UIV, 'R',
+                        ItemList.Sensor_UIV, 'C', OrePrefixes.circuit.get(Materials.Piko), 'W',
+                        OrePrefixes.cableGt01.get(Materials.Draconium) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ScannerUMV.get(1L),
+                bitsd,
+                new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UMV, 'T', ItemList.Emitter_UMV, 'R',
+                        ItemList.Sensor_UMV, 'C', OrePrefixes.circuit.get(Materials.Quantum), 'W',
+                        OrePrefixes.cableGt01.get(Materials.Draconium) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.PumpLuV.get(1L),
+                bitsd,
+                new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_LuV, 'B',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getPipeL(), 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'P', ItemList.Electric_Pump_LuV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.PumpZPM.get(1L),
+                bitsd,
+                new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_ZPM, 'B',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getPipeL(), 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'P', ItemList.Electric_Pump_ZPM });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AcceleratorLV.get(1L),
+                bitsd,
+                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LV, 'M', ItemList.Electric_Motor_LV, 'P',
+                        ItemList.Electric_Pump_LV, 'B', ItemList.Hull_LV, 'C', ItemList.Conveyor_Module_LV, 'I',
+                        ItemList.Electric_Piston_LV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AcceleratorMV.get(1L),
+                bitsd,
+                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_MV, 'M', ItemList.Electric_Motor_MV, 'P',
+                        ItemList.Electric_Pump_MV, 'B', ItemList.Hull_MV, 'C', ItemList.Conveyor_Module_MV, 'I',
+                        ItemList.Electric_Piston_MV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AcceleratorHV.get(1L),
+                bitsd,
+                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_HV, 'M', ItemList.Electric_Motor_HV, 'P',
+                        ItemList.Electric_Pump_HV, 'B', ItemList.Hull_HV, 'C', ItemList.Conveyor_Module_HV, 'I',
+                        ItemList.Electric_Piston_HV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AcceleratorEV.get(1L),
+                bitsd,
+                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_EV, 'M', ItemList.Electric_Motor_EV, 'P',
+                        ItemList.Electric_Pump_EV, 'B', ItemList.Hull_EV, 'C', ItemList.Conveyor_Module_EV, 'I',
+                        ItemList.Electric_Piston_EV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AcceleratorIV.get(1L),
+                bitsd,
+                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_IV, 'M', ItemList.Electric_Motor_IV, 'P',
+                        ItemList.Electric_Pump_IV, 'B', ItemList.Hull_IV, 'C', ItemList.Conveyor_Module_IV, 'I',
+                        ItemList.Electric_Piston_IV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AcceleratorLuV.get(1L),
+                bitsd,
+                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LuV, 'M', ItemList.Electric_Motor_LuV, 'P',
+                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C', ItemList.Conveyor_Module_LuV, 'I',
+                        ItemList.Electric_Piston_LuV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AcceleratorZPM.get(1L),
+                bitsd,
+                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_ZPM, 'M', ItemList.Electric_Motor_ZPM, 'P',
+                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C', ItemList.Conveyor_Module_ZPM, 'I',
+                        ItemList.Electric_Piston_ZPM });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AcceleratorUV.get(1L),
+                bitsd,
+                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_UV, 'M', ItemList.Electric_Motor_UV, 'P',
+                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C', ItemList.Conveyor_Module_UV, 'I',
+                        ItemList.Electric_Piston_UV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.BreweryLuV.get(1L),
+                bitsd,
+                new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'P',
+                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C',
+                        OrePrefixes.circuit.get(Materials.Master), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'Z',
+                        new ItemStack(Items.brewing_stand, 1, 32767) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.BreweryZPM.get(1L),
+                bitsd,
+                new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.Naquadah), 'P',
+                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C',
+                        OrePrefixes.circuit.get(Materials.Ultimate), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'Z',
+                        new ItemStack(Items.brewing_stand, 1, 32767) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.BreweryUV.get(1L),
+                bitsd,
+                new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'P',
+                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'Z',
+                        new ItemStack(Items.brewing_stand, 1, 32767) });
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.BreweryUHV.get(1L),
+                bitsd,
+                new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
+                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C',
+                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'Z',
+                        new ItemStack(Items.brewing_stand, 1, 32767) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.BreweryUEV.get(1L),
+                bitsd,
+                new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.Draconium), 'P',
+                        ItemList.Electric_Pump_UEV, 'B', CustomItemList.Hull_UEV, 'C',
+                        OrePrefixes.circuit.get(Materials.Bio), 'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(),
+                        'Z', new ItemStack(Items.brewing_stand, 1, 32767) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.BreweryUIV.get(1L),
+                bitsd,
+                new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
+                        ItemList.Electric_Pump_UIV, 'B', CustomItemList.Hull_UIV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'Z',
+                        new ItemStack(Items.brewing_stand, 1, 32767) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.BreweryUMV.get(1L),
+                bitsd,
+                new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
+                        ItemList.Electric_Pump_UMV, 'B', CustomItemList.Hull_UMV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'Z',
+                        new ItemStack(Items.brewing_stand, 1, 32767) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ChemicalReactorLuV.get(1L),
+                bitsd,
+                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_LuV, 'R', OrePrefixes.rotor.get(LuVMat2), 'P',
+                        OrePrefixes.pipeMedium.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_LuV, 'C',
+                        OrePrefixes.circuit.get(Materials.Master), 'W',
+                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ChemicalReactorZPM.get(1L),
+                bitsd,
+                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_ZPM, 'R',
+                        OrePrefixes.rotor.get(Materials.Iridium), 'P',
+                        OrePrefixes.pipeLarge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_ZPM, 'C',
+                        OrePrefixes.circuit.get(Materials.Ultimate), 'W',
+                        OrePrefixes.cableGt01.get(Materials.Naquadah) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ChemicalReactorUV.get(1L),
+                bitsd,
+                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_UV, 'R', OrePrefixes.rotor.get(Materials.Osmium),
+                        'P', OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UV,
+                        'C', OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'W',
+                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ChemicalReactorUHV.get(1L),
+                bitsd,
+                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_MAX, 'R',
+                        OrePrefixes.rotor.get(Materials.Osmiridium), 'P',
+                        OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UHV, 'C',
+                        OrePrefixes.circuit.get(Materials.Infinite), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ChemicalReactorUEV.get(1L),
+                bitsd,
+                new Object[] { "PRP", "WMW", "CHC", 'H', CustomItemList.Hull_UEV, 'R',
+                        OrePrefixes.rotor.get(Materials.InfinityCatalyst), 'P',
+                        OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UEV, 'C',
+                        OrePrefixes.circuit.get(Materials.Bio), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ChemicalReactorUIV.get(1L),
+                bitsd,
+                new Object[] { "PRP", "WMW", "CHC", 'H', CustomItemList.Hull_UIV, 'R',
+                        OrePrefixes.rotor.get(Materials.Infinity), 'P',
+                        OrePrefixes.pipeMedium.get(Materials.Polybenzimidazole), 'M', ItemList.Electric_Motor_UIV, 'C',
+                        OrePrefixes.circuit.get(Materials.Optical), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.ChemicalReactorUMV.get(1L),
+                bitsd,
+                new Object[] { "PRP", "WMW", "CHC", 'H', CustomItemList.Hull_UMV, 'R',
+                        OrePrefixes.rotor.get(MaterialsUEVplus.TranscendentMetal), 'P',
+                        OrePrefixes.pipeLarge.get(Materials.Polybenzimidazole), 'M', ItemList.Electric_Motor_UMV, 'C',
+                        OrePrefixes.circuit.get(Materials.Piko), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FermenterLuV.get(1L),
+                bitsd,
+                new Object[] { "WPW", "GBG", "WCW", 'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'P',
+                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C',
+                        OrePrefixes.circuit.get(Materials.Master), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FermenterZPM.get(1L),
+                bitsd,
+                new Object[] { "WPW", "GBG", "WCW", 'W', OrePrefixes.cableGt01.get(Materials.Naquadah), 'P',
+                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C',
+                        OrePrefixes.circuit.get(Materials.Ultimate), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FermenterUV.get(1L),
+                bitsd,
+                new Object[] { "WPW", "GBG", "WCW", 'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'P',
+                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FermenterUHV.get(1L),
+                bitsd,
+                new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
+                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C',
+                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FermenterUEV.get(1L),
+                bitsd,
+                new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'P',
+                        ItemList.Electric_Pump_UEV, 'B', CustomItemList.Hull_UEV, 'C',
+                        OrePrefixes.circuit.get(Materials.Bio), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FermenterUIV.get(1L),
+                bitsd,
+                new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
+                        ItemList.Electric_Pump_UIV, 'B', CustomItemList.Hull_UIV, 'C',
+                        OrePrefixes.circuit.get(Materials.Optical), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FermenterUMV.get(1L),
+                bitsd,
+                new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
+                        ItemList.Electric_Pump_UMV, 'B', CustomItemList.Hull_UMV, 'C',
+                        OrePrefixes.circuit.get(Materials.Piko), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidCannerLuV.get(1L),
+                bitsd,
+                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'P',
+                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C',
+                        OrePrefixes.circuit.get(Materials.Master), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidCannerZPM.get(1L),
+                bitsd,
+                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.Naquadah), 'P',
+                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C',
+                        OrePrefixes.circuit.get(Materials.Ultimate), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidCannerUV.get(1L),
+                bitsd,
+                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'P',
+                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidCannerUHV.get(1L),
+                bitsd,
+                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
+                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidCannerUEV.get(1L),
+                bitsd,
+                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'P',
+                        ItemList.Electric_Pump_UEV, 'B', CustomItemList.Hull_UEV, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidCannerUIV.get(1L),
+                bitsd,
+                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
+                        ItemList.Electric_Pump_UIV, 'B', CustomItemList.Hull_UIV, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidCannerUMV.get(1L),
+                bitsd,
+                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
+                        ItemList.Electric_Pump_UMV, 'B', CustomItemList.Hull_UMV, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidExtractorLuV.get(1L),
+                bitsd,
+                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_LuV, 'E', ItemList.Electric_Piston_LuV, 'P',
+                        ItemList.Electric_Pump_LuV, 'C', OrePrefixes.circuit.get(Materials.Master), 'W',
+                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidExtractorZPM.get(1L),
+                bitsd,
+                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_ZPM, 'E', ItemList.Electric_Piston_ZPM, 'P',
+                        ItemList.Electric_Pump_ZPM, 'C', OrePrefixes.circuit.get(Materials.Ultimate), 'W',
+                        OrePrefixes.cableGt01.get(Materials.Naquadah), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidExtractorUV.get(1L),
+                bitsd,
+                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_UV, 'E', ItemList.Electric_Piston_UV, 'P',
+                        ItemList.Electric_Pump_UV, 'C', OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'W',
+                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidExtractorUHV.get(1L),
+                bitsd,
+                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_MAX, 'E', ItemList.Electric_Piston_UHV, 'P',
+                        ItemList.Electric_Pump_UHV, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidExtractorUEV.get(1L),
+                bitsd,
+                new Object[] { "GEG", "WPW", "CMC", 'M', CustomItemList.Hull_UEV, 'E', ItemList.Electric_Piston_UEV,
+                        'P', ItemList.Electric_Pump_UEV, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidExtractorUIV.get(1L),
+                bitsd,
+                new Object[] { "GEG", "WPW", "CMC", 'M', CustomItemList.Hull_UIV, 'E', ItemList.Electric_Piston_UIV,
+                        'P', ItemList.Electric_Pump_UIV, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidExtractorUMV.get(1L),
+                bitsd,
+                new Object[] { "GEG", "WPW", "CMC", 'M', CustomItemList.Hull_UMV, 'E', ItemList.Electric_Piston_UMV,
+                        'P', ItemList.Electric_Pump_UMV, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidHeaterLuV.get(1L),
+                bitsd,
+                new Object[] { "WGW", "PMP", "RCR", 'M', ItemList.Hull_LuV, 'P', ItemList.Electric_Pump_LuV, 'C',
+                        OrePrefixes.circuit.get(Materials.Master), 'W',
+                        OrePrefixes.wireGt04.get(Materials.NiobiumTitanium), 'R',
+                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidHeaterZPM.get(1L),
+                bitsd,
+                new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_ZPM, 'P', ItemList.Electric_Pump_ZPM, 'C',
+                        OrePrefixes.circuit.get(Materials.Ultimate), 'W', OrePrefixes.wireGt04.get(Materials.Naquadah),
+                        'R', OrePrefixes.cableGt01.get(Materials.Naquadah), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidHeaterUV.get(1L),
+                bitsd,
+                new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_UV, 'P', ItemList.Electric_Pump_UV, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'W',
+                        OrePrefixes.wireGt04.get(Materials.NaquadahAlloy), 'R',
+                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidHeaterUHV.get(1L),
+                bitsd,
+                new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_MAX, 'P', ItemList.Electric_Pump_UHV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil(), 'R',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidHeaterUEV.get(1L),
+                bitsd,
+                new Object[] { "WGW", "PMP", "WCW", 'M', CustomItemList.Hull_UEV, 'P', ItemList.Electric_Pump_UEV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil(), 'R',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidHeaterUIV.get(1L),
+                bitsd,
+                new Object[] { "WGW", "PMP", "WCW", 'M', CustomItemList.Hull_UIV, 'P', ItemList.Electric_Pump_UIV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil(), 'R',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.FluidHeaterUMV.get(1L),
+                bitsd,
+                new Object[] { "WGW", "PMP", "WCW", 'M', CustomItemList.Hull_UMV, 'P', ItemList.Electric_Pump_UMV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil(), 'R',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MixerLuV.get(1L),
+                bitsd,
+                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(LuVMat2), 'M',
+                        ItemList.Electric_Motor_LuV, 'B', ItemList.Hull_LuV, 'C',
+                        OrePrefixes.circuit.get(Materials.Master), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MixerZPM.get(1L),
+                bitsd,
+                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Iridium), 'M',
+                        ItemList.Electric_Motor_ZPM, 'B', ItemList.Hull_ZPM, 'C',
+                        OrePrefixes.circuit.get(Materials.Ultimate), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MixerUV.get(1L),
+                bitsd,
+                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Osmium), 'M',
+                        ItemList.Electric_Motor_UV, 'B', ItemList.Hull_UV, 'C',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MixerUHV.get(1L),
+                bitsd,
+                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Neutronium), 'M',
+                        ItemList.Electric_Motor_UHV, 'B', ItemList.Hull_MAX, 'C',
+                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MixerUEV.get(1L),
+                bitsd,
+                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Neutronium), 'M',
+                        ItemList.Electric_Motor_UEV, 'B', CustomItemList.Hull_UEV, 'C',
+                        OrePrefixes.circuit.get(Materials.Bio), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MixerUIV.get(1L),
+                bitsd,
+                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.CosmicNeutronium), 'M',
+                        ItemList.Electric_Motor_UIV, 'B', CustomItemList.Hull_UIV, 'C',
+                        OrePrefixes.circuit.get(Materials.Optical), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.MixerUMV.get(1L),
+                bitsd,
+                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.CosmicNeutronium), 'M',
+                        ItemList.Electric_Motor_UMV, 'B', CustomItemList.Hull_UMV, 'C',
+                        OrePrefixes.circuit.get(Materials.Piko), 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Transformer_UEV_UHV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_MAX, 'C',
+                        OrePrefixes.wireGt01.get(Materials.Draconium), 'B',
+                        OrePrefixes.wireGt04.get(Materials.SuperconductorUHV), 'K', ItemList.Circuit_Chip_PPIC });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Transformer_UIV_UEV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UEV, 'C',
+                        OrePrefixes.wireGt01.get(Materials.NetherStar), 'B',
+                        OrePrefixes.wireGt04.get(Materials.Draconium), 'K', ItemList.Circuit_Chip_QPIC });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Transformer_UMV_UIV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UIV, 'C',
+                        OrePrefixes.wireGt01.get(Materials.Quantium), 'B',
+                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Circuit_Chip_QPIC });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Transformer_UXV_UMV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UMV, 'C',
+                        OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'B',
+                        OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_QPIC });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Transformer_MAX_UXV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UXV, 'C',
+                        OrePrefixes.wireGt01.get(Materials.Infinity), 'B',
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Circuit_Chip_QPIC });
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_4by4_UEV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UEV, 'W',
+                        OrePrefixes.wireGt16.get(Materials.Draconium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_3by3_UIV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UIV, 'W',
+                        OrePrefixes.wireGt08.get(Materials.NetherStar), 'T', OreDictNames.craftingChest });
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_3by3_UMV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UMV, 'W',
+                        OrePrefixes.wireGt08.get(Materials.Quantium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_3by3_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_2by2_UEV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UEV, 'W',
+                        OrePrefixes.wireGt04.get(Materials.Draconium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_2by2_UIV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UIV, 'W',
+                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_2by2_UMV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UMV, 'W',
+                        OrePrefixes.wireGt04.get(Materials.Quantium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_2by2_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_1by1_UEV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UEV, 'W',
+                        OrePrefixes.wireGt01.get(Materials.Draconium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_1by1_UIV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UIV, 'W',
+                        OrePrefixes.wireGt01.get(Materials.NetherStar), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_1by1_UMV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UMV, 'W',
+                        OrePrefixes.wireGt01.get(Materials.Quantium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_1by1_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_4by4_UIV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UIV, 'W',
+                        OrePrefixes.wireGt16.get(Materials.NetherStar), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_4by4_UMV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UMV, 'W',
+                        OrePrefixes.wireGt16.get(Materials.Quantium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_4by4_UXV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
+                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_Buffer_3by3_UEV.get(1L),
+                bitsd,
+                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UEV, 'W',
+                        OrePrefixes.wireGt08.get(Materials.Draconium), 'T', OreDictNames.craftingChest });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_ULV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_LV_ULV, 'M',
+                        ItemList.Battery_Charger_4by4_ULV, 'B', ItemList.Battery_RE_ULV_Tantalum, 'C',
+                        OrePrefixes.cableGt16.get(Materials.Lead), 'X', OrePrefixes.circuit.get(Materials.Primitive) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_LV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_MV_LV, 'M',
+                        ItemList.Battery_Charger_4by4_LV, 'B', ItemList.Battery_RE_LV_Lithium, 'C',
+                        OrePrefixes.cableGt16.get(Materials.Tin), 'X', OrePrefixes.circuit.get(Materials.Basic) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_MV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_HV_MV, 'M',
+                        ItemList.Battery_Charger_4by4_MV, 'B', ItemList.Battery_RE_MV_Lithium, 'C',
+                        OrePrefixes.cableGt16.get(Materials.AnyCopper), 'X', OrePrefixes.circuit.get(Materials.Good) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_HV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_EV_HV, 'M',
+                        ItemList.Battery_Charger_4by4_HV, 'B', ItemList.Battery_RE_HV_Lithium, 'C',
+                        OrePrefixes.cableGt16.get(Materials.Gold), 'X', OrePrefixes.circuit.get(Materials.Advanced) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_EV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_IV_EV, 'M',
+                        ItemList.Battery_Charger_4by4_EV, 'B', OrePrefixes.battery.get(Materials.Master), 'C',
+                        OrePrefixes.cableGt16.get(Materials.Aluminium), 'X', OrePrefixes.circuit.get(Materials.Data) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_IV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_LuV_IV, 'M',
+                        ItemList.Battery_Charger_4by4_IV, 'B', ItemList.Energy_LapotronicOrb, 'C',
+                        OrePrefixes.cableGt16.get(Materials.Tungsten), 'X', OrePrefixes.circuit.get(Materials.Elite) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_LuV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_ZPM_LuV, 'M',
+                        ItemList.Battery_Charger_4by4_LuV, 'B', ItemList.Energy_LapotronicOrb2, 'C',
+                        OrePrefixes.cableGt16.get(Materials.VanadiumGallium), 'X',
+                        OrePrefixes.circuit.get(Materials.Master) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_ZPM.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_UV_ZPM, 'M',
+                        ItemList.Battery_Charger_4by4_ZPM, 'B', ItemList.Energy_LapotronicOrb2, 'C',
+                        OrePrefixes.cableGt16.get(Materials.Naquadah), 'X',
+                        OrePrefixes.circuit.get(Materials.Ultimate) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_UV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_UHV_UV, 'M',
+                        ItemList.Battery_Charger_4by4_UV, 'B', ItemList.ZPM2, 'C',
+                        OrePrefixes.cableGt16.get(Materials.NaquadahAlloy), 'X',
+                        OrePrefixes.circuit.get(Materials.SuperconductorUHV) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Battery_TurboCharger_4by4_UHV.get(1L),
+                bitsd,
+                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_UEV_UHV, 'M',
+                        ItemList.Battery_Charger_4by4_MAX, 'B', ItemList.ZPM2, 'C',
+                        OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 'X',
+                        OrePrefixes.circuit.get(Materials.Infinite) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Automation_ChestBuffer_UEV.get(1L),
+                bitsd,
+                new Object[] { "CMV", " X ", 'M', CustomItemList.Hull_UEV, 'V', ItemList.Conveyor_Module_UEV, 'C',
+                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Bio) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Automation_ChestBuffer_UIV.get(1L),
+                bitsd,
+                new Object[] { "CMV", " X ", 'M', CustomItemList.Hull_UIV, 'V', ItemList.Conveyor_Module_UIV, 'C',
+                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Optical) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Automation_ChestBuffer_UMV.get(1L),
+                bitsd,
+                new Object[] { "CMV", " X ", 'M', CustomItemList.Hull_UMV, 'V', ItemList.Conveyor_Module_UMV, 'C',
+                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Piko) });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.nameRemover.get(1L),
+                bitsd,
+                new Object[] { "SsS", "VMV", "SXS", 'M', ItemList.Hull_ULV, 'V',
+                        OrePrefixes.gearGtSmall.get(Materials.AnyBronze), 'S', OrePrefixes.screw.get(Materials.AnyIron),
+                        'X', OreDictNames.craftingPiston });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.RockBreakerLuV.get(1L),
+                bitsd,
+                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_LuV, 'E', ItemList.Electric_Motor_LuV,
+                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'W',
+                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'M', ItemList.Hull_LuV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.RockBreakerZPM.get(1L),
+                bitsd,
+                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_ZPM, 'E', ItemList.Electric_Motor_ZPM,
+                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'W',
+                        OrePrefixes.cableGt01.get(Materials.Naquadah), 'M', ItemList.Hull_ZPM });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.RockBreakerUV.get(1L),
+                bitsd,
+                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UV, 'E', ItemList.Electric_Motor_UV,
+                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'W',
+                        OrePrefixes.cableGt01.get(Materials.NaquadahAlloy), 'M', ItemList.Hull_UV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.RockBreakerUHV.get(1L),
+                bitsd,
+                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UHV, 'E', ItemList.Electric_Motor_UHV,
+                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'M', ItemList.Hull_MAX });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.RockBreakerUEV.get(1L),
+                bitsd,
+                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UEV, 'E', ItemList.Electric_Motor_UEV,
+                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'M', CustomItemList.Hull_UEV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.RockBreakerUIV.get(1L),
+                bitsd,
+                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UIV, 'E', ItemList.Electric_Motor_UIV,
+                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'M', CustomItemList.Hull_UIV });
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.RockBreakerUMV.get(1L),
+                bitsd,
+                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UMV, 'E', ItemList.Electric_Motor_UMV,
+                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'M', CustomItemList.Hull_UMV });
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Food_Sliced_Breads.get(1L), ItemList.Shape_Slicer_Flat.get(0L))
+                .itemOutputs(new ItemStack(QuantumBread.Instance(), 1)).noFluidInputs().noFluidOutputs()
+                .duration(20 * TICKS).eut(TierEU.RECIPE_UV).addTo(sSlicerRecipes);
+
+        if (GTPlusPlus.isModLoaded()) {
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.Transformer_HA_UEV_UHV.get(1L),
+                    bitsd,
+                    new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Transformer_UEV_UHV, 'C',
+                            OrePrefixes.wireGt04.get(Materials.Draconium), 'B',
+                            OrePrefixes.wireGt04.get(Materials.Bedrockium), 'K', ItemList.Casing_Coil_Superconductor });
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.Transformer_HA_UIV_UEV.get(1L),
+                    bitsd,
+                    new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Transformer_UIV_UEV, 'C',
+                            OrePrefixes.wireGt04.get(Materials.NetherStar), 'B',
+                            OrePrefixes.wireGt04.get(Materials.Draconium), 'K', ItemList.Casing_Fusion_Coil });
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.Transformer_HA_UMV_UIV.get(1L),
+                    bitsd,
+                    new Object[] { "KBB", "CMK", "KBB", 'M', CustomItemList.Transformer_UMV_UIV, 'C',
+                            OrePrefixes.wireGt04.get(Materials.Quantium), 'B',
+                            OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Casing_Fusion_Coil });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.Transformer_HA_UXV_UMV.get(1L),
+                    bitsd,
+                    new Object[] { "KBB", "CMK", "KBB", 'M', CustomItemList.Transformer_UXV_UMV, 'C',
+                            OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'B',
+                            OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Casing_Fusion_Coil });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.Transformer_HA_MAX_UXV.get(1L),
+                    bitsd,
+                    new Object[] { "KBB", "CMK", "KBB", 'M', CustomItemList.Transformer_MAX_UXV, 'C',
+                            OrePrefixes.wireGt04.get(Materials.Infinity), 'B',
+                            OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Casing_Coil_Infinity });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_LV_ULV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Lead), 'C',
+                            OrePrefixes.cableGt16.get(Materials.Lead), 'S', OrePrefixes.spring.get(Materials.Tin), 'X',
+                            OrePrefixes.cableGt08.get(Materials.Tin), 'O', OrePrefixes.cell.get(Materials.Lubricant),
+                            'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 877) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_MV_LV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tin), 'C',
+                            OrePrefixes.cableGt16.get(Materials.Tin), 'S', OrePrefixes.spring.get(Materials.AnyCopper),
+                            'X', OrePrefixes.cableGt08.get(Materials.AnyCopper), 'O',
+                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 878) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_HV_MV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.AnyCopper), 'C',
+                            OrePrefixes.cableGt16.get(Materials.AnyCopper), 'S', OrePrefixes.spring.get(Materials.Gold),
+                            'X', OrePrefixes.cableGt08.get(Materials.Gold), 'O',
+                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 879) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_EV_HV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Gold), 'C',
+                            OrePrefixes.cableGt16.get(Materials.Gold), 'S', OrePrefixes.spring.get(Materials.Aluminium),
+                            'X', OrePrefixes.cableGt08.get(Materials.Aluminium), 'O',
+                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 880) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_IV_EV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Aluminium), 'C',
+                            OrePrefixes.cableGt16.get(Materials.Aluminium), 'S',
+                            OrePrefixes.spring.get(Materials.Tungsten), 'X',
+                            OrePrefixes.cableGt08.get(Materials.Tungsten), 'O',
+                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 881) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_LuV_IV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tungsten), 'C',
+                            OrePrefixes.cableGt16.get(Materials.Tungsten), 'S',
+                            OrePrefixes.spring.get(Materials.VanadiumGallium), 'X',
+                            OrePrefixes.cableGt08.get(Materials.VanadiumGallium), 'O',
+                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 882) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_ZPM_LuV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.VanadiumGallium),
+                            'C', OrePrefixes.cableGt16.get(Materials.VanadiumGallium), 'S',
+                            OrePrefixes.spring.get(Materials.Naquadah), 'X',
+                            OrePrefixes.cableGt08.get(Materials.Naquadah), 'O',
+                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_UV_ZPM.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Naquadah), 'C',
+                            OrePrefixes.cableGt16.get(Materials.Naquadah), 'S',
+                            OrePrefixes.spring.get(Materials.NaquadahAlloy), 'X',
+                            OrePrefixes.cableGt08.get(Materials.NaquadahAlloy), 'O',
+                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 884) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_UHV_UV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy), 'C',
+                            OrePrefixes.cableGt16.get(Materials.NaquadahAlloy), 'S',
+                            OrePrefixes.spring.get(Materials.Neutronium), 'X',
+                            OrePrefixes.wireGt08.get(Materials.Bedrockium), 'O',
+                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 885) });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_UEV_UHV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Neutronium), 'C',
+                            OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 'S',
+                            OrePrefixes.spring.get(Materials.Draconium), 'X',
+                            OrePrefixes.wireGt08.get(Materials.Draconium), 'O', ItemList.Reactor_Coolant_He_1, 'P',
+                            ItemList.Electric_Pump_MV, 'T', CustomItemList.Transformer_HA_UEV_UHV });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_UIV_UEV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Draconium), 'C',
+                            OrePrefixes.wireGt16.get(Materials.Draconium), 'S',
+                            OrePrefixes.spring.get(Materials.BlackPlutonium), 'X',
+                            OrePrefixes.wireGt08.get(Materials.NetherStar), 'O', ItemList.Reactor_Coolant_He_3, 'P',
+                            ItemList.Electric_Pump_HV, 'T', CustomItemList.Transformer_HA_UIV_UEV });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_UMV_UIV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.BlackPlutonium), 'C',
+                            OrePrefixes.wireGt16.get(Materials.NetherStar), 'S',
+                            OrePrefixes.spring.get(Materials.Quantium), 'X',
+                            OrePrefixes.wireGt08.get(Materials.Quantium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
+                            ItemList.Electric_Pump_IV, 'T', CustomItemList.Transformer_HA_UMV_UIV });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_UXV_UMV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime),
+                            'C', OrePrefixes.wireGt16.get(Materials.Quantium), 'S',
+                            OrePrefixes.spring.get(Materials.Infinity), 'X',
+                            OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1, 'P',
+                            ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_HA_UXV_UMV });
+
+            GT_ModHandler.addCraftingRecipe(
+                    CustomItemList.WetTransformer_MAX_UXV.get(1L),
+                    bitsd,
+                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium),
+                            'C', OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
+                            OrePrefixes.spring.get(MaterialsUEVplus.SpaceTime), 'X',
+                            OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
+                            ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_HA_MAX_UXV });
+        }
+
+    }
+
+    private void registerMachineHulls() {
+        CustomItemList.Hull_UEV.set(
+                new GT_MetaTileEntity_BasicHull(
+                        HULL_UEV.ID,
+                        "hull.tier.10",
+                        "UEV Machine Hull",
+                        10,
+                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+        CustomItemList.Hull_UIV.set(
+                new GT_MetaTileEntity_BasicHull(
+                        HULL_UIV.ID,
+                        "hull.tier.11",
+                        "UIV Machine Hull",
+                        11,
+                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+        CustomItemList.Hull_UMV.set(
+                new GT_MetaTileEntity_BasicHull(
+                        HULL_UMV.ID,
+                        "hull.tier.12",
+                        "UMV Machine Hull",
+                        12,
+                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+        CustomItemList.Hull_UXV.set(
+                new GT_MetaTileEntity_BasicHull(
+                        HULL_UXV.ID,
+                        "hull.tier.13",
+                        "UXV Machine Hull",
+                        13,
+                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+
+        CustomItemList.Hull_MAXV.set(
+                new GT_MetaTileEntity_BasicHull(
+                        HULL_MAX.ID,
+                        "hull.tier.14",
+                        "MAX Machine Hull",
+                        14,
+                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
+    }
+
+    private void registerPlasmaGenerators() {
+        CustomItemList.Generator_Plasma_ZPMV.set(
+                new GT_MetaTileEntity_PlasmaGenerator(
+                        PLASMA_GENERATOR_ZPM.ID,
+                        "basicgenerator.plasmagenerator.tier.08",
+                        "Plasma Generator Mark IV",
+                        7).getStackForm(1L));
+
+        CustomItemList.Generator_Plasma_UV.set(
+                new GT_MetaTileEntity_PlasmaGenerator(
+                        PLASMA_GENERATOR_UV.ID,
+                        "basicgenerator.plasmagenerator.tier.09",
+                        "Ultimate Pocket Sun",
+                        8).getStackForm(1L));
+    }
+
+    private void registerAlloySmelter() {
         CustomItemList.AlloySmelterLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10760,
+                        ALLOY_SMELTER_LuV.ID,
                         "basicmachine.alloysmelter.tier.06",
                         "Elite Alloy Smelter",
                         6,
-                        "HighTech combination Smelter",
+                        MachineType.ALLOY_SMELTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes,
                         2,
                         1,
@@ -192,11 +1347,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AlloySmelterZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10761,
+                        ALLOY_SMELTER_ZPM.ID,
                         "basicmachine.alloysmelter.tier.07",
                         "Elite Alloy Smelter II",
                         7,
-                        "HighTech combination Smelter",
+                        MachineType.ALLOY_SMELTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes,
                         2,
                         1,
@@ -216,11 +1371,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AlloySmelterUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10762,
+                        ALLOY_SMELTER_UV.ID,
                         "basicmachine.alloysmelter.tier.08",
                         "Ultimate Alloy Integrator",
                         8,
-                        "HighTech combination Smelter",
+                        MachineType.ALLOY_SMELTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes,
                         2,
                         1,
@@ -240,11 +1395,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AlloySmelterUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10763,
+                        ALLOY_SMELTER_UHV.ID,
                         "basicmachine.alloysmelter.tier.09",
                         "Epic Alloy Integrator",
                         9,
-                        "HighTech combination Smelter",
+                        MachineType.ALLOY_SMELTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes,
                         2,
                         1,
@@ -264,11 +1419,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AlloySmelterUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10764,
+                        ALLOY_SMELTER_UEV.ID,
                         "basicmachine.alloysmelter.tier.10",
                         "Epic Alloy Integrator II",
                         10,
-                        "HighTech combination Smelter",
+                        MachineType.ALLOY_SMELTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes,
                         2,
                         1,
@@ -288,11 +1443,11 @@ public class GT_Loader_Machines {
         // Nulling recipes for now
         CustomItemList.AlloySmelterUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10765,
+                        ALLOY_SMELTER_UIV.ID,
                         "basicmachine.alloysmelter.tier.11",
                         "Epic Alloy Integrator III",
                         11,
-                        "HighTech combination Smelter",
+                        MachineType.ALLOY_SMELTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes,
                         2,
                         1,
@@ -312,11 +1467,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AlloySmelterUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10766,
+                        ALLOY_SMELTER_UMV.ID,
                         "basicmachine.alloysmelter.tier.12",
                         "Epic Alloy Integrator IV",
                         12,
-                        "HighTech combination Smelter",
+                        MachineType.ALLOY_SMELTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes,
                         2,
                         1,
@@ -333,18 +1488,16 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
-        // ===================================================================================================
+    }
 
-        // ===================================================================================================
-        // AmplifabricatorLuV
-        // ===================================================================================================
+    private void registerMatterAmplifier() {
         CustomItemList.AmplifabricatorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10770,
+                        MATTER_AMPLIFIER_LuV.ID,
                         "basicmachine.amplifab.tier.06",
                         "Elite Amplifabricator",
                         6,
-                        "Extracting UU Amplifier",
+                        MachineType.MATTER_AMPLIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAmplifiers,
                         1,
                         1,
@@ -364,11 +1517,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AmplifabricatorZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10771,
+                        MATTER_AMPLIFIER_ZPM.ID,
                         "basicmachine.amplifab.tier.07",
                         "Elite Amplifabricator II",
                         7,
-                        "Extracting UU Amplifier",
+                        MachineType.MATTER_AMPLIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAmplifiers,
                         1,
                         1,
@@ -388,11 +1541,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AmplifabricatorUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10772,
+                        MATTER_AMPLIFIER_UV.ID,
                         "basicmachine.amplifab.tier.08",
                         "Ultimate Amplicreator",
                         8,
-                        "Extracting UU Amplifier",
+                        MachineType.MATTER_AMPLIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAmplifiers,
                         1,
                         1,
@@ -412,11 +1565,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AmplifabricatorUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10773,
+                        MATTER_AMPLIFIER_UHV.ID,
                         "basicmachine.amplifab.tier.09",
                         "Epic Amplicreator",
                         9,
-                        "Extracting UU Amplifier",
+                        MachineType.MATTER_AMPLIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAmplifiers,
                         1,
                         1,
@@ -436,11 +1589,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AmplifabricatorUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10774,
+                        MATTER_AMPLIFIER_UEV.ID,
                         "basicmachine.amplifab.tier.10",
                         "Epic Amplicreator II",
                         10,
-                        "Extracting UU Amplifier",
+                        MachineType.MATTER_AMPLIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAmplifiers,
                         1,
                         1,
@@ -460,11 +1613,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AmplifabricatorUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10775,
+                        MATTER_AMPLIFIER_UIV.ID,
                         "basicmachine.amplifab.tier.11",
                         "Epic Amplicreator III",
                         11,
-                        "Extracting UU Amplifier",
+                        MachineType.MATTER_AMPLIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAmplifiers,
                         1,
                         1,
@@ -484,11 +1637,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AmplifabricatorUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10776,
+                        MATTER_AMPLIFIER_UMV.ID,
                         "basicmachine.amplifab.tier.12",
                         "Epic Amplicreator IV",
                         12,
-                        "Extracting UU Amplifier",
+                        MachineType.MATTER_AMPLIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAmplifiers,
                         1,
                         1,
@@ -505,17 +1658,16 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // AssemblingMachineLuV
-        // ===================================================================================================
+    private void registerAssemblingMachine() {
         CustomItemList.AssemblingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10780,
+                        ASSEMBLING_MACHINE_LuV.ID,
                         "basicmachine.assembler.tier.06",
                         "Elite Assembling Machine",
                         6,
-                        "Avengers, Assemble!",
+                        MachineType.ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes,
                         9,
                         1,
@@ -536,11 +1688,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AssemblingMachineZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10781,
+                        ASSEMBLING_MACHINE_ZPM.ID,
                         "basicmachine.assembler.tier.07",
                         "Elite Assembling Machine II",
                         7,
-                        "Avengers, Assemble!",
+                        MachineType.ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes,
                         9,
                         1,
@@ -561,11 +1713,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AssemblingMachineUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10782,
+                        ASSEMBLING_MACHINE_UV.ID,
                         "basicmachine.assembler.tier.08",
                         "Ultimate Assembly Constructor",
                         8,
-                        "Avengers, Assemble!",
+                        MachineType.ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes,
                         9,
                         1,
@@ -586,11 +1738,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AssemblingMachineUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10783,
+                        ASSEMBLING_MACHINE_UHV.ID,
                         "basicmachine.assembler.tier.09",
                         "Epic Assembly Constructor",
                         9,
-                        "Avengers, Assemble!",
+                        MachineType.ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes,
                         9,
                         1,
@@ -610,11 +1762,11 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
         CustomItemList.AssemblingMachineUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10784,
+                        ASSEMBLING_MACHINE_UEV.ID,
                         "basicmachine.assembler.tier.10",
                         "Epic Assembly Constructor II",
                         10,
-                        "Avengers, Assemble!",
+                        MachineType.ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes,
                         9,
                         1,
@@ -635,11 +1787,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AssemblingMachineUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10785,
+                        ASSEMBLING_MACHINE_UIV.ID,
                         "basicmachine.assembler.tier.11",
                         "Epic Assembly Constructor III",
                         11,
-                        "Avengers, Assemble!",
+                        MachineType.ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes,
                         9,
                         1,
@@ -660,11 +1812,11 @@ public class GT_Loader_Machines {
 
         CustomItemList.AssemblingMachineUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10786,
+                        ASSEMBLING_MACHINE_UMV.ID,
                         "basicmachine.assembler.tier.12",
                         "Epic Assembly Constructor IV",
                         12,
-                        "Avengers, Assemble!",
+                        MachineType.ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAssemblerRecipes,
                         9,
                         1,
@@ -682,12 +1834,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.ROBOT_ARM, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // AutoclaveLuV
-        // ===================================================================================================
+    private void registerAutoclave() {
         CustomItemList.AutoclaveLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10790,
@@ -869,12 +2018,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'I',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getPlate(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // BendingMachineLuV
-        // ===================================================================================================
+    private void registerBendingMachine() {
         CustomItemList.BendingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10800,
@@ -1049,12 +2195,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // CompressorLuV
-        // ===================================================================================================
+    private void registerCompressor() {
         CustomItemList.CompressorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10810,
@@ -1222,12 +2365,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // CuttingMachineLuV
-        // ===================================================================================================
+    private void registerCuttingMachine() {
         CustomItemList.CuttingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10820,
@@ -1416,12 +2556,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B',
                                 OreDictNames.craftingDiamondBlade }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // DistilleryLuV
-        // ===================================================================================================
+    private void registerDistillery() {
         CustomItemList.DistilleryLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10830,
@@ -1603,12 +2740,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ElectricFurnaceLuV
-        // ===================================================================================================
+    private void registerElectricFurnace() {
         CustomItemList.ElectricFurnaceLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10840,
@@ -1776,12 +2910,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ElectrolyzerLuV
-        // ===================================================================================================
+    private void registerElectrolyzer() {
         CustomItemList.ElectrolyzerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10850,
@@ -1963,12 +3094,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'I',
                                 OrePrefixes.wireGt04.get(Materials.Infinity), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ElectromagneticSeparatorLuV
-        // ===================================================================================================
+    private void registerElectromagneticSeparator() {
         CustomItemList.ElectromagneticSeparatorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10860,
@@ -2150,12 +3278,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ExtractorLuV
-        // ===================================================================================================
+    private void registerExtractor() {
         CustomItemList.ExtractorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10870,
@@ -2337,12 +3462,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ExtruderLuV
-        // ===================================================================================================
+    private void registerExtruder() {
         CustomItemList.ExtruderLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10880,
@@ -2517,12 +3639,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'P',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getPipe(), 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // FluidSolidifierLuV
-        // ===================================================================================================
+    private void registerFluidSolidifier() {
         CustomItemList.FluidSolidifierLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10890,
@@ -2704,12 +3823,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B', OreDictNames.craftingChest })
                                         .getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // FormingPressLuV
-        // ===================================================================================================
+    private void registerFormingPress() {
         CustomItemList.FormingPressLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10900,
@@ -2877,12 +3993,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ForgeHammerLuV
-        // ===================================================================================================
+    private void registerForgeHammer() {
         CustomItemList.ForgeHammerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10910,
@@ -3064,12 +4177,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'O',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil(), 'A', OreDictNames.craftingAnvil })
                                         .getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // CONTINUE HERE 18.10.2015 00:22
-        // ===================================================================================================
-        // LatheLuV
-        // ===================================================================================================
+    private void registerLathe() {
         CustomItemList.LatheLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10920,
@@ -3251,12 +4361,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'D',
                                 OreDictNames.craftingIndustrialDiamond }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // PrecisionLaserEngraverLuV
-        // ===================================================================================================
+    private void registerPrecisionLaserEngraver() {
         CustomItemList.PrecisionLaserEngraverLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10930,
@@ -3431,12 +4538,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // MaceratorLuV
-        // ===================================================================================================
+    private void registerMacerator() {
         CustomItemList.MaceratorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10940,
@@ -3618,12 +4722,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G', OreDictNames.craftingGrinder })
                                         .getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // MassFabricatorLuV
-        // ===================================================================================================
+    private void registerMatterFabricator() {
         CustomItemList.MassFabricatorLuV.set(
                 new GT_MetaTileEntity_Massfabricator(10950, "basicmachine.massfab.tier.06", "Elite Mass Fabricator", 6)
                         .getStackForm(1L));
@@ -3663,63 +4764,9 @@ public class GT_Loader_Machines {
                         "basicmachine.massfab.tier.12",
                         "Epic Existence Initiator IV",
                         12).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MassFabricatorLuV.get(1L),
-                bitsd,
-                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_LuV, 'F', ItemList.Field_Generator_LuV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MassFabricatorZPM.get(1L),
-                bitsd,
-                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_ZPM, 'F', ItemList.Field_Generator_ZPM, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MassFabricatorUV.get(1L),
-                bitsd,
-                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MassFabricatorUHV.get(1L),
-                bitsd,
-                new Object[] { "CFC", "WMW", "CFC", 'M', ItemList.Hull_MAX, 'F', ItemList.Field_Generator_UHV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MassFabricatorUEV.get(1L),
-                bitsd,
-                new Object[] { "CFC", "WMW", "CFC", 'M', CustomItemList.Hull_UEV, 'F', ItemList.Field_Generator_UEV,
-                        'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MassFabricatorUIV.get(1L),
-                bitsd,
-                new Object[] { "CFC", "WMW", "CFC", 'M', CustomItemList.Hull_UIV, 'F', ItemList.Field_Generator_UIV,
-                        'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MassFabricatorUMV.get(1L),
-                bitsd,
-                new Object[] { "CFC", "WMW", "CFC", 'M', CustomItemList.Hull_UMV, 'F', ItemList.Field_Generator_UMV,
-                        'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4() });
-
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // MicrowaveLuV
-        // ===================================================================================================
-
-        // Not really required... HERESY!!!
-
+    private void registerMicrowave() {
         CustomItemList.MicrowaveLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10960,
@@ -3901,12 +4948,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getWire(), 'L',
                                 OrePrefixes.plateDense.get(Materials.Lead) }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // OreWashingPlantLuV
-        // ===================================================================================================
+    private void registerOreWashingPlant() {
         CustomItemList.OreWashingPlantLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10970,
@@ -4087,12 +5131,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // PolarizerLuV
-        // ===================================================================================================
+    private void registerPolarizer() {
         CustomItemList.PolarizerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10980,
@@ -4260,12 +5301,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC, 'Z',
                                 OrePrefixes.wireGt08.get(Materials.Osmium), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // RecyclerLuV
-        // ===================================================================================================
+    private void registerRecycler() {
         CustomItemList.RecyclerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         10990,
@@ -4440,12 +5478,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 OrePrefixes.dust.get(Materials.NetherStar) }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ReplicatorLuV
-        // ===================================================================================================
+    private void registerReplicator() {
         CustomItemList.ReplicatorLuV.set(
                 new GT_MetaTileEntity_Replicator(11000, "basicmachine.replicator.tier.06", "Elite Replicator", 6)
                         .getStackForm(1L));
@@ -4479,61 +5514,9 @@ public class GT_Loader_Machines {
                         "basicmachine.replicator.tier.12",
                         "Epic Elemental Composer IV",
                         12).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ReplicatorLuV.get(1L),
-                bitsd,
-                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_LuV, 'F', ItemList.Field_Generator_LuV, 'E',
-                        ItemList.Emitter_LuV, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ReplicatorZPM.get(1L),
-                bitsd,
-                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_ZPM, 'F', ItemList.Field_Generator_ZPM, 'E',
-                        ItemList.Emitter_ZPM, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ReplicatorUV.get(1L),
-                bitsd,
-                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_UV, 'F', ItemList.Field_Generator_UV, 'E',
-                        ItemList.Emitter_UV, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ReplicatorUHV.get(1L),
-                bitsd,
-                new Object[] { "EFE", "CMC", "EWE", 'M', ItemList.Hull_MAX, 'F', ItemList.Field_Generator_UHV, 'E',
-                        ItemList.Emitter_UHV, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ReplicatorUEV.get(1L),
-                bitsd,
-                new Object[] { "EFE", "CMC", "EWE", 'M', CustomItemList.Hull_UEV, 'F', ItemList.Field_Generator_UEV,
-                        'E', ItemList.Emitter_UEV, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ReplicatorUIV.get(1L),
-                bitsd,
-                new Object[] { "EFE", "CMC", "EWE", 'M', CustomItemList.Hull_UIV, 'F', ItemList.Field_Generator_UIV,
-                        'E', ItemList.Emitter_UIV, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ReplicatorUMV.get(1L),
-                bitsd,
-                new Object[] { "EFE", "CMC", "EWE", 'M', CustomItemList.Hull_UMV, 'F', ItemList.Field_Generator_UMV,
-                        'E', ItemList.Emitter_UMV, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4() });
-
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ScannerLuV
-        // ===================================================================================================
+    private void registerScanner() {
         CustomItemList.ScannerLuV.set(
                 new GT_MetaTileEntity_Scanner(11010, "basicmachine.scanner.tier.06", "Elite Scanner", 6)
                         .getStackForm(1L));
@@ -4555,60 +5538,9 @@ public class GT_Loader_Machines {
         CustomItemList.ScannerUMV.set(
                 new GT_MetaTileEntity_Scanner(11016, "basicmachine.scanner.tier.12", "Epic Electron Microscope IV", 12)
                         .getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ScannerLuV.get(1L),
-                bitsd,
-                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_LuV, 'T', ItemList.Emitter_LuV, 'R',
-                        ItemList.Sensor_LuV, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ScannerZPM.get(1L),
-                bitsd,
-                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_ZPM, 'T', ItemList.Emitter_ZPM, 'R',
-                        ItemList.Sensor_ZPM, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ScannerUV.get(1L),
-                bitsd,
-                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_UV, 'T', ItemList.Emitter_UV, 'R',
-                        ItemList.Sensor_UV, 'C', OrePrefixes.circuit.get(Materials.Infinite), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ScannerUHV.get(1L),
-                bitsd,
-                new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_MAX, 'T', ItemList.Emitter_UHV, 'R',
-                        ItemList.Sensor_UHV, 'C', OrePrefixes.circuit.get(Materials.Bio), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Bedrockium) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ScannerUEV.get(1L),
-                bitsd,
-                new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UEV, 'T', ItemList.Emitter_UEV, 'R',
-                        ItemList.Sensor_UEV, 'C', OrePrefixes.circuit.get(Materials.Optical), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Draconium) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ScannerUIV.get(1L),
-                bitsd,
-                new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UIV, 'T', ItemList.Emitter_UIV, 'R',
-                        ItemList.Sensor_UIV, 'C', OrePrefixes.circuit.get(Materials.Piko), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Draconium) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ScannerUMV.get(1L),
-                bitsd,
-                new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UMV, 'T', ItemList.Emitter_UMV, 'R',
-                        ItemList.Sensor_UMV, 'C', OrePrefixes.circuit.get(Materials.Quantum), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Draconium) });
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // SiftingMachineLuV
-        // ===================================================================================================
+    private void registerSiftingMachine() {
         CustomItemList.SiftingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11020,
@@ -4776,12 +5708,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'F', OreDictNames.craftingFilter,
                                 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // SlicingMachineLuV
-        // ===================================================================================================
+    private void registerSlicingMachine() {
         CustomItemList.SlicingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11028,
@@ -4956,16 +5885,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Food_Sliced_Breads.get(1L), ItemList.Shape_Slicer_Flat.get(0L))
-                .itemOutputs(new ItemStack(QuantumBread.Instance(), 1)).noFluidInputs().noFluidOutputs()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_UV).addTo(sSlicerRecipes);
-
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // ThermalCentrifugeLuV
-        // ===================================================================================================
+    private void registerThermalCentrifuge() {
         CustomItemList.ThermalCentrifugeLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11040,
@@ -5140,12 +6062,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'O',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // WiremillLuV
-        // ===================================================================================================
+    private void registerWiremill() {
         CustomItemList.WiremillLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11050,
@@ -5313,35 +6232,16 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-
-        // ===================================================================================================
-        // PumpLuV
-        // ===================================================================================================
+    private void registerPump() {
         CustomItemList.PumpLuV.set(
                 new GT_MetaTileEntity_Pump(11060, "basicmachine.pump.tier.06", "Lake Dislocator", 6).getStackForm(1L));
         CustomItemList.PumpZPM.set(
                 new GT_MetaTileEntity_Pump(11061, "basicmachine.pump.tier.07", "Ocean Transposer", 7).getStackForm(1L));
-        // CustomItemList.PumpUV.set(new GT_MetaTileEntity_Pump(11062, "basicmachine.pump.tier.08", "Reverse
-        // Terraformer", 8).getStackForm(1L));
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.PumpLuV.get(1L),
-                bitsd,
-                new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_LuV, 'B',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getPipeL(), 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'P', ItemList.Electric_Pump_LuV });
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.PumpZPM.get(1L),
-                bitsd,
-                new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_ZPM, 'B',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getPipeL(), 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'P', ItemList.Electric_Pump_ZPM });
-
-        // ===================================================================================================
-        // ArcFurnaceLuV
-        // ===================================================================================================
+    private void registerArcFurnace() {
         CustomItemList.ArcFurnaceLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11070,
@@ -5516,11 +6416,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'G',
                                 OrePrefixes.cell.get(Materials.Graphite) }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // CentrifugeLuV
-        // ===================================================================================================
-
+    private void registerCentrifuge() {
         CustomItemList.CentrifugeLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11080,
@@ -5688,11 +6586,9 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // Plasma Arc Furnace
-        // ===================================================================================================
-
+    private void registerPlasmaArcFurnace() {
         CustomItemList.PlasmaArcFurnaceLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11090,
@@ -5874,10 +6770,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'T',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                                 OrePrefixes.cell.get(Materials.Graphite) }).getStackForm(1L));
-        // ===================================================================================================
-        // World Accelerator Lv-UV
-        // ===================================================================================================
+    }
 
+    private void registerWorldAccelerator() {
         CustomItemList.AcceleratorLV.set(
                 new GT_MetaTileEntity_WorldAccelerator(
                         11100,
@@ -5926,67 +6821,9 @@ public class GT_Loader_Machines {
                         "basicmachine.accelerator.tier.08",
                         "Ultimate Time Anomaly",
                         8).getStackForm(1L));
-        // Not adding either...
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorLV.get(1L),
-                bitsd,
-                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LV, 'M', ItemList.Electric_Motor_LV, 'P',
-                        ItemList.Electric_Pump_LV, 'B', ItemList.Hull_LV, 'C', ItemList.Conveyor_Module_LV, 'I',
-                        ItemList.Electric_Piston_LV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorMV.get(1L),
-                bitsd,
-                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_MV, 'M', ItemList.Electric_Motor_MV, 'P',
-                        ItemList.Electric_Pump_MV, 'B', ItemList.Hull_MV, 'C', ItemList.Conveyor_Module_MV, 'I',
-                        ItemList.Electric_Piston_MV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorHV.get(1L),
-                bitsd,
-                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_HV, 'M', ItemList.Electric_Motor_HV, 'P',
-                        ItemList.Electric_Pump_HV, 'B', ItemList.Hull_HV, 'C', ItemList.Conveyor_Module_HV, 'I',
-                        ItemList.Electric_Piston_HV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorEV.get(1L),
-                bitsd,
-                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_EV, 'M', ItemList.Electric_Motor_EV, 'P',
-                        ItemList.Electric_Pump_EV, 'B', ItemList.Hull_EV, 'C', ItemList.Conveyor_Module_EV, 'I',
-                        ItemList.Electric_Piston_EV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorIV.get(1L),
-                bitsd,
-                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_IV, 'M', ItemList.Electric_Motor_IV, 'P',
-                        ItemList.Electric_Pump_IV, 'B', ItemList.Hull_IV, 'C', ItemList.Conveyor_Module_IV, 'I',
-                        ItemList.Electric_Piston_IV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorLuV.get(1L),
-                bitsd,
-                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LuV, 'M', ItemList.Electric_Motor_LuV, 'P',
-                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C', ItemList.Conveyor_Module_LuV, 'I',
-                        ItemList.Electric_Piston_LuV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorZPM.get(1L),
-                bitsd,
-                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_ZPM, 'M', ItemList.Electric_Motor_ZPM, 'P',
-                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C', ItemList.Conveyor_Module_ZPM, 'I',
-                        ItemList.Electric_Piston_ZPM });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorUV.get(1L),
-                bitsd,
-                new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_UV, 'M', ItemList.Electric_Motor_UV, 'P',
-                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C', ItemList.Conveyor_Module_UV, 'I',
-                        ItemList.Electric_Piston_UV });
-
-        // ===================================================================================================
-        // Brewery
-        // ===================================================================================================
+    private void registerBrewery() {
         CustomItemList.BreweryLuV.set(
                 new GT_MetaTileEntity_PotionBrewer(11120, "basicmachine.brewery.tier.06", "Elite Brewery", 6)
                         .getStackForm(1L));
@@ -6008,79 +6845,9 @@ public class GT_Loader_Machines {
         CustomItemList.BreweryUMV.set(
                 new GT_MetaTileEntity_PotionBrewer(11126, "basicmachine.brewery.tier.12", "Epic Brew Rusher IV", 12)
                         .getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.BreweryLuV.get(1L),
-                bitsd,
-                new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'P',
-                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'Z',
-                        new ItemStack(Items.brewing_stand, 1, 32767) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.BreweryZPM.get(1L),
-                bitsd,
-                new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.Naquadah), 'P',
-                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'Z',
-                        new ItemStack(Items.brewing_stand, 1, 32767) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.BreweryUV.get(1L),
-                bitsd,
-                new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'P',
-                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'Z',
-                        new ItemStack(Items.brewing_stand, 1, 32767) });
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.BreweryUHV.get(1L),
-                bitsd,
-                new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
-                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'Z',
-                        new ItemStack(Items.brewing_stand, 1, 32767) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.BreweryUEV.get(1L),
-                bitsd,
-                new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.Draconium), 'P',
-                        ItemList.Electric_Pump_UEV, 'B', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(),
-                        'Z', new ItemStack(Items.brewing_stand, 1, 32767) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.BreweryUIV.get(1L),
-                bitsd,
-                new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
-                        ItemList.Electric_Pump_UIV, 'B', CustomItemList.Hull_UIV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'Z',
-                        new ItemStack(Items.brewing_stand, 1, 32767) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.BreweryUMV.get(1L),
-                bitsd,
-                new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
-                        ItemList.Electric_Pump_UMV, 'B', CustomItemList.Hull_UMV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'Z',
-                        new ItemStack(Items.brewing_stand, 1, 32767) });
     }
 
-    private void registerMachines2() {
-        long bitsd = GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.NOT_REMOVABLE
-                | GT_ModHandler.RecipeBits.REVERSIBLE
-                | GT_ModHandler.RecipeBits.BUFFERED;
-
-        Materials LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
-
-        // ===================================================================================================
-        // Canning Machine
-        // ===================================================================================================
+    private void registerCanningMachine() {
         CustomItemList.CanningMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11130,
@@ -6255,10 +7022,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // Chemical Bath
-        // ===================================================================================================
+    private void registerChemicalBath() {
         CustomItemList.ChemicalBathLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11140,
@@ -6440,10 +7206,9 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS }).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // Chemical Reactor
-        // ===================================================================================================
+    private void registerChemicalReactor() {
         CustomItemList.ChemicalReactorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11150,
@@ -6591,70 +7356,9 @@ public class GT_Loader_Machines {
                         "CHEMICAL_REACTOR",
                         null).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ChemicalReactorLuV.get(1L),
-                bitsd,
-                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_LuV, 'R', OrePrefixes.rotor.get(LuVMat2), 'P',
-                        OrePrefixes.pipeMedium.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'W',
-                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium) });
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ChemicalReactorZPM.get(1L),
-                bitsd,
-                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_ZPM, 'R',
-                        OrePrefixes.rotor.get(Materials.Iridium), 'P',
-                        OrePrefixes.pipeLarge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Naquadah) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ChemicalReactorUV.get(1L),
-                bitsd,
-                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_UV, 'R', OrePrefixes.rotor.get(Materials.Osmium),
-                        'P', OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UV,
-                        'C', OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ChemicalReactorUHV.get(1L),
-                bitsd,
-                new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_MAX, 'R',
-                        OrePrefixes.rotor.get(Materials.Osmiridium), 'P',
-                        OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UHV, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ChemicalReactorUEV.get(1L),
-                bitsd,
-                new Object[] { "PRP", "WMW", "CHC", 'H', CustomItemList.Hull_UEV, 'R',
-                        OrePrefixes.rotor.get(Materials.InfinityCatalyst), 'P',
-                        OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ChemicalReactorUIV.get(1L),
-                bitsd,
-                new Object[] { "PRP", "WMW", "CHC", 'H', CustomItemList.Hull_UIV, 'R',
-                        OrePrefixes.rotor.get(Materials.Infinity), 'P',
-                        OrePrefixes.pipeMedium.get(Materials.Polybenzimidazole), 'M', ItemList.Electric_Motor_UIV, 'C',
-                        OrePrefixes.circuit.get(Materials.Optical), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.ChemicalReactorUMV.get(1L),
-                bitsd,
-                new Object[] { "PRP", "WMW", "CHC", 'H', CustomItemList.Hull_UMV, 'R',
-                        OrePrefixes.rotor.get(MaterialsUEVplus.TranscendentMetal), 'P',
-                        OrePrefixes.pipeLarge.get(Materials.Polybenzimidazole), 'M', ItemList.Electric_Motor_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.Piko), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() });
-
-        // ===================================================================================================
-        // Fermenter
-        // ===================================================================================================
+    private void registerFermenter() {
         CustomItemList.FermenterLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11170,
@@ -6801,66 +7505,9 @@ public class GT_Loader_Machines {
                         SpecialEffects.NONE,
                         "FERMENTER",
                         null).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FermenterLuV.get(1L),
-                bitsd,
-                new Object[] { "WPW", "GBG", "WCW", 'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'P',
-                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FermenterZPM.get(1L),
-                bitsd,
-                new Object[] { "WPW", "GBG", "WCW", 'W', OrePrefixes.cableGt01.get(Materials.Naquadah), 'P',
-                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FermenterUV.get(1L),
-                bitsd,
-                new Object[] { "WPW", "GBG", "WCW", 'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'P',
-                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FermenterUHV.get(1L),
-                bitsd,
-                new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
-                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FermenterUEV.get(1L),
-                bitsd,
-                new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'P',
-                        ItemList.Electric_Pump_UEV, 'B', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FermenterUIV.get(1L),
-                bitsd,
-                new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
-                        ItemList.Electric_Pump_UIV, 'B', CustomItemList.Hull_UIV, 'C',
-                        OrePrefixes.circuit.get(Materials.Optical), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FermenterUMV.get(1L),
-                bitsd,
-                new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
-                        ItemList.Electric_Pump_UMV, 'B', CustomItemList.Hull_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.Piko), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
-
-        // ===================================================================================================
-        // Fluid Canner
-        // ===================================================================================================
+    private void registerFluidCanner() {
         CustomItemList.FluidCannerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11180,
@@ -7007,66 +7654,9 @@ public class GT_Loader_Machines {
                         SpecialEffects.NONE,
                         "FLUID_CANNER",
                         null).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidCannerLuV.get(1L),
-                bitsd,
-                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'P',
-                        ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidCannerZPM.get(1L),
-                bitsd,
-                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.Naquadah), 'P',
-                        ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidCannerUV.get(1L),
-                bitsd,
-                new Object[] { "GCG", "GBG", "WPW", 'W', OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'P',
-                        ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidCannerUHV.get(1L),
-                bitsd,
-                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
-                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidCannerUEV.get(1L),
-                bitsd,
-                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'P',
-                        ItemList.Electric_Pump_UEV, 'B', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidCannerUIV.get(1L),
-                bitsd,
-                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'P',
-                        ItemList.Electric_Pump_UIV, 'B', CustomItemList.Hull_UIV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidCannerUMV.get(1L),
-                bitsd,
-                new Object[] { "GCG", "GBG", "WPW", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
-                        ItemList.Electric_Pump_UMV, 'B', CustomItemList.Hull_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
-
-        // ===================================================================================================
-        // Fluid Extractor
-        // ===================================================================================================
+    private void registerFluidExtractor() {
         CustomItemList.FluidExtractorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11190,
@@ -7213,66 +7803,9 @@ public class GT_Loader_Machines {
                         SpecialEffects.NONE,
                         "FLUID_EXTRACTOR",
                         null).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidExtractorLuV.get(1L),
-                bitsd,
-                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_LuV, 'E', ItemList.Electric_Piston_LuV, 'P',
-                        ItemList.Electric_Pump_LuV, 'C', OrePrefixes.circuit.get(Materials.Master), 'W',
-                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidExtractorZPM.get(1L),
-                bitsd,
-                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_ZPM, 'E', ItemList.Electric_Piston_ZPM, 'P',
-                        ItemList.Electric_Pump_ZPM, 'C', OrePrefixes.circuit.get(Materials.Ultimate), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Naquadah), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidExtractorUV.get(1L),
-                bitsd,
-                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_UV, 'E', ItemList.Electric_Piston_UV, 'P',
-                        ItemList.Electric_Pump_UV, 'C', OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'W',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidExtractorUHV.get(1L),
-                bitsd,
-                new Object[] { "GEG", "WPW", "CMC", 'M', ItemList.Hull_MAX, 'E', ItemList.Electric_Piston_UHV, 'P',
-                        ItemList.Electric_Pump_UHV, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidExtractorUEV.get(1L),
-                bitsd,
-                new Object[] { "GEG", "WPW", "CMC", 'M', CustomItemList.Hull_UEV, 'E', ItemList.Electric_Piston_UEV,
-                        'P', ItemList.Electric_Pump_UEV, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidExtractorUIV.get(1L),
-                bitsd,
-                new Object[] { "GEG", "WPW", "CMC", 'M', CustomItemList.Hull_UIV, 'E', ItemList.Electric_Piston_UIV,
-                        'P', ItemList.Electric_Pump_UIV, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidExtractorUMV.get(1L),
-                bitsd,
-                new Object[] { "GEG", "WPW", "CMC", 'M', CustomItemList.Hull_UMV, 'E', ItemList.Electric_Piston_UMV,
-                        'P', ItemList.Electric_Pump_UMV, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
-
-        // ===================================================================================================
-        // Fluid Heater
-        // ===================================================================================================
+    private void registerFluidHeater() {
         CustomItemList.FluidHeaterLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11200,
@@ -7419,72 +7952,9 @@ public class GT_Loader_Machines {
                         SpecialEffects.NONE,
                         "FLUID_HEATER",
                         null).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidHeaterLuV.get(1L),
-                bitsd,
-                new Object[] { "WGW", "PMP", "RCR", 'M', ItemList.Hull_LuV, 'P', ItemList.Electric_Pump_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'W',
-                        OrePrefixes.wireGt04.get(Materials.NiobiumTitanium), 'R',
-                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidHeaterZPM.get(1L),
-                bitsd,
-                new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_ZPM, 'P', ItemList.Electric_Pump_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'W', OrePrefixes.wireGt04.get(Materials.Naquadah),
-                        'R', OrePrefixes.cableGt01.get(Materials.Naquadah), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidHeaterUV.get(1L),
-                bitsd,
-                new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_UV, 'P', ItemList.Electric_Pump_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'W',
-                        OrePrefixes.wireGt04.get(Materials.NaquadahAlloy), 'R',
-                        OrePrefixes.cableGt01.get(Materials.ElectrumFlux), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidHeaterUHV.get(1L),
-                bitsd,
-                new Object[] { "WGW", "PMP", "WCW", 'M', ItemList.Hull_MAX, 'P', ItemList.Electric_Pump_UHV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil(), 'R',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidHeaterUEV.get(1L),
-                bitsd,
-                new Object[] { "WGW", "PMP", "WCW", 'M', CustomItemList.Hull_UEV, 'P', ItemList.Electric_Pump_UEV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil(), 'R',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidHeaterUIV.get(1L),
-                bitsd,
-                new Object[] { "WGW", "PMP", "WCW", 'M', CustomItemList.Hull_UIV, 'P', ItemList.Electric_Pump_UIV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil(), 'R',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.FluidHeaterUMV.get(1L),
-                bitsd,
-                new Object[] { "WGW", "PMP", "WCW", 'M', CustomItemList.Hull_UMV, 'P', ItemList.Electric_Pump_UMV, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil(), 'R',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
-
-        // ===================================================================================================
-        // Mixer
-        // ===================================================================================================
+    private void registerMixer() {
         CustomItemList.MixerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         11210,
@@ -7632,65 +8102,9 @@ public class GT_Loader_Machines {
                         "MIXER",
                         null).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MixerLuV.get(1L),
-                bitsd,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(LuVMat2), 'M',
-                        ItemList.Electric_Motor_LuV, 'B', ItemList.Hull_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MixerZPM.get(1L),
-                bitsd,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Iridium), 'M',
-                        ItemList.Electric_Motor_ZPM, 'B', ItemList.Hull_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MixerUV.get(1L),
-                bitsd,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Osmium), 'M',
-                        ItemList.Electric_Motor_UV, 'B', ItemList.Hull_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MixerUHV.get(1L),
-                bitsd,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Neutronium), 'M',
-                        ItemList.Electric_Motor_UHV, 'B', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MixerUEV.get(1L),
-                bitsd,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Neutronium), 'M',
-                        ItemList.Electric_Motor_UEV, 'B', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MixerUIV.get(1L),
-                bitsd,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.CosmicNeutronium), 'M',
-                        ItemList.Electric_Motor_UIV, 'B', CustomItemList.Hull_UIV, 'C',
-                        OrePrefixes.circuit.get(Materials.Optical), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.MixerUMV.get(1L),
-                bitsd,
-                new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.CosmicNeutronium), 'M',
-                        ItemList.Electric_Motor_UMV, 'B', CustomItemList.Hull_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.Piko), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
-
-        // ===================================================================================================
-        // Transformer
-        // ===================================================================================================
+    private void registerTransformer() {
         CustomItemList.Transformer_UEV_UHV.set(
                 new GT_MetaTileEntity_Transformer(
                         11220,
@@ -7730,47 +8144,9 @@ public class GT_Loader_Machines {
                         "Extended Mega Ultimate Transformer",
                         13,
                         "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Transformer_UEV_UHV.get(1L),
-                bitsd,
-                new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.wireGt01.get(Materials.Draconium), 'B',
-                        OrePrefixes.wireGt04.get(Materials.SuperconductorUHV), 'K', ItemList.Circuit_Chip_PPIC });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Transformer_UIV_UEV.get(1L),
-                bitsd,
-                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.wireGt01.get(Materials.NetherStar), 'B',
-                        OrePrefixes.wireGt04.get(Materials.Draconium), 'K', ItemList.Circuit_Chip_QPIC });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Transformer_UMV_UIV.get(1L),
-                bitsd,
-                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UIV, 'C',
-                        OrePrefixes.wireGt01.get(Materials.Quantium), 'B',
-                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Circuit_Chip_QPIC });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Transformer_UXV_UMV.get(1L),
-                bitsd,
-                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UMV, 'C',
-                        OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'B',
-                        OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Circuit_Chip_QPIC });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Transformer_MAX_UXV.get(1L),
-                bitsd,
-                new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Hull_UXV, 'C',
-                        OrePrefixes.wireGt01.get(Materials.Infinity), 'B',
-                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Circuit_Chip_QPIC });
-
-        // TODO:recipes
-
-        // ===================================================================================================
-        // Battery buffer 4x4
-        // ===================================================================================================
+    private void registerBatteryBuffer4By4() {
         CustomItemList.Battery_Buffer_4by4_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11240,
@@ -7779,12 +8155,6 @@ public class GT_Loader_Machines {
                         10,
                         "",
                         16).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_4by4_UEV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UEV, 'W',
-                        OrePrefixes.wireGt16.get(Materials.Draconium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_4by4_UIV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -7795,12 +8165,6 @@ public class GT_Loader_Machines {
                         "",
                         16).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_4by4_UIV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UIV, 'W',
-                        OrePrefixes.wireGt16.get(Materials.NetherStar), 'T', OreDictNames.craftingChest });
-
         CustomItemList.Battery_Buffer_4by4_UMV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11242,
@@ -7809,12 +8173,6 @@ public class GT_Loader_Machines {
                         12,
                         "",
                         16).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_4by4_UMV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UMV, 'W',
-                        OrePrefixes.wireGt16.get(Materials.Quantium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_4by4_UXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -7825,12 +8183,6 @@ public class GT_Loader_Machines {
                         "",
                         16).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_4by4_UXV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
-                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
-
         CustomItemList.Battery_Buffer_4by4_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11245,
@@ -7839,12 +8191,9 @@ public class GT_Loader_Machines {
                         14,
                         "",
                         16).getStackForm(1L));
+    }
 
-        // TODO:Recipes
-
-        // ===================================================================================================
-        // Battery buffer 3x3
-        // ===================================================================================================
+    private void registerBatteryBuffer3By3() {
         CustomItemList.Battery_Buffer_3by3_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11250,
@@ -7853,12 +8202,6 @@ public class GT_Loader_Machines {
                         10,
                         "",
                         9).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_3by3_UEV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UEV, 'W',
-                        OrePrefixes.wireGt08.get(Materials.Draconium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_3by3_UIV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -7869,12 +8212,6 @@ public class GT_Loader_Machines {
                         "",
                         9).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_3by3_UIV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UIV, 'W',
-                        OrePrefixes.wireGt08.get(Materials.NetherStar), 'T', OreDictNames.craftingChest });
-
         CustomItemList.Battery_Buffer_3by3_UMV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11252,
@@ -7883,12 +8220,6 @@ public class GT_Loader_Machines {
                         12,
                         "",
                         9).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_3by3_UMV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UMV, 'W',
-                        OrePrefixes.wireGt08.get(Materials.Quantium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_3by3_UXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -7899,12 +8230,6 @@ public class GT_Loader_Machines {
                         "",
                         9).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_3by3_UXV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
-                        OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
-
         CustomItemList.Battery_Buffer_3by3_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11255,
@@ -7913,12 +8238,9 @@ public class GT_Loader_Machines {
                         14,
                         "",
                         9).getStackForm(1L));
+    }
 
-        // TODO:Recipes
-
-        // ===================================================================================================
-        // Battery buffer 2x2
-        // ===================================================================================================
+    private void registerBatteryBuffer2By2() {
         CustomItemList.Battery_Buffer_2by2_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11260,
@@ -7927,12 +8249,6 @@ public class GT_Loader_Machines {
                         10,
                         "",
                         4).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_2by2_UEV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UEV, 'W',
-                        OrePrefixes.wireGt04.get(Materials.Draconium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_2by2_UIV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -7943,12 +8259,6 @@ public class GT_Loader_Machines {
                         "",
                         4).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_2by2_UIV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UIV, 'W',
-                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'T', OreDictNames.craftingChest });
-
         CustomItemList.Battery_Buffer_2by2_UMV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11262,
@@ -7957,12 +8267,6 @@ public class GT_Loader_Machines {
                         12,
                         "",
                         4).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_2by2_UMV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UMV, 'W',
-                        OrePrefixes.wireGt04.get(Materials.Quantium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_2by2_UXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -7973,12 +8277,6 @@ public class GT_Loader_Machines {
                         "",
                         4).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_2by2_UXV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
-                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
-
         CustomItemList.Battery_Buffer_2by2_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11265,
@@ -7987,12 +8285,9 @@ public class GT_Loader_Machines {
                         14,
                         "",
                         4).getStackForm(1L));
+    }
 
-        // TODO:Recipes
-
-        // ===================================================================================================
-        // Battery buffer 1x1
-        // ===================================================================================================
+    private void registerBatteryBuffer1By1() {
         CustomItemList.Battery_Buffer_1by1_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11270,
@@ -8001,12 +8296,6 @@ public class GT_Loader_Machines {
                         10,
                         "",
                         1).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_1by1_UEV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UEV, 'W',
-                        OrePrefixes.wireGt01.get(Materials.Draconium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_1by1_UIV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -8017,12 +8306,6 @@ public class GT_Loader_Machines {
                         "",
                         1).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_1by1_UIV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UIV, 'W',
-                        OrePrefixes.wireGt01.get(Materials.NetherStar), 'T', OreDictNames.craftingChest });
-
         CustomItemList.Battery_Buffer_1by1_UMV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11272,
@@ -8031,12 +8314,6 @@ public class GT_Loader_Machines {
                         12,
                         "",
                         1).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_1by1_UMV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UMV, 'W',
-                        OrePrefixes.wireGt01.get(Materials.Quantium), 'T', OreDictNames.craftingChest });
 
         CustomItemList.Battery_Buffer_1by1_UXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
@@ -8047,12 +8324,6 @@ public class GT_Loader_Machines {
                         "",
                         1).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_Buffer_1by1_UXV.get(1L),
-                bitsd,
-                new Object[] { "WTW", "WMW", 'M', CustomItemList.Hull_UXV, 'W',
-                        OrePrefixes.wireGt01.get(Materials.BlackPlutonium), 'T', OreDictNames.craftingChest });
-
         CustomItemList.Battery_Buffer_1by1_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         11275,
@@ -8061,12 +8332,9 @@ public class GT_Loader_Machines {
                         14,
                         "",
                         1).getStackForm(1L));
+    }
 
-        // TODO:Recipes
-
-        // ===================================================================================================
-        // Battery charger 4x4 - faster battery charge/discharge
-        // ===================================================================================================
+    private void registerBatteryCharger4By4() {
         CustomItemList.Battery_Charger_4by4_UEV.set(
                 new GT_MetaTileEntity_Charger(
                         11280,
@@ -8102,13 +8370,9 @@ public class GT_Loader_Machines {
                         13,
                         "",
                         4).getStackForm(1L));
+    }
 
-        // TODO:Recipes
-
-        // ===================================================================================================
-        // Dynamo Hatches
-        // ===================================================================================================
-        // See TT for recipes UEV-UMV
+    private void registerDynamoHatches() {
         CustomItemList.Hatch_Dynamo_UEV.set(
                 new GT_MetaTileEntity_Hatch_Dynamo(11290, "hatch.dynamo.tier.10", "UEV Dynamo Hatch", 10)
                         .getStackForm(1L));
@@ -8124,11 +8388,9 @@ public class GT_Loader_Machines {
         CustomItemList.Hatch_Dynamo_UXV.set(
                 new GT_MetaTileEntity_Hatch_Dynamo(11293, "hatch.dynamo.tier.13", "UXV Dynamo Hatch", 13)
                         .getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // Energy Hatches
-        // ===================================================================================================
-        // See TT for recipes
+    private void registerEnergyHatches() {
         CustomItemList.Hatch_Energy_UEV.set(
                 new GT_MetaTileEntity_Hatch_Energy(11300, "hatch.energy.tier.10", "UEV Energy Hatch", 10)
                         .getStackForm(1L));
@@ -8144,10 +8406,9 @@ public class GT_Loader_Machines {
         CustomItemList.Hatch_Energy_UXV.set(
                 new GT_MetaTileEntity_Hatch_Energy(11303, "hatch.energy.tier.13", "UXV Energy Hatch", 13)
                         .getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // Wet Transformers
-        // ===================================================================================================
+    private void registerWetTransformer() {
         CustomItemList.WetTransformer_LV_ULV.set(
                 new GT_MetaTileEntity_WetTransformer(
                         12000,
@@ -8259,7 +8520,9 @@ public class GT_Loader_Machines {
                         "Extended Mega Ultimate Power Transformer",
                         13,
                         "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
+    }
 
+    private void registerHighAmpTransformer() {
         if (GTPlusPlus.isModLoaded()) {
             CustomItemList.Transformer_HA_UEV_UHV.set(
                     new GregtechMetaTransformerHiAmp(
@@ -8297,304 +8560,10 @@ public class GT_Loader_Machines {
                             13,
                             "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
 
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.Transformer_HA_UEV_UHV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Transformer_UEV_UHV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.Draconium), 'B',
-                            OrePrefixes.wireGt04.get(Materials.Bedrockium), 'K', ItemList.Casing_Coil_Superconductor });
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.Transformer_HA_UIV_UEV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CM ", "KBB", 'M', CustomItemList.Transformer_UIV_UEV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.NetherStar), 'B',
-                            OrePrefixes.wireGt04.get(Materials.Draconium), 'K', ItemList.Casing_Fusion_Coil });
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.Transformer_HA_UMV_UIV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CMK", "KBB", 'M', CustomItemList.Transformer_UMV_UIV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.Quantium), 'B',
-                            OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Casing_Fusion_Coil });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.Transformer_HA_UXV_UMV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CMK", "KBB", 'M', CustomItemList.Transformer_UXV_UMV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'B',
-                            OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Casing_Fusion_Coil });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.Transformer_HA_MAX_UXV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CMK", "KBB", 'M', CustomItemList.Transformer_MAX_UXV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.Infinity), 'B',
-                            OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Casing_Coil_Infinity });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_LV_ULV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Lead), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Lead), 'S', OrePrefixes.spring.get(Materials.Tin), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Tin), 'O', OrePrefixes.cell.get(Materials.Lubricant),
-                            'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 877) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_MV_LV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tin), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Tin), 'S', OrePrefixes.spring.get(Materials.AnyCopper),
-                            'X', OrePrefixes.cableGt08.get(Materials.AnyCopper), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 878) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_HV_MV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.AnyCopper), 'C',
-                            OrePrefixes.cableGt16.get(Materials.AnyCopper), 'S', OrePrefixes.spring.get(Materials.Gold),
-                            'X', OrePrefixes.cableGt08.get(Materials.Gold), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 879) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_EV_HV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Gold), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Gold), 'S', OrePrefixes.spring.get(Materials.Aluminium),
-                            'X', OrePrefixes.cableGt08.get(Materials.Aluminium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 880) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_IV_EV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Aluminium), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Aluminium), 'S',
-                            OrePrefixes.spring.get(Materials.Tungsten), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Tungsten), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 881) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_LuV_IV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tungsten), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Tungsten), 'S',
-                            OrePrefixes.spring.get(Materials.VanadiumGallium), 'X',
-                            OrePrefixes.cableGt08.get(Materials.VanadiumGallium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 882) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_ZPM_LuV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.VanadiumGallium),
-                            'C', OrePrefixes.cableGt16.get(Materials.VanadiumGallium), 'S',
-                            OrePrefixes.spring.get(Materials.Naquadah), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Naquadah), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UV_ZPM.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Naquadah), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Naquadah), 'S',
-                            OrePrefixes.spring.get(Materials.NaquadahAlloy), 'X',
-                            OrePrefixes.cableGt08.get(Materials.NaquadahAlloy), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 884) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UHV_UV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy), 'C',
-                            OrePrefixes.cableGt16.get(Materials.NaquadahAlloy), 'S',
-                            OrePrefixes.spring.get(Materials.Neutronium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Bedrockium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 885) });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UEV_UHV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Neutronium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 'S',
-                            OrePrefixes.spring.get(Materials.Draconium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Draconium), 'O', ItemList.Reactor_Coolant_He_1, 'P',
-                            ItemList.Electric_Pump_MV, 'T', CustomItemList.Transformer_HA_UEV_UHV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UIV_UEV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Draconium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.Draconium), 'S',
-                            OrePrefixes.spring.get(Materials.BlackPlutonium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.NetherStar), 'O', ItemList.Reactor_Coolant_He_3, 'P',
-                            ItemList.Electric_Pump_HV, 'T', CustomItemList.Transformer_HA_UIV_UEV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UMV_UIV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.BlackPlutonium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.NetherStar), 'S',
-                            OrePrefixes.spring.get(Materials.Quantium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Quantium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
-                            ItemList.Electric_Pump_IV, 'T', CustomItemList.Transformer_HA_UMV_UIV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UXV_UMV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime),
-                            'C', OrePrefixes.wireGt16.get(Materials.Quantium), 'S',
-                            OrePrefixes.spring.get(Materials.Infinity), 'X',
-                            OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1, 'P',
-                            ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_HA_UXV_UMV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_MAX_UXV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium),
-                            'C', OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
-                            OrePrefixes.spring.get(MaterialsUEVplus.SpaceTime), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
-                            ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_HA_MAX_UXV });
-        } else {
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_LV_ULV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Lead), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Lead), 'S', OrePrefixes.spring.get(Materials.Tin), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Tin), 'O', OrePrefixes.cell.get(Materials.Lubricant),
-                            'P', ItemList.Electric_Pump_LV, 'T', ItemList.Transformer_LV_ULV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_MV_LV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tin), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Tin), 'S', OrePrefixes.spring.get(Materials.AnyCopper),
-                            'X', OrePrefixes.cableGt08.get(Materials.AnyCopper), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            ItemList.Transformer_MV_LV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_HV_MV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.AnyCopper), 'C',
-                            OrePrefixes.cableGt16.get(Materials.AnyCopper), 'S', OrePrefixes.spring.get(Materials.Gold),
-                            'X', OrePrefixes.cableGt08.get(Materials.Gold), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            ItemList.Transformer_HV_MV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_EV_HV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Gold), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Gold), 'S', OrePrefixes.spring.get(Materials.Aluminium),
-                            'X', OrePrefixes.cableGt08.get(Materials.Aluminium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            ItemList.Transformer_EV_HV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_IV_EV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Aluminium), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Aluminium), 'S',
-                            OrePrefixes.spring.get(Materials.Tungsten), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Tungsten), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            ItemList.Transformer_IV_EV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_LuV_IV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tungsten), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Tungsten), 'S',
-                            OrePrefixes.spring.get(Materials.VanadiumGallium), 'X',
-                            OrePrefixes.cableGt08.get(Materials.VanadiumGallium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            ItemList.Transformer_LuV_IV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_ZPM_LuV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.VanadiumGallium),
-                            'C', OrePrefixes.cableGt16.get(Materials.VanadiumGallium), 'S',
-                            OrePrefixes.spring.get(Materials.Naquadah), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Naquadah), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            ItemList.Transformer_ZPM_LuV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UV_ZPM.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Naquadah), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Naquadah), 'S',
-                            OrePrefixes.spring.get(Materials.NaquadahAlloy), 'X',
-                            OrePrefixes.cableGt08.get(Materials.NaquadahAlloy), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            ItemList.Transformer_UV_ZPM });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UHV_UV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy), 'C',
-                            OrePrefixes.cableGt16.get(Materials.NaquadahAlloy), 'S',
-                            OrePrefixes.spring.get(Materials.Neutronium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Bedrockium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            ItemList.Transformer_MAX_UV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UEV_UHV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Neutronium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.Bedrockium), 'S',
-                            OrePrefixes.spring.get(Materials.Draconium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Draconium), 'O', ItemList.Reactor_Coolant_He_1, 'P',
-                            ItemList.Electric_Pump_MV, 'T', CustomItemList.Transformer_UEV_UHV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UIV_UEV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Draconium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.Draconium), 'S',
-                            OrePrefixes.spring.get(Materials.BlackPlutonium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.NetherStar), 'O', ItemList.Reactor_Coolant_He_3, 'P',
-                            ItemList.Electric_Pump_HV, 'T', CustomItemList.Transformer_UIV_UEV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UMV_UIV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.BlackPlutonium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.NetherStar), 'S',
-                            OrePrefixes.spring.get(Materials.Quantium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Quantium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
-                            ItemList.Electric_Pump_IV, 'T', CustomItemList.Transformer_UMV_UIV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_UXV_UMV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime),
-                            'C', OrePrefixes.wireGt16.get(Materials.Quantium), 'S',
-                            OrePrefixes.spring.get(Materials.Infinity), 'X',
-                            OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
-                            ItemList.Electric_Pump_LuV, 'T', CustomItemList.Transformer_UXV_UMV });
-
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.WetTransformer_MAX_UXV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium),
-                            'C', OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
-                            OrePrefixes.spring.get(MaterialsUEVplus.SpaceTime), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
-                            ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_MAX_UXV });
         }
+    }
 
-        // ===================================================================================================
-        // MULTIBLOCKS ID space up to 12039
-        // ===================================================================================================
+    private void registerAirFilter() {
         CustomItemList.Machine_Multi_AirFilterT1.set(
                 new GT_MetaTileEntity_AirFilterT1(12020, "multimachine.airfilter.01", "Electric Air Filter T1")
                         .getStackForm(1L));
@@ -8604,10 +8573,9 @@ public class GT_Loader_Machines {
         CustomItemList.Machine_Multi_AirFilterT3.set(
                 new GT_MetaTileEntity_AirFilterT3(12022, "multimachine.airfilter.03", "Electric Air Filter T3")
                         .getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // Turbo Chargers
-        // ===================================================================================================
+    private void registerTurboCharger4By4() {
         CustomItemList.Battery_TurboCharger_4by4_ULV.set(
                 new GT_MetaTileEntity_TurboCharger(
                         12040,
@@ -8616,13 +8584,6 @@ public class GT_Loader_Machines {
                         0,
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_ULV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_LV_ULV, 'M',
-                        ItemList.Battery_Charger_4by4_ULV, 'B', ItemList.Battery_RE_ULV_Tantalum, 'C',
-                        OrePrefixes.cableGt16.get(Materials.Lead), 'X', OrePrefixes.circuit.get(Materials.Primitive) });
 
         CustomItemList.Battery_TurboCharger_4by4_LV.set(
                 new GT_MetaTileEntity_TurboCharger(
@@ -8633,13 +8594,6 @@ public class GT_Loader_Machines {
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_LV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_MV_LV, 'M',
-                        ItemList.Battery_Charger_4by4_LV, 'B', ItemList.Battery_RE_LV_Lithium, 'C',
-                        OrePrefixes.cableGt16.get(Materials.Tin), 'X', OrePrefixes.circuit.get(Materials.Basic) });
-
         CustomItemList.Battery_TurboCharger_4by4_MV.set(
                 new GT_MetaTileEntity_TurboCharger(
                         12042,
@@ -8648,13 +8602,6 @@ public class GT_Loader_Machines {
                         2,
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_MV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_HV_MV, 'M',
-                        ItemList.Battery_Charger_4by4_MV, 'B', ItemList.Battery_RE_MV_Lithium, 'C',
-                        OrePrefixes.cableGt16.get(Materials.AnyCopper), 'X', OrePrefixes.circuit.get(Materials.Good) });
 
         CustomItemList.Battery_TurboCharger_4by4_HV.set(
                 new GT_MetaTileEntity_TurboCharger(
@@ -8665,13 +8612,6 @@ public class GT_Loader_Machines {
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_HV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_EV_HV, 'M',
-                        ItemList.Battery_Charger_4by4_HV, 'B', ItemList.Battery_RE_HV_Lithium, 'C',
-                        OrePrefixes.cableGt16.get(Materials.Gold), 'X', OrePrefixes.circuit.get(Materials.Advanced) });
-
         CustomItemList.Battery_TurboCharger_4by4_EV.set(
                 new GT_MetaTileEntity_TurboCharger(
                         12044,
@@ -8680,13 +8620,6 @@ public class GT_Loader_Machines {
                         4,
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_EV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_IV_EV, 'M',
-                        ItemList.Battery_Charger_4by4_EV, 'B', OrePrefixes.battery.get(Materials.Master), 'C',
-                        OrePrefixes.cableGt16.get(Materials.Aluminium), 'X', OrePrefixes.circuit.get(Materials.Data) });
 
         CustomItemList.Battery_TurboCharger_4by4_IV.set(
                 new GT_MetaTileEntity_TurboCharger(
@@ -8697,13 +8630,6 @@ public class GT_Loader_Machines {
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_IV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_LuV_IV, 'M',
-                        ItemList.Battery_Charger_4by4_IV, 'B', ItemList.Energy_LapotronicOrb, 'C',
-                        OrePrefixes.cableGt16.get(Materials.Tungsten), 'X', OrePrefixes.circuit.get(Materials.Elite) });
-
         CustomItemList.Battery_TurboCharger_4by4_LuV.set(
                 new GT_MetaTileEntity_TurboCharger(
                         12046,
@@ -8712,14 +8638,6 @@ public class GT_Loader_Machines {
                         6,
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_LuV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_ZPM_LuV, 'M',
-                        ItemList.Battery_Charger_4by4_LuV, 'B', ItemList.Energy_LapotronicOrb2, 'C',
-                        OrePrefixes.cableGt16.get(Materials.VanadiumGallium), 'X',
-                        OrePrefixes.circuit.get(Materials.Master) });
 
         CustomItemList.Battery_TurboCharger_4by4_ZPM.set(
                 new GT_MetaTileEntity_TurboCharger(
@@ -8730,14 +8648,6 @@ public class GT_Loader_Machines {
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_ZPM.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_UV_ZPM, 'M',
-                        ItemList.Battery_Charger_4by4_ZPM, 'B', ItemList.Energy_LapotronicOrb2, 'C',
-                        OrePrefixes.cableGt16.get(Materials.Naquadah), 'X',
-                        OrePrefixes.circuit.get(Materials.Ultimate) });
-
         CustomItemList.Battery_TurboCharger_4by4_UV.set(
                 new GT_MetaTileEntity_TurboCharger(
                         12048,
@@ -8746,14 +8656,6 @@ public class GT_Loader_Machines {
                         8,
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_UV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_UHV_UV, 'M',
-                        ItemList.Battery_Charger_4by4_UV, 'B', ItemList.ZPM2, 'C',
-                        OrePrefixes.cableGt16.get(Materials.NaquadahAlloy), 'X',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV) });
 
         CustomItemList.Battery_TurboCharger_4by4_UHV.set(
                 new GT_MetaTileEntity_TurboCharger(
@@ -8764,19 +8666,9 @@ public class GT_Loader_Machines {
                         "64A in /16A out, 120A/item, Disable to force Charge",
                         4).getStackForm(1L));
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Battery_TurboCharger_4by4_UHV.get(1L),
-                bitsd,
-                new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_UEV_UHV, 'M',
-                        ItemList.Battery_Charger_4by4_MAX, 'B', ItemList.ZPM2, 'C',
-                        OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), // DONT COPY THIS it has superconductor:
-                                                                               // cable->wire
-                        'X', OrePrefixes.circuit.get(Materials.Infinite) });
+    }
 
-        // TODO add Conveyor Modules for more Tiers
-        // ===================================================================================================
-        // Automated Chest Buffer
-        // ===================================================================================================
+    private void registerChestBuffer() {
         CustomItemList.Automation_ChestBuffer_UEV.set(
                 new GT_MetaTileEntity_ChestBuffer(
                         12060,
@@ -8797,40 +8689,13 @@ public class GT_Loader_Machines {
                         "automation.chestbuffer.tier.12",
                         "UMV Voltage Chest Buffer",
                         12).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Automation_ChestBuffer_UEV.get(1L),
-                bitsd,
-                new Object[] { "CMV", " X ", 'M', CustomItemList.Hull_UEV, 'V', ItemList.Conveyor_Module_UEV, 'C',
-                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Bio) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Automation_ChestBuffer_UIV.get(1L),
-                bitsd,
-                new Object[] { "CMV", " X ", 'M', CustomItemList.Hull_UIV, 'V', ItemList.Conveyor_Module_UIV, 'C',
-                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Optical) });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.Automation_ChestBuffer_UMV.get(1L),
-                bitsd,
-                new Object[] { "CMV", " X ", 'M', CustomItemList.Hull_UMV, 'V', ItemList.Conveyor_Module_UMV, 'C',
-                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Piko) });
-
-        // ===================================================================================================
-        // Automated Chest Buffer
-        // ===================================================================================================
+    private void registerNameRemover() {
         CustomItemList.nameRemover.set(new NameRemover(12070, "fix.name.remover", "Name Remover", 0).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.nameRemover.get(1L),
-                bitsd,
-                new Object[] { "SsS", "VMV", "SXS", 'M', ItemList.Hull_ULV, 'V',
-                        OrePrefixes.gearGtSmall.get(Materials.AnyBronze), 'S', OrePrefixes.screw.get(Materials.AnyIron),
-                        'X', OreDictNames.craftingPiston });
-
-        // ===================================================================================================
-        // Rock Breaker
-        // ===================================================================================================
+    private void registerRockBreaker() {
         CustomItemList.RockBreakerLuV.set(
                 new GT_MetaTileEntity_RockBreaker(12080, "rockbreaker.tier.06", "Cryogenic Magma Solidifier R-9200", 6)
                         .getStackForm(1L));
@@ -8867,65 +8732,16 @@ public class GT_Loader_Machines {
                         "rockbreaker.tier.12",
                         "Cryogenic Magma Solidifier R-15200",
                         12).getStackForm(1L));
+    }
 
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.RockBreakerLuV.get(1L),
-                bitsd,
-                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_LuV, 'E', ItemList.Electric_Motor_LuV,
-                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'W',
-                        OrePrefixes.cableGt01.get(Materials.VanadiumGallium), 'M', ItemList.Hull_LuV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.RockBreakerZPM.get(1L),
-                bitsd,
-                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_ZPM, 'E', ItemList.Electric_Motor_ZPM,
-                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'W',
-                        OrePrefixes.cableGt01.get(Materials.Naquadah), 'M', ItemList.Hull_ZPM });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.RockBreakerUV.get(1L),
-                bitsd,
-                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UV, 'E', ItemList.Electric_Motor_UV,
-                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'W',
-                        OrePrefixes.cableGt01.get(Materials.NaquadahAlloy), 'M', ItemList.Hull_UV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.RockBreakerUHV.get(1L),
-                bitsd,
-                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UHV, 'E', ItemList.Electric_Motor_UHV,
-                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'M', ItemList.Hull_MAX });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.RockBreakerUEV.get(1L),
-                bitsd,
-                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UEV, 'E', ItemList.Electric_Motor_UEV,
-                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'M', CustomItemList.Hull_UEV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.RockBreakerUIV.get(1L),
-                bitsd,
-                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UIV, 'E', ItemList.Electric_Motor_UIV,
-                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'M', CustomItemList.Hull_UIV });
-
-        GT_ModHandler.addCraftingRecipe(
-                CustomItemList.RockBreakerUMV.get(1L),
-                bitsd,
-                new Object[] { "PED", "WMW", "GGG", 'P', ItemList.Electric_Piston_UMV, 'E', ItemList.Electric_Motor_UMV,
-                        'D', OreDictNames.craftingGrinder, 'G', GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'M', CustomItemList.Hull_UMV });
-        // ===================================================================================================
-        // Circuit Assembling Machine
-        // ===================================================================================================
+    private void registerCircuitAssembler() {
         CustomItemList.CircuitAssemblerUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         12090,
                         "basicmachine.circuitassembler.tier.09",
                         "Ultimate Circuit Assembling Machine",
                         9,
-                        "Avengers, Assemble!",
+                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes,
                         6,
                         1,
@@ -8948,7 +8764,7 @@ public class GT_Loader_Machines {
                         "basicmachine.circuitassembler.tier.10",
                         "Ultimate Circuit Assembling Machine II",
                         10,
-                        "Avengers, Assemble!",
+                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes,
                         6,
                         1,
@@ -8972,7 +8788,7 @@ public class GT_Loader_Machines {
                         "basicmachine.circuitassembler.tier.11",
                         "Ultimate Circuit Assembling Machine III",
                         11,
-                        "Avengers, Assemble!",
+                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes,
                         6,
                         1,
@@ -8995,7 +8811,7 @@ public class GT_Loader_Machines {
                         "basicmachine.circuitassembler.tier.12",
                         "Ultimate Circuit Assembling Machine IV",
                         12,
-                        "Avengers, Assemble!",
+                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes,
                         6,
                         1,
@@ -9018,7 +8834,7 @@ public class GT_Loader_Machines {
                         "basicmachine.circuitassembler.tier.13",
                         "Ultimate Circuit Assembling Machine V",
                         13,
-                        "Avengers, Assemble!",
+                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes,
                         6,
                         1,
@@ -9038,7 +8854,7 @@ public class GT_Loader_Machines {
                         "basicmachine.circuitassembler.tier.14",
                         "MAX Circuit Assembling Machine",
                         14,
-                        "Avengers, Assemble!",
+                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes,
                         6,
                         1,
@@ -9052,11 +8868,9 @@ public class GT_Loader_Machines {
                         SpecialEffects.NONE,
                         "CIRCUITASSEMBLER",
                         null).getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // Input Hatches
-        // ===================================================================================================
-
+    private void registerInputHatch() {
         CustomItemList.Hatch_Input_UEV.set(
                 new GT_MetaTileEntity_Hatch_Input(12097, "hatch.input.tier.10", "Input Hatch (UEV)", 10)
                         .getStackForm(1L));
@@ -9072,11 +8886,9 @@ public class GT_Loader_Machines {
         CustomItemList.Hatch_Input_MAX.set(
                 new GT_MetaTileEntity_Hatch_Input(12102, "hatch.input.tier.14", "Input Hatch (MAX)", 14)
                         .getStackForm(1L));
+    }
 
-        // ===================================================================================================
-        // Output Hatches
-        // ===================================================================================================
-
+    private void registerOutputHatches() {
         CustomItemList.Hatch_Output_UEV.set(
                 new GT_MetaTileEntity_Hatch_Output(12103, "hatch.output.tier.10", "Output Hatch (UEV)", 10)
                         .getStackForm(1L));
@@ -9125,6 +8937,9 @@ public class GT_Loader_Machines {
                     .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
                     .addTo(sAssemblerRecipes);
         }
+    }
+
+    private void registerMachines2() {
 
         // ===================================================================================================
         // Electric Oven - nah - daaaah
