@@ -3992,7 +3992,8 @@ public class AssemblerRecipes implements Runnable {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1))
-                .fluidInputs(Materials.Glass.getMolten(288L)).noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Glass.getMolten(288L)).noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
         if (AE2FluidCraft.isModLoaded()) {
             // Dual Interface
