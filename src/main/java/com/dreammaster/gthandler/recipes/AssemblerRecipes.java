@@ -5714,7 +5714,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftCore.ID, "item.rocketFins", 1L, 0)).noFluidInputs()
                 .noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.stdBuilder().noItemInputs()
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 2L, 3),
+                        GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4L, 0),
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 2))
                 .noFluidInputs().noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(sAssemblerRecipes);
