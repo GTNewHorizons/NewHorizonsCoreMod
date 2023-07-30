@@ -219,22 +219,6 @@ public class MixerRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dustImpure, Materials.Biotite, 3L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L),
-                        GT_Utility.getIntegratedCircuit(5))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 12L)).noFluidInputs()
-                .noFluidOutputs().duration(15 * SECONDS).eut(48).addTo(sMixerRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dustPure, Materials.Biotite, 3L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L),
-                        GT_Utility.getIntegratedCircuit(5))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 12L)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(48).addTo(sMixerRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L),
                         GT_Utility.getIntegratedCircuit(5))
