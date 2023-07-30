@@ -410,8 +410,7 @@ public enum MetaTileEntityIDs {
     OUTPUT_HATCH_UIV(12104),
     OUTPUT_HATCH_UMV(12105),
     OUTPUT_HATCH_UXV(12106),
-    OUTPUT_HATCH_MAX(12108),
-    ;
+    OUTPUT_HATCH_MAX(12108),;
 
     public final int ID;
 

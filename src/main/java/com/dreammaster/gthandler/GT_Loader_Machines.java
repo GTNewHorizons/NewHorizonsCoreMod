@@ -1,49 +1,5 @@
 package com.dreammaster.gthandler;
 
-import com.dreammaster.gthandler.accelerator.GT_MetaTileEntity_WorldAccelerator;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
-import com.dreammaster.gthandler.nameRemover.NameRemover;
-import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
-import com.dreammaster.gthandler.turboCharger.GT_MetaTileEntity_TurboCharger;
-import com.dreammaster.item.food.QuantumBread;
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.MachineType;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsKevlar;
-import gregtech.api.enums.MaterialsUEVplus;
-import gregtech.api.enums.OreDictNames;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.SoundResource;
-import gregtech.api.enums.TierEU;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicBatteryBuffer;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicHull;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe.SpecialEffects;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Dynamo;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Energy;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Input;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Output;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Transformer;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_Recipe;
-import gregtech.api.util.GT_Utility;
-import gregtech.common.tileentities.automation.GT_MetaTileEntity_ChestBuffer;
-import gregtech.common.tileentities.generators.GT_MetaTileEntity_PlasmaGenerator;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Charger;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Massfabricator;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_PotionBrewer;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Pump;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Replicator;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_RockBreaker;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Scanner;
-import gregtech.loaders.preload.GT_Loader_MetaTileEntities;
-import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GregtechMetaTransformerHiAmp;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T1;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T2;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T3;
@@ -458,6 +414,52 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sSlicerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
+import com.dreammaster.gthandler.accelerator.GT_MetaTileEntity_WorldAccelerator;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
+import com.dreammaster.gthandler.nameRemover.NameRemover;
+import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
+import com.dreammaster.gthandler.turboCharger.GT_MetaTileEntity_TurboCharger;
+import com.dreammaster.item.food.QuantumBread;
+
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.MachineType;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsKevlar;
+import gregtech.api.enums.MaterialsUEVplus;
+import gregtech.api.enums.OreDictNames;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.SoundResource;
+import gregtech.api.enums.TierEU;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicBatteryBuffer;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicHull;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe.SpecialEffects;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Dynamo;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Energy;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Input;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Output;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Transformer;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_Recipe;
+import gregtech.api.util.GT_Utility;
+import gregtech.common.tileentities.automation.GT_MetaTileEntity_ChestBuffer;
+import gregtech.common.tileentities.generators.GT_MetaTileEntity_PlasmaGenerator;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Charger;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Massfabricator;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_PotionBrewer;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Pump;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Replicator;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_RockBreaker;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Scanner;
+import gregtech.loaders.preload.GT_Loader_MetaTileEntities;
+import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GregtechMetaTransformerHiAmp;
 
 public class GT_Loader_Machines {
 
@@ -2277,7 +2279,7 @@ public class GT_Loader_Machines {
                         "basicmachine.autoclave.tier.06",
                         "Elite Autoclave",
                         6,
-                        "Crystallizing your Dusts",
+                        MachineType.AUTOCLAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes,
                         2,
                         4,
@@ -2303,7 +2305,7 @@ public class GT_Loader_Machines {
                         "basicmachine.autoclave.tier.07",
                         "Elite Autoclave II",
                         7,
-                        "Crystallizing your Dusts",
+                        MachineType.AUTOCLAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes,
                         2,
                         4,
@@ -2329,7 +2331,7 @@ public class GT_Loader_Machines {
                         "basicmachine.autoclave.tier.08",
                         "Ultimate Pressure Cooker",
                         8,
-                        "Crystallizing your Dusts",
+                        MachineType.AUTOCLAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes,
                         2,
                         4,
@@ -2355,7 +2357,7 @@ public class GT_Loader_Machines {
                         "basicmachine.autoclave.tier.09",
                         "Epic Pressure Cooker",
                         9,
-                        "Crystallizing your Dusts",
+                        MachineType.AUTOCLAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes,
                         2,
                         4,
@@ -2381,7 +2383,7 @@ public class GT_Loader_Machines {
                         "basicmachine.autoclave.tier.10",
                         "Epic Pressure Cooker II",
                         10,
-                        "Crystallizing your Dusts",
+                        MachineType.AUTOCLAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes,
                         2,
                         4,
@@ -2407,7 +2409,7 @@ public class GT_Loader_Machines {
                         "basicmachine.autoclave.tier.11",
                         "Epic Pressure Cooker III",
                         11,
-                        "Crystallizing your Dusts",
+                        MachineType.AUTOCLAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes,
                         2,
                         4,
@@ -2433,7 +2435,7 @@ public class GT_Loader_Machines {
                         "basicmachine.autoclave.tier.12",
                         "Epic Pressure Cooker IV",
                         12,
-                        "Crystallizing your Dusts",
+                        MachineType.AUTOCLAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes,
                         2,
                         4,
@@ -2462,7 +2464,7 @@ public class GT_Loader_Machines {
                         "basicmachine.bender.tier.06",
                         "Elite Bending Machine",
                         6,
-                        "Boo, he's bad! We want BENDER!!!",
+                        MachineType.BENDING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sBenderRecipes,
                         2,
                         1,
@@ -2487,7 +2489,7 @@ public class GT_Loader_Machines {
                         "basicmachine.bender.tier.07",
                         "Elite Bending Machine II",
                         7,
-                        "Boo, he's bad! We want BENDER!!!",
+                        MachineType.BENDING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sBenderRecipes,
                         2,
                         1,
@@ -2512,7 +2514,7 @@ public class GT_Loader_Machines {
                         "basicmachine.bender.tier.08",
                         "Ultimate Bending Unit",
                         8,
-                        "Boo, he's bad! We want BENDER!!!",
+                        MachineType.BENDING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sBenderRecipes,
                         2,
                         1,
@@ -2537,7 +2539,7 @@ public class GT_Loader_Machines {
                         "basicmachine.bender.tier.09",
                         "Epic Bending Unit",
                         9,
-                        "Boo, he's bad! We want BENDER!!!",
+                        MachineType.BENDING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sBenderRecipes,
                         2,
                         1,
@@ -2562,7 +2564,7 @@ public class GT_Loader_Machines {
                         "basicmachine.bender.tier.10",
                         "Epic Bending Unit II",
                         10,
-                        "Boo, he's bad! We want BENDER!!!",
+                        MachineType.BENDING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sBenderRecipes,
                         2,
                         1,
@@ -2587,7 +2589,7 @@ public class GT_Loader_Machines {
                         "basicmachine.bender.tier.11",
                         "Epic Bending Unit III",
                         11,
-                        "Boo, he's bad! We want BENDER!!!",
+                        MachineType.BENDING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sBenderRecipes,
                         2,
                         1,
@@ -2612,7 +2614,7 @@ public class GT_Loader_Machines {
                         "basicmachine.bender.tier.12",
                         "Epic Bending Unit IV",
                         12,
-                        "Boo, he's bad! We want BENDER!!!",
+                        MachineType.BENDING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sBenderRecipes,
                         2,
                         1,
@@ -2641,7 +2643,7 @@ public class GT_Loader_Machines {
                         "basicmachine.compressor.tier.06",
                         "Elite Compressor",
                         6,
-                        "Compress-O-Matic C77",
+                        MachineType.COMPRESSOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCompressorRecipes,
                         1,
                         1,
@@ -2665,7 +2667,7 @@ public class GT_Loader_Machines {
                         "basicmachine.compressor.tier.07",
                         "Elite Compressor II",
                         7,
-                        "Compress-O-Matic C77",
+                        MachineType.COMPRESSOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCompressorRecipes,
                         1,
                         1,
@@ -2689,7 +2691,7 @@ public class GT_Loader_Machines {
                         "basicmachine.compressor.tier.08",
                         "Ultimate Matter Constrictor",
                         8,
-                        "Compress-O-Matic C77",
+                        MachineType.COMPRESSOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCompressorRecipes,
                         1,
                         1,
@@ -2713,7 +2715,7 @@ public class GT_Loader_Machines {
                         "basicmachine.compressor.tier.09",
                         "Epic Matter Constrictor",
                         9,
-                        "Compress-O-Matic C77",
+                        MachineType.COMPRESSOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCompressorRecipes,
                         1,
                         1,
@@ -2737,7 +2739,7 @@ public class GT_Loader_Machines {
                         "basicmachine.compressor.tier.10",
                         "Epic Matter Constrictor II",
                         10,
-                        "Compress-O-Matic C77",
+                        MachineType.COMPRESSOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCompressorRecipes,
                         1,
                         1,
@@ -2761,7 +2763,7 @@ public class GT_Loader_Machines {
                         "basicmachine.compressor.tier.11",
                         "Epic Matter Constrictor III",
                         11,
-                        "Compress-O-Matic C77",
+                        MachineType.COMPRESSOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCompressorRecipes,
                         1,
                         1,
@@ -2785,7 +2787,7 @@ public class GT_Loader_Machines {
                         "basicmachine.compressor.tier.12",
                         "Epic Matter Constrictor IV",
                         12,
-                        "Compress-O-Matic C77",
+                        MachineType.COMPRESSOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCompressorRecipes,
                         1,
                         1,
@@ -2813,7 +2815,7 @@ public class GT_Loader_Machines {
                         "basicmachine.cutter.tier.06",
                         "Elite Cutting Machine",
                         6,
-                        "Slice'N Dice",
+                        MachineType.CUTTING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCutterRecipes,
                         2,
                         4,
@@ -2840,7 +2842,7 @@ public class GT_Loader_Machines {
                         "basicmachine.cutter.tier.07",
                         "Elite Cutting Machine II",
                         7,
-                        "Slice'N Dice",
+                        MachineType.CUTTING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCutterRecipes,
                         2,
                         4,
@@ -2867,7 +2869,7 @@ public class GT_Loader_Machines {
                         "basicmachine.cutter.tier.08",
                         "Ultimate Object Divider",
                         8,
-                        "Slice'N Dice",
+                        MachineType.CUTTING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCutterRecipes,
                         2,
                         4,
@@ -2894,7 +2896,7 @@ public class GT_Loader_Machines {
                         "basicmachine.cutter.tier.09",
                         "Epic Object Divider",
                         9,
-                        "Slice'N Dice",
+                        MachineType.CUTTING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCutterRecipes,
                         2,
                         4,
@@ -2921,7 +2923,7 @@ public class GT_Loader_Machines {
                         "basicmachine.cutter.tier.10",
                         "Epic Object Divider II",
                         10,
-                        "Slice'N Dice",
+                        MachineType.CUTTING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCutterRecipes,
                         2,
                         4,
@@ -2948,7 +2950,7 @@ public class GT_Loader_Machines {
                         "basicmachine.cutter.tier.11",
                         "Epic Object Divider III",
                         11,
-                        "Slice'N Dice",
+                        MachineType.CUTTING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCutterRecipes,
                         2,
                         4,
@@ -2975,7 +2977,7 @@ public class GT_Loader_Machines {
                         "basicmachine.cutter.tier.12",
                         "Epic Object Divider IV",
                         12,
-                        "Slice'N Dice",
+                        MachineType.CUTTING_MACHINE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCutterRecipes,
                         2,
                         4,
@@ -3006,7 +3008,7 @@ public class GT_Loader_Machines {
                         "basicmachine.distillery.tier.06",
                         "Elite Distillery",
                         6,
-                        "Extracting the most relevant Parts of Fluids",
+                        MachineType.DISTILLERY.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sDistilleryRecipes,
                         1,
                         1,
@@ -3032,7 +3034,7 @@ public class GT_Loader_Machines {
                         "basicmachine.distillery.tier.07",
                         "Elite Distillery II",
                         7,
-                        "Extracting the most relevant Parts of Fluids",
+                        MachineType.DISTILLERY.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sDistilleryRecipes,
                         1,
                         1,
@@ -3058,7 +3060,7 @@ public class GT_Loader_Machines {
                         "basicmachine.distillery.tier.08",
                         "Ultimate Fraction Splitter",
                         8,
-                        "Extracting the most relevant Parts of Fluids",
+                        MachineType.DISTILLERY.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sDistilleryRecipes,
                         1,
                         1,
@@ -3084,7 +3086,7 @@ public class GT_Loader_Machines {
                         "basicmachine.distillery.tier.09",
                         "Epic Fraction Splitter",
                         9,
-                        "Extracting the most relevant Parts of Fluids",
+                        MachineType.DISTILLERY.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sDistilleryRecipes,
                         1,
                         1,
@@ -3110,7 +3112,7 @@ public class GT_Loader_Machines {
                         "basicmachine.distillery.tier.10",
                         "Epic Fraction Splitter II",
                         10,
-                        "Extracting the most relevant Parts of Fluids",
+                        MachineType.DISTILLERY.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sDistilleryRecipes,
                         1,
                         1,
@@ -3136,7 +3138,7 @@ public class GT_Loader_Machines {
                         "basicmachine.distillery.tier.11",
                         "Epic Fraction Splitter III",
                         11,
-                        "Extracting the most relevant Parts of Fluids",
+                        MachineType.DISTILLERY.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sDistilleryRecipes,
                         1,
                         1,
@@ -3162,7 +3164,7 @@ public class GT_Loader_Machines {
                         "basicmachine.distillery.tier.12",
                         "Epic Fraction Splitter IV",
                         12,
-                        "Extracting the most relevant Parts of Fluids",
+                        MachineType.DISTILLERY.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sDistilleryRecipes,
                         1,
                         1,
@@ -3192,7 +3194,7 @@ public class GT_Loader_Machines {
                         "basicmachine.e_furnace.tier.06",
                         "Elite Electric Furnace",
                         6,
-                        "Not like using a Commodore 64",
+                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFurnaceRecipes,
                         1,
                         1,
@@ -3216,7 +3218,7 @@ public class GT_Loader_Machines {
                         "basicmachine.e_furnace.tier.07",
                         "Elite Electric Furnace II",
                         7,
-                        "Not like using a Commodore 64",
+                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFurnaceRecipes,
                         1,
                         1,
@@ -3240,7 +3242,7 @@ public class GT_Loader_Machines {
                         "basicmachine.e_furnace.tier.08",
                         "Ultimate Atom Stimulator",
                         8,
-                        "Not like using a Commodore 64",
+                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFurnaceRecipes,
                         1,
                         1,
@@ -3264,7 +3266,7 @@ public class GT_Loader_Machines {
                         "basicmachine.e_furnace.tier.09",
                         "Epic Atom Stimulator",
                         9,
-                        "Not like using a Commodore 64",
+                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFurnaceRecipes,
                         1,
                         1,
@@ -3288,7 +3290,7 @@ public class GT_Loader_Machines {
                         "basicmachine.e_furnace.tier.10",
                         "Epic Atom Stimulator II",
                         10,
-                        "Not like using a Commodore 64",
+                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFurnaceRecipes,
                         1,
                         1,
@@ -3312,7 +3314,7 @@ public class GT_Loader_Machines {
                         "basicmachine.e_furnace.tier.11",
                         "Epic Atom Stimulator III",
                         11,
-                        "Not like using a Commodore 64",
+                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFurnaceRecipes,
                         1,
                         1,
@@ -3336,7 +3338,7 @@ public class GT_Loader_Machines {
                         "basicmachine.e_furnace.tier.12",
                         "Epic Atom Stimulator IV",
                         12,
-                        "Not like using a Commodore 64",
+                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFurnaceRecipes,
                         1,
                         1,
@@ -3364,7 +3366,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electrolyzer.tier.06",
                         "Elite Electrolyzer",
                         6,
-                        "Electrolyzing Molecules",
+                        MachineType.ELECTROLYZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes,
                         2,
                         6,
@@ -3390,7 +3392,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electrolyzer.tier.07",
                         "Elite Electrolyzer II",
                         7,
-                        "Electrolyzing Molecules",
+                        MachineType.ELECTROLYZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes,
                         2,
                         6,
@@ -3416,7 +3418,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electrolyzer.tier.08",
                         "Ultimate Ionizer",
                         8,
-                        "Electrolyzing Molecules",
+                        MachineType.ELECTROLYZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes,
                         2,
                         6,
@@ -3442,7 +3444,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electrolyzer.tier.09",
                         "Epic Ionizer",
                         9,
-                        "Electrolyzing Molecules",
+                        MachineType.ELECTROLYZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes,
                         2,
                         6,
@@ -3468,7 +3470,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electrolyzer.tier.10",
                         "Epic Ionizer II",
                         10,
-                        "Electrolyzing Molecules",
+                        MachineType.ELECTROLYZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes,
                         2,
                         6,
@@ -3494,7 +3496,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electrolyzer.tier.11",
                         "Epic Ionizer III",
                         11,
-                        "Electrolyzing Molecules",
+                        MachineType.ELECTROLYZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes,
                         2,
                         6,
@@ -3520,7 +3522,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electrolyzer.tier.12",
                         "Epic Ionizer IV",
                         12,
-                        "Electrolyzing Molecules",
+                        MachineType.ELECTROLYZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectrolyzerRecipes,
                         2,
                         6,
@@ -3550,7 +3552,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electromagneticseparator.tier.06",
                         "Elite Electromagnetic Separator",
                         6,
-                        "Separating the magnetic Ores from the rest",
+                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes,
                         1,
                         3,
@@ -3576,7 +3578,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electromagneticseparator.tier.07",
                         "Elite Electromagnetic Separator II",
                         7,
-                        "Separating the magnetic Ores from the rest",
+                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes,
                         1,
                         3,
@@ -3602,7 +3604,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electromagneticseparator.tier.08",
                         "Ultimate Magnetar Separator",
                         8,
-                        "Separating the magnetic Ores from the rest",
+                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes,
                         1,
                         3,
@@ -3628,7 +3630,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electromagneticseparator.tier.09",
                         "Epic Magnetar Separator",
                         9,
-                        "Separating the magnetic Ores from the rest",
+                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes,
                         1,
                         3,
@@ -3654,7 +3656,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electromagneticseparator.tier.10",
                         "Epic Magnetar Separator II",
                         10,
-                        "Separating the magnetic Ores from the rest",
+                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes,
                         1,
                         3,
@@ -3680,7 +3682,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electromagneticseparator.tier.11",
                         "Epic Magnetar Separator III",
                         11,
-                        "Separating the magnetic Ores from the rest",
+                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes,
                         1,
                         3,
@@ -3706,7 +3708,7 @@ public class GT_Loader_Machines {
                         "basicmachine.electromagneticseparator.tier.12",
                         "Epic Magnetar Separator IV",
                         12,
-                        "Separating the magnetic Ores from the rest",
+                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sElectroMagneticSeparatorRecipes,
                         1,
                         3,
@@ -3736,7 +3738,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extractor.tier.06",
                         "Elite Extractor",
                         6,
-                        "Dejuicer-Device of Doom - D123",
+                        MachineType.EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtractorRecipes,
                         1,
                         1,
@@ -3762,7 +3764,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extractor.tier.07",
                         "Elite Extractor II",
                         7,
-                        "Dejuicer-Device of Doom - D123",
+                        MachineType.EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtractorRecipes,
                         1,
                         1,
@@ -3788,7 +3790,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extractor.tier.08",
                         "Ultimate Extractinator",
                         8,
-                        "Dejuicer-Device of Doom - D123",
+                        MachineType.EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtractorRecipes,
                         1,
                         1,
@@ -3814,7 +3816,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extractor.tier.09",
                         "Epic Extractinator",
                         9,
-                        "Dejuicer-Device of Doom - D123",
+                        MachineType.EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtractorRecipes,
                         1,
                         1,
@@ -3840,7 +3842,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extractor.tier.10",
                         "Epic Extractinator II",
                         10,
-                        "Dejuicer-Device of Doom - D123",
+                        MachineType.EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtractorRecipes,
                         1,
                         1,
@@ -3866,7 +3868,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extractor.tier.11",
                         "Epic Extractinator III",
                         11,
-                        "Dejuicer-Device of Doom - D123",
+                        MachineType.EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtractorRecipes,
                         1,
                         1,
@@ -3892,7 +3894,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extractor.tier.12",
                         "Epic Extractinator IV",
                         12,
-                        "Dejuicer-Device of Doom - D123",
+                        MachineType.EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtractorRecipes,
                         1,
                         1,
@@ -3922,7 +3924,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extruder.tier.06",
                         "Elite Extruder",
                         6,
-                        "Universal Machine for Metal Working",
+                        MachineType.EXTRUDER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtruderRecipes,
                         2,
                         1,
@@ -3947,7 +3949,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extruder.tier.07",
                         "Elite Extruder II",
                         7,
-                        "Universal Machine for Metal Working",
+                        MachineType.EXTRUDER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtruderRecipes,
                         2,
                         1,
@@ -3972,7 +3974,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extruder.tier.08",
                         "Ultimate Shape Driver",
                         8,
-                        "Universal Machine for Metal Working",
+                        MachineType.EXTRUDER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtruderRecipes,
                         2,
                         1,
@@ -3997,7 +3999,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extruder.tier.09",
                         "Epic Shape Driver",
                         9,
-                        "Universal Machine for Metal Working",
+                        MachineType.EXTRUDER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtruderRecipes,
                         2,
                         1,
@@ -4022,7 +4024,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extruder.tier.10",
                         "Epic Shape Driver II",
                         10,
-                        "Universal Machine for Metal Working",
+                        MachineType.EXTRUDER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtruderRecipes,
                         2,
                         1,
@@ -4047,7 +4049,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extruder.tier.11",
                         "Epic Shape Driver III",
                         11,
-                        "Universal Machine for Metal Working",
+                        MachineType.EXTRUDER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtruderRecipes,
                         2,
                         1,
@@ -4072,7 +4074,7 @@ public class GT_Loader_Machines {
                         "basicmachine.extruder.tier.12",
                         "Epic Shape Driver IV",
                         12,
-                        "Universal Machine for Metal Working",
+                        MachineType.EXTRUDER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sExtruderRecipes,
                         2,
                         1,
@@ -4101,7 +4103,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidsolidifier.tier.06",
                         "Elite Fluid Solidifier",
                         6,
-                        "Cools Fluids down to form Solids",
+                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes,
                         1,
                         1,
@@ -4127,7 +4129,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidsolidifier.tier.07",
                         "Elite Fluid Solidifier II",
                         7,
-                        "Cools Fluids down to form Solids",
+                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes,
                         1,
                         1,
@@ -4153,7 +4155,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidsolidifier.tier.08",
                         "Ultimate Fluid Petrificator",
                         8,
-                        "Cools Fluids down to form Solids",
+                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes,
                         1,
                         1,
@@ -4179,7 +4181,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidsolidifier.tier.09",
                         "Epic Fluid Petrificator",
                         9,
-                        "Cools Fluids down to form Solids",
+                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes,
                         1,
                         1,
@@ -4205,7 +4207,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidsolidifier.tier.10",
                         "Epic Fluid Petrificator II",
                         10,
-                        "Cools Fluids down to form Solids",
+                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes,
                         1,
                         1,
@@ -4231,7 +4233,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidsolidifier.tier.11",
                         "Epic Fluid Petrificator III",
                         11,
-                        "Cools Fluids down to form Solids",
+                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes,
                         1,
                         1,
@@ -4257,7 +4259,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidsolidifier.tier.12",
                         "Epic Fluid Petrificator IV",
                         12,
-                        "Cools Fluids down to form Solids",
+                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes,
                         1,
                         1,
@@ -4287,7 +4289,7 @@ public class GT_Loader_Machines {
                         "basicmachine.press.tier.06",
                         "Elite Forming Press",
                         6,
-                        "Imprinting Images into things",
+                        MachineType.FORMING_PRESS.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPressRecipes,
                         6,
                         1,
@@ -4311,7 +4313,7 @@ public class GT_Loader_Machines {
                         "basicmachine.press.tier.07",
                         "Elite Forming Press II",
                         7,
-                        "Imprinting Images into things",
+                        MachineType.FORMING_PRESS.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPressRecipes,
                         6,
                         1,
@@ -4335,7 +4337,7 @@ public class GT_Loader_Machines {
                         "basicmachine.press.tier.08",
                         "Ultimate Surface Shifter",
                         8,
-                        "Imprinting Images into things",
+                        MachineType.FORMING_PRESS.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPressRecipes,
                         6,
                         1,
@@ -4359,7 +4361,7 @@ public class GT_Loader_Machines {
                         "basicmachine.press.tier.09",
                         "Epic Surface Shifter",
                         9,
-                        "Imprinting Images into things",
+                        MachineType.FORMING_PRESS.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPressRecipes,
                         6,
                         1,
@@ -4383,7 +4385,7 @@ public class GT_Loader_Machines {
                         "basicmachine.press.tier.10",
                         "Epic Surface Shifter II",
                         10,
-                        "Imprinting Images into things",
+                        MachineType.FORMING_PRESS.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPressRecipes,
                         6,
                         1,
@@ -4407,7 +4409,7 @@ public class GT_Loader_Machines {
                         "basicmachine.press.tier.11",
                         "Epic Surface Shifter III",
                         11,
-                        "Imprinting Images into things",
+                        MachineType.FORMING_PRESS.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPressRecipes,
                         6,
                         1,
@@ -4431,7 +4433,7 @@ public class GT_Loader_Machines {
                         "basicmachine.press.tier.12",
                         "Epic Surface Shifter IV",
                         12,
-                        "Imprinting Images into things",
+                        MachineType.FORMING_PRESS.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPressRecipes,
                         6,
                         1,
@@ -4459,7 +4461,7 @@ public class GT_Loader_Machines {
                         "basicmachine.hammer.tier.06",
                         "Elite Forge Hammer",
                         6,
-                        "Stop, Hammertime!",
+                        MachineType.FORGE_HAMMER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sHammerRecipes,
                         1,
                         1,
@@ -4485,7 +4487,7 @@ public class GT_Loader_Machines {
                         "basicmachine.hammer.tier.07",
                         "Elite Forge Hammer II",
                         7,
-                        "Stop, Hammertime!",
+                        MachineType.FORGE_HAMMER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sHammerRecipes,
                         1,
                         1,
@@ -4511,7 +4513,7 @@ public class GT_Loader_Machines {
                         "basicmachine.hammer.tier.08",
                         "Ultimate Impact Modulator",
                         8,
-                        "Stop, Hammertime!",
+                        MachineType.FORGE_HAMMER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sHammerRecipes,
                         1,
                         1,
@@ -4537,7 +4539,7 @@ public class GT_Loader_Machines {
                         "basicmachine.hammer.tier.09",
                         "Epic Impact Modulator",
                         9,
-                        "Stop, Hammertime!",
+                        MachineType.FORGE_HAMMER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sHammerRecipes,
                         1,
                         1,
@@ -4563,7 +4565,7 @@ public class GT_Loader_Machines {
                         "basicmachine.hammer.tier.10",
                         "Epic Impact Modulator II",
                         10,
-                        "Stop, Hammertime!",
+                        MachineType.FORGE_HAMMER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sHammerRecipes,
                         1,
                         1,
@@ -4589,7 +4591,7 @@ public class GT_Loader_Machines {
                         "basicmachine.hammer.tier.11",
                         "Epic Impact Modulator III",
                         11,
-                        "Stop, Hammertime!",
+                        MachineType.FORGE_HAMMER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sHammerRecipes,
                         1,
                         1,
@@ -4615,7 +4617,7 @@ public class GT_Loader_Machines {
                         "basicmachine.hammer.tier.12",
                         "Epic Impact Modulator IV",
                         12,
-                        "Stop, Hammertime!",
+                        MachineType.FORGE_HAMMER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sHammerRecipes,
                         1,
                         1,
@@ -4645,7 +4647,7 @@ public class GT_Loader_Machines {
                         "basicmachine.lathe.tier.06",
                         "Elite Lathe",
                         6,
-                        "Produces Rods more efficiently",
+                        MachineType.LATHE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLatheRecipes,
                         1,
                         2,
@@ -4671,7 +4673,7 @@ public class GT_Loader_Machines {
                         "basicmachine.lathe.tier.07",
                         "Elite Lathe II",
                         7,
-                        "Produces Rods more efficiently",
+                        MachineType.LATHE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLatheRecipes,
                         1,
                         2,
@@ -4697,7 +4699,7 @@ public class GT_Loader_Machines {
                         "basicmachine.lathe.tier.08",
                         "Ultimate Turn-O-Matic",
                         8,
-                        "Produces Rods more efficiently",
+                        MachineType.LATHE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLatheRecipes,
                         1,
                         2,
@@ -4723,7 +4725,7 @@ public class GT_Loader_Machines {
                         "basicmachine.lathe.tier.09",
                         "Epic Turn-O-Matic",
                         9,
-                        "Produces Rods more efficiently",
+                        MachineType.LATHE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLatheRecipes,
                         1,
                         2,
@@ -4749,7 +4751,7 @@ public class GT_Loader_Machines {
                         "basicmachine.lathe.tier.10",
                         "Epic Turn-O-Matic II",
                         10,
-                        "Produces Rods more efficiently",
+                        MachineType.LATHE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLatheRecipes,
                         1,
                         2,
@@ -4775,7 +4777,7 @@ public class GT_Loader_Machines {
                         "basicmachine.lathe.tier.11",
                         "Epic Turn-O-Matic III",
                         11,
-                        "Produces Rods more efficiently",
+                        MachineType.LATHE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLatheRecipes,
                         1,
                         2,
@@ -4801,7 +4803,7 @@ public class GT_Loader_Machines {
                         "basicmachine.lathe.tier.12",
                         "Epic Turn-O-Matic IV",
                         12,
-                        "Produces Rods more efficiently",
+                        MachineType.LATHE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLatheRecipes,
                         1,
                         2,
@@ -4830,7 +4832,7 @@ public class GT_Loader_Machines {
                         "basicmachine.laserengraver.tier.06",
                         "Elite Precision Laser Engraver",
                         6,
-                        "Don't look directly at the Laser",
+                        MachineType.LASER_ENGRAVER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes,
                         4,
                         1,
@@ -4855,7 +4857,7 @@ public class GT_Loader_Machines {
                         "basicmachine.laserengraver.tier.07",
                         "Elite Precision Laser Engraver II",
                         7,
-                        "Don't look directly at the Laser",
+                        MachineType.LASER_ENGRAVER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes,
                         4,
                         1,
@@ -4880,7 +4882,7 @@ public class GT_Loader_Machines {
                         "basicmachine.laserengraver.tier.08",
                         "Ultimate Exact Photon Cannon",
                         8,
-                        "With the Power of 1.21 GW",
+                        MachineType.LASER_ENGRAVER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes,
                         4,
                         1,
@@ -4905,7 +4907,7 @@ public class GT_Loader_Machines {
                         "basicmachine.laserengraver.tier.09",
                         "Epic Exact Photon Cannon",
                         9,
-                        "With the Power of 2.42 GW",
+                        MachineType.LASER_ENGRAVER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes,
                         4,
                         1,
@@ -4930,7 +4932,7 @@ public class GT_Loader_Machines {
                         "basicmachine.laserengraver.tier.10",
                         "Epic Exact Photon Cannon II",
                         10,
-                        "With the Power of 4.84 GW",
+                        MachineType.LASER_ENGRAVER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes,
                         4,
                         1,
@@ -4955,7 +4957,7 @@ public class GT_Loader_Machines {
                         "basicmachine.laserengraver.tier.11",
                         "Epic Exact Photon Cannon III",
                         11,
-                        "With the Power of 9.68 GW",
+                        MachineType.LASER_ENGRAVER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes,
                         4,
                         1,
@@ -4980,7 +4982,7 @@ public class GT_Loader_Machines {
                         "basicmachine.laserengraver.tier.12",
                         "Epic Exact Photon Cannon IV",
                         12,
-                        "With the Power of 19.36 GW",
+                        MachineType.LASER_ENGRAVER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes,
                         4,
                         1,
@@ -5009,7 +5011,7 @@ public class GT_Loader_Machines {
                         "basicmachine.macerator.tier.06",
                         "Elite Pulverizer",
                         6,
-                        "Schreddering your Ores with Byproducts",
+                        MachineType.MACERATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMaceratorRecipes,
                         1,
                         4,
@@ -5035,7 +5037,7 @@ public class GT_Loader_Machines {
                         "basicmachine.macerator.tier.07",
                         "Elite Pulverizer II",
                         7,
-                        "Schreddering your Ores with Byproducts",
+                        MachineType.MACERATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMaceratorRecipes,
                         1,
                         4,
@@ -5061,7 +5063,7 @@ public class GT_Loader_Machines {
                         "basicmachine.macerator.tier.08",
                         "Ultimate Shape Eliminator",
                         8,
-                        "Schreddering your Ores with Byproducts",
+                        MachineType.MACERATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMaceratorRecipes,
                         1,
                         4,
@@ -5087,7 +5089,7 @@ public class GT_Loader_Machines {
                         "basicmachine.macerator.tier.09",
                         "Epic Shape Eliminator",
                         9,
-                        "Schreddering your Ores with Byproducts",
+                        MachineType.MACERATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMaceratorRecipes,
                         1,
                         4,
@@ -5113,7 +5115,7 @@ public class GT_Loader_Machines {
                         "basicmachine.macerator.tier.10",
                         "Epic Shape Eliminator II",
                         10,
-                        "Schreddering your Ores with Byproducts",
+                        MachineType.MACERATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMaceratorRecipes,
                         1,
                         4,
@@ -5139,7 +5141,7 @@ public class GT_Loader_Machines {
                         "basicmachine.macerator.tier.11",
                         "Epic Shape Eliminator III",
                         11,
-                        "Schreddering your Ores with Byproducts",
+                        MachineType.MACERATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMaceratorRecipes,
                         1,
                         4,
@@ -5165,7 +5167,7 @@ public class GT_Loader_Machines {
                         "basicmachine.macerator.tier.12",
                         "Epic Shape Eliminator IV",
                         12,
-                        "Schreddering your Ores with Byproducts",
+                        MachineType.MACERATOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMaceratorRecipes,
                         1,
                         4,
@@ -5241,7 +5243,7 @@ public class GT_Loader_Machines {
                         "basicmachine.microwave.tier.06",
                         "Elite Microwave",
                         6,
-                        "Did you really read the instruction Manual?",
+                        MachineType.MICROWAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes,
                         1,
                         1,
@@ -5267,7 +5269,7 @@ public class GT_Loader_Machines {
                         "basicmachine.microwave.tier.07",
                         "Elite Microwave II",
                         7,
-                        "Did you really read the instruction Manual?",
+                        MachineType.MICROWAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes,
                         1,
                         1,
@@ -5293,7 +5295,7 @@ public class GT_Loader_Machines {
                         "basicmachine.microwave.tier.08",
                         "Ultimate UFO Engine",
                         8,
-                        "Did you really remember the instruction Manual?",
+                        MachineType.MICROWAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes,
                         1,
                         1,
@@ -5319,7 +5321,7 @@ public class GT_Loader_Machines {
                         "basicmachine.microwave.tier.09",
                         "Epic UFO Engine",
                         9,
-                        "Did you really remember the instruction Manual?",
+                        MachineType.MICROWAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes,
                         1,
                         1,
@@ -5345,7 +5347,7 @@ public class GT_Loader_Machines {
                         "basicmachine.microwave.tier.10",
                         "Epic UFO Engine II",
                         10,
-                        "Did you really remember the instruction Manual?",
+                        MachineType.MICROWAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes,
                         1,
                         1,
@@ -5371,7 +5373,7 @@ public class GT_Loader_Machines {
                         "basicmachine.microwave.tier.11",
                         "Epic UFO Engine III",
                         11,
-                        "Did you really remember the instruction Manual?",
+                        MachineType.MICROWAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes,
                         1,
                         1,
@@ -5397,7 +5399,7 @@ public class GT_Loader_Machines {
                         "basicmachine.microwave.tier.12",
                         "Epic UFO Engine IV",
                         12,
-                        "Did you really remember the instruction Manual?",
+                        MachineType.MICROWAVE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMicrowaveRecipes,
                         1,
                         1,
@@ -5427,7 +5429,7 @@ public class GT_Loader_Machines {
                         "basicmachine.orewasher.tier.06",
                         "Elite Ore Washing Plant",
                         6,
-                        "Getting more Byproducts from your Ores",
+                        MachineType.ORE_WASHER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sOreWasherRecipes,
                         1,
                         3,
@@ -5452,7 +5454,7 @@ public class GT_Loader_Machines {
                         "basicmachine.orewasher.tier.07",
                         "Elite Ore Washing Plant II",
                         7,
-                        "Getting more Byproducts from your Ores",
+                        MachineType.ORE_WASHER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sOreWasherRecipes,
                         1,
                         3,
@@ -5478,7 +5480,7 @@ public class GT_Loader_Machines {
                         "basicmachine.orewasher.tier.08",
                         "Ultimate Ore Washing Machine",
                         8,
-                        "Getting more Byproducts from your Ores",
+                        MachineType.ORE_WASHER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sOreWasherRecipes,
                         1,
                         3,
@@ -5504,7 +5506,7 @@ public class GT_Loader_Machines {
                         "basicmachine.orewasher.tier.09",
                         "Epic Ore Washing Machine",
                         9,
-                        "Getting more Byproducts from your Ores",
+                        MachineType.ORE_WASHER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sOreWasherRecipes,
                         1,
                         3,
@@ -5530,7 +5532,7 @@ public class GT_Loader_Machines {
                         "basicmachine.orewasher.tier.10",
                         "Epic Ore Washing Machine II",
                         10,
-                        "Getting more Byproducts from your Ores",
+                        MachineType.ORE_WASHER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sOreWasherRecipes,
                         1,
                         3,
@@ -5556,7 +5558,7 @@ public class GT_Loader_Machines {
                         "basicmachine.orewasher.tier.11",
                         "Epic Ore Washing Machine III",
                         11,
-                        "Getting more Byproducts from your Ores",
+                        MachineType.ORE_WASHER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sOreWasherRecipes,
                         1,
                         3,
@@ -5582,7 +5584,7 @@ public class GT_Loader_Machines {
                         "basicmachine.orewasher.tier.12",
                         "Epic Ore Washing Machine IV",
                         12,
-                        "Getting more Byproducts from your Ores",
+                        MachineType.ORE_WASHER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sOreWasherRecipes,
                         1,
                         3,
@@ -5612,7 +5614,7 @@ public class GT_Loader_Machines {
                         "basicmachine.polarizer.tier.06",
                         "Elite Polarizer",
                         6,
-                        "Bipolarising your Magnets",
+                        MachineType.POLARIZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPolarizerRecipes,
                         1,
                         1,
@@ -5636,7 +5638,7 @@ public class GT_Loader_Machines {
                         "basicmachine.polarizer.tier.07",
                         "Elite Polarizer II",
                         7,
-                        "Bipolarising your Magnets",
+                        MachineType.POLARIZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPolarizerRecipes,
                         1,
                         1,
@@ -5660,7 +5662,7 @@ public class GT_Loader_Machines {
                         "basicmachine.polarizer.tier.08",
                         "Ultimate Magnetism Inducer",
                         8,
-                        "Bipolarising your Magnets",
+                        MachineType.POLARIZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPolarizerRecipes,
                         1,
                         1,
@@ -5684,7 +5686,7 @@ public class GT_Loader_Machines {
                         "basicmachine.polarizer.tier.09",
                         "Epic Magnetism Inducer",
                         9,
-                        "Bipolarising your Magnets",
+                        MachineType.POLARIZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPolarizerRecipes,
                         1,
                         1,
@@ -5708,7 +5710,7 @@ public class GT_Loader_Machines {
                         "basicmachine.polarizer.tier.10",
                         "Epic Magnetism Inducer II",
                         10,
-                        "Bipolarising your Magnets",
+                        MachineType.POLARIZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPolarizerRecipes,
                         1,
                         1,
@@ -5732,7 +5734,7 @@ public class GT_Loader_Machines {
                         "basicmachine.polarizer.tier.11",
                         "Epic Magnetism Inducer III",
                         11,
-                        "Bipolarising your Magnets",
+                        MachineType.POLARIZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPolarizerRecipes,
                         1,
                         1,
@@ -5756,7 +5758,7 @@ public class GT_Loader_Machines {
                         "basicmachine.polarizer.tier.12",
                         "Epic Magnetism Inducer IV",
                         12,
-                        "Bipolarising your Magnets",
+                        MachineType.POLARIZER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPolarizerRecipes,
                         1,
                         1,
@@ -5784,7 +5786,7 @@ public class GT_Loader_Machines {
                         "basicmachine.recycler.tier.06",
                         "Elite Recycler",
                         6,
-                        "Compress, burn, obliterate and filter EVERYTHING",
+                        MachineType.RECYCLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sRecyclerRecipes,
                         1,
                         1,
@@ -5809,7 +5811,7 @@ public class GT_Loader_Machines {
                         "basicmachine.recycler.tier.07",
                         "Elite Recycler II",
                         7,
-                        "Compress, burn, obliterate and filter EVERYTHING",
+                        MachineType.RECYCLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sRecyclerRecipes,
                         1,
                         1,
@@ -5834,7 +5836,7 @@ public class GT_Loader_Machines {
                         "basicmachine.recycler.tier.08",
                         "Ultimate Scrap-O-Matic",
                         8,
-                        "Compress, burn, obliterate and filter EVERYTHING",
+                        MachineType.RECYCLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sRecyclerRecipes,
                         1,
                         1,
@@ -5859,7 +5861,7 @@ public class GT_Loader_Machines {
                         "basicmachine.recycler.tier.09",
                         "Epic Scrap-O-Matic",
                         9,
-                        "Compress, burn, obliterate and filter EVERYTHING",
+                        MachineType.RECYCLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sRecyclerRecipes,
                         1,
                         1,
@@ -5884,7 +5886,7 @@ public class GT_Loader_Machines {
                         "basicmachine.recycler.tier.10",
                         "Epic Scrap-O-Matic II",
                         10,
-                        "Compress, burn, obliterate and filter EVERYTHING",
+                        MachineType.RECYCLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sRecyclerRecipes,
                         1,
                         1,
@@ -5909,7 +5911,7 @@ public class GT_Loader_Machines {
                         "basicmachine.recycler.tier.11",
                         "Epic Scrap-O-Matic III",
                         11,
-                        "Compress, burn, obliterate and filter EVERYTHING",
+                        MachineType.RECYCLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sRecyclerRecipes,
                         1,
                         1,
@@ -5934,7 +5936,7 @@ public class GT_Loader_Machines {
                         "basicmachine.recycler.tier.12",
                         "Epic Scrap-O-Matic IV",
                         12,
-                        "Compress, burn, obliterate and filter EVERYTHING",
+                        MachineType.RECYCLER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sRecyclerRecipes,
                         1,
                         1,
@@ -6050,7 +6052,7 @@ public class GT_Loader_Machines {
                         "basicmachine.sifter.tier.06",
                         "Elite Sifting Machine",
                         6,
-                        "Stay calm and keep sifting",
+                        MachineType.SIFTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sSifterRecipes,
                         1,
                         9,
@@ -6074,7 +6076,7 @@ public class GT_Loader_Machines {
                         "basicmachine.sifter.tier.07",
                         "Elite Sifting Machine II",
                         7,
-                        "Stay calm and keep sifting",
+                        MachineType.SIFTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sSifterRecipes,
                         1,
                         9,
@@ -6098,7 +6100,7 @@ public class GT_Loader_Machines {
                         "basicmachine.sifter.tier.08",
                         "Ultimate Pulsation Filter",
                         8,
-                        "Stay calm and keep sifting",
+                        MachineType.SIFTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sSifterRecipes,
                         1,
                         9,
@@ -6122,7 +6124,7 @@ public class GT_Loader_Machines {
                         "basicmachine.sifter.tier.09",
                         "Epic Pulsation Filter",
                         9,
-                        "Stay calm and keep sifting",
+                        MachineType.SIFTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sSifterRecipes,
                         1,
                         9,
@@ -6146,7 +6148,7 @@ public class GT_Loader_Machines {
                         "basicmachine.sifter.tier.10",
                         "Epic Pulsation Filter II",
                         10,
-                        "Stay calm and keep sifting",
+                        MachineType.SIFTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sSifterRecipes,
                         1,
                         9,
@@ -6170,7 +6172,7 @@ public class GT_Loader_Machines {
                         "basicmachine.sifter.tier.11",
                         "Epic Pulsation Filter III",
                         11,
-                        "Stay calm and keep sifting",
+                        MachineType.SIFTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sSifterRecipes,
                         1,
                         9,
@@ -6194,7 +6196,7 @@ public class GT_Loader_Machines {
                         "basicmachine.sifter.tier.12",
                         "Epic Pulsation Filter IV",
                         12,
-                        "Stay calm and keep sifting",
+                        MachineType.SIFTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sSifterRecipes,
                         1,
                         9,
@@ -6222,7 +6224,7 @@ public class GT_Loader_Machines {
                         "basicmachine.slicer.tier.06",
                         "Elite Slicing Machine",
                         6,
-                        "Slice of Life",
+                        MachineType.SLICER.tooltipDescription(),
                         sSlicerRecipes,
                         2,
                         1,
@@ -6247,7 +6249,7 @@ public class GT_Loader_Machines {
                         "basicmachine.slicer.tier.07",
                         "Elite Slicing Machine II",
                         7,
-                        "Slice of Life",
+                        MachineType.SLICER.tooltipDescription(),
                         sSlicerRecipes,
                         2,
                         1,
@@ -6272,7 +6274,7 @@ public class GT_Loader_Machines {
                         "basicmachine.slicer.tier.08",
                         "Ultimate Quantum Slicer",
                         8,
-                        "Be careful when slicing bread!",
+                        MachineType.SLICER.tooltipDescription(),
                         sSlicerRecipes,
                         2,
                         1,
@@ -6297,7 +6299,7 @@ public class GT_Loader_Machines {
                         "basicmachine.slicer.tier.09",
                         "Epic Quantum Slicer",
                         9,
-                        "Be careful when slicing bread!",
+                        MachineType.SLICER.tooltipDescription(),
                         sSlicerRecipes,
                         2,
                         1,
@@ -6322,7 +6324,7 @@ public class GT_Loader_Machines {
                         "basicmachine.slicer.tier.10",
                         "Epic Quantum Slicer II",
                         10,
-                        "Be careful when slicing bread!",
+                        MachineType.SLICER.tooltipDescription(),
                         sSlicerRecipes,
                         2,
                         1,
@@ -6347,7 +6349,7 @@ public class GT_Loader_Machines {
                         "basicmachine.slicer.tier.11",
                         "Epic Quantum Slicer III",
                         11,
-                        "Be careful when slicing bread!",
+                        MachineType.SLICER.tooltipDescription(),
                         sSlicerRecipes,
                         2,
                         1,
@@ -6372,7 +6374,7 @@ public class GT_Loader_Machines {
                         "basicmachine.slicer.tier.12",
                         "Epic Quantum Slicer IV",
                         12,
-                        "Be careful when slicing bread!",
+                        MachineType.SLICER.tooltipDescription(),
                         sSlicerRecipes,
                         2,
                         1,
@@ -6401,7 +6403,7 @@ public class GT_Loader_Machines {
                         "basicmachine.thermalcentrifuge.tier.06",
                         "Elite Thermal Centrifuge",
                         6,
-                        "Separating Ores more precisely",
+                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes,
                         1,
                         3,
@@ -6426,7 +6428,7 @@ public class GT_Loader_Machines {
                         "basicmachine.thermalcentrifuge.tier.07",
                         "Elite Thermal Centrifuge II",
                         7,
-                        "Separating Ores more precisely",
+                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes,
                         1,
                         3,
@@ -6451,7 +6453,7 @@ public class GT_Loader_Machines {
                         "basicmachine.thermalcentrifuge.tier.08",
                         "Ultimate Fire Cyclone",
                         8,
-                        "Separating Ores more precisely",
+                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes,
                         1,
                         3,
@@ -6476,7 +6478,7 @@ public class GT_Loader_Machines {
                         "basicmachine.thermalcentrifuge.tier.09",
                         "Epic Fire Cyclone",
                         9,
-                        "Separating Ores more precisely",
+                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes,
                         1,
                         3,
@@ -6501,7 +6503,7 @@ public class GT_Loader_Machines {
                         "basicmachine.thermalcentrifuge.tier.10",
                         "Epic Fire Cyclone II",
                         10,
-                        "Separating Ores more precisely",
+                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes,
                         1,
                         3,
@@ -6526,7 +6528,7 @@ public class GT_Loader_Machines {
                         "basicmachine.thermalcentrifuge.tier.11",
                         "Epic Fire Cyclone III",
                         11,
-                        "Separating Ores more precisely",
+                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes,
                         1,
                         3,
@@ -6551,7 +6553,7 @@ public class GT_Loader_Machines {
                         "basicmachine.thermalcentrifuge.tier.12",
                         "Epic Fire Cyclone IV",
                         12,
-                        "Separating Ores more precisely",
+                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sThermalCentrifugeRecipes,
                         1,
                         3,
@@ -6580,7 +6582,7 @@ public class GT_Loader_Machines {
                         "basicmachine.wiremill.tier.06",
                         "Elite Wiremill",
                         6,
-                        "Produces Wires more efficiently",
+                        MachineType.WIREMILL.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sWiremillRecipes,
                         2,
                         1,
@@ -6604,7 +6606,7 @@ public class GT_Loader_Machines {
                         "basicmachine.wiremill.tier.07",
                         "Elite Wiremill II",
                         7,
-                        "Produces Wires more efficiently",
+                        MachineType.WIREMILL.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sWiremillRecipes,
                         2,
                         1,
@@ -6628,7 +6630,7 @@ public class GT_Loader_Machines {
                         "basicmachine.wiremill.tier.08",
                         "Ultimate Wire Transfigurator",
                         8,
-                        "Produces Wires more efficiently",
+                        MachineType.WIREMILL.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sWiremillRecipes,
                         2,
                         1,
@@ -6652,7 +6654,7 @@ public class GT_Loader_Machines {
                         "basicmachine.wiremill.tier.09",
                         "Epic Wire Transfigurator",
                         9,
-                        "Produces Wires more efficiently",
+                        MachineType.WIREMILL.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sWiremillRecipes,
                         2,
                         1,
@@ -6676,7 +6678,7 @@ public class GT_Loader_Machines {
                         "basicmachine.wiremill.tier.10",
                         "Epic Wire Transfigurator II",
                         10,
-                        "Produces Wires more efficiently",
+                        MachineType.WIREMILL.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sWiremillRecipes,
                         2,
                         1,
@@ -6700,7 +6702,7 @@ public class GT_Loader_Machines {
                         "basicmachine.wiremill.tier.11",
                         "Epic Wire Transfigurator III",
                         11,
-                        "Produces Wires more efficiently",
+                        MachineType.WIREMILL.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sWiremillRecipes,
                         2,
                         1,
@@ -6724,7 +6726,7 @@ public class GT_Loader_Machines {
                         "basicmachine.wiremill.tier.12",
                         "Epic Wire Transfigurator IV",
                         12,
-                        "Produces Wires more efficiently",
+                        MachineType.WIREMILL.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sWiremillRecipes,
                         2,
                         1,
@@ -6763,7 +6765,7 @@ public class GT_Loader_Machines {
                         "basicmachine.arcfurnace.tier.06",
                         "Elite Arc Furnace",
                         6,
-                        "",
+                        MachineType.ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
                         9,
@@ -6788,7 +6790,7 @@ public class GT_Loader_Machines {
                         "basicmachine.arcfurnace.tier.07",
                         "Elite Arc Furnace II",
                         7,
-                        "",
+                        MachineType.ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
                         9,
@@ -6813,7 +6815,7 @@ public class GT_Loader_Machines {
                         "basicmachine.arcfurnace.tier.08",
                         "Ultimate Short Circuit Heater",
                         8,
-                        "",
+                        MachineType.ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
                         9,
@@ -6838,7 +6840,7 @@ public class GT_Loader_Machines {
                         "basicmachine.arcfurnace.tier.09",
                         "Epic Short Circuit Heater",
                         9,
-                        "",
+                        MachineType.ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
                         9,
@@ -6863,7 +6865,7 @@ public class GT_Loader_Machines {
                         "basicmachine.arcfurnace.tier.10",
                         "Epic Short Circuit Heater II",
                         10,
-                        "",
+                        MachineType.ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
                         9,
@@ -6888,7 +6890,7 @@ public class GT_Loader_Machines {
                         "basicmachine.arcfurnace.tier.11",
                         "Epic Short Circuit Heater III",
                         11,
-                        "",
+                        MachineType.ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
                         9,
@@ -6913,7 +6915,7 @@ public class GT_Loader_Machines {
                         "basicmachine.arcfurnace.tier.12",
                         "Epic Short Circuit Heater IV",
                         12,
-                        "",
+                        MachineType.ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sArcFurnaceRecipes,
                         1,
                         9,
@@ -6942,7 +6944,7 @@ public class GT_Loader_Machines {
                         "basicmachine.centrifuge.tier.06",
                         "Elite Centrifuge",
                         6,
-                        "Separating Molecules",
+                        MachineType.CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes,
                         2,
                         6,
@@ -6966,7 +6968,7 @@ public class GT_Loader_Machines {
                         "basicmachine.centrifuge.tier.07",
                         "Elite Centrifuge II",
                         7,
-                        "Separating Molecules",
+                        MachineType.CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes,
                         2,
                         6,
@@ -6990,7 +6992,7 @@ public class GT_Loader_Machines {
                         "basicmachine.centrifuge.tier.08",
                         "Ultimate Molecular Tornado",
                         8,
-                        "Separating Molecules",
+                        MachineType.CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes,
                         2,
                         6,
@@ -7014,7 +7016,7 @@ public class GT_Loader_Machines {
                         "basicmachine.centrifuge.tier.09",
                         "Epic Molecular Tornado",
                         9,
-                        "Separating Molecules",
+                        MachineType.CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes,
                         2,
                         6,
@@ -7038,7 +7040,7 @@ public class GT_Loader_Machines {
                         "basicmachine.centrifuge.tier.10",
                         "Epic Molecular Tornado II",
                         10,
-                        "Separating Molecules",
+                        MachineType.CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes,
                         2,
                         6,
@@ -7062,7 +7064,7 @@ public class GT_Loader_Machines {
                         "basicmachine.centrifuge.tier.11",
                         "Epic Molecular Tornado III",
                         11,
-                        "Separating Molecules",
+                        MachineType.CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes,
                         2,
                         6,
@@ -7086,7 +7088,7 @@ public class GT_Loader_Machines {
                         "basicmachine.centrifuge.tier.12",
                         "Epic Molecular Tornado IV",
                         12,
-                        "Separating Molecules",
+                        MachineType.CENTRIFUGE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes,
                         2,
                         6,
@@ -7114,7 +7116,7 @@ public class GT_Loader_Machines {
                         "basicmachine.plasmaarcfurnace.tier.06",
                         "Elite Plasma Arc Furnace",
                         6,
-                        "",
+                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
                         9,
@@ -7140,7 +7142,7 @@ public class GT_Loader_Machines {
                         "basicmachine.plasmaarcfurnace.tier.07",
                         "Elite Plasma Arc Furnace II",
                         7,
-                        "",
+                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
                         9,
@@ -7166,7 +7168,7 @@ public class GT_Loader_Machines {
                         "basicmachine.plasmaarcfurnace.tier.08",
                         "Ultimate Plasma Discharge Heater",
                         8,
-                        "",
+                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
                         9,
@@ -7192,7 +7194,7 @@ public class GT_Loader_Machines {
                         "basicmachine.plasmaarcfurnace.tier.09",
                         "Epic Plasma Discharge Heater",
                         9,
-                        "",
+                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
                         9,
@@ -7218,7 +7220,7 @@ public class GT_Loader_Machines {
                         "basicmachine.plasmaarcfurnace.tier.10",
                         "Epic Plasma Discharge Heater II",
                         10,
-                        "",
+                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
                         9,
@@ -7244,7 +7246,7 @@ public class GT_Loader_Machines {
                         "basicmachine.plasmaarcfurnace.tier.11",
                         "Epic Plasma Discharge Heater III",
                         11,
-                        "",
+                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
                         9,
@@ -7270,7 +7272,7 @@ public class GT_Loader_Machines {
                         "basicmachine.plasmaarcfurnace.tier.12",
                         "Epic Plasma Discharge Heater IV",
                         12,
-                        "",
+                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes,
                         1,
                         9,
@@ -7395,7 +7397,7 @@ public class GT_Loader_Machines {
                         "basicmachine.canner.tier.06",
                         "Elite Canning Machine",
                         6,
-                        "Unmobile Food Canning Machine GTA4",
+                        MachineType.CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCannerRecipes,
                         2,
                         2,
@@ -7420,7 +7422,7 @@ public class GT_Loader_Machines {
                         "basicmachine.canner.tier.07",
                         "Elite Canning Machine II",
                         7,
-                        "Unmobile Food Canning Machine GTA4",
+                        MachineType.CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCannerRecipes,
                         2,
                         2,
@@ -7445,7 +7447,7 @@ public class GT_Loader_Machines {
                         "basicmachine.canner.tier.08",
                         "Ultimate Can Operator",
                         8,
-                        "Unmobile Food Canning Machine GTA4",
+                        MachineType.CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCannerRecipes,
                         2,
                         2,
@@ -7470,7 +7472,7 @@ public class GT_Loader_Machines {
                         "basicmachine.canner.tier.09",
                         "Epic Can Operator",
                         9,
-                        "Unmobile Food Canning Machine GTA4",
+                        MachineType.CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCannerRecipes,
                         2,
                         2,
@@ -7495,7 +7497,7 @@ public class GT_Loader_Machines {
                         "basicmachine.canner.tier.10",
                         "Epic Can Operator II",
                         10,
-                        "Unmobile Food Canning Machine GTA4",
+                        MachineType.CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCannerRecipes,
                         2,
                         2,
@@ -7520,7 +7522,7 @@ public class GT_Loader_Machines {
                         "basicmachine.canner.tier.11",
                         "Epic Can Operator III",
                         11,
-                        "Unmobile Food Canning Machine GTA4",
+                        MachineType.CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCannerRecipes,
                         2,
                         2,
@@ -7545,7 +7547,7 @@ public class GT_Loader_Machines {
                         "basicmachine.canner.tier.12",
                         "Epic Can Operator IV",
                         12,
-                        "Unmobile Food Canning Machine GTA4",
+                        MachineType.CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sCannerRecipes,
                         2,
                         2,
@@ -7574,7 +7576,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalbath.tier.06",
                         "Elite Chemical Bath",
                         6,
-                        "Bathing Ores in Chemicals to separate them",
+                        MachineType.CHEMICAL_BATH.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
                         1,
                         3,
@@ -7600,7 +7602,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalbath.tier.07",
                         "Elite Chemical Bath II",
                         7,
-                        "Bathing Ores in Chemicals to separate them",
+                        MachineType.CHEMICAL_BATH.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
                         1,
                         3,
@@ -7626,7 +7628,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalbath.tier.08",
                         "Ultimate Chemical Dunktron",
                         8,
-                        "Bathing Ores in Chemicals to separate them",
+                        MachineType.CHEMICAL_BATH.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
                         1,
                         3,
@@ -7652,7 +7654,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalbath.tier.09",
                         "Epic Chemical Dunktron",
                         9,
-                        "Bathing Ores in Chemicals to separate them",
+                        MachineType.CHEMICAL_BATH.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
                         1,
                         3,
@@ -7678,7 +7680,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalbath.tier.10",
                         "Epic Chemical Dunktron II",
                         10,
-                        "Bathing Ores in Chemicals to separate them",
+                        MachineType.CHEMICAL_BATH.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
                         1,
                         3,
@@ -7704,7 +7706,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalbath.tier.11",
                         "Epic Chemical Dunktron III",
                         11,
-                        "Bathing Ores in Chemicals to separate them",
+                        MachineType.CHEMICAL_BATH.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
                         1,
                         3,
@@ -7730,7 +7732,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalbath.tier.12",
                         "Epic Chemical Dunktron IV",
                         12,
-                        "Bathing Ores in Chemicals to separate them",
+                        MachineType.CHEMICAL_BATH.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes,
                         1,
                         3,
@@ -7760,7 +7762,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalreactor.tier.06",
                         "Elite Chemical Reactor",
                         6,
-                        "Letting Chemicals react with each other",
+                        MachineType.CHEMICAL_REACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalRecipes,
                         2,
                         2,
@@ -7781,7 +7783,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalreactor.tier.07",
                         "Elite Chemical Reactor II",
                         7,
-                        "Letting Chemicals react with each other",
+                        MachineType.CHEMICAL_REACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalRecipes,
                         2,
                         2,
@@ -7802,7 +7804,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalreactor.tier.08",
                         "Ultimate Chemical Perforer",
                         8,
-                        "Letting Chemicals react with each other",
+                        MachineType.CHEMICAL_REACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalRecipes,
                         2,
                         2,
@@ -7823,7 +7825,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalreactor.tier.09",
                         "Epic Chemical Performer",
                         9,
-                        "Letting Chemicals react with each other",
+                        MachineType.CHEMICAL_REACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalRecipes,
                         2,
                         2,
@@ -7844,7 +7846,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalreactor.tier.10",
                         "Epic Chemical Performer II",
                         10,
-                        "Letting Chemicals react with each other",
+                        MachineType.CHEMICAL_REACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalRecipes,
                         2,
                         2,
@@ -7865,7 +7867,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalreactor.tier.11",
                         "Epic Chemical Performer III",
                         11,
-                        "Letting Chemicals react with each other",
+                        MachineType.CHEMICAL_REACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalRecipes,
                         2,
                         2,
@@ -7886,7 +7888,7 @@ public class GT_Loader_Machines {
                         "basicmachine.chemicalreactor.tier.12",
                         "Epic Chemical Performer IV",
                         12,
-                        "Letting Chemicals react with each other",
+                        MachineType.CHEMICAL_REACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sChemicalRecipes,
                         2,
                         2,
@@ -7910,7 +7912,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fermenter.tier.06",
                         "Elite Fermenter",
                         6,
-                        "Fermenting Fluids",
+                        MachineType.FERMENTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFermentingRecipes,
                         1,
                         1,
@@ -7931,7 +7933,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fermenter.tier.07",
                         "Elite Fermenter II",
                         7,
-                        "Fermenting Fluids",
+                        MachineType.FERMENTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFermentingRecipes,
                         1,
                         1,
@@ -7952,7 +7954,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fermenter.tier.08",
                         "Ultimate Fermentation Hastener",
                         8,
-                        "Fermenting Fluids",
+                        MachineType.FERMENTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFermentingRecipes,
                         1,
                         1,
@@ -7973,7 +7975,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fermenter.tier.09",
                         "Epic Fermentation Hastener",
                         9,
-                        "Fermenting Fluids",
+                        MachineType.FERMENTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFermentingRecipes,
                         1,
                         1,
@@ -7994,7 +7996,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fermenter.tier.10",
                         "Epic Fermentation Hastener II",
                         10,
-                        "Fermenting Fluids",
+                        MachineType.FERMENTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFermentingRecipes,
                         1,
                         1,
@@ -8015,7 +8017,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fermenter.tier.11",
                         "Epic Fermentation Hastener III",
                         11,
-                        "Fermenting Fluids",
+                        MachineType.FERMENTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFermentingRecipes,
                         1,
                         1,
@@ -8036,7 +8038,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fermenter.tier.12",
                         "Epic Fermentation Hastener IV",
                         12,
-                        "Fermenting Fluids",
+                        MachineType.FERMENTER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFermentingRecipes,
                         1,
                         1,
@@ -8059,7 +8061,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidcanner.tier.06",
                         "Elite Fluid Canner",
                         6,
-                        "Puts Fluids into and out of Containers",
+                        MachineType.FLUID_CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes,
                         1,
                         1,
@@ -8080,7 +8082,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidcanner.tier.07",
                         "Elite Fluid Canner II",
                         7,
-                        "Puts Fluids into and out of Containers",
+                        MachineType.FLUID_CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes,
                         1,
                         1,
@@ -8101,7 +8103,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidcanner.tier.08",
                         "Ultimate Liquid Can Actuator",
                         8,
-                        "Puts Fluids into and out of Containers",
+                        MachineType.FLUID_CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes,
                         1,
                         1,
@@ -8122,7 +8124,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidcanner.tier.09",
                         "Epic Liquid Can Actuator",
                         9,
-                        "Puts Fluids into and out of Containers",
+                        MachineType.FLUID_CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes,
                         1,
                         1,
@@ -8143,7 +8145,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidcanner.tier.10",
                         "Epic Liquid Can Actuator II",
                         10,
-                        "Puts Fluids into and out of Containers",
+                        MachineType.FLUID_CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes,
                         1,
                         1,
@@ -8164,7 +8166,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidcanner.tier.11",
                         "Epic Liquid Can Actuator III",
                         11,
-                        "Puts Fluids into and out of Containers",
+                        MachineType.FLUID_CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes,
                         1,
                         1,
@@ -8185,7 +8187,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidcanner.tier.12",
                         "Epic Liquid Can Actuator IV",
                         12,
-                        "Puts Fluids into and out of Containers",
+                        MachineType.FLUID_CANNER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes,
                         1,
                         1,
@@ -8208,7 +8210,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidextractor.tier.06",
                         "Elite Fluid Extractor",
                         6,
-                        "Extracting Fluids from Items",
+                        MachineType.FLUID_EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes,
                         1,
                         1,
@@ -8229,7 +8231,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidextractor.tier.07",
                         "Elite Fluid Extractor II",
                         7,
-                        "Extracting Fluids from Items",
+                        MachineType.FLUID_EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes,
                         1,
                         1,
@@ -8250,7 +8252,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidextractor.tier.08",
                         "Ultimate Liquefying Sucker",
                         8,
-                        "Extracting Fluids from Items",
+                        MachineType.FLUID_EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes,
                         1,
                         1,
@@ -8271,7 +8273,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidextractor.tier.09",
                         "Epic Liquefying Sucker",
                         9,
-                        "Extracting Fluids from Items",
+                        MachineType.FLUID_EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes,
                         1,
                         1,
@@ -8292,7 +8294,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidextractor.tier.10",
                         "Epic Liquefying Sucker II",
                         10,
-                        "Extracting Fluids from Items",
+                        MachineType.FLUID_EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes,
                         1,
                         1,
@@ -8313,7 +8315,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidextractor.tier.11",
                         "Epic Liquefying Sucker III",
                         11,
-                        "Extracting Fluids from Items",
+                        MachineType.FLUID_EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes,
                         1,
                         1,
@@ -8334,7 +8336,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidextractor.tier.12",
                         "Epic Liquefying Sucker IV",
                         12,
-                        "Extracting Fluids from Items",
+                        MachineType.FLUID_EXTRACTOR.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes,
                         1,
                         1,
@@ -8357,7 +8359,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidheater.tier.06",
                         "Elite Fluid Heater",
                         6,
-                        "Heating up your Fluids",
+                        MachineType.FLUID_HEATER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes,
                         1,
                         0,
@@ -8378,7 +8380,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidheater.tier.07",
                         "Elite Fluid Heater II",
                         7,
-                        "Heating up your Fluids",
+                        MachineType.FLUID_HEATER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes,
                         1,
                         0,
@@ -8399,7 +8401,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidheater.tier.08",
                         "Ultimate Heat Infuser",
                         8,
-                        "Heating up your Fluids",
+                        MachineType.FLUID_HEATER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes,
                         1,
                         0,
@@ -8420,7 +8422,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidheater.tier.09",
                         "Epic Heat Infuser",
                         9,
-                        "Heating up your Fluids",
+                        MachineType.FLUID_HEATER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes,
                         1,
                         0,
@@ -8441,7 +8443,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidheater.tier.10",
                         "Epic Heat Infuser II",
                         10,
-                        "Heating up your Fluids",
+                        MachineType.FLUID_HEATER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes,
                         1,
                         0,
@@ -8462,7 +8464,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidheater.tier.11",
                         "Epic Heat Infuser III",
                         11,
-                        "Heating up your Fluids",
+                        MachineType.FLUID_HEATER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes,
                         1,
                         0,
@@ -8483,7 +8485,7 @@ public class GT_Loader_Machines {
                         "basicmachine.fluidheater.tier.12",
                         "Epic Heat Infuser IV",
                         12,
-                        "Heating up your Fluids",
+                        MachineType.FLUID_HEATER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes,
                         1,
                         0,
@@ -8506,7 +8508,7 @@ public class GT_Loader_Machines {
                         "basicmachine.mixer.tier.06",
                         "Elite Mixer",
                         6,
-                        "Will it Blend?",
+                        MachineType.MIXER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMixerRecipes,
                         9,
                         4,
@@ -8527,7 +8529,7 @@ public class GT_Loader_Machines {
                         "basicmachine.mixer.tier.07",
                         "Elite Mixer II",
                         7,
-                        "Will it Blend?",
+                        MachineType.MIXER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMixerRecipes,
                         9,
                         4,
@@ -8548,7 +8550,7 @@ public class GT_Loader_Machines {
                         "basicmachine.mixer.tier.08",
                         "Ultimate Matter Organizer",
                         8,
-                        "Will it Blend?",
+                        MachineType.MIXER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMixerRecipes,
                         9,
                         4,
@@ -8569,7 +8571,7 @@ public class GT_Loader_Machines {
                         "basicmachine.mixer.tier.09",
                         "Epic Matter Organizer",
                         9,
-                        "Will it Blend?",
+                        MachineType.MIXER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMixerRecipes,
                         9,
                         4,
@@ -8590,7 +8592,7 @@ public class GT_Loader_Machines {
                         "basicmachine.mixer.tier.10",
                         "Epic Matter Organizer II",
                         10,
-                        "Will it Blend?",
+                        MachineType.MIXER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMixerRecipes,
                         9,
                         4,
@@ -8611,7 +8613,7 @@ public class GT_Loader_Machines {
                         "basicmachine.mixer.tier.11",
                         "Epic Matter Organizer III",
                         11,
-                        "Will it Blend?",
+                        MachineType.MIXER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMixerRecipes,
                         9,
                         4,
@@ -8632,7 +8634,7 @@ public class GT_Loader_Machines {
                         "basicmachine.mixer.tier.12",
                         "Epic Matter Organizer IV",
                         12,
-                        "Will it Blend?",
+                        MachineType.MIXER.tooltipDescription(),
                         GT_Recipe.GT_Recipe_Map.sMixerRecipes,
                         9,
                         4,
@@ -8738,7 +8740,7 @@ public class GT_Loader_Machines {
 
     }
 
-    private void registerBatteryBuffer3By3(){
+    private void registerBatteryBuffer3By3() {
         CustomItemList.Battery_Buffer_3by3_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
                         BATTERY_BUFFER_3_BY_3_UEV.ID,
@@ -8917,55 +8919,39 @@ public class GT_Loader_Machines {
                         4).getStackForm(1L));
     }
 
-    private void registerDynamoHatches(){
+    private void registerDynamoHatches() {
         CustomItemList.Hatch_Dynamo_UEV.set(
-                new GT_MetaTileEntity_Hatch_Dynamo(
-                        DYNAMO_HATCH_UEV.ID,
-                        "hatch.dynamo.tier.10", "UEV Dynamo Hatch", 10)
+                new GT_MetaTileEntity_Hatch_Dynamo(DYNAMO_HATCH_UEV.ID, "hatch.dynamo.tier.10", "UEV Dynamo Hatch", 10)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Dynamo_UIV.set(
-                new GT_MetaTileEntity_Hatch_Dynamo(
-                        DYNAMO_HATCH_UIV.ID,
-                        "hatch.dynamo.tier.11", "UIV Dynamo Hatch", 11)
+                new GT_MetaTileEntity_Hatch_Dynamo(DYNAMO_HATCH_UIV.ID, "hatch.dynamo.tier.11", "UIV Dynamo Hatch", 11)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Dynamo_UMV.set(
-                new GT_MetaTileEntity_Hatch_Dynamo(
-                        DYNAMO_HATCH_UMV.ID,
-                        "hatch.dynamo.tier.12", "UMV Dynamo Hatch", 12)
+                new GT_MetaTileEntity_Hatch_Dynamo(DYNAMO_HATCH_UMV.ID, "hatch.dynamo.tier.12", "UMV Dynamo Hatch", 12)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Dynamo_UXV.set(
-                new GT_MetaTileEntity_Hatch_Dynamo(
-                        DYNAMO_HATCH_UXV.ID,
-                        "hatch.dynamo.tier.13", "UXV Dynamo Hatch", 13)
+                new GT_MetaTileEntity_Hatch_Dynamo(DYNAMO_HATCH_UXV.ID, "hatch.dynamo.tier.13", "UXV Dynamo Hatch", 13)
                         .getStackForm(1L));
     }
 
     private void registerEnergyHatches() {
         CustomItemList.Hatch_Energy_UEV.set(
-                new GT_MetaTileEntity_Hatch_Energy(
-                        ENERGY_HATCH_UEV.ID,
-                        "hatch.energy.tier.10", "UEV Energy Hatch", 10)
+                new GT_MetaTileEntity_Hatch_Energy(ENERGY_HATCH_UEV.ID, "hatch.energy.tier.10", "UEV Energy Hatch", 10)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Energy_UIV.set(
-                new GT_MetaTileEntity_Hatch_Energy(
-                        ENERGY_HATCH_UIV.ID,
-                        "hatch.energy.tier.11", "UIV Energy Hatch", 11)
+                new GT_MetaTileEntity_Hatch_Energy(ENERGY_HATCH_UIV.ID, "hatch.energy.tier.11", "UIV Energy Hatch", 11)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Energy_UMV.set(
-                new GT_MetaTileEntity_Hatch_Energy(
-                        ENERGY_HATCH_UMV.ID,
-                        "hatch.energy.tier.12", "UMV Energy Hatch", 12)
+                new GT_MetaTileEntity_Hatch_Energy(ENERGY_HATCH_UMV.ID, "hatch.energy.tier.12", "UMV Energy Hatch", 12)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Energy_UXV.set(
-                new GT_MetaTileEntity_Hatch_Energy(
-                        ENERGY_HATCH_UXV.ID,
-                        "hatch.energy.tier.13", "UXV Energy Hatch", 13)
+                new GT_MetaTileEntity_Hatch_Energy(ENERGY_HATCH_UXV.ID, "hatch.energy.tier.13", "UXV Energy Hatch", 13)
                         .getStackForm(1L));
     }
 
@@ -9128,21 +9114,21 @@ public class GT_Loader_Machines {
         CustomItemList.Machine_Multi_AirFilterT1.set(
                 new GT_MetaTileEntity_AirFilterT1(
                         AIR_FILTER_CONTROLLER_T1.ID,
-                        "multimachine.airfilter.01", "Electric Air Filter T1")
-                        .getStackForm(1L));
+                        "multimachine.airfilter.01",
+                        "Electric Air Filter T1").getStackForm(1L));
         CustomItemList.Machine_Multi_AirFilterT2.set(
                 new GT_MetaTileEntity_AirFilterT2(
                         AIR_FILTER_CONTROLLER_T2.ID,
-                        "multimachine.airfilter.02", "Electric Air Filter T2")
-                        .getStackForm(1L));
+                        "multimachine.airfilter.02",
+                        "Electric Air Filter T2").getStackForm(1L));
         CustomItemList.Machine_Multi_AirFilterT3.set(
                 new GT_MetaTileEntity_AirFilterT3(
                         AIR_FILTER_CONTROLLER_T3.ID,
-                        "multimachine.airfilter.03", "Electric Air Filter T3")
-                        .getStackForm(1L));
+                        "multimachine.airfilter.03",
+                        "Electric Air Filter T3").getStackForm(1L));
     }
 
-    private void registerTurboCharger4By4(){
+    private void registerTurboCharger4By4() {
         CustomItemList.Battery_TurboCharger_4by4_ULV.set(
                 new GT_MetaTileEntity_TurboCharger(
                         TURBO_CHARGER_ULV.ID,
@@ -9235,7 +9221,7 @@ public class GT_Loader_Machines {
 
     }
 
-    private void registerChestBuffer(){
+    private void registerChestBuffer() {
         CustomItemList.Automation_ChestBuffer_UEV.set(
                 new GT_MetaTileEntity_ChestBuffer(
                         CHEST_BUFFER_UEV.ID,
@@ -9258,36 +9244,39 @@ public class GT_Loader_Machines {
                         12).getStackForm(1L));
     }
 
-    private void registerNameRemover(){
-        CustomItemList.nameRemover.set(new NameRemover(
-                NAME_REMOVER.ID,
-                "fix.name.remover", "Name Remover", 0).getStackForm(1L));
+    private void registerNameRemover() {
+        CustomItemList.nameRemover
+                .set(new NameRemover(NAME_REMOVER.ID, "fix.name.remover", "Name Remover", 0).getStackForm(1L));
     }
 
-    private void registerRockBreaker(){
+    private void registerRockBreaker() {
         CustomItemList.RockBreakerLuV.set(
                 new GT_MetaTileEntity_RockBreaker(
                         ROCK_BREAKER_LuV.ID,
-                        "rockbreaker.tier.06", "Cryogenic Magma Solidifier R-9200", 6)
-                        .getStackForm(1L));
+                        "rockbreaker.tier.06",
+                        "Cryogenic Magma Solidifier R-9200",
+                        6).getStackForm(1L));
 
         CustomItemList.RockBreakerZPM.set(
                 new GT_MetaTileEntity_RockBreaker(
                         ROCK_BREAKER_ZPM.ID,
-                        "rockbreaker.tier.07", "Cryogenic Magma Solidifier R-10200", 7)
-                        .getStackForm(1L));
+                        "rockbreaker.tier.07",
+                        "Cryogenic Magma Solidifier R-10200",
+                        7).getStackForm(1L));
 
         CustomItemList.RockBreakerUV.set(
                 new GT_MetaTileEntity_RockBreaker(
                         ROCK_BREAKER_UV.ID,
-                        "rockbreaker.tier.08", "Cryogenic Magma Solidifier R-11200", 8)
-                        .getStackForm(1L));
+                        "rockbreaker.tier.08",
+                        "Cryogenic Magma Solidifier R-11200",
+                        8).getStackForm(1L));
 
         CustomItemList.RockBreakerUHV.set(
                 new GT_MetaTileEntity_RockBreaker(
                         ROCK_BREAKER_UHV.ID,
-                        "rockbreaker.tier.09", "Cryogenic Magma Solidifier R-12200", 9)
-                        .getStackForm(1L));
+                        "rockbreaker.tier.09",
+                        "Cryogenic Magma Solidifier R-12200",
+                        9).getStackForm(1L));
 
         CustomItemList.RockBreakerUEV.set(
                 new GT_MetaTileEntity_RockBreaker(
@@ -9449,29 +9438,19 @@ public class GT_Loader_Machines {
 
     private void registerInputHatch() {
         CustomItemList.Hatch_Input_UEV.set(
-                new GT_MetaTileEntity_Hatch_Input(
-                        INPUT_HATCH_UEV.ID,
-                        "hatch.input.tier.10", "Input Hatch (UEV)", 10)
+                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_UEV.ID, "hatch.input.tier.10", "Input Hatch (UEV)", 10)
                         .getStackForm(1L));
         CustomItemList.Hatch_Input_UIV.set(
-                new GT_MetaTileEntity_Hatch_Input(
-                        INPUT_HATCH_UIV.ID,
-                        "hatch.input.tier.11", "Input Hatch (UIV)", 11)
+                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_UIV.ID, "hatch.input.tier.11", "Input Hatch (UIV)", 11)
                         .getStackForm(1L));
         CustomItemList.Hatch_Input_UMV.set(
-                new GT_MetaTileEntity_Hatch_Input(
-                        INPUT_HATCH_UMV.ID,
-                        "hatch.input.tier.12", "Input Hatch (UMV)", 12)
+                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_UMV.ID, "hatch.input.tier.12", "Input Hatch (UMV)", 12)
                         .getStackForm(1L));
         CustomItemList.Hatch_Input_UXV.set(
-                new GT_MetaTileEntity_Hatch_Input(
-                        INPUT_HATCH_UXV.ID,
-                        "hatch.input.tier.13", "Input Hatch (UXV)", 13)
+                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_UXV.ID, "hatch.input.tier.13", "Input Hatch (UXV)", 13)
                         .getStackForm(1L));
         CustomItemList.Hatch_Input_MAX.set(
-                new GT_MetaTileEntity_Hatch_Input(
-                        INPUT_HATCH_MAX.ID,
-                        "hatch.input.tier.14", "Input Hatch (MAX)", 14)
+                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_MAX.ID, "hatch.input.tier.14", "Input Hatch (MAX)", 14)
                         .getStackForm(1L));
     }
 
@@ -9479,28 +9458,33 @@ public class GT_Loader_Machines {
         CustomItemList.Hatch_Output_UEV.set(
                 new GT_MetaTileEntity_Hatch_Output(
                         OUTPUT_HATCH_UEV.ID,
-                        "hatch.output.tier.10", "Output Hatch (UEV)", 10)
-                        .getStackForm(1L));
+                        "hatch.output.tier.10",
+                        "Output Hatch (UEV)",
+                        10).getStackForm(1L));
         CustomItemList.Hatch_Output_UIV.set(
                 new GT_MetaTileEntity_Hatch_Output(
                         OUTPUT_HATCH_UIV.ID,
-                        "hatch.output.tier.11", "Output Hatch (UIV)", 11)
-                        .getStackForm(1L));
+                        "hatch.output.tier.11",
+                        "Output Hatch (UIV)",
+                        11).getStackForm(1L));
         CustomItemList.Hatch_Output_UMV.set(
                 new GT_MetaTileEntity_Hatch_Output(
                         OUTPUT_HATCH_UMV.ID,
-                        "hatch.output.tier.12", "Output Hatch (UMV)", 12)
-                        .getStackForm(1L));
+                        "hatch.output.tier.12",
+                        "Output Hatch (UMV)",
+                        12).getStackForm(1L));
         CustomItemList.Hatch_Output_UXV.set(
                 new GT_MetaTileEntity_Hatch_Output(
                         OUTPUT_HATCH_UXV.ID,
-                        "hatch.output.tier.13", "Output Hatch (UXV)", 13)
-                        .getStackForm(1L));
+                        "hatch.output.tier.13",
+                        "Output Hatch (UXV)",
+                        13).getStackForm(1L));
         CustomItemList.Hatch_Output_MAX.set(
                 new GT_MetaTileEntity_Hatch_Output(
                         OUTPUT_HATCH_MAX.ID,
-                        "hatch.output.tier.14", "Output Hatch (MAX)", 14)
-                        .getStackForm(1L));
+                        "hatch.output.tier.14",
+                        "Output Hatch (MAX)",
+                        14).getStackForm(1L));
     }
 
     private void registerMachines2() {
