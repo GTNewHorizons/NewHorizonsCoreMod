@@ -1705,6 +1705,12 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(24).addTo(sAssemblerRecipes);
 
+        // crafting input slave
+        GT_Values.RA.stdBuilder()
+                .itemInputs(ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L), ItemList.Sensor_UV.get(1L))
+                .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).noFluidInputs().noFluidOutputs()
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
+
         // Gear Box Casings
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -5465,7 +5471,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftCore.ID, "item.rocketFins", 1L, 0)).noFluidInputs()
                 .noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.stdBuilder().noItemInputs()
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 2L, 3),
+                        GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4L, 0),
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 2))
                 .noFluidInputs().noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(sAssemblerRecipes);
