@@ -1,44 +1,5 @@
 package com.dreammaster.gthandler;
 
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_MAX;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_GENERATOR_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_GENERATOR_ZPM;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sSlicerRecipes;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeBuilder.TICKS;
-
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
 import com.dreammaster.gthandler.accelerator.GT_MetaTileEntity_WorldAccelerator;
 import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
 import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
@@ -47,18 +8,456 @@ import com.dreammaster.gthandler.nameRemover.NameRemover;
 import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
 import com.dreammaster.gthandler.turboCharger.GT_MetaTileEntity_TurboCharger;
 import com.dreammaster.item.food.QuantumBread;
-
-import gregtech.api.enums.*;
-import gregtech.api.metatileentity.implementations.*;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.MachineType;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsKevlar;
+import gregtech.api.enums.MaterialsUEVplus;
+import gregtech.api.enums.OreDictNames;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.SoundResource;
+import gregtech.api.enums.TierEU;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicBatteryBuffer;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicHull;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe.SpecialEffects;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Dynamo;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Energy;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Input;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Output;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Transformer;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_Recipe;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.tileentities.automation.GT_MetaTileEntity_ChestBuffer;
 import gregtech.common.tileentities.generators.GT_MetaTileEntity_PlasmaGenerator;
-import gregtech.common.tileentities.machines.basic.*;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Charger;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Massfabricator;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_PotionBrewer;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Pump;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Replicator;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_RockBreaker;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Scanner;
 import gregtech.loaders.preload.GT_Loader_MetaTileEntities;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GregtechMetaTransformerHiAmp;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T1;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T2;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T3;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_CHARGER_4_4_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_CHARGER_4_4_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_CHARGER_4_4_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_CHARGER_4_4_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CENTRIFUGE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CENTRIFUGE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CENTRIFUGE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CENTRIFUGE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CENTRIFUGE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CENTRIFUGE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CENTRIFUGE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_BATH_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_BATH_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_BATH_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_BATH_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_BATH_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_BATH_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_BATH_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEST_BUFFER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEST_BUFFER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEST_BUFFER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.COMPRESSOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.COMPRESSOR_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.COMPRESSOR_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.COMPRESSOR_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.COMPRESSOR_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.COMPRESSOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.COMPRESSOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CUTTING_MACHINE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CUTTING_MACHINE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CUTTING_MACHINE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CUTTING_MACHINE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CUTTING_MACHINE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CUTTING_MACHINE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CUTTING_MACHINE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DYNAMO_HATCH_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DYNAMO_HATCH_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DYNAMO_HATCH_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DYNAMO_HATCH_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROLYZER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROLYZER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROLYZER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROLYZER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROLYZER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROLYZER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROLYZER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ENERGY_HATCH_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ENERGY_HATCH_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ENERGY_HATCH_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ENERGY_HATCH_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRUDER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRUDER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRUDER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRUDER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRUDER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRUDER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRUDER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FERMENTER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FERMENTER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FERMENTER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FERMENTER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FERMENTER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FERMENTER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FERMENTER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_CANNER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_CANNER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_CANNER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_CANNER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_CANNER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_CANNER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_CANNER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_EXTRACTOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_EXTRACTOR_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_EXTRACTOR_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_EXTRACTOR_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_EXTRACTOR_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_EXTRACTOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_EXTRACTOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_HEATER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_HEATER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_HEATER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_HEATER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_HEATER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_HEATER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_HEATER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_SOLIDIFIER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_SOLIDIFIER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_SOLIDIFIER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_SOLIDIFIER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_SOLIDIFIER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_SOLIDIFIER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FLUID_SOLIDIFIER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORGE_HAMMER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORGE_HAMMER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORGE_HAMMER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORGE_HAMMER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORGE_HAMMER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORGE_HAMMER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORGE_HAMMER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_MAX_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_UEV_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_UIV_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_UMV_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_UXV_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_REPLICATOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_REPLICATOR_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_REPLICATOR_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_REPLICATOR_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_REPLICATOR_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_REPLICATOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_REPLICATOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MICROWAVE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MICROWAVE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MICROWAVE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MICROWAVE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MICROWAVE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MICROWAVE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MICROWAVE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MIXER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MIXER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MIXER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MIXER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MIXER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MIXER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MIXER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.NAME_REMOVER;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_MAX;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_GENERATOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_GENERATOR_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PUMP_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PUMP_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SLICING_MACHINE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SLICING_MACHINE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SLICING_MACHINE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SLICING_MACHINE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SLICING_MACHINE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SLICING_MACHINE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SLICING_MACHINE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_MAX_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_UEV_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_UIV_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_UMV_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_UXV_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_EV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_HV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_IV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_LV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_MV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_ULV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_EV_HV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_HV_MV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_IV_EV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_LV_ULV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_LuV_IV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_MAX_UXV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_MV_LV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UEV_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UHV_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UIV_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UMV_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UV_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UXV_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_ZPM_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UEV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UHV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UIV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UMV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_ZPM;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_EV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_HV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_IV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_LV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_LuV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_MV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_UV;
+import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_ZPM;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sSlicerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 public class GT_Loader_Machines {
 
@@ -110,6 +509,7 @@ public class GT_Loader_Machines {
         registerCanningMachine();
         registerChemicalBath();
         registerChemicalReactor();
+
         registerFermenter();
         registerFluidCanner();
         registerFluidExtractor();
@@ -129,6 +529,7 @@ public class GT_Loader_Machines {
         registerTurboCharger4By4();
         registerChestBuffer();
         registerRockBreaker();
+        registerNameRemover();
         registerCircuitAssembler();
         registerInputHatch();
         registerOutputHatches();
@@ -1260,6 +1661,39 @@ public class GT_Loader_Machines {
                             ItemList.Electric_Pump_ZPM, 'T', CustomItemList.Transformer_HA_MAX_UXV });
         }
 
+        ItemStack[] inHatches = { CustomItemList.Hatch_Input_UEV.get(1), CustomItemList.Hatch_Input_UIV.get(1),
+                CustomItemList.Hatch_Input_UMV.get(1), CustomItemList.Hatch_Input_UXV.get(1),
+                CustomItemList.Hatch_Input_MAX.get(1) };
+        ItemStack[] outHatches = { CustomItemList.Hatch_Output_UEV.get(1), CustomItemList.Hatch_Output_UIV.get(1),
+                CustomItemList.Hatch_Output_UMV.get(1), CustomItemList.Hatch_Output_UXV.get(1),
+                CustomItemList.Hatch_Output_MAX.get(1) };
+        ItemStack[][] flInputs = new ItemStack[5][3];
+        ItemStack[][] flInputs2 = new ItemStack[5][3];
+        ItemStack[] tanks = { GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 132),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 133),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 134),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 120),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 121),
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 122), };
+        ItemStack[] hulls = { CustomItemList.Hull_UEV.get(1), CustomItemList.Hull_UIV.get(1),
+                CustomItemList.Hull_UMV.get(1), CustomItemList.Hull_UXV.get(1), CustomItemList.Hull_MAXV.get(1), };
+
+        for (int i = 0; i < hulls.length; i++) {
+            flInputs[i] = new ItemStack[] { hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(1) };
+            flInputs2[i] = new ItemStack[] { hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(2) };
+        }
+
+        for (int aTier = 10; aTier < 15; aTier++) {
+            GT_Values.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).itemOutputs(inHatches[aTier - 10])
+                    .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
+                    .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
+                    .addTo(sAssemblerRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).itemOutputs(outHatches[aTier - 10])
+                    .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
+                    .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
+                    .addTo(sAssemblerRecipes);
+        }
+
     }
 
     private void registerMachineHulls() {
@@ -1839,7 +2273,7 @@ public class GT_Loader_Machines {
     private void registerAutoclave() {
         CustomItemList.AutoclaveLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10790,
+                        AUTOCLAVE_LuV.ID,
                         "basicmachine.autoclave.tier.06",
                         "Elite Autoclave",
                         6,
@@ -1865,7 +2299,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.AutoclaveZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10791,
+                        AUTOCLAVE_ZPM.ID,
                         "basicmachine.autoclave.tier.07",
                         "Elite Autoclave II",
                         7,
@@ -1891,7 +2325,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.AutoclaveUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10792,
+                        AUTOCLAVE_UV.ID,
                         "basicmachine.autoclave.tier.08",
                         "Ultimate Pressure Cooker",
                         8,
@@ -1917,7 +2351,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.AutoclaveUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10793,
+                        AUTOCLAVE_UHV.ID,
                         "basicmachine.autoclave.tier.09",
                         "Epic Pressure Cooker",
                         9,
@@ -1943,7 +2377,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.AutoclaveUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10794,
+                        AUTOCLAVE_UEV.ID,
                         "basicmachine.autoclave.tier.10",
                         "Epic Pressure Cooker II",
                         10,
@@ -1969,7 +2403,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.AutoclaveUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10795,
+                        AUTOCLAVE_UIV.ID,
                         "basicmachine.autoclave.tier.11",
                         "Epic Pressure Cooker III",
                         11,
@@ -1995,7 +2429,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.AutoclaveUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10796,
+                        AUTOCLAVE_UMV.ID,
                         "basicmachine.autoclave.tier.12",
                         "Epic Pressure Cooker IV",
                         12,
@@ -2021,9 +2455,10 @@ public class GT_Loader_Machines {
     }
 
     private void registerBendingMachine() {
+
         CustomItemList.BendingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10800,
+                        BENDING_MACHINE_LuV.ID,
                         "basicmachine.bender.tier.06",
                         "Elite Bending Machine",
                         6,
@@ -2048,7 +2483,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.BendingMachineZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10801,
+                        BENDING_MACHINE_ZPM.ID,
                         "basicmachine.bender.tier.07",
                         "Elite Bending Machine II",
                         7,
@@ -2073,7 +2508,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.BendingMachineUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10802,
+                        BENDING_MACHINE_UV.ID,
                         "basicmachine.bender.tier.08",
                         "Ultimate Bending Unit",
                         8,
@@ -2098,7 +2533,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.BendingMachineUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10803,
+                        BENDING_MACHINE_UHV.ID,
                         "basicmachine.bender.tier.09",
                         "Epic Bending Unit",
                         9,
@@ -2123,7 +2558,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.BendingMachineUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10804,
+                        BENDING_MACHINE_UEV.ID,
                         "basicmachine.bender.tier.10",
                         "Epic Bending Unit II",
                         10,
@@ -2148,7 +2583,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.BendingMachineUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10805,
+                        BENDING_MACHINE_UIV.ID,
                         "basicmachine.bender.tier.11",
                         "Epic Bending Unit III",
                         11,
@@ -2173,7 +2608,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.BendingMachineUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10806,
+                        BENDING_MACHINE_UMV.ID,
                         "basicmachine.bender.tier.12",
                         "Epic Bending Unit IV",
                         12,
@@ -2195,12 +2630,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerCompressor() {
+
         CustomItemList.CompressorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10810,
+                        COMPRESSOR_LuV.ID,
                         "basicmachine.compressor.tier.06",
                         "Elite Compressor",
                         6,
@@ -2224,7 +2661,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CompressorZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10811,
+                        COMPRESSOR_ZPM.ID,
                         "basicmachine.compressor.tier.07",
                         "Elite Compressor II",
                         7,
@@ -2248,7 +2685,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CompressorUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10812,
+                        COMPRESSOR_UV.ID,
                         "basicmachine.compressor.tier.08",
                         "Ultimate Matter Constrictor",
                         8,
@@ -2272,7 +2709,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CompressorUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10813,
+                        COMPRESSOR_UHV.ID,
                         "basicmachine.compressor.tier.09",
                         "Epic Matter Constrictor",
                         9,
@@ -2296,7 +2733,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CompressorUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10814,
+                        COMPRESSOR_UEV.ID,
                         "basicmachine.compressor.tier.10",
                         "Epic Matter Constrictor II",
                         10,
@@ -2320,7 +2757,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CompressorUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10815,
+                        COMPRESSOR_UIV.ID,
                         "basicmachine.compressor.tier.11",
                         "Epic Matter Constrictor III",
                         11,
@@ -2344,7 +2781,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CompressorUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10816,
+                        COMPRESSOR_UMV.ID,
                         "basicmachine.compressor.tier.12",
                         "Epic Matter Constrictor IV",
                         12,
@@ -2365,12 +2802,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerCuttingMachine() {
+
         CustomItemList.CuttingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10820,
+                        CUTTING_MACHINE_LuV.ID,
                         "basicmachine.cutter.tier.06",
                         "Elite Cutting Machine",
                         6,
@@ -2397,7 +2836,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CuttingMachineZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10821,
+                        CUTTING_MACHINE_ZPM.ID,
                         "basicmachine.cutter.tier.07",
                         "Elite Cutting Machine II",
                         7,
@@ -2424,7 +2863,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CuttingMachineUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10822,
+                        CUTTING_MACHINE_UV.ID,
                         "basicmachine.cutter.tier.08",
                         "Ultimate Object Divider",
                         8,
@@ -2451,7 +2890,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CuttingMachineUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10823,
+                        CUTTING_MACHINE_UHV.ID,
                         "basicmachine.cutter.tier.09",
                         "Epic Object Divider",
                         9,
@@ -2478,7 +2917,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CuttingMachineUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10824,
+                        CUTTING_MACHINE_UEV.ID,
                         "basicmachine.cutter.tier.10",
                         "Epic Object Divider II",
                         10,
@@ -2505,7 +2944,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CuttingMachineUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10825,
+                        CUTTING_MACHINE_UIV.ID,
                         "basicmachine.cutter.tier.11",
                         "Epic Object Divider III",
                         11,
@@ -2532,7 +2971,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CuttingMachineUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10826,
+                        CUTTING_MACHINE_UMV.ID,
                         "basicmachine.cutter.tier.12",
                         "Epic Object Divider IV",
                         12,
@@ -2556,12 +2995,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B',
                                 OreDictNames.craftingDiamondBlade }).getStackForm(1L));
+
     }
 
     private void registerDistillery() {
+
         CustomItemList.DistilleryLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10830,
+                        DISTILLERY_LuV.ID,
                         "basicmachine.distillery.tier.06",
                         "Elite Distillery",
                         6,
@@ -2587,7 +3028,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.DistilleryZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10831,
+                        DISTILLERY_ZPM.ID,
                         "basicmachine.distillery.tier.07",
                         "Elite Distillery II",
                         7,
@@ -2613,7 +3054,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.DistilleryUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10832,
+                        DISTILLERY_UV.ID,
                         "basicmachine.distillery.tier.08",
                         "Ultimate Fraction Splitter",
                         8,
@@ -2639,7 +3080,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.DistilleryUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10833,
+                        DISTILLERY_UHV.ID,
                         "basicmachine.distillery.tier.09",
                         "Epic Fraction Splitter",
                         9,
@@ -2665,7 +3106,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.DistilleryUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10834,
+                        DISTILLERY_UEV.ID,
                         "basicmachine.distillery.tier.10",
                         "Epic Fraction Splitter II",
                         10,
@@ -2691,7 +3132,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.DistilleryUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10835,
+                        DISTILLERY_UIV.ID,
                         "basicmachine.distillery.tier.11",
                         "Epic Fraction Splitter III",
                         11,
@@ -2717,7 +3158,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.DistilleryUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10836,
+                        DISTILLERY_UMV.ID,
                         "basicmachine.distillery.tier.12",
                         "Epic Fraction Splitter IV",
                         12,
@@ -2740,12 +3181,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
+
     }
 
     private void registerElectricFurnace() {
+
         CustomItemList.ElectricFurnaceLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10840,
+                        ELECTRIC_FURNACE_LuV.ID,
                         "basicmachine.e_furnace.tier.06",
                         "Elite Electric Furnace",
                         6,
@@ -2769,7 +3212,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectricFurnaceZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10841,
+                        ELECTRIC_FURNACE_ZPM.ID,
                         "basicmachine.e_furnace.tier.07",
                         "Elite Electric Furnace II",
                         7,
@@ -2793,7 +3236,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectricFurnaceUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10842,
+                        ELECTRIC_FURNACE_UV.ID,
                         "basicmachine.e_furnace.tier.08",
                         "Ultimate Atom Stimulator",
                         8,
@@ -2817,7 +3260,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectricFurnaceUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10843,
+                        ELECTRIC_FURNACE_UHV.ID,
                         "basicmachine.e_furnace.tier.09",
                         "Epic Atom Stimulator",
                         9,
@@ -2841,7 +3284,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectricFurnaceUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10844,
+                        ELECTRIC_FURNACE_UEV.ID,
                         "basicmachine.e_furnace.tier.10",
                         "Epic Atom Stimulator II",
                         10,
@@ -2865,7 +3308,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectricFurnaceUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10845,
+                        ELECTRIC_FURNACE_UIV.ID,
                         "basicmachine.e_furnace.tier.11",
                         "Epic Atom Stimulator III",
                         11,
@@ -2889,7 +3332,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectricFurnaceUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10846,
+                        ELECTRIC_FURNACE_UMV.ID,
                         "basicmachine.e_furnace.tier.12",
                         "Epic Atom Stimulator IV",
                         12,
@@ -2910,12 +3353,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
+
     }
 
     private void registerElectrolyzer() {
+
         CustomItemList.ElectrolyzerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10850,
+                        ELECTROLYZER_LuV.ID,
                         "basicmachine.electrolyzer.tier.06",
                         "Elite Electrolyzer",
                         6,
@@ -2941,7 +3386,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectrolyzerZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10851,
+                        ELECTROLYZER_ZPM.ID,
                         "basicmachine.electrolyzer.tier.07",
                         "Elite Electrolyzer II",
                         7,
@@ -2967,7 +3412,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectrolyzerUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10852,
+                        ELECTROLYZER_UV.ID,
                         "basicmachine.electrolyzer.tier.08",
                         "Ultimate Ionizer",
                         8,
@@ -2993,7 +3438,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectrolyzerUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10853,
+                        ELECTROLYZER_UHV.ID,
                         "basicmachine.electrolyzer.tier.09",
                         "Epic Ionizer",
                         9,
@@ -3019,7 +3464,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectrolyzerUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10854,
+                        ELECTROLYZER_UEV.ID,
                         "basicmachine.electrolyzer.tier.10",
                         "Epic Ionizer II",
                         10,
@@ -3045,7 +3490,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectrolyzerUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10855,
+                        ELECTROLYZER_UIV.ID,
                         "basicmachine.electrolyzer.tier.11",
                         "Epic Ionizer III",
                         11,
@@ -3071,7 +3516,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectrolyzerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10856,
+                        ELECTROLYZER_UMV.ID,
                         "basicmachine.electrolyzer.tier.12",
                         "Epic Ionizer IV",
                         12,
@@ -3094,12 +3539,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'I',
                                 OrePrefixes.wireGt04.get(Materials.Infinity), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
+
     }
 
     private void registerElectromagneticSeparator() {
+
         CustomItemList.ElectromagneticSeparatorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10860,
+                        ELECTROMAGNETIC_SEPARATOR_LuV.ID,
                         "basicmachine.electromagneticseparator.tier.06",
                         "Elite Electromagnetic Separator",
                         6,
@@ -3125,7 +3572,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectromagneticSeparatorZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10861,
+                        ELECTROMAGNETIC_SEPARATOR_ZPM.ID,
                         "basicmachine.electromagneticseparator.tier.07",
                         "Elite Electromagnetic Separator II",
                         7,
@@ -3151,7 +3598,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectromagneticSeparatorUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10862,
+                        ELECTROMAGNETIC_SEPARATOR_UV.ID,
                         "basicmachine.electromagneticseparator.tier.08",
                         "Ultimate Magnetar Separator",
                         8,
@@ -3177,7 +3624,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectromagneticSeparatorUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10863,
+                        ELECTROMAGNETIC_SEPARATOR_UHV.ID,
                         "basicmachine.electromagneticseparator.tier.09",
                         "Epic Magnetar Separator",
                         9,
@@ -3203,7 +3650,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectromagneticSeparatorUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10864,
+                        ELECTROMAGNETIC_SEPARATOR_UEV.ID,
                         "basicmachine.electromagneticseparator.tier.10",
                         "Epic Magnetar Separator II",
                         10,
@@ -3229,7 +3676,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectromagneticSeparatorUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10865,
+                        ELECTROMAGNETIC_SEPARATOR_UIV.ID,
                         "basicmachine.electromagneticseparator.tier.11",
                         "Epic Magnetar Separator III",
                         11,
@@ -3255,7 +3702,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ElectromagneticSeparatorUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10866,
+                        ELECTROMAGNETIC_SEPARATOR_UMV.ID,
                         "basicmachine.electromagneticseparator.tier.12",
                         "Epic Magnetar Separator IV",
                         12,
@@ -3278,12 +3725,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerExtractor() {
+
         CustomItemList.ExtractorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10870,
+                        EXTRACTOR_LuV.ID,
                         "basicmachine.extractor.tier.06",
                         "Elite Extractor",
                         6,
@@ -3309,7 +3758,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtractorZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10871,
+                        EXTRACTOR_ZPM.ID,
                         "basicmachine.extractor.tier.07",
                         "Elite Extractor II",
                         7,
@@ -3335,7 +3784,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtractorUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10872,
+                        EXTRACTOR_UV.ID,
                         "basicmachine.extractor.tier.08",
                         "Ultimate Extractinator",
                         8,
@@ -3361,7 +3810,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtractorUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10873,
+                        EXTRACTOR_UHV.ID,
                         "basicmachine.extractor.tier.09",
                         "Epic Extractinator",
                         9,
@@ -3387,7 +3836,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtractorUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10874,
+                        EXTRACTOR_UEV.ID,
                         "basicmachine.extractor.tier.10",
                         "Epic Extractinator II",
                         10,
@@ -3413,7 +3862,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtractorUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10875,
+                        EXTRACTOR_UIV.ID,
                         "basicmachine.extractor.tier.11",
                         "Epic Extractinator III",
                         11,
@@ -3439,7 +3888,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtractorUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10876,
+                        EXTRACTOR_UMV.ID,
                         "basicmachine.extractor.tier.12",
                         "Epic Extractinator IV",
                         12,
@@ -3462,12 +3911,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() }).getStackForm(1L));
+
     }
 
     private void registerExtruder() {
+
         CustomItemList.ExtruderLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10880,
+                        EXTRUDER_LuV.ID,
                         "basicmachine.extruder.tier.06",
                         "Elite Extruder",
                         6,
@@ -3492,7 +3943,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtruderZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10881,
+                        EXTRUDER_ZPM.ID,
                         "basicmachine.extruder.tier.07",
                         "Elite Extruder II",
                         7,
@@ -3517,7 +3968,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtruderUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10882,
+                        EXTRUDER_UV.ID,
                         "basicmachine.extruder.tier.08",
                         "Ultimate Shape Driver",
                         8,
@@ -3542,7 +3993,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtruderUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10883,
+                        EXTRUDER_UHV.ID,
                         "basicmachine.extruder.tier.09",
                         "Epic Shape Driver",
                         9,
@@ -3567,7 +4018,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtruderUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10884,
+                        EXTRUDER_UEV.ID,
                         "basicmachine.extruder.tier.10",
                         "Epic Shape Driver II",
                         10,
@@ -3592,7 +4043,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtruderUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10885,
+                        EXTRUDER_UIV.ID,
                         "basicmachine.extruder.tier.11",
                         "Epic Shape Driver III",
                         11,
@@ -3617,7 +4068,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ExtruderUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10886,
+                        EXTRUDER_UMV.ID,
                         "basicmachine.extruder.tier.12",
                         "Epic Shape Driver IV",
                         12,
@@ -3639,12 +4090,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'P',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getPipe(), 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
+
     }
 
     private void registerFluidSolidifier() {
+
         CustomItemList.FluidSolidifierLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10890,
+                        FLUID_SOLIDIFIER_LuV.ID,
                         "basicmachine.fluidsolidifier.tier.06",
                         "Elite Fluid Solidifier",
                         6,
@@ -3670,7 +4123,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidSolidifierZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10891,
+                        FLUID_SOLIDIFIER_ZPM.ID,
                         "basicmachine.fluidsolidifier.tier.07",
                         "Elite Fluid Solidifier II",
                         7,
@@ -3696,7 +4149,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidSolidifierUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10892,
+                        FLUID_SOLIDIFIER_UV.ID,
                         "basicmachine.fluidsolidifier.tier.08",
                         "Ultimate Fluid Petrificator",
                         8,
@@ -3722,7 +4175,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidSolidifierUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10893,
+                        FLUID_SOLIDIFIER_UHV.ID,
                         "basicmachine.fluidsolidifier.tier.09",
                         "Epic Fluid Petrificator",
                         9,
@@ -3748,7 +4201,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidSolidifierUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10894,
+                        FLUID_SOLIDIFIER_UEV.ID,
                         "basicmachine.fluidsolidifier.tier.10",
                         "Epic Fluid Petrificator II",
                         10,
@@ -3774,7 +4227,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidSolidifierUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10895,
+                        FLUID_SOLIDIFIER_UIV.ID,
                         "basicmachine.fluidsolidifier.tier.11",
                         "Epic Fluid Petrificator III",
                         11,
@@ -3800,7 +4253,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidSolidifierUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10896,
+                        FLUID_SOLIDIFIER_UMV.ID,
                         "basicmachine.fluidsolidifier.tier.12",
                         "Epic Fluid Petrificator IV",
                         12,
@@ -3823,12 +4276,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B', OreDictNames.craftingChest })
                                         .getStackForm(1L));
+
     }
 
     private void registerFormingPress() {
+
         CustomItemList.FormingPressLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10900,
+                        FORMING_PRESS_LuV.ID,
                         "basicmachine.press.tier.06",
                         "Elite Forming Press",
                         6,
@@ -3852,7 +4307,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FormingPressZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10901,
+                        FORMING_PRESS_ZPM.ID,
                         "basicmachine.press.tier.07",
                         "Elite Forming Press II",
                         7,
@@ -3876,7 +4331,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FormingPressUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10902,
+                        FORMING_PRESS_UV.ID,
                         "basicmachine.press.tier.08",
                         "Ultimate Surface Shifter",
                         8,
@@ -3900,7 +4355,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FormingPressUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10903,
+                        FORMING_PRESS_UHV.ID,
                         "basicmachine.press.tier.09",
                         "Epic Surface Shifter",
                         9,
@@ -3924,7 +4379,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FormingPressUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10904,
+                        FORMING_PRESS_UEV.ID,
                         "basicmachine.press.tier.10",
                         "Epic Surface Shifter II",
                         10,
@@ -3948,7 +4403,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FormingPressUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10905,
+                        FORMING_PRESS_UIV.ID,
                         "basicmachine.press.tier.11",
                         "Epic Surface Shifter III",
                         11,
@@ -3972,7 +4427,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FormingPressUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10906,
+                        FORMING_PRESS_UMV.ID,
                         "basicmachine.press.tier.12",
                         "Epic Surface Shifter IV",
                         12,
@@ -3993,12 +4448,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerForgeHammer() {
+
         CustomItemList.ForgeHammerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10910,
+                        FORGE_HAMMER_LuV.ID,
                         "basicmachine.hammer.tier.06",
                         "Elite Forge Hammer",
                         6,
@@ -4024,7 +4481,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ForgeHammerZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10911,
+                        FORGE_HAMMER_ZPM.ID,
                         "basicmachine.hammer.tier.07",
                         "Elite Forge Hammer II",
                         7,
@@ -4050,7 +4507,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ForgeHammerUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10912,
+                        FORGE_HAMMER_UV.ID,
                         "basicmachine.hammer.tier.08",
                         "Ultimate Impact Modulator",
                         8,
@@ -4076,7 +4533,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ForgeHammerUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10913,
+                        FORGE_HAMMER_UHV.ID,
                         "basicmachine.hammer.tier.09",
                         "Epic Impact Modulator",
                         9,
@@ -4102,7 +4559,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ForgeHammerUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10914,
+                        FORGE_HAMMER_UEV.ID,
                         "basicmachine.hammer.tier.10",
                         "Epic Impact Modulator II",
                         10,
@@ -4128,7 +4585,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ForgeHammerUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10915,
+                        FORGE_HAMMER_UIV.ID,
                         "basicmachine.hammer.tier.11",
                         "Epic Impact Modulator III",
                         11,
@@ -4154,7 +4611,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ForgeHammerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10916,
+                        FORGE_HAMMER_UMV.ID,
                         "basicmachine.hammer.tier.12",
                         "Epic Impact Modulator IV",
                         12,
@@ -4177,12 +4634,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'O',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil(), 'A', OreDictNames.craftingAnvil })
                                         .getStackForm(1L));
+
     }
 
     private void registerLathe() {
+
         CustomItemList.LatheLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10920,
+                        LATHE_LuV.ID,
                         "basicmachine.lathe.tier.06",
                         "Elite Lathe",
                         6,
@@ -4208,7 +4667,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.LatheZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10921,
+                        LATHE_ZPM.ID,
                         "basicmachine.lathe.tier.07",
                         "Elite Lathe II",
                         7,
@@ -4234,7 +4693,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.LatheUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10922,
+                        LATHE_UV.ID,
                         "basicmachine.lathe.tier.08",
                         "Ultimate Turn-O-Matic",
                         8,
@@ -4260,7 +4719,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.LatheUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10923,
+                        LATHE_UHV.ID,
                         "basicmachine.lathe.tier.09",
                         "Epic Turn-O-Matic",
                         9,
@@ -4286,7 +4745,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.LatheUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10924,
+                        LATHE_UEV.ID,
                         "basicmachine.lathe.tier.10",
                         "Epic Turn-O-Matic II",
                         10,
@@ -4312,7 +4771,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.LatheUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10925,
+                        LATHE_UIV.ID,
                         "basicmachine.lathe.tier.11",
                         "Epic Turn-O-Matic III",
                         11,
@@ -4338,7 +4797,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.LatheUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10926,
+                        LATHE_UMV.ID,
                         "basicmachine.lathe.tier.12",
                         "Epic Turn-O-Matic IV",
                         12,
@@ -4364,9 +4823,10 @@ public class GT_Loader_Machines {
     }
 
     private void registerPrecisionLaserEngraver() {
+
         CustomItemList.PrecisionLaserEngraverLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10930,
+                        PRECISION_LASER_ENGRAVER_LuV.ID,
                         "basicmachine.laserengraver.tier.06",
                         "Elite Precision Laser Engraver",
                         6,
@@ -4391,7 +4851,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PrecisionLaserEngraverZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10931,
+                        PRECISION_LASER_ENGRAVER_ZPM.ID,
                         "basicmachine.laserengraver.tier.07",
                         "Elite Precision Laser Engraver II",
                         7,
@@ -4416,7 +4876,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PrecisionLaserEngraverUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10932,
+                        PRECISION_LASER_ENGRAVER_UV.ID,
                         "basicmachine.laserengraver.tier.08",
                         "Ultimate Exact Photon Cannon",
                         8,
@@ -4441,7 +4901,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PrecisionLaserEngraverUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10933,
+                        PRECISION_LASER_ENGRAVER_UHV.ID,
                         "basicmachine.laserengraver.tier.09",
                         "Epic Exact Photon Cannon",
                         9,
@@ -4466,7 +4926,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PrecisionLaserEngraverUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10934,
+                        PRECISION_LASER_ENGRAVER_UEV.ID,
                         "basicmachine.laserengraver.tier.10",
                         "Epic Exact Photon Cannon II",
                         10,
@@ -4491,7 +4951,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PrecisionLaserEngraverUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10935,
+                        PRECISION_LASER_ENGRAVER_UIV.ID,
                         "basicmachine.laserengraver.tier.11",
                         "Epic Exact Photon Cannon III",
                         11,
@@ -4516,7 +4976,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PrecisionLaserEngraverUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10936,
+                        PRECISION_LASER_ENGRAVER_UMV.ID,
                         "basicmachine.laserengraver.tier.12",
                         "Epic Exact Photon Cannon IV",
                         12,
@@ -4538,12 +4998,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerMacerator() {
+
         CustomItemList.MaceratorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10940,
+                        MACERATOR_LuV.ID,
                         "basicmachine.macerator.tier.06",
                         "Elite Pulverizer",
                         6,
@@ -4569,7 +5031,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MaceratorZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10941,
+                        MACERATOR_ZPM.ID,
                         "basicmachine.macerator.tier.07",
                         "Elite Pulverizer II",
                         7,
@@ -4595,7 +5057,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MaceratorUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10942,
+                        MACERATOR_UV.ID,
                         "basicmachine.macerator.tier.08",
                         "Ultimate Shape Eliminator",
                         8,
@@ -4621,7 +5083,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MaceratorUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10943,
+                        MACERATOR_UHV.ID,
                         "basicmachine.macerator.tier.09",
                         "Epic Shape Eliminator",
                         9,
@@ -4647,7 +5109,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MaceratorUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10944,
+                        MACERATOR_UEV.ID,
                         "basicmachine.macerator.tier.10",
                         "Epic Shape Eliminator II",
                         10,
@@ -4673,7 +5135,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MaceratorUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10945,
+                        MACERATOR_UIV.ID,
                         "basicmachine.macerator.tier.11",
                         "Epic Shape Eliminator III",
                         11,
@@ -4699,7 +5161,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MaceratorUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10946,
+                        MACERATOR_UMV.ID,
                         "basicmachine.macerator.tier.12",
                         "Epic Shape Eliminator IV",
                         12,
@@ -4722,54 +5184,60 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G', OreDictNames.craftingGrinder })
                                         .getStackForm(1L));
+
     }
 
     private void registerMatterFabricator() {
+
         CustomItemList.MassFabricatorLuV.set(
-                new GT_MetaTileEntity_Massfabricator(10950, "basicmachine.massfab.tier.06", "Elite Mass Fabricator", 6)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Massfabricator(
+                        MATTER_FABRICATOR_LuV.ID,
+                        "basicmachine.massfab.tier.06",
+                        "Elite Mass Fabricator",
+                        6).getStackForm(1L));
         CustomItemList.MassFabricatorZPM.set(
                 new GT_MetaTileEntity_Massfabricator(
-                        10951,
+                        MATTER_FABRICATOR_ZPM.ID,
                         "basicmachine.massfab.tier.07",
                         "Elite Mass Fabricator II",
                         7).getStackForm(1L));
         CustomItemList.MassFabricatorUV.set(
                 new GT_MetaTileEntity_Massfabricator(
-                        10952,
+                        MATTER_FABRICATOR_UV.ID,
                         "basicmachine.massfab.tier.08",
                         "Ultimate Existence Initiator",
                         8).getStackForm(1L));
         CustomItemList.MassFabricatorUHV.set(
                 new GT_MetaTileEntity_Massfabricator(
-                        10953,
+                        MATTER_FABRICATOR_UHV.ID,
                         "basicmachine.massfab.tier.09",
                         "Epic Existence Initiator",
                         9).getStackForm(1L));
         CustomItemList.MassFabricatorUEV.set(
                 new GT_MetaTileEntity_Massfabricator(
-                        10954,
+                        MATTER_FABRICATOR_UEV.ID,
                         "basicmachine.massfab.tier.10",
                         "Epic Existence Initiator II",
                         10).getStackForm(1L));
         CustomItemList.MassFabricatorUIV.set(
                 new GT_MetaTileEntity_Massfabricator(
-                        10955,
+                        MATTER_FABRICATOR_UIV.ID,
                         "basicmachine.massfab.tier.11",
                         "Epic Existence Initiator III",
                         11).getStackForm(1L));
         CustomItemList.MassFabricatorUMV.set(
                 new GT_MetaTileEntity_Massfabricator(
-                        10956,
+                        MATTER_FABRICATOR_UMV.ID,
                         "basicmachine.massfab.tier.12",
                         "Epic Existence Initiator IV",
                         12).getStackForm(1L));
     }
 
     private void registerMicrowave() {
+
         CustomItemList.MicrowaveLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10960,
+                        MICROWAVE_LuV.ID,
                         "basicmachine.microwave.tier.06",
                         "Elite Microwave",
                         6,
@@ -4795,7 +5263,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MicrowaveZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10961,
+                        MICROWAVE_ZPM.ID,
                         "basicmachine.microwave.tier.07",
                         "Elite Microwave II",
                         7,
@@ -4821,7 +5289,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MicrowaveUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10962,
+                        MICROWAVE_UV.ID,
                         "basicmachine.microwave.tier.08",
                         "Ultimate UFO Engine",
                         8,
@@ -4847,7 +5315,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MicrowaveUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10963,
+                        MICROWAVE_UHV.ID,
                         "basicmachine.microwave.tier.09",
                         "Epic UFO Engine",
                         9,
@@ -4873,7 +5341,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MicrowaveUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10964,
+                        MICROWAVE_UEV.ID,
                         "basicmachine.microwave.tier.10",
                         "Epic UFO Engine II",
                         10,
@@ -4899,7 +5367,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MicrowaveUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10965,
+                        MICROWAVE_UIV.ID,
                         "basicmachine.microwave.tier.11",
                         "Epic UFO Engine III",
                         11,
@@ -4925,7 +5393,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MicrowaveUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10966,
+                        MICROWAVE_UMV.ID,
                         "basicmachine.microwave.tier.12",
                         "Epic UFO Engine IV",
                         12,
@@ -4948,12 +5416,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getWire(), 'L',
                                 OrePrefixes.plateDense.get(Materials.Lead) }).getStackForm(1L));
+
     }
 
     private void registerOreWashingPlant() {
+
         CustomItemList.OreWashingPlantLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10970,
+                        ORE_WASHING_PLANT_LuV.ID,
                         "basicmachine.orewasher.tier.06",
                         "Elite Ore Washing Plant",
                         6,
@@ -4978,7 +5448,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.OreWashingPlantZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10971,
+                        ORE_WASHING_PLANT_ZPM.ID,
                         "basicmachine.orewasher.tier.07",
                         "Elite Ore Washing Plant II",
                         7,
@@ -5004,7 +5474,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.OreWashingPlantUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10972,
+                        ORE_WASHING_PLANT_UV.ID,
                         "basicmachine.orewasher.tier.08",
                         "Ultimate Ore Washing Machine",
                         8,
@@ -5030,7 +5500,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.OreWashingPlantUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10973,
+                        ORE_WASHING_PLANT_UHV.ID,
                         "basicmachine.orewasher.tier.09",
                         "Epic Ore Washing Machine",
                         9,
@@ -5056,7 +5526,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.OreWashingPlantUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10974,
+                        ORE_WASHING_PLANT_UEV.ID,
                         "basicmachine.orewasher.tier.10",
                         "Epic Ore Washing Machine II",
                         10,
@@ -5082,7 +5552,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.OreWashingPlantUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10975,
+                        ORE_WASHING_PLANT_UIV.ID,
                         "basicmachine.orewasher.tier.11",
                         "Epic Ore Washing Machine III",
                         11,
@@ -5108,7 +5578,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.OreWashingPlantUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10976,
+                        ORE_WASHING_PLANT_UMV.ID,
                         "basicmachine.orewasher.tier.12",
                         "Epic Ore Washing Machine IV",
                         12,
@@ -5131,12 +5601,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP }).getStackForm(1L));
+
     }
 
     private void registerPolarizer() {
+
         CustomItemList.PolarizerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10980,
+                        POLARIZER_LuV.ID,
                         "basicmachine.polarizer.tier.06",
                         "Elite Polarizer",
                         6,
@@ -5160,7 +5632,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PolarizerZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10981,
+                        POLARIZER_ZPM.ID,
                         "basicmachine.polarizer.tier.07",
                         "Elite Polarizer II",
                         7,
@@ -5184,7 +5656,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PolarizerUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10982,
+                        POLARIZER_UV.ID,
                         "basicmachine.polarizer.tier.08",
                         "Ultimate Magnetism Inducer",
                         8,
@@ -5208,7 +5680,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PolarizerUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10983,
+                        POLARIZER_UHV.ID,
                         "basicmachine.polarizer.tier.09",
                         "Epic Magnetism Inducer",
                         9,
@@ -5232,7 +5704,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PolarizerUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10984,
+                        POLARIZER_UEV.ID,
                         "basicmachine.polarizer.tier.10",
                         "Epic Magnetism Inducer II",
                         10,
@@ -5256,7 +5728,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PolarizerUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10985,
+                        POLARIZER_UIV.ID,
                         "basicmachine.polarizer.tier.11",
                         "Epic Magnetism Inducer III",
                         11,
@@ -5280,7 +5752,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PolarizerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10986,
+                        POLARIZER_UMV.ID,
                         "basicmachine.polarizer.tier.12",
                         "Epic Magnetism Inducer IV",
                         12,
@@ -5301,12 +5773,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC, 'Z',
                                 OrePrefixes.wireGt08.get(Materials.Osmium), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerRecycler() {
+
         CustomItemList.RecyclerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10990,
+                        RECYCLER_LuV.ID,
                         "basicmachine.recycler.tier.06",
                         "Elite Recycler",
                         6,
@@ -5331,7 +5805,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.RecyclerZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10991,
+                        RECYCLER_ZPM.ID,
                         "basicmachine.recycler.tier.07",
                         "Elite Recycler II",
                         7,
@@ -5356,7 +5830,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.RecyclerUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10992,
+                        RECYCLER_UV.ID,
                         "basicmachine.recycler.tier.08",
                         "Ultimate Scrap-O-Matic",
                         8,
@@ -5381,7 +5855,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.RecyclerUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10993,
+                        RECYCLER_UHV.ID,
                         "basicmachine.recycler.tier.09",
                         "Epic Scrap-O-Matic",
                         9,
@@ -5406,7 +5880,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.RecyclerUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10994,
+                        RECYCLER_UEV.ID,
                         "basicmachine.recycler.tier.10",
                         "Epic Scrap-O-Matic II",
                         10,
@@ -5431,7 +5905,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.RecyclerUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10995,
+                        RECYCLER_UIV.ID,
                         "basicmachine.recycler.tier.11",
                         "Epic Scrap-O-Matic III",
                         11,
@@ -5456,7 +5930,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.RecyclerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        10996,
+                        RECYCLER_UMV.ID,
                         "basicmachine.recycler.tier.12",
                         "Epic Scrap-O-Matic IV",
                         12,
@@ -5478,72 +5952,101 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 OrePrefixes.dust.get(Materials.NetherStar) }).getStackForm(1L));
+
     }
 
     private void registerReplicator() {
+
         CustomItemList.ReplicatorLuV.set(
-                new GT_MetaTileEntity_Replicator(11000, "basicmachine.replicator.tier.06", "Elite Replicator", 6)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Replicator(
+                        MATTER_REPLICATOR_LuV.ID,
+                        "basicmachine.replicator.tier.06",
+                        "Elite Replicator",
+                        6).getStackForm(1L));
         CustomItemList.ReplicatorZPM.set(
-                new GT_MetaTileEntity_Replicator(11001, "basicmachine.replicator.tier.07", "Elite Replicator II", 7)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Replicator(
+                        MATTER_REPLICATOR_ZPM.ID,
+                        "basicmachine.replicator.tier.07",
+                        "Elite Replicator II",
+                        7).getStackForm(1L));
         CustomItemList.ReplicatorUV.set(
                 new GT_MetaTileEntity_Replicator(
-                        11002,
+                        MATTER_REPLICATOR_UV.ID,
                         "basicmachine.replicator.tier.08",
                         "Ultimate Elemental Composer",
                         8).getStackForm(1L));
         CustomItemList.ReplicatorUHV.set(
-                new GT_MetaTileEntity_Replicator(11003, "basicmachine.replicator.tier.09", "Epic Elemental Composer", 9)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Replicator(
+                        MATTER_REPLICATOR_UHV.ID,
+                        "basicmachine.replicator.tier.09",
+                        "Epic Elemental Composer",
+                        9).getStackForm(1L));
         CustomItemList.ReplicatorUEV.set(
                 new GT_MetaTileEntity_Replicator(
-                        11004,
+                        MATTER_REPLICATOR_UEV.ID,
                         "basicmachine.replicator.tier.10",
                         "Epic Elemental Composer II",
                         10).getStackForm(1L));
         CustomItemList.ReplicatorUIV.set(
                 new GT_MetaTileEntity_Replicator(
-                        11005,
+                        MATTER_REPLICATOR_UIV.ID,
                         "basicmachine.replicator.tier.11",
                         "Epic Elemental Composer III",
                         11).getStackForm(1L));
         CustomItemList.ReplicatorUMV.set(
                 new GT_MetaTileEntity_Replicator(
-                        11006,
+                        MATTER_REPLICATOR_UMV.ID,
                         "basicmachine.replicator.tier.12",
                         "Epic Elemental Composer IV",
                         12).getStackForm(1L));
     }
 
     private void registerScanner() {
+
         CustomItemList.ScannerLuV.set(
-                new GT_MetaTileEntity_Scanner(11010, "basicmachine.scanner.tier.06", "Elite Scanner", 6)
+                new GT_MetaTileEntity_Scanner(SCANNER_LuV.ID, "basicmachine.scanner.tier.06", "Elite Scanner", 6)
                         .getStackForm(1L));
         CustomItemList.ScannerZPM.set(
-                new GT_MetaTileEntity_Scanner(11011, "basicmachine.scanner.tier.07", "Elite Scanner II", 7)
+                new GT_MetaTileEntity_Scanner(SCANNER_ZPM.ID, "basicmachine.scanner.tier.07", "Elite Scanner II", 7)
                         .getStackForm(1L));
         CustomItemList.ScannerUV.set(
-                new GT_MetaTileEntity_Scanner(11012, "basicmachine.scanner.tier.08", "Ultimate Electron Microscope", 8)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Scanner(
+                        SCANNER_UV.ID,
+                        "basicmachine.scanner.tier.08",
+                        "Ultimate Electron Microscope",
+                        8).getStackForm(1L));
         CustomItemList.ScannerUHV.set(
-                new GT_MetaTileEntity_Scanner(11013, "basicmachine.scanner.tier.09", "Epic Electron Microscope", 9)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Scanner(
+                        SCANNER_UHV.ID,
+                        "basicmachine.scanner.tier.09",
+                        "Epic Electron Microscope",
+                        9).getStackForm(1L));
         CustomItemList.ScannerUEV.set(
-                new GT_MetaTileEntity_Scanner(11014, "basicmachine.scanner.tier.10", "Epic Electron Microscope II", 10)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Scanner(
+                        SCANNER_UEV.ID,
+                        "basicmachine.scanner.tier.10",
+                        "Epic Electron Microscope II",
+                        10).getStackForm(1L));
         CustomItemList.ScannerUIV.set(
-                new GT_MetaTileEntity_Scanner(11015, "basicmachine.scanner.tier.11", "Epic Electron Microscope III", 11)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Scanner(
+                        SCANNER_UIV.ID,
+                        "basicmachine.scanner.tier.11",
+                        "Epic Electron Microscope III",
+                        11).getStackForm(1L));
         CustomItemList.ScannerUMV.set(
-                new GT_MetaTileEntity_Scanner(11016, "basicmachine.scanner.tier.12", "Epic Electron Microscope IV", 12)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_Scanner(
+                        SCANNER_UMV.ID,
+                        "basicmachine.scanner.tier.12",
+                        "Epic Electron Microscope IV",
+                        12).getStackForm(1L));
+
     }
 
     private void registerSiftingMachine() {
+
         CustomItemList.SiftingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11020,
+                        SIFTING_MACHINE_LuV.ID,
                         "basicmachine.sifter.tier.06",
                         "Elite Sifting Machine",
                         6,
@@ -5567,7 +6070,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SiftingMachineZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11021,
+                        SIFTING_MACHINE_ZPM.ID,
                         "basicmachine.sifter.tier.07",
                         "Elite Sifting Machine II",
                         7,
@@ -5591,7 +6094,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SiftingMachineUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11022,
+                        SIFTING_MACHINE_UV.ID,
                         "basicmachine.sifter.tier.08",
                         "Ultimate Pulsation Filter",
                         8,
@@ -5615,7 +6118,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SiftingMachineUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11023,
+                        SIFTING_MACHINE_UHV.ID,
                         "basicmachine.sifter.tier.09",
                         "Epic Pulsation Filter",
                         9,
@@ -5639,7 +6142,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SiftingMachineUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11024,
+                        SIFTING_MACHINE_UEV.ID,
                         "basicmachine.sifter.tier.10",
                         "Epic Pulsation Filter II",
                         10,
@@ -5663,7 +6166,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SiftingMachineUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11025,
+                        SIFTING_MACHINE_UIV.ID,
                         "basicmachine.sifter.tier.11",
                         "Epic Pulsation Filter III",
                         11,
@@ -5687,7 +6190,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SiftingMachineUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11026,
+                        SIFTING_MACHINE_UMV.ID,
                         "basicmachine.sifter.tier.12",
                         "Epic Pulsation Filter IV",
                         12,
@@ -5708,12 +6211,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'F', OreDictNames.craftingFilter,
                                 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerSlicingMachine() {
+
         CustomItemList.SlicingMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11028,
+                        SLICING_MACHINE_LuV.ID,
                         "basicmachine.slicer.tier.06",
                         "Elite Slicing Machine",
                         6,
@@ -5738,7 +6243,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SlicingMachineZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11029,
+                        SLICING_MACHINE_ZPM.ID,
                         "basicmachine.slicer.tier.07",
                         "Elite Slicing Machine II",
                         7,
@@ -5763,7 +6268,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SlicingMachineUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11030,
+                        SLICING_MACHINE_UV.ID,
                         "basicmachine.slicer.tier.08",
                         "Ultimate Quantum Slicer",
                         8,
@@ -5788,7 +6293,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SlicingMachineUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11033,
+                        SLICING_MACHINE_UHV.ID,
                         "basicmachine.slicer.tier.09",
                         "Epic Quantum Slicer",
                         9,
@@ -5813,7 +6318,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SlicingMachineUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11034,
+                        SLICING_MACHINE_UEV.ID,
                         "basicmachine.slicer.tier.10",
                         "Epic Quantum Slicer II",
                         10,
@@ -5838,7 +6343,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SlicingMachineUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11035,
+                        SLICING_MACHINE_UIV.ID,
                         "basicmachine.slicer.tier.11",
                         "Epic Quantum Slicer III",
                         11,
@@ -5863,7 +6368,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.SlicingMachineUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11036,
+                        SLICING_MACHINE_UMV.ID,
                         "basicmachine.slicer.tier.12",
                         "Epic Quantum Slicer IV",
                         12,
@@ -5885,12 +6390,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerThermalCentrifuge() {
+
         CustomItemList.ThermalCentrifugeLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11040,
+                        THERMAL_CENTRIFUGE_LuV.ID,
                         "basicmachine.thermalcentrifuge.tier.06",
                         "Elite Thermal Centrifuge",
                         6,
@@ -5915,7 +6422,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ThermalCentrifugeZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11041,
+                        THERMAL_CENTRIFUGE_ZPM.ID,
                         "basicmachine.thermalcentrifuge.tier.07",
                         "Elite Thermal Centrifuge II",
                         7,
@@ -5940,7 +6447,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ThermalCentrifugeUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11042,
+                        THERMAL_CENTRIFUGE_UV.ID,
                         "basicmachine.thermalcentrifuge.tier.08",
                         "Ultimate Fire Cyclone",
                         8,
@@ -5965,7 +6472,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ThermalCentrifugeUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11043,
+                        THERMAL_CENTRIFUGE_UHV.ID,
                         "basicmachine.thermalcentrifuge.tier.09",
                         "Epic Fire Cyclone",
                         9,
@@ -5990,7 +6497,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ThermalCentrifugeUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11044,
+                        THERMAL_CENTRIFUGE_UEV.ID,
                         "basicmachine.thermalcentrifuge.tier.10",
                         "Epic Fire Cyclone II",
                         10,
@@ -6015,7 +6522,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ThermalCentrifugeUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11045,
+                        THERMAL_CENTRIFUGE_UIV.ID,
                         "basicmachine.thermalcentrifuge.tier.11",
                         "Epic Fire Cyclone III",
                         11,
@@ -6040,7 +6547,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ThermalCentrifugeUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11046,
+                        THERMAL_CENTRIFUGE_UMV.ID,
                         "basicmachine.thermalcentrifuge.tier.12",
                         "Epic Fire Cyclone IV",
                         12,
@@ -6062,12 +6569,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'O',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() }).getStackForm(1L));
+
     }
 
     private void registerWiremill() {
+
         CustomItemList.WiremillLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11050,
+                        WIREMILL_LuV.ID,
                         "basicmachine.wiremill.tier.06",
                         "Elite Wiremill",
                         6,
@@ -6091,7 +6600,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WiremillZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11051,
+                        WIREMILL_ZPM.ID,
                         "basicmachine.wiremill.tier.07",
                         "Elite Wiremill II",
                         7,
@@ -6115,7 +6624,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WiremillUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11052,
+                        WIREMILL_UV.ID,
                         "basicmachine.wiremill.tier.08",
                         "Ultimate Wire Transfigurator",
                         8,
@@ -6139,7 +6648,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WiremillUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11053,
+                        WIREMILL_UHV.ID,
                         "basicmachine.wiremill.tier.09",
                         "Epic Wire Transfigurator",
                         9,
@@ -6163,7 +6672,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WiremillUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11054,
+                        WIREMILL_UEV.ID,
                         "basicmachine.wiremill.tier.10",
                         "Epic Wire Transfigurator II",
                         10,
@@ -6187,7 +6696,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WiremillUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11055,
+                        WIREMILL_UIV.ID,
                         "basicmachine.wiremill.tier.11",
                         "Epic Wire Transfigurator III",
                         11,
@@ -6211,7 +6720,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WiremillUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11056,
+                        WIREMILL_UMV.ID,
                         "basicmachine.wiremill.tier.12",
                         "Epic Wire Transfigurator IV",
                         12,
@@ -6232,19 +6741,25 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerPump() {
+
         CustomItemList.PumpLuV.set(
-                new GT_MetaTileEntity_Pump(11060, "basicmachine.pump.tier.06", "Lake Dislocator", 6).getStackForm(1L));
+                new GT_MetaTileEntity_Pump(PUMP_LuV.ID, "basicmachine.pump.tier.06", "Lake Dislocator", 6)
+                        .getStackForm(1L));
         CustomItemList.PumpZPM.set(
-                new GT_MetaTileEntity_Pump(11061, "basicmachine.pump.tier.07", "Ocean Transposer", 7).getStackForm(1L));
+                new GT_MetaTileEntity_Pump(PUMP_ZPM.ID, "basicmachine.pump.tier.07", "Ocean Transposer", 7)
+                        .getStackForm(1L));
+
     }
 
     private void registerArcFurnace() {
+
         CustomItemList.ArcFurnaceLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11070,
+                        ARC_FURNACE_LuV.ID,
                         "basicmachine.arcfurnace.tier.06",
                         "Elite Arc Furnace",
                         6,
@@ -6269,7 +6784,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ArcFurnaceZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11071,
+                        ARC_FURNACE_ZPM.ID,
                         "basicmachine.arcfurnace.tier.07",
                         "Elite Arc Furnace II",
                         7,
@@ -6294,7 +6809,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ArcFurnaceUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11072,
+                        ARC_FURNACE_UV.ID,
                         "basicmachine.arcfurnace.tier.08",
                         "Ultimate Short Circuit Heater",
                         8,
@@ -6319,7 +6834,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ArcFurnaceUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11073,
+                        ARC_FURNACE_UHV.ID,
                         "basicmachine.arcfurnace.tier.09",
                         "Epic Short Circuit Heater",
                         9,
@@ -6344,7 +6859,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ArcFurnaceUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11074,
+                        ARC_FURNACE_UEV.ID,
                         "basicmachine.arcfurnace.tier.10",
                         "Epic Short Circuit Heater II",
                         10,
@@ -6369,7 +6884,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ArcFurnaceUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11075,
+                        ARC_FURNACE_UIV.ID,
                         "basicmachine.arcfurnace.tier.11",
                         "Epic Short Circuit Heater III",
                         11,
@@ -6394,7 +6909,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ArcFurnaceUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11076,
+                        ARC_FURNACE_UMV.ID,
                         "basicmachine.arcfurnace.tier.12",
                         "Epic Short Circuit Heater IV",
                         12,
@@ -6416,12 +6931,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'G',
                                 OrePrefixes.cell.get(Materials.Graphite) }).getStackForm(1L));
+
     }
 
     private void registerCentrifuge() {
+
         CustomItemList.CentrifugeLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11080,
+                        CENTRIFUGE_LuV.ID,
                         "basicmachine.centrifuge.tier.06",
                         "Elite Centrifuge",
                         6,
@@ -6445,7 +6962,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CentrifugeZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11081,
+                        CENTRIFUGE_ZPM.ID,
                         "basicmachine.centrifuge.tier.07",
                         "Elite Centrifuge II",
                         7,
@@ -6469,7 +6986,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CentrifugeUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11082,
+                        CENTRIFUGE_UV.ID,
                         "basicmachine.centrifuge.tier.08",
                         "Ultimate Molecular Tornado",
                         8,
@@ -6493,7 +7010,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CentrifugeUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11083,
+                        CENTRIFUGE_UHV.ID,
                         "basicmachine.centrifuge.tier.09",
                         "Epic Molecular Tornado",
                         9,
@@ -6517,7 +7034,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CentrifugeUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11084,
+                        CENTRIFUGE_UEV.ID,
                         "basicmachine.centrifuge.tier.10",
                         "Epic Molecular Tornado II",
                         10,
@@ -6541,7 +7058,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CentrifugeUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11085,
+                        CENTRIFUGE_UIV.ID,
                         "basicmachine.centrifuge.tier.11",
                         "Epic Molecular Tornado III",
                         11,
@@ -6565,7 +7082,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CentrifugeUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11086,
+                        CENTRIFUGE_UMV.ID,
                         "basicmachine.centrifuge.tier.12",
                         "Epic Molecular Tornado IV",
                         12,
@@ -6586,12 +7103,14 @@ public class GT_Loader_Machines {
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+
     }
 
     private void registerPlasmaArcFurnace() {
+
         CustomItemList.PlasmaArcFurnaceLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11090,
+                        PLASMA_ARC_FURNACE_LuV.ID,
                         "basicmachine.plasmaarcfurnace.tier.06",
                         "Elite Plasma Arc Furnace",
                         6,
@@ -6617,7 +7136,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PlasmaArcFurnaceZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11091,
+                        PLASMA_ARC_FURNACE_ZPM.ID,
                         "basicmachine.plasmaarcfurnace.tier.07",
                         "Elite Plasma Arc Furnace II",
                         7,
@@ -6643,7 +7162,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PlasmaArcFurnaceUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11092,
+                        PLASMA_ARC_FURNACE_UV.ID,
                         "basicmachine.plasmaarcfurnace.tier.08",
                         "Ultimate Plasma Discharge Heater",
                         8,
@@ -6669,7 +7188,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PlasmaArcFurnaceUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11093,
+                        PLASMA_ARC_FURNACE_UHV.ID,
                         "basicmachine.plasmaarcfurnace.tier.09",
                         "Epic Plasma Discharge Heater",
                         9,
@@ -6695,7 +7214,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PlasmaArcFurnaceUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11094,
+                        PLASMA_ARC_FURNACE_UEV.ID,
                         "basicmachine.plasmaarcfurnace.tier.10",
                         "Epic Plasma Discharge Heater II",
                         10,
@@ -6721,7 +7240,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PlasmaArcFurnaceUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11095,
+                        PLASMA_ARC_FURNACE_UIV.ID,
                         "basicmachine.plasmaarcfurnace.tier.11",
                         "Epic Plasma Discharge Heater III",
                         11,
@@ -6747,7 +7266,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.PlasmaArcFurnaceUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11096,
+                        PLASMA_ARC_FURNACE_UMV.ID,
                         "basicmachine.plasmaarcfurnace.tier.12",
                         "Epic Plasma Discharge Heater IV",
                         12,
@@ -6775,82 +7294,104 @@ public class GT_Loader_Machines {
     private void registerWorldAccelerator() {
         CustomItemList.AcceleratorLV.set(
                 new GT_MetaTileEntity_WorldAccelerator(
-                        11100,
+                        WORLD_ACCELERATOR_LV.ID,
                         "basicmachine.accelerator.tier.01",
                         "Basic World Accelerator",
                         1).getStackForm(1L));
         CustomItemList.AcceleratorMV.set(
                 new GT_MetaTileEntity_WorldAccelerator(
-                        11101,
+                        WORLD_ACCELERATOR_MV.ID,
                         "basicmachine.accelerator.tier.02",
                         "Advanced World Accelerator",
                         2).getStackForm(1L));
         CustomItemList.AcceleratorHV.set(
                 new GT_MetaTileEntity_WorldAccelerator(
-                        11102,
+                        WORLD_ACCELERATOR_HV.ID,
                         "basicmachine.accelerator.tier.03",
                         "Advanced World Accelerator II",
                         3).getStackForm(1L));
         CustomItemList.AcceleratorEV.set(
                 new GT_MetaTileEntity_WorldAccelerator(
-                        11103,
+                        WORLD_ACCELERATOR_EV.ID,
                         "basicmachine.accelerator.tier.04",
                         "Advanced World Accelerator III",
                         4).getStackForm(1L));
         CustomItemList.AcceleratorIV.set(
                 new GT_MetaTileEntity_WorldAccelerator(
-                        11104,
+                        WORLD_ACCELERATOR_IV.ID,
                         "basicmachine.accelerator.tier.05",
                         "Advanced World Accelerator IV",
                         5).getStackForm(1L));
         CustomItemList.AcceleratorLuV.set(
                 new GT_MetaTileEntity_WorldAccelerator(
-                        11105,
+                        WORLD_ACCELERATOR_LuV.ID,
                         "basicmachine.accelerator.tier.06",
                         "Elite World Accelerator",
                         6).getStackForm(1L));
         CustomItemList.AcceleratorZPM.set(
                 new GT_MetaTileEntity_WorldAccelerator(
-                        11106,
+                        WORLD_ACCELERATOR_ZPM.ID,
                         "basicmachine.accelerator.tier.07",
                         "Elite World Accelerator II",
                         7).getStackForm(1L));
         CustomItemList.AcceleratorUV.set(
                 new GT_MetaTileEntity_WorldAccelerator(
-                        11107,
+                        WORLD_ACCELERATOR_UV.ID,
                         "basicmachine.accelerator.tier.08",
                         "Ultimate Time Anomaly",
                         8).getStackForm(1L));
+
     }
 
     private void registerBrewery() {
+
         CustomItemList.BreweryLuV.set(
-                new GT_MetaTileEntity_PotionBrewer(11120, "basicmachine.brewery.tier.06", "Elite Brewery", 6)
+                new GT_MetaTileEntity_PotionBrewer(BREWERY_LuV.ID, "basicmachine.brewery.tier.06", "Elite Brewery", 6)
                         .getStackForm(1L));
         CustomItemList.BreweryZPM.set(
-                new GT_MetaTileEntity_PotionBrewer(11121, "basicmachine.brewery.tier.07", "Elite Brewery II", 7)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_PotionBrewer(
+                        BREWERY_ZPM.ID,
+                        "basicmachine.brewery.tier.07",
+                        "Elite Brewery II",
+                        7).getStackForm(1L));
         CustomItemList.BreweryUV.set(
-                new GT_MetaTileEntity_PotionBrewer(11122, "basicmachine.brewery.tier.08", "Ultimate Brew Rusher", 8)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_PotionBrewer(
+                        BREWERY_UV.ID,
+                        "basicmachine.brewery.tier.08",
+                        "Ultimate Brew Rusher",
+                        8).getStackForm(1L));
         CustomItemList.BreweryUHV.set(
-                new GT_MetaTileEntity_PotionBrewer(11123, "basicmachine.brewery.tier.09", "Epic Brew Rusher", 9)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_PotionBrewer(
+                        BREWERY_UHV.ID,
+                        "basicmachine.brewery.tier.09",
+                        "Epic Brew Rusher",
+                        9).getStackForm(1L));
         CustomItemList.BreweryUEV.set(
-                new GT_MetaTileEntity_PotionBrewer(11124, "basicmachine.brewery.tier.10", "Epic Brew Rusher II", 10)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_PotionBrewer(
+                        BREWERY_UEV.ID,
+                        "basicmachine.brewery.tier.10",
+                        "Epic Brew Rusher II",
+                        10).getStackForm(1L));
         CustomItemList.BreweryUIV.set(
-                new GT_MetaTileEntity_PotionBrewer(11125, "basicmachine.brewery.tier.11", "Epic Brew Rusher III", 11)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_PotionBrewer(
+                        BREWERY_UIV.ID,
+                        "basicmachine.brewery.tier.11",
+                        "Epic Brew Rusher III",
+                        11).getStackForm(1L));
         CustomItemList.BreweryUMV.set(
-                new GT_MetaTileEntity_PotionBrewer(11126, "basicmachine.brewery.tier.12", "Epic Brew Rusher IV", 12)
-                        .getStackForm(1L));
+                new GT_MetaTileEntity_PotionBrewer(
+                        BREWERY_UMV.ID,
+                        "basicmachine.brewery.tier.12",
+                        "Epic Brew Rusher IV",
+                        12).getStackForm(1L));
+
     }
 
     private void registerCanningMachine() {
+
         CustomItemList.CanningMachineLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11130,
+                        CANNING_MACHINE_LuV.ID,
                         "basicmachine.canner.tier.06",
                         "Elite Canning Machine",
                         6,
@@ -6875,7 +7416,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CanningMachineZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11131,
+                        CANNING_MACHINE_ZPM.ID,
                         "basicmachine.canner.tier.07",
                         "Elite Canning Machine II",
                         7,
@@ -6900,7 +7441,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CanningMachineUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11132,
+                        CANNING_MACHINE_UV.ID,
                         "basicmachine.canner.tier.08",
                         "Ultimate Can Operator",
                         8,
@@ -6925,7 +7466,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CanningMachineUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11133,
+                        CANNING_MACHINE_UHV.ID,
                         "basicmachine.canner.tier.09",
                         "Epic Can Operator",
                         9,
@@ -6950,7 +7491,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CanningMachineUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11134,
+                        CANNING_MACHINE_UEV.ID,
                         "basicmachine.canner.tier.10",
                         "Epic Can Operator II",
                         10,
@@ -6975,7 +7516,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CanningMachineUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11135,
+                        CANNING_MACHINE_UIV.ID,
                         "basicmachine.canner.tier.11",
                         "Epic Can Operator III",
                         11,
@@ -7000,7 +7541,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CanningMachineUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11136,
+                        CANNING_MACHINE_UMV.ID,
                         "basicmachine.canner.tier.12",
                         "Epic Can Operator IV",
                         12,
@@ -7022,12 +7563,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS }).getStackForm(1L));
+
     }
 
     private void registerChemicalBath() {
+
         CustomItemList.ChemicalBathLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11140,
+                        CHEMICAL_BATH_LuV.ID,
                         "basicmachine.chemicalbath.tier.06",
                         "Elite Chemical Bath",
                         6,
@@ -7053,7 +7596,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalBathZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11141,
+                        CHEMICAL_BATH_ZPM.ID,
                         "basicmachine.chemicalbath.tier.07",
                         "Elite Chemical Bath II",
                         7,
@@ -7079,7 +7622,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalBathUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11142,
+                        CHEMICAL_BATH_UV.ID,
                         "basicmachine.chemicalbath.tier.08",
                         "Ultimate Chemical Dunktron",
                         8,
@@ -7105,7 +7648,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalBathUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11143,
+                        CHEMICAL_BATH_UHV.ID,
                         "basicmachine.chemicalbath.tier.09",
                         "Epic Chemical Dunktron",
                         9,
@@ -7131,7 +7674,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalBathUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11144,
+                        CHEMICAL_BATH_UEV.ID,
                         "basicmachine.chemicalbath.tier.10",
                         "Epic Chemical Dunktron II",
                         10,
@@ -7157,7 +7700,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalBathUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11145,
+                        CHEMICAL_BATH_UIV.ID,
                         "basicmachine.chemicalbath.tier.11",
                         "Epic Chemical Dunktron III",
                         11,
@@ -7183,7 +7726,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalBathUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11146,
+                        CHEMICAL_BATH_UMV.ID,
                         "basicmachine.chemicalbath.tier.12",
                         "Epic Chemical Dunktron IV",
                         12,
@@ -7206,12 +7749,14 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS }).getStackForm(1L));
+
     }
 
     private void registerChemicalReactor() {
+
         CustomItemList.ChemicalReactorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11150,
+                        CHEMICAL_REACTOR_LuV.ID,
                         "basicmachine.chemicalreactor.tier.06",
                         "Elite Chemical Reactor",
                         6,
@@ -7232,7 +7777,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalReactorZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11151,
+                        CHEMICAL_REACTOR_ZPM.ID,
                         "basicmachine.chemicalreactor.tier.07",
                         "Elite Chemical Reactor II",
                         7,
@@ -7253,7 +7798,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalReactorUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11152,
+                        CHEMICAL_REACTOR_UV.ID,
                         "basicmachine.chemicalreactor.tier.08",
                         "Ultimate Chemical Perforer",
                         8,
@@ -7274,7 +7819,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalReactorUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11153,
+                        CHEMICAL_REACTOR_UHV.ID,
                         "basicmachine.chemicalreactor.tier.09",
                         "Epic Chemical Performer",
                         9,
@@ -7295,7 +7840,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalReactorUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11154,
+                        CHEMICAL_REACTOR_UEV.ID,
                         "basicmachine.chemicalreactor.tier.10",
                         "Epic Chemical Performer II",
                         10,
@@ -7316,7 +7861,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalReactorUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11155,
+                        CHEMICAL_REACTOR_UIV.ID,
                         "basicmachine.chemicalreactor.tier.11",
                         "Epic Chemical Performer III",
                         11,
@@ -7337,7 +7882,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.ChemicalReactorUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11156,
+                        CHEMICAL_REACTOR_UMV.ID,
                         "basicmachine.chemicalreactor.tier.12",
                         "Epic Chemical Performer IV",
                         12,
@@ -7361,7 +7906,7 @@ public class GT_Loader_Machines {
     private void registerFermenter() {
         CustomItemList.FermenterLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11170,
+                        FERMENTER_LuV.ID,
                         "basicmachine.fermenter.tier.06",
                         "Elite Fermenter",
                         6,
@@ -7382,7 +7927,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FermenterZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11171,
+                        FERMENTER_ZPM.ID,
                         "basicmachine.fermenter.tier.07",
                         "Elite Fermenter II",
                         7,
@@ -7403,7 +7948,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FermenterUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11172,
+                        FERMENTER_UV.ID,
                         "basicmachine.fermenter.tier.08",
                         "Ultimate Fermentation Hastener",
                         8,
@@ -7424,7 +7969,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FermenterUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11173,
+                        FERMENTER_UHV.ID,
                         "basicmachine.fermenter.tier.09",
                         "Epic Fermentation Hastener",
                         9,
@@ -7445,7 +7990,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FermenterUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11174,
+                        FERMENTER_UEV.ID,
                         "basicmachine.fermenter.tier.10",
                         "Epic Fermentation Hastener II",
                         10,
@@ -7466,7 +8011,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FermenterUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11175,
+                        FERMENTER_UIV.ID,
                         "basicmachine.fermenter.tier.11",
                         "Epic Fermentation Hastener III",
                         11,
@@ -7487,7 +8032,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FermenterUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11176,
+                        FERMENTER_UMV.ID,
                         "basicmachine.fermenter.tier.12",
                         "Epic Fermentation Hastener IV",
                         12,
@@ -7510,7 +8055,7 @@ public class GT_Loader_Machines {
     private void registerFluidCanner() {
         CustomItemList.FluidCannerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11180,
+                        FLUID_CANNER_LuV.ID,
                         "basicmachine.fluidcanner.tier.06",
                         "Elite Fluid Canner",
                         6,
@@ -7531,7 +8076,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidCannerZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11181,
+                        FLUID_CANNER_ZPM.ID,
                         "basicmachine.fluidcanner.tier.07",
                         "Elite Fluid Canner II",
                         7,
@@ -7552,7 +8097,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidCannerUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11182,
+                        FLUID_CANNER_UV.ID,
                         "basicmachine.fluidcanner.tier.08",
                         "Ultimate Liquid Can Actuator",
                         8,
@@ -7573,7 +8118,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidCannerUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11183,
+                        FLUID_CANNER_UHV.ID,
                         "basicmachine.fluidcanner.tier.09",
                         "Epic Liquid Can Actuator",
                         9,
@@ -7594,7 +8139,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidCannerUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11184,
+                        FLUID_CANNER_UEV.ID,
                         "basicmachine.fluidcanner.tier.10",
                         "Epic Liquid Can Actuator II",
                         10,
@@ -7615,7 +8160,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidCannerUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11185,
+                        FLUID_CANNER_UIV.ID,
                         "basicmachine.fluidcanner.tier.11",
                         "Epic Liquid Can Actuator III",
                         11,
@@ -7636,7 +8181,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidCannerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11186,
+                        FLUID_CANNER_UMV.ID,
                         "basicmachine.fluidcanner.tier.12",
                         "Epic Liquid Can Actuator IV",
                         12,
@@ -7659,7 +8204,7 @@ public class GT_Loader_Machines {
     private void registerFluidExtractor() {
         CustomItemList.FluidExtractorLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11190,
+                        FLUID_EXTRACTOR_LuV.ID,
                         "basicmachine.fluidextractor.tier.06",
                         "Elite Fluid Extractor",
                         6,
@@ -7680,7 +8225,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidExtractorZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11191,
+                        FLUID_EXTRACTOR_ZPM.ID,
                         "basicmachine.fluidextractor.tier.07",
                         "Elite Fluid Extractor II",
                         7,
@@ -7701,7 +8246,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidExtractorUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11192,
+                        FLUID_EXTRACTOR_UV.ID,
                         "basicmachine.fluidextractor.tier.08",
                         "Ultimate Liquefying Sucker",
                         8,
@@ -7722,7 +8267,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidExtractorUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11193,
+                        FLUID_EXTRACTOR_UHV.ID,
                         "basicmachine.fluidextractor.tier.09",
                         "Epic Liquefying Sucker",
                         9,
@@ -7743,7 +8288,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidExtractorUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11194,
+                        FLUID_EXTRACTOR_UEV.ID,
                         "basicmachine.fluidextractor.tier.10",
                         "Epic Liquefying Sucker II",
                         10,
@@ -7764,7 +8309,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidExtractorUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11195,
+                        FLUID_EXTRACTOR_UIV.ID,
                         "basicmachine.fluidextractor.tier.11",
                         "Epic Liquefying Sucker III",
                         11,
@@ -7785,7 +8330,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidExtractorUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11196,
+                        FLUID_EXTRACTOR_UMV.ID,
                         "basicmachine.fluidextractor.tier.12",
                         "Epic Liquefying Sucker IV",
                         12,
@@ -7808,7 +8353,7 @@ public class GT_Loader_Machines {
     private void registerFluidHeater() {
         CustomItemList.FluidHeaterLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11200,
+                        FLUID_HEATER_LuV.ID,
                         "basicmachine.fluidheater.tier.06",
                         "Elite Fluid Heater",
                         6,
@@ -7829,7 +8374,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidHeaterZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11201,
+                        FLUID_HEATER_ZPM.ID,
                         "basicmachine.fluidheater.tier.07",
                         "Elite Fluid Heater II",
                         7,
@@ -7850,7 +8395,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidHeaterUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11202,
+                        FLUID_HEATER_UV.ID,
                         "basicmachine.fluidheater.tier.08",
                         "Ultimate Heat Infuser",
                         8,
@@ -7871,7 +8416,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidHeaterUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11203,
+                        FLUID_HEATER_UHV.ID,
                         "basicmachine.fluidheater.tier.09",
                         "Epic Heat Infuser",
                         9,
@@ -7892,7 +8437,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidHeaterUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11204,
+                        FLUID_HEATER_UEV.ID,
                         "basicmachine.fluidheater.tier.10",
                         "Epic Heat Infuser II",
                         10,
@@ -7913,7 +8458,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidHeaterUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11205,
+                        FLUID_HEATER_UIV.ID,
                         "basicmachine.fluidheater.tier.11",
                         "Epic Heat Infuser III",
                         11,
@@ -7934,7 +8479,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.FluidHeaterUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11206,
+                        FLUID_HEATER_UMV.ID,
                         "basicmachine.fluidheater.tier.12",
                         "Epic Heat Infuser IV",
                         12,
@@ -7957,7 +8502,7 @@ public class GT_Loader_Machines {
     private void registerMixer() {
         CustomItemList.MixerLuV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11210,
+                        MIXER_LuV.ID,
                         "basicmachine.mixer.tier.06",
                         "Elite Mixer",
                         6,
@@ -7978,7 +8523,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MixerZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11211,
+                        MIXER_ZPM.ID,
                         "basicmachine.mixer.tier.07",
                         "Elite Mixer II",
                         7,
@@ -7999,7 +8544,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MixerUV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11212,
+                        MIXER_UV.ID,
                         "basicmachine.mixer.tier.08",
                         "Ultimate Matter Organizer",
                         8,
@@ -8020,7 +8565,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MixerUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11213,
+                        MIXER_UHV.ID,
                         "basicmachine.mixer.tier.09",
                         "Epic Matter Organizer",
                         9,
@@ -8041,7 +8586,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MixerUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11214,
+                        MIXER_UEV.ID,
                         "basicmachine.mixer.tier.10",
                         "Epic Matter Organizer II",
                         10,
@@ -8062,7 +8607,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MixerUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11215,
+                        MIXER_UIV.ID,
                         "basicmachine.mixer.tier.11",
                         "Epic Matter Organizer III",
                         11,
@@ -8083,7 +8628,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.MixerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        11216,
+                        MIXER_UMV.ID,
                         "basicmachine.mixer.tier.12",
                         "Epic Matter Organizer IV",
                         12,
@@ -8101,13 +8646,12 @@ public class GT_Loader_Machines {
                         SpecialEffects.NONE,
                         "MIXER",
                         null).getStackForm(1L));
-
     }
 
     private void registerTransformer() {
         CustomItemList.Transformer_UEV_UHV.set(
                 new GT_MetaTileEntity_Transformer(
-                        11220,
+                        TRANSFORMER_UEV_UHV.ID,
                         "transformer.tier.09",
                         "Highly Ultimate Transformer",
                         9,
@@ -8115,7 +8659,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Transformer_UIV_UEV.set(
                 new GT_MetaTileEntity_Transformer(
-                        11221,
+                        TRANSFORMER_UIV_UEV.ID,
                         "transformer.tier.10",
                         "Extremely Ultimate Transformer",
                         10,
@@ -8123,7 +8667,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Transformer_UMV_UIV.set(
                 new GT_MetaTileEntity_Transformer(
-                        11222,
+                        TRANSFORMER_UMV_UIV.ID,
                         "transformer.tier.11",
                         "Insanely Ultimate Transformer",
                         11,
@@ -8131,7 +8675,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Transformer_UXV_UMV.set(
                 new GT_MetaTileEntity_Transformer(
-                        11223,
+                        TRANSFORMER_UXV_UMV.ID,
                         "transformer.tier.12",
                         "Mega Ultimate Transformer",
                         12,
@@ -8139,7 +8683,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Transformer_MAX_UXV.set(
                 new GT_MetaTileEntity_Transformer(
-                        11224,
+                        TRANSFORMER_MAX_UXV.ID,
                         "transformer.tier.13",
                         "Extended Mega Ultimate Transformer",
                         13,
@@ -8149,7 +8693,7 @@ public class GT_Loader_Machines {
     private void registerBatteryBuffer4By4() {
         CustomItemList.Battery_Buffer_4by4_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11240,
+                        BATTERY_BUFFER_4_BY_4_UEV.ID,
                         "batterybuffer.16.tier.10",
                         "Extremely Ultimate Battery Buffer",
                         10,
@@ -8158,7 +8702,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_4by4_UIV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11241,
+                        BATTERY_BUFFER_4_BY_4_UIV.ID,
                         "batterybuffer.16.tier.11",
                         "Insanely Ultimate Battery Buffer",
                         11,
@@ -8167,7 +8711,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_4by4_UMV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11242,
+                        BATTERY_BUFFER_4_BY_4_UMV.ID,
                         "batterybuffer.16.tier.12",
                         "Mega Ultimate Battery Buffer",
                         12,
@@ -8176,7 +8720,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_4by4_UXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11243,
+                        BATTERY_BUFFER_4_BY_4_UXV.ID,
                         "batterybuffer.16.tier.13",
                         "Extended Mega Ultimate Battery Buffer",
                         13,
@@ -8185,18 +8729,19 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_4by4_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11245,
+                        BATTERY_BUFFER_4_BY_4_MAX.ID,
                         "batterybuffer.16.tier.14",
                         "Maximum Battery Buffer",
                         14,
                         "",
                         16).getStackForm(1L));
+
     }
 
-    private void registerBatteryBuffer3By3() {
+    private void registerBatteryBuffer3By3(){
         CustomItemList.Battery_Buffer_3by3_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11250,
+                        BATTERY_BUFFER_3_BY_3_UEV.ID,
                         "batterybuffer.09.tier.10",
                         "Extremely Ultimate Battery Buffer",
                         10,
@@ -8205,7 +8750,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_3by3_UIV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11251,
+                        BATTERY_BUFFER_3_BY_3_UIV.ID,
                         "batterybuffer.09.tier.11",
                         "Insanely Ultimate Battery Buffer",
                         11,
@@ -8214,7 +8759,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_3by3_UMV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11252,
+                        BATTERY_BUFFER_3_BY_3_UMV.ID,
                         "batterybuffer.09.tier.12",
                         "Mega Ultimate Battery Buffer",
                         12,
@@ -8223,7 +8768,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_3by3_UXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11253,
+                        BATTERY_BUFFER_3_BY_3_UXV.ID,
                         "batterybuffer.09.tier.13",
                         "Extended Mega Ultimate Battery Buffer",
                         13,
@@ -8232,7 +8777,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_3by3_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11255,
+                        BATTERY_BUFFER_3_BY_3_MAX.ID,
                         "batterybuffer.09.tier.14",
                         "Maximum Battery Buffer",
                         14,
@@ -8243,7 +8788,7 @@ public class GT_Loader_Machines {
     private void registerBatteryBuffer2By2() {
         CustomItemList.Battery_Buffer_2by2_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11260,
+                        BATTERY_BUFFER_2_BY_2_UEV.ID,
                         "batterybuffer.04.tier.10",
                         "Extremely Ultimate Battery Buffer",
                         10,
@@ -8252,7 +8797,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_2by2_UIV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11261,
+                        BATTERY_BUFFER_2_BY_2_UIV.ID,
                         "batterybuffer.04.tier.11",
                         "Insanely Ultimate Battery Buffer",
                         11,
@@ -8261,7 +8806,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_2by2_UMV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11262,
+                        BATTERY_BUFFER_2_BY_2_UMV.ID,
                         "batterybuffer.04.tier.12",
                         "Mega Ultimate Battery Buffer",
                         12,
@@ -8270,7 +8815,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_2by2_UXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11263,
+                        BATTERY_BUFFER_2_BY_2_UXV.ID,
                         "batterybuffer.04.tier.13",
                         "Extended Mega Ultimate Battery Buffer",
                         13,
@@ -8279,7 +8824,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_2by2_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11265,
+                        BATTERY_BUFFER_2_BY_2_MAX.ID,
                         "batterybuffer.04.tier.14",
                         "Maximum Battery Buffer",
                         14,
@@ -8290,7 +8835,7 @@ public class GT_Loader_Machines {
     private void registerBatteryBuffer1By1() {
         CustomItemList.Battery_Buffer_1by1_UEV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11270,
+                        BATTERY_BUFFER_1_BY_1_UEV.ID,
                         "batterybuffer.01.tier.10",
                         "Extremely Ultimate Battery Buffer",
                         10,
@@ -8299,7 +8844,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_1by1_UIV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11271,
+                        BATTERY_BUFFER_1_BY_1_UIV.ID,
                         "batterybuffer.01.tier.11",
                         "Insanely Ultimate Battery Buffer",
                         11,
@@ -8308,7 +8853,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_1by1_UMV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11272,
+                        BATTERY_BUFFER_1_BY_1_UMV.ID,
                         "batterybuffer.01.tier.12",
                         "Mega Ultimate Battery Buffer",
                         12,
@@ -8317,7 +8862,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_1by1_UXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11273,
+                        BATTERY_BUFFER_1_BY_1_UXV.ID,
                         "batterybuffer.01.tier.13",
                         "Extended Mega Ultimate Battery Buffer",
                         13,
@@ -8326,7 +8871,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Buffer_1by1_MAXV.set(
                 new GT_MetaTileEntity_BasicBatteryBuffer(
-                        11275,
+                        BATTERY_BUFFER_1_BY_1_MAX.ID,
                         "batterybuffer.01.tier.14",
                         "Maximum Battery Buffer",
                         14,
@@ -8337,7 +8882,7 @@ public class GT_Loader_Machines {
     private void registerBatteryCharger4By4() {
         CustomItemList.Battery_Charger_4by4_UEV.set(
                 new GT_MetaTileEntity_Charger(
-                        11280,
+                        BATTERY_CHARGER_4_4_UEV.ID,
                         "batterycharger.16.tier.10",
                         "Extremely Ultimate Battery Charger",
                         10,
@@ -8346,7 +8891,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Charger_4by4_UIV.set(
                 new GT_MetaTileEntity_Charger(
-                        11281,
+                        BATTERY_CHARGER_4_4_UIV.ID,
                         "batterycharger.16.tier.11",
                         "Insanely Ultimate Battery Charger",
                         11,
@@ -8355,7 +8900,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Charger_4by4_UMV.set(
                 new GT_MetaTileEntity_Charger(
-                        11282,
+                        BATTERY_CHARGER_4_4_UMV.ID,
                         "batterycharger.16.tier.12",
                         "Mega Ultimate Battery Charger",
                         12,
@@ -8364,7 +8909,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_Charger_4by4_UXV.set(
                 new GT_MetaTileEntity_Charger(
-                        11283,
+                        BATTERY_CHARGER_4_4_UXV.ID,
                         "batterycharger.16.tier.13",
                         "Extended Mega Ultimate Battery Charger",
                         13,
@@ -8372,46 +8917,62 @@ public class GT_Loader_Machines {
                         4).getStackForm(1L));
     }
 
-    private void registerDynamoHatches() {
+    private void registerDynamoHatches(){
         CustomItemList.Hatch_Dynamo_UEV.set(
-                new GT_MetaTileEntity_Hatch_Dynamo(11290, "hatch.dynamo.tier.10", "UEV Dynamo Hatch", 10)
+                new GT_MetaTileEntity_Hatch_Dynamo(
+                        DYNAMO_HATCH_UEV.ID,
+                        "hatch.dynamo.tier.10", "UEV Dynamo Hatch", 10)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Dynamo_UIV.set(
-                new GT_MetaTileEntity_Hatch_Dynamo(11291, "hatch.dynamo.tier.11", "UIV Dynamo Hatch", 11)
+                new GT_MetaTileEntity_Hatch_Dynamo(
+                        DYNAMO_HATCH_UIV.ID,
+                        "hatch.dynamo.tier.11", "UIV Dynamo Hatch", 11)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Dynamo_UMV.set(
-                new GT_MetaTileEntity_Hatch_Dynamo(11292, "hatch.dynamo.tier.12", "UMV Dynamo Hatch", 12)
+                new GT_MetaTileEntity_Hatch_Dynamo(
+                        DYNAMO_HATCH_UMV.ID,
+                        "hatch.dynamo.tier.12", "UMV Dynamo Hatch", 12)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Dynamo_UXV.set(
-                new GT_MetaTileEntity_Hatch_Dynamo(11293, "hatch.dynamo.tier.13", "UXV Dynamo Hatch", 13)
+                new GT_MetaTileEntity_Hatch_Dynamo(
+                        DYNAMO_HATCH_UXV.ID,
+                        "hatch.dynamo.tier.13", "UXV Dynamo Hatch", 13)
                         .getStackForm(1L));
     }
 
     private void registerEnergyHatches() {
         CustomItemList.Hatch_Energy_UEV.set(
-                new GT_MetaTileEntity_Hatch_Energy(11300, "hatch.energy.tier.10", "UEV Energy Hatch", 10)
+                new GT_MetaTileEntity_Hatch_Energy(
+                        ENERGY_HATCH_UEV.ID,
+                        "hatch.energy.tier.10", "UEV Energy Hatch", 10)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Energy_UIV.set(
-                new GT_MetaTileEntity_Hatch_Energy(11301, "hatch.energy.tier.11", "UIV Energy Hatch", 11)
+                new GT_MetaTileEntity_Hatch_Energy(
+                        ENERGY_HATCH_UIV.ID,
+                        "hatch.energy.tier.11", "UIV Energy Hatch", 11)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Energy_UMV.set(
-                new GT_MetaTileEntity_Hatch_Energy(11302, "hatch.energy.tier.12", "UMV Energy Hatch", 12)
+                new GT_MetaTileEntity_Hatch_Energy(
+                        ENERGY_HATCH_UMV.ID,
+                        "hatch.energy.tier.12", "UMV Energy Hatch", 12)
                         .getStackForm(1L));
 
         CustomItemList.Hatch_Energy_UXV.set(
-                new GT_MetaTileEntity_Hatch_Energy(11303, "hatch.energy.tier.13", "UXV Energy Hatch", 13)
+                new GT_MetaTileEntity_Hatch_Energy(
+                        ENERGY_HATCH_UXV.ID,
+                        "hatch.energy.tier.13", "UXV Energy Hatch", 13)
                         .getStackForm(1L));
     }
 
     private void registerWetTransformer() {
         CustomItemList.WetTransformer_LV_ULV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12000,
+                        WET_TRANSFORMER_LV_ULV.ID,
                         "wettransformer.tier.00",
                         "Ultra Low Voltage Power Transformer",
                         0,
@@ -8419,7 +8980,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_MV_LV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12001,
+                        WET_TRANSFORMER_MV_LV.ID,
                         "wetransformer.tier.01",
                         "Low Voltage Power Transformer",
                         1,
@@ -8427,7 +8988,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_HV_MV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12002,
+                        WET_TRANSFORMER_HV_MV.ID,
                         "wettransformer.tier.02",
                         "Medium Voltage Power Transformer",
                         2,
@@ -8435,7 +8996,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_EV_HV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12003,
+                        WET_TRANSFORMER_EV_HV.ID,
                         "wettransformer.tier.03",
                         "High Voltage Power Transformer",
                         3,
@@ -8443,7 +9004,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_IV_EV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12004,
+                        WET_TRANSFORMER_IV_EV.ID,
                         "wettransformer.tier.04",
                         "Extreme Power Transformer",
                         4,
@@ -8451,7 +9012,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_LuV_IV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12005,
+                        WET_TRANSFORMER_LuV_IV.ID,
                         "wettransformer.tier.05",
                         "Insane Power Transformer",
                         5,
@@ -8459,7 +9020,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_ZPM_LuV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12006,
+                        WET_TRANSFORMER_ZPM_LuV.ID,
                         "wettransformer.tier.06",
                         "Ludicrous Power Transformer",
                         6,
@@ -8467,7 +9028,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_UV_ZPM.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12007,
+                        WET_TRANSFORMER_UV_ZPM.ID,
                         "wettransformer.tier.07",
                         "ZPM Voltage Power Transformer",
                         7,
@@ -8475,7 +9036,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_UHV_UV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12008,
+                        WET_TRANSFORMER_UHV_UV.ID,
                         "wettransformer.tier.08",
                         "Ultimate Power Transformer",
                         8,
@@ -8483,7 +9044,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_UEV_UHV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12009,
+                        WET_TRANSFORMER_UEV_UHV.ID,
                         "wettransformer.tier.09",
                         "Highly Ultimate Power Transformer",
                         9,
@@ -8491,7 +9052,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_UIV_UEV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12010,
+                        WET_TRANSFORMER_UIV_UEV.ID,
                         "wettransformer.tier.10",
                         "Extremely Ultimate Power Transformer",
                         10,
@@ -8499,7 +9060,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_UMV_UIV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12011,
+                        WET_TRANSFORMER_UMV_UIV.ID,
                         "wettransformer.tier.11",
                         "Insanely Ultimate Power Transformer",
                         11,
@@ -8507,7 +9068,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_UXV_UMV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12012,
+                        WET_TRANSFORMER_UXV_UMV.ID,
                         "wettransformer.tier.12",
                         "Mega Ultimate Power Transformer",
                         12,
@@ -8515,7 +9076,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.WetTransformer_MAX_UXV.set(
                 new GT_MetaTileEntity_WetTransformer(
-                        12013,
+                        WET_TRANSFORMER_MAX_UXV.ID,
                         "wettransformer.tier.13",
                         "Extended Mega Ultimate Power Transformer",
                         13,
@@ -8526,35 +9087,35 @@ public class GT_Loader_Machines {
         if (GTPlusPlus.isModLoaded()) {
             CustomItemList.Transformer_HA_UEV_UHV.set(
                     new GregtechMetaTransformerHiAmp(
-                            11989,
+                            HIGH_AMP_TRANSFORMER_UEV_UHV.ID,
                             "transformer.ha.tier.09",
                             "Highly Ultimate Hi-Amp Transformer",
                             9,
                             "UEV -> UHV (Use Soft Mallet to invert)").getStackForm(1L));
             CustomItemList.Transformer_HA_UIV_UEV.set(
                     new GregtechMetaTransformerHiAmp(
-                            11910,
+                            HIGH_AMP_TRANSFORMER_UIV_UEV.ID,
                             "transformer.ha.tier.10",
                             "Extremely Ultimate Hi-Amp Transformer",
                             10,
                             "UIV -> UEV (Use Soft Mallet to invert)").getStackForm(1L));
             CustomItemList.Transformer_HA_UMV_UIV.set(
                     new GregtechMetaTransformerHiAmp(
-                            11911,
+                            HIGH_AMP_TRANSFORMER_UMV_UIV.ID,
                             "transformer.ha.tier.11",
                             "Insanely Ultimate Hi-Amp Transformer",
                             11,
                             "UMV -> UIV (Use Soft Mallet to invert)").getStackForm(1L));
             CustomItemList.Transformer_HA_UXV_UMV.set(
                     new GregtechMetaTransformerHiAmp(
-                            11912,
+                            HIGH_AMP_TRANSFORMER_UXV_UMV.ID,
                             "transformer.ha.tier.12",
                             "Mega Ultimate Hi-Amp Transformer",
                             12,
                             "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
             CustomItemList.Transformer_HA_MAX_UXV.set(
                     new GregtechMetaTransformerHiAmp(
-                            11913,
+                            HIGH_AMP_TRANSFORMER_MAX_UXV.ID,
                             "transformer.ha.tier.13",
                             "Extended Mega Ultimate Hi-Amp Transformer",
                             13,
@@ -8565,20 +9126,26 @@ public class GT_Loader_Machines {
 
     private void registerAirFilter() {
         CustomItemList.Machine_Multi_AirFilterT1.set(
-                new GT_MetaTileEntity_AirFilterT1(12020, "multimachine.airfilter.01", "Electric Air Filter T1")
+                new GT_MetaTileEntity_AirFilterT1(
+                        AIR_FILTER_CONTROLLER_T1.ID,
+                        "multimachine.airfilter.01", "Electric Air Filter T1")
                         .getStackForm(1L));
         CustomItemList.Machine_Multi_AirFilterT2.set(
-                new GT_MetaTileEntity_AirFilterT2(12021, "multimachine.airfilter.02", "Electric Air Filter T2")
+                new GT_MetaTileEntity_AirFilterT2(
+                        AIR_FILTER_CONTROLLER_T2.ID,
+                        "multimachine.airfilter.02", "Electric Air Filter T2")
                         .getStackForm(1L));
         CustomItemList.Machine_Multi_AirFilterT3.set(
-                new GT_MetaTileEntity_AirFilterT3(12022, "multimachine.airfilter.03", "Electric Air Filter T3")
+                new GT_MetaTileEntity_AirFilterT3(
+                        AIR_FILTER_CONTROLLER_T3.ID,
+                        "multimachine.airfilter.03", "Electric Air Filter T3")
                         .getStackForm(1L));
     }
 
-    private void registerTurboCharger4By4() {
+    private void registerTurboCharger4By4(){
         CustomItemList.Battery_TurboCharger_4by4_ULV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12040,
+                        TURBO_CHARGER_ULV.ID,
                         "batteryturbocharger.16.tier.00",
                         "Ultra Low Voltage Turbo Charger",
                         0,
@@ -8587,7 +9154,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_LV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12041,
+                        TURBO_CHARGER_LV.ID,
                         "batteryturbocharger.16.tier.01",
                         "Low Voltage Turbo Charger",
                         1,
@@ -8596,7 +9163,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_MV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12042,
+                        TURBO_CHARGER_MV.ID,
                         "batteryturbocharger.16.tier.02",
                         "Medium Voltage Turbo Charger",
                         2,
@@ -8605,7 +9172,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_HV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12043,
+                        TURBO_CHARGER_HV.ID,
                         "batteryturbocharger.16.tier.03",
                         "High Voltage Turbo Charger",
                         3,
@@ -8614,7 +9181,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_EV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12044,
+                        TURBO_CHARGER_EV.ID,
                         "batteryturbocharger.16.tier.04",
                         "Extreme Voltage Turbo Charger",
                         4,
@@ -8623,7 +9190,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_IV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12045,
+                        TURBO_CHARGER_IV.ID,
                         "batteryturbocharger.16.tier.05",
                         "Insane Voltage Turbo Charger",
                         5,
@@ -8632,7 +9199,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_LuV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12046,
+                        TURBO_CHARGER_LuV.ID,
                         "batteryturbocharger.16.tier.06",
                         "Ludicrous Voltage Turbo Charger",
                         6,
@@ -8641,7 +9208,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_ZPM.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12047,
+                        TURBO_CHARGER_ZPM.ID,
                         "batteryturbocharger.16.tier.07",
                         "ZPM Voltage Turbo Charger",
                         7,
@@ -8650,7 +9217,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_UV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12048,
+                        TURBO_CHARGER_UV.ID,
                         "batteryturbocharger.16.tier.08",
                         "Ultimate Voltage Turbo Charger",
                         8,
@@ -8659,7 +9226,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.Battery_TurboCharger_4by4_UHV.set(
                 new GT_MetaTileEntity_TurboCharger(
-                        12049,
+                        TURBO_CHARGER_UHV.ID,
                         "batteryturbocharger.16.tier.09",
                         "Highly Ultimate Voltage Turbo Charger",
                         9,
@@ -8668,67 +9235,77 @@ public class GT_Loader_Machines {
 
     }
 
-    private void registerChestBuffer() {
+    private void registerChestBuffer(){
         CustomItemList.Automation_ChestBuffer_UEV.set(
                 new GT_MetaTileEntity_ChestBuffer(
-                        12060,
+                        CHEST_BUFFER_UEV.ID,
                         "automation.chestbuffer.tier.10",
                         "Ultra High Voltage Chest Buffer",
                         10).getStackForm(1L));
 
         CustomItemList.Automation_ChestBuffer_UIV.set(
                 new GT_MetaTileEntity_ChestBuffer(
-                        12061,
+                        CHEST_BUFFER_UIV.ID,
                         "automation.chestbuffer.tier.11",
                         "UIV Voltage Chest Buffer",
                         11).getStackForm(1L));
 
         CustomItemList.Automation_ChestBuffer_UMV.set(
                 new GT_MetaTileEntity_ChestBuffer(
-                        12062,
+                        CHEST_BUFFER_UMV.ID,
                         "automation.chestbuffer.tier.12",
                         "UMV Voltage Chest Buffer",
                         12).getStackForm(1L));
     }
 
-    private void registerNameRemover() {
-        CustomItemList.nameRemover.set(new NameRemover(12070, "fix.name.remover", "Name Remover", 0).getStackForm(1L));
+    private void registerNameRemover(){
+        CustomItemList.nameRemover.set(new NameRemover(
+                NAME_REMOVER.ID,
+                "fix.name.remover", "Name Remover", 0).getStackForm(1L));
     }
 
-    private void registerRockBreaker() {
+    private void registerRockBreaker(){
         CustomItemList.RockBreakerLuV.set(
-                new GT_MetaTileEntity_RockBreaker(12080, "rockbreaker.tier.06", "Cryogenic Magma Solidifier R-9200", 6)
+                new GT_MetaTileEntity_RockBreaker(
+                        ROCK_BREAKER_LuV.ID,
+                        "rockbreaker.tier.06", "Cryogenic Magma Solidifier R-9200", 6)
                         .getStackForm(1L));
 
         CustomItemList.RockBreakerZPM.set(
-                new GT_MetaTileEntity_RockBreaker(12081, "rockbreaker.tier.07", "Cryogenic Magma Solidifier R-10200", 7)
+                new GT_MetaTileEntity_RockBreaker(
+                        ROCK_BREAKER_ZPM.ID,
+                        "rockbreaker.tier.07", "Cryogenic Magma Solidifier R-10200", 7)
                         .getStackForm(1L));
 
         CustomItemList.RockBreakerUV.set(
-                new GT_MetaTileEntity_RockBreaker(12082, "rockbreaker.tier.08", "Cryogenic Magma Solidifier R-11200", 8)
+                new GT_MetaTileEntity_RockBreaker(
+                        ROCK_BREAKER_UV.ID,
+                        "rockbreaker.tier.08", "Cryogenic Magma Solidifier R-11200", 8)
                         .getStackForm(1L));
 
         CustomItemList.RockBreakerUHV.set(
-                new GT_MetaTileEntity_RockBreaker(12083, "rockbreaker.tier.09", "Cryogenic Magma Solidifier R-12200", 9)
+                new GT_MetaTileEntity_RockBreaker(
+                        ROCK_BREAKER_UHV.ID,
+                        "rockbreaker.tier.09", "Cryogenic Magma Solidifier R-12200", 9)
                         .getStackForm(1L));
 
         CustomItemList.RockBreakerUEV.set(
                 new GT_MetaTileEntity_RockBreaker(
-                        12084,
+                        ROCK_BREAKER_UEV.ID,
                         "rockbreaker.tier.10",
                         "Cryogenic Magma Solidifier R-13200",
                         10).getStackForm(1L));
 
         CustomItemList.RockBreakerUIV.set(
                 new GT_MetaTileEntity_RockBreaker(
-                        12085,
+                        ROCK_BREAKER_UIV.ID,
                         "rockbreaker.tier.11",
                         "Cryogenic Magma Solidifier R-14200",
                         11).getStackForm(1L));
 
         CustomItemList.RockBreakerUMV.set(
                 new GT_MetaTileEntity_RockBreaker(
-                        12086,
+                        ROCK_BREAKER_UMV.ID,
                         "rockbreaker.tier.12",
                         "Cryogenic Magma Solidifier R-15200",
                         12).getStackForm(1L));
@@ -8737,7 +9314,7 @@ public class GT_Loader_Machines {
     private void registerCircuitAssembler() {
         CustomItemList.CircuitAssemblerUHV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        12090,
+                        CIRCUIT_ASSEMBLER_UHV.ID,
                         "basicmachine.circuitassembler.tier.09",
                         "Ultimate Circuit Assembling Machine",
                         9,
@@ -8760,7 +9337,7 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
         CustomItemList.CircuitAssemblerUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        12091,
+                        CIRCUIT_ASSEMBLER_UEV.ID,
                         "basicmachine.circuitassembler.tier.10",
                         "Ultimate Circuit Assembling Machine II",
                         10,
@@ -8784,7 +9361,7 @@ public class GT_Loader_Machines {
 
         CustomItemList.CircuitAssemblerUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        12092,
+                        CIRCUIT_ASSEMBLER_UIV.ID,
                         "basicmachine.circuitassembler.tier.11",
                         "Ultimate Circuit Assembling Machine III",
                         11,
@@ -8807,7 +9384,7 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() }).getStackForm(1L));
         CustomItemList.CircuitAssemblerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        12093,
+                        CIRCUIT_ASSEMBLER_UMV.ID,
                         "basicmachine.circuitassembler.tier.12",
                         "Ultimate Circuit Assembling Machine IV",
                         12,
@@ -8830,7 +9407,7 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
         CustomItemList.CircuitAssemblerUXV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        12094,
+                        CIRCUIT_ASSEMBLER_UXV.ID,
                         "basicmachine.circuitassembler.tier.13",
                         "Ultimate Circuit Assembling Machine V",
                         13,
@@ -8850,7 +9427,7 @@ public class GT_Loader_Machines {
                         null).getStackForm(1L));
         CustomItemList.CircuitAssemblerMAX.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        12096,
+                        CIRCUIT_ASSEMBLER_MAX.ID,
                         "basicmachine.circuitassembler.tier.14",
                         "MAX Circuit Assembling Machine",
                         14,
@@ -8872,71 +9449,58 @@ public class GT_Loader_Machines {
 
     private void registerInputHatch() {
         CustomItemList.Hatch_Input_UEV.set(
-                new GT_MetaTileEntity_Hatch_Input(12097, "hatch.input.tier.10", "Input Hatch (UEV)", 10)
+                new GT_MetaTileEntity_Hatch_Input(
+                        INPUT_HATCH_UEV.ID,
+                        "hatch.input.tier.10", "Input Hatch (UEV)", 10)
                         .getStackForm(1L));
         CustomItemList.Hatch_Input_UIV.set(
-                new GT_MetaTileEntity_Hatch_Input(12098, "hatch.input.tier.11", "Input Hatch (UIV)", 11)
+                new GT_MetaTileEntity_Hatch_Input(
+                        INPUT_HATCH_UIV.ID,
+                        "hatch.input.tier.11", "Input Hatch (UIV)", 11)
                         .getStackForm(1L));
         CustomItemList.Hatch_Input_UMV.set(
-                new GT_MetaTileEntity_Hatch_Input(12099, "hatch.input.tier.12", "Input Hatch (UMV)", 12)
+                new GT_MetaTileEntity_Hatch_Input(
+                        INPUT_HATCH_UMV.ID,
+                        "hatch.input.tier.12", "Input Hatch (UMV)", 12)
                         .getStackForm(1L));
         CustomItemList.Hatch_Input_UXV.set(
-                new GT_MetaTileEntity_Hatch_Input(12100, "hatch.input.tier.13", "Input Hatch (UXV)", 13)
+                new GT_MetaTileEntity_Hatch_Input(
+                        INPUT_HATCH_UXV.ID,
+                        "hatch.input.tier.13", "Input Hatch (UXV)", 13)
                         .getStackForm(1L));
         CustomItemList.Hatch_Input_MAX.set(
-                new GT_MetaTileEntity_Hatch_Input(12102, "hatch.input.tier.14", "Input Hatch (MAX)", 14)
+                new GT_MetaTileEntity_Hatch_Input(
+                        INPUT_HATCH_MAX.ID,
+                        "hatch.input.tier.14", "Input Hatch (MAX)", 14)
                         .getStackForm(1L));
     }
 
     private void registerOutputHatches() {
         CustomItemList.Hatch_Output_UEV.set(
-                new GT_MetaTileEntity_Hatch_Output(12103, "hatch.output.tier.10", "Output Hatch (UEV)", 10)
+                new GT_MetaTileEntity_Hatch_Output(
+                        OUTPUT_HATCH_UEV.ID,
+                        "hatch.output.tier.10", "Output Hatch (UEV)", 10)
                         .getStackForm(1L));
         CustomItemList.Hatch_Output_UIV.set(
-                new GT_MetaTileEntity_Hatch_Output(12104, "hatch.output.tier.11", "Output Hatch (UIV)", 11)
+                new GT_MetaTileEntity_Hatch_Output(
+                        OUTPUT_HATCH_UIV.ID,
+                        "hatch.output.tier.11", "Output Hatch (UIV)", 11)
                         .getStackForm(1L));
         CustomItemList.Hatch_Output_UMV.set(
-                new GT_MetaTileEntity_Hatch_Output(12105, "hatch.output.tier.12", "Output Hatch (UMV)", 12)
+                new GT_MetaTileEntity_Hatch_Output(
+                        OUTPUT_HATCH_UMV.ID,
+                        "hatch.output.tier.12", "Output Hatch (UMV)", 12)
                         .getStackForm(1L));
         CustomItemList.Hatch_Output_UXV.set(
-                new GT_MetaTileEntity_Hatch_Output(12106, "hatch.output.tier.13", "Output Hatch (UXV)", 13)
+                new GT_MetaTileEntity_Hatch_Output(
+                        OUTPUT_HATCH_UXV.ID,
+                        "hatch.output.tier.13", "Output Hatch (UXV)", 13)
                         .getStackForm(1L));
         CustomItemList.Hatch_Output_MAX.set(
-                new GT_MetaTileEntity_Hatch_Output(12108, "hatch.output.tier.14", "Output Hatch (MAX)", 14)
+                new GT_MetaTileEntity_Hatch_Output(
+                        OUTPUT_HATCH_MAX.ID,
+                        "hatch.output.tier.14", "Output Hatch (MAX)", 14)
                         .getStackForm(1L));
-
-        ItemStack[] inHatches = { CustomItemList.Hatch_Input_UEV.get(1), CustomItemList.Hatch_Input_UIV.get(1),
-                CustomItemList.Hatch_Input_UMV.get(1), CustomItemList.Hatch_Input_UXV.get(1),
-                CustomItemList.Hatch_Input_MAX.get(1) };
-        ItemStack[] outHatches = { CustomItemList.Hatch_Output_UEV.get(1), CustomItemList.Hatch_Output_UIV.get(1),
-                CustomItemList.Hatch_Output_UMV.get(1), CustomItemList.Hatch_Output_UXV.get(1),
-                CustomItemList.Hatch_Output_MAX.get(1) };
-        ItemStack[][] flInputs = new ItemStack[5][3];
-        ItemStack[][] flInputs2 = new ItemStack[5][3];
-        ItemStack[] tanks = { GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 132),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 133),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 134),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 120),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 121),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 122), };
-        ItemStack[] hulls = { CustomItemList.Hull_UEV.get(1), CustomItemList.Hull_UIV.get(1),
-                CustomItemList.Hull_UMV.get(1), CustomItemList.Hull_UXV.get(1), CustomItemList.Hull_MAXV.get(1), };
-
-        for (int i = 0; i < hulls.length; i++) {
-            flInputs[i] = new ItemStack[] { hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(1) };
-            flInputs2[i] = new ItemStack[] { hulls[i].copy(), tanks[i].copy(), GT_Utility.getIntegratedCircuit(2) };
-        }
-
-        for (int aTier = 10; aTier < 15; aTier++) {
-            GT_Values.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).itemOutputs(inHatches[aTier - 10])
-                    .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
-                    .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
-                    .addTo(sAssemblerRecipes);
-            GT_Values.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).itemOutputs(outHatches[aTier - 10])
-                    .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
-                    .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
-                    .addTo(sAssemblerRecipes);
-        }
     }
 
     private void registerMachines2() {
