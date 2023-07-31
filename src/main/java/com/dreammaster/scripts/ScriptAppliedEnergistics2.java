@@ -84,17 +84,10 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         final ItemStack AE2_ME_Glass_Cable = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16);
         final ItemStack AE2_ME_Covered_Cable = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 36);
         final ItemStack AE2_ME_Dense_Covered_Cable = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 536);
-        final ItemStack AE2_ME_Backbone_Covered_Cable = getModItem(
-                AppliedEnergistics2.ID,
-                "item.ItemMultiPart",
-                1,
-                556);
         ItemStack[] FluixCoveredCableColor = new ItemStack[16];
         ItemStack[] FluixDenseCoveredCableColor = new ItemStack[16];
-        ItemStack[] FluixBackboneCoveredCableColor = new ItemStack[16];
         ItemStack[] FluixSmartCableColor = new ItemStack[16];
         ItemStack[] FluixDenseSmartCableColor = new ItemStack[16];
-        ItemStack[] FluixBackboneSmartCableColor = new ItemStack[16];
 
         // Hyper-Acceleration Card
         addShapelessRecipe(
@@ -410,55 +403,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .fluidInputs(Materials.Silicone.getMolten(288L)).noFluidOutputs().duration(35 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
-        // --- Fluix Backbone Covered Cable
-        for (int i = 0; i < 16; i++) {
-            FluixBackboneCoveredCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 540 + i);
-
-            addShapelessRecipe(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 556),
-                    FluixBackboneCoveredCableColor[i]);
-        }
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
-                        GT_Utility.getIntegratedCircuit(24))
-                .itemOutputs(AE2_ME_Backbone_Covered_Cable)
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(432L)).noFluidOutputs()
-                .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
-                        GT_Utility.getIntegratedCircuit(24))
-                .itemOutputs(AE2_ME_Backbone_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(288L))
-                .noFluidOutputs().duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
-                .itemOutputs(AE2_ME_Backbone_Covered_Cable)
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144L)).noFluidOutputs()
-                .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
-                .itemOutputs(AE2_ME_Backbone_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(144L))
-                .noFluidOutputs().duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(AE2_ME_Backbone_Covered_Cable)
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144L)).noFluidOutputs()
-                .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(AE2_ME_Backbone_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(144L))
-                .noFluidOutputs().duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 536),
@@ -537,13 +481,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).noFluidOutputs()
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
-        // --- ME Smart Backbone Cable Fluix
-        for (int i = 0; i < 16; i++) {
-            FluixBackboneSmartCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 560 + i);
-            addShapelessRecipe(
-                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 576),
-                    FluixBackboneSmartCableColor[i]);
-        }
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 76),
