@@ -3818,6 +3818,249 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Titanium.getMolten(36L)).noFluidOutputs().duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
+        // Controller
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Energy Cells
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Fluix, 1),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Aluminium, 1),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2L),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 5, 0),
+                        ItemList.Battery_Buffer_4by4_EV.get(1L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Void Cell
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 3L),
+                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.EnderEye, 1),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Quantum Link
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 22),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumRing", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 9),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumLinkChamber", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Spatial Pylon
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Fluix, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Fluix, 1L),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialPylon", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Spatial IO
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialPylon", 1),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 1),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSpatialIOPort", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // ME IO Port
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 3, 16),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockDrive", 2, 0),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 1)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // ME Chest
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2L),
+                        getModItem(IronChests.ID, "BlockIronChest", 1, 4),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        // ME Drive
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockDrive", 1)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Interface
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
+                        ItemList.Casing_EV.get(1L),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Crafting Unit
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Formation Core
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CertusQuartz, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 22),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 43)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Annihilation Core
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 22),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 12),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 44)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Wireless Receiver
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnderEye, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 140),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41)).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        // Molecular Assembler
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GregTech.ID, "gt.blockmachines", 1, 214),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1))
+                .fluidInputs(Materials.Glass.getMolten(288L)).noFluidOutputs().duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        if (AE2FluidCraft.isModLoaded()) {
+            // Dual Interface
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
+                            getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                            getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorFluidDiamondCore", 2),
+                            GT_Utility.getIntegratedCircuit(2))
+                    .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_interface", 1, 0)).noFluidInputs().noFluidOutputs()
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+            // Fluid Storage Housing
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
+                            GT_Utility.getIntegratedCircuit(3))
+                    .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 0)).noFluidInputs()
+                    .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
+                            GT_Utility.getIntegratedCircuit(3))
+                    .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 1)).noFluidInputs()
+                    .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+            // Multi Fluid Storage Housing
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
+                            GT_Utility.getIntegratedCircuit(3))
+                    .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 2)).noFluidInputs()
+                    .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
+                            GT_Utility.getIntegratedCircuit(3))
+                    .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 3)).noFluidInputs()
+                    .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        }
+        if (AE2Stuff.isModLoaded()) {
+            // Wireless Connector
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 12),
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24),
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41),
+                            GT_Utility.getIntegratedCircuit(2))
+                    .itemOutputs(getModItem(AE2Stuff.ID, "Wireless", 1)).noFluidInputs().noFluidOutputs()
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        }
+
         if (TinkerConstruct.isModLoaded()) {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
