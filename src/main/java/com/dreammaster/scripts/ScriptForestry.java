@@ -23,6 +23,8 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
+import static gregtech.api.util.GT_RecipeConstants.FUEL_TYPE;
+import static gregtech.api.util.GT_RecipeConstants.FUEL_VALUE;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +39,11 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_RecipeConstants;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -128,21 +135,18 @@ public class ScriptForestry implements IScriptLoader {
         recipes1();
         recipes2();
 
-        GT_Values.RA.addFuel(
-                getModItem(Forestry.ID, "bucketShortMead", 1, 0, missing),
-                getModItem(Minecraft.ID, "bucket", 1, 0, missing),
-                4,
-                0);
-        GT_Values.RA.addFuel(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 30711, missing),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),
-                2,
-                0);
-        GT_Values.RA.addFuel(
-                getModItem(Forestry.ID, "canBiomass", 1, 0, missing),
-                getModItem(Forestry.ID, "canEmpty", 1, 0, missing),
-                8,
-                0);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "bucketShortMead", 1, 0, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "bucket", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .metadata(FUEL_VALUE, 4).metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
+
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.FishOil, 1L))
+                .itemOutputs(ItemList.Cell_Empty.get(1)).noFluidInputs().noFluidOutputs().metadata(FUEL_VALUE, 2)
+                .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
+
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "canBiomass", 1, 0, missing))
+                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .metadata(FUEL_VALUE, 8).metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
+
         OreDictionary.registerOre("foodHoneydrop", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
         OreDictionary.registerOre("listAllsugar", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
 
