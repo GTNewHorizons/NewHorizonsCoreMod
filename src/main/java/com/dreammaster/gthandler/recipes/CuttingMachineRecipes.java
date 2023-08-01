@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.init.Blocks;
@@ -23,288 +24,204 @@ public class CuttingMachineRecipes implements Runnable {
 
     @Override
     public void run() {
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_ILC.get(1L),
-                ItemList.Circuit_Chip_ILC.get(8L),
-                GT_Values.NI,
-                900,
-                64);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_Ram.get(1L),
-                ItemList.Circuit_Chip_Ram.get(32L),
-                GT_Values.NI,
-                900,
-                96);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_NAND.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_NAND.get(32L),
-                GT_Values.NI,
-                900,
-                192,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_NOR.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_NOR.get(16L),
-                GT_Values.NI,
-                900,
-                192,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_CPU.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_CPU.get(8L),
-                GT_Values.NI,
-                900,
-                120,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_Simple_SoC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_Simple_SoC.get(6L),
-                GT_Values.NI,
-                900,
-                64,
-                false);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_SoC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_SoC.get(6L),
-                GT_Values.NI,
-                900,
-                480,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_SoC2.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_SoC2.get(6L),
-                GT_Values.NI,
-                900,
-                1024,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_ULPIC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_ULPIC.get(6L),
-                GT_Values.NI,
-                900,
-                120,
-                false);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_LPIC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_LPIC.get(4L),
-                GT_Values.NI,
-                900,
-                480,
-                false);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_PIC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_PIC.get(4L),
-                GT_Values.NI,
-                900,
-                1920,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_HPIC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_HPIC.get(2L),
-                GT_Values.NI,
-                900,
-                7860,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_UHPIC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_UHPIC.get(2L),
-                GT_Values.NI,
-                900,
-                30720,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_NPIC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_NPIC.get(2L),
-                GT_Values.NI,
-                900,
-                122880,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_PPIC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_PPIC.get(2L),
-                GT_Values.NI,
-                900,
-                500000,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_QPIC.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_QPIC.get(2L),
-                GT_Values.NI,
-                900,
-                2000000,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_NanoCPU.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_NanoCPU.get(8L),
-                GT_Values.NI,
-                900,
-                480,
-                true);
-        GT_Values.RA.addCutterRecipe(
-                ItemList.Circuit_Wafer_QuantumCPU.get(1L),
-                GT_Values.NI,
-                ItemList.Circuit_Chip_QuantumCPU.get(4L),
-                GT_Values.NI,
-                900,
-                1920,
-                true);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_ILC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_ILC.get(8L)).noFluidInputs().noFluidOutputs().duration(45 * SECONDS)
+                .eut(64).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Ram.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_Ram.get(32L)).noFluidInputs().noFluidOutputs().duration(45 * SECONDS)
+                .eut(96).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NAND.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_NAND.get(32L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(192).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NOR.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_NOR.get(16L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(192).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_CPU.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_CPU.get(8L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Simple_SoC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_Simple_SoC.get(6L)).noFluidInputs().noFluidOutputs()
+                .duration(45 * SECONDS).eut(64).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_SoC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_SoC.get(6L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_SoC2.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_SoC2.get(6L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(1024).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_ULPIC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_ULPIC.get(6L)).noFluidInputs().noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_LPIC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_LPIC.get(4L)).noFluidInputs().noFluidOutputs().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_PIC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_PIC.get(4L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_HPIC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_HPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(7860).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_UHPIC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_UHPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NPIC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_NPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_PPIC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_PPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(500000).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_QPIC.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_QPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(2000000).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NanoCPU.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_NanoCPU.get(8L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_QuantumCPU.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_QuantumCPU.get(4L)).noFluidInputs().noFluidOutputs()
+                .requiresCleanRoom().duration(45 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCutterRecipes);
+
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Bioware.get(1L))
                 .itemOutputs(ItemList.Circuit_Parts_Chip_Bioware.get(16L), ItemList.Circuit_Chip_Biocell.get(16L))
                 .fluidInputs(Materials.UUMatter.getFluid(8_000L)).noFluidOutputs().duration(15 * SECONDS)
                 .eut((int) TierEU.RECIPE_UEV).addTo(sCutterRecipes);
         if (IndustrialCraft2.isModLoaded()) {
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0),
-                    CustomItemList.ReinforcedGlassPLate.get(2L),
-                    GT_Values.NI,
-                    1200,
-                    30);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0))
+                    .itemOutputs(CustomItemList.ReinforcedGlassPLate.get(2L)).noFluidInputs().noFluidOutputs()
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
         }
 
-        GT_Values.RA
-                .addCutterRecipe(CustomItemList.NandChipBoard.get(1), ItemList.NandChip.get(8), null, 100, 480, true);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.NandChipBoard.get(1)).itemOutputs(ItemList.NandChip.get(8))
+                .noFluidInputs().noFluidOutputs().requiresCleanRoom().duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sCutterRecipes);
 
         if (ZTones.isModLoaded() && ProjectRedCore.isModLoaded()) {
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16),
-                    Materials.Water.getFluid(100L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0),
-                    GT_Values.NI,
-                    200,
-                    4);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16),
-                    GT_ModHandler.getDistilledWater(75L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0),
-                    GT_Values.NI,
-                    200,
-                    4);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16),
-                    Materials.Lubricant.getFluid(25L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0),
-                    GT_Values.NI,
-                    100,
-                    4);
 
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24),
-                    Materials.Water.getFluid(100L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0),
-                    GT_Values.NI,
-                    200,
-                    4);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24),
-                    GT_ModHandler.getDistilledWater(75L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0),
-                    GT_Values.NI,
-                    200,
-                    4);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24),
-                    Materials.Lubricant.getFluid(25L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0),
-                    GT_Values.NI,
-                    100,
-                    4);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0))
+                    .fluidInputs(Materials.Water.getFluid(100L)).noFluidOutputs().duration(10 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
 
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23),
-                    Materials.Water.getFluid(100L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0),
-                    GT_Values.NI,
-                    200,
-                    4);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23),
-                    GT_ModHandler.getDistilledWater(75L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0),
-                    GT_Values.NI,
-                    200,
-                    4);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23),
-                    Materials.Lubricant.getFluid(25L),
-                    GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0),
-                    GT_Values.NI,
-                    100,
-                    4);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0))
+                    .fluidInputs(GT_ModHandler.getDistilledWater(75L)).noFluidOutputs().duration(10 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 16))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampf", 4L, 0))
+                    .fluidInputs(Materials.Lubricant.getFluid(25L)).noFluidOutputs().duration(5 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0))
+                    .fluidInputs(Materials.Water.getFluid(100L)).noFluidOutputs().duration(10 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0))
+                    .fluidInputs(GT_ModHandler.getDistilledWater(75L)).noFluidOutputs().duration(10 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 24))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampt", 4L, 0))
+                    .fluidInputs(Materials.Lubricant.getFluid(25L)).noFluidOutputs().duration(5 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0))
+                    .fluidInputs(Materials.Water.getFluid(100L)).noFluidOutputs().duration(10 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0))
+                    .fluidInputs(GT_ModHandler.getDistilledWater(75L)).noFluidOutputs().duration(10 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1L, 23))
+                    .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "lampb", 4L, 0))
+                    .fluidInputs(Materials.Lubricant.getFluid(25L)).noFluidOutputs().duration(5 * SECONDS).eut(4)
+                    .addTo(sCutterRecipes);
 
         }
 
         if (TinkerConstruct.isModLoaded()) {
             // Cutting Saw
-            GT_Values.RA.addCutterRecipe(
-                    new ItemStack(Blocks.crafting_table, 1),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L),
-                    GT_Values.NI,
-                    4800,
-                    30);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L),
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1L),
-                    GT_Values.NI,
-                    4800,
-                    30);
 
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1),
-                    Materials.Water.getFluid(1000),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L),
-                    GT_Values.NI,
-                    4800,
-                    30);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1),
-                    GT_ModHandler.getDistilledWater(750L),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L),
-                    GT_Values.NI,
-                    4800,
-                    30);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1),
-                    Materials.Lubricant.getFluid(250),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L),
-                    GT_Values.NI,
-                    2400,
-                    30);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2),
-                    Materials.Water.getFluid(1000),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L),
-                    GT_Values.NI,
-                    9600,
-                    30);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2),
-                    GT_ModHandler.getDistilledWater(750L),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L),
-                    GT_Values.NI,
-                    9600,
-                    30);
-            GT_Values.RA.addCutterRecipe(
-                    GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2),
-                    Materials.Lubricant.getFluid(250),
-                    GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L),
-                    GT_Values.NI,
-                    4800,
-                    30);
+            GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.crafting_table, 1))
+                    .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L)).noFluidInputs()
+                    .noFluidOutputs().duration(4 * MINUTES).eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingStation", 1L))
+                    .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1L)).noFluidInputs()
+                    .noFluidOutputs().duration(4 * MINUTES).eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1))
+                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L))
+                    .fluidInputs(Materials.Water.getFluid(1000)).noFluidOutputs().duration(4 * MINUTES)
+                    .eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1))
+                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L))
+                    .fluidInputs(GT_ModHandler.getDistilledWater(750L)).noFluidOutputs().duration(4 * MINUTES)
+                    .eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 1))
+                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ardite, 9L))
+                    .fluidInputs(Materials.Lubricant.getFluid(250)).noFluidOutputs().duration(2 * MINUTES)
+                    .eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2))
+                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L))
+                    .fluidInputs(Materials.Water.getFluid(1000)).noFluidOutputs().duration(8 * MINUTES)
+                    .eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2))
+                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L))
+                    .fluidInputs(GT_ModHandler.getDistilledWater(750L)).noFluidOutputs().duration(8 * MINUTES)
+                    .eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 2))
+                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 9L))
+                    .fluidInputs(Materials.Lubricant.getFluid(250)).noFluidOutputs().duration(4 * MINUTES)
+                    .eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+
         }
 
         if (BartWorks.isModLoaded()) {
@@ -317,13 +234,12 @@ public class CuttingMachineRecipes implements Runnable {
                     Materials.Grade6PurifiedWater.getFluid(1000L), Materials.Grade7PurifiedWater.getFluid(1000L),
                     Materials.Grade8PurifiedWater.getFluid(1000L) };
             for (int i = 0; i < purified_water.length; i++) {
-                GT_Values.RA.addCutterRecipe(
-                        ItemList.Circuit_Silicon_Ingot6.get(1L), // Optical Boule
-                        purified_water[i],
-                        ItemList.Circuit_Silicon_Wafer6.get((i + 1) * 2L),
-                        GT_Values.NI,
-                        wafer_duration_ticks *= 0.95,
-                        wafer_eu_per_tick);
+
+                GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L) // Optical Boul
+                ).itemOutputs(ItemList.Circuit_Silicon_Wafer6.get((i + 1) * 2L)).fluidInputs(purified_water[i])
+                        .noFluidOutputs().duration(wafer_duration_ticks *= 0.95).eut(wafer_eu_per_tick)
+                        .addTo(sCutterRecipes);
+
             }
         }
     }
