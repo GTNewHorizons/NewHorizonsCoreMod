@@ -9,7 +9,13 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMultiblockChemicalRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
+import gregtech.api.enums.TierEU;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -467,191 +473,270 @@ public class ChemicalReactorRecipes implements Runnable {
 
     public static void singleBlockOnly() {
         // 6HF + Al(OH)3 + 3NaOH = Na3AlF6 + 6H2O
-        GT_Values.RA.addChemicalRecipeForBasicMachineOnly(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 9L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 7L),
-                Materials.HydrofluoricAcid.getFluid(6000L),
-                Materials.Water.getFluid(6000L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 10L),
-                GT_Values.NI,
-                300,
-                30);
 
-        GT_Values.RA.addChemicalRecipeForBasicMachineOnly(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 4L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L),
-                Materials.Water.getFluid(1000L),
-                GT_Values.NF,
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 16L),
-                GT_Values.NI,
-                150,
-                120);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 9L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 7L)
+                )
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 10L)
+                )
+                .fluidInputs(
+                        Materials.HydrofluoricAcid.getFluid(6000L)
+                )
+                .fluidOutputs(
+                        Materials.Water.getFluid(6000L)
+                )
+                .duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV)
+                .addTo(sChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 3L)
+                )
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 16L)
+                )
+                .fluidInputs(
+                        Materials.Water.getFluid(1000L)
+                )
+                .noFluidOutputs()
+                .duration(7 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_MV)
+                .addTo(sChemicalRecipes);
+
 
     }
 
     public static void multiBlockOnly() {
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 49L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 63L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.HydrofluoricAcid.getFluid(42000L) },
-                new FluidStack[] { Materials.Water.getFluid(42000L) },
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 64L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 6L) },
-                600,
-                480);
 
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumCarbonate, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 16L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(2000L) },
-                new FluidStack[] { Materials.Hydrogen.getGas(1000L), Materials.CarbonDioxide.getGas(4000L),
-                        Materials.RedMud.getFluid(1000L) },
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 11L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tanzanite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glauconite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lepidolite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GlauconiteSand, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vermiculite, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(4000L) },
-                new FluidStack[] {},
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 49L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 63L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 64L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 6L))
+                .fluidInputs(
+                        Materials.HydrofluoricAcid.getFluid(42000L))
+                .fluidOutputs(
+                        Materials.Water.getFluid(42000L))
+                .duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
 
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { com.dreammaster.item.ItemList.RawPicoWafer.getIS(),
-                        Materials.MysteriousCrystal.getDust(2),
-                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.InfinityCatalyst, 1L).copy()
-                                .splitStack(0),
-                        com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(1) },
-                new FluidStack[] { Materials.Neutronium.getMolten(144L) },
-                new FluidStack[] { GT_Values.NF },
-                new ItemStack[] { com.dreammaster.item.ItemList.PicoWafer.getIS() },
-                3000,
-                (int) (GT_Values.V[9] - (GT_Values.V[9] / 10)));
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumCarbonate, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 16L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(2000L))
+                .fluidOutputs(
+                        Materials.Hydrogen.getGas(1000L), Materials.CarbonDioxide.getGas(4000L),Materials.RedMud.getFluid(1000L))
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
 
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 16L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L),
-                        GT_Utility.getIntegratedCircuit(24) },
-                new FluidStack[] { Materials.Water.getFluid(16000L) },
-                new FluidStack[] { Materials.Hydrogen.getGas(48000L) },
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L) },
-                400,
-                480);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Mica, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 11L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tanzanite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Biotite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 16L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glauconite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lepidolite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GlauconiteSand, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Vermiculite, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 12L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(4000L))
+                .fluidOutputs(
+                )
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        com.dreammaster.item.ItemList.RawPicoWafer.getIS(),Materials.MysteriousCrystal.getDust(2),GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.InfinityCatalyst, 1L).copy().splitStack(0),com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(1))
+                .itemOutputs(
+                        com.dreammaster.item.ItemList.PicoWafer.getIS())
+                .fluidInputs(
+                        Materials.Neutronium.getMolten(144L))
+                .noFluidOutputs()
+                .duration(2 * MINUTES + 30 * SECONDS)
+                .eut( (int) (GT_Values.V[9] - (GT_Values.V[9] / 10)) )
+                .addTo(sMultiblockChemicalRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 16L),GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumHydroxide, 48L),GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
+                .fluidInputs(
+                        Materials.Water.getFluid(16000L))
+                .fluidOutputs(
+                        Materials.Hydrogen.getGas(48000L))
+                .duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV)
+                .addTo(sMultiblockChemicalRecipes);
+
 
         if (BartWorks.isModLoaded()) {
-            GT_Values.RA.addMultiblockChemicalRecipe(
-                    new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 0, false),
-                            GT_Utility.getIntegratedCircuit(1) },
-                    new FluidStack[] { Materials.Grade4PurifiedWater.getFluid(1000) },
-                    new FluidStack[] { Materials.Grade5PurifiedWater.getFluid(900), },
-                    null,
-                    500 * 10,
-                    491_520);
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 0, false),GT_Utility.getIntegratedCircuit(1))
+                    .noItemOutputs()
+                    .fluidInputs(
+                            Materials.Grade4PurifiedWater.getFluid(1000))
+                    .fluidOutputs(
+                            Materials.Grade5PurifiedWater.getFluid(900))
+                    .duration(4 * MINUTES + 10 * SECONDS)
+                    .eut(TierEU.RECIPE_UV)
+                    .addTo(sMultiblockChemicalRecipes);
+
         }
     }
+
+
 }
