@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -407,272 +408,254 @@ public class ScriptAE2FC implements IScriptLoader {
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2), ItemList.Electric_Pump_LV.get(1),
-                        ItemList.Circuit_Board_Basic.get(1), GT_Utility.getIntegratedCircuit(1) },
-                Materials.Lead.getMolten(288),
-                COMPONENT_1,
-                200,
-                30,
-                false);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2), ItemList.Electric_Pump_LV.get(1),
-                        ItemList.Circuit_Board_Basic.get(1), GT_Utility.getIntegratedCircuit(1) },
-                Materials.Tin.getMolten(144),
-                COMPONENT_1,
-                200,
-                30,
-                false);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        ItemList.Electric_Pump_LV.get(1),
+                        ItemList.Circuit_Board_Basic.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_1).fluidInputs(Materials.Lead.getMolten(288)).noFluidOutputs()
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
-                        CustomItemList.ChargedCertusQuartzDust.get(2), ItemList.Electric_Pump_LV.get(1),
-                        ItemList.Circuit_Board_Basic.get(1), GT_Utility.getIntegratedCircuit(1) },
-                Materials.SolderingAlloy.getMolten(72),
-                COMPONENT_1,
-                200,
-                30,
-                false);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        ItemList.Electric_Pump_LV.get(1),
+                        ItemList.Circuit_Board_Basic.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_1).fluidInputs(Materials.Tin.getMolten(144)).noFluidOutputs()
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
 
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        CustomItemList.ChargedCertusQuartzDust.get(2),
+                        ItemList.Electric_Pump_LV.get(1),
+                        ItemList.Circuit_Board_Basic.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_1).fluidInputs(Materials.SolderingAlloy.getMolten(72)).noFluidOutputs()
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
         // 4k ME Storage Component
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
-                        ItemList.Electric_Pump_LV.get(2), ItemList.Circuit_Board_Coated_Basic.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Lead.getMolten(288),
-                COMPONENT_4,
-                200,
-                30,
-                true);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
-                        ItemList.Electric_Pump_LV.get(2), ItemList.Circuit_Board_Coated_Basic.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Tin.getMolten(144),
-                COMPONENT_4,
-                200,
-                30,
-                true);
+                        ItemList.Electric_Pump_LV.get(2),
+                        ItemList.Circuit_Board_Coated_Basic.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_4).fluidInputs(Materials.Lead.getMolten(288)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
-                        ItemList.Electric_Pump_LV.get(2), ItemList.Circuit_Board_Coated_Basic.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.SolderingAlloy.getMolten(72),
-                COMPONENT_4,
-                200,
-                30,
-                true);
+                        ItemList.Electric_Pump_LV.get(2),
+                        ItemList.Circuit_Board_Coated_Basic.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_4).fluidInputs(Materials.Tin.getMolten(144)).noFluidOutputs().requiresCleanRoom()
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
 
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        ItemList.Electric_Pump_LV.get(2),
+                        ItemList.Circuit_Board_Coated_Basic.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_4).fluidInputs(Materials.SolderingAlloy.getMolten(72)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
         // 16k ME Storage Component
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
-                        ItemList.Electric_Pump_MV.get(1), ItemList.Circuit_Board_Phenolic_Good.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Lead.getMolten(288),
-                COMPONENT_16,
-                200,
-                120,
-                true);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
-                        ItemList.Electric_Pump_MV.get(1), ItemList.Circuit_Board_Phenolic_Good.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Tin.getMolten(144),
-                COMPONENT_16,
-                200,
-                120,
-                true);
+                        ItemList.Electric_Pump_MV.get(1),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_16).fluidInputs(Materials.Lead.getMolten(288)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCircuitAssemblerRecipes);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
-                        ItemList.Electric_Pump_MV.get(1), ItemList.Circuit_Board_Phenolic_Good.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.SolderingAlloy.getMolten(72),
-                COMPONENT_16,
-                200,
-                120,
-                true);
+                        ItemList.Electric_Pump_MV.get(1),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_16).fluidInputs(Materials.Tin.getMolten(144)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCircuitAssemblerRecipes);
 
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        ItemList.Electric_Pump_MV.get(1),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_16).fluidInputs(Materials.SolderingAlloy.getMolten(72)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCircuitAssemblerRecipes);
         // 64k ME Storage Component
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
-                        ItemList.Electric_Pump_MV.get(2), ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Lead.getMolten(288),
-                COMPONENT_64,
-                200,
-                480,
-                true);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
-                        ItemList.Electric_Pump_MV.get(2), ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Tin.getMolten(144),
-                COMPONENT_64,
-                200,
-                480,
-                true);
+                        ItemList.Electric_Pump_MV.get(2),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_64).fluidInputs(Materials.Lead.getMolten(288)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCircuitAssemblerRecipes);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
-                        ItemList.Electric_Pump_MV.get(2), ItemList.Circuit_Board_Epoxy_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.SolderingAlloy.getMolten(72),
-                COMPONENT_64,
-                200,
-                480,
-                true);
+                        ItemList.Electric_Pump_MV.get(2),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_64).fluidInputs(Materials.Tin.getMolten(144)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
+                        ItemList.Electric_Pump_MV.get(2),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_64).fluidInputs(Materials.SolderingAlloy.getMolten(72)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCircuitAssemblerRecipes);
         // 256k ME Storage Component
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
-                        ItemList.Electric_Pump_HV.get(1), ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Lead.getMolten(288),
-                COMPONENT_256,
-                200,
-                1920,
-                true);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
-                        ItemList.Electric_Pump_HV.get(1), ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Tin.getMolten(144),
-                COMPONENT_256,
-                200,
-                1920,
-                true);
+                        ItemList.Electric_Pump_HV.get(1),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_256).fluidInputs(Materials.Lead.getMolten(288)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCircuitAssemblerRecipes);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
-                        ItemList.Electric_Pump_HV.get(1), ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.SolderingAlloy.getMolten(72),
-                COMPONENT_256,
-                200,
-                1920,
-                true);
+                        ItemList.Electric_Pump_HV.get(1),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_256).fluidInputs(Materials.Tin.getMolten(144)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCircuitAssemblerRecipes);
 
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                        ItemList.Electric_Pump_HV.get(1),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_256).fluidInputs(Materials.SolderingAlloy.getMolten(72)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCircuitAssemblerRecipes);
         // 1024k ME Storage Component
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
-                        ItemList.Electric_Pump_HV.get(2), ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Lead.getMolten(288),
-                COMPONENT_1024,
-                200,
-                7680,
-                true);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
-                        ItemList.Electric_Pump_HV.get(2), ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Tin.getMolten(144),
-                COMPONENT_1024,
-                200,
-                7680,
-                true);
+                        ItemList.Electric_Pump_HV.get(2),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_1024).fluidInputs(Materials.Lead.getMolten(288)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sCircuitAssemblerRecipes);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
-                        ItemList.Electric_Pump_HV.get(2), ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.SolderingAlloy.getMolten(72),
-                COMPONENT_1024,
-                200,
-                7680,
-                true);
+                        ItemList.Electric_Pump_HV.get(2),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_1024).fluidInputs(Materials.Tin.getMolten(144)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sCircuitAssemblerRecipes);
 
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                        ItemList.Electric_Pump_HV.get(2),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_1024).fluidInputs(Materials.SolderingAlloy.getMolten(72)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sCircuitAssemblerRecipes);
         // 4096k ME Storage Component
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
-                        ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Lead.getMolten(288),
-                COMPONENT_4096,
-                200,
-                30720,
-                true);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
-                        ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Tin.getMolten(144),
-                COMPONENT_4096,
-                200,
-                30720,
-                true);
+                        ItemList.Electric_Pump_EV.get(1),
+                        ItemList.Circuit_Board_Wetware_Extreme.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_4096).fluidInputs(Materials.Lead.getMolten(288)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sCircuitAssemblerRecipes);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
-                        ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.SolderingAlloy.getMolten(72),
-                COMPONENT_4096,
-                200,
-                30720,
-                true);
+                        ItemList.Electric_Pump_EV.get(1),
+                        ItemList.Circuit_Board_Wetware_Extreme.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_4096).fluidInputs(Materials.Tin.getMolten(144)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sCircuitAssemblerRecipes);
 
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                        ItemList.Electric_Pump_EV.get(1),
+                        ItemList.Circuit_Board_Wetware_Extreme.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_4096).fluidInputs(Materials.SolderingAlloy.getMolten(72)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sCircuitAssemblerRecipes);
         // 16384k ME Storage Component
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
-                        ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Bio_Ultra.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Lead.getMolten(288),
-                COMPONENT_16384,
-                200,
-                500000,
-                true);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
-                        ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Bio_Ultra.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.Tin.getMolten(144),
-                COMPONENT_16384,
-                200,
-                500000,
-                true);
+                        ItemList.Electric_Pump_EV.get(1),
+                        ItemList.Circuit_Board_Bio_Ultra.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_16384).fluidInputs(Materials.Lead.getMolten(288)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(500000).addTo(sCircuitAssemblerRecipes);
 
-        GT_Values.RA.addCircuitAssemblerRecipe(
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
-                        ItemList.Electric_Pump_EV.get(1), ItemList.Circuit_Board_Bio_Ultra.get(1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                Materials.SolderingAlloy.getMolten(72),
-                COMPONENT_16384,
-                200,
-                500000,
-                true);
+                        ItemList.Electric_Pump_EV.get(1),
+                        ItemList.Circuit_Board_Bio_Ultra.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_16384).fluidInputs(Materials.Tin.getMolten(144)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(500000).addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        ItemList.Electric_Pump_EV.get(1),
+                        ItemList.Circuit_Board_Bio_Ultra.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(COMPONENT_16384).fluidInputs(Materials.SolderingAlloy.getMolten(72)).noFluidOutputs()
+                .requiresCleanRoom().duration(10 * SECONDS).eut(500000).addTo(sCircuitAssemblerRecipes);
+
         // Fluid Quantum Drive
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 (AE2FC_QUANTUM_CELL),
