@@ -693,7 +693,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'd',
                 COMPONENT_16384,
                 'e',
-                AE2_ADVANCED_HOUSING);
+                AE2FC_ADVANCED_FLUID_STORAGE_HOUSING);
         // ME Digital Singularity
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 AE2FC_SINGULARITY_CELL,

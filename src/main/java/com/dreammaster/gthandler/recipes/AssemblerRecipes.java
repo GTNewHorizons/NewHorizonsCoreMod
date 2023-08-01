@@ -22,6 +22,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 
 import gregtech.api.enums.*;
@@ -1663,17 +1664,15 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Bedrockium, 9L),
                             GT_Utility.getIntegratedCircuit(1))
-                    .itemOutputs(GT_ModHandler.getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1L, 0))
-                    .fluidInputs(Materials.UUMatter.getMolten(1000L)).noFluidOutputs().duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
+                    .itemOutputs(GT_ModHandler.getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1L, 0)).noFluidInputs()
+                    .noFluidOutputs().duration(1 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 9L),
                             GT_Utility.getIntegratedCircuit(1))
-                    .itemOutputs(GT_ModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2))
-                    .fluidInputs(Materials.UUMatter.getMolten(1000L)).noFluidOutputs().duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
+                    .itemOutputs(GT_ModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2)).noFluidInputs()
+                    .noFluidOutputs().duration(1 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
 
         }
 
@@ -1705,6 +1704,12 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UIV.get(1L))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).noFluidOutputs().duration(30 * SECONDS)
                 .eut(24).addTo(sAssemblerRecipes);
+
+        // crafting input slave
+        GT_Values.RA.stdBuilder()
+                .itemInputs(ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L), ItemList.Sensor_UV.get(1L))
+                .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).noFluidInputs().noFluidOutputs()
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
 
         // Gear Box Casings
         GT_Values.RA.stdBuilder()
@@ -2055,6 +2060,15 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Diamond, 1L))
                 .fluidInputs(Materials.Lubricant.getFluid(250L)).noFluidOutputs().duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        if (TecTech.isModLoaded() && GTPlusPlus.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
+                            (GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFineWireChromaticGlass", 2)))
+                    .itemOutputs(com.github.technus.tectech.thing.CustomItemList.DATApipe.get(64))
+                    .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).noFluidOutputs().duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
+        }
     }
 
     private void makeElectricMachinePartRecipes() {
@@ -4574,7 +4588,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 48),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 2L, 51))
-                .fluidInputs(Materials.EnderEye.getMolten(288L)).noFluidOutputs().duration(20 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).noFluidOutputs().duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
         // Manual
 
@@ -4925,7 +4939,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(GT_ModHandler.getModItem(OpenSecurity.ID, "opensecurity.magCard", 2L, 0))
-                .fluidInputs(Materials.Glue.getMolten(144L)).noFluidOutputs().duration(7 * SECONDS + 10 * TICKS).eut(64)
+                .fluidInputs(Materials.Glue.getFluid(144L)).noFluidOutputs().duration(7 * SECONDS + 10 * TICKS).eut(64)
                 .addTo(sAssemblerRecipes);
         // RFID Card
 
@@ -4937,7 +4951,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Circuit_Parts_Transistor.get(1L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_ModHandler.getModItem(OpenSecurity.ID, "opensecurity.rfidCard", 2L, 0))
-                .fluidInputs(Materials.Glue.getMolten(144L)).noFluidOutputs().duration(7 * SECONDS + 10 * TICKS).eut(64)
+                .fluidInputs(Materials.Glue.getFluid(144L)).noFluidOutputs().duration(7 * SECONDS + 10 * TICKS).eut(64)
                 .addTo(sAssemblerRecipes);
         // RFID Reader Card
 
@@ -5418,8 +5432,8 @@ public class AssemblerRecipes implements Runnable {
                         GT_ModHandler.getModItem(GalacticraftCore.ID, "item.heavyPlating", 4L, 0),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftCore.ID, "item.noseCone", 1L, 0))
-                .fluidInputs(Materials.StainlessSteel.getFluid(36L)).noFluidOutputs().duration(2 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.StainlessSteel.getMolten(36L)).noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -5427,7 +5441,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4L, 0),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.heavyNoseCone", 1L, 0))
-                .fluidInputs(Materials.Titanium.getFluid(36L)).noFluidOutputs().duration(2 * SECONDS + 10 * TICKS)
+                .fluidInputs(Materials.Titanium.getMolten(36L)).noFluidOutputs().duration(2 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
@@ -5457,7 +5471,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftCore.ID, "item.rocketFins", 1L, 0)).noFluidInputs()
                 .noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.stdBuilder().noItemInputs()
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 2L, 3),
+                        GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4L, 0),
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 2))
                 .noFluidInputs().noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(sAssemblerRecipes);
@@ -8236,7 +8254,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(Minecraft.ID, "acentauribbgrunt", 64, 0),
+                            getModItem(Minecraft.ID, "cobblestone", 64, 0),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Dilithium, 64),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Pumice, 64),
                             GT_Utility.getIntegratedCircuit(17))
