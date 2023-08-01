@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -36,71 +35,134 @@ public class CuttingMachineRecipes implements Runnable {
                 GT_Values.NI,
                 900,
                 96);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NAND.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_NAND.get(32L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(192).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NOR.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_NOR.get(16L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(192).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_CPU.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_CPU.get(8L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Simple_SoC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_Simple_SoC.get(6L)).noFluidInputs().noFluidOutputs()
-                .duration(20 * TICKS).eut(64).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_SoC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_SoC.get(6L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_HV).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_SoC2.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_SoC2.get(6L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(1024).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_ULPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_ULPIC.get(6L)).noFluidInputs().noFluidOutputs().duration(20 * TICKS)
-                .eut(TierEU.RECIPE_MV).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_LPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_LPIC.get(4L)).noFluidInputs().noFluidOutputs().duration(20 * TICKS)
-                .eut(TierEU.RECIPE_HV).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_PIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_PIC.get(4L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_EV).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_HPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_HPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(7860).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_UHPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_UHPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_LuV).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_NPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_PPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_PPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(500000).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_QPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_QPIC.get(2L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(2000000).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NanoCPU.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_NanoCPU.get(8L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_HV).addTo(sCutterRecipes);
-
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_QuantumCPU.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_QuantumCPU.get(4L)).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(20 * TICKS).eut(TierEU.RECIPE_EV).addTo(sCutterRecipes);
-
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_NAND.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_NAND.get(32L),
+                GT_Values.NI,
+                900,
+                192,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_NOR.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_NOR.get(16L),
+                GT_Values.NI,
+                900,
+                192,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_CPU.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_CPU.get(8L),
+                GT_Values.NI,
+                900,
+                120,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_Simple_SoC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_Simple_SoC.get(6L),
+                GT_Values.NI,
+                900,
+                64,
+                false);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_SoC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_SoC.get(6L),
+                GT_Values.NI,
+                900,
+                480,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_SoC2.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_SoC2.get(6L),
+                GT_Values.NI,
+                900,
+                1024,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_ULPIC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_ULPIC.get(6L),
+                GT_Values.NI,
+                900,
+                120,
+                false);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_LPIC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_LPIC.get(4L),
+                GT_Values.NI,
+                900,
+                480,
+                false);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_PIC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_PIC.get(4L),
+                GT_Values.NI,
+                900,
+                1920,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_HPIC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_HPIC.get(2L),
+                GT_Values.NI,
+                900,
+                7860,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_UHPIC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_UHPIC.get(2L),
+                GT_Values.NI,
+                900,
+                30720,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_NPIC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_NPIC.get(2L),
+                GT_Values.NI,
+                900,
+                122880,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_PPIC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_PPIC.get(2L),
+                GT_Values.NI,
+                900,
+                500000,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_QPIC.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_QPIC.get(2L),
+                GT_Values.NI,
+                900,
+                2000000,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_NanoCPU.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_NanoCPU.get(8L),
+                GT_Values.NI,
+                900,
+                480,
+                true);
+        GT_Values.RA.addCutterRecipe(
+                ItemList.Circuit_Wafer_QuantumCPU.get(1L),
+                GT_Values.NI,
+                ItemList.Circuit_Chip_QuantumCPU.get(4L),
+                GT_Values.NI,
+                900,
+                1920,
+                true);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Bioware.get(1L))
                 .itemOutputs(ItemList.Circuit_Parts_Chip_Bioware.get(16L), ItemList.Circuit_Chip_Biocell.get(16L))
                 .fluidInputs(Materials.UUMatter.getFluid(8_000L)).noFluidOutputs().duration(15 * SECONDS)
