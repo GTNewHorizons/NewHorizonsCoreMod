@@ -628,19 +628,15 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(10000, 10000).noFluidInputs().noFluidOutputs().duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sCentrifugeRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(ItemList.Cell_Air.get(5L))
-                .itemOutputs(Materials.Oxygen.getCells(1), ItemList.Cell_Empty.get(4L))
-                .outputChances(10000, 10000)
-                .noFluidInputs()
-                .fluidOutputs(Materials.Nitrogen.getGas(3900L))
-                .duration(1 * MINUTES + 20 * SECONDS)
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(5L))
+                .itemOutputs(Materials.Oxygen.getCells(1), ItemList.Cell_Empty.get(4L)).outputChances(10000, 10000)
+                .noFluidInputs().fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(8).addTo(sCentrifugeRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, GT_Values.W))
-                .itemOutputs(ItemList.Cell_Empty.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(2).addTo(sCentrifugeRecipes);
+                .itemOutputs(ItemList.Cell_Empty.get(1L)).noFluidInputs().noFluidOutputs().duration(5 * SECONDS).eut(2)
+                .addTo(sCentrifugeRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(Materials.AstralSilver.getDust(3))
                 .itemOutputs(Materials.Silver.getDust(2), Materials.Thaumium.getDust(1)).noFluidInputs()
