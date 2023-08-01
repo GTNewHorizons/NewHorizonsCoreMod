@@ -8,6 +8,8 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -28,6 +30,7 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_ModHandler.RecipeBits;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -397,12 +400,10 @@ public class ScriptAE2FC implements IScriptLoader {
                         AE2_PROCESS_CAL));
 
         // Fluid Storage Bus
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { AE2_STORAGE_BUS, GT_OreDictUnificator.get(OrePrefixes.panel, Materials.Lapis, 3), },
-                null,
-                AE2FC_FLUID_STORAGE_BUS,
-                300,
-                120);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(AE2_STORAGE_BUS, GT_OreDictUnificator.get(OrePrefixes.panel, Materials.Lapis, 3))
+                .itemOutputs(AE2FC_FLUID_STORAGE_BUS).noFluidInputs().noFluidOutputs().duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
@@ -903,46 +904,48 @@ public class ScriptAE2FC implements IScriptLoader {
                 "craftingToolScrewdriver",
                 AE2_ENERGY_CELL,
                 "craftingToolWrench");
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { CELL_1, GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2), AE2_ME_CHEST,
-                        AE2_ENERGY_CELL },
-                null,
-                AE2FC_PORTABLE_CELL,
-                200,
-                120);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        CELL_1,
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
+                        AE2_ME_CHEST,
+                        AE2_ENERGY_CELL)
+                .itemOutputs(AE2FC_PORTABLE_CELL).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
         // Quartz Tank
-        GT_Values.RA.addAssemblerRecipe(
-                GT_Utility.copyAmount(8, AE2_QUARTZ_GLASS),
-                GT_Utility.getIntegratedCircuit(8),
-                null,
-                AE2FC_TANK,
-                800,
-                30);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_Utility.copyAmount(8, AE2_QUARTZ_GLASS), GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(AE2FC_TANK).noFluidInputs().noFluidOutputs().duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+
         // Fluid Level Emitter
-        GT_Values.RA.addAssemblerRecipe(AE2_LEVEL_MAIN, LAPIS_PLATE, null, AE2FC_LEVEL_MAIN, 100, 120);
+        GT_Values.RA.stdBuilder().itemInputs(AE2_LEVEL_MAIN, LAPIS_PLATE).itemOutputs(AE2FC_LEVEL_MAIN).noFluidInputs()
+                .noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
         // Fluid Storage Monitor
-        GT_Values.RA.addAssemblerRecipe(
-                AE2_MON,
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3),
-                null,
-                AE2FC_MON,
-                300,
-                120);
+        GT_Values.RA.stdBuilder().itemInputs(AE2_MON, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
+                .itemOutputs(AE2FC_MON).noFluidInputs().noFluidOutputs().duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sAssemblerRecipes);
+
         // Fluid Conversion Monitor
-        GT_Values.RA.addAssemblerRecipe(
-                AE2_CON,
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3),
-                null,
-                AE2FC_CON,
-                300,
-                120);
+        GT_Values.RA.stdBuilder().itemInputs(AE2_CON, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
+                .itemOutputs(AE2FC_CON).noFluidInputs().noFluidOutputs().duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sAssemblerRecipes);
+
         // Wireless Fluid ME Terminal
-        GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2FC_FLUID_TERMINAL, null, AE2FC_FLUID_WIRELESS, 600, 120);
+        GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_FLUID_TERMINAL).itemOutputs(AE2FC_FLUID_WIRELESS)
+                .noFluidInputs().noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
         // Wireless Fluid Pattern Terminal
-        GT_Values.RA.addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2FC_TERMINAL, null, AE2FC_PATTERN_WIRELESS, 600, 120);
+        GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_TERMINAL).itemOutputs(AE2FC_PATTERN_WIRELESS)
+                .noFluidInputs().noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
         // Wireless Interface Terminal
-        GT_Values.RA
-                .addAssemblerRecipe(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM, null, AE2FC_INTERFACE_WIRELESS, 600, 120);
+        GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM)
+                .itemOutputs(AE2FC_INTERFACE_WIRELESS).noFluidInputs().noFluidOutputs().duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
