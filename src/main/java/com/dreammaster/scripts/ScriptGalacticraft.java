@@ -25,6 +25,8 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidCannerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
+import static gregtech.api.util.GT_RecipeConstants.FUEL_TYPE;
+import static gregtech.api.util.GT_RecipeConstants.FUEL_VALUE;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +35,11 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_RecipeConstants;
 
 public class ScriptGalacticraft implements IScriptLoader {
 
@@ -1243,11 +1250,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 'h',
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 122, missing));
 
-        GT_Values.RA.addFuel(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 30707, missing),
-                getModItem(IndustrialCraft2.ID, "itemCellEmpty", 1, 0, missing),
-                16,
-                0);
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oil, 1))
+                .itemOutputs(ItemList.Cell_Empty.get(1)).noFluidInputs().noFluidOutputs().metadata(FUEL_VALUE, 16)
+                .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
 
         arcFurnaceRecipes();
         assemblerRecipes();

@@ -26,6 +26,8 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeConstants.FUEL_TYPE;
+import static gregtech.api.util.GT_RecipeConstants.FUEL_VALUE;
 
 import java.util.Arrays;
 import java.util.List;
@@ -41,6 +43,7 @@ import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GT_RecipeConstants;
 import mods.railcraft.api.crafting.RailcraftCraftingManager;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1636,7 +1639,10 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3, missing),
                 'i',
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3, missing));
-        GT_Values.RA.addFuel(Materials.Creosote.getCells(1), null, 8, 0);
+
+        GT_Values.RA.stdBuilder().itemInputs(Materials.Creosote.getCells(1)).noItemOutputs().noFluidInputs()
+                .noFluidOutputs().metadata(FUEL_VALUE, 8).metadata(FUEL_TYPE, 0).duration(0).eut(0)
+                .addTo(GT_RecipeConstants.Fuel);
 
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 0, missing));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 1, missing));
