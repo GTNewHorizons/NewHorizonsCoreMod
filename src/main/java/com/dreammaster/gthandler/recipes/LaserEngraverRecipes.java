@@ -1,14 +1,14 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.GT_Values.NF;
+import static gregtech.api.enums.GT_Values.NI;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -24,7 +24,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
@@ -43,224 +42,245 @@ public class LaserEngraverRecipes implements Runnable {
                 .eut(32_000_000).noOptimize().addTo(sLaserEngraverRecipes);
 
         // Mysterious crystal upgrading
+        GT_Values.RA.addLaserEngraverRecipe(
+                CustomItemList.MysteriousCrystalPlate.get(9),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)),
+                CustomItemList.MysteriousCrystal.get(1L),
+                1200,
+                480,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                CustomItemList.MysteriousCrystalPlate.get(9),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)),
+                CustomItemList.MysteriousCrystal.get(1L),
+                1200,
+                480,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                CustomItemList.MysteriousCrystal.get(3L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)),
+                CustomItemList.MysteriousCrystalGemFlawless.get(1L),
+                600,
+                122880,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                CustomItemList.MysteriousCrystal.get(3L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)),
+                CustomItemList.MysteriousCrystalGemFlawless.get(1L),
+                600,
+                122880,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                CustomItemList.MysteriousCrystalGemFlawless.get(3L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)),
+                CustomItemList.MysteriousCrystalGemExquisite.get(1L),
+                600,
+                30720,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                CustomItemList.MysteriousCrystalGemFlawless.get(3L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)),
+                CustomItemList.MysteriousCrystalGemExquisite.get(1L),
+                600,
+                30720,
+                true);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.MysteriousCrystalPlate.get(9),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
-                .itemOutputs(CustomItemList.MysteriousCrystal.get(1L)).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(20 * TICKS).eut(TierEU.RECIPE_HV).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.addLaserEngraverRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Topaz, 1)),
+                CustomItemList.MytrylCrystal.get(1L),
+                1200,
+                256,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Amber, 1)),
+                CustomItemList.MytrylCrystal.get(1L),
+                1200,
+                256,
+                true);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.MysteriousCrystalPlate.get(9),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
-                .itemOutputs(CustomItemList.MysteriousCrystal.get(1L)).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(20 * TICKS).eut(TierEU.RECIPE_HV).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer2.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)),
+                ItemList.Circuit_Wafer_NAND.get(1L),
+                900,
+                480,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer3.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)),
+                ItemList.Circuit_Wafer_NAND.get(4L),
+                600,
+                1920,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer4.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)),
+                ItemList.Circuit_Wafer_NAND.get(8L),
+                600,
+                7680,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer5.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)),
+                ItemList.Circuit_Wafer_NAND.get(16L),
+                600,
+                30720,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer2.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)),
+                ItemList.Circuit_Wafer_NOR.get(1L),
+                900,
+                480,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer3.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)),
+                ItemList.Circuit_Wafer_NOR.get(4L),
+                600,
+                1920,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer4.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)),
+                ItemList.Circuit_Wafer_NOR.get(8L),
+                600,
+                7680,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer5.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)),
+                ItemList.Circuit_Wafer_NOR.get(16L),
+                600,
+                30720,
+                true);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.MysteriousCrystal.get(3L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
-                .itemOutputs(CustomItemList.MysteriousCrystalGemFlawless.get(1L)).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(20 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer3.get(1L),
+                CustomItemList.ReinforcedGlassLense.get(0),
+                CustomItemList.WaferTier3.get(1L),
+                200,
+                1024);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.MysteriousCrystal.get(3L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
-                .itemOutputs(CustomItemList.MysteriousCrystalGemFlawless.get(1L)).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(20 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.MysteriousCrystalGemFlawless.get(3L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
-                .itemOutputs(CustomItemList.MysteriousCrystalGemExquisite.get(1L)).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(20 * TICKS).eut(TierEU.RECIPE_LuV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.MysteriousCrystalGemFlawless.get(3L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
-                .itemOutputs(CustomItemList.MysteriousCrystalGemExquisite.get(1L)).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(20 * TICKS).eut(TierEU.RECIPE_LuV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Topaz, 1)))
-                .itemOutputs(CustomItemList.MytrylCrystal.get(1L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(256).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Mytryl, 9L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Amber, 1)))
-                .itemOutputs(CustomItemList.MytrylCrystal.get(1L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(256).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer2.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NAND.get(1L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_HV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer3.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NAND.get(4L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_EV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer4.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NAND.get(8L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_IV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer5.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NAND.get(16L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_LuV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer2.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NOR.get(1L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_HV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer3.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NOR.get(4L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_EV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer4.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NOR.get(8L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_IV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer5.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NOR.get(16L)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_LuV).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(ItemList.Circuit_Silicon_Wafer3.get(1L), CustomItemList.ReinforcedGlassLense.get(0))
-                .itemOutputs(CustomItemList.WaferTier3.get(1L)).noFluidInputs().noFluidOutputs().duration(20 * TICKS)
-                .eut(1024).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Wafer_SoC2.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
-                .itemOutputs(com.dreammaster.item.ItemList.RawPicoWafer.getIS()).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(20 * TICKS).eut(GT_Values.V[8] - (GT_Values.V[8] / 10))
-                .addTo(sLaserEngraverRecipes);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Wafer_SoC2.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)),
+                com.dreammaster.item.ItemList.RawPicoWafer.getIS(),
+                6000,
+                (int) (GT_Values.V[8] - (GT_Values.V[8] / 10)),
+                true);
 
         if (BartWorks.isModLoaded()) {
             // Optical Boule
-            GT_Values.RA.stdBuilder().itemInputs(
-                    ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
-                    WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
-                    WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
-                    CustomItemList.MysteriousCrystalLens.get(0)).itemOutputs(ItemList.Circuit_Silicon_Ingot6.get(1L))
-                    .fluidInputs(Materials.UUMatter.getFluid(16000L)).noFluidOutputs().requiresCleanRoom()
-                    .duration(30 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sLaserEngraverRecipes);
+            GT_Values.RA.addLaserEngraverRecipe(
+                    new ItemStack[] { ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
+                            WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
+                            WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
+                            CustomItemList.MysteriousCrystalLens.get(0) },
+                    new FluidStack[] { Materials.UUMatter.getFluid(16000L) },
+                    new ItemStack[] { ItemList.Circuit_Silicon_Ingot6.get(1L) },
+                    new FluidStack[] { NF },
+                    30 * 20,
+                    7_864_320,
+                    true);
 
             Fluid oganesson = FluidRegistry.getFluid("oganesson") != null ? FluidRegistry.getFluid("oganesson")
                     : FluidRegistry.getFluid("radon");
 
             if (SuperSolarPanels.isModLoaded()) {
                 // Photonically Enhanced Wafer
-                GT_Values.RA.stdBuilder().itemInputs(
-                        ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
-                        Materials.Glowstone.getNanite(1),
-                        GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 0L, 0) // Solar Light Splitter
-                ).itemOutputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
-                        .fluidInputs(Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000))
-                        .fluidOutputs(Materials.Tin.getMolten(1000L)).requiresCleanRoom().duration(10 * SECONDS)
-                        .eut(TierEU.RECIPE_UEV).addTo(sLaserEngraverRecipes);
+                GT_Values.RA.addLaserEngraverRecipe(
+                        new ItemStack[] { ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
+                                Materials.Glowstone.getNanite(1),
+                                GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 0L, 0) // Solar Light
+                                                                                                      // Splitter
+                        },
+                        new FluidStack[] { Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000) },
+                        new ItemStack[] { ItemList.Circuit_Silicon_Wafer7.get(1L) },
+                        new FluidStack[] { Materials.Tin.getMolten(1000L) },
+                        10 * 20,
+                        7_864_320,
+                        true);
             }
 
-            GT_Values.RA.stdBuilder().itemInputs(WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0) // Hedenbergite
-                                                                                                      // Lens
-            ).noItemOutputs().fluidInputs(Materials.Grade3PurifiedWater.getFluid(1000L))
-                    .fluidOutputs(
-                            Materials.Grade4PurifiedWater.getFluid(900L),
-                            FluidRegistry.getFluidStack("bacterialsludge", 50))
-                    .requiresCleanRoom().duration(4 * MINUTES + 10 * SECONDS).eut(245_760).addTo(sLaserEngraverRecipes);
+            GT_Values.RA.addLaserEngraverRecipe(
+                    new ItemStack[] { WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0) }, // Hedenbergite Lens
+                    new FluidStack[] { Materials.Grade3PurifiedWater.getFluid(1000L) },
+                    new ItemStack[] { NI },
+                    new FluidStack[] { Materials.Grade4PurifiedWater.getFluid(900L),
+                            FluidRegistry.getFluidStack("bacterialsludge", 50) },
+                    500 * 10,
+                    245_760,
+                    true);
 
-            GT_Values.RA.stdBuilder().itemInputs(WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0) // Bart Lens
-            ).noItemOutputs().fluidInputs(Materials.Grade5PurifiedWater.getFluid(1000L))
-                    .fluidOutputs(Materials.Grade6PurifiedWater.getFluid(900L), Materials.Water.getGas(8000L))
-                    .requiresCleanRoom().duration(4 * MINUTES + 10 * SECONDS).eut(983_040).addTo(sLaserEngraverRecipes);
+            GT_Values.RA.addLaserEngraverRecipe(
+                    new ItemStack[] { WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0) }, // Bart Lens
+                    new FluidStack[] { Materials.Grade5PurifiedWater.getFluid(1000L) },
+                    new ItemStack[] { NI },
+                    new FluidStack[] { Materials.Grade6PurifiedWater.getFluid(900L), Materials.Water.getGas(8000L) },
+                    500 * 10,
+                    983_040,
+                    true);
 
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
+            GT_Values.RA.addLaserEngraverRecipe(
+                    new ItemStack[] {
                             GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1)),
-                            ItemList.Circuit_Chip_CrystalSoC2.get(1L))
-                    .itemOutputs(ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1))
-                    .fluidInputs(Materials.BioMediumSterilized.getFluid(50L)).noFluidOutputs().requiresCleanRoom()
-                    .duration(60 * SECONDS).eut(160_000).addTo(sLaserEngraverRecipes);
+                            ItemList.Circuit_Chip_CrystalSoC2.get(1L) },
+                    new FluidStack[] { Materials.BioMediumSterilized.getFluid(50L) },
+                    new ItemStack[] { ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1) },
+                    new FluidStack[] { NF },
+                    60 * 20,
+                    160000,
+                    true);
         }
 
         // GC/GS Wafer
         if (GalacticraftCore.isModLoaded()) {
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(ItemList.Circuit_Silicon_Wafer.get(1L), CustomItemList.ReinforcedGlassLense.get(0))
-                    .itemOutputs(GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1L, 13))
-                    .noFluidInputs().noFluidOutputs().duration(20 * TICKS).eut(256).addTo(sLaserEngraverRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(ItemList.Circuit_Silicon_Wafer2.get(1L), CustomItemList.ReinforcedGlassLense.get(0))
-                    .itemOutputs(GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1L, 14))
-                    .noFluidInputs().noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_HV)
-                    .addTo(sLaserEngraverRecipes);
-
+            GT_Values.RA.addLaserEngraverRecipe(
+                    ItemList.Circuit_Silicon_Wafer.get(1L),
+                    CustomItemList.ReinforcedGlassLense.get(0),
+                    GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1L, 13),
+                    200,
+                    256);
+            GT_Values.RA.addLaserEngraverRecipe(
+                    ItemList.Circuit_Silicon_Wafer2.get(1L),
+                    CustomItemList.ReinforcedGlassLense.get(0),
+                    GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1L, 14),
+                    200,
+                    480);
         }
 
         // Optical to Wafer Buff Recipes
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer6.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
-                .itemOutputs(CustomItemList.RawPicoWafer.get(16)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(1887440).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer6.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_SoC2.get(32)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer6.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_QPIC.get(16)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(1887440).addTo(sLaserEngraverRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer6.get(1L),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1)))
-                .itemOutputs(ItemList.Circuit_Wafer_NPIC.get(32)).noFluidInputs().noFluidOutputs().requiresCleanRoom()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_UV).addTo(sLaserEngraverRecipes);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer6.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)),
+                CustomItemList.RawPicoWafer.get(16),
+                6000,
+                1887440,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer6.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1)),
+                ItemList.Circuit_Wafer_SoC2.get(32),
+                45 * 20,
+                122880,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer6.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1)),
+                ItemList.Circuit_Wafer_QPIC.get(16),
+                120 * 20,
+                1887440,
+                true);
+        GT_Values.RA.addLaserEngraverRecipe(
+                ItemList.Circuit_Silicon_Wafer6.get(1L),
+                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1)),
+                ItemList.Circuit_Wafer_NPIC.get(32),
+                60 * 20,
+                491520,
+                true);
 
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT
@@ -291,14 +311,12 @@ public class LaserEngraverRecipes implements Runnable {
         tag.setInteger("oc:color", color);
         tag.setString("oc:lootFactory", "OpenComputers:" + name);
         floppy.setTagCompound(tag);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 4),
-                        GT_Utility.getIntegratedCircuit(circuit))
-                .itemOutputs(floppy).noFluidInputs().noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_MV)
-                .addTo(sLaserEngraverRecipes);
-        return true;
+        return GT_Values.RA.addLaserEngraverRecipe(
+                GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 4),
+                GT_Utility.getIntegratedCircuit(circuit),
+                floppy,
+                200,
+                120);
     }
 
     private static final boolean makeLuaBios() {
@@ -382,15 +400,11 @@ public class LaserEngraverRecipes implements Runnable {
         subtag.setByteArray("oc:eeprom", b);
         tag.setTag("oc:data", subtag);
         lua.setTagCompound(tag);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_ModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(lua).noFluidInputs().noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_MV)
-                .addTo(sLaserEngraverRecipes);
-
-        return true;
-
+        return GT_Values.RA.addLaserEngraverRecipe(
+                GT_ModHandler.getModItem(OpenComputers.ID, "eeprom", 1L, 0),
+                GT_Utility.getIntegratedCircuit(1),
+                lua,
+                200,
+                120);
     }
 }
