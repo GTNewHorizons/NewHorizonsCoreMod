@@ -398,7 +398,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         // Fluid Storage Bus
         GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { AE2_STORAGE_BUS, GT_OreDictUnificator.get(OrePrefixes.panel, Materials.Lapis, 3), },
+                new ItemStack[] { AE2_STORAGE_BUS, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3), },
                 null,
                 AE2FC_FLUID_STORAGE_BUS,
                 300,
