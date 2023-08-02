@@ -281,7 +281,7 @@ public class ChemicalReactorRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(Materials.Hydrogen.getCells(3)),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnetite, 0))
+                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnetite, 1)))
                 .itemOutputs(ItemList.Cell_Empty.get(3L)).fluidInputs(Materials.Nitrogen.getGas(1000L))
                 .fluidOutputs(Materials.Ammonia.getGas(1000)).duration(16 * SECONDS).eut(384).addTo(UniversalChemical);
 
