@@ -402,7 +402,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         // Fluid Storage Bus
         GT_Values.RA.stdBuilder()
-                .itemInputs(AE2_STORAGE_BUS, GT_OreDictUnificator.get(OrePrefixes.panel, Materials.Lapis, 3))
+                .itemInputs(AE2_STORAGE_BUS, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
                 .itemOutputs(AE2FC_FLUID_STORAGE_BUS).noFluidInputs().noFluidOutputs().duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
 
