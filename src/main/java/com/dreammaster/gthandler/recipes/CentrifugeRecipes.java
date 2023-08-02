@@ -700,9 +700,9 @@ public class CentrifugeRecipes implements Runnable {
         }
 
         if (Gendustry.isModLoaded()) {
-            GT_Values.RA.stdBuilder().itemInputs(CustomItemList.FieryBloodDrop.get(1L)).noItemOutputs()
-                    .outputChances(10000).noFluidInputs().fluidOutputs(Materials.FierySteel.getFluid(10L))
-                    .duration(12 * TICKS).eut(TierEU.RECIPE_HV).addTo(sCentrifugeRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(CustomItemList.FieryBloodDrop.get(1L)).noItemOutputs().noFluidInputs()
+                    .fluidOutputs(Materials.FierySteel.getFluid(10L)).duration(12 * TICKS).eut(TierEU.RECIPE_HV)
+                    .addTo(sCentrifugeRecipes);
         }
 
     }
