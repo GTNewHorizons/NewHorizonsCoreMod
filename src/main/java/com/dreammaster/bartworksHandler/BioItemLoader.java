@@ -23,7 +23,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.github.bartimaeusnek.bartworks.MainMod;
 import com.github.bartimaeusnek.bartworks.common.items.SimpleSubItemClass;
-import com.github.bartimaeusnek.bartworks.util.BW_Util;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
@@ -119,7 +118,7 @@ public class BioItemLoader {
                 new FluidStack[] { new FluidStack(BIOFLUIDS[2], 50) },
                 new FluidStack[] { new FluidStack(BIOFLUIDS[3], 50) },
                 1200,
-                BW_Util.getMachineVoltageFromTier(8),
+                (int) TierEU.RECIPE_UV,
                 100,
                 8,
                 0,

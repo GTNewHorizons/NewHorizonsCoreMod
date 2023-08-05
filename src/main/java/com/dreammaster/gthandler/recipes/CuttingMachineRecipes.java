@@ -100,7 +100,7 @@ public class CuttingMachineRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_Bioware.get(1L))
                 .itemOutputs(ItemList.Circuit_Parts_Chip_Bioware.get(16L), ItemList.Circuit_Chip_Biocell.get(16L))
                 .fluidInputs(Materials.UUMatter.getFluid(8_000L)).noFluidOutputs().duration(15 * SECONDS)
-                .eut((int) TierEU.RECIPE_UEV).addTo(sCutterRecipes);
+                .eut(TierEU.RECIPE_UEV).addTo(sCutterRecipes);
         if (IndustrialCraft2.isModLoaded()) {
 
             GT_Values.RA.stdBuilder()

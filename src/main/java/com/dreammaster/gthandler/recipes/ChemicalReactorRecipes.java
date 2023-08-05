@@ -565,7 +565,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(1))
                 .itemOutputs(com.dreammaster.item.ItemList.PicoWafer.getIS())
                 .fluidInputs(Materials.Neutronium.getMolten(144L)).noFluidOutputs().duration(2 * MINUTES + 30 * SECONDS)
-                .eut((int) (GT_Values.V[9] - (GT_Values.V[9] / 10))).addTo(sMultiblockChemicalRecipes);
+                .eut((GT_Values.V[9] - (GT_Values.V[9] / 10))).addTo(sMultiblockChemicalRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

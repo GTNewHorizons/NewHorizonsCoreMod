@@ -165,7 +165,7 @@ public class LaserEngraverRecipes implements Runnable {
                         ItemList.Circuit_Wafer_SoC2.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
                 .itemOutputs(com.dreammaster.item.ItemList.RawPicoWafer.getIS()).noFluidInputs().noFluidOutputs()
-                .requiresCleanRoom().duration(5 * MINUTES).eut((int) (GT_Values.V[8] - (GT_Values.V[8] / 10)))
+                .requiresCleanRoom().duration(5 * MINUTES).eut((GT_Values.V[8] - (GT_Values.V[8] / 10)))
                 .addTo(sLaserEngraverRecipes);
 
         if (BartWorks.isModLoaded()) {

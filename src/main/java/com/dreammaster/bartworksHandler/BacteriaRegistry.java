@@ -264,7 +264,7 @@ public class BacteriaRegistry {
                 new int[] { 250 },
                 FluidRegistry.getFluidStack("unknowwater", 8000),
                 500,
-                BW_Util.getMachineVoltageFromTier(8),
+                (int) TierEU.RECIPE_UV,
                 0);
 
         for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
@@ -274,7 +274,7 @@ public class BacteriaRegistry {
                     new int[] { 250 },
                     FluidRegistry.getFluidStack("unknowwater", 8000),
                     500,
-                    BW_Util.getMachineVoltageFromTier(8),
+                    (int) TierEU.RECIPE_UV,
                     0);
         }
         addBacterialVatRecipe(
