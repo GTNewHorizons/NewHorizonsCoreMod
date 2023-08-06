@@ -329,15 +329,6 @@ public class ChemicalReactorRecipes implements Runnable {
                 true);
 
         GT_Values.RA.addChemicalRecipe(
-                GT_OreDictUnificator.get(Materials.Hydrogen.getCells(3)),
-                GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnetite, 1)),
-                Materials.Nitrogen.getGas(1000L),
-                Materials.Ammonia.getGas(1000),
-                ItemList.Cell_Empty.get(3L),
-                320,
-                384);
-
-        GT_Values.RA.addChemicalRecipe(
                 new ItemStack(Items.ghast_tear),
                 GT_Utility.getIntegratedCircuit(1),
                 Materials.Water.getFluid(1000L),
