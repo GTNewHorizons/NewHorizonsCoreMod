@@ -7671,7 +7671,9 @@ public class AssemblerRecipes implements Runnable {
     private void makePistonRecipes() {
         // Vanilla Piston Assembler recipe
         List<ItemStack> fenceWood = OreDictionary.getOres("fenceWood");
-        for (ItemStack stack : fenceWood) {
+        for (ItemStack oreStack : fenceWood) {
+
+            ItemStack stack = oreStack.splitStack(1);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
