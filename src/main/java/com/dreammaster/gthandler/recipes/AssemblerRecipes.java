@@ -1694,7 +1694,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UEV.get(1L))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).noFluidOutputs().duration(30 * SECONDS)
-                .eut(24).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_UEV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1703,7 +1703,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UIV.get(1L))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).noFluidOutputs().duration(30 * SECONDS)
-                .eut(24).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
 
         // crafting input slave
         GT_Values.RA.stdBuilder()
@@ -2029,7 +2029,7 @@ public class AssemblerRecipes implements Runnable {
                         CustomItemList.Hull_UMV.get(1),
                         GT_Utility.getIntegratedCircuit(4))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).noFluidOutputs()
-                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UMV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UMV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(sAssemblerRecipes);
         // Spacetime quadruple is temp replacement until Universium Pipes.
         GT_Values.RA.stdBuilder()
@@ -2038,7 +2038,7 @@ public class AssemblerRecipes implements Runnable {
                         CustomItemList.Hull_UXV.get(1),
                         GT_Utility.getIntegratedCircuit(4))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304)).noFluidOutputs()
-                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UXV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UXV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UXV)
                 .addTo(sAssemblerRecipes);
         if (BartWorks.isModLoaded()) {
             GT_Values.RA.stdBuilder()
@@ -2048,7 +2048,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_Utility.getIntegratedCircuit(4))
                     .fluidInputs(MaterialsUEVplus.Space.getMolten(5760)).noFluidOutputs()
                     .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
+                    .eut(TierEU.RECIPE_UXV).addTo(sAssemblerRecipes);
         }
 
         // Diamond Gear
