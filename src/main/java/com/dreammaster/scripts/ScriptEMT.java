@@ -2337,7 +2337,7 @@ public class ScriptEMT implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(getModItem(GregTech.ID, "gt.metaitem.01", 1, 5035, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
-                "UU-MatterInfusion",
+                "UUMatterInfusion",
                 getModItem(GregTech.ID, "gt.metaitem.01", 32, 5057, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("aqua"), 8)
