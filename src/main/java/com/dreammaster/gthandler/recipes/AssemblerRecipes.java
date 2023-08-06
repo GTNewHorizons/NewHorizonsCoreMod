@@ -8445,7 +8445,7 @@ public class AssemblerRecipes implements Runnable {
                             getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
                             getModItem(Minecraft.ID, "stone", 64, 0),
                             getModItem(GalaxySpace.ID, "barnardaCgrass", 64, 0),
-                            getModItem(GalaxySpace.ID, "barnardaCsapling", 1, 0),
+                            getModItem(GalaxySpace.ID, "barnardaCsapling", 1, 1),
                             GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BC", 1, 0)).noFluidOutputs()
