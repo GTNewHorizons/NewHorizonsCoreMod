@@ -389,17 +389,6 @@ public class ScriptGregtech implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 1890, missing),
                 "craftingToolMortar",
                 getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 2, 2322, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2305, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 10, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1047, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1345, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1034, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1029, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1030, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1048, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1028, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockcasings2", 1, 10, missing),
                 "itemCasingStainlessSteel",
