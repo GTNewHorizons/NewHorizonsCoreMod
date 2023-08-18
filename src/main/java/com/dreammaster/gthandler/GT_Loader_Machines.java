@@ -9118,11 +9118,11 @@ public class GT_Loader_Machines {
         for (int aTier = 10; aTier < 15; aTier++) {
             GT_Values.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).itemOutputs(inHatches[aTier - 10])
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
-                    .noFluidOutputs().duration(24 * SECONDS).eut((30 * Math.pow(4, (aTier - 1))))
+                    .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
                     .addTo(sAssemblerRecipes);
             GT_Values.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).itemOutputs(outHatches[aTier - 10])
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
-                    .noFluidOutputs().duration(24 * SECONDS).eut((30 * Math.pow(4, (aTier - 1))))
+                    .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
                     .addTo(sAssemblerRecipes);
         }
 
