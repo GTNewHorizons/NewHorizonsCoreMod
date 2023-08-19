@@ -517,7 +517,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1))
-                .itemOutputs(getModItem(OpenBlocks.ID, "ropeladder", 64, 0, missing)).noFluidInputs().noFluidOutputs()
+                .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 15, missing)).outputChances(10000)
