@@ -8494,13 +8494,60 @@ public class AssemblerRecipes implements Runnable {
                     .fluidInputs(Materials.Copper.getMolten(10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_CB", 1, 0)).noFluidOutputs()
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sAssemblerRecipes);
-            // Technically T9
+            // T9 Planets
+            // Seth
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                            getModItem(Minecraft.ID, "snow", 64, 0),
+                            getModItem(Minecraft.ID, "packed_ice", 64, 0),
+                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.TengamRaw, 64),
+                            GT_Utility.getIntegratedCircuit(17))
+                    .fluidInputs(FluidRegistry.getFluidStack("ice", 10000))
+                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Se", 1, 0)).noFluidOutputs()
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
+            // Anubis
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseBlockGround", 64, 1),
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.InfinityCatalyst, 64),
+                            GT_Utility.getIntegratedCircuit(17))
+                    .noFluidInputs() // This breaks the pattern but the theme of the planet is that it's super dry so
+                                     // :shrug:, maybe add eventual pumpable fluid
+                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_An", 1, 0)).noFluidOutputs()
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
+            // Neper
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                            getModItem(Minecraft.ID, "grass", 64, 0),
+                            getModItem(Minecraft.ID, "stone", 64, 0),
+                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Dilithium, 64),
+                            GT_Utility.getIntegratedCircuit(17))
+                    .fluidInputs(Materials.Water.getFluid(10000)) // There isn't actually water on Neper, but it fits
+                                                                  // the grass
+                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Np", 1, 0)).noFluidOutputs()
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
+            // Maahes
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseGrass", 64, 0),
+                            getModItem(GalacticraftAmunRa.ID, "tile.saplings", 1, 0),
+                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Naquadria, 64),
+                            GT_Utility.getIntegratedCircuit(17))
+                    .fluidInputs(Materials.Water.getFluid(10000)) // Same as Neper (but the grass is red)
+                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1, 0)).noFluidOutputs()
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
+            // Technically T10
             // Deep Dark
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
                             getModItem(Minecraft.ID, "cobblestone", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Dilithium, 64),
+                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Rubidium, 64),
                             GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Pumice, 64),
                             GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(10000))
