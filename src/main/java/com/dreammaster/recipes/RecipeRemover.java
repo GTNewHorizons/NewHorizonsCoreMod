@@ -915,7 +915,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemMaterial", 1, 15, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemMaterial", 1, 16, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemMaterial", 1, 17, missing));
-        removeRecipeByOutputDelayed(getModItem("EnderIO", "tem.darkSteel_shears", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem("EnderIO", "item.darkSteel_shears", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "item.stellar_pickaxe", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "item.stellar_axe", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "item.stellar_sword", 1, 0, missing));
