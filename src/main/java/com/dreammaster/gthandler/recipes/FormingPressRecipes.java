@@ -40,7 +40,8 @@ public class FormingPressRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.MicaBasedPulp.get(4L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.MicaBasedSheet.get(4L)).noFluidInputs().noFluidOutputs()
                 .duration(20 * SECONDS).eut(28).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
@@ -48,7 +49,7 @@ public class FormingPressRecipes implements Runnable {
                         CustomItemList.MicaBasedPulp.get(16L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
                         ItemList.Shape_Mold_Plate.get(0L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(CustomItemList.MicaBasedSheet.get(16L)).noFluidInputs().noFluidOutputs()
                 .duration(20 * SECONDS).eut(256).addTo(sPressRecipes);
 
