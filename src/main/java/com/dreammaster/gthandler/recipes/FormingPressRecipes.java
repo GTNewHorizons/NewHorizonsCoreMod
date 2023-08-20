@@ -34,7 +34,6 @@ public class FormingPressRecipes implements Runnable {
                 .itemInputs(CustomItemList.MalformedSlush.get(2L), CustomItemList.MarshmallowForm.get(0L))
                 .itemOutputs(CustomItemList.UncookedSlush.get(1L)).noFluidInputs().noFluidOutputs()
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sPressRecipes);
-
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MarshmallowForm.get(0L))
                 .itemOutputs(CustomItemList.MarshmallowForm.get(1L)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
