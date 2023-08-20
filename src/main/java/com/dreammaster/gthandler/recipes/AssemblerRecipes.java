@@ -8505,7 +8505,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(FluidRegistry.getFluidStack("ice", 10000))
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Se", 1, 0)).noFluidOutputs()
-                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
             // Anubis
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8517,7 +8517,7 @@ public class AssemblerRecipes implements Runnable {
                     .noFluidInputs() // This breaks the pattern but the theme of the planet is that it's super dry so
                                      // :shrug:, maybe add eventual pumpable fluid
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_An", 1, 0)).noFluidOutputs()
-                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
             // Neper
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8529,7 +8529,7 @@ public class AssemblerRecipes implements Runnable {
                     .fluidInputs(Materials.Water.getFluid(10000)) // There isn't actually water on Neper, but it fits
                                                                   // the grass
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Np", 1, 0)).noFluidOutputs()
-                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
             // Maahes
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8540,7 +8540,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Water.getFluid(10000)) // Same as Neper (but the grass is red)
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1, 0)).noFluidOutputs()
-                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(sAssemblerRecipes);
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(sAssemblerRecipes);
             // Technically T10
             // Deep Dark
             GT_Values.RA.stdBuilder()
