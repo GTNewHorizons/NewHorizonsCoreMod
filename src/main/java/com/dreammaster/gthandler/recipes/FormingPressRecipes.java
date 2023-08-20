@@ -11,6 +11,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
+import gregtech.api.util.GT_Utility;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -47,7 +48,8 @@ public class FormingPressRecipes implements Runnable {
                 .itemInputs(
                         CustomItemList.MicaBasedPulp.get(16L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
-                        ItemList.Shape_Mold_Plate.get(0L))
+                        ItemList.Shape_Mold_Plate.get(0L),
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.MicaBasedSheet.get(16L)).noFluidInputs().noFluidOutputs()
                 .duration(20 * SECONDS).eut(256).addTo(sPressRecipes);
 
