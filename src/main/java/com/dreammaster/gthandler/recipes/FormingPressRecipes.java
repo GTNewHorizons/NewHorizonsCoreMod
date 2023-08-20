@@ -36,8 +36,13 @@ public class FormingPressRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MarshmallowForm.get(0L))
                 .itemOutputs(CustomItemList.MarshmallowForm.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
-
+                .duration(10 * SECONDS).eut(28).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        CustomItemList.MicaBasedPulp.get(4L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L))
+                .itemOutputs(CustomItemList.MicaBasedSheet.get(4L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(28).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.MicaBasedPulp.get(16L),
