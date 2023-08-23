@@ -38,6 +38,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
 
 public class ScriptStevesCarts implements IScriptLoader {
 
@@ -1901,8 +1902,8 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(120).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "diamond", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 18, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("obsidian.molten", 1152)).noFluidOutputs().duration(600)
-                .eut(30).addTo(UniversalChemical);
+                .fluidInputs(Materials.Obsidian.getMolten(1152)).noFluidOutputs().duration(600).eut(30)
+                .addTo(UniversalChemical);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 18809, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).noFluidOutputs().duration(100).eut(30)
