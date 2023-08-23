@@ -17,6 +17,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
 
 public class ScriptWirelessRedstone implements IScriptLoader {
 
@@ -156,8 +157,8 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                         getModItem(WirelessRedstoneCBECore.ID, "blazeTransceiver", 2, 0, missing),
                         getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 2, 0, missing))
                 .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "rep", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("obsidian.molten", 1440)).noFluidOutputs().duration(600)
-                .eut(120).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Obsidian.getMolten(1440)).noFluidOutputs().duration(600).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
