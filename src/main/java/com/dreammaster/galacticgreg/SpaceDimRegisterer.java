@@ -402,7 +402,7 @@ public class SpaceDimRegisterer {
 
         ModDimensionDef dimMehenBelt = new ModDimensionDef(
                 "Mehen Belt",
-                "de.katzenpapst.amunra.world.asteroidWorld.AmunRaAsteroidsChunkProvider",
+                "de.katzenpapst.amunra.world.mehen.MehenChunkProvider",
                 Enums.DimensionType.Asteroid);
         dimMehenBelt.addAsteroidMaterial(GTOreTypes.BlackGranite);
         modAmunRa.addDimensionDef(dimMehenBelt);
