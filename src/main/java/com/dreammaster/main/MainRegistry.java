@@ -279,7 +279,7 @@ public class MainRegistry {
         }
         Logger.warn("==================================================");
         Logger.warn("Welcome to Gregtech:New Horizons " + CoreModConfig.ModPackVersion);
-        Logger.warn("Please bring comments to " + "https://discord.gg/EXshrPV");
+        Logger.warn("Please bring comments to " + "https://discord.gg/gtnh");
         Logger.warn("==================================================");
 
         MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
