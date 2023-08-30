@@ -43,7 +43,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
     public void run() {
         GT_Log.out.println("Core-Mod: Register OreDict Entries of Non-GT-Items.");
 
-        // Custom Stuff GT New Horizons 1.3.X.X
+        // Custom Stuff
         GT_OreDictUnificator.registerOre(
                 "ingotBloodInfusedIron",
                 GT_ModHandler.getModItem(BloodArsenal.ID, "blood_infused_iron", 1L, 0));
@@ -187,6 +187,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 "dustPotassiumHydroxide",
                 GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 1L, 0));
+
+        GT_OreDictUnificator.registerOre(OrePrefixes.stickLong, Materials.Obsidian, ItemList.LongObsidianRod.getIS());
 
         GT_OreDictUnificator.registerOre(OrePrefixes.bars, Materials.Aluminium, ItemList.AluminiumBars.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.bars, Materials.Chrome, ItemList.ChromeBars.getIS());
