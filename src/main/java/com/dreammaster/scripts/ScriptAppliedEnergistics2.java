@@ -88,6 +88,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         ItemStack[] FluixDenseCoveredCableColor = new ItemStack[16];
         ItemStack[] FluixSmartCableColor = new ItemStack[16];
         ItemStack[] FluixDenseSmartCableColor = new ItemStack[16];
+        ItemStack[] FluixGlassCableColor = new ItemStack[16];
 
         // Hyper-Acceleration Card
         addShapelessRecipe(
@@ -257,6 +258,14 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(AE2_BLOCK_CONTAINER).noFluidInputs().noFluidOutputs().duration(2 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+        // Fluix Glass Cable
+        for (int i = 0; i < 16; i++) {
+            FluixGlassCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, i);
+
+            addShapelessRecipe(
+                    getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 16),
+                    FluixGlassCableColor[i]);
+        }
         // --- Fluix Covered Cable
         for (int i = 0; i < 16; i++) {
             FluixCoveredCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 20 + i);
