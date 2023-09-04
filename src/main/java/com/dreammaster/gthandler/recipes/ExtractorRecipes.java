@@ -43,6 +43,14 @@ public class ExtractorRecipes implements Runnable {
                     .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 2)).noFluidInputs()
                     .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
 
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "slime.sapling", 1L, 0))
+                    .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
+
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 0))
+                    .itemOutputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 4L, 0)).noFluidInputs()
+                    .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
+
             GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 1))
                     .itemOutputs(new ItemStack(Items.slime_ball, 4, 0)).noFluidInputs().noFluidOutputs()
                     .duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
@@ -50,7 +58,6 @@ public class ExtractorRecipes implements Runnable {
             GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(TinkerConstruct.ID, "slime.leaves", 16L, 0))
                     .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L)).noFluidInputs()
                     .noFluidOutputs().duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
-
         }
 
         if (BiomesOPlenty.isModLoaded()) {
