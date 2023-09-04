@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCrackingRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistillationRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFusionRecipes;
@@ -192,7 +193,7 @@ public class BacteriaRegistry {
         // super heavy -> heavy radox conversion
         GT_Values.RA.stdBuilder().noItemInputs().itemOutputs().fluidInputs(RadoxSuperHeavy.getFluid(1000))
                 .fluidOutputs(RadoxHeavy.getFluid(2000)).duration(50 * MINUTES).eut(TierEU.RECIPE_UV)
-                .addTo(sDistillationRecipes);
+                .addTo(sCentrifugeRecipes);
 
         // heavy radox + Nq+ -> Nq*
         GT_Values.RA.stdBuilder().itemInputs(Materials.NaquadahEnriched.getDust(1))
