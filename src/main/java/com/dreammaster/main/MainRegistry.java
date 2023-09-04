@@ -8,6 +8,8 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.io.File;
 import java.util.Random;
@@ -356,7 +358,11 @@ public class MainRegistry {
     private void InitAdditionalBlocks() {
         GameRegistry.registerBlock(_mBlockBabyChest, ItemBlockBabyChest.class, "BabyChest");
         GameRegistry.addShapelessRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
-        GT_Values.RA.addCompressorRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0), 300, 2);
+
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(_mBlockBabyChest, 9))
+                .itemOutputs(new ItemStack(Blocks.chest, 1, 0)).noFluidInputs().noFluidOutputs().duration(15 * SECONDS)
+                .eut(2).addTo(sCompressorRecipes);
+
         GameRegistry.registerTileEntity(TileEntityBabyChest.class, "teBabyChest");
 
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());

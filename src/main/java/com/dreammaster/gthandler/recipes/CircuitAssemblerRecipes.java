@@ -229,8 +229,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
                             ELEMENT.STANDALONE.CHRONOMATIC_GLASS.getBolt(8))
                     .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderUEV, 144))
-                    .noFluidOutputs().requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS)
-                    .eut((int) TierEU.RECIPE_UEV).addTo(sCircuitAssemblerRecipes);
+                    .noFluidOutputs().requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS).eut(TierEU.RECIPE_UEV)
+                    .addTo(sCircuitAssemblerRecipes);
         }
 
         GT_Values.RA.stdBuilder()

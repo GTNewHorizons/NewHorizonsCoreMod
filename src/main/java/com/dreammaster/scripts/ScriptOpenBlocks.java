@@ -22,6 +22,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalBathRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
@@ -36,6 +37,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
@@ -82,7 +84,8 @@ public class ScriptOpenBlocks implements IScriptLoader {
 
         addShapelessRecipe(devNull, voidDropFilter);
 
-        GT_Values.RA.addAssemblerRecipe(new ItemStack[] { trashCan, circuit2 }, ender250, devNull, 300, 30);
+        GT_Values.RA.stdBuilder().itemInputs(trashCan, circuit2).itemOutputs(devNull).fluidInputs(ender250)
+                .noFluidOutputs().duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "hangglider", 1, 0, missing),

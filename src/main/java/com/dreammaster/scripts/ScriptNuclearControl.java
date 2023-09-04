@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,14 +38,13 @@ public class ScriptNuclearControl implements IScriptLoader {
         final ItemStack NC2_REMOTE_SENSOR_KIT = getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0);
         final ItemStack NC2_PANEL_MEMORY_CARD = getModItem(IC2NuclearControl.ID, "ItemPanelMemoryCard", 1, 0);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { NC2_REMOTE_SENSOR_KIT,
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        NC2_REMOTE_SENSOR_KIT,
                         GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2) },
-                GT_Values.NF,
-                NC2_PANEL_MEMORY_CARD,
-                200,
-                16);
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2))
+                .itemOutputs(NC2_PANEL_MEMORY_CARD).noFluidInputs().noFluidOutputs().duration(10 * SECONDS).eut(16)
+                .addTo(sAssemblerRecipes);
 
         addShapelessRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
