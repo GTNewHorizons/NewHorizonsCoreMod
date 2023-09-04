@@ -194,18 +194,19 @@ public class LaserEngraverRecipes implements Runnable {
 
             }
 
-            GT_Values.RA.stdBuilder().itemInputs(WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0)// Hedenbergite
-                                                                                                     // Lens
-            ).noItemOutputs().fluidInputs(Materials.Grade3PurifiedWater.getFluid(1000L))
+            GT_Values.RA.stdBuilder().itemInputs(WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0)).noItemOutputs()
+                    .fluidInputs(Materials.Grade3PurifiedWater.getFluid(1000L))
                     .fluidOutputs(
                             Materials.Grade4PurifiedWater.getFluid(900L),
                             FluidRegistry.getFluidStack("bacterialsludge", 50))
-                    .duration(4 * MINUTES + 10 * SECONDS).eut(245_760).requiresCleanRoom().addTo(sLaserEngraverRecipes);
+                    .duration(4 * MINUTES + 10 * SECONDS).eut(245_760).requiresCleanRoom().noOptimize()
+                    .addTo(sLaserEngraverRecipes);
 
-            GT_Values.RA.stdBuilder().itemInputs(WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0) // Bart lens
-            ).noItemOutputs().fluidInputs(Materials.Grade5PurifiedWater.getFluid(1000L))
+            GT_Values.RA.stdBuilder().itemInputs(WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0)).noItemOutputs()
+                    .fluidInputs(Materials.Grade5PurifiedWater.getFluid(1000L))
                     .fluidOutputs(Materials.Grade6PurifiedWater.getFluid(900L), Materials.Water.getGas(8000L))
-                    .duration(4 * MINUTES + 10 * SECONDS).eut(983_040).requiresCleanRoom().addTo(sLaserEngraverRecipes);
+                    .duration(4 * MINUTES + 10 * SECONDS).eut(983_040).requiresCleanRoom().noOptimize()
+                    .addTo(sLaserEngraverRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
