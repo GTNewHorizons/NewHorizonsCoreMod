@@ -1298,6 +1298,17 @@ public class ScriptEnderIO implements IScriptLoader {
                 "stickDarkSteel",
                 "screwEndSteel",
                 "craftingToolHardHammer");
+        addShapedRecipe(
+                getModItem(EnderIO.ID, "item.darkSteel_shears", 1, 0, missing),
+                "plateDarkSteel",
+                "screwDarkSteel",
+                "plateDarkSteel",
+                "craftingToolHardHammer",
+                "ringDarkSteel",
+                "craftingToolFile",
+                "stickWood",
+                "craftingToolScrewdriver",
+                "stickWood");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

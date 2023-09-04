@@ -23,6 +23,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 
 public class FormingPressRecipes implements Runnable {
 
@@ -33,17 +34,24 @@ public class FormingPressRecipes implements Runnable {
                 .itemInputs(CustomItemList.MalformedSlush.get(2L), CustomItemList.MarshmallowForm.get(0L))
                 .itemOutputs(CustomItemList.UncookedSlush.get(1L)).noFluidInputs().noFluidOutputs()
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sPressRecipes);
-
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MarshmallowForm.get(0L))
                 .itemOutputs(CustomItemList.MarshmallowForm.get(1L)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.MicaBasedPulp.get(4L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.MicaBasedSheet.get(4L)).noFluidInputs().noFluidOutputs()
                 .duration(20 * SECONDS).eut(28).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        CustomItemList.MicaBasedPulp.get(16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Asbestos, 1L),
+                        ItemList.Shape_Mold_Plate.get(0L),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(CustomItemList.MicaBasedSheet.get(16L)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(256).addTo(sPressRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_Plate.get(0L))
                 .itemOutputs(ItemList.Shape_Mold_Plate.get(1L)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)

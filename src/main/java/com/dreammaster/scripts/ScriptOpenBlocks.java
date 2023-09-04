@@ -36,6 +36,9 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -511,6 +514,21 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(OpenBlocks.ID, "builder_guide", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(300).eut(64)
                 .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1))
+                .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(200).eut(8).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(OpenBlocks.ID, "elevator", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1))
+                .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 0, missing)).noFluidInputs()
+                .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 15, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblack", 144)).noFluidOutputs().duration(200)

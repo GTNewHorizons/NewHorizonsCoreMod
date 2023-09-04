@@ -278,13 +278,6 @@ public class ChemicalReactorRecipes implements Runnable {
                 .fluidInputs(Materials.GalliumArsenide.getMolten(288L)).noFluidOutputs().requiresCleanRoom()
                 .duration(45 * SECONDS).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(Materials.Hydrogen.getCells(3)),
-                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnetite, 1)))
-                .itemOutputs(ItemList.Cell_Empty.get(3L)).fluidInputs(Materials.Nitrogen.getGas(1000L))
-                .fluidOutputs(Materials.Ammonia.getGas(1000)).duration(16 * SECONDS).eut(384).addTo(UniversalChemical);
-
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.ghast_tear), GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(Materials.Potassium.getDustTiny(1), Materials.Lithium.getDustTiny(1))
                 .fluidInputs(Materials.Water.getFluid(1000L)).fluidOutputs(Materials.SaltWater.getFluid(1000L))

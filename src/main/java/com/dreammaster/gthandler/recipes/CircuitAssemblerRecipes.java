@@ -1113,18 +1113,6 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2),
-                            ItemList.Circuit_Parts_Coil.get(12L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(16L),
-                            ItemList.Circuit_Chip_Ram.get(16L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 16))
-                    .itemOutputs(ItemList.Circuit_Elite.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier * 2))
-                    .noFluidOutputs().requiresCleanRoom().duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2),
                             ItemList.Circuit_Parts_InductorASMD.get(3L),
                             ItemList.Circuit_Parts_CapacitorASMD.get(4L),
                             ItemList.Circuit_Chip_Ram.get(16L),

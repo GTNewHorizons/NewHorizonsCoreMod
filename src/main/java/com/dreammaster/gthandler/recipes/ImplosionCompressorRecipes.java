@@ -155,7 +155,7 @@ public class ImplosionCompressorRecipes implements Runnable {
                     .noFluidInputs().noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_LV)
                     .metadata(ADDITIVE_AMOUNT, 2).addTo(sImplosionRecipes);
 
-            GT_Values.RA.stdBuilder().noItemInputs()
+            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 2L, 5))
                     .itemOutputs(
                             CustomItemList.DeshDualCompressedPlates.get(1L),
                             GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))

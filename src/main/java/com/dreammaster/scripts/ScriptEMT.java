@@ -886,7 +886,7 @@ public class ScriptEMT implements IScriptLoader {
                         "gt.metatool.01",
                         1,
                         102,
-                        "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,SecondaryMaterial:\"Titanium\"},GT.ItemCharge:400000L}",
+                        "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,SecondaryMaterial:\"Aluminium\"},GT.ItemCharge:400000L}",
                         missing),
                 new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
@@ -2337,7 +2337,7 @@ public class ScriptEMT implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(getModItem(GregTech.ID, "gt.metaitem.01", 1, 5035, missing))));
         ThaumcraftApi.addInfusionCraftingRecipe(
-                "UU-MatterInfusion",
+                "UUMatterInfusion",
                 getModItem(GregTech.ID, "gt.metaitem.01", 32, 5057, missing),
                 6,
                 new AspectList().add(Aspect.getAspect("aer"), 8).add(Aspect.getAspect("aqua"), 8)

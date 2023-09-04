@@ -86,7 +86,7 @@ public class ElectrolyzerRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Brick, 17L))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 12L))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L))
                 .noFluidInputs().noFluidOutputs().duration(54 * SECONDS + 12 * TICKS).eut(10)
                 .addTo(sElectrolyzerRecipes);
         // Jade

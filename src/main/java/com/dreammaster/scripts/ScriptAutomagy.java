@@ -623,7 +623,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 'i',
                 "plateInfusedGold");
         TCHelper.clearPages("NITORLIGHT");
-        TCHelper.addResearchPage("NITORLIGHT", new ResearchPage("Automagy.research_page.REDSTONETHEORY.1"));
+        TCHelper.addResearchPage("NITORLIGHT", new ResearchPage("Automagy.research_page.NITORLIGHT.1"));
         TCHelper.setResearchAspects(
                 "NITORLIGHT",
                 new AspectList().add(Aspect.getAspect("lux"), 12).add(Aspect.getAspect("ignis"), 9)
