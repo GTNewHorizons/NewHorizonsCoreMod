@@ -192,7 +192,7 @@ public class BacteriaRegistry {
 
         // super heavy -> heavy radox conversion
         GT_Values.RA.stdBuilder().noItemInputs().itemOutputs().fluidInputs(RadoxSuperHeavy.getFluid(1000))
-                .fluidOutputs(RadoxHeavy.getFluid(2000)).duration(50 * MINUTES).eut(TierEU.RECIPE_UV)
+                .fluidOutputs(RadoxHeavy.getFluid(2000)).duration(50 * MINUTES).eut(TierEU.RECIPE_UV).noOptimize()
                 .addTo(sCentrifugeRecipes);
 
         // heavy radox + Nq+ -> Nq*

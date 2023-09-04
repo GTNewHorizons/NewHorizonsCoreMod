@@ -115,7 +115,7 @@ public class BioItemLoader {
             GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(i + 1))
                     .itemOutputs(OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64))
                     .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000)).noFluidOutputs().duration(2 * SECONDS)
-                    .eut(TierEU.RECIPE_UV).addTo(sCentrifugeRecipes);
+                    .eut(TierEU.RECIPE_UV).noOptimize().addTo(sCentrifugeRecipes);
         }
         addBacterialVatRecipe(
                 new ItemStack[] { Materials.MeatRaw.getDust(4), Materials.Salt.getDust(4), Materials.Calcium.getDust(4),
