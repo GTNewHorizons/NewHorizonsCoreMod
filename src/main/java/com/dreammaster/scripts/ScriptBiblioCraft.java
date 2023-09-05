@@ -116,30 +116,6 @@ public class ScriptBiblioCraft implements IScriptLoader {
                         LableB[i]);
 
                 addShapedRecipe(
-                        getModItem(BiblioCraft.ID, "BiblioWorkbench", 1, i),
-                        ink,
-                        craftingTable,
-                        feather,
-                        Bwood[i],
-                        getModItem(BiblioCraft.ID, "Bibliotheca", 1, i),
-                        Bwood[i],
-                        Bwood[i],
-                        Bwood[i],
-                        Bwood[i]);
-
-                addShapedRecipe(
-                        getModItem(BiblioCraft.ID, "BiblioWorkbench", 1, i),
-                        feather,
-                        craftingTable,
-                        ink,
-                        Bwood[i],
-                        getModItem(BiblioCraft.ID, "Bibliotheca", 1, i),
-                        Bwood[i],
-                        Bwood[i],
-                        Bwood[i],
-                        Bwood[i]);
-
-                addShapedRecipe(
                         getModItem(BiblioCraft.ID, "Bibliotheca", 1, i),
                         planks[i],
                         Bwood[i],
