@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -21,6 +20,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -758,14 +758,12 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("electrum"), 32),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
-                        ItemList.Emitter_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 1, 0, missing),
+                        ItemList.Emitter_MV.get(1L), CustomItemList.ReinforcedGlassLense.get(1L),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 1, 0, missing),
-                        ItemList.Emitter_MV.get(1L), });
+                        CustomItemList.ReinforcedGlassLense.get(1L), ItemList.Emitter_MV.get(1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.Overchanter",
                 getModItem(ThaumicBases.ID, "overchanter", 1, 0, missing),
@@ -826,7 +824,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 'a',
                 "screwStainlessSteel",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.LichBone", 1, 0, missing),
+                CustomItemList.LichBone.get(1L),
                 'c',
                 "screwStainlessSteel",
                 'd',
@@ -853,7 +851,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 'a',
                 "screwStainlessSteel",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.LichBone", 1, 0, missing),
+                CustomItemList.LichBone.get(1L),
                 'c',
                 "screwStainlessSteel",
                 'd',
@@ -1121,7 +1119,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("alienis"), 32),
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 4, missing),
                 new ItemStack[] { getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SnowQueenBlood", 1, 0, missing),
+                        CustomItemList.SnowQueenBlood.get(1L),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 5, missing),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 6, missing),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 7, missing),
@@ -1131,7 +1129,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 8, missing),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 9, missing),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 10, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SnowQueenBlood", 1, 0, missing), });
+                        CustomItemList.SnowQueenBlood.get(1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Bright",
                 getModItem(ThaumicBases.ID, "nodeFoci", 1, 0, missing),

@@ -9,6 +9,8 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -96,7 +98,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorIV, 1L));
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "vajra", 1, 27, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing),
+                CustomItemList.EngravedEnergyChip.get(1L),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 4, missing),
                 "lensReinforcedGlass",
                 "plateAlloyCarbon",
@@ -129,9 +131,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 "circuitMaster");
         addShapedRecipe(
                 getModItem(GraviSuiteNEO.ID, "epicLappack", 1, 27, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
                 ItemList.Energy_LapotronicOrb2.get(1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
                 ItemList.Energy_LapotronicOrb2.get(1L),
                 getModItem(GraviSuite.ID, "ultimateLappack", 1, wildcard, missing),
                 ItemList.Energy_LapotronicOrb2.get(1L),

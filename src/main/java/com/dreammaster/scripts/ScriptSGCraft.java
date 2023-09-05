@@ -4,13 +4,14 @@ import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
@@ -46,11 +47,11 @@ public class ScriptSGCraft implements IScriptLoader {
                 'a',
                 GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.BlackDwarfMatter, 1L),
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 1, 0, missing),
+                CustomItemList.StargateFramePart.get(1L),
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.StargateChevron", 1, 0, missing),
+                CustomItemList.StargateChevron.get(1L),
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 1, 0, missing),
+                CustomItemList.StargateShieldingFoil.get(1L),
                 'e',
                 ItemList.Field_Generator_UXV.get(1L),
                 'f',
@@ -69,9 +70,9 @@ public class ScriptSGCraft implements IScriptLoader {
                 'a',
                 ItemList.Electric_Piston_UXV.get(1L),
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.StargateChevron", 1, 0, missing),
+                CustomItemList.StargateChevron.get(1L),
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 1, 0, missing),
+                CustomItemList.StargateFramePart.get(1L),
                 'd',
                 ItemList.Field_Generator_UXV.get(1L),
                 'e',
@@ -92,7 +93,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'b',
                 ItemList.Field_Generator_UXV.get(1L),
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.QuantumCircuit", 1, 0, missing),
+                CustomItemList.QuantumCircuit.get(1L),
                 'd',
                 getModItem(SGCraft.ID, "sgChevronUpgrade", 1, 0, missing),
                 'e',
@@ -121,9 +122,9 @@ public class ScriptSGCraft implements IScriptLoader {
                 'f',
                 getModItem(BartWorks.ID, "bw.werkstoffblocks.01", 1, 10112, missing),
                 'g',
-                getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 1, 0, missing),
+                CustomItemList.StargateShieldingFoil.get(1L),
                 'h',
-                getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 1, 0, missing),
+                CustomItemList.StargateFramePart.get(1L),
                 'i',
                 ItemList.ZPM4.get(1L),
                 'j',
@@ -151,7 +152,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "---------",
                 "---------",
                 'a',
-                getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 1, 0, missing),
+                CustomItemList.StargateShieldingFoil.get(1L),
                 'b',
                 ItemList.Field_Generator_UXV.get(1L),
                 'c',
@@ -214,7 +215,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'c',
                 GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 1L),
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.QuantumCircuit", 1, 0, missing),
+                CustomItemList.QuantumCircuit.get(1L),
                 'e',
                 getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing),
                 'f',
@@ -233,7 +234,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "bd--d--de",
                 "aeccdccba",
                 'a',
-                getModItem(NewHorizonsCoreMod.ID, "item.QuantumCircuit", 1, 0, missing),
+                CustomItemList.QuantumCircuit.get(1L),
                 'b',
                 ItemList.Emitter_UXV.get(1L),
                 'c',

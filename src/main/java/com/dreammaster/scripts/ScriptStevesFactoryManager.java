@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedTransmission;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -18,6 +17,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
+
+import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -50,7 +51,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesFactoryManager.ID, "BlockMachineManagerName", 1, 0, missing),
                 "plateStainlessSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 "plateStainlessSteel",
                 "plateRedAlloy",
                 ItemList.Casing_Processor.get(1L),
@@ -187,7 +188,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing))
                 .itemOutputs(getModItem(StevesAddons.ID, "labeler", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(150)

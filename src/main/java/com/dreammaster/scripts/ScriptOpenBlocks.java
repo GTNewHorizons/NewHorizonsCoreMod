@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.ProjectBlue;
@@ -32,6 +31,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
@@ -200,15 +200,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateObsidian");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing),
+                CustomItemList.AluminiumBars.get(1L),
                 "stickGold",
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing),
+                CustomItemList.AluminiumBars.get(1L),
                 "pipeSmallDarkSteel",
                 "rotorDarkSteel",
                 "pipeSmallDarkSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing),
+                CustomItemList.AluminiumBars.get(1L),
                 "stickGold",
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing));
+                CustomItemList.AluminiumBars.get(1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "guide", 1, 0, missing),
                 "stoneObsidian",
@@ -239,15 +239,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateStone");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "beartrap", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "craftingToolHardHammer",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "screwSteel",
                 "plateSteel",
                 "screwSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "craftingToolScrewdriver",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing));
+                CustomItemList.SteelBars.get(1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "cannon", 1, 0, missing),
                 "craftingToolSaw",

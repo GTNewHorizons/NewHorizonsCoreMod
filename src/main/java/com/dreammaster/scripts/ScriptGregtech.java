@@ -36,6 +36,8 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -590,7 +592,7 @@ public class ScriptGregtech implements IScriptLoader {
                 'a',
                 "wireGt01SuperconductorMV",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedAluminiumPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedAluminiumPlate.get(1L),
                 'c',
                 ItemList.Circuit_Silicon_Wafer2.get(1L),
                 'd',
@@ -615,7 +617,7 @@ public class ScriptGregtech implements IScriptLoader {
                 'b',
                 "wireGt01SuperconductorHV",
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTitaniumPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedTitaniumPlate.get(1L),
                 'd',
                 ItemList.Circuit_Silicon_Wafer2.get(1L),
                 'e',
@@ -640,7 +642,7 @@ public class ScriptGregtech implements IScriptLoader {
                 'b',
                 "wireGt01SuperconductorEV",
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedTungstenPlate.get(1L),
                 'd',
                 ItemList.Circuit_Silicon_Wafer2.get(1L),
                 'e',
@@ -667,7 +669,7 @@ public class ScriptGregtech implements IScriptLoader {
                 'c',
                 "plateTripleSiliconSolarGrade",
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenSteelPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(1L),
                 'e',
                 ItemList.Circuit_Silicon_Wafer3.get(1L),
                 'f',
@@ -694,7 +696,7 @@ public class ScriptGregtech implements IScriptLoader {
                 'c',
                 ItemList.Circuit_Silicon_Wafer2.get(1L),
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedChromePlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedChromePlate.get(1L),
                 'e',
                 "plateQuadrupleSiliconSolarGrade",
                 'f',
@@ -760,7 +762,7 @@ public class ScriptGregtech implements IScriptLoader {
                 'e',
                 ItemList.Circuit_Silicon_Wafer4.get(1L),
                 'f',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedNaquadriaPlate.get(1L),
                 'g',
                 getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
                 'h',
@@ -795,11 +797,11 @@ public class ScriptGregtech implements IScriptLoader {
                 'e',
                 ItemList.Circuit_Silicon_Wafer5.get(1L),
                 'f',
-                getModItem(NewHorizonsCoreMod.ID, "item.RawPicoWafer", 1, 0, missing),
+                CustomItemList.RawPicoWafer.get(1L),
                 'g',
-                getModItem(NewHorizonsCoreMod.ID, "item.PicoWafer", 1, 0, missing),
+                CustomItemList.PicoWafer.get(1L),
                 'h',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedNeutroniumPlate.get(1L),
                 'i',
                 getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
                 'j',
@@ -1332,9 +1334,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(30)
                 .addTo(sAutoclaveRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 3, 0, missing),
-                        GT_Utility.getIntegratedCircuit(1))
+                .itemInputs(CustomItemList.PotassiumHydroxideDust.get(3L), GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 5L))
                 .fluidInputs(FluidRegistry.getFluidStack("nitricacid", 5000))
                 .fluidOutputs(FluidRegistry.getFluidStack("steam", 16000)).duration(10).eut(30)
@@ -1544,8 +1544,8 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         ItemList.Shape_Mold_Credit.get(0L))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sPressRecipes);
+                .itemOutputs(CustomItemList.CoinBlank.get(1L)).noFluidInputs().noFluidOutputs().duration(200).eut(30)
+                .addTo(sPressRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);

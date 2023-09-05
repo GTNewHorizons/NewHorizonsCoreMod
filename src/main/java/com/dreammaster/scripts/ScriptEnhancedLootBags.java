@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -28,6 +27,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
@@ -86,7 +86,7 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(21, getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing));
         metaExtraItemMap.put(22, getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing));
         metaExtraItemMap.put(23, getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7, missing));
-        metaExtraItemMap.put(24, getModItem(NewHorizonsCoreMod.ID, "item.WaferTier3", 1, 0, missing));
+        metaExtraItemMap.put(24, CustomItemList.WaferTier3.get(1L));
         metaExtraItemMap.put(25, getModItem(Forestry.ID, "propolis", 1, 3, missing));
         metaExtraItemMap.put(26, getModItem(Forestry.ID, "royalJelly", 1, 0, missing));
         metaExtraItemMap.put(27, getModItem(Gendustry.ID, "MutagenBucket", 1, 0, missing));
@@ -102,14 +102,10 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
                 createItemStack(Railcraft.ID, "cart.loco.electric", 1, 0, "{model:\"railcraft:default\"}", missing));
         metaExtraItemMap.put(35, getModItem(IndustrialCraft2.ID, "itemCropSeed", 1, wildcard, missing));
         metaExtraItemMap.put(36, getModItem(PamsHarvestCraft.ID, "beefwellingtonItem", 1, 0, missing));
-        metaExtraItemMap.put(37, getModItem(NewHorizonsCoreMod.ID, "item.LogicProcessorItemGoldCore", 1, 0, missing));
-        metaExtraItemMap
-                .put(38, getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemDiamondCore", 1, 0, missing));
-        metaExtraItemMap
-                .put(39, getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemEmeraldCore", 1, 0, missing));
-        metaExtraItemMap.put(
-                40,
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing));
+        metaExtraItemMap.put(37, CustomItemList.LogicProcessorItemGoldCore.get(1L));
+        metaExtraItemMap.put(38, CustomItemList.EngineeringProcessorItemDiamondCore.get(1L));
+        metaExtraItemMap.put(39, CustomItemList.EngineeringProcessorItemEmeraldCore.get(1L));
+        metaExtraItemMap.put(40, CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1L));
         metaExtraItemMap.put(41, ItemList.Electric_Motor_LuV.get(1L));
         metaExtraItemMap.put(42, ItemList.Electric_Motor_ZPM.get(1L));
         metaExtraItemMap.put(43, ItemList.Electric_Motor_UV.get(1L));

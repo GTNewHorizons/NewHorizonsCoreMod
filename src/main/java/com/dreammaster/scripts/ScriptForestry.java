@@ -35,6 +35,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.forestry.ForestryHelper;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
@@ -394,9 +395,9 @@ public class ScriptForestry implements IScriptLoader {
                 "plateCupronickel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "plateCupronickel",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "gearGtSmallSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
@@ -502,7 +503,7 @@ public class ScriptForestry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Forestry.ID, "mail", 1, 1, missing),
                 getModItem(Forestry.ID, "thermionicTubes", 1, 9, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 getModItem(Forestry.ID, "thermionicTubes", 1, 9, missing),
                 "plateSteel",
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
@@ -527,7 +528,7 @@ public class ScriptForestry implements IScriptLoader {
                 "slabWood",
                 "slabWood",
                 getModItem(Forestry.ID, "frameUntreated", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.WoodenCasing", 1, 0, missing),
+                CustomItemList.WoodenCasing.get(1L),
                 getModItem(Forestry.ID, "frameUntreated", 1, 0, missing),
                 "beeComb",
                 "slabWood",
@@ -2877,15 +2878,15 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'e',
                 ItemList.Rotor_MV.get(1L),
                 'f',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -2903,7 +2904,7 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7, missing),
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7, missing),
                 'd',
@@ -2999,7 +3000,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 getModItem(Forestry.ID, "beealyzer", 1, 0, missing),
                 "abc",
                 "def",
@@ -3025,7 +3026,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 getModItem(Forestry.ID, "treealyzer", 1, 0, missing),
                 "abc",
                 "def",
@@ -3051,7 +3052,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 getModItem(Forestry.ID, "flutterlyzer", 1, 0, missing),
                 "abc",
                 "def",

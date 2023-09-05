@@ -4,11 +4,12 @@ import static gregtech.api.enums.Mods.CompactKineticGenerators;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
@@ -120,7 +121,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'b',
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 1, missing),
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
                 'd',
                 "gearGtSmallDraconium",
                 'e',
@@ -228,7 +229,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'b',
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 5, missing),
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
                 'd',
                 ItemList.Electric_Pump_LuV.get(1L),
                 'e',

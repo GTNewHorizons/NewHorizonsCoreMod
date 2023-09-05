@@ -15,7 +15,6 @@ import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -44,6 +43,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.rwtema.extrautils.ExtraUtils;
 
@@ -120,7 +120,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 "plateDiamond",
                 "screwDiamond",
                 "plateDiamond",
-                getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                CustomItemList.StainlessSteelBars.get(1L),
                 "plateDiamond",
                 "screwDiamond",
                 "plateDiamond",
@@ -900,7 +900,7 @@ public class ScriptAvaritia implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing))
+                        CustomItemList.StainlessSteelBars.get(1L))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(120).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 3, missing))

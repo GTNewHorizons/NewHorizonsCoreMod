@@ -590,7 +590,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 'b',
                 getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing),
+                CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1L),
                 'd',
                 "blockCosmicNeutronium");
 
@@ -1043,7 +1043,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
                 "craftingToolSoftHammer",
                 ItemList.Conveyor_Module_LuV.get(1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing),
+                CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1L),
                 ItemList.Conveyor_Module_LuV.get(1L),
                 ItemList.Electric_Motor_LuV.get(1L),
                 ItemList.Robot_Arm_LuV.get(1L),
@@ -1668,7 +1668,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                 "circuitPrimitive",
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
-                getModItem(NewHorizonsCoreMod.ID, "item.LogicProcessorItemGoldCore", 1, 0, missing),
+                CustomItemList.LogicProcessorItemGoldCore.get(1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
                 "circuitPrimitive",
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartzCharged, 1),
@@ -1679,7 +1679,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
                 "circuitBasic",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.LogicProcessorItemGoldCore", 1, 0, missing),
+                CustomItemList.LogicProcessorItemGoldCore.get(1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
                 "circuitBasic",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
@@ -1690,7 +1690,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
                 "circuitGood",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemDiamondCore", 1, 0, missing),
+                CustomItemList.EngineeringProcessorItemDiamondCore.get(1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
                 "circuitGood",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
@@ -1701,7 +1701,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
                 "circuitAdvanced",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemDiamondCore", 1, 0, missing),
+                CustomItemList.EngineeringProcessorItemDiamondCore.get(1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
                 "circuitAdvanced",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
@@ -1962,7 +1962,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
                         ItemList.Conveyor_Module_LuV.get(2L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing),
+                        CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1L),
                         ItemList.Electric_Motor_LuV.get(2L),
                         ItemList.Robot_Arm_LuV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500, missing)).noFluidInputs()

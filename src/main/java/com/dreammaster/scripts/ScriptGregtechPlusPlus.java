@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
@@ -19,6 +18,8 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+
+import com.dreammaster.gthandler.CustomItemList;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
@@ -65,9 +66,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
                 ItemList.Machine_HV_Centrifuge.get(1L),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing));
-        addShapelessRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.CoinBeesI", 16, 0, missing),
-                getModItem(GTPlusPlus.ID, "frameUseless", 1, 0, missing));
+        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), getModItem(GTPlusPlus.ID, "frameUseless", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
                 "craftingToolFile",

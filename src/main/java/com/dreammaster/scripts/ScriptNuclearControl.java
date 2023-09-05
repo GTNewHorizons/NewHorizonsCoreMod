@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.IC2NuclearControl;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
@@ -14,6 +13,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+
+import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -237,7 +238,7 @@ public class ScriptNuclearControl implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "remoteMonitor", 1, 0, missing),
                 "cableGt01Tin",
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 "cableGt01Tin",
                 getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),

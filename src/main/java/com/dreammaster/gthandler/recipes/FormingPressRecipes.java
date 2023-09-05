@@ -173,33 +173,21 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(ItemList.Shape_Mold_Pipe_Huge.get(1L)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Shape_Empty.get(1L),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 0, 0))
-                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldHelmet.get(0L))
+                .itemOutputs(CustomItemList.MoldHelmet.get(1L)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(256).addTo(sPressRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Shape_Empty.get(1L),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 0, 0))
-                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0))
-                .noFluidInputs().noFluidOutputs().duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldChestplate.get(0L))
+                .itemOutputs(CustomItemList.MoldChestplate.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Shape_Empty.get(1L),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0))
-                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldLeggings.get(0L))
+                .itemOutputs(CustomItemList.MoldLeggings.get(1L)).noFluidInputs().noFluidOutputs()
+                .duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Shape_Empty.get(1L),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 0, 0))
-                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(256).addTo(sPressRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), CustomItemList.MoldBoots.get(0L))
+                .itemOutputs(CustomItemList.MoldBoots.get(1L)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(256).addTo(sPressRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(ItemList.Shape_Extruder_Plate.get(1L)).noFluidInputs().noFluidOutputs()

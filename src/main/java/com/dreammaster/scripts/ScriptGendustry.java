@@ -16,6 +16,8 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -54,9 +56,9 @@ public class ScriptGendustry implements IScriptLoader {
                 getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing),
                 getModItem(Gendustry.ID, "BeeReceptacle", 1, 0, missing),
                 getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedDiamondCrystalChip", 1, 0, missing),
+                CustomItemList.EngravedDiamondCrystalChip.get(1L),
                 getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedDiamondCrystalChip", 1, 0, missing),
+                CustomItemList.EngravedDiamondCrystalChip.get(1L),
                 "gearOsmium",
                 getModItem(Gendustry.ID, "PowerModule", 1, 0, missing),
                 "gearOsmium");
@@ -109,9 +111,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "screwHSSS",
                 getModItem(GregTech.ID, "gt.comb", 1, 78, missing),
                 "screwHSSS",
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.OsmiumBars", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
+                CustomItemList.OsmiumBars.get(1L),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
                 "screwHSSS",
                 "craftingToolScrewdriver",
                 "screwHSSS");
@@ -120,9 +122,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "cableGt01VanadiumGallium",
                 getModItem(GregTech.ID, "gt.comb", 1, 79, missing),
                 "cableGt01VanadiumGallium",
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
                 "circuitMaster",
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
                 "gearGtSmallOsmium",
                 ItemList.Electric_Motor_LuV.get(1L),
                 "gearGtSmallOsmium");
@@ -156,9 +158,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "stickPalladium",
                 "rotorOsmium",
                 "stickPalladium",
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
+                CustomItemList.IridiumAlloyItemCasing.get(1L),
                 ItemList.Electric_Motor_LuV.get(1L),
-                getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing));
+                CustomItemList.IridiumAlloyItemCasing.get(1L));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing),

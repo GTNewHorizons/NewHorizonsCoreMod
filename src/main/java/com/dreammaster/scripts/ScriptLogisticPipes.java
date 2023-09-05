@@ -27,6 +27,8 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -2867,7 +2869,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         ItemList.Cover_Crafting.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
@@ -2880,7 +2882,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         ItemList.Cover_Crafting.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
@@ -2893,7 +2895,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         ItemList.Cover_Crafting.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
@@ -2906,7 +2908,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         ItemList.Cover_Crafting.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
@@ -2919,7 +2921,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         ItemList.Cover_Crafting.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
@@ -3615,7 +3617,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
@@ -3628,7 +3630,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         ItemList.Circuit_Computer.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
@@ -3641,7 +3643,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
@@ -3654,7 +3656,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
@@ -3665,14 +3667,14 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.pipeController", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(Minecraft.ID, "sign", 16, 0, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.ItemPipeSignCreator", 1, 0, missing)).noFluidInputs()

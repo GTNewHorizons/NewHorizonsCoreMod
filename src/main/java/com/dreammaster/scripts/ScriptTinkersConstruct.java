@@ -30,6 +30,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
@@ -3141,31 +3142,31 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(NewHorizonsCoreMod.ID, "item.MarshmallowForm", 1, 0, missing),
+                CustomItemList.MarshmallowForm.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0, missing),
+                CustomItemList.MoldChestplate.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0, missing),
+                CustomItemList.MoldHelmet.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0, missing),
+                CustomItemList.MoldLeggings.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0, missing),
+                CustomItemList.MoldBoots.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
@@ -3305,97 +3306,97 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeHelmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 720),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0, missing),
+                CustomItemList.MoldHelmet.get(1L),
                 false,
                 500);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeChestplate", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 1152),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0, missing),
+                CustomItemList.MoldChestplate.get(1L),
                 false,
                 800);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 1008),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0, missing),
+                CustomItemList.MoldLeggings.get(1L),
                 false,
                 700);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(IndustrialCraft2.ID, "itemArmorBronzeBoots", 1, 0, missing),
                 FluidRegistry.getFluidStack("bronze.molten", 576),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0, missing),
+                CustomItemList.MoldBoots.get(1L),
                 false,
                 400);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("steel.molten", 720),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0, missing),
+                CustomItemList.MoldHelmet.get(1L),
                 false,
                 500);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing),
                 FluidRegistry.getFluidStack("steel.molten", 1152),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0, missing),
+                CustomItemList.MoldChestplate.get(1L),
                 false,
                 800);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Railcraft.ID, "armor.steel.legs", 1, 0, missing),
                 FluidRegistry.getFluidStack("steel.molten", 1008),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0, missing),
+                CustomItemList.MoldLeggings.get(1L),
                 false,
                 700);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Railcraft.ID, "armor.steel.boots", 1, 0, missing),
                 FluidRegistry.getFluidStack("steel.molten", 576),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0, missing),
+                CustomItemList.MoldBoots.get(1L),
                 false,
                 400);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("iron.molten", 720),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0, missing),
+                CustomItemList.MoldHelmet.get(1L),
                 false,
                 500);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "iron_chestplate", 1, 0, missing),
                 FluidRegistry.getFluidStack("iron.molten", 1152),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0, missing),
+                CustomItemList.MoldChestplate.get(1L),
                 false,
                 800);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "iron_leggings", 1, 0, missing),
                 FluidRegistry.getFluidStack("iron.molten", 1008),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0, missing),
+                CustomItemList.MoldLeggings.get(1L),
                 false,
                 700);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "iron_boots", 1, 0, missing),
                 FluidRegistry.getFluidStack("iron.molten", 576),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0, missing),
+                CustomItemList.MoldBoots.get(1L),
                 false,
                 400);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "golden_helmet", 1, 0, missing),
                 FluidRegistry.getFluidStack("gold.molten", 720),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0, missing),
+                CustomItemList.MoldHelmet.get(1L),
                 false,
                 500);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "golden_chestplate", 1, 0, missing),
                 FluidRegistry.getFluidStack("gold.molten", 1152),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0, missing),
+                CustomItemList.MoldChestplate.get(1L),
                 false,
                 800);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "golden_leggings", 1, 0, missing),
                 FluidRegistry.getFluidStack("gold.molten", 1008),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0, missing),
+                CustomItemList.MoldLeggings.get(1L),
                 false,
                 700);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "golden_boots", 1, 0, missing),
                 FluidRegistry.getFluidStack("gold.molten", 576),
-                getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0, missing),
+                CustomItemList.MoldBoots.get(1L),
                 false,
                 400);
         Smeltery.addAlloyMixing(
@@ -3419,10 +3420,10 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing));
 
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.UnfiredSearedBrick", 1, 0, missing),
+                CustomItemList.UnfiredSearedBrick.get(1L),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.UnfiredSlimeSoulBrick", 1, 0, missing),
+                CustomItemList.UnfiredSlimeSoulBrick.get(1L),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
         GT_Values.RA.stdBuilder()
                 .itemInputs(

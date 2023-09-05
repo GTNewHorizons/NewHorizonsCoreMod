@@ -15,6 +15,8 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -614,11 +616,11 @@ public class ScriptMalisDoors implements IScriptLoader {
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.jail_door", 1, 0, missing),
                 null,
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 null,
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 getModItem(Minecraft.ID, "iron_door", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 null,
                 "craftingToolSaw",
                 null);
@@ -1211,9 +1213,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.iron_sliding_door", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "iron_door", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 2, 0, missing))
+                .itemInputs(getModItem(Minecraft.ID, "iron_door", 1, 0, missing), CustomItemList.SteelBars.get(2L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.jail_door", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

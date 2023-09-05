@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBEAddons;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
@@ -14,6 +13,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
+
+import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
@@ -55,7 +56,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
                 "craftingToolFile",
                 "circuitAdvanced",
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 "circuitAdvanced",
                 "itemCasingTungstenSteel",
                 "screwTungstenSteel",

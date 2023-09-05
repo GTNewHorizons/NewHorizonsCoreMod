@@ -15,7 +15,6 @@ import static gregtech.api.enums.Mods.ForgeMicroblocks;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
@@ -32,6 +31,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
+
+import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -138,15 +139,15 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "stickWood");
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowersandstone", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
+                CustomItemList.SandStoneRod.get(1L),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
+                CustomItemList.SandStoneRod.get(1L),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
                 "wireGt01Cupronickel",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing),
+                CustomItemList.SandStoneRod.get(1L),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SandStoneRod", 1, 0, missing));
+                CustomItemList.SandStoneRod.get(1L));
         addShapedRecipe(
                 getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerquartz", 1, 0, missing),
                 "stickNetherQuartz",
@@ -302,7 +303,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "crystalRedstone",
                 "itemCasingStainlessSteel",
                 "circuitData",
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 "circuitData",
                 "itemCasingStainlessSteel",
                 "plateSteel",
@@ -312,11 +313,11 @@ public class ScriptBuildCraft implements IScriptLoader {
                 "itemCasingSteel",
                 ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "itemCasingSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "itemCasingSteel");
         addShapedRecipe(
                 getModItem(BuildCraftSilicon.ID, "laserBlock", 1, 0, missing),

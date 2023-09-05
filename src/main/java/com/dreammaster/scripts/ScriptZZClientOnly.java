@@ -4,7 +4,6 @@ import static com.dreammaster.main.MainRegistry.CoreConfig;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
@@ -15,6 +14,7 @@ import java.util.List;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 
@@ -380,42 +380,32 @@ public class ScriptZZClientOnly implements IScriptLoader {
     public void loadRecipes() {
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                GT_Utility.getIntegratedCircuit(1))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierI", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(1))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierI.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).noFluidOutputs().duration(600).eut(120)
                         .disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                GT_Utility.getIntegratedCircuit(2))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierII", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(2))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierII.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).noFluidOutputs().duration(600).eut(480)
                         .disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                GT_Utility.getIntegratedCircuit(3))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierIII", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(3))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierIII.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).noFluidOutputs().duration(600)
                         .eut(1920).disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                GT_Utility.getIntegratedCircuit(4))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierIV", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(4))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierIV.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).noFluidOutputs().duration(600)
                         .eut(7680).disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                GT_Utility.getIntegratedCircuit(5))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierV", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(5))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierV.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).noFluidOutputs().duration(600)
                         .eut(30720).disabled().hidden().addTo(sAssemblerRecipes));
 

@@ -40,6 +40,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.bloodmagic.BloodMagicHelper;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
@@ -399,7 +400,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ArcaneSlate", 9, 0, missing))
+                .itemOutputs(CustomItemList.ArcaneSlate.get(9L))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).noFluidOutputs().duration(200).eut(48)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 0, missing))
@@ -1571,15 +1572,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 2,
                 0,
                 2,
-                getModItem(NewHorizonsCoreMod.ID, "item.WeakOrb", 1, 0, missing)).setParents("BLOODALTAR")
-                        .setConcealed()
+                CustomItemList.WeakOrb.get(1L))
+                        .setParents("BLOODALTAR").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.WEAKORB.1"),
                                 new ResearchPage("tc.research_page.WEAKORB.2"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "WEAKORB",
-                getModItem(NewHorizonsCoreMod.ID, "item.WeakOrb", 1, 0, missing),
+                CustomItemList.WeakOrb.get(1L),
                 new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("aqua"), 20)
                         .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("perditio"), 20).add(Aspect.getAspect("ordo"), 20),
@@ -1591,15 +1592,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "item.RawOrbTier1", 1, 0, missing),
+                CustomItemList.RawOrbTier1.get(1L),
                 'f',
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
                 'h',
                 "gemDiamond");
         TCHelper.addResearchPage(
                 "WEAKORB",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(NewHorizonsCoreMod.ID, "item.WeakOrb", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(CustomItemList.WeakOrb.get(1L))));
         ThaumcraftApi.addWarpToResearch("WEAKORB", 1);
         new ResearchItem(
                 "APPRENTICEORB",
@@ -1609,15 +1609,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 4,
                 0,
                 3,
-                getModItem(NewHorizonsCoreMod.ID, "item.ApprenticeOrb", 1, 0, missing)).setParents("WEAKORB")
-                        .setConcealed()
+                CustomItemList.ApprenticeOrb.get(1L))
+                        .setParents("WEAKORB").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.APPRENTICEORB.1"),
                                 new ResearchPage("tc.research_page.APPRENTICEORB.2"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "APPRENTICEORB",
-                getModItem(NewHorizonsCoreMod.ID, "item.ApprenticeOrb", 1, 0, missing),
+                CustomItemList.ApprenticeOrb.get(1L),
                 new AspectList().add(Aspect.getAspect("aer"), 40).add(Aspect.getAspect("aqua"), 40)
                         .add(Aspect.getAspect("ignis"), 40).add(Aspect.getAspect("terra"), 40)
                         .add(Aspect.getAspect("perditio"), 40).add(Aspect.getAspect("ordo"), 40),
@@ -1629,16 +1629,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "item.RawOrbTier2", 1, 0, missing),
+                CustomItemList.RawOrbTier2.get(1L),
                 'f',
                 getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
                 'h',
                 "gemFlawlessEmerald");
         TCHelper.addResearchPage(
                 "APPRENTICEORB",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(NewHorizonsCoreMod.ID, "item.ApprenticeOrb", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(CustomItemList.ApprenticeOrb.get(1L))));
         ThaumcraftApi.addWarpToResearch("APPRENTICEORB", 2);
         new ResearchItem(
                 "MAGICANORB",
@@ -1649,15 +1647,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 6,
                 0,
                 3,
-                getModItem(NewHorizonsCoreMod.ID, "item.MagicianOrb", 1, 0, missing)).setParents("APPRENTICEORB")
-                        .setConcealed()
+                CustomItemList.MagicianOrb.get(1L))
+                        .setParents("APPRENTICEORB").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.MAGICANORB.1"),
                                 new ResearchPage("tc.research_page.MAGICANORB.2"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MAGICANORB",
-                getModItem(NewHorizonsCoreMod.ID, "item.MagicianOrb", 1, 0, missing),
+                CustomItemList.MagicianOrb.get(1L),
                 new AspectList().add(Aspect.getAspect("aer"), 60).add(Aspect.getAspect("aqua"), 60)
                         .add(Aspect.getAspect("ignis"), 60).add(Aspect.getAspect("terra"), 60)
                         .add(Aspect.getAspect("perditio"), 60).add(Aspect.getAspect("ordo"), 60),
@@ -1669,16 +1667,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "item.RawOrbTier3", 1, 0, missing),
+                CustomItemList.RawOrbTier3.get(1L),
                 'f',
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
                 'h',
                 "blockGold");
         TCHelper.addResearchPage(
                 "MAGICANORB",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(NewHorizonsCoreMod.ID, "item.MagicianOrb", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(CustomItemList.MagicianOrb.get(1L))));
         ThaumcraftApi.addWarpToResearch("MAGICANORB", 3);
         new ResearchItem(
                 "MASTERORB",
@@ -1689,11 +1685,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                 8,
                 0,
                 3,
-                getModItem(NewHorizonsCoreMod.ID, "item.MasterOrb", 1, 0, missing)).setParents("MAGICANORB")
-                        .setConcealed().setPages(new ResearchPage("tc.research_page.MASTERORB")).registerResearchItem();
+                CustomItemList.MasterOrb.get(1L)).setParents("MAGICANORB").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.MASTERORB")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "MASTERORB",
-                getModItem(NewHorizonsCoreMod.ID, "item.MasterOrb", 1, 0, missing),
+                CustomItemList.MasterOrb.get(1L),
                 new AspectList().add(Aspect.getAspect("aer"), 80).add(Aspect.getAspect("aqua"), 80)
                         .add(Aspect.getAspect("ignis"), 80).add(Aspect.getAspect("terra"), 80)
                         .add(Aspect.getAspect("perditio"), 80).add(Aspect.getAspect("ordo"), 80),
@@ -1705,15 +1701,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "item.RawOrbTier4", 1, 0, missing),
+                CustomItemList.RawOrbTier4.get(1L),
                 'f',
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                 'h',
                 getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing));
         TCHelper.addResearchPage(
                 "MASTERORB",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(NewHorizonsCoreMod.ID, "item.MasterOrb", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(CustomItemList.MasterOrb.get(1L))));
         ThaumcraftApi.addWarpToResearch("MASTERORB", 4);
         new ResearchItem(
                 "ARCHMAGEORB",
@@ -1725,15 +1720,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 10,
                 0,
                 3,
-                getModItem(NewHorizonsCoreMod.ID, "item.ArchmageOrb", 1, 0, missing)).setParents("MASTERORB")
-                        .setConcealed()
+                CustomItemList.ArchmageOrb.get(1L))
+                        .setParents("MASTERORB").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.ARCHMAGEORB.1"),
                                 new ResearchPage("tc.research_page.ARCHMAGEORB.2"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ARCHMAGEORB",
-                getModItem(NewHorizonsCoreMod.ID, "item.ArchmageOrb", 1, 0, missing),
+                CustomItemList.ArchmageOrb.get(1L),
                 new AspectList().add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("aqua"), 100)
                         .add(Aspect.getAspect("ignis"), 100).add(Aspect.getAspect("terra"), 100)
                         .add(Aspect.getAspect("perditio"), 100).add(Aspect.getAspect("ordo"), 100),
@@ -1745,16 +1740,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27, missing),
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "item.RawOrbTier5", 1, 0, missing),
+                CustomItemList.RawOrbTier5.get(1L),
                 'f',
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27, missing),
                 'h',
                 getModItem(BloodMagic.ID, "demonBloodShard", 1, 0, missing));
         TCHelper.addResearchPage(
                 "ARCHMAGEORB",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(NewHorizonsCoreMod.ID, "item.ArchmageOrb", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(CustomItemList.ArchmageOrb.get(1L))));
         ThaumcraftApi.addWarpToResearch("ARCHMAGEORB", 5);
         new ResearchItem(
                 "TRANSCENDENTORB",
@@ -1766,15 +1759,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 12,
                 0,
                 3,
-                getModItem(NewHorizonsCoreMod.ID, "item.TranscendentOrb", 1, 0, missing)).setParents("ARCHMAGEORB")
-                        .setConcealed()
+                CustomItemList.TranscendentOrb.get(1L))
+                        .setParents("ARCHMAGEORB").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.TRANSCENDENTORB.1"),
                                 new ResearchPage("tc.research_page.TRANSCENDENTORB.2"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TRANSCENDENTORB",
-                getModItem(NewHorizonsCoreMod.ID, "item.TranscendentOrb", 1, 0, missing),
+                CustomItemList.TranscendentOrb.get(1L),
                 new AspectList().add(Aspect.getAspect("aer"), 150).add(Aspect.getAspect("aqua"), 150)
                         .add(Aspect.getAspect("ignis"), 150).add(Aspect.getAspect("terra"), 150)
                         .add(Aspect.getAspect("perditio"), 150).add(Aspect.getAspect("ordo"), 150),
@@ -1786,16 +1779,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodArsenal.ID, "sigil_of_lightning", 1, 0, missing),
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "item.RawOrbTier6", 1, 0, missing),
+                CustomItemList.RawOrbTier6.get(1L),
                 'f',
                 getModItem(BloodArsenal.ID, "sigil_of_lightning", 1, 0, missing),
                 'h',
                 getModItem(BloodMagic.ID, "blockCrystal", 1, 0, missing));
         TCHelper.addResearchPage(
                 "TRANSCENDENTORB",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(NewHorizonsCoreMod.ID, "item.TranscendentOrb", 1, 0, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(CustomItemList.TranscendentOrb.get(1L))));
         ThaumcraftApi.addWarpToResearch("TRANSCENDENTORB", 6);
         new ResearchItem(
                 "TRANSPARENTORB",
@@ -3553,7 +3544,7 @@ public class ScriptBloodMagic implements IScriptLoader {
     private void orbRecipes() {
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
-                        getModItem(NewHorizonsCoreMod.ID, "item.TeleposerFrame", 1, 0, missing),
+                        CustomItemList.TeleposerFrame.get(1L),
                         "abc",
                         "def",
                         "ghi",
@@ -3586,7 +3577,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'd',
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
                         'e',
-                        getModItem(NewHorizonsCoreMod.ID, "item.TeleposerFrame", 1, 0, missing),
+                        CustomItemList.TeleposerFrame.get(1L),
                         'f',
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
                         'h',
@@ -3742,7 +3733,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'd',
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         'e',
-                        getModItem(NewHorizonsCoreMod.ID, "item.ArcaneSlate", 1, 0, missing),
+                        CustomItemList.ArcaneSlate.get(1L),
                         'f',
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         'g',
@@ -4386,7 +4377,7 @@ public class ScriptBloodMagic implements IScriptLoader {
     private void altarAlchemyRecipes() {
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodMagic.ID, "weakBloodOrb", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.WeakOrb", 1, 0, missing),
+                CustomItemList.WeakOrb.get(1L),
                 1,
                 5000,
                 20,
@@ -4394,7 +4385,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodMagic.ID, "apprenticeBloodOrb", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.ApprenticeOrb", 1, 0, missing),
+                CustomItemList.ApprenticeOrb.get(1L),
                 2,
                 10000,
                 20,
@@ -4402,7 +4393,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodMagic.ID, "magicianBloodOrb", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.MagicianOrb", 1, 0, missing),
+                CustomItemList.MagicianOrb.get(1L),
                 3,
                 30000,
                 20,
@@ -4410,7 +4401,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodMagic.ID, "masterBloodOrb", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.MasterOrb", 1, 0, missing),
+                CustomItemList.MasterOrb.get(1L),
                 4,
                 60000,
                 20,
@@ -4418,7 +4409,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodMagic.ID, "archmageBloodOrb", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.ArchmageOrb", 1, 0, missing),
+                CustomItemList.ArchmageOrb.get(1L),
                 5,
                 120000,
                 20,
@@ -4426,7 +4417,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodMagic.ID, "transcendentBloodOrb", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.TranscendentOrb", 1, 0, missing),
+                CustomItemList.TranscendentOrb.get(1L),
                 6,
                 300000,
                 20,
@@ -4434,7 +4425,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.ArcaneSlate", 1, 0, missing),
+                CustomItemList.ArcaneSlate.get(1L),
                 1,
                 1000,
                 20,
@@ -4908,7 +4899,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngravedDiamondCrystalChip", 1, 0, missing) },
+                        CustomItemList.EngravedDiamondCrystalChip.get(1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2, 15, missing),
@@ -4978,8 +4969,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.FierySteel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.FierySteel, 1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing) },
+                        CustomItemList.ChargedCertusQuartzDust.get(1L),
+                        CustomItemList.ChargedCertusQuartzDust.get(1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 7, missing),

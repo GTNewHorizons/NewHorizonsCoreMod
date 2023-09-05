@@ -41,6 +41,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.chisel.ChiselHelper;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
@@ -1288,7 +1289,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "gemQuartz",
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 1, 0, missing),
+                CustomItemList.ReinforcedGlassLense.get(1L),
                 'f',
                 "gemQuartz",
                 'g',
@@ -2312,7 +2313,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("aqua"), 32)
                         .add(Aspect.getAspect("machina"), 8),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
-                new ItemStack[] { getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing),
+                new ItemStack[] { CustomItemList.StainlessSteelBars.get(1L),
                         getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
@@ -2930,19 +2931,19 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "screwSteel",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'c',
                 "screwSteel",
                 'd',
                 "wireGt01RedAlloy",
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing),
+                CustomItemList.AluminiumBars.get(1L),
                 'f',
                 "craftingToolScrewdriver",
                 'g',
                 "screwSteel",
                 'h',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'i',
                 "screwSteel");
         TCHelper.addResearchPage(
@@ -3392,13 +3393,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("vitium"), 5),
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
+                        CustomItemList.SteelBars.get(1L), getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                         getModItem(Thaumcraft.ID, "blockTube", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing), });
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing), CustomItemList.SteelBars.get(1L), });
         TCHelper.addResearchPage(
                 "FLUXSCRUB",
                 new ResearchPage(
@@ -3966,7 +3965,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'e',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                 'f',
-                getModItem(NewHorizonsCoreMod.ID, "item.LichBone", 1, 0, missing),
+                CustomItemList.LichBone.get(1L),
                 'g',
                 getModItem(Natura.ID, "barleyFood", 1, 7, missing),
                 'h',
@@ -4885,11 +4884,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'b',
                 getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing),
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'd',
                 "plateSteel",
                 'e',
@@ -5646,7 +5645,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("alienis"), 4).add(Aspect.getAspect("ira"), 1)
                         .add(Aspect.getAspect("superbia"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(NewHorizonsCoreMod.ID, "item.MoonStoneDust", 1, 0, missing),
+                CustomItemList.MoonStoneDust.get(1L),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1));
         ThaumcraftApi.registerObjectTag(
                 getModItem(GalacticraftMars.ID, "tile.mars", 1, 4, missing),
@@ -5669,7 +5668,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("alienis"), 2).add(Aspect.getAspect("metallum"), 3)
                         .add(Aspect.getAspect("ignis"), 3).add(Aspect.getAspect("terra"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem(NewHorizonsCoreMod.ID, "item.MarsStoneDust", 1, 0, missing),
+                CustomItemList.MarsStoneDust.get(1L),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1)
                         .add(Aspect.getAspect("terra"), 1));
         ThaumcraftApi.registerObjectTag(
@@ -5685,7 +5684,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("alienis"), 3).add(Aspect.getAspect("tenebrae"), 3)
                         .add(Aspect.getAspect("vacuos"), 3).add(Aspect.getAspect("gelum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem(NewHorizonsCoreMod.ID, "item.AsteroidsStoneDust", 1, 0, missing),
+                CustomItemList.AsteroidsStoneDust.get(1L),
                 new AspectList().add(Aspect.getAspect("alienis"), 1).add(Aspect.getAspect("perditio"), 1)
                         .add(Aspect.getAspect("gelum"), 1));
         ThaumcraftApi.registerObjectTag(
@@ -5732,7 +5731,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("machina"), 6).add(Aspect.getAspect("instrumentum"), 5)
                         .add(Aspect.getAspect("metallum"), 5).add(Aspect.getAspect("lux"), 4));
         ThaumcraftApi.registerObjectTag(
-                getModItem(NewHorizonsCoreMod.ID, "item.WaferTier3", 1, 0, missing),
+                CustomItemList.WaferTier3.get(1L),
                 new AspectList().add(Aspect.getAspect("fabrico"), 12).add(Aspect.getAspect("ordo"), 10)
                         .add(Aspect.getAspect("machina"), 9).add(Aspect.getAspect("instrumentum"), 8)
                         .add(Aspect.getAspect("metallum"), 7).add(Aspect.getAspect("lux"), 6)
@@ -5875,10 +5874,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemIngot", 1, 4, missing),
                 new AspectList().add(Aspect.getAspect("metallum"), 3));
         ThaumcraftApi.registerObjectTag(
-                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassPlate", 1, 0, missing),
+                CustomItemList.ReinforcedGlassPLate.get(1L),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1));
         ThaumcraftApi.registerObjectTag(
-                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassPlate", 1, 0, missing),
+                CustomItemList.ReinforcedGlassPLate.get(1L),
                 new AspectList().add(Aspect.getAspect("metallum"), 1).add(Aspect.getAspect("gelum"), 1)
                         .add(Aspect.getAspect("vitreus"), 1));
         ThaumcraftApi.registerObjectTag(

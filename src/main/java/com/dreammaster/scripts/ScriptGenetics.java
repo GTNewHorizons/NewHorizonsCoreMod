@@ -19,6 +19,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.forestry.ForestryHelper;
+import com.dreammaster.gthandler.CustomItemList;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
@@ -179,7 +180,7 @@ public class ScriptGenetics implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 2880),
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 getModItem(Genetics.ID, "database", 1, 0, missing),
                 "abc",
                 "def",
@@ -205,7 +206,7 @@ public class ScriptGenetics implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 4320),
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 getModItem(Genetics.ID, "analyst", 1, 0, missing),
                 "abc",
                 "def",
@@ -231,7 +232,7 @@ public class ScriptGenetics implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 4320),
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 getModItem(Genetics.ID, "registry", 1, 0, missing),
                 "abc",
                 "def",

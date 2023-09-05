@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.ForgeMicroblocks;
 import static gregtech.api.enums.Mods.IC2NuclearControl;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -35,6 +34,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.forestry.ForestryHelper;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.railcraft.RailcraftHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -1335,10 +1335,10 @@ public class ScriptRailcraft implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1, 0, missing));
+                CustomItemList.CokeOvenBrick.get(1L),
+                CustomItemList.CokeOvenBrick.get(1L),
+                CustomItemList.CokeOvenBrick.get(1L),
+                CustomItemList.CokeOvenBrick.get(1L));
         addShapedRecipe(
                 getModItem(Railcraft.ID, "brick.sandy", 2, 2, missing),
                 "ingotBrick",
@@ -1934,7 +1934,7 @@ public class ScriptRailcraft implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
-                        getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing), 'f',
+                        CustomItemList.ChargedCertusQuartzDust.get(1L), 'f',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
@@ -2026,25 +2026,25 @@ public class ScriptRailcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 5L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 0, 0, missing))
+                        CustomItemList.MoldHelmet.get(0L))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 8L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 0, 0, missing))
+                        CustomItemList.MoldChestplate.get(0L))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 7L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0, missing))
+                        CustomItemList.MoldLeggings.get(0L))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.legs", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 0, 0, missing))
+                        CustomItemList.MoldBoots.get(0L))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.boots", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()

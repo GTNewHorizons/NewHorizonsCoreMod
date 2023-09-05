@@ -23,6 +23,8 @@ import java.util.List;
 
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -648,22 +650,22 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 2, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
+                CustomItemList.WetTofu.get(1L),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
+                CustomItemList.WetTofu.get(1L),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
+                CustomItemList.WetTofu.get(1L),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing),
                 "craftingToolSoftHammer",
-                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing));
+                CustomItemList.WetTofu.get(1L));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                 "craftingToolRollingPin",
@@ -968,7 +970,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(PamsHarvestCraft.ID, "rabbitrawItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "rabbitcookedItem", 1, 0, missing));
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.WetTofu.get(1L))
                 .itemOutputs(
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),

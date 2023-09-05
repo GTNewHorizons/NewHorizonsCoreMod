@@ -207,8 +207,7 @@ public class FluidSolidifierRecipes implements Runnable {
                     .itemOutputs(ItemList.Shape_Mold_Ingot.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
                     .noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
 
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MarshmallowFormMold", 1, 0))
+            GT_Values.RA.stdBuilder().itemInputs(CustomItemList.MarshmallowFormMold.get(1L))
                     .itemOutputs(CustomItemList.MarshmallowForm.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
                     .noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
 
@@ -294,27 +293,23 @@ public class FluidSolidifierRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldFormBoots", 1, 0))
-                    .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0))
-                    .fluidInputs(Materials.Steel.getMolten(576L)).noFluidOutputs().duration(20 * TICKS)
-                    .eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
+                    .itemOutputs(CustomItemList.MoldBoots.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
+                    .noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldFormChestplate", 1, 0))
-                    .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0))
-                    .fluidInputs(Materials.Steel.getMolten(576L)).noFluidOutputs().duration(20 * TICKS)
-                    .eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
+                    .itemOutputs(CustomItemList.MoldChestplate.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
+                    .noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldFormLeggings", 1, 0))
-                    .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0))
-                    .fluidInputs(Materials.Steel.getMolten(576L)).noFluidOutputs().duration(20 * TICKS)
-                    .eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
+                    .itemOutputs(CustomItemList.MoldLeggings.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
+                    .noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldFormHelmet", 1, 0))
-                    .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0))
-                    .fluidInputs(Materials.Steel.getMolten(576L)).noFluidOutputs().duration(20 * TICKS)
-                    .eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
+                    .itemOutputs(CustomItemList.MoldHelmet.get(1L)).fluidInputs(Materials.Steel.getMolten(576L))
+                    .noFluidOutputs().duration(20 * TICKS).eut(TierEU.RECIPE_MV).addTo(sFluidSolidficationRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldFormDrillHead", 1, 0))
