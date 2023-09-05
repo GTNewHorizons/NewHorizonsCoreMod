@@ -36,9 +36,16 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import tconstruct.library.TConstructRegistry;
 
 public class ScriptGregtech implements IScriptLoader {
@@ -73,7 +80,7 @@ public class ScriptGregtech implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1145, missing),
+                ItemList.Teleporter.get(1L),
                 "circuitOptical",
                 getModItem(SGCraft.ID, "ic2PowerUnit", 1, 0, missing),
                 "circuitOptical",
@@ -84,19 +91,19 @@ public class ScriptGregtech implements IScriptLoader {
                 getModItem(SGCraft.ID, "ocInterface", 1, 0, missing),
                 getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Diamond, 1L),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 null,
                 "craftingToolFile",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer",
                 null,
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 1500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "gemDiamond",
                 "gemDiamond",
                 "craftingToolFile",
@@ -106,9 +113,9 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 2500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Diamond, 1L),
                 "craftingToolFile",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer",
                 null,
                 null,
@@ -117,19 +124,19 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 3500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "gemDiamond",
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 null,
                 null,
                 "craftingToolFile",
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 4500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "gemDiamond",
                 "craftingToolHardHammer",
                 "craftingToolFile",
@@ -139,27 +146,27 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Wood, 1L),
                 "craftingToolKnife",
                 null,
                 null,
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null);
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2890, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
                 "craftingToolMortar",
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1890, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L),
                 "craftingToolMortar",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L),
                 "craftingToolMortar",
                 "listAllmeatraw");
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L),
                 "craftingToolMortar",
                 "listAllfishraw");
         addShapelessRecipe(
@@ -167,28 +174,28 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolMortar",
                 getModItem(CropsPlusPlus.ID, "foodBerries", 1, 1, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2893, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L),
                 "craftingToolMortar",
                 "listAllmeatcooked");
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2893, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L),
                 "craftingToolMortar",
                 "listAllfishcooked");
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L),
                 "craftingToolMortar",
                 "logWood");
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1625, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Brick, 1L),
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "brick", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22874, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L),
                 "stickPlastic",
                 "craftingToolHardHammer",
                 "stickPlastic");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L),
                 "cropBarley",
                 null,
                 null,
@@ -196,7 +203,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L),
                 "cropWheat",
                 null,
                 null,
@@ -204,7 +211,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L),
                 "cropRye",
                 null,
                 null,
@@ -212,7 +219,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L),
                 "cropOats",
                 null,
                 null,
@@ -220,7 +227,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L),
                 getModItem(GregTech.ID, "gt.blockores", 1, 817, missing),
                 null,
                 null,
@@ -228,43 +235,43 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                getModItem(GregTech.ID, "gt.blockores", 1, 1817, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Salt, 1L),
                 null,
                 null,
                 "craftingToolMortar",
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                getModItem(GregTech.ID, "gt.blockores", 1, 2817, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Salt, 1L),
                 null,
                 null,
                 "craftingToolMortar",
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                getModItem(GregTech.ID, "gt.blockores", 1, 3817, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Salt, 1L),
                 null,
                 null,
                 "craftingToolMortar",
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2817, missing),
-                getModItem(GregTech.ID, "gt.blockores", 1, 4817, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Salt, 1L),
                 null,
                 null,
                 "craftingToolMortar",
                 null,
                 null);
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1805, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 1L),
                 "craftingToolMortar",
                 getModItem(Minecraft.ID, "clay_ball", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Iron, 1L),
                 "nuggetIron",
                 null,
                 null,
@@ -272,7 +279,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 86, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Gold, 1L),
                 "nuggetGold",
                 null,
                 null,
@@ -280,7 +287,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 35, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Copper, 1L),
                 "nuggetCopper",
                 null,
                 null,
@@ -288,7 +295,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 57, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Tin, 1L),
                 "nuggetTin",
                 null,
                 null,
@@ -296,7 +303,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 54, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Silver, 1L),
                 "nuggetSilver",
                 null,
                 null,
@@ -304,7 +311,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 89, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Lead, 1L),
                 "nuggetLead",
                 null,
                 null,
@@ -312,7 +319,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 36, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Zinc, 1L),
                 "nuggetZinc",
                 null,
                 null,
@@ -320,7 +327,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 34, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Nickel, 1L),
                 "nuggetNickel",
                 null,
                 null,
@@ -328,21 +335,21 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 11, missing),
+                ItemList.Casing_Motor.get(1L),
                 "itemCasingStainlessSteel",
                 "circuitAdvanced",
                 "itemCasingStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
+                ItemList.Casing_SolidSteel.get(1L),
+                ItemList.Electric_Motor_HV.get(1L),
                 "itemCasingStainlessSteel",
                 "circuitAdvanced",
                 "itemCasingStainlessSteel");
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                ItemList.Cover_SolarPanel.get(1L),
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22880, missing),
@@ -350,58 +357,58 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolHardHammer",
                 "stickRubber");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22530, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Apatite, 1L),
                 "stickApatite",
                 "craftingToolHardHammer",
                 "stickApatite");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22526, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Lapis, 1L),
                 "stickLapis",
                 "craftingToolHardHammer",
                 "stickLapis");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22524, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Lazurite, 1L),
                 "stickLazurite",
                 "craftingToolHardHammer",
                 "stickLazurite");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22525, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sodalite, 1L),
                 "stickSodalite",
                 "craftingToolHardHammer",
                 "stickSodalite");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22532, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.EnderPearl, 1L),
                 "stickEnderPearl",
                 "craftingToolHardHammer",
                 "stickEnderPearl");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22533, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.EnderEye, 1L),
                 "stickEnderEye",
                 "craftingToolHardHammer",
                 "stickEnderEye");
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 2, 4905, missing),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 2L),
                 getModItem(MCFrames.ID, "mcframes.frame", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                 getModItem(OpenBlocks.ID, "scaffolding", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1890, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L),
                 "craftingToolMortar",
                 getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 10, missing),
+                ItemList.Casing_Pump.get(1L),
                 "itemCasingStainlessSteel",
                 "circuitAdvanced",
                 "itemCasingStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
+                ItemList.Casing_SolidSteel.get(1L),
+                ItemList.Electric_Pump_HV.get(1L),
                 "itemCasingStainlessSteel",
                 "circuitAdvanced",
                 "itemCasingStainlessSteel");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20849, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.GraniteBlack, 1L),
                 "stoneGraniteBlack",
                 null,
                 null,
@@ -409,7 +416,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolFile",
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20850, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.GraniteRed, 1L),
                 "stoneGraniteRed",
                 null,
                 null,
@@ -417,18 +424,18 @@ public class ScriptGregtech implements IScriptLoader {
                 "craftingToolFile",
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 6, missing),
+                ItemList.Casing_Processor.get(1L),
                 "itemCasingStainlessSteel",
                 "circuitElite",
                 "itemCasingStainlessSteel",
                 "circuitElite",
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                ItemList.Casing_SolidSteel.get(1L),
                 "circuitElite",
                 "itemCasingStainlessSteel",
                 "circuitElite",
                 "itemCasingStainlessSteel");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                 "craftingToolHardHammer",
                 null,
                 null,
@@ -548,22 +555,22 @@ public class ScriptGregtech implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing), "dyeBrown");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing), "dyeLightGray");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing), "dyeYellow");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing), "dyeWhite");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing), "dyeBlue");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing), "dyeGray");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing), "dyeLime");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing), "dyeOrange");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing), "dyeRed");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing), "dyePurple");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing), "dyePink");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing), "dyeMagenta");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing), "dyeBlack");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing), "dyeGreen");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing), "dyeCyan");
-        addShapelessRecipe(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing), "dyeLightBlue");
+        addShapelessRecipe(ItemList.Color_03.get(1L), "dyeBrown");
+        addShapelessRecipe(ItemList.Color_07.get(1L), "dyeLightGray");
+        addShapelessRecipe(ItemList.Color_11.get(1L), "dyeYellow");
+        addShapelessRecipe(ItemList.Color_15.get(1L), "dyeWhite");
+        addShapelessRecipe(ItemList.Color_04.get(1L), "dyeBlue");
+        addShapelessRecipe(ItemList.Color_08.get(1L), "dyeGray");
+        addShapelessRecipe(ItemList.Color_10.get(1L), "dyeLime");
+        addShapelessRecipe(ItemList.Color_14.get(1L), "dyeOrange");
+        addShapelessRecipe(ItemList.Color_01.get(1L), "dyeRed");
+        addShapelessRecipe(ItemList.Color_05.get(1L), "dyePurple");
+        addShapelessRecipe(ItemList.Color_09.get(1L), "dyePink");
+        addShapelessRecipe(ItemList.Color_13.get(1L), "dyeMagenta");
+        addShapelessRecipe(ItemList.Color_00.get(1L), "dyeBlack");
+        addShapelessRecipe(ItemList.Color_02.get(1L), "dyeGreen");
+        addShapelessRecipe(ItemList.Color_06.get(1L), "dyeCyan");
+        addShapelessRecipe(ItemList.Color_12.get(1L), "dyeLightBlue");
         addShapelessRecipe(
                 getModItem(StructureLib.ID, "item.structurelib.constructableTrigger", 1, 0, missing),
                 "dyeBlue",
@@ -572,7 +579,7 @@ public class ScriptGregtech implements IScriptLoader {
                 "dyeWhite");
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32752, missing),
+                ItemList.Cover_SolarPanel_LV.get(1L),
                 "---------",
                 "---------",
                 "---aba---",
@@ -585,17 +592,17 @@ public class ScriptGregtech implements IScriptLoader {
                 'a',
                 "wireGt01SuperconductorMV",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedAluminiumPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedAluminiumPlate.get(1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32034, missing),
+                ItemList.Circuit_Silicon_Wafer2.get(1L),
                 'd',
                 "platePolytetrafluoroethylene",
                 'e',
                 "circuitAdvanced",
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32751, missing));
+                ItemList.Cover_SolarPanel_8V.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32753, missing),
+                ItemList.Cover_SolarPanel_MV.get(1L),
                 "---------",
                 "----a----",
                 "---bcb---",
@@ -606,21 +613,21 @@ public class ScriptGregtech implements IScriptLoader {
                 "----a----",
                 "---------",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32063, missing),
+                ItemList.Circuit_Chip_ULPIC.get(1L),
                 'b',
                 "wireGt01SuperconductorHV",
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTitaniumPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedTitaniumPlate.get(1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32034, missing),
+                ItemList.Circuit_Silicon_Wafer2.get(1L),
                 'e',
                 "plateEpoxid",
                 'f',
                 "circuitData",
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32752, missing));
+                ItemList.Cover_SolarPanel_LV.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32754, missing),
+                ItemList.Cover_SolarPanel_HV.get(1L),
                 "---------",
                 "----a----",
                 "---bcb---",
@@ -631,21 +638,21 @@ public class ScriptGregtech implements IScriptLoader {
                 "----a----",
                 "---------",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32065, missing),
+                ItemList.Circuit_Chip_LPIC.get(1L),
                 'b',
                 "wireGt01SuperconductorEV",
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedTungstenPlate.get(1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32034, missing),
+                ItemList.Circuit_Silicon_Wafer2.get(1L),
                 'e',
                 "plateIndiumGalliumPhosphide",
                 'f',
                 "circuitElite",
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32753, missing));
+                ItemList.Cover_SolarPanel_MV.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32755, missing),
+                ItemList.Cover_SolarPanel_EV.get(1L),
                 "---------",
                 "----a----",
                 "--bcdcb--",
@@ -656,23 +663,23 @@ public class ScriptGregtech implements IScriptLoader {
                 "----a----",
                 "---------",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32051, missing),
+                ItemList.Circuit_Chip_PIC.get(1L),
                 'b',
                 "wireGt01SuperconductorIV",
                 'c',
                 "plateTripleSiliconSolarGrade",
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenSteelPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32035, missing),
+                ItemList.Circuit_Silicon_Wafer3.get(1L),
                 'f',
                 "platePolybenzimidazole",
                 'g',
                 "circuitMaster",
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32754, missing));
+                ItemList.Cover_SolarPanel_HV.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32756, missing),
+                ItemList.Cover_SolarPanel_IV.get(1L),
                 "---------",
                 "----a----",
                 "--bcdcb--",
@@ -683,25 +690,25 @@ public class ScriptGregtech implements IScriptLoader {
                 "----a----",
                 "---------",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32053, missing),
+                ItemList.Circuit_Chip_HPIC.get(1L),
                 'b',
                 "wireGt01SuperconductorLuV",
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32034, missing),
+                ItemList.Circuit_Silicon_Wafer2.get(1L),
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedChromePlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedChromePlate.get(1L),
                 'e',
                 "plateQuadrupleSiliconSolarGrade",
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32035, missing),
+                ItemList.Circuit_Silicon_Wafer3.get(1L),
                 'g',
                 "plateDoublePolybenzimidazole",
                 'h',
                 "circuitUltimate",
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32755, missing));
+                ItemList.Cover_SolarPanel_EV.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32757, missing),
+                ItemList.Cover_SolarPanel_LuV.get(1L),
                 "----a----",
                 "---bcb---",
                 "--bdedb--",
@@ -712,29 +719,29 @@ public class ScriptGregtech implements IScriptLoader {
                 "---bcb---",
                 "----a----",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32059, missing),
+                ItemList.Circuit_Chip_UHPIC.get(1L),
                 'b',
                 "wireGt02SuperconductorZPM",
                 'c',
                 "circuitUltimate",
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32035, missing),
+                ItemList.Circuit_Silicon_Wafer3.get(1L),
                 'e',
                 getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 8, missing),
                 'f',
                 "plateQuintupleSiliconSolarGrade",
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32151, missing),
+                ItemList.Circuit_Silicon_Wafer4.get(1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 19599, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polybenzimidazole, 1L),
                 'i',
                 getModItem(SuperSolarPanels.ID, "solarsplitter", 1, 0, missing),
                 'j',
                 "circuitSuperconductor",
                 'k',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32756, missing));
+                ItemList.Cover_SolarPanel_IV.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32758, missing),
+                ItemList.Cover_SolarPanel_ZPM.get(1L),
                 "---aba---",
                 "--cadac--",
                 "--aefea--",
@@ -747,29 +754,29 @@ public class ScriptGregtech implements IScriptLoader {
                 'a',
                 "wireGt02SuperconductorUV",
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32048, missing),
+                ItemList.Circuit_Wafer_SoC2.get(1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32161, missing),
+                ItemList.Circuit_Chip_NPIC.get(1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32164, missing),
+                ItemList.Circuit_Wafer_QPIC.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32151, missing),
+                ItemList.Circuit_Silicon_Wafer4.get(1L),
                 'f',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedNaquadriaPlate.get(1L),
                 'g',
                 getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32153, missing),
+                ItemList.Circuit_Silicon_Wafer5.get(1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 20599, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Polybenzimidazole, 1L),
                 'j',
                 "circuitSuperconductor",
                 'k',
                 "circuitInfinite",
                 'l',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32757, missing));
+                ItemList.Cover_SolarPanel_LuV.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32759, missing),
+                ItemList.Cover_SolarPanel_UV.get(1L),
                 "--abcba--",
                 "-daefead-",
                 "-agbhbga-",
@@ -784,814 +791,808 @@ public class ScriptGregtech implements IScriptLoader {
                 'b',
                 "plateDenseSiliconSolarGrade",
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32068, missing),
+                ItemList.Circuit_Chip_CrystalSoC2.get(1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32163, missing),
+                ItemList.Circuit_Chip_PPIC.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32153, missing),
+                ItemList.Circuit_Silicon_Wafer5.get(1L),
                 'f',
-                getModItem(NewHorizonsCoreMod.ID, "item.RawPicoWafer", 1, 0, missing),
+                CustomItemList.RawPicoWafer.get(1L),
                 'g',
-                getModItem(NewHorizonsCoreMod.ID, "item.PicoWafer", 1, 0, missing),
+                CustomItemList.PicoWafer.get(1L),
                 'h',
-                getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 1, 0, missing),
+                CustomItemList.IrradiantReinforcedNeutroniumPlate.get(1L),
                 'i',
                 getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22599, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
                 'k',
                 "circuitInfinite",
                 'l',
                 "circuitBio",
                 'm',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32758, missing));
+                ItemList.Cover_SolarPanel_ZPM.get(1L));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 2896, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32300, missing),
+                ItemList.Shape_Empty.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 null,
                 false,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32301, missing),
+                ItemList.Shape_Mold_Plate.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormPlate", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32302, missing),
+                ItemList.Shape_Mold_Casing.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormCasing", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32303, missing),
+                ItemList.Shape_Mold_Gear.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormGear", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32304, missing),
+                ItemList.Shape_Mold_Credit.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormCoinage", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32305, missing),
+                ItemList.Shape_Mold_Bottle.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormBottle", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32306, missing),
+                ItemList.Shape_Mold_Ingot.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormIngot", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32307, missing),
+                ItemList.Shape_Mold_Ball.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormBall", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32308, missing),
+                ItemList.Shape_Mold_Block.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormBlock", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32309, missing),
+                ItemList.Shape_Mold_Nugget.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormNuggets", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32310, missing),
+                ItemList.Shape_Mold_Bun.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormBuns", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32311, missing),
+                ItemList.Shape_Mold_Bread.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormBread", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32312, missing),
+                ItemList.Shape_Mold_Baguette.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormBaguette", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32313, missing),
+                ItemList.Shape_Mold_Cylinder.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormCylinder", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32314, missing),
+                ItemList.Shape_Mold_Anvil.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormAnvil", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32315, missing),
+                ItemList.Shape_Mold_Name.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormName", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32316, missing),
+                ItemList.Shape_Mold_Arrow.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormArrowHead", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32317, missing),
+                ItemList.Shape_Mold_Gear_Small.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormSmallGear", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32318, missing),
+                ItemList.Shape_Mold_Rod.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormStick", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32319, missing),
+                ItemList.Shape_Mold_Bolt.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormBolt", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32320, missing),
+                ItemList.Shape_Mold_Round.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormRound", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32321, missing),
+                ItemList.Shape_Mold_Screw.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormScrew", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32322, missing),
+                ItemList.Shape_Mold_Ring.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormRing", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32323, missing),
+                ItemList.Shape_Mold_Rod_Long.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormStickLong", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32325, missing),
+                ItemList.Shape_Mold_Turbine_Blade.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormTurbineBlade", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32324, missing),
+                ItemList.Shape_Mold_Rotor.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormRotor", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32326, missing),
+                ItemList.Shape_Mold_Pipe_Tiny.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormPipeTiny", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32327, missing),
+                ItemList.Shape_Mold_Pipe_Small.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormPipeSmall", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32328, missing),
+                ItemList.Shape_Mold_Pipe_Medium.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormPipeMedium", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32329, missing),
+                ItemList.Shape_Mold_Pipe_Large.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormPipeLarge", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32330, missing),
+                ItemList.Shape_Mold_Pipe_Huge.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.MoldFormPipeHuge", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32350, missing),
+                ItemList.Shape_Extruder_Plate.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapePlate", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32351, missing),
+                ItemList.Shape_Extruder_Rod.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeRod", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32352, missing),
+                ItemList.Shape_Extruder_Bolt.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeBolt", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32354, missing),
+                ItemList.Shape_Extruder_Cell.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeCell", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32353, missing),
+                ItemList.Shape_Extruder_Ring.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeRing", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32355, missing),
+                ItemList.Shape_Extruder_Ingot.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeIngot", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32356, missing),
+                ItemList.Shape_Extruder_Wire.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeWire", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32357, missing),
+                ItemList.Shape_Extruder_Casing.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeCasing", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32358, missing),
+                ItemList.Shape_Extruder_Pipe_Tiny.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeTinyPipe", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32359, missing),
+                ItemList.Shape_Extruder_Pipe_Small.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeSmallPipe", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32360, missing),
+                ItemList.Shape_Extruder_Pipe_Medium.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeNormalPipe", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32361, missing),
+                ItemList.Shape_Extruder_Pipe_Large.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeLargePipe", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32362, missing),
+                ItemList.Shape_Extruder_Pipe_Huge.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeHugePipe", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32363, missing),
+                ItemList.Shape_Extruder_Block.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeBlock", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32364, missing),
+                ItemList.Shape_Extruder_Sword.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeSwordBlade", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32365, missing),
+                ItemList.Shape_Extruder_Pickaxe.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapePickaxeHead", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32366, missing),
+                ItemList.Shape_Extruder_Shovel.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeShovelHead", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32367, missing),
+                ItemList.Shape_Extruder_Axe.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeAxeHead", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32368, missing),
+                ItemList.Shape_Extruder_Hoe.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeHoeHead", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32369, missing),
+                ItemList.Shape_Extruder_Hammer.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeHammerHead", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32370, missing),
+                ItemList.Shape_Extruder_File.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeFileHead", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32371, missing),
+                ItemList.Shape_Extruder_Saw.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeSawBlade", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32372, missing),
+                ItemList.Shape_Extruder_Gear.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeGear", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32373, missing),
+                ItemList.Shape_Extruder_Bottle.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeBottle", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32374, missing),
+                ItemList.Shape_Extruder_Rotor.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeRotor", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32376, missing),
+                ItemList.Shape_Extruder_Turbine_Blade.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeTurbineBlade", 1, 0, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32375, missing),
+                ItemList.Shape_Extruder_Small_Gear.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeSmallGear", 1, 0, missing),
                 true,
                 100);
 
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2893, missing));
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1246, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L))
+                .itemOutputs(ItemList.Transformer_MV_LV.get(1L)).noFluidInputs().noFluidOutputs().duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1366, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 22, missing)).noFluidInputs()
-                .noFluidOutputs().duration(250).eut(120).addTo(sAssemblerRecipes);
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 2L))
+                .itemOutputs(ItemList.Transformer_HV_MV.get(1L)).noFluidInputs().noFluidOutputs().duration(250).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1426, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 23, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 2L))
+                .itemOutputs(ItemList.Transformer_EV_HV.get(1L)).noFluidInputs().noFluidOutputs().duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1587, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(1920).addTo(sAssemblerRecipes);
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 2L))
+                .itemOutputs(ItemList.Transformer_IV_EV.get(1L)).noFluidInputs().noFluidOutputs().duration(100)
+                .eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 22032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Iron, 6L),
                         getModItem(IndustrialCraft2.ID, "itemPlutonium", 3, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).noFluidOutputs().duration(1200).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 9, 9057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 27, 9035, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 11300, missing)).noFluidInputs()
+                        GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L),
+                        GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 9, 9057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 2035, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 11300, missing)).noFluidInputs()
+                        GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 3L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 9, 9057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 11035, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 11300, missing)).noFluidInputs()
+                        GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Copper, 3L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 27, 9035, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2057, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 11300, missing)).noFluidInputs()
+                        GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 27, 9035, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11057, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 11300, missing)).noFluidInputs()
+                        GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Tin, 1L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 27, 9035, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 9, 9057, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 11300, missing)).noFluidInputs()
+                        GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L),
+                        GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ThaumicBases.ID, "resource", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                .itemInputs(getModItem(ThaumicBases.ID, "resource", 9, 0, missing), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(ThaumicBases.ID, "resource", 1, 1, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ThaumicBases.ID, "resource", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32309, missing))
+                .itemInputs(getModItem(ThaumicBases.ID, "resource", 1, 1, missing), ItemList.Shape_Mold_Nugget.get(0L))
                 .itemOutputs(getModItem(ThaumicBases.ID, "resource", 9, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2890, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
+                        ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 1890, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 4L),
+                        ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 9, 890, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Glass, 9L),
+                        ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2540, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).noFluidOutputs().duration(2000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2540, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).noFluidOutputs().duration(1500)
                 .eut(30).addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2540, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2541, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).noFluidOutputs().duration(2000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2541, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).noFluidOutputs().duration(1500)
                 .eut(30).addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2541, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2543, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).noFluidOutputs().duration(2000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2543, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).noFluidOutputs().duration(1500)
                 .eut(30).addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2543, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2542, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).noFluidOutputs().duration(2000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2542, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).noFluidOutputs().duration(1500)
                 .eut(30).addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2542, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2545, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).noFluidOutputs().duration(2000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2545, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).noFluidOutputs().duration(1500)
                 .eut(30).addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2545, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2544, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).noFluidOutputs().duration(2000).eut(30)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2544, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).noFluidOutputs().duration(1500)
                 .eut(30).addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2544, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(30)
                 .addTo(sAutoclaveRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 3, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 5, 2836, missing))
+                .itemInputs(CustomItemList.PotassiumHydroxideDust.get(3L), GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 5L))
                 .fluidInputs(FluidRegistry.getFluidStack("nitricacid", 5000))
                 .fluidOutputs(FluidRegistry.getFluidStack("steam", 16000)).duration(10).eut(30)
                 .addTo(UniversalChemical);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 1, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toolRod", 1, 11, missing)).noFluidInputs().noFluidOutputs()
                 .duration(606).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 2, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "pickaxeHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1213).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 3, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "shovelHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1213).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 4, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "hatchetHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1213).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 5, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "swordBlade", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1213).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 6, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "wideGuard", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(606).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 7, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "handGuard", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(606).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 8, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "crossbar", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(606).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 9, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "binding", 1, 11, missing)).noFluidInputs().noFluidOutputs()
                 .duration(606).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 10, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "frypanHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1213).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 11, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "signHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1213).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 12, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "knifeBlade", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(606).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 13, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "chiselHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(606).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 14, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toughRod", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(3639).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 15, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toughBinding", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(3639).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 16, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "heavyPlate", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(9704).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 17, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "broadAxeHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(9704).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 18, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "scytheBlade", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(9704).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 19, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "excavatorHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(9704).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 20, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "largeSwordBlade", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(9704).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 21, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "hammerHead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(9704).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 22, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fullGuard", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(3639).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1213).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 0, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "ShurikenPart", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(606).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 4L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 1, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "CrossbowLimbPart", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(4852).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 5L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 2, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "CrossbowBodyPart", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(6065).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 11382, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 2L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 3, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "BowLimbPart", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1820).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 18, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32350, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing)).noFluidInputs()
+                        ItemList.Shape_Extruder_Plate.get(0L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(64).addTo(sExtruderRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 23874, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22874, missing)).noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 2L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(16).addTo(sHammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 23880, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Rubber, 2L))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22880, missing)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(16).addTo(sHammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 23530, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22530, missing)).noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Apatite, 2L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Apatite, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(16).addTo(sHammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 23526, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22526, missing)).noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Lapis, 2L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Lapis, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(16).addTo(sHammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 23524, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22524, missing)).noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Lazurite, 2L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Lazurite, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(16).addTo(sHammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 23525, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22525, missing)).noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sodalite, 2L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sodalite, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(16).addTo(sHammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 23532, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22532, missing)).noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnderPearl, 2L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.EnderPearl, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(16).addTo(sHammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 23533, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22533, missing)).noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnderEye, 2L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.EnderEye, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(16).addTo(sHammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "flint", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 802, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Flint, 2L)).noFluidInputs()
                 .noFluidOutputs().duration(32).eut(16).addTo(sHammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 8890, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Glass, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(10).eut(16).addTo(sHammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 27890, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 1890, missing)).noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.gemChipped, Materials.Glass, 1L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(10).eut(16).addTo(sHammerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32304, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sPressRecipes);
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        ItemList.Shape_Mold_Credit.get(0L))
+                .itemOutputs(CustomItemList.CoinBlank.get(1L)).noFluidInputs().noFluidOutputs().duration(200).eut(30)
+                .addTo(sPressRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "barleyItem", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "plants", 1, 6, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "ryeItem", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "oatsItem", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 2892, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 9L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "walleyerawItem", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(400).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2890, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 1890, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "glass_shard", 2, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2890, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.blockores", 1, 937, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 5937, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CassiteriteSand, 1L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.CassiteriteSand, 4L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(GregTech.ID, "gt.blockores", 1, 870, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(GregTech.ID, "gt.blockores", 1, 1870, missing),
+                GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(GregTech.ID, "gt.blockores", 1, 2870, missing),
+                GT_OreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(GregTech.ID, "gt.blockores", 1, 3870, missing),
+                GT_OreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
         GT_ModHandler.addSmeltingRecipe(
-                getModItem(GregTech.ID, "gt.blockores", 1, 4870, missing),
+                GT_OreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));
     }
 }

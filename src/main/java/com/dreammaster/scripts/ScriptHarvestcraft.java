@@ -23,9 +23,15 @@ import java.util.List;
 
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptHarvestcraft implements IScriptLoader {
 
@@ -395,7 +401,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 "craftingToolHardHammer",
                 "plateStainlessSteel",
                 "plateStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 8306, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadDrill, Materials.StainlessSteel, 1L),
                 "plateStainlessSteel",
                 "boltStainlessSteel",
                 "plateStainlessSteel",
@@ -630,7 +636,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 "cropSoybean");
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "bubblywaterItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32107, missing));
+                ItemList.Bottle_Mineral_Water.get(1L));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "freshmilkItem", 4, 0, missing),
                 getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing));
@@ -644,22 +650,22 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 2, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
+                CustomItemList.WetTofu.get(1L),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(Minecraft.ID, "water_bucket", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
+                CustomItemList.WetTofu.get(1L),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
         addShapelessRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing),
+                CustomItemList.WetTofu.get(1L),
                 getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing),
                 "craftingToolSoftHammer",
-                getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing));
+                CustomItemList.WetTofu.get(1L));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                 "craftingToolRollingPin",
@@ -753,7 +759,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "strawberryItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberryjuiceItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32554, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Crop_Drop_Grapes.get(1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapejuiceItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "grapeItem", 1, 0, missing))
@@ -924,7 +930,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "tomatoItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "ketchupItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32552, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Crop_Drop_Tomato.get(1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "ketchupItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "peanutItem", 1, 0, missing))
@@ -964,7 +970,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(PamsHarvestCraft.ID, "rabbitrawItem", 1, 0, missing),
                 getModItem(PamsHarvestCraft.ID, "rabbitcookedItem", 1, 0, missing));
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.WetTofu", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.WetTofu.get(1L))
                 .itemOutputs(
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),
@@ -986,392 +992,392 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "heavycreamItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 817, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Salt, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "butterItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "melon", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "melonsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "strawberryItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "lemonItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "lemonsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32551, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        ItemList.Crop_Drop_Lemon.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "lemonsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "blueberryItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blueberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "cherryItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cherrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "starfruitItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "starfruitsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "bananaItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 28, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 29, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "bananasmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "orangeItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 18, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 13, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 21, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "orangesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "papayaItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayasmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "fruits", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "papayasmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "peachItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 12, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "peachsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "limeItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 17, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 16, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "limesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "mangoItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangosmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 57, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "mangosmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pomegranateItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pomegranatesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "blackberryItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 43, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "blackberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "raspberryItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "berry", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "raspberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "kiwiItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "kiwismoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "apricotItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "apricotsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "grapefruitItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 11, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapefruitsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "persimmonItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "persimmonsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "gooseberryItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "gooseberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 48, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "gooseberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "apple", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "applesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "applesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "coconutItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 50, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "coconutsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "cranberryItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 46, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "cranberrysmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "grapeItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32554, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        ItemList.Crop_Drop_Grapes.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "pearItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "food", 1, 12, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 23, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "pearsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "plumItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "fruits", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "plumsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "figItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "figsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraTrees.ID, "food", 1, 32, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "figsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "oliveoilItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "vinegarItem", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 817, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Salt, 2L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "saladdressingItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
 

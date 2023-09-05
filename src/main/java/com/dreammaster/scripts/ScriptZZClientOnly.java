@@ -2,10 +2,8 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.CoreConfig;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
@@ -16,6 +14,7 @@ import java.util.List;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.network.msg.ZZClientOnlySyncMessage;
 
@@ -28,7 +27,9 @@ import forestry.core.recipes.ShapedRecipeCustom;
 import forestry.factory.recipes.CarpenterRecipe;
 import gregtech.GT_Mod;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.util.GT_Recipe;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptZZClientOnly implements IScriptLoader {
 
@@ -64,21 +65,21 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'a',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32000, missing),
+                                    ItemList.Credit_Greg_Copper.get(1L),
                                     'b',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32000, missing),
+                                    ItemList.Credit_Greg_Copper.get(1L),
                                     'c',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32000, missing),
+                                    ItemList.Credit_Greg_Copper.get(1L),
                                     'd',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32000, missing),
+                                    ItemList.Credit_Greg_Copper.get(1L),
                                     'f',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32000, missing),
+                                    ItemList.Credit_Greg_Copper.get(1L),
                                     'g',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32000, missing),
+                                    ItemList.Credit_Greg_Copper.get(1L),
                                     'h',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32000, missing),
+                                    ItemList.Credit_Greg_Copper.get(1L),
                                     'i',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32000, missing))),
+                                    ItemList.Credit_Greg_Copper.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -89,7 +90,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'e',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing))),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -100,21 +101,21 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'a',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32011, missing),
+                                    ItemList.Credit_Copper.get(1L),
                                     'b',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32011, missing),
+                                    ItemList.Credit_Copper.get(1L),
                                     'c',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32011, missing),
+                                    ItemList.Credit_Copper.get(1L),
                                     'd',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32011, missing),
+                                    ItemList.Credit_Copper.get(1L),
                                     'f',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32011, missing),
+                                    ItemList.Credit_Copper.get(1L),
                                     'g',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32011, missing),
+                                    ItemList.Credit_Copper.get(1L),
                                     'h',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32011, missing),
+                                    ItemList.Credit_Copper.get(1L),
                                     'i',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32011, missing))),
+                                    ItemList.Credit_Copper.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -136,9 +137,9 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'e',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'h',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing))),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -162,15 +163,15 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'a',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'c',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'e',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'g',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'i',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing))),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -200,11 +201,11 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'd',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'e',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'f',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing))),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -217,7 +218,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     'd',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'e',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'f',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing))),
                     new CarpenterRecipe(
@@ -230,17 +231,17 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'a',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'c',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'd',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'f',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'g',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'i',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing))),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -255,9 +256,9 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     'c',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'd',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'f',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'g',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'i',
@@ -272,21 +273,21 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'a',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'b',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'c',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'd',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'f',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'g',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'h',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'i',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing))),
+                                    ItemList.Credit_Greg_Silver.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -297,21 +298,21 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'a',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'b',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'c',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'd',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'f',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'g',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'h',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'i',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing))),
+                                    ItemList.Credit_Silver.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -322,23 +323,23 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'a',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'b',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'c',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'd',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'e',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32003, missing),
+                                    ItemList.Credit_Greg_Gold.get(1L),
                                     'f',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'g',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing),
+                                    ItemList.Credit_Greg_Silver.get(1L),
                                     'h',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32001, missing),
+                                    ItemList.Credit_Greg_Cupronickel.get(1L),
                                     'i',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32002, missing))),
+                                    ItemList.Credit_Greg_Silver.get(1L))),
                     new CarpenterRecipe(
                             10,
                             FluidRegistry.getFluidStack("seedoil", 100),
@@ -349,23 +350,23 @@ public class ScriptZZClientOnly implements IScriptLoader {
                                     "def",
                                     "ghi",
                                     'a',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'b',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'c',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'd',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'e',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32014, missing),
+                                    ItemList.Credit_Gold.get(1L),
                                     'f',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'g',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing),
+                                    ItemList.Credit_Silver.get(1L),
                                     'h',
                                     getModItem(IndustrialCraft2.ID, "itemCoin", 1, 0, missing),
                                     'i',
-                                    getModItem(GregTech.ID, "gt.metaitem.01", 1, 32013, missing)))
+                                    ItemList.Credit_Silver.get(1L)))
 
             };
         }
@@ -379,42 +380,32 @@ public class ScriptZZClientOnly implements IScriptLoader {
     public void loadRecipes() {
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierI", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(1))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierI.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).noFluidOutputs().duration(600).eut(120)
                         .disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierII", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(2))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierII.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).noFluidOutputs().duration(600).eut(480)
                         .disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierIII", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(3))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierIII.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).noFluidOutputs().duration(600)
                         .eut(1920).disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierIV", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(4))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierIV.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).noFluidOutputs().duration(600)
                         .eut(7680).disabled().hidden().addTo(sAssemblerRecipes));
         coins.addAll(
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
-                        .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierV", 1, 0, missing))
+                        .itemInputs(CustomItemList.CoinBlank.get(1L), GT_Utility.getIntegratedCircuit(5))
+                        .itemOutputs(CustomItemList.CoinChunkloaderTierV.get(1L))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).noFluidOutputs().duration(600)
                         .eut(30720).disabled().hidden().addTo(sAssemblerRecipes));
 

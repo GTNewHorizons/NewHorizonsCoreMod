@@ -695,7 +695,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'b',
                 getModItem("Avaritia", "Resource", 1, 5),
                 'c',
-                getModItem("gregtech", "gt.blockmachines", 1, 124),
+                ItemList.Quantum_Tank_IV.get(1L),
                 'd',
                 COMPONENT_16384,
                 'e',

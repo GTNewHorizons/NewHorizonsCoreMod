@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
@@ -30,8 +29,13 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -124,23 +128,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'b',
                 getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 18, missing),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17532, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                 'e',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17532, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'h',
                 getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 26, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L));
         TCHelper.addResearchPage(
                 "EMINENCESTONE",
                 new ResearchPage(
@@ -197,14 +201,14 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("luxuria"), 512).add(Aspect.getAspect("alienis"), 512)
                         .add(Aspect.getAspect("terminus"), 512).add(Aspect.getAspect("gula"), 512)
                         .add(Aspect.getAspect("superbia"), 512),
-                getModItem(GregTech.ID, "gt.blockreinforced", 1, 12, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32046, missing),
+                ItemList.Block_BedrockiumCompressed.get(1L),
+                new ItemStack[] { ItemList.Field_Generator_UMV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32046, missing),
+                        ItemList.Field_Generator_UMV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32046, missing),
+                        ItemList.Field_Generator_UMV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32046, missing),
+                        ItemList.Field_Generator_UMV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "PORTALDEEPDARK",
@@ -239,11 +243,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'c',
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'e',
                 getModItem(Minecraft.ID, "bookshelf", 1, 0, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'g',
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                 'h',
@@ -272,11 +276,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17540, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 29351, missing),
+                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17540, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
                 'd',
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
                 'e',
@@ -284,11 +288,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17540, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 29351, missing),
+                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17540, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L));
         TCHelper.addResearchPage(
                 "ANGELBLOCK",
                 new ResearchPage(
@@ -312,7 +316,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("superbia"), 24).add(Aspect.getAspect("sano"), 28)
                         .add(Aspect.getAspect("iter"), 20).add(Aspect.getAspect("potentia"), 12),
-                getModItem(NewHorizonsCoreMod.ID, "item.Marshmallow", 1, 0, missing),
+                CustomItemList.Marshmallow.get(1L),
                 new ItemStack[] { getModItem(PamsHarvestCraft.ID, "epicbaconItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "deluxechickencurryItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "meatfeastpizzaItem", 1, 0, missing),
@@ -499,17 +503,17 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("terra"), 64),
                 getModItem(Minecraft.ID, "diamond_block", 1, 0, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L), });
         TCHelper.addResearchPage(
                 "BEACON",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Minecraft.ID, "beacon", 1, 0, missing))));
@@ -594,7 +598,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("praecantatio"), 35)
                         .add(Aspect.getAspect("vitreus"), 20),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                 new ItemStack[] { getModItem(TinkerConstruct.ID, "materials", 1, 25, missing),
                         getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 25, missing),
@@ -653,10 +657,10 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("sano"), 30).add(Aspect.getAspect("terra"), 25)
                         .add(Aspect.getAspect("instrumentum"), 35),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 2542, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
                         getModItem(TwilightForest.ID, "tile.TFPlant", 1, 3, missing),
                         getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2542, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
                         getModItem(TwilightForest.ID, "tile.TFPlant", 1, 3, missing),
                         getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing), });
         TCHelper.addResearchPage(
@@ -932,23 +936,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17506, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22321, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17506, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
+                ItemList.Sensor_IV.get(1L),
                 'e',
                 getModItem(IronChests.ID, "BlockIronChest", 1, 6, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32684, missing),
+                ItemList.Emitter_IV.get(1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17506, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22321, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17506, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L));
         TCHelper.addResearchPage(
                 "ENDERCHEST",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(EnderStorage.ID, "enderChest", 1, 0, missing))));
@@ -973,23 +977,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22801, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22321, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22801, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
+                ItemList.Sensor_IV.get(1L),
                 'e',
                 getModItem(IronTanks.ID, "obsidianTank", 1, 0, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32684, missing),
+                ItemList.Emitter_IV.get(1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22801, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22321, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22801, missing));
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L));
         TCHelper.addResearchPage(
                 "ENDERTANK",
                 new ResearchPage(
@@ -1015,23 +1019,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22321, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
+                ItemList.Sensor_IV.get(1L),
                 'e',
                 getModItem(Backpack.ID, "backpack", 1, 200, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32684, missing),
+                ItemList.Emitter_IV.get(1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22321, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing));
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L));
         TCHelper.addResearchPage(
                 "ENDERPOUCHE",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(EnderStorage.ID, "enderPouch", 1, 0, missing))));
@@ -1058,23 +1062,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
                 'b',
                 getModItem(Minecraft.ID, "book", 1, 0, missing),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'e',
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                 'h',
                 getModItem(Minecraft.ID, "redstone_block", 1, 0, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L));
         TCHelper.addResearchPage(
                 "AUTOENCHANTINGTABLE",
                 new ResearchPage(
@@ -1105,11 +1109,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'd',
                 getModItem(Automagy.ID, "crystalBrain", 1, 3, missing),
                 'e',
@@ -1117,11 +1121,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 getModItem(Automagy.ID, "crystalBrain", 1, 3, missing),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'h',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing));
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L));
         TCHelper.addResearchPage(
                 "LUGGAGE",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(OpenBlocks.ID, "luggage", 1, 0, missing))));
@@ -1148,16 +1152,16 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 32).add(Aspect.getAspect("corpus"), 16)
                         .add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("lucrum"), 8),
                 getModItem(HardcoreEnderExpansion.ID, "ghost_amulet", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 11975, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Draconium, 1L),
                         getModItem(HardcoreEnderExpansion.ID, "instability_orb", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28770, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 1L),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "fire_shard", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "igneous_rock", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11975, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Draconium, 1L),
                         getModItem(HardcoreEnderExpansion.ID, "instability_orb", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28770, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 1L),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "igneous_rock", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "fire_shard", 1, 0, missing),
@@ -1189,14 +1193,12 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 getModItem(TwilightForest.ID, "item.fierySword", 1, 0, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
-                        getModItem(Avaritia.ID, "Resource", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.LichBone", 1, 0, missing),
+                        getModItem(Avaritia.ID, "Resource", 1, 0, missing), CustomItemList.LichBone.get(1L),
                         getModItem(Avaritia.ID, "Resource", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Silver, 1L),
                         getModItem(TinkerConstruct.ID, "materials", 1, 8, missing),
-                        getModItem(Avaritia.ID, "Resource", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.LichBone", 1, 0, missing),
+                        getModItem(Avaritia.ID, "Resource", 1, 0, missing), CustomItemList.LichBone.get(1L),
                         getModItem(Avaritia.ID, "Resource", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing), });
         TCHelper.addResearchPage(

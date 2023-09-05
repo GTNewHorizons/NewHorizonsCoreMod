@@ -2,9 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 
@@ -14,10 +12,14 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.forestry.ForestryHelper;
+import com.dreammaster.gthandler.CustomItemList;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptBotany implements IScriptLoader {
 
@@ -38,7 +40,7 @@ public class ScriptBotany implements IScriptLoader {
                 getModItem(Botany.ID, "database", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Botany.ID, "trowelWood", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "craftingToolHardHammer",
                 null,
                 "craftingToolFile",
@@ -93,38 +95,38 @@ public class ScriptBotany implements IScriptLoader {
                 "stickWood");
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1815, missing));
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Ash, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1815, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Ash, 1L),
                 getModItem(Botany.ID, "misc", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1809, missing));
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Wood, 1L),
                 getModItem(Botany.ID, "misc", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Botany.ID, "misc", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1022, missing));
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Sulfur, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1022, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Sulfur, 1L),
                 getModItem(Botany.ID, "misc", 1, 3, missing));
 
         ForestryHelper.removeCarpenterRecipe(getModItem(Botany.ID, "database", 1, 0, missing));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1440),
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 getModItem(Botany.ID, "database", 1, 0, missing),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'd',
                 "itemCasingGold",
                 'e',
@@ -132,11 +134,11 @@ public class ScriptBotany implements IScriptLoader {
                 'f',
                 "itemCasingGold",
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17501, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing));
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -308,8 +310,8 @@ public class ScriptBotany implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 4L))
                 .itemOutputs(getModItem(Botany.ID, "soilMeter", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(1200)
                 .eut(64).addTo(sAssemblerRecipes);

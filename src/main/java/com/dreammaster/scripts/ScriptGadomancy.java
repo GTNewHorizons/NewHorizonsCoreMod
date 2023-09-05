@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.Gadomancy;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
@@ -17,7 +16,11 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -153,12 +156,10 @@ public class ScriptGadomancy implements IScriptLoader {
                         .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("auram"), 8),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0, missing), ItemList.QuantumEye.get(1L),
                         getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0, missing), ItemList.QuantumEye.get(1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "GADOMANCY.GOLEMCOREBODYGUARD",
@@ -219,7 +220,7 @@ public class ScriptGadomancy implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("permutatio"), 24)
                         .add(Aspect.getAspect("motus"), 8),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 22970, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
@@ -242,13 +243,13 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "GADOMANCY.NODE_MANIPULATOR",
@@ -269,15 +270,15 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 8, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "GADOMANCY.INFUSIONCLAW",
@@ -346,7 +347,7 @@ public class ScriptGadomancy implements IScriptLoader {
                 'g',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 'i',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing));
         TCHelper.setResearchAspects(
@@ -451,13 +452,13 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing), });
         TCHelper.setResearchAspects(
                 "GADOMANCY.E_PORTAL_CREATOR",
@@ -541,7 +542,7 @@ public class ScriptGadomancy implements IScriptLoader {
                 'a',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                ItemList.Electric_Piston_HV.get(1L),
                 'c',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'd',

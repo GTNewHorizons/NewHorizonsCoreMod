@@ -98,14 +98,14 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1),
                 "plateRedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744),
+                ItemList.Cover_Crafting.get(1L),
                 "plateRedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603),
+                ItemList.Electric_Motor_EV.get(1L),
                 getModItem(Avaritia.ID, "Dire_Crafting", 1),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32633),
+                ItemList.Electric_Motor_EV.get(1L),
+                ItemList.Conveyor_Module_EV.get(1L),
                 "circuitElite",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32633));
+                ItemList.Conveyor_Module_EV.get(1L));
 
         // clearing NBT of th
         addShapelessRecipe(
@@ -138,7 +138,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 'f',
                 getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                 'g',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 129),
+                ItemList.Quantum_Chest_IV.get(1L),
                 'h',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60));
 

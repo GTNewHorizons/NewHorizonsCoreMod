@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -18,6 +17,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.forestry.ForestryHelper;
 
 import forestry.api.recipes.RecipeManagers;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptExtraTrees implements IScriptLoader {
 
@@ -56,18 +59,18 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "machine", 1, 0, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Component_Sawblade_Diamond.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(ExtraTrees.ID, "misc", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(ExtraTrees.ID, "misc", 1, 3, missing));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17889, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 1L),
                 "plankWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17889, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 1L),
                 getModItem(Forestry.ID, "factory2", 1, 2, missing),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 getModItem(Forestry.ID, "factory2", 1, 2, missing),
@@ -76,9 +79,9 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "misc", 1, 3, missing));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17889, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 1L),
                 "slabWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17889, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 1L),
                 getModItem(Forestry.ID, "factory2", 1, 2, missing),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 getModItem(Forestry.ID, "factory2", 1, 2, missing),
@@ -90,11 +93,11 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "plateSteel",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "gearGtSmallBronze",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallBronze");
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "misc", 1, 3, missing),
@@ -4079,23 +4082,23 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'b',
                 "itemCasingGold",
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'e',
                 "circuitAdvanced",
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17501, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'h',
                 "itemCasingGold",
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing));
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 1440),
@@ -4105,23 +4108,23 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'b',
                 "itemCasingGold",
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17501, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
                 'e',
                 "circuitAdvanced",
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'h',
                 "itemCasingGold",
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing));
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
 
     }
 

@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -28,9 +27,12 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -70,7 +72,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 "ingotSteelMagnetic",
                 null,
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32518, missing),
+                ItemList.Battery_RE_LV_Lithium.get(1L),
                 "blockSteelMagnetic",
                 "ingotSteelMagnetic",
                 "ingotSteelMagnetic");
@@ -81,24 +83,24 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 "plateObsidian",
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
                 getModItem(AvaritiaAddons.ID, "CompressedChest", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
+                ItemList.Cover_Crafting.get(1L),
                 "plateObsidian",
                 "plateObsidian",
                 "plateObsidian");
         addShapelessRecipe(
                 getModItem(DraconicEvolution.ID, "safetyMatch", 1, 1000, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32471, missing),
+                ItemList.Tool_Matches.get(1L),
                 "dustDraconium");
         addShapedRecipe(
                 getModItem(DraconicEvolution.ID, "xRayBlock", 8, 0, missing),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -117,7 +119,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDenseNaquadahAlloy",
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32059, missing),
+                ItemList.Circuit_Chip_UHPIC.get(1L),
                 'd',
                 "plateEuropium",
                 'e',
@@ -140,15 +142,15 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 new ItemStack(TinkerTools.largePlate, 1, Tonkers.infinityMetalId),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32677, missing),
+                ItemList.Field_Generator_UV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32687, missing),
+                ItemList.Emitter_UV.get(1L),
                 'f',
                 "blockAmericium",
                 'g',
                 getModItem(DraconicEvolution.ID, "teleporterMKI", 1, 0, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32697, missing),
+                ItemList.Sensor_UV.get(1L),
                 'i',
                 getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -681,7 +683,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'a',
                 "plateDraconiumAwakened",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing),
+                CustomItemList.EngravedEnergyChip.get(1L),
                 'c',
                 getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -698,7 +700,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'a',
                 "plateDraconium",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedDiamondCrystalChip", 1, 0, missing),
+                CustomItemList.EngravedDiamondCrystalChip.get(1L),
                 'c',
                 getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -721,7 +723,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'd',
                 getModItem(DraconicEvolution.ID, "draconium", 1, 2, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.blockcasings4", 1, 7, missing),
+                ItemList.Casing_Fusion_Coil.get(1L),
                 'f',
                 getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing),
                 'g',
@@ -992,7 +994,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "ingotBrickNether",
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing),
+                ItemList.Battery_Hull_LV.get(1L),
                 'd',
                 getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing),
                 'e',
@@ -1092,7 +1094,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(EnderIO.ID, "blockKillerJoe", 1, 0, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
+                ItemList.Electric_Motor_IV.get(1L),
                 'e',
                 getModItem(EnderIO.ID, "blockCapBank", 1, 3, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1178,7 +1180,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing));
+                ItemList.Electric_Motor_IV.get(1L));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1215,7 +1217,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17975, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "rainSensor", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1237,7 +1239,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "safetyMatch", 16, 1000, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18879, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(64).eut(16).addTo(sBoxinatorRecipes);
 

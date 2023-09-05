@@ -31,6 +31,10 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -77,20 +81,20 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing),
-                getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing));
+        addShapelessRecipe(ItemList.Color_00.get(2L), getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing));
 
         ChiselHelper.addGroup("netherstar");
         ChiselHelper.addVariationFromStack("netherstar", getModItem(ForbiddenMagic.ID, "StarBlock", 1, 0, missing));
-        ChiselHelper.addVariationFromStack("netherstar", getModItem(GregTech.ID, "gt.blockgem3", 1, 3, missing));
+        ChiselHelper.addVariationFromStack(
+                "netherstar",
+                GT_OreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1L));
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
                 .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(5).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_00.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
 
         BloodMagicHelper.removeAltarRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 3, missing));
         AltarRecipeRegistry.registerAltarRecipe(
@@ -162,7 +166,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing));
         ThaumcraftApi.addCrucibleRecipe(
                 "VINTEUM",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 9529, missing),
+                GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Vinteum, 1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 9330, missing),
                 new AspectList().add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("ordo"), 2)
                         .add(Aspect.getAspect("vitreus"), 2));
@@ -300,15 +304,15 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         .add(Aspect.getAspect("electrum"), 32).add(Aspect.getAspect("instrumentum"), 24)
                         .add(Aspect.getAspect("machina"), 24),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 4, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 1L),
                         getModItem(Botania.ID, "manaResource", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 1L),
                         getModItem(Botania.ID, "manaResource", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 1L),
                         getModItem(Botania.ID, "manaResource", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 1L),
                         getModItem(Botania.ID, "manaResource", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2333, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.AstralSilver, 1L),
                         getModItem(Botania.ID, "manaResource", 1, 0, missing), });
         TCHelper.addResearchPage("CAP_manasteel", new ResearchPage("derp.research_page.CAP_manasteel"));
         TCHelper.addResearchPage(
@@ -338,15 +342,15 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 64).add(Aspect.getAspect("superbia"), 20)
                         .add(Aspect.getAspect("strontio"), 10),
                 getModItem(ForbiddenMagic.ID, "WandCaps", 1, 3, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17339, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steeleaf, 1L),
                         getModItem(Botania.ID, "manaResource", 1, 4, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                         getModItem(Botania.ID, "manaResource", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17339, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steeleaf, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
         TCHelper.addResearchPage("CAP_terrasteel", new ResearchPage("derp.research_page.CAP_terrasteel"));
         TCHelper.addResearchPage(
@@ -417,7 +421,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                                 new ResearchPage("derp.research_page.VINTEUM"),
                                 new ResearchPage(
                                         TCHelper.findCrucibleRecipe(
-                                                getModItem(GregTech.ID, "gt.metaitem.01", 1, 9529, missing))))
+                                                GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Vinteum, 1L))))
                         .setConcealed().setParents("JOURNEY", "THAUMIUM", "GT_ADVANCEDMETALLURGY")
                         .registerResearchItem();
         ThaumcraftApi.addWarpToResearch("VINTEUM", 1);
@@ -653,14 +657,10 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
                 new ItemStack[] { getModItem(Witchery.ID, "ingredient", 1, 92, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing),
-                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 92, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing), ItemList.QuantumEye.get(1L),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing), ItemList.QuantumEye.get(1L),
+                        getModItem(Witchery.ID, "ingredient", 1, 92, missing), ItemList.QuantumEye.get(1L),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing), ItemList.QuantumEye.get(1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing), });
         TCHelper.setResearchAspects(
@@ -703,14 +703,14 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("telum"), 32).add(Aspect.getAspect("infernus"), 24)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("machina"), 8),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 23977, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27541, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.stick, Materials.BloodInfusedIron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.InfusedFire, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23977, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27541, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.BloodInfusedIron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.InfusedFire, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23977, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27541, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.BloodInfusedIron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.InfusedFire, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing), });
         TCHelper.setResearchAspects(
                 "FORK",
@@ -732,7 +732,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                         getModItem(Minecraft.ID, "skull", 1, 1, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                         getModItem(Minecraft.ID, "skull", 1, 2, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
@@ -757,7 +757,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
                         getModItem(ForbiddenMagic.ID, "GluttonyShard", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30514, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
@@ -789,7 +789,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("exanimis"), 16)
                         .add(Aspect.getAspect("praecantatio"), 32),
                 getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockmetal7", 1, 4, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
@@ -826,11 +826,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing), });
@@ -844,11 +844,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing), });
@@ -862,11 +862,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing), });
@@ -880,11 +880,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 1, missing), });
@@ -905,12 +905,12 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 2, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30514, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
                         getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
                         getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
                         getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30503, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Sapphire, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), });
         TCHelper.setResearchAspects(
                 "TAINTSHOVEL",
@@ -929,12 +929,12 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30514, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 2, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30509, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amethyst, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing), });
         TCHelper.setResearchAspects(
                 "TAINTPICK",
@@ -994,13 +994,11 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32726, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), ItemList.QuantumEye.get(1L),
+                        ItemList.Gravistar.get(1L), ItemList.QuantumEye.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing), });
         TCHelper.setResearchAspects(
@@ -1082,7 +1080,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         .add(Aspect.getAspect("instrumentum"), 8),
                 getModItem(Thaumcraft.ID, "WandRod", 1, 6, missing),
                 new ItemStack[] { getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17379, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Soularium, 1L),
                         getModItem(Minecraft.ID, "skull", 1, 1, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3, missing),
                         getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
@@ -1090,7 +1088,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 3, missing),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17379, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Soularium, 1L), });
         TCHelper.setResearchAspects(
                 "ROD_infernal",
                 new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("ignis"), 12)
@@ -1248,15 +1246,15 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 8),
                 getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing),
                 new ItemStack[] { getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2330, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), });
         TCHelper.addResearchPage(
                 "CAP_alchemical",
                 new ResearchPage(

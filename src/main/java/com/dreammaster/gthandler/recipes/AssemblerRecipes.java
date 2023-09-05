@@ -3986,7 +3986,7 @@ public class AssemblerRecipes implements Runnable {
         // Molecular Assembler
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 214),
+                        ItemList.Machine_EV_Assembler.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
@@ -4805,10 +4805,10 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 94),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32414),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32420),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32425),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32427))
+                        ItemList.Color_00.get(1L),
+                        ItemList.Color_06.get(1L),
+                        ItemList.Color_11.get(1L),
+                        ItemList.Color_13.get(1L))
                 .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 95))
                 .fluidInputs(Materials.Water.getFluid(1000L)).noFluidOutputs().duration(10 * SECONDS).eut(64)
                 .addTo(sAssemblerRecipes);
@@ -4986,9 +4986,9 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 94),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32414),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32414),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32414),
+                        ItemList.Color_00.get(1L),
+                        ItemList.Color_00.get(1L),
+                        ItemList.Color_00.get(1L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_ModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W))
                 .fluidInputs(Materials.Water.getFluid(1000L)).noFluidOutputs().duration(15 * SECONDS)
@@ -4997,9 +4997,9 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_ModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32414),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32414),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32414),
+                        ItemList.Color_00.get(1L),
+                        ItemList.Color_00.get(1L),
+                        ItemList.Color_00.get(1L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_ModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W))
                 .fluidInputs(Materials.Water.getFluid(1000L)).noFluidOutputs().duration(7 * SECONDS + 10 * TICKS)
@@ -5009,9 +5009,9 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 94),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32415),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32416),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32418),
+                        ItemList.Color_01.get(1L),
+                        ItemList.Color_02.get(1L),
+                        ItemList.Color_04.get(1L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_ModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W))
                 .fluidInputs(Materials.Water.getFluid(1000L)).noFluidOutputs().duration(15 * SECONDS)
@@ -5020,9 +5020,9 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_ModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32415),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32416),
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32418),
+                        ItemList.Color_01.get(1L),
+                        ItemList.Color_02.get(1L),
+                        ItemList.Color_04.get(1L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_ModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W))
                 .fluidInputs(Materials.Water.getFluid(1000L)).noFluidOutputs().duration(7 * SECONDS + 10 * TICKS)

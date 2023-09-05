@@ -4,7 +4,6 @@ import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -26,7 +25,12 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptBiomesOPlenty implements IScriptLoader {
 
@@ -93,7 +97,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2816, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
@@ -133,51 +137,31 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing),
                 "dustGlowstone",
                 "dyeBlue");
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
-                getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
-                getModItem(BiomesOPlenty.ID, "flowers", 1, 9, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
-                getModItem(BiomesOPlenty.ID, "flowers2", 1, 1, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                getModItem(BiomesOPlenty.ID, "flowers2", 1, 5, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                getModItem(BiomesOPlenty.ID, "mushrooms", 1, 2, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
-                getModItem(BiomesOPlenty.ID, "mushrooms", 1, 4, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
-                getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing));
+        addShapelessRecipe(ItemList.Color_00.get(1L), getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing));
+        addShapelessRecipe(ItemList.Color_15.get(1L), getModItem(BiomesOPlenty.ID, "flowers", 1, 9, missing));
+        addShapelessRecipe(ItemList.Color_15.get(1L), getModItem(BiomesOPlenty.ID, "flowers2", 1, 1, missing));
+        addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(BiomesOPlenty.ID, "flowers2", 1, 5, missing));
+        addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(BiomesOPlenty.ID, "mushrooms", 1, 2, missing));
+        addShapelessRecipe(ItemList.Color_02.get(1L), getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
+        addShapelessRecipe(ItemList.Color_03.get(1L), getModItem(BiomesOPlenty.ID, "mushrooms", 1, 4, missing));
+        addShapelessRecipe(ItemList.Color_03.get(1L), getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing));
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(BiomesOPlenty.ID, "driedDirt", 1, 0, missing),
                 getModItem(Minecraft.ID, "dirt", 1, 0, missing));
         Module_CustomFuels.registerCustomFuelValue(getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing), (short) 100);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "beeswax", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                .itemInputs(getModItem(Forestry.ID, "beeswax", 2, 0, missing), GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing)).noFluidInputs().noFluidOutputs()
                 .duration(120).eut(20).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "propolis", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                .itemInputs(getModItem(Forestry.ID, "propolis", 2, 0, missing), GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(40).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 2823, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 4L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "rocks", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(50).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing))
@@ -210,8 +194,8 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 6, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_00.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 4, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 12, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sExtractorRecipes);
@@ -240,11 +224,11 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 5, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 9, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32429, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_15.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 1, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32429, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_15.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 15, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 7, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sExtractorRecipes);
@@ -252,23 +236,23 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 11, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 5, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32418, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_04.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mushrooms", 1, 2, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32418, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_04.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 8, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 1, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32416, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_02.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mushrooms", 1, 4, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32417, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_03.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32417, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_03.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mud", 1, 0, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(8).addTo(sExtractorRecipes);
@@ -283,7 +267,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 100)).noFluidOutputs().duration(1).eut(1)
                 .addTo(sFluidCannerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).noFluidOutputs().duration(400).eut(40)
                 .addTo(sFluidSolidficationRecipes);
@@ -299,17 +283,17 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardSand", 1, 0, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.SandDust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1802, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1937, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1833, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.CassiteriteSand, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Phosphate, 1L))
                 .outputChances(10000, 5000, 1000, 500).noFluidInputs().noFluidOutputs().duration(200).eut(8)
                 .addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardDirt", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 1805, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1622, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1934, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1823, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Quicklime, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gypsum, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Calcite, 1L))
                 .outputChances(10000, 7500, 2500, 2500).noFluidInputs().noFluidOutputs().duration(200).eut(8)
                 .addTo(sMaceratorRecipes);
 

@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AFSU;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
@@ -37,7 +36,7 @@ public class ScriptAFSU implements IScriptLoader {
                 "itemCasingTungstenSteel",
                 "cableGt01Platinum",
                 "itemCasingTungstenSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15),
+                ItemList.Hull_IV.get(1L),
                 "itemCasingTungstenSteel",
                 "circuitMaster",
                 getModItem(AFSU.ID, "ALC", 1),

@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BinnieCore;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -11,6 +10,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import forestry.api.recipes.RecipeManagers;
+import gregtech.api.enums.ItemList;
 
 public class ScriptBinniesCore implements IScriptLoader {
 
@@ -93,7 +93,7 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 10,
                 FluidRegistry.getFluidStack("creosote", 2000),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 3, missing),
+                ItemList.Casing_Gearbox_Steel.get(1L),
                 getModItem(BinnieCore.ID, "storage", 1, 1, missing),
                 "abc",
                 "def",
@@ -171,7 +171,7 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 15,
                 FluidRegistry.getFluidStack("creosote", 3000),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 3, missing),
+                ItemList.Casing_Gearbox_Steel.get(1L),
                 getModItem(BinnieCore.ID, "storage", 1, 3, missing),
                 "abc",
                 "def",
@@ -249,7 +249,7 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("creosote", 4000),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 3, missing),
+                ItemList.Casing_Gearbox_Steel.get(1L),
                 getModItem(BinnieCore.ID, "storage", 1, 4, missing),
                 "abc",
                 "def",
@@ -301,7 +301,7 @@ public class ScriptBinniesCore implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 25,
                 FluidRegistry.getFluidStack("creosote", 5000),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 3, missing),
+                ItemList.Casing_Gearbox_Steel.get(1L),
                 getModItem(BinnieCore.ID, "storage", 1, 5, missing),
                 "abc",
                 "def",

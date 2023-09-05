@@ -20,7 +20,13 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptRemoteIO implements IScriptLoader {
 
@@ -48,37 +54,37 @@ public class ScriptRemoteIO implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "tile.remote_interface", 2, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing),
+                ItemList.Automation_Regulator_IV.get(1L),
+                ItemList.Sensor_EV.get(1L),
+                ItemList.Automation_Regulator_IV.get(1L),
                 "circuitElite",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1541, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.BlackSteel, 1L),
                 "circuitElite",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32683, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 9275, missing));
+                ItemList.Automation_Regulator_IV.get(1L),
+                ItemList.Emitter_EV.get(1L),
+                ItemList.Automation_Regulator_IV.get(1L));
         addShapelessRecipe(
                 getModItem(RemoteIO.ID, "tile.remote_interface", 1, 0, missing),
                 getModItem(RandomThings.ID, "playerinterface", 1, 0, missing));
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "tile.machine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                ItemList.Electric_Pump_EV.get(1L),
                 "pipeMediumTitanium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                ItemList.Electric_Pump_EV.get(1L),
                 "pipeMediumTitanium",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing),
+                ItemList.Casing_HV.get(1L),
                 "pipeMediumTitanium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                ItemList.Electric_Pump_EV.get(1L),
                 "pipeMediumTitanium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing));
+                ItemList.Electric_Pump_EV.get(1L));
         addShapedRecipe(
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                ItemList.Electric_Pump_EV.get(1L),
+                ItemList.Casing_HV.get(1L),
+                ItemList.Electric_Pump_EV.get(1L),
                 "plateTitanium",
                 "plateTitanium",
                 "plateTitanium");
@@ -99,7 +105,7 @@ public class ScriptRemoteIO implements IScriptLoader {
                 getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing),
                 null,
                 "screwTitanium",
-                getModItem(GregTech.ID, "gt.blockcasings4", 1, 0, missing),
+                ItemList.Casing_RobustTungstenSteel.get(1L),
                 "screwTitanium",
                 null,
                 "craftingToolScrewdriver",
@@ -146,7 +152,7 @@ public class ScriptRemoteIO implements IScriptLoader {
                 "itemCasingAluminium",
                 "screwIron",
                 "circuitBasic",
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 "circuitBasic",
                 "itemCasingAluminium",
                 createItemStack(GregTech.ID, "gt.metaitem.01", 1, 32518, "{GT.ItemCharge:100000L}", missing),
@@ -162,91 +168,61 @@ public class ScriptRemoteIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.blank_plate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32704, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32705, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Data.get(2L), ItemList.Circuit_Elite.get(2L))
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Data.get(2L), ItemList.Circuit_Elitenanocomputer.get(2L))
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Data.get(2L), ItemList.Circuit_Quantumcomputer.get(2L))
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Data.get(2L), ItemList.Circuit_Crystalprocessor.get(2L))
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Nanocomputer.get(2L), ItemList.Circuit_Elite.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32704, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32084, missing))
+                .itemInputs(ItemList.Circuit_Nanocomputer.get(2L), ItemList.Circuit_Elitenanocomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32704, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32086, missing))
+                .itemInputs(ItemList.Circuit_Nanocomputer.get(2L), ItemList.Circuit_Quantumcomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32704, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32089, missing))
+                .itemInputs(ItemList.Circuit_Nanocomputer.get(2L), ItemList.Circuit_Crystalprocessor.get(2L))
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Quantumprocessor.get(2L), ItemList.Circuit_Elite.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32083, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32705, missing))
+                .itemInputs(ItemList.Circuit_Quantumprocessor.get(2L), ItemList.Circuit_Elitenanocomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32083, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32084, missing))
+                .itemInputs(ItemList.Circuit_Quantumprocessor.get(2L), ItemList.Circuit_Quantumcomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32083, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32086, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32083, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32089, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32085, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32705, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32085, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32084, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32085, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32086, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32085, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32089, missing))
+                .itemInputs(ItemList.Circuit_Quantumprocessor.get(2L), ItemList.Circuit_Crystalprocessor.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
@@ -271,7 +247,7 @@ public class ScriptRemoteIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1546, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.BlackSteel, 2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 10, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -289,13 +265,13 @@ public class ScriptRemoteIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2001, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 21, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17321, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Enderium, 4L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

@@ -1,8 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBEAddons;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
@@ -16,8 +14,12 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptWirelessRedstone implements IScriptLoader {
 
@@ -54,7 +56,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing),
                 "craftingToolFile",
                 "circuitAdvanced",
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 "circuitAdvanced",
                 "itemCasingTungstenSteel",
                 "screwTungstenSteel",
@@ -84,7 +86,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23316, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 1L),
                         getModItem(WirelessRedstoneCBECore.ID, "retherPearl", 1, 0, missing))
                 .itemOutputs(getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(600)
@@ -147,7 +149,7 @@ public class ScriptWirelessRedstone implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 17804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 3L),
                         getModItem(WirelessRedstoneCBECore.ID, "wirelessTransceiver", 1, 0, missing))
                 .itemOutputs(getModItem(WirelessRedstoneCBEAddons.ID, "tracker", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(600)

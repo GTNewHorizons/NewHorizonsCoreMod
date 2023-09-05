@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.ProjectBlue;
@@ -32,9 +31,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -145,13 +146,13 @@ public class ScriptOpenBlocks implements IScriptLoader {
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "fan", 1, 0, missing),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
+                ItemList.Rotor_LV.get(1L),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                 "screwSteel",
                 "plateAnyIron",
                 "screwSteel",
                 "plateAnyIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "plateAnyIron");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "elevator", 1, 0, missing),
@@ -159,7 +160,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateEnderPearl",
                 "plateSteel",
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4115, missing),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1L),
                 "gearGtSmallSteel",
                 "plateSteel",
                 "plateSteel",
@@ -199,15 +200,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateObsidian");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing),
+                CustomItemList.AluminiumBars.get(1L),
                 "stickGold",
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing),
+                CustomItemList.AluminiumBars.get(1L),
                 "pipeSmallDarkSteel",
                 "rotorDarkSteel",
                 "pipeSmallDarkSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing),
+                CustomItemList.AluminiumBars.get(1L),
                 "stickGold",
-                getModItem(NewHorizonsCoreMod.ID, "item.AluminiumBars", 1, 0, missing));
+                CustomItemList.AluminiumBars.get(1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "guide", 1, 0, missing),
                 "stoneObsidian",
@@ -238,15 +239,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateStone");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "beartrap", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "craftingToolHardHammer",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "screwSteel",
                 "plateSteel",
                 "screwSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 "craftingToolScrewdriver",
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing));
+                CustomItemList.SteelBars.get(1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "cannon", 1, 0, missing),
                 "craftingToolSaw",
@@ -255,17 +256,17 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "gearGtSmallWood",
                 "plateSteel",
                 "gearGtSmallWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "village_highlighter", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "plateEmerald",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "plateStone",
                 "plateStone",
                 "plateStone");
@@ -302,9 +303,9 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "generic", 1, 10, missing),
                 getModItem(OpenBlocks.ID, "generic", 1, 11, missing),
                 getModItem(OpenBlocks.ID, "generic", 1, 10, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "screwSteel",
                 "craftingToolScrewdriver",
                 "screwSteel");
@@ -321,15 +322,15 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "pipeSmallSteel");
         addShapelessRecipe(
                 getModItem(OpenBlocks.ID, "scaffolding", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing));
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "generic", 1, 9, missing),
                 getModItem(ProjectBlue.ID, "miniatureLamp", 1, 14, missing),
                 "plateEnderEye",
                 getModItem(ProjectBlue.ID, "miniatureLamp", 1, 14, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "rotorAluminium",
                 "plateEnderEye",
                 "rotorAluminium");
@@ -362,7 +363,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "string", 64, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 64, 22809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 64L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "ropeladder", 64, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -372,33 +373,28 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(OpenBlocks.ID, "ladder", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(OpenBlocks.ID, "sky", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0, missing), GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "sky", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 581, missing),
+                        ItemList.Machine_LV_Mixer.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 581, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18032, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Machine_LV_Mixer.get(1L), ItemList.IC2_Item_Casing_Iron.get(4L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 581, missing),
+                        ItemList.Machine_LV_Mixer.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 18304, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 581, missing),
+                        ItemList.Machine_LV_Mixer.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 18307, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
@@ -409,9 +405,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "factory", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18032, missing))
+                .itemInputs(getModItem(Forestry.ID, "factory", 1, 0, missing), ItemList.IC2_Item_Casing_Iron.get(4L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -429,25 +423,25 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 10, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1865, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Graphite, 1L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).noFluidOutputs().duration(100).eut(8)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "generic", 1, 11, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17533, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 0, "{Uses:10.0f}", missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32106, missing),
+                        ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(300).eut(30)
@@ -482,7 +476,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}", missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32702, missing))
+                        ItemList.Circuit_Good.get(2L))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 144)).noFluidOutputs().duration(1000)
                 .eut(30).addTo(sAssemblerRecipes);
@@ -510,7 +504,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "guide", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24533, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "builder_guide", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(300).eut(64)
                 .addTo(sAssemblerRecipes);
@@ -758,11 +752,11 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("alienis"), 75).add(Aspect.getAspect("bestia"), 50)
                         .add(Aspect.getAspect("victus"), 50).add(Aspect.getAspect("humanus"), 25),
                 getModItem(Minecraft.ID, "egg", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 22086, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
                         getModItem(Minecraft.ID, "skull", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
                         getModItem(Minecraft.ID, "skull", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
                         getModItem(Minecraft.ID, "skull", 1, 3, missing), });
         TCHelper.addResearchPage(
                 "GOLDENEGG",
