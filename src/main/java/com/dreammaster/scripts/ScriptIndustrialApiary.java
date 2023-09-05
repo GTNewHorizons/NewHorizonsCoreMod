@@ -10,6 +10,8 @@ import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -109,7 +111,9 @@ public class ScriptIndustrialApiary implements IScriptLoader {
                 AlvearyLighting);
 
         // Upgrade Frame
-        GT_Values.RA.addAssemblerRecipe(ItemList.Circuit_Board_Plastic.get(1), IntegratedCPU, UpgradeFrame, 200, 24);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Board_Plastic.get(1), IntegratedCPU)
+                .itemOutputs(UpgradeFrame).noFluidInputs().noFluidOutputs().duration(10 * SECONDS).eut(24)
+                .addTo(sAssemblerRecipes);
 
         final ItemList[] AccelerationUpgrades = new ItemList[] { ItemList.IndustrialApiary_Upgrade_Acceleration_1,
                 ItemList.IndustrialApiary_Upgrade_Acceleration_2, ItemList.IndustrialApiary_Upgrade_Acceleration_3,

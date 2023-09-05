@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
@@ -74,23 +75,25 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 "craftingToolWrench",
                 "chestDiamond",
                 "craftingToolScrewdriver");
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(IronChests.ID, "BlockIronChest", 2, 2), ItemList.Electric_Piston_HV.get(1),
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IronChests.ID, "BlockIronChest", 2, 2),
+                        ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4),
-                        GT_Utility.getIntegratedCircuit(1), },
-                GT_Values.NF,
-                getModItem(AvaritiaAddons.ID, "CompressedChest", 1),
-                600,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(IronChests.ID, "BlockIronChest", 1, 6),
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 2), ItemList.Electric_Piston_HV.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).noFluidInputs().noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IronChests.ID, "BlockIronChest", 1, 6),
+                        getModItem(IronChests.ID, "BlockIronChest", 1, 2),
+                        ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
-                        GT_Utility.getIntegratedCircuit(3), },
-                GT_Values.NF,
-                getModItem(AvaritiaAddons.ID, "CompressedChest", 1),
-                600,
-                480);
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).noFluidInputs().noFluidOutputs()
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1),

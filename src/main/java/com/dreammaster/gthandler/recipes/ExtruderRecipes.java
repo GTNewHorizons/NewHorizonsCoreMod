@@ -75,36 +75,35 @@ public class ExtruderRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.NetherStar, 2L)).noFluidInputs()
-                .noFluidOutputs().duration(4 * TICKS).eut((int) TierEU.RECIPE_MV).addTo(sExtruderRecipes);
+                .noFluidOutputs().duration(4 * TICKS).eut(TierEU.RECIPE_MV).addTo(sExtruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
                         ItemList.Shape_Extruder_Pipe_Small.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.NetherStar, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(8 * TICKS).eut((int) TierEU.RECIPE_MV).addTo(sExtruderRecipes);
+                .noFluidOutputs().duration(8 * TICKS).eut(TierEU.RECIPE_MV).addTo(sExtruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 3L),
                         ItemList.Shape_Extruder_Pipe_Medium.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.NetherStar, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(1 * SECONDS + 4 * TICKS).eut((int) TierEU.RECIPE_MV).addTo(sExtruderRecipes);
+                .noFluidOutputs().duration(1 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_MV).addTo(sExtruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 6L),
                         ItemList.Shape_Extruder_Pipe_Large.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.NetherStar, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(2 * SECONDS + 8 * TICKS).eut((int) TierEU.RECIPE_MV).addTo(sExtruderRecipes);
+                .noFluidOutputs().duration(2 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_MV).addTo(sExtruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 12L),
                         ItemList.Shape_Extruder_Pipe_Huge.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.NetherStar, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(4 * SECONDS + 16 * TICKS).eut((int) TierEU.RECIPE_MV)
-                .addTo(sExtruderRecipes);
+                .noFluidOutputs().duration(4 * SECONDS + 16 * TICKS).eut(TierEU.RECIPE_MV).addTo(sExtruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

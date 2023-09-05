@@ -8,8 +8,17 @@ import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCrackingRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistillationRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFusionRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMultiblockChemicalRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPyrolyseRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sVacuumRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GT_RecipeConstants.FUSION_THRESHOLD;
 
 import java.awt.*;
 import java.util.LinkedHashMap;
@@ -171,12 +180,9 @@ public class BacteriaRegistry {
 
     private void runAdditionalFuelRecipes() {
         // XenoxRecycleRecipe
-        GT_Values.RA.addDistillationTowerRecipe(
-                DelutedXenoxene.getFluid(1000),
-                new FluidStack[] { Xenoxene.getFluid(250), RadoxLight.getGas(300) },
-                Ash.getDust(1),
-                600,
-                BW_Util.getMachineVoltageFromTier(8));
+        GT_Values.RA.stdBuilder().noItemInputs().itemOutputs(Ash.getDust(1)).fluidInputs(DelutedXenoxene.getFluid(1000))
+                .fluidOutputs(Xenoxene.getFluid(250), RadoxLight.getGas(300)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(sDistillationRecipes);
 
         // LightRadox + Nq -> Enriched Naquadah condensation int aChance, int aDuration, int aEUt, boolean aCleanroom
         GT_Values.RA.stdBuilder().itemInputs(Materials.Naquadah.getDust(1))
@@ -185,20 +191,9 @@ public class BacteriaRegistry {
                 .eut(TierEU.RECIPE_IV).addTo(sAutoclaveRecipes);
 
         // super heavy -> heavy radox conversion
-        GT_Values.RA.addCentrifugeRecipe(
-                null,
-                null,
-                RadoxSuperHeavy.getFluid(1000),
-                RadoxHeavy.getFluid(2000),
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                60000,
-                BW_Util.getMachineVoltageFromTier(8));
+        GT_Values.RA.stdBuilder().noItemInputs().itemOutputs().fluidInputs(RadoxSuperHeavy.getFluid(1000))
+                .fluidOutputs(RadoxHeavy.getFluid(2000)).duration(50 * MINUTES).eut(TierEU.RECIPE_UV).noOptimize()
+                .addTo(sCentrifugeRecipes);
 
         // heavy radox + Nq+ -> Nq*
         GT_Values.RA.stdBuilder().itemInputs(Materials.NaquadahEnriched.getDust(1))
@@ -208,79 +203,58 @@ public class BacteriaRegistry {
     }
 
     private void runGTRecipes() {
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 64L),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(Ash.getDust(8)).fluidInputs(Xenoxene.getFluid(1000)).fluidOutputs(RawRadox.getFluid(1000))
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).addTo(sPyrolyseRecipes);
 
-        GT_Values.RA.addPyrolyseRecipe(
-                GT_ModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 64L),
-                Xenoxene.getFluid(1000),
-                24,
-                Ash.getDust(8),
-                RawRadox.getFluid(1000),
-                3600,
-                BW_Util.getMachineVoltageFromTier(8));
+        GT_Values.RA.stdBuilder().noItemInputs().itemOutputs(Ash.getDust(5)).fluidInputs(RawRadox.getFluid(5000))
+                .fluidOutputs(
+                        OilHeavy.getFluid(600),
+                        Oil.getFluid(300),
+                        Creosote.getFluid(1000),
+                        Water.getFluid(1400),
+                        FluidList.FermentedBacterialSludge.getFluidStack(50),
+                        FermentedBiomass.getFluid(50),
+                        RadoxSuperHeavy.getFluid(100),
+                        RadoxHeavy.getFluid(150),
+                        DelutedXenoxene.getFluid(50),
+                        RadoxLight.getGas(300),
+                        RadoxSuperLight.getGas(500))
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sDistillationRecipes);
 
-        GT_Values.RA.addDistillationTowerRecipe(
-                RawRadox.getFluid(5000),
-                new FluidStack[] { OilHeavy.getFluid(600), Oil.getFluid(300), Creosote.getFluid(1000),
-                        Water.getFluid(1400), FluidList.FermentedBacterialSludge.getFluidStack(50),
-                        FermentedBiomass.getFluid(50), RadoxSuperHeavy.getFluid(100), RadoxHeavy.getFluid(150),
-                        DelutedXenoxene.getFluid(50), RadoxLight.getGas(300), RadoxSuperLight.getGas(500), },
-                Ash.getDust(5),
-                800,
-                BW_Util.getMachineVoltageFromTier(9));
+        GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(24)).noItemOutputs()
+                .fluidInputs(RadoxSuperLight.getGas(100), Silver.getPlasma(1)).fluidOutputs(RadoxCracked.getGas(100))
+                .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sCrackingRecipes);
 
-        GT_Values.RA.addCrackingRecipe(
-                24,
-                RadoxSuperLight.getGas(100),
-                Silver.getPlasma(1),
-                RadoxCracked.getGas(100),
-                500,
-                BW_Util.getMachineVoltageFromTier(8));
-
-        GT_Values.RA.addDistillationTowerRecipe(
-                RadoxCracked.getGas(1000),
-                new FluidStack[] { RadoxGas.getGas(100), RadoxLight.getGas(200), },
-                Ash.getDust(1),
-                600,
-                BW_Util.getMachineVoltageFromTier(8));
+        GT_Values.RA.stdBuilder().noItemInputs().itemOutputs(Ash.getDust(1)).fluidInputs(RadoxCracked.getGas(1000))
+                .fluidOutputs(RadoxGas.getGas(100), RadoxLight.getGas(200)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
+                .addTo(sDistillationRecipes);
 
         // Ti & O Plasma Recipes
-        GT_Values.RA.addFusionReactorRecipe(
-                Aluminium.getMolten(144),
-                Fluorine.getGas(144),
-                Titanium.getPlasma(144),
-                160,
-                49152,
-                100000000);
+        GT_Values.RA.stdBuilder().noItemInputs().noItemOutputs()
+                .fluidInputs(Aluminium.getMolten(144), Fluorine.getGas(144)).fluidOutputs(Titanium.getPlasma(144))
+                .duration(8 * SECONDS).eut(49_152).metadata(FUSION_THRESHOLD, 100_000_000).addTo(sFusionRecipes);
 
-        GT_Values.RA.addFusionReactorRecipe(
-                Helium.getPlasma(144),
-                Lithium.getMolten(144),
-                Boron.getPlasma(144),
-                240,
-                10240,
-                50000000);
+        GT_Values.RA.stdBuilder().noItemInputs().noItemOutputs()
+                .fluidInputs(Helium.getPlasma(144), Lithium.getMolten(144)).fluidOutputs(Boron.getPlasma(144))
+                .duration(12 * SECONDS).eut(10_240).metadata(FUSION_THRESHOLD, 50_000_000).addTo(sFusionRecipes);
 
-        GT_Values.RA.addFusionReactorRecipe(
-                Boron.getPlasma(144),
-                Lithium.getMolten(144),
-                Oxygen.getPlasma(144),
-                240,
-                49152,
-                100000000);
+        GT_Values.RA.stdBuilder().noItemInputs().noItemOutputs()
+                .fluidInputs(Boron.getPlasma(144), Lithium.getMolten(144)).fluidOutputs(Oxygen.getPlasma(144))
+                .duration(12 * SECONDS).eut(49_152).metadata(FUSION_THRESHOLD, 100_000_000).addTo(sFusionRecipes);
 
-        GT_Values.RA.addMultiblockChemicalRecipe(
-                new ItemStack[] { GT_Utility.getIntegratedCircuit(2) },
-                new FluidStack[] { RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L) },
-                new FluidStack[] { GT_CoreModSupport.RadoxPolymer.getMolten(720L) },
-                (ItemStack[]) null,
-                600,
-                BW_Util.getMachineVoltageFromTier(8));
+        GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(2)).noItemOutputs()
+                .fluidInputs(RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L))
+                .fluidOutputs(GT_CoreModSupport.RadoxPolymer.getMolten(720L)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(sMultiblockChemicalRecipes);
 
-        GT_Values.RA.addVacuumFreezerRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.cell, RadoxPolymer, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.cellMolten, RadoxPolymer, 1L),
-                600,
-                BW_Util.getMachineVoltageFromTier(8));
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.cell, RadoxPolymer, 1L))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.cellMolten, RadoxPolymer, 1L)).noFluidInputs()
+                .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sVacuumRecipes);
+
         runAdditionalFuelRecipes();
     }
 
@@ -291,7 +265,7 @@ public class BacteriaRegistry {
                 new int[] { 250 },
                 FluidRegistry.getFluidStack("unknowwater", 8000),
                 500,
-                BW_Util.getMachineVoltageFromTier(8),
+                (int) TierEU.RECIPE_UV,
                 0);
 
         for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
@@ -301,7 +275,7 @@ public class BacteriaRegistry {
                     new int[] { 250 },
                     FluidRegistry.getFluidStack("unknowwater", 8000),
                     500,
-                    BW_Util.getMachineVoltageFromTier(8),
+                    (int) TierEU.RECIPE_UV,
                     0);
         }
         addBacterialVatRecipe(

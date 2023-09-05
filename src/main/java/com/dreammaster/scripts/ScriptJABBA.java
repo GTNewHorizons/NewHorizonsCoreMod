@@ -12,16 +12,19 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
-
-import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
@@ -49,204 +52,197 @@ public class ScriptJABBA implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Minecraft.ID, "planks", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(BiomesOPlenty.ID, "planks", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(ExtraTrees.ID, "planks", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(ExtraUtilities.ID, "colorWoodPlanks", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Forestry.ID, "planks", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Forestry.ID, "planksFireproof", 8, wildcard),
-                        getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(Natura.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "barrel", 1),
-                200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "barrel", 1), getModItem(Minecraft.ID, "piston", 1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1),
-                1200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "barrel", 1), getModItem(Minecraft.ID, "sticky_piston", 1),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1),
-                1200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "barrel", 1), ItemList.Electric_Piston_LV.get(1L),
-                        GT_Utility.getIntegratedCircuit(2) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 3),
-                1200,
-                16);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_LV.get(1L),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Minecraft.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
+                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(BiomesOPlenty.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
+                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(ExtraTrees.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
+                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ExtraUtilities.ID, "colorWoodPlanks", 8, wildcard),
+                        getModItem(Minecraft.ID, "chest", 1))
+                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Forestry.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
+                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Forestry.ID, "planksFireproof", 8, wildcard),
+                        getModItem(Minecraft.ID, "chest", 1))
+                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "planks", 8, wildcard), getModItem(Minecraft.ID, "chest", 1))
+                .itemOutputs(getModItem(JABBA.ID, "barrel", 1)).noFluidInputs().noFluidOutputs().duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "barrel", 1),
+                        getModItem(Minecraft.ID, "piston", 1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "barrel", 1),
+                        getModItem(Minecraft.ID, "sticky_piston", 1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "barrel", 1),
+                        ItemList.Electric_Piston_LV.get(1L),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 3)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 1),
+                        ItemList.Electric_Piston_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 4),
-                1200,
-                30);
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 4)).noFluidInputs().noFluidOutputs()
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_MV.get(1L),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 1),
+                        ItemList.Electric_Piston_MV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 5),
-                1800,
-                120);
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 5)).noFluidInputs().noFluidOutputs()
+                .duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_HV.get(1L),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 1),
+                        ItemList.Electric_Piston_HV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 6),
-                2400,
-                480);
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 6)).noFluidInputs().noFluidOutputs()
+                .duration(2 * MINUTES).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_EV.get(1L),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 1),
+                        ItemList.Electric_Piston_EV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 8L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 8),
-                3000,
-                1920);
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 8)).noFluidInputs().noFluidOutputs()
+                .duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_IV.get(1L),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 1),
+                        ItemList.Electric_Piston_IV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 9),
-                3600,
-                7680);
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 9)).noFluidInputs().noFluidOutputs()
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_LuV.get(1L),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 1),
+                        ItemList.Electric_Piston_LuV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 32L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 11),
-                4200,
-                30720);
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 11)).noFluidInputs().noFluidOutputs()
+                .duration(3 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_ZPM.get(1L),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 1),
+                        ItemList.Electric_Piston_ZPM.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 64L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 12),
-                4800,
-                122880);
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 12)).noFluidInputs().noFluidOutputs()
+                .duration(4 * MINUTES).eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 1), ItemList.Electric_Piston_UV.get(1L),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 1),
+                        ItemList.Electric_Piston_UV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 64L),
-                        GT_Utility.getIntegratedCircuit(1) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 13),
-                5400,
-                500000);
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 13)).noFluidInputs().noFluidOutputs()
+                .duration(4 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 3),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 4),
-                900,
-                30);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 3, 4),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 5),
-                600,
-                64);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 3, 5),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 6),
-                400,
-                120);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 3, 6),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 8),
-                200,
-                256);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 3, 8),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 9),
-                150,
-                480);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 3, 9),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 11),
-                100,
-                960);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 3, 11),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 12),
-                50,
-                1920);
-        GT_Values.RA.addAssemblerRecipe(
-                new ItemStack[] { getModItem(JABBA.ID, "upgradeCore", 3, 12),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3) },
-                GT_Values.NF,
-                getModItem(JABBA.ID, "upgradeCore", 1, 13),
-                25,
-                4096);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 3),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 4)).noFluidInputs().noFluidOutputs()
+                .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 3, 4),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 5)).noFluidInputs().noFluidOutputs()
+                .duration(30 * SECONDS).eut(64).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 3, 5),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 6)).noFluidInputs().noFluidOutputs()
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 3, 6),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 8)).noFluidInputs().noFluidOutputs()
+                .duration(10 * SECONDS).eut(256).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 3, 8),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 9)).noFluidInputs().noFluidOutputs()
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 3, 9),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 11)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(960).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 3, 11),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 12)).noFluidInputs().noFluidOutputs()
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(JABBA.ID, "upgradeCore", 3, 12),
+                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 13)).noFluidInputs().noFluidOutputs()
+                .duration(1 * SECONDS + 5 * TICKS).eut(4096).addTo(sAssemblerRecipes);
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "barrel", 1),
