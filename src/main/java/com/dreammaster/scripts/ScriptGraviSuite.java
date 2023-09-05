@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GraviSuiteNEO;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -11,6 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptGraviSuite implements IScriptLoader {
 
@@ -31,9 +33,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2380, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2380, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2380, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 1L),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing));
@@ -42,9 +44,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0, missing),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0, missing),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2404, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorLuV, 1L),
                 "plateRhodium-PlatedPalladium",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2404, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorLuV, 1L),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0, missing),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0, missing),
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0, missing));
@@ -76,7 +78,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
                 "plateDenseNeodymiumMagnetic",
                 "plateDenseCopper",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2384, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorIV, 1L),
                 "plateDenseCopper",
                 "plateDenseNeodymiumMagnetic",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
@@ -89,9 +91,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2384, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorIV, 1L),
                 ItemList.Transformer_EV_HV.get(1L),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2384, missing));
+                GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorIV, 1L));
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "vajra", 1, 27, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing),

@@ -290,13 +290,13 @@ public class ScriptJABBA implements IScriptLoader {
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(JABBA.ID, "barrel", 1),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "stickWood");
 
         addShapedRecipe(

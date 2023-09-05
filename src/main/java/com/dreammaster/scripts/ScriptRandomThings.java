@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
@@ -26,6 +25,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class ScriptRandomThings implements IScriptLoader {
@@ -148,15 +150,15 @@ public class ScriptRandomThings implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "enderCollector", 1, 0, missing));
         addShapedRecipe(
                 getModItem(RandomThings.ID, "dyeingMachine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 ItemList.Hull_LV.get(1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L));
         addShapelessRecipe(
                 getModItem(RandomThings.ID, "playerinterface", 1, 0, missing),
                 getModItem(RemoteIO.ID, "tile.remote_interface", 1, 0, missing),
@@ -175,7 +177,7 @@ public class ScriptRandomThings implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "emerald", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17526, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 4L))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(250).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -232,13 +234,13 @@ public class ScriptRandomThings implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(RandomThings.ID, "ingredient", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23028, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 1L))
                 .itemOutputs(getModItem(RandomThings.ID, "spectreKey", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 1000)).noFluidOutputs().duration(600)
                 .eut(1024).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L),
                         getModItem(RandomThings.ID, "ingredient", 1, 3, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 4, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(480).specialValue(2500).addTo(sBlastRecipes);

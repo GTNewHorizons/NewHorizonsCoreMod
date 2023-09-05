@@ -14,6 +14,9 @@ import java.util.List;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.MaterialsUEVplus;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptSGCraft implements IScriptLoader {
 
@@ -41,7 +44,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "aaabbbdee",
                 "aaabcbbdd",
                 'a',
-                getModItem(GregTech.ID, "gt.blockmetal9", 1, 7, missing),
+                GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.BlackDwarfMatter, 1L),
                 'b',
                 getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 1, 0, missing),
                 'c',
@@ -51,7 +54,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'e',
                 ItemList.Field_Generator_UXV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.blockmetal9", 1, 4, missing));
+                GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(SGCraft.ID, "sgChevronUpgrade", 1, 0, missing),
                 "---------",
@@ -85,7 +88,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "----a----",
                 "---------",
                 'a',
-                getModItem(GregTech.ID, "gt.blockmetal9", 1, 7, missing),
+                GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.BlackDwarfMatter, 1L),
                 'b',
                 ItemList.Field_Generator_UXV.get(1L),
                 'c',
@@ -112,7 +115,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'c',
                 ItemList.Emitter_UXV.get(1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 4139, missing),
+                GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 1L),
                 'e',
                 getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 1, 8, missing),
                 'f',
@@ -124,7 +127,8 @@ public class ScriptSGCraft implements IScriptLoader {
                 'i',
                 ItemList.ZPM4.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22583, missing),
+                GT_OreDictUnificator
+                        .get(OrePrefixes.plateDense, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 1L),
                 'k',
                 getModItem(TecTech.ID, "gt.stabilisation_field_generator", 1, 8, missing),
                 'l',
@@ -170,7 +174,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 "acbbaaaa-",
                 "daaaaaaaa",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 22585, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.WhiteDwarfMatter, 1L),
                 'b',
                 ItemList.Electric_Piston_UXV.get(1L),
                 'c',
@@ -204,11 +208,11 @@ public class ScriptSGCraft implements IScriptLoader {
                 "a-g---g-a",
                 "aaacccaaa",
                 'a',
-                getModItem(GregTech.ID, "gt.blockmetal9", 1, 7, missing),
+                GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.BlackDwarfMatter, 1L),
                 'b',
                 getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 3, missing),
                 'c',
-                getModItem(GregTech.ID, "gt.blockmetal9", 1, 4, missing),
+                GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 1L),
                 'd',
                 getModItem(NewHorizonsCoreMod.ID, "item.QuantumCircuit", 1, 0, missing),
                 'e',
@@ -216,7 +220,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'f',
                 getModItem(SGCraft.ID, "stargateRing", 1, 0, missing),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 4586, missing));
+                GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.BlackDwarfMatter, 1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(SGCraft.ID, "ocInterface", 1, 0, missing),
                 "abccdccea",
@@ -233,7 +237,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'b',
                 ItemList.Emitter_UXV.get(1L),
                 'c',
-                getModItem(GregTech.ID, "gt.blockmetal9", 1, 7, missing),
+                GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.BlackDwarfMatter, 1L),
                 'd',
                 getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 3, missing),
                 'e',

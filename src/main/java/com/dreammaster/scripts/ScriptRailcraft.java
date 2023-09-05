@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IC2NuclearControl;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -898,7 +897,7 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 4, missing),
                 "paneGlass",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5133, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
                 "paneGlass",
                 ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Railcraft.ID, "detector", 1, 8, missing),
@@ -915,12 +914,12 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 8, missing),
                 ItemList.Electric_Pump_LV.get(1L),
                 "paneGlass",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5133, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
                 "paneGlass");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 2, 6, missing),
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1426, missing),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10, missing),
@@ -937,7 +936,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "detector", 1, 10, missing),
                 "plateRedAlloy",
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1426, missing),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.gamma", 1, 8, missing),
@@ -961,18 +960,18 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 0, missing),
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1362, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
                 "plateSteel",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10, missing),
                 "plateRedAlloy",
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1362, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Copper, 1L),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(Railcraft.ID, "machine.epsilon", 1, 4, missing),
                 "plateBronze",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1422, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Gold, 1L),
                 "plateBronze",
                 "plateRedAlloy",
                 getModItem(Railcraft.ID, "detector", 1, 10, missing),
@@ -1906,9 +1905,9 @@ public class ScriptRailcraft implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'b',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2057, missing), 'e',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2522, missing), 'f',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2032, missing), 'g',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L), 'f',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
@@ -1920,9 +1919,9 @@ public class ScriptRailcraft implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'b',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2057, missing), 'e',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2516, missing), 'f',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2032, missing), 'g',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1L), 'f',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
@@ -1934,9 +1933,9 @@ public class ScriptRailcraft implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'b',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2057, missing), 'e',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
                         getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1, 0, missing), 'f',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2032, missing), 'g',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
@@ -1948,9 +1947,9 @@ public class ScriptRailcraft implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'b',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'c',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'd',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2057, missing), 'e',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2523, missing), 'f',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2032, missing), 'g',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L), 'e',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quartzite, 1L), 'f',
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L), 'g',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L), 'h',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L), 'i',
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L) });
@@ -2026,25 +2025,25 @@ public class ScriptRailcraft implements IScriptLoader {
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 5L),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 0, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 8L),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 0, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 7, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 7L),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.legs", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 0, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "armor.steel.boots", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
@@ -2107,7 +2106,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                         createItemStack(
                                 ForgeMicroblocks.ID,
                                 "microblock",
@@ -2135,7 +2134,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                         createItemStack(
                                 ForgeMicroblocks.ID,
                                 "microblock",
@@ -2163,7 +2162,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 1L),
                         createItemStack(
                                 ForgeMicroblocks.ID,
                                 "microblock",
@@ -2191,7 +2190,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 1L),
                         createItemStack(
                                 ForgeMicroblocks.ID,
                                 "microblock",
@@ -2219,7 +2218,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17307, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.PigIron, 1L),
                         createItemStack(
                                 ForgeMicroblocks.ID,
                                 "microblock",
@@ -2247,7 +2246,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17307, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.PigIron, 1L),
                         createItemStack(
                                 ForgeMicroblocks.ID,
                                 "microblock",
@@ -2468,15 +2467,15 @@ public class ScriptRailcraft implements IScriptLoader {
                 'b',
                 "dyeRed",
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'd',
                 "dyeRed",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'f',
                 "dyeRed",
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'h',
                 "dyeRed",
                 'i',

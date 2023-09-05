@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderStorage;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -166,7 +165,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(Minecraft.ID, "egg", 1, 0, missing),
                 getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing));
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L));
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "energy_wand", 1, 0, missing),
                 "craftingToolScrewdriver",
@@ -184,7 +183,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(Minecraft.ID, "deadbush", 1, 0, missing),
                 getModItem(Minecraft.ID, "sand", 1, 0, missing),
                 getModItem(Minecraft.ID, "dye", 1, 15, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L));
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "charm_pouch", 1, 0, missing),
@@ -442,7 +441,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
 
         GT_ModHandler.addSmeltingRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11036, missing));
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Zinc, 1L));
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 4, 13, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(2).addTo(sExtractorRecipes);
@@ -532,19 +531,19 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).noFluidOutputs().duration(150).eut(120)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 17770, missing))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 500)).noFluidOutputs().duration(3600).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 17770, missing))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 350)).noFluidOutputs().duration(3600)
                 .eut(30).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 17770, missing))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 150)).noFluidOutputs().duration(1800).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 5839, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Sphalerite, 2L)).noFluidInputs()
                 .noFluidOutputs().duration(4).eut(10).addTo(sHammerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(HardcoreEnderExpansion.ID, "instability_orb_ore", 1, 0, missing))
@@ -560,11 +559,11 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "igneous_rock", 4, 0, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(50).eut(480).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 2770, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 9L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(50).eut(480).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 5839, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(400).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Sphalerite, 4L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(400).eut(2).addTo(sMaceratorRecipes);
 
     }
 }

@@ -50,6 +50,9 @@ import com.dreammaster.tinkersConstruct.TConstructHelper;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import tconstruct.library.crafting.Smeltery;
 
@@ -142,7 +145,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 "sapphire",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 6, missing));
         ChiselHelper.addVariationFromStack("peridot", getModItem(BiomesOPlenty.ID, "gemOre", 1, 5, missing));
-        ChiselHelper.addVariationFromStack("peridot", getModItem(GregTech.ID, "gt.blockgem2", 1, 4, missing));
+        ChiselHelper
+                .addVariationFromStack("peridot", GT_OreDictUnificator.get(OrePrefixes.block, Materials.Olivine, 1L));
         ChiselHelper.addVariationFromStack(
                 "peridot",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 7, missing));
@@ -238,14 +242,14 @@ public class ScriptProjectRed implements IScriptLoader {
                 ItemList.Cover_SolarPanel.get(1L));
         addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing));
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L));
         addShapedRecipe(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0, missing),
                 "stickWood",
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 7086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Gold, 1L),
                 "stickSteel",
                 null,
                 null,
@@ -840,7 +844,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing),
                 "plateSteel",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4401, missing),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 18, missing),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing),
@@ -850,12 +854,12 @@ public class ScriptProjectRed implements IScriptLoader {
                 "plateSteel",
                 "plateSteel",
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L));
         addShapedRecipe(
                 getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 1, missing),
                 "blockGlass",
@@ -869,8 +873,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel");
         addShapelessRecipe(
                 getModItem(MCFrames.ID, "mcframes.frame", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing));
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L));
         addShapelessRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10, missing),
                 getModItem(Forestry.ID, "factory2", 1, 2, missing));
@@ -1743,7 +1747,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1767,24 +1771,24 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24502, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(500).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24512, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(500).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 23874, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 20879, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Paper, 1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.datacard", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(200).eut(16)
@@ -1805,45 +1809,45 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 17635, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 5L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .noFluidInputs().noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 17471, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 5L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .noFluidInputs().noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 22032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 22032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 13, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26019, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 4L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 1, missing))
                 .noFluidInputs().noFluidOutputs().duration(800).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(400).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17500, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 864)).noFluidOutputs().duration(400).eut(30)
                 .addTo(sAssemblerRecipes);
@@ -1863,20 +1867,20 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(300).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17526, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 4L))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18879, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
@@ -1884,7 +1888,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
@@ -1892,7 +1896,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
@@ -1900,7 +1904,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
@@ -1908,7 +1912,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
@@ -1916,7 +1920,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
@@ -1924,7 +1928,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
@@ -1932,7 +1936,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
@@ -1940,7 +1944,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
@@ -1948,7 +1952,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
@@ -1956,7 +1960,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
@@ -1964,7 +1968,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
@@ -1972,7 +1976,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
                 .eut(30).addTo(sCircuitAssemblerRecipes);
@@ -1981,7 +1985,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -1992,7 +1996,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2003,7 +2007,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2014,7 +2018,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2025,7 +2029,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2035,8 +2039,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2046,8 +2050,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2057,8 +2061,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2068,8 +2072,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2079,8 +2083,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2091,7 +2095,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2102,7 +2106,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2113,7 +2117,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2124,7 +2128,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2135,7 +2139,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2146,7 +2150,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2157,7 +2161,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2168,7 +2172,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2179,7 +2183,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2190,7 +2194,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2200,8 +2204,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2211,8 +2215,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2222,8 +2226,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2233,8 +2237,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2244,8 +2248,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2256,7 +2260,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2267,7 +2271,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2278,7 +2282,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2289,7 +2293,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2300,7 +2304,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2311,7 +2315,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2322,7 +2326,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2333,7 +2337,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2344,7 +2348,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2355,7 +2359,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2365,8 +2369,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2376,8 +2380,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2387,8 +2391,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2398,8 +2402,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2409,8 +2413,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2421,7 +2425,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2432,7 +2436,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2443,7 +2447,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2454,7 +2458,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2465,7 +2469,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
@@ -2476,7 +2480,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2488,7 +2492,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2500,7 +2504,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2512,7 +2516,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2524,7 +2528,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2535,8 +2539,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2547,8 +2551,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2559,8 +2563,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2571,8 +2575,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2583,140 +2587,140 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Good.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Processor.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Good.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Processor.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Good.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Processor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2728,7 +2732,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2740,7 +2744,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2752,7 +2756,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2764,7 +2768,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2775,8 +2779,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2787,8 +2791,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2799,8 +2803,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2811,8 +2815,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2823,8 +2827,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
@@ -2836,7 +2840,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2847,7 +2851,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2858,7 +2862,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2869,7 +2873,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2880,7 +2884,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2890,8 +2894,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2901,8 +2905,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2912,8 +2916,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2923,8 +2927,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2934,8 +2938,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2946,7 +2950,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2957,7 +2961,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2968,7 +2972,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2979,7 +2983,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -2990,7 +2994,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3001,7 +3005,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3012,7 +3016,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3023,7 +3027,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3034,7 +3038,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3045,7 +3049,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3055,8 +3059,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3066,8 +3070,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3077,8 +3081,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3088,8 +3092,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3099,8 +3103,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3111,7 +3115,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3122,7 +3126,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3133,7 +3137,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3144,7 +3148,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3155,7 +3159,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3166,7 +3170,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3177,7 +3181,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3188,7 +3192,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3199,7 +3203,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3210,7 +3214,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3220,8 +3224,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3231,8 +3235,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3242,8 +3246,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3253,8 +3257,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3264,8 +3268,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3276,7 +3280,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3287,7 +3291,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3298,7 +3302,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3309,7 +3313,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3320,7 +3324,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
@@ -3331,7 +3335,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3343,7 +3347,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3355,7 +3359,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3367,7 +3371,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3378,8 +3382,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3390,8 +3394,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3402,8 +3406,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3414,8 +3418,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3427,7 +3431,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3439,7 +3443,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3451,7 +3455,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3463,7 +3467,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3474,8 +3478,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3486,8 +3490,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3498,8 +3502,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3510,8 +3514,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3523,7 +3527,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3535,7 +3539,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3547,7 +3551,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3559,7 +3563,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3570,8 +3574,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3582,8 +3586,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3594,8 +3598,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3606,8 +3610,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 26, missing))
                 .itemOutputs(
@@ -3618,8 +3622,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3629,8 +3633,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3640,8 +3644,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3651,8 +3655,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3662,8 +3666,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3674,7 +3678,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3685,7 +3689,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3696,7 +3700,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3707,7 +3711,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3721,7 +3725,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3731,8 +3735,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3742,8 +3746,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3753,8 +3757,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3764,8 +3768,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3775,8 +3779,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3787,7 +3791,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3798,7 +3802,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3809,7 +3813,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3820,7 +3824,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3831,7 +3835,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3841,8 +3845,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3852,8 +3856,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3863,8 +3867,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3874,8 +3878,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3885,8 +3889,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3897,7 +3901,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3908,7 +3912,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3919,7 +3923,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3930,7 +3934,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3941,7 +3945,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
@@ -3952,7 +3956,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -3963,7 +3967,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -3974,7 +3978,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -3985,7 +3989,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -3995,8 +3999,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4006,8 +4010,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4017,8 +4021,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4028,107 +4032,107 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Basic.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Basic.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4139,7 +4143,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4150,7 +4154,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4161,7 +4165,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4171,8 +4175,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4182,8 +4186,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4193,8 +4197,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4204,8 +4208,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
@@ -4215,8 +4219,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4226,8 +4230,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4237,8 +4241,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4248,8 +4252,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4259,8 +4263,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4270,8 +4274,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4281,8 +4285,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4292,8 +4296,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4303,8 +4307,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4314,8 +4318,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4325,8 +4329,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4336,8 +4340,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
@@ -4347,8 +4351,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4358,8 +4362,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4369,8 +4373,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4380,8 +4384,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4391,8 +4395,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4402,8 +4406,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4413,8 +4417,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4424,8 +4428,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4435,8 +4439,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4446,8 +4450,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4457,8 +4461,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4468,8 +4472,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
@@ -4495,7 +4499,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2020, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sPressRecipes);
@@ -4529,13 +4533,13 @@ public class ScriptProjectRed implements IScriptLoader {
                 .noFluidOutputs().duration(400).eut(30).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2020, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
                         getModItem(Minecraft.ID, "glowstone_dust", 8, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(30).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2020, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 56, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(30).addTo(sMixerRecipes);
@@ -4716,7 +4720,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2931, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.YellowLimonite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
@@ -4786,7 +4790,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2877, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
@@ -4912,14 +4916,14 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2524, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 8524, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Lazurite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
@@ -5017,21 +5021,21 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2525, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2526, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 8525, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Sodalite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
@@ -5122,7 +5126,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2930, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BrownLimonite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
@@ -5324,13 +5328,13 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17635, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(8).addTo(sBoxinatorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17471, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(8).addTo(sBoxinatorRecipes);
         GT_Values.RA.stdBuilder()
@@ -5342,13 +5346,13 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17635, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(8).addTo(sBoxinatorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17471, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(8).addTo(sBoxinatorRecipes);
         GT_Values.RA.stdBuilder()

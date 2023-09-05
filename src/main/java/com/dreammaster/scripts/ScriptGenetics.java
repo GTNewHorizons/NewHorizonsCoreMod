@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -24,7 +23,10 @@ import com.dreammaster.forestry.ForestryHelper;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class ScriptGenetics implements IScriptLoader {
@@ -183,23 +185,23 @@ public class ScriptGenetics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27533, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27533, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'e',
                 "circuitData",
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27533, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27533, missing));
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 4320),
@@ -223,7 +225,7 @@ public class ScriptGenetics implements IScriptLoader {
                 'g',
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'i',
                 getModItem(Genetics.ID, "misc", 1, 9, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -262,7 +264,7 @@ public class ScriptGenetics implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 8, 18019, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 8L))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

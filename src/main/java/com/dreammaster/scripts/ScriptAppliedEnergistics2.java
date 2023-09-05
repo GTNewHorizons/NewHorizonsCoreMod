@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -608,15 +607,15 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "circuitAdvanced",
                 getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing),
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "cableGt08Aluminium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
@@ -969,9 +968,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 "stickEnderEye",
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSkyCompass", 1, 0, missing),
                 "craftingToolScrewdriver",
@@ -1012,7 +1011,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "stickNetherQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
                 "circuitGood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "stickNetherQuartz",
                 "craftingToolScrewdriver",
                 "stickNetherQuartz");
@@ -1023,7 +1022,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "stickNetherQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
                 "circuitGood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "stickNetherQuartz",
                 "screwQuartzite",
                 "stickNetherQuartz");
@@ -1035,9 +1034,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500, missing),
                 "craftingToolScrewdriver",
@@ -1057,9 +1056,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 420, missing),
                 "craftingToolScrewdriver",
@@ -1068,9 +1067,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 340, missing),
                 "craftingToolScrewdriver",
@@ -1079,20 +1078,20 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 52, missing),
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 41, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
                 "platePlatinum",
@@ -1276,9 +1275,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 ItemList.Electric_Piston_LV.get(1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320, missing),
                 "craftingToolScrewdriver",
@@ -1298,9 +1297,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 ItemList.Electric_Piston_LV.get(1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460, missing),
                 "craftingToolScrewdriver",
@@ -1419,9 +1418,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing),
                 "craftingToolScrewdriver",
@@ -1430,13 +1429,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 ItemList.Electric_Piston_LV.get(1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
@@ -1447,7 +1446,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
@@ -1458,7 +1457,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
@@ -1469,7 +1468,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing),
@@ -1480,7 +1479,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
@@ -1491,7 +1490,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing),
@@ -1502,7 +1501,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
@@ -1513,7 +1512,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing),
@@ -1524,7 +1523,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 "gemCertusQuartz",
@@ -1535,7 +1534,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 "gemCertusQuartz",
@@ -1566,7 +1565,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
@@ -1577,7 +1576,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.2Cubed", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
@@ -1592,7 +1591,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
@@ -1603,7 +1602,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.16Cubed", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
@@ -1618,7 +1617,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing),
@@ -1629,7 +1628,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemSpatialStorageCell.128Cubed", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 34, missing),
@@ -1644,7 +1643,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
@@ -1655,7 +1654,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17516, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                 "screwCertusQuartz",
                 "plateStainlessSteel",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
@@ -1853,7 +1852,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 8516, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.CertusQuartz, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockLightDetector", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);

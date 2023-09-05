@@ -120,7 +120,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .duration(10 * SECONDS).eut(2).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2807, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 1L),
                         ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "netherbrick", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(2).addTo(sAlloySmelterRecipes);
@@ -1467,28 +1467,28 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L),
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 2, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 4, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 8, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Minecraft.ID, "ladder", 32, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
@@ -1714,7 +1714,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(ItemList.Plank_Oak.get(2L), getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                .itemInputs(
+                        ItemList.Plank_Oak.get(2L),
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1724,7 +1726,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2503,7 +2505,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "jukebox", 1, 0, missing),
                 "logWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 26500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Diamond, 1L),
                 "logWood",
                 getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
                 "record",
@@ -4180,10 +4182,10 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_sword", 1, 0, missing),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 null,
                 "craftingToolFile",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer",
                 null,
                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
@@ -4191,7 +4193,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_shovel", 1, 0, missing),
                 "craftingToolFile",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer",
                 null,
                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
@@ -4201,7 +4203,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 getModItem(Minecraft.ID, "diamond", 1, 0, missing),
                 getModItem(Minecraft.ID, "diamond", 1, 0, missing),
                 "craftingToolFile",
@@ -4212,10 +4214,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_axe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 getModItem(Minecraft.ID, "diamond", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                 null,
                 "craftingToolFile",
@@ -4223,7 +4225,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_hoe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 getModItem(Minecraft.ID, "diamond", 1, 0, missing),
                 "craftingToolHardHammer",
                 "craftingToolFile",
@@ -4234,45 +4236,45 @@ public class ScriptMinecraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_helmet", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 null,
                 null,
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_chestplate", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_leggings", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "diamond_boots", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 null,
                 null,
                 null);
@@ -4322,14 +4324,14 @@ public class ScriptMinecraft implements IScriptLoader {
                 "ringAnyIron");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Gold, 1L),
                 "plateGold",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28086, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 26086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Gold, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 1L),
                 getModItem(Minecraft.ID, "comparator", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 26086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Gold, 1L),
                 "craftingToolWrench");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "compass", 1, 0, missing),
@@ -5089,7 +5091,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "stickWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "nether_star", 16, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 2506, missing),
+                GT_OreDictUnificator.get(OrePrefixes.crateGtGem, Materials.NetherStar, 1L),
                 "craftingToolCrowbar");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "mossy_cobblestone", 1, 0, missing),

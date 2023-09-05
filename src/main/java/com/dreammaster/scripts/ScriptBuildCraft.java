@@ -461,13 +461,13 @@ public class ScriptBuildCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -478,7 +478,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4L))
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -561,7 +561,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 4, missing),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).noFluidInputs()
@@ -577,8 +577,8 @@ public class ScriptBuildCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20032, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 18032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
+                        ItemList.IC2_Item_Casing_Iron.get(2L),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
@@ -586,14 +586,14 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 18032, missing),
+                        ItemList.IC2_Item_Casing_Iron.get(2L),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 18304, missing),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).noFluidInputs()
@@ -609,7 +609,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 18307, missing),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).noFluidInputs()
@@ -624,14 +624,14 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17501, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0, missing))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17347, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 4L))
                 .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
 

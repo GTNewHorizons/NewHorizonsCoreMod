@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -68,22 +67,22 @@ public class ScriptMagicBees implements IScriptLoader {
     public void loadRecipes() {
 
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1540, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedAir, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 18, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1543, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedWater, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 19, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1541, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedFire, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 20, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1542, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedEarth, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 21, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1545, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedOrder, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 22, missing));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1544, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedEntropy, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 23, missing));
         addShapedRecipe(
                 getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0, missing),
@@ -238,7 +237,7 @@ public class ScriptMagicBees implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 8537, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Jade, 4L))
                 .itemOutputs(getModItem(MagicBees.ID, "moonDial", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 576)).noFluidOutputs().duration(200)
                 .eut(30).addTo(sAssemblerRecipes);
@@ -371,7 +370,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 2815, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 12, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).noFluidOutputs().duration(100).eut(16)
@@ -385,7 +384,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 .addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 2815, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 10, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).noFluidOutputs().duration(100).eut(16)
@@ -481,11 +480,11 @@ public class ScriptMagicBees implements IScriptLoader {
                 'f',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5, missing),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 23086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L),
                 'h',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4182, missing),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 23086, missing));
+                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L));
         TCHelper.addResearchPage(
                 "MB_VisAuraProvider",
                 new ResearchPage(
@@ -956,21 +955,21 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'g',
                 "craftingToolWireCutter",
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'i',
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
@@ -993,21 +992,21 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'g',
                 "craftingToolWireCutter",
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'i',
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
@@ -1030,13 +1029,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'd',
                 "craftingToolFile",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 2, missing),
                 'i',
@@ -1061,13 +1060,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'd',
                 "craftingToolFile",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing),
                 'i',

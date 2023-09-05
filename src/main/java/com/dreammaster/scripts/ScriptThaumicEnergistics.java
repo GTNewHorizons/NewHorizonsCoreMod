@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Gadomancy;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TaintedMagic;
@@ -26,6 +25,9 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1766,13 +1768,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                         getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                         getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                         getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",
@@ -1848,11 +1850,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17542, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
                 'b',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17542, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
                 'd',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 'e',
@@ -1860,11 +1862,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'f',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17542, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
                 'h',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17542, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANETERM",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("fabrico"), 12)

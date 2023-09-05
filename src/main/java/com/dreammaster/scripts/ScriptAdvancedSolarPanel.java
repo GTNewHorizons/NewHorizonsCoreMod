@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -12,6 +11,9 @@ import java.util.List;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
@@ -120,7 +122,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11098, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
                         getModItem(Minecraft.ID, "glowstone", 4, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(1920).addTo(sAssemblerRecipes);
@@ -132,7 +134,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 .noFluidOutputs().duration(1200).eut(7680).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17318, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(30720).addTo(sAssemblerRecipes);

@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersMechworks;
@@ -15,6 +14,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class ScriptMechworks implements IScriptLoader {
@@ -64,13 +66,13 @@ public class ScriptMechworks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 17033, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Cobalt, 6L))
                 .itemOutputs(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1152)).noFluidOutputs().duration(1200)
                 .eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
                         getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing))
                 .itemOutputs(getModItem(TinkersMechworks.ID, "SpoolWire", 1, 256, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);

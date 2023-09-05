@@ -28,6 +28,9 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -79,7 +82,7 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 16, missing),
                 null,
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2622, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
                 null,
                 null,
                 null,
@@ -87,7 +90,7 @@ public class ScriptWitchery implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2622, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
                 null,
                 null,
                 getModItem(Witchery.ID, "ingredient", 1, 16, missing),
@@ -237,7 +240,7 @@ public class ScriptWitchery implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);

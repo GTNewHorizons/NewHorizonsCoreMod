@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -29,6 +28,9 @@ import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptBloodArsenal implements IScriptLoader {
 
@@ -616,7 +618,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 getModItem(BloodArsenal.ID, "blood_diamond", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                 4,
                 12000,
                 20,
@@ -727,11 +729,11 @@ public class ScriptBloodArsenal implements IScriptLoader {
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_stick", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(8).addTo(sLatheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2977, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BloodInfusedIron, 1L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 2977, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BloodInfusedIron, 9L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
 
     }
 }

@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
@@ -18,7 +17,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class ScriptMalisDoors implements IScriptLoader {
@@ -42,9 +44,9 @@ public class ScriptMalisDoors implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "plateAnyIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "plateAnyIron",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 "plateAnyIron",
@@ -53,9 +55,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "sliding_trapdoor", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "plateSteel",
                 getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0, missing),
                 "plateSteel",
@@ -72,42 +74,42 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "vanishing_block", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "vanishing_block", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4128, missing),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "vanishing_block", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Gold, 1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Gold, 1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 4182, missing),
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "vanishing_block", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27500, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 "plateRedstone",
                 getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
                 "plateRedstone",
@@ -119,23 +121,23 @@ public class ScriptMalisDoors implements IScriptLoader {
                 ItemList.Conveyor_Module_LV.get(1L),
                 ItemList.Electric_Motor_LV.get(1L),
                 ItemList.Conveyor_Module_LV.get(1L),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 23032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 1L),
                 ItemList.Casing_SolidSteel.get(1L),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20032, missing));
+                GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "door_factory", 1, 0, missing),
                 ItemList.Conveyor_Module_LV.get(1L),
                 ItemList.Electric_Motor_LV.get(1L),
                 ItemList.Conveyor_Module_LV.get(1L),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 23305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Steel, 1L),
                 ItemList.Casing_SolidSteel.get(1L),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 23305, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Steel, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L),
                 getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing));
+                GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "rustyHatch", 1, 0, missing),
                 "plateAnyIron",
@@ -149,37 +151,37 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateAnyIron");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "garage_door", 5, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17874, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28305, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17874, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28305, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17874, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28305, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17874, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28305, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17874, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 "craftingToolWrench",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing));
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "rustyLadder", 4, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "craftingToolWrench",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23032, missing));
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 1L));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.door_acacia", 1, 0, missing),
                 "craftingToolScrewdriver",
@@ -196,8 +198,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
@@ -218,8 +220,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
@@ -240,8 +242,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
@@ -262,8 +264,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
@@ -284,8 +286,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
@@ -306,8 +308,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
@@ -328,8 +330,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
@@ -350,8 +352,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
@@ -372,8 +374,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
@@ -394,8 +396,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
@@ -417,7 +419,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 4, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 4, missing),
                 "stickWood",
@@ -428,7 +430,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 4, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 4, missing),
                 "stickWood",
@@ -450,7 +452,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1, missing),
                 "stickWood",
@@ -461,7 +463,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 1, missing),
                 "stickWood",
@@ -483,7 +485,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 2, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 2, missing),
                 "stickWood",
@@ -494,7 +496,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 2, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 2, missing),
                 "stickWood",
@@ -516,7 +518,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3, missing),
                 "stickWood",
@@ -527,7 +529,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 3, missing),
                 "stickWood",
@@ -549,7 +551,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 5, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 5, missing),
                 "stickWood",
@@ -560,7 +562,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 5, missing),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "stickWood",
                 getModItem(Minecraft.ID, "wooden_slab", 1, 5, missing),
                 "stickWood",
@@ -648,8 +650,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 "stickWood",
                 "craftingToolSaw");
@@ -659,8 +661,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "stickWood",
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 "stickWood",
                 "craftingToolScrewdriver");
@@ -671,7 +673,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 "ringCopper",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 "stickWood",
                 "craftingToolSaw");
@@ -682,7 +684,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 "ringCopper",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 "stickWood",
                 "craftingToolScrewdriver");
@@ -864,9 +866,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "carpet", 1, 15, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "item.saloon", 2, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 23032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 1L),
                 "stickWood",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 23032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
@@ -897,9 +899,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "acaciaFenceGate", 2, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
@@ -908,9 +910,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "acaciaFenceGate", 4, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 4, missing),
@@ -930,9 +932,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "birchFenceGate", 2, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
@@ -941,9 +943,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "birchFenceGate", 4, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 2, missing),
@@ -963,9 +965,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "darkOakFenceGate", 2, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
@@ -974,9 +976,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "darkOakFenceGate", 4, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
@@ -996,9 +998,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "jungleFenceGate", 2, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
@@ -1007,9 +1009,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "jungleFenceGate", 4, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 3, missing),
@@ -1029,9 +1031,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "spruceFenceGate", 2, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
@@ -1040,9 +1042,9 @@ public class ScriptMalisDoors implements IScriptLoader {
                 getModItem(Minecraft.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "spruceFenceGate", 4, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 1, missing),
@@ -1053,13 +1055,13 @@ public class ScriptMalisDoors implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "sliding_trapdoor", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(150).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1070,47 +1072,47 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17532, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(300).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4128, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17532, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(400).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 4182, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17532, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(500).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17532, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         getModItem(MalisisDoors.ID, "item.rustyHandle", 1, 0, missing))
                 .itemOutputs(getModItem(MalisisDoors.ID, "rustyHatch", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17874, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(150).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 23032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(60).eut(30).addTo(sAssemblerRecipes);
@@ -1217,13 +1219,13 @@ public class ScriptMalisDoors implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_door", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.laboratory_door", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wooden_door", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.factory_door", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1381,7 +1383,7 @@ public class ScriptMalisDoors implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "trapdoor", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 23032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Iron, 2L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.saloon", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

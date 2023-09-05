@@ -40,6 +40,8 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class ScriptStevesCarts implements IScriptLoader {
@@ -217,12 +219,12 @@ public class ScriptStevesCarts implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 37, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "craftingToolSoftHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0, missing),
                 "craftingToolWrench",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0, missing));
@@ -410,7 +412,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 ItemList.Electric_Piston_MV.get(1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 2, 30, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null,
                 null,
                 "craftingToolSaw",
@@ -555,9 +557,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "CartModule", 1, 66, missing));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5131, missing));
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5131, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 7, missing),
@@ -975,15 +977,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 31, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6, missing),
                 getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 6, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
                 "fenceWood",
@@ -1031,13 +1033,13 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60, missing),
                 "screwIron",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5121, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
                 "screwIron",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                 "craftingToolScrewdriver",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                 "screwIron",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5121, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
                 "screwIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 57, missing),
@@ -1108,13 +1110,13 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 68, missing),
                 "plateIron",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5601, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Brass, 1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "plateIron",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5601, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Brass, 1L),
                 "plateIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 32, missing),
@@ -1132,12 +1134,12 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5131, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5131, missing));
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 95, missing),
                 "plateEmerald",
@@ -1147,13 +1149,13 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 18, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5590, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Tin, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5590, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Tin, 1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
@@ -1254,10 +1256,10 @@ public class ScriptStevesCarts implements IScriptLoader {
                 ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Minecraft.ID, "hay_block", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5131, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5131, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 89, missing),
@@ -1305,21 +1307,21 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateIron");
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11383, missing));
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Reinforced, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11383, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Reinforced, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 47, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11384, missing));
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Galgadorian, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11384, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Galgadorian, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 47, missing));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 49, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11385, missing));
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.EnhancedGalgadorian, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11385, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.EnhancedGalgadorian, 1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 49, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1376,48 +1378,48 @@ public class ScriptStevesCarts implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(Railcraft.ID, "track", 1, 0, "{track:\"railcraft:track.junction\"}", missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 2000, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "BlockJunction", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 28809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Wood, 2L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23383, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 28383, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Reinforced, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Reinforced, 2L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23384, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 28384, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Galgadorian, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Galgadorian, 2L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 82, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17809, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 37, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 1, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 38, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17383, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Reinforced, 4L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 23, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 39, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17384, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Galgadorian, 4L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 82, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 81, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(2).addTo(sAssemblerRecipes);
@@ -1429,25 +1431,25 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 31343, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2383, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.CobaltBrass, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Reinforced, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 80, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 31343, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2384, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.CobaltBrass, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Galgadorian, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 81, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 7032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iron, 2L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 31032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Iron, 1L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 83, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(16).addTo(sAssemblerRecipes);
@@ -1627,133 +1629,139 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 22305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 22032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28032, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 26032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 33, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 1, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing), ItemList.Color_01.get(4L))
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
+                        ItemList.Color_01.get(4L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 11, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 14, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 19, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 59, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 2, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 22, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 13, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 12, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing), ItemList.Color_02.get(4L))
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
+                        ItemList.Color_02.get(4L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(BiomesOPlenty.ID, "misc", 4, 7, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 28, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 4, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 24, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 21, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Natura.ID, "barleyFood", 4, 8, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 11, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 14, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing), ItemList.Color_04.get(4L))
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
+                        ItemList.Color_04.get(4L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(BiomesOPlenty.ID, "misc", 4, 5, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
@@ -1847,7 +1855,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 5121, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
                         getModItem(Minecraft.ID, "iron_bars", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(16).addTo(sAssemblerRecipes);
@@ -1868,11 +1876,11 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1000).eut(120).specialValue(1700).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 12384, missing))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Galgadorian, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).noFluidOutputs().duration(2000).eut(120)
                 .specialValue(2200).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 12385, missing))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.EnhancedGalgadorian, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).noFluidOutputs().duration(3000).eut(120)
                 .specialValue(3500).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing))
@@ -1882,15 +1890,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 18, missing))
                 .fluidInputs(Materials.Obsidian.getMolten(1152)).noFluidOutputs().duration(600).eut(30)
                 .addTo(UniversalChemical);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 18809, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 4)).noFluidOutputs().duration(100).eut(30)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 18809, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(100).eut(30)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 18809, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(50).eut(30)
                 .addTo(sCutterRecipes);
@@ -1918,15 +1926,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(50).eut(30)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 18032, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 8)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 18032, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 18032, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(100).eut(30)
                 .addTo(sCutterRecipes);
@@ -2027,7 +2035,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(100).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2383, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Reinforced, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
 
     }

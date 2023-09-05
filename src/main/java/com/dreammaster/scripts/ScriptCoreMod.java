@@ -10,7 +10,6 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
@@ -288,7 +287,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2890, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
                 null,
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -310,7 +309,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2805, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 null,
                 null,
                 null,
@@ -321,7 +320,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2299, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                 null,
                 null,
                 null,
@@ -332,7 +331,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1802, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
                 null,
                 null,
                 null,
@@ -343,12 +342,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2934, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2823, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 1L),
                 null,
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -356,17 +355,17 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2022, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2939, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 null,
                 null,
@@ -374,7 +373,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2057, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 null,
@@ -382,12 +381,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2034, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Nickel, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2035, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -395,7 +394,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2896, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 1L),
                 null,
                 null,
                 null,
@@ -414,7 +413,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1625, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Brick, 1L),
                 null,
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -422,7 +421,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2304, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.WroughtIron, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -441,7 +440,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 39, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Arsenic, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -463,7 +462,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1054, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Silver, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -485,7 +484,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 37, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Gallium, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -507,7 +506,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 1343, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.CobaltBrass, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -983,7 +982,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
                 'e',
                 getModItem(Minecraft.ID, "piston", 1, 0, missing));
         TConstructRegistry.getTableCasting().addCastingRecipe(
@@ -1038,13 +1037,13 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22327, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(2000).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 22129, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Neutronium, 1L))
                 .itemOutputs(
                         getModItem(
                                 NewHorizonsCoreMod.ID,
@@ -1061,28 +1060,28 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 17300, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 6L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BronzePlatedReinforcedStone", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 144)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 17305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 6L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.SteelPlatedReinforcedStone", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).noFluidOutputs().duration(250)
                 .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 17028, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 6L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.TitaniumPlatedReinforcedStone", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.platinum", 144)).noFluidOutputs().duration(300).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 17316, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "tile.TungstensteelPlatedReinforcedStone", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iridium", 144)).noFluidOutputs().duration(350).eut(64)
@@ -1090,14 +1089,14 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 17324, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 6L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.NaquadahPlatedReinforcedStone", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.osmium", 144)).noFluidOutputs().duration(450).eut(256)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 17129, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 6L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.NeutroniumPlatedReinforcedStone", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).noFluidOutputs().duration(500)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -1121,14 +1120,14 @@ public class ScriptCoreMod implements IScriptLoader {
                 .noFluidOutputs().duration(1200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(64).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2865, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.CompressedGraphite", 2, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1202,8 +1201,8 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedAluminiumIronPlate", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17308, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedAluminiumPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).noFluidOutputs().duration(600)
                 .eut(120).addTo(sAssemblerRecipes);
@@ -1211,9 +1210,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedTitaniumIronPlate", 1, 0, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17341, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MeteoricSteel, 1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 2, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTitaniumPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(600)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -1221,9 +1220,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedTitaniumIronPlate", 1, 0, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17341, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MeteoricSteel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTitaniumPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs().duration(600)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -1231,19 +1230,19 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedTungstenIronPlate", 1, 0, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17098, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17339, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Uranium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steeleaf, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 576)).noFluidOutputs().duration(600)
                 .eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedTungstenSteelIronPlate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 20318, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17100, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17362, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Sunnarium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plutonium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Knightmetal, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedTungstenSteelPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 1152)).noFluidOutputs().duration(600)
@@ -1252,9 +1251,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedChromeIronPlate", 1, 0, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17358, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17346, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.YttriumBariumCuprate, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.FierySteel, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedChromePlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 2304)).noFluidOutputs().duration(600)
                 .eut(30720).addTo(sAssemblerRecipes);
@@ -1262,9 +1261,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 7, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17083, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17084, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 4608)).noFluidOutputs().duration(600)
                 .eut(122880).addTo(sAssemblerRecipes);
@@ -1272,9 +1271,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedNaquadriaIronPlate", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17391, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17317, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Quantium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216)).noFluidOutputs().duration(600)
                 .eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
@@ -1283,17 +1282,17 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedNaquadriaIronPlate", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.QuantinumPlate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17317, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNaquadriaPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216)).noFluidOutputs().duration(600)
                 .eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(
                 getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedNeutroniumIronPlate", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaNeutroniumSunnariumAlloy", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17398, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2, 17397, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 2L),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 18432)).noFluidOutputs().duration(600)
@@ -1302,8 +1301,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedNeutroniumIronPlate", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaNeutroniumSunnariumAlloy", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.MysteriousCrystalPlate", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 2, 17397, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 2L),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedNeutroniumPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 18432)).noFluidOutputs().duration(600)
@@ -1312,22 +1311,25 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedBedrockiumIronPlate", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.EnrichedXSunnariumAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17976, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17394, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfinityCatalyst, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.IrradiantReinforcedBedrockiumPlate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36864)).noFluidOutputs().duration(600)
                 .eut(8000000).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2398, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).noFluidOutputs().duration(3600).eut(480)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2398, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 800)).noFluidOutputs().duration(2400)
                 .eut(480).addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2398, missing))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 288)).noFluidOutputs().duration(1200).eut(480)
                 .addTo(sAutoclaveRecipes);
@@ -1347,12 +1349,12 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.RawBioFiber", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("nitrofuel", 8)).noFluidOutputs().duration(50).eut(20)
                 .addTo(sAutoclaveRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2098, missing))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Uranium, 1L))
                 .noItemOutputs().fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750)).duration(128).eut(4)
                 .addTo(sBrewingRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 97, missing)).noItemOutputs()
-                .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Uranium235, 1L))
+                .noItemOutputs().fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750)).duration(128).eut(4)
                 .addTo(sBrewingRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing))
@@ -1378,7 +1380,7 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17500, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedDiamondCrystalChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(400).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
@@ -1415,20 +1417,20 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30528, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedQuantumChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(1200).eut(30720).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Force, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30528, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedQuantumChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(1200).eut(30720).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility
                                 .copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.GarnetYellow, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 30528, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.GarnetYellow, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedQuantumChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(1200).eut(30720).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
@@ -1482,32 +1484,32 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility
                                 .copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(3)).noItemOutputs()
@@ -1646,151 +1648,151 @@ public class ScriptCoreMod implements IScriptLoader {
                 .noFluidInputs().noFluidOutputs().duration(300).eut(480).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.AluminiumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(120).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17019, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.AluminiumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(120).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.AluminiumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(120).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17028, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TitaniumIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17028, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TitaniumIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17028, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TitaniumIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17081, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TungstenIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(1920).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17081, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TungstenIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(1920).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17081, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TungstenIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(1920).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17316, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TungstenSteelIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(7680).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17316, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TungstenSteelIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(7680).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17316, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.TungstenSteelIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(7680).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17030, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ChromeIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30720).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17030, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ChromeIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30720).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17030, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ChromeIronPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30720).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17084, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(122880).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17084, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(122880).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17084, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(122880).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17327, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NaquadriaIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17327, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NaquadriaIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17327, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NaquadriaIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17129, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NeutroniumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UHV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17129, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NeutroniumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UHV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17129, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NeutroniumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(TierEU.RECIPE_UHV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17395, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.BedrockiumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(8000000).addTo(sPressRecipes);
@@ -1802,19 +1804,19 @@ public class ScriptCoreMod implements IScriptLoader {
                 .noFluidInputs().noFluidOutputs().duration(600).eut(8000000).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17395, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.BedrockiumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(8000000).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BedrockiumPlate", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.BedrockiumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(8000000).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17395, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.BedrockiumIronPlate", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(8000000).addTo(sPressRecipes);
@@ -1842,7 +1844,7 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0, missing))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Stone, 1),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 1299, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Stone, 2L))
                 .noFluidInputs().noFluidOutputs().duration(160).eut(16).addTo(sLatheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "mushroom", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 2, 0, missing))
@@ -1857,66 +1859,66 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MushroomPowder", 2, 0, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MoldHelmet", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 2305, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 2305, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 2305, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MoldBoots", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 2305, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MoldChestplate", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 2305, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MarshmallowForm", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 4, 2305, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.AluminiumItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1019, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Aluminium, 2L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1306, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.StainlessSteel, 2L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.TitaniumItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1028, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Titanium, 2L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.ChromeItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1030, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Chrome, 2L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.TungstenItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1081, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Tungsten, 2L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.TungstenSteelItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1316, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.TungstenSteel, 2L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.IridiumItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1084, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Iridium, 2L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 8, 1084, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Iridium, 8L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.OsmiumItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1083, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Osmium, 2L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.NeutroniumItemCasing", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 1129, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Neutronium, 2L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2398, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.MysteriousCrystal", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 2398, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.RawMytryl", 1, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.MytrylDust", 1, 0, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);

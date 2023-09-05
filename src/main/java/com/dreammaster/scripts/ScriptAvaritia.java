@@ -53,8 +53,10 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 import tconstruct.smeltery.TinkerSmeltery;
 import tconstruct.tools.TinkerTools;
 import tconstruct.tools.items.Pattern;
@@ -838,7 +840,7 @@ public class ScriptAvaritia implements IScriptLoader {
         CompressorManager.addRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
                 64,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2394));
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 1L));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 4, missing), ItemList.Shape_Mold_Nugget.get(0L))
@@ -877,27 +879,27 @@ public class ScriptAvaritia implements IScriptLoader {
                 .duration(1200).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 6, missing), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17397, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(4000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11397, missing),
                         ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17397, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(4000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 4, missing), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17982, missing)).noFluidInputs()
-                .noFluidOutputs().duration(3000).eut(524000).addTo(sExtruderRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L))
+                .noFluidInputs().noFluidOutputs().duration(3000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11982, missing),
                         ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17982, missing)).noFluidInputs()
-                .noFluidOutputs().duration(3000).eut(524000).addTo(sExtruderRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L))
+                .noFluidInputs().noFluidOutputs().duration(3000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
                         getModItem(NewHorizonsCoreMod.ID, "item.StainlessSteelBars", 1, 0, missing))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(120).addTo(sPressRecipes);
@@ -913,7 +915,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("praecantatio"), 512).add(Aspect.getAspect("cognitio"), 128)
                         .add(Aspect.getAspect("sensus"), 96).add(Aspect.getAspect("luxuria"), 96)
                         .add(Aspect.getAspect("tempus"), 64).add(Aspect.getAspect("terminus"), 128),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17397, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L),
                 new ItemStack[] { getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
                         getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
                         getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),

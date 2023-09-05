@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.LogisticsPipes;
@@ -777,8 +776,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
@@ -788,8 +787,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Basic.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
@@ -799,8 +798,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
@@ -810,8 +809,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
@@ -821,8 +820,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
@@ -832,8 +831,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Basic.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
@@ -843,8 +842,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
@@ -854,8 +853,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 1152)).noFluidOutputs().duration(40 * SECONDS)
@@ -865,8 +864,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
@@ -876,8 +875,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Basic.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
@@ -887,8 +886,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
@@ -898,8 +897,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
@@ -909,8 +908,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
@@ -920,8 +919,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Basic.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
@@ -931,8 +930,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
@@ -942,8 +941,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 576)).noFluidOutputs().duration(40 * SECONDS)
@@ -953,8 +952,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
@@ -964,8 +963,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Basic.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
@@ -975,8 +974,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
@@ -986,8 +985,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1368, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
@@ -997,8 +996,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
@@ -1008,8 +1007,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Basic.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
@@ -1019,8 +1018,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Circuit_Microprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
@@ -1030,59 +1029,59 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Transformer_MV_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1388, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 27305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).noFluidOutputs()
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 22305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
                         getModItem(BartWorks.ID, "BWPumpParts", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 19086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 2L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 22305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
                         getModItem(Railcraft.ID, "glass", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 8, 19086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 22305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 4, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 8, 19086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 22019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 4),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 64, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 22306, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17611, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BorosilicateGlass, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 64, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 8, 28500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 8L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1090,10 +1089,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 8, 28500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 8L),
                         ItemList.Circuit_Basic.get(2L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1101,10 +1100,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 8, 28500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 8L),
                         ItemList.Circuit_Microprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1112,10 +1111,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 8, 28500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 8L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1123,10 +1122,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1134,10 +1133,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         ItemList.Circuit_Basic.get(2L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1145,10 +1144,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         ItemList.Circuit_Microprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1156,10 +1155,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1167,10 +1166,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1178,10 +1177,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         ItemList.Circuit_Good.get(2L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1189,10 +1188,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         ItemList.Circuit_Integrated_Good.get(2L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1200,10 +1199,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         ItemList.Circuit_Processor.get(2L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1211,10 +1210,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1222,10 +1221,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1233,10 +1232,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         ItemList.Circuit_Computer.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1244,10 +1243,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1255,10 +1254,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 20086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 16, 19054, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -1268,7 +1267,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1279,7 +1278,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1290,7 +1289,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1301,7 +1300,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1312,7 +1311,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1323,7 +1322,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1334,7 +1333,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1345,7 +1344,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1356,7 +1355,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1367,7 +1366,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1378,7 +1377,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1389,7 +1388,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing))
@@ -1442,7 +1441,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1453,7 +1452,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1464,7 +1463,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1475,7 +1474,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1486,7 +1485,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1497,7 +1496,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1508,7 +1507,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1519,7 +1518,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1530,7 +1529,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1541,7 +1540,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1552,7 +1551,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1563,7 +1562,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                         ItemList.Component_Filter.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing))
@@ -1624,7 +1623,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1635,7 +1634,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1646,7 +1645,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1657,7 +1656,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1712,7 +1711,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1723,7 +1722,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1734,7 +1733,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1745,7 +1744,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1800,7 +1799,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1811,7 +1810,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1822,7 +1821,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1833,7 +1832,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         ItemList.Electric_Piston_LV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing))
@@ -1845,7 +1844,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1857,7 +1856,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1869,7 +1868,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1881,7 +1880,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1892,8 +1891,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1904,8 +1903,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1916,8 +1915,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1928,8 +1927,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1941,7 +1940,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1953,7 +1952,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1965,7 +1964,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1977,7 +1976,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -1988,8 +1987,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2000,8 +1999,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2012,8 +2011,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2024,8 +2023,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2037,7 +2036,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2049,7 +2048,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2061,7 +2060,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2073,7 +2072,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2084,8 +2083,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2096,8 +2095,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2108,8 +2107,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2120,8 +2119,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26086, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
@@ -2138,7 +2137,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2149,7 +2148,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2160,7 +2159,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2171,7 +2170,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2181,8 +2180,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2192,8 +2191,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2203,8 +2202,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2214,8 +2213,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2226,7 +2225,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2237,7 +2236,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2248,7 +2247,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2259,7 +2258,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2269,8 +2268,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2280,8 +2279,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2291,8 +2290,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2302,8 +2301,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2314,7 +2313,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2325,7 +2324,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2336,7 +2335,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2347,7 +2346,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2357,8 +2356,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2368,8 +2367,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Basic.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2379,8 +2378,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2390,8 +2389,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing))
@@ -2477,7 +2476,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
                         ItemList.Conveyor_Module_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -2487,7 +2486,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
                         ItemList.Conveyor_Module_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -2497,7 +2496,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
                         ItemList.Conveyor_Module_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 17, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2508,7 +2507,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2519,7 +2518,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2530,7 +2529,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2541,7 +2540,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2552,7 +2551,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2563,7 +2562,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2574,7 +2573,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2585,7 +2584,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2596,7 +2595,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2607,7 +2606,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2618,7 +2617,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2629,7 +2628,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Good.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2640,7 +2639,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2651,7 +2650,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         ItemList.Circuit_Processor.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2662,7 +2661,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26334, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2673,7 +2672,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2684,7 +2683,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         ItemList.Circuit_Computer.get(2L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2695,7 +2694,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         ItemList.Circuit_Nanoprocessor.get(2L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2706,7 +2705,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2717,7 +2716,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2728,7 +2727,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         ItemList.Circuit_Computer.get(2L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2739,7 +2738,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         ItemList.Circuit_Nanoprocessor.get(2L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2750,7 +2749,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -2761,7 +2760,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2772,7 +2771,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         ItemList.Circuit_Computer.get(2L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2783,7 +2782,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         ItemList.Circuit_Nanoprocessor.get(2L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2794,7 +2793,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -2805,7 +2804,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.GoldCoreChip", 1, 0, missing),
                         ItemList.Robot_Arm_MV.get(2L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(45 * SECONDS)
@@ -2816,7 +2815,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.GoldCoreChip", 1, 0, missing),
                         ItemList.Robot_Arm_MV.get(2L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2827,7 +2826,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.GoldCoreChip", 1, 0, missing),
                         ItemList.Robot_Arm_MV.get(2L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs()
@@ -2838,7 +2837,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.DiamondCoreChip", 1, 0, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -2849,7 +2848,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.DiamondCoreChip", 1, 0, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 288)).noFluidOutputs().duration(45 * SECONDS)
@@ -2860,7 +2859,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.DiamondCoreChip", 1, 0, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).noFluidOutputs()
@@ -2936,7 +2935,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2947,7 +2946,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Computer.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2958,7 +2957,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2969,7 +2968,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2979,8 +2978,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -2990,8 +2989,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Computer.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -3001,8 +3000,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -3012,8 +3011,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(45 * SECONDS)
@@ -3024,7 +3023,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -3035,7 +3034,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Computer.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -3046,7 +3045,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -3057,7 +3056,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -3067,8 +3066,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -3078,8 +3077,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Computer.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -3089,8 +3088,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -3100,8 +3099,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(45 * SECONDS)
@@ -3112,7 +3111,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -3123,7 +3122,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Computer.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -3134,7 +3133,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -3145,7 +3144,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -3155,8 +3154,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -3166,8 +3165,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Computer.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -3177,8 +3176,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -3188,8 +3187,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17526, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -3210,10 +3209,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(80 * SECONDS)
@@ -3222,10 +3221,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         ItemList.Circuit_Computer.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(80 * SECONDS)
@@ -3234,10 +3233,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         ItemList.Circuit_Nanoprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(80 * SECONDS)
@@ -3246,10 +3245,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(80 * SECONDS)
@@ -3262,8 +3261,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -3276,8 +3275,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         ItemList.Circuit_Computer.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -3290,8 +3289,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         ItemList.Circuit_Nanoprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -3304,8 +3303,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -3318,8 +3317,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -3332,8 +3331,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         ItemList.Circuit_Computer.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -3346,8 +3345,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         ItemList.Circuit_Nanoprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -3360,8 +3359,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1369, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 26348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(45 * SECONDS)
@@ -3377,9 +3376,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Sensor_HV.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1367, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(80 * SECONDS)
@@ -3389,9 +3388,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Sensor_HV.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         ItemList.Circuit_Computer.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1367, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(80 * SECONDS)
@@ -3401,9 +3400,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Sensor_HV.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         ItemList.Circuit_Nanoprocessor.get(2L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1367, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(80 * SECONDS)
@@ -3413,9 +3412,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Sensor_HV.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1367, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 576)).noFluidOutputs().duration(80 * SECONDS)
@@ -3617,10 +3616,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1360, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).noFluidOutputs().duration(80 * SECONDS)
@@ -3630,10 +3629,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         ItemList.Circuit_Computer.get(1L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1360, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).noFluidOutputs().duration(80 * SECONDS)
@@ -3643,10 +3642,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         ItemList.Circuit_Nanoprocessor.get(1L),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1360, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).noFluidOutputs().duration(80 * SECONDS)
@@ -3656,10 +3655,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Emitter_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 4, 1360, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 27500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.remoteOrdererItem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).noFluidOutputs().duration(80 * SECONDS)
@@ -3680,8 +3679,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .noFluidOutputs().duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 26348, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 22500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Diamond, 1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 3, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing))
@@ -3690,7 +3689,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
@@ -3699,7 +3698,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L),
                         ItemList.Circuit_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
@@ -3708,7 +3707,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
@@ -3717,7 +3716,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L),
                         ItemList.Circuit_Processor.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
@@ -3726,7 +3725,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing))
@@ -4235,7 +4234,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing),
                         ItemList.Robot_Arm_MV.get(1L),
                         ItemList.Sensor_MV.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17532, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsSatelliteLogistics", 2, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
@@ -4255,7 +4254,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17381, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 2L),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
@@ -4271,7 +4270,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17381, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 2L),
                         getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
@@ -4287,7 +4286,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17364, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 2L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 2, 0, missing))
@@ -4295,7 +4294,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17351, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 2L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk3", 2, 0, missing))
@@ -4303,7 +4302,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk3", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 2L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 2, 0, missing))
@@ -4311,7 +4310,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17028, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk5", 2, 0, missing))
@@ -4319,7 +4318,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17364, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 3, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4328,7 +4327,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17364, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 3, missing),
                         ItemList.Circuit_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4337,7 +4336,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17364, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 3, missing),
                         ItemList.Circuit_Microprocessor.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4346,7 +4345,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17364, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 3, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4355,7 +4354,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17351, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4364,7 +4363,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17351, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 0, missing),
                         ItemList.Circuit_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4373,7 +4372,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17351, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 0, missing),
                         ItemList.Circuit_Integrated_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4382,7 +4381,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17351, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 0, missing),
                         ItemList.Circuit_Processor.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4391,7 +4390,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17351, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4400,7 +4399,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 4, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4409,7 +4408,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 4, missing),
                         ItemList.Circuit_Computer.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4418,7 +4417,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 4, missing),
                         ItemList.Circuit_Nanoprocessor.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4427,7 +4426,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17348, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 4, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 7, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4436,7 +4435,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17028, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 1, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitEV", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4445,7 +4444,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17028, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 1, missing),
                         ItemList.Circuit_Data.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4454,7 +4453,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17028, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 1, missing),
                         ItemList.Circuit_Nanocomputer.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4463,7 +4462,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17028, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 1, missing),
                         ItemList.Circuit_Quantumprocessor.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4472,7 +4471,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17028, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 1, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 8, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -4482,8 +4481,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -4492,8 +4491,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Parts_Vacuum_Tube.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -4502,8 +4501,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.NandChip.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -4512,8 +4511,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -4522,8 +4521,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -4532,8 +4531,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Parts_Vacuum_Tube.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -4542,8 +4541,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.NandChip.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -4552,8 +4551,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(30 * SECONDS)
@@ -4562,8 +4561,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -4572,8 +4571,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Parts_Vacuum_Tube.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -4582,8 +4581,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.NandChip.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -4592,8 +4591,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -4602,8 +4601,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -4612,8 +4611,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Parts_Vacuum_Tube.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -4622,8 +4621,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.NandChip.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -4632,8 +4631,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(30 * SECONDS)
@@ -4642,8 +4641,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -4652,8 +4651,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Parts_Vacuum_Tube.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -4662,8 +4661,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.NandChip.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -4672,8 +4671,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19035, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -4682,8 +4681,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -4692,8 +4691,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.Circuit_Parts_Vacuum_Tube.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -4702,8 +4701,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         ItemList.NandChip.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -4712,8 +4711,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 29057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19345, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs()
@@ -4794,7 +4793,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
                         getModItem(Minecraft.ID, "wool", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 26, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 25, missing)).noFluidInputs()
@@ -4812,7 +4811,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
                         ItemList.Robot_Arm_LV.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 24, missing)).noFluidInputs()
@@ -4821,7 +4820,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
                         ItemList.Conveyor_Module_LV.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29308, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RedAlloy, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 23, missing)).noFluidInputs()
@@ -4835,7 +4834,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 42, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
@@ -4879,7 +4878,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
                         getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 29300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 0, missing)).noFluidInputs()
@@ -4888,7 +4887,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
                         getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 29300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 1, missing)).noFluidInputs()
@@ -4897,7 +4896,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
                         getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 29300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 2, missing)).noFluidInputs()
@@ -4906,7 +4905,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
                         getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 29300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 3, missing)).noFluidInputs()
@@ -4915,7 +4914,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
                         getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 29300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 4, missing)).noFluidInputs()
@@ -4924,7 +4923,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
                         getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 29300, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 5, missing)).noFluidInputs()
@@ -4932,7 +4931,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27, missing),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 10, missing)).noFluidInputs()
@@ -4948,7 +4947,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27, missing),
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 11, missing)).noFluidInputs()
@@ -4964,7 +4963,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 12, missing)).noFluidInputs()
@@ -4980,7 +4979,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27, missing),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 13, missing)).noFluidInputs()
@@ -4996,7 +4995,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27, missing),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 14, missing)).noFluidInputs()
@@ -5012,7 +5011,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27, missing),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 15, missing)).noFluidInputs()
@@ -5099,7 +5098,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing),
                         ItemList.Robot_Arm_HV.get(1L),
                         ItemList.Sensor_HV.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17532, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidSatellite", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);

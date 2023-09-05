@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -165,7 +164,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 ItemList.Sensor_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
                 "compressedAluminium",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                 "compressedAluminium");
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.fuelLoader", 1, 0, missing),
@@ -753,7 +752,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.deshPick", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 "craftingToolFile",
@@ -766,7 +765,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.deshAxe", 1, 0, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 "stickDesh",
                 "craftingToolHardHammer",
@@ -777,7 +776,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.deshHoe", 1, 0, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                 "craftingToolFile",
                 "stickDesh",
                 "craftingToolHardHammer",
@@ -788,7 +787,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.deshSpade", 1, 0, missing),
                 "craftingToolFile",
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                 null,
                 "stickDesh",
                 "craftingToolHardHammer",
@@ -799,7 +798,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.deshSword", 1, 0, missing),
                 null,
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 30502, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                 "craftingToolFile",
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 "craftingToolHardHammer",
@@ -866,9 +865,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "screwSteel",
                 "craftingToolScrewdriver",
                 "screwSteel",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21305, missing),
+                ItemList.Rotor_HV.get(1L),
                 "stickLongStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 21305, missing),
+                ItemList.Rotor_HV.get(1L),
                 "screwSteel",
                 "craftingToolWrench",
                 "screwSteel");
@@ -951,9 +950,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23884, missing));
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Desh, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 23884, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Desh, 1L),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.battery", 1, wildcard, missing),
@@ -983,13 +982,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 6, missing),
                 ItemList.Electric_Pump_HV.get(1L),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 1L),
                 ItemList.Large_Fluid_Cell_Steel.get(1L),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 1L),
                 ItemList.Electric_Pump_HV.get(1L),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 1L),
                 ItemList.Electric_Pump_HV.get(1L));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.beamReflector", 1, 0, missing),
@@ -1270,60 +1269,60 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing))
@@ -1331,7 +1330,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 1, missing))
@@ -1339,7 +1338,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 2, missing))
@@ -1347,7 +1346,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 3, missing))
@@ -1355,7 +1354,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 0, missing))
@@ -1522,7 +1521,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
@@ -1530,7 +1529,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
@@ -1538,7 +1537,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
@@ -1547,39 +1546,39 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(3L),
                         ItemList.Ingot_Heavy2.get(8L),
                         ItemList.Ingot_Heavy1.get(3L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 11028, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 10L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 21, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 21L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 28, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 28L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 35, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 35L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 42, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 42L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
     }
@@ -1588,7 +1587,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 29019, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Aluminium, 8L),
                         getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 8, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7, missing))
@@ -1596,7 +1595,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23010, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Carbon, 1L),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0, missing)).noFluidInputs()
@@ -1604,13 +1603,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.basicItem", 4, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 28305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 4L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing))
                 .noFluidInputs().noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 28035, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Copper, 4L))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "tile.hydrogenPipe", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1699,26 +1698,26 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 23874, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 2L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.canvas", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.canvas", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 3, 19305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Steel, 3L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.parachute", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(480).addTo(sAssemblerRecipes);
     }
 
     private void blastFurnaceRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 4, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 11028, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(1500).eut(120).specialValue(1500).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(120).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 11340, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 2L)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(120).specialValue(1000).addTo(sBlastRecipes);
     }
 
@@ -1786,10 +1785,10 @@ public class ScriptGalacticraft implements IScriptLoader {
 
     private void maceratorRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.gcBlockCore", 1, 12, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 9, 2340, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeteoricIron, 9L))
+                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.null", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2884, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Desh, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "tile.mars", 1, 2, missing))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.null", 2, 0, missing)).outputChances(10000)
@@ -1801,7 +1800,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 4, missing))
                 .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 2, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2020, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
     }
 
@@ -1810,7 +1809,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1818,7 +1817,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1826,7 +1825,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1834,7 +1833,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1842,7 +1841,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1850,7 +1849,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1858,7 +1857,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1866,7 +1865,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(20L),
                         ItemList.Ingot_Heavy1.get(16L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1874,8 +1873,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
@@ -1884,8 +1883,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1893,8 +1892,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
@@ -1903,8 +1902,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1912,8 +1911,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
@@ -1922,8 +1921,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1931,8 +1930,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 17)).duration(130).eut(30)
@@ -1941,8 +1940,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(10L),
                         ItemList.Ingot_Heavy1.get(41L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 64L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 6L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1951,7 +1950,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
@@ -1961,7 +1960,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1970,7 +1969,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
@@ -1980,7 +1979,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -1989,7 +1988,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
@@ -1999,7 +1998,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2008,7 +2007,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
@@ -2018,7 +2017,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(37L),
                         ItemList.Ingot_Heavy2.get(11L),
                         ItemList.Ingot_Heavy1.get(32L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 12L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2406,7 +2405,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
@@ -2416,7 +2415,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
@@ -2425,7 +2424,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
@@ -2435,7 +2434,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
@@ -2444,7 +2443,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 17))
@@ -2454,7 +2453,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         ItemList.Ingot_Heavy2.get(6L),
                         ItemList.Ingot_Heavy1.get(24L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 40L),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 6)).duration(130).eut(30)
@@ -2464,7 +2463,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(3L),
                         ItemList.Ingot_Heavy2.get(8L),
                         ItemList.Ingot_Heavy1.get(3L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 11028, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 10L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 26)).duration(200).eut(30)
@@ -2474,16 +2473,16 @@ public class ScriptGalacticraft implements IScriptLoader {
                         ItemList.Ingot_Heavy3.get(3L),
                         ItemList.Ingot_Heavy2.get(8L),
                         ItemList.Ingot_Heavy1.get(3L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 11028, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 10L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 21, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 21L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
@@ -2491,18 +2490,18 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 21, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 21L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 28, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 28L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
@@ -2510,18 +2509,18 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 28, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 28L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 35, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 35L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
@@ -2529,18 +2528,18 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 35, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 35L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 42, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 42L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
@@ -2548,9 +2547,9 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3, missing))
                 .itemOutputs(
                         ItemList.Ingot_Heavy1.get(11L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 42, 11305, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 5L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 42L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 4L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);

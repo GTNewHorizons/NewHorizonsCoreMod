@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -93,13 +92,13 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         addShapedRecipe(
                 getModItem(DraconicEvolution.ID, "xRayBlock", 8, 0, missing),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1216,7 +1215,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17975, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "rainSensor", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1238,7 +1237,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "safetyMatch", 16, 1000, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18879, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(64).eut(16).addTo(sBoxinatorRecipes);
 

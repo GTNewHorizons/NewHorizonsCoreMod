@@ -651,9 +651,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "screwEnderPearl",
                 ItemList.Conveyor_Module_LV.get(1L),
                 "screwEnderPearl",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing),
+                GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L),
                 "pipeMediumBrass",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing));
+                GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1L));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
                 "craftingToolWrench",
@@ -662,9 +662,9 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "screwEnderPearl",
                 ItemList.Electric_Pump_LV.get(1L),
                 "screwEnderPearl",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
+                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 ItemList.Electric_Pump_LV.get(1L),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing));
+                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
                 "plateIron",
@@ -685,24 +685,24 @@ public class ScriptExtraUtilities implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "craftingToolSaw",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "chestWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "chestMini", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "craftingToolSaw",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "itemFlint",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 null);
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderCollector", 1, 0, missing),
@@ -943,13 +943,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'd',
                         getModItem(ExtraUtilities.ID, "chandelier", 1, 0, missing),
                         'e',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23306, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 1L),
                         'f',
                         getModItem(ExtraUtilities.ID, "chandelier", 1, 0, missing),
                         'g',
                         getModItem(ExtraUtilities.ID, "chandelier", 1, 0, missing),
                         'h',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 23306, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.StainlessSteel, 1L),
                         'i',
                         getModItem(ExtraUtilities.ID, "chandelier", 1, 0, missing)));
         EnderConstructorRecipesHandler.registerRecipe(
@@ -965,11 +965,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'c',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
                         'd',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17533, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                         'e',
                         getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 8, missing),
                         'f',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17533, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                         'g',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
                         'h',
@@ -985,15 +985,15 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'a',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12, missing),
                         'b',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17533, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                         'c',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12, missing),
                         'd',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17533, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                         'e',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11395, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bedrockium, 1L),
                         'f',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17533, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                         'g',
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12, missing),
                         'h',
@@ -1089,13 +1089,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2816, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(80).eut(64).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 2804, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(8).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
@@ -1113,7 +1113,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17811, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
@@ -1161,19 +1161,19 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 2804, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "chestMini", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(50).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1205,7 +1205,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 5, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 28500, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "chandelier", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
@@ -1268,7 +1268,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17305, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).noFluidOutputs().duration(100).eut(64)
@@ -1316,7 +1316,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .duration(300).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17303, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 2L),
                         getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 14, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(64).addTo(sAssemblerRecipes);
@@ -1342,7 +1342,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17032, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(30).addTo(sAssemblerRecipes);
@@ -1361,28 +1361,28 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(400).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(400).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(400)
                 .eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 19086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "golden_lasso", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1420,8 +1420,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         0,
                         "{TinkerArmor:{BaseDurability:1035,BaseDefense:2.0d,Built:1b,MaxDefense:8.0d,Damage:0,BonusDurability:0,Modifiers:3,DamageReduction:0.0d,TotalDurability:1035,ModDurability:0.0f,Broken:0b}}",
                         missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 28084, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27329, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iridium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
@@ -1433,7 +1433,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27329, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 1, missing),
@@ -1472,8 +1472,8 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         .add(Aspect.getAspect("lucrum"), 50),
                 getModItem(ExtraUtilities.ID, "angelRing", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29351, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 29351, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L), });
         new ResearchItem(
                 "EXURINGS",
                 "ARTIFICE",

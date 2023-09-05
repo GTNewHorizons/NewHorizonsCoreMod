@@ -4,7 +4,6 @@ import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -27,7 +26,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class ScriptBiomesOPlenty implements IScriptLoader {
@@ -95,7 +97,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2816, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
@@ -159,7 +161,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 2823, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 4L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "rocks", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(50).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing))
@@ -281,17 +283,17 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardSand", 1, 0, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.SandDust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1802, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1937, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1833, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.CassiteriteSand, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Phosphate, 1L))
                 .outputChances(10000, 5000, 1000, 500).noFluidInputs().noFluidOutputs().duration(200).eut(8)
                 .addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardDirt", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 1805, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1622, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1934, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 1823, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Quicklime, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gypsum, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Calcite, 1L))
                 .outputChances(10000, 7500, 2500, 2500).noFluidInputs().noFluidOutputs().duration(200).eut(8)
                 .addTo(sMaceratorRecipes);
 

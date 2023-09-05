@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
@@ -10,6 +9,10 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
+
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptBattleGear implements IScriptLoader {
 
@@ -124,7 +127,7 @@ public class ScriptBattleGear implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(MineAndBladeBattleGear2.ID, "dagger.wood", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "craftingToolFile",
                 null,
                 "stickWood",

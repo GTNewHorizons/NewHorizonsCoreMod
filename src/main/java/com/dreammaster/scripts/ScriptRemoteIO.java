@@ -22,6 +22,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptRemoteIO implements IScriptLoader {
 
@@ -53,7 +56,7 @@ public class ScriptRemoteIO implements IScriptLoader {
                 ItemList.Sensor_EV.get(1L),
                 ItemList.Automation_Regulator_IV.get(1L),
                 "circuitElite",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1541, missing),
+                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.BlackSteel, 1L),
                 "circuitElite",
                 ItemList.Automation_Regulator_IV.get(1L),
                 ItemList.Emitter_EV.get(1L),
@@ -163,7 +166,7 @@ public class ScriptRemoteIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.blank_plate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -242,7 +245,7 @@ public class ScriptRemoteIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 1546, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.BlackSteel, 2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 10, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -260,13 +263,13 @@ public class ScriptRemoteIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2001, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 21, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17321, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Enderium, 4L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

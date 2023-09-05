@@ -19,7 +19,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptGendustry implements IScriptLoader {
 
@@ -231,11 +234,11 @@ public class ScriptGendustry implements IScriptLoader {
                 "-aaaaaaa-",
                 "---------",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 21070, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.Europium, 1L),
                 'b',
                 getModItem(Gendustry.ID, "Replicator", 1, 0, missing),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 21327, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.Naquadria, 1L),
                 'd',
                 getModItem(Gendustry.ID, "Liquifier", 1, 0, missing),
                 'e',
@@ -265,29 +268,29 @@ public class ScriptGendustry implements IScriptLoader {
                 getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing));
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 28305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "Labware", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 576)).noFluidOutputs().duration(100).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 4, 17057, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2308, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RedAlloy, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 144)).noFluidOutputs().duration(20).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Gendustry.ID, "GeneSampleBlank", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).noFluidOutputs().duration(200)
                 .eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronTanks.ID, "diamondTank", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 18052, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Palladium, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "MutagenTank", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plutonium", 576)).noFluidOutputs().duration(300)
                 .eut(1920).addTo(sAssemblerRecipes);
@@ -345,19 +348,19 @@ public class ScriptGendustry implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17052, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing))
                 .itemOutputs(getModItem(Gendustry.ID, "EjectCover", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17052, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6, missing))
                 .itemOutputs(getModItem(Gendustry.ID, "ImportCover", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17052, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing))
                 .itemOutputs(getModItem(Gendustry.ID, "ErrorSensorCover", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(1920).addTo(sAssemblerRecipes);
