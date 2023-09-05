@@ -2,7 +2,6 @@ package com.dreammaster.witchery;
 
 import static com.dreammaster.witchery.WitcheryBrewRegistryAccessor.*;
 import static gregtech.api.enums.Mods.BloodArsenal;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.StevesCarts2;
@@ -228,7 +227,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack(Witchery.Items.CHALK_GOLDEN),
                 new ItemStack(Witchery.Items.CHALK_RITUAL),
                 Witchery.Items.GENERIC.itemMandrakeRoot.createStack(),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2086),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
                 Witchery.Items.GENERIC.itemDiamondVapour.createStack());
         addBrewRecipe(
                 2000,
@@ -242,7 +241,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     4000,
                     new ItemStack(Witchery.Items.CHALK_OTHERWHERE),
                     new ItemStack(Witchery.Items.CHALK_RITUAL),
-                    GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2533),
+                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                     GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
                     GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1L, 0));

@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes;
@@ -34,83 +33,67 @@ public class FluidSolidifierRecipes implements Runnable {
                 .fluidInputs(Materials.Sodium.getFluid(1000)).noFluidOutputs().duration(20 * TICKS).eut(4)
                 .addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32414))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_00.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblack"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32415))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_01.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyered"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32416))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_02.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyegreen"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32417))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_03.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyebrown"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32418))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_04.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeblue"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32419))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_05.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyepurple"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32420))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_06.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyecyan"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32421))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_07.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyelightgray"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32422))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_08.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyegray"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32423))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_09.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyepink"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32424))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_10.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyelime"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32425))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_11.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeyellow"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32426))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_12.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyelightblue"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32427))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_13.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyemagenta"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32428))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_14.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyeorange"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32429))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_15.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyewhite"), 72)).noFluidOutputs()
                 .duration(20 * TICKS).eut(16).addTo(sFluidSolidficationRecipes);
 

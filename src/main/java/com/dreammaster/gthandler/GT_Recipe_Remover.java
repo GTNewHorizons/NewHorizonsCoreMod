@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
 import static gregtech.api.enums.Mods.NaturesCompass;
@@ -26,7 +25,10 @@ import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class GT_Recipe_Remover implements Runnable {
 
@@ -721,8 +723,11 @@ public class GT_Recipe_Remover implements Runnable {
                 true);
 
         // --- Meteoric Iron Ingot
-        GT_ModHandler
-                .removeRecipeByOutputDelayed(getModItem(GregTech.ID, "gt.metaitem.01", 1L, 11340), true, false, true);
+        GT_ModHandler.removeRecipeByOutputDelayed(
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 1L),
+                true,
+                false,
+                true);
 
         // --- Solid Meteoric Iron
         GT_ModHandler.removeRecipeByOutputDelayed(

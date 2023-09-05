@@ -11,7 +11,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Gendustry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
@@ -316,22 +315,23 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator
                 .registerOre("foodFlour", GT_ModHandler.getModItem(PamsHarvestCraft.ID, "flourItem", 1L, 0));
         GT_OreDictUnificator
-                .registerOre("listAllmeatcooked", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2893));
+                .registerOre("listAllmeatcooked", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
         GT_OreDictUnificator
-                .registerOre("listAllporkcooked", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2893));
+                .registerOre("listAllporkcooked", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
+        GT_OreDictUnificator.registerOre(
+                "listAllchickencooked",
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
         GT_OreDictUnificator
-                .registerOre("listAllchickencooked", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2893));
+                .registerOre("listAllbeefcooked", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L));
         GT_OreDictUnificator
-                .registerOre("listAllbeefcooked", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2893));
+                .registerOre("listAllmeatraw", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L));
         GT_OreDictUnificator
-                .registerOre("listAllmeatraw", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2892));
+                .registerOre("listAllporkraw", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L));
         GT_OreDictUnificator
-                .registerOre("listAllporkraw", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2892));
+                .registerOre("listAllchickenraw", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L));
         GT_OreDictUnificator
-                .registerOre("listAllchickenraw", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2892));
-        GT_OreDictUnificator
-                .registerOre("listAllbeefraw", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2892));
-        GT_OreDictUnificator.registerOre("foodSalt", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2817));
+                .registerOre("listAllbeefraw", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L));
+        GT_OreDictUnificator.registerOre("foodSalt", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.Salt,
@@ -407,7 +407,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 Materials.Ichorium,
                 GT_ModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1L, 3));
 
-        GT_OreDictUnificator.registerOre("dyeLime", GT_ModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 2877));
+        GT_OreDictUnificator
+                .registerOre("dyeLime", GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L));
 
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.log,
