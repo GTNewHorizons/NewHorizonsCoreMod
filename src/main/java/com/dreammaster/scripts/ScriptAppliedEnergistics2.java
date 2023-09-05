@@ -551,7 +551,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 'b',
                 getModItem(Avaritia.ID, "Resource", 1, 5),
                 'c',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 129),
+                ItemList.Quantum_Chest_IV.get(1L),
                 'd',
                 components[3],
                 'e',
@@ -626,7 +626,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 "circuitMaster",
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 194, missing),
+                ItemList.Battery_Buffer_4by4_EV.get(1L),
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
@@ -656,7 +656,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
                 "plateTitanium",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 574, missing),
+                ItemList.Machine_EV_Autoclave.get(1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
                 "plateTitanium",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
@@ -678,7 +678,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "blockGlass",
                 "plateTitanium",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 214, missing),
+                ItemList.Machine_EV_Assembler.get(1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
                 "plateTitanium",
                 "blockGlass",
@@ -689,7 +689,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
                 "plateTitanium",
                 "cableGt01Copper",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 374, missing),
+                ItemList.Machine_EV_Electrolyzer.get(1L),
                 "cableGt01Copper",
                 "plateTitanium",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
@@ -744,7 +744,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
                 "plateTitanium",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 4, missing),
+                ItemList.Casing_EV.get(1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
                 "plateTitanium",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
@@ -755,7 +755,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCellWorkbench", 1, 0, missing),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "craftingToolWrench",
                 "screwTitanium",
                 getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
@@ -777,13 +777,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCondenser", 1, 0, missing),
                 "plateTitanium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
+                ItemList.Electric_Piston_EV.get(1L),
                 "plateTitanium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
+                ItemList.Electric_Piston_EV.get(1L),
+                ItemList.Hull_EV.get(1L),
+                ItemList.Electric_Piston_EV.get(1L),
                 "plateTitanium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
+                ItemList.Electric_Piston_EV.get(1L),
                 "plateTitanium");
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyAcceptor", 1, 0, missing),
@@ -802,7 +802,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwTitanium",
                 "plateTitanium",
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 264, missing),
+                ItemList.Machine_EV_E_Furnace.get(1L),
                 "craftingToolWrench",
                 "plateTitanium",
                 getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyAcceptor", 1, 0, missing),
@@ -1000,7 +1000,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateTitanium",
                 "craftingToolHardHammer",
                 "screwCertusQuartz",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "screwCertusQuartz",
                 "plateGlowstone",
                 "plateRedAlloy",
@@ -1043,12 +1043,12 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
                 "craftingToolSoftHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32635, missing),
+                ItemList.Conveyor_Module_LuV.get(1L),
                 getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32635, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32655, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing));
+                ItemList.Conveyor_Module_LuV.get(1L),
+                ItemList.Electric_Motor_LuV.get(1L),
+                ItemList.Robot_Arm_LuV.get(1L),
+                ItemList.Electric_Motor_LuV.get(1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480, missing),
                 "craftingToolScrewdriver",
@@ -1167,7 +1167,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 9255, missing));
+                ItemList.Automation_TypeFilter_IV.get(1L));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 42, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
@@ -1277,7 +1277,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
                 "screwCertusQuartz",
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320, missing),
@@ -1299,7 +1299,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
                 "screwCertusQuartz",
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460, missing),
@@ -1392,7 +1392,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolBiometricCard", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "plateTitanium",
                 "plateGold",
                 "plateRedAlloy",
@@ -1431,7 +1431,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
                 "screwCertusQuartz",
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
@@ -1757,7 +1757,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "gemFluix",
                 "plateTitanium",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 604, missing),
+                ItemList.Machine_EV_Press.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
                 "plateTitanium",
                 "gemFluix",
@@ -1860,25 +1860,25 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 200, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 160, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 200, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 160, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1896,13 +1896,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 100, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 80, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 80, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 100, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1917,7 +1917,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing))
+                        ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing)).noFluidInputs()
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1926,7 +1926,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing))
+                        ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 240, missing)).noFluidInputs()
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1935,7 +1935,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing))
+                        ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 260, missing)).noFluidInputs()
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         // ME Terminal
@@ -1962,10 +1962,10 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32635, missing),
+                        ItemList.Conveyor_Module_LuV.get(2L),
                         getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32606, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32655, missing))
+                        ItemList.Electric_Motor_LuV.get(2L),
+                        ItemList.Robot_Arm_LuV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500, missing)).noFluidInputs()
                 .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
         // ME Interface Terminal

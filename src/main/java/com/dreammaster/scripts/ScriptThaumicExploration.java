@@ -16,7 +16,11 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -1594,17 +1598,17 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 new ItemStack[] { getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "netherbrick", 1, 0, missing),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings5", 1, 3, missing),
+                        ItemList.Casing_Coil_TungstenSteel.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17028, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings5", 1, 3, missing),
+                        ItemList.Casing_Coil_TungstenSteel.get(1L),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "netherbrick", 1, 0, missing),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "brick", 1, 0, missing),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings5", 1, 3, missing),
+                        ItemList.Casing_Coil_TungstenSteel.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17028, missing),
-                        getModItem(GregTech.ID, "gt.blockcasings5", 1, 3, missing),
+                        ItemList.Casing_Coil_TungstenSteel.get(1L),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "brick", 1, 0, missing), });
         TCHelper.addResearchPage(
@@ -1665,11 +1669,11 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("ordo"), 16),
                 getModItem(ThaumicExploration.ID, "sojournerCapUncharged", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2500, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L), });
         TCHelper.addResearchPage(
                 "CAP_SOJOURNER",
                 new ResearchPage(
@@ -1759,7 +1763,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("iter"), 12).add(Aspect.getAspect("superbia"), 24)
                         .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("praecantatio"), 16),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                new ItemStack[] { ItemList.Electric_Piston_LV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 23330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 23330, missing),

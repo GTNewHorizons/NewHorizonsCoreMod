@@ -31,6 +31,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -77,9 +78,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing),
-                getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing));
+        addShapelessRecipe(ItemList.Color_00.get(2L), getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing));
 
         ChiselHelper.addGroup("netherstar");
         ChiselHelper.addVariationFromStack("netherstar", getModItem(ForbiddenMagic.ID, "StarBlock", 1, 0, missing));
@@ -89,8 +88,8 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(5).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_00.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
 
         BloodMagicHelper.removeAltarRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 3, missing));
         AltarRecipeRegistry.registerAltarRecipe(
@@ -653,14 +652,10 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
                 new ItemStack[] { getModItem(Witchery.ID, "ingredient", 1, 92, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing),
-                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 92, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing), ItemList.QuantumEye.get(1L),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing), ItemList.QuantumEye.get(1L),
+                        getModItem(Witchery.ID, "ingredient", 1, 92, missing), ItemList.QuantumEye.get(1L),
+                        getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing), ItemList.QuantumEye.get(1L),
                         getModItem(ForbiddenMagic.ID, "NetherShard", 1, 5, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing), });
         TCHelper.setResearchAspects(
@@ -995,10 +990,8 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32726, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), ItemList.QuantumEye.get(1L),
+                        ItemList.Gravistar.get(1L), ItemList.QuantumEye.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),

@@ -17,6 +17,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -46,19 +47,17 @@ public class ScriptNuclearControl implements IScriptLoader {
                 .itemOutputs(NC2_PANEL_MEMORY_CARD).noFluidInputs().noFluidOutputs().duration(10 * SECONDS).eut(16)
                 .addTo(sAssemblerRecipes);
 
-        addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                getModItem(Natura.ID, "Bluebells", 1, 0, missing));
+        addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(Natura.ID, "Bluebells", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 0, missing),
                 "glassReinforced",
                 "glassReinforced",
                 "glassReinforced",
                 "plateDenseLead",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "plateDenseLead",
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing),
+                ItemList.Cover_ActivityDetector.get(1L),
                 "circuitAdvanced");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 1, missing),
@@ -69,7 +68,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 2, missing),
                 getModItem(Minecraft.ID, "repeater", 1, 0, missing),
                 "cableGt01Gold",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1, missing),
+                ItemList.Hull_Bronze.get(1L),
                 "cableGt01Gold");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 2, missing),
@@ -84,20 +83,20 @@ public class ScriptNuclearControl implements IScriptLoader {
                 "cableGt01RedAlloy");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing),
+                ItemList.Sensor_LV.get(1L),
                 "glassReinforced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32680, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Emitter_LV.get(1L),
+                ItemList.Cover_Screen.get(1L),
+                ItemList.Casing_SolidSteel.get(1L),
+                ItemList.Cover_Screen.get(1L),
                 "circuitBasic",
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 0, missing),
                 "circuitBasic");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 getModItem(Minecraft.ID, "stained_glass_pane", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "circuitBasic",
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing),
                 "circuitBasic",
@@ -106,9 +105,9 @@ public class ScriptNuclearControl implements IScriptLoader {
                 "plateIron");
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 getModItem(Minecraft.ID, "stained_glass_pane", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
@@ -118,10 +117,10 @@ public class ScriptNuclearControl implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 6, missing),
                 "plateIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "plateIron",
                 "cableGt01Platinum",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
+                ItemList.Transformer_IV_EV.get(1L),
                 "cableGt01Platinum",
                 "plateIron",
                 "circuitAdvanced",
@@ -129,10 +128,10 @@ public class ScriptNuclearControl implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 7, missing),
                 "plateLead",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "plateLead",
                 "cableGt01Platinum",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
+                ItemList.Transformer_IV_EV.get(1L),
                 "cableGt01Platinum",
                 "plateLead",
                 "circuitAdvanced",
@@ -140,7 +139,7 @@ public class ScriptNuclearControl implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 8, missing),
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "plateSteel",
                 "cableGt01Platinum",
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
@@ -208,9 +207,9 @@ public class ScriptNuclearControl implements IScriptLoader {
                 getModItem(IC2NuclearControl.ID, "ItemToolThermometer", 1, 0, missing),
                 "plateGlass",
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                ItemList.Circuit_Good.get(1L),
+                ItemList.Cover_Screen.get(1L),
+                ItemList.Circuit_Good.get(1L),
                 null,
                 "plateGlass",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing));
@@ -228,10 +227,10 @@ public class ScriptNuclearControl implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IC2NuclearControl.ID, "networkLink", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                ItemList.Casing_SolidSteel.get(1L),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 0, missing),
                 "plateAluminium",
                 getModItem(Minecraft.ID, "comparator", 1, 0, missing),
@@ -256,19 +255,19 @@ public class ScriptNuclearControl implements IScriptLoader {
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32734, missing),
+                        ItemList.Cover_EnergyDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemEnergySensorKit", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing),
+                        ItemList.Cover_ActivityDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32732, missing),
+                        ItemList.Cover_FluidDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 1, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
@@ -291,15 +290,11 @@ public class ScriptNuclearControl implements IScriptLoader {
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTimeCard", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing),
-                        getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
+                .itemInputs(ItemList.Sensor_LV.get(1L), getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
+                .itemInputs(ItemList.Cover_Screen.get(1L), getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTextCard", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

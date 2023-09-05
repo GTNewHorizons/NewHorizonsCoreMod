@@ -179,7 +179,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 'a',
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 3, missing),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32676, missing),
+                ItemList.Field_Generator_ZPM.get(1L),
                 'c',
                 getModItem(BartWorks.ID, "BW_GlasBlocks", 1, 4, missing),
                 'd',
@@ -189,7 +189,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 'f',
                 getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 11, missing),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32607, missing),
+                ItemList.Electric_Motor_ZPM.get(1L),
                 'h',
                 getModItem(EnderIO.ID, "itemCoordSelector", 1, wildcard, missing),
                 'i',
@@ -209,9 +209,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "rotorIron",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "rotorIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "craftingIronFurnace",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+                ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockCombustionGenerator", 1, 0, missing),
                 "itemCasingSteel",
@@ -220,9 +220,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "rotorSteel",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "rotorSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
+                ItemList.Electric_Motor_MV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockZombieGenerator", 1, 0, missing),
                 "itemCasingSteel",
@@ -231,9 +231,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
+                ItemList.Electric_Motor_MV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockFrankenzombieGenerator", 1, 0, missing),
                 "itemCasingDarkSteel",
@@ -242,9 +242,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 2, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
+                ItemList.Electric_Motor_HV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockEnderGenerator", 1, 0, missing),
                 "itemCasingEndSteel",
@@ -253,16 +253,16 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 3, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
+                ItemList.Electric_Motor_EV.get(1L),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing));
+                ItemList.Electric_Motor_EV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSolarPanel", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                ItemList.Cover_SolarPanel.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
@@ -273,7 +273,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                ItemList.Cover_SolarPanel.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
@@ -325,14 +325,14 @@ public class ScriptEnderIO implements IScriptLoader {
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSagMill", 1, 0, missing),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "itemCasingSteel",
                 "circuitBasic",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+                ItemList.Electric_Motor_LV.get(1L),
+                ItemList.Component_Sawblade_Diamond.get(1L),
+                ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockAlloySmelter", 1, 0, missing),
                 "circuitBasic",
@@ -341,9 +341,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "craftingIronFurnace",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "craftingIronFurnace",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+                ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 1, "{type:\"SIMPLE\",storedEnergyRF:0}", missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
@@ -353,7 +353,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "plateRedstone",
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
+                ItemList.Battery_RE_MV_Cadmium.get(1L),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 1, "{type:\"SIMPLE\",storedEnergyRF:0}", missing),
@@ -364,7 +364,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "plateRedstone",
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
+                ItemList.Battery_RE_MV_Cadmium.get(1L),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 2, "{type:\"ACTIVATED\",storedEnergyRF:0}", missing),
@@ -375,7 +375,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32537, missing),
+                ItemList.Battery_RE_HV_Cadmium.get(1L),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 1, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 2, "{type:\"ACTIVATED\",storedEnergyRF:0}", missing),
@@ -386,7 +386,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32537, missing),
+                ItemList.Battery_RE_HV_Cadmium.get(1L),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 8, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
@@ -440,9 +440,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "circuitBasic",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "rotorSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+                ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing),
                 "itemCasingSteel",
@@ -528,9 +528,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "craftingIronFurnace",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+                ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPowerMonitor", 1, 0, missing),
                 "plateElectricalSteel",
@@ -544,9 +544,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockFarmStation", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                ItemList.Robot_Arm_HV.get(1L),
                 "plateDensePulsatingIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                ItemList.Robot_Arm_HV.get(1L),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
@@ -561,9 +561,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "circuitAdvanced",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
+                ItemList.Electric_Motor_HV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockWirelessCharger", 1, 0, missing),
                 "plateElectricalSteel",
@@ -572,9 +572,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "circuitAdvanced",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
+                ItemList.Electric_Motor_HV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTank", 1, 0, missing),
                 "itemCasingSteel",
@@ -584,7 +584,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 4461, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTank", 1, 1, missing),
@@ -595,18 +595,18 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 4460, missing),
                 getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
                 "plateDarkSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                ItemList.Electric_Pump_MV.get(1L),
                 "plateDarkSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockReservoir", 2, 0, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(Minecraft.ID, "cauldron", 1, 0, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockTransceiver", 1, 0, missing),
@@ -624,7 +624,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 "plateElectricalSteel",
                 "chestWood",
                 "plateElectricalSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "frameGtDarkSteel",
                 "circuitBasic");
         addShapedRecipe(
@@ -632,7 +632,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 "plateElectricalSteel",
                 getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing),
                 "plateElectricalSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32519, missing),
+                ItemList.Battery_RE_LV_Sodium.get(1L),
                 "frameGtDarkSteel",
                 "circuitBasic");
         addShapedRecipe(
@@ -842,7 +842,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing),
                 "plateElectricalSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32670, missing),
+                ItemList.Field_Generator_LV.get(1L),
                 "plateElectricalSteel");
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSliceAndSplice", 1, 0, missing),
@@ -852,9 +852,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "circuitGood",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "circuitGood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(Minecraft.ID, "iron_axe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
+                ItemList.Electric_Motor_MV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockSoulBinder", 1, 0, missing),
                 "plateSoularium",
@@ -863,9 +863,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 "circuitAdvanced",
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
+                ItemList.Electric_Motor_HV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPoweredSpawner", 1, 0, missing),
                 "plateDarkSteel",
@@ -885,9 +885,9 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "blockFusedQuartz", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
+                ItemList.Electric_Motor_MV.get(1L));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockAttractor", 1, 0, missing),
                 null,
@@ -1312,7 +1312,7 @@ public class ScriptEnderIO implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 9231, missing),
+                        ItemList.Automation_ChestBuffer_LV.get(1L),
                         getModItem(ExtraUtilities.ID, "enderCollector", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockVacuumChest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
@@ -1337,103 +1337,103 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17365, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17366, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 1, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17367, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 2, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17381, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 3, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17369, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 4, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17378, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 5, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17364, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 6, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17379, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 7, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17401, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 8, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17401, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 9, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17402, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17403, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 1, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17404, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17405, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17406, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17407, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 5, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17408, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1457,25 +1457,25 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelLadder", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(96).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 23364, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkIronBars", 4, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 23379, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EnderIO.ID, "blockSoulariumBars", 4, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 23401, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EnderIO.ID, "blockEndSteelBars", 4, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1509,9 +1509,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .itemOutputs(getModItem(EnderIO.ID, "itemFusedQuartzFrame", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemMaterial", 8, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                .itemInputs(getModItem(EnderIO.ID, "itemMaterial", 8, 1, missing), GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(EnderIO.ID, "itemConduitFacade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1708,9 +1706,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).noFluidOutputs().duration(100).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(Minecraft.ID, "iron_bars", 1, 0, missing))
+                .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "iron_bars", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1752,13 +1748,13 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing))
+                        ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).noFluidOutputs().duration(300).eut(64)
                 .addTo(sAssemblerRecipes);
@@ -1782,7 +1778,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
@@ -1791,7 +1787,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
@@ -1818,7 +1814,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 18305, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
@@ -1827,7 +1823,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 18305, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
@@ -1901,10 +1897,10 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17364, missing),
                         getModItem(EnderIO.ID, "blockDarkIronBars", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 17, missing))
+                        GT_Utility.getIntegratedCircuit(17))
                 .itemOutputs(getModItem(EnderIO.ID, "blockReinforcedObsidian", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32314, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Anvil.get(0L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelAnvil", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.darksteel", 4464)).noFluidOutputs().duration(900)
                 .eut(120).addTo(sFluidSolidficationRecipes);

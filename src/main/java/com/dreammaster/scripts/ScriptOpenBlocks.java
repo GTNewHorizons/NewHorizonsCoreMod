@@ -35,6 +35,7 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -151,7 +152,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateAnyIron",
                 "screwSteel",
                 "plateAnyIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "plateAnyIron");
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "elevator", 1, 0, missing),
@@ -327,9 +328,9 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 getModItem(ProjectBlue.ID, "miniatureLamp", 1, 14, missing),
                 "plateEnderEye",
                 getModItem(ProjectBlue.ID, "miniatureLamp", 1, 14, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "rotorAluminium",
                 "plateEnderEye",
                 "rotorAluminium");
@@ -372,33 +373,31 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemOutputs(getModItem(OpenBlocks.ID, "ladder", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(OpenBlocks.ID, "sky", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0, missing), GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "sky", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 581, missing),
+                        ItemList.Machine_LV_Mixer.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 581, missing),
+                        ItemList.Machine_LV_Mixer.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 18032, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 581, missing),
+                        ItemList.Machine_LV_Mixer.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 18304, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 581, missing),
+                        ItemList.Machine_LV_Mixer.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 4, 18307, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(30).addTo(sAssemblerRecipes);
@@ -447,7 +446,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32106, missing),
+                        ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(300).eut(30)
@@ -482,7 +481,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}", missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32702, missing))
+                        ItemList.Circuit_Good.get(2L))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 144)).noFluidOutputs().duration(1000)
                 .eut(30).addTo(sAssemblerRecipes);

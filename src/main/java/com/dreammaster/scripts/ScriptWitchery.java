@@ -27,6 +27,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -236,14 +238,14 @@ public class ScriptWitchery implements IScriptLoader {
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                        GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                        GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0, missing))
@@ -259,9 +261,7 @@ public class ScriptWitchery implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(50).eut(24)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "clay_ball", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32305, missing))
+                .itemInputs(getModItem(Minecraft.ID, "clay_ball", 4, 0, missing), ItemList.Shape_Mold_Bottle.get(0L))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 4, 26, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()

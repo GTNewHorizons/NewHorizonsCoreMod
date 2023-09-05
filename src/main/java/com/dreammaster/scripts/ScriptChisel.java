@@ -19,6 +19,8 @@ import java.util.List;
 import com.cricketcraft.chisel.api.carving.CarvingUtils;
 import com.dreammaster.chisel.ChiselHelper;
 
+import gregtech.api.enums.ItemList;
+
 public class ScriptChisel implements IScriptLoader {
 
     @Override
@@ -114,9 +116,9 @@ public class ScriptChisel implements IScriptLoader {
                 "screwSteel",
                 "ringWoodSealed",
                 "screwSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
+                ItemList.Cover_Crafting.get(1L),
+                ItemList.Robot_Arm_LV.get(1L),
                 "craftingToolScrewdriver",
                 getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing),
                 "craftingToolHardHammer");
@@ -129,7 +131,7 @@ public class ScriptChisel implements IScriptLoader {
                 "circuitBasic",
                 "plateEmerald",
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "wireGt01RedAlloy");
         addShapedRecipe(
                 getModItem(Chisel.ID, "upgrade", 1, 1, missing),
@@ -140,7 +142,7 @@ public class ScriptChisel implements IScriptLoader {
                 "circuitBasic",
                 "plateEmerald",
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 "wireGt01RedAlloy");
         addShapedRecipe(
                 getModItem(Chisel.ID, "upgrade", 1, 2, missing),
@@ -151,7 +153,7 @@ public class ScriptChisel implements IScriptLoader {
                 "circuitBasic",
                 "plateEmerald",
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
+                ItemList.Cover_Crafting.get(1L),
                 "wireGt01RedAlloy");
         addShapedRecipe(
                 getModItem(Chisel.ID, "upgrade", 1, 3, missing),
@@ -162,7 +164,7 @@ public class ScriptChisel implements IScriptLoader {
                 "circuitBasic",
                 "plateEmerald",
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "wireGt01RedAlloy");
         addShapedRecipe(
                 getModItem(Chisel.ID, "mossy_templeblock", 1, 0, missing),

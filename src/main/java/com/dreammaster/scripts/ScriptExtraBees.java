@@ -24,6 +24,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -225,7 +226,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'd',
                 getModItem(Forestry.ID, "chipsets", 1, 2, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 'f',
                 getModItem(Forestry.ID, "chipsets", 1, 2, missing),
                 'g',
@@ -249,11 +250,11 @@ public class ScriptExtraBees implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32631, missing),
+                ItemList.Conveyor_Module_MV.get(1L),
                 'e',
                 getModItem(Forestry.ID, "apiculture", 1, 0, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32631, missing),
+                ItemList.Conveyor_Module_MV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing),
                 'h',
@@ -277,7 +278,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 1587, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                ItemList.Hull_HV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 1587, missing),
                 'g',
@@ -342,43 +343,43 @@ public class ScriptExtraBees implements IScriptLoader {
                 20,
                 new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 8, missing), },
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing),
+                ItemList.Color_01.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
                 new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 9, missing), },
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing),
+                ItemList.Color_11.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
                 new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 10, missing), },
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
+                ItemList.Color_04.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
                 new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 11, missing), },
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
+                ItemList.Color_02.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
                 new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 13, missing), },
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
+                ItemList.Color_15.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
                 new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 12, missing), },
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
+                ItemList.Color_00.get(1L),
                 100);
         RecipeManagers.squeezerManager.addRecipe(
                 20,
                 new ItemStack[] { getModItem(ExtraBees.ID, "honeyDrop", 1, 14, missing), },
                 FluidRegistry.getFluidStack("for.honey", 200),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
+                ItemList.Color_03.get(1L),
                 100);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 1, missing))
@@ -397,32 +398,32 @@ public class ScriptExtraBees implements IScriptLoader {
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 526, missing)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 8, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing)).outputChances(1000)
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .itemOutputs(ItemList.Color_01.get(1L)).outputChances(1000).noFluidInputs()
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
                 .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 9, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing)).outputChances(1000)
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .itemOutputs(ItemList.Color_11.get(1L)).outputChances(1000).noFluidInputs()
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
                 .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 10, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing)).outputChances(1000)
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .itemOutputs(ItemList.Color_04.get(1L)).outputChances(1000).noFluidInputs()
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
                 .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 11, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing)).outputChances(1000)
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .itemOutputs(ItemList.Color_02.get(1L)).outputChances(1000).noFluidInputs()
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
                 .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 13, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing)).outputChances(1000)
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .itemOutputs(ItemList.Color_15.get(1L)).outputChances(1000).noFluidInputs()
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
                 .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 12, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing)).outputChances(1000)
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .itemOutputs(ItemList.Color_00.get(1L)).outputChances(1000).noFluidInputs()
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
                 .addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 14, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing)).outputChances(1000)
-                .noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
+                .itemOutputs(ItemList.Color_03.get(1L)).outputChances(1000).noFluidInputs()
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(32).eut(7)
                 .addTo(sFluidExtractionRecipes);
 
         new ResearchItem(

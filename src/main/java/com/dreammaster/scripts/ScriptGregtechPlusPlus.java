@@ -23,8 +23,10 @@ import net.minecraftforge.fluids.FluidStack;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.item.chemistry.GenericChem;
@@ -55,13 +57,13 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 875, missing),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 363, missing),
+                ItemList.Machine_HV_Centrifuge.get(1L),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
                 "gearGtTungstenSteel",
                 "circuitElite",
                 "gearGtTungstenSteel",
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 363, missing),
+                ItemList.Machine_HV_Centrifuge.get(1L),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.CoinBeesI", 16, 0, missing),
@@ -102,24 +104,24 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 798, missing),
                 "plateBlueSteel",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 5, missing),
+                ItemList.Casing_IV.get(1L),
                 "plateBlueSteel",
                 "circuitElite",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 355, missing),
+                ItemList.Machine_IV_Wiremill.get(1L),
                 "circuitElite",
                 "plateBlueSteel",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 5, missing),
+                ItemList.Casing_IV.get(1L),
                 "plateBlueSteel");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 753, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5134, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
+                ItemList.Machine_Steel_Boiler.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5134, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
@@ -134,14 +136,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "plateDoubleLead");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 754, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                ItemList.Electric_Pump_MV.get(1L),
                 "circuitGood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                ItemList.Electric_Pump_MV.get(1L),
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 2, missing),
+                ItemList.Casing_MV.get(1L),
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5144, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
+                ItemList.Machine_Steel_Boiler.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5144, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
@@ -156,14 +158,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "plateDoubleStainlessSteel");
         addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 755, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 3, missing),
+                ItemList.Casing_HV.get(1L),
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5154, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 101, missing),
+                ItemList.Machine_Steel_Boiler.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5154, missing));
         addShapedRecipe(
                 getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
@@ -185,7 +187,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "pipeMediumSteel",
                 "plateDarkSteel",
                 "circuitPrimitive",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                ItemList.Electric_Pump_MV.get(1L),
                 "circuitPrimitive");
 
         RecipeManagers.carpenterManager.addRecipe(
@@ -379,7 +381,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.nichrome", 1440)).noFluidOutputs().duration(2400)
                 .eut(7860).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GTPlusPlus.ID, "item.BasicMetaFood", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 2892, missing)).outputChances(10000)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(100).eut(4).addTo(sMaceratorRecipes);
 
         // Shirabon and Eternity

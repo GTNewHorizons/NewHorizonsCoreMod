@@ -24,11 +24,13 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptHardcoreEnderExpansion implements IScriptLoader {
 
@@ -183,7 +185,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(Minecraft.ID, "sand", 1, 0, missing),
                 getModItem(Minecraft.ID, "dye", 1, 15, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2530, missing));
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L));
         addShapedRecipe(
                 getModItem(HardcoreEnderExpansion.ID, "charm_pouch", 1, 0, missing),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
@@ -244,7 +246,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "food", 1, 1, missing),
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32113, missing),
+                ItemList.Bottle_Dark_Beer.get(1L),
                 getModItem(HardcoreEnderExpansion.ID, "living_matter", 1, 0, missing),
                 "dustSugar",
                 getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
@@ -463,7 +465,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "endoplasm", 4, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 16, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "essence", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "blank_gem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1440)).noFluidOutputs().duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
@@ -474,7 +476,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "endoplasm", 8, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 32, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "essence", 32, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "spatial_dash_gem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("endergoo", 2880)).noFluidOutputs().duration(1200).eut(1920)
                 .addTo(sAssemblerRecipes);
@@ -485,7 +487,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "endoplasm", 16, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 64, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "essence", 64, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "transference_gem", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("endergoo", 5760)).noFluidOutputs().duration(1800).eut(7068)
                 .addTo(sAssemblerRecipes);

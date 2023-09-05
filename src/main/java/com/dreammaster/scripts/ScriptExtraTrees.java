@@ -18,6 +18,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.forestry.ForestryHelper;
 
 import forestry.api.recipes.RecipeManagers;
+import gregtech.api.enums.ItemList;
 
 public class ScriptExtraTrees implements IScriptLoader {
 
@@ -56,12 +57,12 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(ExtraTrees.ID, "machine", 1, 0, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Component_Sawblade_Diamond.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(ExtraTrees.ID, "misc", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(ExtraTrees.ID, "misc", 1, 3, missing));
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "machine", 1, 1, missing),
@@ -90,11 +91,11 @@ public class ScriptExtraTrees implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "plateSteel",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "gearGtSmallBronze",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallBronze");
         addShapedRecipe(
                 getModItem(ExtraTrees.ID, "misc", 1, 3, missing),

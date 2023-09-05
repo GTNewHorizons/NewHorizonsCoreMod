@@ -18,7 +18,10 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -1607,13 +1610,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("telum"), 48).add(Aspect.getAspect("mortuus"), 24)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("motus"), 8),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 29501, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 29501, missing),

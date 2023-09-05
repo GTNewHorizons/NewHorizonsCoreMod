@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.ItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -100,7 +101,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 'a',
                 "ringGold",
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
                 'c',
                 "screwGold",
                 'd',
@@ -112,7 +113,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 'g',
                 "screwGold",
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
                 'i',
                 "ringGold");
         TCHelper.addResearchPage(

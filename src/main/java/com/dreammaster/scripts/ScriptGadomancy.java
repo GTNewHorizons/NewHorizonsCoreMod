@@ -17,6 +17,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -153,12 +154,10 @@ public class ScriptGadomancy implements IScriptLoader {
                         .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("auram"), 8),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 4, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0, missing), ItemList.QuantumEye.get(1L),
                         getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0, missing), ItemList.QuantumEye.get(1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "GADOMANCY.GOLEMCOREBODYGUARD",
@@ -346,7 +345,7 @@ public class ScriptGadomancy implements IScriptLoader {
                 'g',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 'i',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing));
         TCHelper.setResearchAspects(
@@ -541,7 +540,7 @@ public class ScriptGadomancy implements IScriptLoader {
                 'a',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                ItemList.Electric_Piston_HV.get(1L),
                 'c',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                 'd',

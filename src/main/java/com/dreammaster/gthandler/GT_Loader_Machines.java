@@ -1671,12 +1671,9 @@ public class GT_Loader_Machines {
                 CustomItemList.Hatch_Output_MAX.get(1) };
         ItemStack[][] flInputs = new ItemStack[5][3];
         ItemStack[][] flInputs2 = new ItemStack[5][3];
-        ItemStack[] tanks = { GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 132),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 133),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 134),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 120),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 121),
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 122), };
+        ItemStack[] tanks = { ItemList.Super_Tank_HV.get(1L), ItemList.Super_Tank_EV.get(1L),
+                ItemList.Super_Tank_IV.get(1L), ItemList.Quantum_Tank_LV.get(1L), ItemList.Quantum_Tank_MV.get(1L),
+                ItemList.Quantum_Tank_HV.get(1L), };
         ItemStack[] hulls = { CustomItemList.Hull_UEV.get(1), CustomItemList.Hull_UIV.get(1),
                 CustomItemList.Hull_UMV.get(1), CustomItemList.Hull_UXV.get(1), CustomItemList.Hull_MAXV.get(1), };
 

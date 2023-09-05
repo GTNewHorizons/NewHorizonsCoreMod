@@ -41,7 +41,11 @@ import com.dreammaster.oredict.OreDictHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptIndustrialCraft implements IScriptLoader {
 
@@ -76,10 +80,10 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 3, missing),
                 "cableGt01AnyCopper",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32501, missing),
+                ItemList.Battery_Hull_MV.get(1L),
                 "cableGt01AnyCopper",
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 2, missing),
+                ItemList.Casing_MV.get(1L),
                 "circuitBasic",
                 "itemCasingSteel",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
@@ -90,11 +94,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
                 "itemCasingSteel",
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
+                ItemList.Hull_MV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
                 "circuitBasic",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
+                ItemList.Electric_Motor_MV.get(1L));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
                 "plateAnyRubber",
@@ -112,7 +116,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateSteel",
                 "cableGt01Tin",
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                ItemList.Hull_LV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
                 "plateSteel",
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
@@ -123,7 +127,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateBronze",
                 "cableGt01AnyCopper",
                 getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
+                ItemList.Hull_MV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                 "plateBronze",
                 getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
@@ -134,7 +138,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "batteryElite",
                 "cableGt01Gold",
                 "batteryElite",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                ItemList.Hull_HV.get(1L),
                 "batteryElite",
                 "plateStainlessSteel",
                 "batteryElite",
@@ -145,7 +149,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "batteryMaster",
                 "cableGt01TungstenSteel",
                 "batteryMaster",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 14, missing),
+                ItemList.Hull_EV.get(1L),
                 "batteryMaster",
                 "circuitData",
                 "batteryMaster",
@@ -183,7 +187,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(NewHorizonsCoreMod.ID, "item.LaserEmitter", 1, 0, missing),
                 "plateTitanium",
                 "circuitMaster",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32527, missing),
+                ItemList.Battery_RE_MV_Cadmium.get(1L),
                 "circuitMaster",
                 "craftingToolFile",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing),
@@ -314,11 +318,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "circuitGood",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 11, missing),
+                ItemList.Casing_HeatProof.get(1L),
                 "circuitGood",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
@@ -354,7 +358,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                 "plateAluminium",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                 "plateAluminium",
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
@@ -545,7 +549,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(NewHorizonsCoreMod.ID, "item.ElectricBoatHull", 1, 0, missing),
                 "craftingToolScrewdriver",
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing),
@@ -614,7 +618,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "circuitBasic",
                 "screwIron",
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 "craftingToolHardHammer",
                 "screwIron",
                 "chestIron",
@@ -730,7 +734,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "itemCasingSteel",
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "circuitBasic");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing),
@@ -741,7 +745,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "itemCasingStainlessSteel",
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "circuitAdvanced");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockPersonal", 1, 1, missing),
@@ -749,7 +753,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateSteel",
                 "screwSteel",
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 "circuitBasic",
                 "craftingToolHardHammer",
                 "plateSteel",
@@ -760,7 +764,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
                 "screwSteel",
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 "circuitBasic",
                 "craftingToolHardHammer",
                 getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing),
@@ -771,10 +775,10 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "chestIron",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 "itemCasingSteel",
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "circuitBasic");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 6, missing),
@@ -782,7 +786,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "itemCasingAnyIron",
                 "itemCasingAnyIron",
                 "craftingChest",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 "craftingChest",
                 "itemCasingAnyIron",
                 "itemCasingAnyIron",
@@ -793,7 +797,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "circuitBasic",
                 "itemCasingAnyIron",
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
                 "itemCasingAnyIron",
                 "craftingChest",
@@ -804,7 +808,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "circuitBasic",
                 "itemCasingAnyIron",
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing),
                 "pipeLargeSteel",
                 Materials.Empty.getCells(1),
@@ -812,10 +816,10 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine3", 1, 3, missing),
                 "itemCasingAnyIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                ItemList.Cover_SolarPanel.get(1L),
                 "itemCasingAnyIron",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "itemCasingAnyIron",
                 "circuitBasic",
@@ -848,7 +852,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "itemCasingSteel",
                 "itemCasingSteel",
                 "pipeMediumSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32611, missing),
+                ItemList.Electric_Pump_MV.get(1L),
                 "pipeMediumSteel",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "circuitBasic",
@@ -856,7 +860,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 12, missing),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 "itemCasingSteel",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "chestSteel",
@@ -869,12 +873,12 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "circuitElite",
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing),
                 "circuitElite",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
+                ItemList.Electric_Motor_IV.get(1L),
                 getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32654, missing),
+                ItemList.Electric_Motor_IV.get(1L),
+                ItemList.Robot_Arm_IV.get(1L),
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32654, missing));
+                ItemList.Robot_Arm_IV.get(1L));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
@@ -892,11 +896,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "itemCasingSteel",
                 "plateRedAlloy",
                 "springSteelMagnetic",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 "springSteelMagnetic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+                ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockChargepad", 1, 3, missing),
                 "screwStainlessSteel",
@@ -947,7 +951,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
                 "itemCasingSteel",
                 "pipeMediumSteel",
-                getModItem(GregTech.ID, "gt.blockcasings3", 1, 14, missing),
+                ItemList.Casing_Firebox_Steel.get(1L),
                 "pipeMediumSteel",
                 "itemCasingSteel",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
@@ -958,16 +962,16 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
                 "itemCasingSteel",
                 "screwSteel",
-                getModItem(GregTech.ID, "gt.blockcasings3", 1, 14, missing),
+                ItemList.Casing_Firebox_Steel.get(1L),
                 "screwSteel",
                 "itemCasingSteel",
                 "craftingIronFurnace",
                 "itemCasingSteel");
         addShapelessRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+                ItemList.Electric_Motor_LV.get(1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 1, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 2, missing),
@@ -975,7 +979,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "rotorStainlessSteel",
                 "itemCasingStainlessSteel",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                ItemList.Hull_HV.get(1L),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 12, missing),
                 "cableGt04Gold",
                 "rotorStainlessSteel",
@@ -997,13 +1001,13 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "itemCasingSteel",
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 2006, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                ItemList.Hull_LV.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 2006, missing),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "itemCasingSteel");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 1L),
                 "craftingToolHardHammer",
                 null,
                 null,
@@ -1014,7 +1018,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 1L),
                 "craftingToolHardHammer",
                 null,
                 null,
@@ -1027,7 +1031,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolCrowbar",
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 3084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Iridium, 1L),
                 "plateIridium",
                 "ingotIridium",
                 "craftingToolHardHammer",
@@ -1038,7 +1042,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 4084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Iridium, 1L),
                 "plateIridium",
                 "ingotIridium",
                 "craftingToolHardHammer",
@@ -1046,7 +1050,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 12084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadSense, Materials.Iridium, 1L),
                 "plateIridium",
                 "plateIridium",
                 "ingotIridium",
@@ -1071,7 +1075,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "ingotIridium",
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 1084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Iridium, 1L),
                 "plateIridium",
                 "ingotIridium",
                 "ingotIridium",
@@ -1082,7 +1086,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 13084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadPlow, Materials.Iridium, 1L),
                 "plateIridium",
                 "plateIridium",
                 null,
@@ -1093,7 +1097,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolFile",
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 84, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Iridium, 1L),
                 null,
                 "plateIridium",
                 null,
@@ -1104,7 +1108,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 7084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iridium, 1L),
                 "plateIridium",
                 "plateIridium",
                 null,
@@ -1115,7 +1119,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 2084, missing),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Iridium, 1L),
                 "craftingToolFile",
                 "plateIridium",
                 "craftingToolHardHammer");
@@ -1136,7 +1140,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateAnyRubber",
                 "screwSteel");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                ItemList.Cover_SolarPanel.get(1L),
                 "craftingToolCrowbar",
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing),
                 "craftingToolScrewdriver",
@@ -1235,13 +1239,13 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 'c',
                 "itemCasingStainlessSteel",
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 'e',
                 "cableGt01Platinum",
                 'f',
                 "circuitData",
                 'g',
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 3, missing),
+                ItemList.Casing_Gearbox_Steel.get(1L),
                 'h',
                 "gearGtSmallTitanium");
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1264,17 +1268,17 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 'd',
                 "gearTitanium",
                 'e',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                ItemList.Hull_HV.get(1L),
                 'f',
                 "cableGt01Platinum",
                 'g',
                 "circuitData",
                 'h',
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 11, missing),
+                ItemList.Casing_Motor.get(1L),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32538, missing));
+                ItemList.Battery_RE_HV_Lithium.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0, missing),
                 "---------",
@@ -1291,11 +1295,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 'b',
                 "lensNetherStar",
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32672, missing),
+                ItemList.Field_Generator_HV.get(1L),
                 'd',
                 getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
+                ItemList.Electric_Motor_EV.get(1L),
                 'f',
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5, missing),
                 'g',
@@ -1324,9 +1328,9 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 'f',
                 "circuitData",
                 'g',
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 3, missing),
+                ItemList.Casing_Gearbox_Steel.get(1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
+                ItemList.Electric_Motor_HV.get(1L));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1364,31 +1368,20 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.MoldLeggings", 0, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(30).addTo(sAlloySmelterRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(600).eut(64)
                 .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
                 .eut(64).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(600).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 231, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 431, missing))
+                .itemInputs(ItemList.Machine_LV_Canner.get(1L), ItemList.Machine_LV_FluidCanner.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1407,25 +1400,25 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 21, missing),
+                        ItemList.Transformer_MV_LV.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 1246, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 22, missing),
+                        ItemList.Transformer_HV_MV.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 1367, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(250).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 23, missing),
+                        ItemList.Transformer_EV_HV.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 1428, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
+                        ItemList.Transformer_IV_EV.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 1529, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(1920).addTo(sAssemblerRecipes);
@@ -1433,7 +1426,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 23355, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 16, 1360, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1469,20 +1462,17 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 23305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).noFluidOutputs().duration(400).eut(30)
                 .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Cover_Screen.get(1L), ItemList.Circuit_Good.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).noFluidOutputs().duration(1200)
                 .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                        ItemList.Cover_Screen.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolMEter", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).noFluidOutputs().duration(600)
@@ -1531,14 +1521,14 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing))
+                        ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing))
+                        ItemList.Electric_Pump_LV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
@@ -1552,7 +1542,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing))
+                        ItemList.Conveyor_Module_LV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
@@ -1599,23 +1589,17 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).noFluidOutputs().duration(500).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing))
+                .itemInputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemSolarHelmet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing))
+                .itemInputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemSolarHelmet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing))
+                .itemInputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemSolarHelmet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(600)
                 .eut(30).addTo(sAssemblerRecipes);
@@ -1666,19 +1650,19 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing))
+                        ItemList.Electric_Pump_HV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorFluidPort", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing))
+                        ItemList.Conveyor_Module_HV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorAccessHatch", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing))
+                        ItemList.Cover_ActivityDetector.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorRedstonePort", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1704,7 +1688,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.02", 8, 22809, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockCrop", 16, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(150).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioChunk", 1, 0, missing))
@@ -1737,55 +1721,55 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5130, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1).eut(64).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5131, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(4).eut(64).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 4, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(8).eut(64).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5133, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(16).eut(64).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5134, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(32).eut(64).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5140, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(4).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5141, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(8).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5142, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 32, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(16).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 5143, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32358, missing))
+                        ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(32).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
@@ -1950,7 +1934,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemDust", 8, 2, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2802, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "iron_boots", 1, 0, missing))

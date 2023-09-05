@@ -20,6 +20,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 
 public class ScriptOpenModularTurrets implements IScriptLoader {
 
@@ -56,7 +57,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
         addShapedRecipe(
                 getModItem(OpenModularTurrets.ID, "baseTierOneBlock", 1, 0, missing),
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32501, missing),
+                ItemList.Battery_Hull_MV.get(1L),
                 "plateSteel",
                 getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing),
                 getModItem(OpenModularTurrets.ID, "sensorTierTwoItem", 1, 0, missing),
@@ -334,7 +335,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "screwIron",
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing),
+                ItemList.Battery_Hull_LV.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
                 "screwIron",
                 "craftingToolFile",
@@ -403,19 +404,19 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 4905, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing))
+                        ItemList.Battery_Hull_LV.get(1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierOne", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 4461, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32501, missing))
+                        ItemList.Battery_Hull_MV.get(1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierTwo", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 4460, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32502, missing))
+                        ItemList.Battery_Hull_HV.get(1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierThree", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -498,25 +499,25 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                        ItemList.Electric_Piston_LV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24305, missing))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierTwo", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                        ItemList.Electric_Piston_MV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24306, missing))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                        ItemList.Electric_Piston_HV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24316, missing))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierFour", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32643, missing),
+                        ItemList.Electric_Piston_EV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24084, missing))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierFive", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(256).addTo(sAssemblerRecipes);
@@ -606,7 +607,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17365, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing))
+                        ItemList.Electric_Piston_MV.get(1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "concealerAddon", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

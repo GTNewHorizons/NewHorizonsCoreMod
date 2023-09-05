@@ -35,7 +35,9 @@ import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_Utility;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.DryingRackRecipes;
 import tconstruct.library.crafting.Smeltery;
@@ -1778,8 +1780,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "diamond_boots", 1, 0, missing),
                 "circuitAdvanced",
                 getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing));
+                ItemList.Electric_Piston_HV.get(1L),
+                ItemList.Electric_Piston_HV.get(1L));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "materials", 1, 3, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 11033, missing));
@@ -2782,349 +2784,349 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 800,
                 FluidRegistry.getFluidStack("emerald.liquid", 640));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32300, missing),
+                ItemList.Shape_Empty.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32301, missing),
+                ItemList.Shape_Mold_Plate.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32302, missing),
+                ItemList.Shape_Mold_Casing.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32303, missing),
+                ItemList.Shape_Mold_Gear.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32304, missing),
+                ItemList.Shape_Mold_Credit.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32305, missing),
+                ItemList.Shape_Mold_Bottle.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32306, missing),
+                ItemList.Shape_Mold_Ingot.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32307, missing),
+                ItemList.Shape_Mold_Ball.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32308, missing),
+                ItemList.Shape_Mold_Block.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32309, missing),
+                ItemList.Shape_Mold_Nugget.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32310, missing),
+                ItemList.Shape_Mold_Bun.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32311, missing),
+                ItemList.Shape_Mold_Bread.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32312, missing),
+                ItemList.Shape_Mold_Baguette.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32313, missing),
+                ItemList.Shape_Mold_Cylinder.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32314, missing),
+                ItemList.Shape_Mold_Anvil.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32315, missing),
+                ItemList.Shape_Mold_Name.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32316, missing),
+                ItemList.Shape_Mold_Arrow.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32317, missing),
+                ItemList.Shape_Mold_Gear_Small.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32318, missing),
+                ItemList.Shape_Mold_Rod.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32319, missing),
+                ItemList.Shape_Mold_Bolt.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32320, missing),
+                ItemList.Shape_Mold_Round.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32321, missing),
+                ItemList.Shape_Mold_Screw.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32322, missing),
+                ItemList.Shape_Mold_Ring.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32323, missing),
+                ItemList.Shape_Mold_Rod_Long.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32324, missing),
+                ItemList.Shape_Mold_Rotor.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32325, missing),
+                ItemList.Shape_Mold_Turbine_Blade.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32326, missing),
+                ItemList.Shape_Mold_Pipe_Tiny.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32327, missing),
+                ItemList.Shape_Mold_Pipe_Small.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32328, missing),
+                ItemList.Shape_Mold_Pipe_Medium.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32329, missing),
+                ItemList.Shape_Mold_Pipe_Large.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32330, missing),
+                ItemList.Shape_Mold_Pipe_Huge.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32350, missing),
+                ItemList.Shape_Extruder_Plate.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32351, missing),
+                ItemList.Shape_Extruder_Rod.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32352, missing),
+                ItemList.Shape_Extruder_Bolt.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32353, missing),
+                ItemList.Shape_Extruder_Ring.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32354, missing),
+                ItemList.Shape_Extruder_Cell.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32355, missing),
+                ItemList.Shape_Extruder_Ingot.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32356, missing),
+                ItemList.Shape_Extruder_Wire.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32357, missing),
+                ItemList.Shape_Extruder_Casing.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32358, missing),
+                ItemList.Shape_Extruder_Pipe_Tiny.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32359, missing),
+                ItemList.Shape_Extruder_Pipe_Small.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32360, missing),
+                ItemList.Shape_Extruder_Pipe_Medium.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32361, missing),
+                ItemList.Shape_Extruder_Pipe_Large.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32362, missing),
+                ItemList.Shape_Extruder_Pipe_Huge.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32363, missing),
+                ItemList.Shape_Extruder_Block.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32364, missing),
+                ItemList.Shape_Extruder_Sword.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32365, missing),
+                ItemList.Shape_Extruder_Pickaxe.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32366, missing),
+                ItemList.Shape_Extruder_Shovel.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32367, missing),
+                ItemList.Shape_Extruder_Axe.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32368, missing),
+                ItemList.Shape_Extruder_Hoe.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32369, missing),
+                ItemList.Shape_Extruder_Hammer.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32370, missing),
+                ItemList.Shape_Extruder_File.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32371, missing),
+                ItemList.Shape_Extruder_Saw.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32372, missing),
+                ItemList.Shape_Extruder_Gear.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32373, missing),
+                ItemList.Shape_Extruder_Bottle.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32374, missing),
+                ItemList.Shape_Extruder_Rotor.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32375, missing),
+                ItemList.Shape_Extruder_Small_Gear.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32376, missing),
+                ItemList.Shape_Extruder_Turbine_Blade.get(1L),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
@@ -3294,7 +3296,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "glass_bottle", 1, 0, missing),
                 FluidRegistry.getFluidStack("glass.molten", 144),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32305, missing),
+                ItemList.Shape_Mold_Bottle.get(1L),
                 false,
                 200);
         TConstructRegistry.getTableCasting().addCastingRecipe(
@@ -3422,50 +3424,50 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+                        ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 1, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+                        ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 17, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 32, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                        ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(8).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 27, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                        ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 18, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(4).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 24, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                        ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 14, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(2).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                        ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                        ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 37, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ForgeMicroblocks.ID, "stoneRod", 7, 0, missing),
                         getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
+                        GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(60).eut(30).addTo(sAssemblerRecipes);
 

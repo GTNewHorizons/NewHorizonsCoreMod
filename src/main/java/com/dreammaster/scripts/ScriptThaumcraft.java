@@ -44,7 +44,11 @@ import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Item_98;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -1414,7 +1418,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 "blockQuartz",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 'f',
                 "blockQuartz",
                 'g',
@@ -1733,7 +1737,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "TALLOW",
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2877, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L),
                 new AspectList().add(Aspect.getAspect("praecantatio"), 2).add(Aspect.getAspect("corpus"), 4)
                         .add(Aspect.getAspect("mortuus"), 2));
         TCHelper.setResearchAspects(
@@ -2067,7 +2071,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'e',
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Piston_MV.get(1L),
                 'g',
                 "screwThaumium",
                 'h',
@@ -2261,7 +2265,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("vacuos"), 7).add(Aspect.getAspect("praecantatio"), 7)
                         .add(Aspect.getAspect("perditio"), 7).add(Aspect.getAspect("aqua"), 7),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17533, missing),
                         getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing), });
@@ -2436,31 +2440,32 @@ public class ScriptThaumcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24502, missing))
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24511, missing))
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24512, missing))
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24527, missing))
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24541, missing))
+                        GT_Utility
+                                .copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
@@ -3305,7 +3310,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'a',
                 "plateThaumium",
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing),
+                ItemList.Sensor_LV.get(1L),
                 'c',
                 "plateThaumium",
                 'd',
@@ -3361,7 +3366,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 'f',
                 getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                 'g',
@@ -3574,7 +3579,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("machina"), 64).add(Aspect.getAspect("motus"), 32)
                         .add(Aspect.getAspect("perditio"), 64).add(Aspect.getAspect("potentia"), 32)
                         .add(Aspect.getAspect("vacuos"), 32),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Piston_MV.get(1L),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 24500, missing),
@@ -4349,7 +4354,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("tutamen"), 20),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 100, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing), });
         TCHelper.addResearchPage(

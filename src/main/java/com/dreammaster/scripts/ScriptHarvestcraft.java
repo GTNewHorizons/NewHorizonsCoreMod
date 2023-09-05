@@ -24,6 +24,7 @@ import java.util.List;
 import net.minecraftforge.oredict.OreDictionary;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 import gregtech.api.util.GT_ModHandler;
 
@@ -630,7 +631,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 "cropSoybean");
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "bubblywaterItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32107, missing));
+                ItemList.Bottle_Mineral_Water.get(1L));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "freshmilkItem", 4, 0, missing),
                 getModItem(Minecraft.ID, "milk_bucket", 1, 0, missing));
@@ -753,7 +754,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "strawberryItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "strawberryjuiceItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32554, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Crop_Drop_Grapes.get(1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapejuiceItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "grapeItem", 1, 0, missing))
@@ -924,7 +925,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "tomatoItem", 1, 0, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "ketchupItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 32552, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Crop_Drop_Tomato.get(1L))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "ketchupItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "peanutItem", 1, 0, missing))
@@ -1009,7 +1010,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32551, missing),
+                        ItemList.Crop_Drop_Lemon.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "lemonsmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
@@ -1309,7 +1310,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32554, missing),
+                        ItemList.Crop_Drop_Grapes.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2702, missing))
                 .itemOutputs(getModItem(PamsHarvestCraft.ID, "grapesmoothieItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(2).addTo(sMixerRecipes);

@@ -32,6 +32,10 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -197,14 +201,14 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("luxuria"), 512).add(Aspect.getAspect("alienis"), 512)
                         .add(Aspect.getAspect("terminus"), 512).add(Aspect.getAspect("gula"), 512)
                         .add(Aspect.getAspect("superbia"), 512),
-                getModItem(GregTech.ID, "gt.blockreinforced", 1, 12, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32046, missing),
+                ItemList.Block_BedrockiumCompressed.get(1L),
+                new ItemStack[] { ItemList.Field_Generator_UMV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32046, missing),
+                        ItemList.Field_Generator_UMV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32046, missing),
+                        ItemList.Field_Generator_UMV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32046, missing),
+                        ItemList.Field_Generator_UMV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "PORTALDEEPDARK",
@@ -499,16 +503,16 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("terra"), 64),
                 getModItem(Minecraft.ID, "diamond_block", 1, 0, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 24506, missing), });
         TCHelper.addResearchPage(
                 "BEACON",
@@ -938,11 +942,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'c',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17506, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
+                ItemList.Sensor_IV.get(1L),
                 'e',
                 getModItem(IronChests.ID, "BlockIronChest", 1, 6, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32684, missing),
+                ItemList.Emitter_IV.get(1L),
                 'g',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17506, missing),
                 'h',
@@ -979,11 +983,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'c',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22801, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
+                ItemList.Sensor_IV.get(1L),
                 'e',
                 getModItem(IronTanks.ID, "obsidianTank", 1, 0, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32684, missing),
+                ItemList.Emitter_IV.get(1L),
                 'g',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 22801, missing),
                 'h',
@@ -1021,11 +1025,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'c',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
+                ItemList.Sensor_IV.get(1L),
                 'e',
                 getModItem(Backpack.ID, "backpack", 1, 200, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32684, missing),
+                ItemList.Emitter_IV.get(1L),
                 'g',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
                 'h',

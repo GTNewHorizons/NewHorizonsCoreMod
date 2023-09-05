@@ -29,6 +29,7 @@ import forestry.factory.recipes.CarpenterRecipe;
 import gregtech.GT_Mod;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.util.GT_Recipe;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptZZClientOnly implements IScriptLoader {
 
@@ -381,7 +382,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                                GT_Utility.getIntegratedCircuit(1))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierI", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 3000)).noFluidOutputs().duration(600).eut(120)
                         .disabled().hidden().addTo(sAssemblerRecipes));
@@ -389,7 +390,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                                GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierII", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 6000)).noFluidOutputs().duration(600).eut(480)
                         .disabled().hidden().addTo(sAssemblerRecipes));
@@ -397,7 +398,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                                GT_Utility.getIntegratedCircuit(3))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierIII", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 12000)).noFluidOutputs().duration(600)
                         .eut(1920).disabled().hidden().addTo(sAssemblerRecipes));
@@ -405,7 +406,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                                GT_Utility.getIntegratedCircuit(4))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierIV", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 24000)).noFluidOutputs().duration(600)
                         .eut(7680).disabled().hidden().addTo(sAssemblerRecipes));
@@ -413,7 +414,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 getModItem(NewHorizonsCoreMod.ID, "item.CoinBlank", 1, 0, missing),
-                                getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                                GT_Utility.getIntegratedCircuit(5))
                         .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.CoinChunkloaderTierV", 1, 0, missing))
                         .fluidInputs(FluidRegistry.getFluidStack("ender", 48000)).noFluidOutputs().duration(600)
                         .eut(30720).disabled().hidden().addTo(sAssemblerRecipes));

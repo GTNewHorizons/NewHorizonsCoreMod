@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.ItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -117,13 +118,12 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.getAspect("venenum"), 32),
                 getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing),
                 new ItemStack[] { getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32553, missing),
+                        ItemList.Crop_Drop_MTomato.get(1L),
                         getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 30694, missing),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
                         getModItem(Witchery.ID, "ingredient", 1, 36, missing),
-                        getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32553, missing),
+                        getModItem(ThaumicBases.ID, "resource", 1, 5, missing), ItemList.Crop_Drop_MTomato.get(1L),
                         getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 30694, missing),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),

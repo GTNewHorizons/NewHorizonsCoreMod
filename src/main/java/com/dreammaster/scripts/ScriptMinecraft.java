@@ -100,9 +100,8 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_ModHandler.addSmeltingRecipe(
                 CustomItemList.UnfiredClayBrick.get(1L),
                 getModItem(Minecraft.ID, "brick", 1, 0, missing));
-        GT_ModHandler.addSmeltingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32561, missing),
-                getModItem(Minecraft.ID, "bread", 1, 0, missing));
+        GT_ModHandler
+                .addSmeltingRecipe(ItemList.Food_Raw_Bread.get(1L), getModItem(Minecraft.ID, "bread", 1, 0, missing));
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
@@ -1499,267 +1498,227 @@ public class ScriptMinecraft implements IScriptLoader {
                 .fluidInputs(Materials.Water.getFluid(500)).noFluidOutputs().duration(15 * SECONDS).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing))
+                .itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L), ItemList.Plank_Oak.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing))
+                        ItemList.Plank_Spruce.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing))
+                        ItemList.Plank_Birch.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing))
+                        ItemList.Plank_Jungle.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing))
+                        ItemList.Plank_Acacia.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing))
+                        ItemList.Plank_DarkOak.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing))
+                        ItemList.Plank_Larch.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing))
+                        ItemList.Plank_Teak.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing))
+                        ItemList.Plank_Acacia_Green.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing))
+                        ItemList.Plank_Lime.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing))
+                        ItemList.Plank_Chestnut.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing))
+                        ItemList.Plank_Wenge.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing))
+                        ItemList.Plank_Baobab.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing))
+                        ItemList.Plank_Sequoia.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing))
+                        ItemList.Plank_Kapok.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing))
+                        ItemList.Plank_Ebony.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing))
+                        ItemList.Plank_Mahagony.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing))
+                        ItemList.Plank_Balsa.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing))
+                        ItemList.Plank_Willow.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing))
+                        ItemList.Plank_Walnut.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing))
+                        ItemList.Plank_Greenheart.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Oak.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Spruce.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Birch.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Jungle.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Acacia.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_DarkOak.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Larch.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Teak.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing))
+                        ItemList.Plank_Acacia_Green.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Lime.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing))
+                        ItemList.Plank_Chestnut.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Wenge.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Baobab.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Sequoia.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Kapok.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Ebony.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing))
+                        ItemList.Plank_Mahagony.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Balsa.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Willow.get(1L))
+                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
+                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Walnut.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing))
+                        ItemList.Plank_Greenheart.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32470, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                .itemInputs(ItemList.Plank_Oak.get(2L), getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32470, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                .itemInputs(ItemList.Plank_Oak.get(2L), getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2606,9 +2565,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwWood",
                 "craftingToolHardHammer",
                 "screwWood",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
                 "springAnyIron",
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
                 "screwWood",
                 "craftingToolScrewdriver",
                 "screwWood");
@@ -4434,13 +4393,13 @@ public class ScriptMinecraft implements IScriptLoader {
                 "dustSmallGunpowder",
                 "dustSmallGunpowder");
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32559, missing),
+                ItemList.Food_Dough.get(1L),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing));
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32559, missing),
+                ItemList.Food_Dough.get(1L),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2881, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L),
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "chest_minecart", 1, 0, missing),
@@ -4756,331 +4715,331 @@ public class ScriptMinecraft implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
+                ItemList.Plank_Oak.get(1L),
+                ItemList.Plank_Oak.get(1L),
+                ItemList.Plank_Oak.get(1L),
+                ItemList.Plank_Oak.get(1L),
+                ItemList.Plank_Oak.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32471, missing),
+                ItemList.Plank_Spruce.get(1L),
+                ItemList.Plank_Spruce.get(1L),
+                ItemList.Plank_Spruce.get(1L),
+                ItemList.Plank_Spruce.get(1L),
+                ItemList.Plank_Spruce.get(1L),
+                ItemList.Plank_Spruce.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32472, missing),
+                ItemList.Plank_Birch.get(1L),
+                ItemList.Plank_Birch.get(1L),
+                ItemList.Plank_Birch.get(1L),
+                ItemList.Plank_Birch.get(1L),
+                ItemList.Plank_Birch.get(1L),
+                ItemList.Plank_Birch.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32473, missing),
+                ItemList.Plank_Jungle.get(1L),
+                ItemList.Plank_Jungle.get(1L),
+                ItemList.Plank_Jungle.get(1L),
+                ItemList.Plank_Jungle.get(1L),
+                ItemList.Plank_Jungle.get(1L),
+                ItemList.Plank_Jungle.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32474, missing),
+                ItemList.Plank_Acacia.get(1L),
+                ItemList.Plank_Acacia.get(1L),
+                ItemList.Plank_Acacia.get(1L),
+                ItemList.Plank_Acacia.get(1L),
+                ItemList.Plank_Acacia.get(1L),
+                ItemList.Plank_Acacia.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32475, missing),
+                ItemList.Plank_DarkOak.get(1L),
+                ItemList.Plank_DarkOak.get(1L),
+                ItemList.Plank_DarkOak.get(1L),
+                ItemList.Plank_DarkOak.get(1L),
+                ItemList.Plank_DarkOak.get(1L),
+                ItemList.Plank_DarkOak.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32476, missing),
+                ItemList.Plank_Larch.get(1L),
+                ItemList.Plank_Larch.get(1L),
+                ItemList.Plank_Larch.get(1L),
+                ItemList.Plank_Larch.get(1L),
+                ItemList.Plank_Larch.get(1L),
+                ItemList.Plank_Larch.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32477, missing),
+                ItemList.Plank_Teak.get(1L),
+                ItemList.Plank_Teak.get(1L),
+                ItemList.Plank_Teak.get(1L),
+                ItemList.Plank_Teak.get(1L),
+                ItemList.Plank_Teak.get(1L),
+                ItemList.Plank_Teak.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32478, missing),
+                ItemList.Plank_Acacia_Green.get(1L),
+                ItemList.Plank_Acacia_Green.get(1L),
+                ItemList.Plank_Acacia_Green.get(1L),
+                ItemList.Plank_Acacia_Green.get(1L),
+                ItemList.Plank_Acacia_Green.get(1L),
+                ItemList.Plank_Acacia_Green.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32479, missing),
+                ItemList.Plank_Lime.get(1L),
+                ItemList.Plank_Lime.get(1L),
+                ItemList.Plank_Lime.get(1L),
+                ItemList.Plank_Lime.get(1L),
+                ItemList.Plank_Lime.get(1L),
+                ItemList.Plank_Lime.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32480, missing),
+                ItemList.Plank_Chestnut.get(1L),
+                ItemList.Plank_Chestnut.get(1L),
+                ItemList.Plank_Chestnut.get(1L),
+                ItemList.Plank_Chestnut.get(1L),
+                ItemList.Plank_Chestnut.get(1L),
+                ItemList.Plank_Chestnut.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32481, missing),
+                ItemList.Plank_Wenge.get(1L),
+                ItemList.Plank_Wenge.get(1L),
+                ItemList.Plank_Wenge.get(1L),
+                ItemList.Plank_Wenge.get(1L),
+                ItemList.Plank_Wenge.get(1L),
+                ItemList.Plank_Wenge.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32482, missing),
+                ItemList.Plank_Baobab.get(1L),
+                ItemList.Plank_Baobab.get(1L),
+                ItemList.Plank_Baobab.get(1L),
+                ItemList.Plank_Baobab.get(1L),
+                ItemList.Plank_Baobab.get(1L),
+                ItemList.Plank_Baobab.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32483, missing),
+                ItemList.Plank_Sequoia.get(1L),
+                ItemList.Plank_Sequoia.get(1L),
+                ItemList.Plank_Sequoia.get(1L),
+                ItemList.Plank_Sequoia.get(1L),
+                ItemList.Plank_Sequoia.get(1L),
+                ItemList.Plank_Sequoia.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32484, missing),
+                ItemList.Plank_Kapok.get(1L),
+                ItemList.Plank_Kapok.get(1L),
+                ItemList.Plank_Kapok.get(1L),
+                ItemList.Plank_Kapok.get(1L),
+                ItemList.Plank_Kapok.get(1L),
+                ItemList.Plank_Kapok.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32485, missing),
+                ItemList.Plank_Ebony.get(1L),
+                ItemList.Plank_Ebony.get(1L),
+                ItemList.Plank_Ebony.get(1L),
+                ItemList.Plank_Ebony.get(1L),
+                ItemList.Plank_Ebony.get(1L),
+                ItemList.Plank_Ebony.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32486, missing),
+                ItemList.Plank_Mahagony.get(1L),
+                ItemList.Plank_Mahagony.get(1L),
+                ItemList.Plank_Mahagony.get(1L),
+                ItemList.Plank_Mahagony.get(1L),
+                ItemList.Plank_Mahagony.get(1L),
+                ItemList.Plank_Mahagony.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32487, missing),
+                ItemList.Plank_Balsa.get(1L),
+                ItemList.Plank_Balsa.get(1L),
+                ItemList.Plank_Balsa.get(1L),
+                ItemList.Plank_Balsa.get(1L),
+                ItemList.Plank_Balsa.get(1L),
+                ItemList.Plank_Balsa.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32488, missing),
+                ItemList.Plank_Willow.get(1L),
+                ItemList.Plank_Willow.get(1L),
+                ItemList.Plank_Willow.get(1L),
+                ItemList.Plank_Willow.get(1L),
+                ItemList.Plank_Willow.get(1L),
+                ItemList.Plank_Willow.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32489, missing),
+                ItemList.Plank_Walnut.get(1L),
+                ItemList.Plank_Walnut.get(1L),
+                ItemList.Plank_Walnut.get(1L),
+                ItemList.Plank_Walnut.get(1L),
+                ItemList.Plank_Walnut.get(1L),
+                ItemList.Plank_Walnut.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32490, missing),
+                ItemList.Plank_Greenheart.get(1L),
+                ItemList.Plank_Greenheart.get(1L),
+                ItemList.Plank_Greenheart.get(1L),
+                ItemList.Plank_Greenheart.get(1L),
+                ItemList.Plank_Greenheart.get(1L),
+                ItemList.Plank_Greenheart.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32491, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32491, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32491, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32491, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32491, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32491, missing),
+                ItemList.Plank_Cherry.get(1L),
+                ItemList.Plank_Cherry.get(1L),
+                ItemList.Plank_Cherry.get(1L),
+                ItemList.Plank_Cherry.get(1L),
+                ItemList.Plank_Cherry.get(1L),
+                ItemList.Plank_Cherry.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32492, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32492, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32492, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32492, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32492, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32492, missing),
+                ItemList.Plank_Mahoe.get(1L),
+                ItemList.Plank_Mahoe.get(1L),
+                ItemList.Plank_Mahoe.get(1L),
+                ItemList.Plank_Mahoe.get(1L),
+                ItemList.Plank_Mahoe.get(1L),
+                ItemList.Plank_Mahoe.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32493, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32493, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32493, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32493, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32493, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32493, missing),
+                ItemList.Plank_Poplar.get(1L),
+                ItemList.Plank_Poplar.get(1L),
+                ItemList.Plank_Poplar.get(1L),
+                ItemList.Plank_Poplar.get(1L),
+                ItemList.Plank_Poplar.get(1L),
+                ItemList.Plank_Poplar.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32494, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32494, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32494, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32494, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32494, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32494, missing),
+                ItemList.Plank_Palm.get(1L),
+                ItemList.Plank_Palm.get(1L),
+                ItemList.Plank_Palm.get(1L),
+                ItemList.Plank_Palm.get(1L),
+                ItemList.Plank_Palm.get(1L),
+                ItemList.Plank_Palm.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32495, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32495, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32495, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32495, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32495, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32495, missing),
+                ItemList.Plank_Papaya.get(1L),
+                ItemList.Plank_Papaya.get(1L),
+                ItemList.Plank_Papaya.get(1L),
+                ItemList.Plank_Papaya.get(1L),
+                ItemList.Plank_Papaya.get(1L),
+                ItemList.Plank_Papaya.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32496, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32496, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32496, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32496, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32496, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32496, missing),
+                ItemList.Plank_Pine.get(1L),
+                ItemList.Plank_Pine.get(1L),
+                ItemList.Plank_Pine.get(1L),
+                ItemList.Plank_Pine.get(1L),
+                ItemList.Plank_Pine.get(1L),
+                ItemList.Plank_Pine.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32497, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32497, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32497, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32497, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32497, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32497, missing),
+                ItemList.Plank_Plum.get(1L),
+                ItemList.Plank_Plum.get(1L),
+                ItemList.Plank_Plum.get(1L),
+                ItemList.Plank_Plum.get(1L),
+                ItemList.Plank_Plum.get(1L),
+                ItemList.Plank_Plum.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32498, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32498, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32498, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32498, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32498, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32498, missing),
+                ItemList.Plank_Maple.get(1L),
+                ItemList.Plank_Maple.get(1L),
+                ItemList.Plank_Maple.get(1L),
+                ItemList.Plank_Maple.get(1L),
+                ItemList.Plank_Maple.get(1L),
+                ItemList.Plank_Maple.get(1L),
                 null,
                 "stickWood",
                 null);
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sign", 3, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32499, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32499, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32499, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32499, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32499, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32499, missing),
+                ItemList.Plank_Citrus.get(1L),
+                ItemList.Plank_Citrus.get(1L),
+                ItemList.Plank_Citrus.get(1L),
+                ItemList.Plank_Citrus.get(1L),
+                ItemList.Plank_Citrus.get(1L),
+                ItemList.Plank_Citrus.get(1L),
                 null,
                 "stickWood",
                 null);

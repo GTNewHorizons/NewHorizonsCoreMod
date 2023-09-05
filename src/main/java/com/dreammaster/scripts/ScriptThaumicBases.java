@@ -26,6 +26,7 @@ import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -639,11 +640,9 @@ public class ScriptThaumicBases implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("vitreus"), 32)
                         .add(Aspect.getAspect("iter"), 16).add(Aspect.getAspect("sensus"), 16),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 24545, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32680, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), ItemList.Emitter_LV.get(1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing),
+                        getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), ItemList.Sensor_LV.get(1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.Foci.Drain",
@@ -739,17 +738,13 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 24),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
                 new ItemStack[] { getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32683, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17362, missing),
+                        ItemList.Emitter_EV.get(1L), getModItem(GregTech.ID, "gt.metaitem.01", 1, 17362, missing),
                         getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
-                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing), ItemList.Sensor_EV.get(1L),
+                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing), ItemList.Sensor_EV.get(1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
                         getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17362, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32683, missing), });
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17362, missing), ItemList.Emitter_EV.get(1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.NodeLinker",
                 getModItem(ThaumicBases.ID, "nodeLinker", 1, 0, missing),
@@ -759,14 +754,14 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("electrum"), 32),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32681, missing),
+                        ItemList.Emitter_MV.get(1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedGlassLense", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32681, missing), });
+                        ItemList.Emitter_MV.get(1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.Overchanter",
                 getModItem(ThaumicBases.ID, "overchanter", 1, 0, missing),

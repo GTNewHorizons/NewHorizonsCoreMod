@@ -79,7 +79,7 @@ public class ScriptEMT implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 2880, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+                        ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
@@ -96,15 +96,15 @@ public class ScriptEMT implements IScriptLoader {
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 6912)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).noFluidOutputs().duration(100).eut(16)
                 .addTo(sFluidSolidficationRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 288)).noFluidOutputs().duration(100).eut(16)
                 .addTo(sFluidSolidficationRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).noFluidOutputs().duration(100).eut(30)
                 .addTo(sFluidSolidficationRecipes);
@@ -114,7 +114,7 @@ public class ScriptEMT implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 2880, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+                        ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 1, 21, missing))
@@ -260,7 +260,7 @@ public class ScriptEMT implements IScriptLoader {
                 'g',
                 "craftingToolHardHammer",
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32528, missing),
+                ItemList.Battery_RE_MV_Lithium.get(1L),
                 'i',
                 "craftingToolWrench");
         TCHelper.addResearchPage(
@@ -652,7 +652,7 @@ public class ScriptEMT implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32518, missing),
+                ItemList.Battery_RE_LV_Lithium.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -732,14 +732,12 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 16),
                 getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, wildcard, missing),
                 new ItemStack[] { getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing), ItemList.Circuit_Elite.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), ItemList.Circuit_Elite.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing), });
         TCHelper.addResearchPage(
                 "ThaumiumOmnitool",
@@ -772,11 +770,11 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0, missing),
                 new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemStaticBoots", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                        ItemList.Electric_Motor_MV.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1361, missing),
                         getModItem(IndustrialCraft2.ID, "itemAdvBat", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1361, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                        ItemList.Electric_Motor_MV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17500, missing), });
         TCHelper.addResearchPage(
                 "ElectricBootsoftheTraveller",
@@ -807,11 +805,11 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ElectricBootsTraveller", 1, wildcard, missing),
                 new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorNanoBoots", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                        ItemList.Electric_Motor_HV.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1442, missing),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1442, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                        ItemList.Electric_Motor_HV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), });
         TCHelper.addResearchPage(
                 "NanoBootsoftheTraveller",
@@ -846,13 +844,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "NanoBootsTraveller", 1, wildcard, missing),
                 new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorQuantumBoots", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
+                        ItemList.Electric_Motor_EV.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1563, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1563, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
+                        ItemList.Electric_Motor_EV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), });
         TCHelper.addResearchPage(
                 "QuantumBootsoftheTraveller",
@@ -889,12 +887,10 @@ public class ScriptEMT implements IScriptLoader {
                         "{ench:[0:{lvl:2s,id:35s}],GT.ToolStats:{PrimaryMaterial:\"Thaumium\",SpecialData:-1L,MaxDamage:51200L,Tier:2L,MaxCharge:400000L,Voltage:128L,Electric:1b,SecondaryMaterial:\"Aluminium\"},GT.ItemCharge:400000L}",
                         missing),
                 new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), ItemList.Circuit_Elite.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), ItemList.Circuit_Elite.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing), });
         TCHelper.addResearchPage(
                 "ThaumiumDrill",
@@ -927,13 +923,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ThaumiumDrill", 1, wildcard, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
+                        ItemList.Circuit_Master.get(1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
+                        ItemList.Circuit_Master.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "DrilloftheRockbreaker",
@@ -964,12 +960,10 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 8),
                 getModItem(ElectroMagicTools.ID, "DiamondChainsaw", 1, wildcard, missing),
                 new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), ItemList.Circuit_Elite.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27028, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing), ItemList.Circuit_Elite.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17316, missing), });
         TCHelper.addResearchPage(
                 "ThaumiumChainsaw",
@@ -1001,13 +995,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "ThaumiumChainsaw", 1, wildcard, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
+                        ItemList.Circuit_Master.get(1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(Railcraft.ID, "tool.steel.shears", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
+                        ItemList.Circuit_Master.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "ChainsawoftheStream",
@@ -1163,9 +1157,9 @@ public class ScriptEMT implements IScriptLoader {
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1442, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        ItemList.Sensor_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                        ItemList.Sensor_HV.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1442, missing), });
@@ -1200,15 +1194,11 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "NanosuitGogglesRevealing", 1, wildcard, missing),
                 new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1563, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing), ItemList.Circuit_Elite.get(1L),
+                        ItemList.Sensor_EV.get(1L), getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32693, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32705, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing), ItemList.Sensor_EV.get(1L),
+                        ItemList.Circuit_Elite.get(1L), getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1563, missing), });
         TCHelper.addResearchPage(
                 "QuantumGogglesofRevealing",
@@ -1244,13 +1234,11 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(ElectroMagicTools.ID, "QuantumGogglesRevealing", 1, wildcard, missing),
                 new ItemStack[] { getModItem(ElectroMagicTools.ID, "EMTSolars", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1624, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17324, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17324, missing), ItemList.Sensor_IV.get(1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.MysteriousCrystal", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MysteriousCrystal", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32694, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17324, missing),
+                        ItemList.Sensor_IV.get(1L), getModItem(GregTech.ID, "gt.metaitem.01", 1, 17324, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1624, missing), });
         TCHelper.addResearchPage(
                 "SolarHelmetofRevealing",
@@ -2057,13 +2045,13 @@ public class ScriptEMT implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemHoeElemental", 1, 0, missing),
                 new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
+                        ItemList.Circuit_Master.get(1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17970, missing),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32706, missing),
+                        ItemList.Circuit_Master.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "ElectricHoeofGrowth",
@@ -2551,15 +2539,15 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("vitreus"), 16).add(Aspect.getAspect("praecantatio"), 8),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
-                        getModItem(GregTech.ID, "gt.blockreinforced", 1, 3, missing),
+                        ItemList.Block_TungstenSteelReinforced.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17383, missing),
-                        getModItem(GregTech.ID, "gt.blockreinforced", 1, 3, missing),
+                        ItemList.Block_TungstenSteelReinforced.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
-                        getModItem(GregTech.ID, "gt.blockreinforced", 1, 3, missing),
+                        ItemList.Block_TungstenSteelReinforced.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17383, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockreinforced", 1, 3, missing), });
+                        ItemList.Block_TungstenSteelReinforced.get(1L), });
         TCHelper.addResearchPage(
                 "ShieldFocus",
                 new ResearchPage(
@@ -2595,7 +2583,7 @@ public class ScriptEMT implements IScriptLoader {
                 'd',
                 "plateReinforcedGlass",
                 'e',
-                getModItem(GregTech.ID, "gt.blockreinforced", 1, 1, missing),
+                ItemList.Block_IridiumTungstensteel.get(1L),
                 'f',
                 "plateReinforcedGlass",
                 'g',
@@ -2758,15 +2746,15 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("machina"), 32).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("cognitio"), 8),
                 getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 22, missing),
+                new ItemStack[] { ItemList.Transformer_HV_MV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 21330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                        ItemList.Electric_Motor_MV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20330, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1460, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                        ItemList.Electric_Motor_MV.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 21330, missing), });
         TCHelper.addResearchPage(
                 "WandFocusCharging",
@@ -2839,18 +2827,14 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("machina"), 16).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("metallum"), 32),
                 getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 7, missing),
-                new ItemStack[] { getModItem(Thaumcraft.ID, "FocusTrade", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32681, missing),
-                        getModItem(Minecraft.ID, "hopper", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "FocusTrade", 1, 0, missing), ItemList.Emitter_MV.get(1L),
+                        getModItem(Minecraft.ID, "hopper", 1, 0, missing), ItemList.Electric_Motor_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 22, missing),
-                        getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
+                        ItemList.Transformer_HV_MV.get(1L), getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                        getModItem(Minecraft.ID, "hopper", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32681, missing), });
+                        ItemList.Electric_Motor_MV.get(1L), getModItem(Minecraft.ID, "hopper", 1, 0, missing),
+                        ItemList.Emitter_MV.get(1L), });
         TCHelper.addResearchPage(
                 "PotentiaGenerator",
                 new ResearchPage(
@@ -3018,7 +3002,7 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("fabrico"), 48).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("cognitio"), 16),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 485, missing),
+                new ItemStack[] { ItemList.Machine_IV_Replicator.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
@@ -3050,8 +3034,8 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("machina"), 16).add(Aspect.getAspect("fabrico"), 16)
                         .add(Aspect.getAspect("potentia"), 24).add(Aspect.getAspect("praecantatio"), 28)
                         .add(Aspect.getAspect("cognitio"), 8),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 302, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.blockmachines", 1, 262, missing),
+                ItemList.Machine_MV_Macerator.get(1L),
+                new ItemStack[] { ItemList.Machine_MV_E_Furnace.get(1L),
                         getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 9, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17330, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 0, missing),
@@ -3077,7 +3061,7 @@ public class ScriptEMT implements IScriptLoader {
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ResearchCompleter",
-                getModItem(GregTech.ID, "gt.blockcasings8", 1, 8, missing),
+                ItemList.Casing_Magical.get(1L),
                 new AspectList().add(Aspect.getAspect("ignis"), 8).add(Aspect.getAspect("aer"), 8)
                         .add(Aspect.getAspect("ordo"), 8),
                 "abc",
@@ -3103,8 +3087,7 @@ public class ScriptEMT implements IScriptLoader {
                 "plateThaumium");
         TCHelper.addResearchPage(
                 "ResearchCompleter",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(GregTech.ID, "gt.blockcasings8", 1, 8, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Casing_Magical.get(1L))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ResearchCompleter",
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 13001, missing),
@@ -3123,7 +3106,7 @@ public class ScriptEMT implements IScriptLoader {
                 'd',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.blockcasings8", 1, 8, missing),
+                ItemList.Casing_Magical.get(1L),
                 'f',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'g',

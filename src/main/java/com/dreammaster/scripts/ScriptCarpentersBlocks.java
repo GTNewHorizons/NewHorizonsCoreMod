@@ -15,6 +15,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 
 public class ScriptCarpentersBlocks implements IScriptLoader {
@@ -102,9 +103,9 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
                 "craftingToolScrewdriver",
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
+                ItemList.Plank_Oak.get(1L),
+                ItemList.Plank_Oak.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27809, missing));
@@ -309,7 +310,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing))
+                        ItemList.Plank_Oak.get(1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersCollapsibleBlock", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.ItemList;
 
 public class ScriptComputronics implements IScriptLoader {
 
@@ -50,7 +51,7 @@ public class ScriptComputronics implements IScriptLoader {
                 'f',
                 getModItem(OpenComputers.ID, "item", 1, 103),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32163),
+                ItemList.Circuit_Chip_PPIC.get(1L),
                 'h',
                 "ingotInfinity",
                 'i',

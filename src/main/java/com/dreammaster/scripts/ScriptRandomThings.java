@@ -25,6 +25,8 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptRandomThings implements IScriptLoader {
 
@@ -78,7 +80,7 @@ public class ScriptRandomThings implements IScriptLoader {
         addShapedRecipe(
                 getModItem(RandomThings.ID, "onlineDetector", 1, 0, missing),
                 getModItem(Chisel.ID, "iron_bars", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
+                ItemList.Sensor_MV.get(1L),
                 getModItem(Chisel.ID, "iron_bars", 1, 2, missing),
                 getModItem(Chisel.ID, "iron_bars", 1, 2, missing),
                 getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 30, missing),
@@ -89,7 +91,7 @@ public class ScriptRandomThings implements IScriptLoader {
         addShapedRecipe(
                 getModItem(RandomThings.ID, "onlineDetector", 1, 0, missing),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
+                ItemList.Sensor_MV.get(1L),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                 getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                 getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 30, missing),
@@ -135,7 +137,7 @@ public class ScriptRandomThings implements IScriptLoader {
                 null,
                 "gemDiamond",
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 "stickObsidian",
                 "blockHopper",
                 null,
@@ -150,7 +152,7 @@ public class ScriptRandomThings implements IScriptLoader {
                 getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                ItemList.Hull_LV.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
@@ -179,39 +181,31 @@ public class ScriptRandomThings implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(RandomThings.ID, "fluidDisplay", 8, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 72)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(RandomThings.ID, "fluidDisplay", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(RandomThings.ID, "advancedFluidDisplay", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(Minecraft.ID, "stone", 1, 0, missing))
+                .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "stone", 1, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing))
+                .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 1, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(Minecraft.ID, "porkchop", 1, 0, missing))
+                .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "porkchop", 1, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 2, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
-                        getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
+                .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "filter", 1, 3, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -224,14 +218,14 @@ public class ScriptRandomThings implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "item.charmOfKeeping3", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(RandomThings.ID, "whitestone", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 4000)).noFluidOutputs().duration(1200).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(RandomThings.ID, "dropFilter", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).noFluidOutputs().duration(300).eut(30)
                 .addTo(sAssemblerRecipes);
@@ -249,9 +243,7 @@ public class ScriptRandomThings implements IScriptLoader {
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 4, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(480).specialValue(2500).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "diamond", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemInputs(getModItem(Minecraft.ID, "diamond", 1, 0, missing), GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(1200).eut(30)
                 .addTo(UniversalChemical);

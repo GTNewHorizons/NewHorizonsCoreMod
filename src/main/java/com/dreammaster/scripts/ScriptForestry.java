@@ -44,6 +44,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_RecipeConstants;
+import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -151,33 +152,23 @@ public class ScriptForestry implements IScriptLoader {
         OreDictionary.registerOre("listAllsugar", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "beeswax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(Forestry.ID, "beeswax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "refractoryWax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(Forestry.ID, "refractoryWax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 1, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 2, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
@@ -193,15 +184,11 @@ public class ScriptForestry implements IScriptLoader {
                 .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 4, 2, missing))
+                .itemInputs(ItemList.Casing_LV.get(1L), getModItem(IndustrialCraft2.ID, "itemCasing", 4, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(800).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18300, missing))
+                .itemInputs(ItemList.Casing_LV.get(1L), getModItem(GregTech.ID, "gt.metaitem.02", 4, 18300, missing))
                 .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(800).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -219,25 +206,25 @@ public class ScriptForestry implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "craftingMaterial", 5, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(Forestry.ID, "apiaristHelmet", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "craftingMaterial", 8, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(Forestry.ID, "apiaristChest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "craftingMaterial", 7, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 7, missing))
+                        GT_Utility.getIntegratedCircuit(7))
                 .itemOutputs(getModItem(Forestry.ID, "apiaristLegs", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "craftingMaterial", 4, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(Forestry.ID, "apiaristBoots", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -257,44 +244,34 @@ public class ScriptForestry implements IScriptLoader {
                         getModItem(Minecraft.ID, "book", 1, 0, missing),
                         getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Forestry.ID, "factory2", 1, 2, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing))
                 .itemOutputs(getModItem(Forestry.ID, "propolis", 1, 0, missing)).outputChances(500).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(40).addTo(sCentrifugeRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 0, 32309, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Nugget.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 200)).noFluidOutputs().duration(400).eut(8)
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "beeswax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(Forestry.ID, "beeswax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "refractoryWax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(Forestry.ID, "refractoryWax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 1, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "wax", 9, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32308, missing))
+                .itemInputs(getModItem(MagicBees.ID, "wax", 9, 2, missing), ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(100).eut(30).addTo(sPressRecipes);
 
@@ -375,7 +352,7 @@ public class ScriptForestry implements IScriptLoader {
                 "screwSteel",
                 "itemCasingBronze",
                 "screwSteel",
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
+                ItemList.Casing_LV.get(1L),
                 "screwSteel",
                 "itemCasingBronze",
                 "screwSteel",
@@ -389,7 +366,7 @@ public class ScriptForestry implements IScriptLoader {
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "circuitBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "circuitBasic");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 0, missing),
@@ -400,29 +377,29 @@ public class ScriptForestry implements IScriptLoader {
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 "ringAnyRubber",
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 1, missing),
                 "plateCupronickel",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "plateCupronickel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 2, missing),
                 "plateCupronickel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "plateCupronickel",
                 getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 3, missing),
@@ -433,7 +410,7 @@ public class ScriptForestry implements IScriptLoader {
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 4, missing),
@@ -444,18 +421,18 @@ public class ScriptForestry implements IScriptLoader {
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 21057, missing),
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 5, missing),
                 "plateCupronickel",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "plateCupronickel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 6, missing),
@@ -466,18 +443,18 @@ public class ScriptForestry implements IScriptLoader {
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory", 1, 7, missing),
                 "plateCupronickel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
+                ItemList.Sensor_MV.get(1L),
                 "plateCupronickel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Piston_MV.get(1L),
                 getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Piston_MV.get(1L),
                 "gearGtSmallAluminium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32681, missing),
+                ItemList.Emitter_MV.get(1L),
                 "gearGtSmallAluminium");
         addShapedRecipe(
                 getModItem(Forestry.ID, "factory2", 1, 1, missing),
@@ -543,7 +520,7 @@ public class ScriptForestry implements IScriptLoader {
                 getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                 "circuitBasic",
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(Forestry.ID, "apiculture", 1, 2, missing),
@@ -2681,7 +2658,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'i',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -2749,17 +2726,17 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "beeCombs", 1, wildcard, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'h',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing));
+                ItemList.Crate_Empty.get(1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 1000),
@@ -2801,17 +2778,17 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "sapling", 1, wildcard, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'h',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing));
+                ItemList.Crate_Empty.get(1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("seedoil", 1000),
@@ -2853,17 +2830,17 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "butterflyGE", 1, wildcard, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing),
+                ItemList.Crate_Empty.get(1L),
                 'h',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27305, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32403, missing));
+                ItemList.Crate_Empty.get(1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 5000),
@@ -2913,7 +2890,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -2939,7 +2916,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 7, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -2983,11 +2960,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                ItemList.Component_Filter.get(1L),
                 'e',
                 getModItem(Forestry.ID, "royalJelly", 1, 0, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32729, missing),
+                ItemList.Component_Filter.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'h',
@@ -3401,7 +3378,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3427,7 +3404,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3453,7 +3430,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3479,7 +3456,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3505,7 +3482,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3531,7 +3508,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3557,7 +3534,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3583,7 +3560,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3609,7 +3586,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3635,7 +3612,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3661,7 +3638,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 31305, missing),
                 'g',
@@ -3685,11 +3662,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3711,11 +3688,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3737,11 +3714,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3763,11 +3740,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3789,11 +3766,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3815,11 +3792,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3841,11 +3818,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3867,11 +3844,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3893,11 +3870,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3919,11 +3896,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3945,11 +3922,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
@@ -3971,11 +3948,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -3997,11 +3974,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4023,11 +4000,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4049,11 +4026,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4075,11 +4052,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4101,11 +4078,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4127,11 +4104,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4153,11 +4130,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4179,11 +4156,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4205,11 +4182,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4231,11 +4208,11 @@ public class ScriptForestry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
@@ -4259,7 +4236,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4285,7 +4262,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4311,7 +4288,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4337,7 +4314,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4363,7 +4340,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4389,7 +4366,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4415,7 +4392,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4441,7 +4418,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4467,7 +4444,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4493,7 +4470,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4519,7 +4496,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 "circuitBasic",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 'f',
                 "circuitBasic",
                 'g',
@@ -4668,7 +4645,7 @@ public class ScriptForestry implements IScriptLoader {
                 'b',
                 getModItem(Minecraft.ID, "sand", 1, wildcard, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2530, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L),
                 'h',
                 getModItem(Minecraft.ID, "sand", 1, wildcard, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4702,7 +4679,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2530, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L),
                 'f',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2815, missing),
                 'g',
@@ -4750,7 +4727,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(Minecraft.ID, "dirt", 1, wildcard, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2836, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L),
                 'f',
                 getModItem(Minecraft.ID, "dirt", 1, wildcard, missing),
                 'h',
@@ -5012,7 +4989,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 10,
                 FluidRegistry.getFluidStack("molten.redstone", 1152),
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                ItemList.Circuit_Board_Coated_Basic.get(1L),
                 getModItem(Forestry.ID, "chipsets", 1, 0, missing),
                 "abc",
                 "def",
@@ -5038,7 +5015,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("molten.redstone", 1152),
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32100, missing),
+                ItemList.Circuit_Board_Coated_Basic.get(1L),
                 getModItem(Forestry.ID, "chipsets", 1, 1, missing),
                 "abc",
                 "def",
@@ -5064,7 +5041,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 30,
                 FluidRegistry.getFluidStack("molten.redstone", 1152),
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                ItemList.Circuit_Board_Phenolic_Good.get(1L),
                 getModItem(Forestry.ID, "chipsets", 1, 2, missing),
                 "abc",
                 "def",
@@ -5090,7 +5067,7 @@ public class ScriptForestry implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 40,
                 FluidRegistry.getFluidStack("molten.redstone", 1152),
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32101, missing),
+                ItemList.Circuit_Board_Phenolic_Good.get(1L),
                 getModItem(Forestry.ID, "chipsets", 1, 3, missing),
                 "abc",
                 "def",
@@ -5485,7 +5462,7 @@ public class ScriptForestry implements IScriptLoader {
                 "def",
                 "ghi",
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32566, missing));
+                ItemList.Food_Sliced_Bread.get(1L));
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("for.honey", 400),
@@ -5663,15 +5640,15 @@ public class ScriptForestry implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
                 'e',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing),
+                ItemList.Plank_Oak.get(1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32470, missing));
+                ItemList.Plank_Oak.get(1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("seedoil", 5000),

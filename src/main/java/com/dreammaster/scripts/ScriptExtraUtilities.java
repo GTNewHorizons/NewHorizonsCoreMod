@@ -45,6 +45,11 @@ import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipes
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -370,7 +375,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "plateRedAlloy",
                 "craftingToolWrench",
                 "gearDiamond",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Piston_MV.get(1L),
                 "plateRedAlloy",
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
                 "plateRedAlloy");
@@ -412,11 +417,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 "craftingToolHardHammer",
                 getModItem(Minecraft.ID, "rail", 1, 0, missing),
                 "craftingToolWrench",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "frameGtSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "gearGtSmallSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "gearGtSmallSteel");
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "filing", 1, 0, missing),
@@ -622,7 +627,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "pipes", 1, wildcard, missing),
                 "craftingToolHardHammer",
                 "screwEnderPearl",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "screwEnderPearl",
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 0, missing),
@@ -633,7 +638,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "pipes", 1, wildcard, missing),
                 "craftingToolHardHammer",
                 "screwEnderPearl",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 "screwEnderPearl",
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
                 getModItem(ExtraUtilities.ID, "extractor_base", 1, 6, missing),
@@ -644,7 +649,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "pipes", 1, wildcard, missing),
                 "craftingToolHardHammer",
                 "screwEnderPearl",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "screwEnderPearl",
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing),
                 "pipeMediumBrass",
@@ -655,10 +660,10 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "pipes", 1, wildcard, missing),
                 "craftingToolHardHammer",
                 "screwEnderPearl",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 "screwEnderPearl",
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5132, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
@@ -884,7 +889,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'a',
                         "plateEuropium",
                         'b',
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32675, missing),
+                        ItemList.Field_Generator_LuV.get(1L),
                         'c',
                         "plateEuropium",
                         'd',
@@ -920,7 +925,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'g',
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing),
                         'h',
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1143, missing),
+                        ItemList.Pump_EV.get(1L),
                         'i',
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing)));
         EnderConstructorRecipesHandler.registerRecipe(
@@ -1096,7 +1101,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2086, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(8).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
@@ -1126,25 +1131,25 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 1, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 9, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1213,19 +1218,17 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                .itemInputs(getModItem(Minecraft.ID, "gravel", 1, 0, missing), GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 6, missing)).noFluidInputs()
                 .noFluidOutputs().duration(20).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1260,15 +1263,13 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(1200).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Railcraft.ID, "machine.alpha", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 32470, missing))
+                .itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6, missing), ItemList.Plank_Oak.get(4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "trading_post", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 17305, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).noFluidOutputs().duration(100).eut(64)
                 .addTo(sAssemblerRecipes);
@@ -1279,16 +1280,12 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 216)).noFluidOutputs().duration(200).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 4, 0, missing), GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 12, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1298,21 +1295,17 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 13, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing))
+                .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), ItemList.Circuit_Good.get(1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing))
+                        ItemList.Circuit_Integrated_Good.get(1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing))
+                .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), ItemList.Circuit_Processor.get(1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1328,27 +1321,23 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 14, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32708, missing))
+                .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing), ItemList.Tool_DataStick.get(1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32704, missing))
+                .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing), ItemList.Circuit_Data.get(1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32083, missing))
+                        ItemList.Circuit_Nanocomputer.get(1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32085, missing))
+                        ItemList.Circuit_Quantumprocessor.get(1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1397,33 +1386,23 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 .itemOutputs(getModItem(ExtraUtilities.ID, "golden_lasso", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32762, missing),
-                        getModItem(Minecraft.ID, "ender_eye", 1, 0, missing))
+                .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "scanner", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing),
-                        getModItem(Minecraft.ID, "cobblestone", 9, 0, missing))
+                .itemInputs(GT_Utility.getIntegratedCircuit(9), getModItem(Minecraft.ID, "cobblestone", 9, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "dirt", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                .itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0, missing), GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "gravel", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                .itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0, missing), GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "sand", 9, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                .itemInputs(getModItem(Minecraft.ID, "sand", 9, 0, missing), GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
 

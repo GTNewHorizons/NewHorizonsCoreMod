@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.Gendustry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -33,6 +32,7 @@ import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import gregtech.api.enums.ItemList;
 
 public class ScriptEnhancedLootBags implements IScriptLoader {
 
@@ -66,11 +66,11 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         HashMap<Integer, ItemStack> metaExtraItemMap = new HashMap<>();
         metaExtraItemMap.put(1, new ItemStack(Items.clay_ball));
         metaExtraItemMap.put(2, getModItem(IndustrialCraft2.ID, "itemHarz", 1, 0, missing));
-        metaExtraItemMap.put(4, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
-        metaExtraItemMap.put(5, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing));
-        metaExtraItemMap.put(6, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing));
-        metaExtraItemMap.put(7, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing));
-        metaExtraItemMap.put(8, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing));
+        metaExtraItemMap.put(4, ItemList.Electric_Motor_LV.get(1L));
+        metaExtraItemMap.put(5, ItemList.Electric_Motor_MV.get(1L));
+        metaExtraItemMap.put(6, ItemList.Electric_Motor_HV.get(1L));
+        metaExtraItemMap.put(7, ItemList.Electric_Motor_EV.get(1L));
+        metaExtraItemMap.put(8, ItemList.Electric_Motor_IV.get(1L));
         metaExtraItemMap.put(9, getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing));
         metaExtraItemMap.put(10, getModItem(Thaumcraft.ID, "ItemBathSalts", 1, 0, missing));
         metaExtraItemMap.put(11, getModItem(Thaumcraft.ID, "WandCap", 1, 7, missing));
@@ -91,7 +91,7 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(26, getModItem(Forestry.ID, "royalJelly", 1, 0, missing));
         metaExtraItemMap.put(27, getModItem(Gendustry.ID, "MutagenBucket", 1, 0, missing));
         metaExtraItemMap.put(28, getModItem(Minecraft.ID, "cake", 1, 0, missing));
-        metaExtraItemMap.put(29, getModItem(GregTech.ID, "gt.metaitem.02", 1, 32243, missing));
+        metaExtraItemMap.put(29, ItemList.Food_Large_Sandwich_Bacon.get(1L));
         metaExtraItemMap.put(30, getModItem(PamsHarvestCraft.ID, "delightedmealItem", 1, 0, missing));
         metaExtraItemMap.put(31, getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0, missing));
         metaExtraItemMap.put(32, new ItemStack(Items.minecart));
@@ -110,17 +110,17 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(
                 40,
                 getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorItemAdvEmeraldCore", 1, 0, missing));
-        metaExtraItemMap.put(41, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing));
-        metaExtraItemMap.put(42, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32607, missing));
-        metaExtraItemMap.put(43, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32608, missing));
-        metaExtraItemMap.put(44, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32609, missing));
+        metaExtraItemMap.put(41, ItemList.Electric_Motor_LuV.get(1L));
+        metaExtraItemMap.put(42, ItemList.Electric_Motor_ZPM.get(1L));
+        metaExtraItemMap.put(43, ItemList.Electric_Motor_UV.get(1L));
+        metaExtraItemMap.put(44, ItemList.ZPM3.get(1L));
         metaExtraItemMap.put(45, getModItem(OpenComputers.ID, "eeprom", 1, 0, missing));
         metaExtraItemMap.put(46, getModItem(OpenComputers.ID, "item", 1, 1, missing));
         metaExtraItemMap.put(47, getModItem(OpenComputers.ID, "item", 1, 2, missing));
         metaExtraItemMap.put(48, getModItem(OpenComputers.ID, "item", 1, 38, missing));
         metaExtraItemMap.put(49, getModItem(OpenComputers.ID, "item", 1, 39, missing));
         metaExtraItemMap.put(50, getModItem(OpenComputers.ID, "item", 1, 69, missing));
-        metaExtraItemMap.put(51, getModItem(GregTech.ID, "gt.blockmachines", 1, 341, missing));
+        metaExtraItemMap.put(51, ItemList.Machine_LV_Scanner.get(1L));
         metaExtraItemMap.put(52, getModItem(Witchery.ID, "witchleaves", 1, 0, missing));
         metaExtraItemMap.put(53, getModItem(Witchery.ID, "ingredient", 1, 95, missing));
         metaExtraItemMap.put(54, getModItem(Witchery.ID, "ingredient", 1, 11, missing));

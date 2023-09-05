@@ -38,7 +38,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptStevesCarts implements IScriptLoader {
 
@@ -77,12 +79,12 @@ public class ScriptStevesCarts implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "BlockCartAssembler", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Robot_Arm_LV.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
+                ItemList.Hull_LV.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing));
@@ -91,20 +93,20 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
+                ItemList.Hull_LV.get(1L),
+                ItemList.Robot_Arm_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing),
+                ItemList.Cover_ActivityDetector.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "BlockDistributor", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
+                ItemList.Hull_LV.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing));
@@ -113,9 +115,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "screwSteel",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "screwSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing),
-                getModItem(GregTech.ID, "gt.blockcasings", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing),
+                ItemList.Cover_ActivityDetector.get(1L),
+                ItemList.Casing_LV.get(1L),
+                ItemList.Cover_ActivityDetector.get(1L),
                 "craftingToolWrench",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "craftingToolScrewdriver");
@@ -187,9 +189,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32100, missing));
+                ItemList.Component_Minecart_Wheels_Iron.get(1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32100, missing),
+                ItemList.Component_Minecart_Wheels_Iron.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 1, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 23, missing),
@@ -303,9 +305,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "craftingToolHardHammer");
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 15, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing));
+                ItemList.Component_Sawblade_Diamond.get(1L));
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing),
+                ItemList.Component_Sawblade_Diamond.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 15, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 80, missing),
@@ -335,7 +337,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "craftingFurnace",
                 "itemCasingIron",
                 "screwIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "screwIron",
                 "craftingToolWrench",
                 "craftingPiston",
@@ -345,67 +347,67 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "itemCasingSteel",
                 "craftingIronFurnace",
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "screwSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Motor_LV.get(1L),
+                ItemList.Electric_Piston_LV.get(1L),
                 "craftingToolScrewdriver",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing));
+                ItemList.Electric_Piston_LV.get(1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 45, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing),
                 "screwSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "screwSteel",
                 "craftingToolWrench",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 1, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Motor_LV.get(1L),
+                ItemList.Electric_Piston_LV.get(1L),
                 "screwAluminium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing));
+                ItemList.Electric_Piston_LV.get(1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 56, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 58, missing),
                 getModItem(StevesCarts2.ID, "CartModule", 1, 1, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 58, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Motor_MV.get(1L),
+                ItemList.Electric_Piston_MV.get(1L),
                 "screwStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing));
+                ItemList.Electric_Piston_MV.get(1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 69, missing),
                 "itemCasingSteel",
                 "craftingIronFurnace",
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(IronTanks.ID, "obsidianTank", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Motor_LV.get(1L),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(Railcraft.ID, "machine.beta", 1, 3, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing));
+                ItemList.Electric_Piston_LV.get(1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 70, missing),
                 "plateReinforced",
                 getModItem(StevesCarts2.ID, "CartModule", 1, 69, missing),
                 "plateReinforced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(IronTanks.ID, "ironTank", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Motor_MV.get(1L),
+                ItemList.Electric_Piston_MV.get(1L),
                 getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing));
+                ItemList.Electric_Piston_MV.get(1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 2, 30, missing),
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 17809, missing),
@@ -469,24 +471,24 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 14, missing),
                 "stickDiamond",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "stickDiamond",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "stickDiamond",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 "stickDiamond");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 84, missing),
                 "stickGalgadorian",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "stickGalgadorian",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
                 getModItem(StevesCarts2.ID, "CartModule", 1, 14, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
                 "stickGalgadorian",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32651, missing),
+                ItemList.Robot_Arm_MV.get(1L),
                 "stickGalgadorian");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 15, missing),
@@ -497,7 +499,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 15, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 79, missing),
@@ -508,7 +510,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "CartModule", 1, 15, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 80, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 80, missing),
@@ -519,7 +521,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "CartModule", 1, 79, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 81, missing),
                 "circuitAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 "circuitAdvanced");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 2, 61, missing),
@@ -545,11 +547,11 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
+                ItemList.Hull_LV.get(1L),
+                ItemList.Robot_Arm_LV.get(1L),
                 getModItem(StevesCarts2.ID, "CartModule", 1, 66, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32731, missing),
+                ItemList.Cover_ActivityDetector.get(1L),
                 getModItem(StevesCarts2.ID, "CartModule", 1, 66, missing));
         addShapelessRecipe(
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 24, missing),
@@ -562,9 +564,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 29, missing),
                 null,
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 29, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 "itemCasingIron",
                 "itemCasingIron",
                 "itemCasingIron");
@@ -706,9 +708,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "rotorSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 40, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 40, missing));
@@ -717,9 +719,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "craftingIronFurnace",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59, missing),
                 "plateIron");
@@ -728,9 +730,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
                 "plateIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "chestWood",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59, missing),
                 "plateIron");
@@ -751,7 +753,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(Minecraft.ID, "rail", 1, 0, missing),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59, missing),
@@ -759,7 +761,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "upgrade", 1, 11, missing),
                 "plateIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(Railcraft.ID, "anvil", 1, 0, missing),
@@ -769,12 +771,12 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "upgrade", 1, 12, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Electric_Piston_LV.get(1L),
+                ItemList.Robot_Arm_LV.get(1L),
+                ItemList.Electric_Piston_LV.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "frameGtSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59, missing),
                 "plateIron");
@@ -827,9 +829,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(IronTanks.ID, "ironTank", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
                 getModItem(IronTanks.ID, "ironTank", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(StevesCarts2.ID, "CartModule", 1, 69, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "plateObsidian",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59, missing),
                 "plateObsidian");
@@ -838,12 +840,12 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Piston_LV.get(1L),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 59, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing));
+                ItemList.Electric_Motor_LV.get(1L));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 41, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing),
@@ -948,9 +950,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateIron",
                 "plateIron",
                 "plateIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(Minecraft.ID, "rail", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 "plateIron",
                 "plateIron",
                 "plateIron");
@@ -1054,19 +1056,19 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateRedstone",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                 getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
                 "plateIron",
                 "blockHopper",
                 "plateIron");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 13, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Robot_Arm_LV.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(Minecraft.ID, "rail", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "plateIron",
                 "plateIron",
                 "plateIron");
@@ -1095,13 +1097,13 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 85, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 68, missing),
@@ -1175,7 +1177,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "gemDiamond",
                 "plateIron",
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32732, missing),
+                ItemList.Cover_FluidDetector.get(1L),
                 "plateRedstone",
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
@@ -1205,10 +1207,10 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 77, missing),
                 "plateIron",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32640, missing),
+                ItemList.Electric_Piston_LV.get(1L),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32734, missing),
+                ItemList.Cover_EnergyDetector.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
                 "plateIron",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
@@ -1237,9 +1239,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "plateRedstone");
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 83, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                ItemList.Sensor_HV.get(1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                ItemList.Sensor_HV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45, missing),
                 "plateGalgadorian",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45, missing),
@@ -1249,7 +1251,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 86, missing),
                 getModItem(Minecraft.ID, "hay_block", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 getModItem(Minecraft.ID, "hay_block", 1, 0, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5131, missing),
@@ -1259,9 +1261,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing));
         addShapedRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 89, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
+                ItemList.Sensor_MV.get(1L),
                 "plateRedstone",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
+                ItemList.Sensor_MV.get(1L),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing),
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
@@ -1340,7 +1342,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 'd',
                 "plateEnhancedGalgadorian",
                 'e',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1192, missing));
+                ItemList.Generator_Naquadah_Mark_III.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(StevesCarts2.ID, "CartModule", 1, 61, missing),
                 "---------",
@@ -1440,7 +1442,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 7032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1451,7 +1453,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .noFluidOutputs().duration(600).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                        ItemList.Cover_SolarPanel.get(1L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
@@ -1464,25 +1466,25 @@ public class ScriptStevesCarts implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(80).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing)).noFluidInputs()
                 .noFluidOutputs().duration(160).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing)).noFluidInputs()
                 .noFluidOutputs().duration(160).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing)).noFluidInputs()
                 .noFluidOutputs().duration(320).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1548,14 +1550,14 @@ public class ScriptStevesCarts implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 36)).noFluidOutputs().duration(160).eut(8)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 72)).noFluidOutputs().duration(320).eut(16)
                 .addTo(sAssemblerRecipes);
@@ -1620,9 +1622,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 88, missing)).noFluidInputs().noFluidOutputs()
                 .duration(600).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "torch", 3, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Minecraft.ID, "torch", 3, 0, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 29, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1644,9 +1644,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 32415, missing))
+                .itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing), ItemList.Color_01.get(4L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1698,9 +1696,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 32416, missing))
+                .itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing), ItemList.Color_02.get(4L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1752,9 +1748,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 32418, missing))
+                .itemInputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 17811, missing), ItemList.Color_04.get(4L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1771,7 +1765,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
+                        ItemList.Cover_Crafting.get(1L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 87, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(30).addTo(sAssemblerRecipes);
@@ -1800,51 +1794,35 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 28, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32762, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 21, missing))
+                .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 21, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32762, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 22, missing))
+                .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 22, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32762, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 23, missing))
+                .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 23, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32762, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 24, missing))
+                .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 24, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 21, missing))
+                .itemInputs(ItemList.Sensor_MV.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 21, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 22, missing))
+                .itemInputs(ItemList.Sensor_MV.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 22, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 23, missing))
+                .itemInputs(ItemList.Sensor_MV.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 23, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32691, missing),
-                        getModItem(StevesCarts2.ID, "CartModule", 1, 24, missing))
+                .itemInputs(ItemList.Sensor_MV.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 24, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1882,7 +1860,7 @@ public class ScriptStevesCarts implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "CartModule", 1, 81, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 129, missing))
+                        ItemList.Quantum_Chest_IV.get(1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 76, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.americium", 1440)).noFluidOutputs().duration(600)
                 .eut(30720).addTo(sAssemblerRecipes);

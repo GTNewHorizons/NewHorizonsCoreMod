@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.ItemList;
 
 public class ScriptSGCraft implements IScriptLoader {
 
@@ -48,7 +49,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'd',
                 getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 1, 0, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32047, missing),
+                ItemList.Field_Generator_UXV.get(1L),
                 'f',
                 getModItem(GregTech.ID, "gt.blockmetal9", 1, 4, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -63,15 +64,15 @@ public class ScriptSGCraft implements IScriptLoader {
                 "---aba---",
                 "---------",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32023, missing),
+                ItemList.Electric_Piston_UXV.get(1L),
                 'b',
                 getModItem(NewHorizonsCoreMod.ID, "item.StargateChevron", 1, 0, missing),
                 'c',
                 getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 1, 0, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32047, missing),
+                ItemList.Field_Generator_UXV.get(1L),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32043, missing));
+                ItemList.Sensor_UXV.get(1L));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(SGCraft.ID, "stargateRing", 1, 1, missing),
                 "---------",
@@ -86,7 +87,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'a',
                 getModItem(GregTech.ID, "gt.blockmetal9", 1, 7, missing),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32047, missing),
+                ItemList.Field_Generator_UXV.get(1L),
                 'c',
                 getModItem(NewHorizonsCoreMod.ID, "item.QuantumCircuit", 1, 0, missing),
                 'd',
@@ -105,11 +106,11 @@ public class ScriptSGCraft implements IScriptLoader {
                 "befghgfeb",
                 "abbcdcbba",
                 'a',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32043, missing),
+                ItemList.Sensor_UXV.get(1L),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32047, missing),
+                ItemList.Field_Generator_UXV.get(1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32039, missing),
+                ItemList.Emitter_UXV.get(1L),
                 'd',
                 getModItem(GregTech.ID, "gt.metaitem.03", 1, 4139, missing),
                 'e',
@@ -121,7 +122,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'h',
                 getModItem(NewHorizonsCoreMod.ID, "item.StargateFramePart", 1, 0, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32594, missing),
+                ItemList.ZPM4.get(1L),
                 'j',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 22583, missing),
                 'k',
@@ -148,7 +149,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'a',
                 getModItem(NewHorizonsCoreMod.ID, "item.StargateShieldingFoil", 1, 0, missing),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32047, missing),
+                ItemList.Field_Generator_UXV.get(1L),
                 'c',
                 createItemStack(
                         EnderIO.ID,
@@ -171,9 +172,9 @@ public class ScriptSGCraft implements IScriptLoader {
                 'a',
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 22585, missing),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32023, missing),
+                ItemList.Electric_Piston_UXV.get(1L),
                 'c',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32594, missing),
+                ItemList.ZPM4.get(1L),
                 'd',
                 getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 3, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -230,13 +231,13 @@ public class ScriptSGCraft implements IScriptLoader {
                 'a',
                 getModItem(NewHorizonsCoreMod.ID, "item.QuantumCircuit", 1, 0, missing),
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32039, missing),
+                ItemList.Emitter_UXV.get(1L),
                 'c',
                 getModItem(GregTech.ID, "gt.blockmetal9", 1, 7, missing),
                 'd',
                 getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 3, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32043, missing));
+                ItemList.Sensor_UXV.get(1L));
 
     }
 }

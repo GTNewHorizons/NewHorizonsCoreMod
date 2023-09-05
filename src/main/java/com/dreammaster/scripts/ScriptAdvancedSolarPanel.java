@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 
 public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
@@ -38,7 +39,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, wildcard, missing),
                 "circuitAdvanced",
                 "cableGt04Aluminium",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 22, missing),
+                ItemList.Transformer_HV_MV.get(1L),
                 "cableGt04Aluminium");
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, 0, missing),
@@ -49,7 +50,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, wildcard, missing),
                 "circuitMaster",
                 "cableGt04Platinum",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 23, missing),
+                ItemList.Transformer_EV_HV.get(1L),
                 "cableGt04Platinum");
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "ultimate_solar_helmet", 1, 0, missing),
@@ -60,7 +61,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, wildcard, missing),
                 "craftingSolarPanelHV",
                 "cableGt04VanadiumGallium",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 24, missing),
+                ItemList.Transformer_IV_EV.get(1L),
                 "cableGt04VanadiumGallium");
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 5, missing),
@@ -85,7 +86,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 "plateNetherStar",
                 getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32752, missing),
+                ItemList.Cover_SolarPanel_LV.get(1L),
                 "craftingToolCrowbar",
                 getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
                 "craftingToolScrewdriver",
@@ -93,7 +94,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 "craftingToolHardHammer",
                 "craftingToolFile");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32753, missing),
+                ItemList.Cover_SolarPanel_MV.get(1L),
                 "craftingToolCrowbar",
                 getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
                 "craftingToolScrewdriver",
@@ -101,7 +102,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 "craftingToolHardHammer",
                 "craftingToolFile");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32754, missing),
+                ItemList.Cover_SolarPanel_HV.get(1L),
                 "craftingToolCrowbar",
                 getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 2, missing),
                 "craftingToolScrewdriver",
@@ -109,7 +110,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 "craftingToolHardHammer",
                 "craftingToolFile");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32755, missing),
+                ItemList.Cover_SolarPanel_EV.get(1L),
                 "craftingToolCrowbar",
                 getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 3, missing),
                 "craftingToolScrewdriver",

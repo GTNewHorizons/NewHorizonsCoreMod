@@ -17,7 +17,9 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptMalisDoors implements IScriptLoader {
 
@@ -114,22 +116,22 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "block_mixer", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
+                ItemList.Electric_Motor_LV.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 23032, missing),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                ItemList.Casing_SolidSteel.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 23032, missing),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 20032, missing),
                 getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 20032, missing));
         addShapedRecipe(
                 getModItem(MalisisDoors.ID, "door_factory", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
+                ItemList.Electric_Motor_LV.get(1L),
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 23305, missing),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                ItemList.Casing_SolidSteel.get(1L),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 23305, missing),
                 getModItem(GregTech.ID, "gt.metaitem.02", 1, 20305, missing),
                 getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing),
@@ -1109,7 +1111,7 @@ public class ScriptMalisDoors implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 3, 23032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(MalisisDoors.ID, "rustyLadder", 2, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(60).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()

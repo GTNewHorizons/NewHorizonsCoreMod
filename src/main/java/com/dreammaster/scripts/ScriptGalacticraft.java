@@ -40,6 +40,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_RecipeConstants;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptGalacticraft implements IScriptLoader {
 
@@ -96,7 +97,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "compressedAluminium",
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 "compressedSteel",
                 "cableGt02Aluminium",
                 "compressedSteel");
@@ -105,9 +106,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "compressedAluminium",
                 getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
                 "compressedAluminium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                ItemList.Electric_Piston_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 "compressedSteel",
                 "compressedBronze",
                 "compressedSteel");
@@ -116,7 +117,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "compressedAluminium",
                 getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
                 "compressedAluminium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "item.oilCanisterPartial", 1, 1001, missing),
                 getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
                 "compressedSteel",
@@ -128,7 +129,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
                 "compressedSteel",
                 getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 0, missing),
+                ItemList.Casing_SolidSteel.get(1L),
                 getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
                 "compressedSteel",
                 getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, 3000, missing),
@@ -139,7 +140,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
                 "compressedAluminium",
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
                 "compressedSteel",
                 getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
@@ -161,7 +162,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "compressedSteel",
                 "compressedDesh",
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                ItemList.Sensor_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
                 "compressedAluminium",
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing),
@@ -171,9 +172,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "compressedSteel",
                 "waferBasic",
                 "compressedSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Pump_HV.get(1L),
+                ItemList.Large_Fluid_Cell_Steel.get(1L),
+                ItemList.Electric_Motor_HV.get(1L),
                 "compressedAluminium",
                 "pipeMediumSteel",
                 "compressedAluminium");
@@ -182,9 +183,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "compressedAluminium",
                 getModItem(Minecraft.ID, "hopper", 1, 0, missing),
                 "compressedAluminium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 9233, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                ItemList.Conveyor_Module_HV.get(1L),
+                ItemList.Automation_ChestBuffer_HV.get(1L),
+                ItemList.Conveyor_Module_HV.get(1L),
                 "compressedDesh",
                 "pipeMediumBrass",
                 "compressedDesh");
@@ -193,9 +194,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "compressedDesh",
                 "pipeMediumBrass",
                 "compressedDesh",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 9233, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32632, missing),
+                ItemList.Conveyor_Module_HV.get(1L),
+                ItemList.Automation_ChestBuffer_HV.get(1L),
+                ItemList.Conveyor_Module_HV.get(1L),
                 "compressedAluminium",
                 getModItem(Minecraft.ID, "hopper", 1, 0, missing),
                 "compressedAluminium");
@@ -238,7 +239,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
                 "compressedDesh",
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing),
                 "waferAdvanced",
                 "wireGt01RedAlloy",
@@ -340,9 +341,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
                 getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "waferAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32690, missing));
+                ItemList.Sensor_LV.get(1L));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 1, missing),
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing),
@@ -360,7 +361,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, wildcard, missing),
                 "compressedSteel",
                 "cableGt01AnyCopper",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 12, missing),
+                ItemList.Hull_MV.get(1L),
                 "cableGt01AnyCopper",
                 "waferBasic",
                 getModItem(IndustrialCraft2.ID, "itemBatChargeRE", 1, wildcard, missing),
@@ -371,7 +372,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, wildcard, missing),
                 "compressedTitanium",
                 "cableGt02Gold",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                ItemList.Hull_HV.get(1L),
                 "cableGt02Gold",
                 "waferAdvanced",
                 getModItem(IndustrialCraft2.ID, "itemBatChargeAdv", 1, wildcard, missing),
@@ -390,10 +391,10 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "tile.viewScreen", 1, 0, missing),
                 "compressedSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                ItemList.Cover_SolarPanel.get(1L),
                 "compressedSteel",
                 "waferBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "waferBasic",
                 "compressedSteel",
                 "compressedSteel",
@@ -402,7 +403,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "tile.telemetry", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 19, missing),
                 "compressedTin",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                ItemList.Emitter_HV.get(1L),
                 "waferBasic",
                 "compressedTin",
                 "waferBasic",
@@ -469,11 +470,11 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oxygenTankLightFull", 1, 1000, missing),
@@ -492,7 +493,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
+                ItemList.Large_Fluid_Cell_Steel.get(1L),
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
                 getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
@@ -503,7 +504,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32406, missing),
+                ItemList.Large_Fluid_Cell_TungstenSteel.get(1L),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
@@ -514,7 +515,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32411, missing),
+                ItemList.Large_Fluid_Cell_Iridium.get(1L),
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.TitaniumDualCompressedPlates", 1, 0, missing),
@@ -525,7 +526,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
                 "plateTripleTrinium",
                 "plateTripleTrinium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32412, missing),
+                ItemList.Large_Fluid_Cell_Osmium.get(1L),
                 "plateTripleTrinium",
                 "plateTripleTrinium",
                 "plateTripleTrinium",
@@ -880,7 +881,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing),
                 "compressedSteel",
                 getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.oilExtractor", 1, 0, missing),
@@ -929,13 +930,13 @@ public class ScriptGalacticraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 19, missing),
                 "compressedAluminium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing),
+                ItemList.Sensor_HV.get(1L),
                 "compressedAluminium",
                 "waferBasic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "waferBasic",
                 "compressedTin",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing),
+                ItemList.Battery_Hull_LV.get(1L),
                 "compressedTin");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.walkway", 2, 0, missing),
@@ -956,7 +957,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.null", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftCore.ID, "item.battery", 1, wildcard, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing));
+                ItemList.Battery_Hull_LV.get(1L));
         addShapedRecipe(
                 getModItem(GalacticraftCore.ID, "item.standardWrench", 1, 0, missing),
                 "plateSteel",
@@ -981,15 +982,15 @@ public class ScriptGalacticraft implements IScriptLoader {
                 "ringRedAlloy");
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "item.null", 1, 6, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32405, missing),
+                ItemList.Large_Fluid_Cell_Steel.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing),
+                ItemList.Electric_Pump_HV.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 5135, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing));
+                ItemList.Electric_Pump_HV.get(1L));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.beamReflector", 1, 0, missing),
                 "ringDesh",
@@ -1018,7 +1019,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 "compressedTitanium",
                 getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32672, missing),
+                ItemList.Field_Generator_HV.get(1L),
                 getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 8, missing),
                 "compressedTitanium",
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
@@ -1040,18 +1041,18 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftCore.ID, "item.oxygenConcentrator", 1, 0, missing),
                 "compressedTitanium",
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 4, missing),
+                ItemList.Casing_Gearbox_Titanium.get(1L),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 getModItem(AE2FluidCraft.ID, "certus_quartz_tank", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing));
+                ItemList.Electric_Pump_HV.get(1L));
         addShapedRecipe(
                 getModItem(GalacticraftMars.ID, "tile.marsMachine", 1, 8, missing),
                 "waferAdvanced",
                 getModItem(GalacticraftCore.ID, "item.basicItem", 1, 19, missing),
                 "waferAdvanced",
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13, missing),
+                ItemList.Hull_HV.get(1L),
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
                 "cableGt02Aluminium",
                 getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
@@ -1242,13 +1243,13 @@ public class ScriptGalacticraft implements IScriptLoader {
                 'd',
                 getModItem(GalacticraftCore.ID, "item.oxygenTankUltraHeavyFull", 1, WILDCARD, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32616, missing),
+                ItemList.Electric_Pump_ZPM.get(1L),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32105, missing),
+                ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                 'g',
                 "pipeSmallInfinity",
                 'h',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 122, missing));
+                ItemList.Quantum_Tank_HV.get(1L));
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oil, 1))
                 .itemOutputs(ItemList.Cell_Empty.get(1)).noFluidInputs().noFluidOutputs().metadata(FUEL_VALUE, 16)
@@ -1267,158 +1268,158 @@ public class ScriptGalacticraft implements IScriptLoader {
     private void arcFurnaceRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 2000))
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 0, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 8000))
                 .noFluidOutputs().duration(4800).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 1, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 8000))
                 .noFluidOutputs().duration(4800).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 2, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 8000))
                 .noFluidOutputs().duration(4800).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 3, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 8000))
                 .noFluidOutputs().duration(4800).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 0, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 10000))
                 .noFluidOutputs().duration(6000).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 1, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 10000))
                 .noFluidOutputs().duration(6000).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 2, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 10000))
                 .noFluidOutputs().duration(6000).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier5Rocket", 1, 3, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 10000))
                 .noFluidOutputs().duration(6000).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 0, missing))
@@ -1426,7 +1427,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 12000))
                 .noFluidOutputs().duration(7200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 1, missing))
@@ -1434,7 +1435,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 12000))
                 .noFluidOutputs().duration(7200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 2, missing))
@@ -1442,7 +1443,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 12000))
                 .noFluidOutputs().duration(7200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier6Rocket", 1, 3, missing))
@@ -1450,7 +1451,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 12000))
                 .noFluidOutputs().duration(7200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier7Rocket", 1, 0, missing))
@@ -1519,39 +1520,39 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .noFluidOutputs().duration(9600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 4000))
                 .noFluidOutputs().duration(2400).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemAstroMiner", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(3L),
+                        ItemList.Ingot_Heavy2.get(8L),
+                        ItemList.Ingot_Heavy1.get(3L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 10, 11028, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("oxygen", 6000))
                 .noFluidOutputs().duration(3600).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 21, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -1559,7 +1560,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 28, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -1567,7 +1568,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 35, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -1575,7 +1576,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .noFluidOutputs().duration(1200).eut(30).addTo(sArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 42, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -1589,7 +1590,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 8, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 29019, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 144)).noFluidOutputs().duration(300)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -1597,7 +1598,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 23010, missing),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "tile.glowstoneTorch", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1616,56 +1617,56 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 5, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 720)).noFluidOutputs().duration(750)
                 .eut(1024).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 5, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(180).eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 1152)).noFluidOutputs().duration(1200)
                 .eut(1024).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 8, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 7, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 7, missing))
+                        GT_Utility.getIntegratedCircuit(7))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 1008)).noFluidOutputs().duration(1050)
                 .eut(1024).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 7, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(260).eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.MeteoricIronString", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 576)).noFluidOutputs().duration(600)
                 .eut(1024).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.thermalPadding", 1, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 4, 7, missing)).noFluidInputs()
                 .noFluidOutputs().duration(150).eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1691,7 +1692,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing),
+                        ItemList.Cover_SolarPanel.get(1L),
                         getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9, missing))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.basicItem", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
@@ -1714,7 +1715,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 11028, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1500).eut(120).specialValue(1500).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 11340, missing)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.MeteoricIron, 1L)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(120).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "tile.fallenMeteor", 1, 0, missing))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 2, 11340, missing)).noFluidInputs()
@@ -1752,25 +1753,25 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32359, missing))
+                        ItemList.Shape_Extruder_Pipe_Small.get(0L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(120).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.basicItem", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32354, missing))
+                        ItemList.Shape_Extruder_Cell.get(0L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(120).eut(30).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.basicItem", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32354, missing))
+                        ItemList.Shape_Extruder_Cell.get(0L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.canister", 1, 1, missing)).noFluidInputs()
                 .noFluidOutputs().duration(120).eut(30).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftCore.ID, "item.basicItem", 2, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32352, missing))
+                        ItemList.Shape_Extruder_Bolt.get(0L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.steelPole", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sExtruderRecipes);
     }
@@ -1807,72 +1808,72 @@ public class ScriptGalacticraft implements IScriptLoader {
     private void plasmaArcFurnaceRecipes() {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 8)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.spaceship", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 20, 32462, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(20L),
+                        ItemList.Ingot_Heavy1.get(16L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing))
                 .outputChances(10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 3))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(65).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
@@ -1881,8 +1882,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
@@ -1890,8 +1891,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
@@ -1900,8 +1901,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
@@ -1909,8 +1910,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
@@ -1919,8 +1920,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
@@ -1928,8 +1929,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
@@ -1938,8 +1939,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 10, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 41, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(10L),
+                        ItemList.Ingot_Heavy1.get(41L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 64, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
@@ -1947,9 +1948,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
@@ -1957,18 +1958,18 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
@@ -1976,18 +1977,18 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
@@ -1995,18 +1996,18 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
@@ -2014,9 +2015,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 37, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 32, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(37L),
+                        ItemList.Ingot_Heavy2.get(11L),
+                        ItemList.Ingot_Heavy1.get(32L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 12, 11340, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
@@ -2024,9 +2025,9 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 0, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
@@ -2034,18 +2035,18 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 0, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 1, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
@@ -2053,18 +2054,18 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 1, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 2, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
@@ -2072,18 +2073,18 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 2, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 3, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 35))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 35)).duration(266).eut(30)
@@ -2091,9 +2092,9 @@ public class ScriptGalacticraft implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.Tier4Rocket", 1, 3, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 12, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 40, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 16, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 52, 32462, missing))
+                        ItemList.Ingot_Heavy3.get(40L),
+                        ItemList.Ingot_Heavy2.get(16L),
+                        ItemList.Ingot_Heavy1.get(52L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 11))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 11)).duration(266).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2101,8 +2102,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
@@ -2111,8 +2112,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2120,8 +2121,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
@@ -2130,8 +2131,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2139,8 +2140,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
@@ -2149,8 +2150,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2158,8 +2159,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 43))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 43)).duration(333).eut(30)
@@ -2168,8 +2169,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 64, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 14, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L),
+                        ItemList.Ingot_Heavy3.get(8L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 14))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 14)).duration(333).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2178,7 +2179,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
@@ -2188,7 +2189,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2197,7 +2198,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
@@ -2207,7 +2208,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2216,7 +2217,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
@@ -2226,7 +2227,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2235,7 +2236,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 52))
                 .fluidOutputs(FluidRegistry.getFluidStack("nitrogen", 52)).duration(400).eut(30)
@@ -2245,7 +2246,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT6", 12, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT5", 62, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.HeavyDutyAlloyIngotT4", 16, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 64, 32464, missing))
+                        ItemList.Ingot_Heavy3.get(64L))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 17))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 17)).duration(400).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
@@ -2403,8 +2404,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
@@ -2413,8 +2414,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
@@ -2422,8 +2423,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
@@ -2432,8 +2433,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
@@ -2441,8 +2442,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000)
@@ -2451,8 +2452,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 24, 32462, missing),
+                        ItemList.Ingot_Heavy2.get(6L),
+                        ItemList.Ingot_Heavy1.get(24L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 40, 11305, missing),
                         getModItem(Minecraft.ID, "diamond", 4, 0, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 6))
@@ -2460,9 +2461,9 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemAstroMiner", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(3L),
+                        ItemList.Ingot_Heavy2.get(8L),
+                        ItemList.Ingot_Heavy1.get(3L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 10, 11028, missing))
                 .outputChances(10000, 10000, 10000, 10000)
                 .fluidInputs(FluidRegistry.getFluidStack("plasma.nitrogen", 26))
@@ -2470,16 +2471,16 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftMars.ID, "item.itemAstroMiner", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 32464, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 32463, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 3, 32462, missing),
+                        ItemList.Ingot_Heavy3.get(3L),
+                        ItemList.Ingot_Heavy2.get(8L),
+                        ItemList.Ingot_Heavy1.get(3L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 10, 11028, missing))
                 .outputChances(10000, 10000, 10000, 10000).fluidInputs(FluidRegistry.getFluidStack("plasma.argon", 8))
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 8)).duration(200).eut(30)
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 21, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -2489,7 +2490,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 21, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -2498,7 +2499,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 28, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -2508,7 +2509,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 1, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 28, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -2517,7 +2518,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 35, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -2527,7 +2528,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 2, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 35, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -2536,7 +2537,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 42, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))
@@ -2546,7 +2547,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .addTo(sPlasmaArcFurnaceRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GalacticraftCore.ID, "item.buggy", 1, 3, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 11, 32462, missing),
+                        ItemList.Ingot_Heavy1.get(11L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 11340, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 42, 11305, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 11306, missing))

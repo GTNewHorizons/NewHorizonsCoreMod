@@ -15,6 +15,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -62,7 +63,7 @@ public class ScriptTwilightForest implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2339, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                        ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(TwilightForest.ID, "item.steeleafIngot", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(4).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()

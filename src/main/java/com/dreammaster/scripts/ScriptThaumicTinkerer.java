@@ -26,6 +26,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
@@ -324,7 +325,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 'd',
                 "pipeLargeElectrum",
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32670, missing),
+                ItemList.Field_Generator_LV.get(1L),
                 'f',
                 "pipeLargeElectrum",
                 'g',
@@ -1001,11 +1002,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("aer"), 25)
                         .add(Aspect.getAspect("potentia"), 10),
                 getModItem(Thaumcraft.ID, "blockLifter", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 27032, missing), });
@@ -2370,13 +2371,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
                         getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                        ItemList.Electric_Piston_HV.get(1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
                         getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                        ItemList.Electric_Piston_HV.get(1L),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing), });
         TCHelper.setResearchAspects(
@@ -2399,13 +2400,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
                         getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing),
+                        ItemList.Component_Sawblade_Diamond.get(1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30501, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30500, missing),
                         getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32721, missing),
+                        ItemList.Component_Sawblade_Diamond.get(1L),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing), });
         TCHelper.setResearchAspects(

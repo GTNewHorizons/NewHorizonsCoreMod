@@ -46,11 +46,13 @@ import net.minecraftforge.fluids.FluidRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.Smeltery;
 
@@ -122,7 +124,7 @@ public class ScriptCoreMod implements IScriptLoader {
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
                 "platePlastic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32740, missing),
+                ItemList.Cover_Screen.get(1L),
                 "platePlastic",
                 "circuitBasic",
                 "cableGt01Tin",
@@ -136,7 +138,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "lensRuby",
                 "itemCasingTitanium",
                 getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing),
+                ItemList.Emitter_HV.get(1L),
                 getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing),
                 "plateAlloyAdvanced",
                 "plateAlloyAdvanced",
@@ -404,7 +406,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -472,7 +474,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2086, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -1108,19 +1110,19 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.RawBioFiber", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.BioOrganicMesh", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockgem3", 1, 4, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L),
                         getModItem(NewHorizonsCoreMod.ID, "item.CompressedBioBall", 8, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.BioChunk", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 23500, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(64).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1375,162 +1377,165 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(sFermentingRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24500, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 17500, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedDiamondCrystalChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(400).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24502, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24511, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24512, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24527, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24541, missing),
+                        GT_Utility
+                                .copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedEnergyChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(600).eut(4096).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24540, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30528, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedQuantumChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(1200).eut(30720).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24521, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Force, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30528, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedQuantumChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(1200).eut(30720).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24528, missing),
+                        GT_Utility
+                                .copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.GarnetYellow, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 30528, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedQuantumChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(1200).eut(30720).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24533, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NanoCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24532, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.NanoCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(480).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24533, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.QuantumCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24532, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L)),
                         getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.QuantumCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(800).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24508, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
                         getModItem(NewHorizonsCoreMod.ID, "item.ManyullynPlate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24509, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
                         getModItem(NewHorizonsCoreMod.ID, "item.ManyullynPlate", 4, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(1200).eut(1920).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24508, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
                         getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedManyullynCrystalChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(900).eut(7680).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24509, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
                         getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1, 0, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedManyullynCrystalChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(900).eut(7680).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24506, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24515, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24545, missing),
+                        GT_Utility
+                                .copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24890, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 24500, missing),
+                        GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(120).addTo(sLaserEngraverRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
-                .noItemOutputs().fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 100))
+        GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(3)).noItemOutputs()
+                .fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 100))
                 .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 10)).duration(600).eut(1920)
                 .addTo(sDistilleryRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32357, missing))
+                        ItemList.Shape_Extruder_Casing.get(0L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 2, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(400).eut(384).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32371, missing))
+                        ItemList.Shape_Extruder_Saw.get(0L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.SawBladeArdite", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(400).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32371, missing))
+                        ItemList.Shape_Extruder_Saw.get(0L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.SawBladeManyullyn", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(120).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32350, missing))
+                        ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ManyullynPlate", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(480).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
@@ -1593,13 +1598,13 @@ public class ScriptCoreMod implements IScriptLoader {
                 .noFluidInputs().noFluidOutputs().duration(300).eut(7680).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32714, missing),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.DiamondFluidCoreChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(300).eut(480).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32714, missing),
+                        ItemList.Circuit_Parts_Crystal_Chip_Master.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EmeraldAdvancedFluidCoreChip", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(300).eut(1024).addTo(sPressRecipes);
@@ -1629,13 +1634,13 @@ public class ScriptCoreMod implements IScriptLoader {
                 .noFluidInputs().noFluidOutputs().duration(300).eut(4096).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32713, missing),
+                        ItemList.Circuit_Parts_Crystal_Chip_Elite.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 4, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(300).eut(480).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32713, missing),
+                        ItemList.Circuit_Parts_Crystal_Chip_Elite.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing))
                 .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(300).eut(480).addTo(sPressRecipes);

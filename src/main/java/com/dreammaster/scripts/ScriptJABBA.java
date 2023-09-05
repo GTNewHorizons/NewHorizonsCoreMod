@@ -188,59 +188,42 @@ public class ScriptJABBA implements IScriptLoader {
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 13)).noFluidInputs().noFluidOutputs()
                 .duration(4 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sAssemblerRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "upgradeCore", 3),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(JABBA.ID, "upgradeCore", 3), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 4)).noFluidInputs().noFluidOutputs()
                 .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "upgradeCore", 3, 4),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 4), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 5)).noFluidInputs().noFluidOutputs()
                 .duration(30 * SECONDS).eut(64).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "upgradeCore", 3, 5),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 5), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 6)).noFluidInputs().noFluidOutputs()
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "upgradeCore", 3, 6),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 6), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 8)).noFluidInputs().noFluidOutputs()
                 .duration(10 * SECONDS).eut(256).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "upgradeCore", 3, 8),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 8), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 9)).noFluidInputs().noFluidOutputs()
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "upgradeCore", 3, 9),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 9), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 11)).noFluidInputs().noFluidOutputs()
                 .duration(5 * SECONDS).eut(960).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "upgradeCore", 3, 11),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 11), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 12)).noFluidInputs().noFluidOutputs()
                 .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(JABBA.ID, "upgradeCore", 3, 12),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3))
+                .itemInputs(getModItem(JABBA.ID, "upgradeCore", 3, 12), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 13)).noFluidInputs().noFluidOutputs()
                 .duration(1 * SECONDS + 5 * TICKS).eut(4096).addTo(sAssemblerRecipes);
 
@@ -264,9 +247,9 @@ public class ScriptJABBA implements IScriptLoader {
                 "stickAnyIron",
                 "craftingToolWrench",
                 "roundAnyRubber",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32100),
+                ItemList.Component_Minecart_Wheels_Iron.get(1L),
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32100));
+                ItemList.Component_Minecart_Wheels_Iron.get(1L));
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "moverDiamond", 1),
@@ -276,9 +259,9 @@ public class ScriptJABBA implements IScriptLoader {
                 "stickDiamond",
                 "craftingToolWrench",
                 "roundPlastic",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32101),
+                ItemList.Component_Minecart_Wheels_Steel.get(1L),
                 "plateNetherStar",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32101));
+                ItemList.Component_Minecart_Wheels_Steel.get(1L));
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "hammer", 1),

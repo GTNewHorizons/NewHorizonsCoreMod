@@ -23,7 +23,9 @@ import com.dreammaster.forestry.ForestryHelper;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptGenetics implements IScriptLoader {
 
@@ -69,7 +71,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 0, missing),
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 "gearGtSmallStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "machine", 1, 1, missing),
@@ -80,7 +82,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 0, missing),
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 "gearGtSmallStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "machine", 1, 2, missing),
@@ -91,7 +93,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 0, missing),
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 "gearGtSmallStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "machine", 1, 3, missing),
@@ -102,7 +104,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 0, missing),
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 "gearGtSmallStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 1, missing),
@@ -113,7 +115,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 0, missing),
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 "gearGtSmallStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 2, missing),
@@ -124,7 +126,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 0, missing),
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 "gearGtSmallStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 3, missing),
@@ -135,7 +137,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 0, missing),
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 "gearGtSmallStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 4, missing),
@@ -146,7 +148,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 0, missing),
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 "gearGtSmallStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "gearGtSmallStainlessSteel");
         addShapedRecipe(
                 getModItem(Genetics.ID, "labMachine", 1, 0, missing),
@@ -168,7 +170,7 @@ public class ScriptGenetics implements IScriptLoader {
                 getModItem(Genetics.ID, "misc", 1, 11, missing),
                 getModItem(Genetics.ID, "misc", 1, 10, missing),
                 "gearGtSmallDiamond",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 "gearGtSmallDiamond");
 
         ForestryHelper.removeCarpenterRecipe(getModItem(Genetics.ID, "database", 1, 0, missing));
@@ -264,29 +266,21 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glass_pane", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 6, missing))
+                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 6, 0, missing), GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 8, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glass_pane", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 2, 0, missing), GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glass_pane", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 4, 0, missing), GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 144)).noFluidOutputs().duration(200).eut(48)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Genetics.ID, "misc", 10, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 10, missing))
+                .itemInputs(getModItem(Genetics.ID, "misc", 10, 6, missing), GT_Utility.getIntegratedCircuit(10))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 576)).noFluidOutputs().duration(200).eut(96)
                 .addTo(sAssemblerRecipes);
@@ -298,16 +292,12 @@ public class ScriptGenetics implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).noFluidOutputs().duration(400)
                 .eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "chipsets", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 2, 32082, missing))
+                .itemInputs(getModItem(Forestry.ID, "chipsets", 1, 1, missing), ItemList.Circuit_Nanoprocessor.get(2L))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).noFluidOutputs().duration(400)
                 .eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "chipsets", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32703, missing))
+                .itemInputs(getModItem(Forestry.ID, "chipsets", 1, 1, missing), ItemList.Circuit_Computer.get(2L))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).noFluidOutputs().duration(400)
                 .eut(64).addTo(sAssemblerRecipes);
@@ -315,15 +305,15 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemInputs(
                         getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
                         getModItem(Genetics.ID, "misc", 2, 10, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).noFluidOutputs().duration(1500)
                 .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32106, missing),
+                        ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).noFluidOutputs().duration(600)
                 .eut(30).addTo(sAssemblerRecipes);
@@ -331,8 +321,8 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing))
+                        ItemList.Color_04.get(1L),
+                        ItemList.Color_05.get(1L))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 144)).noFluidOutputs().duration(100).eut(30)
                 .addTo(sMixerRecipes);
@@ -340,8 +330,8 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing))
+                        ItemList.Color_14.get(1L),
+                        ItemList.Color_11.get(1L))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 144)).noFluidOutputs().duration(100).eut(30)
                 .addTo(sMixerRecipes);

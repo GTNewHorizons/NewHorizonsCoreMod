@@ -3986,7 +3986,7 @@ public class AssemblerRecipes implements Runnable {
         // Molecular Assembler
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 214),
+                        ItemList.Machine_EV_Assembler.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),

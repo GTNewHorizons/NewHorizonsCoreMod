@@ -51,6 +51,7 @@ import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.CompressorManager;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
@@ -102,15 +103,15 @@ public class ScriptAvaritia implements IScriptLoader {
 
         addShapedRecipe(
                 getModItem(Avaritia.ID, "Dire_Crafting", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                ItemList.Robot_Arm_HV.get(1L),
                 getModItem(Avaritia.ID, "Triple_Craft", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing),
+                ItemList.Robot_Arm_HV.get(1L),
                 "waferAdvanced",
                 getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0, missing),
                 "waferAdvanced",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing),
+                ItemList.Electric_Piston_HV.get(1L),
                 "circuitElite",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32642, missing));
+                ItemList.Electric_Piston_HV.get(1L));
         addShapedRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 0, missing),
                 "screwDiamond",
@@ -788,15 +789,15 @@ public class ScriptAvaritia implements IScriptLoader {
                 'e',
                 getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0, missing),
                 'f',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32697, missing),
+                ItemList.Sensor_UV.get(1L),
                 'g',
                 "circuitInfinite",
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32687, missing),
+                ItemList.Emitter_UV.get(1L),
                 'i',
                 "plateInfinity",
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32608, missing),
+                ItemList.Electric_Motor_UV.get(1L),
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
 
@@ -820,13 +821,13 @@ public class ScriptAvaritia implements IScriptLoader {
                 'd',
                 new ItemStack(TinkerTools.largePlate, 1, ExtraUtils.tcon_bedrock_material_id),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32647, missing),
+                ItemList.Electric_Piston_UV.get(1L),
                 'f',
                 TGregUtils.newItemStack(Materials.BlackPlutonium, PartTypes.LargePlate, 1),
                 'g',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32637, missing),
+                ItemList.Conveyor_Module_UV.get(1L),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32608, missing),
+                ItemList.Electric_Motor_UV.get(1L),
                 'i',
                 "circuitInfinite",
                 'j',
@@ -840,15 +841,11 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(GregTech.ID, "gt.metaitem.01", 1, 2394));
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32309, missing))
+                .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 4, missing), ItemList.Shape_Mold_Nugget.get(0L))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 3, missing)).noFluidInputs().noFluidOutputs()
                 .duration(2400).eut(480).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32306, missing))
+                .itemInputs(getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4, missing)).noFluidInputs().noFluidOutputs()
                 .duration(4800).eut(480).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
@@ -869,37 +866,33 @@ public class ScriptAvaritia implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32355, missing))
+                        ItemList.Shape_Extruder_Ingot.get(0L))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Avaritia.ID, "Resource_Block", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32355, missing))
+                        ItemList.Shape_Extruder_Ingot.get(0L))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 6, missing)).noFluidInputs().noFluidOutputs()
                 .duration(1200).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32350, missing))
+                .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 6, missing), ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17397, missing)).noFluidInputs()
                 .noFluidOutputs().duration(4000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11397, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32350, missing))
+                        ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17397, missing)).noFluidInputs()
                 .noFluidOutputs().duration(4000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Avaritia.ID, "Resource", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32350, missing))
+                .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 4, missing), ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17982, missing)).noFluidInputs()
                 .noFluidOutputs().duration(3000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11982, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32350, missing))
+                        ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 17982, missing)).noFluidInputs()
                 .noFluidOutputs().duration(3000).eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()

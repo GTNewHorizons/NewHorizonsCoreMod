@@ -20,10 +20,12 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.chisel.ChiselHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptNatura implements IScriptLoader {
 
@@ -2551,7 +2553,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "natura.flintandblaze", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 432)).noFluidOutputs().duration(200).eut(64)
                 .addTo(sAssemblerRecipes);
@@ -2718,81 +2720,55 @@ public class ScriptNatura implements IScriptLoader {
                 .itemOutputs(getModItem(Natura.ID, "Natura.workbench", 1, 12, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 0, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 1, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 1, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 2, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 2, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 2, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 3, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 3, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 4, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 4, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 4, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 5, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 5, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 5, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 6, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 6, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 7, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 7, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 7, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 8, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 8, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 8, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 9, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 9, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 9, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 10, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 10, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 10, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 11, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 11, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 11, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 12, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 12, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 12, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3337,14 +3313,14 @@ public class ScriptNatura implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                        GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                        GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0, missing))
@@ -3976,8 +3952,8 @@ public class ScriptNatura implements IScriptLoader {
         Module_CustomFuels
                 .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.fusewood", 1, 0, missing), (short) 75);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Bluebells", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32418, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_04.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
 
     }
 }

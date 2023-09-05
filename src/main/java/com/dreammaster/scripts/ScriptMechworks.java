@@ -14,6 +14,8 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptMechworks implements IScriptLoader {
 
@@ -32,7 +34,7 @@ public class ScriptMechworks implements IScriptLoader {
         addShapedRecipe(
                 getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 0, missing),
                 "plateBrass",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "plateBrass",
                 "gearSteel",
                 getModItem(Minecraft.ID, "dispenser", 1, 0, missing),
@@ -55,7 +57,7 @@ public class ScriptMechworks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 9241, missing))
+                        ItemList.Automation_Filter_LV.get(1L))
                 .itemOutputs(getModItem(TinkersMechworks.ID, "RedstoneMachine", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).noFluidOutputs().duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
@@ -99,14 +101,14 @@ public class ScriptMechworks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "LengthWire", 3, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(TinkersMechworks.ID, "SignalBus", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 432)).noFluidOutputs().duration(200).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersMechworks.ID, "SignalBus", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(TinkersMechworks.ID, "SignalTerminal", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).noFluidOutputs().duration(300).eut(30)
                 .addTo(sAssemblerRecipes);

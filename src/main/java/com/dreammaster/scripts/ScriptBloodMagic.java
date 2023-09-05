@@ -49,7 +49,11 @@ import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -368,31 +372,31 @@ public class ScriptBloodMagic implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 2, missing))
+                        GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 1, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 2, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 4, missing))
+                        GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 3, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 5, missing))
+                        GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 4, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing))
@@ -574,7 +578,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32644, missing),
+                ItemList.Electric_Piston_IV.get(1L),
                 'f',
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_bound", 1, 0, missing),
                 'g',
@@ -952,7 +956,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 1, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
+                ItemList.Cover_Crafting.get(1L),
                 'f',
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 1, missing),
                 'g',
@@ -1975,12 +1979,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("motus"), 18).add(Aspect.getAspect("tempus"), 12)
                         .add(Aspect.getAspect("terra"), 8).add(Aspect.getAspect("cognitio"), 4),
                 getModItem(BloodArsenal.ID, "blood_stone", 1, 1, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                new ItemStack[] { ItemList.Electric_Pump_EV.get(1L),
                         getModItem(BloodMagic.ID, "aquasalus", 1, 0, missing),
                         getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
                         getModItem(BloodMagic.ID, "aquasalus", 1, 0, missing),
-                        getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32613, missing),
+                        getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing), ItemList.Electric_Pump_EV.get(1L),
                         getModItem(BloodMagic.ID, "aquasalus", 1, 0, missing),
                         getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
                         getModItem(BloodMagic.ID, "aquasalus", 1, 0, missing),
@@ -2459,14 +2462,13 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 24, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
-                        getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32614, missing),
+                        getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing), ItemList.Electric_Pump_IV.get(1L),
                         getModItem(BloodMagic.ID, "speedRune", 1, 0, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 24, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 27, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32614, missing), });
+                        ItemList.Electric_Pump_IV.get(1L), });
         TCHelper.addResearchPage(
                 "RUNEOFACCELERATION",
                 new ResearchPage(
@@ -3169,7 +3171,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45, missing),
                         getModItem(TinkerConstruct.ID, "slime.gel", 1, 2, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                        ItemList.QuantumEye.get(1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 7, missing),
                         getModItem(TinkerConstruct.ID, "slime.gel", 1, 2, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45, missing),
@@ -3202,15 +3204,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("vinculum"), 48)
                         .add(Aspect.getAspect("limus"), 32).add(Aspect.getAspect("nebrisum"), 8),
                 getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0, missing),
-                new ItemStack[] { getModItem(EnderStorage.ID, "enderChest", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32726, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17770, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
+                new ItemStack[] { getModItem(EnderStorage.ID, "enderChest", 1, 0, missing), ItemList.Gravistar.get(1L),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17770, missing), ItemList.QuantumEye.get(1L),
                         getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
-                        getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32724, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17770, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32726, missing), });
+                        getModItem(Minecraft.ID, "ender_eye", 1, 0, missing), ItemList.QuantumEye.get(1L),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17770, missing), ItemList.Gravistar.get(1L), });
         TCHelper.addResearchPage(
                 "ENDERSIGIL",
                 new ResearchPage(
@@ -3243,8 +3241,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "diamondApple", 1, 0, missing),
                         getModItem(BloodArsenal.ID, "blood_infused_glowstone", 1, 0, missing),
-                        getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32726, missing),
+                        getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0, missing), ItemList.Gravistar.get(1L),
                         getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0, missing),
                         getModItem(BloodArsenal.ID, "blood_infused_glowstone", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "diamondApple", 1, 0, missing),
@@ -3311,13 +3308,10 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("superbia"), 8),
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                 new ItemStack[] { getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32644, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
-                        getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32604, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32644, missing), });
+                        ItemList.Electric_Piston_IV.get(1L), ItemList.Cover_Crafting.get(1L),
+                        ItemList.Electric_Motor_IV.get(1L), getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
+                        ItemList.Electric_Motor_IV.get(1L), ItemList.Cover_Crafting.get(1L),
+                        ItemList.Electric_Piston_IV.get(1L), });
         TCHelper.addResearchPage(
                 "SIGILOFCOMPRESSION",
                 new ResearchPage(
@@ -4842,7 +4836,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 45, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2935, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2936, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4857,7 +4851,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0, missing),
                 10,
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 2804, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2535, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2536, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2538, missing),

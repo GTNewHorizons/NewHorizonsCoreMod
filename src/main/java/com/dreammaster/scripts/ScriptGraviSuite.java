@@ -10,6 +10,8 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.enums.ItemList;
+
 public class ScriptGraviSuite implements IScriptLoader {
 
     @Override
@@ -51,9 +53,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.180k_NaK_Coolantcell", 1, 0, missing),
+                ItemList.Reactor_Coolant_NaK_3.get(1L),
                 "plateColdCallistoIce",
-                getModItem(GregTech.ID, "gt.180k_NaK_Coolantcell", 1, 0, missing),
+                ItemList.Reactor_Coolant_NaK_3.get(1L),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0, missing));
@@ -62,9 +64,9 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "reactorVentDiamond", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.180k_Helium_Coolantcell", 1, 0, missing),
+                ItemList.Reactor_Coolant_He_3.get(1L),
                 "plateColdCallistoIce",
-                getModItem(GregTech.ID, "gt.180k_Helium_Coolantcell", 1, 0, missing),
+                ItemList.Reactor_Coolant_He_3.get(1L),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0, missing));
@@ -88,7 +90,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 2384, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 23, missing),
+                ItemList.Transformer_EV_HV.get(1L),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 2384, missing));
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "vajra", 1, 27, missing),
@@ -126,11 +128,11 @@ public class ScriptGraviSuite implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GraviSuiteNEO.ID, "epicLappack", 1, 27, missing),
                 getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32599, missing),
+                ItemList.Energy_LapotronicOrb2.get(1L),
                 getModItem(NewHorizonsCoreMod.ID, "item.IridiumAlloyItemCasing", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32599, missing),
+                ItemList.Energy_LapotronicOrb2.get(1L),
                 getModItem(GraviSuite.ID, "ultimateLappack", 1, wildcard, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32599, missing),
+                ItemList.Energy_LapotronicOrb2.get(1L),
                 "circuitUltimate",
                 "wireGt16SuperconductorZPM",
                 "circuitUltimate");
@@ -140,7 +142,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 "toolHeadChainsawTungstenSteel",
                 "craftingToolScrewdriver",
                 "gearGtSmallTungstenSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 "gearGtSmallTungstenSteel",
                 "plateTungstenSteel",
                 "batteryElite",
@@ -151,7 +153,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedIridiumDrillTip", 1, 0, missing),
                 "craftingToolScrewdriver",
                 "gearGtSmallIridium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32603, missing),
+                ItemList.Electric_Motor_EV.get(1L),
                 "gearGtSmallIridium",
                 "plateAlloyIridium",
                 "batteryMaster",

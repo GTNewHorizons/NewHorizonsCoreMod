@@ -49,6 +49,8 @@ import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.util.GT_Utility;
 import tconstruct.library.crafting.Smeltery;
 
 public class ScriptProjectRed implements IScriptLoader {
@@ -162,7 +164,7 @@ public class ScriptProjectRed implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 0, missing),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "itemCasingSteel",
                 getModItem(NewHorizonsCoreMod.ID, "item.DiamondDrillTip", 1, 0, missing),
                 getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing),
@@ -176,20 +178,20 @@ public class ScriptProjectRed implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 1, missing),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "itemCasingSteel",
                 "circuitBasic",
                 "pipeMediumTin",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "itemCasingSteel",
                 "craftingPiston",
                 "itemCasingSteel");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 2, missing),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "itemCasingSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "pipeMediumTin",
                 "circuitBasic",
                 "itemCasingSteel",
@@ -201,22 +203,22 @@ public class ScriptProjectRed implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 3, missing),
                 "itemCasingAluminium",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "itemCasingAluminium",
                 "circuitGood",
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 1, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32631, missing),
+                ItemList.Conveyor_Module_MV.get(1L),
                 "itemCasingAluminium",
                 "craftingFilter",
                 "itemCasingAluminium");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 4, missing),
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 7, missing),
                 "circuitBasic",
                 getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "itemCasingSteel",
                 "craftingPiston",
                 "itemCasingSteel");
@@ -226,14 +228,14 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
                 "plateSteel",
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                ItemList.Hull_LV.get(1L),
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
                 "plateSteel",
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
                 "plateSteel");
         addShapelessRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32750, missing));
+                ItemList.Cover_SolarPanel.get(1L));
         addShapelessRecipe(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 2000, missing));
@@ -816,7 +818,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "plateSteel",
                 "wireGt04Copper",
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                ItemList.Hull_LV.get(1L),
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing),
                 "circuitBasic",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
@@ -827,10 +829,10 @@ public class ScriptProjectRed implements IScriptLoader {
                 "plateSteel",
                 "circuitBasic",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11, missing),
+                ItemList.Hull_LV.get(1L),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 16, missing),
                 "wireGt04Copper",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "wireGt04Copper");
         addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 9, missing),
@@ -863,7 +865,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "plateObsidian",
                 "stickSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 321, missing),
+                ItemList.Machine_LV_Printer.get(1L),
                 "stickSteel");
         addShapelessRecipe(
                 getModItem(MCFrames.ID, "mcframes.frame", 1, 0, missing),
@@ -923,8 +925,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 19, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32429, missing),
+                ItemList.Color_15.get(1L),
+                ItemList.Color_15.get(1L),
                 null,
                 null,
                 null,
@@ -956,8 +958,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 20, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32428, missing),
+                ItemList.Color_14.get(1L),
+                ItemList.Color_14.get(1L),
                 null,
                 null,
                 null,
@@ -1022,8 +1024,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32427, missing),
+                ItemList.Color_13.get(1L),
+                ItemList.Color_13.get(1L),
                 null,
                 null,
                 null,
@@ -1066,8 +1068,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 22, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32426, missing),
+                ItemList.Color_12.get(1L),
+                ItemList.Color_12.get(1L),
                 null,
                 null,
                 null,
@@ -1121,8 +1123,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 23, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32425, missing),
+                ItemList.Color_11.get(1L),
+                ItemList.Color_11.get(1L),
                 null,
                 null,
                 null,
@@ -1165,8 +1167,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 24, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32424, missing),
+                ItemList.Color_10.get(1L),
+                ItemList.Color_10.get(1L),
                 null,
                 null,
                 null,
@@ -1209,8 +1211,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 25, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32423, missing),
+                ItemList.Color_09.get(1L),
+                ItemList.Color_09.get(1L),
                 null,
                 null,
                 null,
@@ -1242,8 +1244,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 26, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32422, missing),
+                ItemList.Color_08.get(1L),
+                ItemList.Color_08.get(1L),
                 null,
                 null,
                 null,
@@ -1286,8 +1288,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 27, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32421, missing),
+                ItemList.Color_07.get(1L),
+                ItemList.Color_07.get(1L),
                 null,
                 null,
                 null,
@@ -1330,8 +1332,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32420, missing),
+                ItemList.Color_06.get(1L),
+                ItemList.Color_06.get(1L),
                 null,
                 null,
                 null,
@@ -1385,8 +1387,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 29, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32419, missing),
+                ItemList.Color_05.get(1L),
+                ItemList.Color_05.get(1L),
                 null,
                 null,
                 null,
@@ -1451,8 +1453,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32418, missing),
+                ItemList.Color_04.get(1L),
+                ItemList.Color_04.get(1L),
                 null,
                 null,
                 null,
@@ -1462,8 +1464,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 30, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32410, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32410, missing),
+                ItemList.Dye_Indigo.get(1L),
+                ItemList.Dye_Indigo.get(1L),
                 null,
                 null,
                 null,
@@ -1517,8 +1519,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 31, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32417, missing),
+                ItemList.Color_03.get(1L),
+                ItemList.Color_03.get(1L),
                 null,
                 null,
                 null,
@@ -1594,8 +1596,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 32, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32416, missing),
+                ItemList.Color_02.get(1L),
+                ItemList.Color_02.get(1L),
                 null,
                 null,
                 null,
@@ -1649,8 +1651,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32415, missing),
+                ItemList.Color_01.get(1L),
+                ItemList.Color_01.get(1L),
                 null,
                 null,
                 null,
@@ -1715,8 +1717,8 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 34, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                 getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 32414, missing),
+                ItemList.Color_00.get(1L),
+                ItemList.Color_00.get(1L),
                 null,
                 null,
                 null,
@@ -1728,7 +1730,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(200).eut(16)
                 .addTo(sAssemblerRecipes);
@@ -1783,7 +1785,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 20879, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.datacard", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(200).eut(16)
                 .addTo(sAssemblerRecipes);
@@ -1867,7 +1869,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32711, missing),
+                        ItemList.Circuit_Board_Epoxy.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 4, 17526, missing))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(600).eut(30)
@@ -1875,7 +1877,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 18879, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1889,7 +1891,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(600).eut(30)
@@ -1897,7 +1899,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(600).eut(30)
@@ -1921,7 +1923,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(600).eut(30)
@@ -1929,7 +1931,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(600).eut(30)
@@ -1953,7 +1955,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
@@ -1961,7 +1963,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.blockmachines", 4, 1420, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
@@ -1988,7 +1990,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -1999,7 +2001,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2010,7 +2012,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2043,7 +2045,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2054,7 +2056,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2065,7 +2067,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2098,7 +2100,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2109,7 +2111,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2120,7 +2122,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2153,7 +2155,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2164,7 +2166,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2175,7 +2177,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2208,7 +2210,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2219,7 +2221,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2230,7 +2232,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2263,7 +2265,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2274,7 +2276,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2285,7 +2287,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2318,7 +2320,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2329,7 +2331,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2340,7 +2342,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2373,7 +2375,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2384,7 +2386,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2395,7 +2397,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17035, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2428,7 +2430,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2439,7 +2441,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2450,7 +2452,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2473,6 +2475,18 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2484,7 +2498,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2496,19 +2510,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2528,126 +2530,6 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2659,12 +2541,120 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Good.get(1L),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Processor.get(1L),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Processor.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2676,7 +2666,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2688,7 +2678,19 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2724,7 +2726,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2736,7 +2738,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2748,7 +2750,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2784,7 +2786,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2796,7 +2798,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2808,7 +2810,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17300, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2843,7 +2845,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2854,7 +2856,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2865,7 +2867,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2898,7 +2900,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2909,7 +2911,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2920,7 +2922,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2953,7 +2955,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2964,7 +2966,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2975,7 +2977,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3008,7 +3010,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3019,7 +3021,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3030,7 +3032,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3063,7 +3065,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3074,7 +3076,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3085,7 +3087,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3118,7 +3120,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3129,7 +3131,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3140,7 +3142,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3173,7 +3175,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3184,7 +3186,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3195,7 +3197,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 4, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3228,7 +3230,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3239,7 +3241,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3250,7 +3252,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17032, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3283,7 +3285,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3294,7 +3296,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3305,7 +3307,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -3339,7 +3341,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3351,7 +3353,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3387,7 +3389,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3399,7 +3401,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3435,7 +3437,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3447,7 +3449,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3483,7 +3485,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3495,7 +3497,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3531,7 +3533,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3543,7 +3545,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3579,7 +3581,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3591,7 +3593,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17057, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -3626,7 +3628,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3637,7 +3639,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3648,7 +3650,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3681,7 +3683,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3692,7 +3694,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3703,7 +3705,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3739,7 +3741,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3750,7 +3752,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3761,7 +3763,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3794,7 +3796,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3805,7 +3807,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3816,7 +3818,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3849,7 +3851,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3860,7 +3862,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3871,7 +3873,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17305, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3904,7 +3906,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32702, missing),
+                        ItemList.Circuit_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3915,7 +3917,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32079, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3926,7 +3928,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32080, missing),
+                        ItemList.Circuit_Processor.get(1L),
                         getModItem(Railcraft.ID, "part.plate", 1, 1, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
@@ -3959,7 +3961,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -3970,7 +3972,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4003,7 +4005,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4014,7 +4016,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4047,7 +4049,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4058,7 +4060,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4091,7 +4093,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4102,7 +4104,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4135,7 +4137,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4146,7 +4148,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4179,7 +4181,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4190,7 +4192,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
@@ -4223,7 +4225,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
@@ -4234,7 +4236,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
@@ -4267,7 +4269,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
@@ -4278,7 +4280,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
@@ -4311,7 +4313,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
@@ -4322,7 +4324,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17019, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
@@ -4345,6 +4347,17 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
+                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
@@ -4355,18 +4368,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
-                        getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(900).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
@@ -4399,7 +4401,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
@@ -4410,7 +4412,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
@@ -4443,7 +4445,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32701, missing),
+                        ItemList.Circuit_Basic.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
@@ -4454,7 +4456,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.03", 1, 32078, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17811, missing),
                         getModItem(GregTech.ID, "gt.blockmachines", 2, 2000, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
@@ -4476,7 +4478,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 6, 56, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32500, missing))
+                        ItemList.Battery_Hull_LV.get(1L))
                 .itemOutputs(getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing))
                 .noFluidInputs().noFluidOutputs().duration(100).eut(2).addTo(sCannerRecipes);
         GT_Values.RA.stdBuilder()
@@ -4494,25 +4496,25 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 2020, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+                        ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing)).noFluidInputs()
                 .noFluidOutputs().duration(200).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+                        ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+                        ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32307, missing))
+                        ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing)).noFluidInputs()
                 .noFluidOutputs().duration(600).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
@@ -4547,770 +4549,770 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 15, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 8, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32429, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_15.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 23, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 25, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 14, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32428, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_14.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 24, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 13, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32427, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_13.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 23, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 12, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32426, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_12.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 22, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 11, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2931, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32425, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_11.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 21, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 10, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32424, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_10.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 20, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2877, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 9, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32423, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_09.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 19, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 8, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32422, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_08.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 18, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 8, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32421, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_07.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 8, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 17, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 9, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2524, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 8524, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32420, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_06.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 9, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 16, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 10, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32419, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_05.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 10, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 15, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemDust", 2, 12, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 11, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Natura.ID, "barleyFood", 2, 8, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2525, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2526, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 8525, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32410, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Dye_Indigo.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32418, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_04.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 21, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 11, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 14, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GalacticraftAmunRa.ID, "item.baseItem", 2, 29, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 12, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "cocoapowderItem", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2887, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2888, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2930, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32417, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_03.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemCofeePowder", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 25, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 12, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 13, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 13, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32416, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_02.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 22, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 13, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 12, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 14, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32415, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_01.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 19, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 14, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 11, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 15, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 9, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 32414, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        ItemList.Color_00.get(2L),
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ForbiddenMagic.ID, "FMResource", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ThaumicHorizons.ID, "inkEgg", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 24, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 15, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 10, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 8, missing))
+                        GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing)).noFluidInputs()
                 .noFluidOutputs().duration(50).eut(8).addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
