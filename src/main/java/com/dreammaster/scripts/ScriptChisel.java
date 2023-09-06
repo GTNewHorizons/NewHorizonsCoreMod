@@ -19,6 +19,11 @@ import java.util.List;
 import com.cricketcraft.chisel.api.carving.CarvingUtils;
 import com.dreammaster.chisel.ChiselHelper;
 
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+
 public class ScriptChisel implements IScriptLoader {
 
     @Override
@@ -114,9 +119,9 @@ public class ScriptChisel implements IScriptLoader {
                 "screwSteel",
                 "ringWoodSealed",
                 "screwSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
+                ItemList.Cover_Crafting.get(1L),
+                ItemList.Robot_Arm_LV.get(1L),
                 "craftingToolScrewdriver",
                 getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing),
                 "craftingToolHardHammer");
@@ -129,7 +134,7 @@ public class ScriptChisel implements IScriptLoader {
                 "circuitBasic",
                 "plateEmerald",
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32630, missing),
+                ItemList.Conveyor_Module_LV.get(1L),
                 "wireGt01RedAlloy");
         addShapedRecipe(
                 getModItem(Chisel.ID, "upgrade", 1, 1, missing),
@@ -140,7 +145,7 @@ public class ScriptChisel implements IScriptLoader {
                 "circuitBasic",
                 "plateEmerald",
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32650, missing),
+                ItemList.Robot_Arm_LV.get(1L),
                 "wireGt01RedAlloy");
         addShapedRecipe(
                 getModItem(Chisel.ID, "upgrade", 1, 2, missing),
@@ -151,7 +156,7 @@ public class ScriptChisel implements IScriptLoader {
                 "circuitBasic",
                 "plateEmerald",
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32744, missing),
+                ItemList.Cover_Crafting.get(1L),
                 "wireGt01RedAlloy");
         addShapedRecipe(
                 getModItem(Chisel.ID, "upgrade", 1, 3, missing),
@@ -162,7 +167,7 @@ public class ScriptChisel implements IScriptLoader {
                 "circuitBasic",
                 "plateEmerald",
                 "wireGt01RedAlloy",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32600, missing),
+                ItemList.Electric_Motor_LV.get(1L),
                 "wireGt01RedAlloy");
         addShapedRecipe(
                 getModItem(Chisel.ID, "mossy_templeblock", 1, 0, missing),
@@ -240,8 +245,9 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("marble", getModItem(GregTech.ID, "gt.blockstones", 1, 6, missing));
         ChiselHelper.addVariationFromStack("marble", getModItem(GregTech.ID, "gt.blockstones", 1, 7, missing));
         ChiselHelper.addVariationFromStack("RCAbyssalBlock", getModItem(Railcraft.ID, "cube", 1, 6, missing));
-        ChiselHelper
-                .addVariationFromStack("RCAbyssalBlock", getModItem(GregTech.ID, "gt.blockgranites", 1, 0, missing));
+        ChiselHelper.addVariationFromStack(
+                "RCAbyssalBlock",
+                GT_OreDictUnificator.get(OrePrefixes.stone, Materials.GraniteBlack, 1L));
         ChiselHelper
                 .addVariationFromStack("RCAbyssalBlock", getModItem(GregTech.ID, "gt.blockgranites", 1, 1, missing));
         ChiselHelper
@@ -275,7 +281,9 @@ public class ScriptChisel implements IScriptLoader {
                 "basalts",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 4, missing));
         ChiselHelper.addGroup("redgranite");
-        ChiselHelper.addVariationFromStack("redgranite", getModItem(GregTech.ID, "gt.blockgranites", 1, 8, missing));
+        ChiselHelper.addVariationFromStack(
+                "redgranite",
+                GT_OreDictUnificator.get(OrePrefixes.stone, Materials.GraniteRed, 1L));
         ChiselHelper.addVariationFromStack("redgranite", getModItem(GregTech.ID, "gt.blockgranites", 1, 9, missing));
         ChiselHelper.addVariationFromStack("redgranite", getModItem(GregTech.ID, "gt.blockgranites", 1, 10, missing));
         ChiselHelper.addVariationFromStack("redgranite", getModItem(GregTech.ID, "gt.blockgranites", 1, 11, missing));

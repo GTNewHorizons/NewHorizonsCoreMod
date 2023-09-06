@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -28,6 +27,7 @@ import com.dreammaster.recipes.ShapedUniversalRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 
 public class ScriptAdvancedBackpacks implements IScriptLoader {
 
@@ -219,11 +219,11 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 "plateSteel",
                 "plateSteel",
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Piston_MV.get(1L),
                 "pipeLargeSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32641, missing),
+                ItemList.Electric_Piston_MV.get(1L),
                 "plateSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 1111, missing),
+                ItemList.Generator_Diesel_MV.get(1L),
                 "plateSteel");
         addShapedRecipe(
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 6, missing),
@@ -248,7 +248,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 6, missing),
                 "screwDiamond",
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "pipeTinySteel",
                 "pipeTinySteel",
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 5, missing),
@@ -265,7 +265,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 6, missing),
                 "screwDiamond",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 "pipeTinySteel",
                 "pipeTinySteel",
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 5, missing),
@@ -276,7 +276,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 "craftingToolWrench",
                 "plateAnyRubber",
                 "plateAnyRubber",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32610, missing),
+                ItemList.Electric_Pump_LV.get(1L),
                 "plateAnyRubber",
                 "plateAnyRubber",
                 "plateAnyRubber",
@@ -359,7 +359,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 "screwSteel",
                 "plateAluminium",
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(AdventureBackpack.ID, "backpackComponent", 1, 2, missing),
                 "pipeTinySteel",
                 getModItem(Railcraft.ID, "machine.beta", 1, 5, missing),
@@ -376,7 +376,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 "screwSteel",
                 "plateAluminium",
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32601, missing),
+                ItemList.Electric_Motor_MV.get(1L),
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 "pipeTinySteel",
                 getModItem(Railcraft.ID, "machine.beta", 1, 5, missing),

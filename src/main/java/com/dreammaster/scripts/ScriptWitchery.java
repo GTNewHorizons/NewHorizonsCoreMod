@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
@@ -24,9 +23,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -77,7 +82,7 @@ public class ScriptWitchery implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 16, missing),
                 null,
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2622, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
                 null,
                 null,
                 null,
@@ -85,7 +90,7 @@ public class ScriptWitchery implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 2622, missing),
+                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Quicklime, 1L),
                 null,
                 null,
                 getModItem(Witchery.ID, "ingredient", 1, 16, missing),
@@ -235,15 +240,15 @@ public class ScriptWitchery implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L),
+                        GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                        GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "bone", 1, 0, missing))
@@ -259,9 +264,7 @@ public class ScriptWitchery implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(50).eut(24)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "clay_ball", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 0, 32305, missing))
+                .itemInputs(getModItem(Minecraft.ID, "clay_ball", 4, 0, missing), ItemList.Shape_Mold_Bottle.get(0L))
                 .itemOutputs(getModItem(Witchery.ID, "ingredient", 4, 26, missing)).noFluidInputs().noFluidOutputs()
                 .duration(400).eut(30).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
@@ -316,11 +319,11 @@ public class ScriptWitchery implements IScriptLoader {
                 'c',
                 "plateSteel",
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'e',
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
                 'f',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'g',
                 getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0, missing),
                 'h',
@@ -464,7 +467,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'a',
                 "craftingToolScrewdriver",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'c',
                 "craftingToolHardHammer",
                 'd',
@@ -548,15 +551,13 @@ public class ScriptWitchery implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("fames"), 32),
                 getModItem(Witchery.ID, "seepingshoes", 1, 0, missing),
                 new ItemStack[] { getModItem(Witchery.ID, "ingredient", 1, 80, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 34, missing),
+                        CustomItemList.ManyullynCrystal.get(1L), getModItem(Witchery.ID, "ingredient", 1, 34, missing),
                         getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 80, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1, 0, missing),
+                        CustomItemList.ManyullynCrystal.get(1L), getModItem(Witchery.ID, "ingredient", 1, 80, missing),
+                        CustomItemList.ManyullynCrystal.get(1L),
                         getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
                         getModItem(Witchery.ID, "ingredient", 1, 34, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1, 0, missing), });
+                        CustomItemList.ManyullynCrystal.get(1L), });
         TCHelper.addResearchPage(
                 "RUBYSLIPPERS",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Witchery.ID, "rubyslippers", 1, 0, missing))));
@@ -860,7 +861,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'a',
                 "plateThaumium",
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'c',
                 "plateThaumium",
                 'd',
@@ -872,7 +873,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'g',
                 "blockSteel",
                 'h',
-                getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                CustomItemList.SteelBars.get(1L),
                 'i',
                 "blockSteel");
         TCHelper.addResearchPage(
@@ -936,11 +937,9 @@ public class ScriptWitchery implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("metallum"), 32).add(Aspect.getAspect("vitreus"), 8)
                         .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("lux"), 16),
                 getModItem(Witchery.ID, "fumefunnel", 1, 0, missing),
-                new ItemStack[] { getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
-                        getModItem(Witchery.ID, "ingredient", 1, 73, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.SteelBars", 1, 0, missing),
+                new ItemStack[] { CustomItemList.SteelBars.get(1L),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing), CustomItemList.SteelBars.get(1L),
+                        getModItem(Witchery.ID, "ingredient", 1, 73, missing), CustomItemList.SteelBars.get(1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing), });
         TCHelper.addResearchPage(
                 "FILTEREDFUMEFUNNEL",

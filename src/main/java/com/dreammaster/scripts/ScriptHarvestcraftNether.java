@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -12,6 +11,9 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptHarvestcraftNether implements IScriptLoader {
 
@@ -51,17 +53,17 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 null,
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 64, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolFile",
                 getModItem(Minecraft.ID, "stick", 1, 0, missing),
                 "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(PamsHarvestTheNether.ID, "Quartz Shovel", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 64, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolFile",
                 getModItem(Minecraft.ID, "stick", 1, 0, missing),
                 "craftingToolHardHammer",
@@ -70,7 +72,7 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(PamsHarvestTheNether.ID, "Quartz Pickaxe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 "craftingToolFile",
@@ -81,10 +83,10 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(PamsHarvestTheNether.ID, "Quartz Axe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(Minecraft.ID, "stick", 1, 0, missing),
                 null,
                 "craftingToolFile",
@@ -92,7 +94,7 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(PamsHarvestTheNether.ID, "Quartz Hoe", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 "craftingToolHardHammer",
                 "craftingToolFile",
@@ -106,20 +108,20 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 null,
                 null,
                 null);
         addShapedRecipe(
                 getModItem(PamsHarvestTheNether.ID, "quartzchestItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing));
@@ -128,20 +130,20 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 null,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing));
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         addShapedRecipe(
                 getModItem(PamsHarvestTheNether.ID, "quartzbootsItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
                 null,
                 getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 "craftingToolHardHammer",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17522, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 null,
                 null,
                 null);
@@ -152,19 +154,19 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
                 .itemOutputs(
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(200).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
                 .itemOutputs(
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(200).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
                 .itemOutputs(
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))

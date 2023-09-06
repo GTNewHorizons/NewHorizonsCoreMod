@@ -9,6 +9,10 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
+
 public class ScriptArchitectureCraft implements IScriptLoader {
 
     @Override
@@ -74,7 +78,7 @@ public class ScriptArchitectureCraft implements IScriptLoader {
         addShapelessRecipe(getModItem(ArchitectureCraft.ID, "sawblade", 1), "toolHeadBuzzSawAnyIron");
 
         addShapelessRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 15032),
+                GT_OreDictUnificator.get(OrePrefixes.toolHeadBuzzSaw, Materials.Iron, 1L),
                 getModItem(ArchitectureCraft.ID, "sawblade", 1));
     }
 }

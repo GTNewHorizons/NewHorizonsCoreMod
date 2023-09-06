@@ -4,9 +4,7 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedTransmission;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -20,7 +18,11 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.gthandler.CustomItemList;
+
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptStevesFactoryManager implements IScriptLoader {
 
@@ -49,13 +51,13 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         addShapedRecipe(
                 getModItem(StevesFactoryManager.ID, "BlockMachineManagerName", 1, 0, missing),
                 "plateStainlessSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                CustomItemList.Display.get(1L),
                 "plateStainlessSteel",
                 "plateRedAlloy",
-                getModItem(GregTech.ID, "gt.blockcasings2", 1, 6, missing),
+                ItemList.Casing_Processor.get(1L),
                 "plateRedAlloy",
                 "plateStainlessSteel",
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32602, missing),
+                ItemList.Electric_Motor_HV.get(1L),
                 "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(StevesFactoryManager.ID, "BlockCableName", 2, 0, missing),
@@ -79,14 +81,14 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32692, missing))
+                        ItemList.Sensor_HV.get(1L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableInputName", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32682, missing))
+                        ItemList.Emitter_HV.get(1L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableOutputName", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -114,7 +116,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableIntakeName", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32612, missing))
+                        ItemList.Electric_Pump_HV.get(1L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableIntakeName", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).noFluidOutputs().duration(300)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -128,7 +130,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32652, missing))
+                        ItemList.Robot_Arm_HV.get(1L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableBreakerName", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -142,20 +144,20 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 8, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 1, missing))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 8, missing))
                 .noFluidInputs().noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32705, missing))
+                        ItemList.Circuit_Elite.get(2L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 32740, missing))
+                        ItemList.Cover_Screen.get(2L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -169,7 +171,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32670, missing))
+                        ItemList.Field_Generator_LV.get(1L))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 864)).noFluidOutputs().duration(400)
                 .eut(480).addTo(sAssemblerRecipes);
@@ -180,16 +182,13 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .itemOutputs(getModItem(StevesAddons.ID, "cable_rf", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).noFluidOutputs().duration(200)
                 .eut(480).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32762, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32708, missing))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), ItemList.Tool_DataStick.get(1L))
                 .itemOutputs(getModItem(StevesAddons.ID, "duplicator", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(150)
                 .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.Display", 1, 0, missing),
+                        CustomItemList.Display.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing))
                 .itemOutputs(getModItem(StevesAddons.ID, "labeler", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(150)

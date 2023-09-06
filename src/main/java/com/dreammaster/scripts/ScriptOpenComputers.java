@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -10,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 
 public class ScriptOpenComputers implements IScriptLoader {
@@ -134,7 +134,7 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'a',
                 "circuitMaster",
                 'b',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32606, missing),
+                ItemList.Electric_Motor_LuV.get(1L),
                 'c',
                 "circuitElite",
                 'd',
@@ -165,7 +165,7 @@ public class ScriptOpenComputers implements IScriptLoader {
                 'd',
                 getModItem(OpenComputers.ID, "item", 1, 106, missing),
                 'e',
-                getModItem(GregTech.ID, "gt.metaitem.03", 1, 32105, missing),
+                ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                 'f',
                 "circuitSuperconductor",
                 'g',

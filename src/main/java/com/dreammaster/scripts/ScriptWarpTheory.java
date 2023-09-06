@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -18,6 +17,10 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -117,15 +120,14 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.getAspect("venenum"), 32),
                 getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing),
                 new ItemStack[] { getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32553, missing),
+                        ItemList.Crop_Drop_MTomato.get(1L),
                         getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 30694, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cell, Materials.LifeEssence, 1L),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
                         getModItem(Witchery.ID, "ingredient", 1, 36, missing),
-                        getModItem(ThaumicBases.ID, "resource", 1, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 32553, missing),
+                        getModItem(ThaumicBases.ID, "resource", 1, 5, missing), ItemList.Crop_Drop_MTomato.get(1L),
                         getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 30694, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cell, Materials.LifeEssence, 1L),
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
                         getModItem(Witchery.ID, "ingredient", 1, 36, missing), });
         TCHelper.addResearchPage(
@@ -154,15 +156,15 @@ public class ScriptWarpTheory implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("permutatio"), 32)
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("sano"), 16),
                 getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 11, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 24500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing), });
         TCHelper.addResearchPage(
                 "PURETEAR",
@@ -181,19 +183,19 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.getAspect("permutatio"), 32),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0, missing),
                 new ItemStack[] { getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 1L),
                         getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 29500, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11978, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17086, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 27330, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 1L), });
         TCHelper.setResearchAspects(
                 "warptheory.amulet",
                 new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("auram"), 15)

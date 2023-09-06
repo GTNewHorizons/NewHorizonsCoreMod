@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.FloodLights;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -13,7 +12,10 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptFloodLight implements IScriptLoader {
 
@@ -100,7 +102,7 @@ public class ScriptFloodLight implements IScriptLoader {
                 .duration(100).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 19081, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tungsten, 1L),
                         getModItem(Minecraft.ID, "glass_pane", 2, 0, missing))
                 .itemOutputs(getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("argon", 1)).noFluidOutputs().duration(200).eut(120)
@@ -108,14 +110,14 @@ public class ScriptFloodLight implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 3, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 17305, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
                 .itemOutputs(getModItem(FloodLights.ID, "carbonDissolver", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(200).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 28032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
                 .itemOutputs(getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).noFluidOutputs().duration(200).eut(120)
                 .addTo(sAssemblerRecipes);

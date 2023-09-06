@@ -20,10 +20,12 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.chisel.ChiselHelper;
 
 import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 
 public class ScriptNatura implements IScriptLoader {
 
@@ -2551,7 +2553,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                        GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "natura.flintandblaze", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 432)).noFluidOutputs().duration(200).eut(64)
                 .addTo(sAssemblerRecipes);
@@ -2718,81 +2720,55 @@ public class ScriptNatura implements IScriptLoader {
                 .itemOutputs(getModItem(Natura.ID, "Natura.workbench", 1, 12, missing)).noFluidInputs().noFluidOutputs()
                 .duration(200).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 0, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 0, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 0, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 1, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 1, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 1, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 2, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 2, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 2, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 3, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 3, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 3, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 4, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 4, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 4, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 5, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 5, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 5, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 6, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 6, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 6, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 7, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 7, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 7, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 8, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 8, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 8, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 9, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 9, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 9, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 10, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 10, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 10, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 11, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 11, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 11, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 3, 12, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 3, missing))
+                .itemInputs(getModItem(Natura.ID, "natura.stick", 3, 12, missing), GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(Natura.ID, "Natura.fence", 1, 12, missing)).noFluidInputs().noFluidOutputs()
                 .duration(300).eut(4).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3180,7 +3156,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3192,7 +3168,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.sakura", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3204,7 +3180,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.ghostwood", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3216,7 +3192,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.redwood", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3228,7 +3204,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.bloodwood", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3240,7 +3216,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.hopseed", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3252,7 +3228,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.maple", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3264,7 +3240,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.silverbell", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3276,7 +3252,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.amaranth", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3288,7 +3264,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.tiger", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3300,7 +3276,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.willow", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3312,7 +3288,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.darkwood", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3324,7 +3300,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.fusewood", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3336,15 +3312,15 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24032, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L),
+                        GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing),
-                        getModItem(GregTech.ID, "gt.integrated_circuit", 0, 9, missing))
+                        GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing)).noFluidInputs()
                 .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 1, 0, missing))
@@ -3506,253 +3482,253 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 2, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 2, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 2, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 15, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 15, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, 15, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 3, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 3, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, 3, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 2, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 2, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 2, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 8, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 3, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 3, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, 3, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 9, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "willow", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "willow", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "willow", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 10, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 11, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 11, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 11, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 12, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 4, 12, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(400).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, 1, missing))
                 .itemOutputs(
                         getModItem(Natura.ID, "planks", 6, 12, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(4)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "planks", 1, 0, missing))
@@ -3913,38 +3889,38 @@ public class ScriptNatura implements IScriptLoader {
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "tree", 1, wildcard, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "redwood", 1, wildcard, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "bloodwood", 1, wildcard, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Tree", 1, wildcard, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "willow", 1, wildcard, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Dark Tree", 1, wildcard, missing))
                 .itemOutputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 2809, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .outputChances(10000, 8000).noFluidInputs().noFluidOutputs().duration(400).eut(2)
                 .addTo(sMaceratorRecipes);
         Module_CustomFuels
@@ -3976,8 +3952,8 @@ public class ScriptNatura implements IScriptLoader {
         Module_CustomFuels
                 .registerCustomFuelValue(getModItem(Natura.ID, "pressureplate.fusewood", 1, 0, missing), (short) 75);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Bluebells", 1, 0, missing))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 2, 32418, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_04.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
+                .addTo(sExtractorRecipes);
 
     }
 }
