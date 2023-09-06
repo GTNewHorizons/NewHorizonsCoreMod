@@ -374,30 +374,6 @@ public class ScriptBiblioWoodsNatura implements IScriptLoader {
                     null);
 
             addShapedRecipe(
-                    getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodFancyWorkbench", 1, i),
-                    ink,
-                    craftingTable,
-                    feather,
-                    Nwood[i],
-                    getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodBookcase", 1, i),
-                    Nwood[i],
-                    Nwood[i],
-                    Nwood[i],
-                    Nwood[i]);
-
-            addShapedRecipe(
-                    getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodFancyWorkbench", 1, i),
-                    feather,
-                    craftingTable,
-                    ink,
-                    Nwood[i],
-                    getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodBookcase", 1, i),
-                    Nwood[i],
-                    Nwood[i],
-                    Nwood[i],
-                    Nwood[i]);
-
-            addShapedRecipe(
                     getModItem(BiblioWoodsNaturaEdition.ID, "BiblioWoodMapFrame", 1, i),
                     stick,
                     stick,

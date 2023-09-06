@@ -641,18 +641,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 1),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "PlumSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 1),
-                "PlumSlab",
-                "PlumSlab",
-                "PlumSlab",
-                "PlumSlab");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 17),
                 null,
                 "blockWool",
@@ -819,18 +807,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 0),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "PineSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 0),
-                "PineSlab",
-                "PineSlab",
-                "PineSlab",
-                "PineSlab");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 16),
@@ -1001,18 +977,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 2),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "PoplarSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 2),
-                "PoplarSlab",
-                "PoplarSlab",
-                "PoplarSlab",
-                "PoplarSlab");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 18),
                 null,
                 "blockWool",
@@ -1179,18 +1143,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 3),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "SequoiaSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 3),
-                "SequoiaSlab",
-                "SequoiaSlab",
-                "SequoiaSlab",
-                "SequoiaSlab");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 19),
@@ -1361,18 +1313,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 4),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "TeakSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 4),
-                "TeakSlab",
-                "TeakSlab",
-                "TeakSlab",
-                "TeakSlab");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 20),
                 null,
                 "blockWool",
@@ -1539,18 +1479,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 5),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "WalnutSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 5),
-                "WalnutSlab",
-                "WalnutSlab",
-                "WalnutSlab",
-                "WalnutSlab");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 21),
@@ -1721,18 +1649,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 6),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "WengeSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 6),
-                "WengeSlab",
-                "WengeSlab",
-                "WengeSlab",
-                "WengeSlab");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 22),
                 null,
                 "blockWool",
@@ -1899,18 +1815,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench2", 1, 7),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "WillowSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase2", 1, 7),
-                "WillowSlab",
-                "WillowSlab",
-                "WillowSlab",
-                "WillowSlab");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 23),
@@ -2081,18 +1985,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 0),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "AcaciaSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 0),
-                "AcaciaSlab",
-                "AcaciaSlab",
-                "AcaciaSlab",
-                "AcaciaSlab");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 0),
                 null,
                 "blockWool",
@@ -2259,18 +2151,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 1),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "BalsaSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 1),
-                "BalsaSlab",
-                "BalsaSlab",
-                "BalsaSlab",
-                "BalsaSlab");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 1),
@@ -2441,18 +2321,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 2),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "BaobabSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 2),
-                "BaobabSlab",
-                "BaobabSlab",
-                "BaobabSlab",
-                "BaobabSlab");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 2),
                 null,
                 "blockWool",
@@ -2619,18 +2487,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 3),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "CherrySlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 3),
-                "CherrySlab",
-                "CherrySlab",
-                "CherrySlab",
-                "CherrySlab");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 3),
@@ -2801,18 +2657,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 4),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "ChestnutSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 4),
-                "ChestnutSlab",
-                "ChestnutSlab",
-                "ChestnutSlab",
-                "ChestnutSlab");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 4),
                 null,
                 "blockWool",
@@ -2979,18 +2823,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 5),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "CitrusSlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 5),
-                "CitrusSlab",
-                "CitrusSlab",
-                "CitrusSlab",
-                "CitrusSlab");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 5),
@@ -3161,18 +2993,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 6),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "EbonySlab",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 6),
-                "EbonySlab",
-                "EbonySlab",
-                "EbonySlab",
-                "EbonySlab");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 6),
                 null,
                 "blockWool",
@@ -3339,18 +3159,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 7),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "GreenheartSlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 7),
-                "GreenheartSlabs",
-                "GreenheartSlabs",
-                "GreenheartSlabs",
-                "GreenheartSlabs");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 7),
@@ -3521,18 +3329,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 8),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "KapokSlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 8),
-                "KapokSlabs",
-                "KapokSlabs",
-                "KapokSlabs",
-                "KapokSlabs");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 8),
                 null,
                 "blockWool",
@@ -3699,18 +3495,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 9),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "LarchSlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 9),
-                "LarchSlabs",
-                "LarchSlabs",
-                "LarchSlabs",
-                "LarchSlabs");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 9),
@@ -3881,18 +3665,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 10),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "LimeSlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 10),
-                "LimeSlabs",
-                "LimeSlabs",
-                "LimeSlabs",
-                "LimeSlabs");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 10),
                 null,
                 "blockWool",
@@ -4059,18 +3831,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 11),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "MahoeSlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 11),
-                "MahoeSlabs",
-                "MahoeSlabs",
-                "MahoeSlabs",
-                "MahoeSlabs");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 11),
@@ -4241,18 +4001,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 12),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "MahoganySlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 12),
-                "MahoganySlabs",
-                "MahoganySlabs",
-                "MahoganySlabs",
-                "MahoganySlabs");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 12),
                 null,
                 "blockWool",
@@ -4419,18 +4167,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 13),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "MappleSlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 13),
-                "MappleSlabs",
-                "MappleSlabs",
-                "MappleSlabs",
-                "MappleSlabs");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 13),
@@ -4601,18 +4337,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood");
 
         addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 14),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "PalmSlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 14),
-                "PalmSlabs",
-                "PalmSlabs",
-                "PalmSlabs",
-                "PalmSlabs");
-
-        addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 14),
                 null,
                 "blockWool",
@@ -4779,18 +4503,6 @@ public class ScriptBiblioWoodsForestry implements IScriptLoader {
                 "stickWood",
                 "stickWood",
                 "stickWood");
-
-        addShapedRecipe(
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFancyWorkbench", 1, 15),
-                "dyeBlack",
-                getModItem(Minecraft.ID, "crafting_table", 1),
-                "craftingFeather",
-                "PapayaSlabs",
-                getModItem(BiblioWoodsForestryEdition.ID, "BiblioWoodFstBookcase", 1, 15),
-                "PapayaSlabs",
-                "PapayaSlabs",
-                "PapayaSlabs",
-                "PapayaSlabs");
 
         addShapedRecipe(
                 getModItem(BiblioWoodsForestryEdition.ID, "seatBack1", 1, 15),

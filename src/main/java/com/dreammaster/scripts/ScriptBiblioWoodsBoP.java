@@ -310,29 +310,6 @@ public class ScriptBiblioWoodsBoP implements IScriptLoader {
                     BOPplanks[i],
                     null,
                     BOPplanks[i]);
-            addShapedRecipe(
-                    getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodFancyWorkbench", 1, i),
-                    ink,
-                    craftingTable,
-                    feather,
-                    BOBwood[i],
-                    bookCaseBOP[i],
-                    BOBwood[i],
-                    BOBwood[i],
-                    null,
-                    BOBwood[i]);
-
-            addShapedRecipe(
-                    getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodFancyWorkbench", 1, i),
-                    feather,
-                    craftingTable,
-                    ink,
-                    BOBwood[i],
-                    bookCaseBOP[i],
-                    BOBwood[i],
-                    BOBwood[i],
-                    BOBwood[i],
-                    BOBwood[i]);
 
             addShapedRecipe(
                     bookCaseBOP[i],
