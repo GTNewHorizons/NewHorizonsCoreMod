@@ -305,7 +305,7 @@ public class ScriptAmunRa implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 0), getIntegratedCircuit(23))
                 .itemOutputs(new ItemStack(baseBlockRock, 1, 8)).noFluidInputs().noFluidOutputs().duration(50).eut(4)
                 .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1, 0), getIntegratedCircuit(4))
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1, 0), getIntegratedCircuit(23))
                 .itemOutputs(new ItemStack(baseBlockRock, 1, 9)).noFluidInputs().noFluidOutputs().duration(50).eut(4)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
