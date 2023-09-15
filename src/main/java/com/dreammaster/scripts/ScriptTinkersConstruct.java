@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftCore;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
@@ -1809,6 +1810,28 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing),
                 getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
                 getModItem(ForgeMicroblocks.ID, "stoneRod", 1, 0, missing));
+        addShapedRecipe(
+                getModItem(TinkerConstruct.ID, "slime_boots", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1),
+                null,
+                getModItem(Backpack.ID, "tannedLeather", 1),
+                getModItem(TinkerConstruct.ID, "slime.gel", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "slime.gel", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "slime.pad", 1, 0, missing),
+                getModItem(Minecraft.ID, "leather_boots", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "slime.pad", 1, 0, missing));
+        addShapedRecipe(
+                getModItem(TinkerConstruct.ID, "slimesling", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "slime.gel", 1, 1, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null,
+                getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "materials", 1, 1, missing),
+                getModItem(TinkerConstruct.ID, "slime.pad", 1, 0, missing),
+                getModItem(TinkerConstruct.ID, "slime.gel", 1, 1, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                null);
 
         TConstructHelper.removeBasinRecipe(getModItem(Minecraft.ID, "iron_block", 1, 0, missing));
         TConstructHelper.removeBasinRecipe(getModItem(Minecraft.ID, "gold_block", 1, 0, missing));
