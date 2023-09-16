@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 
 import java.util.Arrays;
@@ -372,13 +371,6 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 'i',
                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L));
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartIridium", 4, 0, missing),
-                        ItemList.Energy_LapotronicOrb.get(1L))
-                .itemOutputs(getModItem(GTPlusPlus.ID, "personalCloakingDevice-0.0", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.nichrome", 1440)).noFluidOutputs().duration(2400)
-                .eut(7860).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GTPlusPlus.ID, "item.BasicMetaFood", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
                 .noFluidInputs().noFluidOutputs().duration(100).eut(4).addTo(sMaceratorRecipes);
