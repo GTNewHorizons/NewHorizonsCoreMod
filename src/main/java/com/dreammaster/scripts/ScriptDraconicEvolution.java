@@ -494,9 +494,9 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDraconiumAwakened",
                 'c',
-                getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
-                'd',
                 getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 1, 1, missing),
+                'd',
+                getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
                 'e',
                 getModItem(DraconicEvolution.ID, "wyvernChest", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
