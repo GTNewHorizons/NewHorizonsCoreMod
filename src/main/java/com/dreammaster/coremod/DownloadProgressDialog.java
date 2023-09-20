@@ -6,6 +6,8 @@ import java.awt.event.WindowEvent;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+import com.dreammaster.lib.Refstrings;
+
 class DownloadProgressDialog extends JDialog {
 
     /**
@@ -13,7 +15,7 @@ class DownloadProgressDialog extends JDialog {
      */
     private static final long serialVersionUID = 6041491111144915139L;
 
-    public static final String WINDOW_TITLE = "GT: New Horizons";
+    public static final String WINDOW_TITLE = Refstrings.NAME;
     private Thread netThread;
     private JProgressBar progressBar;
 
