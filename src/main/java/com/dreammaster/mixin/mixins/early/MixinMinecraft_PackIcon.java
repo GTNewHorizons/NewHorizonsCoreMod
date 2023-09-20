@@ -1,17 +1,15 @@
 package com.dreammaster.mixin.mixins.early;
 
-import java.nio.ByteBuffer;
-
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Util;
 
-import org.lwjgl.opengl.Display;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import com.dreammaster.client.util.IconLoader;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 
 @Mixin(Minecraft.class)
 public class MixinMinecraft_PackIcon {
@@ -30,14 +28,11 @@ public class MixinMinecraft_PackIcon {
         return "GT: New Horizons";
     }
 
-    @Redirect(
+    @ModifyExpressionValue(
             method = "startGame",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lorg/lwjgl/opengl/Display;setIcon([Ljava/nio/ByteBuffer;)I",
-                    remap = false))
-    private int dreadmcraft$changeWindowIcon(ByteBuffer[] buffer) {
-        return this.dreamcraft$loadedGTNHIcon ? 0 : Display.setIcon(buffer);
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Util;getOSType()Lnet/minecraft/util/Util$EnumOS;"))
+    private Util.EnumOS dreadmcraft$changeWindowIcon(Util.EnumOS osType) {
+        return this.dreamcraft$loadedGTNHIcon ? Util.EnumOS.OSX : osType;
     }
 
 }
