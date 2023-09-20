@@ -1,18 +1,20 @@
 package com.dreammaster.coremod;
 
 import java.io.*;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
+
+import cpw.mods.fml.relauncher.FMLLaunchHandler;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.Name("DreamCoreMod")
-public class DreamCoreMod implements IFMLLoadingPlugin {
+public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     static boolean downloadOnlyOnce;
     static Properties coremodConfig = new Properties();
@@ -80,4 +82,17 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
     public String getAccessTransformerClass() {
         return null;
     }
+
+    @Override
+    public String getMixinConfig() {
+        return "mixins.dreamcraft.early.json";
+    }
+
+    @Override
+    public List<String> getMixins(Set<String> loadedCoreMods) {
+        final List<String> mixins = new ArrayList<>();
+        if (FMLLaunchHandler.side().isClient()) {}
+        return mixins;
+    }
+
 }
