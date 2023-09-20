@@ -91,7 +91,9 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     @Override
     public List<String> getMixins(Set<String> loadedCoreMods) {
         final List<String> mixins = new ArrayList<>();
-        if (FMLLaunchHandler.side().isClient()) {}
+        if (FMLLaunchHandler.side().isClient()) {
+            mixins.add("MixinMinecraft_PackIcon");
+        }
         return mixins;
     }
 
