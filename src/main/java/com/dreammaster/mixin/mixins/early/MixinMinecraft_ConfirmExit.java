@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 
 import com.dreammaster.client.util.IconLoader;
+import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.lib.Refstrings;
 import com.gtnewhorizon.mixinextras.injector.ModifyExpressionValue;
 
@@ -26,6 +27,9 @@ public class MixinMinecraft_ConfirmExit {
             method = "runGameLoop",
             at = @At(value = "INVOKE", target = "Lorg/lwjgl/opengl/Display;isCloseRequested()Z", remap = false))
     private boolean dreamcraft$confirmGameShutdown(boolean isCloseRequested) {
+        if (!DreamCoreMod.showConfirmExitWindow) {
+            return isCloseRequested;
+        }
         if (this.dreamcraft$isCloseRequested) {
             return true;
         }

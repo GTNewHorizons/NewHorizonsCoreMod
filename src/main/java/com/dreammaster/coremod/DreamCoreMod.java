@@ -16,13 +16,14 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 @IFMLLoadingPlugin.Name("DreamCoreMod")
 public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
-    static boolean downloadOnlyOnce;
-    static Properties coremodConfig = new Properties();
-
     public static Logger logger = LogManager.getLogger("DreamCoreMod");
-    public static boolean deobf;
-    public static boolean patchItemFocusWarding;
+    static Properties coremodConfig = new Properties();
     public static File debugOutputDir;
+    public static boolean deobf;
+
+    public static boolean showConfirmExitWindow;
+    public static boolean patchItemFocusWarding;
+    static boolean downloadOnlyOnce;
 
     @Override
     public String[] getASMTransformerClass() {
@@ -42,11 +43,13 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
     @Override
     public void injectData(Map<String, Object> data) {
         deobf = !(boolean) data.get("runtimeDeobfuscationEnabled");
+        coremodConfig.setProperty("showConfirmExitWindow", "true");
         coremodConfig.setProperty("patchItemFocusWarding", "true");
         coremodConfig.setProperty("downloadOnlyOnce", "true");
         coremodConfig.setProperty("debug", "false");
         File mcLocation = (File) data.get("mcLocation");
         File configDir = new File(mcLocation, "config");
+        // noinspection ResultOfMethodCallIgnored
         configDir.mkdir();
         File config = new File(configDir, "DreamCoreMod.properties");
         try (Reader r = new FileReader(config)) {
@@ -61,8 +64,9 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         } catch (IOException e) {
             logger.warn("Can't write coremod config. Changes may not have been saved!", e);
         }
-        downloadOnlyOnce = "true".equalsIgnoreCase(coremodConfig.getProperty("downloadOnlyOnce"));
+        showConfirmExitWindow = "true".equalsIgnoreCase(coremodConfig.getProperty("showConfirmExitWindow"));
         patchItemFocusWarding = "true".equalsIgnoreCase(coremodConfig.getProperty("patchItemFocusWarding"));
+        downloadOnlyOnce = "true".equalsIgnoreCase(coremodConfig.getProperty("downloadOnlyOnce"));
         if ("true".equalsIgnoreCase(coremodConfig.getProperty("debug"))) {
             debugOutputDir = new File(mcLocation, ".asm_debug");
             try {
