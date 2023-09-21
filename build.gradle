@@ -599,14 +599,6 @@ repositories {
             }
         }
         maven {
-            name = "ic2"
-            url = "https://maven.ic2.player.to/"
-            metadataSources {
-                mavenPom()
-                artifact()
-            }
-        }
-        maven {
             name = "ic2-mirror"
             url = "https://maven2.ic2.player.to/"
             metadataSources {
