@@ -2,6 +2,7 @@ package com.dreammaster.config;
 
 import java.io.File;
 
+import com.dreammaster.lib.Refstrings;
 import com.dreammaster.modfixes.oilgen.OilGeneratorFix;
 
 import eu.usrv.yamcore.config.ConfigManager;
@@ -14,7 +15,7 @@ public class CoreModConfig extends ConfigManager {
 
     public boolean OreDictItems_Enabled;
     public static boolean ModLoginMessage_Enabled;
-    public static String ModPackVersion;
+    public static String ModPackVersion = Refstrings.MODPACKPACK_VERSION;
 
     public boolean ModHazardousItems_Enabled;
     public boolean ModDebugVersionDisplay_Enabled;
@@ -55,7 +56,6 @@ public class CoreModConfig extends ConfigManager {
     @Override
     protected void PreInit() {
         ModLoginMessage_Enabled = true;
-        ModPackVersion = "2.4.0";
         ModDebugVersionDisplay_Enabled = true;
         ModHazardousItems_Enabled = false;
         ModCustomToolTips_Enabled = false;

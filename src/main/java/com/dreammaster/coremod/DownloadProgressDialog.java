@@ -1,10 +1,19 @@
 package com.dreammaster.coremod;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.WindowEvent;
 
-import javax.swing.*;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import com.dreammaster.lib.Refstrings;
 
 class DownloadProgressDialog extends JDialog {
 
@@ -13,7 +22,7 @@ class DownloadProgressDialog extends JDialog {
      */
     private static final long serialVersionUID = 6041491111144915139L;
 
-    public static final String WINDOW_TITLE = "GT: New Horizons";
+    public static final String WINDOW_TITLE = Refstrings.NAME;
     private Thread netThread;
     private JProgressBar progressBar;
 

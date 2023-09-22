@@ -1,26 +1,39 @@
 package com.dreammaster.coremod;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
+
+import cpw.mods.fml.relauncher.FMLLaunchHandler;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.Name("DreamCoreMod")
-public class DreamCoreMod implements IFMLLoadingPlugin {
-
-    static boolean downloadOnlyOnce;
-    static Properties coremodConfig = new Properties();
+public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     public static Logger logger = LogManager.getLogger("DreamCoreMod");
-    public static boolean deobf;
-    public static boolean patchItemFocusWarding;
+    static Properties coremodConfig = new Properties();
     public static File debugOutputDir;
+    public static boolean deobf;
+
+    public static boolean showConfirmExitWindow;
+    public static boolean patchItemFocusWarding;
+    static boolean downloadOnlyOnce;
 
     @Override
     public String[] getASMTransformerClass() {
@@ -40,11 +53,13 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
     @Override
     public void injectData(Map<String, Object> data) {
         deobf = !(boolean) data.get("runtimeDeobfuscationEnabled");
+        coremodConfig.setProperty("showConfirmExitWindow", "true");
         coremodConfig.setProperty("patchItemFocusWarding", "true");
         coremodConfig.setProperty("downloadOnlyOnce", "true");
         coremodConfig.setProperty("debug", "false");
         File mcLocation = (File) data.get("mcLocation");
         File configDir = new File(mcLocation, "config");
+        // noinspection ResultOfMethodCallIgnored
         configDir.mkdir();
         File config = new File(configDir, "DreamCoreMod.properties");
         try (Reader r = new FileReader(config)) {
@@ -59,8 +74,9 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
         } catch (IOException e) {
             logger.warn("Can't write coremod config. Changes may not have been saved!", e);
         }
-        downloadOnlyOnce = "true".equalsIgnoreCase(coremodConfig.getProperty("downloadOnlyOnce"));
+        showConfirmExitWindow = "true".equalsIgnoreCase(coremodConfig.getProperty("showConfirmExitWindow"));
         patchItemFocusWarding = "true".equalsIgnoreCase(coremodConfig.getProperty("patchItemFocusWarding"));
+        downloadOnlyOnce = "true".equalsIgnoreCase(coremodConfig.getProperty("downloadOnlyOnce"));
         if ("true".equalsIgnoreCase(coremodConfig.getProperty("debug"))) {
             debugOutputDir = new File(mcLocation, ".asm_debug");
             try {
@@ -80,4 +96,20 @@ public class DreamCoreMod implements IFMLLoadingPlugin {
     public String getAccessTransformerClass() {
         return null;
     }
+
+    @Override
+    public String getMixinConfig() {
+        return "mixins.dreamcraft.early.json";
+    }
+
+    @Override
+    public List<String> getMixins(Set<String> loadedCoreMods) {
+        final List<String> mixins = new ArrayList<>();
+        if (FMLLaunchHandler.side().isClient()) {
+            mixins.add("MixinMinecraft_ConfirmExit");
+            mixins.add("MixinMinecraft_PackIcon");
+        }
+        return mixins;
+    }
+
 }
