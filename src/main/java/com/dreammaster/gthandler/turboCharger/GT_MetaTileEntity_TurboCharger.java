@@ -24,14 +24,14 @@ public class GT_MetaTileEntity_TurboCharger extends GT_MetaTileEntity_Charger {
         super(aID, aName, aNameRegional, aTier, aDescription, aSlotCount);
     }
 
-    public GT_MetaTileEntity_TurboCharger(String aName, int aTier, String aDescription, ITexture[][][] aTextures,
+    public GT_MetaTileEntity_TurboCharger(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures,
             int aSlotCount) {
         super(aName, aTier, aDescription, aTextures, aSlotCount);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new GT_MetaTileEntity_TurboCharger(mName, mTier, mDescription, mTextures, mInventory.length);
+        return new GT_MetaTileEntity_TurboCharger(mName, mTier, mDescriptionArray, mTextures, mInventory.length);
     }
 
     @Override

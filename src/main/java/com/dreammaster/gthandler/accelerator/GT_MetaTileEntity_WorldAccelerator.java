@@ -148,14 +148,14 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
         return tInfoDisplay.toArray(new String[0]);
     }
 
-    public GT_MetaTileEntity_WorldAccelerator(String pName, int pTier, int pInvSlotCount, String pDescription,
+    public GT_MetaTileEntity_WorldAccelerator(String pName, int pTier, int pInvSlotCount, String[] pDescription,
             ITexture[][][] pTextures) {
         super(pName, pTier, pInvSlotCount, pDescription, pTextures);
     }
 
     @Override
     public MetaTileEntity newMetaEntity(IGregTechTileEntity pTileEntity) {
-        return new GT_MetaTileEntity_WorldAccelerator(mName, mTier, mInventory.length, mDescription, mTextures);
+        return new GT_MetaTileEntity_WorldAccelerator(mName, mTier, mInventory.length, mDescriptionArray, mTextures);
     }
 
     @Override
