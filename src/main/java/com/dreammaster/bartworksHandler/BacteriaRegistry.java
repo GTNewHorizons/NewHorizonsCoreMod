@@ -288,7 +288,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { Oil.getFluid(20) },
                 new FluidStack[] { Xenoxene.getFluid(20) },
                 3600,
-                BW_Util.getMachineVoltageFromTier(10),
+                (int) TierEU.RECIPE_UEV,
                 Materials.NaquadahEnriched,
                 8,
                 0,
@@ -300,7 +300,7 @@ public class BacteriaRegistry {
                 new int[] { 1500 },
                 FluidRegistry.getFluidStack("binnie.bacteria", 1000),
                 1200,
-                7680,
+                (int) TierEU.RECIPE_IV,
                 CLEANROOM);
 
         addBacterialVatRecipe(
@@ -311,7 +311,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GrowthMediumRaw.getFluid(8) },
                 new FluidStack[] { BioMediumRaw.getFluid(2) },
                 3600,
-                30720,
+                (int) TierEU.RECIPE_LuV,
                 Plutonium,
                 6,
                 CLEANROOM,
@@ -325,7 +325,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GrowthMediumRaw.getFluid(5) },
                 new FluidStack[] { BioMediumRaw.getFluid(5) },
                 3600,
-                122880,
+                (int) TierEU.RECIPE_ZPM,
                 NaquadahEnriched,
                 7,
                 CLEANROOM,
@@ -338,7 +338,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GrowthMediumRaw.getFluid(5) },
                 new FluidStack[] { BioMediumRaw.getFluid(10) },
                 3600,
-                500000,
+                (int) TierEU.RECIPE_UV,
                 Naquadria,
                 8,
                 CLEANROOM,
@@ -350,7 +350,7 @@ public class BacteriaRegistry {
                 new int[] { 750 },
                 GrowthMediumRaw.getFluid(1000),
                 2400,
-                122880,
+                (int) TierEU.RECIPE_ZPM,
                 CLEANROOM);
 
         addBioLabRecipeIncubation(
@@ -359,7 +359,7 @@ public class BacteriaRegistry {
                 new int[] { 750 },
                 Materials.BioMediumRaw.getFluid(1000),
                 3600,
-                500000,
+                (int) TierEU.RECIPE_UV,
                 CLEANROOM);
 
         addBacterialVatRecipe(
@@ -368,7 +368,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(4L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("binnie.growthmedium", 2) },
                 150,
-                480,
+                (int) TierEU.RECIPE_HV,
                 0,
                 4,
                 0,
@@ -380,7 +380,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(8L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("binnie.growthmedium", 4) },
                 150,
-                1920,
+                (int) TierEU.RECIPE_EV,
                 Bismuth,
                 5,
                 0,
@@ -392,7 +392,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(16L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("binnie.growthmedium", 8) },
                 150,
-                7680,
+                (int) TierEU.RECIPE_IV,
                 Uranium,
                 5,
                 0,
@@ -404,7 +404,7 @@ public class BacteriaRegistry {
                 new int[] { 5000 },
                 Water.getFluid(4000),
                 150,
-                480,
+                (int) TierEU.RECIPE_HV,
                 0);
 
         addBioLabRecipeIncubation(
@@ -413,7 +413,7 @@ public class BacteriaRegistry {
                 new int[] { 7500 },
                 GT_ModHandler.getDistilledWater(2000L),
                 150,
-                480,
+                (int) TierEU.RECIPE_HV,
                 0);
 
         addBioLabRecipeIncubation(
@@ -422,7 +422,7 @@ public class BacteriaRegistry {
                 new int[] { 9000 },
                 FluidRegistry.getFluidStack("binnie.growthmedium", 1000),
                 150,
-                480,
+                (int) TierEU.RECIPE_HV,
                 0);
 
         addBioLabRecipeIncubation(
@@ -431,7 +431,7 @@ public class BacteriaRegistry {
                 new int[] { 10000 },
                 FluidRegistry.getFluidStack("binnie.growthmedium", 500),
                 150,
-                1920,
+                (int) TierEU.RECIPE_EV,
                 0);
 
         addBacterialVatRecipe(
@@ -440,7 +440,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(4L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("binnie.bacteria", 2) },
                 300,
-                480,
+                (int) TierEU.RECIPE_HV,
                 Bismuth,
                 4,
                 0,
@@ -452,7 +452,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(8L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("binnie.bacteria", 4) },
                 300,
-                1920,
+                (int) TierEU.RECIPE_EV,
                 Uranium,
                 5,
                 0,
@@ -464,7 +464,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(16L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("binnie.bacteria", 8) },
                 300,
-                7680,
+                (int) TierEU.RECIPE_IV,
                 Plutonium,
                 6,
                 CLEANROOM,
@@ -476,7 +476,7 @@ public class BacteriaRegistry {
                 new int[] { 6000 },
                 FluidRegistry.getFluidStack("binnie.bacteria", 1000),
                 300,
-                480,
+                (int) TierEU.RECIPE_HV,
                 0);
 
         addBioLabRecipeIncubation(
@@ -485,7 +485,7 @@ public class BacteriaRegistry {
                 new int[] { 8000 },
                 FluidRegistry.getFluidStack("binnie.bacteria", 500),
                 300,
-                7680,
+                (int) TierEU.RECIPE_IV,
                 CLEANROOM);
 
         addBioLabRecipeIncubation(
@@ -494,7 +494,7 @@ public class BacteriaRegistry {
                 new int[] { 10000 },
                 FluidRegistry.getFluidStack("binnie.bacteria", 250),
                 300,
-                30720,
+                (int) TierEU.RECIPE_LuV,
                 CLEANROOM);
 
         addBacterialVatRecipe(
@@ -503,7 +503,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(4L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("bacterialsludge", 1) },
                 600,
-                1920,
+                (int) TierEU.RECIPE_EV,
                 Bismuth,
                 5,
                 0,
@@ -515,7 +515,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(8L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("bacterialsludge", 2) },
                 600,
-                7680,
+                (int) TierEU.RECIPE_IV,
                 Uranium,
                 6,
                 CLEANROOM,
@@ -527,7 +527,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(16L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("bacterialsludge", 4) },
                 600,
-                30720,
+                (int) TierEU.RECIPE_LuV,
                 Plutonium,
                 7,
                 CLEANROOM,
@@ -539,7 +539,7 @@ public class BacteriaRegistry {
                 new int[] { 3000 },
                 FluidRegistry.getFluidStack("bacterialsludge", 1000),
                 600,
-                1920,
+                (int) TierEU.RECIPE_EV,
                 0);
 
         addBioLabRecipeIncubation(
@@ -548,7 +548,7 @@ public class BacteriaRegistry {
                 new int[] { 5000 },
                 FluidRegistry.getFluidStack("bacterialsludge", 500),
                 600,
-                7680,
+                (int) TierEU.RECIPE_IV,
                 CLEANROOM);
 
         addBioLabRecipeIncubation(
@@ -557,7 +557,7 @@ public class BacteriaRegistry {
                 new int[] { 7500 },
                 FluidRegistry.getFluidStack("bacterialsludge", 250),
                 600,
-                30720,
+                (int) TierEU.RECIPE_LuV,
                 CLEANROOM);
 
         addBacterialVatRecipe(
@@ -566,7 +566,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(4L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("mutagen", 1) },
                 1200,
-                7680,
+                (int) TierEU.RECIPE_IV,
                 Uranium,
                 6,
                 CLEANROOM,
@@ -578,7 +578,7 @@ public class BacteriaRegistry {
                 new FluidStack[] { GT_ModHandler.getDistilledWater(8L) },
                 new FluidStack[] { FluidRegistry.getFluidStack("mutagen", 2) },
                 1200,
-                30720,
+                (int) TierEU.RECIPE_LuV,
                 Plutonium,
                 7,
                 CLEANROOM,
@@ -590,7 +590,7 @@ public class BacteriaRegistry {
                 new int[] { 1500 },
                 FluidRegistry.getFluidStack("mutagen", 1000),
                 1200,
-                30720,
+                (int) TierEU.RECIPE_LuV,
                 CLEANROOM);
 
         addBioLabRecipeIncubation(
@@ -599,7 +599,7 @@ public class BacteriaRegistry {
                 new int[] { 3000 },
                 FluidRegistry.getFluidStack("mutagen", 500),
                 1200,
-                122880,
+                (int) TierEU.RECIPE_ZPM,
                 CLEANROOM);
 
         new BioItemLoader();
