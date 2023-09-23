@@ -82,8 +82,8 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).noFluidInputs().noFluidOutputs()
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -92,8 +92,8 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
                         GT_Utility.getIntegratedCircuit(3))
-                .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).noFluidInputs().noFluidOutputs()
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1),

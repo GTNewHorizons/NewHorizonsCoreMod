@@ -1039,373 +1039,372 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing)));
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "cobblestone", 9, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "cobblestone", 9, 0, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 1, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 0, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 2, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 1, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 3, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 2, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 4, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 3, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 5, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 4, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 6, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 5, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 5, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 6, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 6, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dirt", 9, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dirt", 9, 0, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 9, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 8, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 8, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 10, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 9, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 9, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 11, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 10, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 10, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "gravel", 9, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "gravel", 9, 0, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 13, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 12, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 12, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "sand", 9, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "sand", 9, 0, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 14, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 9, 14, missing)).duration(300)
+                .eut(2).addTo(sExtractorRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(80).eut(64).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 2, missing)).duration(80).eut(64)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5, missing)).duration(200).eut(8)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 4, missing)).duration(200).eut(8)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 3, missing)).duration(200).eut(8)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 4L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7, missing)).duration(400).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         getModItem(Minecraft.ID, "dye", 1, 9, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 8, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 8, missing)).duration(200).eut(8)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "cobblestone_compressed", 4, 3, missing),
                         getModItem(Minecraft.ID, "diamond_block", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(256).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "bedrockiumIngot", 1, 0, missing)).duration(600).eut(256)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 1, missing)).duration(100).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 2, missing)).duration(100).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(5))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 6, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 6, missing)).duration(100).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 9, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 9, missing)).duration(100).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 0, missing),
                         getModItem(ExtraUtilities.ID, "curtains", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 10, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 10, missing)).duration(200).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 10, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11, missing)).duration(400).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing)).duration(100).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "chestMini", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(50).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "chestMini", 1, 0, missing)).duration(50).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 2, missing),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 4, 7, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 500)).noFluidOutputs().duration(600).eut(120)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 500)).duration(600).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 1, missing),
                         getModItem(Minecraft.ID, "ender_eye", 3, 0, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "endConstructor", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(400).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(400).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "detector", 1, 2, missing),
                         getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "budoff", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone_block", 4, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 3, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "budoff", 1, 3, missing)).duration(200).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 5, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "chandelier", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).noFluidOutputs().duration(600).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 1440)).duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 4, 0, missing),
                         getModItem(Minecraft.ID, "stonebrick", 5, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 9, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(180).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 9, 0, missing)).duration(180).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(20).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4, missing)).duration(20).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 4, missing),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(20).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 7, missing)).duration(20).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "gravel", 1, 0, missing), GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 6, missing)).noFluidInputs()
-                .noFluidOutputs().duration(20).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 6, missing)).duration(20).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 1, 0, missing),
                         getModItem(Minecraft.ID, "ice", 4, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(80).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 3, missing)).duration(80).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 1, 0, missing),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2, 9, missing)).noFluidInputs()
-                .noFluidOutputs().duration(40).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2, 9, missing)).duration(40).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sandstone", 1, 0, missing),
                         getModItem(Minecraft.ID, "end_stone", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2, 13, missing)).noFluidInputs()
-                .noFluidOutputs().duration(40).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 2, 13, missing)).duration(40).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 5, 6, missing),
                         getModItem(Minecraft.ID, "stone_slab", 5, 5, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 5, 10, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 5, 10, missing)).duration(100).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 1, missing),
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 4, 8, missing))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(1200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(1200).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 6, missing), ItemList.Plank_Oak.get(4L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "trading_post", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "trading_post", 1, 0, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).noFluidOutputs().duration(100).eut(64)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 36)).duration(100).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 216)).noFluidOutputs().duration(200).eut(64)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 216)).duration(200).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 4, 0, missing), GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 12, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 12, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 13, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 13, missing)).duration(300).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), ItemList.Circuit_Good.get(1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
                         ItemList.Circuit_Integrated_Good.get(1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing), ItemList.Circuit_Processor.get(1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 9, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing)).duration(300).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 2L),
                         getModItem(ExtraUtilities.ID, "pipes", 1, 11, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 14, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 14, missing)).duration(300).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing), ItemList.Tool_DataStick.get(1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(400).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).duration(400).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing), ItemList.Circuit_Data.get(1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
                         ItemList.Circuit_Nanocomputer.get(1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 10, missing),
                         ItemList.Circuit_Quantumprocessor.get(1L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "pipes.1", 1, 0, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
                         getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 1, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
                         getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(400).eut(30)
+                .itemOutputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 2, missing)).duration(200).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(400).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(400).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(400)
-                .eut(30).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(400).eut(30)
+                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Iron, 4L))
+                .itemOutputs(getModItem(ExtraUtilities.ID, "heatingElement", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(400).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "golden_lasso", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "golden_lasso", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "scanner", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "scanner", 1, 0, missing)).duration(600).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_Utility.getIntegratedCircuit(9), getModItem(Minecraft.ID, "cobblestone", 9, 0, missing))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0, missing)).duration(100)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "dirt", 9, 0, missing), GT_Utility.getIntegratedCircuit(9))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 8, missing)).duration(100)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "gravel", 9, 0, missing), GT_Utility.getIntegratedCircuit(9))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 12, missing)).duration(100)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "sand", 9, 0, missing), GT_Utility.getIntegratedCircuit(9))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing)).duration(100)
+                .eut(16).addTo(sAssemblerRecipes);
 
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",

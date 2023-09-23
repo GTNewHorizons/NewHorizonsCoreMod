@@ -844,68 +844,67 @@ public class ScriptAvaritia implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 4, missing), ItemList.Shape_Mold_Nugget.get(0L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 3, missing)).noFluidInputs().noFluidOutputs()
-                .duration(2400).eut(480).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 3, missing)).duration(2400).eut(480)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing), ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4, missing)).noFluidInputs().noFluidOutputs()
-                .duration(4800).eut(480).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4, missing)).duration(4800).eut(480)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Avaritia.ID, "Resource", 4, 0, missing),
                         getModItem(Minecraft.ID, "nether_star", 2, 0, missing))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 1, missing)).duration(1200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Double_Craft", 1, 0))
-                .itemOutputs(new ItemStack(Blocks.crafting_table, 9)).noFluidInputs().noFluidOutputs().duration(300)
-                .eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(new ItemStack(Blocks.crafting_table, 9)).duration(300).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Triple_Craft", 1, 0))
-                .itemOutputs(getModItem(Avaritia.ID, "Double_Craft", 9, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Double_Craft", 9, 0, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Crystal_Matrix", 1, 0))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 1, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
                         ItemList.Shape_Extruder_Ingot.get(0L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1000).eut(524000).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4, missing)).duration(1000).eut(524000)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Avaritia.ID, "Resource_Block", 1, 1, missing),
                         ItemList.Shape_Extruder_Ingot.get(0L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 6, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(524000).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 6, missing)).duration(1200).eut(524000)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 6, missing), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(4000).eut(524000).addTo(sExtruderRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L)).duration(4000)
+                .eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11397, missing),
                         ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L)).noFluidInputs()
-                .noFluidOutputs().duration(4000).eut(524000).addTo(sExtruderRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L)).duration(4000)
+                .eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 4, missing), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L))
-                .noFluidInputs().noFluidOutputs().duration(3000).eut(524000).addTo(sExtruderRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L)).duration(3000)
+                .eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 11982, missing),
                         ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L))
-                .noFluidInputs().noFluidOutputs().duration(3000).eut(524000).addTo(sExtruderRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L)).duration(3000)
+                .eut(524000).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
                         CustomItemList.StainlessSteelBars.get(1L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(120).addTo(sPressRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 0, missing)).duration(200).eut(120)
+                .addTo(sPressRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 3, missing))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 2, missing)).outputChances(10000).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 2, missing)).outputChances(10000).duration(300)
+                .eut(2).addTo(sMaceratorRecipes);
 
         TCHelper.removeInfusionRecipe(getModItem(Avaritia.ID, "Akashic_Record", 1, 0, missing));
         ThaumcraftApi.addInfusionCraftingRecipe(
@@ -1070,7 +1069,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 ItemStack input = material.ingot.copy();
                 input.stackSize = (int) Math.ceil((float) cost / 2);
                 GT_Values.RA.stdBuilder().itemInputs(input, patternItem)
-                        .itemOutputs(new ItemStack(toolItem, 1, material.materialId)).noFluidInputs().noFluidOutputs()
+                        .itemOutputs(new ItemStack(toolItem, 1, material.materialId))
                         .duration(Math.min((long) material.durationPer16 * cost / 16, Integer.MAX_VALUE))
                         .eut(material.voltage).addTo(sExtruderRecipes);
             }

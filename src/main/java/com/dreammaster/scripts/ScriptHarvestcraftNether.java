@@ -155,32 +155,28 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 .itemOutputs(
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(200).eut(8)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(200).eut(8).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
+                .itemOutputs(
+                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(200).eut(8)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
                 .itemOutputs(
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(200).eut(8)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
-                .itemOutputs(
-                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(200).eut(8)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(200).eut(8).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
+                .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(100).eut(16).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
+                .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(100).eut(16)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
                 .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).noFluidOutputs().duration(100).eut(16)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
-                .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(100).eut(16)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
-                .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(100).eut(16)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(100).eut(16).addTo(sCutterRecipes);
 
     }
 }

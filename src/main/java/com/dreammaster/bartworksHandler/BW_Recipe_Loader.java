@@ -25,9 +25,9 @@ public class BW_Recipe_Loader implements Runnable {
     @Override
     public void run() {
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.HeavyDutyAlloyIngotT4.get(1L))
-                .itemOutputs(CustomItemList.HeavyDutyPlateTier4.get(1L), Ruridit.get(dustTiny, 4)).noFluidInputs()
-                .noFluidOutputs().metadata(GT_RecipeConstants.ADDITIVE_AMOUNT, 32).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sImplosionRecipes);
+                .itemOutputs(CustomItemList.HeavyDutyPlateTier4.get(1L), Ruridit.get(dustTiny, 4))
+                .metadata(GT_RecipeConstants.ADDITIVE_AMOUNT, 32).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sImplosionRecipes);
 
         GT_Values.RA.stdBuilder()
                 .metadata(
@@ -39,7 +39,7 @@ public class BW_Recipe_Loader implements Runnable {
                         CustomItemList.IceCompressedPlate.get(3L),
                         CustomItemList.IceCompressedPlate.get(3L),
                         Ruridit.get(bolt, 4))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 36)).noFluidOutputs()
+                .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 36))
                 .itemOutputs(CustomItemList.HeavyDutyAlloyIngotT4.get(1L)).eut(TierEU.RECIPE_LuV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
     }

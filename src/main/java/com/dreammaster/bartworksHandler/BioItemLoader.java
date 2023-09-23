@@ -75,14 +75,14 @@ public class BioItemLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(Materials.Phosphorus.getDust(1), new ItemStack(BIOTEMS, 4, 1))
-                .fluidInputs(new FluidStack(BIOFLUIDS[0], 6000)).noFluidOutputs().duration(2 * MINUTES)
-                .eut(TierEU.RECIPE_HV).addTo(sCentrifugeRecipes);
+                .fluidInputs(new FluidStack(BIOFLUIDS[0], 6000)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(sCentrifugeRecipes);
 
         RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(11), new ItemStack(BIOTEMS, 1, 1))
                 .itemOutputs(new ItemStack(BIOTEMS, 1, 2)).fluidInputs(GT_ModHandler.getDistilledWater(1000))
-                .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sMixerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sMixerRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(Materials.MeatRaw.getDust(1)).noItemOutputs().noFluidInputs()
+        GT_Values.RA.stdBuilder().itemInputs(Materials.MeatRaw.getDust(1))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[1], 125)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(sFluidExtractionRecipes);
 
@@ -91,7 +91,6 @@ public class BioItemLoader {
                         new ItemStack(BIOTEMS, 8, 2),
                         ItemList.Circuit_Chip_Stemcell.get(16),
                         Materials.Salt.getDust(64))
-                .noItemOutputs()
                 .fluidInputs(
                         FluidRegistry.getFluidStack("unknowwater", 4000),
                         Materials.PhthalicAcid.getFluid(3000),
@@ -114,8 +113,8 @@ public class BioItemLoader {
         for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
             GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(i + 1))
                     .itemOutputs(OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64))
-                    .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000)).noFluidOutputs().duration(2 * SECONDS)
-                    .eut(TierEU.RECIPE_UV).noOptimize().addTo(sCentrifugeRecipes);
+                    .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000)).duration(2 * SECONDS).eut(TierEU.RECIPE_UV)
+                    .noOptimize().addTo(sCentrifugeRecipes);
         }
         addBacterialVatRecipe(
                 new ItemStack[] { Materials.MeatRaw.getDust(4), Materials.Salt.getDust(4), Materials.Calcium.getDust(4),

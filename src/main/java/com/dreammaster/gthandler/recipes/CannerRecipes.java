@@ -19,7 +19,7 @@ public class CannerRecipes implements Runnable {
                 .itemInputs(
                         CustomItemList.AdsorptionFilterCasing.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 32))
-                .itemOutputs(CustomItemList.AdsorptionFilter.get(1)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.AdsorptionFilter.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sCannerRecipes);
     }
 }

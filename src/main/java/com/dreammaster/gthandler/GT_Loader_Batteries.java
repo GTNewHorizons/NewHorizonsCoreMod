@@ -132,7 +132,7 @@ public class GT_Loader_Batteries {
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlueSteel, 2L))
                 .itemOutputs(CustomItemList.BatteryHull_EV.get(1L))
-                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(144L)).noFluidOutputs().duration(5 * SECONDS)
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(144L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
@@ -140,7 +140,7 @@ public class GT_Loader_Batteries {
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Platinum, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 6L))
                 .itemOutputs(CustomItemList.BatteryHull_IV.get(1L))
-                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(288L)).noFluidOutputs().duration(10 * SECONDS)
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(288L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
@@ -148,64 +148,64 @@ public class GT_Loader_Batteries {
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Naquadah, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 18L))
                 .itemOutputs(CustomItemList.BatteryHull_LuV.get(1L))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(144L)).noFluidOutputs().duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(144L)).duration(15 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.NaquadahAlloy, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Europium, 6L))
                 .itemOutputs(CustomItemList.BatteryHull_ZPM.get(1L))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(288L)).noFluidOutputs().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(288L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.ElectrumFlux, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Americium, 18L))
                 .itemOutputs(CustomItemList.BatteryHull_UV.get(1L))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(576L)).noFluidOutputs().duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_ZPM).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(576L)).duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.ElectrumFlux, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 24L))
                 .itemOutputs(CustomItemList.BatteryHull_UHV.get(1L))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(1152L)).noFluidOutputs().duration(5 * SECONDS)
-                .eut(500000).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(1152L)).duration(5 * SECONDS).eut(500000)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.ElectrumFlux, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahEnriched, 36L))
                 .itemOutputs(CustomItemList.BatteryHull_UEV.get(1L))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).noFluidOutputs().duration(10 * SECONDS)
-                .eut(2000000).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).duration(10 * SECONDS).eut(2000000)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.ElectrumFlux, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 48L))
                 .itemOutputs(CustomItemList.BatteryHull_UIV.get(1L))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(4608L)).noFluidOutputs().duration(15 * SECONDS)
-                .eut(2000000).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(4608L)).duration(15 * SECONDS).eut(2000000)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 56L))
                 .itemOutputs(CustomItemList.BatteryHull_UMV.get(1L))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(9216L)).noFluidOutputs().duration(30 * SECONDS)
-                .eut(2000000).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(9216L)).duration(30 * SECONDS).eut(2000000)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUHV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 64L))
                 .itemOutputs(CustomItemList.BatteryHull_UxV.get(1L))
-                .fluidInputs(Materials.Polybenzimidazole.getMolten(18432L)).noFluidOutputs().duration(60 * SECONDS)
-                .eut(2000000).addTo(sAssemblerRecipes);
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(18432L)).duration(60 * SECONDS).eut(2000000)
+                .addTo(sAssemblerRecipes);
 
         // Actually filled hulls.
         // I added a gap of 5 to each filled hull, so 4 additional batteries are possible for each voltage tierELECTRUM
@@ -365,80 +365,80 @@ public class GT_Loader_Batteries {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 4L),
                         CustomItemList.BatteryHull_EV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_EV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_EV_Full.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sCannerRecipes);
         // EV 8192
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 16L),
                         CustomItemList.BatteryHull_IV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_IV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(7 * SECONDS + 10 * TICKS).eut(1024).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_IV_Full.get(1L)).duration(7 * SECONDS + 10 * TICKS).eut(1024)
+                .addTo(sCannerRecipes);
         // LuV 32768
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sunnarium, 32L),
                         CustomItemList.BatteryHull_LuV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_LuV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_LuV_Full.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(sCannerRecipes);
         // ZPM 131072
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadria, 16L),
                         CustomItemList.BatteryHull_ZPM.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_ZPM_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(12 * SECONDS + 10 * TICKS).eut(4096).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_ZPM_Full.get(1L)).duration(12 * SECONDS + 10 * TICKS).eut(4096)
+                .addTo(sCannerRecipes);
         // UV 524288
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Naquadria, 32L),
                         CustomItemList.BatteryHull_UV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_UV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(15 * SECONDS).eut(7860).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_UV_Full.get(1L)).duration(15 * SECONDS).eut(7860)
+                .addTo(sCannerRecipes);
         // UHV 2097152
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 16L),
                         CustomItemList.BatteryHull_UHV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_UHV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(17 * SECONDS + 10 * TICKS).eut(15720).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_UHV_Full.get(1L)).duration(17 * SECONDS + 10 * TICKS).eut(15720)
+                .addTo(sCannerRecipes);
         // UEV 8388608
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 32L),
                         CustomItemList.BatteryHull_UEV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_UEV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(20 * SECONDS).eut(31440).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_UEV_Full.get(1L)).duration(20 * SECONDS).eut(31440)
+                .addTo(sCannerRecipes);
         // UIV 33554432
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 64L),
                         CustomItemList.BatteryHull_UIV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_UIV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(22 * SECONDS + 10 * TICKS).eut(62880).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_UIV_Full.get(1L)).duration(22 * SECONDS + 10 * TICKS).eut(62880)
+                .addTo(sCannerRecipes);
         // UMV 134217728
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Infinity, 4L),
                         CustomItemList.BatteryHull_UMV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_UMV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(25 * SECONDS).eut(125760).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_UMV_Full.get(1L)).duration(25 * SECONDS).eut(125760)
+                .addTo(sCannerRecipes);
         // UxV 536870912
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Infinity, 8L),
                         CustomItemList.BatteryHull_UxV.get(1L))
-                .itemOutputs(CustomItemList.BatteryHull_UxV_Full.get(1L)).noFluidInputs().noFluidOutputs()
-                .duration(30 * SECONDS).eut(251520).addTo(sCannerRecipes);
+                .itemOutputs(CustomItemList.BatteryHull_UxV_Full.get(1L)).duration(30 * SECONDS).eut(251520)
+                .addTo(sCannerRecipes);
 
     }
 }

@@ -90,11 +90,10 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1L));
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
-                .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(5).addTo(sCentrifugeRecipes);
+                .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0, missing)).duration(1200).eut(5)
+                .addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing))
-                .itemOutputs(ItemList.Color_00.get(2L)).noFluidInputs().noFluidOutputs().duration(300).eut(2)
-                .addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_00.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
 
         BloodMagicHelper.removeAltarRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 3, missing));
         AltarRecipeRegistry.registerAltarRecipe(

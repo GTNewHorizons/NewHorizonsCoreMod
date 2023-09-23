@@ -1375,670 +1375,645 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "detector_rail", 1, 0, missing),
                         getModItem(Railcraft.ID, "detector", 1, 9, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "BlockAdvDetector", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "BlockAdvDetector", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(Railcraft.ID, "track", 1, 0, "{track:\"railcraft:track.junction\"}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 4L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "BlockJunction", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "BlockJunction", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Wood, 2L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 0, missing)).duration(200).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Reinforced, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Reinforced, 2L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 23, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 23, missing)).duration(400).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Galgadorian, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Galgadorian, 2L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 82, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 82, missing)).duration(400).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 37, missing)).noFluidInputs().noFluidOutputs()
-                .duration(400).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 37, missing)).duration(400).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 1, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 38, missing)).noFluidInputs().noFluidOutputs()
-                .duration(400).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 38, missing)).duration(400).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Reinforced, 4L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 23, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 39, missing)).noFluidInputs().noFluidOutputs()
-                .duration(400).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 39, missing)).duration(400).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Galgadorian, 4L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 82, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 81, missing)).noFluidInputs().noFluidOutputs()
-                .duration(400).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 81, missing)).duration(400).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.SteelBars.get(5L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 19, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 20, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 20, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.CobaltBrass, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Reinforced, 1L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 80, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 80, missing)).duration(1600).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.CobaltBrass, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Galgadorian, 1L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 81, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 81, missing)).duration(1600).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iron, 2L),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 83, missing)).duration(300).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Iron, 1L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 83, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 84, missing)).duration(600).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_SolarPanel.get(1L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 44, missing)).duration(600).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 44, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 16, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 58, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 58, missing)).duration(1200).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing)).noFluidInputs()
-                .noFluidOutputs().duration(80).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing)).duration(80).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing)).noFluidInputs()
-                .noFluidOutputs().duration(160).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing)).duration(160).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing)).noFluidInputs()
-                .noFluidOutputs().duration(160).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing)).duration(160).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing)).noFluidInputs()
-                .noFluidOutputs().duration(320).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing)).duration(320).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing)).noFluidInputs()
-                .noFluidOutputs().duration(640).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing)).duration(640).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(Minecraft.ID, "sapling", 8, wildcard, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(BiomesOPlenty.ID, "saplings", 8, wildcard, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(BiomesOPlenty.ID, "colorizedSaplings", 8, wildcard, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(Forestry.ID, "saplingGE", 8, wildcard, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(IndustrialCraft2.ID, "blockRubSapling", 8, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(Natura.ID, "florasapling", 8, wildcard, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(Natura.ID, "Rare Sapling", 8, wildcard, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(Thaumcraft.ID, "blockCustomPlant", 8, wildcard, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing),
                         getModItem(TwilightForest.ID, "tile.TFSapling", 8, wildcard, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 17, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 36)).noFluidOutputs().duration(160).eut(8)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 36)).duration(160).eut(8)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 72)).noFluidOutputs().duration(320).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 72)).duration(320).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "porkchop", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 21, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 21, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "diamond", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 22, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 22, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "emerald", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 23, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 23, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "slime_ball", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 24, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 24, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "glass_bottle", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 51, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 51, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "fire_charge", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 52, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 52, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "egg", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 53, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 53, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "cake", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 90, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 90, missing)).duration(600).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(Minecraft.ID, "nether_wart", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 58, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 58, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 28, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 88, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 88, missing)).duration(600).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "torch", 3, 0, missing), GT_Utility.getIntegratedCircuit(3))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 29, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 29, missing)).duration(100).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 1L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing)).duration(100).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 1L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 33, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 33, missing)).duration(100).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 1, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         ItemList.Color_01.get(4L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 11, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 14, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 19, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 59, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 2, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 2, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 22, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 13, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 12, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         ItemList.Color_02.get(4L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(BiomesOPlenty.ID, "misc", 4, 7, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 28, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 3, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Minecraft.ID, "dye", 4, 4, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Botany.ID, "pigment", 4, 24, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ExtraBees.ID, "misc", 4, 21, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Natura.ID, "barleyFood", 4, 8, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 4, 11, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(Gendustry.ID, "HoneyDrop", 4, 14, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         ItemList.Color_04.get(4L))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 2L),
                         getModItem(BiomesOPlenty.ID, "misc", 4, 5, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 4, missing)).duration(100).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "CartModule", 1, 41, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 101, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 101, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_Crafting.get(1L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 87, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 87, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "CartModule", 1, 87, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 16, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 92, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 92, missing)).duration(300).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 91, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 91, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "CartModule", 1, 91, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 16, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 93, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 93, missing)).duration(300).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 25, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 8, 24, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 28, missing)).noFluidInputs().noFluidOutputs()
-                .duration(400).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 28, missing)).duration(400).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 21, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).duration(400).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 22, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).duration(400).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 23, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).duration(400).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Tool_Scanner.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 24, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 26, missing)).duration(400).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Sensor_MV.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 21, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).duration(400).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Sensor_MV.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 22, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).duration(400).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Sensor_MV.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 23, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).duration(400).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Sensor_MV.get(1L), getModItem(StevesCarts2.ID, "CartModule", 1, 24, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 27, missing)).duration(400).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "string", 1, 0, missing),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 43, missing)).noFluidInputs()
-                .noFluidOutputs().duration(50).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 43, missing)).duration(50).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 7, 0, missing),
                         getModItem(Minecraft.ID, "fermented_spider_eye", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 288)).noFluidOutputs().duration(200)
-                .eut(256).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 288)).duration(200).eut(256)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "ModuleComponents", 4, 5, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 45, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 36, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(400).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(400).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Bronze, 1L),
                         getModItem(Minecraft.ID, "iron_bars", 1, 0, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 60, missing)).duration(400).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.SteelBars.get(5L),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 9, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 57, missing)).noFluidInputs().noFluidOutputs()
-                .duration(600).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 57, missing)).duration(600).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesCarts2.ID, "CartModule", 1, 81, missing),
                         ItemList.Quantum_Chest_IV.get(1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 76, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.americium", 1440)).noFluidOutputs().duration(600)
-                .eut(30720).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.americium", 1440)).duration(600).eut(30720)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1000).eut(120).specialValue(1700).addTo(sBlastRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing)).duration(1000).eut(120)
+                .specialValue(1700).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Galgadorian, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).noFluidOutputs().duration(2000).eut(120)
-                .specialValue(2200).addTo(sBlastRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).duration(2000).eut(120).specialValue(2200)
+                .addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.EnhancedGalgadorian, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).noFluidOutputs().duration(3000).eut(120)
-                .specialValue(3500).addTo(sBlastRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("oxygen", 1000)).duration(3000).eut(120).specialValue(3500)
+                .addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 12, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(120).specialValue(1000).addTo(sBlastRecipes);
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 12, missing)).duration(200).eut(120)
+                .specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "diamond", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 2, 18, missing))
-                .fluidInputs(Materials.Obsidian.getMolten(1152)).noFluidOutputs().duration(600).eut(30)
-                .addTo(UniversalChemical);
+                .fluidInputs(Materials.Obsidian.getMolten(1152)).duration(600).eut(30).addTo(UniversalChemical);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 4)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(100).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Wood, 1L))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(50).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(50).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 6)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 4)).duration(100).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 6)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 4)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 31, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 30, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(50).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(50).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 8)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(100).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 8)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 32, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(50).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(50).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 8)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 12)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 8)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 12)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 8)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 35, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 16)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 12)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 16)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 12)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 36, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 35, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 4)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 4)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(300).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 24)).duration(300).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(300).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 24)).noFluidOutputs().duration(300)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(150).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(150).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 64)).duration(300).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 48)).duration(300).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 64)).noFluidOutputs().duration(300).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 48)).noFluidOutputs().duration(300)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 16)).noFluidOutputs().duration(150).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 16)).duration(150).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 16)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 12)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 16)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 12)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 4)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 4)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing))
+                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 8)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 8)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(100).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 12)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 8)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 12)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 8)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 62, missing))
-                .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 61, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).noFluidOutputs().duration(100).eut(30)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(100).eut(30).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 22, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Reinforced, 1L)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .duration(300).eut(2).addTo(sMaceratorRecipes);
 
     }
 }

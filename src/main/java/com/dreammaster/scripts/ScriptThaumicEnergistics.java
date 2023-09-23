@@ -92,7 +92,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, wildcard, missing),
                         getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "wireless.essentia.terminal", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(600).eut(120).addTo(sAssemblerRecipes);
+                .duration(600).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 2, 0, missing),
@@ -101,47 +101,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Parts_Vacuum_Tube.get(2L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.NandChip.get(2L),
-                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 4, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 2, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -151,7 +111,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -161,7 +121,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -171,7 +131,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -181,7 +141,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -191,7 +151,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -201,7 +161,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -211,7 +171,47 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 2, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Parts_Vacuum_Tube.get(2L),
+                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.NandChip.get(2L),
+                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 2, 4, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -221,167 +221,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Basic.get(4L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Microprocessor.get(4L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
-                        ItemList.Circuit_Parts_Vacuum_Tube.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Basic.get(4L),
-                        ItemList.Circuit_Parts_Vacuum_Tube.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Microprocessor.get(4L),
-                        ItemList.Circuit_Parts_Vacuum_Tube.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        ItemList.Circuit_Parts_Vacuum_Tube.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
-                        ItemList.NandChip.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Basic.get(4L),
-                        ItemList.NandChip.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Microprocessor.get(4L),
-                        ItemList.NandChip.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        ItemList.NandChip.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Basic.get(4L),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Microprocessor.get(4L),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -391,7 +231,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -401,7 +241,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -411,7 +251,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -421,7 +261,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -431,7 +271,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -441,7 +281,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -451,7 +291,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -461,7 +301,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -471,7 +311,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -481,7 +321,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -491,7 +331,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -501,7 +341,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -511,7 +351,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -521,7 +361,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -531,7 +371,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -541,7 +381,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -551,7 +391,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -561,7 +401,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -571,7 +411,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -581,7 +421,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -591,7 +431,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -601,7 +441,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -611,7 +451,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -621,7 +461,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -631,7 +471,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -641,7 +481,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -651,7 +491,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -661,7 +501,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -671,7 +511,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -681,7 +521,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -691,7 +531,167 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Basic.get(4L),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Microprocessor.get(4L),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                        ItemList.Circuit_Parts_Vacuum_Tube.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Basic.get(4L),
+                        ItemList.Circuit_Parts_Vacuum_Tube.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Microprocessor.get(4L),
+                        ItemList.Circuit_Parts_Vacuum_Tube.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                        ItemList.Circuit_Parts_Vacuum_Tube.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                        ItemList.NandChip.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Basic.get(4L),
+                        ItemList.NandChip.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Microprocessor.get(4L),
+                        ItemList.NandChip.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                        ItemList.NandChip.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Basic.get(4L),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Microprocessor.get(4L),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 5, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 4, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(30)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -701,207 +701,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Good.get(4L),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Integrated_Good.get(4L),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Processor.get(4L),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
-                        ItemList.Circuit_Basic.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Good.get(4L),
-                        ItemList.Circuit_Basic.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Integrated_Good.get(4L),
-                        ItemList.Circuit_Basic.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Processor.get(4L),
-                        ItemList.Circuit_Basic.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        ItemList.Circuit_Basic.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
-                        ItemList.Circuit_Microprocessor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Good.get(4L),
-                        ItemList.Circuit_Microprocessor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Integrated_Good.get(4L),
-                        ItemList.Circuit_Microprocessor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Processor.get(4L),
-                        ItemList.Circuit_Microprocessor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        ItemList.Circuit_Microprocessor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Good.get(4L),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Integrated_Good.get(4L),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Processor.get(4L),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -911,7 +711,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -921,7 +721,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -931,7 +731,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -941,7 +741,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -951,7 +751,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -961,7 +761,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -971,7 +771,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -981,7 +781,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -991,7 +791,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1001,7 +801,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1011,7 +811,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1021,7 +821,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1031,7 +831,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1041,7 +841,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1051,7 +851,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1061,7 +861,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1071,7 +871,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1081,7 +881,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1091,7 +891,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1101,7 +901,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1111,7 +911,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1121,7 +921,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1131,7 +931,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1141,7 +941,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1151,7 +951,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1161,7 +961,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1171,7 +971,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1181,7 +981,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1191,7 +991,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1201,7 +1001,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1211,7 +1011,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1221,7 +1021,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1231,7 +1031,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1241,7 +1041,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1251,7 +1051,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1261,7 +1061,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1271,7 +1071,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1281,7 +1081,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1291,7 +1091,207 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Good.get(4L),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Integrated_Good.get(4L),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Processor.get(4L),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                        ItemList.Circuit_Basic.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Good.get(4L),
+                        ItemList.Circuit_Basic.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Integrated_Good.get(4L),
+                        ItemList.Circuit_Basic.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Processor.get(4L),
+                        ItemList.Circuit_Basic.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                        ItemList.Circuit_Basic.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                        ItemList.Circuit_Microprocessor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Good.get(4L),
+                        ItemList.Circuit_Microprocessor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Integrated_Good.get(4L),
+                        ItemList.Circuit_Microprocessor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Processor.get(4L),
+                        ItemList.Circuit_Microprocessor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                        ItemList.Circuit_Microprocessor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Good.get(4L),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Integrated_Good.get(4L),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Processor.get(4L),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 6, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 5, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(120)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1301,207 +1301,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Computer.get(4L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Nanoprocessor.get(4L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
-                        ItemList.Circuit_Good.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Computer.get(4L),
-                        ItemList.Circuit_Good.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Nanoprocessor.get(4L),
-                        ItemList.Circuit_Good.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        ItemList.Circuit_Good.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
-                        ItemList.Circuit_Integrated_Good.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Computer.get(4L),
-                        ItemList.Circuit_Integrated_Good.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Nanoprocessor.get(4L),
-                        ItemList.Circuit_Integrated_Good.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        ItemList.Circuit_Integrated_Good.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
-                        ItemList.Circuit_Processor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Computer.get(4L),
-                        ItemList.Circuit_Processor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Nanoprocessor.get(4L),
-                        ItemList.Circuit_Processor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        ItemList.Circuit_Processor.get(16L),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Computer.get(4L),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Nanoprocessor.get(4L),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
-                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
-                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1511,7 +1311,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1521,7 +1321,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1531,7 +1331,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1541,7 +1341,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1551,7 +1351,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1561,7 +1361,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1571,7 +1371,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1581,7 +1381,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1591,7 +1391,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1601,7 +1401,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1611,7 +1411,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1621,7 +1421,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1631,7 +1431,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1641,7 +1441,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1651,7 +1451,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1661,7 +1461,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1671,7 +1471,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1681,7 +1481,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1691,7 +1491,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1701,7 +1501,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1711,7 +1511,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1721,7 +1521,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1731,7 +1531,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1741,7 +1541,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1751,7 +1551,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1761,7 +1561,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1771,7 +1571,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1781,7 +1581,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1791,7 +1591,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1801,7 +1601,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1811,7 +1611,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1821,7 +1621,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1831,7 +1631,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1841,7 +1641,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1851,7 +1651,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1861,7 +1661,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1871,7 +1671,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1881,7 +1681,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1891,7 +1691,207 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Computer.get(4L),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Nanoprocessor.get(4L),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 16, 0, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                        ItemList.Circuit_Good.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Computer.get(4L),
+                        ItemList.Circuit_Good.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Nanoprocessor.get(4L),
+                        ItemList.Circuit_Good.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                        ItemList.Circuit_Good.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                        ItemList.Circuit_Integrated_Good.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Computer.get(4L),
+                        ItemList.Circuit_Integrated_Good.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Nanoprocessor.get(4L),
+                        ItemList.Circuit_Integrated_Good.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                        ItemList.Circuit_Integrated_Good.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                        ItemList.Circuit_Processor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Computer.get(4L),
+                        ItemList.Circuit_Processor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Nanoprocessor.get(4L),
+                        ItemList.Circuit_Processor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                        ItemList.Circuit_Processor.get(16L),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 4, 0, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Computer.get(4L),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Nanoprocessor.get(4L),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
+                .addTo(sCircuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 4, 7, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 16, 6, missing),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(200).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
 
         TCHelper.removeInfusionRecipe(

@@ -16,7 +16,7 @@ public class ArcFurnaceRecipes implements Runnable {
     @Override
     public void run() {
         GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L)).noFluidInputs()
-                .noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L))
+                .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
     }
 }

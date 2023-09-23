@@ -81,49 +81,48 @@ public class ScriptEMT implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(200).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 12, 0, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 4, 10, missing))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 6912)).noFluidOutputs().duration(600).eut(30)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 6912)).duration(600).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 12, 0, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 4, 10, missing))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 6912)).noFluidOutputs().duration(600).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 6912)).duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).noFluidOutputs().duration(100).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(100).eut(16)
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 288)).noFluidOutputs().duration(100).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 288)).duration(100).eut(16)
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).duration(100).eut(30)
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
-                .noItemOutputs().noFluidInputs().fluidOutputs(FluidRegistry.getFluidStack("refinedglue", 288))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_LV / 2).addTo(sFluidExtractionRecipes);
+                .fluidOutputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV / 2).addTo(sFluidExtractionRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(30).addTo(sPressRecipes);
+                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(100).eut(30)
+                .addTo(sPressRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 1, 21, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Cinnabar, 22L))
-                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .outputChances(10000).duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .duration(300).eut(2).addTo(sMaceratorRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing));
         TCHelper.removeArcaneRecipe(getModItem(ElectroMagicTools.ID, "ThaumiumWing", 1, 0, missing));

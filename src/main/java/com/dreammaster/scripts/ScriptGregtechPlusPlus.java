@@ -373,7 +373,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GTPlusPlus.ID, "item.BasicMetaFood", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(100).eut(4).addTo(sMaceratorRecipes);
+                .duration(100).eut(4).addTo(sMaceratorRecipes);
 
         // Shirabon and Eternity
         CORE.RA.addQuantumTransformerRecipe(

@@ -379,266 +379,266 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_bars", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierOne", 4, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierOne", 4, 0, missing)).duration(100).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.SteelBars.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierTwo", 4, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierTwo", 4, 0, missing)).duration(100).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.StainlessSteel, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierThree", 4, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierThree", 4, 0, missing)).duration(100).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.TungstenSteelBars.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Titanium, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFour", 4, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFour", 4, 0, missing)).duration(100).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.IridiumBars.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.TungstenSteel, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFive", 4, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(256).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "fenceTierFive", 4, 0, missing)).duration(100).eut(256)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                         ItemList.Battery_Hull_LV.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierOne", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierOne", 1, 0, missing)).duration(400)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L),
                         ItemList.Battery_Hull_MV.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierTwo", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierTwo", 1, 0, missing)).duration(400)
+                .eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L),
                         ItemList.Battery_Hull_HV.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierThree", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierThree", 1, 0, missing)).duration(400)
+                .eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.EnergeticAlloy, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32503, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFour", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFour", 1, 0, missing)).duration(400)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.VibrantAlloy, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 32504, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFive", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(256).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFive", 1, 0, missing)).duration(400)
+                .eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierOne", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierOne", 1, 0, missing)).duration(400)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.ElectricalSteel, 1L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierTwo", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierTwo", 1, 0, missing)).duration(400)
+                .eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierThree", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierThree", 1, 0, missing)).duration(400)
+                .eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.EnergeticAlloy, 1L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierFour", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierFour", 1, 0, missing)).duration(400)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.VibrantAlloy, 1L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierFive", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(256).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderInvTierFive", 1, 0, missing)).duration(400)
+                .eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierOne", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 2L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierTwo", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.StainlessSteel, 2L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierThree", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierThree", 1, 0, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticAlloy, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.TungstenSteel, 2L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierFour", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierFour", 1, 0, missing)).duration(200).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iridium, 2L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(256).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "barrelTierFive", 1, 0, missing)).duration(200).eut(256)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "piston", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iron, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierOne", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Piston_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Steel, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierTwo", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierTwo", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Piston_MV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.spring, Materials.StainlessSteel, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierThree", 1, 0, missing)).duration(200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Piston_HV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.spring, Materials.TungstenSteel, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierFour", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierFour", 1, 0, missing)).duration(200).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Piston_EV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Iridium, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierFive", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(256).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "chamberTierFive", 1, 0, missing)).duration(200).eut(256)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 72)).noFluidOutputs().duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 72)).duration(100).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Steel, 4L),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0, missing))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "bulletCraftable", 64, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 144)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 144)).duration(200).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L),
                         getModItem(Minecraft.ID, "tnt", 1, 0, missing))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "grenadeCraftable", 32, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 144)).noFluidOutputs().duration(200).eut(64)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 144)).duration(200).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 4L),
                         getModItem(IndustrialCraft2.ID, "blockITNT", 3, 0, missing))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "rocketCraftable", 24, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 144)).noFluidOutputs().duration(200)
-                .eut(120).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 144)).duration(200).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.NeodymiumMagnetic, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "ferroSlug", 16, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tungstensteel", 144)).noFluidOutputs().duration(200)
-                .eut(256).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tungstensteel", 144)).duration(200).eut(256)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         CustomItemList.ReinforcedGlassLense.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "accuraccyUpgradeItem", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "accuraccyUpgradeItem", 1, 0, missing)).duration(100)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(Minecraft.ID, "magma_cream", 1, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "fireRateUpgradeItem", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "fireRateUpgradeItem", 1, 0, missing)).duration(100)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.StainlessSteel, 1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "rangeUpgradeItem", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "rangeUpgradeItem", 1, 0, missing)).duration(100)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         CustomItemList.StainlessSteelBars.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "scattershotUpgradeItem", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "scattershotUpgradeItem", 1, 0, missing)).duration(100)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 2L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "efficiencyUpgradeItem", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "efficiencyUpgradeItem", 1, 0, missing)).duration(100)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(Minecraft.ID, "ender_eye", 2, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "damageAmpAddon", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "damageAmpAddon", 1, 0, missing)).duration(100).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(EnderIO.ID, "blockSolarPanel", 1, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "solarPanelAddon", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "solarPanelAddon", 1, 0, missing)).duration(100).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(OpenComputers.ID, "item", 4, 24, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "serialPortAddon", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "serialPortAddon", 1, 0, missing)).duration(100).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         ItemList.Electric_Piston_MV.get(1L))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "concealerAddon", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "concealerAddon", 1, 0, missing)).duration(100).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(EnderStorage.ID, "enderChest", 1, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "recyclerAddon", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "recyclerAddon", 1, 0, missing)).duration(100).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(Thaumcraft.ID, "blockTube", 4, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "potentiaAddon", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "potentiaAddon", 1, 0, missing)).duration(100).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         getModItem(OpenModularTurrets.ID, "ioBus", 4, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "redstoneReactorAddon", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "redstoneReactorAddon", 1, 0, missing)).duration(100)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 4L),
                         getModItem(Minecraft.ID, "redstone", 4, 0, missing),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing))
-                .itemOutputs(getModItem(OpenModularTurrets.ID, "blazingClayCraftable", 32, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sMixerRecipes);
+                .itemOutputs(getModItem(OpenModularTurrets.ID, "blazingClayCraftable", 32, 0, missing)).duration(200)
+                .eut(30).addTo(sMixerRecipes);
 
     }
 }

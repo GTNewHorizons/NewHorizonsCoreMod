@@ -1337,445 +1337,442 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 6L),
                         CustomItemList.MoldBoots.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing)).duration(300).eut(30)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 6, 17880, missing),
                         CustomItemList.MoldBoots.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L),
                         CustomItemList.MoldBoots.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeBoots", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(30).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeBoots", 1, 0, missing)).duration(400)
+                .eut(30).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 8L),
                         CustomItemList.MoldChestplate.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeChestplate", 1, 0, missing))
-                .noFluidInputs().noFluidOutputs().duration(400).eut(30).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeChestplate", 1, 0, missing)).duration(400)
+                .eut(30).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 5L),
                         CustomItemList.MoldHelmet.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeHelmet", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(30).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeHelmet", 1, 0, missing)).duration(400)
+                .eut(30).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 7L),
                         CustomItemList.MoldLeggings.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(30).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorBronzeLegs", 1, 0, missing)).duration(400)
+                .eut(30).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).noFluidOutputs().duration(600).eut(64)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(600).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).noFluidOutputs().duration(600)
-                .eut(64).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(600).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Hull_ULV.get(1L), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).noFluidOutputs().duration(600).eut(64)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(600).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Machine_LV_Canner.get(1L), ItemList.Machine_LV_FluidCanner.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 6, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 6, missing)).duration(1200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 3, 5, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockHeatGenerator", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 576)).noFluidOutputs().duration(600).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 576)).duration(600).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 8, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 576)).noFluidOutputs().duration(600).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 576)).duration(600).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_MV_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_HV_MV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Copper, 2L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(250).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4, missing)).duration(250).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_EV_HV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 2L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Transformer_IV_EV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Steel, 2L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 6, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(1920).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockElectric", 1, 6, missing)).duration(100).eut(1920)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.SteelMagnetic, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 16L),
                         GT_Utility.getIntegratedCircuit(3))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "coal_block", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCoalBlock", 8, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0, missing)).duration(1200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Wood, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemTreetap", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemTreetap", 1, 0, missing)).duration(200).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockScaffold", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockScaffold", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Iron, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockIronScaffold", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockIronScaffold", 1, 0, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemBoat", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(20).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(20).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).noFluidOutputs().duration(400).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(400).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Cover_Screen.get(1L), ItemList.Circuit_Good.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).noFluidOutputs().duration(1200)
-                .eut(16).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(1200).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_Screen.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolMEter", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).noFluidOutputs().duration(600)
-                .eut(16).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).duration(600).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartAlloy", 3, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemDoorAlloy", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 720)).noFluidOutputs().duration(600).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 720)).duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRemote", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRemote", 1, 0, missing)).duration(1200).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Silver, 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(1200).eut(4)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1200).eut(4)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "reactorCoolantTriple", 1, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).noFluidOutputs().duration(1200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(1200).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing),
                         ItemList.Electric_Pump_LV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         ItemList.Conveyor_Module_LV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).noFluidOutputs().duration(1200).eut(16)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1200).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 17880, missing),
                         CustomItemList.ReinforcedGlassLense.get(2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).noFluidOutputs().duration(500).eut(30)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(500).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 17880, missing),
                         CustomItemList.ReinforcedGlassLense.get(2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).noFluidOutputs().duration(500).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(500).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 17880, missing),
                         getModItem(Minecraft.ID, "wool", 4, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).noFluidOutputs().duration(500).eut(30)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(500).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 8, 17880, missing),
                         getModItem(Minecraft.ID, "wool", 4, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).noFluidOutputs().duration(500).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(500).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 7, 17880, missing),
                         getModItem(Minecraft.ID, "carpet", 4, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).noFluidOutputs().duration(500).eut(30)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(500).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.metaitem.01", 7, 17880, missing),
                         getModItem(Minecraft.ID, "carpet", 4, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).noFluidOutputs().duration(500).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(500).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemSolarHelmet", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).noFluidOutputs().duration(600).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemSolarHelmet", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).noFluidOutputs().duration(600).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "iron_helmet", 1, 0, missing), ItemList.Cover_SolarPanel.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemSolarHelmet", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).noFluidOutputs().duration(600)
-                .eut(30).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(600).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 8, 6, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0, missing)).duration(300)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "chest", 1, 0, missing), ItemList.IC2_Item_Casing_Lead.get(8L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemContainmentbox", 1, 0, missing)).duration(300)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 5, 2, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "chest", 1, 0, missing), ItemList.IC2_Item_Casing_Bronze.get(5L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolbox", 1, 0, missing)).duration(300).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemUran238", 6, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPlutonium", 3, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMOX", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).noFluidOutputs().duration(400).eut(256)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(400).eut(256)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemUran238", 6, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemUran235small", 3, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemUran", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).noFluidOutputs().duration(400).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(400).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lead, 2L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing)).duration(200)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),
                         ItemList.Electric_Pump_HV.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorFluidPort", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorFluidPort", 1, 0, missing)).duration(400)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),
                         ItemList.Conveyor_Module_HV.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorAccessHatch", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorAccessHatch", 1, 0, missing)).duration(400)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),
                         ItemList.Cover_ActivityDetector.get(1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorRedstonePort", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockReactorRedstonePort", 1, 0, missing)).duration(400)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Mercury, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 8L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 8, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).noFluidOutputs().duration(600).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(600).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 16L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockLuminatorDark", 16, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).noFluidOutputs().duration(400).eut(64)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 1152)).duration(400).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "furnace", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing)).duration(400).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 8L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockCrop", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(150).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockCrop", 16, 0, missing)).duration(150).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioChunk", 1, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(120).specialValue(1000).addTo(sBlastRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0, missing)).duration(1200)
+                .eut(120).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioOrganicMesh", 1, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).specialValue(1000).addTo(sBlastRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 1, 0, missing)).duration(600)
+                .eut(120).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioCarbonPlate", 1, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).specialValue(1000).addTo(sBlastRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing)).duration(600)
+                .eut(120).specialValue(1000).addTo(sBlastRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 8, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(30).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 0, missing)).duration(600).eut(30)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Rubber, 4L),
                         getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(200).eut(16)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing),
                         getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ElectricBoatHull", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(30).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ElectricBoatHull", 1, 0, missing)).duration(1200)
+                .eut(30).addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1).eut(64).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing)).duration(1).eut(64)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(4).eut(64).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2, 0, missing)).duration(4).eut(64)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 4, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(8).eut(64).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 4, 0, missing)).duration(8).eut(64)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(16).eut(64).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).duration(16).eut(64)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(32).eut(64).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).duration(32).eut(64)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.StainlessSteel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(4).eut(120).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).duration(4).eut(120)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.StainlessSteel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(8).eut(120).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).duration(8).eut(120)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 32, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(16).eut(120).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 32, 0, missing)).duration(16).eut(120)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.StainlessSteel, 1L),
                         ItemList.Shape_Extruder_Pipe_Tiny.get(0L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(32).eut(120).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0, missing)).duration(32).eut(120)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.darkcoffee", 500)).noFluidOutputs().duration(8).eut(1)
+                .fluidInputs(FluidRegistry.getFluidStack("potion.darkcoffee", 500)).duration(8).eut(1)
                 .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.cafeaulait", 500)).noFluidOutputs().duration(8).eut(1)
+                .fluidInputs(FluidRegistry.getFluidStack("potion.cafeaulait", 500)).duration(8).eut(1)
                 .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFoamSprayer", 1, 0, missing))
                 .itemOutputs(
@@ -1786,8 +1783,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 0,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:8000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 8000)).noFluidOutputs().duration(129)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 8000)).duration(129).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1797,8 +1794,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 24,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:8000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 8000)).noFluidOutputs().duration(129)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 8000)).duration(129).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1808,8 +1805,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 21,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:16000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 16000)).noFluidOutputs().duration(258)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 16000)).duration(258).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1819,8 +1816,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 19,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:24000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 24000)).noFluidOutputs().duration(387)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 24000)).duration(387).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1830,8 +1827,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 16,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:32000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 32000)).noFluidOutputs().duration(516)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 32000)).duration(516).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1841,8 +1838,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 13,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:40000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 40000)).noFluidOutputs().duration(645)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 40000)).duration(645).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1852,8 +1849,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 10,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:48000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 48000)).noFluidOutputs().duration(774)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 48000)).duration(774).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1863,8 +1860,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 7,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:54000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 54000)).noFluidOutputs().duration(870)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 54000)).duration(870).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1874,8 +1871,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 4,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:62000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 62000)).noFluidOutputs().duration(1000)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 62000)).duration(1000).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1885,8 +1882,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 1,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:70000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 70000)).noFluidOutputs().duration(1129)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 70000)).duration(1129).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemArmorCFPack", 1, 26, missing))
                 .itemOutputs(
                         createItemStack(
@@ -1896,80 +1893,79 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                                 1,
                                 "{Fluid:{FluidName:\"ic2constructionfoam\",Amount:80000}}",
                                 missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 80000)).noFluidOutputs().duration(1290)
-                .eut(1).addTo(sFluidCannerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2constructionfoam", 80000)).duration(1290).eut(1)
+                .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.TenKCell.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantSimple", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).noFluidOutputs().duration(16).eut(1)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(16).eut(1)
                 .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.ThirtyKCell.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantTriple", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 3000)).noFluidOutputs().duration(48).eut(1)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 3000)).duration(48).eut(1)
                 .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.SixtyKCell.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "reactorCoolantSix", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 6000)).noFluidOutputs().duration(96).eut(1)
+                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 6000)).duration(96).eut(1)
                 .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.MoldBoots.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 720)).noFluidOutputs().duration(300).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 720)).duration(300).eut(30)
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0, missing))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Diamond, 2L))
-                .noFluidInputs().noFluidOutputs().duration(3830).eut(16).addTo(sLatheRecipes);
+                .duration(3830).eut(16).addTo(sLatheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockBasalt", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Basalt, 1L)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
-                .itemOutputs(CustomItemList.LapotronDust.get(30L)).outputChances(10000).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sMaceratorRecipes);
+                .itemOutputs(CustomItemList.LapotronDust.get(30L)).outputChances(10000).duration(300).eut(2)
+                .addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemDust", 8, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(16).addTo(sMixerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0, missing)).duration(100).eut(16)
+                .addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "iron_boots", 1, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemStaticBoots", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(30).addTo(sPolarizerRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemStaticBoots", 1, 0, missing)).duration(600).eut(30)
+                .addTo(sPolarizerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(100).eut(4).addTo(sWiremillRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing)).duration(100).eut(4)
+                .addTo(sWiremillRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Steel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(150).eut(8).addTo(sWiremillRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 2, 0, missing)).duration(150).eut(8)
+                .addTo(sWiremillRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 4, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sWiremillRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 4, 0, missing)).duration(200).eut(16)
+                .addTo(sWiremillRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Steel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(250).eut(30).addTo(sWiremillRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).duration(250).eut(30)
+                .addTo(sWiremillRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(64).addTo(sWiremillRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).duration(300).eut(64)
+                .addTo(sWiremillRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.StainlessSteel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(64).addTo(sWiremillRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).duration(200).eut(64)
+                .addTo(sWiremillRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.StainlessSteel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(250).eut(96).addTo(sWiremillRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).duration(250).eut(96)
+                .addTo(sWiremillRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 32, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(120).addTo(sWiremillRecipes);
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 32, 0, missing)).duration(300).eut(120)
+                .addTo(sWiremillRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.StainlessSteel, 1L))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(350).eut(256).addTo(sWiremillRecipes);
-        GT_Values.RA.stdBuilder().noItemInputs().noItemOutputs()
-                .fluidInputs(FluidRegistry.getFluidStack("ic2hotcoolant", 1000))
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 64, 0, missing)).duration(350).eut(256)
+                .addTo(sWiremillRecipes);
+        GT_Values.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("ic2hotcoolant", 1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(200).eut(120)
                 .addTo(sVacuumRecipes);
     }

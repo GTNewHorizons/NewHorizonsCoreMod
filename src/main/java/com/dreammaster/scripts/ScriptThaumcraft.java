@@ -114,28 +114,27 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing)).outputChances(7000)
-                .fluidInputs(FluidRegistry.getFluidStack("water", 200)).noFluidOutputs().duration(2000).eut(24)
-                .addTo(sAutoclaveRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(2000).eut(24).addTo(sAutoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing)).outputChances(9000)
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).noFluidOutputs().duration(1500)
-                .eut(24).addTo(sAutoclaveRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1500).eut(24)
+                .addTo(sAutoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Amber, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing)).outputChances(10000)
-                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).noFluidOutputs().duration(1000).eut(24)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(1000).eut(24)
                 .addTo(sAutoclaveRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Blaze, 8L))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 3, missing)).duration(600).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemNugget", 8, 5, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 2, missing)).duration(600).eut(30)
+                .addTo(sAssemblerRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "blockTable", 1, 14, missing));
         TCHelper.clearPages("PLANTS");
@@ -1691,14 +1690,13 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 5, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 9, 4, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(300).eut(2).addTo(sMaceratorRecipes);
+                .duration(300).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(400).eut(30)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(400).eut(30).addTo(sCutterRecipes);
 
         TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing));
         TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing));
@@ -2433,61 +2431,60 @@ public class ScriptThaumcraft implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(400)
-                .eut(30).addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(400).eut(30)
+                .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L)))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(600).eut(120)
+                .addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Jasper, 1L)))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(600).eut(120)
+                .addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L)))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(600).eut(120)
+                .addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.GarnetRed, 1L)))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(600).eut(120)
+                .addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         GT_Utility
                                 .copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(600).eut(120)
+                .addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 19, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(600).eut(120)
+                .addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 91, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(600).eut(120)
+                .addTo(sLaserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 10023, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(120).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(600).eut(120)
+                .addTo(sLaserEngraverRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing));

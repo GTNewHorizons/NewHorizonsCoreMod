@@ -25,28 +25,28 @@ public class BrewingMachineRecipes implements Runnable {
     @Override
     public void run() {
 
-        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Genetics.ID, "misc", 6L, 4)).noItemOutputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Genetics.ID, "misc", 6L, 4))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sBrewingRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 16L, 0))
-                .noItemOutputs().fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750))
+                .fluidInputs(FluidRegistry.getFluidStack("binnie.growthmedium", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 750)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(sBrewingRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.blaze_powder, 1, 0)).noItemOutputs()
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.blaze_powder, 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 100))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteriavector", 100)).duration(5 * TICKS).eut(60)
                 .addTo(sBrewingRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.dye, 1, 15)).noItemOutputs()
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.dye, 1, 15))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 100))
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteriapoly", 100)).duration(5 * TICKS).eut(60)
                 .addTo(sBrewingRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(GT_ModHandler.getModItem(PamsHarvestTheNether.ID, "ignisfruitItem", 45L, 0)).noItemOutputs()
+                .itemInputs(GT_ModHandler.getModItem(PamsHarvestTheNether.ID, "ignisfruitItem", 45L, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("potion.awkward", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("potion.fireresistance", 750)).duration(6 * SECONDS).eut(8)
                 .addTo(sBrewingRecipes);
@@ -70,20 +70,19 @@ public class BrewingMachineRecipes implements Runnable {
                         int amountIn = recipe.getFermentationValue() * 2;
                         int amountOut = amountIn;
 
-                        GT_Values.RA.stdBuilder().itemInputs(resource).noItemOutputs()
+                        GT_Values.RA.stdBuilder().itemInputs(resource)
                                 .fluidInputs(FluidRegistry.getFluidStack("water", amountIn))
                                 .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
                                 .eut(3).addTo(sBrewingRecipes);
 
                         amountOut = (int) (amountOut * 1.5);
 
-                        GT_Values.RA.stdBuilder().itemInputs(resource).noItemOutputs()
+                        GT_Values.RA.stdBuilder().itemInputs(resource)
                                 .fluidInputs(FluidRegistry.getFluidStack("juice", amountIn))
                                 .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
                                 .eut(3).addTo(sBrewingRecipes);
 
-                        GT_Values.RA.stdBuilder().itemInputs(resource).noItemOutputs()
-                                .fluidInputs(Materials.Honey.getFluid(amountIn))
+                        GT_Values.RA.stdBuilder().itemInputs(resource).fluidInputs(Materials.Honey.getFluid(amountIn))
                                 .fluidOutputs(FluidRegistry.getFluidStack("biomass", amountOut)).duration(8 * amountOut)
                                 .eut(3).addTo(sBrewingRecipes);
 

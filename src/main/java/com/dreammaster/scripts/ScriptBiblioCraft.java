@@ -864,33 +864,33 @@ public class ScriptBiblioCraft implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(GT_ModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(Materials.Water.getFluid(4)).noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(sCutterRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(GT_ModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(GT_ModHandler.getDistilledWater(2)).noFluidOutputs().duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(sCutterRecipes);
+                .fluidInputs(GT_ModHandler.getDistilledWater(2)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(sCutterRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(getMeta02(32470))
                 .itemOutputs(GT_ModHandler.getModItem(BiblioCraft.ID, "item.FramingSheet", 4))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).noFluidOutputs().duration(1 * SECONDS + 5 * TICKS).eut(4)
+                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
                 .addTo(sCutterRecipes);
         // --- Frame Board
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(GT_ModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(Materials.Water.getFluid(4)).noFluidOutputs().duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .fluidInputs(Materials.Water.getFluid(4)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(sCutterRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(GT_ModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(GT_ModHandler.getDistilledWater(2)).noFluidOutputs().duration(2 * SECONDS + 10 * TICKS)
-                .eut(4).addTo(sCutterRecipes);
+                .fluidInputs(GT_ModHandler.getDistilledWater(2)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(sCutterRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiblioCraft.ID, "item.FramingSheet", 1))
                 .itemOutputs(GT_ModHandler.getModItem(BiblioCraft.ID, "item.FramingBoard", 4))
-                .fluidInputs(Materials.Lubricant.getFluid(1)).noFluidOutputs().duration(1 * SECONDS + 5 * TICKS).eut(4)
+                .fluidInputs(Materials.Lubricant.getFluid(1)).duration(1 * SECONDS + 5 * TICKS).eut(4)
                 .addTo(sCutterRecipes);
 
     }

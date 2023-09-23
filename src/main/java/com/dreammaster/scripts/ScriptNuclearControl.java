@@ -44,8 +44,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         NC2_REMOTE_SENSOR_KIT,
                         GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2))
-                .itemOutputs(NC2_PANEL_MEMORY_CARD).noFluidInputs().noFluidOutputs().duration(10 * SECONDS).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(NC2_PANEL_MEMORY_CARD).duration(10 * SECONDS).eut(16).addTo(sAssemblerRecipes);
 
         addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(Natura.ID, "Bluebells", 1, 0, missing));
         addShapedRecipe(
@@ -251,58 +250,58 @@ public class ScriptNuclearControl implements IScriptLoader {
                 .itemInputs(
                         getModItem(IC2NuclearControl.ID, "ItemToolDigitalThermometer", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0, missing)).duration(1600)
+                .eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_EnergyDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemEnergySensorKit", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemEnergySensorKit", 1, 0, missing)).duration(1600)
+                .eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_ActivityDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 0, missing)).duration(1600)
+                .eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_FluidDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 1, missing)).duration(1600)
+                .eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 2, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 2, missing)).duration(1600)
+                .eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "KitAppeng", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(2800).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "KitAppeng", 1, 0, missing)).duration(2800).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clock", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTimeCard", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTimeCard", 1, 0, missing)).duration(1600).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Sensor_LV.get(1L), getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing)).duration(1600).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Cover_Screen.get(1L), getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTextCard", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTextCard", 1, 0, missing)).duration(1600).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0, missing)).duration(1600).eut(2)
+                .addTo(sAssemblerRecipes);
 
     }
 }

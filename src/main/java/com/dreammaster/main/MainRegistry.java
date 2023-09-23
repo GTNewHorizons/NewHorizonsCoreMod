@@ -360,8 +360,7 @@ public class MainRegistry {
         GameRegistry.addShapelessRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(_mBlockBabyChest, 9))
-                .itemOutputs(new ItemStack(Blocks.chest, 1, 0)).noFluidInputs().noFluidOutputs().duration(15 * SECONDS)
-                .eut(2).addTo(sCompressorRecipes);
+                .itemOutputs(new ItemStack(Blocks.chest, 1, 0)).duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
 
         GameRegistry.registerTileEntity(TileEntityBabyChest.class, "teBabyChest");
 
