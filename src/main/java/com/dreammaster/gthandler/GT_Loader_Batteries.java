@@ -2,6 +2,7 @@ package com.dreammaster.gthandler;
 
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCannerRecipes;
+import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.client.GT_TooltipHandler.Tier.*;
@@ -13,7 +14,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TC_Aspects;
 import gregtech.api.enums.TierEU;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
 
@@ -334,33 +334,36 @@ public class GT_Loader_Batteries {
         registerTieredTooltip(CustomItemList.BatteryHull_UxV_Full.get(1), UXV);
 
         // Just to be complete, extractor recipes for the filled hulls
-        GT_ModHandler
-                .addExtractionRecipe(CustomItemList.BatteryHull_EV_Full.get(1L), CustomItemList.BatteryHull_EV.get(1L));
-        GT_ModHandler
-                .addExtractionRecipe(CustomItemList.BatteryHull_IV_Full.get(1L), CustomItemList.BatteryHull_IV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_LuV_Full.get(1L),
-                CustomItemList.BatteryHull_LuV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_ZPM_Full.get(1L),
-                CustomItemList.BatteryHull_ZPM.get(1L));
-        GT_ModHandler
-                .addExtractionRecipe(CustomItemList.BatteryHull_UV_Full.get(1L), CustomItemList.BatteryHull_UV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UHV_Full.get(1L),
-                CustomItemList.BatteryHull_UHV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UEV_Full.get(1L),
-                CustomItemList.BatteryHull_UEV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UIV_Full.get(1L),
-                CustomItemList.BatteryHull_UIV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UMV_Full.get(1L),
-                CustomItemList.BatteryHull_UMV.get(1L));
-        GT_ModHandler.addExtractionRecipe(
-                CustomItemList.BatteryHull_UxV_Full.get(1L),
-                CustomItemList.BatteryHull_UxV.get(1L));
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_EV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_EV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_IV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_IV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_LuV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_LuV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_ZPM_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_ZPM.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_UV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_UV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_UHV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_UHV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_UEV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_UEV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_UIV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_UIV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_UMV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_UMV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.BatteryHull_UxV_Full.get(1L))
+                .itemOutputs(CustomItemList.BatteryHull_UxV.get(1L)).duration(15 * SECONDS).eut(2)
+                .addTo(sExtractorRecipes);
 
         // Recipes to actually fill the empty hulls with content
         // IV 2048
