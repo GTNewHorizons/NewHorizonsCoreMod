@@ -443,20 +443,20 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing),
                 GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Zinc, 1L));
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 4, 13, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 4, 13, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 15, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 4, 8, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 4, 8, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "crossed_decoration", 1, 6, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 4, 14, missing)).noFluidInputs().noFluidOutputs()
-                .duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 4, 14, missing)).duration(300).eut(2)
+                .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "auricion", 8, 0, missing))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "energy_wand_core", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "energy_wand_core", 1, 0, missing)).duration(600)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing),
@@ -466,7 +466,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "essence", 16, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "blank_gem", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1440)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1440)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -477,7 +477,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "essence", 32, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "spatial_dash_gem", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 2880)).noFluidOutputs().duration(1200).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 2880)).duration(1200).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -488,24 +488,23 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                         getModItem(HardcoreEnderExpansion.ID, "essence", 64, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "transference_gem", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 5760)).noFluidOutputs().duration(1800).eut(7068)
+                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 5760)).duration(1800).eut(7068)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "golden_pickaxe", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "fire_shard", 8, 0, missing))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "schorching_pickaxe", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(300).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "schorching_pickaxe", 1, 0, missing)).duration(300)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_powder", 4, 0, missing))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.HeeEndium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.EnderEye, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.HeeEndium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.EnderEye, 1L))
-                .outputChances(9000, 8000, 7500, 5000).noFluidInputs()
-                .fluidOutputs(FluidRegistry.getFluidStack("ender", 100)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(sCentrifugeRecipes);
-        GT_Values.RA.stdBuilder().noItemInputs()
+                .outputChances(9000, 8000, 7500, 5000).fluidOutputs(FluidRegistry.getFluidStack("ender", 100))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCentrifugeRecipes);
+        GT_Values.RA.stdBuilder()
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
@@ -518,52 +517,50 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lava", 144)).noFluidOutputs().duration(300).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("lava", 144)).duration(300).eut(120).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2hotcoolant", 72)).duration(300).eut(120)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2hotcoolant", 72)).noFluidOutputs().duration(300).eut(120)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).noFluidOutputs().duration(150).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).duration(150).eut(120)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 500)).noFluidOutputs().duration(3600).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 500)).duration(3600).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 350)).duration(3600).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 350)).noFluidOutputs().duration(3600)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 150)).noFluidOutputs().duration(1800).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 150)).duration(1800).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Sphalerite, 2L)).noFluidInputs()
-                .noFluidOutputs().duration(4).eut(10).addTo(sHammerRecipes);
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Sphalerite, 2L)).duration(4)
+                .eut(10).addTo(sHammerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(HardcoreEnderExpansion.ID, "instability_orb_ore", 1, 0, missing))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "instability_orb", 6, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(50).eut(120).addTo(sHammerRecipes);
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "instability_orb", 6, 0, missing)).duration(50)
+                .eut(120).addTo(sHammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "obsidian_fragment", 1, 0, missing))
-                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "obsidian_rod", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(160).eut(120).addTo(sLatheRecipes);
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "obsidian_rod", 1, 0, missing)).duration(160)
+                .eut(120).addTo(sLatheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "end_powder_ore", 1, 0, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_powder", 8, 0, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(50).eut(480).addTo(sMaceratorRecipes);
+                .duration(50).eut(480).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "igneous_rock_ore", 1, 0, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "igneous_rock", 4, 0, missing)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(50).eut(480).addTo(sMaceratorRecipes);
+                .duration(50).eut(480).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.HeeEndium, 9L)).outputChances(10000)
-                .noFluidInputs().noFluidOutputs().duration(50).eut(480).addTo(sMaceratorRecipes);
+                .duration(50).eut(480).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "sphalerite", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Sphalerite, 4L))
-                .outputChances(10000).noFluidInputs().noFluidOutputs().duration(400).eut(2).addTo(sMaceratorRecipes);
+                .outputChances(10000).duration(400).eut(2).addTo(sMaceratorRecipes);
 
     }
 }

@@ -1643,9 +1643,8 @@ public class ScriptRailcraft implements IScriptLoader {
                 'i',
                 getModItem(Forestry.ID, "craftingMaterial", 1, 3, missing));
 
-        GT_Values.RA.stdBuilder().itemInputs(Materials.Creosote.getCells(1)).noItemOutputs().noFluidInputs()
-                .noFluidOutputs().metadata(FUEL_VALUE, 8).metadata(FUEL_TYPE, 0).duration(0).eut(0)
-                .addTo(GT_RecipeConstants.Fuel);
+        GT_Values.RA.stdBuilder().itemInputs(Materials.Creosote.getCells(1)).metadata(FUEL_VALUE, 8)
+                .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
 
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 0, missing));
         RailcraftHelper.removeRollingRecipe(getModItem(Railcraft.ID, "part.plate", 4, 1, missing));
@@ -1958,62 +1957,62 @@ public class ScriptRailcraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Railcraft.ID, "slab", 2, 28, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 0, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Railcraft.ID, "slab", 2, 26, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 1, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Railcraft.ID, "slab", 2, 27, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 2, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Railcraft.ID, "slab", 2, 24, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 3, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 3, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Railcraft.ID, "slab", 2, 23, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 4, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 4, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Railcraft.ID, "slab", 2, 29, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 5, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 5, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Railcraft.ID, "slab", 2, 25, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 6, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 6, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Railcraft.ID, "slab", 2, 22, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 7, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 7, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Minecraft.ID, "stone_slab", 2, 1, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 8, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 8, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "torch", 1, 0, missing),
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 9, missing)).noFluidInputs().noFluidOutputs()
-                .duration(10 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 9, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(sAssemblerRecipes);
         Module_CustomFuels.registerCustomFuelValue(
                 getModItem(Railcraft.ID, "fluid.creosote.bucket", 1, 0, missing),
                 (short) 6400);
@@ -2021,32 +2020,32 @@ public class ScriptRailcraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 5, 0, missing),
                         getModItem(Railcraft.ID, "part.rebar", 4, 0, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "cube", 5, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cube", 5, 1, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 5L),
                         CustomItemList.MoldHelmet.get(0L))
-                .itemOutputs(getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "armor.steel.helmet", 1, 0, missing)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 8L),
                         CustomItemList.MoldChestplate.get(0L))
-                .itemOutputs(getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "armor.steel.plate", 1, 0, missing)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 7L),
                         CustomItemList.MoldLeggings.get(0L))
-                .itemOutputs(getModItem(Railcraft.ID, "armor.steel.legs", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "armor.steel.legs", 1, 0, missing)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
                         CustomItemList.MoldBoots.get(0L))
-                .itemOutputs(getModItem(Railcraft.ID, "armor.steel.boots", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "armor.steel.boots", 1, 0, missing)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
@@ -2073,8 +2072,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
@@ -2101,8 +2100,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
@@ -2129,8 +2128,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
@@ -2157,8 +2156,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
@@ -2185,8 +2184,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
@@ -2213,8 +2212,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
@@ -2241,8 +2240,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
@@ -2269,8 +2268,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
@@ -2297,8 +2296,8 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stained_glass_pane", 1, wildcard, missing),
@@ -2325,127 +2324,127 @@ public class ScriptRailcraft implements IScriptLoader {
                                 "{mat:\"ProjRed|Illumination:projectred.illumination.lamp_30\"}",
                                 missing),
                         GT_Utility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.signal.lamp", 16, 0, missing)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "firestone.cut", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone_block", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.refined", 1, 5000, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lava", 576)).noFluidOutputs().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lava", 576)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "firestone.cracked", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "redstone_block", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Railcraft.ID, "firestone.refined", 1, 5000, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lava", 576)).noFluidOutputs().duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lava", 576)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cart.work", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cart.work", 1, 0, missing)).duration(5 * SECONDS).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(Railcraft.ID, "machine.alpha", 1, 2, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cart.anchor.personal", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cart.anchor.personal", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(Railcraft.ID, "machine.alpha", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cart.anchor", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cart.anchor", 1, 0, missing)).duration(5 * SECONDS).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(Railcraft.ID, "machine.beta", 1, 1, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cart.tank", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cart.tank", 1, 0, missing)).duration(5 * SECONDS).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cart.energy.batbox", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cart.energy.batbox", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cart.energy.cesu", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cart.energy.cesu", 1, 0, missing)).duration(5 * SECONDS).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 1, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cart.energy.mfe", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "cart.energy.mfe", 1, 0, missing)).duration(5 * SECONDS).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemToolMEter", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.circuit", 1, 1, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "tool.electric.meter", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "tool.electric.meter", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing),
                         getModItem(Railcraft.ID, "part.circuit", 1, 1, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "tool.signal.tuner", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "tool.signal.tuner", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "tool.signal.tuner", 1, 0, missing),
                         getModItem(Minecraft.ID, "compass", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Railcraft.ID, "tool.surveyor", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "tool.surveyor", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 4)).noFluidOutputs().duration(10 * SECONDS)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8, missing))
+                .itemOutputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).noFluidOutputs()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 8, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "slab", 4, 38, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).noFluidOutputs().duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(5 * SECONDS).eut(24).addTo(sHammerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0, missing)).duration(5 * SECONDS).eut(24)
+                .addTo(sHammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Anvil.get(0L))
                 .itemOutputs(getModItem(Railcraft.ID, "anvil", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 4464)).noFluidOutputs().duration(24 * SECONDS)
-                .eut(64).addTo(sFluidSolidficationRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 4464)).duration(24 * SECONDS).eut(64)
+                .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clay_ball", 1, 0, missing),
                         getModItem(Minecraft.ID, "dye", 1, 15, missing),
                         getModItem(Minecraft.ID, "dye", 1, 15, missing),
                         getModItem(Minecraft.ID, "dye", 1, 15, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "part.bleached.clay", 2, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(5 * SECONDS).eut(8).addTo(sMixerRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "part.bleached.clay", 2, 0, missing)).duration(5 * SECONDS).eut(8)
+                .addTo(sMixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L)),
                         getModItem(Railcraft.ID, "firestone.raw", 1, 0, missing))
-                .itemOutputs(getModItem(Railcraft.ID, "firestone.cut", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(2 * MINUTES).eut(TierEU.RECIPE_HV).addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(Railcraft.ID, "firestone.cut", 1, 0, missing)).duration(2 * MINUTES)
+                .eut(TierEU.RECIPE_HV).addTo(sLaserEngraverRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(Railcraft.ID, "tool.crowbar.magic", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(Railcraft.ID, "tool.crowbar.void", 1, 0, missing));

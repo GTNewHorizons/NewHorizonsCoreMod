@@ -28,19 +28,19 @@ public class ScriptEnderZoo implements IScriptLoader {
     public void loadRecipes() {
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "tnt", 1), getModItem(EnderZoo.ID, "confusingDust", 4))
-                .itemOutputs(getModItem(EnderZoo.ID, "blockConfusingCharge", 1)).noFluidInputs().noFluidOutputs()
-                .duration(20 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(EnderZoo.ID, "blockConfusingCharge", 1)).duration(20 * SECONDS).eut(16)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "tnt", 1), getModItem(EnderZoo.ID, "enderFragment", 4))
-                .itemOutputs(getModItem(EnderZoo.ID, "blockEnderCharge", 1)).noFluidInputs().noFluidOutputs()
-                .duration(20 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(EnderZoo.ID, "blockEnderCharge", 1)).duration(20 * SECONDS).eut(16)
+                .addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderZoo.ID, "blockConfusingCharge", 1),
                         getModItem(EnderZoo.ID, "blockEnderCharge", 1))
-                .itemOutputs(getModItem(EnderZoo.ID, "blockConcussionCharge", 2)).noFluidInputs().noFluidOutputs()
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(EnderZoo.ID, "blockConcussionCharge", 2)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
     }
 }

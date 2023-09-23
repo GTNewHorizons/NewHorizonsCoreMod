@@ -1494,8 +1494,8 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'M', CustomItemList.Hull_UMV });
 
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Food_Sliced_Breads.get(1L), ItemList.Shape_Slicer_Flat.get(0L))
-                .itemOutputs(new ItemStack(QuantumBread.Instance(), 1)).noFluidInputs().noFluidOutputs()
-                .duration(20 * TICKS).eut(TierEU.RECIPE_UV).addTo(sSlicerRecipes);
+                .itemOutputs(new ItemStack(QuantumBread.Instance(), 1)).duration(20 * TICKS).eut(TierEU.RECIPE_UV)
+                .addTo(sSlicerRecipes);
 
         if (GTPlusPlus.isModLoaded()) {
             GT_ModHandler.addCraftingRecipe(
@@ -1685,12 +1685,10 @@ public class GT_Loader_Machines {
         for (int aTier = 10; aTier < 15; aTier++) {
             GT_Values.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).itemOutputs(inHatches[aTier - 10])
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
-                    .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
-                    .addTo(sAssemblerRecipes);
+                    .duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1)))).addTo(sAssemblerRecipes);
             GT_Values.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).itemOutputs(outHatches[aTier - 10])
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
-                    .noFluidOutputs().duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1))))
-                    .addTo(sAssemblerRecipes);
+                    .duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1)))).addTo(sAssemblerRecipes);
         }
 
     }

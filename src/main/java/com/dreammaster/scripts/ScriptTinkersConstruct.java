@@ -3452,51 +3452,51 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 0, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 1, missing)).duration(400).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 2, 2, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 17, missing)).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 17, missing)).duration(400).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 32, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(8).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 15, missing)).duration(200).eut(8)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 27, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 18, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(4).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 18, missing)).duration(200).eut(4)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 9, 24, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 14, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(2).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 14, missing)).duration(200).eut(2)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).duration(200).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 37, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "materials", 1, 37, missing)).duration(200).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ForgeMicroblocks.ID, "stoneRod", 7, 0, missing),
                         getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(6))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(60).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing)).duration(60)
+                .eut(30).addTo(sAssemblerRecipes);
 
     }
 }

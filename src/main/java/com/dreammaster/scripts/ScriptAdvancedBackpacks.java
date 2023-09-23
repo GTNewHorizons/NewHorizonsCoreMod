@@ -382,7 +382,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 getModItem(Railcraft.ID, "machine.beta", 1, 5, missing),
                 "pipeTinySteel");
 
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "melon", 1, 0, missing)).noItemOutputs()
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "melon", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("melonjuice", 750)).duration(128).eut(4)
                 .addTo(sBrewingRecipes);

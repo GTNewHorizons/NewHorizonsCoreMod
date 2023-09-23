@@ -48,8 +48,7 @@ public class DistillationRecipes implements Runnable {
 
         if (BartWorks.isModLoaded()) {
 
-            GT_Values.RA.stdBuilder().noItemInputs().noItemOutputs()
-                    .fluidInputs(Materials.Grade2PurifiedWater.getFluid(1000))
+            GT_Values.RA.stdBuilder().fluidInputs(Materials.Grade2PurifiedWater.getFluid(1000))
                     .fluidOutputs(
                             Materials.Grade3PurifiedWater.getFluid(900),
                             Materials.Grade2PurifiedWater.getFluid(50),
@@ -58,8 +57,7 @@ public class DistillationRecipes implements Runnable {
                             Materials.Ammonia.getGas(100))
                     .duration(250 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sDistillationRecipes);
 
-            GT_Values.RA.stdBuilder().noItemInputs().noItemOutputs()
-                    .fluidInputs(Materials.Grade6PurifiedWater.getFluid(1000))
+            GT_Values.RA.stdBuilder().fluidInputs(Materials.Grade6PurifiedWater.getFluid(1000))
                     .fluidOutputs(
                             Materials.Grade7PurifiedWater.getFluid(900),
                             Materials.Grade6PurifiedWater.getFluid(50),
@@ -71,12 +69,11 @@ public class DistillationRecipes implements Runnable {
 
     public static void distilleryRecipes() {
         // Sodium Potassium
-        GT_Values.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).noItemOutputs()
-                .fluidInputs(Materials.Sodium.getFluid(1000))
+        GT_Values.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.Sodium.getFluid(1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("sodiumpotassium", 1000)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(sDistilleryRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
+        GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1))
                 .fluidInputs(Materials.Biomass.getFluid(40)).fluidOutputs(Materials.Ethanol.getFluid(20))
                 .duration(16 * TICKS).eut(24).addTo(sDistilleryRecipes);
 
@@ -85,13 +82,12 @@ public class DistillationRecipes implements Runnable {
         if (Automagy.isModLoaded()) {
             FluidStack fluidMilk = FluidRegistry.getFluidStack("fluidmilk", 1000);
 
-            GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
+            GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1))
                     .fluidInputs(Materials.Milk.getFluid(1000)).fluidOutputs(fluidMilk.copy()).duration(5 * SECONDS)
                     .eut(2).addTo(sDistilleryRecipes);
 
-            GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).noItemOutputs()
-                    .fluidInputs(fluidMilk.copy()).fluidOutputs(Materials.Milk.getFluid(1000)).duration(5 * SECONDS)
-                    .eut(2).addTo(sDistilleryRecipes);
+            GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).fluidInputs(fluidMilk.copy())
+                    .fluidOutputs(Materials.Milk.getFluid(1000)).duration(5 * SECONDS).eut(2).addTo(sDistilleryRecipes);
         }
     }
 }

@@ -45,7 +45,7 @@ public class AssemblingLineRecipes implements Runnable {
                         CustomItemList.QuantinumCompressedPlate.get(4L),
                         CustomItemList.QuantinumCompressedPlate.get(4L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Europium, 8))
-                .fluidInputs(new FluidStack(solderIndalloy, 72)).noFluidOutputs()
+                .fluidInputs(new FluidStack(solderIndalloy, 72))
                 .itemOutputs(CustomItemList.HeavyDutyAlloyIngotT5.get(1L)).eut(TierEU.RECIPE_ZPM).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
 
@@ -57,7 +57,7 @@ public class AssemblingLineRecipes implements Runnable {
                         CustomItemList.LeadOriharukonPlate.get(5L),
                         CustomItemList.LeadOriharukonPlate.get(5L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Tritanium, 8))
-                .fluidInputs(new FluidStack(solderIndalloy, 144)).noFluidOutputs()
+                .fluidInputs(new FluidStack(solderIndalloy, 144))
                 .itemOutputs(CustomItemList.HeavyDutyAlloyIngotT6.get(1L)).eut(TierEU.RECIPE_UV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
 
@@ -69,7 +69,7 @@ public class AssemblingLineRecipes implements Runnable {
                         CustomItemList.MysteriousCrystalCompressedPlate.get(6L),
                         CustomItemList.MysteriousCrystalCompressedPlate.get(6L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Neutronium, 10))
-                .fluidInputs(new FluidStack(solderIndalloy, 288)).noFluidOutputs()
+                .fluidInputs(new FluidStack(solderIndalloy, 288))
                 .itemOutputs(CustomItemList.HeavyDutyAlloyIngotT7.get(1L)).eut(TierEU.RECIPE_UHV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
 
@@ -81,7 +81,7 @@ public class AssemblingLineRecipes implements Runnable {
                         CustomItemList.BlackPlutoniumCompressedPlate.get(7L),
                         CustomItemList.BlackPlutoniumCompressedPlate.get(7L),
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackPlutonium, 12))
-                .fluidInputs(new FluidStack(solderIndalloy, 576)).noFluidOutputs()
+                .fluidInputs(new FluidStack(solderIndalloy, 576))
                 .itemOutputs(CustomItemList.HeavyDutyAlloyIngotT8.get(1L)).eut(TierEU.RECIPE_UEV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
 
@@ -100,8 +100,8 @@ public class AssemblingLineRecipes implements Runnable {
                         Materials.GrowthMediumSterilized.getFluid(250L),
                         Materials.UUMatter.getFluid(250L),
                         new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000))
-                .noFluidOutputs().itemOutputs(ItemList.Circuit_Chip_NeuroCPU.get(1L)).eut(TierEU.RECIPE_ZPM)
-                .duration(30 * SECONDS).addTo(AssemblyLine);
+                .itemOutputs(ItemList.Circuit_Chip_NeuroCPU.get(1L)).eut(TierEU.RECIPE_ZPM).duration(30 * SECONDS)
+                .addTo(AssemblyLine);
 
         GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Circuit_Chip_NeuroCPU.get(1L))
                 .metadata(RESEARCH_TIME, 2 * HOURS)
@@ -117,8 +117,8 @@ public class AssemblingLineRecipes implements Runnable {
                         Materials.BioMediumSterilized.getFluid(500L),
                         Materials.UUMatter.getFluid(500L),
                         new FluidStack(FluidRegistry.getFluid("ic2coolant"), 2000))
-                .noFluidOutputs().itemOutputs(ItemList.Circuit_Chip_BioCPU.get(1L)).eut(TierEU.RECIPE_UHV / 2)
-                .duration(30 * SECONDS).addTo(AssemblyLine);
+                .itemOutputs(ItemList.Circuit_Chip_BioCPU.get(1L)).eut(TierEU.RECIPE_UHV / 2).duration(30 * SECONDS)
+                .addTo(AssemblyLine);
 
         GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Energy_LapotronicOrb.get(1L))
                 .metadata(RESEARCH_TIME, 4 * HOURS)
@@ -134,9 +134,8 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.Circuit_Parts_ResistorASMD.get(8L),
                         ItemList.Circuit_Parts_TransistorASMD.get(8L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 64))
-                .fluidInputs(new FluidStack(solderIndalloy, 720)).noFluidOutputs()
-                .itemOutputs(ItemList.Energy_LapotronicOrb2.get(1L)).eut(TierEU.RECIPE_ZPM).duration(50 * SECONDS)
-                .addTo(AssemblyLine);
+                .fluidInputs(new FluidStack(solderIndalloy, 720)).itemOutputs(ItemList.Energy_LapotronicOrb2.get(1L))
+                .eut(TierEU.RECIPE_ZPM).duration(50 * SECONDS).addTo(AssemblyLine);
 
         if (TecTech.isModLoaded()) {
             TT_recipeAdder.addResearchableAssemblylineRecipe(
@@ -174,7 +173,7 @@ public class AssemblingLineRecipes implements Runnable {
                         GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440),
                         // Pattern capacity card
                         GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54))
-                .fluidInputs(new FluidStack(solderIndalloy, 1152)).noFluidOutputs()
+                .fluidInputs(new FluidStack(solderIndalloy, 1152))
                 .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L)).eut(TierEU.RECIPE_LuV)
                 .duration(30 * SECONDS).addTo(AssemblyLine);
 
@@ -196,7 +195,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Motor_ZPM.get(2L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Duranium, 4))
                     .fluidInputs(new FluidStack(solderIndalloy, 2304), Materials.Tritanium.getMolten(1440L))
-                    .noFluidOutputs().itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "graviChestPlate", 1, 26))
+                    .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "graviChestPlate", 1, 26))
                     .eut(TierEU.RECIPE_LuV / 2).duration(1 * MINUTES + 15 * SECONDS).addTo(AssemblyLine);
 
             GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Casing_Coil_Superconductor.get(1L))
@@ -218,8 +217,8 @@ public class AssemblingLineRecipes implements Runnable {
                             Materials.Longasssuperconductornameforuvwire.getMolten(2880L),
                             Materials.Americium.getPlasma(2880L),
                             Materials.Enderium.getMolten(5760L))
-                    .noFluidOutputs().itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "relocator", 1, 26))
-                    .eut(TierEU.RECIPE_UV).duration(50 * MINUTES).addTo(AssemblyLine);
+                    .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "relocator", 1, 26)).eut(TierEU.RECIPE_UV)
+                    .duration(50 * MINUTES).addTo(AssemblyLine);
         }
 
     }

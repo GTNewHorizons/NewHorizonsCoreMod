@@ -27,8 +27,8 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
-                    .noFluidInputs().fluidOutputs(Materials.Helium_3.getGas(100)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(sElectrolyzerRecipes);
+                    .fluidOutputs(Materials.Helium_3.getGas(100)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(sElectrolyzerRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -37,8 +37,8 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
-                    .noFluidInputs().fluidOutputs(Materials.Helium_3.getGas(200)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(sElectrolyzerRecipes);
+                    .fluidOutputs(Materials.Helium_3.getGas(200)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(sElectrolyzerRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -47,8 +47,8 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
-                    .noFluidInputs().fluidOutputs(Materials.Helium_3.getGas(50)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(sElectrolyzerRecipes);
+                    .fluidOutputs(Materials.Helium_3.getGas(50)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(sElectrolyzerRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -57,14 +57,14 @@ public class ElectrolyzerRecipes implements Runnable {
                     .itemOutputs(
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1))
-                    .noFluidInputs().fluidOutputs(Materials.Helium_3.getGas(100)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(sElectrolyzerRecipes);
+                    .fluidOutputs(Materials.Helium_3.getGas(100)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(sElectrolyzerRecipes);
         }
         // Ore Processing related to alumina and silicon dioxide
         // Alumina
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 2L)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 2L))
                 .fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(sElectrolyzerRecipes);
         // Cryolite
@@ -73,12 +73,12 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))
-                .noFluidInputs().fluidOutputs(Materials.Fluorine.getGas(6000L)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Fluorine.getGas(6000L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sElectrolyzerRecipes);
         // Magnesia
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesia, 2L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L)).noFluidInputs()
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 1L))
                 .fluidOutputs(Materials.Oxygen.getGas(1000L)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(sElectrolyzerRecipes);
         // Brick Dust
@@ -87,8 +87,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L))
-                .noFluidInputs().noFluidOutputs().duration(54 * SECONDS + 12 * TICKS).eut(10)
-                .addTo(sElectrolyzerRecipes);
+                .duration(54 * SECONDS + 12 * TICKS).eut(10).addTo(sElectrolyzerRecipes);
         // Jade
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Jade, 20L))
@@ -96,7 +95,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L))
-                .noFluidInputs().fluidOutputs(Materials.Oxygen.getGas(1000L)).duration(10 * SECONDS).eut(90)
+                .fluidOutputs(Materials.Oxygen.getGas(1000L)).duration(10 * SECONDS).eut(90)
                 .addTo(sElectrolyzerRecipes);
         // Almandine
 
@@ -105,8 +104,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L))
-                .noFluidInputs().fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sElectrolyzerRecipes);
         // Kaolinite
 
         GT_Values.RA.stdBuilder()
@@ -117,7 +116,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 6L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 2L))
-                .noFluidInputs().fluidOutputs(Materials.Hydrogen.getGas(4000L)).duration(24 * SECONDS).eut(90)
+                .fluidOutputs(Materials.Hydrogen.getGas(4000L)).duration(24 * SECONDS).eut(90)
                 .addTo(sElectrolyzerRecipes);
         // Kyanite
 
@@ -125,7 +124,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 3L))
-                .noFluidInputs().noFluidOutputs().duration(8 * SECONDS).eut(60).addTo(sElectrolyzerRecipes);
+                .duration(8 * SECONDS).eut(60).addTo(sElectrolyzerRecipes);
         // Spodumene
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spodumene, 20L))
@@ -133,8 +132,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lithium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L))
-                .noFluidInputs().fluidOutputs(Materials.Oxygen.getGas(1000L)).duration(9 * SECONDS).eut(90)
-                .addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Oxygen.getGas(1000L)).duration(9 * SECONDS).eut(90).addTo(sElectrolyzerRecipes);
         // BlueTopaz
 
         GT_Values.RA.stdBuilder()
@@ -146,8 +144,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 1L))
-                .noFluidInputs().fluidOutputs(Materials.Fluorine.getGas(2000L)).duration(10 * SECONDS + 8 * TICKS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Fluorine.getGas(2000L)).duration(10 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
         // Topaz
 
         GT_Values.RA.stdBuilder()
@@ -159,8 +157,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 1L))
-                .noFluidInputs().fluidOutputs(Materials.Fluorine.getGas(2000L)).duration(8 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Fluorine.getGas(2000L)).duration(8 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
 
         // Clay
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 16L))
@@ -169,8 +167,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lithium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 6L))
-                .noFluidInputs().fluidOutputs(Materials.Water.getFluid(2000L)).duration(8 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Water.getFluid(2000L)).duration(8 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
         // Emerald
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 29L))
@@ -178,7 +176,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Beryllium, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 18L))
-                .noFluidInputs().fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(26 * SECONDS + 2 * TICKS).eut(90)
+                .fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(26 * SECONDS + 2 * TICKS).eut(90)
                 .addTo(sElectrolyzerRecipes);
         // Grossular
 
@@ -187,7 +185,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L))
-                .noFluidInputs().fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(22 * SECONDS).eut(90)
+                .fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(22 * SECONDS).eut(90)
                 .addTo(sElectrolyzerRecipes);
         // Pyrope
 
@@ -196,14 +194,14 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesia, 6L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L))
-                .noFluidInputs().noFluidOutputs().duration(20 * SECONDS).eut(90).addTo(sElectrolyzerRecipes);
+                .duration(20 * SECONDS).eut(90).addTo(sElectrolyzerRecipes);
         // Ruby
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ruby, 6L))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L))
-                .noFluidInputs().noFluidOutputs().duration(7 * SECONDS + 4 * TICKS).eut(60).addTo(sElectrolyzerRecipes);
+                .duration(7 * SECONDS + 4 * TICKS).eut(60).addTo(sElectrolyzerRecipes);
         // Spessartine
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Spessartine, 20L))
@@ -211,7 +209,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Manganese, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 9L))
-                .noFluidInputs().fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(22 * SECONDS).eut(90)
+                .fluidOutputs(Materials.Oxygen.getGas(3000L)).duration(22 * SECONDS).eut(90)
                 .addTo(sElectrolyzerRecipes);
         // Tanzanite
 
@@ -224,8 +222,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 18L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 5L))
-                .noFluidInputs().fluidOutputs(Materials.Hydrogen.getGas(2000L)).duration(14 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Hydrogen.getGas(2000L)).duration(14 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
         // Potassium Feldspar
 
         GT_Values.RA.stdBuilder()
@@ -234,7 +232,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 18L))
-                .noFluidInputs().fluidOutputs(Materials.Oxygen.getGas(1000L)).duration(13 * SECONDS).eut(90)
+                .fluidOutputs(Materials.Oxygen.getGas(1000L)).duration(13 * SECONDS).eut(90)
                 .addTo(sElectrolyzerRecipes);
         // Biotite
 
@@ -248,15 +246,15 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 6L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 11L))
-                .noFluidInputs().fluidOutputs(Materials.Fluorine.getGas(4000L)).duration(14 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Fluorine.getGas(4000L)).duration(14 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
         // Red Granite
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GraniteRed, 6L))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L))
-                .noFluidInputs().noFluidOutputs().duration(6 * SECONDS).eut(60).addTo(sElectrolyzerRecipes);
+                .duration(6 * SECONDS).eut(60).addTo(sElectrolyzerRecipes);
         // Pollucite
 
         GT_Values.RA.stdBuilder()
@@ -268,8 +266,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 1L))
-                .noFluidInputs().fluidOutputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Water.getFluid(2000L)).duration(10 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
         // Lepidolite
 
         GT_Values.RA.stdBuilder()
@@ -281,8 +279,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lithium, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 4L))
-                .noFluidInputs().fluidOutputs(Materials.Fluorine.getGas(2000L)).duration(13 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Fluorine.getGas(2000L)).duration(13 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
         // Glauconite Sand
 
         GT_Values.RA.stdBuilder()
@@ -294,7 +292,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 6L))
-                .noFluidInputs().fluidOutputs(Materials.Hydrogen.getGas(2000L)).duration(18 * SECONDS + 18 * TICKS)
+                .fluidOutputs(Materials.Hydrogen.getGas(2000L)).duration(18 * SECONDS + 18 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
         // Glauconite Dust
 
@@ -307,7 +305,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 10L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 6L))
-                .noFluidInputs().fluidOutputs(Materials.Hydrogen.getGas(2000L)).duration(18 * SECONDS + 18 * TICKS)
+                .fluidOutputs(Materials.Hydrogen.getGas(2000L)).duration(18 * SECONDS + 18 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
         // Vermiculite
 
@@ -321,8 +319,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 6L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Hydrogen, 2L))
-                .noFluidInputs().fluidOutputs(Materials.Water.getFluid(4000L)).duration(21 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Water.getFluid(4000L)).duration(21 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
         // Mica
 
         GT_Values.RA.stdBuilder()
@@ -334,8 +332,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 6L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 11L))
-                .noFluidInputs().fluidOutputs(Materials.Fluorine.getGas(4000L)).duration(13 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Fluorine.getGas(4000L)).duration(13 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
         // Alunite
 
         GT_Values.RA.stdBuilder()
@@ -347,7 +345,7 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 15L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 12L),
                         GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Oxygen, 11L))
-                .noFluidInputs().fluidOutputs(Materials.Hydrogen.getGas(12000L)).duration(10 * SECONDS + 10 * TICKS)
+                .fluidOutputs(Materials.Hydrogen.getGas(12000L)).duration(10 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
         // Zeolite
 
@@ -361,8 +359,8 @@ public class ElectrolyzerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 64L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 17L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 9L))
-                .noFluidInputs().fluidOutputs(Materials.Oxygen.getGas(18000L)).duration(47 * SECONDS + 4 * TICKS)
-                .eut(TierEU.RECIPE_MV).addTo(sElectrolyzerRecipes);
+                .fluidOutputs(Materials.Oxygen.getGas(18000L)).duration(47 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_MV)
+                .addTo(sElectrolyzerRecipes);
 
     }
 }

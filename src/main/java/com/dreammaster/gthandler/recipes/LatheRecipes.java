@@ -21,17 +21,17 @@ public class LatheRecipes implements Runnable {
     public void run() {
 
         GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateChromaticGlass", 1))
-                .itemOutputs(CustomItemList.ChromaticLens.get(1)).noFluidInputs().noFluidOutputs()
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sLatheRecipes);
+                .itemOutputs(CustomItemList.ChromaticLens.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UHV)
+                .addTo(sLatheRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_CoreModSupport.RadoxPolymer.getPlates(1))
-                .itemOutputs(CustomItemList.RadoxPolymerLens.get(1)).noFluidInputs().noFluidOutputs()
-                .duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(sLatheRecipes);
+                .itemOutputs(CustomItemList.RadoxPolymerLens.get(1)).duration(1 * MINUTES + 30 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(sLatheRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.ReinforcedGlassPLate.get(1L))
                 .itemOutputs(
                         CustomItemList.ReinforcedGlassLense.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L))
-                .noFluidInputs().noFluidOutputs().duration(20 * SECONDS).eut(16).addTo(sLatheRecipes);
+                .duration(20 * SECONDS).eut(16).addTo(sLatheRecipes);
     }
 }

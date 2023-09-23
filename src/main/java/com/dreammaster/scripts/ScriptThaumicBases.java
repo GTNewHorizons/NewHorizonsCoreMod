@@ -76,196 +76,164 @@ public class ScriptThaumicBases implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldDiamond", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldDiamond", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldDiamond", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldDiamond", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldDiamond", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 32)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldIron", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldIron", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldIron", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldIron", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldIron", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldLapis", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldLapis", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldLapis", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldLapis", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldLapis", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 32)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 6, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(200).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
+                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(200).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(200)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "relocator", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "relocator", 1, 6, missing));

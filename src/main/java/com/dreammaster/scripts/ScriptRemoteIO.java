@@ -163,123 +163,123 @@ public class ScriptRemoteIO implements IScriptLoader {
                         getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 0, missing),
                         getModItem(WirelessRedstoneCBELogic.ID, "wirelessLogic", 1, 1, missing))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.wireless_transmitter", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1000)).noFluidOutputs().duration(600)
-                .eut(480).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1000)).duration(600).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.blank_plate", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).noFluidOutputs().duration(200)
-                .eut(480).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Data.get(2L), ItemList.Circuit_Elite.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Data.get(2L), ItemList.Circuit_Elitenanocomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Data.get(2L), ItemList.Circuit_Quantumcomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Data.get(2L), ItemList.Circuit_Crystalprocessor.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Nanocomputer.get(2L), ItemList.Circuit_Elite.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Nanocomputer.get(2L), ItemList.Circuit_Elitenanocomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Nanocomputer.get(2L), ItemList.Circuit_Quantumcomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Nanocomputer.get(2L), ItemList.Circuit_Crystalprocessor.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Quantumprocessor.get(2L), ItemList.Circuit_Elite.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Quantumprocessor.get(2L), ItemList.Circuit_Elitenanocomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Quantumprocessor.get(2L), ItemList.Circuit_Quantumcomputer.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Quantumprocessor.get(2L), ItemList.Circuit_Crystalprocessor.get(2L))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).noFluidOutputs().duration(600).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(600).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         getModItem(EnderStorage.ID, "enderChest", 1, 0, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 0, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         getModItem(EnderStorage.ID, "enderChest", 1, 4096, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 1, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockJar", 2, 0, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 2, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.BlackSteel, 2L))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 10, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 10, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         getModItem(ExtraUtilities.ID, "extractor_base", 2, 12, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 12, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 12, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, 0, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 20, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 20, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 21, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.transfer", 1, 21, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Enderium, 4L))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 0, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 0, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.BlankPlatedChip", 1, 0, missing),
                         getModItem(RemoteIO.ID, "item.wireless_transmitter", 1, 0, missing))
-                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(480).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RemoteIO.ID, "item.chip.upgrade", 1, 1, missing)).duration(200).eut(480)
+                .addTo(sAssemblerRecipes);
 
     }
 }

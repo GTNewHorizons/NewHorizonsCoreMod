@@ -59,16 +59,14 @@ public class ScriptGadomancy implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).noFluidOutputs().duration(400).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(400).eut(30).addTo(sCutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(400).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).noFluidOutputs().duration(400)
-                .eut(30).addTo(sCutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
-                .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).noFluidOutputs().duration(200).eut(30)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(200).eut(30).addTo(sCutterRecipes);
 
         TCHelper.removeInfusionRecipe(getModItem(Gadomancy.ID, "itemSilverwoodGolemPlacer", 1, 8, missing));
         TCHelper.removeInfusionRecipe(

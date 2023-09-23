@@ -33,20 +33,20 @@ public class ScriptTinkersDefence implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "AeonSteelIngot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1760).eut(120).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing)).duration(1760).eut(120)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1280).eut(120).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing)).duration(1280).eut(120)
+                .addTo(sExtruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "QueensGoldIngot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
-                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing)).noFluidInputs()
-                .noFluidOutputs().duration(200).eut(120).addTo(sExtruderRecipes);
+                .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing)).duration(200).eut(120)
+                .addTo(sExtruderRecipes);
 
     }
 }

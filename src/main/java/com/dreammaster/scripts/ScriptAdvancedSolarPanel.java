@@ -124,26 +124,26 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
                         getModItem(Minecraft.ID, "glowstone", 4, 0, missing))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing)).noFluidInputs()
-                .noFluidOutputs().duration(600).eut(1920).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing)).duration(600)
+                .eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 2, missing))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1200).eut(7680).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing)).duration(1200)
+                .eut(7680).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0, missing))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing)).noFluidInputs()
-                .noFluidOutputs().duration(800).eut(30720).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing)).duration(800)
+                .eut(30720).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 3, missing))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing)).noFluidInputs()
-                .noFluidOutputs().duration(1600).eut(122880).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing)).duration(1600)
+                .eut(122880).addTo(sAssemblerRecipes);
 
     }
 }

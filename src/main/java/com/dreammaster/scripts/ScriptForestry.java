@@ -138,142 +138,142 @@ public class ScriptForestry implements IScriptLoader {
         recipes2();
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "bucketShortMead", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "bucket", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .metadata(FUEL_VALUE, 4).metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
-
-        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.FishOil, 1L))
-                .itemOutputs(ItemList.Cell_Empty.get(1)).noFluidInputs().noFluidOutputs().metadata(FUEL_VALUE, 2)
+                .itemOutputs(getModItem(Minecraft.ID, "bucket", 1, 0, missing)).metadata(FUEL_VALUE, 4)
                 .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
 
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.cell, Materials.FishOil, 1L))
+                .itemOutputs(ItemList.Cell_Empty.get(1)).metadata(FUEL_VALUE, 2).metadata(FUEL_TYPE, 0).duration(0)
+                .eut(0).addTo(GT_RecipeConstants.Fuel);
+
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "canBiomass", 1, 0, missing))
-                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .metadata(FUEL_VALUE, 8).metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
+                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0, missing)).metadata(FUEL_VALUE, 8)
+                .metadata(FUEL_TYPE, 0).duration(0).eut(0).addTo(GT_RecipeConstants.Fuel);
 
         OreDictionary.registerOre("foodHoneydrop", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
         OreDictionary.registerOre("listAllsugar", getModItem(Forestry.ID, "honeyDrop", 1, 0, missing));
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Forestry.ID, "beeswax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Forestry.ID, "refractoryWax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 9, 1, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 9, 2, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 6L))
-                .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(8).addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "letters", 1, 0, missing)).duration(100).eut(8)
+                .addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "impregnatedCasing", 1, 0, missing),
                         getModItem(Forestry.ID, "craftingMaterial", 8, 6, missing))
-                .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 0, missing)).duration(1200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Casing_LV.get(1L), getModItem(IndustrialCraft2.ID, "itemCasing", 4, 2, missing))
-                .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(800).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).duration(800).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Casing_LV.get(1L), ItemList.IC2_Item_Casing_Bronze.get(4L))
-                .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(800).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).duration(800).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 8L))
-                .itemOutputs(getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(120).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing)).duration(1200).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 2L),
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing))
-                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(120).eut(8).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "canEmpty", 1, 0, missing)).duration(120).eut(8)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "craftingMaterial", 5, 3, missing),
                         GT_Utility.getIntegratedCircuit(5))
-                .itemOutputs(getModItem(Forestry.ID, "apiaristHelmet", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "apiaristHelmet", 1, 0, missing)).duration(1200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "craftingMaterial", 8, 3, missing),
                         GT_Utility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(Forestry.ID, "apiaristChest", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "apiaristChest", 1, 0, missing)).duration(1200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "craftingMaterial", 7, 3, missing),
                         GT_Utility.getIntegratedCircuit(7))
-                .itemOutputs(getModItem(Forestry.ID, "apiaristLegs", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "apiaristLegs", 1, 0, missing)).duration(1200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "craftingMaterial", 4, 3, missing),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(Forestry.ID, "apiaristBoots", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(1200).eut(64).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "apiaristBoots", 1, 0, missing)).duration(1200).eut(64)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "apiculture", 1, 2, missing),
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing))
-                .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 0, missing)).duration(200).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "apiculture", 1, 0, missing),
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing))
-                .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 1, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "cart.beehouse", 1, 1, missing)).duration(200).eut(16)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "book", 1, 0, missing),
                         getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(Forestry.ID, "factory2", 1, 2, missing)).noFluidInputs().noFluidOutputs()
-                .duration(200).eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "factory2", 1, 2, missing)).duration(200).eut(30)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing))
-                .itemOutputs(getModItem(Forestry.ID, "propolis", 1, 0, missing)).outputChances(500).noFluidInputs()
-                .noFluidOutputs().duration(400).eut(40).addTo(sCentrifugeRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "propolis", 1, 0, missing)).outputChances(500).duration(400)
+                .eut(40).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Nugget.get(0L))
                 .itemOutputs(getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 200)).noFluidOutputs().duration(400).eut(8)
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(400).eut(8)
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Forestry.ID, "beeswax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(100).eut(30)
+                .addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Forestry.ID, "refractoryWax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(100).eut(30)
+                .addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 9, 0, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(100).eut(30)
+                .addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 9, 1, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(100).eut(30)
+                .addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 9, 2, missing), ItemList.Shape_Mold_Block.get(0L))
-                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).noFluidInputs().noFluidOutputs()
-                .duration(100).eut(30).addTo(sPressRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "waxCast", 1, 0, missing)).duration(100).eut(30)
+                .addTo(sPressRecipes);
 
         new ResearchItem(
                 "PROVENFRAME",

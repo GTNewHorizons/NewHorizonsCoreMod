@@ -112,8 +112,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
 
         // Upgrade Frame
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Board_Plastic.get(1), IntegratedCPU)
-                .itemOutputs(UpgradeFrame).noFluidInputs().noFluidOutputs().duration(10 * SECONDS).eut(24)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(UpgradeFrame).duration(10 * SECONDS).eut(24).addTo(sAssemblerRecipes);
 
         final ItemList[] AccelerationUpgrades = new ItemList[] { ItemList.IndustrialApiary_Upgrade_Acceleration_1,
                 ItemList.IndustrialApiary_Upgrade_Acceleration_2, ItemList.IndustrialApiary_Upgrade_Acceleration_3,
