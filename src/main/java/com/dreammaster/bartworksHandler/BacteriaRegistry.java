@@ -33,7 +33,6 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
-import com.github.bartimaeusnek.bartworks.util.BW_Util;
 import com.github.bartimaeusnek.bartworks.util.BioCulture;
 import com.github.bartimaeusnek.bartworks.util.BioDNA;
 import com.github.bartimaeusnek.bartworks.util.BioData;
