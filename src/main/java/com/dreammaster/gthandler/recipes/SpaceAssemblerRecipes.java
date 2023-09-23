@@ -16,7 +16,11 @@ import net.minecraftforge.fluids.FluidStack;
 import com.github.technus.tectech.thing.CustomItemList;
 import com.gtnewhorizons.gtnhintergalactic.recipe.IG_RecipeAdder;
 
-import gregtech.api.enums.*;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.material.ELEMENT;

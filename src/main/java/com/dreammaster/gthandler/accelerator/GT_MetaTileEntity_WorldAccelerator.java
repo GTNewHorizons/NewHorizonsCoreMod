@@ -3,7 +3,10 @@ package com.dreammaster.gthandler.accelerator;
 import static gregtech.api.enums.GT_Values.V;
 import static gregtech.api.enums.Mods.GregTech;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
