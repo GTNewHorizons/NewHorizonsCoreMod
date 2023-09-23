@@ -1,10 +1,13 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.Materials.RedAlloy;
-
 import java.util.Arrays;
 
-import gregtech.api.enums.*;
+import gregtech.api.enums.Dyes;
+import gregtech.api.enums.MaterialBuilder;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TC_Aspects;
+import gregtech.api.enums.TextureSet;
 import gregtech.api.interfaces.IMaterialHandler;
 import gregtech.api.objects.MaterialStack;
 
@@ -79,7 +82,7 @@ public class GT_CoreModSupport implements IMaterialHandler {
     @Override
     public void onComponentInit() {
         for (OrePrefixes ore : OrePrefixes.values()) {
-            ore.enableComponent(RedAlloy);
+            ore.enableComponent(Materials.RedAlloy);
             // ore.enableComponent(SomeMaterial);
         }
 

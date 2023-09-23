@@ -38,8 +38,6 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
                 "Can fix GT items with broken NBT data, will erase everything!",
                 2,
                 1,
-                "NameRemover.png",
-                "NameRemover",
                 new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER_ACTIVE),
                 new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER),
                 new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER_ACTIVE),
@@ -50,14 +48,13 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
                 new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER));
     }
 
-    public NameRemover(String aName, int aTier, String aDescription, ITexture[][][] aTextures, String aGUIName,
-            String aNEIName) {
-        super(aName, aTier, 1, aDescription, aTextures, 2, 1, aGUIName, aNEIName);
+    public NameRemover(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
+        super(aName, aTier, 1, aDescription, aTextures, 2, 1);
     }
 
     @Override
     public MetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new NameRemover(mName, mTier, mDescription, mTextures, mGUIName, mNEIName);
+        return new NameRemover(mName, mTier, mDescriptionArray, mTextures);
     }
 
     @Override

@@ -3,7 +3,10 @@ package com.dreammaster.gthandler.accelerator;
 import static gregtech.api.enums.GT_Values.V;
 import static gregtech.api.enums.Mods.GregTech;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -148,14 +151,14 @@ public class GT_MetaTileEntity_WorldAccelerator extends GT_MetaTileEntity_Tiered
         return tInfoDisplay.toArray(new String[0]);
     }
 
-    public GT_MetaTileEntity_WorldAccelerator(String pName, int pTier, int pInvSlotCount, String pDescription,
+    public GT_MetaTileEntity_WorldAccelerator(String pName, int pTier, int pInvSlotCount, String[] pDescription,
             ITexture[][][] pTextures) {
         super(pName, pTier, pInvSlotCount, pDescription, pTextures);
     }
 
     @Override
     public MetaTileEntity newMetaEntity(IGregTechTileEntity pTileEntity) {
-        return new GT_MetaTileEntity_WorldAccelerator(mName, mTier, mInventory.length, mDescription, mTextures);
+        return new GT_MetaTileEntity_WorldAccelerator(mName, mTier, mInventory.length, mDescriptionArray, mTextures);
     }
 
     @Override

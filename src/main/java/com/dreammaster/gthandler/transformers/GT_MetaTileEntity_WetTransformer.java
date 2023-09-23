@@ -4,6 +4,8 @@ import static gregtech.api.enums.GT_Values.V;
 
 import net.minecraft.util.EnumChatFormatting;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
@@ -17,13 +19,13 @@ public class GT_MetaTileEntity_WetTransformer extends GT_MetaTileEntity_Transfor
         super(aID, aName, aNameRegional, aTier, aDescription);
     }
 
-    public GT_MetaTileEntity_WetTransformer(String aName, int aTier, String aDescription, ITexture[][][] aTextures) {
+    public GT_MetaTileEntity_WetTransformer(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
         super(aName, aTier, aDescription, aTextures);
     }
 
     @Override
     public IMetaTileEntity newMetaEntity(IGregTechTileEntity aTileEntity) {
-        return new GT_MetaTileEntity_WetTransformer(mName, mTier, mDescription, mTextures);
+        return new GT_MetaTileEntity_WetTransformer(mName, mTier, mDescriptionArray, mTextures);
     }
 
     @Override
@@ -60,12 +62,14 @@ public class GT_MetaTileEntity_WetTransformer extends GT_MetaTileEntity_Transfor
 
     @Override
     public String[] getDescription() {
-        return new String[] { mDescription, "Accepts 16A and outputs 64A",
+        return ArrayUtils.addAll(
+                mDescriptionArray,
+                "Accepts 16A and outputs 64A",
                 EnumChatFormatting.BLUE + "Tec"
                         + EnumChatFormatting.DARK_BLUE
                         + "Tech"
                         + EnumChatFormatting.BLUE
-                        + ": Interdimensional" };
+                        + ": Interdimensional");
     }
 
     @Override

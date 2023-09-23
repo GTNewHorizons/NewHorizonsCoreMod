@@ -1,6 +1,6 @@
 package com.dreammaster.block;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.creativetab.ModTabList;

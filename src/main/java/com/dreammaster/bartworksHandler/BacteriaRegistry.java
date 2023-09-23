@@ -20,7 +20,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeConstants.FUSION_THRESHOLD;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.LinkedHashMap;
 
 import net.minecraft.init.Items;
@@ -33,7 +33,11 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
-import com.github.bartimaeusnek.bartworks.util.*;
+import com.github.bartimaeusnek.bartworks.util.BW_Util;
+import com.github.bartimaeusnek.bartworks.util.BioCulture;
+import com.github.bartimaeusnek.bartworks.util.BioDNA;
+import com.github.bartimaeusnek.bartworks.util.BioData;
+import com.github.bartimaeusnek.bartworks.util.BioPlasmid;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;

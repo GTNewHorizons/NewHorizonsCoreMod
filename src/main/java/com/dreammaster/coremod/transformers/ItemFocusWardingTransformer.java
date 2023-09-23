@@ -3,7 +3,12 @@ package com.dreammaster.coremod.transformers;
 import static org.objectweb.asm.Opcodes.*;
 
 import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.tree.*;
+import org.objectweb.asm.tree.AbstractInsnNode;
+import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.tree.InsnList;
+import org.objectweb.asm.tree.MethodInsnNode;
+import org.objectweb.asm.tree.MethodNode;
+import org.objectweb.asm.tree.VarInsnNode;
 
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.coremod.IDreamTransformer;
