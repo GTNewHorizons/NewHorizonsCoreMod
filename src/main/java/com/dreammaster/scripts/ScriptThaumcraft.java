@@ -3821,11 +3821,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aqua"), 24).add(Aspect.getAspect("iter"), 32)
                         .add(Aspect.getAspect("permutatio"), 16).add(Aspect.getAspect("vitreus"), 8),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Thaumium, 1L), });
