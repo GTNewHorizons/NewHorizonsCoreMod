@@ -361,6 +361,7 @@ public enum ItemList {
     MoldFormPipeLarge(new ModSimpleBaseItem("MoldFormPipeLarge", ModTabList.ModMoldsTab)),
     MoldFormPipeHuge(new ModSimpleBaseItem("MoldFormPipeHuge", ModTabList.ModMoldsTab)),
     MoldFormDrillHead(new ModSimpleBaseItem("MoldFormDrillHead", ModTabList.ModMoldsTab)),
+    MoldFormSingularity(new ModSimpleBaseItem("MoldFormSingularity", ModTabList.ModMoldsTab)),
     MoonStoneDust(new ModSimpleBaseItem("MoonStoneDust", ModTabList.ModGenericTab)),
     MushroomPowder(new ModSimpleBaseItem("MushroomPowder", ModTabList.ModGenericTab)),
     MutatedEgg(new ModSimpleBaseItem("MutatedEgg", ModTabList.ModGenericTab)),

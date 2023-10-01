@@ -574,6 +574,7 @@ public enum CustomItemList implements IItemContainer {
     MoldChestplate,
     MoldLeggings,
     MoldBoots,
+    MoldSingularity,
     IchoriumCap,
     CoinTechnician,
     CoinTechnicianI,

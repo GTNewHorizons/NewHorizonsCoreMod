@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TinkerConstruct;
@@ -13,9 +14,11 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
+import fox.spiteful.avaritia.items.LudicrousItems;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
@@ -136,6 +139,12 @@ public class FluidSolidifierRecipes implements Runnable {
 
             }
             // Making molds
+            if (Avaritia.isModLoaded()) {
+                GT_Values.RA.stdBuilder().itemInputs(new ItemStack(LudicrousItems.singularity, 1, 0))
+                        .itemOutputs(CustomItemList.MoldSingularity.get(1L))
+                        .fluidInputs(MaterialsUEVplus.TranscendentMetal.getMolten(2304L)).duration(20 * TICKS)
+                        .eut(TierEU.RECIPE_UIV).addTo(sFluidSolidficationRecipes);
+            }
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.MoldFormAnvil", 1, 0))
