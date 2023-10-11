@@ -300,7 +300,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0, missing)).duration(1600).eut(2)
                 .addTo(sAssemblerRecipes);
-                
+
         GT_Values.RA.stdBuilder() // Color upgrade
                 .itemInputs(
                         new ItemStack(Items.dye, 1, 1),
