@@ -981,7 +981,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Casing_RobustTungstenSteel.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 2),
                         GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.TungstenSteel, 4))
-                .itemOutputs(ItemList.Casing_ExtremeEngineIntake.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.Casing_ExtremeEngineIntake.get(4)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(sAssemblerRecipes);
 
         // Filter Machine Casing for cleanroom

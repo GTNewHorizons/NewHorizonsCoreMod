@@ -1839,60 +1839,18 @@ public class ScriptEnderIO implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing)).duration(200).eut(64)
-                .addTo(sAssemblerRecipes);
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateElectricalSteel", 2, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing)).duration(200).eut(64)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
+                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 2L),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing)).duration(200).eut(64)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateElectricalSteel", 2, 0, missing),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing)).duration(200).eut(64)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing)).duration(200).eut(64)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateElectricalSteel", 2, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing)).duration(200).eut(64)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 2L),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing)).duration(200).eut(64)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateElectricalSteel", 2, 0, missing),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing)).duration(200).eut(64)
-                .addTo(sAssemblerRecipes);
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_MV / 2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
