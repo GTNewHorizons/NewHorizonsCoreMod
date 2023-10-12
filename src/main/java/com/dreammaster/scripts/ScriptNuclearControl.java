@@ -316,20 +316,19 @@ public class ScriptNuclearControl implements IScriptLoader {
 
         GT_Values.RA.stdBuilder() // Industria lInformation Panel
                 .itemInputs(
-                        ItemList.Cover_Screen.get(2L),
+                        ItemList.Cover_Screen.get(1L),
                         new ItemStack(Blocks.stained_glass_pane, 1, 5),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.RedAlloy, 1L))
+                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing))
+                .fluidInputs(Materials.RedAlloy.getMolten(72L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing)).duration(400)
                 .eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder() // Industrial Panel Extender
                 .itemInputs(
-                        ItemList.Cover_Screen.get(2L),
+                        ItemList.Cover_Screen.get(1L),
                         new ItemStack(Blocks.stained_glass_pane, 1, 5),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 5L),
-                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.RedAlloy, 1L))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 3L))
+                .fluidInputs(Materials.RedAlloy.getMolten(72L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing)).duration(400)
                 .eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder() // Advanced Information Panel
@@ -337,7 +336,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
                         getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 9, missing)).duration(400)
                 .eut(20).addTo(sAssemblerRecipes);
@@ -346,23 +345,19 @@ public class ScriptNuclearControl implements IScriptLoader {
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
                         getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 10, missing)).duration(400)
                 .eut(20).addTo(sAssemblerRecipes);
 
         GT_Values.RA.stdBuilder() // White Lamp
-                .itemInputs(
-                        new ItemStack(Blocks.stained_glass_pane, 7, 0),
-                        new ItemStack(Blocks.redstone_lamp, 1, 0),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
+                .itemInputs(new ItemStack(Blocks.stained_glass_pane, 4, 0), new ItemStack(Blocks.redstone_lamp, 1, 0))
+                .fluidInputs(Materials.RedAlloy.getMolten(72L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 0, missing)).duration(40)
                 .eut(20).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder() // Orange Lamp
-                .itemInputs(
-                        new ItemStack(Blocks.stained_glass_pane, 7, 1),
-                        new ItemStack(Blocks.redstone_lamp, 1, 0),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
+                .itemInputs(new ItemStack(Blocks.stained_glass_pane, 4, 1), new ItemStack(Blocks.redstone_lamp, 1, 0))
+                .fluidInputs(Materials.RedAlloy.getMolten(72L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 2, missing)).duration(40)
                 .eut(20).addTo(sAssemblerRecipes);
 
