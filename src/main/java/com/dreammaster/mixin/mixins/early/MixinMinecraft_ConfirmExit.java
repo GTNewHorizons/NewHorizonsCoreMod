@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import com.dreammaster.client.util.IconLoader;
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.lib.Refstrings;
-import com.gtnewhorizon.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 
 @Mixin(Minecraft.class)
 public class MixinMinecraft_ConfirmExit {
