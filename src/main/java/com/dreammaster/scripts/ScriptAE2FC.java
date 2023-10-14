@@ -136,6 +136,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_FLUID_BUFFER = getModItem(AE2FluidCraft.ID, "fluid_buffer", 1, 0);
         final ItemStack AE2FC_FLUID_STORAGE_BUS = getModItem(AE2FluidCraft.ID, "part_fluid_storage_bus", 1, 0);
         final ItemStack AE2FC_AUTO_FILLER = getModItem(AE2FluidCraft.ID, "fluid_auto_filler", 1, 0);
+        final ItemStack AE2FC_LEVEL_TERMINAL = getModItem(AE2FluidCraft.ID, "part_level_terminal", 1, 0);
         final ItemStack AE2FC_LEVEL_MAIN = getModItem(AE2FluidCraft.ID, "part_fluid_level_emitter", 1, 0);
         final ItemStack AE2FC_PORTABLE_CELL = getModItem(AE2FluidCraft.ID, "portable_fluid_cell", 1, 0);
         final ItemStack AE2FC_TANK = getModItem(AE2FluidCraft.ID, "certus_quartz_tank", 1, 0);
@@ -145,6 +146,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_FLUID_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_fluid_terminal", 1, 0);
         final ItemStack AE2FC_PATTERN_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_fluid_pattern_terminal", 1, 0);
         final ItemStack AE2FC_INTERFACE_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_interface_terminal", 1, 0);
+        final ItemStack AE2FC_LEVEL_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_level_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
         final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 0);
@@ -837,6 +839,18 @@ public class ScriptAE2FC implements IScriptLoader {
                 ItemList.Electric_Motor_LuV.get(1),
                 ItemList.Robot_Arm_LuV.get(1),
                 ItemList.Electric_Motor_LuV.get(1));
+        // Level Terminal
+        addShapedRecipe(
+                AE2FC_LEVEL_TERMINAL,
+                NIOBIUM_PLATE,
+                AE2FC_LEVEL_MAIN,
+                NIOBIUM_PLATE,
+                AE2_CORE_ANN,
+                AE2_INTERFACE,
+                FLUID_CORE_1,
+                NIOBIUM_PLATE,
+                AE2_LEVEL_MAIN,
+                NIOBIUM_PLATE);
         // Fluid Export Bus
         addShapedRecipe(
                 AE2FC_EXPORTBUS,
@@ -925,6 +939,11 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM)
                 .itemOutputs(AE2FC_INTERFACE_WIRELESS).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(sAssemblerRecipes);
+
+        // Wireless Level Terminal
+        GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_LEVEL_TERMINAL).itemOutputs(AE2FC_LEVEL_WIRELESS)
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
