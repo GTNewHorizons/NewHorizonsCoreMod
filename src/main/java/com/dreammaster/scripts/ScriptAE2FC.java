@@ -941,9 +941,8 @@ public class ScriptAE2FC implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
 
         // Wireless Level Terminal
-        GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_LEVEL_TERMINAL)
-                .itemOutputs(AE2FC_LEVEL_WIRELESS).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_LEVEL_TERMINAL).itemOutputs(AE2FC_LEVEL_WIRELESS)
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
 
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);

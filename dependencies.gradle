@@ -12,7 +12,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:TecTech:5.3.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:bartworks:0.8.8:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.3.7:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.10.6-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.10.8-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.1.14:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly("curse.maven:witchery-69673:2234410") { transitive = false }
@@ -23,5 +23,5 @@ dependencies {
     compileOnly("curse.maven:extra-utilities-225561:2264384") { transitive = false }
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.23:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.5.0:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Galacticraft:3.0.73-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Galacticraft:3.0.74-GTNH:dev") { transitive = false }
 }
