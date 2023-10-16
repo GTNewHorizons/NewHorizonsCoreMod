@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -98,27 +99,28 @@ public class ScriptFloodLight implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                         getModItem(Minecraft.ID, "string", 8, 0, missing))
-                .itemOutputs(getModItem(FloodLights.ID, "mantle", 1, 0, missing)).duration(100).eut(30)
+                .itemOutputs(getModItem(FloodLights.ID, "mantle", 1, 0, missing)).duration(5 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tungsten, 1L),
                         getModItem(Minecraft.ID, "glass_pane", 2, 0, missing))
                 .itemOutputs(getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("argon", 1)).duration(200).eut(120).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("argon", 1)).duration(10 * SECONDS).eut(120)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 3, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
                 .itemOutputs(getModItem(FloodLights.ID, "carbonDissolver", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(200).eut(64)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(FloodLights.ID, "electricIncandescentLightBulb", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
                 .itemOutputs(getModItem(FloodLights.ID, "smallElectricFloodlightMetaBlock", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).duration(200).eut(120)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 288)).duration(10 * SECONDS).eut(120)
                 .addTo(sAssemblerRecipes);
 
     }

@@ -20,6 +20,7 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -319,1066 +320,1066 @@ public class ScriptIronChests implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(Minecraft.ID, "dirt", 8, 0, missing))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 7, missing)).duration(80).eut(1)
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 7, missing)).duration(4 * SECONDS).eut(1)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing)).duration(100).eut(8)
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "planks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 3, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 4, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 5, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 6, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 7, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 8, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 9, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 10, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 11, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 12, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 13, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 14, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 15, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 1, 3, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 7, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "planks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "planks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "planks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "planksFireproof", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 0, "{meta:0}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 1, "{meta:1}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 2, "{meta:2}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 3, "{meta:3}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 4, "{meta:4}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 5, "{meta:5}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 6, "{meta:6}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 7, "{meta:7}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 8, "{meta:8}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 9, "{meta:9}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 10, "{meta:10}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 11, "{meta:11}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 12, "{meta:12}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 13, "{meta:13}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 14, "{meta:14}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 15, "{meta:15}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 16, "{meta:16}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 17, "{meta:17}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 18, "{meta:18}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 19, "{meta:19}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 20, "{meta:20}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 21, "{meta:21}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 22, "{meta:22}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 23, "{meta:23}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 24, "{meta:24}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 25, "{meta:25}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 26, "{meta:26}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 27, "{meta:27}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 28, "{meta:28}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 29, "{meta:29}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 30, "{meta:30}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 31, "{meta:31}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 32, "{meta:32}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 33, "{meta:33}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 34, "{meta:34}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ThaumicBases.ID, "enderPlanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Witchery.ID, "witchwood", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalaxySpace.ID, "barnardaCplanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TaintedMagic.ID, "BlockWarpwoodPlanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "tile.TFPlank", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ForbiddenMagic.ID, "TaintPlank", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(200).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing)).duration(150).eut(16)
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing)).duration(7 * SECONDS).eut(16)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "planks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 3, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 4, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 5, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 6, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 7, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 8, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 9, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 10, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 11, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 12, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 13, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 14, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 1, 15, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 1, 3, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftAmunRa.ID, "tile.wood1", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 7, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "planks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BiomesOPlenty.ID, "planks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "planks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "planksFireproof", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 0, "{meta:0}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 1, "{meta:1}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 2, "{meta:2}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 3, "{meta:3}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 4, "{meta:4}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 5, "{meta:5}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 6, "{meta:6}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 7, "{meta:7}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 8, "{meta:8}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 9, "{meta:9}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 10, "{meta:10}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 11, "{meta:11}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 12, "{meta:12}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 13, "{meta:13}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 14, "{meta:14}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 15, "{meta:15}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 16, "{meta:16}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 17, "{meta:17}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 18, "{meta:18}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 19, "{meta:19}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 20, "{meta:20}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 21, "{meta:21}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 22, "{meta:22}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 23, "{meta:23}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 24, "{meta:24}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 25, "{meta:25}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 26, "{meta:26}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 27, "{meta:27}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 28, "{meta:28}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 29, "{meta:29}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 30, "{meta:30}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 31, "{meta:31}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 32, "{meta:32}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 33, "{meta:33}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(ExtraTrees.ID, "planks", 1, 34, "{meta:34}", missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ThaumicBases.ID, "enderPlanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Witchery.ID, "witchwood", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalaxySpace.ID, "barnardaCplanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TaintedMagic.ID, "BlockWarpwoodPlanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TwilightForest.ID, "tile.TFPlank", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ForbiddenMagic.ID, "TaintPlank", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(300).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "copperIronUpgrade", 1, 0, missing)).duration(300).eut(30)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "copperIronUpgrade", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 3L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing)).duration(200).eut(30)
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "copperSteelUpgrade", 1, 0, missing)).duration(400).eut(30)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "copperSteelUpgrade", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 3L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing)).duration(250).eut(64)
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing)).duration(12 * SECONDS).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "ironGoldUpgrade", 1, 0, missing)).duration(500).eut(64)
+                .itemOutputs(getModItem(IronChests.ID, "ironGoldUpgrade", 1, 0, missing)).duration(25 * SECONDS).eut(64)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "steelGoldUpgrade", 1, 0, missing)).duration(500).eut(64)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "steelGoldUpgrade", 1, 0, missing)).duration(25 * SECONDS)
+                .eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing)).duration(300).eut(120)
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing)).duration(15 * SECONDS).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "goldDiamondUpgrade", 1, 0, missing)).duration(600).eut(120)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "goldDiamondUpgrade", 1, 0, missing)).duration(30 * SECONDS)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 4L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing)).duration(350).eut(256)
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing)).duration(17 * SECONDS).eut(256)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 2L),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "diamondCrystalUpgrade", 1, 0, missing)).duration(700).eut(256)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "diamondCrystalUpgrade", 1, 0, missing)).duration(35 * SECONDS)
+                .eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 3, 7, missing),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 6, missing)).duration(400).eut(256)
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 6, missing)).duration(20 * SECONDS).eut(256)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                         getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
                         GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(IronChests.ID, "diamondObsidianUpgrade", 1, 0, missing)).duration(800).eut(256)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "diamondObsidianUpgrade", 1, 0, missing)).duration(40 * SECONDS)
+                .eut(256).addTo(sAssemblerRecipes);
 
     }
 }

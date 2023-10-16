@@ -20,6 +20,7 @@ import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.QUARTER_INGOT;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_Utility.getIntegratedCircuit;
 
 import java.util.Arrays;
@@ -300,11 +301,14 @@ public class ScriptAmunRa implements IScriptLoader {
          *************/
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 1), getIntegratedCircuit(4))
-                .itemOutputs(new ItemStack(baseBlockRock, 1, 7)).duration(50).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(new ItemStack(baseBlockRock, 1, 7)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 0), getIntegratedCircuit(23))
-                .itemOutputs(new ItemStack(baseBlockRock, 1, 8)).duration(50).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(new ItemStack(baseBlockRock, 1, 8)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1, 0), getIntegratedCircuit(23))
-                .itemOutputs(new ItemStack(baseBlockRock, 1, 9)).duration(50).eut(4).addTo(sAssemblerRecipes);
+                .itemOutputs(new ItemStack(baseBlockRock, 1, 9)).duration(2 * SECONDS + 10 * TICKS).eut(4)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_UV.get(1),
@@ -321,7 +325,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new ItemStack(baseItem, 4, 15),
                         com.dreammaster.item.ItemList.HeavyDutyRocketFinsTier4.getIS(),
                         getIntegratedCircuit(5))
-                .itemOutputs(new ItemStack(baseItem, 1, 14)).duration(50).eut(TierEU.RECIPE_IV)
+                .itemOutputs(new ItemStack(baseItem, 1, 14)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -329,7 +333,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new ItemStack(baseItem, 4, 15),
                         getIntegratedCircuit(4))
                 .fluidInputs(Materials.Neutronium.getMolten(QUARTER_INGOT)).itemOutputs(new ItemStack(baseItem, 1, 16))
-                .duration(50).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         new Object[] { "compressedTin", 4 },
@@ -570,11 +574,11 @@ public class ScriptAmunRa implements IScriptLoader {
         final int eut = isRock ? 7 : 4;
 
         GT_Values.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.Lubricant.getFluid(1)).itemOutputs(slab)
-                .duration(25).eut(eut).addTo(sCutterRecipes);
+                .duration(1 * SECONDS + 5 * TICKS).eut(eut).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.Water.getFluid(4)).itemOutputs(slab)
-                .duration(50).eut(eut).addTo(sCutterRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(input).fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3))
-                .itemOutputs(slab).duration(50).eut(eut).addTo(sCutterRecipes);
+                .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(sCutterRecipes);
     }
 
 }

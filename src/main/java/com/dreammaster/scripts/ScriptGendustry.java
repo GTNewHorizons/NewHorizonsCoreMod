@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -273,7 +274,7 @@ public class ScriptGendustry implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "Labware", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 576)).duration(100).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 576)).duration(5 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -287,85 +288,85 @@ public class ScriptGendustry implements IScriptLoader {
                         getModItem(Gendustry.ID, "GeneSampleBlank", 4, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(200).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(10 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronTanks.ID, "diamondTank", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Palladium, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "MutagenTank", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plutonium", 576)).duration(300).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plutonium", 576)).duration(15 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
                         ItemList.Circuit_Elite.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(400).eut(1920)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
                         ItemList.Circuit_Elitenanocomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(400).eut(1920)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
                         ItemList.Circuit_Quantumcomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(400).eut(1920)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
                         ItemList.Circuit_Crystalprocessor.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(400).eut(1920)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(1920).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
                         ItemList.Circuit_Elite.get(1L))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(400).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
                         ItemList.Circuit_Elitenanocomputer.get(1L))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(400).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
                         ItemList.Circuit_Quantumcomputer.get(1L))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(400).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
                         ItemList.Circuit_Crystalprocessor.get(1L))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(400).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing))
-                .itemOutputs(getModItem(Gendustry.ID, "EjectCover", 1, 0, missing)).duration(200).eut(1920)
+                .itemOutputs(getModItem(Gendustry.ID, "EjectCover", 1, 0, missing)).duration(10 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6, missing))
-                .itemOutputs(getModItem(Gendustry.ID, "ImportCover", 1, 0, missing)).duration(200).eut(1920)
+                .itemOutputs(getModItem(Gendustry.ID, "ImportCover", 1, 0, missing)).duration(10 * SECONDS).eut(1920)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing))
-                .itemOutputs(getModItem(Gendustry.ID, "ErrorSensorCover", 1, 0, missing)).duration(200).eut(1920)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(Gendustry.ID, "ErrorSensorCover", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(1920).addTo(sAssemblerRecipes);
 
     }
 }
