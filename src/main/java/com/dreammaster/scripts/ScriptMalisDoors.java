@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1065,8 +1066,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .itemInputs(
                         getModItem(MalisisDoors.ID, "iron_trapdoor", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L))
-                .itemOutputs(getModItem(MalisisDoors.ID, "sliding_trapdoor", 1, 0, missing)).duration(7 * SECONDS)
-                .eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(MalisisDoors.ID, "sliding_trapdoor", 1, 0, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1, 0, missing),
@@ -1111,8 +1112,8 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
-                .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0, missing)).duration(7 * SECONDS).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(MalisisDoors.ID, "garage_door", 2, 0, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnyIron, 3L),

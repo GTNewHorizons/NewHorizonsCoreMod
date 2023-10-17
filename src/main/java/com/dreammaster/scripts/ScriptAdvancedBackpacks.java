@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.SleepingBags;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBrewingRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -385,7 +386,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "melon", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 750))
-                .fluidOutputs(FluidRegistry.getFluidStack("melonjuice", 750)).duration(6 * SECONDS).eut(4)
+                .fluidOutputs(FluidRegistry.getFluidStack("melonjuice", 750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
                 .addTo(sBrewingRecipes);
 
     }

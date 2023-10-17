@@ -529,8 +529,8 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, wildcard, missing))
                 .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_slab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).duration(7 * SECONDS).eut(120)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 36)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(120).addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "endium_block", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 9L))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 500)).duration(3 * MINUTES).eut(30)

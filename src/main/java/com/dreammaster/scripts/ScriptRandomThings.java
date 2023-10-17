@@ -18,6 +18,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
@@ -174,14 +175,14 @@ public class ScriptRandomThings implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
                         getModItem(Minecraft.ID, "nether_wart", 1, 0, missing))
-                .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 5, missing)).duration(7 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 5, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "emerald", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 4L))
-                .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 0, missing)).duration(12 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 0, missing))
+                .duration(12 * SECONDS + 10 * TICKS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 16, 0, missing),

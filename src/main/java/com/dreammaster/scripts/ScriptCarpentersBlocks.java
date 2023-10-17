@@ -329,7 +329,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 1L))
                 .itemOutputs(getModItem(CarpentersBlocks.ID, "blockCarpentersGarageDoor", 2, 0, missing))
-                .duration(7 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
@@ -394,8 +394,8 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                         getModItem(Minecraft.ID, "wooden_door", 1, 0, missing))
-                .itemOutputs(getModItem(CarpentersBlocks.ID, "itemCarpentersDoor", 1, 0, missing)).duration(7 * SECONDS)
-                .eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(CarpentersBlocks.ID, "itemCarpentersDoor", 1, 0, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 2, 0, missing),

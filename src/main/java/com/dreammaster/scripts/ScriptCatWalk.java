@@ -6,6 +6,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.util.Collections;
 import java.util.List;
@@ -130,26 +131,26 @@ public class ScriptCatWalk implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "rail", 1, 0, missing),
                         getModItem(CatWalks.ID, "steelgrate", 1, 0, missing))
-                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail", 1, 0, missing)).duration(7 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail", 1, 0, missing)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "activator_rail", 1, 0, missing),
                         getModItem(CatWalks.ID, "steelgrate", 1, 0, missing))
-                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_activator", 1, 0, missing)).duration(7 * SECONDS)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_activator", 1, 0, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "detector_rail", 1, 0, missing),
                         getModItem(CatWalks.ID, "steelgrate", 1, 0, missing))
-                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_detector", 1, 0, missing)).duration(7 * SECONDS)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_detector", 1, 0, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "golden_rail", 1, 0, missing),
                         getModItem(CatWalks.ID, "steelgrate", 1, 0, missing))
-                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_powered", 1, 0, missing)).duration(7 * SECONDS)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(CatWalks.ID, "sturdy_rail_powered", 1, 0, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Steel, 2L),

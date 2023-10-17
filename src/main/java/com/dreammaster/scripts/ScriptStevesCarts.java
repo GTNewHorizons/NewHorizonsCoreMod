@@ -1977,7 +1977,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 38, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 37, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(7 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(7 * SECONDS + 10 * TICKS).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38, missing))
@@ -1989,7 +1989,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 39, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 38, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 16)).duration(7 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 16)).duration(7 * SECONDS + 10 * TICKS).eut(30)
                 .addTo(sCutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 63, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 62, missing))

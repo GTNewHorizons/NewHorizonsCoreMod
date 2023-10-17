@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.StevesFactoryManager;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -77,8 +78,8 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 144)).duration(7 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 144))
+                .duration(7 * SECONDS + 10 * TICKS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0, missing),
@@ -185,15 +186,15 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Tool_Scanner.get(1L), ItemList.Tool_DataStick.get(1L))
                 .itemOutputs(getModItem(StevesAddons.ID, "duplicator", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.Display.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing))
                 .itemOutputs(getModItem(StevesAddons.ID, "labeler", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS + 10 * TICKS)
+                .eut(480).addTo(sAssemblerRecipes);
 
     }
 }

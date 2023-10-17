@@ -21,6 +21,7 @@ import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -815,8 +816,8 @@ public class ScriptIronChests implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing)).duration(7 * SECONDS).eut(16)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "planks", 1, wildcard, missing),
@@ -1324,8 +1325,8 @@ public class ScriptIronChests implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 3L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing)).duration(12 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing))
+                .duration(12 * SECONDS + 10 * TICKS).eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
@@ -1357,8 +1358,8 @@ public class ScriptIronChests implements IScriptLoader {
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 4L))
-                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing)).duration(17 * SECONDS).eut(256)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 5, missing))
+                .duration(17 * SECONDS + 10 * TICKS).eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
