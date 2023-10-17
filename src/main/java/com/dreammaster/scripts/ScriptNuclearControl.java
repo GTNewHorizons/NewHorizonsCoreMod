@@ -12,6 +12,8 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -20,6 +22,7 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptNuclearControl implements IScriptLoader {
@@ -246,62 +249,118 @@ public class ScriptNuclearControl implements IScriptLoader {
                 getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
                 "plateAlloyCarbon");
 
-        GT_Values.RA.stdBuilder()
+        GT_Values.RA.stdBuilder() // Remote Sensor Kit
                 .itemInputs(
                         getModItem(IC2NuclearControl.ID, "ItemToolDigitalThermometer", 1, wildcard, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0, missing)).duration(1600)
-                .eut(2).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemRemoteSensorKit", 1, 0, missing))
+                .duration(80 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Energy Sensor Kit
                 .itemInputs(
                         ItemList.Cover_EnergyDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemEnergySensorKit", 1, 0, missing)).duration(1600)
-                .eut(2).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemEnergySensorKit", 1, 0, missing))
+                .duration(80 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Counter Sensor Kit
                 .itemInputs(
                         ItemList.Cover_ActivityDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 0, missing)).duration(1600)
-                .eut(2).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 0, missing))
+                .duration(80 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Liquid Sensor Kit
                 .itemInputs(
                         ItemList.Cover_FluidDetector.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 1, missing)).duration(1600)
-                .eut(2).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 1, missing))
+                .duration(80 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Generator Sensor Kit
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 2, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 2, missing)).duration(1600)
-                .eut(2).addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemMultipleSensorKit", 1, 2, missing))
+                .duration(80 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Applied Energistics Monitor Kit
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "KitAppeng", 1, 0, missing)).duration(2800).eut(2)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "KitAppeng", 1, 0, missing)).duration(140 * SECONDS)
+                .eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Time Card
                 .itemInputs(
                         getModItem(Minecraft.ID, "clock", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTimeCard", 1, 0, missing)).duration(1600).eut(2)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(ItemList.Sensor_LV.get(1L), getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing)).duration(1600).eut(2)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTimeCard", 1, 0, missing)).duration(80 * SECONDS)
+                .eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Text Card
                 .itemInputs(ItemList.Cover_Screen.get(1L), getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTextCard", 1, 0, missing)).duration(1600).eut(2)
-                .addTo(sAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemTextCard", 1, 0, missing)).duration(80 * SECONDS)
+                .eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Vanillia Kit
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
-                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0, missing)).duration(1600).eut(2)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0, missing)).duration(80 * SECONDS)
+                .eut(2).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder() // Color upgrade
+                .itemInputs(
+                        new ItemStack(Items.dye, 1, 1),
+                        new ItemStack(Items.dye, 1, 2),
+                        new ItemStack(Items.dye, 1, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L))
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Range upgrade
+                .itemInputs(ItemList.Sensor_LV.get(1L), getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing)).duration(80 * SECONDS)
+                .eut(2).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder() // Industria lInformation Panel
+                .itemInputs(
+                        ItemList.Cover_Screen.get(1L),
+                        new ItemStack(Blocks.stained_glass_pane, 1, 5),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing))
+                .fluidInputs(Materials.RedAlloy.getMolten(72L))
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing))
+                .duration(20 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Industrial Panel Extender
+                .itemInputs(
+                        ItemList.Cover_Screen.get(1L),
+                        new ItemStack(Blocks.stained_glass_pane, 1, 5),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 3L))
+                .fluidInputs(Materials.RedAlloy.getMolten(72L))
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing))
+                .duration(20 * SECONDS).eut(2).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Advanced Information Panel
+                .itemInputs(
+                        getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
+                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
+                        getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L))
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 9, missing))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Advanced Panel Extender
+                .itemInputs(
+                        getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
+                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
+                        getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L))
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 10, missing))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder() // White Lamp
+                .itemInputs(new ItemStack(Blocks.stained_glass_pane, 4, 0), new ItemStack(Blocks.redstone_lamp, 1, 0))
+                .fluidInputs(Materials.RedAlloy.getMolten(72L))
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 0, missing))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+        GT_Values.RA.stdBuilder() // Orange Lamp
+                .itemInputs(new ItemStack(Blocks.stained_glass_pane, 4, 1), new ItemStack(Blocks.redstone_lamp, 1, 0))
+                .fluidInputs(Materials.RedAlloy.getMolten(72L))
+                .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlLight", 1, 2, missing))
+                .duration(2 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
     }
 }
