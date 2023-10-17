@@ -1654,20 +1654,17 @@ public class BlastFurnaceRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(Materials.Pyrite.getDust(9), GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(Materials.RoastedIron.getDust(9), Materials.Ash.getDust(1))
                 .fluidInputs(Materials.Oxygen.getGas(27000)).fluidOutputs(Materials.SulfurDioxide.getGas(18000))
-                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).noOptimize().metadata(COIL_HEAT, 1200)
-                .addTo(sBlastRecipes);
+                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(sBlastRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(Materials.Pentlandite.getDust(9), GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(Materials.RoastedNickel.getDust(9), Materials.Ash.getDust(1))
                 .fluidInputs(Materials.Oxygen.getGas(27000)).fluidOutputs(Materials.SulfurDioxide.getGas(18000))
-                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).noOptimize().metadata(COIL_HEAT, 1200)
-                .addTo(sBlastRecipes);
+                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(sBlastRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(Materials.Sphalerite.getDust(9), GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(Materials.RoastedZinc.getDust(9), Materials.Ash.getDust(1))
                 .fluidInputs(Materials.Oxygen.getGas(27000)).fluidOutputs(Materials.SulfurDioxide.getGas(18000))
-                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).noOptimize().metadata(COIL_HEAT, 1200)
-                .addTo(sBlastRecipes);
+                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(sBlastRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(Materials.Cobaltite.getDust(9), GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(Materials.RoastedCobalt.getDust(9), Materials.RoastedArsenic.getDust(9))
@@ -1678,14 +1675,12 @@ public class BlastFurnaceRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(Materials.Stibnite.getDust(9), GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(Materials.RoastedAntimony.getDust(9), Materials.Ash.getDust(1))
                 .fluidInputs(Materials.Oxygen.getGas(27000)).fluidOutputs(Materials.SulfurDioxide.getGas(13500))
-                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).noOptimize().metadata(COIL_HEAT, 1200)
-                .addTo(sBlastRecipes);
+                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(sBlastRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(Materials.Galena.getDust(9), GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(Materials.RoastedLead.getDust(9), Materials.Ash.getDust(1))
                 .fluidInputs(Materials.Oxygen.getGas(27000)).fluidOutputs(Materials.SulfurDioxide.getGas(9000))
-                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).noOptimize().metadata(COIL_HEAT, 1200)
-                .addTo(sBlastRecipes);
+                .duration(54 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(sBlastRecipes);
 
         if (TinkerConstruct.isModLoaded()) {
 
