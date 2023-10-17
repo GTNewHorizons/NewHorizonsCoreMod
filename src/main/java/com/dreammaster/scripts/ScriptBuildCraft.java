@@ -26,6 +26,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -424,216 +425,217 @@ public class ScriptBuildCraft implements IScriptLoader {
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
                         getModItem(Forestry.ID, "propolis", 2, 0, missing))
                 .itemOutputs(getModItem(BuildCraftCompat.ID, "item.buildcraftPipe.pipeitemspropolis", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 400)).duration(300).eut(48)
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 400)).duration(15 * SECONDS).eut(48)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
                         getModItem(Forestry.ID, "propolis", 2, 0, missing))
                 .itemOutputs(getModItem(BuildCraftCompat.ID, "item.buildcraftPipe.pipeitemspropolis", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("honey", 400)).duration(300).eut(48).addTo(sAssemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("honey", 400)).duration(15 * SECONDS).eut(48)
+                .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "markerBlock", 1, 0, missing)).duration(100).eut(120)
+                .itemOutputs(getModItem(BuildCraftCore.ID, "markerBlock", 1, 0, missing)).duration(5 * SECONDS).eut(120)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "pathMarkerBlock", 1, 0, missing)).duration(100).eut(120)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftCore.ID, "pathMarkerBlock", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(120).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing))
                 .itemOutputs(getModItem(BuildCraftBuilders.ID, "templateItem", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("squidink", 144)).duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("squidink", 144)).duration(5 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing))
                 .itemOutputs(getModItem(BuildCraftBuilders.ID, "blueprintItem", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblue", 144)).duration(100).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblue", 144)).duration(5 * SECONDS).eut(30)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "glass", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing)).duration(100).eut(8)
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 5, missing),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iron, 2L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing)).duration(100).eut(8)
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0, missing), GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "redstone_board", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(200).eut(480)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(480)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4L))
-                .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0, missing)).duration(300).eut(480)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0, missing), ItemList.Color_11.get(1L))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(200).eut(480)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0, missing),
                         getModItem(Minecraft.ID, "dye", 1, 11, missing))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(200).eut(480)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0, missing),
                         getModItem(Botany.ID, "pigment", 1, 78, missing))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(200).eut(480)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 8, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 1, 20, missing))
-                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(200).eut(480)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(10 * SECONDS)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftCore.ID, "wrenchItem", 1, 0, missing),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0, missing))
-                .itemOutputs(getModItem(BuildCraftTransport.ID, "gateCopier", 1, 0, missing)).duration(100).eut(480)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftTransport.ID, "gateCopier", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing),
                         ItemList.Conveyor_Module_HV.get(1L))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemswood", 16, 0, missing))
-                .duration(400).eut(480).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing),
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsiron", 16, 0, missing))
-                .duration(400).eut(480).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing),
                         ItemList.Electric_Motor_HV.get(1L))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsgold", 16, 0, missing))
-                .duration(400).eut(480).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 4, missing))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsdiamond", 8, 0, missing))
-                .duration(400).eut(480).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing),
                         ItemList.Robot_Arm_HV.get(1L))
                 .itemOutputs(
                         getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsobsidian", 16, 0, missing))
-                .duration(400).eut(480).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsemerald", 8, 0, missing))
-                .duration(400).eut(480).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
                         ItemList.Circuit_Computer.get(1L))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsemerald", 8, 0, missing))
-                .duration(400).eut(480).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
                         ItemList.Circuit_Nanoprocessor.get(1L))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsemerald", 8, 0, missing))
-                .duration(400).eut(480).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(480).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 4, missing),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).duration(200)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 4, missing),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).duration(200)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
                         ItemList.IC2_Item_Casing_Iron.get(2L),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).duration(200)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
                         ItemList.IC2_Item_Casing_Iron.get(2L),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).duration(200)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 18304, missing),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).duration(200)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 18304, missing),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).duration(200)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 18307, missing),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).duration(200)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
                         getModItem(GregTech.ID, "gt.metaitem.02", 2, 18307, missing),
                         ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing)).duration(200)
-                .eut(30).addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 0, missing))
-                .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing)).duration(200).eut(480)
-                .addTo(sPressRecipes);
+                .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing)).duration(10 * SECONDS)
+                .eut(480).addTo(sPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_Utility.copyAmount(0L, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Firestone, 1L)),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 4L))
-                .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0, missing)).duration(600).eut(120)
-                .addTo(sLaserEngraverRecipes);
+                .itemOutputs(getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0, missing)).duration(30 * SECONDS)
+                .eut(120).addTo(sLaserEngraverRecipes);
 
     }
 }
