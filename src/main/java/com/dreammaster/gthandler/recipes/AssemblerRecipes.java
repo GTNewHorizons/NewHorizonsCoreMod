@@ -3779,6 +3779,16 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Hatch_Input_Bus_ME.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(sAssemblerRecipes);
 
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hatch_Input_Multi_2x2_UHV.get(1L),
+                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, 0),
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56),
+                        ItemList.Electric_Pump_UHV.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(ItemList.Hatch_Input_ME.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UV)
+                .addTo(sAssemblerRecipes);
+
         // Cell Workbench
         GT_Values.RA.stdBuilder()
                 .itemInputs(
