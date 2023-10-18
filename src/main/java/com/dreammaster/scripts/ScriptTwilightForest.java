@@ -6,6 +6,8 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -66,32 +68,32 @@ public class ScriptTwilightForest implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steeleaf, 1L),
                         ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(getModItem(TwilightForest.ID, "item.steeleafIngot", 1, 0, missing)).duration(100).eut(4)
-                .addTo(sAlloySmelterRecipes);
+                .itemOutputs(getModItem(TwilightForest.ID, "item.steeleafIngot", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(4).addTo(sAlloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 1, missing))
-                .itemOutputs(getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing)).duration(600).eut(64)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing)).duration(30 * SECONDS)
+                .eut(64).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "ItemResource", 6, 14, missing),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 0, missing))
-                .itemOutputs(getModItem(TwilightForest.ID, "item.fieryBlood", 1, 0, missing)).duration(1200).eut(1024)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(TwilightForest.ID, "item.fieryBlood", 1, 0, missing)).duration(1 * MINUTES)
+                .eut(1024).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 3, missing))
-                .itemOutputs(getModItem(TwilightForest.ID, "item.fieryTears", 1, 0, missing)).duration(1500).eut(256)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(TwilightForest.ID, "item.fieryTears", 1, 0, missing))
+                .duration(1 * MINUTES + 15 * SECONDS).eut(256).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "ItemResource", 8, 14, missing),
                         getModItem(TwilightForest.ID, "item.trophy", 0, 3, missing))
-                .itemOutputs(getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing)).duration(1500).eut(4096)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing))
+                .duration(1 * MINUTES + 15 * SECONDS).eut(4096).addTo(sAssemblerRecipes);
 
         ThaumcraftApi.registerObjectTag(
                 getModItem(TwilightForest.ID, "tile.TFRoots", 1, 0, missing),
