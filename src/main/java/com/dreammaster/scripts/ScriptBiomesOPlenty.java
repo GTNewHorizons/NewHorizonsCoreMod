@@ -18,6 +18,7 @@ import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecip
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -152,98 +153,99 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         Module_CustomFuels.registerCustomFuelValue(getModItem(BiomesOPlenty.ID, "bamboo", 1, 0, missing), (short) 100);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Forestry.ID, "beeswax", 2, 0, missing), GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing)).duration(120).eut(20)
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing)).duration(6 * SECONDS).eut(20)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(Forestry.ID, "propolis", 2, 0, missing), GT_Utility.getIntegratedCircuit(2))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing)).duration(400).eut(40)
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 1, missing)).duration(20 * SECONDS).eut(40)
                 .addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 4L))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "rocks", 1, 0, missing)).duration(50).eut(2)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "rocks", 1, 0, missing)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(2).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Forestry.ID, "honeyDrop", 7, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
-                .outputChances(10000, 5000, 2500, 1200).duration(4000).eut(8).addTo(sCentrifugeRecipes);
+                .outputChances(10000, 5000, 2500, 1200).duration(3 * MINUTES + 20 * SECONDS).eut(8)
+                .addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing))
-                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0, missing)).outputChances(10000).duration(120)
-                .eut(5).addTo(sCentrifugeRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0, missing)).outputChances(10000)
+                .duration(6 * SECONDS).eut(5).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "waxcombItem", 1, 0, missing))
-                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0, missing)).outputChances(10000).duration(120)
-                .eut(5).addTo(sCentrifugeRecipes);
+                .itemOutputs(getModItem(Forestry.ID, "beeswax", 1, 0, missing)).outputChances(10000)
+                .duration(6 * SECONDS).eut(5).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "food", 1, 9, missing))
                 .itemOutputs(
                         getModItem(Forestry.ID, "beeswax", 1, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
-                .outputChances(10000, 9000).duration(120).eut(5).addTo(sCentrifugeRecipes);
+                .outputChances(10000, 9000).duration(6 * SECONDS).eut(5).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "honeycombItem", 1, 0, missing))
                 .itemOutputs(
                         getModItem(Forestry.ID, "beeswax", 1, 0, missing),
                         getModItem(Forestry.ID, "honeyDrop", 1, 0, missing))
-                .outputChances(10000, 9000).duration(120).eut(5).addTo(sCentrifugeRecipes);
+                .outputChances(10000, 9000).duration(6 * SECONDS).eut(5).addTo(sCentrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 1, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 6, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 6, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing))
-                .itemOutputs(ItemList.Color_00.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 4, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 12, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 12, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 7, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 12, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 12, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 5, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 14, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 14, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 2, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 14, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 14, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 6, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 9, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 9, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 9, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 9, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 7, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 13, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 13, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 8, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 5, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 5, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 3, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 5, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 5, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 9, missing))
-                .itemOutputs(ItemList.Color_15.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 1, missing))
-                .itemOutputs(ItemList.Color_15.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_15.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 15, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 7, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 7, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 4, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 11, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 11, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 5, missing))
-                .itemOutputs(ItemList.Color_04.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mushrooms", 1, 2, missing))
-                .itemOutputs(ItemList.Color_04.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_04.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 8, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 1, missing)).duration(300).eut(2)
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 1, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing))
-                .itemOutputs(ItemList.Color_02.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_02.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mushrooms", 1, 4, missing))
-                .itemOutputs(ItemList.Color_03.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_03.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing))
-                .itemOutputs(ItemList.Color_03.get(2L)).duration(300).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_03.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "mud", 1, 0, missing))
-                .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0, missing)).duration(100).eut(8)
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "mudball", 4, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(sExtractorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1, 1, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1, 0, missing)).outputChances(10000)
@@ -258,31 +260,31 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .addTo(sFluidCannerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(400).eut(40)
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(20 * SECONDS).eut(40)
                 .addTo(sFluidSolidficationRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 8, 15, missing)).outputChances(10000).duration(300).eut(2)
-                .addTo(sMaceratorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 8, 15, missing)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 1, 1, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 12, 15, missing)).outputChances(10000).duration(300).eut(2)
-                .addTo(sMaceratorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 12, 15, missing)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 1, 2, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "dye", 24, 15, missing)).outputChances(10000).duration(300).eut(2)
-                .addTo(sMaceratorRecipes);
+                .itemOutputs(getModItem(Minecraft.ID, "dye", 24, 15, missing)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardSand", 1, 0, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.SandDust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.CassiteriteSand, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Phosphate, 1L))
-                .outputChances(10000, 5000, 1000, 500).duration(200).eut(8).addTo(sMaceratorRecipes);
+                .outputChances(10000, 5000, 1000, 500).duration(10 * SECONDS).eut(8).addTo(sMaceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardDirt", 1, 0, missing))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Clay, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Quicklime, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gypsum, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Calcite, 1L))
-                .outputChances(10000, 7500, 2500, 2500).duration(200).eut(8).addTo(sMaceratorRecipes);
+                .outputChances(10000, 7500, 2500, 2500).duration(10 * SECONDS).eut(8).addTo(sMaceratorRecipes);
 
     }
 }
