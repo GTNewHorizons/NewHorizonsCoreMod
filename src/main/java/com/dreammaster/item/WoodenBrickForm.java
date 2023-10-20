@@ -46,7 +46,6 @@ public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBric
         super.setTextureName(String.format("%s:item%s", Refstrings.MODID, _mItemName));
         super.setUnlocalizedName(_mItemName);
         super.setMaxDamage(maxDurability);
-        super.setHasSubtypes(true);
     }
 
     @Override
