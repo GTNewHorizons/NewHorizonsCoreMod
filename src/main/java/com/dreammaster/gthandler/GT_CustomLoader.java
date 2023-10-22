@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.food.QuantumBread;
+import com.dreammaster.modfixes.biomesoplenty.BlockHarvestToolFix;
 import com.dreammaster.modfixes.enderIO.FrankenskullFix;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -152,6 +153,9 @@ public class GT_CustomLoader {
         GameRegistry.registerItem(QuantumBread.Instance(), "itemQuantumToast");
         if (EnderIO.isModLoaded()) {
             FrankenskullFix.fixEnderIO();
+        }
+        if (BiomesOPlenty.isModLoaded()) {
+            BlockHarvestToolFix.fixBOPHarvestTools();
         }
         MaterialLoader.run();
         FluidPipeLoader.run();
