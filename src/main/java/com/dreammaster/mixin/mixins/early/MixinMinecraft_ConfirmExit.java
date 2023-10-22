@@ -23,6 +23,9 @@ public class MixinMinecraft_ConfirmExit {
     @Unique
     private boolean dreamcraft$isCloseRequested;
 
+    @Unique
+    private boolean dreamcraft$waitingDialogQuit;
+
     @ModifyExpressionValue(
             method = "runGameLoop",
             at = @At(value = "INVOKE", target = "Lorg/lwjgl/opengl/Display;isCloseRequested()Z", remap = false))
@@ -33,7 +36,9 @@ public class MixinMinecraft_ConfirmExit {
         if (this.dreamcraft$isCloseRequested) {
             return true;
         }
+        if (dreamcraft$waitingDialogQuit) return false;
         if (isCloseRequested) {
+            dreamcraft$waitingDialogQuit = true;
             new Thread(() -> {
                 final JFrame frame = new JFrame();
                 frame.setAlwaysOnTop(true);
@@ -50,6 +55,7 @@ public class MixinMinecraft_ConfirmExit {
                 if (result == JOptionPane.YES_OPTION) {
                     this.dreamcraft$isCloseRequested = true;
                 }
+                dreamcraft$waitingDialogQuit = false;
             }).start();
             return false;
         }
