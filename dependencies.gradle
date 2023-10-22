@@ -24,4 +24,7 @@ dependencies {
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.23:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.5.0:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.0.73-GTNH:dev") { transitive = false }
+
+    runtimeOnlyNonPublishable("curse.maven:biomes-o-plenty-220318:2499612")
+    runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.1.10-GTNH:dev")
 }
