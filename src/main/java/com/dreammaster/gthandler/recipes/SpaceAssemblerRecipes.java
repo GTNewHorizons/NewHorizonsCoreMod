@@ -1,5 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.AE2FluidCraft;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.GTPlusPlus;
@@ -230,6 +232,25 @@ public class SpaceAssemblerRecipes implements Runnable {
                         (int) TierEU.RECIPE_UIV,
                         null,
                         null);
+
+                // Advanced Stocking Input Hatch (ME)
+                IG_RecipeAdder
+                        .addSpaceAssemblerRecipe(
+                                new ItemStack[] { ItemList.Hatch_Input_Multi_2x2_UEV.get(4L),
+                                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
+                                        ItemList.Optically_Compatible_Memory.get(2), ItemList.Electric_Pump_UEV.get(1L),
+                                        // 16384k Me Fluid Storage Component
+                                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 4, 7),
+                                        // Hyper-Acceleration Card
+                                        GT_ModHandler
+                                                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56) },
+                                new FluidStack[] { new FluidStack(solderUEV, 2304) },
+                                ItemList.Hatch_Input_ME_Advanced.get(1),
+                                1,
+                                15 * 20,
+                                (int) TierEU.RECIPE_UHV,
+                                null,
+                                null);
             }
             if (OpenComputers.isModLoaded()) {
                 // Memory Tier 3.5

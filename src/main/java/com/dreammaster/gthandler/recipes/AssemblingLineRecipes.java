@@ -137,6 +137,19 @@ public class AssemblingLineRecipes implements Runnable {
                 .fluidInputs(new FluidStack(solderIndalloy, 720)).itemOutputs(ItemList.Energy_LapotronicOrb2.get(1L))
                 .eut(TierEU.RECIPE_ZPM).duration(50 * SECONDS).addTo(AssemblyLine);
 
+        // Advanced Stocking Input Bus (ME)
+        GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_Bus_ME.get(1L))
+                .metadata(RESEARCH_TIME, 1 * HOURS)
+                .itemInputs(
+                        ItemList.Hatch_Input_Bus_LuV.get(1L),
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1L),
+                        ItemList.Conveyor_Module_IV.get(1L),
+                        // Acceleration Card
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30))
+                .fluidInputs(new FluidStack(solderIndalloy, 288), FluidRegistry.getFluidStack("lubricant", 500))
+                .itemOutputs(ItemList.Hatch_Input_Bus_ME_Advanced.get(1L)).eut(TierEU.RECIPE_LuV).duration(15 * SECONDS)
+                .addTo(AssemblyLine);
+
         if (TecTech.isModLoaded()) {
             TT_recipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
