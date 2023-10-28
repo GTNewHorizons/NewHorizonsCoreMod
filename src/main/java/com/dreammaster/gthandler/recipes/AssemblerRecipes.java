@@ -3770,13 +3770,29 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Hatch_Output_ME.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(sAssemblerRecipes);
 
+        // Stocking Input Bus (ME)
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hatch_Input_Bus_HV.get(1L),
-                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1L, 440),
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1L),
+                        // Acceleration Card
                         GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 30),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(ItemList.Hatch_Input_Bus_ME.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sAssemblerRecipes);
+
+        // Stocking Input Hatch (ME)
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hatch_Input_Multi_2x2_UV.get(4L),
+                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
+                        ItemList.Circuit_Chip_NeuroCPU.get(1L),
+                        ItemList.Electric_Pump_UV.get(1L),
+                        // 4096k Me Fluid Storage Component
+                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 4L, 6),
+                        // Hyper-Acceleration Card
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 56))
+                .itemOutputs(ItemList.Hatch_Input_ME.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(sAssemblerRecipes);
 
         // Cell Workbench
