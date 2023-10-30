@@ -5,6 +5,7 @@ import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
 import static gregtech.api.enums.GT_Values.*;
 import static gregtech.api.util.GT_StructureUtility.ofHatchAdder;
 import static gregtech.api.util.GT_StructureUtility.ofHatchAdderOptional;
+import static gregtech.api.util.GT_Utility.filterValidMTEs;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
@@ -260,11 +261,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         long tVoltage = getMaxInputVoltage();
         byte tTier = (byte) max(1, GT_Utility.getTier(tVoltage));
         int pollutionPerSecond = 0;
-        for (GT_MetaTileEntity_Hatch_Muffler tHatch : mMufflerHatches) {
-            if (isValidMetaTileEntity(tHatch)) {
-                // applying scaling factor
-                pollutionPerSecond += (int) Math.pow(MainRegistry.CoreConfig.scalingFactor, min(tTier, tHatch.mTier));
-            }
+        for (GT_MetaTileEntity_Hatch_Muffler tHatch : filterValidMTEs(mMufflerHatches)) {
+            // applying scaling factor
+            pollutionPerSecond += (int) Math.pow(MainRegistry.CoreConfig.scalingFactor, min(tTier, tHatch.mTier));
         }
         // apply the boost
         if (isRateBoosted) {
