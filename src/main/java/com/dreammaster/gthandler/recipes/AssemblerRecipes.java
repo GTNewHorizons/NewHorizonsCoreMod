@@ -1782,6 +1782,26 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Titanium.getMolten(1440L)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
 
+        // EBF Controller
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getIC2Item("ironFurnace", 3L),
+                        ItemList.Casing_HeatProof.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 3),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2))
+                .itemOutputs(ItemList.Machine_Multi_BlastFurnace.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+
+        // Vacuum Freezer Controller
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Electric_Pump_HV.get(3L),
+                        ItemList.Casing_FrostProof.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 3),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 2))
+                .itemOutputs(ItemList.Machine_Multi_VacuumFreezer.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(sAssemblerRecipes);
+
         if (GraviSuite.isModLoaded() && GalacticraftMars.isModLoaded()) {
             // Gravitational Engine
             GT_Values.RA.stdBuilder()
