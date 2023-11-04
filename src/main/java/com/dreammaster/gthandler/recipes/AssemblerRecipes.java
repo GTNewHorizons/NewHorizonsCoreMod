@@ -1807,6 +1807,17 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Machine_Multi_VacuumFreezer.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(sAssemblerRecipes);
 
+        // Large Chemical Reactor
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Electric_Motor_HV.get(3L),
+                        ItemList.Casing_HV.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Polytetrafluoroethylene, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1))
+                .itemOutputs(ItemList.Machine_Multi_LargeChemicalReactor.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(sAssemblerRecipes);
+
         if (GraviSuite.isModLoaded() && GalacticraftMars.isModLoaded()) {
             // Gravitational Engine
             GT_Values.RA.stdBuilder()
