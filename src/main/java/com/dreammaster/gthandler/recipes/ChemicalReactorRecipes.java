@@ -11,6 +11,7 @@ import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sChemicalRecipes;
 import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMultiblockChemicalRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
@@ -302,8 +303,8 @@ public class ChemicalReactorRecipes implements Runnable {
                             CustomItemList.DraconiumEgg.get(1L),
                             GT_ModHandler.getModItem(DraconicEvolution.ID, "dragonHeart", 0L, 0))
                     .itemOutputs(new ItemStack(Blocks.dragon_egg, 1, 0))
-                    .fluidInputs(FluidRegistry.getFluidStack("molten.enderium", 1000)).requiresCleanRoom()
-                    .duration(60 * MINUTES).eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
+                    .fluidInputs(Materials.Enderium.getMolten(7 * INGOTS)).requiresCleanRoom().duration(60 * MINUTES)
+                    .eut(TierEU.RECIPE_EV).addTo(UniversalChemical);
 
         }
 
