@@ -108,6 +108,26 @@ public class SpaceAssemblerRecipes implements Runnable {
                 }
             }
             if (GTPlusPlus.isModLoaded()) {
+
+                // Alternate Energy Orb Cluster Recipe
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { ItemList.Circuit_Board_Multifiberglass.get(1L),
+                                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 64L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Master), 4L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(8L), ItemList.Circuit_Chip_HPIC.get(64L),
+                                ItemList.Circuit_Parts_DiodeASMD.get(8L), ItemList.Circuit_Parts_CapacitorASMD.get(8L),
+                                ItemList.Circuit_Parts_ResistorASMD.get(8L),
+                                ItemList.Circuit_Parts_TransistorASMD.get(8L),
+                                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 64) },
+                        new FluidStack[] { new FluidStack(solderIndalloy, 720) },
+                        ItemList.Energy_LapotronicOrb2.get(1),
+                        1,
+                        50 * 20,
+                        (int) TierEU.RECIPE_ZPM,
+                        null,
+                        null);
+
                 // Alternate Energy Module Recipe
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { ItemList.Circuit_Board_Wetware_Extreme.get(1),
