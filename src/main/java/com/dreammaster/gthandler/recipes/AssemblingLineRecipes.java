@@ -175,9 +175,9 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UIV);
         }
 
-        GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_Bus_ME.get(1L))
+        GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_Bus_ME_Advanced.get(1L))
                 .metadata(RESEARCH_TIME, 1 * HOURS).itemInputs(
-                        ItemList.Hatch_Input_Bus_ME.get(1L),
+                        ItemList.Hatch_Input_Bus_ME_Advanced.get(1L),
                         // 4096k Me Storage Component
                         GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 59),
                         // ME Controller
