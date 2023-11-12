@@ -122,6 +122,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Duct_Tape.get(2L)).fluidInputs(Materials.AdvancedGlue.getFluid(200))
                 .duration(6 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
 
+        GT_Values.RA.stdBuilder()
+                .itemInputs(ItemList.Hull_LV.get(1), ItemList.Duct_Tape.get(2), GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Hatch_Maintenance.get(1)).fluidInputs(Materials.AdvancedGlue.getFluid(200))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+
         // 10,30 and 60K NAK Cells
 
         GT_Values.RA.stdBuilder()
