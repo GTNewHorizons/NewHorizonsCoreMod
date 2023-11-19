@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.KeyStore;
-import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -58,10 +57,13 @@ public class LetsEncryptAdder {
     private static boolean alreadyAdded = false;
     private static final Logger LOGGER = LogManager.getLogger(LetsEncryptAdder.class);
 
-    private static void trustLetsEncryptX3() throws Exception {
-        InputStream cert = Objects.requireNonNull(
-                LetsEncryptAdder.class.getResourceAsStream("/assets/letsencryptroot/lets-encrypt-x3-cross-signed.der"),
-                "Embedded let's encrypt certificate not found");
+    private static void trustLetsEncryptRoots() throws Exception {
+        final InputStream cert1 = Objects.requireNonNull(
+                LetsEncryptAdder.class.getResourceAsStream("/assets/letsencryptroot/isrg-root-x1.der"),
+                "Embedded let's encrypt certificate X1 not found");
+        final InputStream cert2 = Objects.requireNonNull(
+                LetsEncryptAdder.class.getResourceAsStream("/assets/letsencryptroot/isrg-root-x2.der"),
+                "Embedded let's encrypt certificate X2 not found");
 
         KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
         Path ksPath = Paths.get(System.getProperty("java.home"), "lib", "security", "cacerts");
@@ -69,10 +71,8 @@ public class LetsEncryptAdder {
 
         CertificateFactory cf = CertificateFactory.getInstance("X.509");
 
-        InputStream caInput = new BufferedInputStream(cert);
-        Certificate crt = cf.generateCertificate(caInput);
-
-        keyStore.setCertificateEntry("lets-encrypt-x3-cross-signed", crt);
+        keyStore.setCertificateEntry("isrg-root-x1", cf.generateCertificate(new BufferedInputStream(cert1)));
+        keyStore.setCertificateEntry("isrg-root-x2", cf.generateCertificate(new BufferedInputStream(cert2)));
 
         TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
         tmf.init(keyStore);
@@ -120,7 +120,7 @@ public class LetsEncryptAdder {
         String body = "";
         try {
             LOGGER.info("Adding Let's Encrypt certificate...");
-            LetsEncryptAdder.trustLetsEncryptX3();
+            LetsEncryptAdder.trustLetsEncryptRoots();
             LOGGER.info("Done, attempting to connect to https://helloworld.letsencrypt.org...");
             URL url = new URL("https://helloworld.letsencrypt.org");
             URLConnection conn = url.openConnection();
