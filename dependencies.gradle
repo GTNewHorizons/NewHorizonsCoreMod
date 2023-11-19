@@ -25,3 +25,9 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:amunra:0.4.36:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.0.73-GTNH:dev") { transitive = false }
 }
+
+configurations.all {
+    resolutionStrategy.dependencySubstitution {
+        substitute module('com.github.GTNewHorizons:AE2FluidCraft-Rework') using module('com.github.GTNewHorizons:AE2FluidCraft-Rework:1.1.30-gtnh') withClassifier("dev") because("-pre version deep in the dependency tree")
+    }
+}
