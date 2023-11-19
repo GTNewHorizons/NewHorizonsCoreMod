@@ -3,7 +3,7 @@
   "modid": "${modId}",
   "name": "${modName}",
   "description": "Core Mod for the GT: New Horizons Pack.",
-  "version": "${modVersion}",
+  "version": "2.1.110",
   "mcversion": "${minecraftVersion}",
   "url": "",
   "updateUrl": "",
