@@ -148,6 +148,12 @@ public class DepLoader implements IFMLCallHook {
             for (Dependency d : deps) if (!d.isDisabled() && !d.isFound()) count++;
             if (count > 0) {
                 LOGGER.info("{} dependencies to download.", count);
+                try {
+                    LetsEncryptAdder.addLetsEncryptCertificates();
+                } catch (Exception e) {
+                    LOGGER.warn(
+                            "Could not ensure Let's Encrypt root certificates are present, downloads might fail on older Java versions.");
+                }
                 downloaded = true;
                 dialog.setJobCount(count);
                 SwingUtilities.invokeLater(() -> dialog.setVisible(true));
