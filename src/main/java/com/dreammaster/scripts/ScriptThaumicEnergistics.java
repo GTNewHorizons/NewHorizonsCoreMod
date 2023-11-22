@@ -77,7 +77,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
 
         // ItemStacks for in/out
         ItemStack SingularityDrive = getModItem(EternalSingularity.ID, "eternal_singularity", 1);
-        ItemStack CEC = getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 4);
+        ItemStack CEC = getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8);
 
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
@@ -1895,6 +1895,143 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(10 * SECONDS).eut(480)
                 .addTo(sCircuitAssemblerRecipes);
 
+        // 256k Essentia Storage Component
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing))
+                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(1920)
+                .addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing))
+                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(1920)
+                .addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
+                .eut(1920).addTo(sCircuitAssemblerRecipes);
+        // 1024k Essentia Storage Component
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
+                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(7680)
+                .addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
+                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(7680)
+                .addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
+                .eut(7680).addTo(sCircuitAssemblerRecipes);
+        // 4096k Essentia Storage Component
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Wetware_Extreme.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
+                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(30720)
+                .addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Wetware_Extreme.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
+                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(30720)
+                .addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Wetware_Extreme.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
+                .eut(30720).addTo(sCircuitAssemblerRecipes);
+        // 16384k Essentia Storage Component
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Bio_Ultra.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
+                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(500000)
+                .addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Bio_Ultra.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
+                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(500000)
+                .addTo(sCircuitAssemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                        ItemList.Circuit_Board_Bio_Ultra.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
+                .eut(500000).addTo(sCircuitAssemblerRecipes);
+
         TCHelper.removeInfusionRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "material", 1, 2, missing));
@@ -1923,6 +2060,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing));
+
         TCHelper.removeArcaneRecipe(getModItem(ThaumicEnergistics.ID, "part.base", 1, 6, missing));
         TCHelper.removeCrucibleRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.golem.gear.box", 1, 0, missing));
@@ -2589,6 +2731,130 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                                 getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("ignis"), 50)
+                        .add(Aspect.getAspect("aqua"), 50),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "circuitData",
+                'b',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing),
+                'c',
+                "circuitData",
+                'd',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing),
+                'e',
+                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                'f',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing),
+                'g',
+                "circuitData",
+                'h',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing),
+                'i',
+                "circuitData");
+        TCHelper.addResearchPage(
+                "thaumicenergistics.TESTORAGE",
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing))));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 60).add(Aspect.getAspect("ignis"), 60)
+                        .add(Aspect.getAspect("aqua"), 60),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "circuitElite",
+                'b',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing),
+                'c',
+                "circuitElite",
+                'd',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing),
+                'e',
+                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                'f',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing),
+                'g',
+                "circuitElite",
+                'h',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing),
+                'i',
+                "circuitElite");
+        TCHelper.addResearchPage(
+                "thaumicenergistics.TESTORAGE",
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 70).add(Aspect.getAspect("ignis"), 70)
+                        .add(Aspect.getAspect("aqua"), 70),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "circuitMaster",
+                'b',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing),
+                'c',
+                "circuitMaster",
+                'd',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing),
+                'e',
+                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                'f',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing),
+                'g',
+                "circuitMaster",
+                'h',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing),
+                'i',
+                "circuitMaster");
+        TCHelper.addResearchPage(
+                "thaumicenergistics.TESTORAGE",
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 80).add(Aspect.getAspect("ignis"), 80)
+                        .add(Aspect.getAspect("aqua"), 80),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "circuitSuperconductor",
+                'b',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing),
+                'c',
+                "circuitSuperconductor",
+                'd',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing),
+                'e',
+                CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
+                'f',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing),
+                'g',
+                "circuitSuperconductor",
+                'h',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing),
+                'i',
+                "circuitSuperconductor");
+        TCHelper.addResearchPage(
+                "thaumicenergistics.TESTORAGE",
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("terra"), 10)
                         .add(Aspect.getAspect("aqua"), 10),
@@ -2769,6 +3035,158 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
                                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 3, missing))));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 4, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 55).add(Aspect.getAspect("terra"), 55)
+                        .add(Aspect.getAspect("aqua"), 55),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
+                'b',
+                "plateInfusedFire",
+                'c',
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
+                'd',
+                "plateInfusedEarth",
+                'e',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing),
+                'f',
+                "plateInfusedEarth",
+                'g',
+                "plateThaumium",
+                'h',
+                "plateThaumium",
+                'i',
+                "plateThaumium");
+        ThaumcraftApi.addShapelessArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 4, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 45).add(Aspect.getAspect("terra"), 45)
+                        .add(Aspect.getAspect("aqua"), 45),
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing));
+        TCHelper.addResearchPage(
+                "thaumicenergistics.TESTORAGE",
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 4, missing))));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 5, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 65).add(Aspect.getAspect("terra"), 65)
+                        .add(Aspect.getAspect("aqua"), 65),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
+                'b',
+                "plateInfusedFire",
+                'c',
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
+                'd',
+                "plateInfusedEarth",
+                'e',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing),
+                'f',
+                "plateInfusedEarth",
+                'g',
+                "plateThaumium",
+                'h',
+                "plateThaumium",
+                'i',
+                "plateThaumium");
+        ThaumcraftApi.addShapelessArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 5, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 55).add(Aspect.getAspect("terra"), 55)
+                        .add(Aspect.getAspect("aqua"), 55),
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing));
+        TCHelper.addResearchPage(
+                "thaumicenergistics.TESTORAGE",
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 5, missing))));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 6, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("terra"), 75)
+                        .add(Aspect.getAspect("aqua"), 75),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
+                'b',
+                "plateInfusedFire",
+                'c',
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
+                'd',
+                "plateInfusedEarth",
+                'e',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing),
+                'f',
+                "plateInfusedEarth",
+                'g',
+                "plateThaumium",
+                'h',
+                "plateThaumium",
+                'i',
+                "plateThaumium");
+        ThaumcraftApi.addShapelessArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 6, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 65).add(Aspect.getAspect("terra"), 65)
+                        .add(Aspect.getAspect("aqua"), 65),
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing));
+        TCHelper.addResearchPage(
+                "thaumicenergistics.TESTORAGE",
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 6, missing))));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 85).add(Aspect.getAspect("terra"), 85)
+                        .add(Aspect.getAspect("aqua"), 85),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
+                'b',
+                "plateInfusedFire",
+                'c',
+                getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
+                'd',
+                "plateInfusedEarth",
+                'e',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing),
+                'f',
+                "plateInfusedEarth",
+                'g',
+                "plateThaumium",
+                'h',
+                "plateThaumium",
+                'i',
+                "plateThaumium");
+        ThaumcraftApi.addShapelessArcaneCraftingRecipe(
+                "thaumicenergistics.TESTORAGE",
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 75).add(Aspect.getAspect("terra"), 75)
+                        .add(Aspect.getAspect("aqua"), 75),
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing),
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing));
+        TCHelper.addResearchPage(
+                "thaumicenergistics.TESTORAGE",
+                new ResearchPage(
+                        TCHelper.findArcaneRecipe(
+                                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing),

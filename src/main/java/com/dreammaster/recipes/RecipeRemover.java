@@ -2639,6 +2639,10 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("thaumicenergistics", "storage.essentia", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem("thaumicenergistics", "storage.essentia", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("thaumicenergistics", "storage.essentia", 1, 3, missing));
+        removeRecipeByOutputDelayed(getModItem("thaumicenergistics", "storage.essentia", 1, 4, missing));
+        removeRecipeByOutputDelayed(getModItem("thaumicenergistics", "storage.essentia", 1, 5, missing));
+        removeRecipeByOutputDelayed(getModItem("thaumicenergistics", "storage.essentia", 1, 6, missing));
+        removeRecipeByOutputDelayed(getModItem("thaumicenergistics", "storage.essentia", 1, 7, missing));
         removeRecipeByOutputDelayed(
                 getModItem("thaumicenergistics", "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ThaumicExploration", "blankSeal", 1, wildcard, missing));
