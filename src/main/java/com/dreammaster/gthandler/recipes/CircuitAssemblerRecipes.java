@@ -608,52 +608,39 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .fluidInputs(tMat.getMolten(36L * tMultiplier / 2L)).duration(7 * SECONDS + 10 * TICKS)
                     .eut(TierEU.RECIPE_EV).addTo(sCircuitAssemblerRecipes);
 
-            if (IndustrialCraft2.isModLoaded()) {
-                // Basic Circuit
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
+                            ItemList.Circuit_Chip_CPU.get(2L),
+                            ItemList.Circuit_Chip_NAND.get(32L),
+                            ItemList.Circuit_Chip_Ram.get(4L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 4))
+                    .itemOutputs(ItemList.Tool_DataStick.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
+                    .requiresCleanRoom().duration(20 * SECONDS).eut(90).addTo(sCircuitAssemblerRecipes);
 
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Coated_Basic.get(1L),
-                                ItemList.Circuit_Parts_Resistor.get(2L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2),
-                                ItemList.Circuit_Parts_Vacuum_Tube.get(2L))
-                        .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1L, 0))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(16)
-                        .addTo(sCircuitAssemblerRecipes);
+            // Basic Circuit
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Coated_Basic.get(1L),
+                            ItemList.Circuit_Parts_Resistor.get(2L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2),
+                            ItemList.Circuit_Parts_Vacuum_Tube.get(2L))
+                    .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1L, 0))
+                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(16)
+                    .addTo(sCircuitAssemblerRecipes);
 
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Coated_Basic.get(1L),
-                                ItemList.Circuit_Parts_ResistorSMD.get(2L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2),
-                                ItemList.Circuit_Parts_Vacuum_Tube.get(2L))
-                        .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1L, 0))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(16)
-                        .addTo(sCircuitAssemblerRecipes);
-                // Good Circuit
+            // Good Circuit
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2L, 0),
+                            ItemList.Circuit_Parts_Diode.get(2L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2))
+                    .itemOutputs(ItemList.Circuit_Good.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
 
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2L, 0),
-                                ItemList.Circuit_Parts_Diode.get(2L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2))
-                        .itemOutputs(ItemList.Circuit_Good.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
-                        .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                                GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2L, 0),
-                                ItemList.Circuit_Parts_DiodeSMD.get(2L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2))
-                        .itemOutputs(ItemList.Circuit_Good.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
-                        .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
-
-            }
-
-            // Integraded Circuits
-
+            // Integrated Logic Circuit
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Coated_Basic.get(1L),
@@ -665,69 +652,13 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .itemOutputs(ItemList.Circuit_Basic.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
                     .duration(10 * SECONDS).eut(16).addTo(sCircuitAssemblerRecipes);
 
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Coated_Basic.get(1L),
-                            ItemList.Circuit_Chip_ILC.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(2L),
-                            ItemList.Circuit_Parts_Diode.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Tin, 2))
-                    .itemOutputs(ItemList.Circuit_Basic.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
-                    .duration(10 * SECONDS).eut(16).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Coated_Basic.get(1L),
-                            ItemList.Circuit_Chip_ILC.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(2L),
-                            ItemList.Circuit_Parts_DiodeSMD.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Tin, 2))
-                    .itemOutputs(ItemList.Circuit_Basic.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
-                    .duration(10 * SECONDS).eut(16).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Coated_Basic.get(1L),
-                            ItemList.Circuit_Chip_ILC.get(1L),
-                            ItemList.Circuit_Parts_Resistor.get(2L),
-                            ItemList.Circuit_Parts_DiodeSMD.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Tin, 2))
-                    .itemOutputs(ItemList.Circuit_Basic.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
-                    .duration(10 * SECONDS).eut(16).addTo(sCircuitAssemblerRecipes);
-
+            // Good Integrated Circuit
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Phenolic_Good.get(1L),
                             ItemList.Circuit_Basic.get(2L),
                             ItemList.Circuit_Parts_Resistor.get(4L),
                             ItemList.Circuit_Parts_Diode.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 4))
-                    .itemOutputs(ItemList.Circuit_Integrated_Good.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(20 * SECONDS).eut(24)
-                    .addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                            ItemList.Circuit_Basic.get(2L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(4L),
-                            ItemList.Circuit_Parts_Diode.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 4))
-                    .itemOutputs(ItemList.Circuit_Integrated_Good.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(20 * SECONDS).eut(24)
-                    .addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                            ItemList.Circuit_Basic.get(2L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(4L),
-                            ItemList.Circuit_Parts_DiodeSMD.get(4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 4))
                     .itemOutputs(ItemList.Circuit_Integrated_Good.get(1L))
@@ -746,38 +677,13 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(10 * SECONDS).eut(24)
                     .addTo(sCircuitAssemblerRecipes);
 
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                            ItemList.Circuit_Basic.get(2L),
-                            ItemList.Circuit_Parts_Resistor.get(4L),
-                            ItemList.Circuit_Parts_DiodeSMD.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 4))
-                    .itemOutputs(ItemList.Circuit_Integrated_Good.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(20 * SECONDS).eut(24)
-                    .addTo(sCircuitAssemblerRecipes);
-
             // Advanced circuit
-
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Integrated_Good.get(1L),
                             ItemList.Circuit_Chip_ILC.get(2L),
                             ItemList.Circuit_Chip_Ram.get(2L),
                             ItemList.Circuit_Parts_Transistor.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 8),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.AnnealedCopper, 8))
-                    .itemOutputs(GT_ModHandler.getIC2Item("advancedCircuit", 1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(40 * SECONDS).eut(TierEU.RECIPE_LV)
-                    .addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Integrated_Good.get(1L),
-                            ItemList.Circuit_Chip_ILC.get(2L),
-                            ItemList.Circuit_Chip_Ram.get(2L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 8),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.AnnealedCopper, 8))
                     .itemOutputs(GT_ModHandler.getIC2Item("advancedCircuit", 1L))
@@ -795,8 +701,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .itemOutputs(GT_ModHandler.getIC2Item("advancedCircuit", 1L))
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                     .addTo(sCircuitAssemblerRecipes);
-            // Integrated Circuits
 
+            // Microprocessor
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Plastic_Advanced.get(1L),
@@ -809,95 +715,12 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
                     .eut(60).addTo(sCircuitAssemblerRecipes);
 
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(2L),
-                            ItemList.Circuit_Parts_Capacitor.get(2L),
-                            ItemList.Circuit_Parts_Transistor.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
-                    .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_Resistor.get(2L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(2L),
-                            ItemList.Circuit_Parts_Transistor.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
-                    .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_Resistor.get(2L),
-                            ItemList.Circuit_Parts_Capacitor.get(2L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
-                    .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(2L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(2L),
-                            ItemList.Circuit_Parts_Transistor.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
-                    .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(2L),
-                            ItemList.Circuit_Parts_Capacitor.get(2L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
-                    .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_Resistor.get(2L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(2L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
-                    .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
+            // Integrated Processor
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                             ItemList.Circuit_Chip_CPU.get(1L),
                             ItemList.Circuit_Parts_Resistor.get(4L),
-                            ItemList.Circuit_Parts_Capacitor.get(4L),
-                            ItemList.Circuit_Parts_Transistor.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
-                    .itemOutputs(ItemList.Circuit_Processor.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(4L),
                             ItemList.Circuit_Parts_Capacitor.get(4L),
                             ItemList.Circuit_Parts_Transistor.get(4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
@@ -917,66 +740,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(5 * SECONDS)
                     .eut(60).addTo(sCircuitAssemblerRecipes);
 
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_Resistor.get(4L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(4L),
-                            ItemList.Circuit_Parts_Transistor.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
-                    .itemOutputs(ItemList.Circuit_Processor.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_Resistor.get(4L),
-                            ItemList.Circuit_Parts_Capacitor.get(4L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
-                    .itemOutputs(ItemList.Circuit_Processor.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(4L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(4L),
-                            ItemList.Circuit_Parts_Transistor.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
-                    .itemOutputs(ItemList.Circuit_Processor.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(4L),
-                            ItemList.Circuit_Parts_Capacitor.get(4L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
-                    .itemOutputs(ItemList.Circuit_Processor.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_Resistor.get(4L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(4L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
-                    .itemOutputs(ItemList.Circuit_Processor.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
+            // Processor Assembly
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Plastic_Advanced.get(1L),
@@ -991,87 +755,6 @@ public class CircuitAssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(2L),
-                            ItemList.Circuit_Chip_NAND.get(32L),
-                            ItemList.Circuit_Chip_Ram.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 16),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 4))
-                    .itemOutputs(ItemList.Tool_DataStick.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
-                    .requiresCleanRoom().duration(20 * SECONDS).eut(90).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Advanced.get(2L),
-                            ItemList.Circuit_Parts_Diode.get(4L),
-                            ItemList.Circuit_Chip_Ram.get(8L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 16))
-                    .itemOutputs(ItemList.Circuit_Data.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
-                    .requiresCleanRoom().duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2),
-                            ItemList.Circuit_Parts_Coil.get(12L),
-                            ItemList.Circuit_Parts_Capacitor.get(24),
-                            ItemList.Circuit_Chip_Ram.get(16L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 24))
-                    .itemOutputs(ItemList.Circuit_Elite.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier * 2))
-                    .requiresCleanRoom().duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(2L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(2L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 2))
-                    .itemOutputs(ItemList.Circuit_Microprocessor.get(2L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorSMD.get(4L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(4L),
-                            ItemList.Circuit_Parts_TransistorSMD.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
-                    .itemOutputs(ItemList.Circuit_Processor.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(10 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Processor.get(2L),
-                            ItemList.Circuit_Parts_Coil.get(4L),
-                            ItemList.Circuit_Parts_CapacitorSMD.get(8L),
-                            ItemList.Circuit_Chip_Ram.get(4L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 8))
-                    .itemOutputs(ItemList.Circuit_Computer.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
-                    .requiresCleanRoom().duration(20 * SECONDS).eut(96).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                            ItemList.Circuit_Chip_CPU.get(1L),
-                            ItemList.Circuit_Parts_ResistorASMD.get(4L),
-                            ItemList.Circuit_Parts_CapacitorASMD.get(1L),
-                            ItemList.Circuit_Parts_TransistorASMD.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 4))
-                    .itemOutputs(ItemList.Circuit_Processor.get(1L))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).requiresCleanRoom().duration(5 * SECONDS)
-                    .eut(60).addTo(sCircuitAssemblerRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                             ItemList.Circuit_Processor.get(2L),
                             ItemList.Circuit_Parts_InductorASMD.get(1L),
                             ItemList.Circuit_Parts_CapacitorASMD.get(2L),
@@ -1080,11 +763,12 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .itemOutputs(ItemList.Circuit_Computer.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
                     .requiresCleanRoom().duration(10 * SECONDS).eut(96).addTo(sCircuitAssemblerRecipes);
 
+            // Workstation
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                             ItemList.Circuit_Advanced.get(2L),
-                            ItemList.Circuit_Parts_DiodeSMD.get(4L),
+                            ItemList.Circuit_Parts_Diode.get(4L),
                             ItemList.Circuit_Chip_Ram.get(8L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Electrum, 16),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 16))
@@ -1102,6 +786,19 @@ public class CircuitAssemblerRecipes implements Runnable {
                     .itemOutputs(ItemList.Circuit_Data.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier))
                     .requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCircuitAssemblerRecipes);
 
+            // Mainframe
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2),
+                            ItemList.Circuit_Parts_Coil.get(12L),
+                            ItemList.Circuit_Parts_Capacitor.get(24),
+                            ItemList.Circuit_Chip_Ram.get(16L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 24))
+                    .itemOutputs(ItemList.Circuit_Elite.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier * 2))
+                    .requiresCleanRoom().duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(sCircuitAssemblerRecipes);
+
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 2),
@@ -1112,8 +809,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 16))
                     .itemOutputs(ItemList.Circuit_Elite.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier * 2))
                     .requiresCleanRoom().duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCircuitAssemblerRecipes);
-            // Nanotech Circuits
 
+            // Nanotech Circuits
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
