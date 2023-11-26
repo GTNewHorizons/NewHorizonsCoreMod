@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -37,6 +38,7 @@ public class ScriptChisel implements IScriptLoader {
                 Chisel.ID,
                 ProjectRedExploration.ID,
                 BiomesOPlenty.ID,
+                Botania.ID,
                 Chisel.ID,
                 EnderIO.ID,
                 GalacticraftCore.ID,
@@ -571,5 +573,8 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper
                 .addVariationFromStack("red_mushroom", getModItem(Minecraft.ID, "red_mushroom_block", 1, 15, missing));
 
+        ChiselHelper.addGroup("blazeblock");
+        ChiselHelper.addVariationFromStack("blazeblock", getModItem(Botania.ID, "blazeBlock", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("blazeblock", getModItem(GregTech.ID, "gt.blockgem3", 1, 5, missing));
     }
 }
