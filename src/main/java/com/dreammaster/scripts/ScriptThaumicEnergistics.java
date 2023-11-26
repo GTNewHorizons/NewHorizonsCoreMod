@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Gadomancy;
@@ -25,6 +26,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -77,7 +79,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
 
         // ItemStacks for in/out
         ItemStack SingularityDrive = getModItem(EternalSingularity.ID, "eternal_singularity", 1);
-        ItemStack CEC = getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8);
+        // Creative Essentia Cell
+        ItemStack CEC = getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10);
 
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
@@ -3187,6 +3190,54 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
                                 getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 7, missing))));
+
+        // Fluid Quantum Drive
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 8, missing),
+                "---------",
+                "----a----",
+                "---bdb---",
+                "--bcdcb--",
+                "-addedda-",
+                "--bcdcb--",
+                "---bdb---",
+                "----a----",
+                "---------",
+                'a',
+                "blockCosmicNeutronium",
+                'b',
+                "plateDenseNeutronium",
+                'c',
+                "circuitInfinite",
+                'd',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing),
+                'e',
+                getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing));
+        // ME Digital Singularity
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 9, missing),
+                "----a----",
+                "---aba---",
+                "--ecdce--",
+                "-acdddca-",
+                "abddfddba",
+                "-acdddca-",
+                "--ecdce--",
+                "---aba---",
+                "----a----",
+                'a',
+                "blockCosmicNeutronium",
+                'b',
+                getModItem(Avaritia.ID, "Resource", 1, 5),
+                'c',
+                getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
+                'd',
+                getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing),
+                'e',
+                "blockInfinity",
+                'f',
+                getModItem(EternalSingularity.ID, "eternal_singularity", 1));
+
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.cell.workbench", 1, 0, missing),
