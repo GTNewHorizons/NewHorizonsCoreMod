@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AFSU;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 
 import java.util.Arrays;
@@ -48,7 +48,7 @@ public class ScriptAFSU implements IScriptLoader {
                         ItemList.Energy_LapotronicOrb.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AFSU.ID, "ALC", 1)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
     }
 }

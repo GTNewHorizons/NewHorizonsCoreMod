@@ -9,8 +9,8 @@ import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -112,7 +112,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
 
         // Upgrade Frame
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Board_Plastic.get(1), IntegratedCPU)
-                .itemOutputs(UpgradeFrame).duration(10 * SECONDS).eut(24).addTo(sAssemblerRecipes);
+                .itemOutputs(UpgradeFrame).duration(10 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         final ItemList[] AccelerationUpgrades = new ItemList[] { ItemList.IndustrialApiary_Upgrade_Acceleration_1,
                 ItemList.IndustrialApiary_Upgrade_Acceleration_2, ItemList.IndustrialApiary_Upgrade_Acceleration_3,

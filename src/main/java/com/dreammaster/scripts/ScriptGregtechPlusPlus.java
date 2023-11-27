@@ -8,8 +8,8 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -374,7 +374,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(GTPlusPlus.ID, "item.BasicMetaFood", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
-                .duration(5 * SECONDS).eut(4).addTo(sMaceratorRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(maceratorRecipes);
 
         // Shirabon and Eternity
         CORE.RA.addQuantumTransformerRecipe(

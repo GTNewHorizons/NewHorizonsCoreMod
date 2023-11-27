@@ -13,9 +13,9 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
+import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
+import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLaserEngraverRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
@@ -77,40 +77,39 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(5 * SECONDS).eut(8)
-                .addTo(sCutterRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(5 * SECONDS).eut(8).addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 4)).duration(5 * SECONDS).eut(8)
-                .addTo(sCutterRecipes);
+                .addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(2 * SECONDS + 10 * TICKS).eut(8)
-                .addTo(sCutterRecipes);
+                .addTo(cutterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sLaserEngraverRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sLaserEngraverRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sLaserEngraverRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(sLaserEngraverRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicTinkerer.ID, "interface", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicTinkerer.ID, "connector", 1, 0, missing));

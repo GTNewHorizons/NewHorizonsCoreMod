@@ -3,8 +3,8 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -127,25 +127,25 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
                         getModItem(Minecraft.ID, "glowstone", 4, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing))
-                .duration(30 * SECONDS).eut(1920).addTo(sAssemblerRecipes);
+                .duration(30 * SECONDS).eut(1920).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 2, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing))
-                .duration(1 * MINUTES).eut(7680).addTo(sAssemblerRecipes);
+                .duration(1 * MINUTES).eut(7680).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing))
-                .duration(40 * SECONDS).eut(30720).addTo(sAssemblerRecipes);
+                .duration(40 * SECONDS).eut(30720).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 3, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing))
-                .duration(1 * MINUTES + 20 * SECONDS).eut(122880).addTo(sAssemblerRecipes);
+                .duration(1 * MINUTES + 20 * SECONDS).eut(122880).addTo(assemblerRecipes);
 
     }
 }

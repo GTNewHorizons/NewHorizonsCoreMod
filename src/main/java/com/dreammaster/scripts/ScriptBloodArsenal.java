@@ -8,11 +8,11 @@ import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
+import static gregtech.api.recipe.RecipeMaps.latheRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sLatheRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -696,42 +696,42 @@ public class ScriptBloodArsenal implements IScriptLoader {
                         getModItem(BloodArsenal.ID, "blood_money", 1, 0, missing),
                         getModItem(BloodArsenal.ID, "blood_money", 1, 0, missing),
                         getModItem(BloodArsenal.ID, "blood_money", 1, 0, missing))
-                .outputChances(10000, 10000, 10000, 10000).duration(20 * SECONDS).eut(30).addTo(sCentrifugeRecipes);
+                .outputChances(10000, 10000, 10000, 10000).duration(20 * SECONDS).eut(30).addTo(centrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 1, 2, missing))
                 .itemOutputs(
                         getModItem(BloodArsenal.ID, "blood_money", 1, 1, missing),
                         getModItem(BloodArsenal.ID, "blood_money", 1, 1, missing),
                         getModItem(BloodArsenal.ID, "blood_money", 1, 1, missing),
                         getModItem(BloodArsenal.ID, "blood_money", 1, 1, missing))
-                .outputChances(10000, 10000, 10000, 10000).duration(20 * SECONDS).eut(30).addTo(sCentrifugeRecipes);
+                .outputChances(10000, 10000, 10000, 10000).duration(20 * SECONDS).eut(30).addTo(centrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_money", 1, 3, missing))
                 .itemOutputs(
                         getModItem(BloodArsenal.ID, "blood_money", 1, 2, missing),
                         getModItem(BloodArsenal.ID, "blood_money", 1, 2, missing),
                         getModItem(BloodArsenal.ID, "blood_money", 1, 2, missing),
                         getModItem(BloodArsenal.ID, "blood_money", 1, 2, missing))
-                .outputChances(10000, 10000, 10000, 10000).duration(20 * SECONDS).eut(30).addTo(sCentrifugeRecipes);
+                .outputChances(10000, 10000, 10000, 10000).duration(20 * SECONDS).eut(30).addTo(centrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0, missing))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 10)).duration(10 * SECONDS).eut(120)
-                .addTo(sCutterRecipes);
+                .addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0, missing))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(10 * SECONDS).eut(120)
-                .addTo(sCutterRecipes);
+                .addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_wood", 1, 0, missing))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 6, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(5 * SECONDS).eut(120)
-                .addTo(sCutterRecipes);
+                .addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_planks", 1, 0, missing))
                 .itemOutputs(getModItem(BloodArsenal.ID, "blood_infused_stick", 2, 0, missing)).duration(20).eut(8)
-                .addTo(sLatheRecipes);
+                .addTo(latheRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_iron", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BloodInfusedIron, 1L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BloodInfusedIron, 9L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
     }
 }

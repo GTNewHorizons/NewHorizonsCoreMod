@@ -11,10 +11,10 @@ import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.TecTech;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCutterRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sImplosionRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
+import static gregtech.api.recipe.RecipeMaps.implosionRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.BUCKETS;
 import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
@@ -302,13 +302,13 @@ public class ScriptAmunRa implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 1), getIntegratedCircuit(4))
                 .itemOutputs(new ItemStack(baseBlockRock, 1, 7)).duration(2 * SECONDS + 10 * TICKS).eut(4)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(baseBlockRock, 1, 0), getIntegratedCircuit(23))
                 .itemOutputs(new ItemStack(baseBlockRock, 1, 8)).duration(2 * SECONDS + 10 * TICKS).eut(4)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1, 0), getIntegratedCircuit(23))
                 .itemOutputs(new ItemStack(baseBlockRock, 1, 9)).duration(2 * SECONDS + 10 * TICKS).eut(4)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_UV.get(1),
@@ -318,7 +318,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new Object[] { OrePrefixes.gearGt.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(machines3, 1, 1)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.HeavyDutyPlateTier8.getIS(2),
@@ -326,14 +326,14 @@ public class ScriptAmunRa implements IScriptLoader {
                         com.dreammaster.item.ItemList.HeavyDutyRocketFinsTier4.getIS(),
                         getIntegratedCircuit(5))
                 .itemOutputs(new ItemStack(baseItem, 1, 14)).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.HeavyDutyNoseConeTier4.getIS(),
                         new ItemStack(baseItem, 4, 15),
                         getIntegratedCircuit(4))
                 .fluidInputs(Materials.Neutronium.getMolten(QUARTER_INGOT)).itemOutputs(new ItemStack(baseItem, 1, 16))
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(sAssemblerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         new Object[] { "compressedTin", 4 },
@@ -352,7 +352,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ItemList.Emitter_UHV.get(1))
                 .fluidInputs(new FluidStack(mutatedLivingSolder, 4 * INGOTS))
                 .itemOutputs(new ItemStack(baseItem, 1, 28)).duration(2 * MINUTES).eut(TierEU.RECIPE_UHV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(simpleItem, 16, 3),
@@ -361,7 +361,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new Object[] { OrePrefixes.gearGtSmall.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(baseItem, 1, 30)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         /************************
          * Implosion Compressor *
@@ -372,7 +372,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         com.dreammaster.item.ItemList.HeavyDutyAlloyIngotT9.getIS(),
                         GT_ModHandler.getIC2Item("industrialTnt", 18))
                 .itemOutputs(new ItemStack(baseItem, 1, 15), Materials.Neutronium.getDustTiny(8)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sImplosionRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(implosionRecipes);
 
         /*********
          * Mixer *
@@ -380,7 +380,7 @@ public class ScriptAmunRa implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(Materials.Carbon.getNanite(4), Materials.Neutronium.getNanite(1))
                 .fluidInputs(Materials.Infinity.getMolten(INGOTS)).itemOutputs(new ItemStack(baseItem, 5, 27))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sMixerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(mixerRecipes);
 
         /*****************
          * Assembly Line *
@@ -548,13 +548,13 @@ public class ScriptAmunRa implements IScriptLoader {
         addShapedOredictRecipe(GT_Utility.copyAmount(4, plank), "S", "L", 'S', "craftingToolSaw", 'L', log);
         GT_Values.RA.stdBuilder().itemInputs(log).fluidInputs(Materials.Lubricant.getFluid(1))
                 .itemOutputs(GT_Utility.copyAmount(6, plank), Materials.Wood.getDust(1)).duration(10 * SECONDS).eut(7)
-                .addTo(sCutterRecipes);
+                .addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(log).fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3))
                 .itemOutputs(GT_Utility.copyAmount(4, plank), Materials.Wood.getDust(2)).duration(20 * SECONDS).eut(7)
-                .addTo(sCutterRecipes);
+                .addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(log).fluidInputs(Materials.Water.getFluid(5))
                 .itemOutputs(GT_Utility.copyAmount(4, plank), Materials.Wood.getDust(2)).duration(20 * SECONDS).eut(7)
-                .addTo(sCutterRecipes);
+                .addTo(cutterRecipes);
 
         // Slabs -> Planks
         GameRegistry.addShapedRecipe(plank, "S", "S", 'S', slab);
@@ -574,11 +574,11 @@ public class ScriptAmunRa implements IScriptLoader {
         final int eut = isRock ? 7 : 4;
 
         GT_Values.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.Lubricant.getFluid(1)).itemOutputs(slab)
-                .duration(1 * SECONDS + 5 * TICKS).eut(eut).addTo(sCutterRecipes);
+                .duration(1 * SECONDS + 5 * TICKS).eut(eut).addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(input).fluidInputs(Materials.Water.getFluid(4)).itemOutputs(slab)
-                .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(sCutterRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(input).fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3))
-                .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(sCutterRecipes);
+                .itemOutputs(slab).duration(2 * SECONDS + 10 * TICKS).eut(eut).addTo(cutterRecipes);
     }
 
 }
