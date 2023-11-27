@@ -7,14 +7,14 @@ import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCrackingRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistillationRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFusionRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMultiblockChemicalRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPyrolyseRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sVacuumRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.crackingRecipes;
+import static gregtech.api.recipe.RecipeMaps.distillationTowerRecipes;
+import static gregtech.api.recipe.RecipeMaps.fusionRecipes;
+import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
+import static gregtech.api.recipe.RecipeMaps.pyrolyseRecipes;
+import static gregtech.api.recipe.RecipeMaps.vacuumFreezerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
@@ -185,23 +185,23 @@ public class BacteriaRegistry {
         // XenoxRecycleRecipe
         GT_Values.RA.stdBuilder().itemOutputs(Ash.getDust(1)).fluidInputs(DelutedXenoxene.getFluid(1000))
                 .fluidOutputs(Xenoxene.getFluid(250), RadoxLight.getGas(300)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(sDistillationRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
 
         // LightRadox + Nq -> Enriched Naquadah condensation int aChance, int aDuration, int aEUt, boolean aCleanroom
         GT_Values.RA.stdBuilder().itemInputs(Materials.Naquadah.getDust(1))
                 .itemOutputs(Materials.NaquadahEnriched.getDust(3)).outputChances(10000)
                 .fluidInputs(RadoxLight.getGas(2000)).duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
 
         // super heavy -> heavy radox conversion
         GT_Values.RA.stdBuilder().itemOutputs().fluidInputs(RadoxSuperHeavy.getFluid(1000))
                 .fluidOutputs(RadoxHeavy.getFluid(2000)).duration(50 * MINUTES).eut(TierEU.RECIPE_UV).noOptimize()
-                .addTo(sCentrifugeRecipes);
+                .addTo(centrifugeRecipes);
 
         // heavy radox + Nq+ -> Nq*
         GT_Values.RA.stdBuilder().itemInputs(Materials.NaquadahEnriched.getDust(1))
                 .itemOutputs(Materials.Naquadria.getDust(3)).outputChances(10000).fluidInputs(RadoxHeavy.getFluid(4000))
-                .duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(sAutoclaveRecipes);
+                .duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
 
     }
 
@@ -211,7 +211,7 @@ public class BacteriaRegistry {
                         GT_ModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 64L),
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(Ash.getDust(8)).fluidInputs(Xenoxene.getFluid(1000)).fluidOutputs(RawRadox.getFluid(1000))
-                .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).addTo(sPyrolyseRecipes);
+                .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).addTo(pyrolyseRecipes);
 
         GT_Values.RA.stdBuilder().itemOutputs(Ash.getDust(5)).fluidInputs(RawRadox.getFluid(5000))
                 .fluidOutputs(
@@ -226,37 +226,37 @@ public class BacteriaRegistry {
                         DelutedXenoxene.getFluid(50),
                         RadoxLight.getGas(300),
                         RadoxSuperLight.getGas(500))
-                .duration(40 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sDistillationRecipes);
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(distillationTowerRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(24))
                 .fluidInputs(RadoxSuperLight.getGas(100), Silver.getPlasma(1)).fluidOutputs(RadoxCracked.getGas(100))
-                .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(sCrackingRecipes);
+                .duration(25 * SECONDS).eut(TierEU.RECIPE_UV).addTo(crackingRecipes);
 
         GT_Values.RA.stdBuilder().itemOutputs(Ash.getDust(1)).fluidInputs(RadoxCracked.getGas(1000))
                 .fluidOutputs(RadoxGas.getGas(100), RadoxLight.getGas(200)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(sDistillationRecipes);
+                .addTo(distillationTowerRecipes);
 
         // Ti & O Plasma Recipes
         GT_Values.RA.stdBuilder().fluidInputs(Aluminium.getMolten(144), Fluorine.getGas(144))
                 .fluidOutputs(Titanium.getPlasma(144)).duration(8 * SECONDS).eut(49_152)
-                .metadata(FUSION_THRESHOLD, 100_000_000).addTo(sFusionRecipes);
+                .metadata(FUSION_THRESHOLD, 100_000_000).addTo(fusionRecipes);
 
         GT_Values.RA.stdBuilder().fluidInputs(Helium.getPlasma(144), Lithium.getMolten(144))
                 .fluidOutputs(Boron.getPlasma(144)).duration(12 * SECONDS).eut(10_240)
-                .metadata(FUSION_THRESHOLD, 50_000_000).addTo(sFusionRecipes);
+                .metadata(FUSION_THRESHOLD, 50_000_000).addTo(fusionRecipes);
 
         GT_Values.RA.stdBuilder().fluidInputs(Boron.getPlasma(144), Lithium.getMolten(144))
                 .fluidOutputs(Oxygen.getPlasma(144)).duration(12 * SECONDS).eut(49_152)
-                .metadata(FUSION_THRESHOLD, 100_000_000).addTo(sFusionRecipes);
+                .metadata(FUSION_THRESHOLD, 100_000_000).addTo(fusionRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(2))
                 .fluidInputs(RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L))
                 .fluidOutputs(GT_CoreModSupport.RadoxPolymer.getMolten(720L)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(sMultiblockChemicalRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(multiblockChemicalReactorRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.cell, RadoxPolymer, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.cellMolten, RadoxPolymer, 1L)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(sVacuumRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(vacuumFreezerRecipes);
 
         runAdditionalFuelRecipes();
     }

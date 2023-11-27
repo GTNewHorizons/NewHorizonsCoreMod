@@ -11,14 +11,14 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
+import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBlastRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sWiremillRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
@@ -100,14 +100,14 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         // Quad Core
         GT_Values.RA.stdBuilder()
                 .itemInputs(CraftingUnit, GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Elite), 2))
-                .itemOutputs(CoCraftingUnit4x).duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .itemOutputs(CoCraftingUnit4x).duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // 16 core
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CraftingUnit,
                         GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.SuperconductorUHV), 2))
-                .itemOutputs(CoCraftingUnit16x).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sAssemblerRecipes);
+                .itemOutputs(CoCraftingUnit16x).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         // Advanced Storage Housing
         GT_ModHandler.removeRecipeByOutput(AE2_ADVANCED_HOUSING);
@@ -118,7 +118,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 3L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
                         GT_Utility.getIntegratedCircuit(3))
-                .itemOutputs(AE2_ADVANCED_HOUSING).duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .itemOutputs(AE2_ADVANCED_HOUSING).duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
         GT_ModHandler.addCraftingRecipe(
                 AE2_ADVANCED_HOUSING,
                 new Object[] { "hPS", "CGC", "SCd", 'P', CERTUS_PLATE, 'S',
@@ -189,7 +189,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                             GT_Utility.getIntegratedCircuit(1))
                     .itemOutputs(components[0]).fluidInputs(solder).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
-                    .requiresCleanRoom().addTo(sCircuitAssemblerRecipes);
+                    .requiresCleanRoom().addTo(circuitAssemblerRecipes);
             // 1024k
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -199,7 +199,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                             GT_Utility.getIntegratedCircuit(1))
                     .itemOutputs(components[1]).fluidInputs(solder).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
-                    .requiresCleanRoom().addTo(sCircuitAssemblerRecipes);
+                    .requiresCleanRoom().addTo(circuitAssemblerRecipes);
             // 4096k
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -209,7 +209,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             ItemList.Circuit_Board_Wetware_Extreme.get(1),
                             GT_Utility.getIntegratedCircuit(1))
                     .itemOutputs(components[2]).fluidInputs(solder).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
-                    .requiresCleanRoom().addTo(sCircuitAssemblerRecipes);
+                    .requiresCleanRoom().addTo(circuitAssemblerRecipes);
             // 16384k
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -219,7 +219,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                             ItemList.Circuit_Board_Bio_Ultra.get(1),
                             GT_Utility.getIntegratedCircuit(1))
                     .itemOutputs(components[3]).fluidInputs(solder).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
-                    .requiresCleanRoom().addTo(sCircuitAssemblerRecipes);
+                    .requiresCleanRoom().addTo(circuitAssemblerRecipes);
         }
 
         // Advanced Crafting Storage
@@ -233,7 +233,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             GT_ModHandler.removeRecipeByOutput(storage[i]);
             GT_Values.RA.stdBuilder()
                     .itemInputs(components[i], getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1))
-                    .itemOutputs(storage[i]).duration(20 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+                    .itemOutputs(storage[i]).duration(20 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         }
 
         // ME Block Container
@@ -251,7 +251,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         AE2_ME_CHEST,
                         AE2_HOUSING,
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(AE2_BLOCK_CONTAINER).duration(2 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .itemOutputs(AE2_BLOCK_CONTAINER).duration(2 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Fluix Glass Cable
         for (int i = 0; i < 16; i++) {
             FluixGlassCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, i);
@@ -270,37 +270,37 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         }
         GT_Values.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.Rubber.getMolten(144L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(108L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(AE2_ME_Glass_Cable, GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(72L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         AE2_ME_Glass_Cable,
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
                 .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(36L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         AE2_ME_Glass_Cable,
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
                 .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(36L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         AE2_ME_Glass_Cable,
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(36L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         AE2_ME_Glass_Cable,
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(AE2_ME_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(36L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -308,28 +308,28 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                 .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144L)).duration(25 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                 .fluidInputs(Materials.Silicone.getMolten(144L)).duration(25 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                 .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144L)).duration(25 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36))
                 .fluidInputs(Materials.Silicone.getMolten(144L)).duration(25 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         // --- Fluix Dense Covered Cable
         for (int i = 0; i < 16; i++) {
@@ -345,37 +345,37 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(216L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(144L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
                 .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.PolyvinylChloride, 1))
                 .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.StyreneButadieneRubber.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(AE2_ME_Dense_Covered_Cable).fluidInputs(Materials.Silicone.getMolten(72L))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -383,28 +383,28 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
                 .fluidInputs(Materials.StyreneButadieneRubber.getMolten(288L)).duration(35 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
                 .fluidInputs(Materials.Silicone.getMolten(288L)).duration(35 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
                 .fluidInputs(Materials.StyreneButadieneRubber.getMolten(288L)).duration(35 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 36),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536))
                 .fluidInputs(Materials.Silicone.getMolten(288L)).duration(35 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -412,28 +412,28 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556))
                 .fluidInputs(Materials.StyreneButadieneRubber.getMolten(576L)).duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 536),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556))
                 .fluidInputs(Materials.Silicone.getMolten(576L)).duration(45 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 536),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556))
                 .fluidInputs(Materials.StyreneButadieneRubber.getMolten(576L)).duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 536),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556))
                 .fluidInputs(Materials.Silicone.getMolten(576L)).duration(45 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         // ME Smart Cable Fluix
         for (int i = 0; i < 16; i++) {
@@ -450,7 +450,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 56))
                 .fluidInputs(Materials.ConductiveIron.getMolten(144L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
@@ -458,7 +458,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 56))
                 .fluidInputs(Materials.ConductiveIron.getMolten(144L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         // --- ME Smart Dense Cable Fluix
         for (int i = 0; i < 16; i++) {
@@ -474,7 +474,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 76))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(7 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
@@ -482,7 +482,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 76))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(7 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -491,7 +491,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 576))
                 .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556),
@@ -499,7 +499,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 576))
                 .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         // ME Quantum Storage
         GT_ModHandler
@@ -1784,127 +1784,127 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 1, 0, missing),
                         getModItem(Minecraft.ID, "glowstone_dust", 8, 0, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzLamp", 1, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 7, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzLamp", 1, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 8, 0, missing),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSkyChest", 1, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 8, 1, missing),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockSkyChest", 1, 1, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 1, missing))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 0, missing))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 36, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 1, missing))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 37, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 2, missing))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 38, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingStorage", 1, 3, missing))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingMonitor", 1, 0, missing))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzTorch", 1, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.gem, Materials.CertusQuartz, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockLightDetector", 1, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 200, missing))
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 160, missing))
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 200, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing))
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 160, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing))
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 80, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 100, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 80, missing))
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 80, missing),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 100, missing))
-                .duration(5 * SECONDS).eut(4).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 3, 140, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 8, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 3, 16, missing))
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
@@ -1913,7 +1913,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1),
@@ -1922,7 +1922,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 240, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1),
@@ -1931,7 +1931,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 260, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Terminal
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1941,7 +1941,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Good), 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Crafting Terminal
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1951,7 +1951,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Processing Pattern Terminal
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1961,7 +1961,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         ItemList.Electric_Motor_LuV.get(2L),
                         ItemList.Robot_Arm_LuV.get(1L))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 500, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Interface Terminal
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1971,7 +1971,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 480, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Conversion Monitor
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1981,7 +1981,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 420, missing))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Pattern Terminal
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1991,7 +1991,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 340, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Formation Plane
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2000,7 +2000,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 7, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Annihilation Plane
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2009,7 +2009,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 7, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 300, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // P2P Tunnel - ME
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2018,7 +2018,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 7, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460, missing))
-                .duration(18 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(18 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // ME Storage Monitor
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2027,7 +2027,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 160, missing),
@@ -2035,7 +2035,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 200, missing),
@@ -2043,7 +2043,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Portable Cell
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2052,25 +2052,26 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ToolPortableCell", 1, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Quartz Glass
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass", 4, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).noOptimize().addTo(sBlastRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).noOptimize()
+                .addTo(blastFurnaceRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass", 4, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0, missing))
-                .duration(20 * SECONDS).eut(16).noOptimize().addTo(sAlloySmelterRecipes);
+                .duration(20 * SECONDS).eut(16).noOptimize().addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing))
                 .itemOutputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockTinyTNT", 1, 0, missing),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockTinyTNT", 1, 0, missing))
-                .duration(30 * SECONDS).eut(5).addTo(sCentrifugeRecipes);
+                .duration(30 * SECONDS).eut(5).addTo(centrifugeRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 1),
@@ -2093,21 +2094,21 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4, 8, missing))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         // Quartz Fiber
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CertusQuartz, 2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sWiremillRecipes);
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CertusQuartzCharged, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sWiremillRecipes);
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 8))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sWiremillRecipes);
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Quartzite, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing))
-                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sWiremillRecipes);
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
 
     }
 }

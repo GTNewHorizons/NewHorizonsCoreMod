@@ -9,18 +9,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
 import com.dreammaster.gthandler.gui.CoreMod_UITextures;
-import com.gtnewhorizons.modularui.api.math.Pos2d;
-import com.gtnewhorizons.modularui.api.math.Size;
-import com.gtnewhorizons.modularui.api.screen.ModularWindow;
-import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
-import com.gtnewhorizons.modularui.common.widget.ProgressBar;
+import com.gtnewhorizons.modularui.api.drawable.FallbackableUITexture;
 
 import gregtech.api.enums.Textures;
+import gregtech.api.gui.modularui.GT_UITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine;
 import gregtech.api.objects.GT_RenderedTexture;
+import gregtech.api.recipe.BasicUIProperties;
 import gregtech.common.items.GT_IntegratedCircuit_Item;
 
 /**
@@ -188,15 +186,11 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
         return true;
     }
 
+    private static final FallbackableUITexture progressBarTexture = GT_UITextures
+            .fallbackableProgressbar("name_remover", CoreMod_UITextures.PROGRESSBAR_NAME_REMOVER);
+
     @Override
-    public void addUIWidgets(ModularWindow.Builder builder, UIBuildContext buildContext) {
-        super.addUIWidgets(builder, buildContext);
-        builder.widget(
-                createProgressBar(
-                        CoreMod_UITextures.PROGRESSBAR_NAME_REMOVER,
-                        20,
-                        ProgressBar.Direction.RIGHT,
-                        new Pos2d(78, 24),
-                        new Size(20, 18)));
+    protected BasicUIProperties getUIProperties() {
+        return super.getUIProperties().toBuilder().progressBarTexture(progressBarTexture).build();
     }
 }

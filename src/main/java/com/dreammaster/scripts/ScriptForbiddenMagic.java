@@ -15,9 +15,9 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -93,9 +93,9 @@ public class ScriptForbiddenMagic implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
                 .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0, missing)).duration(1 * MINUTES).eut(5)
-                .addTo(sCentrifugeRecipes);
+                .addTo(centrifugeRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing))
-                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(sExtractorRecipes);
+                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
 
         BloodMagicHelper.removeAltarRecipe(getModItem(ForbiddenMagic.ID, "WandCores", 1, 3, missing));
         AltarRecipeRegistry.registerAltarRecipe(

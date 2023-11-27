@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFermentingRecipes;
+import static gregtech.api.recipe.RecipeMaps.fermentingRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraftforge.fluids.FluidRegistry;
@@ -14,15 +14,15 @@ public class FermenterRecipes implements Runnable {
     public void run() {
         GT_Values.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("concrete", 1000))
                 .fluidOutputs(Materials.Concrete.getMolten(1000)).duration(1 * SECONDS).eut(16)
-                .addTo(sFermentingRecipes);
+                .addTo(fermentingRecipes);
 
         GT_Values.RA.stdBuilder().fluidInputs(Materials.Concrete.getMolten(1000))
                 .fluidOutputs(Materials.ConstructionFoam.getFluid(1000)).duration(1 * SECONDS).eut(16)
-                .addTo(sFermentingRecipes);
+                .addTo(fermentingRecipes);
 
         GT_Values.RA.stdBuilder().fluidInputs(Materials.ConstructionFoam.getFluid(1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("concrete", 1000)).duration(1 * SECONDS).eut(16)
-                .addTo(sFermentingRecipes);
+                .addTo(fermentingRecipes);
 
     }
 }

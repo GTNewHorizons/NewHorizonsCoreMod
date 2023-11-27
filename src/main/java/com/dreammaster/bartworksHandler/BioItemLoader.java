@@ -6,10 +6,10 @@ import static com.github.bartimaeusnek.bartworks.API.BioRecipeAdder.addBacterial
 import static gregtech.api.enums.GT_Values.*;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCentrifugeRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidExtractionRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMultiblockChemicalRecipes;
+import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
+import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
@@ -76,15 +76,15 @@ public class BioItemLoader {
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(Materials.Phosphorus.getDust(1), new ItemStack(BIOTEMS, 4, 1))
                 .fluidInputs(new FluidStack(BIOFLUIDS[0], 6000)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
-                .addTo(sCentrifugeRecipes);
+                .addTo(centrifugeRecipes);
 
         RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(11), new ItemStack(BIOTEMS, 1, 1))
                 .itemOutputs(new ItemStack(BIOTEMS, 1, 2)).fluidInputs(GT_ModHandler.getDistilledWater(1000))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sMixerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(Materials.MeatRaw.getDust(1))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[1], 125)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sFluidExtractionRecipes);
+                .addTo(fluidExtractionRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -96,7 +96,7 @@ public class BioItemLoader {
                         Materials.PhthalicAcid.getFluid(3000),
                         new FluidStack(BIOFLUIDS[1], 1000))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[2], 8000)).duration(60 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(sMultiblockChemicalRecipes);
+                .addTo(multiblockChemicalReactorRecipes);
 
         addBacterialVatRecipe(
                 new ItemStack[] { ItemList.IC2_Energium_Dust.get(8), Materials.Mytryl.getDust(1),
@@ -114,7 +114,7 @@ public class BioItemLoader {
             GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(i + 1))
                     .itemOutputs(OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64))
                     .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000)).duration(2 * SECONDS).eut(TierEU.RECIPE_UV)
-                    .noOptimize().addTo(sCentrifugeRecipes);
+                    .noOptimize().addTo(centrifugeRecipes);
         }
         addBacterialVatRecipe(
                 new ItemStack[] { Materials.MeatRaw.getDust(4), Materials.Salt.getDust(4), Materials.Calcium.getDust(4),

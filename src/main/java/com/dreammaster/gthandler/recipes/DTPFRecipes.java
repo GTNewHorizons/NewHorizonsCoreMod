@@ -2,8 +2,8 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.GregTech_API.mGTPlusPlus;
 import static gregtech.api.enums.Mods.*;
+import static gregtech.api.recipe.RecipeMaps.plasmaForgeRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPlasmaForgeRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
@@ -66,7 +66,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8),
                                 Materials.Neutronium.getMolten(tier_1_quantity))
                         .duration(base_time).eut(25_165_824).metadata(COIL_HEAT, awakened_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 25442L;
@@ -79,7 +79,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4),
                                 Materials.Neutronium.getMolten(tier_2_quantity))
                         .duration(base_time / 2).eut(50_331_648).metadata(COIL_HEAT, infinity_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_3 = 10979L;
@@ -92,7 +92,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2),
                                 Materials.Neutronium.getMolten(tier_3_quantity))
                         .duration(base_time / 4).eut(100_663_296).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_4_quantity = 144L * base_quantity
                         * tier_up_multiplier
@@ -108,7 +108,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4),
                                 Materials.Neutronium.getMolten(tier_4_quantity))
                         .duration(base_time / 8).eut(201_326_592).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             {
@@ -135,7 +135,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_bee_1 / 8),
                                 Materials.CosmicNeutronium.getMolten(tier_1_quantity))
                         .duration(base_time_bee).eut(7_115_337).metadata(COIL_HEAT, awakened_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_bee_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_bee_2 = (long) (12085L * 0.85);
@@ -151,7 +151,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_bee_2 / 4),
                                 Materials.CosmicNeutronium.getMolten(tier_2_bee_quantity))
                         .duration(base_time_bee / 2).eut(14_230_674).metadata(COIL_HEAT, infinity_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_3_bee_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_bee_3 = (long) (5215L * 0.85);
@@ -167,7 +167,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_bee_3 / 2),
                                 Materials.CosmicNeutronium.getMolten(tier_3_bee_quantity))
                         .duration(base_time_bee / 4).eut(28_461_349).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_4_bee_quantity = 144L * base_quantity
                         * tier_up_multiplier
@@ -186,7 +186,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_bee_4),
                                 Materials.CosmicNeutronium.getMolten(tier_4_bee_quantity))
                         .duration(base_time_bee / 8).eut(56_922_697).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // normal ones
 
@@ -200,7 +200,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8),
                                 Materials.CosmicNeutronium.getMolten(tier_1_quantity))
                         .duration(base_time).eut(7_115_337).metadata(COIL_HEAT, awakened_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 12085L;
@@ -213,7 +213,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4),
                                 Materials.CosmicNeutronium.getMolten(tier_2_quantity))
                         .duration(base_time / 2).eut(14_230_674).metadata(COIL_HEAT, infinity_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_3 = 5215L;
@@ -226,7 +226,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2),
                                 Materials.CosmicNeutronium.getMolten(tier_3_quantity))
                         .duration(base_time / 4).eut(28_461_349).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_4_quantity = 144L * base_quantity
                         * tier_up_multiplier
@@ -242,7 +242,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4),
                                 Materials.CosmicNeutronium.getMolten(tier_4_quantity))
                         .duration(base_time / 8).eut(56_922_697).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             {
@@ -264,7 +264,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8),
                                 Materials.Bedrockium.getMolten(tier_1_quantity))
                         .duration(base_time).eut(29_659_721).metadata(COIL_HEAT, awakened_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = tier_1_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 40299L;
@@ -277,7 +277,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4),
                                 Materials.Bedrockium.getMolten(tier_2_quantity))
                         .duration(base_time / 2).eut(59_319_442).metadata(COIL_HEAT, infinity_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = tier_2_quantity * tier_up_multiplier;
                 long fuel_quantity_3 = 17391L;
@@ -290,7 +290,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2),
                                 Materials.Bedrockium.getMolten(tier_3_quantity))
                         .duration(base_time / 4).eut(118_638_885).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
                 long fuel_quantity_4 = 7337L;
@@ -303,7 +303,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4),
                                 Materials.Bedrockium.getMolten(tier_4_quantity))
                         .duration(base_time / 8).eut(237_277_769).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             if (mGTPlusPlus) {
@@ -319,7 +319,7 @@ public class DTPFRecipes implements Runnable {
                                 new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1584),
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L / 4))
                         .duration(1 * MINUTES + 15 * SECONDS).eut(800_000_000).metadata(COIL_HEAT, infinity_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Hypogen v2
                 GT_Values.RA.stdBuilder()
@@ -332,7 +332,7 @@ public class DTPFRecipes implements Runnable {
                                 new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 2880),
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L / 2))
                         .duration(1 * MINUTES + 15 * SECONDS).eut(1_200_000_000).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Hypogen v3
                 GT_Values.RA.stdBuilder()
@@ -346,7 +346,7 @@ public class DTPFRecipes implements Runnable {
                                 new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 5760),
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L))
                         .duration(1 * MINUTES + 15 * SECONDS).eut(1_600_000_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Hypogen v4
                 GT_Values.RA.stdBuilder()
@@ -360,7 +360,7 @@ public class DTPFRecipes implements Runnable {
                                 new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 5760 * 2),
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(2000L))
                         .duration(1 * MINUTES + 15 * SECONDS).eut(2_000_000_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 {
                     // Chromatic Glass
@@ -383,7 +383,7 @@ public class DTPFRecipes implements Runnable {
                                             FluidRegistry.getFluid("molten.chromaticglass"),
                                             (int) tier_1_quantity))
                             .duration(base_time).eut(50_331_648).metadata(COIL_HEAT, awakened_heat)
-                            .addTo(sPlasmaForgeRecipes);
+                            .addTo(plasmaForgeRecipes);
 
                     long tier_2_quantity = tier_1_quantity * tier_up_multiplier;
                     long fuel_quantity_2 = 61060L;
@@ -398,7 +398,7 @@ public class DTPFRecipes implements Runnable {
                                             FluidRegistry.getFluid("molten.chromaticglass"),
                                             (int) tier_2_quantity))
                             .duration(base_time / 2).eut(100_663_296).metadata(COIL_HEAT, infinity_heat)
-                            .addTo(sPlasmaForgeRecipes);
+                            .addTo(plasmaForgeRecipes);
 
                     long tier_3_quantity = tier_2_quantity * tier_up_multiplier;
                     long fuel_quantity_3 = 26350L;
@@ -412,7 +412,7 @@ public class DTPFRecipes implements Runnable {
                                             FluidRegistry.getFluid("molten.chromaticglass"),
                                             (int) tier_3_quantity))
                             .duration(base_time / 4).eut(201_326_592).metadata(COIL_HEAT, hypogen_heat)
-                            .addTo(sPlasmaForgeRecipes);
+                            .addTo(plasmaForgeRecipes);
 
                     long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
                     long fuel_quantity_4 = 11117L;
@@ -426,7 +426,7 @@ public class DTPFRecipes implements Runnable {
                                             FluidRegistry.getFluid("molten.chromaticglass"),
                                             (int) tier_4_quantity))
                             .duration(base_time / 8).eut(402_653_184).metadata(COIL_HEAT, eternal_heat)
-                            .addTo(sPlasmaForgeRecipes);
+                            .addTo(plasmaForgeRecipes);
                 }
 
                 // SpaceTime v1
@@ -436,7 +436,7 @@ public class DTPFRecipes implements Runnable {
                                 Materials.Infinity.getMolten(2304L),
                                 new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1152))
                         .fluidOutputs(MaterialsUEVplus.SpaceTime.getMolten(144L)).duration(40 * SECONDS)
-                        .eut(1_000_000_000).metadata(COIL_HEAT, hypogen_heat).addTo(sPlasmaForgeRecipes);
+                        .eut(1_000_000_000).metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
 
                 // Spacetime v2
                 GT_Values.RA.stdBuilder()
@@ -447,7 +447,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(5000L),
                                 Materials.Infinity.getMolten(1152L))
                         .fluidOutputs(MaterialsUEVplus.SpaceTime.getMolten(576L)).duration(20 * SECONDS)
-                        .eut(2_000_000_000).metadata(COIL_HEAT, eternal_heat).addTo(sPlasmaForgeRecipes);
+                        .eut(2_000_000_000).metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
                 // Raw Tesseract recipe
                 // 16 Vertices, 24 faces and 32 edges.
@@ -463,7 +463,7 @@ public class DTPFRecipes implements Runnable {
                         .itemOutputs(ItemList.Tesseract.get(4)).fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(1000))
                         .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000 / 2))
                         .duration(40 * SECONDS).eut(32_000_000).metadata(COIL_HEAT, infinity_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Raw Tesseract v2
                 GT_Values.RA.stdBuilder()
@@ -477,7 +477,7 @@ public class DTPFRecipes implements Runnable {
                         .itemOutputs(ItemList.Tesseract.get(8)).fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(1000))
                         .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000))
                         .duration(40 * SECONDS).eut(128_000_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Raw Tesseract v3
                 GT_Values.RA.stdBuilder()
@@ -490,7 +490,7 @@ public class DTPFRecipes implements Runnable {
                         .fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(1000))
                         .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(2000))
                         .duration(40 * SECONDS).eut(512_000_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Transcendent metal
                 GT_Values.RA.stdBuilder()
@@ -508,7 +508,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(5632 * 2),
                                 ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144 * 20 * 9))
                         .duration(40 * SECONDS).eut(256_000_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Quantum + Astral Titanium
                 GT_Values.RA.stdBuilder().itemInputs(
@@ -528,7 +528,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(8547),
                                 ALLOY.QUANTUM.getFluidStack(144 * 320))
                         .duration(27 * SECONDS).eut(1_543_932_302).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Quantum + Astral Titanium v2
                 GT_Values.RA.stdBuilder().itemInputs(
@@ -548,7 +548,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(3801 * 2),
                                 ALLOY.QUANTUM.getFluidStack(144 * 640))
                         .duration(13 * SECONDS + 10 * TICKS).eut(1_543_932_303).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Timepiece
                 GT_Values.RA.stdBuilder()
@@ -565,7 +565,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(100000L * 2),
                                 MaterialsUEVplus.Space.getMolten(18432L * 8))
                         .duration(80 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Time to Space
                 GT_Values.RA.stdBuilder().itemInputs(
@@ -583,7 +583,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L * 2),
                                 MaterialsUEVplus.Space.getMolten(9216L * 64))
                         .duration(10 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // Space to Time
                 GT_Values.RA.stdBuilder().itemInputs(
@@ -599,7 +599,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L * 2),
                                 MaterialsUEVplus.Time.getMolten(9216L * 64))
                         .duration(10 * SECONDS).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 13500)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             if (Avaritia.isModLoaded()) {
@@ -620,7 +620,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_5 * 2),
                                 Materials.Infinity.getMolten(256L * 144L))
                         .duration(base_time / 8).eut(409_600_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long fuel_quantity_3 = (long) (26_244 * 0.85);
 
@@ -634,7 +634,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3),
                                 Materials.Infinity.getMolten(128L * 144L))
                         .duration(base_time / 4).eut(204_800_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long fuel_quantity_4 = (long) (58_932 * 0.85);
 
@@ -648,7 +648,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4 / 2),
                                 Materials.Infinity.getMolten(64L * 144L))
                         .duration(base_time / 2).eut(102_400_000).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long fuel_quantity_special_bee = (long) ((58_932L / 64) * 0.75);
 
@@ -663,7 +663,7 @@ public class DTPFRecipes implements Runnable {
                                         .getFluid(fuel_quantity_special_bee / 2),
                                 Materials.Infinity.getMolten(144L))
                         .duration(base_time / 256).eut(102_400_000 / 64).metadata(COIL_HEAT, awakened_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 // normal recipes
 
@@ -678,7 +678,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_special / 2),
                                 Materials.Infinity.getMolten(144L))
                         .duration(base_time / 128).eut(102_400_000 / 64).metadata(COIL_HEAT, awakened_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long fuel_quantity_1 = 58_932L;
                 GT_Values.RA.stdBuilder()
@@ -690,7 +690,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2),
                                 Materials.Infinity.getMolten(64L * 144L))
                         .duration(base_time).eut(102_400_000).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long fuel_quantity_2 = 26_244L;
                 GT_Values.RA.stdBuilder()
@@ -702,7 +702,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2),
                                 Materials.Infinity.getMolten(128L * 144L))
                         .duration(base_time / 2).eut(204_800_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long fuel_quantity_6 = 11_373L;
                 GT_Values.RA.stdBuilder()
@@ -714,7 +714,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_6 * 2),
                                 Materials.Infinity.getMolten(256L * 144L))
                         .duration(base_time / 4).eut(409_600_000).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             // UV Superconductor.
@@ -738,7 +738,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8),
                                 Materials.Longasssuperconductornameforuvwire.getMolten(tier_1_quantity))
                         .duration(base_time).eut(14_345_265).metadata(COIL_HEAT, awakened_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 1354L;
@@ -753,7 +753,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4),
                                 Materials.Longasssuperconductornameforuvwire.getMolten(tier_2_quantity))
                         .duration(base_time / 2).eut(28_690_530).metadata(COIL_HEAT, infinity_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_3 = 671L;
@@ -768,7 +768,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2),
                                 Materials.Longasssuperconductornameforuvwire.getMolten(tier_3_quantity))
                         .duration(base_time / 4).eut(57_381_060).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_4_quantity = 144L * base_quantity
                         * tier_up_multiplier
@@ -786,7 +786,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4),
                                 Materials.Longasssuperconductornameforuvwire.getMolten(tier_4_quantity))
                         .duration(base_time / 8).eut(114_762_120).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             // UHV Superconductor.
@@ -810,7 +810,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 4),
                                 Materials.Longasssuperconductornameforuhvwire.getMolten(tier_1_quantity))
                         .duration(base_time).eut(62_717_952).metadata(COIL_HEAT, infinity_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 19_806L;
@@ -825,7 +825,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 2),
                                 Materials.Longasssuperconductornameforuhvwire.getMolten(tier_2_quantity))
                         .duration(base_time / 2).eut(125_435_904).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_3 = 8_654L;
@@ -840,7 +840,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3),
                                 Materials.Longasssuperconductornameforuhvwire.getMolten(tier_3_quantity))
                         .duration(base_time / 4).eut(250_871_808).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_4_quantity = 144L * base_quantity * (long) Math.pow(tier_up_multiplier, 3);
                 long fuel_quantity_4 = 4_389L;
@@ -855,7 +855,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4 * 2),
                                 Materials.Longasssuperconductornameforuhvwire.getMolten(tier_4_quantity))
                         .duration(base_time / 8).eut(501_743_616).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             // UEV Superconductors.
@@ -881,7 +881,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2),
                                 Materials.SuperconductorUEVBase.getMolten(tier_1_quantity))
                         .duration(base_time / 2).eut(195_457_244).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 18_274;
@@ -897,7 +897,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2),
                                 Materials.SuperconductorUEVBase.getMolten(tier_2_quantity))
                         .duration(base_time / 4).eut(390_914_488).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_3 = 7_981;
@@ -913,7 +913,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 * 2),
                                 Materials.SuperconductorUEVBase.getMolten(tier_3_quantity))
                         .duration(base_time / 8).eut(781_828_976).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             // UIV Superconductors.
@@ -939,7 +939,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 2),
                                 Materials.SuperconductorUIVBase.getMolten(tier_1_quantity))
                         .duration(base_time / 2).eut(374_265_584).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 34_992;
@@ -955,7 +955,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2),
                                 Materials.SuperconductorUIVBase.getMolten(tier_2_quantity))
                         .duration(base_time / 4).eut(748_531_167).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
                 long fuel_quantity_3 = 15_282;
@@ -971,7 +971,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 * 2),
                                 Materials.SuperconductorUIVBase.getMolten(tier_3_quantity))
                         .duration(base_time / 8).eut(1_497_062_335).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
 
             // UMV Superconductors.
@@ -997,7 +997,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1),
                                 Materials.SuperconductorUMVBase.getMolten(tier_1_quantity))
                         .duration(base_time).eut(1_455_144_621).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
                 long fuel_quantity_2 = 59_416;
@@ -1014,7 +1014,7 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 * 2),
                                 Materials.SuperconductorUMVBase.getMolten(tier_2_quantity))
                         .duration(base_time).eut(1_455_144_621).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(sPlasmaForgeRecipes);
+                        .addTo(plasmaForgeRecipes);
             }
         }
     }

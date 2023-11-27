@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import gregtech.api.enums.Materials;
-import gregtech.api.util.GT_Recipe;
+import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GT_Utility;
 
 public class FluidHeaterRecipes implements Runnable {
@@ -15,7 +15,7 @@ public class FluidHeaterRecipes implements Runnable {
     public void run() {
         if (BartWorks.isModLoaded()) {
 
-            GT_Recipe.GT_Recipe_Map.sFluidHeaterRecipes.addRecipe(
+            RecipeMaps.fluidHeaterRecipes.addRecipe(
                     false,
                     new ItemStack[] { GT_Utility.getIntegratedCircuit(1) },
                     null,

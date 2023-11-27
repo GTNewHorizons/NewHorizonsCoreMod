@@ -29,15 +29,15 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.ThaumicHorizons;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
+import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
+import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
+import static gregtech.api.recipe.RecipeMaps.unpackagerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBoxinatorRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCannerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sUnboxinatorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
@@ -1739,153 +1739,153 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(16)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2, missing))
-                .duration(15 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2, missing))
-                .duration(15 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 3, missing))
-                .duration(20 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         getModItem(Minecraft.ID, "redstone", 3, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4, missing))
-                .duration(20 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing))
-                .duration(20 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
                         GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing))
-                .duration(25 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(25 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
                         GT_OreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing))
-                .duration(25 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(25 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9, missing))
-                .duration(15 * SECONDS).eut(64).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Paper, 1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.datacard", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS).eut(16)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.screwdriver", 1, 0, missing),
                         getModItem(ProjectRedExpansion.ID, "projectred.expansion.battery", 1, 0, missing))
                 .itemOutputs(
                         getModItem(ProjectRedExpansion.ID, "projectred.expansion.electric_screwdriver", 1, 0, missing))
-                .duration(5 * SECONDS).eut(16).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 5, 17880, missing))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
-                .duration(15 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 5L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
-                .duration(15 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 5L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
-                .duration(15 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
-                .duration(5 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
-                .duration(5 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 13, missing),
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 4L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 1, missing))
-                .duration(40 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(40 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(20 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 864)).duration(20 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
                         getModItem(Minecraft.ID, "magma_cream", 4, 0, missing))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lava", 4000)).duration(20 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 60, missing))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 9, missing))
-                .duration(10 * SECONDS).eut(30).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(15 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Epoxy.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 4L))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1893,7 +1893,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1901,7 +1901,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1909,7 +1909,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1917,7 +1917,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1925,7 +1925,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1933,7 +1933,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1941,7 +1941,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1949,7 +1949,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1957,7 +1957,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1965,7 +1965,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1973,7 +1973,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
@@ -1981,7 +1981,7 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -1992,7 +1992,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2003,7 +2003,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2014,7 +2014,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2025,7 +2025,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2036,7 +2036,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2047,7 +2047,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2058,7 +2058,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2069,7 +2069,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2080,7 +2080,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2091,7 +2091,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2102,7 +2102,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2113,7 +2113,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2124,7 +2124,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2135,7 +2135,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2146,7 +2146,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2157,7 +2157,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2168,7 +2168,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2179,7 +2179,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2190,7 +2190,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2201,7 +2201,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2212,7 +2212,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2223,7 +2223,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2234,7 +2234,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2245,7 +2245,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2256,7 +2256,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2267,7 +2267,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2278,7 +2278,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2289,7 +2289,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2300,7 +2300,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2311,7 +2311,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2322,7 +2322,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2333,7 +2333,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2344,7 +2344,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2355,7 +2355,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2366,7 +2366,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2377,7 +2377,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2388,7 +2388,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2399,7 +2399,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2410,7 +2410,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2421,7 +2421,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2432,7 +2432,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2443,7 +2443,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2454,7 +2454,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2465,7 +2465,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2476,7 +2476,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2488,7 +2488,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2500,7 +2500,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2512,7 +2512,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2524,7 +2524,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2536,7 +2536,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2548,7 +2548,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2560,7 +2560,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2572,7 +2572,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2584,7 +2584,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2596,127 +2596,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Good.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Integrated_Good.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Processor.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Good.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Integrated_Good.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Processor.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2727,8 +2607,128 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Good.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Processor.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Good.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Integrated_Good.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Processor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 6, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2740,7 +2740,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2752,7 +2752,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2764,7 +2764,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2776,7 +2776,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2788,7 +2788,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2800,7 +2800,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2812,7 +2812,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2824,7 +2824,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2836,7 +2836,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2847,7 +2847,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2858,7 +2858,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2869,7 +2869,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2880,7 +2880,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2891,7 +2891,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2902,7 +2902,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2913,7 +2913,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2924,7 +2924,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2935,7 +2935,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2946,7 +2946,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2957,7 +2957,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2968,7 +2968,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2979,7 +2979,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2990,7 +2990,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3001,7 +3001,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3012,7 +3012,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3023,7 +3023,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3034,7 +3034,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3045,7 +3045,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3056,7 +3056,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3067,7 +3067,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3078,7 +3078,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3089,7 +3089,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3100,7 +3100,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3111,7 +3111,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3122,7 +3122,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3133,7 +3133,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3144,7 +3144,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3155,7 +3155,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3166,7 +3166,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3177,7 +3177,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3188,7 +3188,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3199,7 +3199,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3210,7 +3210,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3221,7 +3221,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3232,7 +3232,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3243,7 +3243,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3254,7 +3254,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3265,7 +3265,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3276,7 +3276,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3287,7 +3287,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3298,7 +3298,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3309,7 +3309,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3320,7 +3320,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3331,7 +3331,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3343,7 +3343,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3355,7 +3355,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3367,7 +3367,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3379,7 +3379,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3391,7 +3391,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3403,7 +3403,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3415,7 +3415,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3427,7 +3427,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3439,7 +3439,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3451,7 +3451,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3463,7 +3463,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3475,7 +3475,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3487,7 +3487,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3499,7 +3499,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3511,7 +3511,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3523,7 +3523,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3535,7 +3535,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3547,7 +3547,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3559,7 +3559,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3571,7 +3571,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3583,7 +3583,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3595,7 +3595,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3607,7 +3607,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3619,7 +3619,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3630,7 +3630,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3641,7 +3641,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3652,7 +3652,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3663,7 +3663,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3674,7 +3674,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3685,7 +3685,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3696,7 +3696,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3707,7 +3707,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3718,7 +3718,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
     }
 
     private void recipes2() {
@@ -3732,7 +3732,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3743,7 +3743,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3754,7 +3754,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3765,7 +3765,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3776,7 +3776,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3787,7 +3787,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3798,7 +3798,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3809,7 +3809,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3820,7 +3820,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3831,7 +3831,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3842,7 +3842,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3853,7 +3853,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3864,7 +3864,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3875,7 +3875,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3886,7 +3886,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3897,7 +3897,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3908,7 +3908,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3919,7 +3919,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3930,7 +3930,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3941,7 +3941,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3952,7 +3952,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3963,7 +3963,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3974,7 +3974,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3985,7 +3985,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -3996,7 +3996,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4007,7 +4007,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4018,7 +4018,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4029,7 +4029,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4040,95 +4040,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Basic.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Basic.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        ItemList.Circuit_Microprocessor.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
-                .itemOutputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4138,8 +4050,96 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Basic.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPlates", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4150,7 +4150,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4161,7 +4161,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4172,7 +4172,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4183,7 +4183,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4194,7 +4194,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4205,7 +4205,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4216,7 +4216,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4227,7 +4227,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4238,7 +4238,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4249,7 +4249,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4260,7 +4260,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4271,7 +4271,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4282,7 +4282,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4293,7 +4293,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4304,7 +4304,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4315,7 +4315,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4326,7 +4326,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4337,7 +4337,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4348,7 +4348,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4359,7 +4359,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4370,7 +4370,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4381,7 +4381,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4392,7 +4392,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4403,7 +4403,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4414,7 +4414,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4425,7 +4425,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4436,7 +4436,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4447,7 +4447,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4458,7 +4458,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4469,7 +4469,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -4480,895 +4480,895 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 6, 56, missing),
                         ItemList.Battery_Hull_LV.get(1L))
                 .itemOutputs(getModItem(ProjectRedExpansion.ID, "projectred.expansion.emptybattery", 1, 0, missing))
-                .duration(5 * SECONDS).eut(2).addTo(sCannerRecipes);
+                .duration(5 * SECONDS).eut(2).addTo(cannerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7, missing))
-                .duration(30 * SECONDS).eut(30).addTo(sPressRecipes);
+                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 8, missing))
-                .duration(30 * SECONDS).eut(30).addTo(sPressRecipes);
+                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing))
-                .duration(10 * SECONDS).eut(30).addTo(sPressRecipes);
+                .duration(10 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing))
-                .duration(30 * SECONDS).eut(30).addTo(sPressRecipes);
+                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14, missing))
-                .duration(30 * SECONDS).eut(30).addTo(sPressRecipes);
+                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing))
-                .duration(30 * SECONDS).eut(30).addTo(sPressRecipes);
+                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 9, 56, missing)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing),
                         getModItem(Minecraft.ID, "redstone", 8, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing))
-                .duration(20 * SECONDS).eut(30).addTo(sMixerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
                         getModItem(Minecraft.ID, "glowstone_dust", 8, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing))
-                .duration(20 * SECONDS).eut(30).addTo(sMixerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 56, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing))
-                .duration(20 * SECONDS).eut(30).addTo(sMixerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 56, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57, missing))
-                .duration(20 * SECONDS).eut(30).addTo(sMixerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 15, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 8, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_15.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 23, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 25, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 19, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 14, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 1, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_14.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 1, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 24, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 20, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 13, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 2, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_13.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 2, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 23, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 21, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 12, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 3, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_12.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 3, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 22, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 22, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 11, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 4, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.YellowLimonite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_11.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 4, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 21, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 23, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 10, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 5, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_10.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 5, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 20, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 24, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 9, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 6, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_09.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 6, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 19, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 25, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 8, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 7, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_08.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 7, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 18, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 26, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 7, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 8, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_07.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 8, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 17, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 27, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 6, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 9, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lazurite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Lazurite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_06.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 9, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 16, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 28, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 5, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 10, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_05.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 10, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 15, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 29, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 4, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemDust", 2, 12, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 11, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Natura.ID, "barleyFood", 2, 8, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 5, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Sodalite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Sodalite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Dye_Indigo.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_04.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 21, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 11, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 14, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 3, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GalacticraftAmunRa.ID, "item.baseItem", 2, 29, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 12, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 6, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "cocoapowderItem", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2887, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 2, 2888, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BrownLimonite, 2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_03.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemCofeePowder", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 25, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 12, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 13, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 2, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 13, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 7, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_02.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 22, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 13, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 12, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 32, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 1, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 14, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_01.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 19, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 14, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 11, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 33, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Minecraft.ID, "dye", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 15, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(BiomesOPlenty.ID, "misc", 2, 9, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         ItemList.Color_00.get(2L),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ForbiddenMagic.ID, "FMResource", 2, 1, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ThaumicHorizons.ID, "inkEgg", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 24, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ProjectRedExploration.ID, "projectred.exploration.lilyseed", 2, 15, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Gendustry.ID, "HoneyDrop", 2, 10, missing),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(sMixerRecipes);
+                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sBoxinatorRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sBoxinatorRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sBoxinatorRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sBoxinatorRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sBoxinatorRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sBoxinatorRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sUnboxinatorRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .itemOutputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
-                .duration(5 * SECONDS).eut(8).addTo(sUnboxinatorRecipes);
+                .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
 
     }
 }

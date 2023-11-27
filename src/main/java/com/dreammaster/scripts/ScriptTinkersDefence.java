@@ -2,8 +2,8 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersDefence;
+import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -36,19 +36,19 @@ public class ScriptTinkersDefence implements IScriptLoader {
                         getModItem(TinkersDefence.ID, "AeonSteelIngot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing))
-                .duration(1 * MINUTES + 28 * SECONDS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 28 * SECONDS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing))
-                .duration(1 * MINUTES + 4 * SECONDS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 4 * SECONDS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "QueensGoldIngot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing)).duration(10 * SECONDS)
-                .eut(120).addTo(sExtruderRecipes);
+                .eut(120).addTo(extruderRecipes);
 
     }
 }
