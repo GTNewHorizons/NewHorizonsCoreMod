@@ -34,6 +34,7 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -1933,10 +1934,10 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemDust", 8, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Flint, 1L),
+                        new ItemStack(Items.flint),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalBall", 1, 0, missing)).duration(5 * SECONDS)
-                .eut(16).addTo(sMixerRecipes);
+                .eut(16).addTo(sAssemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "iron_boots", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemStaticBoots", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(30).addTo(sPolarizerRecipes);
