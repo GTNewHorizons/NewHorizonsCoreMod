@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagString;
+import net.minecraft.util.StatCollector;
 
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.lib.Refstrings;
@@ -17,6 +18,10 @@ import codechicken.nei.api.IConfigureNEI;
 import gregtech.api.util.GT_ModHandler;
 
 public class NEIGTNewHorizonsConfig implements IConfigureNEI {
+
+    private void setOverrideName(ItemStack itemStack, String unlocalizedName) {
+        API.setOverrideName(itemStack, StatCollector.translateToLocal("override." + unlocalizedName));
+    }
 
     @Override
     public void loadConfig() {
@@ -54,23 +59,17 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
         if (GraviSuite.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(GraviSuite.ID, "BlockRelocatorPortal", 1));
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 0, missing),
-                    "Superconductor Cover");
-            API.setOverrideName(
-                    GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 1, missing),
-                    "Superconductor");
-            API.setOverrideName(
-                    GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2, missing),
-                    "Cooling Core");
-            API.setOverrideName(
+                    "SuperconductorCover");
+            setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 1, missing), "Superconductor");
+            setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2, missing), "CoolingCore");
+            setOverrideName(
                     GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 3, missing),
-                    "Gravitation Engine");
-            API.setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 4, missing), "Magnetron");
-            API.setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 5, missing), "Vajra Core");
-            API.setOverrideName(
-                    GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 6, missing),
-                    "Engine Booster");
+                    "GravitationEngine");
+            setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 4, missing), "Magnetron");
+            setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 5, missing), "VajraCore");
+            setOverrideName(GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 6, missing), "EngineBooster");
         }
 
         if (HardcoreEnderExpansion.isModLoaded()) {
@@ -129,12 +128,12 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
         if (AppliedEnergistics2.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockPaint", 1));
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                    "Universal Storage Housing");
-            API.setOverrideName(
+                    "UniversalStorageHousing");
+            setOverrideName(
                     GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing),
-                    "Neutronium Energy Cell");
+                    "NeutroniumEnergyCell");
         }
 
         if (BartWorks.isModLoaded()) {
@@ -174,14 +173,12 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GT_ModHandler.getModItem(SleepingBags.ID, "sleepingBagBlock", 1));
         }
         if (Forestry.isModLoaded()) {
-            API.setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 2, missing), "Swarmer");
-            API.setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 3, missing), "Alveary Fan");
-            API.setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 4, missing), "Alveary Heater");
-            API.setOverrideName(
-                    GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 5, missing),
-                    "Alveary Hygroregulator");
-            API.setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 6, missing), "Alveary Stabiliser");
-            API.setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 7, missing), "Alveary Sieve");
+            setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 2, missing), "Swarmer");
+            setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 3, missing), "AlvearyFan");
+            setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 4, missing), "AlvearyHeater");
+            setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 5, missing), "AlvearyHygroregulator");
+            setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 6, missing), "AlvearyStabiliser");
+            setOverrideName(GT_ModHandler.getModItem(Forestry.ID, "alveary", 1, 7, missing), "AlvearySieve");
         }
         if (BiomesOPlenty.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(BiomesOPlenty.ID, "misc", 1, 9, missing));
@@ -191,115 +188,115 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GT_ModHandler.getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing));
         }
         if (BuildCraftTransport.isModLoaded()) {
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerwood", 1, 0, missing),
-                    "Wood-Covered Kinesis Pipe");
-            API.setOverrideName(
+                    "Wood-CoveredKinesisPipe");
+            setOverrideName(
                     GT_ModHandler.getModItem(
                             BuildCraftTransport.ID,
                             "item.buildcraftPipe.pipeitemscobblestone",
                             1,
                             0,
                             missing),
-                    "Cobblestone-Covered Pipe");
-            API.setOverrideName(
+                    "CobblestoneCoveredPipe");
+            setOverrideName(
                     GT_ModHandler.getModItem(
                             BuildCraftTransport.ID,
                             "item.buildcraftPipe.pipepowercobblestone",
                             1,
                             0,
                             missing),
-                    "Cobblestone-Covered Kinesis Pipe");
-            API.setOverrideName(
+                    "CobblestoneCoveredKinesisPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsstone", 1, 0, missing),
-                    "Stone-Covered Pipe");
-            API.setOverrideName(
+                    "StoneCoveredPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerstone", 1, 0, missing),
-                    "Stone-Covered Kinesis Pipe");
-            API.setOverrideName(
+                    "StoneCoveredKinesisPipe");
+            setOverrideName(
                     GT_ModHandler.getModItem(
                             BuildCraftTransport.ID,
                             "item.buildcraftPipe.pipeitemssandstone",
                             1,
                             0,
                             missing),
-                    "Sandstone-Covered Pipe");
-            API.setOverrideName(
+                    "SandstoneCoveredPipe");
+            setOverrideName(
                     GT_ModHandler.getModItem(
                             BuildCraftTransport.ID,
                             "item.buildcraftPipe.pipepowersandstone",
                             1,
                             0,
                             missing),
-                    "Sandstone-Covered Kinesis Pipe");
-            API.setOverrideName(
+                    "SandstoneCoveredKinesisPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsiron", 1, 0, missing),
-                    "Iron-Covered Pipe");
-            API.setOverrideName(
+                    "IronCoveredPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepoweriron", 1, 0, missing),
-                    "Iron-Covered Kinesis Pipe");
-            API.setOverrideName(
+                    "IronCoveredKinesisPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsquartz", 1, 0, missing),
-                    "Quartz-Covered Pipe");
-            API.setOverrideName(
+                    "QuartzCoveredPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerquartz", 1, 0, missing),
-                    "Quartz-Covered Kinesis Pipe");
-            API.setOverrideName(
+                    "QuartzCoveredKinesisPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowergold", 1, 0, missing),
-                    "Gold-Covered Kinesis Pipe");
-            API.setOverrideName(
+                    "GoldCoveredKinesisPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerdiamond", 1, 0, missing),
-                    "Diamond-Covered Kinesis Pipe");
-            API.setOverrideName(
+                    "DiamondCoveredKinesisPipe");
+            setOverrideName(
                     GT_ModHandler
                             .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepoweremerald", 1, 0, missing),
-                    "Emerald-Covered Kinesis Pipe");
+                    "EmeraldCoveredKinesisPipe");
         }
         if (BuildCraftSilicon.isModLoaded()) {
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler.getModItem(BuildCraftSilicon.ID, "redstoneCrystal", 1, 0, missing),
-                    "Firestone Crystal");
+                    "FirestoneCrystal");
         }
 
         if (GalacticraftCore.isModLoaded()) {
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftCore.ID, "item.meteoricIronIngot", 1, 1, missing),
-                    "Compressed Meteoric Iron Plate");
-            API.setOverrideName(
+                    "CompressedMeteoricIronPlate");
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1, 6, missing),
-                    "Compressed Copper Plate");
-            API.setOverrideName(
+                    "CompressedCopperPlate");
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1, 7, missing),
-                    "Compressed Tin Plate");
-            API.setOverrideName(
+                    "CompressedTinPlate");
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1, 8, missing),
-                    "Compressed Aluminium Plate");
-            API.setOverrideName(
+                    "CompressedAluminiumPlate");
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9, missing),
-                    "Compressed Steel Plate");
-            API.setOverrideName(
+                    "CompressedSteelPlate");
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1, 10, missing),
-                    "Compressed Bronze Plate");
-            API.setOverrideName(
+                    "CompressedBronzePlate");
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftCore.ID, "item.basicItem", 1, 11, missing),
-                    "Compressed Iron Plate");
+                    "CompressedIronPlate");
         }
         if (GalacticraftMars.isModLoaded()) {
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 6, missing),
-                    "Compressed Titanium Plate");
-            API.setOverrideName(
+                    "CompressedTitaniumPlate");
+            setOverrideName(
                     GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 1, 5, missing),
-                    "Compressed Desh Plate");
+                    "CompressedDeshPlate");
         }
         if (MagicBees.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(MagicBees.ID, "capsule.magic", 1, 32767, missing));
@@ -319,56 +316,54 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         }
 
         if (BloodMagic.isModLoaded()) {
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler.getModItem(BloodMagic.ID, "Altar", 1, 0, missing),
-                    "Altar of GregoriusT's Blood");
+                    "AltarOfGregoriusT'sBlood");
         }
 
         if (Railcraft.isModLoaded()) {
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler.getModItem(Railcraft.ID, "upgrade.lapotron", 1, 0, missing),
-                    "Lapatron Loader Upgrade");
-            API.setOverrideName(GT_ModHandler.getModItem(Railcraft.ID, "part.plate", 1, 4, missing), "Lead Plate");
+                    "LapatronLoaderUpgrade");
+            setOverrideName(GT_ModHandler.getModItem(Railcraft.ID, "part.plate", 1, 4, missing), "LeadPlate");
         }
 
         if (StevesCarts2.isModLoaded()) {
-            API.setOverrideName(
-                    GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 61, missing),
-                    "Infinity Engine");
-            API.setOverrideName(
+            setOverrideName(GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 61, missing), "InfinityEngine");
+            setOverrideName(
                     GT_ModHandler.getModItem(StevesCarts2.ID, "upgrade", 1, 14, missing),
-                    "Upgrade: Integrated Infinity Reactor");
-            API.setOverrideName(
+                    "UpgradeIntegratedInfinityReactor");
+            setOverrideName(
                     GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 76, missing),
-                    "Quantum Minecart Hull");
-            API.setOverrideName(
+                    "QuantumMinecartHull");
+            setOverrideName(
                     GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 81, missing),
-                    "Galgadorian Minecart Hull");
-            API.setOverrideName(
+                    "GalgadorianMinecartHull");
+            setOverrideName(
                     GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 39, missing),
-                    "Reinforced Minecart Hull");
-            API.setOverrideName(
+                    "ReinforcedMinecartHull");
+            setOverrideName(
                     GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 38, missing),
-                    "Standard Minecart Hull");
-            API.setOverrideName(
+                    "StandardMinecartHull");
+            setOverrideName(
                     GT_ModHandler.getModItem(StevesCarts2.ID, "CartModule", 1, 37, missing),
-                    "Wooden Minecart Hull");
+                    "WoodenMinecartHull");
         }
 
         if (EnderIO.isModLoaded()) {
             ItemStack creativeBank = GT_ModHandler.getModItem(EnderIO.ID, "blockCapBank", 1, 0, missing);
             creativeBank.setTagInfo("type", new NBTTagString("CREATIVE"));
             creativeBank.setTagInfo("storedEnergyRF", new NBTTagInt(2500000));
-            API.setOverrideName(creativeBank, "Chaotic Capacitor Bank");
+            setOverrideName(creativeBank, "ChaoticCapacitorBank");
         }
 
         if (BiblioWoodsBoPEdition.isModLoaded()) {
-            API.setOverrideName(
+            setOverrideName(
                     GT_ModHandler.getModItem(BiblioWoodsBoPEdition.ID, "BiblioWoodcase", 1, 4, missing),
-                    "Hellbark Case");
+                    "HellbarkCase");
         }
 
-        API.setOverrideName(new ItemStack(Blocks.ender_chest), "Personal Ender Chest");
+        setOverrideName(new ItemStack(Blocks.ender_chest), "PersonalEnderChest");
 
         MainRegistry.Logger.info("Added NEI Config");
     }
