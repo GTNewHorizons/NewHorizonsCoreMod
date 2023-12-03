@@ -46,7 +46,8 @@ public class ScriptChisel implements IScriptLoader {
                 IronChests.ID,
                 Natura.ID,
                 Railcraft.ID,
-                TinkerConstruct.ID);
+                TinkerConstruct.ID,
+                TwilightForest.ID);
     }
 
     @Override
