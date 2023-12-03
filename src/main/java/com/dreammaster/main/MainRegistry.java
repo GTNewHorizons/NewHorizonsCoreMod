@@ -15,6 +15,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
+import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.dreammaster.bartworksHandler.BWGlassAdder;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
@@ -66,6 +67,7 @@ import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -100,7 +102,8 @@ import gregtech.common.items.GT_MetaGenerated_Item_01;
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"
                 + "after:HardcoreEnderExpansion;"
-                + "after:Thaumcraft;")
+                + "after:Thaumcraft;"
+                + "after:amazingtrophies")
 public class MainRegistry {
 
     @SidedProxy(clientSide = Refstrings.CLIENTSIDE, serverSide = Refstrings.SERVERSIDE)
@@ -483,6 +486,12 @@ public class MainRegistry {
             BW_RadHatchMaterial.runRadHatchAdder();
         }
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
+        if (Loader.isModLoaded("amazingtrophies")) {
+            AchievementHandler.init();
+            AchievementHandler handler = new AchievementHandler();
+            MinecraftForge.EVENT_BUS.register(handler);
+            FMLCommonHandler.instance().bus().register(handler);
+        }
     }
 
     /**

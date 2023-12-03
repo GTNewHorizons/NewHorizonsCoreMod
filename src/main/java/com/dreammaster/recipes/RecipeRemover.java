@@ -122,8 +122,7 @@ public class RecipeRemover {
             if (aRecipeList.isEmpty()) return true;
             @SuppressWarnings("unchecked")
             ArrayList<Object> recipe = (ArrayList<Object>) aRecipeList.clone();
-            @SuppressWarnings("unchecked")
-            List<Object> rInputs = (r instanceof ShapelessOreRecipe ? ((ShapelessOreRecipe) r).getInput()
+            List<?> rInputs = (r instanceof ShapelessOreRecipe ? ((ShapelessOreRecipe) r).getInput()
                     : ((ShapelessRecipes) r).recipeItems);
             for (Object rInput : rInputs) {
                 HashSet<GT_Utility.ItemId> rInputHashed;
