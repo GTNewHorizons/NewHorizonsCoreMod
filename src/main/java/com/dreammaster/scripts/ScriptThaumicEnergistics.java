@@ -1909,7 +1909,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(1920)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1920,7 +1920,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(1920)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1931,7 +1931,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 4, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(1920).addTo(sCircuitAssemblerRecipes);
+                .eut(1920).addTo(circuitAssemblerRecipes);
         // 1024k Essentia Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -1943,7 +1943,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(7680)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1954,7 +1954,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(7680)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1965,7 +1965,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(7680).addTo(sCircuitAssemblerRecipes);
+                .eut(7680).addTo(circuitAssemblerRecipes);
         // 4096k Essentia Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -1977,7 +1977,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(30720)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1988,7 +1988,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(30720)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1999,7 +1999,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(30720).addTo(sCircuitAssemblerRecipes);
+                .eut(30720).addTo(circuitAssemblerRecipes);
         // 16384k Essentia Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -2011,7 +2011,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(500000)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2022,7 +2022,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(500000)
-                .addTo(sCircuitAssemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -2033,7 +2033,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(500000).addTo(sCircuitAssemblerRecipes);
+                .eut(500000).addTo(circuitAssemblerRecipes);
 
         TCHelper.removeInfusionRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0, missing));
