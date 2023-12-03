@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.ProjectRedExploration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -576,5 +577,11 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addGroup("blazeblock");
         ChiselHelper.addVariationFromStack("blazeblock", getModItem(Botania.ID, "blazeBlock", 1, 0, missing));
         ChiselHelper.addVariationFromStack("blazeblock", getModItem(GregTech.ID, "gt.blockgem3", 1, 5, missing));
+        ChiselHelper.addGroup("knightmetalblock");
+        ChiselHelper.addVariationFromStack(
+                "knightmetalblock",
+                getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0, missing));
+        ChiselHelper
+                .addVariationFromStack("knightmetalblock", getModItem(GregTech.ID, "gt.blockmetal4", 1, 0, missing));
     }
 }
