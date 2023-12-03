@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -37,6 +38,7 @@ import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
@@ -61,7 +63,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 ExtraUtilities.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
-                Thaumcraft.ID);
+                Thaumcraft.ID,
+                DraconicEvolution.ID);
     }
 
     @Override
@@ -552,6 +555,41 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "blockInfinity",
                 'f',
                 getModItem(EternalSingularity.ID, "eternal_singularity", 1));
+
+        // ME Singularity crafting storage
+        GT_ModHandler
+                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1));
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1),
+                "abcfhfcba",
+                "bcdfhfdcb",
+                "cdefhfedc",
+                "fffgigfff",
+                "hhhijihhh",
+                "fffgigfff",
+                "cdefhfedc",
+                "bcdfhfdcb",
+                "abcfhfcba",
+                'a',
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1),
+                'b',
+                CustomItemList.PikoCircuit.get(1L),
+                'c',
+                ItemList.Field_Generator_UIV.get(1L),
+                'd',
+                getModItem(DraconicEvolution.ID, "reactorStabilizer", 1),
+                'e',
+                GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.TranscendentMetal, 1L),
+                'f',
+                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 1L),
+                'g',
+                GT_OreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.SpaceTime, 1L),
+                'h',
+                GT_OreDictUnificator.get(OrePrefixes.wireGt01, MaterialsUEVplus.SpaceTime, 1L),
+                'i',
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1),
+                'j',
+                getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1));
 
         // ME Void Storage
         GT_ModHandler.removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1));
