@@ -109,6 +109,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
             mixins.add("MixinMinecraft_ConfirmExit");
             mixins.add("MixinMinecraft_PackIcon");
         }
+        mixins.add("MixinTileEntityBeacon");
         return mixins;
     }
 
