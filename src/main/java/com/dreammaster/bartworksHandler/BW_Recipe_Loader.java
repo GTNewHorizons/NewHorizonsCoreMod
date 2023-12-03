@@ -4,7 +4,7 @@ import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.OrePrefixes.bolt;
 import static gregtech.api.enums.OrePrefixes.dustTiny;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sImplosionRecipes;
+import static gregtech.api.recipe.RecipeMaps.implosionRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.AssemblyLine;
@@ -27,7 +27,7 @@ public class BW_Recipe_Loader implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.HeavyDutyAlloyIngotT4.get(1L))
                 .itemOutputs(CustomItemList.HeavyDutyPlateTier4.get(1L), Ruridit.get(dustTiny, 4))
                 .metadata(GT_RecipeConstants.ADDITIVE_AMOUNT, 32).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(sImplosionRecipes);
+                .addTo(implosionRecipes);
 
         GT_Values.RA.stdBuilder()
                 .metadata(

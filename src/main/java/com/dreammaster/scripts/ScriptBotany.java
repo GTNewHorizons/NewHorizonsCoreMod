@@ -3,8 +3,8 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -148,175 +148,175 @@ public class ScriptBotany implements IScriptLoader {
                         getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "cobblestone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 128, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 256, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "hardened_clay", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 384, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 512, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sandstone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 640, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clay", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "cobblestone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 129, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 257, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "hardened_clay", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 385, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 513, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sandstone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 641, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clay", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "cobblestone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 130, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 258, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "hardened_clay", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 386, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 514, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sandstone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 2, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 642, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clay", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "cobblestone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 131, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 259, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "hardened_clay", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 387, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 515, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sandstone", 4, 0, missing),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing))
                 .itemOutputs(getModItem(Botany.ID, "insulatedTube", 1, 643, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 288)).duration(40 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 4L))
                 .itemOutputs(getModItem(Botany.ID, "soilMeter", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1 * MINUTES).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
     }
 }

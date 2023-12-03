@@ -9,8 +9,8 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SleepingBags;
+import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sBrewingRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
@@ -387,7 +387,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "melon", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("melonjuice", 750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
-                .addTo(sBrewingRecipes);
+                .addTo(brewingRecipes);
 
     }
 

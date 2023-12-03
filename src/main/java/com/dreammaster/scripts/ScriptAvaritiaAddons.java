@@ -7,10 +7,10 @@ import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
+import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPlasmaArcFurnaceRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -83,7 +83,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -93,7 +93,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "ExtremeAutoCrafter", 1),
@@ -184,14 +184,14 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                             MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(576),
                             MaterialsUEVplus.ExcitedDTSC.getFluid(10000))
                     .fluidOutputs(Materials.Hydrogen.getPlasma(576), Materials.Helium.getPlasma(576))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(sHammerRecipes);
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(hammerRecipes);
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing))
                     .fluidInputs(MaterialsUEVplus.Eternity.getMolten(144))
                     .fluidOutputs(Materials.Infinity.getMolten(576)).duration(5 * SECONDS).eut(TierEU.RECIPE_UXV)
-                    .addTo(sPlasmaArcFurnaceRecipes);
+                    .addTo(plasmaArcFurnaceRecipes);
         }
     }
 }

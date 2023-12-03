@@ -2,8 +2,8 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistillationRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sDistilleryRecipes;
+import static gregtech.api.recipe.RecipeMaps.distillationTowerRecipes;
+import static gregtech.api.recipe.RecipeMaps.distilleryRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
@@ -34,7 +34,7 @@ public class DistillationRecipes implements Runnable {
                         Materials.NitrogenDioxide.getGas(150),
                         Materials.Methane.getGas(150),
                         Materials.Mercury.getFluid(10))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sDistillationRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(distillationTowerRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 10))
@@ -44,7 +44,7 @@ public class DistillationRecipes implements Runnable {
                         Materials.NitrogenDioxide.getGas(3000),
                         Materials.Methane.getGas(3000),
                         Materials.Mercury.getFluid(200))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sDistillationRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(distillationTowerRecipes);
 
         if (BartWorks.isModLoaded()) {
 
@@ -55,7 +55,7 @@ public class DistillationRecipes implements Runnable {
                             Materials.Grade1PurifiedWater.getFluid(100),
                             Materials.Oil.getFluid(50),
                             Materials.Ammonia.getGas(100))
-                    .duration(250 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(sDistillationRecipes);
+                    .duration(250 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(distillationTowerRecipes);
 
             GT_Values.RA.stdBuilder().fluidInputs(Materials.Grade6PurifiedWater.getFluid(1000))
                     .fluidOutputs(
@@ -63,7 +63,7 @@ public class DistillationRecipes implements Runnable {
                             Materials.Grade6PurifiedWater.getFluid(50),
                             Materials.Grade5PurifiedWater.getFluid(100),
                             Materials.Ethanol.getFluid(50))
-                    .duration(250 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(sDistillationRecipes);
+                    .duration(250 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(distillationTowerRecipes);
         }
     }
 
@@ -71,11 +71,11 @@ public class DistillationRecipes implements Runnable {
         // Sodium Potassium
         GT_Values.RA.stdBuilder().itemInputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.Sodium.getFluid(1000))
                 .fluidOutputs(FluidRegistry.getFluidStack("sodiumpotassium", 1000)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sDistilleryRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(distilleryRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1))
                 .fluidInputs(Materials.Biomass.getFluid(40)).fluidOutputs(Materials.Ethanol.getFluid(20))
-                .duration(16 * TICKS).eut(24).addTo(sDistilleryRecipes);
+                .duration(16 * TICKS).eut(24).addTo(distilleryRecipes);
 
         // unify milk from Automagy
 
@@ -84,10 +84,10 @@ public class DistillationRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1))
                     .fluidInputs(Materials.Milk.getFluid(1000)).fluidOutputs(fluidMilk.copy()).duration(5 * SECONDS)
-                    .eut(2).addTo(sDistilleryRecipes);
+                    .eut(2).addTo(distilleryRecipes);
 
             GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1)).fluidInputs(fluidMilk.copy())
-                    .fluidOutputs(Materials.Milk.getFluid(1000)).duration(5 * SECONDS).eut(2).addTo(sDistilleryRecipes);
+                    .fluidOutputs(Materials.Milk.getFluid(1000)).duration(5 * SECONDS).eut(2).addTo(distilleryRecipes);
         }
     }
 }

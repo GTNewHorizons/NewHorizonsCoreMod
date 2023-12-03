@@ -20,15 +20,15 @@ import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
+import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
+import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
+import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAlloySmelterRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAutoclaveRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtractorRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sHammerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sPressRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
@@ -818,7 +818,7 @@ public class ScriptGregtech implements IScriptLoader {
 
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L)).duration(15 * SECONDS)
-                .eut(2).addTo(sExtractorRecipes);
+                .eut(2).addTo(extractorRecipes);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Empty.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
@@ -1175,167 +1175,166 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 3, missing),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 2L))
-                .itemOutputs(ItemList.Transformer_MV_LV.get(1L)).duration(15 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .itemOutputs(ItemList.Transformer_MV_LV.get(1L)).duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 4, missing),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 2L))
                 .itemOutputs(ItemList.Transformer_HV_MV.get(1L)).duration(12 * SECONDS + 10 * TICKS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 5, missing),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 2L))
                 .itemOutputs(ItemList.Transformer_EV_HV.get(1L)).duration(10 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 6, missing),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 2L))
                 .itemOutputs(ItemList.Transformer_IV_EV.get(1L)).duration(5 * SECONDS).eut(1920)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Iron, 6L),
                         getModItem(IndustrialCraft2.ID, "itemPlutonium", 3, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(1 * MINUTES).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L),
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
-                .eut(16).addTo(sAlloySmelterRecipes);
+                .eut(16).addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 3L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
-                .eut(16).addTo(sAlloySmelterRecipes);
+                .eut(16).addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L),
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Copper, 3L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
-                .eut(16).addTo(sAlloySmelterRecipes);
+                .eut(16).addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
-                .eut(16).addTo(sAlloySmelterRecipes);
+                .eut(16).addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L),
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Tin, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
-                .eut(16).addTo(sAlloySmelterRecipes);
+                .eut(16).addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L),
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
-                .eut(16).addTo(sAlloySmelterRecipes);
+                .eut(16).addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ThaumicBases.ID, "resource", 9, 0, missing), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(ThaumicBases.ID, "resource", 1, 1, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(sAlloySmelterRecipes);
+                .addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ThaumicBases.ID, "resource", 1, 1, missing), ItemList.Shape_Mold_Nugget.get(0L))
                 .itemOutputs(getModItem(ThaumicBases.ID, "resource", 9, 0, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(sAlloySmelterRecipes);
+                .addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
                         ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(sAlloySmelterRecipes);
+                .addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 4L),
                         ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(sAlloySmelterRecipes);
+                .addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Glass, 9L),
                         ItemList.Shape_Mold_Block.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "glass", 1, 0, missing)).duration(10 * SECONDS).eut(16)
-                .addTo(sAlloySmelterRecipes);
+                .addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(30).addTo(sAutoclaveRecipes);
+                .eut(30).addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedAir, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(50 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(30).addTo(sAutoclaveRecipes);
+                .eut(30).addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(50 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(30).addTo(sAutoclaveRecipes);
+                .eut(30).addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(50 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(30).addTo(sAutoclaveRecipes);
+                .eut(30).addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(50 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(30).addTo(sAutoclaveRecipes);
+                .eut(30).addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedOrder, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(50 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 200)).duration(1 * MINUTES + 40 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing)).outputChances(9000)
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 100)).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(30).addTo(sAutoclaveRecipes);
+                .eut(30).addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEntropy, 1L))
                 .itemOutputs(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 36)).duration(50 * SECONDS).eut(30)
-                .addTo(sAutoclaveRecipes);
+                .addTo(autoclaveRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(CustomItemList.PotassiumHydroxideDust.get(3L), GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 5L))
@@ -1347,240 +1346,241 @@ public class ScriptGregtech implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 1, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toolRod", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 2, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "pickaxeHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 3, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "shovelHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 4, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "hatchetHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 5, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "swordBlade", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 6, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "wideGuard", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 7, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "handGuard", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 8, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "crossbar", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 9, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "binding", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 10, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "frypanHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 11, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "signHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 12, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "knifeBlade", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 13, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "chiselHead", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 14, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toughRod", 1, 11, missing))
-                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 15, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toughBinding", 1, 11, missing))
-                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 16, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "heavyPlate", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 17, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "broadAxeHead", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 18, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "scytheBlade", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 19, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "excavatorHead", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 20, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "largeSwordBlade", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 21, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "hammerHead", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 22, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fullGuard", 1, 11, missing))
-                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 0, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "ShurikenPart", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 4L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 1, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "CrossbowLimbPart", 1, 11, missing))
-                .duration(4 * MINUTES + 2 * SECONDS + 12 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(4 * MINUTES + 2 * SECONDS + 12 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 5L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 2, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "CrossbowBodyPart", 1, 11, missing))
-                .duration(5 * MINUTES + 3 * SECONDS + 5 * TICKS).eut(120).addTo(sExtruderRecipes);
+                .duration(5 * MINUTES + 3 * SECONDS + 5 * TICKS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 2L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 3, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "BowLimbPart", 1, 11, missing))
-                .duration(1 * MINUTES + 31 * SECONDS).eut(120).addTo(sExtruderRecipes);
+                .duration(1 * MINUTES + 31 * SECONDS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 18, missing),
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L)).duration(20).eut(64)
-                .addTo(sExtruderRecipes);
+                .addTo(extruderRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 2L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L)).duration(20)
-                .eut(16).addTo(sHammerRecipes);
+                .eut(16).addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Rubber, 2L))
                 .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22880, missing)).duration(20).eut(16)
-                .addTo(sHammerRecipes);
+                .addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Apatite, 2L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Apatite, 1L)).duration(20)
-                .eut(16).addTo(sHammerRecipes);
+                .eut(16).addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Lapis, 2L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Lapis, 1L)).duration(20).eut(16)
-                .addTo(sHammerRecipes);
+                .addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Lazurite, 2L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Lazurite, 1L)).duration(20)
-                .eut(16).addTo(sHammerRecipes);
+                .eut(16).addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sodalite, 2L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sodalite, 1L)).duration(20)
-                .eut(16).addTo(sHammerRecipes);
+                .eut(16).addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnderPearl, 2L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.EnderPearl, 1L)).duration(20)
-                .eut(16).addTo(sHammerRecipes);
+                .eut(16).addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EnderEye, 2L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.EnderEye, 1L)).duration(20)
-                .eut(16).addTo(sHammerRecipes);
+                .eut(16).addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "flint", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Flint, 2L))
-                .duration(1 * SECONDS + 12 * TICKS).eut(16).addTo(sHammerRecipes);
+                .duration(1 * SECONDS + 12 * TICKS).eut(16).addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Glass, 1L)).duration(10).eut(16)
-                .addTo(sHammerRecipes);
+                .addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.gemChipped, Materials.Glass, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L)).duration(10).eut(16)
-                .addTo(sHammerRecipes);
+                .addTo(hammerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         ItemList.Shape_Mold_Credit.get(0L))
-                .itemOutputs(CustomItemList.CoinBlank.get(1L)).duration(10 * SECONDS).eut(30).addTo(sPressRecipes);
+                .itemOutputs(CustomItemList.CoinBlank.get(1L)).duration(10 * SECONDS).eut(30)
+                .addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "barleyItem", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "plants", 1, 6, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "ryeItem", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "oatsItem", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 9L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "walleyerawItem", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
-                .duration(20 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "glass_shard", 2, 0, missing))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CassiteriteSand, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.CassiteriteSand, 4L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_ModHandler.addSmeltingRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));

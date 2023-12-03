@@ -10,10 +10,10 @@ import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sExtruderRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMixerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -214,197 +214,197 @@ public class ScriptMagicBees implements IScriptLoader {
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.void", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(30 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 5, 0, missing),
                         getModItem(MagicBees.ID, "pollen", 1, 0, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "effectJar", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(30 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 4, 3, missing),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 72)).duration(10 * SECONDS).eut(48)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 6, 5, missing),
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 288)).duration(20 * SECONDS).eut(256)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clock", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Jade, 4L))
                 .itemOutputs(getModItem(MagicBees.ID, "moonDial", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 576)).duration(10 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 0, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 1, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 2, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(20 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 3, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(20 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 4, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(30 * SECONDS).eut(256)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 5, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(30 * SECONDS).eut(256)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 6, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(40 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 7, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(40 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 8, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(50 * SECONDS).eut(1024)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 9, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(50 * SECONDS).eut(1024)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 10, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 12, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES).eut(1920)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 11, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 12, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES).eut(1920)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 12, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 14, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 10 * SECONDS)
-                .eut(4096).addTo(sAssemblerRecipes);
+                .eut(4096).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 13, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 14, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 10 * SECONDS)
-                .eut(4096).addTo(sAssemblerRecipes);
+                .eut(4096).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 14, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 16, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 20 * SECONDS)
-                .eut(7680).addTo(sAssemblerRecipes);
+                .eut(7680).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 15, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 16, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 20 * SECONDS)
-                .eut(7680).addTo(sAssemblerRecipes);
+                .eut(7680).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 3, 0, missing), ItemList.Shape_Extruder_Cell.get(0L))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.magic", 1, 0, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(sExtruderRecipes);
+                .addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 3, 2, missing), ItemList.Shape_Extruder_Cell.get(0L))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.magic", 1, 0, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(sExtruderRecipes);
+                .addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 2, wildcard, missing),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 6, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(16)
-                .addTo(sMixerRecipes);
+                .addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 12, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(16)
-                .addTo(sMixerRecipes);
+                .addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 2, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 5, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(16)
-                .addTo(sMixerRecipes);
+                .addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 10, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(16)
-                .addTo(sMixerRecipes);
+                .addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemFertilizer", 8, 0, missing),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 32, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(16)
-                .addTo(sMixerRecipes);
+                .addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemFertilizer", 8, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 30, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(16)
-                .addTo(sMixerRecipes);
+                .addTo(mixerRecipes);
 
         TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 3, 17, missing));
         TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 3, 17, missing));

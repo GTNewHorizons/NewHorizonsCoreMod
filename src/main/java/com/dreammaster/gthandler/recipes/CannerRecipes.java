@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCannerRecipes;
+import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -20,6 +20,6 @@ public class CannerRecipes implements Runnable {
                         CustomItemList.AdsorptionFilterCasing.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 32))
                 .itemOutputs(CustomItemList.AdsorptionFilter.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sCannerRecipes);
+                .addTo(cannerRecipes);
     }
 }

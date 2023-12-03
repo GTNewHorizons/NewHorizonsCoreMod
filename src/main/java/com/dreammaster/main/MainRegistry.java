@@ -2,7 +2,7 @@ package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 import static gregtech.api.enums.Mods.*;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCompressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.io.File;
@@ -374,7 +374,7 @@ public class MainRegistry {
         GameRegistry.addShapelessRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(_mBlockBabyChest, 9))
-                .itemOutputs(new ItemStack(Blocks.chest, 1, 0)).duration(15 * SECONDS).eut(2).addTo(sCompressorRecipes);
+                .itemOutputs(new ItemStack(Blocks.chest, 1, 0)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GameRegistry.registerTileEntity(TileEntityBabyChest.class, "teBabyChest");
 

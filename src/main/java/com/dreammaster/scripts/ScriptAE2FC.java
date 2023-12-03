@@ -7,9 +7,9 @@ import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sCircuitAssemblerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -406,7 +406,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(AE2_STORAGE_BUS, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
                 .itemOutputs(AE2FC_FLUID_STORAGE_BUS).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
@@ -419,7 +419,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_1).fluidInputs(Materials.Lead.getMolten(288)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -429,7 +429,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_1).fluidInputs(Materials.Tin.getMolten(144)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -439,7 +439,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_1).fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
         // 4k ME Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -450,7 +450,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_4).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -460,7 +460,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_4).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -470,7 +470,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_4).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
         // 16k ME Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -481,7 +481,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -491,7 +491,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -501,7 +501,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
         // 64k ME Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -512,7 +512,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_64).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -522,7 +522,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_64).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -532,7 +532,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_64).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
         // 256k ME Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -543,7 +543,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_256).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -553,7 +553,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_256).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -563,7 +563,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_256).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(circuitAssemblerRecipes);
         // 1024k ME Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -574,7 +574,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_1024).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -584,7 +584,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_1024).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -594,7 +594,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_1024).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_IV).addTo(circuitAssemblerRecipes);
         // 4096k ME Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -605,7 +605,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_4096).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -615,7 +615,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_4096).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -625,7 +625,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_4096).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(circuitAssemblerRecipes);
         // 16384k ME Storage Component
 
         GT_Values.RA.stdBuilder()
@@ -636,7 +636,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16384).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(500000).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(500000).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -646,7 +646,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16384).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(500000).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(500000).addTo(circuitAssemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -656,7 +656,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16384).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(500000).addTo(sCircuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(500000).addTo(circuitAssemblerRecipes);
 
         // Fluid Quantum Drive
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -908,41 +908,41 @@ public class ScriptAE2FC implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Lapis, 2),
                         AE2_ME_CHEST,
                         AE2_ENERGY_CELL)
-                .itemOutputs(AE2FC_PORTABLE_CELL).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .itemOutputs(AE2FC_PORTABLE_CELL).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Quartz Tank
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_Utility.copyAmount(8, AE2_QUARTZ_GLASS), GT_Utility.getIntegratedCircuit(8))
-                .itemOutputs(AE2FC_TANK).duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(sAssemblerRecipes);
+                .itemOutputs(AE2FC_TANK).duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Fluid Level Emitter
         GT_Values.RA.stdBuilder().itemInputs(AE2_LEVEL_MAIN, LAPIS_PLATE).itemOutputs(AE2FC_LEVEL_MAIN)
-                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Fluid Storage Monitor
         GT_Values.RA.stdBuilder().itemInputs(AE2_MON, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
-                .itemOutputs(AE2FC_MON).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .itemOutputs(AE2FC_MON).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Fluid Conversion Monitor
         GT_Values.RA.stdBuilder().itemInputs(AE2_CON, GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
-                .itemOutputs(AE2FC_CON).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .itemOutputs(AE2FC_CON).duration(15 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Wireless Fluid ME Terminal
         GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_FLUID_TERMINAL).itemOutputs(AE2FC_FLUID_WIRELESS)
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Wireless Fluid Pattern Terminal
         GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_TERMINAL).itemOutputs(AE2FC_PATTERN_WIRELESS)
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Wireless Interface Terminal
         GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2_INTERFACE_TERM)
                 .itemOutputs(AE2FC_INTERFACE_WIRELESS).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         // Wireless Level Terminal
         GT_Values.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_LEVEL_TERMINAL).itemOutputs(AE2FC_LEVEL_WIRELESS)
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(sAssemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);

@@ -17,10 +17,10 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sAssemblerRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sFluidSolidficationRecipes;
-import static gregtech.api.util.GT_Recipe.GT_Recipe_Map.sMaceratorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import java.util.Arrays;
@@ -109,7 +109,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4))
                 .fluidInputs(Materials.ConductiveIron.getMolten(144L)).duration(10 * SECONDS).eut(256)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         // ME Dense Conduit
         GT_Values.RA.stdBuilder()
@@ -119,7 +119,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 1))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         // ME Ultra Dense Conduit
         GT_Values.RA.stdBuilder()
@@ -129,7 +129,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 2))
                 .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(960)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 createItemStack(
@@ -1316,455 +1316,455 @@ public class ScriptEnderIO implements IScriptLoader {
                         ItemList.Automation_ChestBuffer_LV.get(1L),
                         getModItem(ExtraUtilities.ID, "enderCollector", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockVacuumChest", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockBuffer", 1, 0, missing),
                         getModItem(EnderIO.ID, "blockBuffer", 1, 1, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockBuffer", 1, 2, missing)).duration(20 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "diamond", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.PulsatingIron, 8L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing)).duration(30 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "emerald", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.VibrantAlloy, 8L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing)).duration(30 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticAlloy, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 1, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 2, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 3, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ConductiveIron, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 4, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.PulsatingIron, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 5, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 6, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Soularium, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 7, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EndSteel, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 8, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EndSteel, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 9, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CrudeSteel, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 0, missing)).duration(10 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CrystallineAlloy, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 1, missing)).duration(10 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MelodicAlloy, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 2, missing)).duration(10 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 3, missing)).duration(10 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CrystallinePinkSlime, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 4, missing)).duration(10 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticSilver, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 5, missing)).duration(10 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VividAlloy, 1L),
                         GT_Utility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 6, missing)).duration(10 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.ManyullynCrystal.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Enderium, 8L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 1, 10, missing)).duration(10 * SECONDS).eut(256)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "heavy_weighted_pressure_plate", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelPressurePlate", 1, 0, missing))
-                .duration(10 * SECONDS).eut(64).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockDarkSteelPressurePlate", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelPressurePlate", 1, 1, missing))
-                .duration(10 * SECONDS).eut(64).addTo(sAssemblerRecipes);
+                .duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelLadder", 2, 0, missing)).duration(5 * SECONDS)
-                .eut(96).addTo(sAssemblerRecipes);
+                .eut(96).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.DarkSteel, 3L),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkIronBars", 4, 0, missing)).duration(30 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Soularium, 3L),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EnderIO.ID, "blockSoulariumBars", 4, 0, missing)).duration(30 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.EndSteel, 3L),
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EnderIO.ID, "blockEndSteelBars", 4, 0, missing)).duration(30 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockElectricLight", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockElectricLight", 1, 1, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockElectricLight", 1, 2, missing),
                         getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockElectricLight", 1, 3, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockElectricLight", 16, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 3, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockElectricLight", 16, 4, missing)).duration(10 * SECONDS)
-                .eut(256).addTo(sAssemblerRecipes);
+                .eut(256).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockElectricLight", 1, 4, missing),
                         getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockElectricLight", 1, 5, missing)).duration(10 * SECONDS)
-                .eut(256).addTo(sAssemblerRecipes);
+                .eut(256).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L),
                         getModItem(EnderIO.ID, "itemMaterial", 4, 1, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemFusedQuartzFrame", 1, 0, missing)).duration(5 * SECONDS)
-                .eut(16).addTo(sAssemblerRecipes);
+                .eut(16).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(EnderIO.ID, "itemMaterial", 8, 1, missing), GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(EnderIO.ID, "itemConduitFacade", 1, 0, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 2, 1, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 2, missing)).duration(5 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 2, missing),
                         getModItem(Minecraft.ID, "lever", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 1, missing)).duration(5 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 0, missing)).duration(5 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ConductiveIron, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Aluminium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(256)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Osmium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduit", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CrudeSteel, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS).eut(8)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Zinc, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS).eut(16)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SolderingAlloy, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(5 * SECONDS).eut(30)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Nickel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).duration(5 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GregTech.ID, "gt.blockmachines", 1, 1380, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).duration(5 * SECONDS).eut(96)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Electrum, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(160)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackSteel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(192)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.TungstenSteel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticSilver, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS).eut(320)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.HSSG, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CrystallineAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS).eut(960)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.NiobiumTitanium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CrystallinePinkSlime, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
-                .eut(1920).addTo(sAssemblerRecipes);
+                .eut(1920).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Naquadah, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MelodicAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
-                .eut(7680).addTo(sAssemblerRecipes);
+                .eut(7680).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.BlackPlutonium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 144)).duration(5 * SECONDS)
-                .eut(30720).addTo(sAssemblerRecipes);
+                .eut(30720).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Copper, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(256)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Polytetrafluoroethylene, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CrystallineAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS).eut(960)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CrystallinePinkSlime, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
-                .eut(1920).addTo(sAssemblerRecipes);
+                .eut(1920).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polybenzimidazole, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MelodicAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144)).duration(5 * SECONDS)
-                .eut(7680).addTo(sAssemblerRecipes);
+                .eut(7680).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polybenzimidazole, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.polybenzimidazole", 144)).duration(5 * SECONDS)
-                .eut(30720).addTo(sAssemblerRecipes);
+                .eut(30720).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Electrum, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.PulsatingIron, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemItemConduit", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(120)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemOCConduit", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(480)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Component_Filter.get(1L), getModItem(Minecraft.ID, "iron_bars", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(30).addTo(sAssemblerRecipes);
+                .eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 1, missing)).duration(15 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 2, 1, missing),
                         getModItem(EnderIO.ID, "blockEndSteelBars", 2, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemBigFilterUpgrade", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(120).addTo(sAssemblerRecipes);
+                .eut(120).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBigFilterUpgrade", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 2, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemBigFilterUpgrade", 1, 1, missing)).duration(15 * SECONDS)
-                .eut(256).addTo(sAssemblerRecipes);
+                .eut(256).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 1, missing),
                         getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemExistingItemFilter", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(120).addTo(sAssemblerRecipes);
+                .eut(120).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemYetaWrench", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemModItemFilter", 1, 0, missing)).duration(15 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemConduitProbe", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerItemFilter", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 0, missing),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(64).addTo(sAssemblerRecipes);
+                .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(15 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "blockFusedQuartz", 3, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.round, Materials.Soularium, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemSoulVessel", 1, 0, missing)).duration(10 * SECONDS).eut(48)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
@@ -1773,7 +1773,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
@@ -1782,7 +1782,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         ItemList.Circuit_Basic.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
@@ -1791,7 +1791,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         ItemList.Circuit_Microprocessor.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
@@ -1800,7 +1800,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
@@ -1809,7 +1809,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
                         ItemList.IC2_Item_Casing_Steel.get(2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
@@ -1818,7 +1818,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         ItemList.Circuit_Basic.get(1L),
                         ItemList.IC2_Item_Casing_Steel.get(2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
@@ -1827,7 +1827,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         ItemList.Circuit_Microprocessor.get(1L),
                         ItemList.IC2_Item_Casing_Steel.get(2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
@@ -1836,21 +1836,21 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         ItemList.IC2_Item_Casing_Steel.get(2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(sAssemblerRecipes);
+                .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 0),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 7),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMachinePart", 1, 0)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_MV / 2).addTo(sAssemblerRecipes);
+                .eut(TierEU.RECIPE_MV / 2).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
@@ -1858,42 +1858,42 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "blockDarkIronBars", 2, 0, missing),
                         GT_Utility.getIntegratedCircuit(17))
                 .itemOutputs(getModItem(EnderIO.ID, "blockReinforcedObsidian", 1, 0, missing)).duration(30 * SECONDS)
-                .eut(120).addTo(sAssemblerRecipes);
+                .eut(120).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Anvil.get(0L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelAnvil", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.darksteel", 4464)).duration(45 * SECONDS).eut(120)
-                .addTo(sFluidSolidficationRecipes);
+                .addTo(fluidSolidifierRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartCFPowder", 1, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 9, 2, missing)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(sMaceratorRecipes);
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 5, missing))
                 .itemOutputs(
                         getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 14, missing))
-                .outputChances(10000, 1000, 100, 10).duration(5 * SECONDS).eut(480).addTo(sMaceratorRecipes);
+                .outputChances(10000, 1000, 100, 10).duration(5 * SECONDS).eut(480).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing))
                 .itemOutputs(
                         getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 15, missing))
-                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(sMaceratorRecipes);
+                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 8, missing))
                 .itemOutputs(
                         getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing))
-                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(sMaceratorRecipes);
+                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(EnderIO.ID, "itemMaterial", 1, 13, missing))
                 .itemOutputs(
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing))
-                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(sMaceratorRecipes);
+                .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
 
     }
 }
