@@ -18,6 +18,7 @@ import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.Phase;
 import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import cpw.mods.fml.relauncher.Side;
 import fox.spiteful.avaritia.items.LudicrousItems;
 
 public class AchievementHandler {
@@ -50,7 +51,7 @@ public class AchievementHandler {
 
     @SubscribeEvent
     public void onEntityUpdate(PlayerTickEvent event) {
-        if (event.phase == Phase.START) {
+        if (event.side == Side.CLIENT || event.phase == Phase.START) {
             return;
         }
 
