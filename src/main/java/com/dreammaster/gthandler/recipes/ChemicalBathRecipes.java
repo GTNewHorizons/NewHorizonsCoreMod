@@ -63,8 +63,8 @@ public class ChemicalBathRecipes implements Runnable {
         // Cooling Hot Netherrack Bricks
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.HotNetherrackBrick.get(1L))
                 .itemOutputs(CustomItemList.InfernalBrick.get(1L))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 1000))
-                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 1000)).duration(10 * SECONDS)
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2coolant"), 250))
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ic2hotcoolant"), 250)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
         // Cooling Hot Kanthal MV
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Kanthal, 1L))
