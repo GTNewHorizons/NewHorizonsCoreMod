@@ -11,4 +11,9 @@ public class RailcraftHelper {
         RailcraftCraftingManager.rollingMachine.getRecipeList()
                 .removeIf(r -> GT_Utility.areStacksEqual(r.getRecipeOutput(), output, true));
     }
+
+    public static void removeRockCrusherRecipe(ItemStack input) {
+        RailcraftCraftingManager.rockCrusher.getRecipes()
+                .removeIf(r -> GT_Utility.areStacksEqual(r.getInput(), input, true));
+    }
 }

@@ -33,6 +33,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.railcraft.RailcraftHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
@@ -2147,6 +2148,11 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Quartzite, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_MV).addTo(wiremillRecipes);
+
+        RailcraftHelper
+                .removeRockCrusherRecipe(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
+        RailcraftHelper
+                .removeRockCrusherRecipe(getModItem(AppliedEnergistics2.ID, "tile.BlockSkyStone", 1, 0, missing));
 
     }
 }
