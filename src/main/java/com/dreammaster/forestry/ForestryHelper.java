@@ -31,9 +31,8 @@ public class ForestryHelper {
     }
 
     public static void removeFabricatorRecipe(ItemStack output) {
-        RecipeManagers.fabricatorManager.removeRecipe(
-                RecipeManagers.fabricatorManager.recipes().stream()
-                        .filter(r -> GT_Utility.areStacksEqual(r.getRecipeOutput(), output, true)).findFirst()
-                        .orElse(null));
+        RecipeManagers.fabricatorManager.recipes().stream()
+                .filter(r -> GT_Utility.areStacksEqual(r.getRecipeOutput(), output, true))
+                .forEach(r -> RecipeManagers.fabricatorManager.removeRecipe(r));
     }
 }
