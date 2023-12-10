@@ -53,7 +53,13 @@ public class RecipeRemover {
         int i = tList.size();
         tList.removeIf(r -> {
             ItemStack rCopy = r.getRecipeOutput();
-            if (rCopy == null) return false; // ????????????????????
+            if (rCopy == null) {
+                return false;
+            }
+            if (rCopy.getItem() == null) {
+                System.out.println("Do you know what youare doing?");
+                return false;
+            }
             if (rCopy.stackTagCompound != null) {
                 rCopy = rCopy.copy();
                 rCopy.stackTagCompound = null;
