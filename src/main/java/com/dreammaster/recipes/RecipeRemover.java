@@ -53,7 +53,16 @@ public class RecipeRemover {
         int i = tList.size();
         tList.removeIf(r -> {
             ItemStack rCopy = r.getRecipeOutput();
-            if (rCopy == null) return false; // ????????????????????
+            if (rCopy == null) {
+                return false;
+            }
+            if (rCopy.getItem() == null) {
+                MainRegistry.Logger.warn("Someone is adding recipes with null items!");
+                for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+                    MainRegistry.Logger.warn(element.toString());
+                }
+                return true;
+            }
             if (rCopy.stackTagCompound != null) {
                 rCopy = rCopy.copy();
                 rCopy.stackTagCompound = null;
