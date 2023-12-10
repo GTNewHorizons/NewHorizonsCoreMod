@@ -58,6 +58,9 @@ public class RecipeRemover {
             }
             if (rCopy.getItem() == null) {
                 MainRegistry.Logger.warn("Someone is adding recipes with null items!");
+                for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+                    MainRegistry.Logger.warn(element.toString());
+                }
                 return true;
             }
             if (rCopy.stackTagCompound != null) {
