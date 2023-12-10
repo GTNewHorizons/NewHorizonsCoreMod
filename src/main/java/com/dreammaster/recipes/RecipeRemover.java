@@ -57,8 +57,8 @@ public class RecipeRemover {
                 return false;
             }
             if (rCopy.getItem() == null) {
-                System.out.println("Do you know what youare doing?");
-                return false;
+                System.out.println("Someone is adding recipes with null items!");
+                return true;
             }
             if (rCopy.stackTagCompound != null) {
                 rCopy = rCopy.copy();
