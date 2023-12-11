@@ -486,7 +486,10 @@ public class MainRegistry {
             BW_RadHatchMaterial.runRadHatchAdder();
         }
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
-        if (Loader.isModLoaded("amazingtrophies") && BloodMagic.isModLoaded() && Avaritia.isModLoaded()) {
+        if (Loader.isModLoaded("amazingtrophies") && BloodMagic.isModLoaded()
+                && Avaritia.isModLoaded()
+                && SGCraft.isModLoaded()
+                && TinkerConstruct.isModLoaded()) {
             AchievementHandler.init();
             AchievementHandler handler = new AchievementHandler();
             MinecraftForge.EVENT_BUS.register(handler);
