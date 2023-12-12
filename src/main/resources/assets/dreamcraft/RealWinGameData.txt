@@ -52,9 +52,22 @@ Dipo33:dev
 Greesy:dev
 bombcar1042:dev
 BritishCynic:dev
+Prometheus0000:dev
+Jimbno:dev
+ScriptedPiky:dev
+Careface:dev
+YPXxiao:dev
+Bluebine:dev
+Cinobi:dev
+Drobac:dev
+Adrian:dev
+MrWye:dev
+jayjay:dev
+moronwmachinegun:dev
+Giovanni_NL:dev
+Bryfer:dev
 
 Technus:contributor
-Prometheus0000:contributor
 Blood-Asp:contributor
 bartimaeusnek:contributor
 richardhendricks:contributor
@@ -77,7 +90,6 @@ matt-159:contributor
 wlhlm:contributor
 Zokonius:contributor
 Quetz4l:contributor
-ScriptedPiky:contributor
 EnderProyects:contributor
 xchgeax:contributor
 brachy84:contributor
@@ -118,7 +130,6 @@ harrynull:contributor
 KatrinaAS:contributor
 albus12138:contributor
 mist475:contributor
-Jimbno:contributor
 wohaopa:contributor
 hacatu:contributor
 damug:contributor
@@ -154,10 +165,13 @@ ko5h:contributor
 DualBallers:contributor
 YoungGT:contributor
 Yesterday17:contributor
+bigbass1997:contributor
+gcewing:contributor
+brandon3055:contributor
 
 Pandoro:stargate
 JodieRuth:stargate
-PropainChan
+PropainChan:stargate
 RubiksImplosion:stargate
 harrynull:stargate
 zefenglin:stargate
