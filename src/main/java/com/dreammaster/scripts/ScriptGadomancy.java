@@ -99,7 +99,6 @@ public class ScriptGadomancy implements IScriptLoader {
         TCHelper.removeArcaneRecipe(getModItem(Gadomancy.ID, "BlockAuraPylon", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(Gadomancy.ID, "BlockAuraPylon", 1, 1, missing));
         TCHelper.removeArcaneRecipe(getModItem(Gadomancy.ID, "BlockKnowledgeBook", 1, 0, missing));
-        TCHelper.removeArcaneRecipe(getModItem(Gadomancy.ID, "BlockEssentiaCompressor", 3, 0, missing));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "GADOMANCY.GOLEMSILVERWOOD",
                 getModItem(Gadomancy.ID, "itemSilverwoodGolemPlacer", 1, 8, missing),
@@ -656,33 +655,6 @@ public class ScriptGadomancy implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("lucrum"), 3));
         TCHelper.setResearchComplexity("GADOMANCY.KNOWLEDGE_BOOK", 3);
         ThaumcraftApi.addWarpToResearch("GADOMANCY.KNOWLEDGE_BOOK", 4);
-        ThaumcraftApi.addArcaneCraftingRecipe(
-                "GADOMANCY.ESSENTIA_COMPRESSOR",
-                getModItem(Gadomancy.ID, "BlockEssentiaCompressor", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("aer"), 180).add(Aspect.getAspect("aqua"), 200)
-                        .add(Aspect.getAspect("ignis"), 120).add(Aspect.getAspect("terra"), 100)
-                        .add(Aspect.getAspect("perditio"), 140).add(Aspect.getAspect("ordo"), 160),
-                "abc",
-                "def",
-                "ghi",
-                'a',
-                getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing),
-                'b',
-                getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
-                'c',
-                getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing),
-                'd',
-                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
-                'e',
-                getModItem(Gadomancy.ID, "ItemElement", 1, 0, missing),
-                'f',
-                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
-                'g',
-                getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing),
-                'h',
-                getModItem(Gadomancy.ID, "ItemAuraCore", 1, 3, missing),
-                'i',
-                getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing));
         TCHelper.setResearchAspects(
                 "GADOMANCY.ESSENTIA_COMPRESSOR",
                 new AspectList().add(Aspect.getAspect("vacuos"), 21).add(Aspect.getAspect("perditio"), 18)
