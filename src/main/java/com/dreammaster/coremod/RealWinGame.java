@@ -1,5 +1,7 @@
 package com.dreammaster.coremod;
 
+import static net.minecraft.util.StatCollector.translateToLocal;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -7,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import net.minecraft.client.audio.ISound;
+import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.Tessellator;
@@ -49,7 +51,7 @@ public class RealWinGame extends GuiScreen {
     private int textsize;
     private int field_146579_r;
     private float field_146578_s = 0.5F;
-    private ISound currentMusic;
+    int y = 0;
 
     public RealWinGame() {}
 
@@ -70,6 +72,7 @@ public class RealWinGame extends GuiScreen {
     }
 
     private void func_146574_g() {
+        this.mc.getSoundHandler().stopSounds();
         this.mc.displayGuiScreen((GuiScreen) null);
     }
 
@@ -95,25 +98,17 @@ public class RealWinGame extends GuiScreen {
             // this.field_146582_i.add("");
             try {
                 String s = "";
-                String s01 = "§oThe GTNH administrators, with their unwavering dedication, embody innovation and community spirit in crafting an unparalleled gaming experience. Their commitment to a supportive environment and adept management inspires players on extraordinary journeys within GregTech New Horizons. These administrators shape a modpack that challenges creativity and unites a diverse community, fostering collective achievement and enjoyment.";
+                String s01 = "";
                 String s1 = "§l";
-                String s02 = "§oThe passionate GTNH developers, dedicating their free time to bring a vision to life, exemplify the essence of creative commitment. Their tireless efforts and imaginative ingenuity not only shape the intricate world of GregTech New Horizons but also invite players into an extraordinary realm of limitless possibilities, showcasing the true artistry of their craft.";
+                String s02 = "";
                 String s2 = "§l";
-                String s03 = "§oThe invaluable contributions from the GTNH community reflect a collaborative spirit that elevates the modpack to new heights. These dedicated contributors, through their shared expertise and commitment, weave a tapestry of innovation, turning individual efforts into a collective masterpiece that enriches the gaming experience for all.";
+                String s03 = "";
                 String s3 = "";
-                String s04 = "§oThe generous support of GTNH donators serves as the backbone of a thriving community, enabling the modpack to flourish and evolve. Their contributions not only fuel the development but also stand as a testament to the shared passion that unites players in the pursuit of an extraordinary and continually enriching gaming adventure.";
+                String s04 = "";
                 String s4 = "";
-                String s05 = "§oThe triumph of GTNH players who conquer the pack takes note of their exceptional dedication, strategic brilliance, and unwavering perseverance. Their achievements stand as a testament to the indomitable spirit that transforms the challenging gaming experience of GregTech New Horizons into a remarkable journey of skill and triumph.";
+                String s05 = "";
                 String s5 = "";
-                String cg = "Congratulations on completing GregTech New Horizons (GTNH)! That's a significant achievement, and you've likely invested a considerable amount of time and effort into mastering the complexities of the modpack. Your dedication and problem-solving skills have paid off, and you've conquered the challenges that GTNH presents.\n"
-                        + "\n"
-                        + "Now that you've reached the endgame, take a moment to reflect on your journey and the skills you've acquired. Whether you've automated complex processes, built intricate machinery, or explored distant dimensions, you've demonstrated resilience and ingenuity.\n"
-                        + "\n"
-                        + "Consider sharing your accomplishments with the gaming community, perhaps by creating a post or video detailing your experiences and strategies. Your insights and expertise may inspire others who are still navigating the challenges of GTNH.\n"
-                        + "\n"
-                        + "As you bask in the glory of your success, you might also want to explore other modpacks or challenges within the Minecraft community. There's a vast array of content and experiences waiting for you, and your skills from GTNH will undoubtedly serve you well in new adventures.\n"
-                        + "\n"
-                        + "Once again, congratulations on your triumph in GTNH! May your future Minecraft endeavors be just as rewarding and enjoyable.";
+                String cg = "";
                 BufferedReader bufferedreader = new BufferedReader(
                         new InputStreamReader(
                                 this.mc.getResourceManager()
@@ -160,17 +155,34 @@ public class RealWinGame extends GuiScreen {
                     s5 = s5 + ("§o§d" + this.mc.getSession().getUsername() + "   ");
                 }
 
-                this.admindesc.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s01, 320));
+                this.admindesc.addAll(
+                        this.mc.fontRenderer.listFormattedStringToWidth(translateToLocal("dc.wingame.admindesc"), 320));
                 this.admin.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s1, 320));
-                this.devdesc.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s02, 320));
+                this.devdesc.addAll(
+                        this.mc.fontRenderer.listFormattedStringToWidth(translateToLocal("dc.wingame.devdesc"), 320));
                 this.dev.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s2, 320));
-                this.contributordesc.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s03, 320));
+                this.contributordesc.addAll(
+                        this.mc.fontRenderer
+                                .listFormattedStringToWidth(translateToLocal("dc.wingame.contributordesc"), 320));
                 this.contributor.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s3, 320));
-                this.donordesc.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s04, 320));
+                this.donordesc.addAll(
+                        this.mc.fontRenderer
+                                .listFormattedStringToWidth(translateToLocal("dc.wingame.donatordesc"), 320));
                 this.donor.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s4, 320));
-                this.gatedesc.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s05, 320));
+                this.gatedesc.addAll(
+                        this.mc.fontRenderer.listFormattedStringToWidth(translateToLocal("dc.wingame.gatedesc"), 320));
                 this.gate.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s5, 320));
-                this.cg.addAll(this.mc.fontRenderer.listFormattedStringToWidth(cg, 320));
+                this.cg.addAll(
+                        this.mc.fontRenderer.listFormattedStringToWidth(
+                                (translateToLocal("dc.wingame.gc") + "\n\n"
+                                        + translateToLocal("dc.wingame.gc1")
+                                        + "\n\n"
+                                        + translateToLocal("dc.wingame.gc2")
+                                        + "\n\n"
+                                        + translateToLocal("dc.wingame.gc3")
+                                        + "\n\n"
+                                        + translateToLocal("dc.wingame.gc4")),
+                                320));
             } catch (Exception var9) {
                 logger.error("Couldn't load credits", var9);
             }
@@ -226,6 +238,12 @@ public class RealWinGame extends GuiScreen {
     }
 
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+        if (y == 0) {
+            mc.getSoundHandler().stopSounds();
+            mc.getSoundHandler().playSound(
+                    PositionedSoundRecord.func_147673_a(new ResourceLocation("dreamcraft", "credits.wingame")));
+            y++;
+        }
         this.func_146575_b(mouseX, mouseY, partialTicks);
         Tessellator tessellator = Tessellator.instance;
         int k = this.width / 2 - 160;
