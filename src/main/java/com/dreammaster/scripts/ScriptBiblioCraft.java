@@ -756,7 +756,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
             addShapedRecipe(
                     TypeWriterB[i],
                     "plateRubber",
-                    getModItem(OpenComputers.ID, "item", 1, 20),
+                    getModItem(OpenComputers.ID, "keyboard", 1),
                     "plateRubber",
                     "ringIron",
                     color16[i],

@@ -16,10 +16,12 @@ import WayofTime.alchemicalWizardry.ModItems;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.Phase;
 import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import cpw.mods.fml.relauncher.Side;
 import fox.spiteful.avaritia.items.LudicrousItems;
+import tconstruct.library.tools.ToolCore;
 
 public class AchievementHandler {
 
@@ -32,6 +34,7 @@ public class AchievementHandler {
     public static StatBase eternityBeaconAchievement;
     private static StatBase allEffects;
     private static StatBase hearts;
+    private static StatBase unbreakableTool;
     private static int numberPotions = 0;
 
     public static void init() {
@@ -41,6 +44,7 @@ public class AchievementHandler {
         eternityBeaconAchievement = StatList.func_151177_a("eternity_beacon");
         allEffects = StatList.func_151177_a("all_effects");
         hearts = StatList.func_151177_a("100_hearts");
+        unbreakableTool = StatList.func_151177_a("unbreakable_tconstruct_tool");
 
         for (Potion potion : Potion.potionTypes) {
             if (potion != null && !potion.isInstant()) {
@@ -122,6 +126,15 @@ public class AchievementHandler {
         LAST_DEATHCOUNT.put(uuid, deathCount);
         LAST_DAMAGE.put(uuid, event.ammount);
 
+    }
+
+    @SubscribeEvent
+    public void onItemPickup(ItemPickupEvent event) {
+        ItemStack stack = event.pickedUp.getEntityItem();
+        if (stack.getItem() instanceof ToolCore && stack.hasTagCompound()
+                && stack.getTagCompound().getCompoundTag("InfiTool").getInteger("Unbreaking") >= 10) {
+            event.player.triggerAchievement(unbreakableTool);
+        }
     }
 
     private static boolean hasArmor(ItemStack[] armor, Item helmet, Item chestplate, Item leggins, Item boots) {
