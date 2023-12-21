@@ -2854,6 +2854,14 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("TwilightForest", "item.emptyMagicMap", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TwilightForest", "item.ironwoodRaw", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TwilightForest", "tile.TFUncraftingTable", 1, 0, missing));
+
+        String[] materials = new String[] { "Twilight", "Canopy", "Mangrove", "Darkwood", "Time", "Trans", "Mine",
+                "Sort" };
+        for (int i = 0; i < materials.length; i++) {
+            removeRecipeByOutputDelayed(getModItem("TwilightForest", "tile.TFTrapDoor" + materials[i], 1, 0, missing));
+            removeRecipeByOutputDelayed(getModItem("TwilightForest", "item.TFDoor" + materials[i], 1, 0, missing));
+        }
+
         removeRecipeByOutputDelayed(getModItem("WR-CBE|Core", "obsidianStick", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("WR-CBE|Core", "stoneBowl", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("WR-CBE|Core", "retherPearl", 1, 0, missing));
