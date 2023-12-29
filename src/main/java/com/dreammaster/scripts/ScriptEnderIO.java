@@ -1718,6 +1718,12 @@ public class ScriptEnderIO implements IScriptLoader {
                 .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 1, missing),
+                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing))
+                .itemOutputs(getModItem(EnderIO.ID, "itemLimitedItemFilter", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(120).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 2, 1, missing),
                         getModItem(EnderIO.ID, "blockEndSteelBars", 2, 0, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemBigFilterUpgrade", 1, 0, missing)).duration(15 * SECONDS)
@@ -1731,7 +1737,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemBasicFilterUpgrade", 1, 1, missing),
-                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing))
+                        getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 20, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "itemExistingItemFilter", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
