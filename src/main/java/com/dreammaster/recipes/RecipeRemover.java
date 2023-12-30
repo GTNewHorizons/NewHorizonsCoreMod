@@ -2859,7 +2859,7 @@ public class RecipeRemover {
                 "Sort" };
         for (int i = 0; i < materials.length; i++) {
             removeRecipeByOutputDelayed(getModItem("TwilightForest", "tile.TFTrapDoor" + materials[i], 1, 0, missing));
-            removeRecipeByOutputDelayed(getModItem("TwilightForest", "item.TFDoor" + materials[i], 1, 0, missing));
+            removeRecipeByOutputDelayed(getModItem("TwilightForest", "item.door" + materials[i], 1, 0, missing));
         }
 
         removeRecipeByOutputDelayed(getModItem("WR-CBE|Core", "obsidianStick", 1, 0, missing));

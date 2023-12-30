@@ -103,9 +103,9 @@ public class ScriptTwilightForest implements IScriptLoader {
                     getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing));
 
             addShapedRecipe(
-                    getModItem(TwilightForest.ID, "item.TFDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
-                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
                     "craftingToolScrewdriver",
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
                     "ringAnyIron",
@@ -114,9 +114,9 @@ public class ScriptTwilightForest implements IScriptLoader {
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
                     "craftingToolSaw");
             addShapedRecipe(
-                    getModItem(TwilightForest.ID, "item.TFDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
-                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
                     "craftingToolScrewdriver",
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
                     "ringCopper",
@@ -125,9 +125,9 @@ public class ScriptTwilightForest implements IScriptLoader {
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
                     "craftingToolSaw");
             addShapedRecipe(
-                    getModItem(TwilightForest.ID, "item.TFDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
-                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
                     "craftingToolSaw",
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
                     "ringAnyIron",
@@ -136,9 +136,9 @@ public class ScriptTwilightForest implements IScriptLoader {
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
                     "craftingToolScrewdriver");
             addShapedRecipe(
-                    getModItem(TwilightForest.ID, "item.TFDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
-                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
                     "craftingToolSaw",
                     getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
                     "ringCopper",
