@@ -905,6 +905,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemItemConduit", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemBasicFilterUpgrade", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemBasicFilterUpgrade", 1, 1, missing));
+        removeRecipeByOutputDelayed(getModItem("EnderIO", "itemLimitedItemFilter", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemExistingItemFilter", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemModItemFilter", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("EnderIO", "itemBigFilterUpgrade", 1, 0, missing));
