@@ -1807,8 +1807,8 @@ public class AssemblerRecipes implements Runnable {
         // Large Chemical Reactor
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Electric_Motor_HV.get(3L),
-                        ItemList.Casing_HV.get(1L),
+                        ItemList.Electric_Motor_HV.get(1L),
+                        ItemList.Hull_HV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Polytetrafluoroethylene, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                         GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1),

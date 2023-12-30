@@ -20,6 +20,7 @@ import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.Phase;
 import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import cpw.mods.fml.relauncher.Side;
+import fox.spiteful.avaritia.DamageSourceInfinitySword;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import tconstruct.library.tools.ToolCore;
 
@@ -123,8 +124,9 @@ public class AchievementHandler {
         UUID uuid = player.getUniqueID();
         int deathCount = FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager()
                 .func_152602_a(player).writeStat(StatList.deathsStat);
+        float amount = event.source instanceof DamageSourceInfinitySword ? Float.POSITIVE_INFINITY : event.ammount;
         LAST_DEATHCOUNT.put(uuid, deathCount);
-        LAST_DAMAGE.put(uuid, event.ammount);
+        LAST_DAMAGE.put(uuid, amount);
 
     }
 
