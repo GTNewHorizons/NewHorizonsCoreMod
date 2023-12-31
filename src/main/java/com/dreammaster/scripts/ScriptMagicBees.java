@@ -1,15 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.Botania;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MagicBees;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
@@ -408,6 +399,7 @@ public class ScriptMagicBees implements IScriptLoader {
 
         TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 3, 17, missing));
         TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 3, 17, missing));
+        TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "apiamancersDrainer", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 7, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 8, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 9, missing));
@@ -1117,6 +1109,24 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
                                 getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0, missing))));
+        TCHelper.moveResearch("MB_ApiamancersDrainer", "MAGICBEES", -1, 7);
+        TCHelper.addResearchPrereq("MB_ApiamancersDrainer", "MB_DimensionalSingularity", false);
+        TCHelper.setResearchComplexity("MB_ApiamancersDrainer", 5);
+        ResearchCategories.getResearch("MB_ApiamancersDrainer").setConcealed();
+        ThaumcraftApi.addWarpToResearch("MB_ApiamancersDrainer", 3);
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "MB_ApiamancersDrainer",
+                getModItem(MagicBees.ID, "apiamancersDrainer", 1, 0, missing),
+                5,
+                new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("tempus"), 50),
+                getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
+                new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
+                        getModItem(MagicBees.ID, "pollen", 1, 0, missing),
+                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 1, missing),
+                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 1, missing),
+                        getModItem(MagicBees.ID, "pollen", 1, 1, missing),
+                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 1, missing),
+                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 1, missing), });
         TCHelper.refreshResearchPages("MB_VisAuraProvider");
         TCHelper.refreshResearchPages("MB_EssenceLife");
         TCHelper.refreshResearchPages("MB_EssenceDeath");
@@ -1127,5 +1137,6 @@ public class ScriptMagicBees implements IScriptLoader {
         TCHelper.refreshResearchPages("MB_Scoop");
         TCHelper.refreshResearchPages("MB_ScoopVoid");
         TCHelper.refreshResearchPages("MB_GrafterVoid");
+        TCHelper.refreshResearchPages("MB_ApiamancersDrainer");
     }
 }
