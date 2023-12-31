@@ -1,6 +1,16 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
