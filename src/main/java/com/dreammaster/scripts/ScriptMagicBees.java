@@ -1128,7 +1128,7 @@ public class ScriptMagicBees implements IScriptLoader {
                 "MB_ApiamancersDrainer",
                 getModItem(MagicBees.ID, "apiamancersDrainer", 1, 0, missing),
                 5,
-                new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("lucrum"), 50)
+                new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.GREED, 50)
                         .add(Aspect.getAspect("tempus"), 25),
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
