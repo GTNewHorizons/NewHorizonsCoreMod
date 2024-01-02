@@ -4,8 +4,10 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
@@ -42,7 +44,9 @@ public class ScriptChisel implements IScriptLoader {
                 Botania.ID,
                 Chisel.ID,
                 EnderIO.ID,
+                GalacticraftAmunRa.ID,
                 GalacticraftCore.ID,
+                IndustrialCraft2.ID,
                 IronChests.ID,
                 Natura.ID,
                 Railcraft.ID,
@@ -284,6 +288,16 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack(
                 "basalts",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 4, missing));
+        ChiselHelper.addVariationFromStack("basalts", getModItem(IndustrialCraft2.ID, "blockBasalt", 1, 0, missing));
+        ChiselHelper.addVariationFromStack(
+                "basalts",
+                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 0, missing));
+        ChiselHelper.addVariationFromStack(
+                "basalts",
+                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 1, missing));
+        ChiselHelper.addVariationFromStack(
+                "basalts",
+                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1, 7, missing));
         ChiselHelper.addGroup("redgranite");
         ChiselHelper.addVariationFromStack(
                 "redgranite",
