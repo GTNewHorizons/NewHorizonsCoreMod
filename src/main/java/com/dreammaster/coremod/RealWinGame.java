@@ -39,6 +39,7 @@ public class RealWinGame extends GuiScreen {
     private List field_146582_i;
     private List admindesc;
     private List admin;
+    private List staff;
     private List devdesc;
     private List dev;
     private List contributordesc;
@@ -84,6 +85,7 @@ public class RealWinGame extends GuiScreen {
         if (this.field_146582_i == null) {
             this.admindesc = new ArrayList();
             this.admin = new ArrayList();
+            this.staff = new ArrayList();
             this.devdesc = new ArrayList();
             this.dev = new ArrayList();
             this.contributordesc = new ArrayList();
@@ -100,6 +102,7 @@ public class RealWinGame extends GuiScreen {
                 String s = "";
                 String s01 = "";
                 String s1 = "§l";
+                String s11 = "";
                 String s02 = "";
                 String s2 = "§l";
                 String s03 = "";
@@ -119,6 +122,9 @@ public class RealWinGame extends GuiScreen {
                     if (s.contains(":")) {
                         if (s.contains(":admin")) {
                             s1 = s1 + s.substring(0, s.indexOf(":")) + "   ";
+                        }
+                        if (s.contains(":staff")) {
+                            s11 = s11 + s.substring(0, s.indexOf(":")) + "   ";
                         }
                         if (s.contains(":dev")) {
                             s2 = s2 + s.substring(0, s.indexOf(":")) + "   ";
@@ -158,6 +164,7 @@ public class RealWinGame extends GuiScreen {
                 this.admindesc.addAll(
                         this.mc.fontRenderer.listFormattedStringToWidth(translateToLocal("dc.wingame.admindesc"), 320));
                 this.admin.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s1, 320));
+                this.staff.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s11, 320));
                 this.devdesc.addAll(
                         this.mc.fontRenderer.listFormattedStringToWidth(translateToLocal("dc.wingame.devdesc"), 320));
                 this.dev.addAll(this.mc.fontRenderer.listFormattedStringToWidth(s2, 320));
@@ -187,7 +194,8 @@ public class RealWinGame extends GuiScreen {
                 logger.error("Couldn't load credits", var9);
             }
             // this.field_146579_r = this.field_146582_i.size() * 12;
-            textsize = this.admin.size() + this.dev.size()
+            textsize = this.admin.size() + this.staff.size()
+                    + this.dev.size()
                     + this.contributor.size()
                     + this.donor.size()
                     + this.gate.size()
@@ -274,7 +282,22 @@ public class RealWinGame extends GuiScreen {
             // GL11.glScalef(2.5F, 2.5F, 1.0F); // scale
             this.fontRendererObj.fontRandom.setSeed((long) j1 * 4238972211L + (long) (this.field_146581_h / 4));
             this.fontRendererObj
-                    .drawStringWithShadow(s, this.width / 2 - this.fontRendererObj.getStringWidth(s) / 2, i1, 16711680);
+                    .drawStringWithShadow(s, this.width / 2 - this.fontRendererObj.getStringWidth(s) / 2, i1, 11141120);
+            // GL11.glPopMatrix(); // restore
+            i1 += 12;
+        }
+
+        i1 += 32;
+
+        for (j1 = 0; j1 < this.staff.size(); ++j1) {
+            String s = (String) this.staff.get(j1);
+            s = s.replaceFirst("\\s*", "");
+            s = s.replaceAll("\\s+$", "");
+            // GL11.glPushMatrix(); // remember current
+            // GL11.glScalef(2.5F, 2.5F, 1.0F); // scale
+            this.fontRendererObj.fontRandom.setSeed((long) j1 * 4238972211L + (long) (this.field_146581_h / 4));
+            this.fontRendererObj
+                    .drawStringWithShadow(s, this.width / 2 - this.fontRendererObj.getStringWidth(s) / 2, i1, 43690);
             // GL11.glPopMatrix(); // restore
             i1 += 12;
         }
