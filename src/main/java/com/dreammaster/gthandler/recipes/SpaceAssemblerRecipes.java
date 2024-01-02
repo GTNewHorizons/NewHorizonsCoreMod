@@ -149,6 +149,26 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null);
             }
 
+            if (GoodGenerator.isModLoaded()) {
+                // Advanced Radiation Proof Plate
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lanthanum, 32L),
+                                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectrumFlux, 16L),
+                                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Trinium, 16L),
+                                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 64L),
+                                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 16L),
+                                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 16L),
+                                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 16L) },
+                        new FluidStack[] { new FluidStack(solderIndalloy, (32 * 144)),
+                                Materials.Lead.getMolten(64 * 144L) },
+                        GT_ModHandler.getModItem(GoodGenerator.ID, "advancedRadiationProtectionPlate", 4L, 0),
+                        1,
+                        50 * 20,
+                        (int) TierEU.ZPM,
+                        null,
+                        null);
+            }
+
             // Alternate Energy Cluster Recipe
             IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { ItemList.Circuit_Board_Bio_Ultra.get(1),

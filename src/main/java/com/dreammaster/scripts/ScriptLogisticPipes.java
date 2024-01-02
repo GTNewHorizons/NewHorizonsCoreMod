@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
@@ -55,7 +54,6 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 BuildCraftSilicon.ID,
                 ExtraUtilities.ID,
                 Forestry.ID,
-                GTPlusPlus.ID,
                 GalacticraftCore.ID,
                 IndustrialCraft2.ID,
                 IronChests.ID,
@@ -4264,23 +4262,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateRedstoneAlloy", 2, 0, missing),
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 2L),
-                        getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
-                        GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
-                        getModItem(GTPlusPlus.ID, "itemPlateRedstoneAlloy", 2, 0, missing),
                         getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
@@ -4879,7 +4861,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
-                        getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
+                        ItemList.Robot_Arm_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(5))
@@ -4888,7 +4870,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
-                        getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
+                        ItemList.Robot_Arm_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(6))
@@ -4897,7 +4879,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
-                        getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
+                        ItemList.Robot_Arm_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(1))
@@ -4906,7 +4888,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
-                        getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
+                        ItemList.Robot_Arm_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(2))
@@ -4915,7 +4897,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
-                        getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
+                        ItemList.Robot_Arm_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(3))
@@ -4924,7 +4906,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
-                        getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32036, missing),
+                        ItemList.Robot_Arm_LV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                         GT_Utility.getIntegratedCircuit(4))
