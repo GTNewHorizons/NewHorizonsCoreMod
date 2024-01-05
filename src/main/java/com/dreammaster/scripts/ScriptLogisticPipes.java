@@ -64,12 +64,6 @@ public class ScriptLogisticPipes implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapelessRecipe(
-                getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing),
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing));
-        addShapelessRecipe(
-                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing));
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 2, missing),
                 "boltRedSteel",
@@ -1261,6 +1255,114 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        ItemList.Circuit_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        ItemList.Circuit_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        ItemList.Circuit_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
+                        GT_Utility.getIntegratedCircuit(18))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
