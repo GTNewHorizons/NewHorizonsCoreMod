@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
@@ -234,6 +235,24 @@ public class CuttingMachineRecipes implements Runnable {
                 ).itemOutputs(ItemList.Circuit_Silicon_Wafer6.get((i + 1) * 2L)).fluidInputs(purified_water[i])
                         .duration(wafer_duration_ticks *= 0.95).eut(wafer_eu_per_tick).addTo(cutterRecipes);
 
+            }
+        }
+
+        if (Chisel.isModLoaded()) {
+            // Floor Carpet
+            for (int meta = 0; meta < 16; ++meta) {
+                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Chisel.ID, "carpet_block", 1, meta))
+                        .fluidInputs(Materials.Water.getFluid(4L))
+                        .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS)
+                        .eut(7).addTo(cutterRecipes);
+                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Chisel.ID, "carpet_block", 1, meta))
+                        .fluidInputs(GT_ModHandler.getDistilledWater(3L))
+                        .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS)
+                        .eut(7).addTo(cutterRecipes);
+                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Chisel.ID, "carpet_block", 1, meta))
+                        .fluidInputs(Materials.Lubricant.getFluid(1L))
+                        .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(50).eut(7)
+                        .addTo(cutterRecipes);
             }
         }
     }
