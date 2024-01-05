@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraBees;
+import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
@@ -796,6 +797,17 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing),
                 "wireGt02RedAlloy",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 24, missing));
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing),
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing),
+                "wireGt02RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing),
+                "plateGlowstone",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                "circuitBasic",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing),
+                "wireGt02RedAlloy",
+                getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing));
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routerutil", 1, 0, missing),
                 "wireGt01RedAlloy",
@@ -1865,6 +1877,12 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 1, 60, missing))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 9, missing))
+                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
+                        getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 0, missing))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 10, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -4479,6 +4497,138 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 7, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 72)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        ItemList.Circuit_Microprocessor.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
+                .addTo(circuitAssemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
+                .itemOutputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36)).duration(45 * SECONDS).eut(30)
                 .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
