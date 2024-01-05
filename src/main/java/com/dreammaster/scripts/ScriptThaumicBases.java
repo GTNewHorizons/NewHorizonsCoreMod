@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
+import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -29,6 +30,7 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -75,6 +77,13 @@ public class ScriptThaumicBases implements IScriptLoader {
 
         OreDictHelper.removeOreDict("gravel", getModItem(ThaumicBases.ID, "oldGravel", 1, 0, missing));
 
+        GT_ModHandler.addSmeltingRecipe(
+                getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 9, 3, missing));
+        GT_ModHandler.addSmeltingRecipe(
+                getModItem(ThaumicBases.ID, "quicksilverBrick", 1, 0, missing),
+                getModItem(Thaumcraft.ID, "ItemResource", 9, 3, missing));
+
         GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
@@ -267,6 +276,12 @@ public class ScriptThaumicBases implements IScriptLoader {
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mercury", 9000)).duration(1152).eut(4)
+                .addTo(fluidExtractionRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "quicksilverBrick", 1, 0, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("mercury", 9000)).duration(1152).eut(4)
+                .addTo(fluidExtractionRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "relocator", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "relocator", 1, 6, missing));
