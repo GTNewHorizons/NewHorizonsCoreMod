@@ -82,6 +82,11 @@ public class WoodenBrickForm extends Item implements IExtendedModItem<WoodenBric
     }
 
     @Override
+    public boolean isRepairable() {
+        return false;
+    }
+
+    @Override
     public ItemStack getContainerItem(ItemStack stack) {
         ItemStack ret = stack.copy().splitStack(1);
         if (ret.getItemDamage() < getMaxDamage()) {
