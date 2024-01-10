@@ -8528,6 +8528,17 @@ public class AssemblerRecipes implements Runnable {
                     .fluidInputs(Materials.Water.getFluid(10000)) // Same as Neper (but the grass is red)
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            // Horus
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseFalling", 64, 0), // Obsidian Sand
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 9), // Obsidian Brick
+                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CosmicNeutronium, 64),
+                            GT_Utility.getIntegratedCircuit(17))
+                    .fluidInputs(Materials.Lava.getFluid(10000))
+                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ho", 1, 0)).duration(15 * SECONDS)
+                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             // Technically T10
             // Deep Dark
             GT_Values.RA.stdBuilder()
