@@ -2076,6 +2076,15 @@ public class AssemblerRecipes implements Runnable {
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
         }
+        // Fusion Coil Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4L),
+                        ItemList.Neutron_Reflector.get(2L),
+                        ItemList.Field_Generator_MV.get(2L),
+                        ItemList.Casing_Coil_Superconductor.get(1L))
+                .itemOutputs(ItemList.Casing_Fusion_Coil.get(1L)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
     }
 
     private void makeElectricMachinePartRecipes() {
@@ -8527,6 +8536,17 @@ public class AssemblerRecipes implements Runnable {
                             GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Water.getFluid(10000)) // Same as Neper (but the grass is red)
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1, 0)).duration(15 * SECONDS)
+                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            // Horus
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseFalling", 64, 0), // Obsidian Sand
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 9), // Obsidian Brick
+                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CosmicNeutronium, 64),
+                            GT_Utility.getIntegratedCircuit(17))
+                    .fluidInputs(Materials.Lava.getFluid(10000))
+                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ho", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             // Technically T10
             // Deep Dark
