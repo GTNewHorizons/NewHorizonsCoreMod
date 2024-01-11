@@ -2076,6 +2076,16 @@ public class AssemblerRecipes implements Runnable {
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
         }
+        // Fusion Coil Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4L),
+                        ItemList.Neutron_Reflector.get(2L),
+                        ItemList.Field_Generator_MV.get(2L),
+                        ItemList.Casing_Coil_Superconductor.get(1L))
+                .itemOutputs(ItemList.Casing_Fusion_Coil.get(1L))
+                .duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
     }
 
     private void makeElectricMachinePartRecipes() {
