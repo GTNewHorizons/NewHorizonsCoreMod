@@ -6230,6 +6230,112 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.IC2_Plantball.get(1L))
                 .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 12)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // Anti Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 4),
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "antiBlock", 8L, 15)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Carpet
+        for (int meta = 0; meta < 16; ++meta) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.wool, 4, meta),
+                            new ItemStack(Items.string, 1),
+                            GT_Utility.getIntegratedCircuit(24))
+                    .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "carpet_block", 8L, meta)).duration(5 * SECONDS)
+                    .eut(24).addTo(assemblerRecipes);
+        }
+
+        // Cubits
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 4),
+                        new ItemStack(Blocks.wool, 1, 15),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "cubit", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Fantasy Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 4),
+                        new ItemStack(Items.gold_nugget, 1),
+                        new ItemStack(Items.dye, 1, 15),
+                        GT_Utility.getIntegratedCircuit(11))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "fantasyblock2", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Neonite
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.emerald, 8),
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "neonite", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // GloTek
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.emerald, 8),
+                        new ItemStack(Items.glowstone_dust, 2),
+                        GT_Utility.getIntegratedCircuit(11))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "glotek", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Rebellious Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
+                        new ItemStack(Items.gold_nugget, 1),
+                        GT_Utility.getIntegratedCircuit(23))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "rebel", 32L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Structural Concrete
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.gravel, 5),
+                        new ItemStack(Blocks.sand, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "nucrete", 16L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Purpur Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.end_stone, 4),
+                        new ItemStack(Items.dye, 4, 5),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "purpur", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Svelstone
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 4),
+                        GT_ModHandler.getModItem(Chisel.ID, "andesite", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "sveltstone", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Woolen Clay
+        for (int meta = 0; meta < 16; ++meta) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.wool, 2, meta),
+                            new ItemStack(Blocks.stained_hardened_clay, 2, meta),
+                            GT_Utility.getIntegratedCircuit(24))
+                    .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "woolen_clay", 8L, meta)).duration(5 * SECONDS)
+                    .eut(24).addTo(assemblerRecipes);
+        }
     }
 
     private void makeReinforcedIronPlateRecipes() {
