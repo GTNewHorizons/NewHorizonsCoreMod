@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IronTanks;
@@ -24,6 +25,8 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.chisel.ChiselHelper;
+
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -45,6 +48,7 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
         return Arrays.asList(
                 HardcoreEnderExpansion.ID,
                 BiomesOPlenty.ID,
+                Chisel.ID,
                 EnderStorage.ID,
                 IronTanks.ID,
                 Thaumcraft.ID,
@@ -566,5 +570,222 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.crushed, Materials.Sphalerite, 4L))
                 .outputChances(10000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
 
+        addDecorativeBlocks();
+    }
+
+    private void addDecorativeBlocks() {
+        // Overgrown endstone
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 8, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "red_mushroom", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing));
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "end_stone", 16, 0, missing),
+                        getModItem(Minecraft.ID, "red_mushroom", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(23))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 0, missing))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 8, 1, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing));
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "end_stone", 16, 0, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(23))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 1, missing))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 8, 2, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing));
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "end_stone", 16, 0, missing),
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(23))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "end_stone_terrain", 16, 2, missing))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
+        // Laboratory
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 8, 0, missing),
+                getModItem(Chisel.ID, "laboratoryblock", 1, 0, missing),
+                getModItem(Chisel.ID, "laboratoryblock", 1, 0, missing),
+                getModItem(Chisel.ID, "laboratoryblock", 1, 0, missing),
+                getModItem(Chisel.ID, "laboratoryblock", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                getModItem(Chisel.ID, "laboratoryblock", 1, 0, missing),
+                getModItem(Chisel.ID, "laboratoryblock", 1, 0, missing),
+                getModItem(Chisel.ID, "laboratoryblock", 1, 0, missing),
+                getModItem(Chisel.ID, "laboratoryblock", 1, 0, missing));
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "stone", 4, 0, missing),
+                        getModItem(Minecraft.ID, "quartz", 1, 0, missing),
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(11))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 8, 0, missing))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_obsidian", 8, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing));
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "obsidian", 4, 0, missing),
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_obsidian", 8, 0, missing))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
+        // Crafting recipe already exists.
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "glass", 4, 0, missing),
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "laboratory_glass", 8, 0, missing))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_stairs", 4, 0, missing),
+                null,
+                null,
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 1, 0, missing),
+                null,
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "laboratory_floor", 1, 0, missing));
+
+        addShapelessRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "obsidian_end", 2, 0, missing),
+                getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing));
+
+        for (int meta = 0; meta < 3; ++meta) {
+            addShapedRecipe(
+                    getModItem(HardcoreEnderExpansion.ID, "obsidian_special_glow", 1, meta, missing),
+                    null,
+                    getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                    null,
+                    getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                    getModItem(HardcoreEnderExpansion.ID, "obsidian_special", 1, meta, missing),
+                    getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                    null,
+                    getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                    null);
+        }
+
+        // Ravaged brick
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing),
+                getModItem(Minecraft.ID, "brick_block", 1, 0, missing));
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "brick_block", 4, 0, missing),
+                        getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 8, 0, missing))
+                .duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_glow", 1, 0, missing),
+                null,
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                null,
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, 0, missing),
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                null,
+                getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
+                null);
+
+        ChiselHelper.addGroup("HEERavagedBrick");
+        for (int meta = 0; meta < 6; ++meta) {
+            ChiselHelper.addVariationFromStack(
+                    "HEERavagedBrick",
+                    getModItem(HardcoreEnderExpansion.ID, "ravaged_brick", 1, meta, missing));
+        }
+
+        ChiselHelper.addVariationFromStack(
+                "HEERavagedBrick",
+                getModItem(HardcoreEnderExpansion.ID, "ravaged_brick_smooth", 1, 0, missing));
+
+        // Peresgrit
+
+        addShapedRecipe(
+                getModItem(HardcoreEnderExpansion.ID, "persegrit", 8, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing),
+                getModItem(Minecraft.ID, "end_stone", 1, 0, missing),
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing));
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "end_stone", 2, 0, missing),
+                        getModItem(Minecraft.ID, "gravel", 2, 0, missing),
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "persegrit", 8, 0, missing)).duration(5 * SECONDS)
+                .eut(24).addTo(assemblerRecipes);
+
+        ChiselHelper.addGroup("HEEPersegrit");
+        for (int meta = 0; meta < 16; ++meta) {
+            ChiselHelper.addVariationFromStack(
+                    "HEEPersegrit",
+                    getModItem(HardcoreEnderExpansion.ID, "persegrit", 1, meta, missing));
+        }
     }
 }
