@@ -27,4 +27,13 @@ dependencies {
 
     runtimeOnlyNonPublishable("curse.maven:biomes-o-plenty-220318:2499612")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.2.0-GTNH:dev")
+
+    // Core unit testing platform
+    testImplementation(platform('org.junit:junit-bom:5.9.2'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+
+    // Extra unit testing libraries
+    testImplementation('org.assertj:assertj-core:3.+')
+    testImplementation('org.mockito:mockito-core:5.+')
+    testImplementation('org.mockito:mockito-junit-jupiter:5.+')
 }
