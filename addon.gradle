@@ -4,3 +4,6 @@ test {
         events "passed", "skipped", "failed"
     }
 }
+configurations {
+    testImplementation.extendsFrom compileOnly
+}
