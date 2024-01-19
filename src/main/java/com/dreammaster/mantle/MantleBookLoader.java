@@ -15,14 +15,14 @@ import mantle.books.BookData;
 
 final class MantleBookLoader implements BookLoader {
 
-    static final BookDataReader BOOK_DATA_READER = new BookDataReader();
-    static final BookDataStoreProxy BOOK_DATA_STORE_PROXY = BookDataStoreProxy.getInstance();
+    private static final BookDataReader BOOK_DATA_READER = new BookDataReader();
+    private static final BookDataStoreProxy BOOK_DATA_STORE_PROXY = BookDataStoreProxy.getInstance();
     private final BookDataStoreProxy bookDataStoreProxy;
     private final BookData data;
     private final IGT_Mod sideChecker;
     private final BookDataReader bookDataReader;
 
-    public static BookLoader readBook(String unlocalizedName, String modId, String xmlDocumentPath) {
+    static BookLoader readBook(String unlocalizedName, String modId, String xmlDocumentPath) {
         return new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER, GT_Mod.gregtechproxy)
                 .setRequiredData(unlocalizedName, modId, xmlDocumentPath);
     }
