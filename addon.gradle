@@ -1,0 +1,9 @@
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+configurations {
+    testImplementation.extendsFrom compileOnly
+}
