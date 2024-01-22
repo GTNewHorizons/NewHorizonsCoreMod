@@ -1119,13 +1119,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findArcaneRecipe(
                                 getModItem(MagicBees.ID, "magicbees.enchantedEarth", 1, 0, missing))));
-        TCHelper.moveResearch("MB_ApiamancersDrainer", "MAGICBEES", -1, 7);
-        TCHelper.addResearchPrereq("MB_ApiamancersDrainer", "MB_DimensionalSingularity", false);
-        TCHelper.setResearchComplexity("MB_ApiamancersDrainer", 5);
-        ResearchCategories.getResearch("MB_ApiamancersDrainer").setConcealed();
-        ThaumcraftApi.addWarpToResearch("MB_ApiamancersDrainer", 3);
+        TCHelper.moveResearch("MB_ApimancersDrainer", "MAGICBEES", -1, 7);
+        TCHelper.addResearchPrereq("MB_ApimancersDrainer", "MB_DimensionalSingularity", false);
+        TCHelper.setResearchComplexity("MB_ApimancersDrainer", 5);
+        ResearchCategories.getResearch("MB_ApimancersDrainer").setConcealed();
+        ThaumcraftApi.addWarpToResearch("MB_ApimancersDrainer", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
-                "MB_ApiamancersDrainer",
+                "MB_ApimancersDrainer",
                 getModItem(MagicBees.ID, "apiamancersDrainer", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("tempus"), 50),
@@ -1147,6 +1147,6 @@ public class ScriptMagicBees implements IScriptLoader {
         TCHelper.refreshResearchPages("MB_Scoop");
         TCHelper.refreshResearchPages("MB_ScoopVoid");
         TCHelper.refreshResearchPages("MB_GrafterVoid");
-        TCHelper.refreshResearchPages("MB_ApiamancersDrainer");
+        TCHelper.refreshResearchPages("MB_ApimancersDrainer");
     }
 }
