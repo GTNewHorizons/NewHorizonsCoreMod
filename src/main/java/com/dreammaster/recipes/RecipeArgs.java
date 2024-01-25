@@ -3,6 +3,7 @@ package com.dreammaster.recipes;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.function.UnaryOperator;
 
 import javax.annotation.Nonnull;
 
@@ -10,15 +11,39 @@ import net.minecraft.item.ItemStack;
 
 class RecipeArgs implements Recipe {
 
+    // Hardcoded dependency for now
+    private final UnaryOperator<Object[]> ingredientsResolver = new IngredientsResolver();
+    // Hardcoded dependency for now
+    private final IngredientsFlattener ingredientsFlattener = new ResolvedIngredientsFlattener();
+
     protected final ItemStack result;
     protected final Object[] ingredients;
+    private Object[] resolvedIngredients;
 
     RecipeArgs(ItemStack result, Object... ingredients) {
         if (Objects.isNull(result)) throw new NullPointerException("Craft created with null result!");
-        if (Objects.isNull(ingredients)) throw new NullPointerException("Craft created with null input!");
-        if (ingredients.length == 0) throw new IllegalArgumentException("Craft created with no input!");
+        if (Objects.isNull(ingredients)) throw new NullPointerException("Craft created with null ingredients!");
+        if (ingredients.length == 0) throw new IllegalArgumentException("Craft created with no ingredients!");
         this.result = result.copy();
         this.ingredients = Arrays.copyOf(ingredients, ingredients.length);
+    }
+
+    /**
+     * Flattens the recipe to only have up to one ItemStack per slot.
+     *
+     * @return A non-empty array of ItemStack or null values.
+     */
+    @Nonnull
+    @Override
+    public ItemStack[] flatten() {
+        return ingredientsFlattener.flatten(getResolvedIngredients());
+    }
+
+    private Object[] getResolvedIngredients() {
+        if (resolvedIngredients == null) {
+            resolvedIngredients = ingredientsResolver.apply(ingredients);
+        }
+        return resolvedIngredients;
     }
 
     @Nonnull
