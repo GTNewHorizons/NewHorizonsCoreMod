@@ -22,4 +22,7 @@ public interface Recipe {
     @Nonnull
     Recipe provideTo(@Nonnull Consumer<Recipe> recipeUser);
 
+    @Nonnull
+    ItemStack[] flatten();
+
 }
