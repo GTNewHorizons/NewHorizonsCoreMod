@@ -187,11 +187,11 @@ public class BacteriaRegistry {
                 .fluidOutputs(Xenoxene.getFluid(250), RadoxLight.getGas(300)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
 
-        // LightRadox + Nq -> Enriched Naquadah condensation int aChance, int aDuration, int aEUt, boolean aCleanroom
+        // LightRadox + Nq -> Enriched Naquadah condensation
         GT_Values.RA.stdBuilder().itemInputs(Materials.Naquadah.getDust(1))
                 .itemOutputs(Materials.NaquadahEnriched.getDust(3)).outputChances(10000)
-                .fluidInputs(RadoxLight.getGas(2000)).duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(RadoxLight.getGas(2000)).requiresLowGravity().duration(17 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
 
         // super heavy -> heavy radox conversion
         GT_Values.RA.stdBuilder().itemOutputs().fluidInputs(RadoxSuperHeavy.getFluid(1000))
@@ -201,7 +201,8 @@ public class BacteriaRegistry {
         // heavy radox + Nq+ -> Nq*
         GT_Values.RA.stdBuilder().itemInputs(Materials.NaquadahEnriched.getDust(1))
                 .itemOutputs(Materials.Naquadria.getDust(3)).outputChances(10000).fluidInputs(RadoxHeavy.getFluid(4000))
-                .duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
+                .requiresLowGravity().duration(17 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_ZPM)
+                .addTo(autoclaveRecipes);
 
     }
 
