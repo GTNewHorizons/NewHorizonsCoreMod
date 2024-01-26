@@ -34,7 +34,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.mantle.BookLoader;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
@@ -51,15 +50,6 @@ import tconstruct.library.crafting.DryingRackRecipes;
 import tconstruct.library.crafting.Smeltery;
 
 public class ScriptTinkersConstruct implements IScriptLoader {
-
-    /**
-     * Purposefully adding this static method here and keeping it private rather than adding onto TConstructHelper to
-     * avoid future proliferation of overloads of this method.
-     */
-    private static void addBook(String bookName, String unlocalizedName, String tooltip, String itemImage) {
-        BookLoader.of(unlocalizedName, TinkerConstruct.ID, "/assets/dreamcraft/tinker/manuals/" + bookName + ".xml")
-                .setTooltip(tooltip).setItemImage(itemImage).makeTranslatable().addToBookDataStore();
-    }
 
     @Override
     public String getScriptName() {
@@ -3510,16 +3500,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
                 .duration(3 * SECONDS).eut(30).addTo(assemblerRecipes);
-
-        addManuals();
-    }
-
-    private void addManuals() {
-        addBook("firstday", "tconstruct.manual.beginner", "manual1.tooltip", "tinker:tinkerbook_diary");
-        addBook("materials", "tconstruct.manual.toolstation", "manual2.tooltip", "tinker:tinkerbook_toolstation");
-        addBook("smeltery", "tconstruct.manual.smeltery", "manual3.tooltip", "tinker:tinkerbook_smeltery");
-        addBook("diary", "tconstruct.manual.diary", "manual4.tooltip", "tinker:tinkerbook_blue");
-        addBook("weaponry", "tconstruct.manual.weaponry", "manual5.tooltip", "tinker:tinkerbook_green");
     }
 
 }
