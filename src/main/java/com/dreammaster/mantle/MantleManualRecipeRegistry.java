@@ -14,7 +14,10 @@ public interface MantleManualRecipeRegistry {
     }
 
     @Nonnull
-    Consumer<Recipe> manualCraftingRecipeNamed(String manualRecipeName);
+    Consumer<Recipe> manualShapedCraftingRecipeNamed(String manualRecipeName);
+
+    @Nonnull
+    Consumer<Recipe> manualShapelessCraftingRecipeNamed(String manualRecipeName);
 
     @Nonnull
     Consumer<Recipe> manualSmeltingRecipeNamed(String manualRecipeName);

@@ -775,7 +775,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     ToolDictNames.craftingToolKnife,
                     GT_ModHandler.getModItem(aTextTConstruct, "blankPattern", 1L, 0))
                     .provideTo(shapelessUnremovableGtRecipes())
-                    .provideTo(MANTLE.manualCraftingRecipeNamed("woodenformbrick"));
+                    .provideTo(MANTLE.manualShapedCraftingRecipeNamed("woodenformbrick"));
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.UnfiredSearedBrick.get(8L),
                     GT_ModHandler.RecipeBits.NOT_REMOVABLE,
@@ -787,7 +787,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1),
                     new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GT_Values.W))
                     .provideTo(shapelessUnremovableGtRecipes())
-                    .provideTo(MANTLE.manualCraftingRecipeNamed("unfiredsearedbrick"));
+                    .provideTo(MANTLE.manualShapedCraftingRecipeNamed("unfiredsearedbrick"));
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.UnfiredSlimeSoulBrick.get(8L),
                     GT_ModHandler.RecipeBits.NOT_REMOVABLE,

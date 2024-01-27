@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.scripts.GameRegistryProxy.shapedRecipes;
+import static com.dreammaster.scripts.GameRegistryProxy.shapelessRecipes;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftCore;
@@ -34,7 +36,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.oredict.OreDictHelper;
+import com.dreammaster.recipes.Recipe;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -50,6 +54,8 @@ import tconstruct.library.crafting.DryingRackRecipes;
 import tconstruct.library.crafting.Smeltery;
 
 public class ScriptTinkersConstruct implements IScriptLoader {
+
+    private static final MantleManualRecipeRegistry MANTLE = MantleManualRecipeRegistry.getInstance();
 
     @Override
     public String getScriptName() {
@@ -84,7 +90,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         OreDictionary.registerOre("bucketEnder", getModItem(TinkerConstruct.ID, "buckets", 1, 23, missing));
         OreDictHelper.removeOreDict("nuggetAluminium", getModItem(TinkerConstruct.ID, "oreBerries", 1, 4, missing));
 
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "LavaTank", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
@@ -94,7 +100,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("smelterytank1"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTankNether", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
@@ -106,7 +113,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
@@ -116,7 +123,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("smelterycontroller"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
@@ -128,7 +136,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "Smeltery", 2, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
@@ -138,7 +146,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("searedbricks"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "Smeltery", 2, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
@@ -172,7 +181,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
@@ -182,7 +191,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("smelterydrain"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
@@ -194,7 +204,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "SearedBlock", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 null,
@@ -204,7 +214,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 null,
-                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("smelterytable"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlockNether", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
@@ -216,7 +227,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
                 null,
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "SearedBlock", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 null,
@@ -226,7 +237,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
-                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("smelterybasin"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlockNether", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
@@ -238,7 +250,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "CastingChannel", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 null,
@@ -248,7 +260,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("castingchannel"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CastingChannel", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
@@ -268,7 +281,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "SearedBlockNether", 2, 1, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "CastingChannel", 1, 1, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "SearedBlock", 1, 1, missing),
                 null,
                 null,
@@ -278,7 +291,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 2, missing),
-                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("smelteryfaucet"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "SearedBlockNether", 1, 1, missing),
                 null,
@@ -290,7 +304,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "LavaTank", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 "glassReinforced",
@@ -300,7 +314,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "glassReinforced",
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 "glassReinforced",
-                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("smelterytank2"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTankNether", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
@@ -312,7 +327,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
                 "glassReinforced",
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "LavaTank", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 "glassReinforced",
@@ -322,7 +337,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing),
                 "glassReinforced",
-                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing));
+                getModItem(TinkerConstruct.ID, "Smeltery", 1, 2, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("smelterytank3"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "LavaTankNether", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
@@ -386,7 +402,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null,
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
                 null);
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
                 "sand",
                 "sand",
@@ -396,7 +412,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dustClay",
                 getModItem(Minecraft.ID, "gravel", 1, 0, missing),
                 getModItem(Minecraft.ID, "gravel", 1, 0, missing),
-                getModItem(Minecraft.ID, "gravel", 1, 0, missing));
+                getModItem(Minecraft.ID, "gravel", 1, 0, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("grout"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 4, 1, missing),
                 getModItem(Minecraft.ID, "gravel", 1, 0, missing),
@@ -498,12 +515,13 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Natura.ID, "soil.tainted", 1, 0, missing),
                 getModItem(Natura.ID, "heatsand", 1, 0, missing),
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0, missing));
-        addShapelessRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
                 "platePaper",
                 "platePaper",
                 "platePaper",
-                "platePaper");
+                "platePaper").provideTo(shapelessRecipes())
+                .provideTo(MANTLE.manualShapelessCraftingRecipeNamed("blankpattern"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing),
                 "craftingToolSaw",
@@ -523,7 +541,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null,
                 "craftingToolSoftHammer",
                 null);
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing),
                 "stickWood",
                 getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
@@ -533,12 +551,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "stickWood",
                 null,
                 "craftingToolSoftHammer",
-                null);
+                null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("toolstation"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
                 "stickWood",
                 getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
@@ -548,7 +566,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing),
                 null,
                 "craftingToolSoftHammer",
-                null);
+                null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("partcrafter"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 2, missing));
@@ -607,7 +625,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 2, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 4, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5, missing),
                 "stickWood",
                 getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
@@ -617,12 +635,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "stickWood",
                 null,
                 "craftingToolSoftHammer",
-                null);
+                null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("patternchest"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 4, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
                 "stickWood",
                 getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
@@ -632,7 +650,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "fenceWood",
                 null,
                 "craftingToolSoftHammer",
-                null);
+                null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("stenciltable"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 11, missing));
@@ -691,7 +709,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 3, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
                 getModItem(TinkerConstruct.ID, "SearedSlab", 1, 1, missing),
@@ -701,7 +719,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "blockIron",
                 "blockIron",
                 "craftingToolHardHammer",
-                "blockIron");
+                "blockIron").provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("toolforge"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolForgeBlock", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 15, missing),
@@ -921,7 +939,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "SpeedSlab", 2, 7, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 7, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "trap.punji", 2, 0, missing),
                 getModItem(Minecraft.ID, "reeds", 1, 0, missing),
                 "stickWood",
@@ -931,7 +949,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 getModItem(Minecraft.ID, "reeds", 1, 0, missing),
                 "stickWood",
-                getModItem(Minecraft.ID, "reeds", 1, 0, missing));
+                getModItem(Minecraft.ID, "reeds", 1, 0, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("punji"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "WoolSlab1", 2, 0, missing),
                 "craftingToolShears",
@@ -996,7 +1015,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "WoolSlab2", 2, 7, missing),
                 "craftingToolShears",
                 getModItem(Minecraft.ID, "wool", 1, 15, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing),
                 null,
                 getModItem(Minecraft.ID, "log", 1, 0, missing),
@@ -1006,7 +1025,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "log", 1, 0, missing),
                 null,
                 getModItem(Minecraft.ID, "log", 1, 0, missing),
-                null);
+                null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("barricade"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing),
                 null,
@@ -1040,7 +1059,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null,
                 getModItem(Minecraft.ID, "log", 1, 3, missing),
                 null);
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing),
                 "slimeball",
                 "slimeball",
@@ -1050,7 +1069,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "dustRedstone",
                 "slimeball",
                 "slimeball",
-                "slimeball");
+                "slimeball").provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("slimechannel"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "blood.channel", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
@@ -1062,15 +1082,16 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "slime.pad", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "slime.gel", 1, 1, missing),
-                getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing));
-        addShapedRecipe(
+                getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("bouncepad"));
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0, missing),
                 getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
                 getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
@@ -1080,7 +1101,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "dirt", 1, 0, missing),
                 getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
                 getModItem(Minecraft.ID, "slime_ball", 1, 0, missing),
-                getModItem(Minecraft.ID, "slime_ball", 1, 0, missing));
+                getModItem(Minecraft.ID, "slime_ball", 1, 0, missing)).provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("slimymud"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 2, missing),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
@@ -1092,7 +1114,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing));
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 3, missing),
                 "dustBone",
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
@@ -1102,7 +1124,8 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
                 "dustBone",
                 getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
-                "dustBone");
+                "dustBone").provideTo(shapedRecipes())
+                .provideTo(MANTLE.manualShapedCraftingRecipeNamed("graveyardsoil"));
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassBlock.StainedClear", 7, 0, missing),
                 getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing),
@@ -1583,14 +1606,14 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "GlassPaneClearStained", 1, 15, missing),
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
                 "dyeBlack");
-        addShapedRecipe(
+        Recipe.of(
                 getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 0, missing),
                 "slabWood",
                 "slabWood",
                 "slabWood",
                 "screwWood",
                 "craftingToolScrewdriver",
-                "screwWood");
+                "screwWood").provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("dryingrack"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "Armor.DryingRack", 1, 5, missing));
@@ -3445,9 +3468,9 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 12000,
                 getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing));
 
-        GT_ModHandler.addSmeltingRecipe(
-                CustomItemList.UnfiredSearedBrick.get(1L),
-                getModItem(TinkerConstruct.ID, "materials", 1, 2, missing));
+        Recipe.of(getModItem(TinkerConstruct.ID, "materials", 1, 2, missing), CustomItemList.UnfiredSearedBrick.get(1L))
+                .provideTo(recipe -> GT_ModHandler.addSmeltingRecipe(recipe.flatten()[0], recipe.getResult()))
+                .provideTo(MANTLE.manualSmeltingRecipeNamed("searedbrick"));
         GT_ModHandler.addSmeltingRecipe(
                 CustomItemList.UnfiredSlimeSoulBrick.get(1L),
                 getModItem(TinkerConstruct.ID, "materials", 1, 37, missing));

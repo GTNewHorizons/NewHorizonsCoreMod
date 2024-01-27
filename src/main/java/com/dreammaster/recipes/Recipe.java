@@ -1,6 +1,7 @@
 package com.dreammaster.recipes;
 
 import java.util.function.Consumer;
+import java.util.function.UnaryOperator;
 
 import javax.annotation.Nonnull;
 
@@ -24,5 +25,8 @@ public interface Recipe {
 
     @Nonnull
     ItemStack[] flatten();
+
+    @Nonnull
+    ItemStack[] flattenWith(UnaryOperator<Object[]> ingredientsResolver);
 
 }
