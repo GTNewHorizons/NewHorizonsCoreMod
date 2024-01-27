@@ -531,12 +531,20 @@ u <page type="intro">
   </material>
  </page>
 
- <page type="crafting">
-  <text>item.tconstruct.Materials.PaperStack.name</text>
-  <recipe>
-   <name>paperstack</name>
-   <size>two</size>
-  </recipe>
+ <page type="sidebar">
+  <text>item.tconstruct.manual.toolstation.paper.how_to</text>
+  <item>
+   <text>item.tconstruct.manual.toolstation.paper.ingredient</text>
+   <icon>paper</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.paper.catalyst</text>
+   <icon>steam_compressor</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.paper.result</text>
+   <icon>paperstack</icon>
+  </item>
  </page>
 
  <page type="materialstats">
