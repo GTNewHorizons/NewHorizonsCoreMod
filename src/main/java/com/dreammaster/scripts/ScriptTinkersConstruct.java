@@ -32,6 +32,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -643,7 +644,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 4, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5, missing));
-        Recipe.of(
+        addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
                 "stickWood",
                 getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
@@ -653,7 +654,18 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "fenceWood",
                 null,
                 "craftingToolSoftHammer",
-                null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("stenciltable"));
+                null);
+        Recipe.of(
+                getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
+                "stickWood",
+                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
+                "stickWood",
+                Blocks.fence,
+                "stickWood",
+                Blocks.fence,
+                null,
+                "craftingToolSoftHammer",
+                null).provideTo(MANTLE.manualShapedCraftingRecipeNamed("stenciltable"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 11, missing));
