@@ -149,6 +149,21 @@
   </recipe>
  </page>
 
+ <page type="crafting">
+  <text>item.WoodenBrickForm.name</text>
+  <recipe>
+   <name>woodenformbrick</name>
+   <size>two</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>item.UnfiredSearedBrick.name</text>
+  <recipe>
+   <name>unfiredsearedbrick</name>
+   <size>two</size>
+  </recipe>
+ </page>
 
  <page type="furnace">
   <text>item.tconstruct.Materials.SearedBrick.name</text>
