@@ -191,14 +191,6 @@
  </page>
 
  <page type="crafting">
-  <text>item.book.name</text>
-  <recipe>
-   <name>alternatebook</name>
-   <size>three</size>
-  </recipe>
- </page>
-
- <page type="crafting">
   <text>item.tconstruct.manual.beginner.name</text>
   <recipe>
    <name>patternbook1</name>
@@ -222,6 +214,8 @@
   </recipe>
  </page>
 
+ <page type="blank">
+ </page>
 
  <page type="text">
   <text>item.tconstruct.manual.beginner.armor_modifiers_page</text>

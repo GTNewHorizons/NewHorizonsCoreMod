@@ -253,11 +253,6 @@
  </page>
 
  <page type="blockcast">
-  <text>tile.whiteStone.name</text>
-  <recipe>endstone</recipe>
- </page>
-
- <page type="blockcast">
   <text>item.tconstruct.Materials.GlueBall.name</text>
   <recipe>glueball</recipe>
  </page>

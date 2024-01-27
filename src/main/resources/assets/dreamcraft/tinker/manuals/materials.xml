@@ -808,26 +808,6 @@ u <page type="intro">
  </page>
 
  <page type="sectionpage">
-  <title>modifier.toolstation.Flux</title>
-  <text>modifier.toolstation.Flux.desc</text>
- </page>
-
-<page type="modifier">
-<tooltype>tool</tooltype>
-<recipe>fluxmod</recipe>
-</page>
-
-<page type="sectionpage">
-<title>modifier.toolstation.Flux</title>
-<text>modifier.toolstation.Flux.desc2</text>
-</page>
-
-<page type="modifier">
-<tooltype>tool</tooltype>
-<recipe>fluxmod2</recipe>
-</page>
-
- <page type="sectionpage">
   <title>item.tconstruct.manual.toolstation.additional_modifiers</title>
   <text>modifier.toolstation.additional_gold_diamond1</text>
  </page>
