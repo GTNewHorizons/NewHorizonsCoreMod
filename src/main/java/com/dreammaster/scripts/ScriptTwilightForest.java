@@ -64,6 +64,115 @@ public class ScriptTwilightForest implements IScriptLoader {
                 getModItem(TwilightForest.ID, "item.carminite", 1, 0, missing),
                 getModItem(TwilightForest.ID, "tile.TFTowerStone", 1, 1, missing));
 
+        String[] materials = new String[] { "Twilight", "Canopy", "Mangrove", "Darkwood", "Time", "Trans", "Mine",
+                "Sort" };
+
+        for (int i = 0; i < materials.length; i++) {
+            addShapedRecipe(
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    getModItem(Minecraft.ID, "flint", 1, 0, missing),
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing));
+            addShapedRecipe(
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 2, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    "screwAnyIron",
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing));
+            addShapedRecipe(
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 3, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    "screwSteel",
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing),
+                    "stickWood",
+                    getModItem(TwilightForest.ID, "tile.TFWoodSlab", 1, i, missing));
+
+            addShapedRecipe(
+                    getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
+                    "craftingToolScrewdriver",
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    "ringAnyIron",
+                    "screwAnyIron",
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    "craftingToolSaw");
+            addShapedRecipe(
+                    getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
+                    "craftingToolScrewdriver",
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    "ringCopper",
+                    "screwCopper",
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    "craftingToolSaw");
+            addShapedRecipe(
+                    getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
+                    "craftingToolSaw",
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    "ringAnyIron",
+                    "screwAnyIron",
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    "craftingToolScrewdriver");
+            addShapedRecipe(
+                    getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
+                    "craftingToolSaw",
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    "ringCopper",
+                    "screwCopper",
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    "craftingToolScrewdriver");
+
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
+                            getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing))
+                    .itemOutputs(getModItem(TwilightForest.ID, "item.TFDoor" + materials[i], 1, 0, missing))
+                    .fluidInputs(Materials.Iron.getMolten(16)).duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
+                            getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing))
+                    .itemOutputs(getModItem(TwilightForest.ID, "item.TFDoor" + materials[i], 1, 0, missing))
+                    .fluidInputs(Materials.Copper.getMolten(16)).duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(TwilightForest.ID, "tile.TFWoodSlab", 4, i, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                    .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 4, 0, missing))
+                    .fluidInputs(Materials.Iron.getMolten(16)).duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(TwilightForest.ID, "tile.TFWoodSlab", 4, i, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 4L))
+                    .itemOutputs(getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 6, 0, missing))
+                    .fluidInputs(Materials.Steel.getMolten(16)).duration(30 * SECONDS).eut(4).addTo(assemblerRecipes);
+        }
+
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steeleaf, 1L),
