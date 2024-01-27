@@ -670,22 +670,6 @@ u <page type="intro">
   <recipe>lavacrystalmod</recipe>
  </page>
 
- <page type="crafting">
-  <text>item.tconstruct.Materials.Mossball.name</text>
-  <recipe>
-   <name>mossball</name>
-   <size>three</size>
-  </recipe>
- </page>
-
- <page type="crafting">
-  <text>item.tconstruct.Materials.LavaCrystal.name</text>
-  <recipe>
-   <name>lavacrystal</name>
-   <size>three</size>
-  </recipe>
- </page>
-
  <page type="sectionpage">
   <title>modifier.tooltip.Luck</title>
   <text>modifier.tooltip.Luck.desc</text>
@@ -734,22 +718,6 @@ u <page type="intro">
  <page type="modifier">
   <tooltype>tool</tooltype>
   <recipe>silkymod</recipe>
- </page>
-
- <page type="crafting">
-  <text>item.tconstruct.Materials.SilkyCloth.name</text>
-  <recipe>
-   <name>silkycloth</name>
-   <size>three</size>
-  </recipe>
- </page>
-
- <page type="crafting">
-  <text>item.tconstruct.Materials.SilkyJewel.name</text>
-  <recipe>
-   <name>silkyjewel</name>
-   <size>three</size>
-  </recipe>
  </page>
 
  <page type="sectionpage">
