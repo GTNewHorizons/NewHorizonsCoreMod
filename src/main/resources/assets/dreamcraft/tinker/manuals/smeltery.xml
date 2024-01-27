@@ -148,7 +148,7 @@
   <text>CraftedSoil.Grout.name</text>
   <recipe>
    <name>grout</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -161,7 +161,7 @@
   <text>Smeltery.Brick.name</text>
   <recipe>
    <name>searedbricks</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 

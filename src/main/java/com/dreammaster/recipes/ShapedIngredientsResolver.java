@@ -5,7 +5,7 @@ import java.util.function.UnaryOperator;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class IngredientsResolver implements UnaryOperator<Object[]> {
+public class ShapedIngredientsResolver implements UnaryOperator<Object[]> {
 
     @Override
     public Object[] apply(Object[] ingredients) {

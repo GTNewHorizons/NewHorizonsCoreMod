@@ -44,7 +44,7 @@
   <text>crafters.PatternShaper</text>
   <recipe>
    <name>stenciltable</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -52,7 +52,7 @@
   <text>crafters.PartBuilder</text>
   <recipe>
    <name>partcrafter</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -60,7 +60,7 @@
   <text>inventory.PatternChest</text>
   <recipe>
    <name>patternchest</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -68,7 +68,7 @@
   <text>crafters.ToolStation</text>
   <recipe>
    <name>toolstation</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -105,7 +105,7 @@
   <text>tile.slime.channel.name</text>
   <recipe>
    <name>slimechannel</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -113,7 +113,7 @@
   <text>tile.slime.pad.name</text>
   <recipe>
    <name>bouncepad</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -133,7 +133,7 @@
   <text>item.tconstruct.manual.beginner.barricade</text>
   <recipe>
    <name>barricade</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -145,7 +145,7 @@
   <text>CraftedSoil.Grout.name</text>
   <recipe>
    <name>grout</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 
@@ -174,7 +174,7 @@
   <text>Smeltery.Brick.name</text>
   <recipe>
    <name>searedbricks</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 

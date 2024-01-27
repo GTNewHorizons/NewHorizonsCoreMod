@@ -1,6 +1,7 @@
 package com.dreammaster.mantle;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.notNull;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.never;
@@ -51,7 +52,7 @@ class MantleClientRegistryProxyTest {
     void registerCraftingRecipeWithNullName() {
         MantleClientRegistryProxy mantleClientRegistryProxy = new MantleClientRegistryProxy();
 
-        assertThatThrownBy(() -> mantleClientRegistryProxy.manualCraftingRecipeNamed(null))
+        assertThatThrownBy(() -> mantleClientRegistryProxy.manualShapedCraftingRecipeNamed(null))
                 .isInstanceOf(NullPointerException.class);
     }
 
@@ -77,8 +78,8 @@ class MantleClientRegistryProxyTest {
 
     private void registerIngredients(ItemStack result, ItemStack[] ingredients) {
         when(RECIPE.getResult()).thenReturn(result);
-        when(RECIPE.flatten()).thenReturn(ingredients);
-        Consumer<Recipe> registry = fixture.manualCraftingRecipeNamed(RECIPE_NAME);
+        when(RECIPE.flattenWith(notNull())).thenReturn(ingredients);
+        Consumer<Recipe> registry = fixture.manualShapedCraftingRecipeNamed(RECIPE_NAME);
 
         registry.accept(RECIPE);
     }

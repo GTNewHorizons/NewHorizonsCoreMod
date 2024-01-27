@@ -798,7 +798,7 @@ u <page type="intro">
   <text>CraftedSoil.GraveyardSoil.name</text>
   <recipe>
    <name>graveyardsoil</name>
-   <size>two</size>
+   <size>three</size>
   </recipe>
  </page>
 

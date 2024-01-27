@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 class RecipeArgs implements Recipe {
 
     // Hardcoded dependency for now
-    private final UnaryOperator<Object[]> ingredientsResolver = new IngredientsResolver();
+    private final UnaryOperator<Object[]> defaultIngredientsResolver = new ShapedIngredientsResolver();
     // Hardcoded dependency for now
     private final IngredientsFlattener ingredientsFlattener = new ResolvedIngredientsFlattener();
 
@@ -39,9 +39,21 @@ class RecipeArgs implements Recipe {
         return ingredientsFlattener.flatten(getResolvedIngredients());
     }
 
+    /**
+     * Flattens the recipe to only have up to one ItemStack per slot.
+     * 
+     * @param ingredientsResolver Transforms the ingredients to only contain null, ItemStack or List&lt;ItemStack&gt;
+     * @return A non-empty array of ItemStack or null values.
+     */
+    @Nonnull
+    @Override
+    public ItemStack[] flattenWith(@Nonnull UnaryOperator<Object[]> ingredientsResolver) {
+        return ingredientsFlattener.flatten(ingredientsResolver.apply(ingredients));
+    }
+
     private Object[] getResolvedIngredients() {
         if (resolvedIngredients == null) {
-            resolvedIngredients = ingredientsResolver.apply(ingredients);
+            resolvedIngredients = defaultIngredientsResolver.apply(ingredients);
         }
         return resolvedIngredients;
     }
