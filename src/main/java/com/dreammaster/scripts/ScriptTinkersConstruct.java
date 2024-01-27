@@ -32,6 +32,8 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -49,6 +51,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import mantle.lib.client.MantleClientRegistry;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.DryingRackRecipes;
 import tconstruct.library.crafting.Smeltery;
@@ -3523,6 +3526,13 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
                 .duration(3 * SECONDS).eut(30).addTo(assemblerRecipes);
+
+        registerManualIcons();
+    }
+
+    private void registerManualIcons() {
+        MantleClientRegistry.registerManualIcon("paper", new ItemStack(Items.paper, 64, 0));
+        MantleClientRegistry.registerManualIcon("steam_compressor", ItemList.Machine_Bronze_Compressor.get(1));
     }
 
 }
