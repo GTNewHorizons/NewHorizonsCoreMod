@@ -94,7 +94,7 @@
 
  <page type="picture">
   <text>item.tconstruct.manual.beginner.oreberry_picture</text>
-  <location>tinker:manuals/oreberries.png</location>
+  <location>dreamcraft:textures/tinker/manuals/oreberry_crops.png</location>
  </page>
 
  <page type="text">
