@@ -1,14 +1,37 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AdventureBackpack;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.Chisel;
+import static gregtech.api.enums.Mods.Computronics;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.GalacticraftCore;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
+import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.OpenPrinters;
+import static gregtech.api.enums.Mods.ProjectRedIllumination;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
+
+import java.util.function.Consumer;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.main.NHItems;
+import com.dreammaster.mantle.MantleManualRecipeRegistry;
+import com.dreammaster.recipes.Recipe;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
@@ -29,6 +52,7 @@ import ic2.core.Ic2Items;
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader implements Runnable {
 
+    private static final MantleManualRecipeRegistry MANTLE = MantleManualRecipeRegistry.getInstance();
     private static final String aTextMachineBeta = "machine.beta";
     private static final String aTextMachineAlpha = "machine.alpha";
     private static final String aTextIron1 = "X X";
@@ -746,22 +770,24 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 new Object[] { new ItemStack(Items.clay_ball, 1, 0),
                         new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GT_Values.W) });
         if (TinkerConstruct.isModLoaded()) {
-            GT_ModHandler.addShapelessCraftingRecipe(
+            Recipe.of(
                     new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GT_Values.W),
-                    GT_ModHandler.RecipeBits.NOT_REMOVABLE,
-                    new Object[] { ToolDictNames.craftingToolKnife,
-                            GT_ModHandler.getModItem(aTextTConstruct, "blankPattern", 1L, 0) });
+                    ToolDictNames.craftingToolKnife,
+                    GT_ModHandler.getModItem(aTextTConstruct, "blankPattern", 1L, 0))
+                    .provideTo(shapelessUnremovableGtRecipes())
+                    .provideTo(MANTLE.manualShapedCraftingRecipeNamed("woodenformbrick"));
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.UnfiredSearedBrick.get(8L),
                     GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                     new Object[] { "GGG", "GFG", "GGG", 'G',
                             GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1), 'F',
                             new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GT_Values.W) });
-            GT_ModHandler.addShapelessCraftingRecipe(
+            Recipe.of(
                     CustomItemList.UnfiredSearedBrick.get(1L),
-                    GT_ModHandler.RecipeBits.NOT_REMOVABLE,
-                    new Object[] { GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1),
-                            new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GT_Values.W) });
+                    GT_ModHandler.getModItem(aTextTConstruct, "CraftedSoil", 1L, 1),
+                    new ItemStack(NHItems.WOODEN_BRICK_FORM.get(), 1, GT_Values.W))
+                    .provideTo(shapelessUnremovableGtRecipes())
+                    .provideTo(MANTLE.manualShapedCraftingRecipeNamed("unfiredsearedbrick"));
             GT_ModHandler.addCraftingRecipe(
                     CustomItemList.UnfiredSlimeSoulBrick.get(8L),
                     GT_ModHandler.RecipeBits.NOT_REMOVABLE,
@@ -1821,5 +1847,12 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Clay Cast", 1, 3),
                     new Object[] { "  C", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
         }
+    }
+
+    private Consumer<Recipe> shapelessUnremovableGtRecipes() {
+        return craft -> GT_ModHandler.addShapelessCraftingRecipe(
+                craft.getResult(),
+                GT_ModHandler.RecipeBits.NOT_REMOVABLE,
+                craft.getIngredients());
     }
 }
