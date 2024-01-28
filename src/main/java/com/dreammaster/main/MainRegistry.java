@@ -72,6 +72,7 @@ import com.dreammaster.railcraftStones.NH_QuarryPopulator;
 import com.dreammaster.recipes.RecipeRemover;
 import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
+import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
@@ -485,6 +486,8 @@ public class MainRegistry {
         }
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
+
+        if (TinkerConstruct.isModLoaded()) TiCoLoader.doPostInitialization();
     }
 
     @Mod.EventHandler
