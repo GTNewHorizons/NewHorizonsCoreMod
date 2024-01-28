@@ -547,8 +547,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(EternalSingularity.ID, "eternal_singularity", 1));
 
         // ME Singularity crafting storage
-        GT_ModHandler
-                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1)); // stays
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1),
                 "abcfhfcba",
