@@ -598,5 +598,14 @@ public class ScriptChisel implements IScriptLoader {
                 getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0, missing));
         ChiselHelper
                 .addVariationFromStack("knightmetalblock", getModItem(GregTech.ID, "gt.blockmetal4", 1, 0, missing));
+        ChiselHelper.addGroup("ironwoodblock");
+        ChiselHelper.addVariationFromStack(
+                "ironwoodblock",
+                getModItem(TwilightForest.ID, "tile.IronwoodBlock", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("ironwoodblock", getModItem(GregTech.ID, "gt.blockmetal3", 1, 14, missing));
+        ChiselHelper.addGroup("fieryblock");
+        ChiselHelper
+                .addVariationFromStack("fieryblock", getModItem(TwilightForest.ID, "tile.FieryBlock", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("fieryblock", getModItem(GregTech.ID, "gt.blockmetal3", 1, 4, missing));
     }
 }
