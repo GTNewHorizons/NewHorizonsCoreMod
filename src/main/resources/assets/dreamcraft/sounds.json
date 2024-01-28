@@ -1,0 +1,11 @@
+{
+  "credits.wingame": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "WinGame",
+        "stream": false
+      }
+    ]
+  }
+}
