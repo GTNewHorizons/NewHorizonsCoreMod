@@ -113,7 +113,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemOutputs(CoCraftingUnit16x).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         // Advanced Storage Housing
-        GT_ModHandler.removeRecipeByOutput(AE2_ADVANCED_HOUSING);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GLASS_PANE,
@@ -135,21 +134,18 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         // Advanced Storage Cells
         final ItemStack[] components = new ItemStack[] {
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 57), // 256k
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 58), // 1024k
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 59), // 4096k
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60), // 16384k
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 57), // 256k //
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 58), // 1024k //
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 59), // 4096k //
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60), // 16384k //
         };
         final ItemStack[] cells = new ItemStack[] {
-                getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.256k", 1), // 256k
-                getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.1024k", 1), // 1024k
-                getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.4096k", 1), // 4096k
-                getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.16384k", 1), // 16384k
+                getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.256k", 1), // 256k //
+                getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.1024k", 1), // 1024k //
+                getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.4096k", 1), // 4096k //
+                getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.16384k", 1), // 16384k //
         };
-        for (int i = 0; i < components.length; i++) {
-            GT_ModHandler.removeRecipeByOutput(cells[i]);
-            GT_ModHandler.removeRecipeByOutput(components[i]);
-        }
+
         for (int i = 0; i < components.length; i++) {
             GT_ModHandler.addCraftingRecipe(
                     cells[i],
@@ -233,14 +229,12 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingStorage", 1, 3), // 16384k
         };
         for (int i = 0; i < storage.length; i++) {
-            GT_ModHandler.removeRecipeByOutput(storage[i]);
             GT_Values.RA.stdBuilder()
                     .itemInputs(components[i], getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1))
                     .itemOutputs(storage[i]).duration(20 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         }
 
         // ME Block Container
-        GT_ModHandler.removeRecipeByOutput(AE2_BLOCK_CONTAINER);
         GT_ModHandler.addCraftingRecipe(
                 AE2_BLOCK_CONTAINER,
                 new Object[] { " K ", "SMS", "dHw", 'K',
@@ -505,8 +499,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .addTo(assemblerRecipes);
 
         // ME Quantum Storage
-        GT_ModHandler
-                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Quantum", 1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Quantum", 1),
                 "---------",
@@ -530,8 +522,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 AE2_ADVANCED_HOUSING);
 
         // ME Digital Singularity
-        GT_ModHandler
-                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
                 "----a----",
@@ -558,7 +548,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         // ME Singularity crafting storage
         GT_ModHandler
-                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1));
+                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1)); // stays
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1),
                 "abcfhfcba",
@@ -592,7 +582,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1));
 
         // ME Void Storage
-        GT_ModHandler.removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1),
                 "craftingToolHardHammer",
@@ -606,7 +595,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolScrewdriver");
 
         AvaritiaHelper.removeExtremeCraftingRecipe(
-                getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing));
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing)); // stays
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing),
                 "aaaaaaaaa",
