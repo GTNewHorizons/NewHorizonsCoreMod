@@ -1601,7 +1601,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
-                "gemCertusQuartz");git
+                "gemCertusQuartz");
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 39, missing),
