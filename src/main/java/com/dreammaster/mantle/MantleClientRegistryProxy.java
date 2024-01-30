@@ -15,6 +15,9 @@ import com.dreammaster.recipes.ShapelessIngredientsResolver;
 
 import mantle.lib.client.MantleClientRegistry;
 
+/**
+ * Implementation class. Access it through MantleManualRecipeRegistry::getInstance
+ */
 class MantleClientRegistryProxy implements MantleManualRecipeRegistry {
 
     private static final UnaryOperator<Object[]> SHAPED_INGREDIENTS_RESOLVER = new ShapedIngredientsResolver();

@@ -9,6 +9,9 @@ import javax.annotation.Nonnull;
 
 import net.minecraft.item.ItemStack;
 
+/**
+ * Implementation class. Access it through Recipe::of
+ */
 class RecipeArgs implements Recipe {
 
     // Hardcoded dependency for now
