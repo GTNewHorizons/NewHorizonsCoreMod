@@ -124,7 +124,7 @@ public class RecipeRemover {
      *
      * @author kuba6000
      */
-    public static void removeRecipeShapelessDelayed(Object aOutput, Object... aRecipe) {
+    static void removeRecipeShapelessDelayed(Object aOutput, Object... aRecipe) {
         ArrayList<Object> aRecipeList = new ArrayList<>(Arrays.asList(aRecipe));
         addToBuffer(getItemsHashed(aOutput, false), r -> {
             if (!(r instanceof ShapelessOreRecipe) && !(r instanceof ShapelessRecipes)) return false;
@@ -176,7 +176,7 @@ public class RecipeRemover {
      *
      * @author kuba6000
      */
-    public static void removeRecipeShapedDelayed(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
+    static void removeRecipeShapedDelayed(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
         if (recipeWidthField == null) {
             try {
                 recipeWidthField = ShapedOreRecipe.class.getDeclaredField("width");
@@ -240,7 +240,7 @@ public class RecipeRemover {
      *
      * @author kuba6000
      */
-    public static void removeRecipeShapedDelayed(Object aOutput) {
+    static void removeRecipeShapedDelayed(Object aOutput) {
         addToBuffer(getItemsHashed(aOutput, false), r -> r instanceof ShapedOreRecipe || r instanceof ShapedRecipes);
     }
 
@@ -249,7 +249,7 @@ public class RecipeRemover {
      *
      * @author kuba6000
      */
-    public static void removeRecipeByOutputDelayed(Object aOutput) {
+    static void removeRecipeByOutputDelayed(Object aOutput) {
         addToBuffer(getItemsHashed(aOutput, false), r -> true);
     }
 
