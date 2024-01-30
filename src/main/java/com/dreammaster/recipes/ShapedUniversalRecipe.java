@@ -28,11 +28,11 @@ import gregtech.api.util.GT_Utility;
  */
 public class ShapedUniversalRecipe extends ShapedOreRecipe {
 
-    private static final ItemStack MISSING = new ItemStack(Blocks.fire);
-    ItemStack output;
-    Object[][] recipe = new Object[3][3];
-    Object[] recipeXY = new Object[9];
-    int maxX, maxY = 0;
+    static final ItemStack MISSING = new ItemStack(Blocks.fire);
+    private final ItemStack output;
+    private final Object[][] recipe = new Object[3][3];
+    private final Object[] recipeXY = new Object[9];
+    private int maxX, maxY = 0;
 
     public ShapedUniversalRecipe(ItemStack result, Object... recipe) {
         super(result, "xxx", "xxx", "xxx", 'x', MISSING);
