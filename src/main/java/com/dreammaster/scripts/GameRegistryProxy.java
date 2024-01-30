@@ -12,15 +12,20 @@ import com.dreammaster.recipes.ShapelessUniversalRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-class GameRegistryProxy {
+/**
+ * Provides methods allowing interaction with the GameRegistry.
+ * <p>
+ * For use with Recipe::provideTo
+ */
+public class GameRegistryProxy {
 
     private static final GameRegistryProxy INSTANCE = new GameRegistryProxy();
 
-    static Consumer<Recipe> shapedRecipes() {
+    public static Consumer<Recipe> shapedRecipes() {
         return INSTANCE::addShapedRecipe;
     }
 
-    static Consumer<Recipe> shapelessRecipes() {
+    public static Consumer<Recipe> shapelessRecipes() {
         return INSTANCE::addShapelessRecipe;
     }
 
