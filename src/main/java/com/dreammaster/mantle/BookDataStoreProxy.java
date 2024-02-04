@@ -10,6 +10,8 @@ import mantle.books.BookDataStore;
 
 /**
  * This class helps us avoid issues with books already loaded by another mod.
+ * <p>
+ * Implementation class. Use it through BookLoader::of
  */
 class BookDataStoreProxy {
 

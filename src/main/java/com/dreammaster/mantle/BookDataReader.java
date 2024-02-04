@@ -14,6 +14,8 @@ import org.xml.sax.SAXException;
 /**
  * This class doesn't support loading different XML documents based on Minecraft's currently configured language. Books
  * are instead intended to be translated through lang files.
+ * <p>
+ * This is an implementation class. Use it through BookLoader::of
  */
 class BookDataReader {
 

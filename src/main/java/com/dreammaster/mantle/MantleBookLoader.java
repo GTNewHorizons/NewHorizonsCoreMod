@@ -13,6 +13,9 @@ import gregtech.GT_Mod;
 import gregtech.api.interfaces.internal.IGT_Mod;
 import mantle.books.BookData;
 
+/**
+ * Implementation class. Use it through BookLoader::of
+ */
 final class MantleBookLoader implements BookLoader {
 
     private static final BookDataReader BOOK_DATA_READER = new BookDataReader();
