@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<book>
+ <page type="intro">
+  <text>item.tconstruct.manual.weaponry.title_page</text>
+ </page>
+
+ <page type="contents">
+  <text>item.tconstruct.manual.common.toc</text>
+  <link>
+   <text>item.tconstruct.manual.common.intro_link</text>
+   <icon>weaponrybook</icon>
+   <jump>3</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.weaponry.throwing_weapons_link</text>
+   <icon>throwingknifeIcon</icon>
+   <jump>5</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.weaponry.projectile_weapons_link</text>
+   <icon>shortbowIcon</icon>
+   <jump>7</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.weaponry.projectiles_link</text>
+   <icon>arrowIcon</icon>
+   <jump>10</jump>
+  </link>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.intro1</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.contents</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.throwing_weapons</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.javelin</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.projectile_weapons</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.longbow</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.crossbow</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.projectiles</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.part_materials</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.weaponry.bolts</text>
+ </page>
+
+</book>

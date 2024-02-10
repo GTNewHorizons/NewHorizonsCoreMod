@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+
+<book>
+ <page type="intro">
+  <text>item.tconstruct.manual.smeltery.title_page</text>
+ </page>
+
+ <page type="contents">
+  <text>item.tconstruct.manual.common.toc</text>
+  <link>
+   <text>item.tconstruct.manual.common.intro_link</text>
+   <icon>smelterybook</icon>
+   <jump>3</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.smeltery.casting_link</text>
+   <icon>castingtable</icon>
+   <jump>8</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.smeltery.construction_link</text>
+   <icon>smeltery</icon>
+   <jump>5</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.smeltery.alloys_link</text>
+   <icon>liquidiron</icon>
+   <jump>9</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.common.recipes</text>
+   <icon>blankcast</icon>
+   <jump>9</jump>
+  </link>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.smeltery.intro1</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.smeltery.intro2</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.smeltery.intro3</text>
+ </page>
+
+ <page type="sidebar">
+  <text>item.tconstruct.manual.smeltery.getting_started</text>
+  <item>
+   <text>item.tconstruct.manual.smeltery.smeltery_parts1</text>
+   <icon>smeltery</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.smeltery_parts2</text>
+   <icon>lavatank</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.smeltery_parts3</text>
+   <icon>searedbrick</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.smeltery_parts4</text>
+   <icon>drain</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.smeltery_parts5</text>
+   <icon>faucet</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.smeltery_parts6</text>
+   <icon>castingtable</icon>
+  </item>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.smeltery.construction1</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.smeltery.construction2</text>
+ </page>
+
+ <page type="picture">
+  <text>item.tconstruct.manual.smeltery.figure1a</text>
+  <location>tinker:manuals/smelterysmall.png</location>
+ </page>
+
+ <page type="sidebar">
+  <text>item.tconstruct.manual.smeltery.alloys</text>
+  <item>
+   <text>item.tconstruct.manual.smeltery.bronze</text>
+   <icon>bronzeingot</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.aluminium</text>
+   <icon>alubrassingot</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.manyullyn</text>
+   <icon>manyullyningot</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.alumite</text>
+   <icon>alumiteingot</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.pigiron</text>
+   <icon>pigironingot</icon>
+  </item>
+ </page>
+
+ <page type="sidebar">
+  <text>item.tconstruct.manual.smeltery.liquids</text>
+  <item>
+   <text>item.tconstruct.manual.smeltery.blood</text>
+   <icon>bloodbucket</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.emerald</text>
+   <icon>emeraldbucket</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.glue</text>
+   <icon>gluebucket</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.slime</text>
+   <icon>slimebucket</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.ender</text>
+   <icon>enderbucket</icon>
+  </item>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.smeltery.casting1</text>
+ </page>
+
+ <page type="picture">
+  <text>item.tconstruct.manual.smeltery.casting2</text>
+  <location>tinker:manuals/casting.png</location>
+ </page>
+
+ <page type="crafting">
+  <text>CraftedSoil.Grout.name</text>
+  <recipe>
+   <name>grout</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="furnace">
+  <text>item.tconstruct.Materials.SearedBrick.name</text>
+  <recipe>searedbrick</recipe>
+ </page>
+
+ <page type="crafting">
+  <text>Smeltery.Brick.name</text>
+  <recipe>
+   <name>searedbricks</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>Smeltery.Controller.name</text>
+  <recipe>
+   <name>smelterycontroller</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>Smeltery.Drain.name</text>
+  <recipe>
+   <name>smelterydrain</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>LavaTank.Tank.name</text>
+  <recipe>
+   <name>smelterytank1</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>LavaTank.Gague.name</text>
+  <recipe>
+   <name>smelterytank2</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>LavaTank.Window.name</text>
+  <recipe>
+   <name>smelterytank3</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>SearedBlock.Faucet.name</text>
+  <recipe>
+   <name>smelteryfaucet</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>option.tcon.castingchannel</text>
+  <recipe>
+   <name>castingchannel</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>SearedBlock.Table.name</text>
+  <recipe>
+   <name>smelterytable</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>SearedBlock.Basin.name</text>
+  <recipe>
+   <name>smelterybasin</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="blockcast">
+  <text>block.brownstone.smooth.name</text>
+  <recipe>brownstone</recipe>
+ </page>
+
+ <page type="blockcast">
+  <text>block.glass.pure.name</text>
+  <recipe>clearglass</recipe>
+ </page>
+
+ <page type="blockcast">
+  <text>Smeltery.Stone.name</text>
+  <recipe>searedstone</recipe>
+ </page>
+
+ <page type="blockcast">
+  <text>item.tconstruct.Materials.GlueBall.name</text>
+  <recipe>glueball</recipe>
+ </page>
+
+
+</book>

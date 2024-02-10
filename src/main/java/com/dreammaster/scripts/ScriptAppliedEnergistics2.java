@@ -113,7 +113,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemOutputs(CoCraftingUnit16x).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         // Advanced Storage Housing
-        GT_ModHandler.removeRecipeByOutput(AE2_ADVANCED_HOUSING);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GLASS_PANE,
@@ -146,10 +145,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.4096k", 1), // 4096k
                 getModItem(AppliedEnergistics2.ID, "item.ItemAdvancedStorageCell.16384k", 1), // 16384k
         };
-        for (int i = 0; i < components.length; i++) {
-            GT_ModHandler.removeRecipeByOutput(cells[i]);
-            GT_ModHandler.removeRecipeByOutput(components[i]);
-        }
+
         for (int i = 0; i < components.length; i++) {
             GT_ModHandler.addCraftingRecipe(
                     cells[i],
@@ -233,14 +229,12 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingStorage", 1, 3), // 16384k
         };
         for (int i = 0; i < storage.length; i++) {
-            GT_ModHandler.removeRecipeByOutput(storage[i]);
             GT_Values.RA.stdBuilder()
                     .itemInputs(components[i], getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1))
                     .itemOutputs(storage[i]).duration(20 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         }
 
         // ME Block Container
-        GT_ModHandler.removeRecipeByOutput(AE2_BLOCK_CONTAINER);
         GT_ModHandler.addCraftingRecipe(
                 AE2_BLOCK_CONTAINER,
                 new Object[] { " K ", "SMS", "dHw", 'K',
@@ -505,8 +499,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .addTo(assemblerRecipes);
 
         // ME Quantum Storage
-        GT_ModHandler
-                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Quantum", 1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Quantum", 1),
                 "---------",
@@ -530,8 +522,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 AE2_ADVANCED_HOUSING);
 
         // ME Digital Singularity
-        GT_ModHandler
-                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
                 "----a----",
@@ -557,8 +547,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(EternalSingularity.ID, "eternal_singularity", 1));
 
         // ME Singularity crafting storage
-        GT_ModHandler
-                .removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1),
                 "abcfhfcba",
@@ -592,7 +580,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1));
 
         // ME Void Storage
-        GT_ModHandler.removeRecipeByOutput(getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1));
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1),
                 "craftingToolHardHammer",
@@ -606,7 +593,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolScrewdriver");
 
         AvaritiaHelper.removeExtremeCraftingRecipe(
-                getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing));
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing)); // stays
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing),
                 "aaaaaaaaa",
@@ -1158,48 +1145,63 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateAluminium",
                 "plateAluminium",
                 "plateAluminium");
+        // capacity card
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 27, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing));
+        // stick
+        addShapelessRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 64, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
+                "slimeball");
+        // crafting card
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 53, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 35, missing),
                 "craftingWorkBench");
+        // redstone card
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 26, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing),
                 "craftingRedstoneTorch",
                 "craftingRedstoneTorch",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing));
+        // fuzzy card
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 29, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing));
+        // inverter card
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 31, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing),
                 getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing));
+        // acceleration card
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 30, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
+        // oredictionary card
         addShapelessRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 55, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 ItemList.Automation_TypeFilter_IV.get(1L));
+        // wireless booster
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 42, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 8, missing),
@@ -1211,6 +1213,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 null,
                 null);
+        // Me Annihilation plane
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 300, missing),
                 "craftingToolScrewdriver",
@@ -1222,6 +1225,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "gemFluix",
                 "gemFluix",
                 "gemFluix");
+        // cable anchor block
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing),
                 "boltIron",
@@ -1300,6 +1304,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 null,
                 "boltTitanium");
+        // ME export bus
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 260, missing),
                 "craftingToolScrewdriver",
@@ -1311,6 +1316,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 ItemList.Electric_Piston_LV.get(1L),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
+        // ME formation plane
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320, missing),
                 "craftingToolScrewdriver",
@@ -1322,6 +1328,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
+        // ME import bus
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 240, missing),
                 "craftingToolScrewdriver",
@@ -1333,6 +1340,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 ItemList.Electric_Piston_LV.get(1L),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
+        // p2p tunnel - ME
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460, missing),
                 "craftingToolScrewdriver",
@@ -1344,6 +1352,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing));
+        // certuz quartz wrench
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolCertusQuartzWrench", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
@@ -1366,6 +1375,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 "gemQuartz",
                 null);
+        // mass cannon
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolMassCannon", 1, 0, missing),
                 "plateTitanium",
@@ -1377,6 +1387,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateTitanium",
                 null,
                 null);
+        // memory card
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolMemoryCard", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
@@ -1388,6 +1399,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 null,
                 null);
+        // charged staff
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolChargedStaff", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing),
@@ -1399,6 +1411,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 null,
                 "stickThaumium");
+        // entropy manipulator
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolEntropyManipulator", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7, missing),
@@ -1410,6 +1423,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 null,
                 "stickThaumium");
+        // color applicator
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolColorApplicator", 1, 0, missing),
                 "wireGt01Aluminium",
@@ -1421,6 +1435,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 "stickSteel",
                 null);
+        // biometric card
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolBiometricCard", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
@@ -1432,6 +1447,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 null,
                 null);
+        // ME wireless access point
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockWireless", 1, 0, missing),
                 null,
@@ -1443,6 +1459,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "craftingToolScrewdriver",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
                 "craftingToolWrench");
+        // ME storage monitor
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 400, missing),
                 "craftingToolScrewdriver",
@@ -1454,6 +1471,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
+        // ME storage bus
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing),
                 "craftingToolScrewdriver",
@@ -1465,6 +1483,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 ItemList.Electric_Piston_LV.get(1L),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
+        // 1k storage cell
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
                 "craftingToolHardHammer",
@@ -1487,6 +1506,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 "plateAluminium",
                 "craftingToolHardHammer");
+        // 4k storage cell
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.4k", 1, 0, missing),
                 "craftingToolHardHammer",
@@ -1509,6 +1529,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 "plateAluminium",
                 "craftingToolHardHammer");
+        // 16k storage cell
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.16k", 1, 0, missing),
                 "craftingToolHardHammer",
@@ -1531,6 +1552,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 "plateAluminium",
                 "craftingToolHardHammer");
+        // 64k storage cell
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.64k", 1, 0, missing),
                 "craftingToolHardHammer",
@@ -1553,6 +1575,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "screwCertusQuartz",
                 "plateAluminium",
                 "craftingToolHardHammer");
+        // viewing cell
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemViewCell", 1, 0, missing),
                 "craftingToolScrewdriver",

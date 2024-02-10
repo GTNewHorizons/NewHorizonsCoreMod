@@ -27,9 +27,9 @@ import gregtech.api.util.GT_Utility;
  */
 public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
 
-    ItemStack output;
-    ArrayList<Object> recipe = new ArrayList<>();
-    ArrayList<Object> recipeXY = new ArrayList<>();
+    private final ItemStack output;
+    private final ArrayList<Object> recipe = new ArrayList<>();
+    private final ArrayList<Object> recipeXY = new ArrayList<>();
 
     public ShapelessUniversalRecipe(ItemStack result, Object... recipe) {
         super(result);

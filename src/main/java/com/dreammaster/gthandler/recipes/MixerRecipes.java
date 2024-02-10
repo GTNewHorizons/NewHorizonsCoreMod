@@ -1183,10 +1183,12 @@ public class MixerRecipes implements Runnable {
         }
 
         if (Chisel.isModLoaded()) {
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 1L))
-                    .fluidInputs(Materials.Water.getFluid(100L))
-                    .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcrete", 1L)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
+            for (int meta = 0; meta < 16; ++meta) {
+                GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 1L, meta))
+                        .fluidInputs(Materials.Water.getFluid(100L))
+                        .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcrete", 1L, meta)).duration(5 * SECONDS)
+                        .eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
+            }
         }
     }
 }

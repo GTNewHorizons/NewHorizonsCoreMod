@@ -2,7 +2,6 @@ package com.dreammaster.gthandler;
 
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
@@ -39,47 +38,6 @@ public class GT_Recipe_Remover implements Runnable {
 
         // Vanilla
         GT_ModHandler.removeRecipeByOutputDelayed(new ItemStack(Blocks.iron_bars, 1, wildcard), true, false, true);
-        // AE
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 2),
-                true,
-                false,
-                true);
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 3),
-                true,
-                false,
-                true);
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 36),
-                true,
-                false,
-                true);
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 536),
-                true,
-                false,
-                true);
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 556),
-                true,
-                false,
-                true);
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 56),
-                true,
-                false,
-                true);
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 76),
-                true,
-                false,
-                true);
-        GT_ModHandler.removeRecipeByOutputDelayed(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 576),
-                true,
-                false,
-                true);
         // ASP
         GT_ModHandler.removeRecipeByOutputDelayed(
                 getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 0),

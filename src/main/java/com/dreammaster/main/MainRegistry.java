@@ -1,7 +1,16 @@
 package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.GalactiGreg;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.SGCraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -63,6 +72,7 @@ import com.dreammaster.railcraftStones.NH_QuarryPopulator;
 import com.dreammaster.recipes.RecipeRemover;
 import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
+import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
@@ -476,6 +486,8 @@ public class MainRegistry {
         }
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
+
+        if (TinkerConstruct.isModLoaded()) TiCoLoader.doPostInitialization();
     }
 
     @Mod.EventHandler

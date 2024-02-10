@@ -10,7 +10,11 @@ import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -2076,6 +2080,15 @@ public class AssemblerRecipes implements Runnable {
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
         }
+        // Fusion Coil Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4L),
+                        ItemList.Neutron_Reflector.get(2L),
+                        ItemList.Field_Generator_MV.get(2L),
+                        ItemList.Casing_Coil_Superconductor.get(1L))
+                .itemOutputs(ItemList.Casing_Fusion_Coil.get(1L)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
     }
 
     private void makeElectricMachinePartRecipes() {
@@ -5495,50 +5508,72 @@ public class AssemblerRecipes implements Runnable {
                 "mint", "myst", "reds", "reed", "roen", "sols", "sync", "tank", "vect", "vena" };
         String[] zblockName = { "zane", "zech", "zest", "zeta", "zion", "zkul", "zoea", "zome", "zone", "zorg", "ztyl",
                 "zyth" };
-        ItemStack[] item = { new ItemStack(Items.dye, 1, 7), new ItemStack(Items.dye, 1, 4),
-                new ItemStack(Blocks.wool, 1, 0), new ItemStack(Blocks.hardened_clay, 1, 0),
-                new ItemStack(Items.dye, 1, 3), new ItemStack(Items.dye, 1, 8), new ItemStack(Items.gold_ingot, 1, 0),
-                new ItemStack(Blocks.obsidian, 1, 0), new ItemStack(Blocks.soul_sand, 1, 0),
-                new ItemStack(Blocks.netherrack, 1, 0), new ItemStack(Blocks.ice, 1, 0),
-                new ItemStack(Items.slime_ball, 1, 0), new ItemStack(Blocks.brown_mushroom, 1, 0),
-                new ItemStack(Items.redstone, 1, 0), new ItemStack(Items.reeds, 1, 0),
-                new ItemStack(Blocks.sandstone, 1, 0), new ItemStack(Items.blaze_powder, 1, 0),
-                new ItemStack(Items.emerald, 1, 0), new ItemStack(Items.iron_ingot, 1, 0),
-                new ItemStack(Items.ghast_tear, 1, 0), new ItemStack(Items.ender_pearl, 1, 0) };
-        ItemStack[] zitem = { new ItemStack(Items.dye, 1, 0), new ItemStack(Items.dye, 1, 1),
-                new ItemStack(Items.dye, 1, 2), new ItemStack(Items.dye, 1, 5), new ItemStack(Items.dye, 1, 6),
-                new ItemStack(Items.dye, 1, 9), new ItemStack(Items.dye, 1, 10), new ItemStack(Items.dye, 1, 11),
-                new ItemStack(Items.dye, 1, 12), new ItemStack(Items.dye, 1, 13), new ItemStack(Items.dye, 1, 14),
-                new ItemStack(Items.dye, 1, 15) };
 
-        for (int j = 0; j < 21; j++) {
-            for (int i = 0; i < 16; i++) {
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_ModHandler.getModItem(ZTones.ID, "stoneTile", 4L, 0),
-                                item[j],
-                                GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
-                        .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + blockName[j] + "Block", 8L, i))
-                        .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
+        Map<String, List<ItemStack>> itemMap = new HashMap<>();
+        itemMap.put(blockName[0], OreDictionary.getOres("dyeLightGray")); // agon
+        itemMap.put(blockName[1], OreDictionary.getOres("dyeBlue")); // azur
+        itemMap.put(blockName[2], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.wool, 1, 0)))); // bitt
+        itemMap.put(blockName[3], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.hardened_clay, 1, 0)))); // cray
+        itemMap.put(blockName[4], OreDictionary.getOres("dyeBrown")); // fort
+        itemMap.put(blockName[5], OreDictionary.getOres("dyeGray")); // iszm
+        itemMap.put(blockName[6], new ArrayList<>(Arrays.asList(new ItemStack(Items.gold_ingot, 1, 0))));// jelt
+        itemMap.put(blockName[7], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.obsidian, 1, 0)))); // korp
+        itemMap.put(blockName[8], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.soul_sand, 1, 0))));// kryp
+        itemMap.put(blockName[9], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.netherrack, 1, 0))));// lair
+        itemMap.put(blockName[10], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.ice, 1, 0))));// lave
+        itemMap.put(blockName[11], new ArrayList<>(Arrays.asList(new ItemStack(Items.slime_ball, 1, 0))));// mint
+        itemMap.put(blockName[12], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.brown_mushroom, 1, 0))));// myst
+        itemMap.put(blockName[13], new ArrayList<>(Arrays.asList(new ItemStack(Items.redstone, 1, 0))));// reds
+        itemMap.put(blockName[14], new ArrayList<>(Arrays.asList(new ItemStack(Items.reeds, 1, 0))));// reed
+        itemMap.put(blockName[15], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.sandstone, 1, 0))));// roen
+        itemMap.put(blockName[16], new ArrayList<>(Arrays.asList(new ItemStack(Items.blaze_powder, 1, 0))));// sols
+        itemMap.put(blockName[17], new ArrayList<>(Arrays.asList(new ItemStack(Items.emerald, 1, 0))));// sync
+        itemMap.put(blockName[18], new ArrayList<>(Arrays.asList(new ItemStack(Items.iron_ingot, 1, 0))));// tank
+        itemMap.put(blockName[19], new ArrayList<>(Arrays.asList(new ItemStack(Items.ghast_tear, 1, 0))));// vect
+        itemMap.put(blockName[20], new ArrayList<>(Arrays.asList(new ItemStack(Items.ender_pearl, 1, 0))));// vena
+        Map<String, List<ItemStack>> zitemMap = new HashMap<>();
+        zitemMap.put(zblockName[0], OreDictionary.getOres("dyeBlack")); // zane
+        zitemMap.put(zblockName[1], OreDictionary.getOres("dyeRed")); // zech
+        zitemMap.put(zblockName[2], OreDictionary.getOres("dyeBlack")); // zest
+        zitemMap.put(zblockName[3], OreDictionary.getOres("dyePurple")); // zeta
+        zitemMap.put(zblockName[4], OreDictionary.getOres("dyeCyan")); // zion
+        zitemMap.put(zblockName[5], OreDictionary.getOres("dyePink")); // zkul
+        zitemMap.put(zblockName[6], OreDictionary.getOres("dyeLime")); // zoea
+        zitemMap.put(zblockName[7], OreDictionary.getOres("dyeYellow")); // zome
+        zitemMap.put(zblockName[8], OreDictionary.getOres("dyeLightBlue")); // zone
+        zitemMap.put(zblockName[9], OreDictionary.getOres("dyeMagenta")); // zorg
+        zitemMap.put(zblockName[10], OreDictionary.getOres("dyeOrange")); // ztyl
+        zitemMap.put(zblockName[11], OreDictionary.getOres("dyeWhite")); // zyth
+
+        final int ztoneVariants = 16;
+
+        for (String name : blockName) {
+            for (int i = 0; i < ztoneVariants; i++) {
+                for (ItemStack ingredient : itemMap.get(name)) {
+                    GT_Values.RA.stdBuilder()
+                            .itemInputs(
+                                    GT_ModHandler.getModItem(ZTones.ID, "stoneTile", 4L, 0),
+                                    ingredient,
+                                    GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
+                            .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + name + "Block", 8L, i))
+                            .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
+                }
             }
         }
-
-        for (int j = 0; j < 12; j++) {
-            for (int i = 0; i < 16; i++) {
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 4L, 0),
-                                zitem[j],
-                                GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
-                        .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + zblockName[j] + "Block", 8L, i))
-                        .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-
+        for (String name : zblockName) {
+            for (int i = 0; i < ztoneVariants; i++) {
+                for (ItemStack ingredient : zitemMap.get(name)) {
+                    GT_Values.RA.stdBuilder()
+                            .itemInputs(
+                                    GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 4L, 0),
+                                    ingredient,
+                                    GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
+                            .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + name + "Block", 8L, i))
+                            .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
+                }
             }
         }
-
-        for (int i = 0; i < 16; i++) {
-
+        for (int i = 0; i < ztoneVariants; i++) {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 4L, 0),
@@ -5546,7 +5581,6 @@ public class AssemblerRecipes implements Runnable {
                             GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
                     .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile.glaxx", 8L, i)).duration(10 * SECONDS)
                     .eut(16).addTo(assemblerRecipes);
-
         }
     }
 
@@ -6221,6 +6255,112 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.IC2_Plantball.get(1L))
                 .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcretesand", 12)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // Anti Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 4),
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "antiBlock", 8L, 15)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Carpet
+        for (int meta = 0; meta < 16; ++meta) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.wool, 4, meta),
+                            new ItemStack(Items.string, 1),
+                            GT_Utility.getIntegratedCircuit(24))
+                    .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "carpet_block", 8L, meta)).duration(5 * SECONDS)
+                    .eut(24).addTo(assemblerRecipes);
+        }
+
+        // Cubits
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 4),
+                        new ItemStack(Blocks.wool, 1, 15),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "cubit", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Fantasy Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 4),
+                        new ItemStack(Items.gold_nugget, 1),
+                        new ItemStack(Items.dye, 1, 15),
+                        GT_Utility.getIntegratedCircuit(11))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "fantasyblock2", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Neonite
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.emerald, 8),
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "neonite", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // GloTek
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.emerald, 8),
+                        new ItemStack(Items.glowstone_dust, 2),
+                        GT_Utility.getIntegratedCircuit(11))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "glotek", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Rebellious Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2),
+                        new ItemStack(Items.gold_nugget, 1),
+                        GT_Utility.getIntegratedCircuit(23))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "rebel", 32L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Structural Concrete
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.gravel, 5),
+                        new ItemStack(Blocks.sand, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "nucrete", 16L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Purpur Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.end_stone, 4),
+                        new ItemStack(Items.dye, 4, 5),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "purpur", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Svelstone
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.stone, 4),
+                        GT_ModHandler.getModItem(Chisel.ID, "andesite", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "sveltstone", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
+
+        // Woolen Clay
+        for (int meta = 0; meta < 16; ++meta) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.wool, 2, meta),
+                            new ItemStack(Blocks.stained_hardened_clay, 2, meta),
+                            GT_Utility.getIntegratedCircuit(24))
+                    .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "woolen_clay", 8L, meta)).duration(5 * SECONDS)
+                    .eut(24).addTo(assemblerRecipes);
+        }
     }
 
     private void makeReinforcedIronPlateRecipes() {
@@ -8527,6 +8667,17 @@ public class AssemblerRecipes implements Runnable {
                             GT_Utility.getIntegratedCircuit(17))
                     .fluidInputs(Materials.Water.getFluid(10000)) // Same as Neper (but the grass is red)
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1, 0)).duration(15 * SECONDS)
+                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            // Horus
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseFalling", 64, 0), // Obsidian Sand
+                            getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 9), // Obsidian Brick
+                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CosmicNeutronium, 64),
+                            GT_Utility.getIntegratedCircuit(17))
+                    .fluidInputs(Materials.Lava.getFluid(10000))
+                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ho", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             // Technically T10
             // Deep Dark

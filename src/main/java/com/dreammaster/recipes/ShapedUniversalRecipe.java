@@ -1,6 +1,5 @@
 package com.dreammaster.recipes;
 
-import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 
 import java.util.ArrayList;
@@ -8,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
@@ -28,13 +28,14 @@ import gregtech.api.util.GT_Utility;
  */
 public class ShapedUniversalRecipe extends ShapedOreRecipe {
 
-    ItemStack output;
-    Object[][] recipe = new Object[3][3];
-    Object[] recipeXY = new Object[9];
-    int maxX, maxY = 0;
+    static final ItemStack MISSING = new ItemStack(Blocks.fire);
+    private final ItemStack output;
+    private final Object[][] recipe = new Object[3][3];
+    private final Object[] recipeXY = new Object[9];
+    private int maxX, maxY = 0;
 
     public ShapedUniversalRecipe(ItemStack result, Object... recipe) {
-        super(result, "xxx", "xxx", "xxx", 'x', missing);
+        super(result, "xxx", "xxx", "xxx", 'x', MISSING);
         output = result.copy();
         if (recipe.length > 3 && recipe[0] instanceof String
                 && recipe[1] instanceof String
