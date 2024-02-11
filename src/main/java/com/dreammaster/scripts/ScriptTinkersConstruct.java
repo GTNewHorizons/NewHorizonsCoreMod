@@ -1923,6 +1923,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeTableRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Electrum, 1L));
         TConstructHelper.removeTableRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Invar, 1L));
         TConstructHelper.removeTableRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Lead, 1L));
+        TConstructHelper.removeMeltingRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Lead, 1L));
         TConstructHelper.removeTableRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Steel, 1L));
         TConstructHelper.removeTableRecipe(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 0, missing));
         TConstructHelper.removeTableRecipe(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 1, missing));
@@ -2732,36 +2733,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 400,
                 FluidRegistry.getFluidStack("nickel.molten", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 89, missing),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                89,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 144));
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Lead, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                89,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 144));
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Lead, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                89,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 144));
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Lead, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                89,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 144));
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Lead, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                89,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 144));
-        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Silver, 1L),
                 GameRegistry.findBlock("gregtech", "gt.blockores"),
                 54,
@@ -3319,42 +3290,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 null,
                 false,
                 250);
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lead, 1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 144));
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Lead, 1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 144));
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Lead, 1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 16));
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lead, 1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 144));
-        Smeltery.addMelting(
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Lead, 1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 72));
-        Smeltery.addMelting(
-                getModItem(IndustrialCraft2.ID, "blockMetal", 1, 4, missing),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("lead.molten", 1296));
         Smeltery.addMelting(
                 getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10, missing),
                 GameRegistry.findBlock("TConstruct", "MetalBlock"),
