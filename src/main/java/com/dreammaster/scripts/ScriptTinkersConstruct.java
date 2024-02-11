@@ -1923,6 +1923,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeTableRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Electrum, 1L));
         TConstructHelper.removeTableRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Invar, 1L));
         TConstructHelper.removeTableRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Lead, 1L));
+        TConstructHelper.removeMeltingRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Lead, 1L));
         TConstructHelper.removeTableRecipe(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Steel, 1L));
         TConstructHelper.removeTableRecipe(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 0, missing));
         TConstructHelper.removeTableRecipe(getModItem(IndustrialCraft2.ID, "itemIngot", 1, 1, missing));
