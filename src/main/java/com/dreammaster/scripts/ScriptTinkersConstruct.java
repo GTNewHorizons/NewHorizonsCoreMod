@@ -3298,7 +3298,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("ender", 2250));
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 getModItem(Minecraft.ID, "glass_bottle", 1, 0, missing),
-                FluidRegistry.getFluidStack("glass.molten", 144),
+                FluidRegistry.getFluidStack("glass.molten", 1000),
                 ItemList.Shape_Mold_Bottle.get(1L),
                 false,
                 200);
