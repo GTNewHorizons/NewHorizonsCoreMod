@@ -189,6 +189,10 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(CustomItemList.MoldBoots.get(1L)).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Mold_ToolHeadDrill.get(0L))
+                .itemOutputs(ItemList.Shape_Mold_ToolHeadDrill.get(1L)).duration(10 * SECONDS).eut(256)
+                .addTo(formingPressRecipes);
+
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(ItemList.Shape_Extruder_Plate.get(1L)).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
@@ -304,6 +308,10 @@ public class FormingPressRecipes implements Runnable {
                         GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0))
                 .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 1, 0))
                 .duration(10 * SECONDS).eut(256).addTo(formingPressRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_ToolHeadDrill.get(0))
+                .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1)).duration(10 * SECONDS).eut(256)
+                .addTo(formingPressRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

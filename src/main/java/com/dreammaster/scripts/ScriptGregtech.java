@@ -1006,6 +1006,13 @@ public class ScriptGregtech implements IScriptLoader {
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
+                ItemList.Shape_Mold_ToolHeadDrill.get(1L),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem(NewHorizonsCoreMod.ID, "item.MoldFormDrillHead", 1, 0, missing),
+                true,
+                100);
+
+        TConstructRegistry.getTableCasting().addCastingRecipe(
                 ItemList.Shape_Extruder_Plate.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapePlate", 1, 0, missing),
@@ -1165,6 +1172,12 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Shape_Extruder_Small_Gear.get(1L),
                 FluidRegistry.getFluidStack("steel.molten", 576),
                 getModItem(NewHorizonsCoreMod.ID, "item.ShapeSmallGear", 1, 0, missing),
+                true,
+                100);
+        TConstructRegistry.getTableCasting().addCastingRecipe(
+                ItemList.Shape_Extruder_ToolHeadDrill.get(1),
+                FluidRegistry.getFluidStack("steel.molten", 576),
+                getModItem(NewHorizonsCoreMod.ID, "item.ShapeDrillHead", 1, 0, missing),
                 true,
                 100);
 
