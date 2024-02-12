@@ -366,15 +366,11 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 "screwIron",
                 "craftingToolHardHammer",
                 "screwIron");
-        addShapelessRecipe(
+        GT_ModHandler.addCraftingRecipe(
                 getModItem(PamsHarvestCraft.ID, "cuttingboardItem", 1, 0, missing),
-                createItemStack(
-                        GregTech.ID,
-                        "gt.metatool.01",
-                        1,
-                        36,
-                        "{ench:[0:{lvl:3s,id:16s},1:{lvl:3s,id:21s}],GT.ToolStats:{PrimaryMaterial:\"StainlessSteel\",MaxDamage:48000L,SecondaryMaterial:\"StainlessSteel\"}}",
-                        missing));
+                GT_ModHandler.RecipeBits.DO_NOT_CHECK_FOR_COLLISIONS | GT_ModHandler.RecipeBits.BUFFERED,
+                new Object[] { "PPf", "PP ", "SBh", 'S', OrePrefixes.stick.get(Materials.StainlessSteel), 'P',
+                        OrePrefixes.plate.get(Materials.StainlessSteel), 'B', OrePrefixes.plate.get(Materials.Wood) });
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "mortarandpestleItem", 1, 0, missing),
                 "craftingToolHardHammer",
