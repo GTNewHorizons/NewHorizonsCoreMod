@@ -5576,8 +5576,8 @@ public class AssemblerRecipes implements Runnable {
         for (int i = 0; i < ztoneVariants; i++) {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 4L, 0),
-                            new ItemStack(Blocks.glass, 1, 0),
+                            GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 1L, 0),
+                            new ItemStack(Blocks.glass, 4, 0),
                             GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
                     .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile.glaxx", 8L, i)).duration(10 * SECONDS)
                     .eut(16).addTo(assemblerRecipes);
