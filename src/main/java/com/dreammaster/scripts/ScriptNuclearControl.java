@@ -209,9 +209,9 @@ public class ScriptNuclearControl implements IScriptLoader {
                 getModItem(IC2NuclearControl.ID, "ItemToolThermometer", 1, 0, missing),
                 "plateGlass",
                 null,
-                ItemList.Circuit_Good.get(1L),
+                "circuitGood",
                 ItemList.Cover_Screen.get(1L),
-                ItemList.Circuit_Good.get(1L),
+                "circuitGood",
                 null,
                 "plateGlass",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing));
