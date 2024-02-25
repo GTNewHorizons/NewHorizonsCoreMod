@@ -450,8 +450,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 3,
                 getModItem(Minecraft.ID, "brewing_stand", 1, 0, missing))
                         .setPages(
-                                new ResearchPage("brewingstand.research_page.BREWINGSTAND.1"),
-                                new ResearchPage("brewingstand.research_page.BREWINGSTAND.2"),
+                                new ResearchPage("Minecraft.research_page.BREWINGSTAND.1"),
+                                new ResearchPage("Minecraft.research_page.BREWINGSTAND.2"),
                                 new ResearchPage("Minecraft.research_page.BREWINGSTAND.3"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
