@@ -404,7 +404,7 @@ public class HazardousItemsHandler {
                 Class<?> c = pPlayer.inventory.getClass();
                 Field extraInv = null;
                 try {
-                    extraInv = c.getDeclaredField("extraItems");
+                    extraInv = c.getDeclaredField("battlegear2$extraItems");
                 } catch (NoSuchFieldException nsfe) {
                     _mLogger.warn(
                             "battlegear.changed.1",
@@ -414,6 +414,7 @@ public class HazardousItemsHandler {
                 if (extraInv == null) return;
 
                 try {
+                    extraInv.setAccessible(true);
                     ItemStack[] tExtraInv = (ItemStack[]) extraInv.get(pPlayer.inventory);
                     checkInventoryArray(tExtraInv, pPlayer);
                 } catch (Exception ex) {
