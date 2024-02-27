@@ -414,6 +414,7 @@ public class HazardousItemsHandler {
                         }
                         bg2ExtraInvField.setAccessible(true);
                     }
+                    if (bg2ExtraInvField == null) return;
                     ItemStack[] tExtraInv = (ItemStack[]) bg2ExtraInvField.get(pPlayer.inventory);
                     checkInventoryArray(tExtraInv, pPlayer);
                 } catch (NoSuchFieldException | IllegalAccessException ex) {
