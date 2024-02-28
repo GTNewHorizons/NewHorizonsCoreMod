@@ -58,6 +58,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import tconstruct.smeltery.TinkerSmeltery;
@@ -1074,6 +1075,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 input.stackSize = (int) Math.ceil((float) cost / 2);
                 GT_Values.RA.stdBuilder().itemInputs(input, patternItem)
                         .itemOutputs(new ItemStack(toolItem, 1, material.materialId))
+                        .recipeCategory(RecipeCategories.ticPartExtruding)
                         .duration(Math.min((long) material.durationPer16 * cost / 16, Integer.MAX_VALUE))
                         .eut(material.voltage).addTo(extruderRecipes);
             }
