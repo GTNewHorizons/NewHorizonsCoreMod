@@ -520,29 +520,14 @@ public class CircuitAssemblerRecipes implements Runnable {
                 ItemStack DataStickWScheme = ItemList.Tool_DataStick.get(1L);
                 DataStickWScheme.setTagCompound(
                         GT_Utility.getNBTContainingShort(new NBTTagCompound(), "rocket_tier", (short) (i + 100)));
-
+                int rocketTier = Math.min(i + 2, 3);
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                RocketMaterial[i],
-                                ItemList.Circuit_Quantumprocessor.get(1L),
+                                RocketMaterial[rocketTier - 1],
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),
                                 DataStickWScheme.splitStack(0))
                         .itemOutputs(ExtraChips[i]).fluidInputs(tMat.getMolten(576L * tMultiplier / 2L))
-                        .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[i])
-                        .addTo(circuitAssemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(RocketMaterial[i], ItemList.Circuit_Data.get(1L), DataStickWScheme.splitStack(0))
-                        .itemOutputs(ExtraChips[i]).fluidInputs(tMat.getMolten(576L * tMultiplier / 2L))
-                        .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[i])
-                        .addTo(circuitAssemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                RocketMaterial[i],
-                                ItemList.Circuit_Nanocomputer.get(1L),
-                                DataStickWScheme.splitStack(0))
-                        .itemOutputs(ExtraChips[i]).fluidInputs(tMat.getMolten(576L * tMultiplier / 2L))
-                        .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[i])
+                        .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[rocketTier - 2])
                         .addTo(circuitAssemblerRecipes);
 
             }
