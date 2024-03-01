@@ -481,39 +481,11 @@ public class CircuitAssemblerRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 RocketMaterial[(i - 1)],
-                                ItemList.Circuit_Elite.get(1L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),
                                 DataStickWScheme.splitStack(0))
                         .itemOutputs(RocketChip[(i - 1)]).fluidInputs(tMat.getMolten(576L * tMultiplier / 2L))
                         .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[(i - 2)])
                         .addTo(circuitAssemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                RocketMaterial[(i - 1)],
-                                ItemList.Circuit_Elitenanocomputer.get(1L),
-                                DataStickWScheme.splitStack(0))
-                        .itemOutputs(RocketChip[(i - 1)]).fluidInputs(tMat.getMolten(576L * tMultiplier / 2L))
-                        .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[(i - 2)])
-                        .addTo(circuitAssemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                RocketMaterial[(i - 1)],
-                                ItemList.Circuit_Quantumcomputer.get(1L),
-                                DataStickWScheme.splitStack(0))
-                        .itemOutputs(RocketChip[(i - 1)]).fluidInputs(tMat.getMolten(576L * tMultiplier / 2L))
-                        .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[(i - 2)])
-                        .addTo(circuitAssemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                RocketMaterial[(i - 1)],
-                                ItemList.Circuit_Crystalprocessor.get(1L),
-                                DataStickWScheme.splitStack(0))
-                        .itemOutputs(RocketChip[(i - 1)]).fluidInputs(tMat.getMolten(576L * tMultiplier / 2L))
-                        .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[(i - 2)])
-                        .addTo(circuitAssemblerRecipes);
-
             }
 
             for (int i = 0; i < 3; ++i) {
