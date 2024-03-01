@@ -497,7 +497,8 @@ public class CircuitAssemblerRecipes implements Runnable {
                         .itemInputs(
                                 RocketMaterial[rocketTier - 1],
                                 GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),
-                                DataStickWScheme.splitStack(0))
+                                DataStickWScheme.splitStack(0),
+                                GT_Utility.getIntegratedCircuit(Math.max(i, 1)))
                         .itemOutputs(ExtraChips[i]).fluidInputs(tMat.getMolten(576L * tMultiplier / 2L))
                         .requiresCleanRoom().duration(7 * MINUTES + 30 * SECONDS).eut(EUperRecipe[rocketTier - 2])
                         .addTo(circuitAssemblerRecipes);
