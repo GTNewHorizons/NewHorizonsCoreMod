@@ -1126,7 +1126,7 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("MB_ApimancersDrainer", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MB_ApimancersDrainer",
-                getModItem(MagicBees.ID, "apiamancersDrainer", 1, 0, missing),
+                getModItem(MagicBees.ID, "apimancersDrainer", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("tempus"), 50),
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
