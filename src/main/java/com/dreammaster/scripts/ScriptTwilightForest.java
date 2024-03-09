@@ -151,13 +151,13 @@ public class ScriptTwilightForest implements IScriptLoader {
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
                             getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing))
-                    .itemOutputs(getModItem(TwilightForest.ID, "item.TFDoor" + materials[i], 1, 0, missing))
+                    .itemOutputs(getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing))
                     .fluidInputs(Materials.Iron.getMolten(16)).duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 4L),
                             getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing))
-                    .itemOutputs(getModItem(TwilightForest.ID, "item.TFDoor" + materials[i], 1, 0, missing))
+                    .itemOutputs(getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing))
                     .fluidInputs(Materials.Copper.getMolten(16)).duration(20 * SECONDS).eut(4).addTo(assemblerRecipes);
             GT_Values.RA.stdBuilder()
                     .itemInputs(
