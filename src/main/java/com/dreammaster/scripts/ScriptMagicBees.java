@@ -409,7 +409,7 @@ public class ScriptMagicBees implements IScriptLoader {
 
         TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 3, 17, missing));
         TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 3, 17, missing));
-        TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "apiamancersDrainer", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "apimancersDrainer", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 7, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 8, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 9, missing));
