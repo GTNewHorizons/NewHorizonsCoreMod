@@ -2264,7 +2264,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "carpet", 2, wildcard, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2, 0, missing),
-                        getModItem(TwilightForest.ID, "tile.TFPlank", 2, wildcard, missing),
+                        getModItem(TwilightForest.ID, "tile.TFPlanks", 2, wildcard, missing),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "bed", 1, 0, missing)).duration(5 * SECONDS).eut(24)
                 .addTo(assemblerRecipes);

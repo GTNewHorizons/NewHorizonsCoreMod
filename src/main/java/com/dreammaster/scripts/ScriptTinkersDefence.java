@@ -33,7 +33,7 @@ public class ScriptTinkersDefence implements IScriptLoader {
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing));
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TinkersDefence.ID, "AeonSteelIngot", 1, 0, missing),
+                        getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing))
                 .duration(1 * MINUTES + 28 * SECONDS).eut(120).addTo(extruderRecipes);
@@ -45,7 +45,7 @@ public class ScriptTinkersDefence implements IScriptLoader {
                 .duration(1 * MINUTES + 4 * SECONDS).eut(120).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TinkersDefence.ID, "QueensGoldIngot", 1, 0, missing),
+                        getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(extruderRecipes);
