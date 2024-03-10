@@ -462,14 +462,14 @@ public class CompressorRecipes implements Runnable {
         if (!TinkersDefence.isModLoaded()) {
             return;
         }
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkersDefence.ID, "AeonSteelIngot", 9, 0, missing))
-                .itemOutputs(getModItem(TinkersDefence.ID, "AeonSteelBlock", 1, 0, missing)).duration(15 * SECONDS)
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkersDefence.ID, "AeonSteel Ingot", 9, 0, missing))
+                .itemOutputs(getModItem(TinkersDefence.ID, "aeonsteelblock", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkersDefence.ID, "QueensGoldIngot", 9, 0, missing))
-                .itemOutputs(getModItem(TinkersDefence.ID, "QueensGoldBlock", 1, 0, missing)).duration(15 * SECONDS)
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 9, 0, missing))
+                .itemOutputs(getModItem(TinkersDefence.ID, "QueensGoldblock", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(TinkersDefence.ID, "DogbeariumIngot", 9, 0, missing))
-                .itemOutputs(getModItem(TinkersDefence.ID, "DogbeariumBlock", 1, 0, missing)).duration(15 * SECONDS)
+                .itemOutputs(getModItem(TinkersDefence.ID, "Dogbeariumblock", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
     }
 }
