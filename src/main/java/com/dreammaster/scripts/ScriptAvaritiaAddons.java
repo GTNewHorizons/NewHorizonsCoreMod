@@ -55,17 +55,6 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
     public void loadRecipes() {
         addShapedRecipe(
                 getModItem(AvaritiaAddons.ID, "CompressedChest", 1),
-                "plateDenseObsidian",
-                "plateDenseObsidian",
-                "plateDenseObsidian",
-                "chestDiamond",
-                ItemList.Electric_Piston_HV.get(1),
-                "chestDiamond",
-                "plateDenseObsidian",
-                "plateDenseObsidian",
-                "plateDenseObsidian");
-        addShapedRecipe(
-                getModItem(AvaritiaAddons.ID, "CompressedChest", 1),
                 "stickObsidian",
                 ItemList.Electric_Piston_HV.get(1),
                 "stickObsidian",
@@ -73,25 +62,16 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 "chestObsidian",
                 "plateDenseObsidian",
                 "craftingToolWrench",
-                "chestDiamond",
+                getModItem(IronChests.ID, "BlockIronChest", 1, 9, missing),
                 "craftingToolScrewdriver");
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IronChests.ID, "BlockIronChest", 2, 2),
-                        ItemList.Electric_Piston_HV.get(1),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 4),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 6),
-                        getModItem(IronChests.ID, "BlockIronChest", 1, 2),
+                        getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                         ItemList.Electric_Piston_HV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
-                        GT_Utility.getIntegratedCircuit(3))
+                        GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
