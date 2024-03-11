@@ -18,8 +18,6 @@ import java.io.File;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.IReloadableResourceManager;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -244,10 +242,7 @@ public class MainRegistry {
         if (CoreConfig.ModCustomToolTips_Enabled) {
             Logger.debug("Module_CustomToolTips is enabled");
             Module_CustomToolTips = new CustomToolTipsHandler();
-            if (PreEvent.getSide().isClient()) {
-                ((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager())
-                        .registerReloadListener(Module_CustomToolTips);
-            }
+            proxy.registerResourceReload();
             // Module_CustomToolTips.LoadConfig();
         }
 

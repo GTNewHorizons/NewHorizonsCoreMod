@@ -2,7 +2,11 @@ package com.dreammaster.main;
 
 import static com.dreammaster.main.ConfigHandler.CONFIG_HANDLER;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.client.resources.IReloadableResourceManager;
+import net.minecraft.client.resources.IResourceManager;
+import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -20,13 +24,18 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 
-public class ClientProxy extends CommonProxy {
+public class ClientProxy extends CommonProxy implements IResourceManagerReloadListener {
 
     @Override
     public void addTexturePage() {
         if (Textures.BlockIcons.casingTexturePages[8] == null) {
             Textures.BlockIcons.casingTexturePages[8] = new ITexture[128];
         }
+    }
+
+    @Override
+    public void registerResourceReload() {
+        ((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager()).registerReloadListener(this);
     }
 
     @Override
@@ -50,5 +59,11 @@ public class ClientProxy extends CommonProxy {
     @Override
     public World getClientWorld() {
         return FMLClientHandler.instance().getClient().theWorld;
+    }
+
+    @Override
+    public void onResourceManagerReload(IResourceManager p_110549_1_) {
+        MainRegistry.Module_CustomToolTips.setConfigFileLocation();
+        MainRegistry.Module_CustomToolTips.ReloadCustomToolTips("");
     }
 }

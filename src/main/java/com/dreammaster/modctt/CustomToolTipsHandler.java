@@ -10,8 +10,6 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import net.minecraft.client.resources.IResourceManager;
-import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -25,7 +23,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 
-public class CustomToolTipsHandler implements IResourceManagerReloadListener {
+public class CustomToolTipsHandler {
 
     private final LogHelper _mLogger = MainRegistry.Logger;
     private String _mConfigFileName;
@@ -51,7 +49,7 @@ public class CustomToolTipsHandler implements IResourceManagerReloadListener {
         _mInitialized = false;
     }
 
-    private void setConfigFileLocation() {
+    public void setConfigFileLocation() {
         String locale = FMLCommonHandler.instance().getCurrentLanguage();
         String localeAwareFileName = String.format("config/%s/CustomToolTips_%s.xml", Refstrings.COLLECTIONID, locale);
         if (new File(localeAwareFileName).isFile()) {
@@ -188,7 +186,7 @@ public class CustomToolTipsHandler implements IResourceManagerReloadListener {
      *
      * @return
      */
-    private boolean ReloadCustomToolTips(String pXMLContent) {
+    public boolean ReloadCustomToolTips(String pXMLContent) {
         boolean tResult = false;
 
         _mLogger.debug("[CTT.ReloadCustomToolTips] will now try to load it's configuration");
@@ -238,11 +236,5 @@ public class CustomToolTipsHandler implements IResourceManagerReloadListener {
                 pEvent.toolTip.add(tPartTip.replace("&", "§"));
             }
         }
-    }
-
-    @Override
-    public void onResourceManagerReload(IResourceManager p_110549_1_) {
-        setConfigFileLocation();
-        ReloadCustomToolTips("");
     }
 }
