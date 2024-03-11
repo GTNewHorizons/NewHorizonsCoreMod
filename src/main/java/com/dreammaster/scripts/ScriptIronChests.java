@@ -822,7 +822,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .eut(16).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, wildcard, missing),
+                        getModItem(TwilightForest.ID, "tile.TFPlanks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 3L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IronChests.ID, "woodCopperUpgrade", 1, 0, missing)).duration(10 * SECONDS)
@@ -1311,7 +1311,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TwilightForest.ID, "tile.TFPlank", 1, wildcard, missing),
+                        getModItem(TwilightForest.ID, "tile.TFPlanks", 1, wildcard, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 3L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IronChests.ID, "woodIronUpgrade", 1, 0, missing)).duration(15 * SECONDS).eut(30)
