@@ -10,6 +10,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import net.minecraft.client.resources.IResourceManager;
+import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -18,15 +20,16 @@ import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
 import com.dreammaster.network.msg.CTTClientSyncMessage;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 
-public class CustomToolTipsHandler {
+public class CustomToolTipsHandler implements IResourceManagerReloadListener {
 
-    private LogHelper _mLogger = MainRegistry.Logger;
+    private final LogHelper _mLogger = MainRegistry.Logger;
     private String _mConfigFileName;
-    private CustomToolTipsObjectFactory _mCttFactory = new CustomToolTipsObjectFactory();
+    private final CustomToolTipsObjectFactory _mCttFactory = new CustomToolTipsObjectFactory();
     private CustomToolTips _mCustomToolTips;
     private boolean _mInitialized;
 
@@ -44,8 +47,18 @@ public class CustomToolTipsHandler {
     }
 
     public CustomToolTipsHandler() {
-        _mConfigFileName = String.format("config/%s/CustomToolTips.xml", Refstrings.COLLECTIONID);
+        setConfigFileLocation();
         _mInitialized = false;
+    }
+
+    private void setConfigFileLocation() {
+        String locale = FMLCommonHandler.instance().getCurrentLanguage();
+        String localeAwareFileName = String.format("config/%s/CustomToolTips_%s.xml", Refstrings.COLLECTIONID, locale);
+        if (new File(localeAwareFileName).isFile()) {
+            _mConfigFileName = localeAwareFileName;
+        } else {
+            _mConfigFileName = String.format("config/%s/CustomToolTips.xml", Refstrings.COLLECTIONID);
+        }
     }
 
     public void InitSampleConfig() {
@@ -225,5 +238,11 @@ public class CustomToolTipsHandler {
                 pEvent.toolTip.add(tPartTip.replace("&", "§"));
             }
         }
+    }
+
+    @Override
+    public void onResourceManagerReload(IResourceManager p_110549_1_) {
+        setConfigFileLocation();
+        ReloadCustomToolTips("");
     }
 }
