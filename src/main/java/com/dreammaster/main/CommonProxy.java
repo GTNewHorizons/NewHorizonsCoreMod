@@ -9,6 +9,8 @@ public class CommonProxy implements IGuiHandler {
 
     public void addTexturePage() {}
 
+    public void registerResourceReload() {}
+
     public void registerRenderInfo() {}
 
     @Override

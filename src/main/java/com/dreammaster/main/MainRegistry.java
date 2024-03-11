@@ -240,8 +240,9 @@ public class MainRegistry {
         }
 
         if (CoreConfig.ModCustomToolTips_Enabled) {
-            Logger.debug("Module_HazardousItems is enabled");
+            Logger.debug("Module_CustomToolTips is enabled");
             Module_CustomToolTips = new CustomToolTipsHandler();
+            proxy.registerResourceReload();
             // Module_CustomToolTips.LoadConfig();
         }
 
