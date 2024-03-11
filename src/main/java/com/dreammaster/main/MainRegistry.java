@@ -244,8 +244,10 @@ public class MainRegistry {
         if (CoreConfig.ModCustomToolTips_Enabled) {
             Logger.debug("Module_CustomToolTips is enabled");
             Module_CustomToolTips = new CustomToolTipsHandler();
-            ((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager())
-                    .registerReloadListener(Module_CustomToolTips);
+            if (PreEvent.getSide().isClient()) {
+                ((IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager())
+                        .registerReloadListener(Module_CustomToolTips);
+            }
             // Module_CustomToolTips.LoadConfig();
         }
 
