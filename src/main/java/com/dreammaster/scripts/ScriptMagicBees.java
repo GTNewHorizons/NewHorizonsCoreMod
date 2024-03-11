@@ -409,7 +409,7 @@ public class ScriptMagicBees implements IScriptLoader {
 
         TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 3, 17, missing));
         TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "miscResources", 3, 17, missing));
-        TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "apiamancersDrainer", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(MagicBees.ID, "apimancersDrainer", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 7, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 8, missing));
         TCHelper.removeCrucibleRecipe(getModItem(MagicBees.ID, "miscResources", 1, 9, missing));
@@ -1126,7 +1126,7 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("MB_ApimancersDrainer", 3);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "MB_ApimancersDrainer",
-                getModItem(MagicBees.ID, "apiamancersDrainer", 1, 0, missing),
+                getModItem(MagicBees.ID, "apimancersDrainer", 1, 0, missing),
                 5,
                 new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("tempus"), 50),
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
