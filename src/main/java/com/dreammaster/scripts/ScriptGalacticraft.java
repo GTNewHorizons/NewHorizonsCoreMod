@@ -11,6 +11,7 @@ import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
@@ -19,7 +20,9 @@ import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
+import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
@@ -32,6 +35,8 @@ import static gregtech.api.util.GT_RecipeConstants.FUEL_VALUE;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -41,6 +46,8 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
+import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_RecipeConstants;
 import gregtech.api.util.GT_Utility;
@@ -1266,6 +1273,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         fluidCannerRecipes();
         maceratorRecipes();
         plasmaArcFurnaceRecipes();
+        dungeonBlockRecipes();
     }
 
     private void arcFurnaceRecipes() {
@@ -2557,5 +2565,170 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .fluidOutputs(FluidRegistry.getFluidStack("argon", 3)).duration(3 * SECONDS + 5 * TICKS).eut(30)
                 .addTo(plasmaArcFurnaceRecipes);
 
+    }
+
+    private void dungeonBlockRecipes() {
+        // Dungeon blocks
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(GalacticraftCore.ID, "tile.moonBlock", 4, 4),
+                        CustomItemList.ReinforcedGlassLense.get(0))
+                .itemOutputs(GT_ModHandler.getModItem(GalacticraftCore.ID, "tile.moonBlock", 1, 14))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+
+        for (ItemStack lens : GT_OreDictUnificator.getOres("craftingLensRed")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(GalacticraftMars.ID, "tile.mars", 4, 9),
+                            GT_Utility.copyAmount(0, lens))
+                    .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "tile.mars", 1, 7)).duration(4 * SECONDS)
+                    .eut(TierEU.RECIPE_EV).addTo(laserEngraverRecipes);
+        }
+        for (ItemStack lens : GT_OreDictUnificator.getOres("craftingLensCyan")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 4, 1),
+                            GT_Utility.copyAmount(0, lens))
+                    .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 2)).duration(4 * SECONDS)
+                    .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+        }
+        for (ItemStack lens : GT_OreDictUnificator.getOres("craftingLensYellow")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 4, 2),
+                            GT_Utility.copyAmount(0, lens))
+                    .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 3)).duration(4 * SECONDS)
+                    .eut(TierEU.RECIPE_LuV).addTo(laserEngraverRecipes);
+        }
+        for (ItemStack lens : GT_OreDictUnificator.getOres("craftingLensWhite")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(GalaxySpace.ID, "enceladusblocks", 4, 1),
+                            GT_Utility.copyAmount(0, lens))
+                    .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "enceladusblocks", 1, 2))
+                    .duration(4 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(laserEngraverRecipes);
+        }
+        for (ItemStack lens : GT_OreDictUnificator.getOres("craftingLensLightGray")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(GalaxySpace.ID, "proteusblocks", 4, 2),
+                            GT_Utility.copyAmount(0, lens))
+                    .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "proteusblocks", 1, 3)).duration(4 * SECONDS)
+                    .eut(TierEU.RECIPE_UV).addTo(laserEngraverRecipes);
+        }
+        for (ItemStack lens : GT_OreDictUnificator.getOres("craftingLensBrown")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_ModHandler.getModItem(GalaxySpace.ID, "plutoblocks", 4, 5),
+                            GT_Utility.copyAmount(0, lens))
+                    .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "plutoblocks", 1, 6)).duration(4 * SECONDS)
+                    .eut(TierEU.RECIPE_UHV).addTo(laserEngraverRecipes);
+        }
+
+        // Special dungeon blocks
+        addShapedRecipe(
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 4, 4),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 2),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 2),
+                null,
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 2),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 2),
+                null,
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 4, 5),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 4),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 4),
+                null,
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 4),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 4),
+                null,
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 4, 2),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 5),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 5),
+                null,
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 5),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ceresblocks", 1, 5),
+                null,
+                null,
+                null,
+                null);
+
+        addShapedRecipe(
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 4, 8),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 3),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 3),
+                null,
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 3),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 3),
+                null,
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 4, 7),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 8),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 8),
+                null,
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 8),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 8),
+                null,
+                null,
+                null,
+                null);
+        addShapedRecipe(
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 4, 3),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 7),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 7),
+                null,
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 7),
+                GT_ModHandler.getModItem(GalaxySpace.ID, "ioblocks", 1, 7),
+                null,
+                null,
+                null,
+                null);
+
+        // Glowstone dusts
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CeresStoneDust", 1),
+                        GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 0))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.IoStoneDust", 1),
+                        GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 1))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.EnceladusStoneDust", 1),
+                        GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 2))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ProteusStoneDust", 1),
+                        GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 3))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Items.glowstone_dust, 1),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PlutoStoneDust", 1),
+                        GT_Utility.getIntegratedCircuit(8))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 4))
+                .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
     }
 }
