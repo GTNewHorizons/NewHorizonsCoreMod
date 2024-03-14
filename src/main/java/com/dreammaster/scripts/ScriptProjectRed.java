@@ -761,7 +761,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "craftingToolFile",
                 null,
                 "stickLongIron",
-                "pateGlass",
+                "plateGlass",
                 "stickLongIron",
                 null,
                 "craftingToolSaw",
@@ -794,7 +794,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "craftingToolFile",
                 null,
                 "stickSteel",
-                "pateGlass",
+                "plateGlass",
                 "stickSteel",
                 null,
                 "craftingToolSaw",
@@ -827,13 +827,13 @@ public class ScriptProjectRed implements IScriptLoader {
                 "craftingToolFile",
                 null,
                 "stickLongSteel",
-                "pateGlass",
+                "plateGlass",
                 "stickLongSteel",
                 null,
                 "craftingToolSaw",
                 null);
         addShapedRecipe(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing),
                 null,
                 "craftingToolFile",
                 null,
@@ -844,7 +844,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "craftingToolSaw",
                 null);
         addShapedRecipe(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing),
                 null,
                 "craftingToolFile",
                 null,
@@ -855,18 +855,18 @@ public class ScriptProjectRed implements IScriptLoader {
                 "craftingToolSaw",
                 null);
         addShapedRecipe(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing),
                 null,
                 "craftingToolFile",
                 null,
                 "stickAluminium",
-                "pateGlass",
+                "plateGlass",
                 "stickAluminium",
                 null,
                 "craftingToolSaw",
                 null);
         addShapedRecipe(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing),
                 null,
                 "craftingToolFile",
                 null,
@@ -877,7 +877,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "craftingToolSaw",
                 null);
         addShapedRecipe(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing),
                 null,
                 "craftingToolFile",
                 null,
@@ -888,12 +888,12 @@ public class ScriptProjectRed implements IScriptLoader {
                 "craftingToolSaw",
                 null);
         addShapedRecipe(
-                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing),
                 null,
                 "craftingToolFile",
                 null,
                 "stickLongAluminium",
-                "pateGlass",
+                "plateGlass",
                 "stickLongAluminium",
                 null,
                 "craftingToolSaw",
