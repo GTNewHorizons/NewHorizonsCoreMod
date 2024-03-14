@@ -703,9 +703,9 @@ public class ScriptProjectRed implements IScriptLoader {
                 null,
                 "craftingToolFile",
                 null,
-                "stickLongIron",
+                "stickIron",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                "stickLongIron",
+                "stickIron",
                 null,
                 "craftingToolSaw",
                 null);
@@ -714,9 +714,185 @@ public class ScriptProjectRed implements IScriptLoader {
                 null,
                 "craftingToolFile",
                 null,
+                "stickIron",
+                "paneGlass",
+                "stickIron",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickIron",
+                "plateGlass",
+                "stickIron",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongIron",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickLongIron",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
                 "stickLongIron",
                 "paneGlass",
                 "stickLongIron",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongIron",
+                "pateGlass",
+                "stickLongIron",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickSteel",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickSteel",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickSteel",
+                "paneGlass",
+                "stickSteel",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickSteel",
+                "pateGlass",
+                "stickSteel",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongSteel",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickLongSteel",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongSteel",
+                "paneGlass",
+                "stickLongSteel",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongSteel",
+                "pateGlass",
+                "stickLongSteel",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickAluminium",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickAluminium",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickAluminium",
+                "paneGlass",
+                "stickAluminium",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickAluminium",
+                "pateGlass",
+                "stickAluminium",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongAluminium",
+                getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                "stickLongAluminium",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongAluminium",
+                "paneGlass",
+                "stickLongAluminium",
+                null,
+                "craftingToolSaw",
+                null);
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
+                null,
+                "craftingToolFile",
+                null,
+                "stickLongAluminium",
+                "pateGlass",
+                "stickLongAluminium",
                 null,
                 "craftingToolSaw",
                 null);
@@ -1857,15 +2033,129 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
-                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing))
                 .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L))
-                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing))
                 .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Iron, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 0, missing))
+                .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing))
+                .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing))
+                .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Iron, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing))
+                .duration(5 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing))
+                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing))
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing))
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Aluminium, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing))
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 64, 0, missing))
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 64, 0, missing))
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
+                        GT_Utility.getIntegratedCircuit(19))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 64, 0, missing))
+                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 0, missing),
