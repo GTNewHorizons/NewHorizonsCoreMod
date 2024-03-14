@@ -2161,29 +2161,29 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 13, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Diamond, 4L))
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Diamond, 8L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 1, missing))
                 .duration(40 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 13, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 4L))
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 8L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 1, missing))
                 .duration(60 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 13, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.StainlessSteel, 4L))
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.StainlessSteel, 8L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 32, 1, missing))
                 .duration(80 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 64, 0, missing),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 13, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Titanium, 4L))
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Titanium, 8L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 64, 1, missing))
                 .duration(100 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
