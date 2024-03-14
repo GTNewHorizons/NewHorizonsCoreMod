@@ -916,7 +916,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                 "plateCopper",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                "circuitGood",
+                "circuitBasic",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                 "wireGt01RedAlloy",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing));
@@ -927,7 +927,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
                 "plateBronze",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                "circuitGood",
+                "circuitBasic",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                 "wireGt01RedAlloy",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing));
@@ -938,7 +938,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
                 "plateIron",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                "circuitGood",
+                "circuitBasic",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing),
                 "wireGt01RedAlloy",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 32, missing));
@@ -960,7 +960,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
                 "plateSteel",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
-                "circuitGood",
+                "circuitBasic",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
                 "wireGt01RedAlloy",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing));
