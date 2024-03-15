@@ -2205,9 +2205,10 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
-                        getModItem(Minecraft.ID, "magma_cream", 4, 0, missing))
+                        ItemList.Component_Filter.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lava", 4000)).duration(20 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1440)).duration(20 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
