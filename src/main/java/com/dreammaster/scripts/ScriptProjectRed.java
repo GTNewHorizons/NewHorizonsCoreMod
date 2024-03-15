@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraBees;
-import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
@@ -2217,23 +2216,20 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 9, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
+                .itemInputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 1440))
-                .duration(10 * SECONDS).eut(30).addTo(chemicalBathRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 1440)).duration(10 * SECONDS).eut(30)
+                .addTo(chemicalBathRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
+                .itemInputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 720))
-                .duration(10 * SECONDS).eut(30).addTo(chemicalBathRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.styrenebutadienerubber", 720)).duration(10 * SECONDS)
+                .eut(30).addTo(chemicalBathRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
+                .itemInputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 10, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 384))
-                .duration(10 * SECONDS).eut(30).addTo(chemicalBathRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("molten.silicone", 384)).duration(10 * SECONDS).eut(30)
+                .addTo(chemicalBathRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
