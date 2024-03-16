@@ -2241,7 +2241,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L))
+                        ItemList.Robot_Arm_LV.get(1L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 864)).duration(20 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
