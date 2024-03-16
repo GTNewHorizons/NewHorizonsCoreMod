@@ -1062,6 +1062,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "itemCasingSteel",
                 createItemStack(GregTech.ID, "gt.metaitem.01", 1, 32519, "{GT.ItemCharge:50000L}", missing),
                 "itemCasingSteel");
+        addShapedRecipe(
                 getModItem(ProjectRedExpansion.ID, "projectred.expansion.jetpack", 1, 6400, missing),
                 "circuitBasic",
                 "wireGt04Gold",
