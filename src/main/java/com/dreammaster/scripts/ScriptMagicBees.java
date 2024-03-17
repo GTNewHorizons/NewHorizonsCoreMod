@@ -1132,10 +1132,10 @@ public class ScriptMagicBees implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
                         getModItem(MagicBees.ID, "pollen", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 1, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 1, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 1, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 1, missing),
+                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
+                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
+                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
+                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
                         getModItem(MagicBees.ID, "pollen", 1, 1, missing) });
         TCHelper.refreshResearchPages("MB_VisAuraProvider");
         TCHelper.refreshResearchPages("MB_EssenceLife");
