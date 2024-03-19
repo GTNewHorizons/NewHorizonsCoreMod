@@ -1,31 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.Backpack;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BuildCraftFactory;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.MalisisDoors;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
-import static gregtech.api.enums.Mods.ProjectRedIntegration;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.RandomThings;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicBases;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -92,7 +67,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 ExtraUtilities.ID,
                 BartWorks.ID,
                 PamsHarvestTheNether.ID,
-                StevesCarts2.ID);
+                StevesCarts2.ID,
+                TaintedMagic.ID);
     }
 
     @Override
@@ -5580,6 +5556,48 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 9).add(Aspect.getAspect("ordo"), 9)
                         .add(Aspect.getAspect("praecantatio"), 6).add(Aspect.getAspect("alienis"), 3));
         TCHelper.setResearchComplexity("ADVALCHEMYFURNACE", 3);
+        new ResearchItem(
+                "CRIMSONRITES",
+                "ELDRITCH",
+                new AspectList().add(Aspect.getAspect("alienis"), 12).add(Aspect.getAspect("praecantatio"), 6)
+                        .add(Aspect.getAspect("cognitio"), 3).add(Aspect.getAspect("spiritus"), 12)
+                        .add(Aspect.getAspect("vacuos"), 9).add(Aspect.getAspect("infernus"), 2)
+                        .add(Aspect.getAspect("vitium"), 5),
+                -3,
+                -3,
+                5,
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1, missing)).setParents("ELDRITCHMAJOR")
+                        .setConcealed().setPages(new ResearchPage("tc.research_page.CRIMSONRITES"))
+                        .registerResearchItem();
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "CRIMSONRITES",
+                getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1, missing),
+                10,
+                new AspectList().add(Aspect.getAspect("alienis"), 32).add(Aspect.getAspect("praecantatio"), 64)
+                        .add(Aspect.getAspect("infernus"), 16),
+                getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
+                new ItemStack[] { getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
+                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                        getModItem(Minecraft.ID, "ender_eye", 21, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing),
+                        getModItem(Minecraft.ID, "ender_eye", 21, 0, missing),
+                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
+                        getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing) });
+        TCHelper.addResearchPage(
+                "CRIMSONRITES",
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1, missing))));
+        ThaumcraftApi.addWarpToResearch("CRIMSONRITES", 10);
+        TCHelper.refreshResearchPages("CRIMSONRITES");
         TCHelper.refreshResearchPages("ELDRITCHMINOR");
         TCHelper.refreshResearchPages("VOIDMETAL");
         TCHelper.refreshResearchPages("CAP_void");
