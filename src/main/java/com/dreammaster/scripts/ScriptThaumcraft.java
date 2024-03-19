@@ -68,7 +68,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                 BartWorks.ID,
                 PamsHarvestTheNether.ID,
                 StevesCarts2.ID,
-                TaintedMagic.ID);
+                TaintedMagic.ID,
+                Witchery.ID);
     }
 
     @Override
@@ -5569,6 +5570,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1, missing)).setParents("ELDRITCHMAJOR")
                         .setConcealed().setPages(new ResearchPage("tc.research_page.CRIMSONRITES"))
                         .registerResearchItem();
+        ThaumcraftApi.addWarpToResearch("CRIMSONRITES", 10);
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CRIMSONRITES",
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1, missing),
@@ -5596,7 +5598,22 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "CRIMSONRITES",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 1, missing))));
-        ThaumcraftApi.addWarpToResearch("CRIMSONRITES", 10);
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "CRIMSONRITES",
+                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 8, missing),
+                new AspectList().add(Aspect.getAspect("aqua"), 5).add(Aspect.getAspect("terra"), 5)
+                        .add(Aspect.getAspect("perditio"), 5),
+                "aba",
+                "bcb",
+                "ada",
+                'a',
+                getModItem(Witchery.ID, "ingredient", 1, 102, missing),
+                'b',
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
+                'c',
+                getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
+                'd',
+                getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing));
         TCHelper.refreshResearchPages("CRIMSONRITES");
         TCHelper.refreshResearchPages("ELDRITCHMINOR");
         TCHelper.refreshResearchPages("VOIDMETAL");

@@ -1527,6 +1527,9 @@ Witchery.research_page.WAYSTONE=A waystone is an etched piece of flint that is a
 tc.research_name.RUNEDTABLET=Runed Tablet
 tc.research_text.RUNEDTABLET=[NH] Boss...? Yeee is farming time
 kosh.research_page.RUNEDTABLET=Your desire get to the boss? DO IT !!!
+tc.research_name.CRIMSONRITES=Crimson Rites
+tc.research_text.CRIMSONRITES=Unlocking the Unknown
+tc.research_page.CRIMSONRITES=You have seen glimpses of powerful magic users. You think you might have found a way to unlock their secrets.
 
 # Tinker's Construct manual contents
 item.tconstruct.manual.common.recipes=Recipes
