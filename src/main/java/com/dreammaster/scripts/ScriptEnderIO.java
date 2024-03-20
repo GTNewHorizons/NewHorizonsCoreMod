@@ -1865,6 +1865,12 @@ public class ScriptEnderIO implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(17))
                 .itemOutputs(getModItem(EnderIO.ID, "blockReinforcedObsidian", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L),
+                        createItemStack(DraconicEvolution.ID, "mobSoul", 1, 0, "{Name:\"Any\"}", missing))
+                .itemOutputs(getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0, missing)).duration(90 * SECONDS)
+                .eut(65536).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Anvil.get(0L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockDarkSteelAnvil", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.darksteel", 4464)).duration(45 * SECONDS).eut(120)
