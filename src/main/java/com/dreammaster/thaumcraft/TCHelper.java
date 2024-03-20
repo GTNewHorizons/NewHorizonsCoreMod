@@ -47,6 +47,17 @@ public class TCHelper {
         return null;
     }
 
+    public static IArcaneRecipe findArcaneRecipe(ItemStack stack, boolean ignoreNBT) {
+        for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
+            if (craft instanceof IArcaneRecipe) {
+                if (((IArcaneRecipe) craft).getRecipeOutput() != null
+                        && GT_Utility.areStacksEqual(((IArcaneRecipe) craft).getRecipeOutput(), stack, ignoreNBT))
+                    return (IArcaneRecipe) craft;
+            }
+        }
+        return null;
+    }
+
     public static CrucibleRecipe findCrucibleRecipe(ItemStack stack) {
         for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
             if (craft instanceof CrucibleRecipe) {
