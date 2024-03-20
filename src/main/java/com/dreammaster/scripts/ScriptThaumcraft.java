@@ -5641,12 +5641,6 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'd',
                 getModItem(Thaumcraft.ID, "WandRod", 1, 0, missing));
-        TCHelper.addResearchPage(
-                "CRIMSONRITES",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 8, missing),
-                                false)));
         TCHelper.refreshResearchPages("CRIMSONRITES");
         TCHelper.refreshResearchPages("ELDRITCHMINOR");
         TCHelper.refreshResearchPages("VOIDMETAL");
