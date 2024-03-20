@@ -848,7 +848,8 @@ public enum CustomItemList implements IItemContainer {
     BioBall,
     PotassiumHydroxideDust,
     ChromaticLens,
-    RadoxPolymerLens;
+    RadoxPolymerLens,
+    GregtechMetaTileEntity_Mega_Adv_EBF;
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;

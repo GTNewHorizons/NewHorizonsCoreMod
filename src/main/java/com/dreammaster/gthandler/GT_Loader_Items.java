@@ -3,6 +3,7 @@ package com.dreammaster.gthandler;
 import static gregtech.client.GT_TooltipHandler.Tier.*;
 import static gregtech.client.GT_TooltipHandler.registerTieredTooltip;
 
+import com.dreammaster.gthandler.tileEntities.GregtechMetaTileEntity_Mega_Adv_EBF;
 import com.dreammaster.item.ItemList;
 
 import gregtech.api.enums.SubTag;
@@ -430,5 +431,8 @@ public class GT_Loader_Items {
         CustomItemList.PotassiumHydroxideDust.set(ItemList.PotassiumHydroxideDust.getIS());
         CustomItemList.RadoxPolymerLens.set(ItemList.RadoxPolymerLens.getIS());
         CustomItemList.ChromaticLens.set(ItemList.ChromaticLens.getIS());
+        CustomItemList.GregtechMetaTileEntity_Mega_Adv_EBF.set(
+                new GregtechMetaTileEntity_Mega_Adv_EBF(10432, "multimachine.megavolcani", "Mega Volcanus")
+                        .getStackForm(1));
     }
 }
