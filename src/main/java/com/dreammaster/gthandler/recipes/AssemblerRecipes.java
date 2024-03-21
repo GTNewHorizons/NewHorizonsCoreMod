@@ -4085,7 +4085,8 @@ public class AssemblerRecipes implements Runnable {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 2),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 3))
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 3),
+                GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -4095,7 +4096,8 @@ public class AssemblerRecipes implements Runnable {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Platinum, 2),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3))
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3),
+                GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -4108,7 +4110,8 @@ public class AssemblerRecipes implements Runnable {
                 // Engineering Processor
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
                 // Fluix Crystal
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7))
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7),
+                GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 30)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -4119,7 +4122,8 @@ public class AssemblerRecipes implements Runnable {
                 // Engineering Processor
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
                 CustomItemList.MysteriousCrystal.get(1L),
-                CustomItemList.AcceleratorLuV.get(1L))
+                CustomItemList.AcceleratorLuV.get(1L),
+                GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 56)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -4130,7 +4134,8 @@ public class AssemblerRecipes implements Runnable {
                 // ME Storage Bus
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220),
                 // ME Level Emitter
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280))
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),
+                GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 63)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -4141,7 +4146,8 @@ public class AssemblerRecipes implements Runnable {
                 // 16k ME Storage Component
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 37),
                 // ME Interface
-                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0))
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
+                GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 54)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
