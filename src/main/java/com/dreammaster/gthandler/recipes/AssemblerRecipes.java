@@ -1904,14 +1904,14 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Super_Chest_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        // Super Buffer IV
+        // Chest Buffer IV
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Conveyor_Module_IV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Elite), 1),
                         ItemList.Hull_IV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
-                .itemOutputs(ItemList.Automation_SuperBuffer_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.Automation_ChestBuffer_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         // Quantum Tank V
