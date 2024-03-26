@@ -85,11 +85,6 @@ public class AutoclaveRecipes implements Runnable {
                 .fluidInputs(Materials.Void.getMolten(36)).duration(45 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(autoclaveRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_RawCrystalParts.get(1L))
-                .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(10000)
-                .fluidInputs(Materials.Europium.getMolten(16)).duration(10 * MINUTES).eut(TierEU.RECIPE_HV)
-                .addTo(autoclaveRecipes);
-
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GalliumArsenide, 2))
                 .itemOutputs(ItemList.GalliumArsenideCrystal.get(1L)).outputChances(8000)
                 .fluidInputs(Materials.Water.getFluid(200L)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -105,21 +100,6 @@ public class AutoclaveRecipes implements Runnable {
                 .fluidInputs(GT_ModHandler.getDistilledWater(100L)).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(autoclaveRecipes);
 
-        if (GalacticraftMars.isModLoaded()) {
-
-            GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_RawCrystalParts.get(1L))
-                    .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(6000)
-                    .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 250)).duration(10 * MINUTES)
-                    .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
-
-        }
-        if (Gendustry.isModLoaded()) {
-            GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_RawCrystalParts.get(1L))
-                    .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(8000)
-                    .fluidInputs(FluidRegistry.getFluidStack("mutagen", 250)).duration(10 * MINUTES)
-                    .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
-
-        }
         if (GTPlusPlus.isModLoaded()) {
             GT_Values.RA.stdBuilder()
                     .itemInputs(ItemList.Circuit_Silicon_Wafer6.get(1L), ELEMENT.STANDALONE.HYPOGEN.getDust(1))
@@ -130,6 +110,26 @@ public class AutoclaveRecipes implements Runnable {
     }
 
     public static void spaceRecipes() {
+
+        if (GalacticraftMars.isModLoaded()) {
+
+            GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_RawCrystalParts.get(1L))
+                    .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(6000)
+                    .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 250)).requiresCleanRoom()
+                    .requiresLowGravity().duration(10 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
+        }
+
+        if (Gendustry.isModLoaded()) {
+            GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_RawCrystalParts.get(1L))
+                    .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(8000)
+                    .fluidInputs(FluidRegistry.getFluidStack("mutagen", 250)).requiresCleanRoom().requiresLowGravity()
+                    .duration(10 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
+        }
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Parts_RawCrystalParts.get(1L))
+                .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(10000)
+                .fluidInputs(Materials.Europium.getMolten(16)).requiresCleanRoom().requiresLowGravity()
+                .duration(10 * MINUTES).eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1))
                 .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(1000)
