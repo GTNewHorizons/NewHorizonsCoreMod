@@ -955,7 +955,7 @@ public class ScriptProjectRed implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 4, missing),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
-                "wireGt01RedAlloy",
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing),
                 "plateSteel",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -966,7 +966,7 @@ public class ScriptProjectRed implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 5, missing),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing),
-                "wireGt02RedAlloy",
+                ItemList.Sensor_LV.get(1L),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 21, missing),
                 "plateGold",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -977,7 +977,7 @@ public class ScriptProjectRed implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 6, missing),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
-                "wireGt02RedAlloy",
+                ItemList.Conveyor_Module_LV.get(1L),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
                 "plateCobalt",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -999,7 +999,7 @@ public class ScriptProjectRed implements IScriptLoader {
         addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 8, missing),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing),
-                "wireGt02RedAlloy",
+                ItemList.Cover_Crafting.get(1L),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing),
                 "plateGlowstone",
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
@@ -2370,12 +2370,28 @@ public class ScriptProjectRed implements IScriptLoader {
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing))
-                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 0, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 6L))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 36))
+                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing))
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 0, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 8L))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 36))
+                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing))
+                    .duration(25 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Item Responder chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
@@ -2385,15 +2401,15 @@ public class ScriptProjectRed implements IScriptLoader {
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    4,
                                     0,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Dynamic Item Responder chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
@@ -2404,15 +2420,15 @@ public class ScriptProjectRed implements IScriptLoader {
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    4,
                                     1,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Item Overflow Responder chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
@@ -2422,15 +2438,15 @@ public class ScriptProjectRed implements IScriptLoader {
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    4,
                                     2,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Item Terminator chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
@@ -2441,87 +2457,91 @@ public class ScriptProjectRed implements IScriptLoader {
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    4,
                                     3,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Item Extractor chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
+                            ItemList.Conveyor_Module_LV.get(1L),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    2,
                                     4,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Item Broadcaster chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 21, missing))
+                            ItemList.Sensor_LV.get(1L),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    2,
                                     5,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Item Stock Keeper chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Cobalt, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                            ItemList.Conveyor_Module_LV.get(1L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    2,
                                     6,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Item Crafting chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
+                            ItemList.Cover_Crafting.get(1L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    2,
                                     7,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
 
             // Item Crafting Extension chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 44, missing),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L),
@@ -2531,10 +2551,10 @@ public class ScriptProjectRed implements IScriptLoader {
                             getModItem(
                                     ProjectRedTransportation.ID,
                                     "projectred.transportation.routingchip",
-                                    1,
+                                    2,
                                     8,
                                     missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
+                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(circuitAssemblerRecipes);
         }
     }
 
