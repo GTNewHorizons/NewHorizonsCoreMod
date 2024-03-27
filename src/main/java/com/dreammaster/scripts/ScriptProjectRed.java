@@ -2232,18 +2232,82 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L))
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(20 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 1, missing),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 1, missing),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(40 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 1, missing),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(50 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 1, missing),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 2, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(60 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 2L),
-                        ItemList.Robot_Arm_LV.get(1L))
+                        ItemList.Circuit_Board_Coated_Basic.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 864)).duration(20 * SECONDS).eut(30)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(20 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 1, missing),
+                        ItemList.Circuit_Board_Phenolic_Good.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 2, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(30 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 1, missing),
+                        ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(40 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 1, missing),
+                        ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(50 * SECONDS).eut(30)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 1, missing),
+                        ItemList.Circuit_Board_Multifiberglass_Elite.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
+                .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 16, 4, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(60 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
