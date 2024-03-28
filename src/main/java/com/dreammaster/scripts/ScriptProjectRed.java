@@ -92,6 +92,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 ForbiddenMagic.ID,
                 Forestry.ID,
                 Gendustry.ID,
+                GTPlusPlus.ID,
                 IndustrialCraft2.ID,
                 Natura.ID,
                 OpenBlocks.ID,
@@ -2491,7 +2492,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
-                            getModItem(GTPlusPlus.ID, "platePotin", 1, 0, missing),
+                            getModItem(GTPlusPlus.ID, "itemPlatePotin", 1, 0, missing),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
