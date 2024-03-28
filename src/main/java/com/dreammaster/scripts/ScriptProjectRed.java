@@ -47,7 +47,6 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
-import gtPlusPlus.core.material.Material;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
