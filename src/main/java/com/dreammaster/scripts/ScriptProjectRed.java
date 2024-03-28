@@ -910,6 +910,28 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickDiamond",
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 0, missing));
         addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 2, missing),
+                "screwIron",
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
+                "screwIron",
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                ItemList.Circuit_Board_Coated_Basic.get(1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                "screwIron",
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
+                "screwIron");
+        addShapedRecipe(
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 4, missing),
+                "screwSteel",
+                getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 1, 1, missing),
+                "screwSteel",
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                ItemList.Circuit_Board_Coated_Basic.get(1L),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                "screwSteel",
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
+                "screwSteel");
+        addShapedRecipe(
                 getModItem(ProjectRedTransportation.ID, "projectred.transportation.routingchip", 1, 0, missing),
                 getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                 "wireGt01RedAlloy",
