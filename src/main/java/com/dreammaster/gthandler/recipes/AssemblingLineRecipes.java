@@ -24,6 +24,8 @@ import com.github.technus.tectech.recipe.TT_recipeAdder;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsBotania;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
@@ -151,6 +153,249 @@ public class AssemblingLineRecipes implements Runnable {
                 .addTo(AssemblyLine);
 
         if (TecTech.isModLoaded()) {
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Electric_Motor_UXV.get(1L),
+                    2_000_000_000,
+                    2_000_000,
+                    (int) TierEU.RECIPE_MAX,
+                    1_024_000,
+                    new Object[] { GT_OreDictUnificator.get(OrePrefixes.stickLong, MaterialsBotania.GaiaSpirit, 18L),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, MaterialsBotania.Terrasteel, 19L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, MaterialsUEVplus.MagMatter, 61L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, MaterialsUEVplus.MagMatter, 63L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, MaterialsUEVplus.MagMatter, 62L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, MaterialsUEVplus.MagMatter, 59L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUMV, 18L),
+                            CustomItemList.PikoCircuit.get(15L),
+                            GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 14L) },
+
+                    new FluidStack[] { Materials.Lubricant.getFluid(2880000L),
+                            MaterialsBotania.GaiaSpirit.getMolten(2880L),
+                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(2880L),
+                            MaterialsUEVplus.MagMatter.getMolten(5760L),
+
+                    },
+                    ItemList.Electric_Motor_MAX.get(1L),
+                    3 * HOURS + 2 * MINUTES + 5 * SECONDS,
+                    (int) TierEU.RECIPE_MAX);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Electric_Piston_UXV.get(1L),
+                    2_000_000_000,
+                    2_000_000,
+                    (int) TierEU.RECIPE_MAX,
+                    1_024_000,
+                    new Object[] { ItemList.Electric_Motor_MAX.get(2L),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, MaterialsBotania.Terrasteel, 7L),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.MagMatter, 9L),
+                            GT_OreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.BlackDwarfMatter, 34L),
+                            GT_OreDictUnificator.get(OrePrefixes.ring, MaterialsBotania.GaiaSpirit, 62L),
+                            GT_OreDictUnificator.get(OrePrefixes.round, MaterialsUEVplus.MagMatter, 61L),
+                            GT_OreDictUnificator.get(OrePrefixes.round, MaterialsBotania.Terrasteel, 59L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUMV, 47),
+                            CustomItemList.QuantumCircuit.get(16L),
+                            GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 32) },
+
+                    new FluidStack[] { Materials.Lubricant.getFluid(2880000L),
+                            MaterialsBotania.GaiaSpirit.getMolten(2880L),
+                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(2880L),
+                            MaterialsUEVplus.MagMatter.getMolten(5760L),
+
+                    },
+                    ItemList.Electric_Piston_MAX.get(1L),
+                    3 * HOURS + 2 * MINUTES + 5 * SECONDS,
+                    (int) TierEU.RECIPE_MAX);
+
+            TT_recipeAdder
+                    .addResearchableAssemblylineRecipe(
+                            ItemList.Electric_Pump_UXV.get(1L),
+                            2_000_000_000,
+                            2_000_000,
+                            (int) TierEU.RECIPE_MAX,
+                            1_024_000,
+                            new Object[] { ItemList.Electric_Motor_MAX.get(3L),
+                                    GT_OreDictUnificator.get(OrePrefixes.plateDense, MaterialsBotania.Terrasteel, 11L),
+                                    GT_OreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.MagMatter, 9L),
+                                    GT_OreDictUnificator.get(OrePrefixes.pipeHuge, MaterialsUEVplus.SpaceTime, 45L),
+                                    GT_OreDictUnificator.get(OrePrefixes.rotor, MaterialsBotania.GaiaSpirit, 62L),
+                                    GT_OreDictUnificator.get(
+                                            OrePrefixes.ring,
+                                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                            22L),
+                                    GT_OreDictUnificator.get(OrePrefixes.round, MaterialsUEVplus.MagMatter, 64L),
+                                    GT_OreDictUnificator.get(
+                                            OrePrefixes.round,
+                                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                            57L),
+                                    GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUMV, 37L),
+                                    CustomItemList.QuantumCircuit.get(14L),
+                                    GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 45L) },
+
+                            new FluidStack[] { Materials.Lubricant.getFluid(2880000L),
+                                    MaterialsBotania.GaiaSpirit.getMolten(2880L),
+                                    MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(2880L),
+                                    MaterialsUEVplus.MagMatter.getMolten(5760L),
+
+                            },
+                            ItemList.Electric_Pump_MAX.get(1L),
+                            3 * HOURS + 2 * MINUTES + 5 * SECONDS,
+                            (int) TierEU.RECIPE_MAX);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Conveyor_Module_UXV.get(1L),
+                    2_000_000_000,
+                    2_000_000,
+                    (int) TierEU.RECIPE_MAX,
+                    1_024_000,
+                    new Object[] { ItemList.Electric_Motor_MAX.get(8L),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, MaterialsBotania.Terrasteel, 6L),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.MagMatter, 9L),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 64L),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.StyreneButadieneRubber, 64L),
+                            GT_OreDictUnificator.get(OrePrefixes.ring, MaterialsUEVplus.BlackDwarfMatter, 64L),
+                            GT_OreDictUnificator.get(OrePrefixes.round, MaterialsUEVplus.MagMatter, 64L),
+                            GT_OreDictUnificator.get(
+                                    OrePrefixes.round,
+                                    MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                    64L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUMV, 32L),
+                            CustomItemList.QuantumCircuit.get(16L),
+                            GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 64L) },
+
+                    new FluidStack[] { Materials.Rubber.getFluid(2_000_000_000),
+                            MaterialsBotania.GaiaSpirit.getMolten(2880L),
+                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(2880L),
+                            MaterialsUEVplus.MagMatter.getMolten(5760L),
+
+                    },
+                    ItemList.Conveyor_Module_MAX.get(1L),
+                    3 * HOURS + 2 * MINUTES + 5 * SECONDS,
+                    (int) TierEU.RECIPE_MAX);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Robot_Arm_UXV.get(1L),
+                    2_000_000_000,
+                    2_000_000,
+                    (int) TierEU.RECIPE_MAX,
+                    1_024_000,
+                    new Object[] { ItemList.Electric_Motor_MAX.get(5L), ItemList.Electric_Piston_MAX.get(3L),
+                            ItemList.Conveyor_Module_UXV.get(10L), CustomItemList.QuantumCircuit.get(63L),
+                            CustomItemList.PikoCircuit.get(62L), CustomItemList.QuantumCircuit.get(61L),
+                            new Object[] { OrePrefixes.circuit.get(Materials.Master), 60L },
+                            GT_OreDictUnificator.get(OrePrefixes.gear, Materials.Alumite, 31L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUMV, 37L),
+                            GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 31L)
+
+                    },
+
+                    new FluidStack[] { Materials.Lubricant.getFluid(2134567L),
+                            MaterialsBotania.GaiaSpirit.getMolten(12345L),
+                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(100_000L),
+                            MaterialsUEVplus.MagMatter.getMolten(5432L),
+
+                    },
+                    ItemList.Robot_Arm_MAX.get(1L),
+                    3 * HOURS + 2 * MINUTES + 5 * SECONDS,
+                    (int) TierEU.RECIPE_MAX);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Emitter_UXV.get(1L),
+                    2_000_000_000,
+                    2_000_000,
+                    (int) TierEU.RECIPE_MAX,
+                    1_024_000,
+                    new Object[] { ItemList.Electric_Motor_MAX.get(3L), CustomItemList.QuantumCircuit.get(64L),
+                            new Object[] { OrePrefixes.circuit.get(Materials.Master), 31L },
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Alumite, 31L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, MaterialsBotania.Terrasteel, 31L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, MaterialsUEVplus.WhiteDwarfMatter, 46L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Praseodymium, 42L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Silver, 47L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.SamariumMagnetic, 22L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, MaterialsUEVplus.MagMatter, 4L),
+                            GT_OreDictUnificator.get(
+                                    OrePrefixes.foil,
+                                    MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                    37L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, MaterialsBotania.GaiaSpirit, 17L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, MaterialsBotania.ElvenElementium, 64L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUV, 55L),
+                            GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 22L)
+
+                    },
+
+                    new FluidStack[] { Materials.Benzene.getFluid(2586756L),
+                            MaterialsBotania.GaiaSpirit.getMolten(8675L),
+                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(68574),
+                            MaterialsUEVplus.MagMatter.getMolten(6757),
+
+                    },
+                    ItemList.Emitter_MAX.get(1L),
+                    6 * HOURS + 3 * MINUTES + 5 * SECONDS,
+                    (int) TierEU.RECIPE_MAX);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Sensor_UXV.get(1L),
+                    2_000_000_000,
+                    2_000_000,
+                    (int) TierEU.RECIPE_MAX,
+                    1_024_000,
+                    new Object[] { ItemList.Electric_Motor_MAX.get(6L), CustomItemList.QuantumCircuit.get(1L),
+                            new Object[] { OrePrefixes.circuit.get(Materials.Ultimate), 1L },
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Alumite, 31L),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, MaterialsBotania.Terrasteel, 31L),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.WhiteDwarfMatter, 46L),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Praseodymium, 42L),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Silver, 47L),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.SamariumMagnetic, 22L),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.MagMatter, 4L),
+                            GT_OreDictUnificator.get(
+                                    OrePrefixes.frameGt,
+                                    MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                    37L),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, MaterialsBotania.GaiaSpirit, 17L),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, MaterialsBotania.ElvenElementium, 64L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorEV, 55L),
+                            GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 22L)
+
+                    },
+
+                    new FluidStack[] { Materials.AceticAcid.getFluid(2586756L),
+                            MaterialsBotania.GaiaSpirit.getMolten(8675L),
+                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(68574),
+                            MaterialsUEVplus.MagMatter.getMolten(6757),
+
+                    },
+                    ItemList.Sensor_MAX.get(1L),
+                    6 * HOURS + 3 * MINUTES + 5 * SECONDS,
+                    (int) TierEU.RECIPE_MAX);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    ItemList.Field_Generator_UXV.get(1L),
+                    2_000_000_000,
+                    2_000_000,
+                    (int) TierEU.RECIPE_MAX,
+                    1_024_000,
+                    new Object[] { ItemList.Field_Generator_LV.get(32L), ItemList.Field_Generator_MV.get(25L),
+                            ItemList.Field_Generator_HV.get(63L), ItemList.Field_Generator_EV.get(22L),
+                            ItemList.Field_Generator_IV.get(31L), ItemList.Field_Generator_LuV.get(8L),
+                            ItemList.Field_Generator_ZPM.get(12L), ItemList.Field_Generator_UV.get(8L),
+                            ItemList.Field_Generator_UHV.get(4L), ItemList.Field_Generator_UEV.get(2L),
+                            ItemList.Field_Generator_UIV.get(1L), ItemList.Field_Generator_UMV.get(11L),
+                            ItemList.Field_Generator_UXV.get(22L)
+
+                    },
+
+                    new FluidStack[] { Materials.Infinity.getMolten(500_000_000), Materials.BioDiesel.getFluid(9793),
+                            Materials.Grade1PurifiedWater.getFluid(1857476),
+                            MaterialsUEVplus.MagMatter.getMolten(12222),
+
+                    },
+                    ItemList.Field_Generator_MAX.get(1L),
+                    MINUTES * HOURS,
+                    (int) TierEU.RECIPE_LV);
+
             TT_recipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
                     2000 * 60 * 8,
@@ -232,6 +477,7 @@ public class AssemblingLineRecipes implements Runnable {
                             Materials.Enderium.getMolten(5760L))
                     .itemOutputs(GT_ModHandler.getModItem(GraviSuite.ID, "relocator", 1, 26)).eut(TierEU.RECIPE_UV)
                     .duration(50 * MINUTES).addTo(AssemblyLine);
+
         }
 
     }
