@@ -849,7 +849,11 @@ public enum CustomItemList implements IItemContainer {
     PotassiumHydroxideDust,
     ChromaticLens,
     RadoxPolymerLens,
-    GregtechMetaTileEntity_Mega_Adv_EBF;
+    GregtechMetaTileEntity_Mega_Adv_EBF,
+    SpacetimeCompressionFieldGeneratorTier10,
+    StabilisationFieldGeneratorTier10,
+    TimeAccelerationFieldGeneratorTier10,
+    Mega_EoH;
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;
