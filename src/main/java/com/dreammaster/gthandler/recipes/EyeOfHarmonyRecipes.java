@@ -65,7 +65,7 @@ public class EyeOfHarmonyRecipes {
                         11_000_000_000L,
                         11_000_000_000L,
                         520_658,
-                        10,
+                        9,
                         0.5),
                 null,
                 new FluidStack[] { Materials.Hydrogen.getGas(0), Materials.Helium.getGas(0),
