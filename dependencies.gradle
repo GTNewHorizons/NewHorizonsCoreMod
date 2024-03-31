@@ -9,7 +9,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:twilightforest:2.5.18:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:GalacticGregGT5:1.1.0:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.3.2:dev") { transitive = false }
-    implementation("com.github.GTNewHorizons:TecTech:5.3.42:dev") { transitive = false }
+    implementation("com.github.GTNewHorizons:TecTech:5.3.44:dev") { transitive = false }
     implementation("com.github.GTNewHorizons:bartworks:0.9.17:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.4.1:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.11.12-GTNH:dev") { transitive = false }

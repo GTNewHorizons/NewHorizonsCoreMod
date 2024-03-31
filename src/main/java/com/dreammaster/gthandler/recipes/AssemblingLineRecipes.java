@@ -397,6 +397,24 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_LV);
 
             TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    CustomItemList.HighEnergyFlowCircuit.get(1L),
+                    1_000_000,
+                    64,
+                    (int) TierEU.RECIPE_LuV,
+                    32,
+                    new Object[] { ItemList.Transformer_LV_ULV.get(1L), ItemList.Transformer_MV_LV.get(2L),
+                            ItemList.Transformer_HV_MV.get(3L), ItemList.Transformer_EV_HV.get(4L),
+                            ItemList.Transformer_IV_EV.get(5L), ItemList.Transformer_LuV_IV.get(6L),
+                            ItemList.Transformer_ZPM_LuV.get(7L), ItemList.Transformer_UV_ZPM.get(1L),
+                            ItemList.Transformer_MAX_UV.get(1L), CustomItemList.HighEnergyFlowCircuit.get(5L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 64L) },
+
+                    new FluidStack[] { Materials.Lubricant.getFluid(2000), Materials.Cobalt.getMolten(144 * 20) },
+                    com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1L),
+                    10*MINUTES,
+                    (int) TierEU.RECIPE_ZPM);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
                     2000 * 60 * 8,
                     2000,
