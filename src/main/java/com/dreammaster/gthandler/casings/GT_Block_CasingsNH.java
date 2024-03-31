@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.casings;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
@@ -28,6 +29,9 @@ import gregtech.common.blocks.GT_Material_Casings;
 public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
 
     public static boolean mConnectedMachineTextures = true;
+    private static IIcon spacetimeCompression;
+    private static IIcon timeDilation;
+    private static IIcon stabilisation;
 
     public GT_Block_CasingsNH() {
         super(GT_Item_CasingsNH.class, "gt.blockcasingsNH", GT_Material_Casings.INSTANCE);
@@ -43,6 +47,16 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".4.name", "Advanced Air Filter Vent Casing"); // adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".5.name", "Super Air Filter Turbine Casing"); // adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".6.name", "Super Air Filter Vent Casing"); // adding
+        String elven = EnumChatFormatting.BOLD + "Elven";
+        GT_LanguageManager.addStringLocalization(
+                getUnlocalizedName() + ".7.name",
+                EnumChatFormatting.GREEN + elven + EnumChatFormatting.RESET + " Spacetime Compression Field Generator"); // adding
+        GT_LanguageManager.addStringLocalization(
+                getUnlocalizedName() + ".8.name",
+                EnumChatFormatting.GREEN + elven + EnumChatFormatting.RESET + " Time Dilation Field Generator"); // adding
+        GT_LanguageManager.addStringLocalization(
+                getUnlocalizedName() + ".9.name",
+                EnumChatFormatting.GREEN + elven + EnumChatFormatting.RESET + " Stabilisation Field Generator"); // adding
 
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".10.name", "UEV Machine Casing"); // adding
         GT_LanguageManager.addStringLocalization(getUnlocalizedName() + ".11.name", "UIV Machine Casing"); // adding
@@ -57,6 +71,9 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
         CustomItemList.Casing_AirFilter_Vent_T2.set(new ItemStack(this, 1, 4)); // adding
         CustomItemList.Casing_AirFilter_Turbine_T3.set(new ItemStack(this, 1, 5)); // adding
         CustomItemList.Casing_AirFilter_Vent_T3.set(new ItemStack(this, 1, 6)); // adding
+        CustomItemList.SpacetimeCompressionFieldGeneratorTier10.set(new ItemStack(this, 1, 7)); // adding
+        // CustomItemList.TimeAccelerationFieldGeneratorTier10.set(new ItemStack(this, 1, 8)); // adding
+        // CustomItemList.StabilisationFieldGeneratorTier10.set(new ItemStack(this, 1, 9)); // adding
 
         CustomItemList.Casing_UEV.set(new ItemStack(this, 1, 10));
         CustomItemList.Casing_UIV.set(new ItemStack(this, 1, 11));
@@ -66,7 +83,11 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
     }
 
     @Override
-    public void registerBlockIcons(IIconRegister aIconRegister) {}
+    public void registerBlockIcons(IIconRegister aIconRegister) {
+        spacetimeCompression = aIconRegister.registerIcon("gregtech:iconsets/casingCompression10");
+        timeDilation = aIconRegister.registerIcon("gregtech:iconsets/casingDilation10");
+        stabilisation = aIconRegister.registerIcon("gregtech:iconsets/casingStabilisation10");
+    }
 
     @Override
     public IIcon getIcon(int aSide, int aMeta) {
@@ -85,6 +106,12 @@ public class GT_Block_CasingsNH extends GT_Block_Casings_Abstract {
                 return Textures.BlockIcons.MACHINE_CASING_ROBUST_TUNGSTENSTEEL.getIcon();
             case 6:
                 return Textures.BlockIcons.MACHINE_CASING_PIPE_TUNGSTENSTEEL.getIcon();
+            case 7:
+                return spacetimeCompression;
+            case 8:
+                return timeDilation;
+            case 9:
+                return stabilisation;
             default:
                 if (aSide == 0) {
                     return Textures.BlockIcons.MACHINECASINGS_BOTTOM[aMeta].getIcon();
