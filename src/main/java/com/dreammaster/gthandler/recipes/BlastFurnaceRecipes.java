@@ -6,6 +6,7 @@ import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GT_RecipeBuilder.HOURS;
 import static gregtech.api.util.GT_RecipeConstants.COIL_HEAT;
 
 import net.minecraft.init.Blocks;
@@ -16,6 +17,8 @@ import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsBotania;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
@@ -1620,5 +1623,17 @@ public class BlastFurnaceRecipes implements Runnable {
                     .eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
 
         }
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Samarium, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.ElvenElementium, 21L),
+                        ItemList.Electric_Piston_IV.get(32L),
+                        new Object[] { OrePrefixes.circuit.get(Materials.Good), 32L },
+                        GT_Utility.getIntegratedCircuit(11))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, MaterialsUEVplus.MagMatter, 6L))
+                .fluidInputs(Materials.Infinity.getMolten(144 * 50000)).duration(5 * HOURS)
+                .fluidOutputs(Materials.Benzene.getFluid(2_000_000_000L)).eut(TierEU.RECIPE_UXV)
+                .metadata(COIL_HEAT, 144000).addTo(blastFurnaceRecipes);
     }
 }
