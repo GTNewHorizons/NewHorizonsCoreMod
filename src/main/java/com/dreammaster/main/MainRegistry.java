@@ -1,16 +1,7 @@
 package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.GalactiGreg;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.SGCraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
@@ -48,6 +39,7 @@ import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_CasingNH;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
+import com.dreammaster.gthandler.recipes.EyeOfHarmonyRecipes;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.WoodenBrickForm;
@@ -508,7 +500,12 @@ public class MainRegistry {
             MinecraftForge.EVENT_BUS.register(handler);
             FMLCommonHandler.instance().bus().register(handler);
         }
+        if (TecTech.isModLoaded()) {
+            specialEoHRecipeStorage = new EyeOfHarmonyRecipes();
+        }
     }
+
+    public static EyeOfHarmonyRecipes specialEoHRecipeStorage = null;
 
     /**
      * Register your mod-fixes here

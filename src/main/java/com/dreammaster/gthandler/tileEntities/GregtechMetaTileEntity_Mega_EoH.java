@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.tileEntities;
 
+import static com.dreammaster.main.MainRegistry.specialEoHRecipeStorage;
 import static com.github.technus.tectech.TecTech.eyeOfHarmonyRecipeStorage;
 import static com.github.technus.tectech.thing.CustomItemList.astralArrayFabricator;
 import static com.github.technus.tectech.thing.casing.GT_Block_CasingsTT.texturePage;
@@ -2420,7 +2421,10 @@ public class GregtechMetaTileEntity_Mega_EoH extends GT_MetaTileEntity_Multibloc
 
             currentRecipe = eyeOfHarmonyRecipeStorage.recipeLookUp(controllerStack);
             if (currentRecipe == null) {
-                return CheckRecipeResultRegistry.NO_RECIPE;
+                currentRecipe = specialEoHRecipeStorage.specialRecipeLookUp(controllerStack);
+                if (currentRecipe == null) {
+                    return CheckRecipeResultRegistry.NO_RECIPE;
+                }
             }
             CheckRecipeResult result = processRecipe(currentRecipe);
             if (!result.wasSuccessful()) currentRecipe = null;
