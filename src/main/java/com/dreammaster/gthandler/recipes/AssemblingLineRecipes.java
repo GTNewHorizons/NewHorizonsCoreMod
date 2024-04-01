@@ -2,8 +2,13 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.AvaritiaAddons;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_RecipeBuilder.HOURS;
 import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
@@ -14,6 +19,7 @@ import static gregtech.api.util.GT_RecipeConstants.AssemblyLine;
 import static gregtech.api.util.GT_RecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GT_RecipeConstants.RESEARCH_TIME;
 
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -31,6 +37,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import vazkii.botania.api.BotaniaAPI;
 
 public class AssemblingLineRecipes implements Runnable {
 
@@ -414,6 +421,153 @@ public class AssemblingLineRecipes implements Runnable {
                     com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1L),
                     10 * MINUTES,
                     (int) TierEU.RECIPE_ZPM);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    com.github.technus.tectech.thing.CustomItemList.SpacetimeCompressionFieldGeneratorTier8.get(1),
+                    10 * 48_000_000,
+                    10 * 16_384,
+                    (int) TierEU.RECIPE_MAX,
+                    10 * 8,
+                    new Object[] { com.github.technus.tectech.thing.CustomItemList.EOH_Reinforced_Spatial_Casing.get(1),
+                            // T10 Yotta cell.
+                            GT_ModHandler.getModItem(GoodGenerator.ID, "yottaFluidTankCells", 1, 9),
+                            // quantum tank V (max tier)
+                            ItemList.Quantum_Tank_IV.get(4 * 10),
+                            // Inf chest
+                            GT_ModHandler.getModItem(AvaritiaAddons.ID, "InfinityChest", 10),
+                            // Spacetime continuum ripper
+                            GT_ModHandler.getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.5", 4, 10),
+                            GT_ModHandler.getModItem("appliedenergistics2", "tile.BlockSingularityCraftingStorage", 1),
+                            GT_ModHandler
+                                    .getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Singularity", 1),
+                            GT_ModHandler
+                                    .getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Singularity", 1),
+                            GT_ModHandler
+                                    .getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Singularity", 1),
+                            GT_ModHandler
+                                    .getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Singularity", 1),
+                            GT_ModHandler
+                                    .getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Singularity", 1),
+                            GT_ModHandler
+                                    .getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Singularity", 1),
+                            GT_ModHandler
+                                    .getModItem("appliedenergistics2", "item.ItemExtremeStorageCell.Singularity", 1),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.MagMatter, 2),
+                            GT_OreDictUnificator.get(
+                                    OrePrefixes.bolt,
+                                    MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                    32),
+                            com.github.technus.tectech.loader.recipe.BaseRecipeLoader.getItemContainer("QuantumCircuit")
+                                    .get(3) },
+                    new FluidStack[] {
+                            new FluidStack(
+                                    FluidRegistry.getFluid("molten.mutatedlivingsolder"),
+                                    (int) (2_880 * Math.pow(2L, 9))),
+                            MaterialsUEVplus.Space.getMolten(1_440 * 10), MaterialsUEVplus.SpaceTime.getMolten(1_440),
+                            MaterialsBotania.Terrasteel.getMolten(144 * 4096) },
+                    CustomItemList.SpacetimeCompressionFieldGeneratorTier10.get(1),
+                    10 * 4_000 * 20,
+                    (int) TierEU.RECIPE_UXV);
+
+            TT_recipeAdder
+                    .addResearchableAssemblylineRecipe(
+                            com.github.technus.tectech.thing.CustomItemList.TimeAccelerationFieldGeneratorTier8.get(1),
+                            10 * 48_000_000,
+                            10 * 16_384,
+                            (int) TierEU.RECIPE_MAX,
+                            10 * 8,
+                            new Object[] {
+                                    com.github.technus.tectech.thing.CustomItemList.EOH_Reinforced_Temporal_Casing
+                                            .get(1),
+                                    GregtechItemList.FusionComputer_UV3.get(1),
+                                    GT_ModHandler.getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 4),
+                                    // UV Solar panel
+                                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 10, 0),
+                                    com.github.technus.tectech.loader.recipe.BaseRecipeLoader
+                                            .getItemContainer("QuantumCircuit").get(10),
+                                    // Red Spectral Component
+                                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "redcomponent", 64),
+                                    // Green Spectral Component
+                                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "greencomponent", 64),
+                                    // Blue Spectral Component
+                                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "bluecomponent", 64),
+
+                                    GT_OreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.MagMatter, 2),
+                                    GT_OreDictUnificator.get(
+                                            OrePrefixes.bolt,
+                                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                            32),
+                                    // Dyson Swarm Module Deployment Unit Base Casing
+                                    GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 10 * 4, 2),
+                                    // Dyson Swarm Energy Receiver Dish Block
+                                    GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 10 * 4, 1),
+                                    // Ultimate Time Anomaly.
+                                    GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 10 * 4, 11107),
+
+                                    ItemList.Energy_Module.get(10),
+                                    GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 10 * 4),
+
+                            },
+                            new FluidStack[] {
+                                    new FluidStack(
+                                            FluidRegistry.getFluid("molten.mutatedlivingsolder"),
+                                            (int) (2_880 * Math.pow(2L, 9))),
+                                    MaterialsUEVplus.Time.getMolten(1_440 * 10),
+                                    MaterialsUEVplus.SpaceTime.getMolten(1_440),
+                                    MaterialsBotania.Terrasteel.getMolten(144 * 4096) },
+                            CustomItemList.TimeAccelerationFieldGeneratorTier10.get(1),
+                            10 * 4_000 * 20,
+                            (int) TierEU.RECIPE_UXV);
+
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    com.github.technus.tectech.thing.CustomItemList.StabilisationFieldGeneratorTier8.get(1),
+                    10 * 48_000_000,
+                    10 * 16_384,
+                    (int) TierEU.RECIPE_MAX,
+                    10 * 8,
+                    new Object[] {
+                            com.github.technus.tectech.thing.CustomItemList.TimeAccelerationFieldGeneratorTier8.get(1),
+                            com.github.technus.tectech.thing.CustomItemList.SpacetimeCompressionFieldGeneratorTier8
+                                    .get(1),
+                            com.github.technus.tectech.thing.CustomItemList.EOH_Infinite_Energy_Casing.get(1),
+                            // Dyson Swarm Module.
+                            GT_ModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 4 * 10, 0),
+
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUMVBase, 4 * 10),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUIVBase, 4 * 10),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUEVBase, 4 * 10),
+                            GT_OreDictUnificator
+                                    .get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuhvwire, 4 * 10),
+
+                            // Gravitation Engine
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
+
+                            GT_OreDictUnificator.get(
+                                    OrePrefixes.bolt,
+                                    MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                    32),
+                            com.github.technus.tectech.loader.recipe.BaseRecipeLoader.getItemContainer("QuantumCircuit")
+                                    .get(2 * 10),
+                            GT_OreDictUnificator.get(OrePrefixes.gearGt, MaterialsUEVplus.SpaceTime, 10),
+                            GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, MaterialsUEVplus.MagMatter, 1)
+
+                    },
+                    new FluidStack[] {
+                            new FluidStack(
+                                    FluidRegistry.getFluid("molten.mutatedlivingsolder"),
+                                    (int) (2_880 * Math.pow(2L, 9))),
+                            MaterialsUEVplus.Time.getMolten(1_440 * 10), MaterialsUEVplus.Space.getMolten(1_440 * 10),
+                            MaterialsUEVplus.SpaceTime.getMolten(1_440) },
+                    CustomItemList.StabilisationFieldGeneratorTier10.get(1),
+                    10 * 4_000 * 20,
+                    (int) TierEU.RECIPE_UXV);
+
+            BotaniaAPI.registerElvenTradeRecipe(
+                    CustomItemList.Mega_EoH.get(2),
+                    com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(29));
 
             TT_recipeAdder
                     .addResearchableAssemblylineRecipe(

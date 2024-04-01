@@ -15,7 +15,6 @@ import static gregtech.api.enums.GT_HatchElement.InputBus;
 import static gregtech.api.enums.GT_HatchElement.InputHatch;
 import static gregtech.api.enums.GT_HatchElement.OutputBus;
 import static gregtech.api.enums.GT_HatchElement.OutputHatch;
-import static gregtech.api.enums.GT_Values.AuthorColen;
 import static gregtech.api.util.GT_ParallelHelper.calculateChancedOutputMultiplier;
 import static gregtech.api.util.GT_StructureUtility.buildHatchAdder;
 import static gregtech.api.util.GT_Utility.formatNumbers;
@@ -114,7 +113,7 @@ public class GregtechMetaTileEntity_Mega_EoH extends GT_MetaTileEntity_Multibloc
     private static final int TOTAL_CASING_TIERS_WITH_POWER_PENALTY = 8;
     private static final long PRECISION_MULTIPLIER = 1_000_000;
 
-    private String userUUID = "";
+    private UUID userUUID;
     private BigInteger outputEU_BigInt = BigInteger.ZERO;
     private long startEU = 0;
 
@@ -2226,132 +2225,25 @@ public class GregtechMetaTileEntity_Mega_EoH extends GT_MetaTileEntity_Multibloc
                 new ChatComponentText("Animations are now " + (animationsEnabled ? "enabled" : "disabled") + "."));
     }
 
+    String archer = BOLD + "Legolas";
+
     @Override
     public GT_Multiblock_Tooltip_Builder createTooltip() {
         final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
         tt.addMachineType("Spacetime Manipulator, EOH").addInfo(TOOLTIP_BAR)
-                .addInfo("Creates a pocket of spacetime that is bigger on the inside using transdimensional")
-                .addInfo("engineering. Certified Time Lord regulation compliant. This multi uses too much EU")
-                .addInfo("to be handled with conventional means. All EU requirements are handled directly by")
-                .addInfo("your wireless EU network.").addInfo(TOOLTIP_BAR)
-                .addInfo("This multiblock will constantly consume hydrogen and helium when it is not running a")
-                .addInfo("recipe once per second. It will store this internally, you can see the totals by")
-                .addInfo("using a scanner. This multi also has three tiered blocks with " + RED + 9 + GRAY + " tiers")
-                .addInfo("each. They are as follows and have the associated effects on the multi.")
-                .addInfo(BLUE + "Spacetime Compression Field Generator:")
-                .addInfo("- The tier of this block determines what recipes can be run. If the multiblocks")
-                .addInfo("  spacetime compression field block exceeds the requirements of the recipe it")
-                .addInfo(
-                        "  will decrease the processing time by " + RED
-                                + formatNumbers(SPACETIME_CASING_DIFFERENCE_DISCOUNT_PERCENTAGE * 100)
-                                + "%"
-                                + GRAY
-                                + " per tier over the requirement (multiplicative).")
-                .addInfo(BLUE + "Time Dilation Field Generator:")
-                .addInfo(
-                        "- Decreases the time required for a recipe by " + RED
-                                + "50%"
-                                + GRAY
-                                + " per tier of block (multiplicative).")
-                .addInfo(
-                        "  Decreases the probability of a recipe succeeding by " + RED
-                                + formatNumbers(TIME_ACCEL_DECREASE_CHANCE_PER_TIER * 100)
-                                + "%"
-                                + GRAY
-                                + " per tier (additive)")
-                .addInfo(BLUE + "Stabilisation Field Generator:")
-                .addInfo(
-                        "- Increases the probability of a recipe succeeding by " + RED
-                                + formatNumbers(STABILITY_INCREASE_PROBABILITY_DECREASE_YIELD_PER_TIER * 100)
-                                + "%"
-                                + GRAY
-                                + " per tier (additive).")
-                .addInfo(
-                        "  Decreases the yield of a recipe by " + RED
-                                + formatNumbers(STABILITY_INCREASE_PROBABILITY_DECREASE_YIELD_PER_TIER * 100)
-                                + "%"
-                                + GRAY
-                                + " per tier (additive). ")
-                .addInfo("  > Low tier stabilisation field generators have a power output penalty.")
-                .addInfo(
-                        "     The power output penalty for using Crude Stabilisation Field Generators is " + RED
-                                + formatNumbers(
-                                        STABILITY_INCREASE_PROBABILITY_DECREASE_YIELD_PER_TIER
-                                                * TOTAL_CASING_TIERS_WITH_POWER_PENALTY
-                                                * 100)
-                                + "%"
-                                + GRAY
-                                + ".")
-                .addInfo(
-                        "     This penalty decreases by " + RED
-                                + formatNumbers(STABILITY_INCREASE_PROBABILITY_DECREASE_YIELD_PER_TIER * 100)
-                                + "%"
-                                + GRAY
-                                + " per tier (additive).")
+                .addInfo("Elven engineering? Take this pesky dwarves.")
+                .addInfo("Spacetime Manipulation technology imbued with elven magic.")
+                .addInfo("Functions the same as a regular Eye of Harmony, but with a 100x power output multiplier!")
                 .addInfo(TOOLTIP_BAR)
-                .addInfo(
-                        "Going over a recipe requirement on hydrogen or helium has a penalty on yield and recipe chance.")
-                .addInfo("All stored hydrogen and helium is consumed during a craft. The associated formulas are:")
-                .addInfo(GREEN + "Overflow ratio = (Stored fluid / Recipe requirement) - 1")
-                .addInfo(GREEN + "Adjustment value = 1 - exp(-(30 * Overflow ratio)^2)")
-                .addInfo("The Adjustment value is then subtracted from the total yield and recipe chance.")
-                .addInfo(TOOLTIP_BAR)
-                .addInfo("It should be noted that base recipe chance is determined per recipe and yield always starts")
-                .addInfo("at 1 and subtracts depending on penalties. All fluid/item outputs are multiplied by the")
-                .addInfo("yield. Failure fluid is exempt.").addInfo(TOOLTIP_BAR)
-                .addInfo("This multiblock can only output to ME output buses/hatches.").addInfo(TOOLTIP_BAR)
-                .addInfo("This multiblock can be overclocked by placing a programmed circuit into the input bus.")
-                .addInfo(
-                        "E.g. A circuit of 2 will provide 2 OCs, 16x EU input and 0.25x the time. EU output is unaffected.")
-                .addInfo(
-                        "All outputs are equal. All item and fluid output chances & amounts per recipe are unaffected.")
-                .addInfo(TOOLTIP_BAR)
-                .addInfo(
-                        "If a recipe fails the EOH will output " + GREEN
-                                + "Success chance * "
-                                + formatNumbers(MOLTEN_SPACETIME_PER_FAILURE_TIER)
-                                + " * ("
-                                + SPACETIME_FAILURE_BASE
-                                + ")^(Recipe tier)"
-                                + GRAY
-                                + "L of molten")
-                .addInfo(
-                        MaterialsUEVplus.SpaceTime.getLocalizedNameForItem("%material")
-                                + " instead of fluid/item outputs and output as much EU as a successful recipe.")
-                .addInfo(TOOLTIP_BAR)
-                .addInfo(
-                        "This multiblock can perform parallel processing by placing Astral Array Fabricators into the input bus.")
-                .addInfo("The amount of parallel is calculated via these formulas:")
-                .addInfo(GREEN + "Parallel exponent = floor(log(8 * Astral Array amount) / log(1.7))")
-                .addInfo(GREEN + "Parallel = 2^(Parallel exponent)")
-                .addInfo("If the EOH is running parallel recipes, the power calculation changes.")
-                .addInfo("The power needed for parallel processing is calculated as follows:")
-                .addInfo(GREEN + "total EU = ((EU output - EU input * 1.63) / 9) * 2.3^(Parallel exponent - 1)")
-                .addInfo(
-                        "Furthermore, if parallel recipes are run, the recipes consume "
-                                + MaterialsUEVplus.RawStarMatter.getLocalizedNameForItem("%material"))
-                .addInfo("instead of helium and hydrogen. Overflow penalties still apply.")
-                .addInfo(
-                        "The required amount of fluid to start a recipe is " + GREEN
-                                + "12.4 / 10^6 * Helium amount * Parallel"
-                                + GRAY
-                                + ".")
-                .addInfo("The success or failure of each parallel is determined independently.").addInfo(TOOLTIP_BAR)
-                .addInfo("Animations can be disabled by using a screwdriver on the multiblock.").addSeparator()
-                .addStructureInfo("Eye of Harmony structure is too complex! See schematic for details.")
-                .addStructureInfo(GOLD + "896" + GRAY + " Reinforced Spatial Structure Casing.")
-                .addStructureInfo(GOLD + "534" + GRAY + " Reinforced Temporal Structure Casing.")
-                .addStructureInfo(GOLD + "31" + GRAY + " Infinite SpaceTime Energy Boundary Casing.")
-                .addStructureInfo(GOLD + "168" + GRAY + " Time Dilation Field Generator.")
-                .addStructureInfo(GOLD + "48" + GRAY + " Stabilisation Field Generator.")
-                .addStructureInfo(GOLD + "138" + GRAY + " Spacetime Compression Field Generator.")
+                .addStructureInfo("Use the hologram thing, you won't be building this by hand anyways")
+                .addStructureInfo("Just use NEI for the needed block amounts man")
                 .addStructureInfo("--------------------------------------------")
                 .addStructureInfo("Requires " + GOLD + 2 + GRAY + " input hatches.")
                 .addStructureInfo("Requires " + GOLD + 1 + GRAY + " ME output hatch.")
                 .addStructureInfo("Requires " + GOLD + 1 + GRAY + " input bus.")
                 .addStructureInfo("Requires " + GOLD + 1 + GRAY + " ME output bus.")
                 .addStructureInfo("--------------------------------------------").beginStructureBlock(33, 33, 33, false)
-                .toolTipFinisher(AuthorColen.substring(8) + GRAY + "&" + CommonValues.TEC_MARK_EM);
+                .toolTipFinisher(GREEN + archer + GRAY + " & " + CommonValues.TEC_MARK_EM);
         return tt;
     }
 
@@ -2531,7 +2423,7 @@ public class GregtechMetaTileEntity_Mega_EoH extends GT_MetaTileEntity_Multibloc
         // Calculate normal EU values
         double outputEUPenalty = (TOTAL_CASING_TIERS_WITH_POWER_PENALTY - stabilisationFieldMetadata)
                 * STABILITY_INCREASE_PROBABILITY_DECREASE_YIELD_PER_TIER;
-        outputEU_BigInt = BigInteger.valueOf((long) (recipeObject.getEUOutput() * (1 - outputEUPenalty)));
+        outputEU_BigInt = BigInteger.valueOf((long) (recipeObject.getEUOutput() * (1 - outputEUPenalty) * 100));
         usedEU = BigInteger.valueOf(-startEU).multiply(BigInteger.valueOf((long) pow(4, currentCircuitMultiplier)));
 
         // Calculate parallel EU values
@@ -2722,7 +2614,7 @@ public class GregtechMetaTileEntity_Mega_EoH extends GT_MetaTileEntity_Multibloc
         super.onPreTick(aBaseMetaTileEntity, aTick);
 
         if (aTick == 1) {
-            userUUID = String.valueOf(getBaseMetaTileEntity().getOwnerUuid());
+            userUUID = getBaseMetaTileEntity().getOwnerUuid();
             String userName = getBaseMetaTileEntity().getOwnerName();
             strongCheckOrAddUser(userUUID, userName);
         }
