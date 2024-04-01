@@ -2,10 +2,14 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.TecTech;
+import static gregtech.api.enums.Mods.AvaritiaAddons;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_RecipeBuilder.HOURS;
 import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
@@ -453,11 +457,12 @@ public class AssemblingLineRecipes implements Runnable {
                                     OrePrefixes.bolt,
                                     MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
                                     32),
-                            getItemContainer("QuantumCircuit").get(3) },
+                            com.github.technus.tectech.loader.recipe.BaseRecipeLoader.getItemContainer("QuantumCircuit")
+                                    .get(3) },
                     new FluidStack[] {
                             new FluidStack(
                                     FluidRegistry.getFluid("molten.mutatedlivingsolder"),
-                                    (int) (2_880 * pow(2L, 9))),
+                                    (int) (2_880 * Math.pow(2L, 9))),
                             MaterialsUEVplus.Space.getMolten(1_440 * 10), MaterialsUEVplus.SpaceTime.getMolten(1_440),
                             MaterialsBotania.Terrasteel.getMolten(144 * 4096) },
                     CustomItemList.SpacetimeCompressionFieldGeneratorTier10.get(1),
@@ -475,16 +480,17 @@ public class AssemblingLineRecipes implements Runnable {
                                     com.github.technus.tectech.thing.CustomItemList.EOH_Reinforced_Temporal_Casing
                                             .get(1),
                                     GregtechItemList.FusionComputer_UV3.get(1),
-                                    getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 4),
+                                    GT_ModHandler.getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 4),
                                     // UV Solar panel
-                                    getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 10, 0),
-                                    getItemContainer("QuantumCircuit").get(10),
+                                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 10, 0),
+                                    com.github.technus.tectech.loader.recipe.BaseRecipeLoader
+                                            .getItemContainer("QuantumCircuit").get(10),
                                     // Red Spectral Component
-                                    getModItem(SuperSolarPanels.ID, "redcomponent", 64),
+                                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "redcomponent", 64),
                                     // Green Spectral Component
-                                    getModItem(SuperSolarPanels.ID, "greencomponent", 64),
+                                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "greencomponent", 64),
                                     // Blue Spectral Component
-                                    getModItem(SuperSolarPanels.ID, "bluecomponent", 64),
+                                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "bluecomponent", 64),
 
                                     GT_OreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.MagMatter, 2),
                                     GT_OreDictUnificator.get(
@@ -492,11 +498,11 @@ public class AssemblingLineRecipes implements Runnable {
                                             MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
                                             32),
                                     // Dyson Swarm Module Deployment Unit Base Casing
-                                    getModItem(GalaxySpace.ID, "dysonswarmparts", 10 * 4, 2),
+                                    GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 10 * 4, 2),
                                     // Dyson Swarm Energy Receiver Dish Block
-                                    getModItem(GalaxySpace.ID, "dysonswarmparts", 10 * 4, 1),
+                                    GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 10 * 4, 1),
                                     // Ultimate Time Anomaly.
-                                    getModItem(GregTech.ID, "gt.blockmachines", 10 * 4, 11107),
+                                    GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 10 * 4, 11107),
 
                                     ItemList.Energy_Module.get(10),
                                     GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 10 * 4),
@@ -505,7 +511,7 @@ public class AssemblingLineRecipes implements Runnable {
                             new FluidStack[] {
                                     new FluidStack(
                                             FluidRegistry.getFluid("molten.mutatedlivingsolder"),
-                                            (int) (2_880 * pow(2L, 9))),
+                                            (int) (2_880 * Math.pow(2L, 9))),
                                     MaterialsUEVplus.Time.getMolten(1_440 * 10),
                                     MaterialsUEVplus.SpaceTime.getMolten(1_440),
                                     MaterialsBotania.Terrasteel.getMolten(144 * 4096) },
@@ -525,7 +531,7 @@ public class AssemblingLineRecipes implements Runnable {
                                     .get(1),
                             com.github.technus.tectech.thing.CustomItemList.EOH_Infinite_Energy_Casing.get(1),
                             // Dyson Swarm Module.
-                            getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 4 * 10, 0),
+                            GT_ModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 4 * 10, 0),
 
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUMVBase, 4 * 10),
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUIVBase, 4 * 10),
@@ -534,16 +540,17 @@ public class AssemblingLineRecipes implements Runnable {
                                     .get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuhvwire, 4 * 10),
 
                             // Gravitation Engine
-                            getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
-                            getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
-                            getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
-                            getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
+                            GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 64, 3),
 
                             GT_OreDictUnificator.get(
                                     OrePrefixes.bolt,
                                     MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
                                     32),
-                            getItemContainer("QuantumCircuit").get(2 * 10),
+                            com.github.technus.tectech.loader.recipe.BaseRecipeLoader.getItemContainer("QuantumCircuit")
+                                    .get(2 * 10),
                             GT_OreDictUnificator.get(OrePrefixes.gearGt, MaterialsUEVplus.SpaceTime, 10),
                             GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, MaterialsUEVplus.MagMatter, 1)
 
@@ -551,7 +558,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] {
                             new FluidStack(
                                     FluidRegistry.getFluid("molten.mutatedlivingsolder"),
-                                    (int) (2_880 * pow(2L, 9))),
+                                    (int) (2_880 * Math.pow(2L, 9))),
                             MaterialsUEVplus.Time.getMolten(1_440 * 10), MaterialsUEVplus.Space.getMolten(1_440 * 10),
                             MaterialsUEVplus.SpaceTime.getMolten(1_440) },
                     CustomItemList.StabilisationFieldGeneratorTier10.get(1),
