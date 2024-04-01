@@ -557,8 +557,8 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UXV);
 
             BotaniaAPI.registerElvenTradeRecipe(
-                    CustomItemList.Mega_EoH.get(1),
-                    com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1));
+                    CustomItemList.Mega_EoH.get(2),
+                    com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(29));
 
             TT_recipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
