@@ -104,7 +104,12 @@ public class GregtechMetaTileEntity_Mega_Adv_EBF
                 .addCasingInfoMin(mCasingName, 8, false).addInputHatch("Any Casing", 1).addInputBus("Any Casing", 1)
                 .addOutputBus("Any Casing", 1).addOutputHatch("Any Casing", 1).addEnergyHatch("Any Casing", 1)
                 .addMaintenanceHatch("Any Casing", 1).addOtherStructurePart(mHatchName, "Any Casing", 1)
-                .toolTipFinisher(EnumChatFormatting.RED + "Volcanus God:" +EnumChatFormatting.BLUE + "Lewis" + EnumChatFormatting.GOLD + "Saber");
+                .toolTipFinisher(
+                        EnumChatFormatting.RED + "Volcanus God:"
+                                + EnumChatFormatting.BLUE
+                                + "Lewis"
+                                + EnumChatFormatting.GOLD
+                                + "Saber");
         return tt;
     }
 

@@ -1634,6 +1634,6 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, MaterialsUEVplus.MagMatter, 6L))
                 .fluidInputs(Materials.Infinity.getMolten(144 * 50000)).duration(5 * HOURS)
                 .fluidOutputs(Materials.Benzene.getFluid(2_000_000_000L)).eut(TierEU.RECIPE_UXV)
-                .metadata(COIL_HEAT, 144000).addTo(blastFurnaceRecipes);
+                .metadata(COIL_HEAT, 135000).addTo(blastFurnaceRecipes);
     }
 }

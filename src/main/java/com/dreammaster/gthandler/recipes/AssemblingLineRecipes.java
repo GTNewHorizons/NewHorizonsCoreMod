@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_RecipeBuilder.HOURS;
 import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
@@ -413,6 +414,35 @@ public class AssemblingLineRecipes implements Runnable {
                     com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1L),
                     10 * MINUTES,
                     (int) TierEU.RECIPE_ZPM);
+
+            TT_recipeAdder
+                    .addResearchableAssemblylineRecipe(
+                            ItemList.Casing_Coil_AwakenedDraconium.get(1L),
+                            2_000_000_000,
+                            2_000_000,
+                            (int) TierEU.RECIPE_MAX,
+                            1_024_000,
+                            new Object[] { GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 32, 963),
+                                    GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 32, 963),
+                                    GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 32, 963),
+                                    GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 12, 963),
+                                    ItemList.Robot_Arm_UXV.get(64), ItemList.Emitter_UXV.get(64),
+                                    GT_OreDictUnificator.get(
+                                            OrePrefixes.plateDense,
+                                            MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter,
+                                            64L),
+                                    GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 64L),
+                                    CustomItemList.AcceleratorUV.get(64L), ItemList.EnergisedTesseract.get(64L),
+                                    ItemList.ZPM6.get(2L) },
+
+                            new FluidStack[] { Materials.Infinity.getMolten(2_000_000_000L),
+                                    MaterialsBotania.GaiaSpirit.getMolten(10_000L),
+                                    MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(
+                                            10_000_000L),
+                                    MaterialsUEVplus.SpaceTime.getMolten(1_000_000_000), },
+                            CustomItemList.GregtechMetaTileEntity_Mega_Adv_EBF.get(1L),
+                            24 * HOURS,
+                            (int) TierEU.RECIPE_UXV);
 
             TT_recipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
