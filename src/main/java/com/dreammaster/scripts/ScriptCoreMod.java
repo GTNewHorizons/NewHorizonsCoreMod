@@ -215,8 +215,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 null);
         addShapedRecipe(
                 getModItem(NewHorizonsCoreMod.ID, "item.SawBladePeridot", 1, 0, missing),
-                "platePeridot",
-                "platePeridot",
+                "plateOlivine",
+                "plateOlivine",
                 null,
                 "craftingToolFile",
                 "craftingToolHardHammer",
