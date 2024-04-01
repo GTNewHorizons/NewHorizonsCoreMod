@@ -411,7 +411,7 @@ public class AssemblingLineRecipes implements Runnable {
 
                     new FluidStack[] { Materials.Lubricant.getFluid(2000), Materials.Cobalt.getMolten(144 * 20) },
                     com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1L),
-                    10*MINUTES,
+                    10 * MINUTES,
                     (int) TierEU.RECIPE_ZPM);
 
             TT_recipeAdder.addResearchableAssemblylineRecipe(
