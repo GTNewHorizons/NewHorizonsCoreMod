@@ -20,6 +20,7 @@ import java.util.Collection;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -53,7 +54,6 @@ import gregtech.api.util.GT_Multiblock_Tooltip_Builder;
 import gregtech.api.util.GT_OverclockCalculator;
 import gregtech.api.util.GT_Recipe;
 import gtPlusPlus.api.objects.minecraft.BlockPos;
-import gtPlusPlus.core.lib.CORE;
 import gtPlusPlus.core.util.reflect.ReflectionUtils;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Steam_BusInput;
 import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GT_MetaTileEntity_Hatch_CustomFluidBase;
@@ -104,7 +104,7 @@ public class GregtechMetaTileEntity_Mega_Adv_EBF
                 .addCasingInfoMin(mCasingName, 8, false).addInputHatch("Any Casing", 1).addInputBus("Any Casing", 1)
                 .addOutputBus("Any Casing", 1).addOutputHatch("Any Casing", 1).addEnergyHatch("Any Casing", 1)
                 .addMaintenanceHatch("Any Casing", 1).addOtherStructurePart(mHatchName, "Any Casing", 1)
-                .toolTipFinisher(CORE.GT_Tooltip_Builder.get());
+                .toolTipFinisher(EnumChatFormatting.RED + "Volcanus God:" +EnumChatFormatting.BLUE + "Lewis" + EnumChatFormatting.GOLD + "Saber");
         return tt;
     }
 

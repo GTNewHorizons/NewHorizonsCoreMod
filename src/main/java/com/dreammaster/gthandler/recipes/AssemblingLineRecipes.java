@@ -1,13 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.github.technus.tectech.loader.recipe.BaseRecipeLoader.getItemContainer;
-import static com.google.common.math.LongMath.pow;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.TecTech;
-import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.HOURS;
 import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
