@@ -2,6 +2,8 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.github.technus.tectech.recipe.TecTechRecipeMaps.eyeOfHarmonyRecipes;
 import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.HashMap;
 
@@ -9,9 +11,12 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.gthandler.CustomItemList;
 import com.github.technus.tectech.recipe.EyeOfHarmonyRecipe;
 
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsBotania;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
@@ -56,7 +61,18 @@ public class EyeOfHarmonyRecipes {
         eyeOfHarmonyRecipes.addRecipe(
                 false,
                 new ItemStack[] { GT_ModHandler.getModItem(Botania.ID, "dice", 0L, 0) },
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Infinity, 12_325_347) },
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.Terrasteel, 12_325_347),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.GaiaSpirit, 12_325_347),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsBotania.Manasteel, 12_325_347),
+                        CustomItemList.QuantumCircuit.get(9L), ItemList.EnergisedTesseract.get(32),
+                        CustomItemList.PikoCircuit.get(12L),
+                        GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.BlackDwarfMatter, 32L),
+                        GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.WhiteDwarfMatter, 32L),
+                        ItemList.ZPM4.get(1L), ItemList.Electric_Motor_UXV.get(4L),
+                        getModItem(DraconicEvolution.ID, "chaosFragment", 4L, 2)
+
+                },
                 new EyeOfHarmonyRecipe(
                         null,
                         null,

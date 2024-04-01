@@ -1,7 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.GregTech_API.mGTPlusPlus;
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.recipe.RecipeMaps.plasmaForgeRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;

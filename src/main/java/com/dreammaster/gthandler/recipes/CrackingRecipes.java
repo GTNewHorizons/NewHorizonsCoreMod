@@ -1,7 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.gthandler.GT_CoreModSupport.*;
-import static gregtech.api.enums.Materials.*;
+import static gregtech.api.enums.Materials.Silver;
 import static gregtech.api.recipe.RecipeMaps.crackingRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 

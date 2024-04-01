@@ -7,14 +7,30 @@ import static com.github.technus.tectech.thing.casing.GT_Block_CasingsTT.texture
 import static com.github.technus.tectech.thing.casing.TT_Container_Casings.eyeOfHarmonyRenderBlock;
 import static com.github.technus.tectech.thing.casing.TT_Container_Casings.sBlockCasingsBA0;
 import static com.github.technus.tectech.util.TT_Utility.toStandardForm;
-import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static gregtech.api.enums.GT_HatchElement.*;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlocksTiered;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.transpose;
+import static com.gtnewhorizon.structurelib.structure.StructureUtility.withChannel;
+import static gregtech.api.enums.GT_HatchElement.InputBus;
+import static gregtech.api.enums.GT_HatchElement.InputHatch;
+import static gregtech.api.enums.GT_HatchElement.OutputBus;
+import static gregtech.api.enums.GT_HatchElement.OutputHatch;
 import static gregtech.api.enums.GT_Values.AuthorColen;
 import static gregtech.api.util.GT_ParallelHelper.calculateChancedOutputMultiplier;
 import static gregtech.api.util.GT_StructureUtility.buildHatchAdder;
 import static gregtech.api.util.GT_Utility.formatNumbers;
-import static java.lang.Math.*;
-import static net.minecraft.util.EnumChatFormatting.*;
+import static java.lang.Math.exp;
+import static java.lang.Math.max;
+import static java.lang.Math.pow;
+import static net.minecraft.util.EnumChatFormatting.BLUE;
+import static net.minecraft.util.EnumChatFormatting.BOLD;
+import static net.minecraft.util.EnumChatFormatting.GOLD;
+import static net.minecraft.util.EnumChatFormatting.GRAY;
+import static net.minecraft.util.EnumChatFormatting.GREEN;
+import static net.minecraft.util.EnumChatFormatting.RED;
+import static net.minecraft.util.EnumChatFormatting.RESET;
+import static net.minecraft.util.EnumChatFormatting.WHITE;
+import static net.minecraft.util.EnumChatFormatting.YELLOW;
 
 import java.math.BigInteger;
 import java.util.*;
@@ -2323,17 +2339,17 @@ public class GregtechMetaTileEntity_Mega_EoH extends GT_MetaTileEntity_Multibloc
                 .addInfo("The success or failure of each parallel is determined independently.").addInfo(TOOLTIP_BAR)
                 .addInfo("Animations can be disabled by using a screwdriver on the multiblock.").addSeparator()
                 .addStructureInfo("Eye of Harmony structure is too complex! See schematic for details.")
-                .addStructureInfo(EnumChatFormatting.GOLD + "896" + GRAY + " Reinforced Spatial Structure Casing.")
-                .addStructureInfo(EnumChatFormatting.GOLD + "534" + GRAY + " Reinforced Temporal Structure Casing.")
-                .addStructureInfo(EnumChatFormatting.GOLD + "31" + GRAY + " Infinite SpaceTime Energy Boundary Casing.")
-                .addStructureInfo(EnumChatFormatting.GOLD + "168" + GRAY + " Time Dilation Field Generator.")
-                .addStructureInfo(EnumChatFormatting.GOLD + "48" + GRAY + " Stabilisation Field Generator.")
-                .addStructureInfo(EnumChatFormatting.GOLD + "138" + GRAY + " Spacetime Compression Field Generator.")
+                .addStructureInfo(GOLD + "896" + GRAY + " Reinforced Spatial Structure Casing.")
+                .addStructureInfo(GOLD + "534" + GRAY + " Reinforced Temporal Structure Casing.")
+                .addStructureInfo(GOLD + "31" + GRAY + " Infinite SpaceTime Energy Boundary Casing.")
+                .addStructureInfo(GOLD + "168" + GRAY + " Time Dilation Field Generator.")
+                .addStructureInfo(GOLD + "48" + GRAY + " Stabilisation Field Generator.")
+                .addStructureInfo(GOLD + "138" + GRAY + " Spacetime Compression Field Generator.")
                 .addStructureInfo("--------------------------------------------")
-                .addStructureInfo("Requires " + EnumChatFormatting.GOLD + 2 + GRAY + " input hatches.")
-                .addStructureInfo("Requires " + EnumChatFormatting.GOLD + 1 + GRAY + " ME output hatch.")
-                .addStructureInfo("Requires " + EnumChatFormatting.GOLD + 1 + GRAY + " input bus.")
-                .addStructureInfo("Requires " + EnumChatFormatting.GOLD + 1 + GRAY + " ME output bus.")
+                .addStructureInfo("Requires " + GOLD + 2 + GRAY + " input hatches.")
+                .addStructureInfo("Requires " + GOLD + 1 + GRAY + " ME output hatch.")
+                .addStructureInfo("Requires " + GOLD + 1 + GRAY + " input bus.")
+                .addStructureInfo("Requires " + GOLD + 1 + GRAY + " ME output bus.")
                 .addStructureInfo("--------------------------------------------").beginStructureBlock(33, 33, 33, false)
                 .toolTipFinisher(AuthorColen.substring(8) + GRAY + "&" + CommonValues.TEC_MARK_EM);
         return tt;
@@ -2770,7 +2786,7 @@ public class GregtechMetaTileEntity_Mega_EoH extends GT_MetaTileEntity_Multibloc
     }
 
     private final String[] EOH_TIER_FANCY_NAMES_EXTENDED = { "Crude", "Primitive", "Stable", "Advanced", "Superb",
-            "Exotic", "Perfect", "Tipler", EnumChatFormatting.BOLD + "Gallifreyan", BOLD + "Elven" };
+            "Exotic", "Perfect", "Tipler", BOLD + "Gallifreyan", BOLD + "Elven" };
 
     @Override
     public String[] getInfoData() {
