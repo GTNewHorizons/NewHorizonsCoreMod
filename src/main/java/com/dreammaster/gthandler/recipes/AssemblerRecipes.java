@@ -927,14 +927,10 @@ public class AssemblerRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(ItemList.Casing_Tank_10.get(1L)).duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.diamond, 1, 0), ItemList.Circuit_Basic.get(4L))
-                .itemOutputs(CustomItemList.TwilightCrystal.get(1L)).duration(30 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.diamond, 1, 0),
-                        GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4L, 0))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4L))
                 .itemOutputs(CustomItemList.TwilightCrystal.get(1L)).duration(30 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
 
