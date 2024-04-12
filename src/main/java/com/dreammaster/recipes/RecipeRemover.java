@@ -409,7 +409,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "gemOre", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "gemOre", 1, 13, missing));
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "gemOre", 1, 5, missing));
-        removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "planks", 1, 14, missing));
         removeRecipeByOutputDelayed(getModItem("BloodArsenal", "blood_infused_iron_block", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("BloodArsenal", "blood_infused_iron", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("BloodArsenal", "blood_infused_planks", 1, 0, missing));
