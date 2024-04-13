@@ -424,62 +424,22 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     ItemList.Circuit_Parts_Resistor.get(1, o),
                     new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
                             OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Coal), 'R',
-                            GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1, 36) });
+                            GT_OreDictUnificator.get("slimeball", 1) });
             GT_ModHandler.addCraftingRecipe(
                     ItemList.Circuit_Parts_Resistor.get(1, o),
                     new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
                             OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Carbon),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1, 36) });
+                            'R', GT_OreDictUnificator.get("slimeball", 1) });
             GT_ModHandler.addCraftingRecipe(
                     ItemList.Circuit_Parts_Resistor.get(1, o),
                     new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
                             OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Charcoal),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1, 36) });
+                            'R', GT_OreDictUnificator.get("slimeball", 1) });
             GT_ModHandler.addCraftingRecipe(
                     ItemList.Circuit_Parts_Resistor.get(1, o),
                     new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
                             OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Lignite),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "materials", 1, 36) });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Circuit_Parts_Resistor.get(1, o),
-                    new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
-                            OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Coal), 'R',
-                            GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1, 0) });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Circuit_Parts_Resistor.get(1, o),
-                    new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
-                            OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Carbon),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1, 0) });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Circuit_Parts_Resistor.get(1, o),
-                    new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
-                            OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Charcoal),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1, 0) });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Circuit_Parts_Resistor.get(1, o),
-                    new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
-                            OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Lignite),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1, 0) });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Circuit_Parts_Resistor.get(1, o),
-                    new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
-                            OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Coal), 'R',
-                            GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1, 1) });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Circuit_Parts_Resistor.get(1, o),
-                    new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
-                            OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Carbon),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1, 1) });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Circuit_Parts_Resistor.get(1, o),
-                    new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
-                            OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Charcoal),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1, 1) });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Circuit_Parts_Resistor.get(1, o),
-                    new Object[] { "RPR", "FCF", " P ", 'F', OrePrefixes.wireGt01.get(Materials.Copper), 'P',
-                            OrePrefixes.wireFine.get(Materials.Copper), 'C', OrePrefixes.dust.get(Materials.Lignite),
-                            'R', GT_ModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1, 1) });
+                            'R', GT_OreDictUnificator.get("slimeball", 1) });
         }
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Circuit_Board_Coated_Basic.get(1, o),
