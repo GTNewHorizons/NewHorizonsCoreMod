@@ -56,6 +56,8 @@ public interface CustomItem {
         private NBTTagCompound nbt;
         private boolean exact = false;
 
+        private boolean noValues = false;
+
         public NBTItem() {}
 
         public NBTItem(ItemStack stack) {
@@ -74,7 +76,7 @@ public interface CustomItem {
             for (String key : (Set<String>) nbt.func_150296_c()) {
                 NBTBase v = nbt.getTag(key);
                 if (!stack.stackTagCompound.hasKey(key, v.getId())) return false;
-                if (!stack.stackTagCompound.getTag(key).equals(v)) return false;
+                if ((!noValues) && (!stack.stackTagCompound.getTag(key).equals(v))) return false;
             }
             return true;
         }
@@ -120,6 +122,11 @@ public interface CustomItem {
 
         public NBTItem matchExact() {
             exact = true;
+            return this;
+        }
+
+        public NBTItem noValues() {
+            noValues = true;
             return this;
         }
 

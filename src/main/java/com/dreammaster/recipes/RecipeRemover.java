@@ -3037,18 +3037,9 @@ public class RecipeRemover {
                         getModItem("EnderZoo", "enderFragment", 1, 0, missing) },
                 new Object[] { null, getModItem("EnderZoo", "enderFragment", 1, 0, missing), null });
         removeRecipeShapedDelayed(
-                getModItem("ExtraUtilities", "unstableingot", 1, 0, missing)/*
-                                                                             * createItemStack("ExtraUtilities",
-                                                                             * "unstableingot", 1, 0, "{Bug:1b}",
-                                                                             * missing)
-                                                                             */,
+                getModItem("ExtraUtilities", "unstableingot", 1, 0, missing),
                 new Object[] { getModItem("minecraft", "iron_ingot", 1, 0, missing) },
-                new Object[] { getModItem("ExtraUtilities", "divisionSigil", 1, 0, missing)/*
-                                                                                            * createItemStack(
-                                                                                            * "ExtraUtilities",
-                                                                                            * "divisionSigil", 1, 0,
-                                                                                            * "{damage:256}", missing)
-                                                                                            */ },
+                new Object[] { getModItem("ExtraUtilities", "divisionSigil", 1, 0, missing) },
                 new Object[] { getModItem("minecraft", "diamond", 1, 0, missing) });
         removeRecipeShapedDelayed(
                 getModItem("ForbiddenMagic", "FMResource", 9, 0, missing),
