@@ -1691,6 +1691,51 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockCrop", 16, 0, missing))
                 .duration(7 * SECONDS + 10 * TICKS).eut(30).addTo(assemblerRecipes);
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L),
+                        getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 3, 0, missing),
+                        ItemList.Hull_MV.get(1L),
+                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
+                        ItemList.Electric_Motor_MV.get(1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 8, missing)).duration(30 * SECONDS)
+                .eut(120).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4L),
+                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 2, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "itemPartAlloy", 2, 0, missing),
+                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 0, missing),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing))
+                .duration(1 * SECONDS + 5 * TICKS).eut(16).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, missing, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, missing, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silver, missing, 1L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing)).duration(30 * SECONDS)
+                .eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, missing, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, missing, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silver, missing, 1L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing)).duration(30 * SECONDS)
+                .eut(30).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, missing, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, missing, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silver, missing, 1L),
+                        GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing)).duration(30 * SECONDS)
+                .eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioChunk", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0, missing)).duration(1 * MINUTES)
                 .eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
