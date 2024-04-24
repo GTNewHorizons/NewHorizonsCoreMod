@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
@@ -598,7 +599,7 @@ public class CentrifugeRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, GT_Values.W))
-                .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(centrifugeRecipes);
+                .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(extractorRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(Materials.AstralSilver.getDust(3))
                 .itemOutputs(Materials.Silver.getDust(2), Materials.Thaumium.getDust(1)).duration(15 * SECONDS)
