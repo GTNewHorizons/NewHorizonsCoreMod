@@ -596,10 +596,6 @@ public class CentrifugeRecipes implements Runnable {
                 .fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS).eut(8)
                 .addTo(centrifugeRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, GT_Values.W))
-                .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(centrifugeRecipes);
-
         GT_Values.RA.stdBuilder().itemInputs(Materials.AstralSilver.getDust(3))
                 .itemOutputs(Materials.Silver.getDust(2), Materials.Thaumium.getDust(1)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);

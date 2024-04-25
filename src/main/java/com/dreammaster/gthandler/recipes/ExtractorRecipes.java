@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.SGCraft;
@@ -25,6 +26,11 @@ public class ExtractorRecipes implements Runnable {
 
     @Override
     public void run() {
+        if (IndustrialCraft2.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemCellHydrant", 1L, GT_Values.W))
+                    .itemOutputs(ItemList.Cell_Empty.get(1L)).duration(5 * SECONDS).eut(2).addTo(extractorRecipes);
+        }
 
         if (GalaxySpace.isModLoaded() && SGCraft.isModLoaded()) {
             for (int i = 0; i < 6; ++i) {
