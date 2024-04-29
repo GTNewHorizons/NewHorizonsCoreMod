@@ -1719,6 +1719,18 @@ public class ScriptGalacticraft implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Steel, 3L))
                 .itemOutputs(getModItem(GalacticraftCore.ID, "item.parachute", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GalacticraftCore.ID, "tile.oxygenPipe", 1, 0, missing),
+                        getModItem(GalacticraftMars.ID, "tile.walkway", 1, 0, missing))
+                .itemOutputs(getModItem(GalacticraftMars.ID, "tile.walkwayOxygenPipe", 1, 0, missing))
+                .duration(1 * SECONDS).eut(120).addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GalacticraftCore.ID, "tile.aluminumWire", 1, 0, missing),
+                        getModItem(GalacticraftMars.ID, "tile.walkway", 1, 0, missing))
+                .itemOutputs(getModItem(GalacticraftMars.ID, "tile.walkwayWire", 1, 0, missing)).duration(1 * SECONDS)
+                .eut(120).addTo(assemblerRecipes);
     }
 
     private void blastFurnaceRecipes() {
