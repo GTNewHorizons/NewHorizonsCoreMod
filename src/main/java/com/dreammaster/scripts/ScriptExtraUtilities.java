@@ -43,6 +43,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
@@ -873,11 +874,30 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 null,
                 getModItem(RandomThings.ID, "ingredient", 1, 1, missing),
                 null);
+
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 0, missing),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
-                createItemStack(ExtraUtilities.ID, "divisionSigil", 1, 0, "{damage:256}", missing),
-                getModItem(Minecraft.ID, "diamond", 1, 0, missing));
+                null,
+                null,
+                new CustomItem.NBTItem(getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0)).setNBT("{damage:256}")
+                        .noValues(),
+                null,
+                null,
+                getModItem(Minecraft.ID, "diamond", 1, 0, missing),
+                null,
+                null);
+        addShapedRecipe(
+                getModItem(ExtraUtilities.ID, "unstableingot", 1, 2, missing),
+                getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing),
+                null,
+                null,
+                new CustomItem.NBTItem(getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0)).setNBT("{stable:1b}"),
+                null,
+                null,
+                getModItem(Minecraft.ID, "diamond", 1, 0, missing),
+                null,
+                null);
 
         // mods.extraUtils.QED.removeRecipe(<*>); // <- scripts
         EnderConstructorRecipesHandler.recipes.clear();

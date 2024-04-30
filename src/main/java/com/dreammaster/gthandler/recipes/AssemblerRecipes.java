@@ -927,14 +927,10 @@ public class AssemblerRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(ItemList.Casing_Tank_10.get(1L)).duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.diamond, 1, 0), ItemList.Circuit_Basic.get(4L))
-                .itemOutputs(CustomItemList.TwilightCrystal.get(1L)).duration(30 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.diamond, 1, 0),
-                        GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 4L, 0))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4L))
                 .itemOutputs(CustomItemList.TwilightCrystal.get(1L)).duration(30 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
 
@@ -8216,6 +8212,9 @@ public class AssemblerRecipes implements Runnable {
             return;
         }
 
+        final OrePrefixes[] allOrePrefixes = { OrePrefixes.ore, OrePrefixes.oreNetherrack, OrePrefixes.oreEndstone,
+                OrePrefixes.oreBlackgranite, OrePrefixes.oreRedgranite, OrePrefixes.oreMarble, OrePrefixes.oreBasalt };
+
         // NEI Ore Plugin planets
         // T0 Planets
         // Overworld
@@ -8297,16 +8296,18 @@ public class AssemblerRecipes implements Runnable {
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
             // T2 Planets
             // Deimos
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "deimosblocks", 64, 0),
-                            getModItem(GalaxySpace.ID, "deimosblocks", 64, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Uranium, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.SulfuricAcid.getFluid(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_De", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "deimosblocks", 64, 0),
+                                getModItem(GalaxySpace.ID, "deimosblocks", 64, 1),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Uranium, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.SulfuricAcid.getFluid(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_De", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+            }
             // Phobos
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8342,16 +8343,18 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ce", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
             // Callisto
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "callistoblocks", 64, 0),
-                            getModItem(GalaxySpace.ID, "callistoblocks", 64, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CallistoIce, 64L),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.LiquidAir.getFluid(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ca", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "callistoblocks", 64, 0),
+                                getModItem(GalaxySpace.ID, "callistoblocks", 64, 1),
+                                GT_OreDictUnificator.get(orePrefix, Materials.CallistoIce, 64L),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.LiquidAir.getFluid(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ca", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+            }
             // Asteroids
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8364,27 +8367,31 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_As", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
             // Ganymede
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "ganymedeblocks", 64, 0),
-                            getModItem(GalaxySpace.ID, "ganymedeblocks", 64, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Platinum, 64L),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Oxygen.getGas(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ga", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "ganymedeblocks", 64, 0),
+                                getModItem(GalaxySpace.ID, "ganymedeblocks", 64, 1),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Platinum, 64L),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.Oxygen.getGas(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ga", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+            }
             // Europa
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "europagrunt", 64, 0),
-                            getModItem(GalaxySpace.ID, "europagrunt", 64, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Manganese, 64L),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Water.getFluid(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Eu", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "europagrunt", 64, 0),
+                                getModItem(GalaxySpace.ID, "europagrunt", 64, 1),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Manganese, 64L),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.Water.getFluid(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Eu", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+            }
             // Ross 128b
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8420,16 +8427,18 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Me", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
             // Venus
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "venusblocks", 64, 0),
-                            getModItem(GalaxySpace.ID, "venusblocks", 64, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Quantium, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.CarbonDioxide.getGas(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ve", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "venusblocks", 64, 0),
+                                getModItem(GalaxySpace.ID, "venusblocks", 64, 1),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Quantium, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.CarbonDioxide.getGas(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ve", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+            }
             // T5 Planets
             // Miranda
             GT_Values.RA.stdBuilder()
@@ -8511,16 +8520,18 @@ public class AssemblerRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
             // T7 Planets
             // Haumea
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "haumeablocks", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.NetherStar, 64),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Naquadah, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.InfusedGold.getMolten(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ha", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "haumeablocks", 64, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.NetherStar, 64),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Naquadah, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.InfusedGold.getMolten(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ha", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            }
             // Pluto
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8533,39 +8544,45 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Pl", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
             // Makemake
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "makemakegrunt", 64, 0),
-                            getModItem(GalaxySpace.ID, "makemakegrunt", 64, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Chrysotile, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.HydrofluoricAcid.getFluid(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_MM", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "makemakegrunt", 64, 0),
+                                getModItem(GalaxySpace.ID, "makemakegrunt", 64, 1),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Chrysotile, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.HydrofluoricAcid.getFluid(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_MM", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            }
             // Kuiper Belt
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 64, 0),
-                            getModItem(GalacticraftMars.ID, "tile.denseIce", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Neutronium, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.HydrofluoricAcid.getFluid(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_KB", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 64, 0),
+                                getModItem(GalacticraftMars.ID, "tile.denseIce", 64, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Neutronium, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.HydrofluoricAcid.getFluid(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_KB", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+            }
             // T8 Planets
             // Vega B
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "vegabgrunt", 64, 0),
-                            getModItem(GalaxySpace.ID, "vegabsubgrunt", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.InfinityCatalyst, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Neutronium.getMolten(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_VB", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "vegabgrunt", 64, 0),
+                                getModItem(GalaxySpace.ID, "vegabsubgrunt", 64, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.InfinityCatalyst, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.Neutronium.getMolten(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_VB", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+            }
             // Barnard C
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8589,16 +8606,18 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BE", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
             // Barnard F
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "barnardaFgrunt", 64, 0),
-                            getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Bedrockium, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Tin.getMolten(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BF", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "barnardaFgrunt", 64, 0),
+                                getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 64, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Bedrockium, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.Tin.getMolten(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_BF", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+            }
             // T Ceti E
             GT_Values.RA.stdBuilder()
                     .itemInputs(
@@ -8611,86 +8630,101 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_TE", 1, 0)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
             // Alpha Centauri Bb
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalaxySpace.ID, "acentauribbgrunt", 64, 0),
-                            getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Samarium, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Copper.getMolten(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_CB", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalaxySpace.ID, "acentauribbgrunt", 64, 0),
+                                getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 64, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Samarium, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.Copper.getMolten(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_CB", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+            }
             // T9 Planets
             // Seth
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(Minecraft.ID, "snow", 64, 0),
-                            getModItem(Minecraft.ID, "packed_ice", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.TengamRaw, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(FluidRegistry.getFluidStack("ice", 10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Se", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(Minecraft.ID, "snow", 64, 0),
+                                getModItem(Minecraft.ID, "packed_ice", 64, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.TengamRaw, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(FluidRegistry.getFluidStack("ice", 10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Se", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            }
             // Anubis
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalacticraftAmunRa.ID, "tile.baseBlockGround", 64, 1),
-                            getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.InfinityCatalyst, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    // This breaks the pattern but the theme of the planet is that it's super dry so
-                    // :shrug:, maybe add eventual pumpable fluid
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_An", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockGround", 64, 1),
+                                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 1),
+                                GT_OreDictUnificator.get(orePrefix, Materials.InfinityCatalyst, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        // This breaks the pattern but the theme of the planet is that it's super dry so
+                        // :shrug:, maybe add eventual pumpable fluid
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_An", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            }
             // Neper
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(Minecraft.ID, "grass", 64, 0),
-                            getModItem(Minecraft.ID, "stone", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Dilithium, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Water.getFluid(10000)) // There isn't actually water on Neper, but it fits
-                                                                  // the grass
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Np", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(Minecraft.ID, "grass", 64, 0),
+                                getModItem(Minecraft.ID, "stone", 64, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Dilithium, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.Water.getFluid(10000)) // There isn't actually water on Neper, but it
+                                                                      // fits
+                        // the grass
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Np", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            }
             // Maahes
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalacticraftAmunRa.ID, "tile.baseGrass", 64, 0),
-                            getModItem(GalacticraftAmunRa.ID, "tile.saplings", 1, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Naquadria, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Water.getFluid(10000)) // Same as Neper (but the grass is red)
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalacticraftAmunRa.ID, "tile.baseGrass", 64, 0),
+                                getModItem(GalacticraftAmunRa.ID, "tile.saplings", 1, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Naquadria, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.Water.getFluid(10000)) // Same as Neper (but the grass is red)
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Mh", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            }
             // Horus
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(GalacticraftAmunRa.ID, "tile.baseFalling", 64, 0), // Obsidian Sand
-                            getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 9), // Obsidian Brick
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CosmicNeutronium, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(Materials.Lava.getFluid(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ho", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(GalacticraftAmunRa.ID, "tile.baseFalling", 64, 0), // Obsidian Sand
+                                getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 64, 9), // Obsidian Brick
+                                GT_OreDictUnificator.get(orePrefix, Materials.CosmicNeutronium, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(Materials.Lava.getFluid(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ho", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+            }
             // Technically T10
             // Deep Dark
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            getModItem(Minecraft.ID, "cobblestone", 64, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Rubidium, 64),
-                            GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Pumice, 64),
-                            GT_Utility.getIntegratedCircuit(17))
-                    .fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(10000))
-                    .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1, 0)).duration(15 * SECONDS)
-                    .eut(TierEU.RECIPE_UMV).addTo(assemblerRecipes);
+            for (OrePrefixes orePrefix : allOrePrefixes) {
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                                getModItem(Minecraft.ID, "cobblestone", 64, 0),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Rubidium, 64),
+                                GT_OreDictUnificator.get(orePrefix, Materials.Pumice, 64),
+                                GT_Utility.getIntegratedCircuit(17))
+                        .fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(10000))
+                        .itemOutputs(getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_DD", 1, 0))
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(assemblerRecipes);
+            }
         }
     }
 
