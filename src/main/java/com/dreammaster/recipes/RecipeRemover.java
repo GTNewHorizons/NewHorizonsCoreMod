@@ -506,6 +506,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 5, missing));
+        removeRecipeByOutputDelayed(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 6, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 32, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "blockTeleposer", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "reinforcedTelepositionFocus", 1, 0, missing));
