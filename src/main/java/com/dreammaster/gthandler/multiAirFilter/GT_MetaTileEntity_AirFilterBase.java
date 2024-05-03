@@ -201,24 +201,27 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
         tt.addMachineType("Air Filter").addInfo("Controller block for the Electric Air Filter T" + multiTier)
                 .addInfo("Needs a Turbine in the controller")
-                .addInfo(
-                        "Add " + ItemList.AdsorptionFilter.getIS().getDisplayName()
-                                + " in input bus to double efficiency (30 uses per item)")
-                .addInfo("Machine tier = Maximum effective Muffler tier")
                 .addInfo("Can process " + (2 * multiTier + 1) + "x" + (2 * multiTier + 1) + " chunks")
+                .addInfo("Each muffler hatch reduces pollution in one chunk of the working area by:")
                 .addInfo(
-                        "Each muffler reduce pollution by " + MainRegistry.CoreConfig.globalMultiplicator
-                                + " * bonusMultiTier * turbineEff * multiEff * Floor("
+                        "  " + EnumChatFormatting.WHITE
+                                + MainRegistry.CoreConfig.globalMultiplicator
+                                + " * multiTierBonus * turbineEff * FLOOR("
                                 + MainRegistry.CoreConfig.scalingFactor
-                                + "^effectiveTier) every second")
-                .addInfo("The value of bonusMultiTier for this controller is: " + getBonusByTier()).addSeparator()
+                                + "^mufflerTier)")
+                .addInfo("every second").addInfo("- multiTierBonus for this controller is " + getBonusByTier())
+                .addInfo("- turbineEff is the efficiency of the Turbine in controller slot")
+                .addInfo("- Effective muffler tier is limited by energy input tier").addSeparator()
+                .addInfo("Insert " + ItemList.AdsorptionFilter.getIS().getDisplayName() + " in an input bus")
+                .addInfo("  to double pollution cleaning amount (30 uses per item)")
+                .addInfo("Each maintenance issue reduces cleaning amount by 10%").addSeparator()
                 .beginStructureBlock(3, 4, 3, true).addController("Front bottom")
-                .addOtherStructurePart(getCasingString(), "Top and bottom")
-                .addOtherStructurePart(getPipeString(), "Corners of the middle 2 layers")
-                .addOtherStructurePart("Muffler Hatch Or " + getPipeString(), "8 in the middle layers")
+                .addOtherStructurePart(getCasingString(), "Top and bottom layers")
+                .addOtherStructurePart(getPipeString(), "Corners of the middle two layers")
+                .addOtherStructurePart("Muffler Hatch", "Sides of the middle two layers")
                 .addEnergyHatch("Any bottom layer casing", 1).addMaintenanceHatch("Any bottom layer casing", 1)
                 .addInputBus("Any bottom layer casing", 1).addOutputBus("Any bottom layer casing", 1)
-                .addMufflerHatch("Middle Center", 2).toolTipFinisher("GTNH Coremod");
+                .toolTipFinisher("GTNH Coremod");
         return tt;
     }
 

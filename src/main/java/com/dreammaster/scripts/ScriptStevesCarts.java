@@ -626,9 +626,9 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "itemCasingSteel",
                 "plateRedstone",
                 "itemCasingSteel",
-                "plateReinforced",
+                "plateSteel",
                 getModItem(StevesCarts2.ID, "ModuleComponents", 1, 16, missing),
-                "plateReinforced",
+                "plateSteel",
                 "itemCasingSteel",
                 "itemCasingSteel",
                 "itemCasingSteel");

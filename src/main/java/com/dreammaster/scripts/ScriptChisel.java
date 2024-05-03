@@ -315,6 +315,7 @@ public class ScriptChisel implements IScriptLoader {
         CarvingUtils.getChiselRegistry().removeGroup("end_stone");
         ChiselHelper.addGroup("endstone");
         ChiselHelper.addVariationFromStack("endstone", getModItem(Minecraft.ID, "end_stone", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("endstone", getModItem(Chisel.ID, "end_Stone", 1, 0, missing));
         ChiselHelper.addVariationFromStack("endstone", getModItem(Chisel.ID, "end_Stone", 1, 1, missing));
         ChiselHelper.addVariationFromStack("endstone", getModItem(Chisel.ID, "end_Stone", 1, 2, missing));
         ChiselHelper.addVariationFromStack("endstone", getModItem(Chisel.ID, "end_Stone", 1, 3, missing));
@@ -598,5 +599,14 @@ public class ScriptChisel implements IScriptLoader {
                 getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0, missing));
         ChiselHelper
                 .addVariationFromStack("knightmetalblock", getModItem(GregTech.ID, "gt.blockmetal4", 1, 0, missing));
+        ChiselHelper.addGroup("ironwoodblock");
+        ChiselHelper.addVariationFromStack(
+                "ironwoodblock",
+                getModItem(TwilightForest.ID, "tile.IronwoodBlock", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("ironwoodblock", getModItem(GregTech.ID, "gt.blockmetal3", 1, 14, missing));
+        ChiselHelper.addGroup("fieryblock");
+        ChiselHelper
+                .addVariationFromStack("fieryblock", getModItem(TwilightForest.ID, "tile.FieryBlock", 1, 0, missing));
+        ChiselHelper.addVariationFromStack("fieryblock", getModItem(GregTech.ID, "gt.blockmetal3", 1, 4, missing));
     }
 }

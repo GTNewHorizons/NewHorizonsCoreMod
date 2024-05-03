@@ -1,0 +1,826 @@
+<?xml version="1.0"?>
+
+<book>
+u <page type="intro">
+  <text>item.tconstruct.manual.toolstation.title_page</text>
+ </page>
+
+ <page type="contents">
+  <text>item.tconstruct.manual.common.toc</text>
+  <link>
+   <text>item.tconstruct.manual.toolstation.tools</text>
+   <icon>ironpick</icon>
+   <jump>2</jump>
+  </link>
+  <link>
+   <text>tconstruct.nei.toolmaterials</text>
+   <icon>woodplanks</icon>
+   <jump>4</jump>
+  </link>
+  <link>
+   <text>gui.toolstation17</text>
+   <icon>lavacrystal</icon>
+   <jump>4</jump>
+  </link>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.toolstation.intro</text>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.pickaxe</title>
+  <text>item.tconstruct.manual.toolstation.pickaxe_desc</text>
+  <text>item.tconstruct.manual.toolstation.pickaxe_use</text>
+  <icon>pickicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.pickaxe_head</text>
+   <icon>pickhead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_binding</text>
+   <icon>binding</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.shovel</title>
+  <text>item.tconstruct.manual.toolstation.shovel_desc</text>
+  <text>item.tconstruct.manual.toolstation.shovel_use</text>
+  <icon>shovelicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.shovel_head</text>
+   <icon>shovelhead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.axe</title>
+  <text>item.tconstruct.manual.toolstation.axe_desc</text>
+  <text>item.tconstruct.manual.toolstation.axe_use</text>
+  <icon>axeicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.axe_head</text>
+   <icon>axehead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.mattock</title>
+  <text>item.tconstruct.manual.toolstation.mattock_desc</text>
+  <text>item.tconstruct.manual.toolstation.mattock_use</text>
+  <icon>mattockicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.axe_head</text>
+   <icon>axehead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.shovel_head</text>
+   <icon>shovelhead</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.broadsword</title>
+  <text>item.tconstruct.manual.toolstation.broadsword_desc</text>
+  <text>item.tconstruct.manual.toolstation.broadsword_use</text>
+  <icon>swordicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.sword_blade</text>
+   <icon>swordblade</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.wide_guard</text>
+   <icon>wideguard</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.longsword</title>
+  <text>item.tconstruct.manual.toolstation.longsword_desc</text>
+  <text>item.tconstruct.manual.toolstation.longsword_use</text>
+  <icon>longswordicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.sword_blade</text>
+   <icon>swordblade</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.hand_guard</text>
+   <icon>handguard</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.rapier</title>
+  <text>item.tconstruct.manual.toolstation.rapier_desc</text>
+  <text>item.tconstruct.manual.toolstation.rapier_use</text>
+  <icon>rapiericon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.sword_blade</text>
+   <icon>swordblade</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.crossbar</text>
+   <icon>crossbar</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.dagger</title>
+  <text>item.tconstruct.manual.toolstation.dagger_desc</text>
+  <text>item.tconstruct.manual.toolstation.dagger_use</text>
+  <icon>daggerIcon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.knife_blade</text>
+   <icon>knifeblade</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.crossbar</text>
+   <icon>crossbar</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.frying_pan</title>
+  <text>item.tconstruct.manual.toolstation.frying_pan_desc</text>
+  <text>item.tconstruct.manual.toolstation.frying_pan_use</text>
+  <icon>frypanicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.pan</text>
+   <icon>pan</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.battlesign</title>
+  <text>item.tconstruct.manual.toolstation.battlesign_desc</text>
+  <text>item.tconstruct.manual.toolstation.battlesign_use</text>
+  <icon>battlesignicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.board</text>
+   <icon>board</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.chisel</title>
+  <text>item.tconstruct.manual.toolstation.chisel_desc</text>
+  <text>item.tconstruct.manual.toolstation.chisel_use</text>
+  <icon>chiselicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.chisel_head</text>
+   <icon>chiselhead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.hammer</title>
+  <text>item.tconstruct.manual.toolstation.hammer_desc</text>
+  <text>item.tconstruct.manual.toolstation.hammer_use</text>
+  <icon>hammericon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.hammer_head</text>
+   <icon>hammerhead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.large_plate</text>
+   <icon>largeplate</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_rod</text>
+   <icon>toughrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.large_plate</text>
+   <icon>largeplate</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.lumber_axe</title>
+  <text>item.tconstruct.manual.toolstation.lumber_axe_desc</text>
+  <text>item.tconstruct.manual.toolstation.lumber_axe_use</text>
+  <icon>lumbericon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.broad_axe_head</text>
+   <icon>broadaxehead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.large_plate</text>
+   <icon>largeplate</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_rod</text>
+   <icon>toughrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_binding</text>
+   <icon>toughbinding</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.excavator</title>
+  <text>item.tconstruct.manual.toolstation.excavator_desc</text>
+  <text>item.tconstruct.manual.toolstation.excavator_use</text>
+  <icon>excavatoricon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.excavator_head</text>
+   <icon>excavatorhead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.large_plate</text>
+   <icon>largeplate</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_rod</text>
+   <icon>toughrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_binding</text>
+   <icon>toughbinding</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.scythe</title>
+  <text>item.tconstruct.manual.toolstation.scythe_desc</text>
+  <text>item.tconstruct.manual.toolstation.scythe_use</text>
+  <icon>scytheicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.scythe_head</text>
+   <icon>scythehead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_rod</text>
+   <icon>toughrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_binding</text>
+   <icon>toughbinding</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_rod</text>
+   <icon>toughrod</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.cleaver</title>
+  <text>item.tconstruct.manual.toolstation.cleaver_desc</text>
+  <text>item.tconstruct.manual.toolstation.cleaver_use</text>
+  <icon>cleavericon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.large_sword_blade</text>
+   <icon>largeswordblade</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.large_plate</text>
+   <icon>largeplate</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_rod</text>
+   <icon>toughrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_rod</text>
+   <icon>toughrod</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.battleaxe</title>
+  <text>item.tconstruct.manual.toolstation.battleaxe_desc</text>
+  <text>item.tconstruct.manual.toolstation.battleaxe_use</text>
+  <icon>battleaxeicon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.broad_axe_head</text>
+   <icon>broadaxehead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.broad_axe_head</text>
+   <icon>broadaxehead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_rod</text>
+   <icon>toughrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tough_binding</text>
+   <icon>toughbinding</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.shortbow</title>
+  <text>item.tconstruct.manual.toolstation.shortbow_desc</text>
+  <text>item.tconstruct.manual.toolstation.shortbow_use</text>
+  <icon>shortbowIcon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.Bowstring.string.name</text>
+   <icon>bowstring</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+ </page>
+
+ <page type="toolpage">
+  <title>item.tconstruct.manual.toolstation.arrow</title>
+  <text>item.tconstruct.manual.toolstation.arrow_desc</text>
+  <text>item.tconstruct.manual.toolstation.arrow_use</text>
+  <icon>arrowIcon</icon>
+  <item>
+   <text>item.tconstruct.manual.toolstation.arrow_head</text>
+   <icon>arrowhead</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.tool_rod</text>
+   <icon>toolrod</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.toolstation.fletching</text>
+   <icon>fletching</icon>
+  </item>
+ </page>
+
+ <page type="sectionpage">
+  <title>item.tconstruct.manual.toolstation.material_traits_title</title>
+  <text>item.tconstruct.manual.toolstation.material_traits</text>
+ </page>
+
+ <page type="materialstats">
+  <title>material.wood</title>
+  <icon>woodaxe</icon>
+  <text>material.wood.desc</text>
+  <toolmaterial>Wood</toolmaterial>
+  <material>
+   <main>woodplanks</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.stone</title>
+  <icon>stonepick</icon>
+  <text>material.stone.desc</text>
+  <toolmaterial>Stone</toolmaterial>
+  <material>
+   <main>stoneblock</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.iron</title>
+  <icon>ironpick</icon>
+  <text>material.iron.desc</text>
+  <toolmaterial>Iron</toolmaterial>
+  <material>
+   <main>ironingot</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.flint</title>
+  <icon>flintshovel</icon>
+  <text>material.flint.desc</text>
+  <toolmaterial>Flint</toolmaterial>
+  <material>
+   <main>flint</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.cactus</title>
+  <icon>cactussword</icon>
+  <text>material.cactus.desc</text>
+  <toolmaterial>Cactus</toolmaterial>
+  <material>
+   <main>cactus</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.bone</title>
+  <icon>bonerapier</icon>
+  <text>material.bone.desc</text>
+  <toolmaterial>Bone</toolmaterial>
+  <material>
+   <main>bone</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.obsidian</title>
+  <icon>bonefrypan</icon>
+  <text>material.obsidian.desc</text>
+  <toolmaterial>Obsidian</toolmaterial>
+  <material>
+   <main>obsidian</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.alumite</title>
+  <icon>alumitepick</icon>
+  <text>material.alumite.desc</text>
+  <toolmaterial>Alumite</toolmaterial>
+  <material>
+   <main>alumiteingot</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.netherrack</title>
+  <icon>netherrackmattock</icon>
+  <text>material.netherrack.desc</text>
+  <toolmaterial>Netherrack</toolmaterial>
+  <material>
+   <main>netherrack</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.blueslime</title>
+  <icon>blueslimebattlesign</icon>
+  <text>material.blueslime.desc</text>
+  <toolmaterial>BlueSlime</toolmaterial>
+  <material>
+   <main>blueslimecrystal</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.slime</title>
+  <icon>slimebattlesign</icon>
+  <text>material.greenslime.desc</text>
+  <toolmaterial>Slime</toolmaterial>
+  <material>
+   <main>slimecrystal</main>
+  </material>
+ </page>
+
+ <page type="crafting">
+  <text>CraftedSoil.Slime.name</text>
+  <recipe>
+   <name>slimymud</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="furnace">
+  <text>item.tconstruct.Materials.SlimeCrystal.name</text>
+  <recipe>slimecrystal</recipe>
+ </page>
+
+ <page type="materialstats">
+  <title>material.paper</title>
+  <icon>paperpick</icon>
+  <text>material.paper.desc</text>
+  <toolmaterial>Paper</toolmaterial>
+  <material>
+   <main>paperstack</main>
+  </material>
+ </page>
+
+ <page type="sidebar">
+  <text>item.tconstruct.manual.toolstation.paper.how_to</text>
+  <item>
+   <text>item.tconstruct.manual.toolstation.paper.ingredient</text>
+   <icon>paper</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.paper.catalyst</text>
+   <icon>steam_compressor</icon>
+  </item>
+  <item>
+   <text>item.tconstruct.manual.smeltery.paper.result</text>
+   <icon>paperstack</icon>
+  </item>
+ </page>
+
+ <page type="materialstats">
+  <title>material.cobalt</title>
+  <icon>cobaltlongsword</icon>
+  <text>material.cobalt.desc</text>
+  <toolmaterial>Cobalt</toolmaterial>
+  <material>
+   <main>cobaltingot</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.ardite</title>
+  <icon>arditelongsword</icon>
+  <text>material.ardite.desc</text>
+  <toolmaterial>Ardite</toolmaterial>
+  <material>
+   <main>arditeingot</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.manyullyn</title>
+  <icon>manyullynlongsword</icon>
+  <text>material.manyullyn.desc</text>
+  <toolmaterial>Manyullyn</toolmaterial>
+  <material>
+   <main>manyullyningot</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.copper</title>
+  <icon>copperaxe</icon>
+  <text>material.copper.desc</text>
+  <toolmaterial>Copper</toolmaterial>
+  <material>
+   <main>copperingot</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.bronze</title>
+  <icon>bronzeaxe</icon>
+  <text>material.bronze.desc</text>
+  <toolmaterial>Bronze</toolmaterial>
+  <material>
+   <main>bronzeingot</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.steel</title>
+  <icon>steelsword</icon>
+  <text>material.steel.desc</text>
+  <toolmaterial>Steel</toolmaterial>
+  <material>
+   <main>steelingot</main>
+  </material>
+ </page>
+
+ <page type="materialstats">
+  <title>material.pigiron</title>
+  <icon>pigironsword</icon>
+  <text>material.pigiron.desc</text>
+  <toolmaterial>PigIron</toolmaterial>
+  <material>
+   <main>pigironingot</main>
+  </material>
+ </page>
+
+ <page type="blank">
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.Diamond</title>
+  <text>modifier.toolstation.Diamond.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>diamondmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.Emerald</title>
+  <text>modifier.toolstation.Emerald.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>emeraldmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tool.haste</title>
+  <text>modifier.tool.haste.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>redstonemod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tool.moss</title>
+  <text>modifier.tool.moss.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>mossmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tool.lava</title>
+  <text>modifier.tool.lava.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>lavacrystalmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tooltip.Luck</title>
+  <text>modifier.tooltip.Luck.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>lapismod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tooltip.Sharpness</title>
+  <text>modifier.tooltip.Sharpness.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>weapon</tooltype>
+  <recipe>quartzmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tooltip.Fiery</title>
+  <text>modifier.tooltip.Fiery.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>weapon</tooltype>
+  <recipe>blazemod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.Necrotic</title>
+  <text>modifier.toolstation.Necrotic.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>weapon</tooltype>
+  <recipe>necroticmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tooltip.Silky</title>
+  <text>modifier.tooltip.Silky.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>silkymod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>item.tconstruct.Materials.Reinforcement.name</title>
+  <text>item.tconstruct.Materials.Reinforcement.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>reinforcedmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.Knockback</title>
+  <text>modifier.toolstation.Knockback.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>weapon</tooltype>
+  <recipe>pistonmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.Beheading</title>
+  <text>modifier.toolstation.Beheading.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>weapon</tooltype>
+  <recipe>beheadingmod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.ModAntiSpider</title>
+  <text>modifier.toolstation.ModAntiSpider.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>weapon</tooltype>
+  <recipe>spidermod</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.Smite</title>
+  <text>modifier.toolstation.Smite.desc</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>weapon</tooltype>
+  <recipe>smitemod</recipe>
+ </page>
+
+ <page type="crafting">
+  <text>CraftedSoil.GraveyardSoil.name</text>
+  <recipe>
+   <name>graveyardsoil</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="furnace">
+  <text>CraftedSoil.ConsecratedSoil.name</text>
+  <recipe>consecratedsoil</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>item.tconstruct.manual.toolstation.additional_modifiers</title>
+  <text>modifier.toolstation.additional_gold_diamond1</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>tier1free</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>item.tconstruct.manual.toolstation.additional_modifiers</title>
+  <text>modifier.toolstation.additional_gold_diamond2</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>tier1.5free</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>item.tconstruct.manual.toolstation.additional_modifiers</title>
+  <text>modifier.toolstation.additional_nether_star</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>tier2free</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>item.tconstruct.manual.toolstation.additional_modifiers</title>
+  <text>modifier.toolstation.additional_creative</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>tool</tooltype>
+  <recipe>creativefree</recipe>
+ </page>
+
+</book>

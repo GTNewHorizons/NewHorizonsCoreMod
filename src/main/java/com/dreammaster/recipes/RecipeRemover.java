@@ -124,7 +124,7 @@ public class RecipeRemover {
      *
      * @author kuba6000
      */
-    public static void removeRecipeShapelessDelayed(Object aOutput, Object... aRecipe) {
+    static void removeRecipeShapelessDelayed(Object aOutput, Object... aRecipe) {
         ArrayList<Object> aRecipeList = new ArrayList<>(Arrays.asList(aRecipe));
         addToBuffer(getItemsHashed(aOutput, false), r -> {
             if (!(r instanceof ShapelessOreRecipe) && !(r instanceof ShapelessRecipes)) return false;
@@ -176,7 +176,7 @@ public class RecipeRemover {
      *
      * @author kuba6000
      */
-    public static void removeRecipeShapedDelayed(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
+    static void removeRecipeShapedDelayed(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
         if (recipeWidthField == null) {
             try {
                 recipeWidthField = ShapedOreRecipe.class.getDeclaredField("width");
@@ -240,7 +240,7 @@ public class RecipeRemover {
      *
      * @author kuba6000
      */
-    public static void removeRecipeShapedDelayed(Object aOutput) {
+    static void removeRecipeShapedDelayed(Object aOutput) {
         addToBuffer(getItemsHashed(aOutput, false), r -> r instanceof ShapedOreRecipe || r instanceof ShapedRecipes);
     }
 
@@ -249,7 +249,7 @@ public class RecipeRemover {
      *
      * @author kuba6000
      */
-    public static void removeRecipeByOutputDelayed(Object aOutput) {
+    static void removeRecipeByOutputDelayed(Object aOutput) {
         addToBuffer(getItemsHashed(aOutput, false), r -> true);
     }
 
@@ -355,126 +355,6 @@ public class RecipeRemover {
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "CraftedSoil", 1, 1, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TConstruct", "CraftedSoil", 1, 6, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem("TwilightForest", "item.ironwoodRaw", 1, wildcard, missing));
-
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockFluix", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockQuartz", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockQuartzChiseled", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockController", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockEnergyCell", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockDenseEnergyCell", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockChest", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockDrive", 1, 0, missing));
-        removeRecipeByOutputDelayed(
-                getModItem("appliedenergistics2", "tile.BlockQuartzGrowthAccelerator", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCraftingUnit", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCraftingUnit", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockMolecularAssembler", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCharger", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockInscriber", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockQuantumRing", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockQuantumLinkChamber", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSpatialPylon", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSpatialIOPort", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockInterface", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCellWorkbench", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockIOPort", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCondenser", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockEnergyAcceptor", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockVibrationChamber", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSecurity", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 140, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 16, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 7, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 12, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 9, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 44, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 43, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 41, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSkyCompass", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 180, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 380, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 360, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 480, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 340, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolWirelessTerminal", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockQuartzGlass", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockQuartzLamp", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockQuartzTorch", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockLightDetector", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockTinyTNT", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 28, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 52, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 25, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 52, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 27, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 53, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 26, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 29, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 31, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 30, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 42, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 300, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 120, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 260, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 320, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 240, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 460, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 180, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 80, missing));
-        removeRecipeByOutputDelayed(
-                getModItem("appliedenergistics2", "item.ToolCertusQuartzCuttingKnife", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolCertusQuartzWrench", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolMassCannon", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolMemoryCard", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolChargedStaff", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolEntropyManipulator", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolColorApplicator", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolBiometricCard", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemCrystalSeed", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemCrystalSeed", 1, 600, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemCrystalSeed", 1, 1200, missing));
-        removeRecipeByOutputDelayed(
-                getModItem("appliedenergistics2", "item.ToolNetherQuartzCuttingKnife", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolNetherQuartzWrench", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSkyStone", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSkyStone", 1, 2, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSkyStone", 1, 3, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSkyChest", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockSkyChest", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockWireless", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCraftingStorage", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCraftingStorage", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCraftingStorage", 1, 2, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCraftingStorage", 1, 3, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "tile.BlockCraftingMonitor", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 420, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 200, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 160, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 400, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 220, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 280, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 80, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiPart", 1, 100, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemBasicStorageCell.1k", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemBasicStorageCell.4k", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemBasicStorageCell.16k", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemBasicStorageCell.64k", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 39, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 35, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 36, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 37, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 38, missing));
-        removeRecipeByOutputDelayed(
-                getModItem("appliedenergistics2", "item.ItemSpatialStorageCell.2Cubed", 1, 0, missing));
-        removeRecipeByOutputDelayed(
-                getModItem("appliedenergistics2", "item.ItemSpatialStorageCell.16Cubed", 1, 0, missing));
-        removeRecipeByOutputDelayed(
-                getModItem("appliedenergistics2", "item.ItemSpatialStorageCell.128Cubed", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemViewCell", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 32, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 33, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ItemMultiMaterial", 1, 34, missing));
-        removeRecipeByOutputDelayed(getModItem("appliedenergistics2", "item.ToolPortableCell", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ae2stuff", "Encoder", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ae2stuff", "Grower", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("ae2stuff", "Inscriber", 1, 0, missing));
@@ -529,7 +409,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "gemOre", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "gemOre", 1, 13, missing));
         removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "gemOre", 1, 5, missing));
-        removeRecipeByOutputDelayed(getModItem("BiomesOPlenty", "planks", 1, 14, missing));
         removeRecipeByOutputDelayed(getModItem("BloodArsenal", "blood_infused_iron_block", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("BloodArsenal", "blood_infused_iron", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("BloodArsenal", "blood_infused_planks", 1, 0, missing));
@@ -627,6 +506,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 5, missing));
+        removeRecipeByOutputDelayed(getModItem("AWWayofTime", "AlchemicalWizardrybloodRune", 1, 6, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "bloodMagicBaseItems", 1, 32, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "blockTeleposer", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("AWWayofTime", "reinforcedTelepositionFocus", 1, 0, missing));
@@ -2864,6 +2744,14 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("TwilightForest", "item.emptyMagicMap", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TwilightForest", "item.ironwoodRaw", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("TwilightForest", "tile.TFUncraftingTable", 1, 0, missing));
+
+        String[] materials = new String[] { "Twilight", "Canopy", "Mangrove", "Darkwood", "Time", "Trans", "Mine",
+                "Sort" };
+        for (int i = 0; i < materials.length; i++) {
+            removeRecipeByOutputDelayed(getModItem("TwilightForest", "tile.TFTrapDoor" + materials[i], 1, 0, missing));
+            removeRecipeByOutputDelayed(getModItem("TwilightForest", "item.door" + materials[i], 1, 0, missing));
+        }
+
         removeRecipeByOutputDelayed(getModItem("WR-CBE|Core", "obsidianStick", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("WR-CBE|Core", "stoneBowl", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("WR-CBE|Core", "retherPearl", 1, 0, missing));
@@ -3150,18 +3038,9 @@ public class RecipeRemover {
                         getModItem("EnderZoo", "enderFragment", 1, 0, missing) },
                 new Object[] { null, getModItem("EnderZoo", "enderFragment", 1, 0, missing), null });
         removeRecipeShapedDelayed(
-                getModItem("ExtraUtilities", "unstableingot", 1, 0, missing)/*
-                                                                             * createItemStack("ExtraUtilities",
-                                                                             * "unstableingot", 1, 0, "{Bug:1b}",
-                                                                             * missing)
-                                                                             */,
+                getModItem("ExtraUtilities", "unstableingot", 1, 0, missing),
                 new Object[] { getModItem("minecraft", "iron_ingot", 1, 0, missing) },
-                new Object[] { getModItem("ExtraUtilities", "divisionSigil", 1, 0, missing)/*
-                                                                                            * createItemStack(
-                                                                                            * "ExtraUtilities",
-                                                                                            * "divisionSigil", 1, 0,
-                                                                                            * "{damage:256}", missing)
-                                                                                            */ },
+                new Object[] { getModItem("ExtraUtilities", "divisionSigil", 1, 0, missing) },
                 new Object[] { getModItem("minecraft", "diamond", 1, 0, missing) });
         removeRecipeShapedDelayed(
                 getModItem("ForbiddenMagic", "FMResource", 9, 0, missing),

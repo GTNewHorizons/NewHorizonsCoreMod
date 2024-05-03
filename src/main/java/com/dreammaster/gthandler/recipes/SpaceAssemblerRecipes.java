@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.item.ItemStack;
@@ -305,6 +306,23 @@ public class SpaceAssemblerRecipes implements Runnable {
                         1,
                         10 * SECONDS,
                         (int) TierEU.RECIPE_UV,
+                        null,
+                        null);
+            }
+            if (AppliedEnergistics2.isModLoaded() && AE2FluidCraft.isModLoaded()) {
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1),
+                                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 3),
+                                GT_ModHandler
+                                        .getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingStorage", 1, 3),
+                                ItemList.Robot_Arm_UHV.get(16), ItemList.Circuit_OpticalProcessor.get(16),
+                                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 4L),
+                                GT_ModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_pattern_terminal_ex", 1) },
+                        new FluidStack[] { new FluidStack(solderUEV, 9216) },
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockPatternOptimizationMatrix", 1),
+                        1,
+                        5 * MINUTES,
+                        (int) TierEU.RECIPE_UHV,
                         null,
                         null);
             }

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<book>
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page1</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page2</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page3</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page4</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page5</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page6</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page7</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page8</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page9</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page10</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page11</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page12</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page13</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page14</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page15</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page16</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page17</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page18</text>
+    </page>
+
+    <page type="text">
+        <text>item.tconstruct.manual.diary.page19</text>
+    </page>
+</book>

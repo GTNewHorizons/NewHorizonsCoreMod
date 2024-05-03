@@ -104,9 +104,6 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing));
         addShapelessRecipe(
-                getModItem(BiomesOPlenty.ID, "planks", 2, 14, missing),
-                getModItem(BiomesOPlenty.ID, "logs4", 1, 3, missing));
-        addShapelessRecipe(
                 getModItem(Minecraft.ID, "bucket", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "bopBucket", 1, 0, missing));
         addShapelessRecipe(

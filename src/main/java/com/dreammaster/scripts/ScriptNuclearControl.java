@@ -209,9 +209,9 @@ public class ScriptNuclearControl implements IScriptLoader {
                 getModItem(IC2NuclearControl.ID, "ItemToolThermometer", 1, 0, missing),
                 "plateGlass",
                 null,
-                ItemList.Circuit_Good.get(1L),
+                "circuitGood",
                 ItemList.Cover_Screen.get(1L),
-                ItemList.Circuit_Good.get(1L),
+                "circuitGood",
                 null,
                 "plateGlass",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing));
@@ -344,7 +344,7 @@ public class ScriptNuclearControl implements IScriptLoader {
         GT_Values.RA.stdBuilder() // Advanced Panel Extender
                 .itemInputs(
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 0, missing),
-                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
+                        getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 5, missing),
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L))

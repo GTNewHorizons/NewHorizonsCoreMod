@@ -133,31 +133,31 @@ public class AutoclaveRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1))
                 .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(1000)
-                .fluidInputs(Materials.Europium.getMolten(16)).requiresCleanRoom().duration(10 * MINUTES).eut(320)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Europium.getMolten(16)).requiresCleanRoom().requiresLowGravity()
+                .duration(10 * MINUTES).eut(320).addTo(autoclaveRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 1))
                 .itemOutputs(ItemList.Circuit_Parts_RawCrystalChip.get(1L)).outputChances(1000)
-                .fluidInputs(Materials.Europium.getMolten(16)).requiresCleanRoom().duration(10 * MINUTES).eut(320)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(Materials.Europium.getMolten(16)).requiresCleanRoom().requiresLowGravity()
+                .duration(10 * MINUTES).eut(320).addTo(autoclaveRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 12))
                 .itemOutputs(ItemList.Tool_DataOrb.get(1L)).outputChances(10000)
-                .fluidInputs(Materials.UUMatter.getFluid(250L)).requiresCleanRoom().duration(10 * MINUTES)
-                .eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.UUMatter.getFluid(250L)).requiresCleanRoom().requiresLowGravity()
+                .duration(10 * MINUTES).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Olivine, 12))
                 .itemOutputs(ItemList.Tool_DataOrb.get(1L)).outputChances(10000)
-                .fluidInputs(Materials.UUMatter.getFluid(250L)).requiresCleanRoom().duration(10 * MINUTES)
-                .eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
+                .fluidInputs(Materials.UUMatter.getFluid(250L)).requiresCleanRoom().requiresLowGravity()
+                .duration(10 * MINUTES).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
         if (SGCraft.isModLoaded()) {
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64))
                     .itemOutputs(GT_ModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).outputChances(10000)
-                    .fluidInputs(Materials.Silver.getPlasma(8000L)).requiresCleanRoom().duration(3 * MINUTES)
-                    .eut(131000).addTo(autoclaveRecipes);
+                    .fluidInputs(Materials.Silver.getPlasma(8000L)).requiresCleanRoom().requiresLowGravity()
+                    .duration(3 * MINUTES).eut(131000).addTo(autoclaveRecipes);
 
         }
 

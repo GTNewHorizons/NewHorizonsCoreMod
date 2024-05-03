@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+
+<book>
+# <page type="intro">
+  <text>item.tconstruct.manual.beginner.title_page</text>
+ </page>
+
+ <page type="contents">
+  <text>item.tconstruct.manual.common.toc</text>
+  <link>
+   <text>item.tconstruct.manual.beginner.getting_started</text>
+   <icon>sapling</icon>
+   <jump>3</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.common.recipes</text>
+   <icon>workbench</icon>
+   <jump>5</jump>
+  </link>
+  <link>
+   <text>item.tconstruct.manual.beginner.armor_modifiers_header</text>
+   <icon>travelvest</icon>
+   <jump>4</jump>
+  </link>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.beginner.intro1</text>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.beginner.intro2</text>
+ </page>
+
+ <page type="crafting">
+  <text>item.tconstruct.Pattern.blank_pattern.name</text>
+  <recipe>
+   <name>blankpattern</name>
+   <size>two</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>crafters.PatternShaper</text>
+  <recipe>
+   <name>stenciltable</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>crafters.PartBuilder</text>
+  <recipe>
+   <name>partcrafter</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>inventory.PatternChest</text>
+  <recipe>
+   <name>patternchest</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>crafters.ToolStation</text>
+  <recipe>
+   <name>toolstation</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>crafters.ToolForge</text>
+  <recipe>
+   <name>toolforge</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>tile.Armor.DryingRack.name</text>
+  <recipe>
+   <name>dryingrack</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.beginner.oreberries</text>
+ </page>
+
+ <page type="picture">
+  <text>item.tconstruct.manual.beginner.oreberry_picture</text>
+  <location>dreamcraft:textures/tinker/manuals/oreberry_crops.png</location>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.beginner.slime_channels</text>
+ </page>
+
+ <page type="crafting">
+  <text>tile.slime.channel.name</text>
+  <recipe>
+   <name>slimechannel</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>tile.slime.pad.name</text>
+  <recipe>
+   <name>bouncepad</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.beginner.traps</text>
+ </page>
+
+ <page type="crafting">
+  <text>tile.trap.punji.name</text>
+  <recipe>
+   <name>punji</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>item.tconstruct.manual.beginner.barricade</text>
+  <recipe>
+   <name>barricade</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.beginner.smeltery_intro</text>
+ </page>
+
+ <page type="crafting">
+  <text>CraftedSoil.Grout.name</text>
+  <recipe>
+   <name>grout</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>item.WoodenBrickForm.name</text>
+  <recipe>
+   <name>woodenformbrick</name>
+   <size>two</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>item.UnfiredSearedBrick.name</text>
+  <recipe>
+   <name>unfiredsearedbrick</name>
+   <size>two</size>
+  </recipe>
+ </page>
+
+ <page type="furnace">
+  <text>item.tconstruct.Materials.SearedBrick.name</text>
+  <recipe>searedbrick</recipe>
+ </page>
+
+ <page type="crafting">
+  <text>Smeltery.Brick.name</text>
+  <recipe>
+   <name>searedbricks</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>Smeltery.Controller.name</text>
+  <recipe>
+   <name>smelterycontroller</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.beginner.books</text>
+ </page>
+
+ <page type="crafting">
+  <text>item.tconstruct.manual.beginner.name</text>
+  <recipe>
+   <name>patternbook1</name>
+   <size>two</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>item.tconstruct.manual.toolstation.name</text>
+  <recipe>
+   <name>patternbook2</name>
+   <size>two</size>
+  </recipe>
+ </page>
+
+ <page type="crafting">
+  <text>item.tconstruct.manual.smeltery.name</text>
+  <recipe>
+   <name>patternbook3</name>
+   <size>two</size>
+  </recipe>
+ </page>
+
+ <page type="blank">
+ </page>
+
+ <page type="text">
+  <text>item.tconstruct.manual.beginner.armor_modifiers_page</text>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.NightVision</title>
+  <text>item.tconstruct.manual.beginner.night_vision</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelgoggles</tooltype>
+  <recipe>nightvision</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.PerfectDodge</title>
+  <text>item.tconstruct.manual.beginner.perfect_dodge</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelvest</tooltype>
+  <recipe>dodge</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.Stealth</title>
+  <text>item.tconstruct.manual.beginner.stealth</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelvest</tooltype>
+  <recipe>stealth</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tooltip.FeatherFall</title>
+  <text>item.tconstruct.manual.beginner.feather_fall</text>
+ </page>
+
+ <page type="crafting">
+  <text>crafters.TinkerTable</text>
+  <recipe>
+   <name>featherfall</name>
+   <size>three</size>
+  </recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.toolstation.WaterWalk</title>
+  <text>item.tconstruct.manual.beginner.water_walk</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelboots</tooltype>
+  <recipe>waterwalk</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tooltip.LeadBoots</title>
+  <text>item.tconstruct.manual.beginner.lead_boots</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelboots</tooltype>
+  <recipe>leadboots</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tooltip.SlimySoles</title>
+  <text>item.tconstruct.manual.beginner.slimy_soles</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelboots</tooltype>
+  <recipe>slimysoles</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>item.tconstruct.manual.beginner.speed_title</title>
+  <text>item.tconstruct.manual.beginner.speed</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelglove</tooltype>
+  <recipe>glovehaste</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tool.moss</title>
+  <text>item.tconstruct.manual.beginner.auto-repair</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelmulti</tooltype>
+  <recipe>moss</recipe>
+ </page>
+
+ <page type="sectionpage">
+  <title>modifier.tooltip.Double-Jump</title>
+  <text>item.tconstruct.manual.beginner.double_jump</text>
+ </page>
+
+ <page type="modifier">
+  <tooltype>travelmulti</tooltype>
+  <recipe>doublejump</recipe>
+ </page>
+
+</book>
