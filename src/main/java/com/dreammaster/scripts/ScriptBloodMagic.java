@@ -2467,6 +2467,48 @@ public class ScriptBloodMagic implements IScriptLoader {
                         TCHelper.findInfusionRecipe(
                                 getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 5, missing))));
         new ResearchItem(
+                "RUNEOFQUICKNESS",
+                "BLOODMAGIC",
+                new AspectList().add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("tempus"), 35)
+                        .add(Aspect.getAspect("cognitio"), 35).add(Aspect.getAspect("machina"), 23)
+                        .add(Aspect.getAspect("motus"), 27).add(Aspect.getAspect("praecantatio"), 15)
+                        .add(Aspect.getAspect("terra"), 7),
+                -10,
+                -2,
+                3,
+                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 6, missing))
+                        .setParents("INFUSION", "RUNEOFACCELERATION", "RUNEOFDISLOCATION", "SPEEDRUNE").setConcealed()
+                        .setPages(
+                                new ResearchPage("tc.research_page.RUNEOFQUICKNESS.1"),
+                                new ResearchPage("tc.research_page.RUNEOFQUICKNESS.2"))
+                        .registerResearchItem();
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "RUNEOFQUICKNESS",
+                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 6, missing),
+                15,
+                new AspectList().add(Aspect.getAspect("potentia"), 96).add(Aspect.getAspect("machina"), 48)
+                        .add(Aspect.getAspect("motus"), 64).add(Aspect.getAspect("cognitio"), 32)
+                        .add(Aspect.getAspect("tempus"), 32).add(Aspect.getAspect("praecantatio"), 16)
+                        .add(Aspect.getAspect("terra"), 8),
+                getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing),
+                new ItemStack[] { getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 5, missing),
+                        CustomItemList.AcceleratorLuV.get(1L, missing),
+                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 24, missing),
+                        getModItem(BloodMagic.ID, "speedRune", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
+                        getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing),
+                        getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 5, missing),
+                        CustomItemList.AcceleratorLuV.get(1L, missing),
+                        getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 24, missing),
+                        getModItem(BloodMagic.ID, "speedRune", 1, 0, missing),
+                        getModItem(BloodMagic.ID, "aether", 1, 0, missing),
+                        getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing), });
+        TCHelper.addResearchPage(
+                "RUNEOFQUICKNESS",
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(
+                                getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 6, missing))));
+        new ResearchItem(
                 "ARCANEPEDESTALANDPLINTH",
                 "BLOODMAGIC",
                 new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("terra"), 12)
