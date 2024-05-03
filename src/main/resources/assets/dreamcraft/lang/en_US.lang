@@ -842,6 +842,10 @@ tc.research_page.RUNEOFSUPERIORCAPACITY.2=The capacity of your altar can be calc
 tc.research_name.RUNEOFACCELERATION=Rune of Acceleration
 tc.research_text.RUNEOFACCELERATION=[BM] More Speed
 tc.research_page.RUNEOFACCELERATION=The specialization of each Rune gave you an idea. Instead of increasing the amount of fluid that is transported, you can increase the speed at which a new transportation happens.<BR><BR>To accomplish this, you created the Rune of Acceleration, which increases the frequency of the Altar fluid transportations.
+tc.research_name.RUNEOFQUICKNESS=Rune of Quickness
+tc.research_text.RUNEOFQUICKNESS=[BM] Even More Speed
+tc.research_page.RUNEOFQUICKNESS.1=If you've automated the blood transmutation process, you'll likely notice the altar always waits a certain amount of time before transmuting the next item. This delay only seems to occur when using automated means to place items on the altar.<BR><BR>This delay seems to be ingrained within the very laws of the world as accelerating time around the altar has no effect on the delay.
+tc.research_page.RUNEOFQUICKNESS.2=After countless days and nights of research and experimentation, you've successfully created a new rune that manages to reduce the delay.<BR><BR>Every quickness rune added to the altar reduces the delay by around 20%. The effect is multiplicative and not additive.
 tc.research_name.ARCANEPEDESTALANDPLINTH=Arcane Pedestal
 tc.research_text.ARCANEPEDESTALANDPLINTH=[BM] Let's summon some Demons
 tc.research_page.ARCANEPEDESTALANDPLINTH.1=The Arcane Pedestal is a block added by Blood Magic. When used in conjunction with an Arcane Plinth, the pedestals allow for the summoning of Demons and Elementals based upon what items are placed on them. The Arcane Pedestal is also used in the crafting of the Arcane Plinth.
@@ -1527,6 +1531,9 @@ Witchery.research_page.WAYSTONE=A waystone is an etched piece of flint that is a
 tc.research_name.RUNEDTABLET=Runed Tablet
 tc.research_text.RUNEDTABLET=[NH] Boss...? Yeee is farming time
 kosh.research_page.RUNEDTABLET=Your desire get to the boss? DO IT !!!
+tc.research_name.CRIMSONRITES=Crimson Rites
+tc.research_text.CRIMSONRITES=Unlocking the Unknown
+tc.research_page.CRIMSONRITES=You have seen glimpses of powerful magic users. You think you might have found a way to unlock their secrets.
 
 # Tinker's Construct manual contents
 item.tconstruct.manual.common.recipes=Recipes
