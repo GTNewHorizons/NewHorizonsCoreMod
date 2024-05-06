@@ -1882,6 +1882,38 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(GT_ModHandler.getModItem(GalacticraftMars.ID, "item.null", 1, 6)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         }
+
+        // Super Tank V
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Elite), 4),
+                        Materials.Titanium.getPlates(2),
+                        ItemList.Electric_Pump_EV.get(1),
+                        ItemList.Field_Generator_HV.get(1),
+                        ItemList.Casing_Tank_5.get(1))
+                .itemOutputs(ItemList.Super_Tank_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        // Super Chest V
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Elite), 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Titanium, 3),
+                        ItemList.Field_Generator_HV.get(1),
+                        ItemList.Automation_SuperBuffer_IV.get(1))
+                .itemOutputs(ItemList.Super_Chest_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        // Chest Buffer IV
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Conveyor_Module_IV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Elite), 1),
+                        ItemList.Hull_IV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
+                .itemOutputs(ItemList.Automation_ChestBuffer_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
         // Quantum Tank V
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1920,6 +1952,26 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
                 .itemOutputs(CustomItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // UV Compressor
+        GT_Values.RA.stdBuilder().itemInputs(
+                ItemList.Hull_UV.get(1),
+                // UV circuit, but internal naming is SuperconductorUHV?
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 2),
+                ItemList.Electric_Piston_UV.get(2),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.ElectrumFlux, 4))
+                .itemOutputs(CustomItemList.CompressorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UV)
+                .addTo(assemblerRecipes);
+
+        // UV Microwave Transmitter
+        GT_Values.RA.stdBuilder().itemInputs(
+                ItemList.Hull_UV.get(1),
+                // UV circuit, but internal naming is SuperconductorUHV?
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 2),
+                ItemList.Emitter_UV.get(4),
+                ItemList.Field_Generator_UV.get(1),
+                ItemList.Energy_Module.get(1)).itemOutputs(ItemList.MicroTransmitter_UV.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
 
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
@@ -4026,6 +4078,92 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockMolecularAssembler", 1))
                 .fluidInputs(Materials.Glass.getMolten(288L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
+
+        // Basic Card
+        GT_Values.RA.stdBuilder().itemInputs(
+                // Calculation Processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 2),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 3),
+                GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Advanced Card
+        GT_Values.RA.stdBuilder().itemInputs(
+                // Calculation Processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Platinum, 2),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 3),
+                GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Acceleration Card
+        GT_Values.RA.stdBuilder().itemInputs(
+                // Advanced Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
+                // Logic Processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22),
+                // Engineering Processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                // Fluix Crystal
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 7),
+                GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 30)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Hyper-Acceleration Card
+        GT_Values.RA.stdBuilder().itemInputs(
+                // Advanced Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
+                // Engineering Processor
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
+                CustomItemList.MysteriousCrystal.get(1L),
+                CustomItemList.AcceleratorLuV.get(1L),
+                GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 56)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Advanced Blocking Card
+        GT_Values.RA.stdBuilder().itemInputs(
+                // Advanced Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
+                // ME Storage Bus
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220),
+                // ME Level Emitter
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 280),
+                GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 63)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Pattern Capacity Card
+        GT_Values.RA.stdBuilder().itemInputs(
+                // Advanced Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
+                // 16k ME Storage Component
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 37),
+                // ME Interface
+                getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0),
+                GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 54)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // ME interface (flat version)
+        GT_Values.RA.stdBuilder().itemInputs(
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4),
+                // Fluix Cable
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 2, 16),
+                // Formation Core
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
+                // Annihilation Core
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 44),
+                ItemList.Casing_EV.get(1L),
+                GT_Utility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         if (AE2FluidCraft.isModLoaded()) {
             // Dual Interface
