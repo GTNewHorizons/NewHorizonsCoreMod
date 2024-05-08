@@ -2709,38 +2709,38 @@ public class ScriptGalacticraft implements IScriptLoader {
         // Glowstone dusts
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CeresStoneDust", 1),
+                        new ItemStack(Items.glowstone_dust, 2),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CeresStoneDust", 2),
                         GT_Utility.getIntegratedCircuit(8))
-                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 0))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 0))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.IoStoneDust", 1),
+                        new ItemStack(Items.glowstone_dust, 2),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.IoStoneDust", 2),
                         GT_Utility.getIntegratedCircuit(8))
-                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 1))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 1))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.EnceladusStoneDust", 1),
+                        new ItemStack(Items.glowstone_dust, 2),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.EnceladusStoneDust", 2),
                         GT_Utility.getIntegratedCircuit(8))
-                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 2))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 2))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ProteusStoneDust", 1),
+                        new ItemStack(Items.glowstone_dust, 2),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ProteusStoneDust", 2),
                         GT_Utility.getIntegratedCircuit(8))
-                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 3))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 3))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Items.glowstone_dust, 1),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PlutoStoneDust", 1),
+                        new ItemStack(Items.glowstone_dust, 2),
+                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PlutoStoneDust", 2),
                         GT_Utility.getIntegratedCircuit(8))
-                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 2, 4))
+                .itemOutputs(GT_ModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 4))
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
     }
 }
