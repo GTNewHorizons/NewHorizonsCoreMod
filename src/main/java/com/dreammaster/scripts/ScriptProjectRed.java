@@ -2916,8 +2916,26 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing))
+                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 7, missing))
+                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 8, missing))
+                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
+                        ItemList.Shape_Mold_Ball.get(0L))
+                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing))
+                .duration(10 * SECONDS).eut(30).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing),
+                        ItemList.Shape_Mold_Ball.get(0L))
+                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing))
                 .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -3723,6 +3741,12 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing),
+                        getModItem(Minecraft.ID, "redstone", 8, 0, missing))
+                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing))
+                .duration(20 * SECONDS).eut(30).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
