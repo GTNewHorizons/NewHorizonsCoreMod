@@ -2955,6 +2955,12 @@ public class ScriptProjectRed implements IScriptLoader {
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing),
+                        getModItem(Minecraft.ID, "redstone", 8, 0, missing))
+                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing))
+                .duration(20 * SECONDS).eut(30).addTo(mixerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
                         getModItem(Minecraft.ID, "glowstone_dust", 8, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing))
@@ -3741,12 +3747,6 @@ public class ScriptProjectRed implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 34, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing),
-                        getModItem(Minecraft.ID, "redstone", 8, 0, missing))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing))
-                .duration(20 * SECONDS).eut(30).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
