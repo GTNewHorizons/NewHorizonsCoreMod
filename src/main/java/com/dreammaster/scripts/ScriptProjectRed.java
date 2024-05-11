@@ -47,8 +47,10 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
@@ -2926,32 +2928,36 @@ public class ScriptProjectRed implements IScriptLoader {
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 8, missing))
                 .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing),
-                        "craftingLensRed", 0)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing))
-                .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing),
-                        "craftingLensYellow", 0)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14, missing))
-                .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing),
-                        "craftingLensBlue", 0)
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing))
-                .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
+        for (ItemStack itemStack : OreDictionary.getOres("craftingLensRed")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing),
+                            GT_Utility.copyAmount(0, itemStack))
+                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing))
+                    .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
+        }
+        for (ItemStack itemStack : OreDictionary.getOres("craftingLensYellow")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing),
+                            GT_Utility.copyAmount(0, itemStack))
+                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14, missing))
+                    .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
+        }
+        for (ItemStack itemStack : OreDictionary.getOres("craftingLensBlue")) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing),
+                            GT_Utility.copyAmount(0, itemStack))
+                    .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing))
+                    .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
+        }
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 9, 56, missing)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Circuit_Silicon_Wafer.get(1L),
-                        getModItem(Minecraft.ID, "redstone", 8, 0, missing))
+                .itemInputs(ItemList.Circuit_Silicon_Wafer.get(1L), getModItem(Minecraft.ID, "redstone", 8, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing))
                 .duration(20 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
