@@ -35,6 +35,7 @@ import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
+import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
@@ -2928,21 +2929,21 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing),
-                        ItemList.Shape_Mold_Ball.get(0L))
+                        "craftingLensRed", 0)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing))
-                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
+                .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing),
-                        ItemList.Shape_Mold_Ball.get(0L))
+                        "craftingLensYellow", 0)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 14, missing))
-                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
+                .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing),
-                        ItemList.Shape_Mold_Ball.get(0L))
+                        "craftingLensBlue", 0)
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing))
-                .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
+                .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 9, 56, missing)).outputChances(10000)
