@@ -2927,12 +2927,6 @@ public class ScriptProjectRed implements IScriptLoader {
                 .duration(30 * SECONDS).eut(30).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
-                        ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 12, missing))
-                .duration(10 * SECONDS).eut(30).addTo(formingPressRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing),
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 13, missing))
