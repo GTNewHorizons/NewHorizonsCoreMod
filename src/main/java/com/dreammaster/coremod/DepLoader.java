@@ -1,5 +1,6 @@
 package com.dreammaster.coremod;
 
+import java.awt.GraphicsEnvironment;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -27,12 +28,13 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import cpw.mods.fml.relauncher.IFMLCallHook;
+import org.jetbrains.annotations.NotNull;
 
 public class DepLoader implements IFMLCallHook {
 
     private File mcLocation;
-    private static final Logger LOGGER = LogManager.getLogger(DepLoader.class);
-    private DownloadProgressDialog dialog = null;
+    static final Logger LOGGER = LogManager.getLogger(DepLoader.class);
+    private IDownloadProgress dialog = null;
 
     public static class Dependency {
 
@@ -134,15 +136,9 @@ public class DepLoader implements IFMLCallHook {
         boolean downloaded = false;
         Thread netThread = null;
         try {
-            dialog = new DownloadProgressDialog();
+            dialog = createDownloadProgress();
             Thread mainThread = Thread.currentThread();
-            dialog.addWindowListener(new WindowAdapter() {
-
-                @Override
-                public void windowClosing(WindowEvent e) {
-                    mainThread.interrupt();
-                }
-            });
+            dialog.setMainThread(mainThread);
             precheck(deps);
             int count = 0;
             for (Dependency d : deps) if (!d.isDisabled() && !d.isFound()) count++;
@@ -156,7 +152,6 @@ public class DepLoader implements IFMLCallHook {
                 }
                 downloaded = true;
                 dialog.setJobCount(count);
-                SwingUtilities.invokeLater(() -> dialog.setVisible(true));
 
                 final Downloader downloader = new Downloader(deps);
 
@@ -211,6 +206,14 @@ public class DepLoader implements IFMLCallHook {
             throw new RuntimeException("Restart the game please.");
         }
         return null;
+    }
+
+    private static @NotNull IDownloadProgress createDownloadProgress() {
+        if (GraphicsEnvironment.isHeadless()) {
+            return new DownloadProgressConsole();
+        } else {
+            return new DownloadProgressDialog();
+        }
     }
 
     private void precheck(List<Dependency> deps) {
