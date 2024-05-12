@@ -42,6 +42,7 @@ class DownloadProgressDialog extends JDialog implements IDownloadProgress {
     @Override
     public void setMainThread(Thread mainThread) {
         addWindowListener(new WindowAdapter() {
+
             @Override
             public void windowClosed(WindowEvent e) {
                 mainThread.interrupt();

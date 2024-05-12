@@ -1,8 +1,6 @@
 package com.dreammaster.coremod;
 
 import java.awt.GraphicsEnvironment;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,17 +16,16 @@ import java.util.List;
 import java.util.Map;
 
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import cpw.mods.fml.relauncher.IFMLCallHook;
-import org.jetbrains.annotations.NotNull;
 
 public class DepLoader implements IFMLCallHook {
 
