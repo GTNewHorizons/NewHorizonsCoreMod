@@ -1,8 +1,10 @@
 package com.dreammaster.coremod;
 
-public class DownloadProgressConsole implements IDownloadProgress{
+public class DownloadProgressConsole implements IDownloadProgress {
+
     private int progress = 0;
     private int total = 0;
+
     @Override
     public void setJobCount(int max) {
         total = max;
