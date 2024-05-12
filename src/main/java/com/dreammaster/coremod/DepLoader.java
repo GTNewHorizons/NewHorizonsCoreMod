@@ -195,11 +195,15 @@ public class DepLoader implements IFMLCallHook {
         dialog.dispose();
         if (downloaded) {
             // prompt for reload
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Download complete! Please close this dialog now and launch the game from your launcher again to enjoy the pack.",
-                    DownloadProgressDialog.WINDOW_TITLE,
-                    JOptionPane.INFORMATION_MESSAGE);
+            if (GraphicsEnvironment.isHeadless()) {
+                LOGGER.error("Download complete! Please close this dialog now and launch the game from your launcher again to enjoy the pack.");
+            }else {
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Download complete! Please close this dialog now and launch the game from your launcher again to enjoy the pack.",
+                        DownloadProgressDialog.WINDOW_TITLE,
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
             throw new RuntimeException("Restart the game please.");
         }
         return null;
