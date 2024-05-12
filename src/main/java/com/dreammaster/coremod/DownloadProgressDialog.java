@@ -2,6 +2,7 @@ package com.dreammaster.coremod;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.BoxLayout;
@@ -11,11 +12,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import com.dreammaster.lib.Refstrings;
 
-class DownloadProgressDialog extends JDialog {
+class DownloadProgressDialog extends JDialog implements IDownloadProgress {
 
     /**
      *
@@ -26,12 +28,26 @@ class DownloadProgressDialog extends JDialog {
     private Thread netThread;
     private JProgressBar progressBar;
 
+    @Override
     public void setJobCount(int max) {
         progressBar.setMaximum(max);
+        SwingUtilities.invokeLater(() -> setVisible(true));
     }
 
+    @Override
     public void progress() {
         progressBar.setValue(progressBar.getValue() + 1);
+    }
+
+    @Override
+    public void setMainThread(Thread mainThread) {
+        addWindowListener(new WindowAdapter() {
+
+            @Override
+            public void windowClosed(WindowEvent e) {
+                mainThread.interrupt();
+            }
+        });
     }
 
     /**
