@@ -1,7 +1,6 @@
 package com.dreammaster.coremod;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -17,10 +16,10 @@ import java.util.List;
 import java.util.Map;
 
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,8 +30,8 @@ import cpw.mods.fml.relauncher.IFMLCallHook;
 public class DepLoader implements IFMLCallHook {
 
     private File mcLocation;
-    private static final Logger LOGGER = LogManager.getLogger(DepLoader.class);
-    private DownloadProgressDialog dialog = null;
+    static final Logger LOGGER = LogManager.getLogger(DepLoader.class);
+    private IDownloadProgress dialog = null;
 
     public static class Dependency {
 
@@ -134,15 +133,9 @@ public class DepLoader implements IFMLCallHook {
         boolean downloaded = false;
         Thread netThread = null;
         try {
-            dialog = new DownloadProgressDialog();
+            dialog = createDownloadProgress();
             Thread mainThread = Thread.currentThread();
-            dialog.addWindowListener(new WindowAdapter() {
-
-                @Override
-                public void windowClosing(WindowEvent e) {
-                    mainThread.interrupt();
-                }
-            });
+            dialog.setMainThread(mainThread);
             precheck(deps);
             int count = 0;
             for (Dependency d : deps) if (!d.isDisabled() && !d.isFound()) count++;
@@ -156,7 +149,6 @@ public class DepLoader implements IFMLCallHook {
                 }
                 downloaded = true;
                 dialog.setJobCount(count);
-                SwingUtilities.invokeLater(() -> dialog.setVisible(true));
 
                 final Downloader downloader = new Downloader(deps);
 
@@ -203,14 +195,27 @@ public class DepLoader implements IFMLCallHook {
         dialog.dispose();
         if (downloaded) {
             // prompt for reload
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Download complete! Please close this dialog now and launch the game from your launcher again to enjoy the pack.",
-                    DownloadProgressDialog.WINDOW_TITLE,
-                    JOptionPane.INFORMATION_MESSAGE);
+            if (GraphicsEnvironment.isHeadless()) {
+                LOGGER.error(
+                        "Download complete! Please close this dialog now and launch the game from your launcher again to enjoy the pack.");
+            } else {
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Download complete! Please close this dialog now and launch the game from your launcher again to enjoy the pack.",
+                        DownloadProgressDialog.WINDOW_TITLE,
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
             throw new RuntimeException("Restart the game please.");
         }
         return null;
+    }
+
+    private static @NotNull IDownloadProgress createDownloadProgress() {
+        if (GraphicsEnvironment.isHeadless()) {
+            return new DownloadProgressConsole();
+        } else {
+            return new DownloadProgressDialog();
+        }
     }
 
     private void precheck(List<Dependency> deps) {
