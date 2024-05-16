@@ -1445,7 +1445,8 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
+                        getModItem(Minecraft.ID, "stone", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
