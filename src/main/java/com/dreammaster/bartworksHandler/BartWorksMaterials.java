@@ -38,10 +38,6 @@ public class BartWorksMaterials {
     }
 
     public static void addVoidMinerDropsToDimension(int dimID, ISubTagContainer material, float chance) {
-        try {
-            VoidMinerDropAdder.addDropsToDim(dimID, material, chance);
-        } catch (InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        VoidMinerDropAdder.addDropsToDim(dimID, material, chance);
     }
 }
