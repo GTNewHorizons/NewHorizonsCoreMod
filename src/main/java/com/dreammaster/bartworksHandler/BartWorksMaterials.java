@@ -1,6 +1,5 @@
 package com.dreammaster.bartworksHandler;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Optional;
 
 import com.github.bartimaeusnek.bartworks.API.VoidMinerDropAdder;
