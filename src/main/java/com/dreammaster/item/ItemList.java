@@ -602,6 +602,20 @@ public enum ItemList {
     CircuitMAX(new ModSimpleBaseItem("CircuitMAX", ModTabList.ModCircuitsTab)),
     RadoxPolymerLens(new ModSimpleBaseItem("RadoxPolymerLens", ModTabList.ModSpaceTab)),
     ChromaticLens(new ModSimpleBaseItem("ChromaticLens", ModTabList.ModSpaceTab)),
+    NanoCircuitOrigin(new ModSimpleBaseItem("OriginNanoCircuit", ModTabList.ModSpaceTab)),
+    GatePlateOrigin(new ModSimpleBaseItem("OriginGatePlate", ModTabList.ModSpaceTab)),
+    ChevronOrigin(new ModSimpleBaseItem("OriginChevron", ModTabList.ModSpaceTab)),
+    FramePartOrigin(new ModSimpleBaseItem("OriginFramePart", ModTabList.ModSpaceTab)),
+    PikoCircuitPolychrome(new ModSimpleBaseItem("PolychromePikoCircuit", ModTabList.ModSpaceTab)),
+    QuantumCircuitPolychrome(new ModSimpleBaseItem("PolychromeQuantumCircuit", ModTabList.ModSpaceTab)),
+    GatePlatePolychrome(new ModSimpleBaseItem("PolychromeGatePlate", ModTabList.ModSpaceTab)),
+    ChevronPolychrome(new ModSimpleBaseItem("PolychromeChevron", ModTabList.ModSpaceTab)),
+    FramePartPolychrome(new ModSimpleBaseItem("PolychromeFramePart", ModTabList.ModSpaceTab)),
+    PikoCircuitDimensional(new ModSimpleBaseItem("DimensionalPikoCircuit", ModTabList.ModSpaceTab)),
+    QuantumCircuitDimensional(new ModSimpleBaseItem("DimensionalQuantumCircuit", ModTabList.ModSpaceTab)),
+    GatePlateDimensional(new ModSimpleBaseItem("DimensionalGatePlate", ModTabList.ModSpaceTab)),
+    ChevronDimensional(new ModSimpleBaseItem("DimensionalChevron", ModTabList.ModSpaceTab)),
+    FramePartDimensional(new ModSimpleBaseItem("DimensionalFramePart", ModTabList.ModSpaceTab)),
 
     // Do not delete this
     EndOfList(null);
