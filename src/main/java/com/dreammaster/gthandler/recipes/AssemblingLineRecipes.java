@@ -332,7 +332,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 Materials.Silver.getPlasma(36_864L) },
                         com.dreammaster.item.ItemList.GatePlatePolychrome.getIS(1),
                         1 * HOURS,
-                        (int) TierEU.RECIPE_UXV);
+                        (int) TierEU.RECIPE_UIV);
 
                 TT_recipeAdder.addResearchableAssemblylineRecipe(
                         com.dreammaster.item.ItemList.GatePlatePolychrome.getIS(1),
@@ -356,7 +356,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 Materials.Silver.getPlasma(9_216L) },
                         com.dreammaster.item.ItemList.ChevronPolychrome.getIS(1),
                         1 * HOURS,
-                        (int) TierEU.RECIPE_UXV);
+                        (int) TierEU.RECIPE_UIV);
 
                 TT_recipeAdder.addResearchableAssemblylineRecipe(
                         com.dreammaster.item.ItemList.FramePartOrigin.getIS(1),
@@ -373,7 +373,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 Materials.Tritanium.getMolten(73_728L), Materials.Concrete.getMolten(73_728L) },
                         com.dreammaster.item.ItemList.FramePartPolychrome.getIS(1),
                         1 * HOURS,
-                        (int) TierEU.RECIPE_UXV);
+                        (int) TierEU.RECIPE_UIV);
 
                 // UMV Gate
                 TT_recipeAdder.addResearchableAssemblylineRecipe(
