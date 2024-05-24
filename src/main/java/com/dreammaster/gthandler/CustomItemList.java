@@ -848,7 +848,21 @@ public enum CustomItemList implements IItemContainer {
     BioBall,
     PotassiumHydroxideDust,
     ChromaticLens,
-    RadoxPolymerLens;
+    RadoxPolymerLens,
+    NanoCircuitOrigin,
+    ChevronOrigin,
+    FramePartOrigin,
+    GatePlateOrigin,
+    PikoCircuitPolychrome,
+    QuantumCircuitPolychrome,
+    GatePlatePolychrome,
+    ChevronPolychrome,
+    FramePartPolychrome,
+    PikoCircuitDimensional,
+    QuantumCircuitDimensional,
+    GatePlateDimensional,
+    ChevronDimensional,
+    FramePartDimensional;
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;

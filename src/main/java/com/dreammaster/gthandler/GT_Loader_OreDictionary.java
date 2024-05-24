@@ -418,7 +418,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         // GTNH-Circuits
         GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.Piko, ItemList.PikoCircuit.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.Quantum, ItemList.QuantumCircuit.getIS());
-        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.Nano, ItemList.NanoCircuit.getIS());
 
         // Add ore dictionary entries for sand and red sand to craft unfired coke oven bricks.
         GT_OreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 0));
