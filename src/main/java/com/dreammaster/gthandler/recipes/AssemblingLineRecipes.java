@@ -489,7 +489,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Osmiridium, 8L),
                                 ItemList.Electric_Motor_UMV.get(64L), ItemList.Electric_Piston_UMV.get(64L),
                                 ItemList.Field_Generator_UMV.get(16L),
-                                com.dreammaster.item.ItemList.QuantumCircuitDimensional.getIS(1), },
+                                com.dreammaster.item.ItemList.QuantumCircuitDimensional.getIS(32), },
                         new FluidStack[] { Materials.Neutronium.getMolten(32_768_000L),
                                 MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                                 Materials.SuperconductorUMVBase.getMolten(4 * 36864L),
