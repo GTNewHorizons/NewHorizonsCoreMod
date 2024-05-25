@@ -12,16 +12,17 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.12.2-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.2.2:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
-    compileOnly("curse.maven:witchery-69673:2234410") { transitive = false }
+    compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
     compileOnly("com.github.GTNewHorizons:Chisel:2.15.0-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Botania:1.11.1-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.6.2:dev") { transitive = false }
-    compileOnly("curse.maven:extra-utilities-225561:2264384") { transitive = false }
+    compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.25:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.5.1:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.1.5-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:ForestryMC:4.8.10:dev") { transitive = false }
 
-    runtimeOnlyNonPublishable("curse.maven:biomes-o-plenty-220318:2499612")
+    runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.2.1-GTNH:dev")
 
     // Core unit testing platform
