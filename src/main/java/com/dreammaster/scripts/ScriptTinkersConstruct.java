@@ -3219,11 +3219,11 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 300,
                 FluidRegistry.getFluidStack("glue", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1L),
                 GameRegistry.findBlock("TConstruct", "GlueBlock"),
                 0,
                 350,
-                FluidRegistry.getFluidStack("glue", 288));
+                FluidRegistry.getFluidStack("glue", 144));
         Smeltery.addMelting(
                 getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing),
                 GameRegistry.findBlock("TConstruct", "GlueBlock"),
