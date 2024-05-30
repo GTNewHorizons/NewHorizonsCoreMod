@@ -9,12 +9,15 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeConstants.COIL_HEAT;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.block.BlockList;
+import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 
+import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -26,7 +29,9 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.core.material.ELEMENT;
+import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.core.recipe.common.CI;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class DTPFRecipes implements Runnable {
 
@@ -714,6 +719,178 @@ public class DTPFRecipes implements Runnable {
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_6 * 2),
                                 Materials.Infinity.getMolten(256L * 144L))
                         .duration(base_time / 4).eut(409_600_000).metadata(COIL_HEAT, eternal_heat)
+                        .addTo(plasmaForgeRecipes);
+            }
+
+            // Quantum anomaly
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GregtechItemList.Laser_Lens_Special.get(1),
+                            new ItemStack(Particle.getBaseParticle(Particle.GRAVITON).getItem(), 4),
+                            CustomItemList.MysteriousCrystalLens.get(0),
+                            ItemRefer.HiC_T5.get(1))
+                    .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
+                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(30 * SECONDS)
+                    .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(92))
+                    .eut((int) TierEU.RECIPE_UMV).metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+
+            // LuV Superconductor
+            {
+                long base_quantity = 8190L;
+                long tier_up_multiplier = 2L;
+
+                int base_time = 1260;
+
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 9295L;
+                long energy_1 = 14_277_120L;
+                GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(6))
+                        .fluidInputs(
+                                Materials.Indium.getMolten(4L * tier_1_quantity / 30),
+                                Materials.Tin.getMolten(2L * tier_1_quantity / 30),
+                                Materials.Barium.getMolten(2L * tier_1_quantity / 30),
+                                Materials.Titanium.getMolten(tier_1_quantity / 30),
+                                Materials.Copper.getMolten(7L * tier_1_quantity / 30),
+                                Materials.Oxygen.getPlasma(14_000L / 32 * tier_1_quantity / 30 / 144),
+                                MaterialsUEVplus.ExcitedDTCC.getFluid(fuel_quantity_1))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8),
+                                Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid
+                                        .getMolten(tier_1_quantity))
+                        .duration(base_time).eut(energy_1).metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
+
+                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_2 = 3637L;
+                long energy_2 = energy_1 * 2;
+                GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(6))
+                        .fluidInputs(
+                                Materials.Indium.getMolten(4L * tier_2_quantity / 30),
+                                Materials.Tin.getMolten(2L * tier_2_quantity / 30),
+                                Materials.Barium.getMolten(2L * tier_2_quantity / 30),
+                                Materials.Titanium.getMolten(tier_2_quantity / 30),
+                                Materials.Copper.getMolten(7L * tier_2_quantity / 30),
+                                Materials.Oxygen.getPlasma(14_000L / 32 * tier_2_quantity / 30 / 144),
+                                MaterialsUEVplus.ExcitedDTPC.getFluid(fuel_quantity_2))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4),
+                                Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid
+                                        .getMolten(tier_2_quantity))
+                        .duration(base_time / 2).eut(energy_2).metadata(COIL_HEAT, infinity_heat)
+                        .addTo(plasmaForgeRecipes);
+
+                long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_3 = 1570L;
+                long energy_3 = energy_2 * 2;
+                GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(6))
+                        .fluidInputs(
+                                Materials.Indium.getMolten(4L * tier_3_quantity / 30),
+                                Materials.Tin.getMolten(2L * tier_3_quantity / 30),
+                                Materials.Barium.getMolten(2L * tier_3_quantity / 30),
+                                Materials.Titanium.getMolten(tier_3_quantity / 30),
+                                Materials.Copper.getMolten(7L * tier_3_quantity / 30),
+                                Materials.Oxygen.getPlasma(14_000L / 32 * tier_3_quantity / 30 / 144),
+                                MaterialsUEVplus.ExcitedDTRC.getFluid(fuel_quantity_3))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2),
+                                Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid
+                                        .getMolten(tier_3_quantity))
+                        .duration(base_time / 4).eut(energy_3).metadata(COIL_HEAT, hypogen_heat)
+                        .addTo(plasmaForgeRecipes);
+
+                long tier_4_quantity = 144L * base_quantity
+                        * tier_up_multiplier
+                        * tier_up_multiplier
+                        * tier_up_multiplier;
+                long fuel_quantity_4 = 662L;
+                long energy_4 = energy_3 * 2;
+                GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(6))
+                        .fluidInputs(
+                                Materials.Indium.getMolten(4L * tier_4_quantity / 30),
+                                Materials.Tin.getMolten(2L * tier_4_quantity / 30),
+                                Materials.Barium.getMolten(2L * tier_4_quantity / 30),
+                                Materials.Titanium.getMolten(tier_4_quantity / 30),
+                                Materials.Copper.getMolten(7L * tier_4_quantity / 30),
+                                Materials.Oxygen.getPlasma(14_000L / 32 * tier_4_quantity / 30 / 144),
+                                MaterialsUEVplus.ExcitedDTEC.getFluid(fuel_quantity_4))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4),
+                                Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid
+                                        .getMolten(tier_4_quantity))
+                        .duration(base_time / 8).eut(energy_4).metadata(COIL_HEAT, eternal_heat)
+                        .addTo(plasmaForgeRecipes);
+            }
+
+            // ZPM Superconductor
+            {
+                long base_quantity = 4095L;
+                long tier_up_multiplier = 2L;
+
+                int base_time = 1440;
+
+                long tier_1_quantity = 144L * base_quantity;
+                long fuel_quantity_1 = 12740L;
+                long energy_1 = 17_122_560L;
+                GT_Values.RA.stdBuilder()
+                        .fluidInputs(
+                                Materials.Palladium.getMolten(6L * tier_1_quantity / 13),
+                                Materials.Indium.getMolten(2L * tier_1_quantity / 13),
+                                Materials.Osmium.getMolten(tier_1_quantity / 13),
+                                Materials.Naquadah.getMolten(4L * tier_1_quantity / 13),
+                                MaterialsUEVplus.ExcitedDTCC.getFluid(fuel_quantity_1))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_1 / 8),
+                                Materials.Tetranaquadahdiindiumhexaplatiumosminid.getMolten(tier_1_quantity))
+                        .duration(base_time).eut(energy_1).metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
+
+                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+                long fuel_quantity_2 = 4985L;
+                long energy_2 = energy_1 * 2;
+                GT_Values.RA.stdBuilder()
+                        .fluidInputs(
+                                Materials.Palladium.getMolten(6L * tier_2_quantity / 13),
+                                Materials.Indium.getMolten(2L * tier_2_quantity / 13),
+                                Materials.Osmium.getMolten(tier_2_quantity / 13),
+                                Materials.Naquadah.getMolten(4L * tier_2_quantity / 13),
+                                MaterialsUEVplus.ExcitedDTPC.getFluid(fuel_quantity_2))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_2 / 4),
+                                Materials.Tetranaquadahdiindiumhexaplatiumosminid.getMolten(tier_2_quantity))
+                        .duration(base_time / 2).eut(energy_2).metadata(COIL_HEAT, infinity_heat)
+                        .addTo(plasmaForgeRecipes);
+
+                long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
+                long fuel_quantity_3 = 2151L;
+                long energy_3 = energy_2 * 2;
+                GT_Values.RA.stdBuilder()
+                        .fluidInputs(
+                                Materials.Palladium.getMolten(6L * tier_3_quantity / 13),
+                                Materials.Indium.getMolten(2L * tier_3_quantity / 13),
+                                Materials.Osmium.getMolten(tier_3_quantity / 13),
+                                Materials.Naquadah.getMolten(4L * tier_3_quantity / 13),
+                                MaterialsUEVplus.ExcitedDTRC.getFluid(fuel_quantity_3))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_3 / 2),
+                                Materials.Tetranaquadahdiindiumhexaplatiumosminid.getMolten(tier_3_quantity))
+                        .duration(base_time / 4).eut(energy_3).metadata(COIL_HEAT, hypogen_heat)
+                        .addTo(plasmaForgeRecipes);
+
+                long tier_4_quantity = 144L * base_quantity
+                        * tier_up_multiplier
+                        * tier_up_multiplier
+                        * tier_up_multiplier;
+                long fuel_quantity_4 = 908L;
+                long energy_4 = energy_3 * 2;
+                GT_Values.RA.stdBuilder()
+                        .fluidInputs(
+                                Materials.Palladium.getMolten(6L * tier_4_quantity / 13),
+                                Materials.Indium.getMolten(2L * tier_4_quantity / 13),
+                                Materials.Osmium.getMolten(tier_4_quantity / 13),
+                                Materials.Naquadah.getMolten(4L * tier_4_quantity / 13),
+                                MaterialsUEVplus.ExcitedDTEC.getFluid(fuel_quantity_4))
+                        .fluidOutputs(
+                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(fuel_quantity_4),
+                                Materials.Tetranaquadahdiindiumhexaplatiumosminid.getMolten(tier_4_quantity))
+                        .duration(base_time / 8).eut(energy_4).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
             }
 
