@@ -4159,7 +4159,7 @@ public class AssemblerRecipes implements Runnable {
                 // Formation Core
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
                 // Annihilation Core
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 44),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
                 ItemList.Casing_EV.get(1L),
                 GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440)).duration(5 * SECONDS)
