@@ -728,7 +728,7 @@ public class DTPFRecipes implements Runnable {
                             GregtechItemList.Laser_Lens_Special.get(1),
                             new ItemStack(Particle.getBaseParticle(Particle.GRAVITON).getItem(), 4),
                             CustomItemList.MysteriousCrystalLens.get(0),
-                            ItemRefer.HiC_T5.get(1))
+                            ItemRefer.HiC_T5.get(0))
                     .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
                     .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(30 * SECONDS)
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(92))
