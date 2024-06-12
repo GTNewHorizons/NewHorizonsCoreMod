@@ -1074,6 +1074,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("Forestry", "hunterBag", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "adventurerBag", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "builderBag", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem("Forestry", "coinBag", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "apiculture", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "apiculture", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "apicultureChest", 1, 0, missing));

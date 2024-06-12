@@ -1,7 +1,15 @@
 package com.dreammaster.gthandler;
 
+import static com.gtnewhorizon.gtnhlib.util.AnimatedTooltipHandler.addItemTooltip;
 import static gregtech.client.GT_TooltipHandler.Tier.*;
 import static gregtech.client.GT_TooltipHandler.registerTieredTooltip;
+
+import java.util.Arrays;
+import java.util.List;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 
 import com.dreammaster.item.ItemList;
 
@@ -13,6 +21,7 @@ public class GT_Loader_Items {
     public void run() {
         GT = GT_MetaGenerated_Item_01.INSTANCE;
         registerItems();
+        registerTooltips();
     }
 
     private GT_MetaGenerated_Item_01 GT;
@@ -69,11 +78,8 @@ public class GT_Loader_Items {
         CustomItemList.AdvancedProcessorBoard.set(ItemList.AdvancedProcessorBoard.getIS());
         CustomItemList.HighEnergyFlowCircuit.set(ItemList.HighEnergyFlowCircuit.getIS());
         CustomItemList.NanoCircuit.set(ItemList.NanoCircuit.getIS());
-        registerTieredTooltip(CustomItemList.NanoCircuit.get(1), UIV);
         CustomItemList.PikoCircuit.set(ItemList.PikoCircuit.getIS());
-        registerTieredTooltip(CustomItemList.PikoCircuit.get(1), UMV);
         CustomItemList.QuantumCircuit.set(ItemList.QuantumCircuit.getIS());
-        registerTieredTooltip(CustomItemList.QuantumCircuit.get(1), UXV);
         CustomItemList.CarbonPartBoots.set(ItemList.CarbonPartBoots.getIS());
         CustomItemList.CarbonPartChestplate.set(ItemList.CarbonPartChestplate.getIS());
         CustomItemList.CarbonPartHelmet.set(ItemList.CarbonPartHelmet.getIS());
@@ -430,5 +436,71 @@ public class GT_Loader_Items {
         CustomItemList.PotassiumHydroxideDust.set(ItemList.PotassiumHydroxideDust.getIS());
         CustomItemList.RadoxPolymerLens.set(ItemList.RadoxPolymerLens.getIS());
         CustomItemList.ChromaticLens.set(ItemList.ChromaticLens.getIS());
+        CustomItemList.NanoCircuitOrigin.set(ItemList.NanoCircuitOrigin.getIS());
+        CustomItemList.ChevronOrigin.set(ItemList.ChevronOrigin.getIS());
+        CustomItemList.FramePartOrigin.set(ItemList.FramePartOrigin.getIS());
+        CustomItemList.GatePlateOrigin.set(ItemList.GatePlateOrigin.getIS());
+        CustomItemList.PikoCircuitPolychrome.set(ItemList.PikoCircuitPolychrome.getIS());
+        CustomItemList.QuantumCircuitPolychrome.set(ItemList.QuantumCircuitPolychrome.getIS());
+        CustomItemList.GatePlatePolychrome.set(ItemList.GatePlatePolychrome.getIS());
+        CustomItemList.ChevronPolychrome.set(ItemList.ChevronPolychrome.getIS());
+        CustomItemList.FramePartPolychrome.set(ItemList.FramePartPolychrome.getIS());
+        CustomItemList.PikoCircuitDimensional.set(ItemList.PikoCircuitDimensional.getIS());
+        CustomItemList.QuantumCircuitDimensional.set(ItemList.QuantumCircuitDimensional.getIS());
+        CustomItemList.GatePlateDimensional.set(ItemList.GatePlateDimensional.getIS());
+        CustomItemList.ChevronDimensional.set(ItemList.ChevronDimensional.getIS());
+        CustomItemList.FramePartDimensional.set(ItemList.FramePartDimensional.getIS());
+    }
+
+    private void registerTooltips() {
+        registerTieredTooltip(CustomItemList.PikoCircuit.get(1), UMV);
+        registerTieredTooltip(CustomItemList.QuantumCircuit.get(1), UXV);
+        List<ItemStack> origin = Arrays.asList(
+                ItemList.ChevronOrigin.getIS(),
+                ItemList.FramePartOrigin.getIS(),
+                ItemList.GatePlateOrigin.getIS(),
+                ItemList.NanoCircuitOrigin.getIS());
+        List<ItemStack> polychrome = Arrays.asList(
+                ItemList.PikoCircuitPolychrome.getIS(),
+                ItemList.QuantumCircuitPolychrome.getIS(),
+                ItemList.GatePlatePolychrome.getIS(),
+                ItemList.ChevronPolychrome.getIS(),
+                ItemList.FramePartPolychrome.getIS());
+        List<ItemStack> dimensional = Arrays.asList(
+                ItemList.PikoCircuitDimensional.getIS(),
+                ItemList.QuantumCircuitDimensional.getIS(),
+                ItemList.GatePlateDimensional.getIS(),
+                ItemList.ChevronDimensional.getIS(),
+                ItemList.FramePartDimensional.getIS());
+        for (ItemStack itemStack : origin) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.YELLOW + StatCollector.translateToLocal("item.Origin.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Origin.version"));
+        }
+
+        for (ItemStack itemStack : polychrome) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.AQUA + StatCollector.translateToLocal("item.Polychrome.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Polychrome.version"));
+        }
+
+        for (ItemStack itemStack : dimensional) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.LIGHT_PURPLE + StatCollector.translateToLocal("item.Dimensional.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Dimensional.version"));
+        }
+
     }
 }

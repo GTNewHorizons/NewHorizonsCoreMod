@@ -1,6 +1,5 @@
 package com.dreammaster.bartworksHandler;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Optional;
 
 import com.github.bartimaeusnek.bartworks.API.VoidMinerDropAdder;
@@ -38,10 +37,6 @@ public class BartWorksMaterials {
     }
 
     public static void addVoidMinerDropsToDimension(int dimID, ISubTagContainer material, float chance) {
-        try {
-            VoidMinerDropAdder.addDropsToDim(dimID, material, chance);
-        } catch (InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        VoidMinerDropAdder.addDropsToDim(dimID, material, chance);
     }
 }

@@ -168,7 +168,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "VINTEUM",
                 GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Vinteum, 1L),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 9330, missing),
+                "nuggetThaumium",
                 new AspectList().add(Aspect.getAspect("permutatio"), 4).add(Aspect.getAspect("ordo"), 2)
                         .add(Aspect.getAspect("vitreus"), 2));
         ThaumcraftApi.addInfusionCraftingRecipe(

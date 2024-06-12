@@ -184,7 +184,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 'c',
                 getModItem(BartWorks.ID, "BW_GlasBlocks", 1, 4, missing),
                 'd',
-                "plateDenseAmericium",
+                "plateDenseNaquadahEnriched",
                 'e',
                 "plateDenseStellarAlloy",
                 'f',

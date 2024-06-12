@@ -1216,6 +1216,16 @@ public class ScriptGregtech implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
+                        ItemList.Electric_Piston_EV.get(2, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2),
+                        ItemList.Electric_Motor_EV.get(2, missing),
+                        ItemList.Hull_EV.get(1, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, missing, 1L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(ItemList.Machine_EV_Bender.get(1, missing)).duration(10 * SECONDS).eut(1920)
+                .addTo(assemblerRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L),
                         GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
