@@ -29,20 +29,24 @@ public class DTPFCalculator {
     protected long freezerDuration = 0;
     protected long baseParallel = 0;
     protected long DTPFEUt = 0;
+    protected long totalBaseEU = 0;
     protected long minCatalystTier = 0;
     protected long maxCatalystTier = 4;
     Collection<GT_Recipe> ebfRecipes = blastFurnaceRecipes.getAllRecipes();
     Collection<GT_Recipe> freezerRecipes = vacuumFreezerRecipes.getAllRecipes();
+    private int[] catalyst_amounts = new int[5];
     private static final FluidStack[] CATALYSTS = new FluidStack[] { MaterialsUEVplus.ExcitedDTCC.getFluid(1),
             MaterialsUEVplus.ExcitedDTPC.getFluid(1), MaterialsUEVplus.ExcitedDTRC.getFluid(1),
             MaterialsUEVplus.ExcitedDTEC.getFluid(1), MaterialsUEVplus.ExcitedDTSC.getFluid(1) };
     // These were calculated based on their respective mixer + laser engraver recipes & their plasma energy values
-    private static final long[] CATALYST_ENERGY_VALUES = new long[] { 14_514_983L, 66_768_460L, 269_326_451L, 1_073_007_393L, 4_276_767_521L };
+    private static final long[] CATALYST_ENERGY_VALUES = new long[] { 14_514_983L, 66_768_460L, 269_326_451L,
+            1_073_007_393L, 4_276_767_521L };
 
     public DTPFCalculator calculateGenericEBFBasedRecipe(Materials material) {
         determineEBFParams(material);
         determineFreezerParams(material);
         calculateBaseDTPFPowerConsumption();
+        calculateCatalystAmounts();
         return this;
     }
 
@@ -81,7 +85,16 @@ public class DTPFCalculator {
     }
 
     private void calculateBaseDTPFPowerConsumption() {
-        DTPFEUt = (freezerEUpertick + ebfEUpertick) * baseParallel / ebfDuration / 10;
+        totalBaseEU = (freezerEUpertick * freezerDuration + ebfEUpertick * ebfDuration) * baseParallel;
+        DTPFEUt = totalBaseEU / ebfDuration / 10;
+    }
+
+    private void calculateCatalystAmounts() {
+        for (long i = 0; i <= (maxCatalystTier - minCatalystTier); i++) {
+            catalyst_amounts[(int) (minCatalystTier + i)] = (int) (((totalBaseEU * (0.8 - i * 0.1) * Math.pow(2, i)
+                    - DTPFEUt * Math.pow(2, i) * (ebfDuration / Math.pow(2, i + 1)))
+                    / CATALYST_ENERGY_VALUES[(int) (minCatalystTier + i)]));
+        }
     }
 
     public DTPFCalculator setBaseParallel(long parallel) {
@@ -104,16 +117,20 @@ public class DTPFCalculator {
         return this;
     }
 
-    public long getBaseDuration() {
-        return ebfDuration / 2;
+    public long getDuration(int catalystTier) {
+        return (long) (ebfDuration / Math.pow(2, catalystTier + 1));
     }
 
-    public long getBaseEUt() {
-        return DTPFEUt;
+    public long getEUt(int catalystTier) {
+        return (long) (DTPFEUt * Math.pow(2, catalystTier));
     }
 
-    public long getCrudeAmount() {
-        return DTPFEUt;
+    public long getCatalystAmount(int catalystTier) {
+        return catalyst_amounts[catalystTier];
+    }
+
+    public long getResidueAmount(int catalystTier) {
+        return (long) (catalyst_amounts[catalystTier] * (Math.pow(2, catalystTier) / 8));
     }
 
     public static DTPFCalculator dtpfCalculator() {
