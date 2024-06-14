@@ -1,5 +1,6 @@
 package com.dreammaster.main;
 
+import static com.dreammaster.main.XMod.DETRAVSCANNERMOD;
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
@@ -41,6 +42,7 @@ import com.dreammaster.command.HazardousItemsCommand;
 import com.dreammaster.command.ItemInHandInfoCommand;
 import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
+import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.galacticgreg.SpaceDimRegisterer;
 import com.dreammaster.gthandler.CoreMod_PCBFactory_MaterialLoader;
@@ -143,6 +145,10 @@ public class MainRegistry {
         if (Module_AdminErrorLogs != null) {
             Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
         }
+    }
+
+    public MainRegistry() {
+        if (DETRAVSCANNERMOD) GregTech_API.sAfterGTPreload.add(ScannerTools::new);
     }
 
     @Mod.EventHandler
