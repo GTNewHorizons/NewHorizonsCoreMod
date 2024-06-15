@@ -38,7 +38,7 @@ public class DTPFCalculator {
     protected float EUtDivisor = 1f;
     Collection<GT_Recipe> ebfRecipes = blastFurnaceRecipes.getAllRecipes();
     Collection<GT_Recipe> freezerRecipes = vacuumFreezerRecipes.getAllRecipes();
-    private int[] catalyst_amounts = new int[5];
+    private int[] catalystAmounts = new int[5];
     private static final FluidStack[] CATALYSTS = new FluidStack[] { MaterialsUEVplus.ExcitedDTCC.getFluid(1),
             MaterialsUEVplus.ExcitedDTPC.getFluid(1), MaterialsUEVplus.ExcitedDTRC.getFluid(1),
             MaterialsUEVplus.ExcitedDTEC.getFluid(1), MaterialsUEVplus.ExcitedDTSC.getFluid(1) };
@@ -67,16 +67,19 @@ public class DTPFCalculator {
      * ingot/dust/molten equivalent. For recipes containing more than 1 relevant output, it is recommended to choose one
      * main output and normalize voltage and recipe time to one unit of that output (see molten quantum as an example).
      *
-     * @param base_voltage  Recipe voltage
-     * @param base_duration Recipe duration in ticks
+     * @param baseVoltage  Recipe voltage
+     * @param baseDuration Recipe duration in ticks
      */
-    public DTPFCalculator calculateNonEBFRecipe(long base_voltage, long base_duration) {
-        recipeDuration = base_duration;
-        calculateNonEBFBaseDTPFPowerConsumption(base_voltage, base_duration);
-        calculateCatalystAmounts(base_duration);
+    public DTPFCalculator calculateNonEBFRecipe(long baseVoltage, long baseDuration) {
+        recipeDuration = baseDuration;
+        calculateNonEBFBaseDTPFPowerConsumption(baseVoltage, baseDuration);
+        calculateCatalystAmounts(baseDuration);
         return this;
     }
 
+    /**
+     * Finds the material's respective EBF recipe and calculates what it would look like when using Oganesson.
+     */
     private void determineEBFParams(Materials material) {
         ArrayList<GT_Recipe> foundEBFRecipes = new ArrayList<>();
         ItemStack input = material.getDust(1);
@@ -103,6 +106,9 @@ public class DTPFCalculator {
         recipeDuration = ebfDuration;
     }
 
+    /**
+     * Finds the material's respective vacuum freezer recipe.
+     */
     private void determineFreezerParams(Materials material) {
         // Find correct freezer recipe
         for (GT_Recipe recipe : freezerRecipes) {
@@ -116,28 +122,44 @@ public class DTPFCalculator {
         }
     }
 
+    /**
+     * Calculates the base power use of the output material's dtpf recipe, taking its ebf and vacuum freezer recipes
+     * into account.
+     */
     private void calculateBaseDTPFPowerConsumption() {
         totalBaseEU = (freezerEUpertick * freezerDuration + ebfEUpertick * ebfDuration) * baseParallel;
+        // power distribution is 10% to dtpf, 90% to catalyst
         DTPFEUt = totalBaseEU / ebfDuration / 10;
+        // make sure all recipes fit into max int
         while (DTPFEUt > (Integer.MAX_VALUE / Math.pow(scalingFactor, maxCatalystTier - minCatalystTier))) {
             DTPFEUt /= scalingFactor;
         }
     }
 
-    private void calculateNonEBFBaseDTPFPowerConsumption(long base_voltage, long base_duration) {
-        totalBaseEU = base_voltage * base_duration * baseParallel;
-        DTPFEUt = totalBaseEU / base_duration / 10;
+    /**
+     * Calculates the base power use of the output material's dtpf recipe based on a supplied voltage and duration.
+     */
+    private void calculateNonEBFBaseDTPFPowerConsumption(long baseVoltage, long baseDuration) {
+        totalBaseEU = baseVoltage * baseDuration * baseParallel;
+        // power distribution is 10% to dtpf, 90% to catalyst
+        DTPFEUt = totalBaseEU / baseDuration / 10;
+        // make sure all recipes fit into max int
         while (DTPFEUt > (Integer.MAX_VALUE / Math.pow(scalingFactor, maxCatalystTier - minCatalystTier))) {
             DTPFEUt /= scalingFactor;
         }
     }
 
-    private void calculateCatalystAmounts(long recipe_duration) {
+    /**
+     * Calculates each catalyst amount, applying an innate discount that starts at 20% and increases by 10% for each
+     * additional catalyst tier in the output's set of dtpf recipes.
+     *
+     */
+    private void calculateCatalystAmounts(long recipeDuration) {
         for (long i = 0; i <= (maxCatalystTier - minCatalystTier); i++) {
-            catalyst_amounts[(int) (minCatalystTier
+            catalystAmounts[(int) (minCatalystTier
                     + i)] = (int) (((totalBaseEU * (0.8 - i * 0.1) * Math.pow(scalingFactor, i)
                             - DTPFEUt * Math.pow(scalingFactor, i)
-                                    * (recipe_duration / Math.pow(scalingFactor, i + 1))
+                                    * (recipeDuration / Math.pow(scalingFactor, i + 1))
                                     / EUtDivisor)
                             / CATALYST_ENERGY_VALUES[(int) (minCatalystTier + i)]) * (1 - catalystDiscount / 100f));
         }
@@ -252,7 +274,7 @@ public class DTPFCalculator {
      * @param catalystTier Catalyst tier of the recipe
      */
     public long getCatalystAmount(int catalystTier) {
-        return catalyst_amounts[catalystTier];
+        return catalystAmounts[catalystTier];
     }
 
     /**
@@ -261,7 +283,7 @@ public class DTPFCalculator {
      * @param catalystTier Catalyst tier of the recipe
      */
     public long getResidueAmount(int catalystTier) {
-        return (long) (catalyst_amounts[catalystTier] * (Math.pow(2, catalystTier) / 8));
+        return (long) (catalystAmounts[catalystTier] * (Math.pow(2, catalystTier) / 8));
     }
 
     public static DTPFCalculator dtpfCalculator() {
