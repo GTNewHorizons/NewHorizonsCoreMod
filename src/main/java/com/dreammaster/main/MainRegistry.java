@@ -1,10 +1,10 @@
 package com.dreammaster.main;
 
-import static com.dreammaster.main.XMod.DETRAVSCANNERMOD;
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.DetravScannerMod;
 import static gregtech.api.enums.Mods.GalactiGreg;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SGCraft;
@@ -148,7 +148,7 @@ public class MainRegistry {
     }
 
     public MainRegistry() {
-        if (DETRAVSCANNERMOD) GregTech_API.sAfterGTPreload.add(ScannerTools::new);
+        if (DetravScannerMod.isModLoaded()) GregTech_API.sAfterGTPreload.add(ScannerTools::new);
     }
 
     @Mod.EventHandler
