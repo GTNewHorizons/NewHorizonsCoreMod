@@ -122,7 +122,9 @@ public class DTPFCalculator {
         for (long i = 0; i <= (maxCatalystTier - minCatalystTier); i++) {
             catalyst_amounts[(int) (minCatalystTier
                     + i)] = (int) (((totalBaseEU * (0.8 - i * 0.1) * Math.pow(scalingFactor, i)
-                            - DTPFEUt * Math.pow(scalingFactor, i) * (recipe_duration / Math.pow(scalingFactor, i + 1)) / EUtMultiplier)
+                            - DTPFEUt * Math.pow(scalingFactor, i)
+                                    * (recipe_duration / Math.pow(scalingFactor, i + 1))
+                                    / EUtMultiplier)
                             / CATALYST_ENERGY_VALUES[(int) (minCatalystTier + i)]) * (1 - catalystDiscount / 100f));
         }
     }
