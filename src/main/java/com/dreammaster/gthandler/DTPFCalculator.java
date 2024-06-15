@@ -21,6 +21,7 @@ public class DTPFCalculator {
     public DTPFCalculator() {};
 
     protected long duration = -1;
+    protected ItemStack customInput = null;
     protected ItemStack[] itemInputs = new ItemStack[0];
     protected FluidStack[] fluidInputs = new FluidStack[0];
     protected long ebfEUpertick = 0;
@@ -32,6 +33,11 @@ public class DTPFCalculator {
     protected long totalBaseEU = 0;
     protected long minCatalystTier = 0;
     protected long maxCatalystTier = 4;
+    protected long catalystDiscount = 0;
+    protected long processingTimeDiscount = 0;
+    protected long recipeDuration = 0;
+    protected long scalingFactor = 2;
+    protected float EUtMultiplier = 1f;
     Collection<GT_Recipe> ebfRecipes = blastFurnaceRecipes.getAllRecipes();
     Collection<GT_Recipe> freezerRecipes = vacuumFreezerRecipes.getAllRecipes();
     private int[] catalyst_amounts = new int[5];
@@ -46,15 +52,26 @@ public class DTPFCalculator {
         determineEBFParams(material);
         determineFreezerParams(material);
         calculateBaseDTPFPowerConsumption();
-        calculateCatalystAmounts();
+        calculateCatalystAmounts(ebfDuration);
+        return this;
+    }
+
+    public DTPFCalculator calculateNonEBFRecipe(long base_voltage, long base_duration) {
+        recipeDuration = base_duration;
+        calculateNonEBFBaseDTPFPowerConsumption(base_voltage, base_duration);
+        calculateCatalystAmounts(base_duration);
         return this;
     }
 
     private void determineEBFParams(Materials material) {
         ArrayList<GT_Recipe> foundEBFRecipes = new ArrayList<>();
+        ItemStack input = material.getDust(1);
+        if (customInput != null) {
+            input = customInput;
+        }
         // Find correct ebf recipes
         for (GT_Recipe recipe : ebfRecipes) {
-            if (GT_Utility.areStacksEqual(material.getDust(1), recipe.mInputs[0])) {
+            if (GT_Utility.areStacksEqual(input, recipe.mInputs[0])) {
                 foundEBFRecipes.add(recipe);
             }
         }
@@ -69,6 +86,7 @@ public class DTPFCalculator {
                 break;
             }
         }
+        recipeDuration = ebfDuration;
     }
 
     private void determineFreezerParams(Materials material) {
@@ -87,13 +105,25 @@ public class DTPFCalculator {
     private void calculateBaseDTPFPowerConsumption() {
         totalBaseEU = (freezerEUpertick * freezerDuration + ebfEUpertick * ebfDuration) * baseParallel;
         DTPFEUt = totalBaseEU / ebfDuration / 10;
+        while (DTPFEUt > (Integer.MAX_VALUE / Math.pow(scalingFactor, maxCatalystTier - minCatalystTier))) {
+            DTPFEUt /= scalingFactor;
+        }
     }
 
-    private void calculateCatalystAmounts() {
+    private void calculateNonEBFBaseDTPFPowerConsumption(long base_voltage, long base_duration) {
+        totalBaseEU = base_voltage * base_duration * baseParallel;
+        DTPFEUt = totalBaseEU / base_duration / 10;
+        while (DTPFEUt > (Integer.MAX_VALUE / Math.pow(scalingFactor, maxCatalystTier - minCatalystTier))) {
+            DTPFEUt /= scalingFactor;
+        }
+    }
+
+    private void calculateCatalystAmounts(long recipe_duration) {
         for (long i = 0; i <= (maxCatalystTier - minCatalystTier); i++) {
-            catalyst_amounts[(int) (minCatalystTier + i)] = (int) (((totalBaseEU * (0.8 - i * 0.1) * Math.pow(2, i)
-                    - DTPFEUt * Math.pow(2, i) * (ebfDuration / Math.pow(2, i + 1)))
-                    / CATALYST_ENERGY_VALUES[(int) (minCatalystTier + i)]));
+            catalyst_amounts[(int) (minCatalystTier
+                    + i)] = (int) (((totalBaseEU * (0.8 - i * 0.1) * Math.pow(scalingFactor, i)
+                            - DTPFEUt * Math.pow(scalingFactor, i) * (recipe_duration / Math.pow(scalingFactor, i + 1)) / EUtMultiplier)
+                            / CATALYST_ENERGY_VALUES[(int) (minCatalystTier + i)]) * (1 - catalystDiscount / 100f));
         }
     }
 
@@ -112,17 +142,43 @@ public class DTPFCalculator {
         return this;
     }
 
+    public DTPFCalculator setCatalystDiscount(long discount) {
+        this.catalystDiscount = discount;
+        return this;
+    }
+
+    public DTPFCalculator setProcessingTimeDiscount(long discount) {
+        this.processingTimeDiscount = discount;
+        return this;
+    }
+
+    public DTPFCalculator setEUtMultiplier(float multiplier) {
+        this.EUtMultiplier = multiplier;
+        return this;
+    }
+
+    public DTPFCalculator setCustomEBFinputItem(ItemStack item) {
+        this.customInput = item;
+        return this;
+    }
+
+    public DTPFCalculator setScalingFactor(long factor) {
+        this.scalingFactor = factor;
+        return this;
+    }
+
     public DTPFCalculator fluidInputs(FluidStack... fluidInputs) {
         this.fluidInputs = fluidInputs;
         return this;
     }
 
     public long getDuration(int catalystTier) {
-        return (long) (ebfDuration / Math.pow(2, catalystTier + 1));
+        return (long) ((recipeDuration / Math.pow(scalingFactor, catalystTier + 1 - minCatalystTier))
+                * (1 - processingTimeDiscount / 100f));
     }
 
     public long getEUt(int catalystTier) {
-        return (long) (DTPFEUt * Math.pow(2, catalystTier));
+        return (long) (DTPFEUt * Math.pow(scalingFactor, catalystTier - minCatalystTier) / EUtMultiplier);
     }
 
     public long getCatalystAmount(int catalystTier) {
