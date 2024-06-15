@@ -527,18 +527,17 @@ public class DTPFRecipes implements Runnable {
             // Astral titanium ebf
             long total_EU_per_astral_ingot_ebf = 22_118_400_000L;
             // Astral titanium freezer
-            long total_EU_per_astral_ingot_freezer = 1_639_710_720;
+            long total_EU_per_astral_ingot_freezer = 1_639_710_720L;
             // 2 astral titanium blocks per 320 quantum ingots
             float astral_ingots_per_quantum_ingot = 18 / 320f;
             // Based on quantum abs including coil discount
             long recipe_time_per_quantum_ingot = (long) (600 * 20 / 10 * 0.9);
+            long total_EUt = (long) (total_EU_per_quantum_ingot + astral_ingots_per_quantum_ingot
+                    * (total_EU_per_astral_dust + total_EU_per_astral_ingot_ebf + total_EU_per_astral_ingot_freezer))
+                    / recipe_time_per_quantum_ingot;
             DTPFCalculator quantum = new DTPFCalculator().setBaseParallel(320).setLowestCatalystTier(3)
-                    .setHighestCatalystTier(4).calculateNonEBFRecipe(
-                            total_EU_per_quantum_ingot + (long) (astral_ingots_per_quantum_ingot
-                                    * (total_EU_per_astral_dust + total_EU_per_astral_ingot_ebf
-                                            + total_EU_per_astral_ingot_freezer))
-                                    / recipe_time_per_quantum_ingot,
-                            recipe_time_per_quantum_ingot);
+                    .setHighestCatalystTier(4).setEUtDivisor(1.12f)
+                    .calculateNonEBFRecipe(total_EUt, recipe_time_per_quantum_ingot);
             GT_Values.RA.stdBuilder().itemInputs(
                     CI.getEnergyCore(9, 0),
                     BlockList.Quantinum.getIS(2),
@@ -634,7 +633,7 @@ public class DTPFRecipes implements Runnable {
 
                 DTPFCalculator infinity_bee = new DTPFCalculator().setBaseParallel(base_quantity)
                         .setLowestCatalystTier(2).setHighestCatalystTier(4).setCatalystDiscount(15)
-                        .setProcessingTimeDiscount(50).setEUtMultiplier(2).calculateNonEBFRecipe(32_000_000, base_time);
+                        .setProcessingTimeDiscount(50).setEUtDivisor(2).calculateNonEBFRecipe(32_000_000, base_time);
 
                 // Bee comb catalyst recipes for infinity
 
@@ -693,7 +692,7 @@ public class DTPFRecipes implements Runnable {
                 // normal recipes
 
                 DTPFCalculator infinity = new DTPFCalculator().setBaseParallel(base_quantity).setLowestCatalystTier(2)
-                        .setHighestCatalystTier(4).setEUtMultiplier(2).calculateNonEBFRecipe(32_000_000, base_time);
+                        .setHighestCatalystTier(4).setEUtDivisor(2).calculateNonEBFRecipe(32_000_000, base_time);
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(

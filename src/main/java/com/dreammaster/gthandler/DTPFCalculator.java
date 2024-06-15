@@ -37,7 +37,7 @@ public class DTPFCalculator {
     protected long processingTimeDiscount = 0;
     protected long recipeDuration = 0;
     protected long scalingFactor = 2;
-    protected float EUtMultiplier = 1f;
+    protected float EUtDivisor = 1f;
     Collection<GT_Recipe> ebfRecipes = blastFurnaceRecipes.getAllRecipes();
     Collection<GT_Recipe> freezerRecipes = vacuumFreezerRecipes.getAllRecipes();
     private int[] catalyst_amounts = new int[5];
@@ -124,7 +124,7 @@ public class DTPFCalculator {
                     + i)] = (int) (((totalBaseEU * (0.8 - i * 0.1) * Math.pow(scalingFactor, i)
                             - DTPFEUt * Math.pow(scalingFactor, i)
                                     * (recipe_duration / Math.pow(scalingFactor, i + 1))
-                                    / EUtMultiplier)
+                                    / EUtDivisor)
                             / CATALYST_ENERGY_VALUES[(int) (minCatalystTier + i)]) * (1 - catalystDiscount / 100f));
         }
     }
@@ -154,8 +154,8 @@ public class DTPFCalculator {
         return this;
     }
 
-    public DTPFCalculator setEUtMultiplier(float multiplier) {
-        this.EUtMultiplier = multiplier;
+    public DTPFCalculator setEUtDivisor(float Divisor) {
+        this.EUtDivisor = Divisor;
         return this;
     }
 
@@ -180,7 +180,7 @@ public class DTPFCalculator {
     }
 
     public long getEUt(int catalystTier) {
-        return (long) (DTPFEUt * Math.pow(scalingFactor, catalystTier - minCatalystTier) / EUtMultiplier);
+        return (long) (DTPFEUt * Math.pow(scalingFactor, catalystTier - minCatalystTier) / EUtDivisor);
     }
 
     public long getCatalystAmount(int catalystTier) {
