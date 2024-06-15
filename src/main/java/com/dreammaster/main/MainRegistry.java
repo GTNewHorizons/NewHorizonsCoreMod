@@ -50,6 +50,7 @@ import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_CasingNH;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
+import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.WoodenBrickForm;
@@ -501,6 +502,7 @@ public class MainRegistry {
     public void CompleteLoad(FMLLoadCompleteEvent event) {
         RecipeRemover.run();
         ScriptLoader.run();
+        new DTPFRecipes().run();
         if (BartWorks.isModLoaded()) {
             BW_RadHatchMaterial.runRadHatchAdder();
         }
