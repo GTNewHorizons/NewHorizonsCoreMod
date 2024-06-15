@@ -21,7 +21,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:amunra:0.5.1:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.1.5-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.9.3:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:DetravScannerMod:1.8.0:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:DetravScannerMod:1.8.1:dev") { transitive = false }
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.2.1-GTNH:dev")
