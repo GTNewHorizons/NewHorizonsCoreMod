@@ -58,7 +58,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_up_multiplier = 2L;
 
                 DTPFCalculator neutronium = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .setCustomEBFinputItem(CustomItemList.RawNeutronium.get(1L)).setHighestCatalystTier(3)
+                        .setCustomEBFinputItem(CustomItemList.RawNeutronium.get(1L))
                         .calculateGenericEBFBasedRecipe(Materials.Neutronium);
 
                 long tier_1_quantity = 144L * base_quantity;
@@ -124,7 +124,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_up_multiplier = 2L;
 
                 DTPFCalculator cosmic_neutronium_bee = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .setHighestCatalystTier(3).setCatalystDiscount(15).setProcessingTimeDiscount(50)
+                        .setCatalystDiscount(15).setProcessingTimeDiscount(50)
                         .calculateGenericEBFBasedRecipe(Materials.CosmicNeutronium);
 
                 int base_time = 4200;
@@ -200,7 +200,7 @@ public class DTPFRecipes implements Runnable {
                 // normal ones
 
                 DTPFCalculator cosmic_neutronium = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .setHighestCatalystTier(3).calculateGenericEBFBasedRecipe(Materials.CosmicNeutronium);
+                        .calculateGenericEBFBasedRecipe(Materials.CosmicNeutronium);
 
                 GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(4))
                         .fluidInputs(
@@ -263,7 +263,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_up_multiplier = 2L;
 
                 DTPFCalculator bedrockium = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .setHighestCatalystTier(3).calculateGenericEBFBasedRecipe(Materials.Bedrockium);
+                        .calculateGenericEBFBasedRecipe(Materials.Bedrockium);
 
                 long tier_1_quantity = 144L * base_quantity;
 
@@ -378,7 +378,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_up_multiplier = 2L;
 
                 DTPFCalculator chromatic_glass = new DTPFCalculator().setBaseParallel(base_quantity)
-                        .setHighestCatalystTier(3).calculateNonEBFRecipe(1_966_080, 6_000);
+                        .calculateNonEBFRecipe(1_966_080, 6_000);
 
                 long tier_1_quantity = 144L * base_quantity;
 
@@ -764,7 +764,7 @@ public class DTPFRecipes implements Runnable {
                 long base_quantity = 8190L;
                 long tier_up_multiplier = 2L;
 
-                DTPFCalculator baseLuV = new DTPFCalculator().setBaseParallel(base_quantity).setHighestCatalystTier(3)
+                DTPFCalculator baseLuV = new DTPFCalculator().setBaseParallel(base_quantity)
                         .calculateGenericEBFBasedRecipe(
                                 Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid);
 
@@ -846,7 +846,7 @@ public class DTPFRecipes implements Runnable {
                 long base_quantity = 4095L;
                 long tier_up_multiplier = 2L;
 
-                DTPFCalculator baseZPM = new DTPFCalculator().setBaseParallel(base_quantity).setHighestCatalystTier(3)
+                DTPFCalculator baseZPM = new DTPFCalculator().setBaseParallel(base_quantity)
                         .calculateGenericEBFBasedRecipe(Materials.Tetranaquadahdiindiumhexaplatiumosminid);
 
                 long tier_1_quantity = 144L * base_quantity;
@@ -915,7 +915,7 @@ public class DTPFRecipes implements Runnable {
                 long base_quantity = 2043L;
                 long tier_up_multiplier = 2L;
 
-                DTPFCalculator baseUV = new DTPFCalculator().setBaseParallel(base_quantity).setHighestCatalystTier(3)
+                DTPFCalculator baseUV = new DTPFCalculator().setBaseParallel(base_quantity)
                         .calculateGenericEBFBasedRecipe(Materials.Longasssuperconductornameforuvwire);
 
                 long tier_1_quantity = 144L * base_quantity;
