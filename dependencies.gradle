@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.48.27:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.48.37:dev")
     api("com.github.GTNewHorizons:Yamcl:0.6.0:dev")
     api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
 
@@ -21,6 +21,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:amunra:0.5.1:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.1.5-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.9.3:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:DetravScannerMod:1.8.1:dev") { transitive = false }
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.2.1-GTNH:dev")
