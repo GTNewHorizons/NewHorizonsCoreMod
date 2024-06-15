@@ -49,8 +49,6 @@ public class DTPFRecipes implements Runnable {
             // ------------------------------------- Plasma Forge ---------------------------------------
             // ------------------------------------------------------------------------------------------
 
-            // See https://docs.google.com/spreadsheets/d/1_n2HSFyzfNzkJHYBPFu3HTZvkh69GBi5LXw2c9FyG9o/edit?usp=sharing
-            // for details on plasma forge maths.
             {
                 // Neutronium Smelting.
 
