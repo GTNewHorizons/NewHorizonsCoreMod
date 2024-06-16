@@ -531,7 +531,7 @@ public class ScriptMagicBees implements IScriptLoader {
                         .add(Aspect.getAspect("herba"), 6).add(Aspect.getAspect("terra"), 3));
         TCHelper.setResearchComplexity("MB_EssenceLife", 3);
         TCHelper.clearPages("MB_EssenceDeath");
-        TCHelper.addResearchPage("MB_EssenceDeath", new ResearchPage("tc.reseacrh_page.MB_EssenceDeath.1"));
+        TCHelper.addResearchPage("MB_EssenceDeath", new ResearchPage("tc.research_page.MB_EssenceDeath.1"));
         ThaumcraftApi.addCrucibleRecipe(
                 "MB_EssenceDeath",
                 getModItem(MagicBees.ID, "miscResources", 1, 8, missing),
