@@ -226,7 +226,7 @@ public class AssemblingLineRecipes implements Runnable {
                         (int) TierEU.RECIPE_UHV);
 
                 TT_recipeAdder.addResearchableAssemblylineRecipe(
-                        com.dreammaster.item.ItemList.GatePlateOrigin.getIS(1),
+                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 1L),
                         192_000,
                         512,
                         2_000_000,
@@ -335,7 +335,7 @@ public class AssemblingLineRecipes implements Runnable {
                         (int) TierEU.RECIPE_UIV);
 
                 TT_recipeAdder.addResearchableAssemblylineRecipe(
-                        com.dreammaster.item.ItemList.GatePlatePolychrome.getIS(1),
+                        com.dreammaster.item.ItemList.ChevronOrigin.getIS(1),
                         32_000_000 * 12,
                         8192,
                         32_000_000,
@@ -471,7 +471,7 @@ public class AssemblingLineRecipes implements Runnable {
                         (int) TierEU.RECIPE_UXV);
 
                 TT_recipeAdder.addResearchableAssemblylineRecipe(
-                        com.dreammaster.item.ItemList.GatePlateDimensional.getIS(1),
+                        com.dreammaster.item.ItemList.ChevronPolychrome.getIS(1),
                         2_000_000_000,
                         32_768,
                         500_000_000,
@@ -489,7 +489,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Osmiridium, 8L),
                                 ItemList.Electric_Motor_UMV.get(64L), ItemList.Electric_Piston_UMV.get(64L),
                                 ItemList.Field_Generator_UMV.get(16L),
-                                com.dreammaster.item.ItemList.QuantumCircuitDimensional.getIS(1), },
+                                com.dreammaster.item.ItemList.QuantumCircuitDimensional.getIS(32), },
                         new FluidStack[] { Materials.Neutronium.getMolten(32_768_000L),
                                 MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                                 Materials.SuperconductorUMVBase.getMolten(4 * 36864L),

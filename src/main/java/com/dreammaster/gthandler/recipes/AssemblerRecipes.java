@@ -1900,7 +1900,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Elite), 4),
                         GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Titanium, 3),
                         ItemList.Field_Generator_HV.get(1),
-                        ItemList.Automation_SuperBuffer_IV.get(1))
+                        ItemList.Automation_ChestBuffer_IV.get(1))
                 .itemOutputs(ItemList.Super_Chest_IV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
@@ -4159,7 +4159,7 @@ public class AssemblerRecipes implements Runnable {
                 // Formation Core
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 43),
                 // Annihilation Core
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 44),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 44),
                 ItemList.Casing_EV.get(1L),
                 GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440)).duration(5 * SECONDS)
