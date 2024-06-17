@@ -14,7 +14,6 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -50,11 +49,11 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                 'G',
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                 'W',
-                ToolDictNames.craftingToolSaw,
+                "craftingToolSaw",
                 'S',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L),
+                "screwWood",
                 'D',
-                ToolDictNames.craftingToolScrewdriver);
+                "craftingToolScrewdriver");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumiumBoat",
                 getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0, missing),
@@ -66,7 +65,7 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                 'F', // Fire Cluster
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
                 'T',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                "plateThaumium",
                 'W', // Water Cluster
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'B',
