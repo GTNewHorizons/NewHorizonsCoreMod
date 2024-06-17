@@ -7,7 +7,6 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.enums.ToolDictNames;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
@@ -15,6 +14,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GT_OreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
