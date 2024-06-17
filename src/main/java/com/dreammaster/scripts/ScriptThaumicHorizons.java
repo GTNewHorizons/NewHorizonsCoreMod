@@ -70,7 +70,7 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                 'W', // Water Cluster
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                 'B',
-                getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0, missing));
+                getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0, missing));
         ThaumcraftApi.addWarpToResearch("thaumiumBoat", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "planarTheory",
