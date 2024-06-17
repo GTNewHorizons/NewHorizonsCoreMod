@@ -2,9 +2,12 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Automagy;
+import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
+import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
@@ -35,11 +38,20 @@ public class ScriptAutomagy implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Thaumcraft.ID, Automagy.ID, Genetics.ID, AppliedEnergistics2.ID, ProjectRedIntegration.ID);
+        return Arrays.asList(
+                Thaumcraft.ID,
+                Automagy.ID,
+                Genetics.ID,
+                AppliedEnergistics2.ID,
+                ProjectRedIntegration.ID,
+                BuildCraftFactory.ID,
+                IndustrialCraft2.ID,
+                Railcraft.ID);
     }
 
     @Override
     public void loadRecipes() {
+        TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockBoiler", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockTorchInversion", 1, 0, missing));
         TCHelper.removeCrucibleRecipe(getModItem(Automagy.ID, "blockRedcrystal", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(Automagy.ID, "blockRedcrystalAmp", 2, 0, missing));
@@ -71,6 +83,23 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.1"));
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.2"));
         TCHelper.addResearchPage("REDSTONETHEORY", new ResearchPage("Automagy.research_page.REDSTONETHEORY.3"));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "ALCHEMYBOILER",
+                getModItem(Automagy.ID, "blockBoiler", 1, 0, missing),
+                new AspectList().add(Aspect.WATER, 25).add(Aspect.FIRE, 20).add(Aspect.ORDER, 20),
+                "SAS",
+                "TFT",
+                "SBS",
+                'A',
+                getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
+                'F',
+                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                'B',
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
+                'S',
+                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
+                'T',
+                "plateThaumium");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDSTONETHEORY",
                 getModItem(Automagy.ID, "blockTorchInversion", 1, 0, missing),
@@ -681,6 +710,7 @@ public class ScriptAutomagy implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing), });
         TCHelper.addResearchPage("ENCHANT_FISHING", new ResearchPage(TCHelper.findInfusionEnchantRecipe(61)));
         TCHelper.addResearchPage("ENCHANT_FISHING", new ResearchPage(TCHelper.findInfusionEnchantRecipe(62)));
+        TCHelper.refreshResearchPages("ALCHEMYBOILER");
         TCHelper.refreshResearchPages("REDSTONETHEORY");
         TCHelper.refreshResearchPages("REDCRYSTAL");
         TCHelper.refreshResearchPages("REDCRYSTAL_AMP");
