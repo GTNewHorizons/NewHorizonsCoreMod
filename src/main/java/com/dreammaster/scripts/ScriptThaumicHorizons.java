@@ -7,6 +7,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.enums.ToolDictNames;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
@@ -33,10 +34,44 @@ public class ScriptThaumicHorizons implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "transductionAmplifier", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "vortexStabilizer", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "recombinator", 1, 0, missing));
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "greatwoodBoat",
+                getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0, missing),
+                (new AspectList()).add(Aspect.ORDER, 10).add(Aspect.EARTH, 10).add(Aspect.WATER, 10),
+                "GWG",
+                "GGG",
+                "SDS",
+                'G',
+                getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
+                'W',
+                ToolDictNames.craftingToolSaw,
+                'S',
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Wood, 1L),
+                'D',
+                ToolDictNames.craftingToolScrewdriver);
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "thaumiumBoat",
+                getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0, missing),
+                (new AspectList()).add(Aspect.FIRE, 20).add(Aspect.WATER, 20).add(Aspect.ORDER, 20)
+                        .add(Aspect.EARTH, 20),
+                "FTF",
+                "TBT",
+                "WTW",
+                'F', // Fire Cluster
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
+                'T',
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                'W', // Water Cluster
+                getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
+                'B',
+                getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0, missing));
+        ThaumcraftApi.addWarpToResearch("thaumiumBoat", 1);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "planarTheory",
                 getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
@@ -154,6 +189,8 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("sensus"), 6));
         TCHelper.setResearchComplexity("recombinator", 4);
         ThaumcraftApi.addWarpToResearch("recombinator", 3);
+        TCHelper.refreshResearchPages("greatwoodBoat");
+        TCHelper.refreshResearchPages("thaumiumBoat");
         TCHelper.refreshResearchPages("planarTheory");
         TCHelper.refreshResearchPages("transductionAmplifier");
         TCHelper.refreshResearchPages("vortexStabilizer");
