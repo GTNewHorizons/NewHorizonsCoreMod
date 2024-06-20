@@ -334,6 +334,98 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(new ItemStack(Blocks.glass, 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
 
+        // Recipes for Any circuits
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitLV", 1)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitHV", 1)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitEV", 1)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitIV", 1)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitLuV", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitZPM", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUV", 1)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinite, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUHV", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Bio, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUEV", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Optical, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUIV", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Exotic, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUMV", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUXV", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Transcendent, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitMAX", 1))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+
         if (BloodArsenal.isModLoaded()) {
 
             GT_Values.RA.stdBuilder()
