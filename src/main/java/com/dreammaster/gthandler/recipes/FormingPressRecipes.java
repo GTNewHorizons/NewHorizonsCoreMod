@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -341,24 +342,26 @@ public class FormingPressRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitULV.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        //GT_Values.RA.stdBuilder()
-        //        .itemInputs(
-        //                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
-        //                GT_Utility.getIntegratedCircuit(24))
-        //        .itemOutputs(com.dreammaster.item.ItemList.CircuitLV.getIS(1)).duration(1 * SECONDS)
-        //        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        // LV Circuits are overridden by IC2: Treat the IC2 circuit as the Any variant
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1L, 0))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1),
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitMV.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        //GT_Values.RA.stdBuilder()
-        //        .itemInputs(
-        //                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
-        //                GT_Utility.getIntegratedCircuit(24))
-        //        .itemOutputs(com.dreammaster.item.ItemList.CircuitHV.getIS(1)).duration(1 * SECONDS)
-        //        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        // Same with HV
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
+                        GT_Utility.getIntegratedCircuit(24))
+                .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1L, 0))
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1),
