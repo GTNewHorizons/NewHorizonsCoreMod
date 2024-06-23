@@ -341,24 +341,24 @@ public class FormingPressRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitULV.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        //GT_Values.RA.stdBuilder()
-        //        .itemInputs(
-        //                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
-        //                GT_Utility.getIntegratedCircuit(24))
-        //        .itemOutputs(com.dreammaster.item.ItemList.CircuitLV.getIS(1)).duration(1 * SECONDS)
-        //        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        // GT_Values.RA.stdBuilder()
+        // .itemInputs(
+        // GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+        // GT_Utility.getIntegratedCircuit(24))
+        // .itemOutputs(com.dreammaster.item.ItemList.CircuitLV.getIS(1)).duration(1 * SECONDS)
+        // .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1),
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitMV.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        //GT_Values.RA.stdBuilder()
-        //        .itemInputs(
-        //                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
-        //                GT_Utility.getIntegratedCircuit(24))
-        //        .itemOutputs(com.dreammaster.item.ItemList.CircuitHV.getIS(1)).duration(1 * SECONDS)
-        //        .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+        // GT_Values.RA.stdBuilder()
+        // .itemInputs(
+        // GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
+        // GT_Utility.getIntegratedCircuit(24))
+        // .itemOutputs(com.dreammaster.item.ItemList.CircuitHV.getIS(1)).duration(1 * SECONDS)
+        // .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1),
