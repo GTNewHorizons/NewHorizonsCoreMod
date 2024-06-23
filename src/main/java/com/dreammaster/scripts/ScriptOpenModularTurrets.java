@@ -528,7 +528,7 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
                 .eut(256).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "ioBus", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 72)).duration(5 * SECONDS).eut(30)
