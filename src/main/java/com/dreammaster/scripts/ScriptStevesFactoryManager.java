@@ -24,6 +24,9 @@ import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 
 public class ScriptStevesFactoryManager implements IScriptLoader {
@@ -166,7 +169,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableCamouflageName", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(15 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
@@ -191,7 +194,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.Display.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2))
                 .itemOutputs(getModItem(StevesAddons.ID, "labeler", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(480).addTo(assemblerRecipes);
