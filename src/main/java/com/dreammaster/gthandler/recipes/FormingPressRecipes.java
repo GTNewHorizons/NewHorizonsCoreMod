@@ -334,14 +334,13 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(new ItemStack(Blocks.glass, 1, 0)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(formingPressRecipes);
 
-        // Recipes for Any circuits (LV and HV are broken due to IC2 interactions)
+        // Recipes for Any circuits
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 1),
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitULV.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        // LV Circuits are overridden by IC2: Treat the IC2 circuit as the Any variant
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
@@ -354,7 +353,6 @@ public class FormingPressRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitMV.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        // Same with HV
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
