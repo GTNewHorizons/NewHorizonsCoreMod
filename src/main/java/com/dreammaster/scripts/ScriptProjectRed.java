@@ -2388,7 +2388,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .addTo(chemicalBathRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L))
                 .itemOutputs(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(15 * SECONDS).eut(30)

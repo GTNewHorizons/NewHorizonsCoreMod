@@ -580,7 +580,7 @@ public class CircuitAssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                            GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2L, 0),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2),
                             ItemList.Circuit_Parts_Diode.get(2L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2))
                     .itemOutputs(ItemList.Circuit_Good.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))

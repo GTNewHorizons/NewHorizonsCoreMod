@@ -1776,7 +1776,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
@@ -1812,7 +1812,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
                         ItemList.IC2_Item_Casing_Steel.get(2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
