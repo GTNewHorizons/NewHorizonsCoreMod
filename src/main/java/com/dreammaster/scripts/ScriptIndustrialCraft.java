@@ -1030,11 +1030,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 16L),
-                GT_OreDictUnificator.get(OrePrefixes.crateGtPlate, Materials.Iridium, 1L),
-                "craftingToolCrowbar",
-                null);
-        addShapedRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Iridium, 1L),
                 "plateIridium",
                 "ingotIridium",
@@ -1127,11 +1122,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "craftingToolFile",
                 "plateIridium",
                 "craftingToolHardHammer");
-        addShapedRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iridium, 16L),
-                GT_OreDictUnificator.get(OrePrefixes.crateGtIngot, Materials.Iridium, 1L),
-                "craftingToolCrowbar",
-                null);
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing),
                 "screwSteel",
