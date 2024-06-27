@@ -292,17 +292,7 @@ public class ScriptGenetics implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "chipsets", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing))
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "chipsets", 1, 1, missing), ItemList.Circuit_Nanoprocessor.get(2L))
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "chipsets", 1, 1, missing), ItemList.Circuit_Computer.get(2L))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);

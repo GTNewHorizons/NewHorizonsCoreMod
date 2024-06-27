@@ -545,19 +545,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 1, 0, missing))
-                .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsemerald", 8, 0, missing))
-                .duration(20 * SECONDS).eut(480).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
-                        ItemList.Circuit_Computer.get(1L))
-                .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsemerald", 8, 0, missing))
-                .duration(20 * SECONDS).eut(480).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 0, missing),
-                        ItemList.Circuit_Nanoprocessor.get(1L))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1))
                 .itemOutputs(getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipeitemsemerald", 8, 0, missing))
                 .duration(20 * SECONDS).eut(480).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()

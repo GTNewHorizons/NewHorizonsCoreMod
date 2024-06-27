@@ -16,7 +16,6 @@ import com.dreammaster.gthandler.recipes.CircuitAssemblerRecipes;
 import com.dreammaster.gthandler.recipes.CompressorRecipes;
 import com.dreammaster.gthandler.recipes.CrackingRecipes;
 import com.dreammaster.gthandler.recipes.CuttingMachineRecipes;
-import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.gthandler.recipes.DistillationRecipes;
 import com.dreammaster.gthandler.recipes.ElectrolyzerRecipes;
 import com.dreammaster.gthandler.recipes.ExtractorRecipes;
@@ -61,7 +60,6 @@ public class GT_MachineRecipeLoader implements Runnable {
         new CompressorRecipes().run();
         new CuttingMachineRecipes().run();
         new DistillationRecipes().run();
-        new DTPFRecipes().run();
         new ElectrolyzerRecipes().run();
         new ExtractorRecipes().run();
         new ExtruderRecipes().run();
