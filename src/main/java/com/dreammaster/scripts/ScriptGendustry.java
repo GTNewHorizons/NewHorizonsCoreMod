@@ -300,52 +300,13 @@ public class ScriptGendustry implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
-                        ItemList.Circuit_Elite.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
-                        ItemList.Circuit_Elitenanocomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
-                        ItemList.Circuit_Quantumcomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
-                        ItemList.Circuit_Crystalprocessor.get(1L))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(1920).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
-                        ItemList.Circuit_Elite.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
-                        ItemList.Circuit_Elitenanocomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
-                        ItemList.Circuit_Quantumcomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
-                        ItemList.Circuit_Crystalprocessor.get(1L))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
                 .addTo(assemblerRecipes);

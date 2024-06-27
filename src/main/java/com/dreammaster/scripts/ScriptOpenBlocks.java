@@ -477,7 +477,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}", missing),
-                        ItemList.Circuit_Good.get(2L))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 144)).duration(50 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);

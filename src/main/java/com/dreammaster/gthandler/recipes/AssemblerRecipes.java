@@ -1839,7 +1839,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1),
-                            ItemList.Circuit_Nanoprocessor.get(2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2),
                             GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 5, 0),
                             ItemList.Transformer_HV_MV.get(1))
                     .itemOutputs(GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1))

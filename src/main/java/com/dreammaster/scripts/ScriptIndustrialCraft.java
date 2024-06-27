@@ -1460,7 +1460,10 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(20 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Cover_Screen.get(1L), ItemList.Circuit_Good.get(1L))
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Cover_Screen.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(1 * MINUTES).eut(16)
                 .addTo(assemblerRecipes);

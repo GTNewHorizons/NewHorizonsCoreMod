@@ -1777,69 +1777,6 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        ItemList.Circuit_Basic.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        ItemList.Circuit_Microprocessor.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 5, missing))
-                .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
-                .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        ItemList.Circuit_Basic.get(1L),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
-                .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        ItemList.Circuit_Microprocessor.get(1L),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
-                .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedItem0", 1, 5, missing),
                         ItemList.IC2_Item_Casing_Steel.get(2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
