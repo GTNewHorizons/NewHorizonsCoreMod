@@ -155,7 +155,7 @@ public class ScriptStevesFactoryManager implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(StevesFactoryManager.ID, "BlockCableName", 1, 0, missing),
-                        ItemList.Circuit_Elite.get(2L))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1))
                 .itemOutputs(getModItem(StevesFactoryManager.ID, "BlockCableClusterName", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(10 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);

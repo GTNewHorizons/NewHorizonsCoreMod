@@ -310,6 +310,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null);
             }
             if (AppliedEnergistics2.isModLoaded() && AE2FluidCraft.isModLoaded()) {
+                // Non-oredicted circuit was intended.
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1),
                                 GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 3),
