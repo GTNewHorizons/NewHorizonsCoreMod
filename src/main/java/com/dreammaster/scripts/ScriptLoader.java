@@ -24,6 +24,7 @@ public class ScriptLoader {
                         new ScriptAE2Stuff(),
                         new ScriptAE2WC(),
                         new ScriptAFSU(),
+                        new ScriptAkashicTome(),
                         new ScriptAmunRa(),
                         new ScriptAppliedEnergistics2(),
                         new ScriptArchitectureCraft(),

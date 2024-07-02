@@ -1,0 +1,37 @@
+package com.dreammaster.scripts;
+
+import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.util.GT_ModHandler.getModItem;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class ScriptAkashicTome implements IScriptLoader {
+
+    @Override
+    public String getScriptName() {
+        return "Akashic Tome";
+    }
+
+    @Override
+    public List<String> getDependencies() {
+        return Arrays.asList(Backpack.ID, Minecraft.ID);
+    }
+
+    @Override
+    public void loadRecipes() {
+        addShapedRecipe(
+                getModItem("akashictome", "tome", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Minecraft.ID, "book", 1, 0, missing),
+                getModItem(Minecraft.ID, "book", 1, 0, missing),
+                getModItem(Minecraft.ID, "string", 1, 0, missing),
+                getModItem(Minecraft.ID, "chest", 1, 0, missing),
+                getModItem(Minecraft.ID, "paper", 1, 0, missing),
+                getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
+                getModItem(Minecraft.ID, "book", 1, 0, missing),
+                getModItem(Minecraft.ID, "book", 1, 0, missing));
+    }
+
+}
