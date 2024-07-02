@@ -250,7 +250,7 @@ public class AssemblingLineRecipes implements Runnable {
                         (int) TierEU.RECIPE_UHV);
 
                 TT_recipeAdder.addResearchableAssemblylineRecipe(
-                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Neutronium, 1L),
                         192_000,
                         512,
                         2_000_000,
