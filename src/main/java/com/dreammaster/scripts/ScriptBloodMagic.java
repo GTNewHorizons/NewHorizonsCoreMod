@@ -34,7 +34,6 @@ import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static vexatos.tgregworks.reference.Mods.TGregworks;
 
 import java.util.Arrays;
 import java.util.List;
@@ -3863,7 +3862,13 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
                         'b',
-                        createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}", missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1520,
+                                "{material:\"Titanium\"}",
+                                missing),
                         'c',
                         getModItem(BloodMagic.ID, "magicales", 1, 0, missing),
                         'd',
@@ -4988,8 +4993,20 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3, missing),
                         getModItem(BloodMagic.ID, "incendium", 1, 0, missing),
                         getModItem(BloodMagic.ID, "incendium", 1, 0, missing),
-                        createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}", missing),
-                        createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}", missing) },
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1520,
+                                "{material:\"Titanium\"}",
+                                missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1520,
+                                "{material:\"Titanium\"}",
+                                missing) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 1, missing),

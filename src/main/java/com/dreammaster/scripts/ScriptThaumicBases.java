@@ -573,13 +573,25 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("mortuus"), 16),
                 getModItem(ThaumicBases.ID, "spike", 1, 2, missing),
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1520, "{material:\"Titanium\"}", missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1520,
+                                "{material:\"Titanium\"}",
+                                missing),
                         getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
                         getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
-                        createItemStack(TinkersGregworks.ID, "tGregToolPartArrowHead", 1, 1583, "{material:\"Void\"}", missing),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1583,
+                                "{material:\"Void\"}",
+                                missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.VoidAnvil",
