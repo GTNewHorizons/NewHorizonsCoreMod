@@ -16,7 +16,7 @@ public class ScriptAkashicTome implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Backpack.ID, Minecraft.ID);
+        return Arrays.asList("akashictome", Backpack.ID);
     }
 
     @Override
