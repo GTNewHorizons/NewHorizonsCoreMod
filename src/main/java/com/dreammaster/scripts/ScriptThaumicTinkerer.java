@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -1997,20 +1996,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25543,
-                                "{ench:[0:{lvl:3s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25543,
-                                "{ench:[0:{lvl:3s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 2, missing), // Water arrow
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 2, missing), // Water arrow
                         GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing), });
         TCHelper.setResearchAspects(
@@ -2082,23 +2069,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25330,
-                                "{ench:[0:{lvl:2s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 0, missing), // Air Arrow
                         GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25330,
-                                "{ench:[0:{lvl:2s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 0, missing), // Air Arrow
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
                         getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "HoverHarness", 1, 0, missing), });
