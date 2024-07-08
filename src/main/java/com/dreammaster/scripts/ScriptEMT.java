@@ -2711,21 +2711,9 @@ public class ScriptEMT implements IScriptLoader {
                         CustomItemList.ReinforcedGlassLense.get(1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                         getModItem(Minecraft.ID, "firework_charge", 1, 0, missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                26541,
-                                "{ench:[0:{lvl:3s,id:20s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 1, missing), // Fire Arrow
                         getModItem(Minecraft.ID, "tnt", 1, 0, missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                26541,
-                                "{ench:[0:{lvl:3s,id:20s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 1, missing), // Fire Arrow
                         getModItem(Minecraft.ID, "firework_charge", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                         CustomItemList.ReinforcedGlassLense.get(1L), });
