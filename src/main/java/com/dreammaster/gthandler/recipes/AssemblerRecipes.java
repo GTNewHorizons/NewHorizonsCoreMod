@@ -2137,6 +2137,17 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Casing_Coil_Superconductor.get(1L))
                 .itemOutputs(ItemList.Casing_Fusion_Coil.get(1L)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
+        if (VisualProspecting.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L),
+                            new ItemStack(Items.writable_book, 1, 0x7FFF),
+                            new ItemStack(Items.gold_nugget, 1, 0x7FFF))
+                    .fluidInputs(Materials.Glue.getFluid(20L))
+                    .itemOutputs(
+                            GT_ModHandler.getModItem(VisualProspecting.ID, "item.visualprospecting.prospectorslog", 1))
+                    .duration(6 * SECONDS).eut(8).addTo(assemblerRecipes);
+        }
     }
 
     private void makeElectricMachinePartRecipes() {
