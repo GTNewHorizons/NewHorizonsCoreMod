@@ -9,6 +9,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -2137,6 +2138,17 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Casing_Coil_Superconductor.get(1L))
                 .itemOutputs(ItemList.Casing_Fusion_Coil.get(1L)).duration(15 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
+        if (VisualProspecting.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L),
+                            new ItemStack(Items.writable_book, 1, WILDCARD),
+                            new ItemStack(Items.gold_nugget, 1, WILDCARD))
+                    .fluidInputs(Materials.Glue.getFluid(20L))
+                    .itemOutputs(
+                            GT_ModHandler.getModItem(VisualProspecting.ID, "item.visualprospecting.prospectorslog", 1))
+                    .duration(6 * SECONDS).eut(8).addTo(assemblerRecipes);
+        }
     }
 
     private void makeElectricMachinePartRecipes() {
