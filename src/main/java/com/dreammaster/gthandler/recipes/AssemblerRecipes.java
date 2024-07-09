@@ -9,6 +9,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -2141,8 +2142,8 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L),
-                            new ItemStack(Items.writable_book, 1, 0x7FFF),
-                            new ItemStack(Items.gold_nugget, 1, 0x7FFF))
+                            new ItemStack(Items.writable_book, 1, WILDCARD),
+                            new ItemStack(Items.gold_nugget, 1, WILDCARD))
                     .fluidInputs(Materials.Glue.getFluid(20L))
                     .itemOutputs(
                             GT_ModHandler.getModItem(VisualProspecting.ID, "item.visualprospecting.prospectorslog", 1))
