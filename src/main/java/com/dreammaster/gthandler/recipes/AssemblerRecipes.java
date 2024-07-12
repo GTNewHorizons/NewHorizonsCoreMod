@@ -17,7 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -3877,68 +3876,6 @@ public class AssemblerRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(ItemList.Hatch_Output_ME.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-
-        // Add storage component recipes to pre-apply cache upgrades
-
-        final ItemStack COMPONENT_1 = GT_ModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35);
-        final ItemStack COMPONENT_4 = GT_ModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36);
-        final ItemStack COMPONENT_16 = GT_ModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37);
-        final ItemStack COMPONENT_64 = GT_ModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38);
-        final ItemStack COMPONENT_256 = GT_ModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 57);
-        final ItemStack COMPONENT_1024 = GT_ModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 58);
-        final ItemStack COMPONENT_4096 = GT_ModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 59);
-        final ItemStack COMPONENT_16384 = GT_ModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 60);
-        final ItemStack FLUIDCOMPONENT_1 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 0);
-        final ItemStack FLUIDCOMPONENT_4 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 1);
-        final ItemStack FLUIDCOMPONENT_16 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 2);
-        final ItemStack FLUIDCOMPONENT_64 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 3);
-        final ItemStack FLUIDCOMPONENT_256 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 4);
-        final ItemStack FLUIDCOMPONENT_1024 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 5);
-        final ItemStack FLUIDCOMPONENT_4096 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 6);
-        final ItemStack FLUIDCOMPONENT_16384 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 7);
-
-        ItemStack[] itemComponents = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64,
-                COMPONENT_256, COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
-        ItemStack[] fluidComponents = new ItemStack[] { FLUIDCOMPONENT_1, FLUIDCOMPONENT_4, FLUIDCOMPONENT_16,
-                FLUIDCOMPONENT_64, FLUIDCOMPONENT_256, FLUIDCOMPONENT_1024, FLUIDCOMPONENT_4096, FLUIDCOMPONENT_16384 };
-        long[] capacities = { 8192, 32768, 131072, 524288, 2097152, 8388608, 33554432, 134217728 };
-
-        for (int i = 0; i <= 7; i++) {
-            ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
-            NBTTagCompound hatchNBT = modifiedHatch.getTagCompound();
-            if (hatchNBT != null) {
-                hatchNBT.setLong("baseCapacity", capacities[i]);
-            } else {
-                hatchNBT = new NBTTagCompound();
-                hatchNBT.setLong("baseCapacity", capacities[i] * 256);
-                modifiedHatch.setTagCompound(hatchNBT);
-            }
-
-            ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
-            NBTTagCompound busNBT = modifiedBus.getTagCompound();
-            if (busNBT != null) {
-                busNBT.setLong("baseCapacity", capacities[i]);
-            } else {
-                busNBT = new NBTTagCompound();
-                busNBT.setLong("baseCapacity", capacities[i]);
-                modifiedBus.setTagCompound(busNBT);
-            }
-
-            GT_ModHandler.addShapelessCraftingRecipe(
-                    modifiedHatch,
-                    new Object[] { ItemList.Hatch_Output_ME.get(1L), fluidComponents[i] });
-            GT_ModHandler.addShapelessCraftingRecipe(
-                    modifiedBus,
-                    new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), itemComponents[i] });
-        }
 
         // Stocking Input Bus (ME)
         GT_Values.RA.stdBuilder()
