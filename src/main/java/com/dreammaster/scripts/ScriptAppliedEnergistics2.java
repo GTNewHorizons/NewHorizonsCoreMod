@@ -403,35 +403,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .fluidInputs(Materials.Silicone.getMolten(288L)).duration(35 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556))
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(576L)).duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.PolyvinylChloride, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556))
-                .fluidInputs(Materials.Silicone.getMolten(576L)).duration(45 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556))
-                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(576L)).duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Polydimethylsiloxane, 1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556))
-                .fluidInputs(Materials.Silicone.getMolten(576L)).duration(45 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
-
         // ME Smart Cable Fluix
         for (int i = 0; i < 16; i++) {
             FluixSmartCableColor[i] = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 40 + i);
@@ -480,23 +451,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 76))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 76),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 576))
-                .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 556),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 576))
-                .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
 
         // ME Quantum Storage
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
