@@ -172,6 +172,9 @@ public class ScriptAE2FC implements IScriptLoader {
         ItemStack[] components = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64, COMPONENT_256,
                 COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
 
+        final ItemStack nitinolPlate = GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateNitinol60", 2L);
+        final ItemStack zeronPlate = GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateZeron100", 2L);
+
         // AE2FC_FLUID_STORAGE_HOUSING
         GT_ModHandler.addCraftingRecipe(
                 AE2FC_FLUID_STORAGE_HOUSING,
@@ -243,12 +246,12 @@ public class ScriptAE2FC implements IScriptLoader {
                 AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
                 RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
                 new Object[] { "hCW", "S-S", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                        "plateNeutronium", 'A', "plateStainlessSteel" });
+                        nitinolPlate, 'A', "plateStainlessSteel" });
         GT_ModHandler.addCraftingRecipe(
                 AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
                 RecipeBits.BUFFERED,
                 new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                        "plateNeutronium", 'A', "plateStainlessSteel" });
+                        nitinolPlate, 'A', "plateStainlessSteel" });
         for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
 
             {
@@ -262,12 +265,12 @@ public class ScriptAE2FC implements IScriptLoader {
                     entry.getKey(),
                     RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
                     new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateNeutronium", 'A', "plateStainlessSteel", 'K', entry.getValue() });
+                            nitinolPlate, 'A', "plateStainlessSteel", 'K', entry.getValue() });
             GT_ModHandler.addCraftingRecipe(
                     entry.getKey(),
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateNeutronium", 'A', "plateStainlessSteel", 'K', entry.getValue() });
+                            nitinolPlate, 'A', "plateStainlessSteel", 'K', entry.getValue() });
             addShapelessRecipe(entry.getKey(), AE2FC_ADVANCED_FLUID_STORAGE_HOUSING, entry.getValue());
         }
 
@@ -275,13 +278,13 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_ModHandler.addCraftingRecipe(
                 AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING,
                 RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
-                new Object[] { "hCW", "S-S", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                        "plateInfinity", 'A', "plateTungstenSteel" });
+                new Object[] { "hCW", "S-S", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S', zeronPlate,
+                        'A', "plateTungstenSteel" });
         GT_ModHandler.addCraftingRecipe(
                 AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING,
                 RecipeBits.BUFFERED,
-                new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                        "plateInfinity", 'A', "plateTungstenSteel" });
+                new Object[] { "dCW", "S-S", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S', zeronPlate,
+                        'A', "plateTungstenSteel" });
         for (Map.Entry<ItemStack, ItemStack> entry : new HashMap<ItemStack, ItemStack>() {
 
             {
@@ -295,12 +298,12 @@ public class ScriptAE2FC implements IScriptLoader {
                     entry.getKey(),
                     RecipeBits.BUFFERED | RecipeBits.DELETE_ALL_OTHER_SHAPED_RECIPES,
                     new Object[] { "hCW", "SKS", "WAd", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateInfinity", 'A', "plateTungstenSteel", 'K', entry.getValue() });
+                            zeronPlate, 'A', "plateTungstenSteel", 'K', entry.getValue() });
             GT_ModHandler.addCraftingRecipe(
                     entry.getKey(),
                     RecipeBits.BUFFERED,
                     new Object[] { "dCW", "SKS", "WAh", 'C', "plateCertusQuartz", 'W', "screwCertusQuartz", 'S',
-                            "plateInfinity", 'A', "plateTungstenSteel", 'K', entry.getValue() });
+                            zeronPlate, 'A', "plateTungstenSteel", 'K', entry.getValue() });
             addShapelessRecipe(entry.getKey(), AE2FC_ADVANCED_MULTI_FLUID_STORAGE_HOUSING, entry.getValue());
         }
 

@@ -4202,7 +4202,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2L),
+                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateNitinol60", 2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
                             GT_Utility.getIntegratedCircuit(3))
@@ -4222,7 +4222,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 2L),
+                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateZeron100", 2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
                             GT_Utility.getIntegratedCircuit(3))
