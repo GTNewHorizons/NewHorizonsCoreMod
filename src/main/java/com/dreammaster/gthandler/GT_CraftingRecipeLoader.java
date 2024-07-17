@@ -31,6 +31,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.main.NHItems;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
@@ -50,6 +51,7 @@ import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import gregtech.common.GT_Proxy;
 import ic2.core.Ic2Items;
 
@@ -74,6 +76,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
     private static final long bits4 = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.BUFFERED;
     private static final long tBitMask = GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE
             | GT_ModHandler.RecipeBits.REVERSIBLE;
+
+    /**
+     * Rolling Machine Crafting Recipe
+     */
+    private static boolean addRollingMachineRecipe(ItemStack aResult, Object[] aRecipe) {
+        aResult = GT_OreDictUnificator.get(true, aResult);
+        if (aResult == null || aRecipe == null || aResult.stackSize <= 0) return false;
+        try {
+            mods.railcraft.api.crafting.RailcraftCraftingManager.rollingMachine.getRecipeList()
+                    .add(new ShapedOreRecipe(GT_Utility.copyOrNull(aResult), aRecipe));
+        } catch (Throwable e) {
+            return GT_ModHandler.addCraftingRecipe(GT_Utility.copyOrNull(aResult), aRecipe);
+        }
+        return true;
+    }
 
     @Override
     public void run() {
@@ -1474,27 +1491,27 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             new ItemStack(Items.chest_minecart, 1), 'F', ItemList.Hull_HP, 'B',
                             ItemList.Machine_Steel_Boiler });
 
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.light.blue", 8L),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Aluminium).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.purple", 64L),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Titanium).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.black", 64L),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Tungsten).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.light.blue", 8L),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Aluminium).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.purple", 64L),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Titanium).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.black", 64L),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Tungsten).toString() });
