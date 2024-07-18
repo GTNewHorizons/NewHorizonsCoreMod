@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -629,6 +630,36 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 bits,
                 new Object[] { "PPP", "SBS", "SSS", 'P', OrePrefixes.plate.get(Materials.Palladium), 'S',
                         OrePrefixes.stick.get(Materials.Osmium), 'B', CustomItemList.IridiumBars.get(1) });
+
+        // Magnetic Flux Exhibitor
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "multimachine.electromagneticseparator", 1, 358),
+                bits,
+                new Object[] { "CBC", "FMF", "CBC", 'M', ItemList.Machine_IV_ElectromagneticSeparator, 'B',
+                        OrePrefixes.circuit.get(Materials.Elite), 'C', OrePrefixes.plate.get(Materials.TungstenSteel),
+                        'F', ItemList.Conveyor_Module_IV });
+
+        // MagTech Casing
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings10", 1, 0),
+                bits,
+                new Object[] { "PhP", "PFP", "PwP", 'P', OrePrefixes.plate.get(Materials.TungstenSteel), 'F',
+                        OrePrefixes.frameGt.get(Materials.Titanium) });
+
+        // Electromagnet Housing
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.hatch.mag_hatch", 1, 359),
+                bits,
+                new Object[] { "CFC", "FMF", "CFC", 'M', ItemList.Hatch_Input_Bus_IV, 'C',
+                        OrePrefixes.plate.get(Materials.Polystyrene), 'F', CustomItemList.TungstenSteelBars });
+
+        // TurboCan Pro
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.multimachine.canner", 1, 360),
+                bits,
+                new Object[] { "CFC", "AMB", "CFC", 'A', ItemList.Machine_HV_Canner, 'B',
+                        ItemList.Machine_HV_FluidCanner, 'F', OrePrefixes.circuit.get(Materials.Advanced), 'C',
+                        OrePrefixes.pipeMedium.get(Materials.Steel), 'M', ItemList.Pump_HV });
 
         // BM raw orbs
         GT_ModHandler.addCraftingRecipe(
