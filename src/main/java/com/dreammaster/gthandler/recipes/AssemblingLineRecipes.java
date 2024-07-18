@@ -197,31 +197,27 @@ public class AssemblingLineRecipes implements Runnable {
                     100_000_000,
                     2,
                     new ItemStack[] {
-                        // Regular slave connector
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 15440),
-                        // Network Switch With QoS
-                        Machine_Multi_Switch.get(1),
-                        // Data pipe
-                        DATApipe.get(64),
-                        // Internet card
-                        getModItem(OpenComputers.ID, "internetCard", 1),
-                        // Dense infinity plate
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
-                        // Shirabon foil
-                        GT_OreDictUnificator.get("foilShirabon", 64),
-                        // Quantum circuit
-                        QuantumCircuit.getIS(4),
-                        // Energized tesseract
-                        ItemList.EnergisedTesseract.get(1)
-                    },
-                    new FluidStack[] {
-                            new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L)
-                    },
+                            // Regular slave connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15440),
+                            // Network Switch With QoS
+                            Machine_Multi_Switch.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            getModItem(OpenComputers.ID, "internetCard", 1),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(4),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
                     // Cloud Computation Client Hatch
                     getModItem(GregTech.ID, "gt.blockmachines", 1, 15445),
                     30 * SECONDS,
-                    (int) TierEU.RECIPE_UMV
-            );
+                    (int) TierEU.RECIPE_UMV);
 
             // Cloud computation server hatch
             TT_recipeAdder.addResearchableAssemblylineRecipe(
@@ -247,16 +243,12 @@ public class AssemblingLineRecipes implements Runnable {
                             // Quantum circuit
                             QuantumCircuit.getIS(4),
                             // Energized tesseract
-                            ItemList.EnergisedTesseract.get(1)
-                    },
-                    new FluidStack[] {
-                            new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L)
-                    },
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
                     // Cloud Computation Server Hatch
                     getModItem(GregTech.ID, "gt.blockmachines", 1, 15444),
                     30 * SECONDS,
-                    (int) TierEU.RECIPE_UMV
-            );
+                    (int) TierEU.RECIPE_UMV);
 
             // Wireless assembly line slave connector
             TT_recipeAdder.addResearchableAssemblylineRecipe(
@@ -280,16 +272,12 @@ public class AssemblingLineRecipes implements Runnable {
                             // Quantum circuit
                             QuantumCircuit.getIS(4),
                             // Energized tesseract
-                            ItemList.EnergisedTesseract.get(1)
-                    },
-                    new FluidStack[] {
-                            new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L)
-                    },
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
                     // Wireless assembly line slave connector
                     getModItem(GregTech.ID, "gt.blockmachines", 1, 15446),
                     30 * SECONDS,
-                    (int) TierEU.RECIPE_UMV
-            );
+                    (int) TierEU.RECIPE_UMV);
 
             // Wireless data bank master connector
             TT_recipeAdder.addResearchableAssemblylineRecipe(
@@ -313,16 +301,12 @@ public class AssemblingLineRecipes implements Runnable {
                             // Quantum circuit
                             QuantumCircuit.getIS(4),
                             // Energized tesseract
-                            ItemList.EnergisedTesseract.get(1)
-                    },
-                    new FluidStack[] {
-                            new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L)
-                    },
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
                     // Wireless data bank master connector
                     getModItem(GregTech.ID, "gt.blockmachines", 1, 15447),
                     30 * SECONDS,
-                    (int) TierEU.RECIPE_UMV
-            );
+                    (int) TierEU.RECIPE_UMV);
 
             if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 
