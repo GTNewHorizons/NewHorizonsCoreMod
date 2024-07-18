@@ -2062,6 +2062,25 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.2", 1L, 2)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         }
+
+        // MagTech Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L),
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1L))
+                .itemOutputs(getModItem(GregTech.ID, "gt.blockcasings10", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(16).addTo(assemblerRecipes);
+
+        // Iron Electromagnet
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.IronMagnetic, 8L),
+                        ItemList.IV_Coil.get(8L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorIV, 16L))
+                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32345))
+                .fluidInputs(Materials.Cobalt.getMolten(1152)).duration(30 * SECONDS).eut(TierEU.IV)
+                .addTo(assemblerRecipes);
+
         // Ultimate Time Anomaly
         GT_Values.RA.stdBuilder()
                 .itemInputs(
