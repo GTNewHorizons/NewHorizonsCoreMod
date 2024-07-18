@@ -265,6 +265,8 @@ public class AssemblingLineRecipes implements Runnable {
                             Machine_Multi_DataBank.get(1),
                             // Data pipe
                             DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
                             // Dense infinity plate
                             GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
                             // Shirabon foil
@@ -294,6 +296,8 @@ public class AssemblingLineRecipes implements Runnable {
                             Machine_Multi_DataBank.get(1),
                             // Data pipe
                             DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
                             // Dense infinity plate
                             GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
                             // Shirabon foil
