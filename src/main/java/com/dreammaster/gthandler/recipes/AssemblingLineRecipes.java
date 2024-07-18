@@ -614,7 +614,7 @@ public class AssemblingLineRecipes implements Runnable {
             GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32346))
                     .metadata(RESEARCH_TIME, 60 * SECONDS)
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NickelZincFerrite, 32L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 32L),
                             GT_OreDictUnificator.get(OrePrefixes.ring, Materials.NeodymiumMagnetic, 16L),
                             ItemList.ZPM_Coil.get(16L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorZPM, 32L),
@@ -637,7 +637,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Field_Generator_UV.get(2))
                     .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32348))
                     .fluidInputs(
-                            new FluidStack(FluidRegistry.getFluid("ic2coolant"), 32000),
+                            new FluidStack(FluidRegistry.getFluid("supercoolant"), 32000),
                             Materials.Cobalt.getMolten(6912),
                             Materials.ElectrumFlux.getMolten(2304))
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_UV).addTo(AssemblyLine);
@@ -653,7 +653,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Field_Generator_UHV.get(2))
                     .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32349))
                     .fluidInputs(
-                            new FluidStack(FluidRegistry.getFluid("ic2coolant"), 64000),
+                            new FluidStack(FluidRegistry.getFluid("supercoolant"), 64000),
                             Materials.Cobalt.getMolten(9216),
                             Materials.Naquadria.getMolten(2304))
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(AssemblyLine);
