@@ -47,8 +47,13 @@ public class ScriptAE2FC implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays
-                .asList(AE2FluidCraft.ID, AppliedEnergistics2.ID, OpenComputers.ID, GoodGenerator.ID, GTPlusPlus.ID, EternalSingularity.ID);
+        return Arrays.asList(
+                AE2FluidCraft.ID,
+                AppliedEnergistics2.ID,
+                OpenComputers.ID,
+                GoodGenerator.ID,
+                GTPlusPlus.ID,
+                EternalSingularity.ID);
     }
 
     @Override
