@@ -210,7 +210,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            QuantumCircuit.getIS(4),
+                            QuantumCircuit.getIS(1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -241,7 +241,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            QuantumCircuit.getIS(4),
+                            QuantumCircuit.getIS(1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -270,7 +270,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            QuantumCircuit.getIS(4),
+                            QuantumCircuit.getIS(1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -299,7 +299,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            QuantumCircuit.getIS(4),
+                            QuantumCircuit.getIS(1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
