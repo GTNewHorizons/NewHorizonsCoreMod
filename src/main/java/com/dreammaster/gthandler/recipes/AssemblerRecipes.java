@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import common.TileEntities;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -2035,7 +2037,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
                             ItemList.Transformer_ZPM_LuV.get(1),
                             ItemList.Casing_Coil_TungstenSteel.get(1))
-                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883))
+                    .itemOutputs(GregtechItemList.Transformer_HA_ZPM_LuV.get(1))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
             // 64A Zpm To LuV transformer
@@ -2045,7 +2047,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
                             GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
                             GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883),
+                            GregtechItemList.Transformer_HA_ZPM_LuV.get(1),
                             ItemList.Electric_Pump_LV.get(1))
                     .fluidInputs(Materials.Lubricant.getFluid(2000))
                     .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
@@ -2080,7 +2082,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.battery, Materials.Master, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
                             ItemList.Circuit_Chip_PIC.get(2))
-                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 13106))
+                    .itemOutputs(TileEntities.lsc.getStackForm(1))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         }
         GT_Values.RA.stdBuilder()
