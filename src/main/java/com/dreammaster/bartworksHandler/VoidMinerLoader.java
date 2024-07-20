@@ -166,7 +166,7 @@ public class VoidMinerLoader {
                             "  {} (weight: {} / block id: {})",
                             name,
                             GTPPMaterialWeights.get(name),
-                            GameRegistry.findUniqueIdentifierFor(GTPPMaterials.get(name).getOreBlock())));
+                            GameRegistry.findUniqueIdentifierFor(GTPPMaterials.get(name).getOreBlock(1))));
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: End added GT++ material list");
             log.info("==========");
