@@ -1,11 +1,18 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.item.ItemList.QuantumCircuit;
+import static com.github.technus.tectech.thing.CustomItemList.DATApipe;
+import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_DataBank;
+import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TecTech;
+import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.HOURS;
 import static gregtech.api.util.GT_RecipeBuilder.INGOTS;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
@@ -176,6 +183,134 @@ public class AssemblingLineRecipes implements Runnable {
                     ItemList.Hatch_CraftingInput_Bus_ME.get(1L),
                     30 * SECONDS,
                     (int) TierEU.RECIPE_UIV);
+
+            Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
+                    ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
+                    : FluidRegistry.getFluid("molten.solderingalloy");
+
+            // Cloud Computation Client Hatch
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    // Optical Slave Connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15440),
+                    512000,
+                    2000,
+                    100_000_000,
+                    2,
+                    new ItemStack[] {
+                            // Regular slave connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15440),
+                            // Network Switch With QoS
+                            Machine_Multi_Switch.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(1),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                    // Cloud Computation Client Hatch
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15445),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UMV);
+
+            // Cloud computation server hatch
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    // Optical Master Connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15441),
+                    512000,
+                    2000,
+                    100_000_000,
+                    2,
+                    new ItemStack[] {
+                            // Regular master connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15441),
+                            // Network Switch With QoS
+                            Machine_Multi_Switch.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(1),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                    // Cloud Computation Server Hatch
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15444),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UMV);
+
+            // Wireless assembly line slave connector
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    // Assembly line slave connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15442),
+                    512000,
+                    2000,
+                    100_000_000,
+                    2,
+                    new ItemStack[] {
+                            // Assembly line slave connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15442),
+                            // Data bank
+                            Machine_Multi_DataBank.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(1),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                    // Wireless assembly line slave connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15446),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UMV);
+
+            // Wireless data bank master connector
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    // Data bank master connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15443),
+                    512000,
+                    2000,
+                    100_000_000,
+                    2,
+                    new ItemStack[] {
+                            // Data bank master connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15443),
+                            // Data bank
+                            Machine_Multi_DataBank.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(1),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                    // Wireless data bank master connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15447),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UMV);
 
             if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 
@@ -590,5 +725,71 @@ public class AssemblingLineRecipes implements Runnable {
                     .duration(50 * MINUTES).addTo(AssemblyLine);
         }
 
+        // Electromagnets
+        {
+            // Steel Electromagnet
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32345))
+                    .metadata(RESEARCH_TIME, 60 * SECONDS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NickelZincFerrite, 32L),
+                            GT_OreDictUnificator.get(OrePrefixes.ring, Materials.SteelMagnetic, 16L),
+                            ItemList.LuV_Coil.get(16L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 32L),
+                            ItemList.Field_Generator_LuV.get(2))
+                    .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32346))
+                    .fluidInputs(
+                            new FluidStack(FluidRegistry.getFluid("ic2coolant"), 8000),
+                            Materials.Cobalt.getMolten(2304),
+                            Materials.VanadiumGallium.getMolten(2304))
+                    .duration(60 * SECONDS).eut((int) TierEU.RECIPE_LuV).addTo(AssemblyLine);
+
+            // Neodymium Electromagnet
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32346))
+                    .metadata(RESEARCH_TIME, 60 * SECONDS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 32L),
+                            GT_OreDictUnificator.get(OrePrefixes.ring, Materials.NeodymiumMagnetic, 16L),
+                            ItemList.ZPM_Coil.get(16L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorZPM, 32L),
+                            ItemList.Field_Generator_ZPM.get(2))
+                    .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32347))
+                    .fluidInputs(
+                            new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000),
+                            Materials.Cobalt.getMolten(4608),
+                            Materials.Osmiridium.getMolten(2304))
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
+
+            // Samarium Electromagnet
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32347))
+                    .metadata(RESEARCH_TIME, 60 * SECONDS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
+                            GT_OreDictUnificator.get(OrePrefixes.ring, Materials.SamariumMagnetic, 32L),
+                            ItemList.UV_Coil.get(32L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUV, 64L),
+                            ItemList.Field_Generator_UV.get(2))
+                    .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32348))
+                    .fluidInputs(
+                            new FluidStack(FluidRegistry.getFluid("supercoolant"), 32000),
+                            Materials.Cobalt.getMolten(6912),
+                            Materials.ElectrumFlux.getMolten(2304))
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_UV).addTo(AssemblyLine);
+
+            // Tengam Electromagnet
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32348))
+                    .metadata(RESEARCH_TIME, 60 * SECONDS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.CosmicNeutronium, 32L),
+                            GT_OreDictUnificator.get(OrePrefixes.ring, Materials.TengamAttuned, 32L),
+                            ItemList.UHV_Coil.get(32L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUHV, 64L),
+                            ItemList.Field_Generator_UHV.get(2))
+                    .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32349))
+                    .fluidInputs(
+                            new FluidStack(FluidRegistry.getFluid("supercoolant"), 64000),
+                            Materials.Cobalt.getMolten(9216),
+                            Materials.Naquadria.getMolten(2304))
+                    .duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(AssemblyLine);
+        }
     }
 }
