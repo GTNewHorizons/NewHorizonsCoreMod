@@ -1,10 +1,15 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.item.ItemList.QuantumCircuit;
+import static com.github.technus.tectech.thing.CustomItemList.DATApipe;
+import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_DataBank;
+import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GregTech;
+import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -178,6 +183,134 @@ public class AssemblingLineRecipes implements Runnable {
                     ItemList.Hatch_CraftingInput_Bus_ME.get(1L),
                     30 * SECONDS,
                     (int) TierEU.RECIPE_UIV);
+
+            Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
+                    ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
+                    : FluidRegistry.getFluid("molten.solderingalloy");
+
+            // Cloud Computation Client Hatch
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    // Optical Slave Connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15440),
+                    512000,
+                    2000,
+                    100_000_000,
+                    2,
+                    new ItemStack[] {
+                            // Regular slave connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15440),
+                            // Network Switch With QoS
+                            Machine_Multi_Switch.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(1),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                    // Cloud Computation Client Hatch
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15445),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UMV);
+
+            // Cloud computation server hatch
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    // Optical Master Connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15441),
+                    512000,
+                    2000,
+                    100_000_000,
+                    2,
+                    new ItemStack[] {
+                            // Regular master connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15441),
+                            // Network Switch With QoS
+                            Machine_Multi_Switch.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(1),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                    // Cloud Computation Server Hatch
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15444),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UMV);
+
+            // Wireless assembly line slave connector
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    // Assembly line slave connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15442),
+                    512000,
+                    2000,
+                    100_000_000,
+                    2,
+                    new ItemStack[] {
+                            // Assembly line slave connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15442),
+                            // Data bank
+                            Machine_Multi_DataBank.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(1),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                    // Wireless assembly line slave connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15446),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UMV);
+
+            // Wireless data bank master connector
+            TT_recipeAdder.addResearchableAssemblylineRecipe(
+                    // Data bank master connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15443),
+                    512000,
+                    2000,
+                    100_000_000,
+                    2,
+                    new ItemStack[] {
+                            // Data bank master connector
+                            getModItem(GregTech.ID, "gt.blockmachines", 1, 15443),
+                            // Data bank
+                            Machine_Multi_DataBank.get(1),
+                            // Data pipe
+                            DATApipe.get(64),
+                            // Internet card
+                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
+                            // Dense infinity plate
+                            GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
+                            // Shirabon foil
+                            GT_OreDictUnificator.get("foilShirabon", 64),
+                            // Quantum circuit
+                            QuantumCircuit.getIS(1),
+                            // Energized tesseract
+                            ItemList.EnergisedTesseract.get(1) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                    // Wireless data bank master connector
+                    getModItem(GregTech.ID, "gt.blockmachines", 1, 15447),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UMV);
 
             if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 
