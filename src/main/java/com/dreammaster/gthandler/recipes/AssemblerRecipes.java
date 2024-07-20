@@ -29,6 +29,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
+import common.TileEntities;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -42,6 +43,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class AssemblerRecipes implements Runnable {
 
@@ -2035,8 +2037,8 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
                             ItemList.Transformer_ZPM_LuV.get(1),
                             ItemList.Casing_Coil_TungstenSteel.get(1))
-                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                    .itemOutputs(GregtechItemList.Transformer_HA_ZPM_LuV.get(1)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
             // 64A Zpm To LuV transformer
             GT_Values.RA.stdBuilder()
@@ -2045,7 +2047,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
                             GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
                             GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883),
+                            GregtechItemList.Transformer_HA_ZPM_LuV.get(1),
                             ItemList.Electric_Pump_LV.get(1))
                     .fluidInputs(Materials.Lubricant.getFluid(2000))
                     .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
@@ -2099,8 +2101,8 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.battery, Materials.Master, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
                             ItemList.Circuit_Chip_PIC.get(2))
-                    .itemOutputs(GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 13106))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                    .itemOutputs(TileEntities.lsc.getStackForm(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(assemblerRecipes);
         }
         GT_Values.RA.stdBuilder()
                 .itemInputs(
