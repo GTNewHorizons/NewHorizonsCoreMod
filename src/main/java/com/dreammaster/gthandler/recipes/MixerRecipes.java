@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Chisel;
@@ -16,8 +17,10 @@ import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
+import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
@@ -31,6 +34,7 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 
+import goodgenerator.items.MyMaterial;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -1189,6 +1193,21 @@ public class MixerRecipes implements Runnable {
                         .itemOutputs(GT_ModHandler.getModItem(Chisel.ID, "hempcrete", 1L, meta)).duration(5 * SECONDS)
                         .eut(TierEU.RECIPE_LV).addTo(mixerRecipes);
             }
+        }
+
+        if (UniversalSingularities.isModLoaded() && Avaritia.isModLoaded()) {
+            // Star Fuel
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.block, Materials.Neutronium, 64),
+                            GT_OreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 64L),
+                            // Diamond Singularity
+                            getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1L, 2))
+                    .itemOutputs(GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 8))
+                    .fluidInputs(
+                            MyMaterial.naquadahBasedFuelMkV.getFluidOrGas(1000),
+                            MaterialsUEVplus.ExcitedDTEC.getFluid(128000))
+                    .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerRecipes);
         }
     }
 }
