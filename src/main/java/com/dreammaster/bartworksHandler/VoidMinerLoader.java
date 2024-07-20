@@ -53,7 +53,7 @@ public class VoidMinerLoader {
         if (weight <= 0f) {
             return;
         }
-        VoidMinerUtility.addBlockToDimensionList(DEEPDARK_ID, material.getBlock(), 0, weight);
+        VoidMinerUtility.addBlockToDimensionList(DEEPDARK_ID, material.getOreBlock(1), 0, weight);
     }
 
     public static void initDeepDark() {
@@ -166,7 +166,7 @@ public class VoidMinerLoader {
                             "  {} (weight: {} / block id: {})",
                             name,
                             GTPPMaterialWeights.get(name),
-                            GameRegistry.findUniqueIdentifierFor(GTPPMaterials.get(name).getBlock())));
+                            GameRegistry.findUniqueIdentifierFor(GTPPMaterials.get(name).getOreBlock())));
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: End added GT++ material list");
             log.info("==========");
