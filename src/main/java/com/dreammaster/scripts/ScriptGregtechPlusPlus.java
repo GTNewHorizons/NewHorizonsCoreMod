@@ -11,13 +11,13 @@ import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeConstants.QFT_FOCUS_TIER;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.quantumForceTransformerRecipes;
 
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
@@ -31,7 +31,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.item.chemistry.GenericChem;
-import gtPlusPlus.core.lib.CORE;
 import gtPlusPlus.core.util.minecraft.ItemUtils;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
@@ -377,17 +376,15 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .duration(5 * SECONDS).eut(4).addTo(maceratorRecipes);
 
         // Shirabon and Eternity
-        CORE.RA.addQuantumTransformerRecipe(
-                new ItemStack[] { getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
                         ItemList.EnergisedTesseract.get(1),
-                        ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0) },
-                new FluidStack[] { MaterialsUEVplus.PrimordialMatter.getFluid(1152) },
-                new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432) },
-                new ItemStack[] { GT_OreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1) },
-                new int[] { 2500, 2500, 2500, 2500 },
-                20 * 20,
-                (int) TierEU.RECIPE_UMV,
-                4);
-
+                        ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0))
+                .itemOutputs(GT_OreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
+                .outputChances(25_00, 25_00).fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
+                .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
+                .metadata(QFT_FOCUS_TIER, 4).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)
+                .addTo(quantumForceTransformerRecipes);
     }
 }
