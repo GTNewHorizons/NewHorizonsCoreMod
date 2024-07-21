@@ -9,6 +9,9 @@ import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeConstants.QFT_FOCUS_TIER;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.quantumForceTransformerRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,6 +21,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.gthandler.CustomItemList;
 
 import forestry.api.recipes.RecipeManagers;
+import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
