@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Natura;
@@ -168,6 +169,13 @@ public class ExtractorRecipes implements Runnable {
                     .itemOutputs(new ItemStack(Items.glowstone_dust, 1, 0)).duration(15 * SECONDS).eut(2)
                     .addTo(extractorRecipes);
 
+        }
+
+        if (GalacticraftAmunRa.isModLoaded()) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(GT_ModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1L, 14))
+                    .itemOutputs(GT_ModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 8L, 26))
+                    .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(extractorRecipes);
         }
 
     }
