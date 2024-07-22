@@ -6,7 +6,7 @@ dependencies {
     api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
 
     compileOnly("com.github.GTNewHorizons:AkashicTome:1.1.4:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Avaritia:1.50:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Avaritia:1.51:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.6.31:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.4.3:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.4.1:dev") { transitive = false }
