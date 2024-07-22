@@ -176,8 +176,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 8L),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing)).duration(120 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                    .duration(120 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
             // Advanced Extractor Module
             GT_Values.RA.stdBuilder()
@@ -336,7 +336,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         getModItem(Forestry.ID, "beeswax", 4, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Diode, 2L),
+                        ItemList.Circuit_Parts_Diode.get(2L),
                         GT_Utility.getIntegratedCircuit(18))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing)).duration(40 * SECONDS)
@@ -419,7 +419,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 4, 601, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 6, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 602, missing)).duration(90 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
 
@@ -786,7 +786,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                    .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
@@ -797,7 +797,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
-                    .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
 
         // Request Logistics Pipe
