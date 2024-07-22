@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.dreammaster.item.ItemList.QuantumCircuit;
 import static com.github.technus.tectech.thing.CustomItemList.DATApipe;
 import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_DataBank;
 import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Switch;
@@ -43,6 +42,11 @@ public class AssemblingLineRecipes implements Runnable {
 
     @Override
     public void run() {
+
+        Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
+                ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
+                : FluidRegistry.getFluid("molten.solderingalloy");
+
         Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
                 ? FluidRegistry.getFluid("molten.indalloy140")
                 : FluidRegistry.getFluid("molten.solderingalloy");
@@ -184,10 +188,6 @@ public class AssemblingLineRecipes implements Runnable {
                     30 * SECONDS,
                     (int) TierEU.RECIPE_UIV);
 
-            Fluid solderUEV = FluidRegistry.getFluid("molten.mutatedlivingsolder") != null
-                    ? FluidRegistry.getFluid("molten.mutatedlivingsolder")
-                    : FluidRegistry.getFluid("molten.solderingalloy");
-
             // Cloud Computation Client Hatch
             TT_recipeAdder.addResearchableAssemblylineRecipe(
                     // Optical Slave Connector
@@ -210,7 +210,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            QuantumCircuit.getIS(1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -241,7 +241,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            QuantumCircuit.getIS(1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -272,7 +272,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            QuantumCircuit.getIS(1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -303,7 +303,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            QuantumCircuit.getIS(1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -791,5 +791,48 @@ public class AssemblingLineRecipes implements Runnable {
                             Materials.Naquadria.getMolten(2304))
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(AssemblyLine);
         }
+
+        // Piko Circuit
+        TT_recipeAdder.addResearchableAssemblylineRecipe(
+                ItemList.Circuit_OpticalMainframe.get(1L),
+                384000,
+                1024,
+                4000000,
+                64,
+                new Object[] { ItemList.Circuit_Board_Optical.get(1L), CustomItemList.PicoWafer.get(4L),
+                        new Object[] { OrePrefixes.circuit.get(Materials.Optical), 2L },
+                        ItemList.Circuit_Parts_TransistorXSMD.get(48L), ItemList.Circuit_Parts_ResistorXSMD.get(48L),
+                        ItemList.Circuit_Parts_CapacitorXSMD.get(48L), ItemList.Circuit_Parts_DiodeXSMD.get(48L),
+                        ItemList.Circuit_Chip_PPIC.get(64L), GT_OreDictUnificator.get("foilRadoxPoly", 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, MaterialsUEVplus.TranscendentMetal, 32),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Neutronium, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64) },
+                new FluidStack[] { new FluidStack(solderUEV, 3744), Materials.UUMatter.getFluid(8000L),
+                        Materials.Osmium.getMolten(1152L) },
+                com.dreammaster.item.ItemList.PikoCircuit.getIS(1),
+                10000,
+                128_000_000);
+
+        // Quantum Circuit
+        TT_recipeAdder.addResearchableAssemblylineRecipe(
+                CustomItemList.PikoCircuit.get(1L),
+                720000,
+                2048,
+                8000000,
+                128,
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 16),
+                        CustomItemList.PikoCircuit.get(2L), ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
+                        ItemList.Circuit_Parts_DiodeXSMD.get(64L), ItemList.Circuit_Parts_TransistorXSMD.get(64L),
+                        ItemList.Circuit_Parts_ResistorXSMD.get(64L), ItemList.Circuit_Chip_QPIC.get(64L),
+                        GT_OreDictUnificator.get("foilShirabon", 64),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Indium, 64),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, MaterialsUEVplus.SpaceTime, 8),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 16) },
+                new FluidStack[] { new FluidStack(solderUEV, 3744), Materials.UUMatter.getFluid(24000L),
+                        Materials.Osmium.getMolten(2304L) },
+                com.dreammaster.item.ItemList.QuantumCircuit.getIS(1),
+                20000,
+                (int) TierEU.RECIPE_UMV);
+
     }
 }
