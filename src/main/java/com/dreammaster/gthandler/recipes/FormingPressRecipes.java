@@ -425,13 +425,6 @@ public class FormingPressRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitMAX.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        // Pico and Quantum because of course they are not oreDicted
-        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.PikoCircuit.get(1L), GT_Utility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitUMV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(CustomItemList.QuantumCircuit.get(1L), GT_Utility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitUXV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         if (BloodArsenal.isModLoaded()) {
 
