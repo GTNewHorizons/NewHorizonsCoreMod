@@ -12,16 +12,10 @@ import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
-
+import com.dreammaster.item.ItemList;
 import com.github.technus.tectech.thing.CustomItemList;
 import com.gtnewhorizons.gtnhintergalactic.recipe.IG_RecipeAdder;
 
-import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
@@ -29,6 +23,11 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.material.ELEMENT;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 public class SpaceAssemblerRecipes implements Runnable {
 
@@ -351,6 +350,26 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 MaterialsUEVplus.Eternity.getNanite(4) },
                         new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
                         GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1),
+                        3,
+                        1 * MINUTES,
+                        (int) TierEU.RECIPE_UXV,
+                        null,
+                        null);
+            }
+            if (AppliedEnergistics2.isModLoaded()) {
+                // Artificial Fluid Universe Cell
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { GT_ModHandler
+                                .getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1),
+                                GT_OreDictUnificator.get("plateDenseShirabon", 16),
+                                ItemList.Field_Generator_UXV.get(1L),
+                                getModItem(GoodGenerator.ID, "yottaFluidTankCells", 2, 9),
+                                getModItem(kekztech.ID, "Kekztech_tfftsoragefield_block", 2, 10),
+                                GT_ModHandler.getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 4, 8),
+                                com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
+                                MaterialsUEVplus.Eternity.getNanite(4) },
+                        new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.FluidExtremeStorageCell.Universe", 1),
                         3,
                         1 * MINUTES,
                         (int) TierEU.RECIPE_UXV,
