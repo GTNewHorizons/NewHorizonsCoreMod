@@ -8,10 +8,12 @@ import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -310,6 +312,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null);
             }
             if (AppliedEnergistics2.isModLoaded() && AE2FluidCraft.isModLoaded()) {
+                // Non-oredicted circuit was intended.
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1),
                                 GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 3),
@@ -323,6 +326,34 @@ public class SpaceAssemblerRecipes implements Runnable {
                         1,
                         5 * MINUTES,
                         (int) TierEU.RECIPE_UHV,
+                        null,
+                        null);
+            }
+            if (AppliedEnergistics2.isModLoaded()) {
+                // Artificial Universe Cell
+                ItemStack filledUMVCell = ItemList.ZPM6.get(1L);
+                NBTTagCompound euNBT = filledUMVCell.getTagCompound();
+                if (euNBT != null) {
+                    euNBT.setLong("GT.ItemCharge", 9223372036854775807L);
+                } else {
+                    euNBT = new NBTTagCompound();
+                    euNBT.setLong("GT.ItemCharge", 9223372036854775807L);
+                    filledUMVCell.setTagCompound(euNBT);
+                }
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { GT_ModHandler
+                                .getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
+                                GT_OreDictUnificator
+                                        .get(OrePrefixes.plateDense, MaterialsUEVplus.TranscendentMetal, 64L),
+                                ItemList.Field_Generator_UXV.get(1L), filledUMVCell,
+                                GT_ModHandler.getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 4, 8),
+                                com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
+                                MaterialsUEVplus.Eternity.getNanite(4) },
+                        new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
+                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1),
+                        3,
+                        1 * MINUTES,
+                        (int) TierEU.RECIPE_UXV,
                         null,
                         null);
             }

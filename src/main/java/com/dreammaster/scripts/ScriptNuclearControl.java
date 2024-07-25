@@ -297,7 +297,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                 .eut(2).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder() // Vanillia Kit
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
                         getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemVanilliaKit", 1, 0, missing)).duration(80 * SECONDS)
                 .eut(2).addTo(assemblerRecipes);

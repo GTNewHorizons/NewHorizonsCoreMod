@@ -1994,23 +1994,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("telum"), 64).add(Aspect.getAspect("tenebrae"), 64)
                         .add(Aspect.getAspect("tempestas"), 32),
                 getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 28978, missing), // Ichorium Ring
                         getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25543,
-                                "{ench:[0:{lvl:3s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25543,
-                                "{ench:[0:{lvl:3s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 2, missing), // Water arrow
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 2, missing), // Water arrow
                         GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing), });
         TCHelper.setResearchAspects(
@@ -2078,27 +2066,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("sensus"), 64).add(Aspect.getAspect("tutamen"), 64)
                         .add(Aspect.getAspect("volatus"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothChest", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 17978, missing), // Ichorium Plate
                         getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25330,
-                                "{ench:[0:{lvl:2s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 0, missing), // Air Arrow
                         GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17978, missing), // Ichorium Plate
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25330,
-                                "{ench:[0:{lvl:2s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 0, missing), // Air Arrow
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
                         getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "HoverHarness", 1, 0, missing), });

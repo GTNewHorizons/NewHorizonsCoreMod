@@ -20,7 +20,6 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
     @Override
     public void loadConfig() {
-        hideFakeCircuits();
         API.hideItem(new ItemStack(QuantumBread.Instance()));
         if (Aroma1997Core.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(Aroma1997Core.ID, "wrenched", 1));
@@ -183,24 +182,6 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         API.setOverrideName(new ItemStack(Blocks.ender_chest), "Personal Ender Chest");
 
         MainRegistry.Logger.info("Added NEI Config");
-    }
-
-    private void hideFakeCircuits() {
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitULV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitLV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitMV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitHV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitEV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitIV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitLuV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitZPM", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUHV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUEV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUIV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUMV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitUXV", 1));
-        API.hideItem(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CircuitMAX", 1));
     }
 
     @Override

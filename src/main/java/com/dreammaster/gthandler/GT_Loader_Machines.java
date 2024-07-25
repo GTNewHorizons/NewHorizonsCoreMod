@@ -764,14 +764,14 @@ public class GT_Loader_Machines {
                 CustomItemList.ScannerUIV.get(1L),
                 bitsd,
                 new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UIV, 'T', ItemList.Emitter_UIV, 'R',
-                        ItemList.Sensor_UIV, 'C', OrePrefixes.circuit.get(Materials.Piko), 'W',
+                        ItemList.Sensor_UIV, 'C', OrePrefixes.circuit.get(Materials.Exotic), 'W',
                         OrePrefixes.cableGt01.get(Materials.Draconium) });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ScannerUMV.get(1L),
                 bitsd,
                 new Object[] { "CTC", "WMW", "CRC", 'M', CustomItemList.Hull_UMV, 'T', ItemList.Emitter_UMV, 'R',
-                        ItemList.Sensor_UMV, 'C', OrePrefixes.circuit.get(Materials.Quantum), 'W',
+                        ItemList.Sensor_UMV, 'C', OrePrefixes.circuit.get(Materials.Cosmic), 'W',
                         OrePrefixes.cableGt01.get(Materials.Draconium) });
 
         GT_ModHandler.addCraftingRecipe(
@@ -963,7 +963,7 @@ public class GT_Loader_Machines {
                 new Object[] { "PRP", "WMW", "CHC", 'H', CustomItemList.Hull_UMV, 'R',
                         OrePrefixes.rotor.get(MaterialsUEVplus.TranscendentMetal), 'P',
                         OrePrefixes.pipeLarge.get(Materials.Polybenzimidazole), 'M', ItemList.Electric_Motor_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.Piko), 'W',
+                        OrePrefixes.circuit.get(Materials.Exotic), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() });
 
         GT_ModHandler.addCraftingRecipe(
@@ -1019,7 +1019,7 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'P',
                         ItemList.Electric_Pump_UMV, 'B', CustomItemList.Hull_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.Piko), 'G',
+                        OrePrefixes.circuit.get(Materials.Exotic), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
 
         GT_ModHandler.addCraftingRecipe(
@@ -1249,7 +1249,7 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.CosmicNeutronium), 'M',
                         ItemList.Electric_Motor_UMV, 'B', CustomItemList.Hull_UMV, 'C',
-                        OrePrefixes.circuit.get(Materials.Piko), 'G',
+                        OrePrefixes.circuit.get(Materials.Exotic), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() });
 
         GT_ModHandler.addCraftingRecipe(
@@ -1471,7 +1471,7 @@ public class GT_Loader_Machines {
                 CustomItemList.Automation_ChestBuffer_UMV.get(1L),
                 bitsd,
                 new Object[] { "CMV", " X ", 'M', CustomItemList.Hull_UMV, 'V', ItemList.Conveyor_Module_UMV, 'C',
-                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Piko) });
+                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Exotic) });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.nameRemover.get(1L),
@@ -8055,7 +8055,7 @@ public class GT_Loader_Machines {
                         "CIRCUITASSEMBLER",
                         new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UIV, 'E', ItemList.Emitter_UIV, 'H',
                                 CustomItemList.Hull_UIV, 'K', ItemList.Conveyor_Module_UIV, 'C',
-                                OrePrefixes.circuit.get(Materials.Piko), 'W',
+                                OrePrefixes.circuit.get(Materials.Exotic), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() }).getStackForm(1L));
         CustomItemList.CircuitAssemblerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
@@ -8073,7 +8073,7 @@ public class GT_Loader_Machines {
                         "CIRCUITASSEMBLER",
                         new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UMV, 'E', ItemList.Emitter_UMV, 'H',
                                 CustomItemList.Hull_UMV, 'K', ItemList.Conveyor_Module_UMV, 'C',
-                                OrePrefixes.circuit.get(Materials.Quantum), 'W',
+                                OrePrefixes.circuit.get(Materials.Cosmic), 'W',
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
         CustomItemList.CircuitAssemblerUXV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(

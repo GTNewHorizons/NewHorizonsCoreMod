@@ -5078,10 +5078,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "stickWood");
         addShapedRecipe(
-                getModItem(Minecraft.ID, "nether_star", 16, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.crateGtGem, Materials.NetherStar, 1L),
-                "craftingToolCrowbar");
-        addShapedRecipe(
                 getModItem(Minecraft.ID, "mossy_cobblestone", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),

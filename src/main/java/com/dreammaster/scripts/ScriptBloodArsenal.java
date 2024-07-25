@@ -28,7 +28,6 @@ import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
@@ -461,7 +460,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                         'a',
                         getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing),
                         'b',
-                        ItemList.Arrow_Head_Glass_Emtpy.get(1L),
+                        getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing),
                         'c',
                         getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing),
                         'd',
@@ -485,7 +484,7 @@ public class ScriptBloodArsenal implements IScriptLoader {
                         'a',
                         getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing),
                         'b',
-                        ItemList.Arrow_Head_Glass_Emtpy.get(1L),
+                        getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing),
                         'c',
                         getModItem(BloodArsenal.ID, "glass_shard", 1, 0, missing),
                         'd',

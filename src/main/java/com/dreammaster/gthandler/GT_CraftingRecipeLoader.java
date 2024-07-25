@@ -1,6 +1,8 @@
 package com.dreammaster.gthandler;
 
+import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AdventureBackpack;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
@@ -11,6 +13,7 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -28,6 +31,8 @@ import java.util.function.Consumer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.main.NHItems;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
@@ -47,6 +52,7 @@ import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GT_Log;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
 import gregtech.common.GT_Proxy;
 import ic2.core.Ic2Items;
 
@@ -71,6 +77,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
     private static final long bits4 = GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.BUFFERED;
     private static final long tBitMask = GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE
             | GT_ModHandler.RecipeBits.REVERSIBLE;
+
+    /**
+     * Rolling Machine Crafting Recipe
+     */
+    private static boolean addRollingMachineRecipe(ItemStack aResult, Object[] aRecipe) {
+        aResult = GT_OreDictUnificator.get(true, aResult);
+        if (aResult == null || aRecipe == null || aResult.stackSize <= 0) return false;
+        try {
+            mods.railcraft.api.crafting.RailcraftCraftingManager.rollingMachine.getRecipeList()
+                    .add(new ShapedOreRecipe(GT_Utility.copyOrNull(aResult), aRecipe));
+        } catch (Throwable e) {
+            return GT_ModHandler.addCraftingRecipe(GT_Utility.copyOrNull(aResult), aRecipe);
+        }
+        return true;
+    }
 
     @Override
     public void run() {
@@ -626,6 +647,36 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 bits,
                 new Object[] { "PPP", "SBS", "SSS", 'P', OrePrefixes.plate.get(Materials.Palladium), 'S',
                         OrePrefixes.stick.get(Materials.Osmium), 'B', CustomItemList.IridiumBars.get(1) });
+
+        // Magnetic Flux Exhibitor
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 358),
+                bits,
+                new Object[] { "CBC", "FMF", "CBC", 'M', ItemList.Machine_IV_ElectromagneticSeparator, 'B',
+                        OrePrefixes.circuit.get(Materials.Elite), 'C', OrePrefixes.plate.get(Materials.TungstenSteel),
+                        'F', ItemList.Conveyor_Module_IV });
+
+        // MagTech Casing
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings10", 1, 0),
+                bits,
+                new Object[] { "PhP", "PFP", "PwP", 'P', OrePrefixes.plate.get(Materials.TungstenSteel), 'F',
+                        OrePrefixes.frameGt.get(Materials.Titanium) });
+
+        // Electromagnet Housing
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 359),
+                bits,
+                new Object[] { "CFC", "FMF", "CFC", 'M', ItemList.Hatch_Input_Bus_IV, 'C',
+                        OrePrefixes.plate.get(Materials.Polystyrene), 'F', CustomItemList.TungstenSteelBars });
+
+        // TurboCan Pro
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 360),
+                bits,
+                new Object[] { "CFC", "AMB", "CFC", 'A', ItemList.Machine_HV_Canner, 'B',
+                        ItemList.Machine_HV_FluidCanner, 'F', OrePrefixes.circuit.get(Materials.Advanced), 'C',
+                        OrePrefixes.pipeLarge.get(Materials.Steel), 'M', ItemList.Electric_Pump_HV });
 
         // BM raw orbs
         GT_ModHandler.addCraftingRecipe(
@@ -1471,27 +1522,27 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             new ItemStack(Items.chest_minecart, 1), 'F', ItemList.Hull_HP, 'B',
                             ItemList.Machine_Steel_Boiler });
 
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.light.blue", 8L),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Aluminium).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.purple", 64L),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Titanium).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.black", 64L),
                     new Object[] { aTextIron2, " X ", aTextIron2, 'X',
                             OrePrefixes.stick.get(Materials.Tungsten).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.light.blue", 8L),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Aluminium).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.purple", 64L),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Titanium).toString() });
-            GT_ModHandler.addRollingMachineRecipe(
+            addRollingMachineRecipe(
                     GT_ModHandler.getModItem(Railcraft.ID, "post.metal.black", 64L),
                     new Object[] { aTextIron1, aTextIron2, aTextIron1, 'X',
                             OrePrefixes.stick.get(Materials.Tungsten).toString() });
@@ -1856,6 +1907,68 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(TinkerConstruct.ID, "Clay Cast", 1, 3),
                     new Object[] { "  C", "W  ", "   ", 'W', ToolDictNames.craftingToolKnife, 'C', aBlankClayCast });
+        }
+
+        // Add storage component recipes to pre-apply cache upgrades
+
+        final ItemStack COMPONENT_1 = GT_ModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35);
+        final ItemStack COMPONENT_4 = GT_ModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36);
+        final ItemStack COMPONENT_16 = GT_ModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37);
+        final ItemStack COMPONENT_64 = GT_ModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 38);
+        final ItemStack COMPONENT_256 = GT_ModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 57);
+        final ItemStack COMPONENT_1024 = GT_ModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 58);
+        final ItemStack COMPONENT_4096 = GT_ModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 59);
+        final ItemStack COMPONENT_16384 = GT_ModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 60);
+        final ItemStack FLUIDCOMPONENT_1 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 0);
+        final ItemStack FLUIDCOMPONENT_4 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 1);
+        final ItemStack FLUIDCOMPONENT_16 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 2);
+        final ItemStack FLUIDCOMPONENT_64 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 3);
+        final ItemStack FLUIDCOMPONENT_256 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 4);
+        final ItemStack FLUIDCOMPONENT_1024 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 5);
+        final ItemStack FLUIDCOMPONENT_4096 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 6);
+        final ItemStack FLUIDCOMPONENT_16384 = GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 1, 7);
+
+        ItemStack[] itemComponents = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64,
+                COMPONENT_256, COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
+        ItemStack[] fluidComponents = new ItemStack[] { FLUIDCOMPONENT_1, FLUIDCOMPONENT_4, FLUIDCOMPONENT_16,
+                FLUIDCOMPONENT_64, FLUIDCOMPONENT_256, FLUIDCOMPONENT_1024, FLUIDCOMPONENT_4096, FLUIDCOMPONENT_16384 };
+        long[] capacities = { 8192, 32768, 131072, 524288, 2097152, 8388608, 33554432, 134217728 };
+
+        for (int i = 0; i <= 7; i++) {
+            ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
+            NBTTagCompound hatchNBT = modifiedHatch.getTagCompound();
+            if (hatchNBT != null) {
+                hatchNBT.setLong("baseCapacity", capacities[i]);
+            } else {
+                hatchNBT = new NBTTagCompound();
+                hatchNBT.setLong("baseCapacity", capacities[i] * 256);
+                modifiedHatch.setTagCompound(hatchNBT);
+            }
+
+            ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
+            NBTTagCompound busNBT = modifiedBus.getTagCompound();
+            if (busNBT != null) {
+                busNBT.setLong("baseCapacity", capacities[i]);
+            } else {
+                busNBT = new NBTTagCompound();
+                busNBT.setLong("baseCapacity", capacities[i]);
+                modifiedBus.setTagCompound(busNBT);
+            }
+
+            GT_ModHandler.addShapelessCraftingRecipe(
+                    modifiedHatch,
+                    new Object[] { ItemList.Hatch_Output_ME.get(1L), fluidComponents[i] });
+            GT_ModHandler.addShapelessCraftingRecipe(
+                    modifiedBus,
+                    new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), itemComponents[i] });
         }
     }
 

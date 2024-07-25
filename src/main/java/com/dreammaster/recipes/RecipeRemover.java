@@ -373,6 +373,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("AdvancedSolarPanel", "ultimate_solar_helmet", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("AdvancedSolarPanel", "asp_crafting_items", 1, 5, missing));
         removeRecipeByOutputDelayed(getModItem("AdvancedSolarPanel", "asp_crafting_items", 1, 13, missing));
+        removeRecipeByOutputDelayed(getModItem("akashictome", "tome", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Automagy", "blockHourglass", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Avaritia", "Double_Craft", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Avaritia", "Triple_Craft", 1, 0, missing));
@@ -1074,6 +1075,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem("Forestry", "hunterBag", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "adventurerBag", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "builderBag", 1, 0, missing));
+        removeRecipeByOutputDelayed(getModItem("Forestry", "coinBag", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "apiculture", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "apiculture", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem("Forestry", "apicultureChest", 1, 0, missing));
