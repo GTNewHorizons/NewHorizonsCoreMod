@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Automagy;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.recipe.RecipeMaps.distillationTowerRecipes;
 import static gregtech.api.recipe.RecipeMaps.distilleryRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;

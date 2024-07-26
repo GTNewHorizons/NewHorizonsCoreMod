@@ -1,9 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.recipe.RecipeMaps.sifterRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;

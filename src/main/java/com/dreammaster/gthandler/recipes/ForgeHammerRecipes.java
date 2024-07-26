@@ -46,22 +46,17 @@ public class ForgeHammerRecipes implements Runnable {
         // Raw optical chip
         int chip_duration_ticks = 10 * SECONDS;
         long chip_eu_per_tick = TierEU.RECIPE_UEV;
-        FluidStack[] purified_water = { Materials.Grade7PurifiedWater.getFluid(100L), Materials.Grade8PurifiedWater.getFluid(100L) };
+        FluidStack[] purified_water = { Materials.Grade7PurifiedWater.getFluid(100L),
+                Materials.Grade8PurifiedWater.getFluid(100L) };
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(8))
-                .fluidInputs(Materials.Grade7PurifiedWater.getFluid(100L))
-                .duration(chip_duration_ticks)
-                .eut(chip_eu_per_tick)
-                .addTo(hammerRecipes);
+                .fluidInputs(Materials.Grade7PurifiedWater.getFluid(100L)).duration(chip_duration_ticks)
+                .eut(chip_eu_per_tick).addTo(hammerRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(12))
-                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(100L))
-                .duration(chip_duration_ticks / 2)
-                .eut(chip_eu_per_tick)
-                .addTo(hammerRecipes);
+                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(100L)).duration(chip_duration_ticks / 2)
+                .eut(chip_eu_per_tick).addTo(hammerRecipes);
     }
 }
