@@ -222,20 +222,23 @@ public class CuttingMachineRecipes implements Runnable {
 
         if (BartWorks.isModLoaded()) {
             // Photonically Prepared Wafer
-            int wafer_duration_ticks = 50 * 20;
-            int wafer_eu_per_tick = 7_864_320;
-            FluidStack[] purified_water = { Materials.Grade1PurifiedWater.getFluid(1000L),
-                    Materials.Grade2PurifiedWater.getFluid(1000L), Materials.Grade3PurifiedWater.getFluid(1000L),
-                    Materials.Grade4PurifiedWater.getFluid(1000L), Materials.Grade5PurifiedWater.getFluid(1000L),
-                    Materials.Grade6PurifiedWater.getFluid(1000L), Materials.Grade7PurifiedWater.getFluid(1000L),
-                    Materials.Grade8PurifiedWater.getFluid(1000L) };
-            for (int i = 0; i < purified_water.length; i++) {
+            int wafer_duration_ticks = 50 * SECONDS;
+            long wafer_eu_per_tick = TierEU.RECIPE_UEV;
 
-                GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L) // Optical Boul
-                ).itemOutputs(ItemList.Circuit_Silicon_Wafer6.get((i + 1) * 2L)).fluidInputs(purified_water[i])
-                        .duration(wafer_duration_ticks *= 0.95).eut(wafer_eu_per_tick).addTo(cutterRecipes);
-
-            }
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
+                    .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(16))
+                    .fluidInputs(Materials.Grade7PurifiedWater.getFluid(1000L))
+                    .duration(wafer_duration_ticks)
+                    .eut(wafer_eu_per_tick)
+                    .addTo(cutterRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
+                    .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(24))
+                    .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1000L))
+                    .duration(wafer_duration_ticks / 2)
+                    .eut(wafer_eu_per_tick)
+                    .addTo(cutterRecipes);
         }
 
         if (Chisel.isModLoaded()) {
