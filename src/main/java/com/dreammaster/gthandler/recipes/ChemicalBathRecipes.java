@@ -219,15 +219,6 @@ public class ChemicalBathRecipes implements Runnable {
                     .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
         }
 
-        if (GTPlusPlus.isModLoaded()) {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(GT_OreDictUnificator.get(OrePrefixes.nanite, Materials.Silver, 0, false))
-                    .itemOutputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "particleBase", 1L, 24)).outputChances(100)
-                    .fluidInputs(Materials.Grade7PurifiedWater.getFluid(1000L))
-                    .fluidOutputs(Materials.Grade8PurifiedWater.getFluid(900L)).duration(4 * MINUTES + 10 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV / 2).addTo(chemicalBathRecipes);
-        }
-
         if (EnderIO.isModLoaded()) {
             GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L))
                     .itemOutputs(GT_ModHandler.getModItem(EnderIO.ID, "blockFusedQuartz", 1L, 4))

@@ -13,11 +13,5 @@ public class FluidHeaterRecipes implements Runnable {
 
     @Override
     public void run() {
-        if (BartWorks.isModLoaded()) {
-            GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(1))
-                    .fluidInputs(Materials.Grade1PurifiedWater.getFluid(1000))
-                    .fluidOutputs(Materials.Grade2PurifiedWater.getFluid(900)).duration(4 * MINUTES + 10 * SECONDS)
-                    .eut(61_440).addTo(fluidHeaterRecipes);
-        }
     }
 }

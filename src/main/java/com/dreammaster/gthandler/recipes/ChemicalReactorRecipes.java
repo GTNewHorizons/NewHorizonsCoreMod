@@ -564,18 +564,6 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SodiumAluminate, 64L))
                 .fluidInputs(Materials.Water.getFluid(16000L)).fluidOutputs(Materials.Hydrogen.getGas(48000L))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
-
-        if (BartWorks.isModLoaded()) {
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Zeolite, 0, false),
-                            GT_Utility.getIntegratedCircuit(1))
-                    .fluidInputs(Materials.Grade4PurifiedWater.getFluid(1000))
-                    .fluidOutputs(Materials.Grade5PurifiedWater.getFluid(900)).duration(4 * MINUTES + 10 * SECONDS)
-                    .eut(TierEU.RECIPE_UV).addTo(multiblockChemicalReactorRecipes);
-
-        }
     }
 
 }
