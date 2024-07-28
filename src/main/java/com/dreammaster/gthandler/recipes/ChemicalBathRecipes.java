@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.LogisticsPipes;
@@ -217,15 +216,6 @@ public class ChemicalBathRecipes implements Runnable {
                             GT_ModHandler.getModItem(Forestry.ID, "mulch", 4L, 0))
                     .outputChances(10000, 3300, 2000).fluidInputs(Materials.Water.getFluid(750L)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
-        }
-
-        if (GTPlusPlus.isModLoaded()) {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(GT_OreDictUnificator.get(OrePrefixes.nanite, Materials.Silver, 0, false))
-                    .itemOutputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "particleBase", 1L, 24)).outputChances(100)
-                    .fluidInputs(Materials.Grade7PurifiedWater.getFluid(1000L))
-                    .fluidOutputs(Materials.Grade8PurifiedWater.getFluid(900L)).duration(4 * MINUTES + 10 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV / 2).addTo(chemicalBathRecipes);
         }
 
         if (EnderIO.isModLoaded()) {
