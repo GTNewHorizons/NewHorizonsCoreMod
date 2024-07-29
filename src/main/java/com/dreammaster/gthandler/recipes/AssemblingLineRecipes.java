@@ -971,6 +971,69 @@ public class AssemblingLineRecipes implements Runnable {
                     .duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_UV)
                     .addTo(AssemblyLine);
+
+            GT_Values.RA.stdBuilder()
+                    .metadata(RESEARCH_ITEM, Materials.Grade5PurifiedWater.getCells(1))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 8),
+                            ItemList.BlockNaquadriaReinforcedWaterPlantCasing.get(8),
+                            ItemList.BlockUltraVioletLaserEmitter.get(8),
+                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_UV.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Neutronium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Draconium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 8),
+                            ItemList.Electric_Motor_UV.get(4),
+                            ItemList.Electric_Pump_UV.get(4),
+                            // Still UV circuit, for some reason the alias is not working.
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Neutronium, 64)
+                    )
+                    .fluidInputs(
+                            Materials.Neutronium.getMolten(32 * 144),
+                            Materials.Naquadria.getMolten(32 * 144),
+                            new FluidStack(solderIndalloy, 32 * 144),
+                            Materials.Lubricant.getFluid(64000)
+                    )
+                    .itemOutputs(
+                            ItemList.Machine_Multi_PurificationUnitUVTreatment.get(1)
+                    )
+                    .duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UV)
+                    .addTo(AssemblyLine);
+
+            GT_Values.RA.stdBuilder()
+                    .metadata(RESEARCH_ITEM, Materials.Grade6PurifiedWater.getCells(1))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 8),
+                            ItemList.BlockPlasmaHeatingCasing.get(8),
+                            com.github.technus.tectech.thing.CustomItemList.eM_Computer_Casing.get(8),
+                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_UEV.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Infinity, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.CosmicNeutronium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 8),
+                            ItemList.Electric_Motor_UEV.get(4),
+                            ItemList.Electric_Pump_UEV.get(4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 32)
+                    )
+                    .fluidInputs(
+                            Materials.Quantium.getMolten(64 * 144),
+                            Materials.Infinity.getMolten(64 * 144),
+                            new FluidStack(solderUEV, 64 * 144),
+                            Materials.Lubricant.getFluid(128000)
+                    )
+                    .itemOutputs(
+                            ItemList.Machine_Multi_PurificationUnitDegasifier.get(1)
+                    )
+                    .duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UEV)
+                    .addTo(AssemblyLine);
         }
 
         // Piko Circuit
