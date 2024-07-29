@@ -907,6 +907,70 @@ public class AssemblingLineRecipes implements Runnable {
                     .duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_ZPM)
                     .addTo(AssemblyLine);
+
+            GT_Values.RA.stdBuilder()
+                    .metadata(RESEARCH_ITEM, Materials.Grade3PurifiedWater.getCells(1))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 8),
+                            ItemList.BlockNaquadahReinforcedWaterPlantCasing.get(8),
+                            ItemList.BlockExtremeCorrosionResistantCasing.get(8),
+                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_ZPM.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.NaquadahAlloy, 4),
+                            HASTELLOY_C276.getRotor(4),
+                            HASTELLOY_C276.getPlate(8),
+                            ItemList.Electric_Motor_ZPM.get(4),
+                            ItemList.Electric_Pump_ZPM.get(4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 8),
+                            // Still UV circuit, for some reason the alias is not working.
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Naquadah, 32)
+                    )
+                    .fluidInputs(
+                            Materials.NaquadahAlloy.getMolten(16 * 144),
+                            HASTELLOY_C276.getFluidStack(16 * 144),
+                            new FluidStack(solderIndalloy, 16 * 144),
+                            Materials.Lubricant.getFluid(32000)
+                    )
+                    .itemOutputs(
+                            ItemList.Machine_Multi_PurificationUnitPhAdjustment.get(1)
+                    )
+                    .duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_ZPM)
+                    .addTo(AssemblyLine);
+
+            GT_Values.RA.stdBuilder()
+                    .metadata(RESEARCH_ITEM, Materials.Grade4PurifiedWater.getCells(1))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 8),
+                            ItemList.BlockPlasmaHeatingCasing.get(8),
+                            ItemList.Casing_Coil_Superconductor.get(8),
+                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_UV.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Neutronium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Osmiridium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 8),
+                            ItemList.Electric_Motor_UV.get(4),
+                            ItemList.Electric_Pump_UV.get(4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 16),
+                            // Still UV circuit, for some reason the alias is not working.
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Neutronium, 32)
+                    )
+                    .fluidInputs(
+                            Materials.Neutronium.getMolten(32 * 144),
+                            Materials.Naquadria.getMolten(32 * 144),
+                            new FluidStack(solderIndalloy, 32 * 144),
+                            Materials.Lubricant.getFluid(64000)
+                    )
+                    .itemOutputs(
+                            ItemList.Machine_Multi_PurificationUnitPlasmaHeater.get(1)
+                    )
+                    .duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UV)
+                    .addTo(AssemblyLine);
         }
 
         // Piko Circuit
