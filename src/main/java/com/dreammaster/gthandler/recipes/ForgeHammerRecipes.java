@@ -46,8 +46,6 @@ public class ForgeHammerRecipes implements Runnable {
         // Raw optical chip
         int chip_duration_ticks = 10 * SECONDS;
         long chip_eu_per_tick = TierEU.RECIPE_UEV;
-        FluidStack[] purified_water = { Materials.Grade7PurifiedWater.getFluid(100L),
-                Materials.Grade8PurifiedWater.getFluid(100L) };
 
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_Optical.get(8))
