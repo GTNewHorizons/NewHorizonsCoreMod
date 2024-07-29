@@ -6,7 +6,6 @@ import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Swit
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.EternalSingularity;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -24,7 +23,6 @@ import static gregtech.api.util.GT_RecipeConstants.RESEARCH_TIME;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
 
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
@@ -42,6 +40,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class AssemblingLineRecipes implements Runnable {
 
@@ -800,8 +799,7 @@ public class AssemblingLineRecipes implements Runnable {
         // Waterline controllers
         {
 
-            GT_Values.RA.stdBuilder()
-                    .metadata(RESEARCH_ITEM, new ItemStack(Items.water_bucket, 1))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, new ItemStack(Items.water_bucket, 1))
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tungsten, 4L),
@@ -812,19 +810,12 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Pump_LuV.get(4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.NiobiumTitanium, 8)
-                    )
-                    .fluidInputs(
-                            new FluidStack(solderIndalloy, 8 * 144),
-                            Materials.Lubricant.getFluid(16000)
-                    )
-                    .itemOutputs(ItemList.Machine_Multi_PurificationPlant.get(1))
-                    .duration(60 * SECONDS)
-                    .eut(TierEU.RECIPE_LuV)
-                    .addTo(AssemblyLine);
+                            GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.NiobiumTitanium, 8))
+                    .fluidInputs(new FluidStack(solderIndalloy, 8 * 144), Materials.Lubricant.getFluid(16000))
+                    .itemOutputs(ItemList.Machine_Multi_PurificationPlant.get(1)).duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
-            GT_Values.RA.stdBuilder()
-                    .metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Sifter.get(1))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Sifter.get(1))
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
                             ItemList.ActivatedCarbonFilterMesh.get(16),
@@ -835,20 +826,15 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Pump_LuV.get(4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 16)
-                    )
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 16))
                     .fluidInputs(
                             Materials.Osmium.getMolten(8 * 144),
                             new FluidStack(solderIndalloy, 8 * 144),
-                            Materials.Lubricant.getFluid(16000)
-                    )
-                    .itemOutputs(ItemList.Machine_Multi_PurificationUnitClarifier.get(1))
-                    .duration(60 * SECONDS)
-                    .eut(TierEU.RECIPE_LuV)
-                    .addTo(AssemblyLine);
+                            Materials.Lubricant.getFluid(16000))
+                    .itemOutputs(ItemList.Machine_Multi_PurificationUnitClarifier.get(1)).duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
-            GT_Values.RA.stdBuilder()
-                    .metadata(RESEARCH_ITEM, Materials.Grade1PurifiedWater.getCells(1))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade1PurifiedWater.getCells(1))
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 8),
@@ -862,18 +848,14 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Electric_Pump_LuV.get(4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 8),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 16)
-                    )
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 16))
                     .fluidInputs(
                             HASTELLOY_C276.getFluidStack(8 * 144),
                             HASTELLOY_X.getFluidStack(8 * 144),
                             new FluidStack(solderIndalloy, 8 * 144),
-                            Materials.Lubricant.getFluid(16000)
-                    )
-                    .itemOutputs(ItemList.Machine_Multi_PurificationUnitOzonation.get(1))
-                    .duration(60 * SECONDS)
-                    .eut(TierEU.RECIPE_LuV)
-                    .addTo(AssemblyLine);
+                            Materials.Lubricant.getFluid(16000))
+                    .itemOutputs(ItemList.Machine_Multi_PurificationUnitOzonation.get(1)).duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
         }
 
         // Piko Circuit

@@ -112,8 +112,7 @@ public class LaserEngraverRecipes implements Runnable {
                         ItemList.Circuit_Silicon_Wafer3.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(4L)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_EV)
-                .addTo(WaferEngravingRecipes);
+                .eut(TierEU.RECIPE_EV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

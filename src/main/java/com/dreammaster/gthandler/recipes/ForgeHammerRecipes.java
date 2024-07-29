@@ -8,7 +8,6 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
