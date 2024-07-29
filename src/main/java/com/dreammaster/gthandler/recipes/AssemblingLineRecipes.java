@@ -856,13 +856,14 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Casing_Vent.get(8),
                             com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
                             HASTELLOY_C276.getPlate(8),
-                            HASTELLOY_X.getPlate(8),
                             HASTELLOY_C276.getRotor(4),
                             HASTELLOY_X.getRotor(4),
+                            HASTELLOY_X.getPlate(8),
+                            ItemList.Electric_Motor_LuV.get(4),
                             ItemList.Electric_Pump_LuV.get(4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 8),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 16)
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 32)
                     )
                     .fluidInputs(
                             HASTELLOY_C276.getFluidStack(8 * 144),
@@ -873,6 +874,38 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitOzonation.get(1))
                     .duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_LuV)
+                    .addTo(AssemblyLine);
+
+            GT_Values.RA.stdBuilder()
+                    .metadata(RESEARCH_ITEM, Materials.Grade2PurifiedWater.getCells(1))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Adamantium, 8),
+                            ItemList.BlockFlocculationCasing.get(8),
+                            ItemList.Casing_Vent.get(8),
+                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_ZPM.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Trinium, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Trinium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.NaquadahAlloy, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 8),
+                            ItemList.Electric_Motor_ZPM.get(4),
+                            ItemList.Electric_Pump_ZPM.get(4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4),
+                            // Still UV circuit, for some reason the alias is not working.
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Naquadah, 16)
+                    )
+                    .fluidInputs(
+                            Materials.Iridium.getMolten(16 * 144),
+                            Materials.NaquadahAlloy.getMolten(16 * 144),
+                            new FluidStack(solderIndalloy, 16 * 144),
+                            Materials.Lubricant.getFluid(32000)
+                    )
+                    .itemOutputs(
+                            ItemList.Machine_Multi_PurificationUnitFlocculator.get(1)
+                    )
+                    .duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_ZPM)
                     .addTo(AssemblyLine);
         }
 
