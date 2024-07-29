@@ -12,6 +12,10 @@ public class ChiselHelper {
                 .addVariation(groupName, Block.getBlockFromItem(stack.getItem()), stack.getItemDamage(), 99);
     }
 
+    public static void registerOredict(String groupName, String oreName) {
+        CarvingUtils.getChiselRegistry().registerOre(groupName, oreName);
+    }
+
     public static void removeVariationStack(ItemStack stack) {
         CarvingUtils.getChiselRegistry()
                 .removeVariation(Block.getBlockFromItem(stack.getItem()), stack.getItemDamage());

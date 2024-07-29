@@ -85,11 +85,8 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
         addShapelessRecipe(ItemList.Color_00.get(2L), getModItem(ForbiddenMagic.ID, "InkFlower", 1, 0, missing));
 
-        ChiselHelper.addGroup("netherstar");
-        ChiselHelper.addVariationFromStack("netherstar", getModItem(ForbiddenMagic.ID, "StarBlock", 1, 0, missing));
-        ChiselHelper.addVariationFromStack(
-                "netherstar",
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1L));
+        ChiselHelper.addGroup("blockNetherStar");
+        ChiselHelper.registerOredict("blockNetherStar", "blockNetherStar");
 
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Items.emerald))
                 .itemOutputs(getModItem(ForbiddenMagic.ID, "FMResource", 9, 0, missing)).duration(1 * MINUTES).eut(5)
