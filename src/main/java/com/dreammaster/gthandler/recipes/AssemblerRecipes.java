@@ -1976,6 +1976,45 @@ public class AssemblerRecipes implements Runnable {
                 ItemList.Energy_Module.get(1)).itemOutputs(ItemList.MicroTransmitter_UV.get(1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
 
+        // Industrial Tinted Glass
+        ItemStack[] dyes = new ItemStack[] { ItemList.Color_15.get(1), // white
+                ItemList.Color_07.get(1), // light gray
+                ItemList.Color_08.get(1), // gray
+                ItemList.Color_00.get(1) // black
+        };
+
+        ItemStack[] glasses = new ItemStack[] { ItemList.GlassTintedIndustrialWhite.get(1),
+                ItemList.GlassTintedIndustrialLightGray.get(1), ItemList.GlassTintedIndustrialGray.get(1),
+                ItemList.GlassTintedIndustrialBlack.get(1), };
+
+        for (int meta = 0; meta < 4; ++meta) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
+                            new ItemStack(Blocks.glass, 4),
+                            dyes[meta])
+                    .itemOutputs(glasses[meta]).eut(TierEU.RECIPE_LV).duration(10 * SECONDS).addTo(assemblerRecipes);
+        }
+
+        // Chemical grade glass
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
+                        new ItemStack(Blocks.glass))
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(4 * 144))
+                .itemOutputs(ItemList.GlassPHResistant.get(1)).eut(TierEU.RECIPE_EV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // Ultraviolet emitter casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1),
+                        ItemList.Emitter_UV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 4))
+                .fluidInputs(Materials.Titanium.getPlasma(4 * 144))
+                .itemOutputs(ItemList.BlockUltraVioletLaserEmitter.get(1)).eut(TierEU.RECIPE_UV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
             GT_Values.RA.stdBuilder()
