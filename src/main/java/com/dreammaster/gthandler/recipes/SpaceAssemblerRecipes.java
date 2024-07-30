@@ -353,19 +353,19 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null,
                         null);
             }
-            if (AppliedEnergistics2.isModLoaded()) {
+            if (AE2FluidCraft.isModLoaded()) {
                 // Artificial Fluid Universe Cell
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1),
                                 GT_OreDictUnificator.get("plateDenseShirabon", 16),
                                 ItemList.Field_Generator_UXV.get(1L),
                                 getModItem(GoodGenerator.ID, "yottaFluidTankCells", 2, 9),
-                                getModItem(KekzTech.ID, "Kekztech_tfftsoragefield_block", 2, 10),
+                                getModItem(KekzTech.ID, "kekztech_tfftstoragefield_block", 2, 10),
                                 getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
                                 MaterialsUEVplus.Eternity.getNanite(4) },
                         new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
-                        getModItem(AppliedEnergistics2.ID, "item.FluidExtremeStorageCell.Universe", 1),
+                        getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1),
                         3,
                         1 * MINUTES,
                         (int) TierEU.RECIPE_UXV,
