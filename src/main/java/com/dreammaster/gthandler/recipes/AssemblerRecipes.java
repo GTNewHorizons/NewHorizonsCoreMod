@@ -10,6 +10,8 @@ import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
+import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
+import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +31,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
+import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import common.TileEntities;
 
 import gregtech.api.enums.GT_Values;
@@ -2014,6 +2017,47 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Titanium.getPlasma(4 * 144))
                 .itemOutputs(ItemList.BlockUltraVioletLaserEmitter.get(1)).eut(TierEU.RECIPE_UV).duration(10 * SECONDS)
                 .addTo(assemblerRecipes);
+
+        // Sterile Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ledox, 4),
+                        ItemList.Electric_Motor_IV.get(2),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.PolyvinylChloride, 4))
+                .fluidInputs(Materials.Ledox.getMolten(4 * 144))
+                .itemOutputs(ItemList.BlockIndustrialWaterPlantCasing.get(1)).eut(TierEU.RECIPE_EV)
+                .duration(10 * SECONDS).addTo(assemblerRecipes);
+
+        // Reinforced Sterile Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.BlockIndustrialWaterPlantCasing.get(1),
+                        WerkstoffLoader.Ruridit.get(OrePrefixes.bolt, 16))
+                .fluidInputs(Materials.Concrete.getMolten(8 * 144))
+                .itemOutputs(ItemList.BlockSterileWaterPlantCasing.get(1)).eut(TierEU.RECIPE_IV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // Stabilized Naquadah Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 6),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.NiobiumTitanium, 4))
+                .fluidInputs(Materials.SuperCoolant.getFluid(4000))
+                .itemOutputs(ItemList.BlockNaquadahReinforcedWaterPlantCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+
+        // Inert Neutralization Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        HASTELLOY_C276.getFrameBox(1),
+                        HASTELLOY_C276.getPlate(3),
+                        HASTELLOY_X.getPlate(3),
+                        ItemList.Electric_Pump_LuV.get(1))
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(4 * 144))
+                .itemOutputs(ItemList.BlockExtremeCorrosionResistantCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
