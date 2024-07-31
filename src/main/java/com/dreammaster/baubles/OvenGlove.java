@@ -12,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
@@ -209,6 +210,12 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
                 return;
             }
             EntityPlayer player = (EntityPlayer) entity;
+
+            // If the game is in peaceful, exit early. Why do this? See issue #16879
+            if (player.worldObj.difficultySetting == EnumDifficulty.PEACEFUL) {
+                event.setCanceled(true);
+                return;
+            }
 
             if (!(event.source instanceof DamageSourceHotItem)) {
                 return;
