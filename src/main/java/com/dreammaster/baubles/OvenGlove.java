@@ -211,13 +211,13 @@ public final class OvenGlove extends Item implements IBauble, IExtendedModItem<O
             }
             EntityPlayer player = (EntityPlayer) entity;
 
-            // If the game is in peaceful, exit early. Why do this? See issue #16879
-            if (player.worldObj.difficultySetting == EnumDifficulty.PEACEFUL) {
-                event.setCanceled(true);
+            if (!(event.source instanceof DamageSourceHotItem)) {
                 return;
             }
 
-            if (!(event.source instanceof DamageSourceHotItem)) {
+            // If the game is in peaceful, exit early. Why do this? See issue #16879
+            if (player.worldObj.difficultySetting == EnumDifficulty.PEACEFUL) {
+                event.setCanceled(true);
                 return;
             }
 
