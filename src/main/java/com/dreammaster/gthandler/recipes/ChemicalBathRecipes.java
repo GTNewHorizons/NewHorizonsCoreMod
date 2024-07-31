@@ -24,6 +24,7 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -165,6 +166,13 @@ public class ChemicalBathRecipes implements Runnable {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolPainterWhite", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyewhite", 144)).duration(10 * SECONDS).eut(2)
                 .addTo(chemicalBathRecipes);
+
+        // Superplasticizer-treated high strength concrete
+        Fluid naphthalene = FluidRegistry.getFluid("fluid.naphthalene");
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getIC2Item("reinforcedStone", 1))
+                .fluidInputs(new FluidStack(naphthalene, 1000))
+                .itemOutputs(ItemList.BlockIndustrialStrengthConcrete.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(chemicalBathRecipes);
 
         if (BiomesOPlenty.isModLoaded() && HardcoreEnderExpansion.isModLoaded() && Thaumcraft.isModLoaded()) {
             GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 0, missing))

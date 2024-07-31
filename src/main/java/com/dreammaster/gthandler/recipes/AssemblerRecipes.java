@@ -2059,6 +2059,17 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.BlockExtremeCorrosionResistantCasing.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
+        // Naquadria Reinforced Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.BlockNaquadahReinforcedWaterPlantCasing.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Naquadria, 8),
+                        ItemList.Electric_Pump_ZPM.get(1))
+                .fluidInputs(Materials.SuperCoolant.getFluid(8000))
+                .itemOutputs(ItemList.BlockNaquadriaReinforcedWaterPlantCasing.get(1)).eut(TierEU.RECIPE_ZPM)
+                .duration(10 * SECONDS).addTo(assemblerRecipes);
+
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
             GT_Values.RA.stdBuilder()
