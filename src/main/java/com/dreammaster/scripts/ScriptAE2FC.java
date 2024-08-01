@@ -423,11 +423,11 @@ public class ScriptAE2FC implements IScriptLoader {
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
                         CustomItemList.ChargedCertusQuartzDust.get(2),
+                        ItemList.Electric_Pump_LV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
                         ItemList.Circuit_Board_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -438,6 +438,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
                         CustomItemList.ChargedCertusQuartzDust.get(2),
+                        ItemList.Electric_Pump_LV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
                         ItemList.Circuit_Board_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -448,6 +449,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
                         CustomItemList.ChargedCertusQuartzDust.get(2),
+                        ItemList.Electric_Pump_LV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
                         ItemList.Circuit_Board_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -459,6 +461,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        ItemList.Electric_Pump_LV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -469,6 +472,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        ItemList.Electric_Pump_LV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -479,6 +483,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        ItemList.Electric_Pump_LV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -490,6 +495,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        ItemList.Electric_Pump_MV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -500,6 +506,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        ItemList.Electric_Pump_MV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -510,6 +517,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        ItemList.Electric_Pump_MV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -521,6 +529,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
+                        ItemList.Electric_Pump_MV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(4),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -531,6 +540,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
+                        ItemList.Electric_Pump_MV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(4),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -541,6 +551,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 16),
+                        ItemList.Electric_Pump_MV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(4),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -552,6 +563,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                        ItemList.Electric_Pump_HV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(1),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -562,6 +574,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                        ItemList.Electric_Pump_HV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(1),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -572,6 +585,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                        ItemList.Electric_Pump_HV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(1),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -583,6 +597,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                        ItemList.Electric_Pump_HV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(2),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -593,6 +608,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                        ItemList.Electric_Pump_HV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(2),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -603,6 +619,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                        ItemList.Electric_Pump_HV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(2),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -614,6 +631,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                        ItemList.Electric_Pump_EV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(4),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -624,6 +642,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                        ItemList.Electric_Pump_EV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(4),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -634,6 +653,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                        ItemList.Electric_Pump_EV.get(1),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(4),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -645,6 +665,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        ItemList.Electric_Pump_EV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(8),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -655,6 +676,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        ItemList.Electric_Pump_EV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(8),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -665,6 +687,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        ItemList.Electric_Pump_EV.get(2),
                         com.dreammaster.item.ItemList.EngineeringProcessorFluidEmeraldCore.getIS(8),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))
