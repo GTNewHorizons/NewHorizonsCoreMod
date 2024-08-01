@@ -428,7 +428,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
                         CustomItemList.ChargedCertusQuartzDust.get(2),
-                        ItemList.Electric_Pump_LV.get(1),
+                        com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(1),
                         ItemList.Circuit_Board_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_1).fluidInputs(Materials.Lead.getMolten(288)).duration(10 * SECONDS)
