@@ -38,6 +38,8 @@ import com.dreammaster.gthandler.recipes.SpaceAssemblerRecipes;
 import com.dreammaster.gthandler.recipes.VacuumFreezerRecipes;
 import com.dreammaster.gthandler.recipes.WiremillRecipes;
 
+import gregtech.loaders.postload.recipes.NeutroniumCompressorRecipes;
+
 public class GT_MachineRecipeLoader implements Runnable {
 
     @Override
@@ -75,6 +77,7 @@ public class GT_MachineRecipeLoader implements Runnable {
         new LatheRecipes().run();
         new MaceratorRecipes().run();
         new MixerRecipes().run();
+        new NeutroniumCompressorRecipes().run();
         new SifterRecipes().run();
         new VacuumFreezerRecipes().run();
         new WiremillRecipes().run();
