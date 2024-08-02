@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -9,10 +10,12 @@ import static gregtech.api.util.GT_RecipeConstants.BLACKHOLE;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import net.minecraftforge.fluids.FluidStack;
 
 // All recipes from Avaritia's Neutronium Compressor - now in GT!
 public class NeutroniumCompressorRecipes implements Runnable {
@@ -21,7 +24,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
     public void run() {
         GT_Values.RA.stdBuilder().itemInputs(
                 GT_Utility.copyAmountUnsafe(7296, GT_OreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1)))
-                .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 0)).metadata(BLACKHOLE, 1).duration(3 * SECONDS)
+                .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 0)).duration(3 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(
                 GT_Utility.copyAmountUnsafe(1215, GT_OreDictUnificator.get(OrePrefixes.block, Materials.Gold, 1)))
@@ -175,7 +178,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(
                 GT_Utility.copyAmountUnsafe(62, GT_OreDictUnificator.get(OrePrefixes.block, Materials.Iridium, 1)))
                 .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 23))
-                .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).metadata(BLACKHOLE, 1).addTo(neutroniumCompressorRecipes);
+                .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(
                 GT_Utility.copyAmountUnsafe(512, GT_OreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1)))
                 .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24))
@@ -299,6 +302,11 @@ public class NeutroniumCompressorRecipes implements Runnable {
                 .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 64))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1L, 5)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(neutroniumCompressorRecipes);
+
+        //Recipes which require stabilized black hole - not from original neutronium compressor
+        GT_Values.RA.stdBuilder().fluidInputs((MaterialsUEVplus.SpaceTime).getMolten(72))
+                .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0)).metadata(BLACKHOLE, 1).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(neutroniumCompressorRecipes);
     }
 }
