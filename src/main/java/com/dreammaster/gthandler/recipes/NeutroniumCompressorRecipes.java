@@ -1,10 +1,12 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.github.bartimaeusnek.bartworks.API.recipe.BartWorksRecipeMaps.electricImplosionCompressorRecipes;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.BLACKHOLE;
 
@@ -303,10 +305,18 @@ public class NeutroniumCompressorRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 64))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 1L, 5)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(neutroniumCompressorRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 64))
+                .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(neutroniumCompressorRecipes);
 
         //Recipes which require stabilized black hole - not from original neutronium compressor
-        GT_Values.RA.stdBuilder().fluidInputs((MaterialsUEVplus.SpaceTime).getMolten(72))
-                .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0)).metadata(BLACKHOLE, 1).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
+        GT_Values.RA.stdBuilder()
+                .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1L))
+                .fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(72L))
+                .duration(1 * MINUTES + 40 * SECONDS)
+                .eut(TierEU.RECIPE_UMV)
+                .metadata(BLACKHOLE, 1)
+                .noOptimize()
                 .addTo(neutroniumCompressorRecipes);
     }
 }

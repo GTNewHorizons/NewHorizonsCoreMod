@@ -32,13 +32,12 @@ import com.dreammaster.gthandler.recipes.LaserEngraverRecipes;
 import com.dreammaster.gthandler.recipes.LatheRecipes;
 import com.dreammaster.gthandler.recipes.MaceratorRecipes;
 import com.dreammaster.gthandler.recipes.MixerRecipes;
+import com.dreammaster.gthandler.recipes.NeutroniumCompressorRecipes;
 import com.dreammaster.gthandler.recipes.RecipeRemoval;
 import com.dreammaster.gthandler.recipes.SifterRecipes;
 import com.dreammaster.gthandler.recipes.SpaceAssemblerRecipes;
 import com.dreammaster.gthandler.recipes.VacuumFreezerRecipes;
 import com.dreammaster.gthandler.recipes.WiremillRecipes;
-
-import gregtech.loaders.postload.recipes.NeutroniumCompressorRecipes;
 
 public class GT_MachineRecipeLoader implements Runnable {
 
