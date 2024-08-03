@@ -134,7 +134,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { ItemList.Circuit_Board_Wetware_Extreme.get(1),
                                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bedrockium, 64L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Chip_UHPIC.get(64L), ItemList.Circuit_Parts_DiodeXSMD.get(8L),
@@ -175,7 +175,7 @@ public class SpaceAssemblerRecipes implements Runnable {
             IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { ItemList.Circuit_Board_Bio_Ultra.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 64L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4L),
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
@@ -298,7 +298,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         new ItemStack[] { ItemList.Circuit_Board_Multifiberglass_Elite.get(4),
                                 ItemList.Circuit_Chip_Ram.get(64), ItemList.Circuit_Chip_SoC.get(64),
                                 ItemList.Circuit_Chip_NAND.get(64),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1L),
                                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L) },
                         new FluidStack[] { new FluidStack(solderIndalloy, 1152) },
                         getModItem(OpenComputers.ID, "item", 64L, 39),

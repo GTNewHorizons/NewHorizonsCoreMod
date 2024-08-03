@@ -314,7 +314,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ItemList.Hull_UV.get(1),
                         new ItemStack(simpleItem, 32, 3),
                         ItemList.Field_Generator_UV.get(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.SuperconductorUHV), 2 },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 2 },
                         new Object[] { OrePrefixes.gearGt.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(machines3, 1, 1)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
@@ -357,7 +357,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 .itemInputs(
                         new ItemStack(simpleItem, 16, 3),
                         GameRegistry.findItemStack(GoodGenerator.ID, "radiationProtectionPlate", 4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.SuperconductorUHV), 1 },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 1 },
                         new Object[] { OrePrefixes.gearGtSmall.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(baseItem, 1, 30)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)

@@ -29,16 +29,15 @@ public class GT_CustomLoader {
                 BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome,
                 Materials.Enderium),
 
-        ZPM(OrePrefixes.circuit.get(Materials.Ultimate), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
+        ZPM(OrePrefixes.circuit.get(Materials.ZPM), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
                 Materials.Naquadah, OrePrefixes.wireGt02.get(Materials.Naquadah),
                 OrePrefixes.gemExquisite.get(Materials.GarnetYellow), ItemList.MysteriousCrystal.getIS(),
                 BartWorks.isModLoaded() ? "blockGlassZPM" : "glassReinforced", Materials.Iridium, Materials.Naquadah),
 
-        UV(OrePrefixes.circuit.get(Materials.SuperconductorUHV),
-                OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate), Materials.ElectrumFlux,
-                OrePrefixes.wireGt02.get(Materials.NaquadahAlloy), OrePrefixes.gemExquisite.get(Materials.GarnetRed),
-                new ItemStack(Blocks.dragon_egg, 1), BartWorks.isModLoaded() ? "blockGlassUV" : "glassReinforced",
-                Materials.Osmium, Materials.Neutronium),
+        UV(OrePrefixes.circuit.get(Materials.UV), OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),
+                Materials.ElectrumFlux, OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
+                OrePrefixes.gemExquisite.get(Materials.GarnetRed), new ItemStack(Blocks.dragon_egg, 1),
+                BartWorks.isModLoaded() ? "blockGlassUV" : "glassReinforced", Materials.Osmium, Materials.Neutronium),
 
         UHV(OrePrefixes.circuit.get(Materials.Infinite), OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
                 Materials.Bedrockium, OrePrefixes.wireGt02.get(Materials.Bedrockium), null, null,

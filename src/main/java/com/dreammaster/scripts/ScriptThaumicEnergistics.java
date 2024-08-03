@@ -327,7 +327,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 16384k Essentia Storage Component
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
@@ -337,7 +337,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
@@ -347,7 +347,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),

@@ -107,9 +107,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         // 16 core
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        CraftingUnit,
-                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.SuperconductorUHV), 2))
+                .itemInputs(CraftingUnit, GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 2))
                 .itemOutputs(CoCraftingUnit16x).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         // Advanced Storage Housing
@@ -212,7 +210,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             // 16384k
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Bio_Ultra.get(1),

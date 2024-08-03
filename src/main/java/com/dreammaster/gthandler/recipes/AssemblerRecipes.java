@@ -742,7 +742,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.OreDrill3.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Europium, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4L),
                         ItemList.Electric_Motor_ZPM.get(4L),
                         ItemList.Electric_Pump_ZPM.get(4L),
                         ItemList.Conveyor_Module_ZPM.get(4L),
@@ -1960,7 +1960,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(
                 ItemList.Hull_UV.get(1),
                 // UV circuit, but internal naming is SuperconductorUHV?
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 2),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
                 ItemList.Electric_Piston_UV.get(2),
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.ElectrumFlux, 4))
                 .itemOutputs(CustomItemList.CompressorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UV)
@@ -1970,7 +1970,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(
                 ItemList.Hull_UV.get(1),
                 // UV circuit, but internal naming is SuperconductorUHV?
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 2),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
                 ItemList.Emitter_UV.get(4),
                 ItemList.Field_Generator_UV.get(1),
                 ItemList.Energy_Module.get(1)).itemOutputs(ItemList.MicroTransmitter_UV.get(1)).duration(5 * SECONDS)
@@ -2754,7 +2754,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.QuantumStar.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(ItemList.Field_Generator_IV.get(1L)).fluidInputs(Materials.HSSS.getMolten(576))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);

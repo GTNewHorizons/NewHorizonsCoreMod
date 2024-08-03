@@ -43,7 +43,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                         | GT_ModHandler.RecipeBits.BUFFERED,
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_ZPM, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_ZPM, 'C',
-                        OrePrefixes.circuit.get(Materials.Ultimate), 'P', OrePrefixes.plate.get(Materials.Osmium), 'B',
+                        OrePrefixes.circuit.get(Materials.ZPM), 'P', OrePrefixes.plate.get(Materials.Osmium), 'B',
                         CustomItemList.BatteryHull_ZPM_Full.get(1L) });
         GT_ModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
@@ -56,8 +56,8 @@ public class ScannerTools implements IOreRecipeRegistrator {
                         | GT_ModHandler.RecipeBits.BUFFERED,
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_UV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_UV, 'C',
-                        OrePrefixes.circuit.get(Materials.SuperconductorUHV), 'P',
-                        OrePrefixes.plate.get(Materials.Neutronium), 'B', CustomItemList.BatteryHull_UV_Full.get(1L) });
+                        OrePrefixes.circuit.get(Materials.UV), 'P', OrePrefixes.plate.get(Materials.Neutronium), 'B',
+                        CustomItemList.BatteryHull_UV_Full.get(1L) });
         GT_ModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
                         106,

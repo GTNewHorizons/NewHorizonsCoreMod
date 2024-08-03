@@ -692,7 +692,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 6, 1),
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 2),
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 3),
-                            new Object[] { OrePrefixes.circuit.get(Materials.Ultimate), 2L },
+                            new Object[] { OrePrefixes.circuit.get(Materials.ZPM), 2L },
                             GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Duranium, 2),
                             ItemList.Energy_LapotronicOrb2.get(1L),
                             ItemList.Field_Generator_IV.get(2L),
@@ -707,7 +707,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Casing_Fusion_Coil.get(16L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 16L),
-                            new Object[] { OrePrefixes.circuit.get(Materials.SuperconductorUHV), 16L },
+                            new Object[] { OrePrefixes.circuit.get(Materials.UV), 16L },
                             ItemList.Sensor_UV.get(16L),
                             ItemList.Emitter_UV.get(16L),
                             ItemList.Field_Generator_UV.get(8L),

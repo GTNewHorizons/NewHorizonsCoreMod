@@ -267,7 +267,7 @@ public class CircuitAssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2),
                         ItemList.Circuit_Chip_UHPIC.get(4L),
                         ItemList.Circuit_Chip_QuantumCPU.get(2L),
                         ItemList.Circuit_Chip_NanoCPU.get(2L),
@@ -1022,7 +1022,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Parts_PetriDish.get(8L),
                             ItemList.Electric_Pump_UV.get(1L),
                             ItemList.Sensor_LuV.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 32L))
                     .itemOutputs(ItemList.Circuit_Board_Bio.get(32L))
                     .fluidInputs(Materials.BioMediumSterilized.getFluid(16000L)).requiresCleanRoom()
