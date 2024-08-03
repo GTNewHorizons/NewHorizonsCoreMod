@@ -608,7 +608,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         ItemList.Electric_Pump_EV.get(1),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
@@ -618,7 +618,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         ItemList.Electric_Pump_EV.get(1),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
@@ -628,7 +628,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         ItemList.Electric_Pump_EV.get(1),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
@@ -640,7 +640,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         ItemList.Electric_Pump_EV.get(1),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -650,7 +650,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         ItemList.Electric_Pump_EV.get(1),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -660,7 +660,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         ItemList.Electric_Pump_EV.get(1),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GT_Utility.getIntegratedCircuit(1))

@@ -129,8 +129,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Generator_Naquadah_Mark_II.get(1L),
                 bits,
                 new Object[] { "PCP", "FMF", "WCW", 'M', ItemList.Hull_IV, 'F', ItemList.Field_Generator_IV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'W', OrePrefixes.cableGt04.get(Materials.Tungsten),
-                        'P', OrePrefixes.stick.get(Materials.Plutonium241) });
+                        OrePrefixes.circuit.get(Materials.LuV), 'W', OrePrefixes.cableGt04.get(Materials.Tungsten), 'P',
+                        OrePrefixes.stick.get(Materials.Plutonium241) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Generator_Naquadah_Mark_III.get(1L),
                 bits,
@@ -156,9 +156,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.LargeHPSteamTurbine.get(1L),
                 bits,
                 new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_IV, 'B',
-                        OrePrefixes.pipeLarge.get(Materials.TungstenSteel), 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'P',
-                        OrePrefixes.gearGt.get(Materials.TungstenSteel) });
+                        OrePrefixes.pipeLarge.get(Materials.TungstenSteel), 'C', OrePrefixes.circuit.get(Materials.LuV),
+                        'P', OrePrefixes.gearGt.get(Materials.TungstenSteel) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.LargePlasmaTurbine.get(1L),
                 bits,
@@ -201,7 +200,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Quantum_Tank_LV.get(1L),
                 bits,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_IV, 'M', ItemList.Casing_Tank_6, 'G',
-                        ItemList.Field_Generator_EV, 'D', OrePrefixes.circuit.get(Materials.Master), 'P',
+                        ItemList.Field_Generator_EV, 'D', OrePrefixes.circuit.get(Materials.LuV), 'P',
                         OrePrefixes.plate.get(Materials.TungstenSteel) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Quantum_Tank_MV.get(1L),
@@ -263,7 +262,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Quantum_Chest_LV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_LuV, 'G',
-                        ItemList.Field_Generator_EV, 'D', OrePrefixes.circuit.get(Materials.Master), 'P',
+                        ItemList.Field_Generator_EV, 'D', OrePrefixes.circuit.get(Materials.LuV), 'P',
                         OrePrefixes.plateQuadruple.get(Materials.TungstenSteel) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_MV.get(1L),
@@ -362,7 +361,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Field_Generator_EV.get(1L),
                 GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { "WCW", "CGC", "WCW", 'G', OrePrefixes.gem.get(Materials.NetherStar), 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'W', OrePrefixes.plateDouble.get(Materials.HSSG) });
+                        OrePrefixes.circuit.get(Materials.LuV), 'W', OrePrefixes.plateDouble.get(Materials.HSSG) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Field_Generator_IV.get(1L),
                 GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE,

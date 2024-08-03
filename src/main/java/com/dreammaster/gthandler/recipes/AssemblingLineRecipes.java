@@ -139,7 +139,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Multifiberglass.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 64L),
-                        new Object[] { OrePrefixes.circuit.get(Materials.Master), 4L },
+                        new Object[] { OrePrefixes.circuit.get(Materials.LuV), 4L },
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L),
                         ItemList.Circuit_Chip_HPIC.get(64L),

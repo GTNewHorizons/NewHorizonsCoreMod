@@ -725,7 +725,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.OreDrill2.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Osmiridium, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
                         ItemList.Electric_Motor_LuV.get(4L),
                         ItemList.Electric_Pump_LuV.get(4L),
                         ItemList.Conveyor_Module_LuV.get(4L),
@@ -1731,7 +1731,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         CustomItemList.QuantumPartHelmet.get(1L),
                         CustomItemList.QuantumCrystal.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4),
                         ItemList.Energy_LapotronicOrb.get(1L),
                         ItemList.Sensor_IV.get(1L),
@@ -1746,7 +1746,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         CustomItemList.QuantumPartChestplate.get(1L),
                         CustomItemList.QuantumCrystal.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 6),
                         ItemList.Energy_LapotronicOrb.get(1L),
                         ItemList.Field_Generator_EV.get(3L),
@@ -1761,7 +1761,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         CustomItemList.QuantumPartLeggings.get(1L),
                         CustomItemList.QuantumCrystal.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 6),
                         ItemList.Energy_LapotronicOrb.get(1L),
                         ItemList.Field_Generator_EV.get(2L),
@@ -1776,7 +1776,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         CustomItemList.QuantumPartBoots.get(1L),
                         CustomItemList.QuantumCrystal.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.TungstenSteel, 4),
                         ItemList.Energy_LapotronicOrb.get(1L),
                         ItemList.Field_Generator_EV.get(1L),
@@ -2098,8 +2098,8 @@ public class AssemblerRecipes implements Runnable {
             // LSC controller
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.battery, Materials.Master, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.battery, Materials.LuV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
                             ItemList.Circuit_Chip_PIC.get(2))
                     .itemOutputs(TileEntities.lsc.getStackForm(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(assemblerRecipes);
@@ -2153,7 +2153,7 @@ public class AssemblerRecipes implements Runnable {
         // Fusion Coil Block
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
                         ItemList.Neutron_Reflector.get(2L),
                         ItemList.Field_Generator_MV.get(2L),
                         ItemList.Casing_Coil_Superconductor.get(1L))
@@ -2746,7 +2746,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
                         GT_Utility.getIntegratedCircuit(13))
                 .itemOutputs(ItemList.Field_Generator_EV.get(1)).fluidInputs(Materials.HSSG.getMolten(576))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
@@ -3959,7 +3959,7 @@ public class AssemblerRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2L),
                         getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 5, 0),
                         ItemList.Battery_Buffer_4by4_EV.get(1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),

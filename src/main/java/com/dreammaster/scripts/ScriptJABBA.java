@@ -157,7 +157,7 @@ public class ScriptJABBA implements IScriptLoader {
                 .itemInputs(
                         getModItem(JABBA.ID, "upgradeCore", 1),
                         ItemList.Electric_Piston_LuV.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 32L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 32L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 11)).duration(3 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);

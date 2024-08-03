@@ -115,7 +115,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { ItemList.Circuit_Board_Multifiberglass.get(1L),
                                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 64L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Master), 4L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 4L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(8L), ItemList.Circuit_Chip_HPIC.get(64L),
                                 ItemList.Circuit_Parts_DiodeASMD.get(8L), ItemList.Circuit_Parts_CapacitorASMD.get(8L),

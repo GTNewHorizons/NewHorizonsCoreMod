@@ -22,7 +22,7 @@ public class GT_CustomLoader {
 
     public enum AdvancedGTMaterials {
 
-        LuV(OrePrefixes.circuit.get(Materials.Master), OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
+        LuV(OrePrefixes.circuit.get(Materials.LuV), OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
                 Materials.VanadiumGallium, OrePrefixes.wireGt02.get(Materials.HSSG),
                 OrePrefixes.gemExquisite.get(Materials.Diamond), gregtech.api.enums.ItemList.Gravistar,
                 BartWorks.isModLoaded() ? "blockGlassLuV" : "glassReinforced",

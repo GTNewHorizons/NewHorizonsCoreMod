@@ -30,7 +30,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                         | GT_ModHandler.RecipeBits.BUFFERED,
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_LuV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_LuV, 'C',
-                        OrePrefixes.circuit.get(Materials.Master), 'P', OrePrefixes.plate.get(Materials.Iridium), 'B',
+                        OrePrefixes.circuit.get(Materials.LuV), 'P', OrePrefixes.plate.get(Materials.Iridium), 'B',
                         CustomItemList.BatteryHull_LuV_Full.get(1L) });
         GT_ModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
