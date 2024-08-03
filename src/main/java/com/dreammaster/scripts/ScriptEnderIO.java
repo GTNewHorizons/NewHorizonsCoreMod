@@ -125,7 +125,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemMEConduit", 16, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1L),
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 2))
                 .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(960)

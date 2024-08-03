@@ -102,7 +102,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         // Quad Core
         GT_Values.RA.stdBuilder()
-                .itemInputs(CraftingUnit, GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Elite), 2))
+                .itemInputs(CraftingUnit, GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.IV), 2))
                 .itemOutputs(CoCraftingUnit4x).duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // 16 core
@@ -182,7 +182,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             // 256k
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
@@ -192,8 +192,8 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             // 1024k
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
                             GT_Utility.getIntegratedCircuit(1))
@@ -203,7 +203,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Master, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                             CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1),
                             ItemList.Circuit_Board_Wetware_Extreme.get(1),
                             GT_Utility.getIntegratedCircuit(1))

@@ -139,7 +139,7 @@ public class ScriptJABBA implements IScriptLoader {
                 .itemInputs(
                         getModItem(JABBA.ID, "upgradeCore", 1),
                         ItemList.Electric_Piston_EV.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 8L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 8L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 8)).duration(2 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
@@ -148,7 +148,7 @@ public class ScriptJABBA implements IScriptLoader {
                 .itemInputs(
                         getModItem(JABBA.ID, "upgradeCore", 1),
                         ItemList.Electric_Piston_IV.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 16L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(JABBA.ID, "upgradeCore", 1, 9)).duration(3 * MINUTES).eut(TierEU.RECIPE_IV)
                 .addTo(assemblerRecipes);
