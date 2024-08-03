@@ -69,7 +69,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                         | GT_ModHandler.RecipeBits.BUFFERED,
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_UHV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_UHV, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'P', OrePrefixes.plate.get(Materials.Infinity),
-                        'B', CustomItemList.BatteryHull_UHV_Full.get(1L) });
+                        OrePrefixes.circuit.get(Materials.UHV), 'P', OrePrefixes.plate.get(Materials.Infinity), 'B',
+                        CustomItemList.BatteryHull_UHV_Full.get(1L) });
     }
 }

@@ -391,13 +391,13 @@ public class FormingPressRecipes implements Runnable {
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinite, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 1),
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitUHV.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Bio, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 1),
                         GT_Utility.getIntegratedCircuit(24))
                 .itemOutputs(com.dreammaster.item.ItemList.CircuitUEV.getIS(1)).duration(1 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);

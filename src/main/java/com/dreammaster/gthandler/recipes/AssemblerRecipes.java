@@ -1920,7 +1920,7 @@ public class AssemblerRecipes implements Runnable {
         // Quantum Tank V
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
                         Materials.Americium.getPlates(2),
                         ItemList.Electric_Pump_UV.get(1),
                         ItemList.Field_Generator_UV.get(1),
@@ -1930,7 +1930,7 @@ public class AssemblerRecipes implements Runnable {
         // Quantum Tank IV
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Infinite), 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 4),
                         Materials.Europium.getPlates(2),
                         ItemList.Electric_Pump_ZPM.get(1),
                         ItemList.Field_Generator_ZPM.get(1),
@@ -1940,7 +1940,7 @@ public class AssemblerRecipes implements Runnable {
         // Quantum Chest V
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
                         Materials.Americium.getPlates(3),
                         ItemList.Field_Generator_UV.get(1),
                         CustomItemList.Automation_ChestBuffer_UEV.get(1L))
@@ -1950,7 +1950,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Conveyor_Module_UEV.get(1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Bio), 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 1),
                         CustomItemList.Hull_UEV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
                 .itemOutputs(CustomItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS)

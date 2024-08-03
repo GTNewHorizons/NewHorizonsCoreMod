@@ -197,7 +197,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { ItemList.Circuit_Board_Optical.get(1),
                                 GT_OreDictUnificator.get("foilShirabon", 64),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinite, 4L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),

@@ -743,14 +743,14 @@ public class GT_Loader_Machines {
                 CustomItemList.ScannerUV.get(1L),
                 bitsd,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_UV, 'T', ItemList.Emitter_UV, 'R',
-                        ItemList.Sensor_UV, 'C', OrePrefixes.circuit.get(Materials.Infinite), 'W',
+                        ItemList.Sensor_UV, 'C', OrePrefixes.circuit.get(Materials.UHV), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ScannerUHV.get(1L),
                 bitsd,
                 new Object[] { "CTC", "WMW", "CRC", 'M', ItemList.Hull_MAX, 'T', ItemList.Emitter_UHV, 'R',
-                        ItemList.Sensor_UHV, 'C', OrePrefixes.circuit.get(Materials.Bio), 'W',
+                        ItemList.Sensor_UHV, 'C', OrePrefixes.circuit.get(Materials.UEV), 'W',
                         OrePrefixes.cableGt01.get(Materials.Bedrockium) });
 
         GT_ModHandler.addCraftingRecipe(
@@ -871,9 +871,8 @@ public class GT_Loader_Machines {
                 CustomItemList.BreweryUHV.get(1L),
                 bitsd,
                 new Object[] { "GPG", "WBW", "CZC", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
-                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'Z',
+                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C', OrePrefixes.circuit.get(Materials.UHV),
+                        'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'Z',
                         new ItemStack(Items.brewing_stand, 1, 32767) });
 
         GT_ModHandler.addCraftingRecipe(
@@ -881,7 +880,7 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "GPG", "WBW", "CZC", 'W', OrePrefixes.cableGt01.get(Materials.Draconium), 'P',
                         ItemList.Electric_Pump_UEV, 'B', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(),
+                        OrePrefixes.circuit.get(Materials.UEV), 'G', GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(),
                         'Z', new ItemStack(Items.brewing_stand, 1, 32767) });
 
         GT_ModHandler.addCraftingRecipe(
@@ -932,7 +931,7 @@ public class GT_Loader_Machines {
                 new Object[] { "PRP", "WMW", "CHC", 'H', ItemList.Hull_MAX, 'R',
                         OrePrefixes.rotor.get(Materials.Osmiridium), 'P',
                         OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UHV, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'W',
+                        OrePrefixes.circuit.get(Materials.UHV), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
         GT_ModHandler.addCraftingRecipe(
@@ -941,7 +940,7 @@ public class GT_Loader_Machines {
                 new Object[] { "PRP", "WMW", "CHC", 'H', CustomItemList.Hull_UEV, 'R',
                         OrePrefixes.rotor.get(Materials.InfinityCatalyst), 'P',
                         OrePrefixes.pipeHuge.get(Materials.PolyvinylChloride), 'M', ItemList.Electric_Motor_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'W',
+                        OrePrefixes.circuit.get(Materials.UEV), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
         GT_ModHandler.addCraftingRecipe(
@@ -987,16 +986,15 @@ public class GT_Loader_Machines {
                 CustomItemList.FermenterUHV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'P',
-                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
+                        ItemList.Electric_Pump_UHV, 'B', ItemList.Hull_MAX, 'C', OrePrefixes.circuit.get(Materials.UHV),
+                        'G', GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FermenterUEV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "GBG", "WCW", 'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'P',
                         ItemList.Electric_Pump_UEV, 'B', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'G',
+                        OrePrefixes.circuit.get(Materials.UEV), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
 
         GT_ModHandler.addCraftingRecipe(
@@ -1212,7 +1210,7 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Neutronium), 'M',
                         ItemList.Electric_Motor_UHV, 'B', ItemList.Hull_MAX, 'C',
-                        OrePrefixes.circuit.get(Materials.Infinite), 'G',
+                        OrePrefixes.circuit.get(Materials.UHV), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
 
         GT_ModHandler.addCraftingRecipe(
@@ -1220,7 +1218,7 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "GRG", "GMG", "CBC", 'R', OrePrefixes.rotor.get(Materials.Neutronium), 'M',
                         ItemList.Electric_Motor_UEV, 'B', CustomItemList.Hull_UEV, 'C',
-                        OrePrefixes.circuit.get(Materials.Bio), 'G',
+                        OrePrefixes.circuit.get(Materials.UEV), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
 
         GT_ModHandler.addCraftingRecipe(
@@ -1439,13 +1437,13 @@ public class GT_Loader_Machines {
                 new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_UEV_UHV, 'M',
                         ItemList.Battery_Charger_4by4_MAX, 'B', ItemList.ZPM2, 'C',
                         OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 'X',
-                        OrePrefixes.circuit.get(Materials.Infinite) });
+                        OrePrefixes.circuit.get(Materials.UHV) });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Automation_ChestBuffer_UEV.get(1L),
                 bitsd,
                 new Object[] { "CMV", " X ", 'M', CustomItemList.Hull_UEV, 'V', ItemList.Conveyor_Module_UEV, 'C',
-                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.Bio) });
+                        OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.UEV) });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Automation_ChestBuffer_UIV.get(1L),

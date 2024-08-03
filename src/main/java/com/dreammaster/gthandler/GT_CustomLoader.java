@@ -39,12 +39,12 @@ public class GT_CustomLoader {
                 OrePrefixes.gemExquisite.get(Materials.GarnetRed), new ItemStack(Blocks.dragon_egg, 1),
                 BartWorks.isModLoaded() ? "blockGlassUV" : "glassReinforced", Materials.Osmium, Materials.Neutronium),
 
-        UHV(OrePrefixes.circuit.get(Materials.Infinite), OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
+        UHV(OrePrefixes.circuit.get(Materials.UHV), OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
                 Materials.Bedrockium, OrePrefixes.wireGt02.get(Materials.Bedrockium), null, null,
                 BartWorks.isModLoaded() ? "blockGlassUHV" : "glassReinforced", Materials.Neutronium,
                 Materials.Neutronium),
 
-        UEV(OrePrefixes.circuit.get(Materials.Bio), OrePrefixes.wireGt04.get(Materials.Bedrockium), Materials.Draconium,
+        UEV(OrePrefixes.circuit.get(Materials.UEV), OrePrefixes.wireGt04.get(Materials.Bedrockium), Materials.Draconium,
                 OrePrefixes.wireGt02.get(Materials.Draconium), null, null,
                 BartWorks.isModLoaded() ? "blockGlassUEV" : "glassReinforced", Materials.Bedrockium,
                 Materials.Infinity),
