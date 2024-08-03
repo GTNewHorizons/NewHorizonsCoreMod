@@ -49,7 +49,7 @@ public class GT_CustomLoader {
                 BartWorks.isModLoaded() ? "blockGlassUEV" : "glassReinforced", Materials.Bedrockium,
                 Materials.Infinity),
 
-        UIV(OrePrefixes.circuit.get(Materials.Optical), OrePrefixes.wireGt08.get(Materials.Bedrockium),
+        UIV(OrePrefixes.circuit.get(Materials.UIV), OrePrefixes.wireGt08.get(Materials.Bedrockium),
                 Materials.NetherStar, OrePrefixes.wireGt02.get(Materials.NetherStar), null, null,
                 BartWorks.isModLoaded() ? "blockGlassUIV" : "glassReinforced", Materials.CosmicNeutronium,
                 MaterialsUEVplus.TranscendentMetal),

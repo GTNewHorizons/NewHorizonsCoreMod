@@ -416,8 +416,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockRubWood", 1L, 0));
 
         // oreDict UMV and UXV circuits
-        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.Exotic, ItemList.PikoCircuit.getIS());
-        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.Cosmic, ItemList.QuantumCircuit.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.UMV, ItemList.PikoCircuit.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.UXV, ItemList.QuantumCircuit.getIS());
         GT_OreDictUnificator.addToBlacklist(ItemList.PikoCircuit.getIS());
         GT_OreDictUnificator.addToBlacklist(ItemList.QuantumCircuit.getIS());
 
