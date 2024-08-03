@@ -10,11 +10,11 @@ import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
-import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
-import static gtPlusPlus.core.material.ALLOY.STELLITE;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_W;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
+import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
+import static gtPlusPlus.core.material.ALLOY.STELLITE;
 
 import java.util.ArrayList;
 import java.util.Arrays;
