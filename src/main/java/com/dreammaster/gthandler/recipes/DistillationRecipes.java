@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Automagy;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.recipe.RecipeMaps.distillationTowerRecipes;
 import static gregtech.api.recipe.RecipeMaps.distilleryRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
@@ -45,26 +44,6 @@ public class DistillationRecipes implements Runnable {
                         Materials.Methane.getGas(3000),
                         Materials.Mercury.getFluid(200))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_EV).addTo(distillationTowerRecipes);
-
-        if (BartWorks.isModLoaded()) {
-
-            GT_Values.RA.stdBuilder().fluidInputs(Materials.Grade2PurifiedWater.getFluid(1000))
-                    .fluidOutputs(
-                            Materials.Grade3PurifiedWater.getFluid(900),
-                            Materials.Grade2PurifiedWater.getFluid(50),
-                            Materials.Grade1PurifiedWater.getFluid(100),
-                            Materials.Oil.getFluid(50),
-                            Materials.Ammonia.getGas(100))
-                    .duration(250 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(distillationTowerRecipes);
-
-            GT_Values.RA.stdBuilder().fluidInputs(Materials.Grade6PurifiedWater.getFluid(1000))
-                    .fluidOutputs(
-                            Materials.Grade7PurifiedWater.getFluid(900),
-                            Materials.Grade6PurifiedWater.getFluid(50),
-                            Materials.Grade5PurifiedWater.getFluid(100),
-                            Materials.Ethanol.getFluid(50))
-                    .duration(250 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(distillationTowerRecipes);
-        }
     }
 
     public static void distilleryRecipes() {
