@@ -398,7 +398,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                 // pick the chunk randomly
                 ChunkCoordinates pollutedChunk;
                 if (pollutedChunkList.size() > 1) {
-                    pollutedChunk = pollutedChunkList.get(MainRegistry.Rnd.nextInt(pollutedChunkList.size() - 1));
+                    pollutedChunk = pollutedChunkList.get(MainRegistry.Rnd.nextInt(pollutedChunkList.size()));
                     pollutedChunk.removePollution(pollutionCleaningRatePerSecond);
                 } else if (pollutedChunkList.size() == 1) { // no random on only one element
                     pollutedChunk = pollutedChunkList.get(0);
