@@ -309,7 +309,7 @@ public class CircuitAssemblerRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                             CustomItemList.ChargedCertusQuartzDust.get(2),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Basic.get(1),
@@ -320,7 +320,7 @@ public class CircuitAssemblerRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                             CustomItemList.ChargedCertusQuartzDust.get(2),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Basic.get(1),
@@ -331,7 +331,7 @@ public class CircuitAssemblerRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                             CustomItemList.ChargedCertusQuartzDust.get(2),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Basic.get(1),
@@ -343,8 +343,8 @@ public class CircuitAssemblerRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Coated_Basic.get(1),
                             GT_Utility.getIntegratedCircuit(1))
@@ -354,8 +354,8 @@ public class CircuitAssemblerRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Coated_Basic.get(1),
                             GT_Utility.getIntegratedCircuit(1))
@@ -365,8 +365,8 @@ public class CircuitAssemblerRecipes implements Runnable {
 
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                             CustomItemList.LogicProcessorItemGoldCore.get(1),
                             ItemList.Circuit_Board_Coated_Basic.get(1),
                             GT_Utility.getIntegratedCircuit(1))
@@ -378,7 +378,7 @@ public class CircuitAssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
                             GT_Utility.getIntegratedCircuit(1))
@@ -389,7 +389,7 @@ public class CircuitAssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
                             GT_Utility.getIntegratedCircuit(1))
@@ -400,7 +400,7 @@ public class CircuitAssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                             CustomItemList.EngineeringProcessorItemDiamondCore.get(1),
                             ItemList.Circuit_Board_Phenolic_Good.get(1),
                             GT_Utility.getIntegratedCircuit(1))
@@ -580,7 +580,7 @@ public class CircuitAssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2),
                             ItemList.Circuit_Parts_Diode.get(2L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 2))
                     .itemOutputs(ItemList.Circuit_Good.get(1L)).fluidInputs(tMat.getMolten(144L * tMultiplier / 2L))
@@ -1034,7 +1034,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 ItemList.Circuit_Board_Coated_Basic.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                                 GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8),
                                 GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(GT_ModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 9))

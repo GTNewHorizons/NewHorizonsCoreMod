@@ -100,7 +100,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 1k Essentia Storage Component
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated.get(1L),
@@ -110,7 +110,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated.get(1L),
@@ -120,7 +120,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated.get(1L),
@@ -132,8 +132,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         // 4k Essentia Storage Component
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
@@ -142,8 +142,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
@@ -152,8 +152,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 .addTo(circuitAssemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
@@ -165,7 +165,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
@@ -175,7 +175,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
@@ -185,7 +185,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
                         GT_Utility.getIntegratedCircuit(1))

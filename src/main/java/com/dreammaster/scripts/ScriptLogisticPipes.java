@@ -97,7 +97,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
@@ -109,7 +109,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                             ItemList.Component_Filter.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                             GT_Utility.getIntegratedCircuit(18))
@@ -122,7 +122,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
                             ItemList.Component_Filter.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                             GT_Utility.getIntegratedCircuit(18))
@@ -134,7 +134,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
@@ -148,7 +148,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                             ItemList.Electric_Piston_LV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                             GT_Utility.getIntegratedCircuit(18))
@@ -184,7 +184,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
                             ItemList.Robot_Arm_MV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
@@ -437,7 +437,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                             GT_Utility.getIntegratedCircuit(18))
@@ -447,7 +447,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                             GT_Utility.getIntegratedCircuit(18))
@@ -765,7 +765,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -780,7 +780,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 8L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72))
@@ -791,7 +791,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
                         GT_Utility.getIntegratedCircuit(18))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72))
@@ -951,7 +951,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 4, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1186,7 +1186,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             ItemList.Transformer_MV_LV.get(1L),
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                             GT_Utility.getIntegratedCircuit(24))
@@ -1197,7 +1197,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             ItemList.Transformer_MV_LV.get(1L),
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                             GT_Utility.getIntegratedCircuit(24))

@@ -1300,7 +1300,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1315,7 +1315,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ExtraUtilities.ID, "pipes", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "pipes", 1, 13, missing)).duration(15 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()

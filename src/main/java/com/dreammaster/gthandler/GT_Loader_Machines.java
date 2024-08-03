@@ -1386,14 +1386,14 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_LV_ULV, 'M',
                         ItemList.Battery_Charger_4by4_ULV, 'B', ItemList.Battery_RE_ULV_Tantalum, 'C',
-                        OrePrefixes.cableGt16.get(Materials.Lead), 'X', OrePrefixes.circuit.get(Materials.Primitive) });
+                        OrePrefixes.cableGt16.get(Materials.Lead), 'X', OrePrefixes.circuit.get(Materials.ULV) });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Battery_TurboCharger_4by4_LV.get(1L),
                 bitsd,
                 new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_MV_LV, 'M',
                         ItemList.Battery_Charger_4by4_LV, 'B', ItemList.Battery_RE_LV_Lithium, 'C',
-                        OrePrefixes.cableGt16.get(Materials.Tin), 'X', OrePrefixes.circuit.get(Materials.Basic) });
+                        OrePrefixes.cableGt16.get(Materials.Tin), 'X', OrePrefixes.circuit.get(Materials.LV) });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Battery_TurboCharger_4by4_MV.get(1L),

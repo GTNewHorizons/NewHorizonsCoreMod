@@ -170,8 +170,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Super_Tank_LV.get(1L),
                 bits,
                 new Object[] { "DGD", "PMP", "DUD", 'U', ItemList.Electric_Pump_MV, 'M', ItemList.Casing_Tank_1, 'G',
-                        OrePrefixes.plate.get(Materials.PulsatingIron), 'D', OrePrefixes.circuit.get(Materials.Basic),
-                        'P', OrePrefixes.plate.get(Materials.Aluminium) });
+                        OrePrefixes.plate.get(Materials.PulsatingIron), 'D', OrePrefixes.circuit.get(Materials.LV), 'P',
+                        OrePrefixes.plate.get(Materials.Aluminium) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Super_Tank_MV.get(1L),
                 bits,
@@ -232,8 +232,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Super_Chest_LV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_LV, 'G',
-                        OrePrefixes.plate.get(Materials.PulsatingIron), 'D', OrePrefixes.circuit.get(Materials.Basic),
-                        'P', OrePrefixes.plateDense.get(Materials.Iron) });
+                        OrePrefixes.plate.get(Materials.PulsatingIron), 'D', OrePrefixes.circuit.get(Materials.LV), 'P',
+                        OrePrefixes.plateDense.get(Materials.Iron) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_MV.get(1L),
                 bits,
@@ -375,7 +375,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Cover_SolarPanel.get(1L, o),
                 GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.NOT_REMOVABLE
                         | GT_ModHandler.RecipeBits.REVERSIBLE,
-                new Object[] { "SGS", "CPC", "TRT", 'C', OrePrefixes.circuit.get(Materials.Basic), 'G',
+                new Object[] { "SGS", "CPC", "TRT", 'C', OrePrefixes.circuit.get(Materials.LV), 'G',
                         GT_ModHandler.getIC2Item("reinforcedGlass", 1L), 'P',
                         OrePrefixes.plateAlloy.get(Materials.Carbon), 'S', ItemList.Circuit_Silicon_Wafer, 'T',
                         OrePrefixes.wireGt01.get(Materials.RedAlloy), 'R', CustomItemList.AluminiumIronPlate });
@@ -921,7 +921,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 bits,
                 new Object[] { "RCR", "RAR", "RTR", 'R',
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0), 'C',
-                        OrePrefixes.circuit.get(Materials.Basic), 'A', OrePrefixes.itemCasing.get(Materials.Aluminium),
+                        OrePrefixes.circuit.get(Materials.LV), 'A', OrePrefixes.itemCasing.get(Materials.Aluminium),
                         'T', OrePrefixes.wireGt02.get(Materials.Tin) });
         GT_ModHandler.addCraftingRecipe(
                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemArmorAdvBatpack", 1, GT_Values.W),
@@ -1020,7 +1020,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     new Object[] { "BLB", "SPS", "GCG", 'B', OrePrefixes.plate.get(Materials.StainlessSteel), 'L',
                             OrePrefixes.plate.get(Materials.Lapis), 'S',
                             OrePrefixes.spring.get(Materials.StainlessSteel), 'P', OreDictNames.craftingPiston, 'G',
-                            OrePrefixes.circuit.get(Materials.Basic), 'C',
+                            OrePrefixes.circuit.get(Materials.LV), 'C',
                             GT_ModHandler.getModItem(Forestry.ID, "sturdyMachine", 1L, 0) });
             GT_ModHandler.addCraftingRecipe(
                     GT_ModHandler.getModItem(Forestry.ID, "engine", 1L, 1),

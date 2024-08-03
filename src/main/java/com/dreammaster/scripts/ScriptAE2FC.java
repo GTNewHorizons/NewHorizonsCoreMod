@@ -422,7 +422,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         CustomItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
                         ItemList.Circuit_Board_Basic.get(1),
@@ -432,7 +432,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         CustomItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
                         ItemList.Circuit_Board_Basic.get(1),
@@ -442,7 +442,7 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         CustomItemList.ChargedCertusQuartzDust.get(2),
                         ItemList.Electric_Pump_LV.get(1),
                         ItemList.Circuit_Board_Basic.get(1),
@@ -453,8 +453,8 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         ItemList.Electric_Pump_LV.get(2),
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -463,8 +463,8 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         ItemList.Electric_Pump_LV.get(2),
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -473,8 +473,8 @@ public class ScriptAE2FC implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         ItemList.Electric_Pump_LV.get(2),
                         ItemList.Circuit_Board_Coated_Basic.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -485,7 +485,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         ItemList.Electric_Pump_MV.get(1),
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -495,7 +495,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         ItemList.Electric_Pump_MV.get(1),
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
@@ -505,7 +505,7 @@ public class ScriptAE2FC implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 16),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         ItemList.Electric_Pump_MV.get(1),
                         ItemList.Circuit_Board_Phenolic_Good.get(1),
                         GT_Utility.getIntegratedCircuit(1))
