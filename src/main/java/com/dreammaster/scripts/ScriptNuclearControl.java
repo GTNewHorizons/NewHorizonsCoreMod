@@ -307,7 +307,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         new ItemStack(Items.dye, 1, 1),
                         new ItemStack(Items.dye, 1, 2),
                         new ItemStack(Items.dye, 1, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder() // Range upgrade
@@ -338,7 +338,7 @@ public class ScriptNuclearControl implements IScriptLoader {
                         getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 4, missing),
                         getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plateAlloy, Materials.Carbon, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "blockNuclearControlMain", 1, 9, missing))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder() // Advanced Panel Extender

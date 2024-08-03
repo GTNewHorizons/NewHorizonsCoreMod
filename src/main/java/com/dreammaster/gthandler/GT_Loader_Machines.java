@@ -1400,14 +1400,14 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_HV_MV, 'M',
                         ItemList.Battery_Charger_4by4_MV, 'B', ItemList.Battery_RE_MV_Lithium, 'C',
-                        OrePrefixes.cableGt16.get(Materials.AnyCopper), 'X', OrePrefixes.circuit.get(Materials.Good) });
+                        OrePrefixes.cableGt16.get(Materials.AnyCopper), 'X', OrePrefixes.circuit.get(Materials.MV) });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Battery_TurboCharger_4by4_HV.get(1L),
                 bitsd,
                 new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_EV_HV, 'M',
                         ItemList.Battery_Charger_4by4_HV, 'B', ItemList.Battery_RE_HV_Lithium, 'C',
-                        OrePrefixes.cableGt16.get(Materials.Gold), 'X', OrePrefixes.circuit.get(Materials.Advanced) });
+                        OrePrefixes.cableGt16.get(Materials.Gold), 'X', OrePrefixes.circuit.get(Materials.HV) });
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.Battery_TurboCharger_4by4_EV.get(1L),

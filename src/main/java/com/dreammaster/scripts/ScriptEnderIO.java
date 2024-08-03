@@ -105,7 +105,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4))
                 .fluidInputs(Materials.ConductiveIron.getMolten(144L)).duration(10 * SECONDS).eut(256)
@@ -115,7 +115,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemMEConduit", 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 1))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)

@@ -477,14 +477,14 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}", missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 144)).duration(50 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}", missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:4b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).duration(1 * MINUTES).eut(30)
                 .addTo(assemblerRecipes);

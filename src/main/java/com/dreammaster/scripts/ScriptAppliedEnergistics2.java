@@ -183,7 +183,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                             CustomItemList.EngineeringProcessorItemEmeraldCore.get(1),
                             ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
                             GT_Utility.getIntegratedCircuit(1))
@@ -414,7 +414,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 56))
                 .fluidInputs(Materials.ConductiveIron.getMolten(144L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -422,7 +422,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 36),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 56))
                 .fluidInputs(Materials.ConductiveIron.getMolten(144L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
@@ -438,7 +438,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 56),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 76))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(7 * SECONDS + 10 * TICKS)
@@ -446,7 +446,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 536),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 76))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(7 * SECONDS + 10 * TICKS)
@@ -1953,7 +1953,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 4),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Quartzite, 1),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 180, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Good), 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.MV), 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 380, missing))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);

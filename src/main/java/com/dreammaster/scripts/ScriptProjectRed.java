@@ -2325,7 +2325,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 1, missing),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 4, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(40 * SECONDS).eut(30)
@@ -2334,7 +2334,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(
                         getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 1, missing),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(ProjectRedTransportation.ID, "projectred.transportation.pipe", 8, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(50 * SECONDS).eut(30)
@@ -2430,7 +2430,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Gold, 8L))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing))
@@ -2457,7 +2457,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Brass, 1),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2474,7 +2474,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.AnnealedCopper, 1),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing))
@@ -2510,7 +2510,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             getModItem(GTPlusPlus.ID, "itemPlatePotin", 1, 0, missing),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2528,7 +2528,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackBronze, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
@@ -2564,7 +2564,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2581,7 +2581,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ConductiveIron, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing))
@@ -2617,7 +2617,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TinAlloy, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -2635,7 +2635,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderiumBase, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 29, missing),
@@ -2670,7 +2670,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ElectricalSteel, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
@@ -2686,7 +2686,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 28, missing))
@@ -2721,7 +2721,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
@@ -2738,7 +2738,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticAlloy, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 21, missing))
@@ -2773,7 +2773,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Cobalt, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
@@ -2790,7 +2790,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing))
@@ -2825,7 +2825,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
@@ -2842,7 +2842,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlueAlloy, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 24, missing))
@@ -2877,7 +2877,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SterlingSilver, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
@@ -2893,7 +2893,7 @@ public class ScriptProjectRed implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 16, 44, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnergeticSilver, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 4L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 33, missing))
