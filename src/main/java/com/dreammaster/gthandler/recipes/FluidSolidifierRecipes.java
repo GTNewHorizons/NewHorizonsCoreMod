@@ -4,6 +4,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import net.minecraft.init.Blocks;
@@ -12,6 +13,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.gthandler.GT_CustomLoader;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -95,6 +97,18 @@ public class FluidSolidifierRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L)).itemOutputs(ItemList.Color_15.get(1L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("dye.chemical.dyewhite"), 72)).duration(20 * TICKS)
                 .eut(16).addTo(fluidSolidifierRecipes);
+
+        // Electron-permeable neutronium-coated glass
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_OreDictUnificator.get(GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 1))
+                .fluidInputs(Materials.Helium.getPlasma(4 * 144)).itemOutputs(ItemList.GlassUVResistant.get(1))
+                .eut(TierEU.RECIPE_UV).duration(5 * SECONDS).addTo(fluidSolidifierRecipes);
+
+        // Omni Purpose Infinity Fused Glass
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.GlassUVResistant.get(1))
+                .fluidInputs(Materials.Infinity.getMolten(144))
+                .itemOutputs(ItemList.GlassOmniPurposeInfinityFused.get(1)).eut(TierEU.RECIPE_UEV).duration(5 * SECONDS)
+                .addTo(fluidSolidifierRecipes);
 
         if (TinkerConstruct.isModLoaded()) {
 
