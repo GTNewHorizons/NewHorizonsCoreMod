@@ -415,9 +415,11 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 Materials.Wood,
                 GT_ModHandler.getModItem(IndustrialCraft2.ID, "blockRubWood", 1L, 0));
 
-        // GTNH-Circuits
-        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.Piko, ItemList.PikoCircuit.getIS());
-        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.Quantum, ItemList.QuantumCircuit.getIS());
+        // oreDict UMV and UXV circuits
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.UMV, ItemList.PikoCircuit.getIS());
+        GT_OreDictUnificator.registerOre(OrePrefixes.circuit, Materials.UXV, ItemList.QuantumCircuit.getIS());
+        GT_OreDictUnificator.addToBlacklist(ItemList.PikoCircuit.getIS());
+        GT_OreDictUnificator.addToBlacklist(ItemList.QuantumCircuit.getIS());
 
         // Add ore dictionary entries for sand and red sand to craft unfired coke oven bricks.
         GT_OreDictUnificator.registerOre("sand", new ItemStack(Blocks.sand, 1, 0));

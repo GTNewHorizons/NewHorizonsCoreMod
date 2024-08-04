@@ -1392,14 +1392,14 @@ public class ScriptIronChests implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
-                        getModItem(IndustrialCraft2.ID, "itemDensePlates", 3, 7, missing),
+                        getModItem(IndustrialCraft2.ID, "itemDensePlates", 2, 7, missing),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 6, missing)).duration(20 * SECONDS).eut(256)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                        getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
+                        getModItem(IndustrialCraft2.ID, "itemDensePlates", 2, 7, missing),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(IronChests.ID, "diamondObsidianUpgrade", 1, 0, missing)).duration(40 * SECONDS)
                 .eut(256).addTo(assemblerRecipes);

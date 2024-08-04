@@ -6,12 +6,16 @@ import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.KekzTech;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.enums.Mods.TecTech;
+import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -24,7 +28,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.material.ELEMENT;
 
@@ -45,16 +48,16 @@ public class SpaceAssemblerRecipes implements Runnable {
             if (BartWorks.isModLoaded()) {
                 // Optically Perfected CPU
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Chip_Optical.get(1L),
+                        new ItemStack[] { gregtech.api.enums.ItemList.Circuit_Chip_Optical.get(1L),
                                 ItemList.Optical_Cpu_Containment_Housing.get(1L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.InfinityCatalyst, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Draconium, 4L),
                                 CustomItemList.DATApipe.get(1L),
                                 // Atomic Separation Catalyst screw
-                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10022),
+                                getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10022),
                                 // Precious Metals Alloy screw
-                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10109) },
+                                getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10109) },
                         new FluidStack[] { new FluidStack(solderUEV, 288) },
                         ItemList.Optically_Perfected_CPU.get(1L),
                         1,
@@ -72,9 +75,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.DraconiumAwakened, 8L),
                                 CustomItemList.DATApipe.get(4L),
                                 // Precious Metals Alloy screw
-                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 8L, 10109),
+                                getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 8L, 10109),
                                 // Enriched Naquadah Alloy screw
-                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 8L, 10110) },
+                                getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 8L, 10110) },
                         new FluidStack[] { new FluidStack(solderUEV, 576) },
                         ItemList.Optically_Perfected_CPU.get(4L),
                         2,
@@ -94,11 +97,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
                                             CustomItemList.DATApipe.get(16L),
                                             // Enriched Naquadah Alloy screw
-                                            GT_ModHandler
-                                                    .getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 16L, 10110),
+                                            getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 16L, 10110),
                                             // Shirabon screw
-                                            GT_ModHandler
-                                                    .getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 16L, 10112) },
+                                            getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 16L, 10112) },
                                     new FluidStack[] { new FluidStack(solderUEV, 1152) },
                                     ItemList.Optically_Perfected_CPU.get(16L),
                                     2,
@@ -114,7 +115,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { ItemList.Circuit_Board_Multifiberglass.get(1L),
                                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 64L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.Master), 4L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 4L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(8L), ItemList.Circuit_Chip_HPIC.get(64L),
                                 ItemList.Circuit_Parts_DiodeASMD.get(8L), ItemList.Circuit_Parts_CapacitorASMD.get(8L),
@@ -133,7 +134,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { ItemList.Circuit_Board_Wetware_Extreme.get(1),
                                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bedrockium, 64L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Chip_UHPIC.get(64L), ItemList.Circuit_Parts_DiodeXSMD.get(8L),
@@ -162,7 +163,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 16L) },
                         new FluidStack[] { new FluidStack(solderIndalloy, (32 * 144)),
                                 Materials.Lead.getMolten(64 * 144L) },
-                        GT_ModHandler.getModItem(GoodGenerator.ID, "advancedRadiationProtectionPlate", 4L, 0),
+                        getModItem(GoodGenerator.ID, "advancedRadiationProtectionPlate", 4L, 0),
                         1,
                         50 * 20,
                         (int) TierEU.ZPM,
@@ -174,7 +175,7 @@ public class SpaceAssemblerRecipes implements Runnable {
             IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { ItemList.Circuit_Board_Bio_Ultra.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 64L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 4L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4L),
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
@@ -196,7 +197,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { ItemList.Circuit_Board_Optical.get(1),
                                 GT_OreDictUnificator.get("foilShirabon", 64),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinite, 4L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 4L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                                 ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
@@ -226,11 +227,11 @@ public class SpaceAssemblerRecipes implements Runnable {
             if (OpenComputers.isModLoaded() && SuperSolarPanels.isModLoaded()) {
                 // Optically Compatible Memory
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 39), // Memory tier 3.5
+                        new ItemStack[] { getModItem(OpenComputers.ID, "item", 1L, 39), // Memory tier 3.5
                                 ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(4L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUEV, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 8L),
-                                GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 1L, 0) // Solar Light
+                                getModItem(SuperSolarPanels.ID, "solarsplitter", 1L, 0) // Solar Light
                         // Splitter
                         },
                         new FluidStack[] { new FluidStack(solderUEV, 288) },
@@ -242,11 +243,11 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null);
 
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(OpenComputers.ID, "item", 4L, 39), // Memory tier 3.5
+                        new ItemStack[] { getModItem(OpenComputers.ID, "item", 4L, 39), // Memory tier 3.5
                                 ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(16L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUIV, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 16L),
-                                GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 4L, 0) // Solar Light
+                                getModItem(SuperSolarPanels.ID, "solarsplitter", 4L, 0) // Solar Light
                         // Splitter
                         },
                         new FluidStack[] { new FluidStack(solderUEV, 576) },
@@ -258,12 +259,12 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null);
 
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(OpenComputers.ID, "item", 16L, 39), // Memory tier
+                        new ItemStack[] { getModItem(OpenComputers.ID, "item", 16L, 39), // Memory tier
                                 // 3.5
                                 ItemList.Circuit_Chip_Optical.get(1L), CustomItemList.DATApipe.get(64L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUMV, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 32L),
-                                GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 16L, 0) // Solar Light
+                                getModItem(SuperSolarPanels.ID, "solarsplitter", 16L, 0) // Solar Light
                         // Splitter
                         },
                         new FluidStack[] { new FluidStack(solderUEV, 1152) },
@@ -275,23 +276,21 @@ public class SpaceAssemblerRecipes implements Runnable {
                         null);
 
                 // Advanced Stocking Input Hatch (ME)
-                IG_RecipeAdder
-                        .addSpaceAssemblerRecipe(
-                                new ItemStack[] { ItemList.Hatch_Input_Multi_2x2_UEV.get(4L),
-                                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
-                                        ItemList.Optically_Compatible_Memory.get(2), ItemList.Electric_Pump_UEV.get(1L),
-                                        // 16384k Me Fluid Storage Component
-                                        GT_ModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 4, 7),
-                                        // Hyper-Acceleration Card
-                                        GT_ModHandler
-                                                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56) },
-                                new FluidStack[] { new FluidStack(solderUEV, 2304) },
-                                ItemList.Hatch_Input_ME_Advanced.get(1),
-                                1,
-                                15 * 20,
-                                (int) TierEU.RECIPE_UHV,
-                                null,
-                                null);
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { ItemList.Hatch_Input_Multi_2x2_UEV.get(4L),
+                                getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
+                                ItemList.Optically_Compatible_Memory.get(2), ItemList.Electric_Pump_UEV.get(1L),
+                                // 16384k Me Fluid Storage Component
+                                getModItem(AE2FluidCraft.ID, "fluid_part", 4, 7),
+                                // Hyper-Acceleration Card
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56) },
+                        new FluidStack[] { new FluidStack(solderUEV, 2304) },
+                        ItemList.Hatch_Input_ME_Advanced.get(1),
+                        1,
+                        15 * 20,
+                        (int) TierEU.RECIPE_UHV,
+                        null,
+                        null);
             }
             if (OpenComputers.isModLoaded()) {
                 // Memory Tier 3.5
@@ -299,10 +298,10 @@ public class SpaceAssemblerRecipes implements Runnable {
                         new ItemStack[] { ItemList.Circuit_Board_Multifiberglass_Elite.get(4),
                                 ItemList.Circuit_Chip_Ram.get(64), ItemList.Circuit_Chip_SoC.get(64),
                                 ItemList.Circuit_Chip_NAND.get(64),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1L),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1L),
                                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L) },
                         new FluidStack[] { new FluidStack(solderIndalloy, 1152) },
-                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 64L, 39),
+                        getModItem(OpenComputers.ID, "item", 64L, 39),
                         1,
                         10 * SECONDS,
                         (int) TierEU.RECIPE_UV,
@@ -312,18 +311,64 @@ public class SpaceAssemblerRecipes implements Runnable {
             if (AppliedEnergistics2.isModLoaded() && AE2FluidCraft.isModLoaded()) {
                 // Non-oredicted circuit was intended.
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1),
-                                GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 3),
-                                GT_ModHandler
-                                        .getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingStorage", 1, 3),
+                        new ItemStack[] { getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1),
+                                getModItem(AppliedEnergistics2.ID, "tile.BlockCraftingUnit", 1, 3),
+                                getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingStorage", 1, 3),
                                 ItemList.Robot_Arm_UHV.get(16), ItemList.Circuit_OpticalProcessor.get(16),
                                 GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 4L),
-                                GT_ModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_pattern_terminal_ex", 1) },
+                                getModItem(AE2FluidCraft.ID, "part_fluid_pattern_terminal_ex", 1) },
                         new FluidStack[] { new FluidStack(solderUEV, 9216) },
-                        GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockPatternOptimizationMatrix", 1),
+                        getModItem(AppliedEnergistics2.ID, "tile.BlockPatternOptimizationMatrix", 1),
                         1,
                         5 * MINUTES,
                         (int) TierEU.RECIPE_UHV,
+                        null,
+                        null);
+            }
+            if (AppliedEnergistics2.isModLoaded()) {
+                // Artificial Universe Cell
+                ItemStack filledUMVCell = ItemList.ZPM6.get(1L);
+                NBTTagCompound euNBT = filledUMVCell.getTagCompound();
+                if (euNBT != null) {
+                    euNBT.setLong("GT.ItemCharge", 9223372036854775807L);
+                } else {
+                    euNBT = new NBTTagCompound();
+                    euNBT.setLong("GT.ItemCharge", 9223372036854775807L);
+                    filledUMVCell.setTagCompound(euNBT);
+                }
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] {
+                                getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
+                                GT_OreDictUnificator
+                                        .get(OrePrefixes.plateDense, MaterialsUEVplus.TranscendentMetal, 64L),
+                                ItemList.Field_Generator_UXV.get(1L), filledUMVCell,
+                                getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 4, 8),
+                                com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
+                                MaterialsUEVplus.Eternity.getNanite(4) },
+                        new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
+                        getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1),
+                        3,
+                        1 * MINUTES,
+                        (int) TierEU.RECIPE_UXV,
+                        null,
+                        null);
+            }
+            if (AE2FluidCraft.isModLoaded()) {
+                // Artificial Fluid Universe Cell
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1),
+                                GT_OreDictUnificator.get("plateDenseShirabon", 16),
+                                ItemList.Field_Generator_UXV.get(1L),
+                                getModItem(GoodGenerator.ID, "yottaFluidTankCells", 2, 9),
+                                getModItem(KekzTech.ID, "kekztech_tfftstoragefield_block", 2, 10),
+                                getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 4, 8),
+                                com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
+                                MaterialsUEVplus.Eternity.getNanite(4) },
+                        new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
+                        getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1),
+                        3,
+                        1 * MINUTES,
+                        (int) TierEU.RECIPE_UXV,
                         null,
                         null);
             }

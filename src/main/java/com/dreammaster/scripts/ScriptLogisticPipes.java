@@ -92,88 +92,98 @@ public class ScriptLogisticPipes implements IScriptLoader {
 
     private void loadModuleRecipes() {
         for (Materials solderingMaterial : solderingMaterials) {
-
             // Blank Module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Gold, 4L),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing)).duration(30 * SECONDS)
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // ItemSink Module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                            ItemList.Component_Filter.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing)).duration(45 * SECONDS)
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // Passive Supplier Module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(LogisticsPipes.ID, "item.itemModule", 3, 0, missing),
-                            ItemList.Component_Filter.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing)).duration(45 * SECONDS)
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 2, missing)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // Extractor Module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 2, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 8L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing)).duration(45 * SECONDS)
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 3, missing)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // Polymorphic ItemSink Module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                            ItemList.Electric_Piston_LV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 4L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 2L),
+                            getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
+                            GT_Utility.getIntegratedCircuit(18))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 36))
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 4, missing)).duration(20 * SECONDS)
+                    .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 4, missing)).duration(45 * SECONDS)
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 4, missing)).duration(30 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // QuickSort Module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 1, 501, missing),
-                            ItemList.Robot_Arm_HV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                            ItemList.Robot_Arm_LV.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 8L),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 8L),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing)).duration(45 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing))
+                    .duration(120 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
             // Advanced Extractor Module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 1, 3, missing),
-                            getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
+                            getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 5, missing),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 7, missing)).duration(45 * SECONDS)
@@ -183,24 +193,24 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 0, missing),
-                            ItemList.Robot_Arm_MV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                            ItemList.Electric_Motor_LV.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 8L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 500, missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // Bee Analyzer module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                            getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
-                            ItemList.Conveyor_Module_HV.get(1L),
-                            ItemList.Sensor_HV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
+                            ItemList.Conveyor_Module_MV.get(1L),
+                            ItemList.Sensor_MV.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing)).duration(80 * SECONDS)
@@ -210,36 +220,35 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
-                            ItemList.Robot_Arm_HV.get(1L),
-                            ItemList.Conveyor_Module_HV.get(1L),
-                            ItemList.Sensor_HV.get(1L),
-                            ItemList.Emitter_HV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            ItemList.Robot_Arm_MV.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.StainlessSteel, 4L),
+                            ItemList.Sensor_MV.get(1L),
+                            ItemList.Emitter_MV.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 10, missing))
-                    .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                    .duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
             // Crafting Module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 5, 0, missing),
                             ItemList.Emitter_MV.get(1L),
-                            ItemList.Sensor_MV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
-                            ItemList.Cover_Crafting.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
+                            ItemList.Cover_Crafting.get(5L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 30, missing),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 5, 600, missing))
-                    .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                    .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // Type Filter ItemSink module
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 2, 1, missing),
                             ItemList.Conveyor_Module_LV.get(1L),
-                            getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
+                            ItemList.Circuit_Parts_Diode.get(2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 30, missing),
                             GT_Utility.getIntegratedCircuit(18))
@@ -251,7 +260,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Terminus Module
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing),
                         getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 6, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
@@ -274,7 +283,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 103, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing))
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 5, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 107, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
@@ -289,14 +298,14 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Advanced Extractor MK3
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 107, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 7, missing),
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 6, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 207, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 203, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing))
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 5, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 207, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
@@ -326,13 +335,12 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(Forestry.ID, "apicultureChest", 1, 0, missing),
-                        getModItem(Forestry.ID, "propolis", 4, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                        getModItem(Forestry.ID, "beeswax", 4, missing),
+                        ItemList.Circuit_Parts_Diode.get(2L),
                         GT_Utility.getIntegratedCircuit(18))
                 .fluidInputs(FluidRegistry.getFluidStack("for.honey", 1000))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing)).duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing)).duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Drone Terminus Module
         GT_Values.RA.stdBuilder()
@@ -346,14 +354,14 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 12, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         // OreDict ItemSink module
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 12, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         getModItem(Minecraft.ID, "writable_book", 1, wildcard, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 13, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
@@ -362,7 +370,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(Thaumcraft.ID, "ItemShard", 4, 6, missing))
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 5, missing),
+                        getModItem(Thaumcraft.ID, "ItemShard", 2, 6, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 30, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
@@ -386,46 +395,47 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 5, missing),
-                        getModItem(OpenComputers.ID, "item", 1, 70, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 14, missing)).duration(30 * SECONDS)
+                        getModItem(OpenComputers.ID, "item", 2, 24, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 14, missing)).duration(120 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
 
         // CC Based ItemSink module
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
-                        getModItem(OpenComputers.ID, "item", 1, 70, missing))
+                        getModItem(OpenComputers.ID, "item", 2, 24, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 15, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
 
         // Crafting module MK2
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 600, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 601, missing)).duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(formingPressRecipes);
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 600, missing),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 601, missing)).duration(40 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
 
         // Crafting module MK3
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 2, 601, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 2, 602, missing)).duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(formingPressRecipes);
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 601, missing),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 6, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 602, missing)).duration(90 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
 
         // Active Supplier Module
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 3, 2, missing),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 3, 502, missing)).duration(30 * SECONDS)
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 4, 2, missing),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing),
+                        getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 502, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         // Creative Tab Based ItemSink module
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 12, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 1, missing),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 1, 16, missing)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
@@ -437,7 +447,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 4L),
                             GT_Utility.getIntegratedCircuit(18))
@@ -447,7 +457,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tin, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.AnnealedCopper, 4L),
                             GT_Utility.getIntegratedCircuit(18))
@@ -467,12 +477,12 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 4, missing),
-                            ItemList.Robot_Arm_LV.get(1L),
+                            ItemList.Electric_Piston_LV.get(1L),
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bronze, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 33, missing),
                             GT_Utility.getIntegratedCircuit(circuit))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, meta, missing))
-                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, meta, missing))
+                    .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // Modification
 
@@ -567,10 +577,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                            getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 27, missing),
                             GT_Utility.getIntegratedCircuit(circuit))
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, meta, missing))
-                    .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                    .duration(8 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // Modification
 
@@ -656,32 +665,23 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Item Speed Upgrade
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                        ItemList.Electric_Piston_LV.get(1L),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 8, 4, missing),
+                        ItemList.Electric_Motor_LV.get(1L),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 32, missing),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 20, missing))
-                .fluidInputs(Materials.Lubricant.getFluid(1000)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 8, 20, missing))
+                .fluidInputs(Materials.Lubricant.getFluid(500)).duration(30 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         // Advanced Satellite Upgrade
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        ItemList.Sensor_HV.get(1L),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
+                        ItemList.Sensor_LV.get(1L),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 23, missing),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 21, missing)).duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        ItemList.Sensor_HV.get(1L),
-                        ItemList.Emitter_HV.get(1L),
-                        getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing),
-                        GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 21, missing)).duration(60 * SECONDS)
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 21, missing)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Fluid Crafting Upgrade
@@ -747,14 +747,14 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 1L))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 42, missing)).duration(30 * SECONDS)
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 4, 42, missing)).duration(8 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         // Crafting Cleanup Upgrade
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 4, missing),
-                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 207, missing),
+                        getModItem(LogisticsPipes.ID, "item.itemModule", 1, 107, missing),
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 33, missing),
                         GT_Utility.getIntegratedCircuit(18))
@@ -765,68 +765,48 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 4, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Primitive, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1L),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 34, missing),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemUpgrade", 2, 44, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
     }
 
     private void loadPipeRecipes() {
-        // Basic Logistics Pipe
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawed, Materials.Diamond, 8L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
-                        GT_Utility.getIntegratedCircuit(18))
-                .fluidInputs(Materials.SolderingAlloy.getMolten(72))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
-                        GT_Utility.getIntegratedCircuit(18))
-                .fluidInputs(Materials.SolderingAlloy.getMolten(72))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
-                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
-                        GT_Utility.getIntegratedCircuit(18))
-                .fluidInputs(Materials.SolderingAlloy.getMolten(72))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
-                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 32, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Silver, 16L),
-                        GT_Utility.getIntegratedCircuit(18))
-                .fluidInputs(Materials.SolderingAlloy.getMolten(72))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 32, 0, missing))
-                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        for (Materials solderingMaterial : solderingMaterials) {
+            // Basic Logistics Pipe
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedAlloy, 16),
+                            GT_Utility.getIntegratedCircuit(18))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 36))
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing))
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 16, 0, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Gold, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.RedstoneAlloy, 8),
+                            GT_Utility.getIntegratedCircuit(18))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 36))
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 16, 0, missing))
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        }
 
         // Request Logistics Pipe
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
-                        ItemList.Emitter_MV.get(1L),
-                        ItemList.Conveyor_Module_MV.get(1L),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 4, 1, missing),
+                        ItemList.Emitter_LV.get(1L),
+                        ItemList.Conveyor_Module_LV.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 4),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -835,18 +815,19 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 6, missing),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 4, 1, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogisticsMk2", 1, 0, missing))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Provider Logistics Pipe
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 3, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 500, missing),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsProviderLogistics", 2, 0, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsProviderLogistics", 3, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Provider Logistics Pipe Mk2
@@ -878,7 +859,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsCraftingLogistics", 2, 0, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsCraftingLogisticsMk2", 2, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -894,7 +875,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsCraftingLogisticsMk2", 2, 0, missing),
-                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 8, missing),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 6, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsCraftingLogisticsMk3", 2, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -911,8 +892,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing),
-                        ItemList.Robot_Arm_MV.get(1L),
-                        ItemList.Sensor_MV.get(1L),
+                        ItemList.Robot_Arm_LV.get(1L),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 5, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsSatelliteLogistics", 2, 0, missing))
@@ -921,17 +902,17 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Supplier Logistics Pipe
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 3, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 502, missing),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsSupplierLogistics", 2, 0, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsSupplierLogistics", 3, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Logistics Chassis Mk1
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 2L),
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing))
@@ -941,36 +922,38 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk1", 2, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 5, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 2, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 4L),
-                        getModItem(IronChests.ID, "BlockIronChest", 2, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1L),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
+                        getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 4, 0, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 6, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Logistics Chassis Mk3
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk2", 2, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 2L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 0, missing),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk3", 2, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 4L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk3", 6, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -979,39 +962,42 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk3", 2, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Kanthal, 2L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 4, missing),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 2, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 8, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedSteel, 4L),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Kanthal, 8L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 4, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 8, 0, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 6, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Logistics Chassis Mk5
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk4", 2, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 2L),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 7, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk5", 2, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 6L),
                         getModItem(IronChests.ID, "BlockIronChest", 2, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
+                        getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 6, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeLogisticsChassiMk5", 12, 0, missing))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Remote Orderer Logistics Pipe
         GT_Values.RA.stdBuilder()
@@ -1025,20 +1011,20 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Bee Analyzer Logistics Pipe
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 2, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 8, missing),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsApiaristAnalyser", 1, 0, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsApiaristAnalyser", 2, 0, missing))
                 .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // BeeSink Logistics Pipe
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 3, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 9, missing),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsApiaristSink", 1, 0, missing))
-                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsApiaristSink", 3, 0, missing))
+                .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Logistics Firewall Pipe
         GT_Values.RA.stdBuilder()
@@ -1052,36 +1038,36 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Logistics Fluid Container Supplier
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 3, 0, missing),
-                        ItemList.Robot_Arm_MV.get(1L),
+                        getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 5, 0, missing),
+                        ItemList.Robot_Arm_LV.get(1L),
                         getModItem(Minecraft.ID, "bucket", 1, 0, missing),
                         ItemList.Large_Fluid_Cell_Steel.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsFluidSupplier", 3, 0, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsFluidSupplier", 5, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Logistics Fluid Basic Pipe
         for (Materials solderingMaterial : solderingMaterials) {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 6, 0, missing),
+                            getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 12, 0, missing),
                             ItemList.Electric_Pump_LV.get(1L),
                             ItemList.Large_Fluid_Cell_Steel.get(1L),
                             GT_Utility.getIntegratedCircuit(18))
-                    .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 6, 0, missing))
+                    .fluidInputs(getSolderingFluid(solderingMaterial, 144))
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 12, 0, missing))
                     .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         }
 
         // Logistics Fluid Insertion Pipe
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 3, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 6, 0, missing),
                         ItemList.Electric_Pump_MV.get(1L),
                         ItemList.Large_Fluid_Cell_Steel.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidInsertion", 3, 0, missing))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidInsertion", 6, 0, missing))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Logistics Fluid Provider Pipe
         GT_Values.RA.stdBuilder()
@@ -1118,8 +1104,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing),
-                        ItemList.Robot_Arm_HV.get(1L),
-                        ItemList.Sensor_HV.get(1L),
+                        ItemList.Robot_Arm_LV.get(1L),
+                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 5, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidSatellite", 1, 0, missing))
@@ -1128,11 +1114,11 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Logistics Fluid Supplier
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 3, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeFluidBasic", 4, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 502, missing),
                         ItemList.Large_Fluid_Cell_Steel.get(1L),
                         GT_Utility.getIntegratedCircuit(18))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidSupplierMk2", 3, 0, missing))
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeFluidSupplierMk2", 4, 0, missing))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Unrouted Transport Pipe
@@ -1170,7 +1156,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Aluminium, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BorosilicateGlass, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 16L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -1186,7 +1172,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             ItemList.Transformer_MV_LV.get(1L),
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                             GT_Utility.getIntegratedCircuit(24))
@@ -1196,8 +1182,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Transformer_MV_LV.get(1L),
-                            getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.AnnealedCopper, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
                             GT_Utility.getIntegratedCircuit(24))
@@ -1211,10 +1196,10 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 8L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 4L),
                         GT_Utility.getIntegratedCircuit(24))
                 .fluidInputs(Materials.Plastic.getMolten(576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 2, missing)).duration(80 * SECONDS)
@@ -1223,32 +1208,32 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Logistics Crafting Table
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Hull_MV.get(1L),
+                        ItemList.Hull_LV.get(1L),
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        ItemList.Robot_Arm_MV.get(2L),
+                        ItemList.Electric_Piston_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 4L),
                         GT_Utility.getIntegratedCircuit(24))
                 .fluidInputs(Materials.Plastic.getMolten(576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing)).duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Hull_MV.get(1L),
+                        ItemList.Hull_LV.get(1L),
                         getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10, missing),
-                        ItemList.Robot_Arm_MV.get(2L),
+                        ItemList.Electric_Piston_LV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlueAlloy, 4L),
                         GT_Utility.getIntegratedCircuit(24))
                 .fluidInputs(Materials.Plastic.getMolten(576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing)).duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Logistics Fuzzy Crafting Table
         GT_Values.RA.stdBuilder()
@@ -1256,16 +1241,16 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 3, missing),
                         getModItem(LogisticsPipes.ID, "item.itemUpgrade", 1, 25, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "logisticsSolidBlock", 1, 4, missing)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(formingPressRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
 
         // Logistics Statistics Table
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                        ItemList.Sensor_HV.get(1L),
+                        ItemList.Sensor_MV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Copper, 4L),
                         GT_Utility.getIntegratedCircuit(24))
                 .fluidInputs(Materials.Plastic.getMolten(576))
@@ -1281,7 +1266,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.PipeItemsRequestLogistics", 1, 0, missing),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
                         GT_Utility.getIntegratedCircuit(24))
                 .fluidInputs(Materials.Plastic.getMolten(576))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeBlockRequestTable", 1, 0, missing))
@@ -1292,29 +1277,29 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 2, missing),
-                            getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2L),
+                            ItemList.Circuit_Parts_Diode.get(1L),
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.BlackSteel, 4L),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Steel, 4L),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 5, missing))
+                    .duration(20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
             // Diamond Upgrade Chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                            getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2L),
+                            getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 5, missing),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 2L),
+                            ItemList.Circuit_Parts_Diode.get(2L),
                             getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 4L),
+                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Platinum, 4L),
                             GT_Utility.getIntegratedCircuit(18))
                     .fluidInputs(getSolderingFluid(solderingMaterial, 36))
-                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 2, 6, missing))
-                    .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                    .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 4, 6, missing))
+                    .duration(40 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
-            // Advanced Gold Crafting Chip
+            // HV Gold Crafting Chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
@@ -1327,7 +1312,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing))
                     .duration(45 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-            // Advanced Diamond Crafting Chip
+            // HV Diamond Crafting Chip
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
@@ -1348,7 +1333,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Sensor_MV.get(1L),
                         CustomItemList.Display.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Copper, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 4L),
                         GT_Utility.getIntegratedCircuit(18))
@@ -1361,22 +1346,20 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Crafting Sign Creator
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Display.get(1L),
-                        getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
-                        getModItem(Minecraft.ID, "sign", 16, 0, missing),
+                        ItemList.Cover_Screen.get(1),
+                        getModItem(Minecraft.ID, "sign", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.ItemPipeSignCreator", 1, 0, missing))
-                .duration(80 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Logistics Pipe Controller
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Display.get(1L),
-                        getModItem(OpenComputers.ID, "keyboard", 1, 0, missing),
+                        ItemList.Cover_Screen.get(1),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 0, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.pipeController", 1, 0, missing)).duration(80 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Logistics Disk
         addShapedRecipe(
@@ -1388,7 +1371,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 getModItem(OpenComputers.ID, "item", 1, 19, missing),
                 "plateCarbon",
                 "plateCarbon",
-                "circuitPrimitive",
+                "circuitULV",
                 "plateCarbon");
 
         // Logistics HUD Glasses
@@ -1397,9 +1380,9 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing),
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 2, missing),
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing),
-                "screwTitanium",
-                "circuitAdvanced",
-                "screwTitanium",
+                "screwAluminium",
+                "circuitGood",
+                "screwAluminium",
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing),
                 "craftingToolScrewdriver",
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing));
@@ -1407,9 +1390,8 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Logistics HUD Bow
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Aluminium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Diamond, 1L),
-                        getModItem(BuildCraftSilicon.ID, "redstoneChipset", 2, 3, missing),
                         GT_Utility.getIntegratedCircuit(18))
                 .fluidInputs(Materials.Aluminium.getMolten(144))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing)).duration(80 * SECONDS)
@@ -1418,22 +1400,22 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Logistics HUD Glass
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GalacticraftCore.ID, "item.sensorLens", 1, 0, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Aluminium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                         GT_Utility.getIntegratedCircuit(18))
                 .fluidInputs(Materials.Aluminium.getMolten(144))
-                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing)).duration(80 * SECONDS)
+                .itemOutputs(getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // Logistics HUD Nose Bridge
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 2, missing),
-                "boltRedSteel",
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
                 "stickDiamond",
-                "boltRedSteel",
+                getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
                 "craftingToolFile",
-                "screwTitanium",
+                "screwAluminium",
                 "craftingToolSoftHammer",
                 null,
                 "craftingToolScrewdriver",

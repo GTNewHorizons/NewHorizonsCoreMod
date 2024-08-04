@@ -16,6 +16,7 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.DTPFCalculator;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 
+import goodgenerator.items.MyMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -458,7 +459,7 @@ public class DTPFRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateAbyssalAlloy", 24L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemScrewBotmium", 16L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 1L))
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1L))
                     .itemOutputs(ItemList.Tesseract.get(4)).fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(1000))
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000 / 2))
                     .duration(40 * SECONDS).eut(32_000_000).metadata(COIL_HEAT, infinity_heat)
@@ -704,7 +705,6 @@ public class DTPFRecipes implements Runnable {
                         .duration(infinity.getDuration(2) / 128).eut(infinity.getEUt(2) / 64)
                         .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
 
-                long fuel_quantity_1 = 58_932L;
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
@@ -717,7 +717,6 @@ public class DTPFRecipes implements Runnable {
                         .duration(infinity.getDuration(2)).eut(infinity.getEUt(2)).metadata(COIL_HEAT, hypogen_heat)
                         .addTo(plasmaForgeRecipes);
 
-                long fuel_quantity_2 = 26_244L;
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
@@ -730,7 +729,6 @@ public class DTPFRecipes implements Runnable {
                         .duration(infinity.getDuration(3)).eut(infinity.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
 
-                long fuel_quantity_6 = 11_373L;
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5),
@@ -742,6 +740,24 @@ public class DTPFRecipes implements Runnable {
                                 Materials.Infinity.getMolten(256L * 144L))
                         .duration(infinity.getDuration(4)).eut(infinity.getEUt(4)).metadata(COIL_HEAT, eternal_heat)
                         .addTo(plasmaForgeRecipes);
+
+                if (GalacticraftAmunRa.isModLoaded()) {
+                    // Dark Matter
+                    GT_Values.RA.stdBuilder()
+                            .itemInputs(
+                                    GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 16),
+                                    GT_ModHandler.getModItem(Avaritia.ID, "Resource", 32L, 8),
+                                    GT_Utility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
+                            .fluidInputs(
+                                    MaterialsUEVplus.ExcitedDTEC.getFluid(1797693L),
+                                    Materials.CosmicNeutronium.getMolten(16384 * 144),
+                                    MyMaterial.tairitsu.getMolten(16384 * 144),
+                                    ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
+                            .itemOutputs(GT_ModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1L, 14))
+                            .duration(80 * SECONDS)
+                            .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1797693L))
+                            .eut(TierEU.RECIPE_UMV).metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
+                }
             }
 
             // Quantum anomaly

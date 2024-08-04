@@ -175,8 +175,8 @@ public class ScriptRemoteIO implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 2))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2))
                 .itemOutputs(getModItem(RemoteIO.ID, "item.chip.location", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(30 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);

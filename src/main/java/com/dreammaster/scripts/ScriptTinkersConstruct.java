@@ -2229,6 +2229,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 700,
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Iron, 1L),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Iron, 1L),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
@@ -2254,6 +2260,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.ore, Materials.BrownLimonite, 1L),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.BrownLimonite, 1L),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
                 700,
@@ -2289,6 +2301,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 700,
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.YellowLimonite, 1L),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.YellowLimonite, 1L),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
@@ -2314,6 +2332,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.ore, Materials.BandedIron, 1L),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.BandedIron, 1L),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
                 700,
@@ -2349,6 +2373,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 700,
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.GraniticMineralSand, 1L),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.GraniticMineralSand, 1L),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
@@ -2374,6 +2404,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Magnetite, 1L),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Magnetite, 1L),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
                 700,
@@ -2409,6 +2445,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 700,
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Pyrite, 1L),
+                GameRegistry.findBlock("minecraft", "iron_ore"),
+                0,
+                700,
+                FluidRegistry.getFluidStack("iron.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Pyrite, 1L),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
@@ -2434,6 +2476,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
                 getModItem(GregTech.ID, "gt.blockores", 1, 35, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Copper, 1L),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 3,
                 600,
@@ -2469,6 +2517,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 600,
                 FluidRegistry.getFluidStack("copper.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Malachite, 1L),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Malachite, 1L),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 3,
@@ -2494,6 +2548,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("copper.molten", 144));
         Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Tetrahedrite, 1L),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Tetrahedrite, 1L),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 3,
                 600,
@@ -2529,6 +2589,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 600,
                 FluidRegistry.getFluidStack("copper.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Chalcopyrite, 1L),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                3,
+                600,
+                FluidRegistry.getFluidStack("copper.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Chalcopyrite, 1L),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 3,
@@ -2554,6 +2620,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("copper.molten", 144));
         Smeltery.addMelting(
                 getModItem(GregTech.ID, "gt.blockores", 1, 57, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                400,
+                FluidRegistry.getFluidStack("tin.molten", 144));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Tin, 1L),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 4,
                 400,
@@ -2589,6 +2661,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 600,
                 FluidRegistry.getFluidStack("tin.molten", 288));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Cassiterite, 1L),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Cassiterite, 1L),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 4,
@@ -2614,6 +2692,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("tin.molten", 144));
         Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.ore, Materials.CassiteriteSand, 1L),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                4,
+                600,
+                FluidRegistry.getFluidStack("tin.molten", 288));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.CassiteriteSand, 1L),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 4,
                 600,
@@ -2649,6 +2733,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 600,
                 FluidRegistry.getFluidStack("gold.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Gold, 1L),
+                GameRegistry.findBlock("minecraft", "gold_ore"),
+                0,
+                600,
+                FluidRegistry.getFluidStack("gold.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Gold, 1L),
                 GameRegistry.findBlock("minecraft", "gold_ore"),
                 0,
@@ -2674,6 +2764,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("gold.molten", 144));
         Smeltery.addMelting(
                 getModItem(GregTech.ID, "gt.blockores", 1, 19, missing),
+                GameRegistry.findBlock("TConstruct", "SearedBrick"),
+                5,
+                400,
+                FluidRegistry.getFluidStack("aluminum.molten", 144));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Aluminium, 1L),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 5,
                 400,
@@ -2709,6 +2805,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 400,
                 FluidRegistry.getFluidStack("nickel.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Nickel, 1L),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                34,
+                400,
+                FluidRegistry.getFluidStack("nickel.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Nickel, 1L),
                 GameRegistry.findBlock("gregtech", "gt.blockores"),
                 34,
@@ -2734,6 +2836,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("nickel.molten", 144));
         Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.ore, Materials.Silver, 1L),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                54,
+                500,
+                FluidRegistry.getFluidStack("silver.molten", 144));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Silver, 1L),
                 GameRegistry.findBlock("gregtech", "gt.blockores"),
                 54,
                 500,
@@ -2769,6 +2877,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 800,
                 FluidRegistry.getFluidStack("platinum.molten", 144));
         Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Platinum, 1L),
+                GameRegistry.findBlock("gregtech", "gt.blockores"),
+                85,
+                800,
+                FluidRegistry.getFluidStack("platinum.molten", 144));
+        Smeltery.addMelting(
                 GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Platinum, 1L),
                 GameRegistry.findBlock("gregtech", "gt.blockores"),
                 85,
@@ -2794,6 +2908,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 FluidRegistry.getFluidStack("platinum.molten", 144));
         Smeltery.addMelting(
                 getModItem(GregTech.ID, "gt.blockores", 1, 501, missing),
+                GameRegistry.findBlock("minecraft", "emerald_ore"),
+                0,
+                800,
+                FluidRegistry.getFluidStack("emerald.liquid", 640));
+        Smeltery.addMelting(
+                GT_OreDictUnificator.get(OrePrefixes.rawOre, Materials.Emerald, 1L),
                 GameRegistry.findBlock("minecraft", "emerald_ore"),
                 0,
                 800,
