@@ -105,7 +105,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 5, missing),
                 "plateAlloyCarbon",
                 "plateAlloyIridium",
-                "batteryMaster",
+                "batteryElite",
                 "plateAlloyIridium");
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 6, missing),
@@ -121,11 +121,11 @@ public class ScriptGraviSuite implements IScriptLoader {
         addShapedRecipe(
                 getModItem(GraviSuite.ID, "ultimateLappack", 1, 27, missing),
                 "itemCasingChrome",
-                "batteryMaster",
+                "batteryData",
                 "itemCasingChrome",
-                "batteryMaster",
+                "batteryData",
                 getModItem(GraviSuite.ID, "advLappack", 1, wildcard, missing),
-                "batteryMaster",
+                "batteryData",
                 "circuitMaster",
                 "wireGt16NiobiumTitanium",
                 "circuitMaster");
@@ -149,7 +149,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 ItemList.Electric_Motor_HV.get(1L),
                 "gearGtSmallTungstenSteel",
                 "plateTungstenSteel",
-                "batteryElite",
+                "batteryData",
                 "plateTungstenSteel");
         addShapedRecipe(
                 createItemStack(GraviSuite.ID, "advDDrill", 1, 27, "{toolXP:0.0d,charge:0,toolMode:0}", missing),
@@ -160,7 +160,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 ItemList.Electric_Motor_EV.get(1L),
                 "gearGtSmallIridium",
                 "plateAlloyIridium",
-                "batteryMaster",
+                "batteryData",
                 "plateAlloyIridium");
 
     }
