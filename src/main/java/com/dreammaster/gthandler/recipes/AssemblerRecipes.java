@@ -10,6 +10,11 @@ import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
+import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
+import static gtPlusPlus.core.material.ALLOY.HASTELLOY_W;
+import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
+import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
+import static gtPlusPlus.core.material.ALLOY.STELLITE;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +34,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
+import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import common.TileEntities;
 
 import gregtech.api.enums.GT_Values;
@@ -1976,6 +1982,138 @@ public class AssemblerRecipes implements Runnable {
                 ItemList.Energy_Module.get(1)).itemOutputs(ItemList.MicroTransmitter_UV.get(1)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
 
+        // Industrial Tinted Glass
+        ItemStack[] dyes = new ItemStack[] { ItemList.Color_15.get(1), // white
+                ItemList.Color_07.get(1), // light gray
+                ItemList.Color_08.get(1), // gray
+                ItemList.Color_00.get(1) // black
+        };
+
+        ItemStack[] glasses = new ItemStack[] { ItemList.GlassTintedIndustrialWhite.get(1),
+                ItemList.GlassTintedIndustrialLightGray.get(1), ItemList.GlassTintedIndustrialGray.get(1),
+                ItemList.GlassTintedIndustrialBlack.get(1), };
+
+        for (int meta = 0; meta < 4; ++meta) {
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
+                            new ItemStack(Blocks.glass, 4),
+                            dyes[meta])
+                    .itemOutputs(glasses[meta]).eut(TierEU.RECIPE_LV).duration(10 * SECONDS).addTo(assemblerRecipes);
+        }
+
+        // Chemical grade glass
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
+                        new ItemStack(Blocks.glass))
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(4 * 144))
+                .itemOutputs(ItemList.GlassPHResistant.get(1)).eut(TierEU.RECIPE_EV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // Ultraviolet emitter casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1),
+                        ItemList.Emitter_UV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 4))
+                .fluidInputs(Materials.Titanium.getPlasma(4 * 144))
+                .itemOutputs(ItemList.BlockUltraVioletLaserEmitter.get(1)).eut(TierEU.RECIPE_UV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // Sterile Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ledox, 4),
+                        ItemList.Electric_Motor_IV.get(2),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.PolyvinylChloride, 4))
+                .fluidInputs(Materials.Ledox.getMolten(4 * 144))
+                .itemOutputs(ItemList.BlockIndustrialWaterPlantCasing.get(1)).eut(TierEU.RECIPE_EV)
+                .duration(10 * SECONDS).addTo(assemblerRecipes);
+
+        // Reinforced Sterile Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.BlockIndustrialWaterPlantCasing.get(1),
+                        WerkstoffLoader.Ruridit.get(OrePrefixes.bolt, 16))
+                .fluidInputs(Materials.Concrete.getMolten(8 * 144))
+                .itemOutputs(ItemList.BlockSterileWaterPlantCasing.get(1)).eut(TierEU.RECIPE_IV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // Stabilized Naquadah Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 6),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.NiobiumTitanium, 4))
+                .fluidInputs(Materials.SuperCoolant.getFluid(4000))
+                .itemOutputs(ItemList.BlockNaquadahReinforcedWaterPlantCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+
+        // Inert Neutralization Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        HASTELLOY_C276.getFrameBox(1),
+                        HASTELLOY_C276.getPlate(3),
+                        HASTELLOY_X.getPlate(3),
+                        ItemList.Electric_Pump_LuV.get(1))
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(4 * 144))
+                .itemOutputs(ItemList.BlockExtremeCorrosionResistantCasing.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+
+        // Naquadria Reinforced Water Plant Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.BlockNaquadahReinforcedWaterPlantCasing.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Naquadria, 8),
+                        ItemList.Electric_Pump_ZPM.get(1))
+                .fluidInputs(Materials.SuperCoolant.getFluid(8000))
+                .itemOutputs(ItemList.BlockNaquadriaReinforcedWaterPlantCasing.get(1)).eut(TierEU.RECIPE_ZPM)
+                .duration(10 * SECONDS).addTo(assemblerRecipes);
+
+        // Inert Filtration Casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        HASTELLOY_C276.getFrameBox(1),
+                        HASTELLOY_X.getPlate(6),
+                        HASTELLOY_C276.getRotor(2),
+                        HASTELLOY_C276.getGear(2),
+                        ItemList.Electric_Pump_IV.get(1))
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(4 * 144))
+                .itemOutputs(ItemList.BlockOzoneCasing.get(1)).eut(TierEU.RECIPE_IV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // Reactive gas containment casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(HASTELLOY_W.getFrameBox(1), HASTELLOY_W.getPlate(6), HASTELLOY_W.getRotor(1))
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(4 * 144))
+                .itemOutputs(ItemList.BlockHighPressureResistantCasing.get(1)).eut(TierEU.RECIPE_IV)
+                .duration(10 * SECONDS).addTo(assemblerRecipes);
+
+        // slick sterile flocculation casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.StainlessSteel, 6),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 4),
+                        ItemList.Electric_Pump_IV.get(1))
+                .fluidInputs(Materials.Polytetrafluoroethylene.getMolten(4 * 144))
+                .itemOutputs(ItemList.BlockFlocculationCasing.get(1)).eut(TierEU.RECIPE_LuV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // Trinium plated heat-resistant casing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Trinium, 6),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.NaquadahAlloy, 16),
+                        ItemList.UV_Coil.get(2))
+                .fluidInputs(Materials.Osmiridium.getMolten(4 * 144))
+                .itemOutputs(ItemList.BlockPlasmaHeatingCasing.get(1)).eut(TierEU.RECIPE_ZPM).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
             GT_Values.RA.stdBuilder()
@@ -2071,6 +2209,11 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L),
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1L))
                 .itemOutputs(getModItem(GregTech.ID, "gt.blockcasings10", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(16).addTo(assemblerRecipes);
+
+        // Laser Containment Casing
+        GT_Values.RA.stdBuilder().itemInputs(STELLITE.getPlate(6), NITINOL_60.getFrameBox(1))
+                .itemOutputs(getModItem(GregTech.ID, "gt.blockcasings10", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
 
         // Iron Electromagnet

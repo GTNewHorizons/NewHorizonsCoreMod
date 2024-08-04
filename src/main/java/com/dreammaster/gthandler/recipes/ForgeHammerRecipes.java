@@ -8,7 +8,6 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -44,18 +43,17 @@ public class ForgeHammerRecipes implements Runnable {
                     .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(hammerRecipes);
         }
         // Raw optical chip
-        int chip_duration_ticks = 10 * 20;
-        int chip_eu_per_tick = 7_864_320;
-        FluidStack[] purified_water = { Materials.Grade1PurifiedWater.getFluid(100L),
-                Materials.Grade2PurifiedWater.getFluid(100L), Materials.Grade3PurifiedWater.getFluid(100L),
-                Materials.Grade4PurifiedWater.getFluid(100L), Materials.Grade5PurifiedWater.getFluid(100L),
-                Materials.Grade6PurifiedWater.getFluid(100L), Materials.Grade7PurifiedWater.getFluid(100L),
-                Materials.Grade8PurifiedWater.getFluid(100L) };
+        int chip_duration_ticks = 10 * SECONDS;
+        long chip_eu_per_tick = TierEU.RECIPE_UEV;
 
-        for (int i = 0; i < purified_water.length; i++) {
-            GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
-                    .itemOutputs(ItemList.Circuit_Chip_Optical.get((i + 1))).fluidInputs(purified_water[i])
-                    .duration(chip_duration_ticks).eut(chip_eu_per_tick).addTo(hammerRecipes);
-        }
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_Optical.get(8))
+                .fluidInputs(Materials.Grade7PurifiedWater.getFluid(100L)).duration(chip_duration_ticks)
+                .eut(chip_eu_per_tick).addTo(hammerRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
+                .itemOutputs(ItemList.Circuit_Chip_Optical.get(12))
+                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(100L)).duration(chip_duration_ticks / 2)
+                .eut(chip_eu_per_tick).addTo(hammerRecipes);
     }
 }

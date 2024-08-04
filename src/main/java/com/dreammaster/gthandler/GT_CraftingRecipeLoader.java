@@ -25,6 +25,8 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
+import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
+import static gtPlusPlus.core.material.ALLOY.STELLITE;
 
 import java.util.function.Consumer;
 
@@ -55,6 +57,8 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.GT_Proxy;
 import ic2.core.Ic2Items;
+import pers.gwyog.gtneioreplugin.plugin.block.ModBlocks;
+import pers.gwyog.gtneioreplugin.util.DimensionHelper;
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader implements Runnable {
 
@@ -677,6 +681,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 new Object[] { "CFC", "AMB", "CFC", 'A', ItemList.Machine_HV_Canner, 'B',
                         ItemList.Machine_HV_FluidCanner, 'F', OrePrefixes.circuit.get(Materials.Advanced), 'C',
                         OrePrefixes.pipeLarge.get(Materials.Steel), 'M', ItemList.Electric_Pump_HV });
+
+        // High Energy Laser Emitter
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Machine_Multi_IndustrialLaserEngraver.get(1),
+                bits,
+                new Object[] { "CFC", "EAE", "CEC", 'A', ItemList.Machine_IV_LaserEngraver, 'F',
+                        OrePrefixes.circuit.get(Materials.LuV), 'C', NITINOL_60.getPlate(1), 'E',
+                        ItemList.Emitter_IV });
+
+        // Laser Containment Casing
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings10", 1, 1),
+                bits,
+                new Object[] { "PhP", "PFP", "PwP", 'P', STELLITE.getPlate(1), 'F', NITINOL_60.getFrameBox(1) });
 
         // BM raw orbs
         GT_ModHandler.addCraftingRecipe(
@@ -1970,6 +1988,23 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                     modifiedBus,
                     new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), itemComponents[i] });
         }
+
+        // Pre-add planet block to EOH controller
+        for (String dimAbbreviation : DimensionHelper.DimNameDisplayed) {
+            ItemStack dimDisplay = new ItemStack(ModBlocks.getBlock(dimAbbreviation));
+            ItemStack EOHController = com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony
+                    .get(1L);
+            ItemStack NBTController = EOHController.copy();
+            NBTTagCompound nbt = new NBTTagCompound();
+            nbt.setString("planetBlock", dimAbbreviation);
+            NBTController.setTagCompound(nbt);
+            GT_ModHandler.addShapelessCraftingRecipe(NBTController, new Object[] { EOHController, dimDisplay });
+        }
+
+        // Transform EOH controller back to non-NBT one
+        GT_ModHandler.addShapelessCraftingRecipe(
+                com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L),
+                new Object[] { com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L) });
     }
 
     private Consumer<Recipe> shapelessUnremovableGtRecipes() {
