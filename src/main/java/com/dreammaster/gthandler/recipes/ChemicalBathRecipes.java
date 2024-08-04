@@ -4,7 +4,7 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.LogisticsPipes;
@@ -25,6 +25,7 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -167,6 +168,19 @@ public class ChemicalBathRecipes implements Runnable {
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyewhite", 144)).duration(10 * SECONDS).eut(2)
                 .addTo(chemicalBathRecipes);
 
+        // Laser Resistant Plate
+        GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockAlloy", 1))
+                .itemOutputs(getModItem(GregTech.ID, "gt.laserplate", 1, 0))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.hastelloyx", 1152)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(chemicalBathRecipes);
+
+        // Superplasticizer-treated high strength concrete
+        Fluid naphthalene = FluidRegistry.getFluid("fluid.naphthalene");
+        GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getIC2Item("reinforcedStone", 1))
+                .fluidInputs(new FluidStack(naphthalene, 1000))
+                .itemOutputs(ItemList.BlockIndustrialStrengthConcrete.get(1)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(chemicalBathRecipes);
+
         if (BiomesOPlenty.isModLoaded() && HardcoreEnderExpansion.isModLoaded() && Thaumcraft.isModLoaded()) {
             GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "skull", 1, 0, missing))
                     .itemOutputs(
@@ -217,15 +231,6 @@ public class ChemicalBathRecipes implements Runnable {
                             GT_ModHandler.getModItem(Forestry.ID, "mulch", 4L, 0))
                     .outputChances(10000, 3300, 2000).fluidInputs(Materials.Water.getFluid(750L)).duration(25 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
-        }
-
-        if (GTPlusPlus.isModLoaded()) {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(GT_OreDictUnificator.get(OrePrefixes.nanite, Materials.Silver, 0, false))
-                    .itemOutputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "particleBase", 1L, 24)).outputChances(100)
-                    .fluidInputs(Materials.Grade7PurifiedWater.getFluid(1000L))
-                    .fluidOutputs(Materials.Grade8PurifiedWater.getFluid(900L)).duration(4 * MINUTES + 10 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV / 2).addTo(chemicalBathRecipes);
         }
 
         if (EnderIO.isModLoaded()) {
