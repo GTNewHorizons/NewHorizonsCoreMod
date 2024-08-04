@@ -143,7 +143,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Board_Multifiberglass.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 64L),
-                        new Object[] { OrePrefixes.circuit.get(Materials.Master), 4L },
+                        new Object[] { OrePrefixes.circuit.get(Materials.LuV), 4L },
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L),
                         ItemList.Circuit_Parts_Crystal_Chip_Master.get(36L),
                         ItemList.Circuit_Chip_HPIC.get(64L),
@@ -214,7 +214,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -245,7 +245,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -276,7 +276,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -307,7 +307,7 @@ public class AssemblingLineRecipes implements Runnable {
                             // Shirabon foil
                             GT_OreDictUnificator.get("foilShirabon", 64),
                             // Quantum circuit
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Cosmic, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1),
                             // Energized tesseract
                             ItemList.EnergisedTesseract.get(1) },
                     new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
@@ -696,7 +696,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 6, 1),
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 2),
                             GT_ModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 3),
-                            new Object[] { OrePrefixes.circuit.get(Materials.Ultimate), 2L },
+                            new Object[] { OrePrefixes.circuit.get(Materials.ZPM), 2L },
                             GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Duranium, 2),
                             ItemList.Energy_LapotronicOrb2.get(1L),
                             ItemList.Field_Generator_IV.get(2L),
@@ -711,7 +711,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Casing_Fusion_Coil.get(16L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 16L),
-                            new Object[] { OrePrefixes.circuit.get(Materials.SuperconductorUHV), 16L },
+                            new Object[] { OrePrefixes.circuit.get(Materials.UV), 16L },
                             ItemList.Sensor_UV.get(16L),
                             ItemList.Emitter_UV.get(16L),
                             ItemList.Field_Generator_UV.get(8L),
@@ -991,7 +991,7 @@ public class AssemblingLineRecipes implements Runnable {
                 4000000,
                 64,
                 new Object[] { ItemList.Circuit_Board_Optical.get(1L), CustomItemList.PicoWafer.get(4L),
-                        new Object[] { OrePrefixes.circuit.get(Materials.Optical), 2L },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2L },
                         ItemList.Circuit_Parts_TransistorXSMD.get(48L), ItemList.Circuit_Parts_ResistorXSMD.get(48L),
                         ItemList.Circuit_Parts_CapacitorXSMD.get(48L), ItemList.Circuit_Parts_DiodeXSMD.get(48L),
                         ItemList.Circuit_Chip_PPIC.get(64L), GT_OreDictUnificator.get("foilRadoxPoly", 16L),

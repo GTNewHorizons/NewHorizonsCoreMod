@@ -105,7 +105,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 4, 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4))
                 .fluidInputs(Materials.ConductiveIron.getMolten(144L)).duration(10 * SECONDS).eut(256)
@@ -115,7 +115,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemMEConduit", 16),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 1))
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -125,7 +125,7 @@ public class ScriptEnderIO implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EnderIO.ID, "itemMEConduit", 16, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1L),
                         circuit2)
                 .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 2))
                 .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(960)
@@ -1776,7 +1776,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         ItemList.IC2_Item_Casing_Steel.get(2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
