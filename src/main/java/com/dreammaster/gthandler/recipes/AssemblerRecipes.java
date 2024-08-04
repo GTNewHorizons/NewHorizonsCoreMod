@@ -13,6 +13,8 @@ import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_W;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
+import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
+import static gtPlusPlus.core.material.ALLOY.STELLITE;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -2207,6 +2209,11 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L),
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1L))
                 .itemOutputs(getModItem(GregTech.ID, "gt.blockcasings10", 1, 0)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(16).addTo(assemblerRecipes);
+
+        // Laser Containment Casing
+        GT_Values.RA.stdBuilder().itemInputs(STELLITE.getPlate(6), NITINOL_60.getFrameBox(1))
+                .itemOutputs(getModItem(GregTech.ID, "gt.blockcasings10", 1, 1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
 
         // Iron Electromagnet
