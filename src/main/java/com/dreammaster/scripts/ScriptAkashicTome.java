@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.AkashicTome;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -16,7 +17,7 @@ public class ScriptAkashicTome implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList("akashictome", Backpack.ID);
+        return Arrays.asList(AkashicTome.ID, Backpack.ID);
     }
 
     @Override
