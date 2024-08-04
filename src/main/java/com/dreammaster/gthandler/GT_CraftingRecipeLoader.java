@@ -158,7 +158,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.LargeHPSteamTurbine.get(1L),
                 bits,
                 new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_IV, 'B',
-                        OrePrefixes.pipeLarge.get(Materials.Titanium), 'C', OrePrefixes.circuit.get(Materials.EV),
+                        OrePrefixes.pipeLarge.get(Materials.Titanium), 'C', OrePrefixes.circuit.get(Materials.IV),
                         'P', OrePrefixes.gearGt.get(Materials.Titanium) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.LargePlasmaTurbine.get(1L),
