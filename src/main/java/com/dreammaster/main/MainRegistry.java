@@ -29,6 +29,7 @@ import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.dreammaster.bartworksHandler.BWGlassAdder;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
+import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
 import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import com.dreammaster.baubles.OvenGlove;
@@ -222,7 +223,8 @@ public class MainRegistry {
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
         if (!ItemList.AddToItemManager(ItemManager)
-                | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))) {
+                | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))
+                | !(!BartWorks.isModLoaded() || BioItemLoader.preInit())) {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
         }
