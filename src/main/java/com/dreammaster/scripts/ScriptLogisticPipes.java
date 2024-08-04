@@ -158,7 +158,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.itemModule", 4, 1, missing),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UlV, 2L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 1L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 20, missing),
                             GT_Utility.getIntegratedCircuit(18))
