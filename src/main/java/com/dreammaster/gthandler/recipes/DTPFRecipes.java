@@ -459,7 +459,7 @@ public class DTPFRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateAbyssalAlloy", 24L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemScrewBotmium", 16L),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 1L))
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1L))
                     .itemOutputs(ItemList.Tesseract.get(4)).fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(1000))
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000 / 2))
                     .duration(40 * SECONDS).eut(32_000_000).metadata(COIL_HEAT, infinity_heat)

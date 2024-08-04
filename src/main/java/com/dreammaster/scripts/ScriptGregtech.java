@@ -1217,7 +1217,7 @@ public class ScriptGregtech implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Electric_Piston_EV.get(2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2),
                         ItemList.Electric_Motor_EV.get(2, missing),
                         ItemList.Hull_EV.get(1, missing),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, missing, 1L),

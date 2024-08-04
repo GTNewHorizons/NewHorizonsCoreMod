@@ -44,7 +44,7 @@ public class ScriptAFSU implements IScriptLoader {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
                         ItemList.Energy_LapotronicOrb.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AFSU.ID, "ALC", 1)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
