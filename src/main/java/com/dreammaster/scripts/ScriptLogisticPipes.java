@@ -1172,7 +1172,6 @@ public class ScriptLogisticPipes implements IScriptLoader {
                     .itemInputs(
                             ItemList.Transformer_MV_LV.get(1L),
                             getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
-                            getModItem(LogisticsPipes.ID, "item.PipeItemsLVLogistics", 4, 0, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                             GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Copper, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 8L),
@@ -1196,7 +1195,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsLVLogistics", 4, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Electrum, 8L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 4L),
@@ -1212,7 +1211,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Hull_LV.get(1L),
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         ItemList.Electric_Piston_LV.get(1L),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsLVLogistics", 1, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
@@ -1226,7 +1225,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         ItemList.Hull_LV.get(1L),
                         getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10, missing),
                         ItemList.Electric_Piston_LV.get(1L),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsLVLogistics", 1, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 1, 0, missing),
                         getModItem(LogisticsPipes.ID, "item.itemModule", 1, 600, missing),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Copper, 2L),
@@ -1248,7 +1247,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_MV.get(1L),
-                        getModItem(LogisticsPipes.ID, "item.PipeItemsLVLogistics", 4, 0, missing),
+                        getModItem(LogisticsPipes.ID, "item.PipeItemsBasicLogistics", 4, 0, missing),
                         ItemList.Sensor_MV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 8L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
@@ -1382,7 +1381,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 2, missing),
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 1, missing),
                 "screwAluminium",
-                "circuitMV",
+                "circuitGood",
                 "screwAluminium",
                 getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 0, missing),
                 "craftingToolScrewdriver",
