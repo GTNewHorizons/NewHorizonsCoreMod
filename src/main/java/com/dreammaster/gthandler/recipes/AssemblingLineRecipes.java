@@ -1012,74 +1012,74 @@ public class AssemblingLineRecipes implements Runnable {
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
                             GT_OreDictUnificator
-                                    .get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuhvwire, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Ledox, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CallistoIce, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.EnrichedHolmium, 4),
+                                    .get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuhvwire, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Ledox, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CallistoIce, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.EnrichedHolmium, 16),
                             GT_OreDictUnificator
-                                    .get(OrePrefixes.plate, Materials.Longasssuperconductornameforuhvwire, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ledox, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnrichedHolmium, 4),
+                                    .get(OrePrefixes.plate, Materials.Longasssuperconductornameforuhvwire, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ledox, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnrichedHolmium, 16),
                             ItemList.Field_Generator_UEV.get(1),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 4))
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 16))
                     .fluidInputs(
-                            Materials.Longasssuperconductornameforuhvwire.getMolten(8 * 144),
-                            Materials.Ledox.getMolten(8 * 144),
-                            Materials.CallistoIce.getMolten(8 * 144),
-                            MaterialsUEVplus.ExcitedDTRC.getFluid(1000L))
-                    .itemOutputs(ItemList.BlockQuarkContainmentCasing.get(1)).duration(60 * SECONDS)
+                            Materials.Longasssuperconductornameforuhvwire.getMolten(32 * 144),
+                            Materials.Ledox.getMolten(32 * 144),
+                            Materials.CallistoIce.getMolten(32 * 144),
+                            MaterialsUEVplus.ExcitedDTRC.getFluid(4000L))
+                    .itemOutputs(ItemList.BlockQuarkContainmentCasing.get(4)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
 
             // Femtometer-calibrated particle beam casing
             GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.CHARM))
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 16),
                             ItemList.Field_Generator_UEV.get(1),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 4))
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 16))
                     .fluidInputs(
-                            Materials.Infinity.getMolten(8 * 144),
-                            Materials.Tritanium.getMolten(8 * 144),
-                            new FluidStack(solderUEV, 8 * 144),
-                            MaterialsUEVplus.ExcitedDTRC.getFluid(1000L))
-                    .itemOutputs(ItemList.BlockQuarkReleaseChamber.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UIV)
+                            Materials.Infinity.getMolten(32 * 144),
+                            Materials.Tritanium.getMolten(32 * 144),
+                            new FluidStack(solderUEV, 32 * 144),
+                            MaterialsUEVplus.ExcitedDTRC.getFluid(4000L))
+                    .itemOutputs(ItemList.BlockQuarkReleaseChamber.get(4)).duration(60 * SECONDS).eut(TierEU.RECIPE_UIV)
                     .addTo(AssemblyLine);
 
             // Particle beam guidance pipe casing
             GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.BOTTOM))
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Bedrockium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Infinity, 16),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Bedrockium, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Infinity, 64),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 64),
                             GT_OreDictUnificator
-                                    .get(OrePrefixes.foil, Materials.Longasssuperconductornameforuhvwire, 16),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 16),
+                                    .get(OrePrefixes.foil, Materials.Longasssuperconductornameforuhvwire, 64),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 64),
                             ItemList.Field_Generator_UEV.get(1),
-                            ItemList.Tesseract.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 4))
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 16))
                     .fluidInputs(
-                            Materials.Infinity.getMolten(8 * 144),
-                            Materials.Tritanium.getMolten(8 * 144),
-                            new FluidStack(solderUEV, 8 * 144),
-                            MaterialsUEVplus.ExcitedDTRC.getFluid(1000L))
-                    .itemOutputs(ItemList.BlockQuarkPipe.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UIV)
+                            Materials.Infinity.getMolten(32 * 144),
+                            Materials.Tritanium.getMolten(32 * 144),
+                            new FluidStack(solderUEV, 32 * 144),
+                            MaterialsUEVplus.ExcitedDTRC.getFluid(4000L))
+                    .itemOutputs(ItemList.BlockQuarkPipe.get(4)).duration(60 * SECONDS).eut(TierEU.RECIPE_UIV)
                     .addTo(AssemblyLine);
         }
 
