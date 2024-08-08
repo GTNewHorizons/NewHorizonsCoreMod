@@ -1000,7 +1000,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 8),
                             GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 64))
                     .fluidInputs(
-                            Materials.SuperconductorUHV.getMolten(64 * 144),
+                            Materials.Longasssuperconductornameforuhvwire.getMolten(64 * 144),
                             Materials.Infinity.getMolten(64 * 144),
                             new FluidStack(solderUEV, 64 * 144),
                             Materials.Lubricant.getFluid(128000))
