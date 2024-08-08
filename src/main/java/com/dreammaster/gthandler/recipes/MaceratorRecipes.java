@@ -534,7 +534,7 @@ public class MaceratorRecipes implements Runnable {
             GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 0))
                     .itemOutputs(
                             CustomItemList.EnceladusIceDust.get(1L),
-                            CustomItemList.MysteriousCrystalDust.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1),
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
                     .outputChances(10000, 1500, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -552,7 +552,7 @@ public class MaceratorRecipes implements Runnable {
             GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 3))
                     .itemOutputs(
                             CustomItemList.EnceladusIceDust.get(1L),
-                            CustomItemList.MysteriousCrystalDust.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 1),
                             GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1))
                     .outputChances(10000, 1500, 500, 250).duration(20 * SECONDS).eut(TierEU.RECIPE_HV)

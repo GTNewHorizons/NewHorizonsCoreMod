@@ -255,7 +255,7 @@ public class CentrifugeRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.EnceladusIceDust.get(36L))
                 .itemOutputs(
-                        CustomItemList.MysteriousCrystalDust.get(9L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Chrome, 9L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 9L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ledox, 4L),

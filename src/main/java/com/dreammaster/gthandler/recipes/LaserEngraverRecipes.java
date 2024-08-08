@@ -46,14 +46,14 @@ public class LaserEngraverRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MysteriousCrystalPlate.get(9),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 9L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
                 .itemOutputs(CustomItemList.MysteriousCrystal.get(1L)).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MysteriousCrystalPlate.get(9),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 9L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
                 .itemOutputs(CustomItemList.MysteriousCrystal.get(1L)).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
