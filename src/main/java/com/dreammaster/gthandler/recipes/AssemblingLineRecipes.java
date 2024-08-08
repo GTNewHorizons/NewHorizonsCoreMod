@@ -40,6 +40,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class AssemblingLineRecipes implements Runnable {
@@ -981,6 +982,105 @@ public class AssemblingLineRecipes implements Runnable {
                             Materials.Lubricant.getFluid(128000))
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitDegasifier.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_UEV).addTo(AssemblyLine);
+
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade7PurifiedWater.getCells(1))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 16),
+                            ItemList.BlockQuarkContainmentCasing.get(8),
+                            ItemList.BlockQuarkReleaseChamber.get(8),
+                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_UEV.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Infinity, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.CosmicNeutronium, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 16),
+                            ItemList.Electric_Motor_UEV.get(8),
+                            ItemList.Electric_Pump_UEV.get(8),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 8),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 64))
+                    .fluidInputs(
+                            Materials.SuperconductorUHV.getMolten(64 * 144),
+                            Materials.Infinity.getMolten(64 * 144),
+                            new FluidStack(solderUEV, 64 * 144),
+                            Materials.Lubricant.getFluid(128000))
+                    .itemOutputs(ItemList.Machine_Multi_PurificationUnitParticleExtractor.get(1)).duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
+
+            // Quark exclusion casing
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.STRANGE))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator
+                                    .get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuhvwire, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Ledox, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CallistoIce, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.EnrichedHolmium, 4),
+                            GT_OreDictUnificator
+                                    .get(OrePrefixes.plate, Materials.Longasssuperconductornameforuhvwire, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Ledox, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnrichedHolmium, 4),
+                            ItemList.Field_Generator_UEV.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 4))
+                    .fluidInputs(
+                            Materials.Longasssuperconductornameforuhvwire.getMolten(8 * 144),
+                            Materials.Ledox.getMolten(8 * 144),
+                            Materials.CallistoIce.getMolten(8 * 144),
+                            MaterialsUEVplus.ExcitedDTRC.getFluid(1000L))
+                    .itemOutputs(ItemList.BlockQuarkContainmentCasing.get(1)).duration(60 * SECONDS)
+                    .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
+
+            // Femtometer-calibrated particle beam casing
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.CHARM))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Tritanium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 4),
+                            ItemList.Field_Generator_UEV.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 2),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 4))
+                    .fluidInputs(
+                            Materials.Infinity.getMolten(8 * 144),
+                            Materials.Tritanium.getMolten(8 * 144),
+                            new FluidStack(solderUEV, 8 * 144),
+                            MaterialsUEVplus.ExcitedDTRC.getFluid(1000L))
+                    .itemOutputs(ItemList.BlockQuarkReleaseChamber.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UIV)
+                    .addTo(AssemblyLine);
+
+            // Particle beam guidance pipe casing
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.BOTTOM))
+                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Bedrockium, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Infinity, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 16),
+                            GT_OreDictUnificator
+                                    .get(OrePrefixes.foil, Materials.Longasssuperconductornameforuhvwire, 16),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 16),
+                            ItemList.Field_Generator_UEV.get(1),
+                            ItemList.Tesseract.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 4),
+                            GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 4))
+                    .fluidInputs(
+                            Materials.Infinity.getMolten(8 * 144),
+                            Materials.Tritanium.getMolten(8 * 144),
+                            new FluidStack(solderUEV, 8 * 144),
+                            MaterialsUEVplus.ExcitedDTRC.getFluid(1000L))
+                    .itemOutputs(ItemList.BlockQuarkPipe.get(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_UIV)
+                    .addTo(AssemblyLine);
         }
 
         // Piko Circuit

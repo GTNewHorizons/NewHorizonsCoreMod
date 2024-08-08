@@ -2114,6 +2114,61 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.BlockPlasmaHeatingCasing.get(1)).eut(TierEU.RECIPE_ZPM).duration(10 * SECONDS)
                 .addTo(assemblerRecipes);
 
+        // Ph sensor hatch
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_LuV.get(1),
+                        ItemList.Cover_ActivityDetector.get(1),
+                        ItemList.Cover_Screen.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
+                        ItemList.Sensor_LuV.get(1),
+                        ItemList.Emitter_LuV.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(8 * 144)).itemOutputs(ItemList.Hatch_pHSensor.get(1))
+                .eut(TierEU.RECIPE_LuV).duration(10 * SECONDS).addTo(assemblerRecipes);
+
+        // Lens housing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hatch_Input_Bus_UV.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Neutronium, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(8 * 144)).itemOutputs(ItemList.Hatch_LensHousing.get(1))
+                .eut(TierEU.RECIPE_ZPM).duration(10 * SECONDS).addTo(assemblerRecipes);
+
+        // lens indicator hatch
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_UV.get(1),
+                        ItemList.Cover_ActivityDetector.get(1),
+                        ItemList.Cover_Screen.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.SuperconductorUHV, 1),
+                        ItemList.Sensor_UV.get(1),
+                        ItemList.Emitter_UV.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(8 * 144))
+                .itemOutputs(ItemList.Hatch_LensIndicator.get(1)).eut(TierEU.RECIPE_ZPM).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
+        // degasser control hatch
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_UV.get(1),
+                        ItemList.Cover_ActivityDetector.get(1),
+                        ItemList.Cover_Screen.get(1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 1),
+                        ItemList.Sensor_UHV.get(1),
+                        ItemList.Emitter_UHV.get(1),
+                        GT_Utility.getIntegratedCircuit(1))
+                .fluidInputs(Materials.SolderingAlloy.getMolten(8 * 144))
+                .itemOutputs(ItemList.Hatch_DegasifierControl.get(1)).eut(TierEU.RECIPE_UHV).duration(10 * SECONDS)
+                .addTo(assemblerRecipes);
+
         if (HardcoreEnderExpansion.isModLoaded()) {
             // Biome Compass
             GT_Values.RA.stdBuilder()
