@@ -465,7 +465,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         0,
                         "{aqua:0,terra:0,ignis:0,ordo:0,perditio:0,aer:0}",
                         missing),
-                new ItemStack(ConfigItems.itemResource, 1, 14),
+                new ItemStack(ConfigItems.itemShard, 1, WILDCARD),
                 "screwSteel",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
                 "screwSteel",
@@ -473,7 +473,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "screwSteel",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
                 "screwSteel",
-                new ItemStack(ConfigItems.itemResource, 1, 14));
+                new ItemStack(ConfigItems.itemShard, 1, WILDCARD));
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "resource", 1, 2, missing));
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing));
