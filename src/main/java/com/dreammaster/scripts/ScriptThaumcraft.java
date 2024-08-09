@@ -61,6 +61,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import thaumcraft.common.config.ConfigItems;
 
 public class ScriptThaumcraft implements IScriptLoader {
 
@@ -464,15 +465,15 @@ public class ScriptThaumcraft implements IScriptLoader {
                         0,
                         "{aqua:0,terra:0,ignis:0,ordo:0,perditio:0,aer:0}",
                         missing),
-                getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing),
-                "screwAluminium",
+                new ItemStack(ConfigItems.itemResource, 1, 14),
+                "screwSteel",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
-                "screwAluminium",
+                "screwSteel",
                 getModItem(Forestry.ID, "oakStick", 1, 0, missing),
-                "screwAluminium",
+                "screwSteel",
                 getModItem(Thaumcraft.ID, "WandCap", 1, 0, missing),
-                "screwAluminium",
-                getModItem(TwilightForest.ID, "item.nagaScale", 1, 0, missing));
+                "screwSteel",
+                new ItemStack(ConfigItems.itemResource, 1, 14));
 
         TCHelper.removeArcaneRecipe(getModItem(ThaumicBases.ID, "resource", 1, 2, missing));
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing));
@@ -537,11 +538,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                "screwSteel",
+                "screwIron",
                 'b',
                 "foilCopper",
                 'c',
-                "screwSteel",
+                "screwIron",
                 'd',
                 "foilCopper",
                 'e',
@@ -549,11 +550,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "foilCopper",
                 'g',
-                "screwSteel",
+                "screwIron",
                 'h',
                 "foilCopper",
                 'i',
-                "screwSteel");
+                "screwIron");
         TCHelper.addResearchPage(
                 "CAP_copper",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 3, missing))));
@@ -574,11 +575,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                "screwAluminium",
+                "screwSteel",
                 'b',
                 "foilGold",
                 'c',
-                "screwAluminium",
+                "screwSteel",
                 'd',
                 "foilGold",
                 'e',
@@ -586,11 +587,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "foilGold",
                 'g',
-                "screwAluminium",
+                "screwSteel",
                 'h',
                 "foilGold",
                 'i',
-                "screwAluminium");
+                "screwSteel");
         TCHelper.addResearchPage(
                 "CAP_gold",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 1, missing))));
@@ -610,11 +611,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                "screwStainlessSteel",
+                "screwSteel",
                 'b',
                 "foilSilver",
                 'c',
-                "screwStainlessSteel",
+                "screwSteel",
                 'd',
                 "foilSilver",
                 'e',
@@ -622,11 +623,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "foilSilver",
                 'g',
-                "screwStainlessSteel",
+                "screwSteel",
                 'h',
                 "foilSilver",
                 'i',
-                "screwStainlessSteel");
+                "screwSteel");
         TCHelper.addResearchPage(
                 "CAP_silver",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 5, missing))));
@@ -2319,7 +2320,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("sano"), 16).add(Aspect.getAspect("aqua"), 32)
                         .add(Aspect.getAspect("machina"), 8),
                 getModItem(Thaumcraft.ID, "blockJar", 1, 0, missing),
-                new ItemStack[] { CustomItemList.StainlessSteelBars.get(1L),
+                new ItemStack[] { CustomItemList.AluminiumBars.get(1L),
                         getModItem(Minecraft.ID, "quartz_block", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
@@ -2416,7 +2417,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 1, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 2, missing),
                 "itemCasingGold",
-                "lensDiamond",
+                new ItemStack(ConfigItems.itemShard, 1, 6),
                 "itemCasingGold",
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 3, missing),
                 getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing),
@@ -2813,7 +2814,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'd',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'e',
-                getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
+                getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing),
                 'f',
                 getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                 'g',
@@ -2935,23 +2936,23 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                "screwSteel",
+                "screwIron",
                 'b',
                 CustomItemList.SteelBars.get(1L),
                 'c',
-                "screwSteel",
+                "screwIron",
                 'd',
                 "wireGt01RedAlloy",
                 'e',
-                CustomItemList.AluminiumBars.get(1L),
+                CustomItemList.SteelBars.get(1L),
                 'f',
                 "craftingToolScrewdriver",
                 'g',
-                "screwSteel",
+                "screwIron",
                 'h',
                 CustomItemList.SteelBars.get(1L),
                 'i',
-                "screwSteel");
+                "screwIron");
         TCHelper.addResearchPage(
                 "GRATE",
                 new ResearchPage(
@@ -3734,11 +3735,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 26, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing), });
         TCHelper.setResearchAspects(
@@ -3758,10 +3759,10 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                         getModItem(Minecraft.ID, "feather", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         getModItem(TwilightForest.ID, "item.tfFeather", 1, 0, missing), });
         TCHelper.setResearchAspects(
@@ -4106,14 +4107,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("iter"), 16).add(Aspect.getAspect("motus"), 16)
                         .add(Aspect.getAspect("spiritus"), 16).add(Aspect.getAspect("vacuos"), 32),
                 getModItem(Thaumcraft.ID, "blockChestHungry", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.StainlessSteel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 1L),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemGolemPlacer", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.StainlessSteel, 1L), });
+                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L), });
         TCHelper.setResearchAspects(
                 "TRAVELTRUNK",
                 new AspectList().add(Aspect.getAspect("spiritus"), 12).add(Aspect.getAspect("vacuos"), 12)
@@ -5300,11 +5301,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                "screwTungstenSteel",
+                "screwStainlessSteel",
                 'b',
                 "foilVoid",
                 'c',
-                "screwTungstenSteel",
+                "screwStainlessSteel",
                 'd',
                 "foilVoid",
                 'e',
@@ -5312,11 +5313,11 @@ public class ScriptThaumcraft implements IScriptLoader {
                 'f',
                 "foilVoid",
                 'g',
-                "screwTungstenSteel",
+                "screwStainlessSteel",
                 'h',
                 "foilVoid",
                 'i',
-                "screwTungstenSteel");
+                "screwStainlessSteel");
         TCHelper.addResearchPage(
                 "CAP_void",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "WandCap", 1, 8, missing))));
@@ -5612,9 +5613,9 @@ public class ScriptThaumcraft implements IScriptLoader {
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
                         getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
-                        getModItem(Minecraft.ID, "ender_eye", 21, 0, missing),
+                        getModItem(Minecraft.ID, "ender_pearl", 21, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing),
-                        getModItem(Minecraft.ID, "ender_eye", 21, 0, missing),
+                        getModItem(Minecraft.ID, "ender_pearl", 21, 0, missing),
                         getModItem(ThaumicBases.ID, "knoseFragment", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 17, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
