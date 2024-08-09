@@ -2074,7 +2074,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'd',
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'e',
-                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 3, missing),
+                getModItem(TaintedMagic.ID, "ItemWandCap", 1, 1, missing),
                 'f',
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                 'g',

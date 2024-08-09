@@ -575,7 +575,7 @@ public class ScriptGadomancy implements IScriptLoader {
                 'a',
                 getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing),
                 'b',
-                "stickIridium",
+                "stickTungstenSteel",
                 'c',
                 getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing),
                 'd',
@@ -587,7 +587,7 @@ public class ScriptGadomancy implements IScriptLoader {
                 'g',
                 getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing),
                 'h',
-                "stickIridium",
+                "stickTungstenSteel",
                 'i',
                 getModItem(Thaumcraft.ID, "blockTube", 1, 6, missing));
         TCHelper.setResearchAspects(
@@ -605,11 +605,11 @@ public class ScriptGadomancy implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                "screwOsmiridium",
+                "screwTitanium",
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                 'c',
-                "screwOsmiridium",
+                "screwTitanium",
                 'd',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                 'e',
@@ -617,11 +617,11 @@ public class ScriptGadomancy implements IScriptLoader {
                 'f',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                 'g',
-                "stickIridium",
+                "stickTungstenSteel",
                 'h',
                 getModItem(Gadomancy.ID, "BlockAuraPylon", 1, 0, missing),
                 'i',
-                "stickIridium");
+                "stickTungstenSteel");
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GADOMANCY.KNOWLEDGE_BOOK",
                 getModItem(Gadomancy.ID, "BlockKnowledgeBook", 1, 0, missing),
