@@ -865,7 +865,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Adamantium, 8),
                             ItemList.BlockFlocculationCasing.get(8),
                             ItemList.Casing_Vent.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_ZPM.get(1),
+                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Trinium, 8),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Trinium, 4),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.NaquadahAlloy, 4),
