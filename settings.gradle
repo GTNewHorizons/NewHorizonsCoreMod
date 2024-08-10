@@ -1,7 +1,6 @@
 
 pluginManagement {
     repositories {
-        mavenLocal()
         maven {
             // RetroFuturaGradle
             name "GTNH Maven"
@@ -13,6 +12,7 @@ pluginManagement {
         }
         gradlePluginPortal()
         mavenCentral()
+        mavenLocal()
     }
 }
 
