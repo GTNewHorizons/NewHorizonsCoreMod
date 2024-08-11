@@ -32,6 +32,7 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.gthandler.CustomItemList;
 import com.github.technus.tectech.recipe.TT_recipeAdder;
 
+import appeng.api.AEApi;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -865,7 +866,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Adamantium, 8),
                             ItemList.BlockFlocculationCasing.get(8),
                             ItemList.Casing_Vent.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_ZPM.get(1),
+                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Trinium, 8),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Trinium, 4),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.NaquadahAlloy, 4),
@@ -1125,5 +1126,25 @@ public class AssemblingLineRecipes implements Runnable {
                 20000,
                 (int) TierEU.RECIPE_UMV);
 
+        // Miniature Wormhole Generator
+        TT_recipeAdder.addResearchableAssemblylineRecipe(
+                AEApi.instance().definitions().materials().singularity().maybeStack(1).get(),
+                64000,
+                64,
+                200000,
+                4,
+                new Object[] { com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1),
+                        AEApi.instance().definitions().materials().singularity().maybeStack(4).get(),
+                        ItemList.Field_Generator_UHV.get(4), ItemList.Emitter_UHV.get(4),
+                        ItemList.Casing_Fusion_Coil.get(4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 2),
+                        com.github.technus.tectech.thing.CustomItemList.LASERpipe.get(64), },
+                new FluidStack[] { new FluidStack(Materials.Neutronium.mStandardMoltenFluid, 144 * 12),
+                        new FluidStack(Materials.Tritanium.mStandardMoltenFluid, 144 * 12),
+                        new FluidStack(solderIndalloy, 144 * 24),
+                        new FluidStack(Materials.SuperCoolant.mFluid, 144 * 48), },
+                ItemList.WormholeGenerator.get(1L),
+                60 * SECONDS,
+                (int) TierEU.RECIPE_UEV);
     }
 }
