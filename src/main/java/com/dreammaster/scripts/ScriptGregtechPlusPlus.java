@@ -377,7 +377,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         ItemList.EnergisedTesseract.get(1),
                         ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0))
                 .itemOutputs(GT_OreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
-                .outputChances(25_00, 25_00).fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
+                .fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
                 .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
                 .metadata(QFT_FOCUS_TIER, 4).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(quantumForceTransformerRecipes);
