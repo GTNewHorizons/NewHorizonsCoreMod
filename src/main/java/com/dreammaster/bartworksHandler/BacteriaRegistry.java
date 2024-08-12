@@ -602,6 +602,6 @@ public class BacteriaRegistry {
                 (int) TierEU.RECIPE_ZPM,
                 CLEANROOM);
 
-        new BioItemLoader();
+        BioItemLoader.registerRecipes();
     }
 }

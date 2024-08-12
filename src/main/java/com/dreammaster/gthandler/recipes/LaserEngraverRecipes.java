@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GT_RecipeConstants.WaferEngravingRecipes;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -45,14 +46,14 @@ public class LaserEngraverRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MysteriousCrystalPlate.get(9),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 9L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
                 .itemOutputs(CustomItemList.MysteriousCrystal.get(1L)).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.MysteriousCrystalPlate.get(9),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 9L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
                 .itemOutputs(CustomItemList.MysteriousCrystal.get(1L)).requiresCleanRoom().duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
@@ -104,61 +105,61 @@ public class LaserEngraverRecipes implements Runnable {
                         ItemList.Circuit_Silicon_Wafer2.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(1L)).requiresCleanRoom().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer3.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(4L)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_EV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer4.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(8L)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_IV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer5.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NAND.get(16L)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LuV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_LuV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer2.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NOR.get(1L)).requiresCleanRoom().duration(45 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_HV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer3.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NOR.get(4L)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_EV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_EV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer4.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NOR.get(8L)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_IV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer5.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NOR.get(16L)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LuV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_LuV).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Silicon_Wafer3.get(1L), CustomItemList.ReinforcedGlassLense.get(0))
                 .itemOutputs(CustomItemList.WaferTier3.get(1L)).duration(10 * SECONDS).eut(1024)
-                .addTo(laserEngraverRecipes);
+                .addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -193,20 +194,6 @@ public class LaserEngraverRecipes implements Runnable {
 
             }
 
-            GT_Values.RA.stdBuilder().itemInputs(WerkstoffLoader.Hedenbergit.get(OrePrefixes.lens, 0))
-                    .fluidInputs(Materials.Grade3PurifiedWater.getFluid(1000L))
-                    .fluidOutputs(
-                            Materials.Grade4PurifiedWater.getFluid(900L),
-                            FluidRegistry.getFluidStack("bacterialsludge", 50))
-                    .duration(4 * MINUTES + 10 * SECONDS).eut(245_760).requiresCleanRoom().noOptimize()
-                    .addTo(laserEngraverRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(WerkstoffLoader.BArTiMaEuSNeK.get(OrePrefixes.lens, 0))
-                    .fluidInputs(Materials.Grade5PurifiedWater.getFluid(1000L))
-                    .fluidOutputs(Materials.Grade6PurifiedWater.getFluid(900L), Materials.Water.getGas(8000L))
-                    .duration(4 * MINUTES + 10 * SECONDS).eut(983_040).requiresCleanRoom().noOptimize()
-                    .addTo(laserEngraverRecipes);
-
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1)),
@@ -238,28 +225,28 @@ public class LaserEngraverRecipes implements Runnable {
                         ItemList.Circuit_Silicon_Wafer6.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
                 .itemOutputs(CustomItemList.RawPicoWafer.get(16)).requiresCleanRoom().duration(5 * MINUTES).eut(1887440)
-                .addTo(laserEngraverRecipes);
+                .addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer6.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_SoC2.get(32)).requiresCleanRoom().duration(45 * 20)
-                .eut(TierEU.RECIPE_ZPM).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_ZPM).addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer6.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Sapphire, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_QPIC.get(16)).requiresCleanRoom().duration(120 * 20).eut(1887440)
-                .addTo(laserEngraverRecipes);
+                .addTo(WaferEngravingRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Silicon_Wafer6.get(1L),
                         GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NPIC.get(32)).requiresCleanRoom().duration(60 * 20)
-                .eut(TierEU.RECIPE_UV).addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(WaferEngravingRecipes);
 
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT

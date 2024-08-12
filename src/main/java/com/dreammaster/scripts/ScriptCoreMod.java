@@ -1295,7 +1295,7 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(
                 CustomItemList.ReinforcedNeutroniumIronPlate.get(1L),
                 getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaNeutroniumSunnariumAlloy", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.MysteriousCrystalPlate", 1, 0, missing),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 2L),
                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(CustomItemList.IrradiantReinforcedNeutroniumPlate.get(1L))

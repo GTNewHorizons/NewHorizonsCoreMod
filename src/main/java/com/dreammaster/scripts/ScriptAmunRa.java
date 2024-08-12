@@ -314,7 +314,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ItemList.Hull_UV.get(1),
                         new ItemStack(simpleItem, 32, 3),
                         ItemList.Field_Generator_UV.get(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.SuperconductorUHV), 2 },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 2 },
                         new Object[] { OrePrefixes.gearGt.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(machines3, 1, 1)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
@@ -347,7 +347,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         Materials.Neutronium.getPlates(16),
                         new Object[] { OrePrefixes.gearGt.get("EnrichedNaquadahAlloy"), 4 },
                         new ItemStack(baseItem, 4, 27),
-                        new Object[] { OrePrefixes.circuit.get(Materials.Infinite), 2 },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2 },
                         ItemList.Sensor_UHV.get(1),
                         ItemList.Emitter_UHV.get(1))
                 .fluidInputs(new FluidStack(mutatedLivingSolder, 4 * INGOTS))
@@ -357,7 +357,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 .itemInputs(
                         new ItemStack(simpleItem, 16, 3),
                         GameRegistry.findItemStack(GoodGenerator.ID, "radiationProtectionPlate", 4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.SuperconductorUHV), 1 },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UV), 1 },
                         new Object[] { OrePrefixes.gearGtSmall.get("EnrichedNaquadahAlloy"), 1 },
                         new ItemStack(baseItem, 1, 26))
                 .itemOutputs(new ItemStack(baseItem, 1, 30)).duration(20 * SECONDS).eut(TierEU.RECIPE_UV)
@@ -395,7 +395,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new Object[] { ItemList.Hull_MAX.get(1), new ItemStack(baseItem, 32, 28),
                         com.dreammaster.item.ItemList.IrradiantReinforcedNeutroniumPlate.getIS(64),
                         new ItemStack(GameRegistry.findItem(GalaxySpace.ID, "item.RocketControlComputer"), 4, 8),
-                        new Object[] { OrePrefixes.circuit.get(Materials.Infinite), 16 }, ItemList.Sensor_UHV.get(8),
+                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 16 }, ItemList.Sensor_UHV.get(8),
                         ItemList.Emitter_UHV.get(8) },
                 new FluidStack[] { Materials.Infinity.getMolten(100 * INGOTS),
                         FluidRegistry.getFluidStack("molten.enriched naquadah alloy", 256 * INGOTS),
@@ -413,8 +413,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
                         com.dreammaster.item.ItemList.HeavyDutyRocketEngineTier4.getIS(64),
                         new Object[] { OrePrefixes.pipeHuge.get(Materials.Infinity), 8 },
-                        ItemList.Electric_Pump_UHV.get(16),
-                        new Object[] { OrePrefixes.circuit.get(Materials.Infinite), 8 },
+                        ItemList.Electric_Pump_UHV.get(16), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 8 },
                         new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(50 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
@@ -451,8 +450,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new Object[] { new ItemStack(dysonSwarmParts, 16, 3), new ItemStack(dysonSwarmParts, 16, 3),
                         new ItemStack(dysonSwarmParts, 16, 3), new ItemStack(dysonSwarmParts, 16, 3),
                         ItemList.Quantum_Tank_EV.get(2), ItemList.Electric_Pump_UHV.get(4),
-                        new Object[] { OrePrefixes.circuit.get(Materials.Infinite), 2 },
-                        new ItemStack(baseItem, 1, 27) },
+                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2 }, new ItemStack(baseItem, 1, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(50 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },

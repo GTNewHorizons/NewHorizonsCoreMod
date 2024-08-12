@@ -139,24 +139,24 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 1, missing),
                 "cableGt01Gold",
-                "batteryElite",
+                "batteryAdvanced",
                 "cableGt01Gold",
-                "batteryElite",
+                "batteryAdvanced",
                 ItemList.Hull_HV.get(1L),
-                "batteryElite",
+                "batteryAdvanced",
                 "plateStainlessSteel",
-                "batteryElite",
+                "batteryAdvanced",
                 "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing),
                 "cableGt01TungstenSteel",
-                "batteryMaster",
+                "batteryData",
                 "cableGt01TungstenSteel",
-                "batteryMaster",
+                "batteryData",
                 ItemList.Hull_EV.get(1L),
-                "batteryMaster",
+                "batteryData",
                 "circuitData",
-                "batteryMaster",
+                "batteryData",
                 "circuitData");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
@@ -691,7 +691,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         missing),
                 "plateAlloyIridium",
                 "circuitMaster",
-                "batteryMaster",
+                "batteryData",
                 "circuitMaster",
                 "craftingToolFile",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing),
@@ -716,7 +716,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 CustomItemList.Display.get(1L),
                 "circuitAdvanced",
                 "cableGt01Gold",
-                "batteryElite",
+                "batteryAdvanced",
                 "cableGt01Gold");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0, missing),
@@ -727,7 +727,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 CustomItemList.Display.get(1L),
                 "circuitData",
                 "cableGt01Nichrome",
-                "batteryMaster",
+                "batteryData",
                 "cableGt01Nichrome");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing),
@@ -1463,14 +1463,14 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_Screen.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemCropnalyzer", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(1 * MINUTES).eut(16)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Cover_Screen.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 2))
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemToolMEter", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).duration(30 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
@@ -1489,35 +1489,35 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Silver, 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFreq", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(1 * MINUTES).eut(4)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         getModItem(IndustrialCraft2.ID, "reactorCoolantTriple", 1, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1 * MINUTES).eut(16)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 2, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(1 * MINUTES).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1 * MINUTES).eut(16)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         ItemList.Electric_Piston_LV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1 * MINUTES).eut(16)
@@ -1531,14 +1531,14 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1 * MINUTES).eut(16)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         ItemList.Conveyor_Module_LV.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 144)).duration(1 * MINUTES).eut(16)
@@ -1690,7 +1690,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L),
                         getModItem(IndustrialCraft2.ID, "itemBatREDischarged", 3, 0, missing),
                         ItemList.Hull_MV.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Basic, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing),
                         ItemList.Electric_Motor_MV.get(1L),
                         GT_Utility.getIntegratedCircuit(1))
