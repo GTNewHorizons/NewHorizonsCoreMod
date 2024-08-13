@@ -2290,7 +2290,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Robot_Arm_UV.get(2),
                         ItemList.Electric_Piston_UV.get(2),
                         ItemList.Hull_UV.get(1))
-                .itemOutputs(CustomItemList.AcceleratorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.AcceleratorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         if (KekzTech.isModLoaded()) {
             // LSC controller
@@ -4353,7 +4353,7 @@ public class AssemblerRecipes implements Runnable {
                 // Engineering Processor
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
                 CustomItemList.MysteriousCrystal.get(1L),
-                CustomItemList.AcceleratorLuV.get(1L),
+                ItemList.AcceleratorLuV.get(1L),
                 GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 56)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

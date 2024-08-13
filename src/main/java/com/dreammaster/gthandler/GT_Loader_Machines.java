@@ -399,14 +399,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UIV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_EV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_HV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_IV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_LV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_MV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WORLD_ACCELERATOR_ZPM;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
@@ -452,10 +444,10 @@ import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.accelerator.GT_MetaTileEntity_WorldAccelerator;
 import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
 import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
 import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
@@ -542,7 +534,6 @@ public class GT_Loader_Machines {
         registerArcFurnace();
         registerCentrifuge();
         registerPlasmaArcFurnace();
-        registerWorldAccelerator();
         registerBrewery();
         registerCanningMachine();
         registerChemicalBath();
@@ -789,56 +780,56 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'P', ItemList.Electric_Pump_ZPM });
 
         GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorLV.get(1L),
+                ItemList.AcceleratorLV.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LV, 'M', ItemList.Electric_Motor_LV, 'P',
                         ItemList.Electric_Pump_LV, 'B', ItemList.Hull_LV, 'C', ItemList.Conveyor_Module_LV, 'I',
                         ItemList.Electric_Piston_LV });
 
         GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorMV.get(1L),
+                ItemList.AcceleratorMV.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_MV, 'M', ItemList.Electric_Motor_MV, 'P',
                         ItemList.Electric_Pump_MV, 'B', ItemList.Hull_MV, 'C', ItemList.Conveyor_Module_MV, 'I',
                         ItemList.Electric_Piston_MV });
 
         GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorHV.get(1L),
+                ItemList.AcceleratorHV.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_HV, 'M', ItemList.Electric_Motor_HV, 'P',
                         ItemList.Electric_Pump_HV, 'B', ItemList.Hull_HV, 'C', ItemList.Conveyor_Module_HV, 'I',
                         ItemList.Electric_Piston_HV });
 
         GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorEV.get(1L),
+                ItemList.AcceleratorEV.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_EV, 'M', ItemList.Electric_Motor_EV, 'P',
                         ItemList.Electric_Pump_EV, 'B', ItemList.Hull_EV, 'C', ItemList.Conveyor_Module_EV, 'I',
                         ItemList.Electric_Piston_EV });
 
         GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorIV.get(1L),
+                ItemList.AcceleratorIV.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_IV, 'M', ItemList.Electric_Motor_IV, 'P',
                         ItemList.Electric_Pump_IV, 'B', ItemList.Hull_IV, 'C', ItemList.Conveyor_Module_IV, 'I',
                         ItemList.Electric_Piston_IV });
 
         GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorLuV.get(1L),
+                ItemList.AcceleratorLuV.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LuV, 'M', ItemList.Electric_Motor_LuV, 'P',
                         ItemList.Electric_Pump_LuV, 'B', ItemList.Hull_LuV, 'C', ItemList.Conveyor_Module_LuV, 'I',
                         ItemList.Electric_Piston_LuV });
 
         GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorZPM.get(1L),
+                ItemList.AcceleratorZPM.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_ZPM, 'M', ItemList.Electric_Motor_ZPM, 'P',
                         ItemList.Electric_Pump_ZPM, 'B', ItemList.Hull_ZPM, 'C', ItemList.Conveyor_Module_ZPM, 'I',
                         ItemList.Electric_Piston_ZPM });
 
         GT_ModHandler.addCraftingRecipe(
-                CustomItemList.AcceleratorUV.get(1L),
+                ItemList.AcceleratorUV.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_UV, 'M', ItemList.Electric_Motor_UV, 'P',
                         ItemList.Electric_Pump_UV, 'B', ItemList.Hull_UV, 'C', ItemList.Conveyor_Module_UV, 'I',
@@ -1786,10 +1777,15 @@ public class GT_Loader_Machines {
                         SoundResource.IC2_MACHINES_INDUCTION_LOOP,
                         SpecialEffects.NONE,
                         "ALLOY_SMELTER",
-                        new Object[] { "ECE", "CMC", "WCW", 'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL, 'E',
-                                GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                                GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'C',
-                                GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil() }).getStackForm(1L));
+                        null).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.AlloySmelterLuV.get(1L),
+                bitsd,
+                new Object[] { "ECE", "CMC", "WCW", 'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL, 'E',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil()});
 
         CustomItemList.AlloySmelterZPM.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
@@ -6256,58 +6252,6 @@ public class GT_Loader_Machines {
                                 GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'T',
                                 GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                                 OrePrefixes.cell.get(Materials.Graphite) }).getStackForm(1L));
-    }
-
-    private void registerWorldAccelerator() {
-        CustomItemList.AcceleratorLV.set(
-                new GT_MetaTileEntity_WorldAccelerator(
-                        WORLD_ACCELERATOR_LV.ID,
-                        "basicmachine.accelerator.tier.01",
-                        "Basic World Accelerator",
-                        1).getStackForm(1L));
-        CustomItemList.AcceleratorMV.set(
-                new GT_MetaTileEntity_WorldAccelerator(
-                        WORLD_ACCELERATOR_MV.ID,
-                        "basicmachine.accelerator.tier.02",
-                        "Advanced World Accelerator",
-                        2).getStackForm(1L));
-        CustomItemList.AcceleratorHV.set(
-                new GT_MetaTileEntity_WorldAccelerator(
-                        WORLD_ACCELERATOR_HV.ID,
-                        "basicmachine.accelerator.tier.03",
-                        "Advanced World Accelerator II",
-                        3).getStackForm(1L));
-        CustomItemList.AcceleratorEV.set(
-                new GT_MetaTileEntity_WorldAccelerator(
-                        WORLD_ACCELERATOR_EV.ID,
-                        "basicmachine.accelerator.tier.04",
-                        "Advanced World Accelerator III",
-                        4).getStackForm(1L));
-        CustomItemList.AcceleratorIV.set(
-                new GT_MetaTileEntity_WorldAccelerator(
-                        WORLD_ACCELERATOR_IV.ID,
-                        "basicmachine.accelerator.tier.05",
-                        "Advanced World Accelerator IV",
-                        5).getStackForm(1L));
-        CustomItemList.AcceleratorLuV.set(
-                new GT_MetaTileEntity_WorldAccelerator(
-                        WORLD_ACCELERATOR_LuV.ID,
-                        "basicmachine.accelerator.tier.06",
-                        "Elite World Accelerator",
-                        6).getStackForm(1L));
-        CustomItemList.AcceleratorZPM.set(
-                new GT_MetaTileEntity_WorldAccelerator(
-                        WORLD_ACCELERATOR_ZPM.ID,
-                        "basicmachine.accelerator.tier.07",
-                        "Elite World Accelerator II",
-                        7).getStackForm(1L));
-        CustomItemList.AcceleratorUV.set(
-                new GT_MetaTileEntity_WorldAccelerator(
-                        WORLD_ACCELERATOR_UV.ID,
-                        "basicmachine.accelerator.tier.08",
-                        "Ultimate Time Anomaly",
-                        8).getStackForm(1L));
-
     }
 
     private void registerBrewery() {
