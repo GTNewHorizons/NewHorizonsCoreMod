@@ -7,20 +7,15 @@ import com.dreammaster.gthandler.nameRemover.NameRemover;
 import com.dreammaster.item.food.QuantumBread;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
-import gregtech.api.enums.MachineType;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OreDictNames;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.SoundResource;
 import gregtech.api.enums.TierEU;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe.SpecialEffects;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_Utility;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Massfabricator;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Replicator;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -28,35 +23,8 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.*;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
-import static gregtech.api.recipe.RecipeMaps.benderRecipes;
-import static gregtech.api.recipe.RecipeMaps.cannerRecipes;
-import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
-import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
-import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static gregtech.api.recipe.RecipeMaps.distilleryRecipes;
-import static gregtech.api.recipe.RecipeMaps.electroMagneticSeparatorRecipes;
-import static gregtech.api.recipe.RecipeMaps.electrolyzerRecipes;
-import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
-import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
-import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
-import static gregtech.api.recipe.RecipeMaps.furnaceRecipes;
-import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
-import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
-import static gregtech.api.recipe.RecipeMaps.latheRecipes;
-import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static gregtech.api.recipe.RecipeMaps.microwaveRecipes;
-import static gregtech.api.recipe.RecipeMaps.oreWasherRecipes;
-import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
-import static gregtech.api.recipe.RecipeMaps.polarizerRecipes;
-import static gregtech.api.recipe.RecipeMaps.recyclerRecipes;
-import static gregtech.api.recipe.RecipeMaps.sifterRecipes;
 import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
-import static gregtech.api.recipe.RecipeMaps.thermalCentrifugeRecipes;
-import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
@@ -68,7 +36,7 @@ public class GT_Loader_Machines {
     private Materials LuVMat2;
 
     public void run() {
-        LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
+        LuVMat2 = Materials.get("Rhodium-PlatedPalladium");
         registerAlloySmelter();
         registerMatterAmplifier();
         registerAssemblingMachine();
@@ -88,12 +56,10 @@ public class GT_Loader_Machines {
         registerLathe();
         registerPrecisionLaserEngraver();
         registerMacerator();
-        registerMatterFabricator();
         registerMicrowave();
         registerOreWashingPlant();
         registerPolarizer();
         registerRecycler();
-        registerReplicator();
         registerSiftingMachine();
         registerSlicingMachine();
         registerThermalCentrifuge();
@@ -1425,21 +1391,7 @@ public class GT_Loader_Machines {
     }
 
     private void registerAutoclave() {
-        CustomItemList.AutoclaveLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        AUTOCLAVE_LuV.ID,
-                        "basicmachine.autoclave.tier.06",
-                        "Elite Autoclave",
-                        6,
-                        MachineType.AUTOCLAVE.tooltipDescription(),
-                        autoclaveRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "AUTOCLAVE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AutoclaveLuV.get(1L),
@@ -1451,21 +1403,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
 
-        CustomItemList.AutoclaveZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        AUTOCLAVE_ZPM.ID,
-                        "basicmachine.autoclave.tier.07",
-                        "Elite Autoclave II",
-                        7,
-                        MachineType.AUTOCLAVE.tooltipDescription(),
-                        autoclaveRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "AUTOCLAVE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AutoclaveZPM.get(1L),
@@ -1477,21 +1415,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
 
-        CustomItemList.AutoclaveUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        AUTOCLAVE_UV.ID,
-                        "basicmachine.autoclave.tier.08",
-                        "Ultimate Pressure Cooker",
-                        8,
-                        MachineType.AUTOCLAVE.tooltipDescription(),
-                        autoclaveRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "AUTOCLAVE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AutoclaveUV.get(1L),
@@ -1503,21 +1427,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), });
 
-        CustomItemList.AutoclaveUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        AUTOCLAVE_UHV.ID,
-                        "basicmachine.autoclave.tier.09",
-                        "Epic Pressure Cooker",
-                        9,
-                        MachineType.AUTOCLAVE.tooltipDescription(),
-                        autoclaveRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "AUTOCLAVE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AutoclaveUHV.get(1L),
@@ -1529,21 +1439,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), });
 
-        CustomItemList.AutoclaveUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        AUTOCLAVE_UEV.ID,
-                        "basicmachine.autoclave.tier.10",
-                        "Epic Pressure Cooker II",
-                        10,
-                        MachineType.AUTOCLAVE.tooltipDescription(),
-                        autoclaveRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "AUTOCLAVE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AutoclaveUEV.get(1L),
@@ -1555,21 +1451,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), });
 
-        CustomItemList.AutoclaveUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        AUTOCLAVE_UIV.ID,
-                        "basicmachine.autoclave.tier.11",
-                        "Epic Pressure Cooker III",
-                        11,
-                        MachineType.AUTOCLAVE.tooltipDescription(),
-                        autoclaveRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "AUTOCLAVE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AutoclaveUIV.get(1L),
@@ -1581,21 +1463,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), });
 
-        CustomItemList.AutoclaveUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        AUTOCLAVE_UMV.ID,
-                        "basicmachine.autoclave.tier.12",
-                        "Epic Pressure Cooker IV",
-                        12,
-                        MachineType.AUTOCLAVE.tooltipDescription(),
-                        autoclaveRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "AUTOCLAVE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AutoclaveUMV.get(1L),
@@ -1610,21 +1478,7 @@ public class GT_Loader_Machines {
 
     private void registerBendingMachine() {
 
-        CustomItemList.BendingMachineLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        BENDING_MACHINE_LuV.ID,
-                        "basicmachine.bender.tier.06",
-                        "Elite Bending Machine",
-                        6,
-                        MachineType.BENDING_MACHINE.tooltipDescription(),
-                        benderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "BENDER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.BendingMachineLuV.get(1L),
@@ -1635,21 +1489,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
 
-        CustomItemList.BendingMachineZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        BENDING_MACHINE_ZPM.ID,
-                        "basicmachine.bender.tier.07",
-                        "Elite Bending Machine II",
-                        7,
-                        MachineType.BENDING_MACHINE.tooltipDescription(),
-                        benderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "BENDER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.BendingMachineZPM.get(1L),
@@ -1660,21 +1500,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.BendingMachineUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        BENDING_MACHINE_UV.ID,
-                        "basicmachine.bender.tier.08",
-                        "Ultimate Bending Unit",
-                        8,
-                        MachineType.BENDING_MACHINE.tooltipDescription(),
-                        benderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "BENDER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.BendingMachineUV.get(1L),
@@ -1685,21 +1511,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
 
-        CustomItemList.BendingMachineUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        BENDING_MACHINE_UHV.ID,
-                        "basicmachine.bender.tier.09",
-                        "Epic Bending Unit",
-                        9,
-                        MachineType.BENDING_MACHINE.tooltipDescription(),
-                        benderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "BENDER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.BendingMachineUHV.get(1L),
@@ -1710,21 +1522,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.BendingMachineUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        BENDING_MACHINE_UEV.ID,
-                        "basicmachine.bender.tier.10",
-                        "Epic Bending Unit II",
-                        10,
-                        MachineType.BENDING_MACHINE.tooltipDescription(),
-                        benderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "BENDER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.BendingMachineUEV.get(1L),
@@ -1735,21 +1533,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.BendingMachineUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        BENDING_MACHINE_UIV.ID,
-                        "basicmachine.bender.tier.11",
-                        "Epic Bending Unit III",
-                        11,
-                        MachineType.BENDING_MACHINE.tooltipDescription(),
-                        benderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "BENDER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.BendingMachineUIV.get(1L),
@@ -1760,21 +1544,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
 
-        CustomItemList.BendingMachineUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        BENDING_MACHINE_UMV.ID,
-                        "basicmachine.bender.tier.12",
-                        "Epic Bending Unit IV",
-                        12,
-                        MachineType.BENDING_MACHINE.tooltipDescription(),
-                        benderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "BENDER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.BendingMachineUMV.get(1L),
@@ -1787,21 +1557,7 @@ public class GT_Loader_Machines {
     }
 
     private void registerCompressor() {
-        CustomItemList.CompressorLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        COMPRESSOR_LuV.ID,
-                        "basicmachine.compressor.tier.06",
-                        "Elite Compressor",
-                        6,
-                        MachineType.COMPRESSOR.tooltipDescription(),
-                        compressorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "COMPRESSOR",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CompressorLuV.get(1L),
@@ -1811,21 +1567,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
 
-        CustomItemList.CompressorZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        COMPRESSOR_ZPM.ID,
-                        "basicmachine.compressor.tier.07",
-                        "Elite Compressor II",
-                        7,
-                        MachineType.COMPRESSOR.tooltipDescription(),
-                        compressorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "COMPRESSOR",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CompressorZPM.get(1L),
@@ -1835,21 +1577,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.CompressorUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        COMPRESSOR_UV.ID,
-                        "basicmachine.compressor.tier.08",
-                        "Ultimate Matter Constrictor",
-                        8,
-                        MachineType.COMPRESSOR.tooltipDescription(),
-                        compressorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "COMPRESSOR",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CompressorUV.get(1L),
@@ -1859,21 +1587,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
 
-        CustomItemList.CompressorUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        COMPRESSOR_UHV.ID,
-                        "basicmachine.compressor.tier.09",
-                        "Epic Matter Constrictor",
-                        9,
-                        MachineType.COMPRESSOR.tooltipDescription(),
-                        compressorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "COMPRESSOR",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CompressorUHV.get(1L),
@@ -1883,21 +1597,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.CompressorUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        COMPRESSOR_UEV.ID,
-                        "basicmachine.compressor.tier.10",
-                        "Epic Matter Constrictor II",
-                        10,
-                        MachineType.COMPRESSOR.tooltipDescription(),
-                        compressorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "COMPRESSOR",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CompressorUEV.get(1L),
@@ -1907,21 +1607,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.CompressorUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        COMPRESSOR_UIV.ID,
-                        "basicmachine.compressor.tier.11",
-                        "Epic Matter Constrictor III",
-                        11,
-                        MachineType.COMPRESSOR.tooltipDescription(),
-                        compressorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "COMPRESSOR",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CompressorUIV.get(1L),
@@ -1931,21 +1617,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
 
-        CustomItemList.CompressorUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        COMPRESSOR_UMV.ID,
-                        "basicmachine.compressor.tier.12",
-                        "Epic Matter Constrictor IV",
-                        12,
-                        MachineType.COMPRESSOR.tooltipDescription(),
-                        compressorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "COMPRESSOR",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CompressorUMV.get(1L),
@@ -1958,21 +1630,7 @@ public class GT_Loader_Machines {
 
     private void registerCuttingMachine() {
 
-        CustomItemList.CuttingMachineLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CUTTING_MACHINE_LuV.ID,
-                        "basicmachine.cutter.tier.06",
-                        "Elite Cutting Machine",
-                        6,
-                        MachineType.CUTTING_MACHINE.tooltipDescription(),
-                        cutterRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CUTTER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CuttingMachineLuV.get(1L),
@@ -1985,21 +1643,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'B',
                         OreDictNames.craftingDiamondBlade });
 
-        CustomItemList.CuttingMachineZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CUTTING_MACHINE_ZPM.ID,
-                        "basicmachine.cutter.tier.07",
-                        "Elite Cutting Machine II",
-                        7,
-                        MachineType.CUTTING_MACHINE.tooltipDescription(),
-                        cutterRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CUTTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CuttingMachineZPM.get(1L),
@@ -2012,21 +1655,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'B',
                         OreDictNames.craftingDiamondBlade });
 
-        CustomItemList.CuttingMachineUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CUTTING_MACHINE_UV.ID,
-                        "basicmachine.cutter.tier.08",
-                        "Ultimate Object Divider",
-                        8,
-                        MachineType.CUTTING_MACHINE.tooltipDescription(),
-                        cutterRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CUTTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CuttingMachineUV.get(1L),
@@ -2039,22 +1667,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'B',
                         OreDictNames.craftingDiamondBlade });
 
-        CustomItemList.CuttingMachineUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CUTTING_MACHINE_UHV.ID,
-                        "basicmachine.cutter.tier.09",
-                        "Epic Object Divider",
-                        9,
-                        MachineType.CUTTING_MACHINE.tooltipDescription(),
-                        cutterRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CUTTER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CuttingMachineUHV.get(1L),
                 bitsd,
@@ -2066,21 +1678,7 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'B',
                         OreDictNames.craftingDiamondBlade });
 
-        CustomItemList.CuttingMachineUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CUTTING_MACHINE_UEV.ID,
-                        "basicmachine.cutter.tier.10",
-                        "Epic Object Divider II",
-                        10,
-                        MachineType.CUTTING_MACHINE.tooltipDescription(),
-                        cutterRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CUTTER",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CuttingMachineUEV.get(1L),
@@ -2093,21 +1691,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), 'B',
                         OreDictNames.craftingDiamondBlade });
 
-        CustomItemList.CuttingMachineUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CUTTING_MACHINE_UIV.ID,
-                        "basicmachine.cutter.tier.11",
-                        "Epic Object Divider III",
-                        11,
-                        MachineType.CUTTING_MACHINE.tooltipDescription(),
-                        cutterRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CUTTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CuttingMachineUIV.get(1L),
@@ -2120,21 +1703,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'B',
                         OreDictNames.craftingDiamondBlade });
 
-        CustomItemList.CuttingMachineUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CUTTING_MACHINE_UMV.ID,
-                        "basicmachine.cutter.tier.12",
-                        "Epic Object Divider IV",
-                        12,
-                        MachineType.CUTTING_MACHINE.tooltipDescription(),
-                        cutterRecipes,
-                        2,
-                        4,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CUTTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CuttingMachineUMV.get(1L),
@@ -2151,21 +1719,7 @@ public class GT_Loader_Machines {
 
     private void registerDistillery() {
 
-        CustomItemList.DistilleryLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        DISTILLERY_LuV.ID,
-                        "basicmachine.distillery.tier.06",
-                        "Elite Distillery",
-                        6,
-                        MachineType.DISTILLERY.tooltipDescription(),
-                        distilleryRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "DISTILLERY",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.DistilleryLuV.get(1L),
@@ -2177,21 +1731,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
 
-        CustomItemList.DistilleryZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        DISTILLERY_ZPM.ID,
-                        "basicmachine.distillery.tier.07",
-                        "Elite Distillery II",
-                        7,
-                        MachineType.DISTILLERY.tooltipDescription(),
-                        distilleryRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "DISTILLERY",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.DistilleryZPM.get(1L),
@@ -2203,21 +1742,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
 
-        CustomItemList.DistilleryUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        DISTILLERY_UV.ID,
-                        "basicmachine.distillery.tier.08",
-                        "Ultimate Fraction Splitter",
-                        8,
-                        MachineType.DISTILLERY.tooltipDescription(),
-                        distilleryRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "DISTILLERY",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.DistilleryUV.get(1L),
@@ -2229,21 +1753,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
 
-        CustomItemList.DistilleryUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        DISTILLERY_UHV.ID,
-                        "basicmachine.distillery.tier.09",
-                        "Epic Fraction Splitter",
-                        9,
-                        MachineType.DISTILLERY.tooltipDescription(),
-                        distilleryRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "DISTILLERY",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.DistilleryUHV.get(1L),
@@ -2255,21 +1764,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
 
-        CustomItemList.DistilleryUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        DISTILLERY_UEV.ID,
-                        "basicmachine.distillery.tier.10",
-                        "Epic Fraction Splitter II",
-                        10,
-                        MachineType.DISTILLERY.tooltipDescription(),
-                        distilleryRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "DISTILLERY",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.DistilleryUEV.get(1L),
@@ -2281,21 +1775,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
 
-        CustomItemList.DistilleryUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        DISTILLERY_UIV.ID,
-                        "basicmachine.distillery.tier.11",
-                        "Epic Fraction Splitter III",
-                        11,
-                        MachineType.DISTILLERY.tooltipDescription(),
-                        distilleryRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "DISTILLERY",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.DistilleryUIV.get(1L),
@@ -2307,21 +1786,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
 
-        CustomItemList.DistilleryUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        DISTILLERY_UMV.ID,
-                        "basicmachine.distillery.tier.12",
-                        "Epic Fraction Splitter IV",
-                        12,
-                        MachineType.DISTILLERY.tooltipDescription(),
-                        distilleryRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "DISTILLERY",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.DistilleryUMV.get(1L),
@@ -2336,22 +1800,6 @@ public class GT_Loader_Machines {
 
     private void registerElectricFurnace() {
 
-        CustomItemList.ElectricFurnaceLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTRIC_FURNACE_LuV.ID,
-                        "basicmachine.e_furnace.tier.06",
-                        "Elite Electric Furnace",
-                        6,
-                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
-                        furnaceRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTRIC_FURNACE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectricFurnaceLuV.get(1L),
                 bitsd,
@@ -2360,21 +1808,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil() });
 
-        CustomItemList.ElectricFurnaceZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTRIC_FURNACE_ZPM.ID,
-                        "basicmachine.e_furnace.tier.07",
-                        "Elite Electric Furnace II",
-                        7,
-                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
-                        furnaceRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTRIC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectricFurnaceZPM.get(1L),
@@ -2384,21 +1817,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getHCoil() });
 
-        CustomItemList.ElectricFurnaceUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTRIC_FURNACE_UV.ID,
-                        "basicmachine.e_furnace.tier.08",
-                        "Ultimate Atom Stimulator",
-                        8,
-                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
-                        furnaceRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTRIC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectricFurnaceUV.get(1L),
@@ -2408,21 +1826,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil() });
 
-        CustomItemList.ElectricFurnaceUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTRIC_FURNACE_UHV.ID,
-                        "basicmachine.e_furnace.tier.09",
-                        "Epic Atom Stimulator",
-                        9,
-                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
-                        furnaceRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTRIC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectricFurnaceUHV.get(1L),
@@ -2432,21 +1835,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() });
 
-        CustomItemList.ElectricFurnaceUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTRIC_FURNACE_UEV.ID,
-                        "basicmachine.e_furnace.tier.10",
-                        "Epic Atom Stimulator II",
-                        10,
-                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
-                        furnaceRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTRIC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectricFurnaceUEV.get(1L),
@@ -2456,21 +1844,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() });
 
-        CustomItemList.ElectricFurnaceUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTRIC_FURNACE_UIV.ID,
-                        "basicmachine.e_furnace.tier.11",
-                        "Epic Atom Stimulator III",
-                        11,
-                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
-                        furnaceRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTRIC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectricFurnaceUIV.get(1L),
@@ -2480,21 +1853,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil() });
 
-        CustomItemList.ElectricFurnaceUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTRIC_FURNACE_UMV.ID,
-                        "basicmachine.e_furnace.tier.12",
-                        "Epic Atom Stimulator IV",
-                        12,
-                        MachineType.ELECTRIC_FURNACE.tooltipDescription(),
-                        furnaceRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTRIC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectricFurnaceUMV.get(1L),
@@ -2507,21 +1865,6 @@ public class GT_Loader_Machines {
 
     private void registerElectrolyzer() {
 
-        CustomItemList.ElectrolyzerLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROLYZER_LuV.ID,
-                        "basicmachine.electrolyzer.tier.06",
-                        "Elite Electrolyzer",
-                        6,
-                        MachineType.ELECTROLYZER.tooltipDescription(),
-                        electrolyzerRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ELECTROLYZER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectrolyzerLuV.get(1L),
@@ -2533,21 +1876,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt02.get(Materials.Osmium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
 
-        CustomItemList.ElectrolyzerZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROLYZER_ZPM.ID,
-                        "basicmachine.electrolyzer.tier.07",
-                        "Elite Electrolyzer II",
-                        7,
-                        MachineType.ELECTROLYZER.tooltipDescription(),
-                        electrolyzerRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ELECTROLYZER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectrolyzerZPM.get(1L),
@@ -2559,21 +1887,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt02.get(Materials.NiobiumTitanium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
 
-        CustomItemList.ElectrolyzerUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROLYZER_UV.ID,
-                        "basicmachine.electrolyzer.tier.08",
-                        "Ultimate Ionizer",
-                        8,
-                        MachineType.ELECTROLYZER.tooltipDescription(),
-                        electrolyzerRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ELECTROLYZER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectrolyzerUV.get(1L),
@@ -2585,21 +1898,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt04.get(Materials.VanadiumGallium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
 
-        CustomItemList.ElectrolyzerUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROLYZER_UHV.ID,
-                        "basicmachine.electrolyzer.tier.09",
-                        "Epic Ionizer",
-                        9,
-                        MachineType.ELECTROLYZER.tooltipDescription(),
-                        electrolyzerRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ELECTROLYZER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectrolyzerUHV.get(1L),
@@ -2611,22 +1909,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt04.get(Materials.Osmiridium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
 
-        CustomItemList.ElectrolyzerUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROLYZER_UEV.ID,
-                        "basicmachine.electrolyzer.tier.10",
-                        "Epic Ionizer II",
-                        10,
-                        MachineType.ELECTROLYZER.tooltipDescription(),
-                        electrolyzerRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ELECTROLYZER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectrolyzerUEV.get(1L),
                 bitsd,
@@ -2637,22 +1919,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt04.get(Materials.Draconium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
 
-        CustomItemList.ElectrolyzerUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROLYZER_UIV.ID,
-                        "basicmachine.electrolyzer.tier.11",
-                        "Epic Ionizer III",
-                        11,
-                        MachineType.ELECTROLYZER.tooltipDescription(),
-                        electrolyzerRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ELECTROLYZER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectrolyzerUIV.get(1L),
                 bitsd,
@@ -2662,22 +1928,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'I',
                         OrePrefixes.wireGt04.get(Materials.DraconiumAwakened), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
-
-        CustomItemList.ElectrolyzerUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROLYZER_UMV.ID,
-                        "basicmachine.electrolyzer.tier.12",
-                        "Epic Ionizer IV",
-                        12,
-                        MachineType.ELECTROLYZER.tooltipDescription(),
-                        electrolyzerRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ELECTROLYZER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectrolyzerUMV.get(1L),
@@ -2692,22 +1942,6 @@ public class GT_Loader_Machines {
 
     private void registerElectromagneticSeparator() {
 
-        CustomItemList.ElectromagneticSeparatorLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROMAGNETIC_SEPARATOR_LuV.ID,
-                        "basicmachine.electromagneticseparator.tier.06",
-                        "Elite Electromagnetic Separator",
-                        6,
-                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
-                        electroMagneticSeparatorRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTROMAGNETIC_SEPARATOR",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectromagneticSeparatorLuV.get(1L),
                 bitsd,
@@ -2717,22 +1951,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
-
-        CustomItemList.ElectromagneticSeparatorZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROMAGNETIC_SEPARATOR_ZPM.ID,
-                        "basicmachine.electromagneticseparator.tier.07",
-                        "Elite Electromagnetic Separator II",
-                        7,
-                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
-                        electroMagneticSeparatorRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTROMAGNETIC_SEPARATOR",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectromagneticSeparatorZPM.get(1L),
@@ -2744,22 +1962,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.ElectromagneticSeparatorUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROMAGNETIC_SEPARATOR_UV.ID,
-                        "basicmachine.electromagneticseparator.tier.08",
-                        "Ultimate Magnetar Separator",
-                        8,
-                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
-                        electroMagneticSeparatorRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTROMAGNETIC_SEPARATOR",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectromagneticSeparatorUV.get(1L),
                 bitsd,
@@ -2769,22 +1971,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
-
-        CustomItemList.ElectromagneticSeparatorUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROMAGNETIC_SEPARATOR_UHV.ID,
-                        "basicmachine.electromagneticseparator.tier.09",
-                        "Epic Magnetar Separator",
-                        9,
-                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
-                        electroMagneticSeparatorRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTROMAGNETIC_SEPARATOR",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectromagneticSeparatorUHV.get(1L),
@@ -2796,22 +1982,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.ElectromagneticSeparatorUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROMAGNETIC_SEPARATOR_UEV.ID,
-                        "basicmachine.electromagneticseparator.tier.10",
-                        "Epic Magnetar Separator II",
-                        10,
-                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
-                        electroMagneticSeparatorRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTROMAGNETIC_SEPARATOR",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectromagneticSeparatorUEV.get(1L),
                 bitsd,
@@ -2822,22 +1992,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.ElectromagneticSeparatorUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROMAGNETIC_SEPARATOR_UIV.ID,
-                        "basicmachine.electromagneticseparator.tier.11",
-                        "Epic Magnetar Separator III",
-                        11,
-                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
-                        electroMagneticSeparatorRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTROMAGNETIC_SEPARATOR",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectromagneticSeparatorUIV.get(1L),
                 bitsd,
@@ -2847,22 +2001,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        CustomItemList.ElectromagneticSeparatorUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ELECTROMAGNETIC_SEPARATOR_UMV.ID,
-                        "basicmachine.electromagneticseparator.tier.12",
-                        "Epic Magnetar Separator IV",
-                        12,
-                        MachineType.ELECTROMAGNETIC_SEPARATOR.tooltipDescription(),
-                        electroMagneticSeparatorRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "ELECTROMAGNETIC_SEPARATOR",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ElectromagneticSeparatorUMV.get(1L),
@@ -2877,22 +2015,6 @@ public class GT_Loader_Machines {
 
     private void registerExtractor() {
 
-        CustomItemList.ExtractorLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRACTOR_LuV.ID,
-                        "basicmachine.extractor.tier.06",
-                        "Elite Extractor",
-                        6,
-                        MachineType.EXTRACTOR.tooltipDescription(),
-                        extractorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "EXTRACTOR",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtractorLuV.get(1L),
                 bitsd,
@@ -2902,22 +2024,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() });
-
-        CustomItemList.ExtractorZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRACTOR_ZPM.ID,
-                        "basicmachine.extractor.tier.07",
-                        "Elite Extractor II",
-                        7,
-                        MachineType.EXTRACTOR.tooltipDescription(),
-                        extractorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "EXTRACTOR",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtractorZPM.get(1L),
@@ -2929,22 +2035,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() });
 
-        CustomItemList.ExtractorUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRACTOR_UV.ID,
-                        "basicmachine.extractor.tier.08",
-                        "Ultimate Extractinator",
-                        8,
-                        MachineType.EXTRACTOR.tooltipDescription(),
-                        extractorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "EXTRACTOR",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtractorUV.get(1L),
                 bitsd,
@@ -2954,22 +2044,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() });
-
-        CustomItemList.ExtractorUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRACTOR_UHV.ID,
-                        "basicmachine.extractor.tier.09",
-                        "Epic Extractinator",
-                        9,
-                        MachineType.EXTRACTOR.tooltipDescription(),
-                        extractorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "EXTRACTOR",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtractorUHV.get(1L),
@@ -2981,22 +2055,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() });
 
-        CustomItemList.ExtractorUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRACTOR_UEV.ID,
-                        "basicmachine.extractor.tier.10",
-                        "Epic Extractinator II",
-                        10,
-                        MachineType.EXTRACTOR.tooltipDescription(),
-                        extractorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "EXTRACTOR",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtractorUEV.get(1L),
                 bitsd,
@@ -3007,22 +2065,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() });
 
-        CustomItemList.ExtractorUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRACTOR_UIV.ID,
-                        "basicmachine.extractor.tier.11",
-                        "Epic Extractinator III",
-                        11,
-                        MachineType.EXTRACTOR.tooltipDescription(),
-                        extractorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "EXTRACTOR",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtractorUIV.get(1L),
                 bitsd,
@@ -3032,22 +2074,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() });
-
-        CustomItemList.ExtractorUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRACTOR_UMV.ID,
-                        "basicmachine.extractor.tier.12",
-                        "Epic Extractinator IV",
-                        12,
-                        MachineType.EXTRACTOR.tooltipDescription(),
-                        extractorRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "EXTRACTOR",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtractorUMV.get(1L),
@@ -3063,22 +2089,6 @@ public class GT_Loader_Machines {
 
     private void registerExtruder() {
 
-        CustomItemList.ExtruderLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRUDER_LuV.ID,
-                        "basicmachine.extruder.tier.06",
-                        "Elite Extruder",
-                        6,
-                        MachineType.EXTRUDER.tooltipDescription(),
-                        extruderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "EXTRUDER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtruderLuV.get(1L),
                 bitsd,
@@ -3087,22 +2097,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'P',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil() });
-
-        CustomItemList.ExtruderZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRUDER_ZPM.ID,
-                        "basicmachine.extruder.tier.07",
-                        "Elite Extruder II",
-                        7,
-                        MachineType.EXTRUDER.tooltipDescription(),
-                        extruderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "EXTRUDER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtruderZPM.get(1L),
@@ -3113,22 +2107,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getHCoil() });
 
-        CustomItemList.ExtruderUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRUDER_UV.ID,
-                        "basicmachine.extruder.tier.08",
-                        "Ultimate Shape Driver",
-                        8,
-                        MachineType.EXTRUDER.tooltipDescription(),
-                        extruderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "EXTRUDER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtruderUV.get(1L),
                 bitsd,
@@ -3137,22 +2115,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'P',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil() });
-
-        CustomItemList.ExtruderUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRUDER_UHV.ID,
-                        "basicmachine.extruder.tier.09",
-                        "Epic Shape Driver",
-                        9,
-                        MachineType.EXTRUDER.tooltipDescription(),
-                        extruderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "EXTRUDER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtruderUHV.get(1L),
@@ -3163,22 +2125,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() });
 
-        CustomItemList.ExtruderUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRUDER_UEV.ID,
-                        "basicmachine.extruder.tier.10",
-                        "Epic Shape Driver II",
-                        10,
-                        MachineType.EXTRUDER.tooltipDescription(),
-                        extruderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "EXTRUDER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtruderUEV.get(1L),
                 bitsd,
@@ -3188,22 +2134,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() });
 
-        CustomItemList.ExtruderUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRUDER_UIV.ID,
-                        "basicmachine.extruder.tier.11",
-                        "Epic Shape Driver III",
-                        11,
-                        MachineType.EXTRUDER.tooltipDescription(),
-                        extruderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "EXTRUDER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtruderUIV.get(1L),
                 bitsd,
@@ -3212,22 +2142,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'P',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil() });
-
-        CustomItemList.ExtruderUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        EXTRUDER_UMV.ID,
-                        "basicmachine.extruder.tier.12",
-                        "Epic Shape Driver IV",
-                        12,
-                        MachineType.EXTRUDER.tooltipDescription(),
-                        extruderRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "EXTRUDER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ExtruderUMV.get(1L),
@@ -3242,23 +2156,6 @@ public class GT_Loader_Machines {
 
     private void registerFluidSolidifier() {
 
-        CustomItemList.FluidSolidifierLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FLUID_SOLIDIFIER_LuV.ID,
-                        "basicmachine.fluidsolidifier.tier.06",
-                        "Elite Fluid Solidifier",
-                        6,
-                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
-                        fluidSolidifierRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "FLUID_SOLIDIFIER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FluidSolidifierLuV.get(1L),
                 bitsd,
@@ -3267,22 +2164,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'B', OreDictNames.craftingChest });
-
-        CustomItemList.FluidSolidifierZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FLUID_SOLIDIFIER_ZPM.ID,
-                        "basicmachine.fluidsolidifier.tier.07",
-                        "Elite Fluid Solidifier II",
-                        7,
-                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
-                        fluidSolidifierRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "FLUID_SOLIDIFIER",
-                       null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FluidSolidifierZPM.get(1L),
@@ -3293,22 +2174,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'B', OreDictNames.craftingChest });
 
-        CustomItemList.FluidSolidifierUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FLUID_SOLIDIFIER_UV.ID,
-                        "basicmachine.fluidsolidifier.tier.08",
-                        "Ultimate Fluid Petrificator",
-                        8,
-                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
-                        fluidSolidifierRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "FLUID_SOLIDIFIER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FluidSolidifierUV.get(1L),
                 bitsd,
@@ -3317,22 +2182,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'B', OreDictNames.craftingChest });
-
-        CustomItemList.FluidSolidifierUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FLUID_SOLIDIFIER_UHV.ID,
-                        "basicmachine.fluidsolidifier.tier.09",
-                        "Epic Fluid Petrificator",
-                        9,
-                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
-                        fluidSolidifierRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "FLUID_SOLIDIFIER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FluidSolidifierUHV.get(1L),
@@ -3343,22 +2192,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'B', OreDictNames.craftingChest });
 
-        CustomItemList.FluidSolidifierUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FLUID_SOLIDIFIER_UEV.ID,
-                        "basicmachine.fluidsolidifier.tier.10",
-                        "Epic Fluid Petrificator II",
-                        10,
-                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
-                        fluidSolidifierRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "FLUID_SOLIDIFIER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FluidSolidifierUEV.get(1L),
                 bitsd,
@@ -3368,22 +2201,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), 'B', OreDictNames.craftingChest });
 
-        CustomItemList.FluidSolidifierUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FLUID_SOLIDIFIER_UIV.ID,
-                        "basicmachine.fluidsolidifier.tier.11",
-                        "Epic Fluid Petrificator III",
-                        11,
-                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
-                        fluidSolidifierRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "FLUID_SOLIDIFIER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FluidSolidifierUIV.get(1L),
                 bitsd,
@@ -3392,22 +2209,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'B', OreDictNames.craftingChest });
-
-        CustomItemList.FluidSolidifierUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FLUID_SOLIDIFIER_UMV.ID,
-                        "basicmachine.fluidsolidifier.tier.12",
-                        "Epic Fluid Petrificator IV",
-                        12,
-                        MachineType.FLUID_SOLIDIFIER.tooltipDescription(),
-                        fluidSolidifierRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "FLUID_SOLIDIFIER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FluidSolidifierUMV.get(1L),
@@ -3422,22 +2223,6 @@ public class GT_Loader_Machines {
 
     private void registerFormingPress() {
 
-        CustomItemList.FormingPressLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORMING_PRESS_LuV.ID,
-                        "basicmachine.press.tier.06",
-                        "Elite Forming Press",
-                        6,
-                        MachineType.FORMING_PRESS.tooltipDescription(),
-                        formingPressRecipes,
-                        6,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "PRESS",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FormingPressLuV.get(1L),
                 bitsd,
@@ -3445,22 +2230,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
-
-        CustomItemList.FormingPressZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORMING_PRESS_ZPM.ID,
-                        "basicmachine.press.tier.07",
-                        "Elite Forming Press II",
-                        7,
-                        MachineType.FORMING_PRESS.tooltipDescription(),
-                        formingPressRecipes,
-                        6,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "PRESS",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FormingPressZPM.get(1L),
@@ -3470,22 +2239,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.FormingPressUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORMING_PRESS_UV.ID,
-                        "basicmachine.press.tier.08",
-                        "Ultimate Surface Shifter",
-                        8,
-                        MachineType.FORMING_PRESS.tooltipDescription(),
-                        formingPressRecipes,
-                        6,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "PRESS",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FormingPressUV.get(1L),
                 bitsd,
@@ -3493,22 +2246,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
-
-        CustomItemList.FormingPressUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORMING_PRESS_UHV.ID,
-                        "basicmachine.press.tier.09",
-                        "Epic Surface Shifter",
-                        9,
-                        MachineType.FORMING_PRESS.tooltipDescription(),
-                        formingPressRecipes,
-                        6,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "PRESS",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FormingPressUHV.get(1L),
@@ -3518,22 +2255,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.FormingPressUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORMING_PRESS_UEV.ID,
-                        "basicmachine.press.tier.10",
-                        "Epic Surface Shifter II",
-                        10,
-                        MachineType.FORMING_PRESS.tooltipDescription(),
-                        formingPressRecipes,
-                        6,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "PRESS",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FormingPressUEV.get(1L),
                 bitsd,
@@ -3542,22 +2263,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.FormingPressUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORMING_PRESS_UIV.ID,
-                        "basicmachine.press.tier.11",
-                        "Epic Surface Shifter III",
-                        11,
-                        MachineType.FORMING_PRESS.tooltipDescription(),
-                        formingPressRecipes,
-                        6,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "PRESS",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FormingPressUIV.get(1L),
                 bitsd,
@@ -3565,22 +2270,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        CustomItemList.FormingPressUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORMING_PRESS_UMV.ID,
-                        "basicmachine.press.tier.12",
-                        "Epic Surface Shifter IV",
-                        12,
-                        MachineType.FORMING_PRESS.tooltipDescription(),
-                        formingPressRecipes,
-                        6,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_COMPRESSOR_OP,
-                        SpecialEffects.NONE,
-                        "PRESS",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.FormingPressUMV.get(1L),
@@ -3594,23 +2283,6 @@ public class GT_Loader_Machines {
 
     private void registerForgeHammer() {
 
-        CustomItemList.ForgeHammerLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORGE_HAMMER_LuV.ID,
-                        "basicmachine.hammer.tier.06",
-                        "Elite Forge Hammer",
-                        6,
-                        MachineType.FORGE_HAMMER.tooltipDescription(),
-                        hammerRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.RANDOM_ANVIL_USE,
-                        SpecialEffects.NONE,
-                        "HAMMER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ForgeHammerLuV.get(1L),
                 bitsd,
@@ -3619,23 +2291,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil(), 'A', OreDictNames.craftingAnvil });
-
-        CustomItemList.ForgeHammerZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORGE_HAMMER_ZPM.ID,
-                        "basicmachine.hammer.tier.07",
-                        "Elite Forge Hammer II",
-                        7,
-                        MachineType.FORGE_HAMMER.tooltipDescription(),
-                        hammerRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.RANDOM_ANVIL_USE,
-                        SpecialEffects.NONE,
-                        "HAMMER",
-                        null)
-                                        .getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ForgeHammerZPM.get(1L),
@@ -3646,23 +2301,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getHCoil(), 'A', OreDictNames.craftingAnvil });
 
-        CustomItemList.ForgeHammerUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORGE_HAMMER_UV.ID,
-                        "basicmachine.hammer.tier.08",
-                        "Ultimate Impact Modulator",
-                        8,
-                        MachineType.FORGE_HAMMER.tooltipDescription(),
-                        hammerRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.RANDOM_ANVIL_USE,
-                        SpecialEffects.NONE,
-                        "HAMMER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ForgeHammerUV.get(1L),
                 bitsd,
@@ -3671,23 +2309,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil(), 'A', OreDictNames.craftingAnvil });
-
-        CustomItemList.ForgeHammerUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORGE_HAMMER_UHV.ID,
-                        "basicmachine.hammer.tier.09",
-                        "Epic Impact Modulator",
-                        9,
-                        MachineType.FORGE_HAMMER.tooltipDescription(),
-                        hammerRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.RANDOM_ANVIL_USE,
-                        SpecialEffects.NONE,
-                        "HAMMER",
-                        null)
-                                        .getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ForgeHammerUHV.get(1L),
@@ -3698,23 +2319,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil(), 'A', OreDictNames.craftingAnvil });
 
-        CustomItemList.ForgeHammerUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORGE_HAMMER_UEV.ID,
-                        "basicmachine.hammer.tier.10",
-                        "Epic Impact Modulator II",
-                        10,
-                        MachineType.FORGE_HAMMER.tooltipDescription(),
-                        hammerRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.RANDOM_ANVIL_USE,
-                        SpecialEffects.NONE,
-                        "HAMMER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ForgeHammerUEV.get(1L),
                 bitsd,
@@ -3724,23 +2328,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil(), 'A', OreDictNames.craftingAnvil});
 
-        CustomItemList.ForgeHammerUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORGE_HAMMER_UIV.ID,
-                        "basicmachine.hammer.tier.11",
-                        "Epic Impact Modulator III",
-                        11,
-                        MachineType.FORGE_HAMMER.tooltipDescription(),
-                        hammerRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.RANDOM_ANVIL_USE,
-                        SpecialEffects.NONE,
-                        "HAMMER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ForgeHammerUIV.get(1L),
                 bitsd,
@@ -3749,23 +2336,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil(), 'A', OreDictNames.craftingAnvil });
-
-        CustomItemList.ForgeHammerUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        FORGE_HAMMER_UMV.ID,
-                        "basicmachine.hammer.tier.12",
-                        "Epic Impact Modulator IV",
-                        12,
-                        MachineType.FORGE_HAMMER.tooltipDescription(),
-                        hammerRecipes,
-                        1,
-                        1,
-                        true,
-                        SoundResource.RANDOM_ANVIL_USE,
-                        SpecialEffects.NONE,
-                        "HAMMER",
-                        null)
-                                        .getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ForgeHammerUMV.get(1L),
@@ -3780,22 +2350,6 @@ public class GT_Loader_Machines {
 
     private void registerLathe() {
 
-        CustomItemList.LatheLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        LATHE_LuV.ID,
-                        "basicmachine.lathe.tier.06",
-                        "Elite Lathe",
-                        6,
-                        MachineType.LATHE.tooltipDescription(),
-                        latheRecipes,
-                        1,
-                        2,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "LATHE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.LatheLuV.get(1L),
                 bitsd,
@@ -3805,22 +2359,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond });
-
-        CustomItemList.LatheZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        LATHE_ZPM.ID,
-                        "basicmachine.lathe.tier.07",
-                        "Elite Lathe II",
-                        7,
-                        MachineType.LATHE.tooltipDescription(),
-                        latheRecipes,
-                        1,
-                        2,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "LATHE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.LatheZPM.get(1L),
@@ -3832,22 +2370,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond });
 
-        CustomItemList.LatheUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        LATHE_UV.ID,
-                        "basicmachine.lathe.tier.08",
-                        "Ultimate Turn-O-Matic",
-                        8,
-                        MachineType.LATHE.tooltipDescription(),
-                        latheRecipes,
-                        1,
-                        2,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "LATHE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.LatheUV.get(1L),
                 bitsd,
@@ -3857,22 +2379,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond });
-
-        CustomItemList.LatheUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        LATHE_UHV.ID,
-                        "basicmachine.lathe.tier.09",
-                        "Epic Turn-O-Matic",
-                        9,
-                        MachineType.LATHE.tooltipDescription(),
-                        latheRecipes,
-                        1,
-                        2,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "LATHE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.LatheUHV.get(1L),
@@ -3884,22 +2390,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond });
 
-        CustomItemList.LatheUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        LATHE_UEV.ID,
-                        "basicmachine.lathe.tier.10",
-                        "Epic Turn-O-Matic II",
-                        10,
-                        MachineType.LATHE.tooltipDescription(),
-                        latheRecipes,
-                        1,
-                        2,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "LATHE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.LatheUEV.get(1L),
                 bitsd,
@@ -3910,22 +2400,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond });
 
-        CustomItemList.LatheUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        LATHE_UIV.ID,
-                        "basicmachine.lathe.tier.11",
-                        "Epic Turn-O-Matic III",
-                        11,
-                        MachineType.LATHE.tooltipDescription(),
-                        latheRecipes,
-                        1,
-                        2,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "LATHE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.LatheUIV.get(1L),
                 bitsd,
@@ -3935,22 +2409,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond });
-
-        CustomItemList.LatheUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        LATHE_UMV.ID,
-                        "basicmachine.lathe.tier.12",
-                        "Epic Turn-O-Matic IV",
-                        12,
-                        MachineType.LATHE.tooltipDescription(),
-                        latheRecipes,
-                        1,
-                        2,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "LATHE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.LatheUMV.get(1L),
@@ -3966,22 +2424,6 @@ public class GT_Loader_Machines {
 
     private void registerPrecisionLaserEngraver() {
 
-        CustomItemList.PrecisionLaserEngraverLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PRECISION_LASER_ENGRAVER_LuV.ID,
-                        "basicmachine.laserengraver.tier.06",
-                        "Elite Precision Laser Engraver",
-                        6,
-                        MachineType.LASER_ENGRAVER.tooltipDescription(),
-                        laserEngraverRecipes,
-                        4,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "LASER_ENGRAVER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PrecisionLaserEngraverLuV.get(1L),
                 bitsd,
@@ -3990,22 +2432,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
-
-        CustomItemList.PrecisionLaserEngraverZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PRECISION_LASER_ENGRAVER_ZPM.ID,
-                        "basicmachine.laserengraver.tier.07",
-                        "Elite Precision Laser Engraver II",
-                        7,
-                        MachineType.LASER_ENGRAVER.tooltipDescription(),
-                        laserEngraverRecipes,
-                        4,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "LASER_ENGRAVER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PrecisionLaserEngraverZPM.get(1L),
@@ -4016,22 +2442,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.PrecisionLaserEngraverUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PRECISION_LASER_ENGRAVER_UV.ID,
-                        "basicmachine.laserengraver.tier.08",
-                        "Ultimate Exact Photon Cannon",
-                        8,
-                        MachineType.LASER_ENGRAVER.tooltipDescription(),
-                        laserEngraverRecipes,
-                        4,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "LASER_ENGRAVER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PrecisionLaserEngraverUV.get(1L),
                 bitsd,
@@ -4040,22 +2450,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
-
-        CustomItemList.PrecisionLaserEngraverUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PRECISION_LASER_ENGRAVER_UHV.ID,
-                        "basicmachine.laserengraver.tier.09",
-                        "Epic Exact Photon Cannon",
-                        9,
-                        MachineType.LASER_ENGRAVER.tooltipDescription(),
-                        laserEngraverRecipes,
-                        4,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "LASER_ENGRAVER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PrecisionLaserEngraverUHV.get(1L),
@@ -4066,22 +2460,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.PrecisionLaserEngraverUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PRECISION_LASER_ENGRAVER_UEV.ID,
-                        "basicmachine.laserengraver.tier.10",
-                        "Epic Exact Photon Cannon II",
-                        10,
-                        MachineType.LASER_ENGRAVER.tooltipDescription(),
-                        laserEngraverRecipes,
-                        4,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "LASER_ENGRAVER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PrecisionLaserEngraverUEV.get(1L),
                 bitsd,
@@ -4091,22 +2469,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.PrecisionLaserEngraverUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PRECISION_LASER_ENGRAVER_UIV.ID,
-                        "basicmachine.laserengraver.tier.11",
-                        "Epic Exact Photon Cannon III",
-                        11,
-                        MachineType.LASER_ENGRAVER.tooltipDescription(),
-                        laserEngraverRecipes,
-                        4,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "LASER_ENGRAVER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PrecisionLaserEngraverUIV.get(1L),
                 bitsd,
@@ -4115,22 +2477,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        CustomItemList.PrecisionLaserEngraverUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PRECISION_LASER_ENGRAVER_UMV.ID,
-                        "basicmachine.laserengraver.tier.12",
-                        "Epic Exact Photon Cannon IV",
-                        12,
-                        MachineType.LASER_ENGRAVER.tooltipDescription(),
-                        laserEngraverRecipes,
-                        4,
-                        1,
-                        true,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "LASER_ENGRAVER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PrecisionLaserEngraverUMV.get(1L),
@@ -4145,23 +2491,6 @@ public class GT_Loader_Machines {
 
     private void registerMacerator() {
 
-        CustomItemList.MaceratorLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MACERATOR_LuV.ID,
-                        "basicmachine.macerator.tier.06",
-                        "Elite Pulverizer",
-                        6,
-                        MachineType.MACERATOR.tooltipDescription(),
-                        maceratorRecipes,
-                        1,
-                        4,
-                        false,
-                        SoundResource.IC2_MACHINES_MACERATOR_OP,
-                        SpecialEffects.TOP_SMOKE,
-                        "PULVERIZER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MaceratorLuV.get(1L),
                 bitsd,
@@ -4170,23 +2499,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G', OreDictNames.craftingGrinder });
-
-        CustomItemList.MaceratorZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MACERATOR_ZPM.ID,
-                        "basicmachine.macerator.tier.07",
-                        "Elite Pulverizer II",
-                        7,
-                        MachineType.MACERATOR.tooltipDescription(),
-                        maceratorRecipes,
-                        1,
-                        4,
-                        false,
-                        SoundResource.IC2_MACHINES_MACERATOR_OP,
-                        SpecialEffects.TOP_SMOKE,
-                        "PULVERIZER",
-                        null)
-                                        .getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MaceratorZPM.get(1L),
@@ -4197,23 +2509,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G', OreDictNames.craftingGrinder });
 
-        CustomItemList.MaceratorUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MACERATOR_UV.ID,
-                        "basicmachine.macerator.tier.08",
-                        "Ultimate Shape Eliminator",
-                        8,
-                        MachineType.MACERATOR.tooltipDescription(),
-                        maceratorRecipes,
-                        1,
-                        4,
-                        false,
-                        SoundResource.IC2_MACHINES_MACERATOR_OP,
-                        SpecialEffects.TOP_SMOKE,
-                        "PULVERIZER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MaceratorUV.get(1L),
                 bitsd,
@@ -4222,23 +2517,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G', OreDictNames.craftingGrinder });
-
-        CustomItemList.MaceratorUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MACERATOR_UHV.ID,
-                        "basicmachine.macerator.tier.09",
-                        "Epic Shape Eliminator",
-                        9,
-                        MachineType.MACERATOR.tooltipDescription(),
-                        maceratorRecipes,
-                        1,
-                        4,
-                        false,
-                        SoundResource.IC2_MACHINES_MACERATOR_OP,
-                        SpecialEffects.TOP_SMOKE,
-                        "PULVERIZER",
-                        null)
-                                        .getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MaceratorUHV.get(1L),
@@ -4249,23 +2527,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G', OreDictNames.craftingGrinder });
 
-        CustomItemList.MaceratorUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MACERATOR_UEV.ID,
-                        "basicmachine.macerator.tier.10",
-                        "Epic Shape Eliminator II",
-                        10,
-                        MachineType.MACERATOR.tooltipDescription(),
-                        maceratorRecipes,
-                        1,
-                        4,
-                        false,
-                        SoundResource.IC2_MACHINES_MACERATOR_OP,
-                        SpecialEffects.TOP_SMOKE,
-                        "PULVERIZER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MaceratorUEV.get(1L),
                 bitsd,
@@ -4275,23 +2536,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G', OreDictNames.craftingGrinder });
 
-        CustomItemList.MaceratorUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MACERATOR_UIV.ID,
-                        "basicmachine.macerator.tier.11",
-                        "Epic Shape Eliminator III",
-                        11,
-                        MachineType.MACERATOR.tooltipDescription(),
-                        maceratorRecipes,
-                        1,
-                        4,
-                        false,
-                        SoundResource.IC2_MACHINES_MACERATOR_OP,
-                        SpecialEffects.TOP_SMOKE,
-                        "PULVERIZER",
-                        null)
-                                        .getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MaceratorUIV.get(1L),
                 bitsd,
@@ -4300,23 +2544,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G', OreDictNames.craftingGrinder });
-
-        CustomItemList.MaceratorUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MACERATOR_UMV.ID,
-                        "basicmachine.macerator.tier.12",
-                        "Epic Shape Eliminator IV",
-                        12,
-                        MachineType.MACERATOR.tooltipDescription(),
-                        maceratorRecipes,
-                        1,
-                        4,
-                        false,
-                        SoundResource.IC2_MACHINES_MACERATOR_OP,
-                        SpecialEffects.TOP_SMOKE,
-                        "PULVERIZER",
-                        null)
-                                        .getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MaceratorUMV.get(1L),
@@ -4329,69 +2556,8 @@ public class GT_Loader_Machines {
 
     }
 
-    private void registerMatterFabricator() {
-
-        CustomItemList.MassFabricatorLuV.set(
-                new GT_MetaTileEntity_Massfabricator(
-                        MATTER_FABRICATOR_LuV.ID,
-                        "basicmachine.massfab.tier.06",
-                        "Elite Mass Fabricator",
-                        6).getStackForm(1L));
-        CustomItemList.MassFabricatorZPM.set(
-                new GT_MetaTileEntity_Massfabricator(
-                        MATTER_FABRICATOR_ZPM.ID,
-                        "basicmachine.massfab.tier.07",
-                        "Elite Mass Fabricator II",
-                        7).getStackForm(1L));
-        CustomItemList.MassFabricatorUV.set(
-                new GT_MetaTileEntity_Massfabricator(
-                        MATTER_FABRICATOR_UV.ID,
-                        "basicmachine.massfab.tier.08",
-                        "Ultimate Existence Initiator",
-                        8).getStackForm(1L));
-        CustomItemList.MassFabricatorUHV.set(
-                new GT_MetaTileEntity_Massfabricator(
-                        MATTER_FABRICATOR_UHV.ID,
-                        "basicmachine.massfab.tier.09",
-                        "Epic Existence Initiator",
-                        9).getStackForm(1L));
-        CustomItemList.MassFabricatorUEV.set(
-                new GT_MetaTileEntity_Massfabricator(
-                        MATTER_FABRICATOR_UEV.ID,
-                        "basicmachine.massfab.tier.10",
-                        "Epic Existence Initiator II",
-                        10).getStackForm(1L));
-        CustomItemList.MassFabricatorUIV.set(
-                new GT_MetaTileEntity_Massfabricator(
-                        MATTER_FABRICATOR_UIV.ID,
-                        "basicmachine.massfab.tier.11",
-                        "Epic Existence Initiator III",
-                        11).getStackForm(1L));
-        CustomItemList.MassFabricatorUMV.set(
-                new GT_MetaTileEntity_Massfabricator(
-                        MATTER_FABRICATOR_UMV.ID,
-                        "basicmachine.massfab.tier.12",
-                        "Epic Existence Initiator IV",
-                        12).getStackForm(1L));
-    }
-
     private void registerMicrowave() {
 
-        CustomItemList.MicrowaveLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MICROWAVE_LuV.ID,
-                        "basicmachine.microwave.tier.06",
-                        "Elite Microwave",
-                        6,
-                        MachineType.MICROWAVE.tooltipDescription(),
-                        microwaveRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "MICROWAVE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MicrowaveLuV.get(1L),
@@ -4403,21 +2569,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE, 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) });
 
-        CustomItemList.MicrowaveZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MICROWAVE_ZPM.ID,
-                        "basicmachine.microwave.tier.07",
-                        "Elite Microwave II",
-                        7,
-                        MachineType.MICROWAVE.tooltipDescription(),
-                        microwaveRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "MICROWAVE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MicrowaveZPM.get(1L),
@@ -4429,22 +2580,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE, 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) });
 
-        CustomItemList.MicrowaveUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MICROWAVE_UV.ID,
-                        "basicmachine.microwave.tier.08",
-                        "Ultimate UFO Engine",
-                        8,
-                        MachineType.MICROWAVE.tooltipDescription(),
-                        microwaveRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "MICROWAVE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MicrowaveUV.get(1L),
                 bitsd,
@@ -4454,22 +2589,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CIRCUIT, 'W',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.WIRE, 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) });
-
-        CustomItemList.MicrowaveUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MICROWAVE_UHV.ID,
-                        "basicmachine.microwave.tier.09",
-                        "Epic UFO Engine",
-                        9,
-                        MachineType.MICROWAVE.tooltipDescription(),
-                        microwaveRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "MICROWAVE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MicrowaveUHV.get(1L),
@@ -4481,22 +2600,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getWire(), 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) });
 
-        CustomItemList.MicrowaveUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MICROWAVE_UEV.ID,
-                        "basicmachine.microwave.tier.10",
-                        "Epic UFO Engine II",
-                        10,
-                        MachineType.MICROWAVE.tooltipDescription(),
-                        microwaveRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "MICROWAVE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MicrowaveUEV.get(1L),
                 bitsd,
@@ -4507,22 +2610,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getWire(), 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) });
 
-        CustomItemList.MicrowaveUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MICROWAVE_UIV.ID,
-                        "basicmachine.microwave.tier.11",
-                        "Epic UFO Engine III",
-                        11,
-                        MachineType.MICROWAVE.tooltipDescription(),
-                        microwaveRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "MICROWAVE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MicrowaveUIV.get(1L),
                 bitsd,
@@ -4532,22 +2619,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getWire(), 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) });
-
-        CustomItemList.MicrowaveUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        MICROWAVE_UMV.ID,
-                        "basicmachine.microwave.tier.12",
-                        "Epic UFO Engine IV",
-                        12,
-                        MachineType.MICROWAVE.tooltipDescription(),
-                        microwaveRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_ELECTROFURNACE_LOOP,
-                        SpecialEffects.NONE,
-                        "MICROWAVE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.MicrowaveUMV.get(1L),
@@ -4563,22 +2634,6 @@ public class GT_Loader_Machines {
 
     private void registerOreWashingPlant() {
 
-        CustomItemList.OreWashingPlantLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ORE_WASHING_PLANT_LuV.ID,
-                        "basicmachine.orewasher.tier.06",
-                        "Elite Ore Washing Plant",
-                        6,
-                        MachineType.ORE_WASHER.tooltipDescription(),
-                        oreWasherRecipes,
-                        1,
-                        3,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ORE_WASHER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.OreWashingPlantLuV.get(1L),
                 bitsd,
@@ -4587,22 +2642,6 @@ public class GT_Loader_Machines {
                         'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP });
-
-        CustomItemList.OreWashingPlantZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ORE_WASHING_PLANT_ZPM.ID,
-                        "basicmachine.orewasher.tier.07",
-                        "Elite Ore Washing Plant II",
-                        7,
-                        MachineType.ORE_WASHER.tooltipDescription(),
-                        oreWasherRecipes,
-                        1,
-                        3,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ORE_WASHER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.OreWashingPlantZPM.get(1L),
@@ -4614,22 +2653,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP });
 
-        CustomItemList.OreWashingPlantUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ORE_WASHING_PLANT_UV.ID,
-                        "basicmachine.orewasher.tier.08",
-                        "Ultimate Ore Washing Machine",
-                        8,
-                        MachineType.ORE_WASHER.tooltipDescription(),
-                        oreWasherRecipes,
-                        1,
-                        3,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ORE_WASHER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.OreWashingPlantUV.get(1L),
                 bitsd,
@@ -4639,22 +2662,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP });
-
-        CustomItemList.OreWashingPlantUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ORE_WASHING_PLANT_UHV.ID,
-                        "basicmachine.orewasher.tier.09",
-                        "Epic Ore Washing Machine",
-                        9,
-                        MachineType.ORE_WASHER.tooltipDescription(),
-                        oreWasherRecipes,
-                        1,
-                        3,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ORE_WASHER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.OreWashingPlantUHV.get(1L),
@@ -4666,22 +2673,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP });
 
-        CustomItemList.OreWashingPlantUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ORE_WASHING_PLANT_UEV.ID,
-                        "basicmachine.orewasher.tier.10",
-                        "Epic Ore Washing Machine II",
-                        10,
-                        MachineType.ORE_WASHER.tooltipDescription(),
-                        oreWasherRecipes,
-                        1,
-                        3,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ORE_WASHER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.OreWashingPlantUEV.get(1L),
                 bitsd,
@@ -4692,22 +2683,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP });
 
-        CustomItemList.OreWashingPlantUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ORE_WASHING_PLANT_UIV.ID,
-                        "basicmachine.orewasher.tier.11",
-                        "Epic Ore Washing Machine III",
-                        11,
-                        MachineType.ORE_WASHER.tooltipDescription(),
-                        oreWasherRecipes,
-                        1,
-                        3,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ORE_WASHER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.OreWashingPlantUIV.get(1L),
                 bitsd,
@@ -4717,22 +2692,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP });
-
-        CustomItemList.OreWashingPlantUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ORE_WASHING_PLANT_UMV.ID,
-                        "basicmachine.orewasher.tier.12",
-                        "Epic Ore Washing Machine IV",
-                        12,
-                        MachineType.ORE_WASHER.tooltipDescription(),
-                        oreWasherRecipes,
-                        1,
-                        3,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "ORE_WASHER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.OreWashingPlantUMV.get(1L),
@@ -4748,22 +2707,6 @@ public class GT_Loader_Machines {
 
     private void registerPolarizer() {
 
-        CustomItemList.PolarizerLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        POLARIZER_LuV.ID,
-                        "basicmachine.polarizer.tier.06",
-                        "Elite Polarizer",
-                        6,
-                        MachineType.POLARIZER.tooltipDescription(),
-                        polarizerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "POLARIZER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PolarizerLuV.get(1L),
                 bitsd,
@@ -4771,22 +2714,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC, 'Z',
                         OrePrefixes.wireGt02.get(Materials.Osmium), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
-
-        CustomItemList.PolarizerZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        POLARIZER_ZPM.ID,
-                        "basicmachine.polarizer.tier.07",
-                        "Elite Polarizer II",
-                        7,
-                        MachineType.POLARIZER.tooltipDescription(),
-                        polarizerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "POLARIZER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PolarizerZPM.get(1L),
@@ -4796,22 +2723,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt04.get(Materials.Osmium), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.PolarizerUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        POLARIZER_UV.ID,
-                        "basicmachine.polarizer.tier.08",
-                        "Ultimate Magnetism Inducer",
-                        8,
-                        MachineType.POLARIZER.tooltipDescription(),
-                        polarizerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "POLARIZER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PolarizerUV.get(1L),
                 bitsd,
@@ -4819,22 +2730,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC, 'Z',
                         OrePrefixes.wireGt08.get(Materials.Osmium), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
-
-        CustomItemList.PolarizerUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        POLARIZER_UHV.ID,
-                        "basicmachine.polarizer.tier.09",
-                        "Epic Magnetism Inducer",
-                        9,
-                        MachineType.POLARIZER.tooltipDescription(),
-                        polarizerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "POLARIZER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PolarizerUHV.get(1L),
@@ -4844,22 +2739,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt08.get(Materials.Osmium), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.PolarizerUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        POLARIZER_UEV.ID,
-                        "basicmachine.polarizer.tier.10",
-                        "Epic Magnetism Inducer II",
-                        10,
-                        MachineType.POLARIZER.tooltipDescription(),
-                        polarizerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "POLARIZER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PolarizerUEV.get(1L),
                 bitsd,
@@ -4868,22 +2747,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.wireGt08.get(Materials.Osmium), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.PolarizerUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        POLARIZER_UIV.ID,
-                        "basicmachine.polarizer.tier.11",
-                        "Epic Magnetism Inducer III",
-                        11,
-                        MachineType.POLARIZER.tooltipDescription(),
-                        polarizerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "POLARIZER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PolarizerUIV.get(1L),
                 bitsd,
@@ -4891,22 +2754,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.STICK_ELECTROMAGNETIC, 'Z',
                         OrePrefixes.wireGt08.get(Materials.Osmium), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        CustomItemList.PolarizerUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        POLARIZER_UMV.ID,
-                        "basicmachine.polarizer.tier.12",
-                        "Epic Magnetism Inducer IV",
-                        12,
-                        MachineType.POLARIZER.tooltipDescription(),
-                        polarizerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_MAGNETIZER_LOOP,
-                        SpecialEffects.NONE,
-                        "POLARIZER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PolarizerUMV.get(1L),
@@ -4920,22 +2767,6 @@ public class GT_Loader_Machines {
 
     private void registerRecycler() {
 
-        CustomItemList.RecyclerLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        RECYCLER_LuV.ID,
-                        "basicmachine.recycler.tier.06",
-                        "Elite Recycler",
-                        6,
-                        MachineType.RECYCLER.tooltipDescription(),
-                        recyclerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "RECYCLER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.RecyclerLuV.get(1L),
                 bitsd,
@@ -4944,22 +2775,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) });
-
-        CustomItemList.RecyclerZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        RECYCLER_ZPM.ID,
-                        "basicmachine.recycler.tier.07",
-                        "Elite Recycler II",
-                        7,
-                        MachineType.RECYCLER.tooltipDescription(),
-                        recyclerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "RECYCLER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.RecyclerZPM.get(1L),
@@ -4970,22 +2785,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) });
 
-        CustomItemList.RecyclerUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        RECYCLER_UV.ID,
-                        "basicmachine.recycler.tier.08",
-                        "Ultimate Scrap-O-Matic",
-                        8,
-                        MachineType.RECYCLER.tooltipDescription(),
-                        recyclerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "RECYCLER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.RecyclerUV.get(1L),
                 bitsd,
@@ -4994,22 +2793,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) });
-
-        CustomItemList.RecyclerUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        RECYCLER_UHV.ID,
-                        "basicmachine.recycler.tier.09",
-                        "Epic Scrap-O-Matic",
-                        9,
-                        MachineType.RECYCLER.tooltipDescription(),
-                        recyclerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "RECYCLER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.RecyclerUHV.get(1L),
@@ -5020,22 +2803,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) });
 
-        CustomItemList.RecyclerUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        RECYCLER_UEV.ID,
-                        "basicmachine.recycler.tier.10",
-                        "Epic Scrap-O-Matic II",
-                        10,
-                        MachineType.RECYCLER.tooltipDescription(),
-                        recyclerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "RECYCLER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.RecyclerUEV.get(1L),
                 bitsd,
@@ -5045,22 +2812,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) });
 
-        CustomItemList.RecyclerUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        RECYCLER_UIV.ID,
-                        "basicmachine.recycler.tier.11",
-                        "Epic Scrap-O-Matic III",
-                        11,
-                        MachineType.RECYCLER.tooltipDescription(),
-                        recyclerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "RECYCLER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.RecyclerUIV.get(1L),
                 bitsd,
@@ -5069,22 +2820,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) });
-
-        CustomItemList.RecyclerUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        RECYCLER_UMV.ID,
-                        "basicmachine.recycler.tier.12",
-                        "Epic Scrap-O-Matic IV",
-                        12,
-                        MachineType.RECYCLER.tooltipDescription(),
-                        recyclerRecipes,
-                        1,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "RECYCLER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.RecyclerUMV.get(1L),
@@ -5097,69 +2832,8 @@ public class GT_Loader_Machines {
 
     }
 
-    private void registerReplicator() {
-
-        CustomItemList.ReplicatorLuV.set(
-                new GT_MetaTileEntity_Replicator(
-                        MATTER_REPLICATOR_LuV.ID,
-                        "basicmachine.replicator.tier.06",
-                        "Elite Replicator",
-                        6).getStackForm(1L));
-        CustomItemList.ReplicatorZPM.set(
-                new GT_MetaTileEntity_Replicator(
-                        MATTER_REPLICATOR_ZPM.ID,
-                        "basicmachine.replicator.tier.07",
-                        "Elite Replicator II",
-                        7).getStackForm(1L));
-        CustomItemList.ReplicatorUV.set(
-                new GT_MetaTileEntity_Replicator(
-                        MATTER_REPLICATOR_UV.ID,
-                        "basicmachine.replicator.tier.08",
-                        "Ultimate Elemental Composer",
-                        8).getStackForm(1L));
-        CustomItemList.ReplicatorUHV.set(
-                new GT_MetaTileEntity_Replicator(
-                        MATTER_REPLICATOR_UHV.ID,
-                        "basicmachine.replicator.tier.09",
-                        "Epic Elemental Composer",
-                        9).getStackForm(1L));
-        CustomItemList.ReplicatorUEV.set(
-                new GT_MetaTileEntity_Replicator(
-                        MATTER_REPLICATOR_UEV.ID,
-                        "basicmachine.replicator.tier.10",
-                        "Epic Elemental Composer II",
-                        10).getStackForm(1L));
-        CustomItemList.ReplicatorUIV.set(
-                new GT_MetaTileEntity_Replicator(
-                        MATTER_REPLICATOR_UIV.ID,
-                        "basicmachine.replicator.tier.11",
-                        "Epic Elemental Composer III",
-                        11).getStackForm(1L));
-        CustomItemList.ReplicatorUMV.set(
-                new GT_MetaTileEntity_Replicator(
-                        MATTER_REPLICATOR_UMV.ID,
-                        "basicmachine.replicator.tier.12",
-                        "Epic Elemental Composer IV",
-                        12).getStackForm(1L));
-    }
-
     private void registerSiftingMachine() {
 
-        CustomItemList.SiftingMachineLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SIFTING_MACHINE_LuV.ID,
-                        "basicmachine.sifter.tier.06",
-                        "Elite Sifting Machine",
-                        6,
-                        MachineType.SIFTER.tooltipDescription(),
-                        sifterRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SIFTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SiftingMachineLuV.get(1L),
@@ -5169,21 +2843,6 @@ public class GT_Loader_Machines {
                         'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
 
-        CustomItemList.SiftingMachineZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SIFTING_MACHINE_ZPM.ID,
-                        "basicmachine.sifter.tier.07",
-                        "Elite Sifting Machine II",
-                        7,
-                        MachineType.SIFTER.tooltipDescription(),
-                        sifterRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SIFTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SiftingMachineZPM.get(1L),
@@ -5193,21 +2852,6 @@ public class GT_Loader_Machines {
                         'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.SiftingMachineUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SIFTING_MACHINE_UV.ID,
-                        "basicmachine.sifter.tier.08",
-                        "Ultimate Pulsation Filter",
-                        8,
-                        MachineType.SIFTER.tooltipDescription(),
-                        sifterRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SIFTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SiftingMachineUV.get(1L),
@@ -5217,22 +2861,6 @@ public class GT_Loader_Machines {
                         'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
 
-        CustomItemList.SiftingMachineUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SIFTING_MACHINE_UHV.ID,
-                        "basicmachine.sifter.tier.09",
-                        "Epic Pulsation Filter",
-                        9,
-                        MachineType.SIFTER.tooltipDescription(),
-                        sifterRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SIFTER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SiftingMachineUHV.get(1L),
                 bitsd,
@@ -5240,22 +2868,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'F', OreDictNames.craftingFilter,
                         'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
-
-        CustomItemList.SiftingMachineUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SIFTING_MACHINE_UEV.ID,
-                        "basicmachine.sifter.tier.10",
-                        "Epic Pulsation Filter II",
-                        10,
-                        MachineType.SIFTER.tooltipDescription(),
-                        sifterRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SIFTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SiftingMachineUEV.get(1L),
@@ -5265,22 +2877,6 @@ public class GT_Loader_Machines {
                         'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.SiftingMachineUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SIFTING_MACHINE_UIV.ID,
-                        "basicmachine.sifter.tier.11",
-                        "Epic Pulsation Filter III",
-                        11,
-                        MachineType.SIFTER.tooltipDescription(),
-                        sifterRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SIFTER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SiftingMachineUIV.get(1L),
                 bitsd,
@@ -5288,22 +2884,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'F', OreDictNames.craftingFilter,
                         'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        CustomItemList.SiftingMachineUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SIFTING_MACHINE_UMV.ID,
-                        "basicmachine.sifter.tier.12",
-                        "Epic Pulsation Filter IV",
-                        12,
-                        MachineType.SIFTER.tooltipDescription(),
-                        sifterRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SIFTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SiftingMachineUMV.get(1L),
@@ -5317,22 +2897,6 @@ public class GT_Loader_Machines {
 
     private void registerSlicingMachine() {
 
-        CustomItemList.SlicingMachineLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SLICING_MACHINE_LuV.ID,
-                        "basicmachine.slicer.tier.06",
-                        "Elite Slicing Machine",
-                        6,
-                        MachineType.SLICER.tooltipDescription(),
-                        slicerRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SLICER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SlicingMachineLuV.get(1L),
                 bitsd,
@@ -5341,22 +2905,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
-
-        CustomItemList.SlicingMachineZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SLICING_MACHINE_ZPM.ID,
-                        "basicmachine.slicer.tier.07",
-                        "Elite Slicing Machine II",
-                        7,
-                        MachineType.SLICER.tooltipDescription(),
-                        slicerRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SLICER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SlicingMachineZPM.get(1L),
@@ -5367,22 +2915,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.SlicingMachineUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SLICING_MACHINE_UV.ID,
-                        "basicmachine.slicer.tier.08",
-                        "Ultimate Quantum Slicer",
-                        8,
-                        MachineType.SLICER.tooltipDescription(),
-                        slicerRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SLICER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SlicingMachineUV.get(1L),
                 bitsd,
@@ -5391,22 +2923,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
-
-        CustomItemList.SlicingMachineUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SLICING_MACHINE_UHV.ID,
-                        "basicmachine.slicer.tier.09",
-                        "Epic Quantum Slicer",
-                        9,
-                        MachineType.SLICER.tooltipDescription(),
-                        slicerRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SLICER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SlicingMachineUHV.get(1L),
@@ -5417,22 +2933,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.SlicingMachineUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SLICING_MACHINE_UEV.ID,
-                        "basicmachine.slicer.tier.10",
-                        "Epic Quantum Slicer II",
-                        10,
-                        MachineType.SLICER.tooltipDescription(),
-                        slicerRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SLICER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SlicingMachineUEV.get(1L),
                 bitsd,
@@ -5442,22 +2942,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.SlicingMachineUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SLICING_MACHINE_UIV.ID,
-                        "basicmachine.slicer.tier.11",
-                        "Epic Quantum Slicer III",
-                        11,
-                        MachineType.SLICER.tooltipDescription(),
-                        slicerRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SLICER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SlicingMachineUIV.get(1L),
                 bitsd,
@@ -5466,22 +2950,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        CustomItemList.SlicingMachineUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        SLICING_MACHINE_UMV.ID,
-                        "basicmachine.slicer.tier.12",
-                        "Epic Quantum Slicer IV",
-                        12,
-                        MachineType.SLICER.tooltipDescription(),
-                        slicerRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "SLICER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.SlicingMachineUMV.get(1L),
@@ -5496,22 +2964,6 @@ public class GT_Loader_Machines {
 
     private void registerThermalCentrifuge() {
 
-        CustomItemList.ThermalCentrifugeLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        THERMAL_CENTRIFUGE_LuV.ID,
-                        "basicmachine.thermalcentrifuge.tier.06",
-                        "Elite Thermal Centrifuge",
-                        6,
-                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
-                        thermalCentrifugeRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "THERMAL_CENTRIFUGE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ThermalCentrifugeLuV.get(1L),
                 bitsd,
@@ -5520,22 +2972,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil() });
-
-        CustomItemList.ThermalCentrifugeZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        THERMAL_CENTRIFUGE_ZPM.ID,
-                        "basicmachine.thermalcentrifuge.tier.07",
-                        "Elite Thermal Centrifuge II",
-                        7,
-                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
-                        thermalCentrifugeRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "THERMAL_CENTRIFUGE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ThermalCentrifugeZPM.get(1L),
@@ -5546,22 +2982,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getHCoil() });
 
-        CustomItemList.ThermalCentrifugeUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        THERMAL_CENTRIFUGE_UV.ID,
-                        "basicmachine.thermalcentrifuge.tier.08",
-                        "Ultimate Fire Cyclone",
-                        8,
-                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
-                        thermalCentrifugeRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "THERMAL_CENTRIFUGE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ThermalCentrifugeUV.get(1L),
                 bitsd,
@@ -5570,22 +2990,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil() });
-
-        CustomItemList.ThermalCentrifugeUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        THERMAL_CENTRIFUGE_UHV.ID,
-                        "basicmachine.thermalcentrifuge.tier.09",
-                        "Epic Fire Cyclone",
-                        9,
-                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
-                        thermalCentrifugeRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "THERMAL_CENTRIFUGE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ThermalCentrifugeUHV.get(1L),
@@ -5596,21 +3000,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() });
 
-        CustomItemList.ThermalCentrifugeUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        THERMAL_CENTRIFUGE_UEV.ID,
-                        "basicmachine.thermalcentrifuge.tier.10",
-                        "Epic Fire Cyclone II",
-                        10,
-                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
-                        thermalCentrifugeRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "THERMAL_CENTRIFUGE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ThermalCentrifugeUEV.get(1L),
@@ -5621,21 +3010,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() });
 
-        CustomItemList.ThermalCentrifugeUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        THERMAL_CENTRIFUGE_UIV.ID,
-                        "basicmachine.thermalcentrifuge.tier.11",
-                        "Epic Fire Cyclone III",
-                        11,
-                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
-                        thermalCentrifugeRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "THERMAL_CENTRIFUGE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ThermalCentrifugeUIV.get(1L),
@@ -5645,22 +3019,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil() });
-
-        CustomItemList.ThermalCentrifugeUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        THERMAL_CENTRIFUGE_UMV.ID,
-                        "basicmachine.thermalcentrifuge.tier.12",
-                        "Epic Fire Cyclone IV",
-                        12,
-                        MachineType.THERMAL_CENTRIFUGE.tooltipDescription(),
-                        thermalCentrifugeRecipes,
-                        1,
-                        3,
-                        false,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "THERMAL_CENTRIFUGE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ThermalCentrifugeUMV.get(1L),
@@ -5675,22 +3033,6 @@ public class GT_Loader_Machines {
 
     private void registerWiremill() {
 
-        CustomItemList.WiremillLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        WIREMILL_LuV.ID,
-                        "basicmachine.wiremill.tier.06",
-                        "Elite Wiremill",
-                        6,
-                        MachineType.WIREMILL.tooltipDescription(),
-                        wiremillRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "WIREMILL",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.WiremillLuV.get(1L),
                 bitsd,
@@ -5698,22 +3040,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
-
-        CustomItemList.WiremillZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        WIREMILL_ZPM.ID,
-                        "basicmachine.wiremill.tier.07",
-                        "Elite Wiremill II",
-                        7,
-                        MachineType.WIREMILL.tooltipDescription(),
-                        wiremillRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "WIREMILL",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.WiremillZPM.get(1L),
@@ -5723,22 +3049,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.WiremillUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        WIREMILL_UV.ID,
-                        "basicmachine.wiremill.tier.08",
-                        "Ultimate Wire Transfigurator",
-                        8,
-                        MachineType.WIREMILL.tooltipDescription(),
-                        wiremillRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "WIREMILL",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.WiremillUV.get(1L),
                 bitsd,
@@ -5746,22 +3056,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
-
-        CustomItemList.WiremillUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        WIREMILL_UHV.ID,
-                        "basicmachine.wiremill.tier.09",
-                        "Epic Wire Transfigurator",
-                        9,
-                        MachineType.WIREMILL.tooltipDescription(),
-                        wiremillRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "WIREMILL",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.WiremillUHV.get(1L),
@@ -5771,22 +3065,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.WiremillUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        WIREMILL_UEV.ID,
-                        "basicmachine.wiremill.tier.10",
-                        "Epic Wire Transfigurator II",
-                        10,
-                        MachineType.WIREMILL.tooltipDescription(),
-                        wiremillRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "WIREMILL",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.WiremillUEV.get(1L),
                 bitsd,
@@ -5795,22 +3073,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.WiremillUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        WIREMILL_UIV.ID,
-                        "basicmachine.wiremill.tier.11",
-                        "Epic Wire Transfigurator III",
-                        11,
-                        MachineType.WIREMILL.tooltipDescription(),
-                        wiremillRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "WIREMILL",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.WiremillUIV.get(1L),
                 bitsd,
@@ -5818,22 +3080,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        CustomItemList.WiremillUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        WIREMILL_UMV.ID,
-                        "basicmachine.wiremill.tier.12",
-                        "Epic Wire Transfigurator IV",
-                        12,
-                        MachineType.WIREMILL.tooltipDescription(),
-                        wiremillRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_RECYCLER_OP,
-                        SpecialEffects.NONE,
-                        "WIREMILL",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.WiremillUMV.get(1L),
@@ -5847,22 +3093,6 @@ public class GT_Loader_Machines {
 
     private void registerArcFurnace() {
 
-        CustomItemList.ArcFurnaceLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ARC_FURNACE_LuV.ID,
-                        "basicmachine.arcfurnace.tier.06",
-                        "Elite Arc Furnace",
-                        6,
-                        MachineType.ARC_FURNACE.tooltipDescription(),
-                        arcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ARC_FURNACE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ArcFurnaceLuV.get(1L),
                 bitsd,
@@ -5871,22 +3101,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
-
-        CustomItemList.ArcFurnaceZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ARC_FURNACE_ZPM.ID,
-                        "basicmachine.arcfurnace.tier.07",
-                        "Elite Arc Furnace II",
-                        7,
-                        MachineType.ARC_FURNACE.tooltipDescription(),
-                        arcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ARC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ArcFurnaceZPM.get(1L),
@@ -5897,22 +3111,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4(), 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.ArcFurnaceUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ARC_FURNACE_UV.ID,
-                        "basicmachine.arcfurnace.tier.08",
-                        "Ultimate Short Circuit Heater",
-                        8,
-                        MachineType.ARC_FURNACE.tooltipDescription(),
-                        arcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ARC_FURNACE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ArcFurnaceUV.get(1L),
                 bitsd,
@@ -5921,22 +3119,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable4(), 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
-
-        CustomItemList.ArcFurnaceUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ARC_FURNACE_UHV.ID,
-                        "basicmachine.arcfurnace.tier.09",
-                        "Epic Short Circuit Heater",
-                        9,
-                        MachineType.ARC_FURNACE.tooltipDescription(),
-                        arcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ARC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ArcFurnaceUHV.get(1L),
@@ -5947,22 +3129,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4(), 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.ArcFurnaceUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ARC_FURNACE_UEV.ID,
-                        "basicmachine.arcfurnace.tier.10",
-                        "Epic Short Circuit Heater II",
-                        10,
-                        MachineType.ARC_FURNACE.tooltipDescription(),
-                        arcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ARC_FURNACE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ArcFurnaceUEV.get(1L),
                 bitsd,
@@ -5972,22 +3138,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4(), 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.ArcFurnaceUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ARC_FURNACE_UIV.ID,
-                        "basicmachine.arcfurnace.tier.11",
-                        "Epic Short Circuit Heater III",
-                        11,
-                        MachineType.ARC_FURNACE.tooltipDescription(),
-                        arcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ARC_FURNACE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ArcFurnaceUIV.get(1L),
                 bitsd,
@@ -5996,22 +3146,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4(), 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
-
-        CustomItemList.ArcFurnaceUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ARC_FURNACE_UMV.ID,
-                        "basicmachine.arcfurnace.tier.12",
-                        "Epic Short Circuit Heater IV",
-                        12,
-                        MachineType.ARC_FURNACE.tooltipDescription(),
-                        arcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ARC_FURNACE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.ArcFurnaceUMV.get(1L),
@@ -6026,22 +3160,6 @@ public class GT_Loader_Machines {
 
     private void registerCentrifuge() {
 
-        CustomItemList.CentrifugeLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CENTRIFUGE_LuV.ID,
-                        "basicmachine.centrifuge.tier.06",
-                        "Elite Centrifuge",
-                        6,
-                        MachineType.CENTRIFUGE.tooltipDescription(),
-                        centrifugeRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CENTRIFUGE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CentrifugeLuV.get(1L),
                 bitsd,
@@ -6049,22 +3167,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() });
-
-        CustomItemList.CentrifugeZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CENTRIFUGE_ZPM.ID,
-                        "basicmachine.centrifuge.tier.07",
-                        "Elite Centrifuge II",
-                        7,
-                        MachineType.CENTRIFUGE.tooltipDescription(),
-                        centrifugeRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CENTRIFUGE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CentrifugeZPM.get(1L),
@@ -6074,22 +3176,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() });
 
-        CustomItemList.CentrifugeUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CENTRIFUGE_UV.ID,
-                        "basicmachine.centrifuge.tier.08",
-                        "Ultimate Molecular Tornado",
-                        8,
-                        MachineType.CENTRIFUGE.tooltipDescription(),
-                        centrifugeRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CENTRIFUGE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CentrifugeUV.get(1L),
                 bitsd,
@@ -6097,22 +3183,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() });
-
-        CustomItemList.CentrifugeUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CENTRIFUGE_UHV.ID,
-                        "basicmachine.centrifuge.tier.09",
-                        "Epic Molecular Tornado",
-                        9,
-                        MachineType.CENTRIFUGE.tooltipDescription(),
-                        centrifugeRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CENTRIFUGE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CentrifugeUHV.get(1L),
@@ -6122,22 +3192,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
 
-        CustomItemList.CentrifugeUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CENTRIFUGE_UEV.ID,
-                        "basicmachine.centrifuge.tier.10",
-                        "Epic Molecular Tornado II",
-                        10,
-                        MachineType.CENTRIFUGE.tooltipDescription(),
-                        centrifugeRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CENTRIFUGE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CentrifugeUEV.get(1L),
                 bitsd,
@@ -6146,22 +3200,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.CentrifugeUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CENTRIFUGE_UIV.ID,
-                        "basicmachine.centrifuge.tier.11",
-                        "Epic Molecular Tornado III",
-                        11,
-                        MachineType.CENTRIFUGE.tooltipDescription(),
-                        centrifugeRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CENTRIFUGE",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CentrifugeUIV.get(1L),
                 bitsd,
@@ -6169,22 +3207,6 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
-
-        CustomItemList.CentrifugeUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CENTRIFUGE_UMV.ID,
-                        "basicmachine.centrifuge.tier.12",
-                        "Epic Molecular Tornado IV",
-                        12,
-                        MachineType.CENTRIFUGE.tooltipDescription(),
-                        centrifugeRecipes,
-                        2,
-                        6,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CENTRIFUGE",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CentrifugeUMV.get(1L),
@@ -6198,21 +3220,7 @@ public class GT_Loader_Machines {
 
     private void registerPlasmaArcFurnace() {
 
-        CustomItemList.PlasmaArcFurnaceLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PLASMA_ARC_FURNACE_LuV.ID,
-                        "basicmachine.plasmaarcfurnace.tier.06",
-                        "Elite Plasma Arc Furnace",
-                        6,
-                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
-                        plasmaArcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "PLASMA_ARC_FURNACE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PlasmaArcFurnaceLuV.get(1L),
@@ -6224,21 +3232,7 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.PlasmaArcFurnaceZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PLASMA_ARC_FURNACE_ZPM.ID,
-                        "basicmachine.plasmaarcfurnace.tier.07",
-                        "Elite Plasma Arc Furnace II",
-                        7,
-                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
-                        plasmaArcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "PLASMA_ARC_FURNACE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PlasmaArcFurnaceZPM.get(1L),
@@ -6250,21 +3244,7 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.PlasmaArcFurnaceUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PLASMA_ARC_FURNACE_UV.ID,
-                        "basicmachine.plasmaarcfurnace.tier.08",
-                        "Ultimate Plasma Discharge Heater",
-                        8,
-                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
-                        plasmaArcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "PLASMA_ARC_FURNACE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PlasmaArcFurnaceUV.get(1L),
@@ -6276,21 +3256,7 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.PlasmaArcFurnaceUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PLASMA_ARC_FURNACE_UHV.ID,
-                        "basicmachine.plasmaarcfurnace.tier.09",
-                        "Epic Plasma Discharge Heater",
-                        9,
-                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
-                        plasmaArcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "PLASMA_ARC_FURNACE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PlasmaArcFurnaceUHV.get(1L),
@@ -6302,21 +3268,7 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.PlasmaArcFurnaceUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PLASMA_ARC_FURNACE_UEV.ID,
-                        "basicmachine.plasmaarcfurnace.tier.10",
-                        "Epic Plasma Discharge Heater II",
-                        10,
-                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
-                        plasmaArcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "PLASMA_ARC_FURNACE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PlasmaArcFurnaceUEV.get(1L),
@@ -6328,21 +3280,7 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.PlasmaArcFurnaceUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PLASMA_ARC_FURNACE_UIV.ID,
-                        "basicmachine.plasmaarcfurnace.tier.11",
-                        "Epic Plasma Discharge Heater III",
-                        11,
-                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
-                        plasmaArcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "PLASMA_ARC_FURNACE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PlasmaArcFurnaceUIV.get(1L),
@@ -6354,21 +3292,7 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
 
-        CustomItemList.PlasmaArcFurnaceUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        PLASMA_ARC_FURNACE_UMV.ID,
-                        "basicmachine.plasmaarcfurnace.tier.12",
-                        "Epic Plasma Discharge Heater IV",
-                        12,
-                        MachineType.PLASMA_ARC_FURNACE.tooltipDescription(),
-                        plasmaArcFurnaceRecipes,
-                        1,
-                        9,
-                        true,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "PLASMA_ARC_FURNACE",
-                        null).getStackForm(1L));
+
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.PlasmaArcFurnaceUMV.get(1L),
@@ -6382,23 +3306,6 @@ public class GT_Loader_Machines {
     }
 
     private void registerCanningMachine() {
-
-        CustomItemList.CanningMachineLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CANNING_MACHINE_LuV.ID,
-                        "basicmachine.canner.tier.06",
-                        "Elite Canning Machine",
-                        6,
-                        MachineType.CANNER.tooltipDescription(),
-                        cannerRecipes,
-                        2,
-                        2,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "CANNER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CanningMachineLuV.get(1L),
                 bitsd,
@@ -6407,22 +3314,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS });
-
-        CustomItemList.CanningMachineZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CANNING_MACHINE_ZPM.ID,
-                        "basicmachine.canner.tier.07",
-                        "Elite Canning Machine II",
-                        7,
-                        MachineType.CANNER.tooltipDescription(),
-                        cannerRecipes,
-                        2,
-                        2,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "CANNER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CanningMachineZPM.get(1L),
@@ -6433,22 +3324,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS });
 
-        CustomItemList.CanningMachineUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CANNING_MACHINE_UV.ID,
-                        "basicmachine.canner.tier.08",
-                        "Ultimate Can Operator",
-                        8,
-                        MachineType.CANNER.tooltipDescription(),
-                        cannerRecipes,
-                        2,
-                        2,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "CANNER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CanningMachineUV.get(1L),
                 bitsd,
@@ -6457,22 +3332,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS });
-
-        CustomItemList.CanningMachineUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CANNING_MACHINE_UHV.ID,
-                        "basicmachine.canner.tier.09",
-                        "Epic Can Operator",
-                        9,
-                        MachineType.CANNER.tooltipDescription(),
-                        cannerRecipes,
-                        2,
-                        2,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "CANNER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CanningMachineUHV.get(1L),
@@ -6483,22 +3342,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS });
 
-        CustomItemList.CanningMachineUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CANNING_MACHINE_UEV.ID,
-                        "basicmachine.canner.tier.10",
-                        "Epic Can Operator II",
-                        10,
-                        MachineType.CANNER.tooltipDescription(),
-                        cannerRecipes,
-                        2,
-                        2,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "CANNER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CanningMachineUEV.get(1L),
                 bitsd,
@@ -6508,21 +3351,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS });
 
-        CustomItemList.CanningMachineUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CANNING_MACHINE_UIV.ID,
-                        "basicmachine.canner.tier.11",
-                        "Epic Can Operator III",
-                        11,
-                        MachineType.CANNER.tooltipDescription(),
-                        cannerRecipes,
-                        2,
-                        2,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "CANNER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CanningMachineUIV.get(1L),
@@ -6532,22 +3360,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.GLASS });
-
-        CustomItemList.CanningMachineUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CANNING_MACHINE_UMV.ID,
-                        "basicmachine.canner.tier.12",
-                        "Epic Can Operator IV",
-                        12,
-                        MachineType.CANNER.tooltipDescription(),
-                        cannerRecipes,
-                        2,
-                        2,
-                        false,
-                        SoundResource.IC2_MACHINES_EXTRACTOR_OP,
-                        SpecialEffects.NONE,
-                        "CANNER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CanningMachineUMV.get(1L),
