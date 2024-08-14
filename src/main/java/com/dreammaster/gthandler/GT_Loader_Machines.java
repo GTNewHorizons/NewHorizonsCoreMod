@@ -1708,37 +1708,10 @@ public class GT_Loader_Machines {
     }
 
     private void registerPlasmaGenerators() {
-        CustomItemList.Generator_Plasma_ZPMV.set(
-                new GT_MetaTileEntity_PlasmaGenerator(
-                        PLASMA_GENERATOR_ZPM.ID,
-                        "basicgenerator.plasmagenerator.tier.08",
-                        "Plasma Generator Mark IV",
-                        7).getStackForm(1L));
 
-        CustomItemList.Generator_Plasma_UV.set(
-                new GT_MetaTileEntity_PlasmaGenerator(
-                        PLASMA_GENERATOR_UV.ID,
-                        "basicgenerator.plasmagenerator.tier.09",
-                        "Ultimate Pocket Sun",
-                        8).getStackForm(1L));
     }
 
     private void registerAlloySmelter() {
-        CustomItemList.AlloySmelterLuV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ALLOY_SMELTER_LuV.ID,
-                        "basicmachine.alloysmelter.tier.06",
-                        "Elite Alloy Smelter",
-                        6,
-                        MachineType.ALLOY_SMELTER.tooltipDescription(),
-                        alloySmelterRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ALLOY_SMELTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AlloySmelterLuV.get(1L),
@@ -1748,44 +1721,12 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil()});
 
-        CustomItemList.AlloySmelterZPM.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ALLOY_SMELTER_ZPM.ID,
-                        "basicmachine.alloysmelter.tier.07",
-                        "Elite Alloy Smelter II",
-                        7,
-                        MachineType.ALLOY_SMELTER.tooltipDescription(),
-                        alloySmelterRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ALLOY_SMELTER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AlloySmelterZPM.get(1L),
                 bitsd,new Object[] { "ECE", "CMC", "WCW", 'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL, 'E',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getHCoil() });
-
-        CustomItemList.AlloySmelterUV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ALLOY_SMELTER_UV.ID,
-                        "basicmachine.alloysmelter.tier.08",
-                        "Ultimate Alloy Integrator",
-                        8,
-                        MachineType.ALLOY_SMELTER.tooltipDescription(),
-                        alloySmelterRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ALLOY_SMELTER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AlloySmelterUV.get(1L),
@@ -1794,22 +1735,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil() });
 
-        CustomItemList.AlloySmelterUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ALLOY_SMELTER_UHV.ID,
-                        "basicmachine.alloysmelter.tier.09",
-                        "Epic Alloy Integrator",
-                        9,
-                        MachineType.ALLOY_SMELTER.tooltipDescription(),
-                        alloySmelterRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ALLOY_SMELTER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AlloySmelterUHV.get(1L),
                 bitsd,new Object[] { "ECE", "CMC", "WCW", 'M', GT_MetaTileEntity_BasicMachine_GT_Recipe.X.HULL, 'E',
@@ -1817,21 +1742,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() });
 
-        CustomItemList.AlloySmelterUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ALLOY_SMELTER_UEV.ID,
-                        "basicmachine.alloysmelter.tier.10",
-                        "Epic Alloy Integrator II",
-                        10,
-                        MachineType.ALLOY_SMELTER.tooltipDescription(),
-                        alloySmelterRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ALLOY_SMELTER",
-                        null).getStackForm(1L));
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AlloySmelterUEV.get(1L),
                 bitsd,new Object[] { "ECE", "CMC", "WCW", 'M', CustomItemList.Hull_UEV, 'E',
@@ -1839,22 +1749,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() });
 
-        // Nulling recipes for now
-        CustomItemList.AlloySmelterUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ALLOY_SMELTER_UIV.ID,
-                        "basicmachine.alloysmelter.tier.11",
-                        "Epic Alloy Integrator III",
-                        11,
-                        MachineType.ALLOY_SMELTER.tooltipDescription(),
-                        alloySmelterRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ALLOY_SMELTER",
-                        null).getStackForm(1L));
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AlloySmelterUIV.get(1L),
                 bitsd,new Object[] { "ECE", "CMC", "WCW", 'M', CustomItemList.Hull_UIV, 'E',
@@ -1862,21 +1756,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil() });
 
-        CustomItemList.AlloySmelterUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        ALLOY_SMELTER_UMV.ID,
-                        "basicmachine.alloysmelter.tier.12",
-                        "Epic Alloy Integrator IV",
-                        12,
-                        MachineType.ALLOY_SMELTER.tooltipDescription(),
-                        alloySmelterRecipes,
-                        2,
-                        1,
-                        false,
-                        SoundResource.IC2_MACHINES_INDUCTION_LOOP,
-                        SpecialEffects.NONE,
-                        "ALLOY_SMELTER",
-                        null).getStackForm(1L));
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.AlloySmelterUMV.get(1L),
                 bitsd,new Object[] { "ECE", "CMC", "WCW", 'M', CustomItemList.Hull_UMV, 'E',
