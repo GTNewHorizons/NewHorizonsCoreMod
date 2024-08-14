@@ -1704,45 +1704,7 @@ public class GT_Loader_Machines {
     }
 
     private void registerMachineHulls() {
-        CustomItemList.Hull_UEV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        HULL_UEV.ID,
-                        "hull.tier.10",
-                        "UEV Machine Hull",
-                        10,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
 
-        CustomItemList.Hull_UIV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        HULL_UIV.ID,
-                        "hull.tier.11",
-                        "UIV Machine Hull",
-                        11,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-        CustomItemList.Hull_UMV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        HULL_UMV.ID,
-                        "hull.tier.12",
-                        "UMV Machine Hull",
-                        12,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-        CustomItemList.Hull_UXV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        HULL_UXV.ID,
-                        "hull.tier.13",
-                        "UXV Machine Hull",
-                        13,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
-
-        CustomItemList.Hull_MAXV.set(
-                new GT_MetaTileEntity_BasicHull(
-                        HULL_MAX.ID,
-                        "hull.tier.14",
-                        "MAX Machine Hull",
-                        14,
-                        GT_Loader_MetaTileEntities.imagination).getStackForm(1L));
     }
 
     private void registerPlasmaGenerators() {
