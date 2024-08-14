@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -13,12 +13,14 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.Materials;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.Materials;
+
 public class ScriptEtFuturumRequiem implements IScriptLoader {
+
     @Override
     public String getScriptName() {
         return "Et Futurum Requiem";
@@ -26,10 +28,7 @@ public class ScriptEtFuturumRequiem implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(
-            EtFuturumRequiem.ID,
-            GTPlusPlus.ID
-        );
+        return Arrays.asList(EtFuturumRequiem.ID, GTPlusPlus.ID);
     }
 
     @Override
@@ -112,11 +111,16 @@ public class ScriptEtFuturumRequiem implements IScriptLoader {
         final ItemStack CUT_COPPER_SLAB = getModItem(EtFuturumRequiem.ID, "cut_copper_slab", 1, 0, missing);
 
         final ItemStack BLACKSTONE = getModItem(EtFuturumRequiem.ID, "blackstone", 1, 0, missing);
-        final ItemStack POLISHED_BLACKSTONE  = getModItem(EtFuturumRequiem.ID, "blackstone", 1, 1, missing);
-        final ItemStack POLISHED_BLACKSTONE_BRICKS  = getModItem(EtFuturumRequiem.ID, "blackstone", 1, 2, missing);
+        final ItemStack POLISHED_BLACKSTONE = getModItem(EtFuturumRequiem.ID, "blackstone", 1, 1, missing);
+        final ItemStack POLISHED_BLACKSTONE_BRICKS = getModItem(EtFuturumRequiem.ID, "blackstone", 1, 2, missing);
         final ItemStack BLACKSTONE_SLAB = getModItem(EtFuturumRequiem.ID, "blackstone_slab", 1, 0, missing);
         final ItemStack POLISHED_BLACKSTONE_SLAB = getModItem(EtFuturumRequiem.ID, "blackstone_slab", 1, 1, missing);
-        final ItemStack POLISHED_BLACKSTONE_BRICK_SLAB = getModItem(EtFuturumRequiem.ID, "blackstone_slab", 1, 2, missing);
+        final ItemStack POLISHED_BLACKSTONE_BRICK_SLAB = getModItem(
+                EtFuturumRequiem.ID,
+                "blackstone_slab",
+                1,
+                2,
+                missing);
 
         addPlankRecipes(CRIMSON_WOOD_PLANKS, CRIMSON_STEM);
         addPlankRecipes(WARPED_WOOD_PLANKS, WARPED_STEM);
@@ -163,27 +167,18 @@ public class ScriptEtFuturumRequiem implements IScriptLoader {
 
         ItemStack outputCutterLubricant = result.copy();
         outputCutterLubricant.stackSize = 6;
-        ItemStack sawdustCutterLubricant = getModItem(GregTech.ID, "gt.metaitem.01", 1, 1809);
-        GT_Values.RA.stdBuilder().itemInputs(ingredient)
-            .itemOutputs(outputCutterLubricant, sawdustCutterLubricant)
-            .fluidInputs(getFluidStack("lubricant", 1))
-            .duration(10 * SECONDS).eut(7)
-            .addTo(cutterRecipes);
+        ItemStack sawdustCutterLubricant = getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809);
+        GT_Values.RA.stdBuilder().itemInputs(ingredient).itemOutputs(outputCutterLubricant, sawdustCutterLubricant)
+                .fluidInputs(getFluidStack("lubricant", 1)).duration(10 * SECONDS).eut(7).addTo(cutterRecipes);
 
         ItemStack outputCutterWater = result.copy();
         outputCutterWater.stackSize = 4;
-        ItemStack sawdustCutterWater = getModItem(GregTech.ID, "gt.metaitem.01", 2, 1809);
-        GT_Values.RA.stdBuilder().itemInputs(ingredient)
-                .itemOutputs(outputCutterWater, sawdustCutterWater)
-                .fluidInputs(getFluidStack("ic2distilledwater", 3))
-                .duration(20 * SECONDS).eut(7)
-                .addTo(cutterRecipes);
+        ItemStack sawdustCutterWater = getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809);
+        GT_Values.RA.stdBuilder().itemInputs(ingredient).itemOutputs(outputCutterWater, sawdustCutterWater)
+                .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(20 * SECONDS).eut(7).addTo(cutterRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ingredient)
-                .itemOutputs(outputCutterWater, sawdustCutterWater)
-                .fluidInputs(Materials.Water.getFluid(5))
-                .duration(20 * SECONDS).eut(7)
-                .addTo(cutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ingredient).itemOutputs(outputCutterWater, sawdustCutterWater)
+                .fluidInputs(Materials.Water.getFluid(5)).duration(20 * SECONDS).eut(7).addTo(cutterRecipes);
 
     }
 
@@ -192,22 +187,14 @@ public class ScriptEtFuturumRequiem implements IScriptLoader {
         output.stackSize = 2;
         addShapelessRecipe(output, "craftingToolSaw", null, ingredient, null);
 
-        GT_Values.RA.stdBuilder().itemInputs(ingredient)
-                .itemOutputs(output)
-                .fluidInputs(getFluidStack("lubricant", 1))
-                .duration(1 * SECONDS + 5 * TICKS).eut(7)
+        GT_Values.RA.stdBuilder().itemInputs(ingredient).itemOutputs(output).fluidInputs(getFluidStack("lubricant", 1))
+                .duration(1 * SECONDS + 5 * TICKS).eut(7).addTo(cutterRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(ingredient).itemOutputs(output)
+                .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(2 * SECONDS + 10 * TICKS).eut(7)
                 .addTo(cutterRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(ingredient)
-                .itemOutputs(output)
-                .fluidInputs(getFluidStack("ic2distilledwater", 3))
-                .duration(2 * SECONDS + 10 * TICKS).eut(7)
-                .addTo(cutterRecipes);
-        
-        GT_Values.RA.stdBuilder().itemInputs(ingredient)
-                .itemOutputs(output)
-                .fluidInputs(Materials.Water.getFluid(4))
-                .duration(2 * SECONDS + 10 * TICKS).eut(7)
-                .addTo(cutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ingredient).itemOutputs(output).fluidInputs(Materials.Water.getFluid(4))
+                .duration(2 * SECONDS + 10 * TICKS).eut(7).addTo(cutterRecipes);
     }
 };
