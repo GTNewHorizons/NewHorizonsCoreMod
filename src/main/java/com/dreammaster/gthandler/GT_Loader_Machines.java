@@ -1,15 +1,32 @@
 package com.dreammaster.gthandler;
 
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
+import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
+import com.dreammaster.gthandler.nameRemover.NameRemover;
+import com.dreammaster.item.food.QuantumBread;
+import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.MachineType;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsKevlar;
+import gregtech.api.enums.MaterialsUEVplus;
+import gregtech.api.enums.OreDictNames;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.SoundResource;
+import gregtech.api.enums.TierEU;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe;
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe.SpecialEffects;
+import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GT_Utility;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Massfabricator;
+import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Replicator;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T1;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T2;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AIR_FILTER_CONTROLLER_T3;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ALLOY_SMELTER_ZPM;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UHV;
@@ -17,13 +34,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UIV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ARC_FURNACE_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ASSEMBLING_MACHINE_ZPM;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UHV;
@@ -31,30 +41,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UIV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.AUTOCLAVE_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_MAX;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_1_BY_1_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_MAX;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_2_BY_2_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_MAX;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_3_BY_3_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_MAX;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_BUFFER_4_BY_4_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_CHARGER_4_4_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_CHARGER_4_4_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_CHARGER_4_4_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BATTERY_CHARGER_4_4_UXV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UHV;
@@ -62,13 +48,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BENDING_MACHINE_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.BREWERY_ZPM;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CANNING_MACHINE_UHV;
@@ -97,9 +76,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEMICAL_REACTOR_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEST_BUFFER_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEST_BUFFER_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CHEST_BUFFER_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_MAX;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.CIRCUIT_ASSEMBLER_UHV;
@@ -127,10 +103,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_UIV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DISTILLERY_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DYNAMO_HATCH_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DYNAMO_HATCH_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DYNAMO_HATCH_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.DYNAMO_HATCH_UXV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTRIC_FURNACE_UHV;
@@ -152,10 +124,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ELECTROMAGNETIC_SEPARATOR_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ENERGY_HATCH_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ENERGY_HATCH_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ENERGY_HATCH_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ENERGY_HATCH_UXV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.EXTRACTOR_UHV;
@@ -219,21 +187,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_UI
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.FORMING_PRESS_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_MAX_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_UEV_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_UIV_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_UMV_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HIGH_AMP_TRANSFORMER_UXV_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_MAX;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.HULL_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_MAX;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.INPUT_HATCH_UXV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.LATHE_UHV;
@@ -248,13 +201,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_UIV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MACERATOR_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_AMPLIFIER_ZPM;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.MATTER_FABRICATOR_UHV;
@@ -291,11 +237,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLAN
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ORE_WASHING_PLANT_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_MAX;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.OUTPUT_HATCH_UXV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UHV;
@@ -303,8 +244,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNA
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_ARC_FURNACE_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_GENERATOR_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PLASMA_GENERATOR_ZPM;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.POLARIZER_UHV;
@@ -319,8 +258,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PRECISION_LASER_ENGRAVER_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PUMP_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.PUMP_ZPM;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UHV;
@@ -328,20 +265,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UIV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.RECYCLER_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.ROCK_BREAKER_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SCANNER_ZPM;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.SIFTING_MACHINE_UHV;
@@ -363,35 +286,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFU
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_UMV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_UV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.THERMAL_CENTRIFUGE_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_MAX_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_UEV_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_UIV_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_UMV_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TRANSFORMER_UXV_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_EV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_HV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_IV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_LV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_LuV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_MV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_ULV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.TURBO_CHARGER_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_EV_HV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_HV_MV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_IV_EV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_LV_ULV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_LuV_IV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_MAX_UXV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_MV_LV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UEV_UHV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UHV_UV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UIV_UEV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UMV_UIV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UV_ZPM;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_UXV_UMV;
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WET_TRANSFORMER_ZPM_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_LuV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UEV;
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_UHV;
@@ -402,8 +296,6 @@ import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.WIREMILL_ZPM;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GregTech;
-import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
-import static gregtech.api.recipe.RecipeMaps.amplifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
@@ -444,50 +336,6 @@ import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
-import com.dreammaster.gthandler.nameRemover.NameRemover;
-import com.dreammaster.gthandler.transformers.GT_MetaTileEntity_WetTransformer;
-import com.dreammaster.gthandler.turboCharger.GT_MetaTileEntity_TurboCharger;
-import com.dreammaster.item.food.QuantumBread;
-
-import gregtech.api.enums.GT_Values;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.MachineType;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.MaterialsKevlar;
-import gregtech.api.enums.MaterialsUEVplus;
-import gregtech.api.enums.OreDictNames;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.SoundResource;
-import gregtech.api.enums.TierEU;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicBatteryBuffer;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicHull;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe.SpecialEffects;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Dynamo;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Energy;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Input;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Output;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Transformer;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_Utility;
-import gregtech.common.tileentities.automation.GT_MetaTileEntity_ChestBuffer;
-import gregtech.common.tileentities.generators.GT_MetaTileEntity_PlasmaGenerator;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Charger;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Massfabricator;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_PotionBrewer;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Pump;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Replicator;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_RockBreaker;
-import gregtech.common.tileentities.machines.basic.GT_MetaTileEntity_Scanner;
-import gregtech.loaders.preload.GT_Loader_MetaTileEntities;
-import gtPlusPlus.xmod.gregtech.api.metatileentity.implementations.base.GregtechMetaTransformerHiAmp;
-
 public class GT_Loader_Machines {
 
     public static long bitsd = GT_ModHandler.RecipeBits.DISMANTLEABLE | GT_ModHandler.RecipeBits.NOT_REMOVABLE
@@ -497,8 +345,6 @@ public class GT_Loader_Machines {
 
     public void run() {
         LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
-        registerMachineHulls();
-        registerPlasmaGenerators();
         registerAlloySmelter();
         registerMatterAmplifier();
         registerAssemblingMachine();
@@ -524,44 +370,24 @@ public class GT_Loader_Machines {
         registerPolarizer();
         registerRecycler();
         registerReplicator();
-        registerScanner();
         registerSiftingMachine();
         registerSlicingMachine();
         registerThermalCentrifuge();
         registerWiremill();
-        registerPump();
         registerArcFurnace();
         registerCentrifuge();
         registerPlasmaArcFurnace();
-        registerBrewery();
         registerCanningMachine();
         registerChemicalBath();
         registerChemicalReactor();
-
         registerFermenter();
         registerFluidCanner();
         registerFluidExtractor();
         registerFluidHeater();
         registerMixer();
-        registerTransformer();
-        registerBatteryBuffer4By4();
-        registerBatteryBuffer3By3();
-        registerBatteryBuffer2By2();
-        registerBatteryBuffer1By1();
-        registerBatteryCharger4By4();
-        registerDynamoHatches();
-        registerEnergyHatches();
-        registerWetTransformer();
-        registerHighAmpTransformer();
         registerAirFilter();
-        registerTurboCharger4By4();
-        registerChestBuffer();
-        registerRockBreaker();
         registerNameRemover();
         registerCircuitAssembler();
-        registerInputHatch();
-        registerOutputHatches();
-
         registerMachines2();
         recipes();
     }
@@ -1700,14 +1526,6 @@ public class GT_Loader_Machines {
                     .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
                     .duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1)))).addTo(assemblerRecipes);
         }
-
-    }
-
-    private void registerMachineHulls() {
-
-    }
-
-    private void registerPlasmaGenerators() {
 
     }
 
@@ -5607,10 +5425,6 @@ public class GT_Loader_Machines {
                         12).getStackForm(1L));
     }
 
-    private void registerScanner() {
-
-    }
-
     private void registerSiftingMachine() {
 
         CustomItemList.SiftingMachineLuV.set(
@@ -6313,12 +6127,6 @@ public class GT_Loader_Machines {
 
     }
 
-    private void registerPump() {
-
-
-
-    }
-
     private void registerArcFurnace() {
 
         CustomItemList.ArcFurnaceLuV.set(
@@ -6853,12 +6661,6 @@ public class GT_Loader_Machines {
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'T',
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) });
-    }
-
-    private void registerBrewery() {
-
-
-
     }
 
     private void registerCanningMachine() {
@@ -7910,194 +7712,6 @@ public class GT_Loader_Machines {
                         null).getStackForm(1L));
     }
 
-    private void registerTransformer() {
-
-    }
-
-    private void registerBatteryBuffer4By4() {
-
-
-    }
-
-    private void registerBatteryBuffer3By3() {
-
-    }
-
-    private void registerBatteryBuffer2By2() {
-
-    }
-
-    private void registerBatteryBuffer1By1() {
-
-    }
-
-    private void registerBatteryCharger4By4() {
-
-    }
-
-    private void registerDynamoHatches() {
-
-    }
-
-    private void registerEnergyHatches() {
-
-    }
-
-    private void registerWetTransformer() {
-        CustomItemList.WetTransformer_LV_ULV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_LV_ULV.ID,
-                        "wettransformer.tier.00",
-                        "Ultra Low Voltage Power Transformer",
-                        0,
-                        "LV -> ULV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_MV_LV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_MV_LV.ID,
-                        "wetransformer.tier.01",
-                        "Low Voltage Power Transformer",
-                        1,
-                        "MV -> LV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_HV_MV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_HV_MV.ID,
-                        "wettransformer.tier.02",
-                        "Medium Voltage Power Transformer",
-                        2,
-                        "HV -> MV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_EV_HV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_EV_HV.ID,
-                        "wettransformer.tier.03",
-                        "High Voltage Power Transformer",
-                        3,
-                        "EV -> HV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_IV_EV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_IV_EV.ID,
-                        "wettransformer.tier.04",
-                        "Extreme Power Transformer",
-                        4,
-                        "IV -> EV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_LuV_IV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_LuV_IV.ID,
-                        "wettransformer.tier.05",
-                        "Insane Power Transformer",
-                        5,
-                        "LuV -> IV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_ZPM_LuV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_ZPM_LuV.ID,
-                        "wettransformer.tier.06",
-                        "Ludicrous Power Transformer",
-                        6,
-                        "ZPM -> LuV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_UV_ZPM.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_UV_ZPM.ID,
-                        "wettransformer.tier.07",
-                        "ZPM Voltage Power Transformer",
-                        7,
-                        "UV -> ZPM (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_UHV_UV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_UHV_UV.ID,
-                        "wettransformer.tier.08",
-                        "Ultimate Power Transformer",
-                        8,
-                        "UHV -> UV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_UEV_UHV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_UEV_UHV.ID,
-                        "wettransformer.tier.09",
-                        "Highly Ultimate Power Transformer",
-                        9,
-                        "UEV -> UHV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_UIV_UEV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_UIV_UEV.ID,
-                        "wettransformer.tier.10",
-                        "Extremely Ultimate Power Transformer",
-                        10,
-                        "UIV -> UEV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_UMV_UIV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_UMV_UIV.ID,
-                        "wettransformer.tier.11",
-                        "Insanely Ultimate Power Transformer",
-                        11,
-                        "UMV -> UIV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_UXV_UMV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_UXV_UMV.ID,
-                        "wettransformer.tier.12",
-                        "Mega Ultimate Power Transformer",
-                        12,
-                        "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        CustomItemList.WetTransformer_MAX_UXV.set(
-                new GT_MetaTileEntity_WetTransformer(
-                        WET_TRANSFORMER_MAX_UXV.ID,
-                        "wettransformer.tier.13",
-                        "Extended Mega Ultimate Power Transformer",
-                        13,
-                        "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
-    }
-
-    private void registerHighAmpTransformer() {
-        if (GTPlusPlus.isModLoaded()) {
-            CustomItemList.Transformer_HA_UEV_UHV.set(
-                    new GregtechMetaTransformerHiAmp(
-                            HIGH_AMP_TRANSFORMER_UEV_UHV.ID,
-                            "transformer.ha.tier.09",
-                            "Highly Ultimate Hi-Amp Transformer",
-                            9,
-                            "UEV -> UHV (Use Soft Mallet to invert)").getStackForm(1L));
-            CustomItemList.Transformer_HA_UIV_UEV.set(
-                    new GregtechMetaTransformerHiAmp(
-                            HIGH_AMP_TRANSFORMER_UIV_UEV.ID,
-                            "transformer.ha.tier.10",
-                            "Extremely Ultimate Hi-Amp Transformer",
-                            10,
-                            "UIV -> UEV (Use Soft Mallet to invert)").getStackForm(1L));
-            CustomItemList.Transformer_HA_UMV_UIV.set(
-                    new GregtechMetaTransformerHiAmp(
-                            HIGH_AMP_TRANSFORMER_UMV_UIV.ID,
-                            "transformer.ha.tier.11",
-                            "Insanely Ultimate Hi-Amp Transformer",
-                            11,
-                            "UMV -> UIV (Use Soft Mallet to invert)").getStackForm(1L));
-            CustomItemList.Transformer_HA_UXV_UMV.set(
-                    new GregtechMetaTransformerHiAmp(
-                            HIGH_AMP_TRANSFORMER_UXV_UMV.ID,
-                            "transformer.ha.tier.12",
-                            "Mega Ultimate Hi-Amp Transformer",
-                            12,
-                            "UXV -> UMV (Use Soft Mallet to invert)").getStackForm(1L));
-            CustomItemList.Transformer_HA_MAX_UXV.set(
-                    new GregtechMetaTransformerHiAmp(
-                            HIGH_AMP_TRANSFORMER_MAX_UXV.ID,
-                            "transformer.ha.tier.13",
-                            "Extended Mega Ultimate Hi-Amp Transformer",
-                            13,
-                            "MAX -> UXV (Use Soft Mallet to invert)").getStackForm(1L));
-
-        }
-    }
-
     private void registerAirFilter() {
         CustomItemList.Machine_Multi_AirFilterT1.set(
                 new GT_MetaTileEntity_AirFilterT1(
@@ -8116,176 +7730,9 @@ public class GT_Loader_Machines {
                         "Electric Air Filter T3").getStackForm(1L));
     }
 
-    private void registerTurboCharger4By4() {
-        CustomItemList.Battery_TurboCharger_4by4_ULV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_ULV.ID,
-                        "batteryturbocharger.16.tier.00",
-                        "Ultra Low Voltage Turbo Charger",
-                        0,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_LV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_LV.ID,
-                        "batteryturbocharger.16.tier.01",
-                        "Low Voltage Turbo Charger",
-                        1,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_MV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_MV.ID,
-                        "batteryturbocharger.16.tier.02",
-                        "Medium Voltage Turbo Charger",
-                        2,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_HV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_HV.ID,
-                        "batteryturbocharger.16.tier.03",
-                        "High Voltage Turbo Charger",
-                        3,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_EV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_EV.ID,
-                        "batteryturbocharger.16.tier.04",
-                        "Extreme Voltage Turbo Charger",
-                        4,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_IV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_IV.ID,
-                        "batteryturbocharger.16.tier.05",
-                        "Insane Voltage Turbo Charger",
-                        5,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_LuV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_LuV.ID,
-                        "batteryturbocharger.16.tier.06",
-                        "Ludicrous Voltage Turbo Charger",
-                        6,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_ZPM.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_ZPM.ID,
-                        "batteryturbocharger.16.tier.07",
-                        "ZPM Voltage Turbo Charger",
-                        7,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_UV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_UV.ID,
-                        "batteryturbocharger.16.tier.08",
-                        "Ultimate Voltage Turbo Charger",
-                        8,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-        CustomItemList.Battery_TurboCharger_4by4_UHV.set(
-                new GT_MetaTileEntity_TurboCharger(
-                        TURBO_CHARGER_UHV.ID,
-                        "batteryturbocharger.16.tier.09",
-                        "Highly Ultimate Voltage Turbo Charger",
-                        9,
-                        "64A in /16A out, 120A/item, Disable to force Charge",
-                        4).getStackForm(1L));
-
-    }
-
-    private void registerChestBuffer() {
-        CustomItemList.Automation_ChestBuffer_UEV.set(
-                new GT_MetaTileEntity_ChestBuffer(
-                        CHEST_BUFFER_UEV.ID,
-                        "automation.chestbuffer.tier.10",
-                        "Ultra High Voltage Chest Buffer",
-                        10).getStackForm(1L));
-
-        CustomItemList.Automation_ChestBuffer_UIV.set(
-                new GT_MetaTileEntity_ChestBuffer(
-                        CHEST_BUFFER_UIV.ID,
-                        "automation.chestbuffer.tier.11",
-                        "UIV Voltage Chest Buffer",
-                        11).getStackForm(1L));
-
-        CustomItemList.Automation_ChestBuffer_UMV.set(
-                new GT_MetaTileEntity_ChestBuffer(
-                        CHEST_BUFFER_UMV.ID,
-                        "automation.chestbuffer.tier.12",
-                        "UMV Voltage Chest Buffer",
-                        12).getStackForm(1L));
-    }
-
     private void registerNameRemover() {
         CustomItemList.nameRemover
                 .set(new NameRemover(NAME_REMOVER.ID, "fix.name.remover", "Name Remover", 0).getStackForm(1L));
-    }
-
-    private void registerRockBreaker() {
-        CustomItemList.RockBreakerLuV.set(
-                new GT_MetaTileEntity_RockBreaker(
-                        ROCK_BREAKER_LuV.ID,
-                        "rockbreaker.tier.06",
-                        "Cryogenic Magma Solidifier R-9200",
-                        6).getStackForm(1L));
-
-        CustomItemList.RockBreakerZPM.set(
-                new GT_MetaTileEntity_RockBreaker(
-                        ROCK_BREAKER_ZPM.ID,
-                        "rockbreaker.tier.07",
-                        "Cryogenic Magma Solidifier R-10200",
-                        7).getStackForm(1L));
-
-        CustomItemList.RockBreakerUV.set(
-                new GT_MetaTileEntity_RockBreaker(
-                        ROCK_BREAKER_UV.ID,
-                        "rockbreaker.tier.08",
-                        "Cryogenic Magma Solidifier R-11200",
-                        8).getStackForm(1L));
-
-        CustomItemList.RockBreakerUHV.set(
-                new GT_MetaTileEntity_RockBreaker(
-                        ROCK_BREAKER_UHV.ID,
-                        "rockbreaker.tier.09",
-                        "Cryogenic Magma Solidifier R-12200",
-                        9).getStackForm(1L));
-
-        CustomItemList.RockBreakerUEV.set(
-                new GT_MetaTileEntity_RockBreaker(
-                        ROCK_BREAKER_UEV.ID,
-                        "rockbreaker.tier.10",
-                        "Cryogenic Magma Solidifier R-13200",
-                        10).getStackForm(1L));
-
-        CustomItemList.RockBreakerUIV.set(
-                new GT_MetaTileEntity_RockBreaker(
-                        ROCK_BREAKER_UIV.ID,
-                        "rockbreaker.tier.11",
-                        "Cryogenic Magma Solidifier R-14200",
-                        11).getStackForm(1L));
-
-        CustomItemList.RockBreakerUMV.set(
-                new GT_MetaTileEntity_RockBreaker(
-                        ROCK_BREAKER_UMV.ID,
-                        "rockbreaker.tier.12",
-                        "Cryogenic Magma Solidifier R-15200",
-                        12).getStackForm(1L));
     }
 
     private void registerCircuitAssembler() {
@@ -8418,56 +7865,6 @@ public class GT_Loader_Machines {
                         null).getStackForm(1L));
     }
 
-    private void registerInputHatch() {
-        CustomItemList.Hatch_Input_UEV.set(
-                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_UEV.ID, "hatch.input.tier.10", "Input Hatch (UEV)", 10)
-                        .getStackForm(1L));
-        CustomItemList.Hatch_Input_UIV.set(
-                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_UIV.ID, "hatch.input.tier.11", "Input Hatch (UIV)", 11)
-                        .getStackForm(1L));
-        CustomItemList.Hatch_Input_UMV.set(
-                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_UMV.ID, "hatch.input.tier.12", "Input Hatch (UMV)", 12)
-                        .getStackForm(1L));
-        CustomItemList.Hatch_Input_UXV.set(
-                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_UXV.ID, "hatch.input.tier.13", "Input Hatch (UXV)", 13)
-                        .getStackForm(1L));
-        CustomItemList.Hatch_Input_MAX.set(
-                new GT_MetaTileEntity_Hatch_Input(INPUT_HATCH_MAX.ID, "hatch.input.tier.14", "Input Hatch (MAX)", 14)
-                        .getStackForm(1L));
-    }
-
-    private void registerOutputHatches() {
-        CustomItemList.Hatch_Output_UEV.set(
-                new GT_MetaTileEntity_Hatch_Output(
-                        OUTPUT_HATCH_UEV.ID,
-                        "hatch.output.tier.10",
-                        "Output Hatch (UEV)",
-                        10).getStackForm(1L));
-        CustomItemList.Hatch_Output_UIV.set(
-                new GT_MetaTileEntity_Hatch_Output(
-                        OUTPUT_HATCH_UIV.ID,
-                        "hatch.output.tier.11",
-                        "Output Hatch (UIV)",
-                        11).getStackForm(1L));
-        CustomItemList.Hatch_Output_UMV.set(
-                new GT_MetaTileEntity_Hatch_Output(
-                        OUTPUT_HATCH_UMV.ID,
-                        "hatch.output.tier.12",
-                        "Output Hatch (UMV)",
-                        12).getStackForm(1L));
-        CustomItemList.Hatch_Output_UXV.set(
-                new GT_MetaTileEntity_Hatch_Output(
-                        OUTPUT_HATCH_UXV.ID,
-                        "hatch.output.tier.13",
-                        "Output Hatch (UXV)",
-                        13).getStackForm(1L));
-        CustomItemList.Hatch_Output_MAX.set(
-                new GT_MetaTileEntity_Hatch_Output(
-                        OUTPUT_HATCH_MAX.ID,
-                        "hatch.output.tier.14",
-                        "Output Hatch (MAX)",
-                        14).getStackForm(1L));
-    }
 
     private void registerMachines2() {
 
