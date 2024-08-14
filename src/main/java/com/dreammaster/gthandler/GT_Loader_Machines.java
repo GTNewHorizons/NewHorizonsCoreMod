@@ -7736,22 +7736,6 @@ public class GT_Loader_Machines {
     }
 
     private void registerCircuitAssembler() {
-        CustomItemList.CircuitAssemblerUHV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CIRCUIT_ASSEMBLER_UHV.ID,
-                        "basicmachine.circuitassembler.tier.09",
-                        "Ultimate Circuit Assembling Machine",
-                        9,
-                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
-                        circuitAssemblerRecipes,
-                        6,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CIRCUITASSEMBLER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CircuitAssemblerUHV.get(1L),
                 bitsd,
@@ -7759,22 +7743,6 @@ public class GT_Loader_Machines {
                         ItemList.Hull_MAX, 'K', ItemList.Conveyor_Module_UHV, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
-
-        CustomItemList.CircuitAssemblerUEV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CIRCUIT_ASSEMBLER_UEV.ID,
-                        "basicmachine.circuitassembler.tier.10",
-                        "Ultimate Circuit Assembling Machine II",
-                        10,
-                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
-                        circuitAssemblerRecipes,
-                        6,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CIRCUITASSEMBLER",
-                        null).getStackForm(1L));
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CircuitAssemblerUEV.get(1L),
@@ -7784,22 +7752,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.circuit.get(Materials.UIV), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
-        CustomItemList.CircuitAssemblerUIV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CIRCUIT_ASSEMBLER_UIV.ID,
-                        "basicmachine.circuitassembler.tier.11",
-                        "Ultimate Circuit Assembling Machine III",
-                        11,
-                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
-                        circuitAssemblerRecipes,
-                        6,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CIRCUITASSEMBLER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CircuitAssemblerUIV.get(1L),
                 bitsd,
@@ -7808,22 +7760,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.circuit.get(Materials.UMV), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
 
-        CustomItemList.CircuitAssemblerUMV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CIRCUIT_ASSEMBLER_UMV.ID,
-                        "basicmachine.circuitassembler.tier.12",
-                        "Ultimate Circuit Assembling Machine IV",
-                        12,
-                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
-                        circuitAssemblerRecipes,
-                        6,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CIRCUITASSEMBLER",
-                        null).getStackForm(1L));
-
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.CircuitAssemblerUMV.get(1L),
                 bitsd,
@@ -7831,38 +7767,6 @@ public class GT_Loader_Machines {
                         CustomItemList.Hull_UMV, 'K', ItemList.Conveyor_Module_UMV, 'C',
                         OrePrefixes.circuit.get(Materials.UXV), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() });
-
-        CustomItemList.CircuitAssemblerUXV.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CIRCUIT_ASSEMBLER_UXV.ID,
-                        "basicmachine.circuitassembler.tier.13",
-                        "Ultimate Circuit Assembling Machine V",
-                        13,
-                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
-                        circuitAssemblerRecipes,
-                        6,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CIRCUITASSEMBLER",
-                        null).getStackForm(1L));
-
-        CustomItemList.CircuitAssemblerMAX.set(
-                new GT_MetaTileEntity_BasicMachine_GT_Recipe(
-                        CIRCUIT_ASSEMBLER_MAX.ID,
-                        "basicmachine.circuitassembler.tier.14",
-                        "MAX Circuit Assembling Machine",
-                        14,
-                        MachineType.CIRCUIT_ASSEMBLER.tooltipDescription(),
-                        circuitAssemblerRecipes,
-                        6,
-                        1,
-                        true,
-                        SoundResource.NONE,
-                        SpecialEffects.NONE,
-                        "CIRCUITASSEMBLER",
-                        null).getStackForm(1L));
     }
 
 
