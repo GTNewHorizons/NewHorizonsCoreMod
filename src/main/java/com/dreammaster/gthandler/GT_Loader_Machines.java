@@ -8309,10 +8309,16 @@ public class GT_Loader_Machines {
                         SoundResource.NONE,
                         SpecialEffects.NONE,
                         "CIRCUITASSEMBLER",
-                        new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UHV, 'E', ItemList.Emitter_UHV, 'H',
-                                ItemList.Hull_MAX, 'K', ItemList.Conveyor_Module_UHV, 'C',
-                                GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                                GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() }).getStackForm(1L));
+                        null).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.CircuitAssemblerUHV.get(1L),
+                bitsd,
+                new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UHV, 'E', ItemList.Emitter_UHV, 'H',
+                        ItemList.Hull_MAX, 'K', ItemList.Conveyor_Module_UHV, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() });
+
         CustomItemList.CircuitAssemblerUEV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         CIRCUIT_ASSEMBLER_UEV.ID,
@@ -8327,10 +8333,15 @@ public class GT_Loader_Machines {
                         SoundResource.NONE,
                         SpecialEffects.NONE,
                         "CIRCUITASSEMBLER",
-                        new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UEV, 'E', ItemList.Emitter_UEV, 'H',
-                                CustomItemList.Hull_UEV, 'K', ItemList.Conveyor_Module_UEV, 'C',
-                                OrePrefixes.circuit.get(Materials.UIV), 'W',
-                                GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() }).getStackForm(1L));
+                        null).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.CircuitAssemblerUEV.get(1L),
+                bitsd,
+                new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UEV, 'E', ItemList.Emitter_UEV, 'H',
+                        CustomItemList.Hull_UEV, 'K', ItemList.Conveyor_Module_UEV, 'C',
+                        OrePrefixes.circuit.get(Materials.UIV), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() });
 
         CustomItemList.CircuitAssemblerUIV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
@@ -8346,10 +8357,16 @@ public class GT_Loader_Machines {
                         SoundResource.NONE,
                         SpecialEffects.NONE,
                         "CIRCUITASSEMBLER",
-                        new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UIV, 'E', ItemList.Emitter_UIV, 'H',
-                                CustomItemList.Hull_UIV, 'K', ItemList.Conveyor_Module_UIV, 'C',
-                                OrePrefixes.circuit.get(Materials.UMV), 'W',
-                                GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() }).getStackForm(1L));
+                        null).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.CircuitAssemblerUIV.get(1L),
+                bitsd,
+                new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UIV, 'E', ItemList.Emitter_UIV, 'H',
+                        CustomItemList.Hull_UIV, 'K', ItemList.Conveyor_Module_UIV, 'C',
+                        OrePrefixes.circuit.get(Materials.UMV), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() });
+
         CustomItemList.CircuitAssemblerUMV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         CIRCUIT_ASSEMBLER_UMV.ID,
@@ -8364,10 +8381,16 @@ public class GT_Loader_Machines {
                         SoundResource.NONE,
                         SpecialEffects.NONE,
                         "CIRCUITASSEMBLER",
-                        new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UMV, 'E', ItemList.Emitter_UMV, 'H',
-                                CustomItemList.Hull_UMV, 'K', ItemList.Conveyor_Module_UMV, 'C',
-                                OrePrefixes.circuit.get(Materials.UXV), 'W',
-                                GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() }).getStackForm(1L));
+                        null).getStackForm(1L));
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.CircuitAssemblerUMV.get(1L),
+                bitsd,
+                new Object[] { "RCE", "KHK", "WCW", 'R', ItemList.Robot_Arm_UMV, 'E', ItemList.Emitter_UMV, 'H',
+                        CustomItemList.Hull_UMV, 'K', ItemList.Conveyor_Module_UMV, 'C',
+                        OrePrefixes.circuit.get(Materials.UXV), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() });
+
         CustomItemList.CircuitAssemblerUXV.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         CIRCUIT_ASSEMBLER_UXV.ID,
@@ -8383,6 +8406,7 @@ public class GT_Loader_Machines {
                         SpecialEffects.NONE,
                         "CIRCUITASSEMBLER",
                         null).getStackForm(1L));
+
         CustomItemList.CircuitAssemblerMAX.set(
                 new GT_MetaTileEntity_BasicMachine_GT_Recipe(
                         CIRCUIT_ASSEMBLER_MAX.ID,
