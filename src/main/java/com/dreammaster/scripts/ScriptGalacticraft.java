@@ -45,6 +45,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.gthandler.CustomItemList;
 
 import codechicken.nei.PositionedStack;
+import cpw.mods.fml.common.Optional;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -3038,6 +3039,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(MarsItems.spaceship, 1, 13), 134 - x, 73 - y));
     }
 
+    @Optional.Method(modid = "GalacticraftCore")
     private void astroMinerRecipes() {
         final HashMap<Integer, ItemStack> input = new HashMap<>();
         for (int i = 1; i <= 8; i++) {
