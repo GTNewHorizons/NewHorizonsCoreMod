@@ -120,11 +120,9 @@ public class ScriptIndustrialApiary implements IScriptLoader {
                 ItemList.IndustrialApiary_Upgrade_Acceleration_6, ItemList.IndustrialApiary_Upgrade_Acceleration_7,
                 ItemList.IndustrialApiary_Upgrade_Acceleration_8 };
 
-        final ItemStack[] Accelerators = new ItemStack[] { ItemList.AcceleratorLV.get(1),
-                ItemList.AcceleratorMV.get(1), ItemList.AcceleratorHV.get(1),
-                ItemList.AcceleratorEV.get(1), ItemList.AcceleratorIV.get(1),
-                ItemList.AcceleratorLuV.get(1), ItemList.AcceleratorZPM.get(1),
-                ItemList.AcceleratorUV.get(1) };
+        final ItemStack[] Accelerators = new ItemStack[] { ItemList.AcceleratorLV.get(1), ItemList.AcceleratorMV.get(1),
+                ItemList.AcceleratorHV.get(1), ItemList.AcceleratorEV.get(1), ItemList.AcceleratorIV.get(1),
+                ItemList.AcceleratorLuV.get(1), ItemList.AcceleratorZPM.get(1), ItemList.AcceleratorUV.get(1) };
 
         // Acceleration Upgrade 1-8
         for (int i = 0; i < AccelerationUpgrades.length; i++) {

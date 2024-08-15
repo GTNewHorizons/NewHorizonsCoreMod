@@ -35,7 +35,6 @@ public enum CustomItemList implements IItemContainer {
     @Deprecated
     Casing_MAXV,
 
-
     // CoreModItems
     EtchedLowVoltageWiring,
     EtchedInsaneVoltageWiring,

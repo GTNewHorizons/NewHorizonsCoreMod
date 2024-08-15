@@ -1959,8 +1959,8 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 1),
                         ItemList.Hull_UEV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
-                .itemOutputs(ItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         // UV Compressor
         GT_Values.RA.stdBuilder().itemInputs(
@@ -2242,9 +2242,8 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
                             GregtechItemList.Transformer_HA_ZPM_LuV.get(1),
                             ItemList.Electric_Pump_LV.get(1))
-                    .fluidInputs(Materials.Lubricant.getFluid(2000))
-                    .itemOutputs(ItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                    .fluidInputs(Materials.Lubricant.getFluid(2000)).itemOutputs(ItemList.WetTransformer_ZPM_LuV.get(1))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
             // Hastelloy-X Structural Block
             GT_Values.RA.stdBuilder()
