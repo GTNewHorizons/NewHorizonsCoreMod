@@ -281,13 +281,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_EV.get(1L),
                 bits,
-                new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_MAX, 'G',
+                new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UHV, 'G',
                         ItemList.Field_Generator_ZPM, 'D', OrePrefixes.circuit.get(Materials.UHV), 'P',
                         OrePrefixes.plateDouble.get(Materials.Europium) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_IV.get(1L),
                 bits,
-                new Object[] { "DPD", "PMP", "DGD", 'M', CustomItemList.Automation_ChestBuffer_UEV, 'G',
+                new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UEV, 'G',
                         ItemList.Field_Generator_UV, 'D', OrePrefixes.circuit.get(Materials.UEV), 'P',
                         OrePrefixes.plate.get(Materials.Americium) });
 
@@ -760,23 +760,23 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             break;
                         case 10: // UEV
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 1L);
-                            machinehull = CustomItemList.Hull_UEV.get(1L);
+                            machinehull = ItemList.Hull_UEV.get(1L);
                             break;
                         case 11: // UIV
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 1L);
-                            machinehull = CustomItemList.Hull_UIV.get(1L);
+                            machinehull = ItemList.Hull_UIV.get(1L);
                             break;
                         case 12: // UMV
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L);
-                            machinehull = CustomItemList.Hull_UMV.get(1L);
+                            machinehull = ItemList.Hull_UMV.get(1L);
                             break;
                         case 13: // UXV
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.TranscendentMetal, 1L);
-                            machinehull = CustomItemList.Hull_UXV.get(1L);
+                            machinehull = ItemList.Hull_UXV.get(1L);
                             break;
                         default: // MAX
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 1L);
-                            machinehull = CustomItemList.Hull_MAXV.get(1L);
+                            machinehull = ItemList.Hull_MAXV.get(1L);
                             break;
                     }
 

@@ -31,7 +31,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_LuV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_LuV, 'C',
                         OrePrefixes.circuit.get(Materials.LuV), 'P', OrePrefixes.plate.get(Materials.Iridium), 'B',
-                        CustomItemList.BatteryHull_LuV_Full.get(1L) });
+                        ItemList.BatteryHull_LuV_Full.get(1L) });
         GT_ModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
                         102,
@@ -44,7 +44,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_ZPM, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_ZPM, 'C',
                         OrePrefixes.circuit.get(Materials.ZPM), 'P', OrePrefixes.plate.get(Materials.Osmium), 'B',
-                        CustomItemList.BatteryHull_ZPM_Full.get(1L) });
+                        ItemList.BatteryHull_ZPM_Full.get(1L) });
         GT_ModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
                         104,
@@ -57,7 +57,7 @@ public class ScannerTools implements IOreRecipeRegistrator {
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_UV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_UV, 'C',
                         OrePrefixes.circuit.get(Materials.UV), 'P', OrePrefixes.plate.get(Materials.Neutronium), 'B',
-                        CustomItemList.BatteryHull_UV_Full.get(1L) });
+                        ItemList.BatteryHull_UV_Full.get(1L) });
         GT_ModHandler.addCraftingRecipe(
                 DetravMetaGeneratedTool01.INSTANCE.getToolWithStats(
                         106,
@@ -70,6 +70,6 @@ public class ScannerTools implements IOreRecipeRegistrator {
                 new Object[] { "EHR", "CSC", "PBP", 'S', ItemList.Cover_Screen, 'R', ItemList.Sensor_UHV, 'H',
                         OrePrefixes.toolHeadDrill.get(material), 'E', ItemList.Emitter_UHV, 'C',
                         OrePrefixes.circuit.get(Materials.UHV), 'P', OrePrefixes.plate.get(Materials.Infinity), 'B',
-                        CustomItemList.BatteryHull_UHV_Full.get(1L) });
+                        ItemList.BatteryHull_UHV_Full.get(1L) });
     }
 }
