@@ -485,6 +485,6 @@ public class BacteriaRegistry {
         bioLabRecipes();
         bacterialVatRecipes();
 
-        new BioItemLoader();
+        BioItemLoader.registerRecipes();
     }
 }

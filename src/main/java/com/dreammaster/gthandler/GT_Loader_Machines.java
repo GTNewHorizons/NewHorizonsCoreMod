@@ -1398,7 +1398,7 @@ public class GT_Loader_Machines {
                 CustomItemList.Battery_TurboCharger_4by4_EV.get(1L),
                 bitsd,
                 new Object[] { "BTB", "CMC", "BXB", 'T', CustomItemList.WetTransformer_IV_EV, 'M',
-                        ItemList.Battery_Charger_4by4_EV, 'B', OrePrefixes.battery.get(Materials.LuV), 'C',
+                        ItemList.Battery_Charger_4by4_EV, 'B', OrePrefixes.battery.get(Materials.EV), 'C',
                         OrePrefixes.cableGt16.get(Materials.Aluminium), 'X', OrePrefixes.circuit.get(Materials.EV) });
 
         GT_ModHandler.addCraftingRecipe(
