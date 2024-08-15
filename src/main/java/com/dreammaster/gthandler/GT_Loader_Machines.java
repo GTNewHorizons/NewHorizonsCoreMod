@@ -85,7 +85,7 @@ public class GT_Loader_Machines {
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Hull_UEV.get(1L),
                 bitsd,
-                new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UEV, 'W',
+                new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UEV, 'W',
                         OrePrefixes.cableGt08.get(Materials.Draconium), 'H',
                         OrePrefixes.plate.get(Materials.Bedrockium), 'P',
                         OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
@@ -93,7 +93,7 @@ public class GT_Loader_Machines {
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Hull_UIV.get(1L),
                 bitsd,
-                new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UIV, 'W',
+                new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UIV, 'W',
                         OrePrefixes.cableGt08.get(Materials.NetherStar), 'H',
                         OrePrefixes.plate.get(Materials.BlackPlutonium), 'P',
                         OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
@@ -101,7 +101,7 @@ public class GT_Loader_Machines {
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Hull_UMV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UMV, 'W',
+                new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UMV, 'W',
                         OrePrefixes.wireGt12.get(Materials.Quantium), 'H',
                         OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime), 'P',
                         OrePrefixes.plateDouble.get(Materials.Polybenzimidazole) });
@@ -109,7 +109,7 @@ public class GT_Loader_Machines {
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Hull_UXV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { "PHP", "WMW", 'M', ItemList.Casing_UXV, 'W',
+                new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UXV, 'W',
                         OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'H',
                         OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'P',
                         OrePrefixes.plateDense.get(MaterialsKevlar.Kevlar) });
