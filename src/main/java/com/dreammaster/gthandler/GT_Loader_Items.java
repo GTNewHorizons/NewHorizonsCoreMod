@@ -266,7 +266,6 @@ public class GT_Loader_Items {
         CustomItemList.MediumFuelCanister.set(ItemList.MediumFuelCanister.getIS());
         CustomItemList.LargeFuelCanister.set(ItemList.LargeFuelCanister.getIS());
         CustomItemList.ExtraLargeFuelCanister.set(ItemList.ExtraLargeFuelCanister.getIS());
-        CustomItemList.MysteriousCrystalPlate.set(ItemList.MysteriousCrystalPlate.getIS());
         CustomItemList.LedoxPlate.set(ItemList.LedoxPlate.getIS());
         CustomItemList.QuantinumPlate.set(ItemList.QuantinumPlate.getIS());
         CustomItemList.CallistoIcePlate.set(ItemList.CallistoIcePlate.getIS());
@@ -318,7 +317,6 @@ public class GT_Loader_Items {
         CustomItemList.VegaBStoneDust.set(ItemList.VegaBStoneDust.getIS());
         CustomItemList.BarnardaEStoneDust.set(ItemList.BarnardaEStoneDust.getIS());
         CustomItemList.BarnardaFStoneDust.set(ItemList.BarnardaFStoneDust.getIS());
-        CustomItemList.MysteriousCrystalDust.set(ItemList.MysteriousCrystalDust.getIS());
         CustomItemList.IndustryFrame.set(ItemList.IndustryFrame.getIS());
         CustomItemList.TCetiEStoneDust.set(ItemList.TCetiEStoneDust.getIS());
         CustomItemList.AdsorptionFilterCasing.set(ItemList.AdsorptionFilterCasing.getIS());

@@ -139,24 +139,24 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 1, missing),
                 "cableGt01Gold",
-                "batteryElite",
+                "batteryAdvanced",
                 "cableGt01Gold",
-                "batteryElite",
+                "batteryAdvanced",
                 ItemList.Hull_HV.get(1L),
-                "batteryElite",
+                "batteryAdvanced",
                 "plateStainlessSteel",
-                "batteryElite",
+                "batteryAdvanced",
                 "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing),
                 "cableGt01TungstenSteel",
-                "batteryMaster",
+                "batteryData",
                 "cableGt01TungstenSteel",
-                "batteryMaster",
+                "batteryData",
                 ItemList.Hull_EV.get(1L),
-                "batteryMaster",
+                "batteryData",
                 "circuitData",
-                "batteryMaster",
+                "batteryData",
                 "circuitData");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockRubber", 1, 0, missing),
@@ -691,7 +691,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         missing),
                 "plateAlloyIridium",
                 "circuitMaster",
-                "batteryMaster",
+                "batteryData",
                 "circuitMaster",
                 "craftingToolFile",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 2, missing),
@@ -716,7 +716,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 CustomItemList.Display.get(1L),
                 "circuitAdvanced",
                 "cableGt01Gold",
-                "batteryElite",
+                "batteryAdvanced",
                 "cableGt01Gold");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0, missing),
@@ -727,7 +727,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 CustomItemList.Display.get(1L),
                 "circuitData",
                 "cableGt01Nichrome",
-                "batteryMaster",
+                "batteryData",
                 "cableGt01Nichrome");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing),
