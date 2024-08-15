@@ -37,8 +37,8 @@ import gregtech.api.util.GT_Utility;
 
 public class BioItemLoader {
 
-    private static final Item BIOTEMS;
-    private static final GT_Fluid[] BIOFLUIDS;
+    private static Item BIOTEMS;
+    private static GT_Fluid[] BIOFLUIDS;
 
     static {
         BIOTEMS = new SimpleSubItemClass(new String[] { "itemCollagen", "itemGelatin", "itemAgar" })
