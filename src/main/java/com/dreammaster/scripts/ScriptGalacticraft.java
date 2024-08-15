@@ -45,6 +45,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.gthandler.CustomItemList;
 
 import codechicken.nei.PositionedStack;
+import cpw.mods.fml.common.Optional;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -59,7 +60,6 @@ import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import micdoodle8.mods.galacticraft.api.world.SpaceStationType;
 import micdoodle8.mods.galacticraft.core.Constants;
-import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.core.nei.BuggyRecipeHandler;
@@ -2772,7 +2772,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 .duration(4 * SECONDS).eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
     }
 
-    private void spaceStationRecipes() {
+    @Optional.Method(modid = "GalacticraftCore")
+    private static void spaceStationRecipes() {
         final HashMap<Object, Integer> inputMap = new HashMap<>();
         inputMap.put(new ItemStack(GCBlocks.basicBlock, 1, 4), 231);
         inputMap.put(new ItemStack(Blocks.glass_pane), 6);
@@ -2782,13 +2783,14 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new SpaceStationType(ConfigManagerCore.idDimensionOverworldOrbit, 0, new SpaceStationRecipe(inputMap)));
     }
 
-    private void buggyRecipes() {
+    @Optional.Method(modid = "GalacticraftCore")
+    private static void buggyRecipes() {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
         input.put(1, new ItemStack(GCItems.basicItem, 1, 19));
         input.put(2, new ItemStack(GCItems.partBuggy, 1, 1));
         if (GalaxySpace.isModLoaded()) {
-            input.put(3, GT_ModHandler.getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 100));
+            input.put(3, getModItem(GalaxySpace.ID, "item.RocketControlComputer", 1, 100));
         }
         for (int i = 4; i <= 7; i++) {
             input.put(i, new ItemStack(GCItems.partBuggy));
@@ -2833,8 +2835,7 @@ public class ScriptGalacticraft implements IScriptLoader {
             input3.put(
                     3,
                     new PositionedStack(
-                            GT_ModHandler
-                                    .getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 100),
+                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 100),
                             62 - x,
                             73 - y));
         }
@@ -2947,14 +2948,15 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(GCItems.buggy, 1, 3), 143 - x, 64 - y));
     }
 
-    private void cargoRecipes() {
+    @Optional.Method(modid = "GalacticraftCore")
+    private static void cargoRecipes() {
         HashMap<Integer, ItemStack> input = new HashMap<>();
         HashMap<Integer, ItemStack> input2;
         input.put(1, new ItemStack(GCItems.basicItem, 1, 14));
         if (GalaxySpace.isModLoaded()) {
-            input.put(2, GT_ModHandler.getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 101));
+            input.put(2, getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 101));
             for (int i = 3; i <= 5; i++) {
-                input.put(i, GT_ModHandler.getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1));
+                input.put(i, getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1));
             }
         }
         input.put(7, new ItemStack(GCItems.partNoseCone));
@@ -2986,23 +2988,22 @@ public class ScriptGalacticraft implements IScriptLoader {
         if (GalaxySpace.isModLoaded()) {
             input3.add(
                     new PositionedStack(
-                            GT_ModHandler
-                                    .getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 101),
+                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 101),
                             134 - x,
                             28 - y));
             input3.add(
                     new PositionedStack(
-                            GT_ModHandler.getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
+                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
                             116 - x,
                             19 - y));
             input3.add(
                     new PositionedStack(
-                            GT_ModHandler.getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
+                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
                             152 - x,
                             19 - y));
             input3.add(
                     new PositionedStack(
-                            GT_ModHandler.getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
+                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.ModuleSmallFuelCanister", 1),
                             116 - x,
                             37 - y));
         }
@@ -3038,7 +3039,8 @@ public class ScriptGalacticraft implements IScriptLoader {
                 new PositionedStack(new ItemStack(MarsItems.spaceship, 1, 13), 134 - x, 73 - y));
     }
 
-    private void astroMinerRecipes() {
+    @Optional.Method(modid = "GalacticraftCore")
+    private static void astroMinerRecipes() {
         final HashMap<Integer, ItemStack> input = new HashMap<>();
         for (int i = 1; i <= 8; i++) {
             input.put(i, new ItemStack(MarsItems.marsItemBasic, 1, 3));
@@ -3052,7 +3054,7 @@ public class ScriptGalacticraft implements IScriptLoader {
             input.put(i, new ItemStack(AsteroidsItems.orionDrive));
         }
         if (GalaxySpace.isModLoaded()) {
-            input.put(18, GT_ModHandler.getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 102));
+            input.put(18, getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 102));
         }
         input.put(19, new ItemStack(GCItems.basicItem, 1, 14));
         input.put(20, new ItemStack(GCItems.basicItem, 1, 14));
@@ -3063,8 +3065,8 @@ public class ScriptGalacticraft implements IScriptLoader {
         input.put(25, RecipeUtil.getChestItemStack(1, 1));
         input.put(26, new ItemStack(AsteroidsItems.basicItem, 1, 8));
         input.put(27, new ItemStack(AsteroidBlocks.beamReceiver));
-        input.put(28, GT_ModHandler.getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603));
-        input.put(29, GT_ModHandler.getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603));
+        input.put(28, getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603));
+        input.put(29, getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603));
         GalacticraftRegistry
                 .addAstroMinerRecipe(new NasaWorkbenchRecipe(new ItemStack(AsteroidsItems.astroMiner, 1, 0), input));
 
@@ -3094,8 +3096,7 @@ public class ScriptGalacticraft implements IScriptLoader {
         if (GalaxySpace.isModLoaded()) {
             input3.add(
                     new PositionedStack(
-                            GT_ModHandler
-                                    .getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 102),
+                            getModItem(Constants.MOD_ID_GALAXYSPACE, "item.RocketControlComputer", 1, 102),
                             62 - x,
                             37 - y));
         }
@@ -3109,15 +3110,9 @@ public class ScriptGalacticraft implements IScriptLoader {
         input3.add(new PositionedStack(new ItemStack(AsteroidsItems.basicItem, 1, 8), 44 - x, 73 - y));
         input3.add(new PositionedStack(new ItemStack(AsteroidBlocks.beamReceiver), 62 - x, 73 - y));
         input3.add(
-                new PositionedStack(
-                        GT_ModHandler.getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603),
-                        80 - x,
-                        73 - y));
+                new PositionedStack(getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603), 80 - x, 73 - y));
         input3.add(
-                new PositionedStack(
-                        GT_ModHandler.getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603),
-                        98 - x,
-                        73 - y));
+                new PositionedStack(getModItem(Constants.MOD_ID_GREGTECH, "gt.metaitem.01", 1, 32603), 98 - x, 73 - y));
         instance.registerAstroMinerRecipe(
                 input3,
                 new PositionedStack(new ItemStack(AsteroidsItems.astroMiner), 143 - x, 55 - y));

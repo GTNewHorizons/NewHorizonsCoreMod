@@ -1351,6 +1351,18 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 null,
                 null,
                 null);
+        // priority card
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ToolPriorityCard", 1, 0, missing),
+                "plateTungstenSteel",
+                "circuitElite",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "plateDiamond",
+                "plateRedAlloy",
+                "plateDiamond",
+                null,
+                null,
+                null);
         // charged staff
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ToolChargedStaff", 1, 0, missing),
