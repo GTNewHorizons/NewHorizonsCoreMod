@@ -840,28 +840,28 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 2L),
                         CustomItemList.Casing_UEV.get(1L))
-                .itemOutputs(CustomItemList.Hull_UEV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
+                .itemOutputs(ItemList.Hull_UEV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.NetherStar, 2L),
                         CustomItemList.Casing_UIV.get(1L))
-                .itemOutputs(CustomItemList.Hull_UIV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
+                .itemOutputs(ItemList.Hull_UIV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt12, Materials.Quantium, 2L),
                         CustomItemList.Casing_UMV.get(1L))
-                .itemOutputs(CustomItemList.Hull_UMV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
+                .itemOutputs(ItemList.Hull_UMV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 2L),
                         CustomItemList.Casing_UXV.get(1L))
-                .itemOutputs(CustomItemList.Hull_UXV.get(1L)).fluidInputs(MaterialsKevlar.Kevlar.getMolten(576L))
+                .itemOutputs(ItemList.Hull_UXV.get(1L)).fluidInputs(MaterialsKevlar.Kevlar.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         // Hermetic casings
@@ -1438,7 +1438,7 @@ public class AssemblerRecipes implements Runnable {
 
         if (BartWorks.isModLoaded()) {
             // Humongous input hatch
-            GT_Values.RA.stdBuilder().itemInputs(CustomItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1))
+            GT_Values.RA.stdBuilder().itemInputs(ItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1))
                     .itemOutputs(ItemRegistry.humongousInputHatch.copy())
                     .fluidInputs(MaterialsUEVplus.Space.getMolten(5_760L)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
                     .addTo(assemblerRecipes);
@@ -1685,7 +1685,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 1L),
-                        CustomItemList.Hull_UEV.get(1L),
+                        ItemList.Hull_UEV.get(1L),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UEV.get(1L))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
@@ -1694,7 +1694,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.TranscendentMetal, 1L),
-                        CustomItemList.Hull_UIV.get(1L),
+                        ItemList.Hull_UIV.get(1L),
                         GT_Utility.getIntegratedCircuit(4))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UIV.get(1L))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UIV)
@@ -1949,7 +1949,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
                         Materials.Americium.getPlates(3),
                         ItemList.Field_Generator_UV.get(1),
-                        CustomItemList.Automation_ChestBuffer_UEV.get(1L))
+                        ItemList.Automation_ChestBuffer_UEV.get(1L))
                 .itemOutputs(ItemList.Quantum_Chest_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         // Ultra High Voltage Chest Buffer
@@ -1957,10 +1957,10 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Conveyor_Module_UEV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 1),
-                        CustomItemList.Hull_UEV.get(1),
+                        ItemList.Hull_UEV.get(1),
                         GT_OreDictUnificator.get(OrePrefixes.chest, Materials.Wood, 1))
-                .itemOutputs(CustomItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Automation_ChestBuffer_UEV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
         // UV Compressor
         GT_Values.RA.stdBuilder().itemInputs(
@@ -1969,7 +1969,7 @@ public class AssemblerRecipes implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2),
                 ItemList.Electric_Piston_UV.get(2),
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.ElectrumFlux, 4))
-                .itemOutputs(CustomItemList.CompressorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UV)
+                .itemOutputs(ItemList.CompressorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(assemblerRecipes);
 
         // UV Microwave Transmitter
@@ -2242,9 +2242,8 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
                             GregtechItemList.Transformer_HA_ZPM_LuV.get(1),
                             ItemList.Electric_Pump_LV.get(1))
-                    .fluidInputs(Materials.Lubricant.getFluid(2000))
-                    .itemOutputs(CustomItemList.WetTransformer_ZPM_LuV.get(1)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+                    .fluidInputs(Materials.Lubricant.getFluid(2000)).itemOutputs(ItemList.WetTransformer_ZPM_LuV.get(1))
+                    .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
             // Hastelloy-X Structural Block
             GT_Values.RA.stdBuilder()
@@ -2290,7 +2289,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Robot_Arm_UV.get(2),
                         ItemList.Electric_Piston_UV.get(2),
                         ItemList.Hull_UV.get(1))
-                .itemOutputs(CustomItemList.AcceleratorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.AcceleratorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         if (KekzTech.isModLoaded()) {
             // LSC controller
@@ -2305,7 +2304,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 1),
-                        CustomItemList.Hull_UMV.get(1),
+                        ItemList.Hull_UMV.get(1),
                         GT_Utility.getIntegratedCircuit(4))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UMV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UMV)
@@ -2314,7 +2313,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 4),
-                        CustomItemList.Hull_UXV.get(1),
+                        ItemList.Hull_UXV.get(1),
                         GT_Utility.getIntegratedCircuit(4))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UXV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UXV)
@@ -4353,7 +4352,7 @@ public class AssemblerRecipes implements Runnable {
                 // Engineering Processor
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24),
                 CustomItemList.MysteriousCrystal.get(1L),
-                CustomItemList.AcceleratorLuV.get(1L),
+                ItemList.AcceleratorLuV.get(1L),
                 GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 56)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
@@ -9168,7 +9167,7 @@ public class AssemblerRecipes implements Runnable {
                                 ItemList.Hull_EV.get(1L),
                                 ItemList.Cover_SolarPanel_EV.get(1L),
                                 ItemList.Robot_Arm_EV.get(1L),
-                                CustomItemList.BatteryHull_EV_Full.get(1L),
+                                ItemList.BatteryHull_EV_Full.get(1L),
                                 GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(GT_ModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 3))
                         .fluidInputs(tMat.getMolten(1152L * tMultiplier / 2L)).duration(1 * MINUTES + 10 * SECONDS)
@@ -9184,7 +9183,7 @@ public class AssemblerRecipes implements Runnable {
                                 ItemList.Hull_IV.get(1L),
                                 ItemList.Cover_SolarPanel_IV.get(1L),
                                 ItemList.Robot_Arm_IV.get(1L),
-                                CustomItemList.BatteryHull_IV_Full.get(1L),
+                                ItemList.BatteryHull_IV_Full.get(1L),
                                 GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(GT_ModHandler.getModItem(SuperSolarPanels.ID, "SpectralSolarPanel", 1L, 0))
                         .fluidInputs(tMat.getMolten(1440 * tMultiplier / 2L)).duration(1 * MINUTES + 20 * SECONDS)
@@ -9195,7 +9194,7 @@ public class AssemblerRecipes implements Runnable {
                                 ItemList.Hull_LuV.get(1L),
                                 ItemList.Cover_SolarPanel_LuV.get(1L),
                                 ItemList.Robot_Arm_LuV.get(1L),
-                                CustomItemList.BatteryHull_LuV_Full.get(1L),
+                                ItemList.BatteryHull_LuV_Full.get(1L),
                                 GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(GT_ModHandler.getModItem(SuperSolarPanels.ID, "SingularSolarPanel", 1L, 0))
                         .fluidInputs(tMat.getMolten(1728 * tMultiplier / 2L)).duration(1 * MINUTES + 30 * SECONDS)
@@ -9206,7 +9205,7 @@ public class AssemblerRecipes implements Runnable {
                                 ItemList.Hull_ZPM.get(1L),
                                 ItemList.Cover_SolarPanel_ZPM.get(1L),
                                 ItemList.Robot_Arm_ZPM.get(1L),
-                                CustomItemList.BatteryHull_ZPM_Full.get(1L),
+                                ItemList.BatteryHull_ZPM_Full.get(1L),
                                 GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(GT_ModHandler.getModItem(SuperSolarPanels.ID, "AdminSolarPanel", 1L, 0))
                         .fluidInputs(tMat.getMolten(2016 * tMultiplier / 2L)).duration(1 * MINUTES + 40 * SECONDS)
@@ -9217,7 +9216,7 @@ public class AssemblerRecipes implements Runnable {
                                 ItemList.Hull_UV.get(1L),
                                 ItemList.Cover_SolarPanel_UV.get(1L),
                                 ItemList.Robot_Arm_UV.get(1L),
-                                CustomItemList.BatteryHull_UV_Full.get(1L),
+                                ItemList.BatteryHull_UV_Full.get(1L),
                                 GT_Utility.getIntegratedCircuit(2))
                         .itemOutputs(GT_ModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1L, 0))
                         .fluidInputs(tMat.getMolten(2304 * tMultiplier / 2L)).duration(1 * MINUTES + 50 * SECONDS)
