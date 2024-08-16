@@ -5833,16 +5833,16 @@ public class AssemblerRecipes implements Runnable {
                         GT_ModHandler.getModItem(JABBA.ID, "upgradeCore", 1L, 0),
                         GT_ModHandler.getModItem(JABBA.ID, "upgradeCore", 1L, 3),
                         GT_Utility.getIntegratedCircuit(3))
-                .itemOutputs(GT_ModHandler.getModItem(JABBA.ID, "upgradeSide", 1L, 1)).duration(60 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
+                .itemOutputs(GT_ModHandler.getModItem(JABBA.ID, "upgradeSide", 1L, 1)).duration(60 * SECONDS).eut(16)
+                .addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_ModHandler.getModItem(JABBA.ID, "upgradeCore", 1L, 0),
                         GT_ModHandler.getModItem(JABBA.ID, "upgradeCore", 1L, 2),
                         GT_Utility.getIntegratedCircuit(3))
-                .itemOutputs(GT_ModHandler.getModItem(JABBA.ID, "upgradeSide", 1L, 2)).duration(60 * SECONDS)
-                .eut(16).addTo(assemblerRecipes);
+                .itemOutputs(GT_ModHandler.getModItem(JABBA.ID, "upgradeSide", 1L, 2)).duration(60 * SECONDS).eut(16)
+                .addTo(assemblerRecipes);
     }
 
     private void makeZTonesRecipes() {
