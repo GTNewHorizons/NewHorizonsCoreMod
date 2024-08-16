@@ -449,6 +449,72 @@ public class ScriptGregtech implements IScriptLoader {
                 null,
                 null);
         addShapedRecipe(
+                ItemList.WirelessHeadphones.get(1),
+                GT_OreDictUnificator.get(OrePrefixes.rod, Materials.Rubber, 1L),
+                ItemList.Sensor_LV.get(1),
+                GT_OreDictUnificator.get(OrePrefixes.rod, Materials.Rubber, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
+                null,
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                null,
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing));
+        addShapedRecipe(
+                ItemList.BetterJukebox_LV.get(1),
+                ItemList.Electric_Piston_LV.get(1),
+                ItemList.Emitter_LV.get(1),
+                ItemList.Electric_Motor_LV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                ItemList.Hull_LV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L));
+        addShapedRecipe(
+                ItemList.BetterJukebox_MV.get(1),
+                ItemList.Electric_Piston_MV.get(1),
+                ItemList.Emitter_MV.get(1),
+                ItemList.Electric_Motor_MV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                ItemList.Hull_MV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L));
+        addShapedRecipe(
+                ItemList.BetterJukebox_HV.get(1),
+                ItemList.Electric_Piston_HV.get(1),
+                ItemList.Emitter_HV.get(1),
+                ItemList.Electric_Motor_HV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                ItemList.Hull_HV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L));
+        addShapedRecipe(
+                ItemList.BetterJukebox_EV.get(1),
+                ItemList.Electric_Piston_EV.get(1),
+                ItemList.Emitter_EV.get(1),
+                ItemList.Electric_Motor_EV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                ItemList.Hull_EV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1L));
+        addShapedRecipe(
+                ItemList.BetterJukebox_IV.get(1),
+                ItemList.Electric_Piston_IV.get(1),
+                ItemList.Emitter_IV.get(1),
+                ItemList.Electric_Motor_IV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                ItemList.Hull_IV.get(1),
+                getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1L),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
+        addShapedRecipe(
                 getModItem(GregTech.ID, "gt.blockstones", 1, 2, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
