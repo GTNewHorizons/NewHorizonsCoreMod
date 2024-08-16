@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.CatWalks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
@@ -14,6 +13,7 @@ import java.util.List;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.objects.ItemData;
 import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptCatWalk implements IScriptLoader {
@@ -157,30 +157,23 @@ public class ScriptCatWalk implements IScriptLoader {
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing))
                 .itemOutputs(getModItem(CatWalks.ID, "ropeLight", 8, 0, missing)).duration(5 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(CatWalks.ID, "support_column", 1, 0, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Steel, 6L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(CatWalks.ID, "scaffold", 1, 0, missing))
-                .itemOutputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Steel, 2L))
-                .outputChances(10000, 10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(CatWalks.ID, "scaffold", 1, 1, missing))
-                .itemOutputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Steel, 2L))
-                .outputChances(10000, 10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(CatWalks.ID, "catwalk_unlit", 1, 0, missing))
-                .itemOutputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
-                        GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Steel, 2L))
-                .outputChances(10000, 10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(CatWalks.ID, "cagedLadder_north_unlit", 1, 0, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(CatWalks.ID, "steelgrate", 1, 0, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Steel, 2L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-
+        GT_OreDictUnificator.addItemData(
+                getModItem(CatWalks.ID, "steelgrate", 1, 0),
+                new ItemData(Materials.Steel, 2 * GT_Values.M / 9)); // GT_Values.M equals one dust or ingot
+        GT_OreDictUnificator.addItemData(
+                getModItem(CatWalks.ID, "support_column", 1, 0),
+                new ItemData(Materials.Steel, 6 * GT_Values.M / 9));
+        GT_OreDictUnificator.addItemData(
+                getModItem(CatWalks.ID, "scaffold", 1, 0),
+                new ItemData(Materials.Steel, 20 * GT_Values.M / 9));
+        GT_OreDictUnificator.addItemData(
+                getModItem(CatWalks.ID, "scaffold", 1, 1),
+                new ItemData(Materials.Steel, 20 * GT_Values.M / 9));
+        GT_OreDictUnificator.addItemData(
+                getModItem(CatWalks.ID, "catwalk_unlit", 1, 0),
+                new ItemData(Materials.Steel, GT_Values.M / 9));
+        GT_OreDictUnificator.addItemData(
+                getModItem(CatWalks.ID, "cagedLadder_north_unlit", 1, 0),
+                new ItemData(Materials.Steel, GT_Values.M / 9));
     }
 }
