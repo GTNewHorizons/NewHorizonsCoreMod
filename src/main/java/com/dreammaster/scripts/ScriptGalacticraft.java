@@ -14,6 +14,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
+import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
@@ -1095,11 +1096,17 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.grapple", 1, 0, missing),
                 null,
                 null,
-                "toolHeadArrowMeteoricSteel",
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartArrowHead",
+                        1,
+                        1573,
+                        "{material:\"MeteoricSteel\"}",
+                        missing),
                 CustomItemList.MeteoricIronString.get(1L),
                 CustomItemList.MeteoricIronString.get(1L),
                 CustomItemList.MeteoricIronString.get(1L),
-                "ringMeteoricSteel",
+                "springMeteoricSteel",
                 null,
                 null);
         addShapedRecipe(
