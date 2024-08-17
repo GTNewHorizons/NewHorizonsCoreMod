@@ -12,27 +12,40 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.StatCollector;
+import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.main.MainRegistry;
+import com.kuba6000.mobsinfo.api.IChanceModifier;
+import com.kuba6000.mobsinfo.api.IMobExtraInfoProvider;
+import com.kuba6000.mobsinfo.api.MobDrop;
+import com.kuba6000.mobsinfo.api.MobRecipe;
 
+import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import eu.usrv.yamcore.persisteddata.PersistedDataBase;
+import io.netty.buffer.ByteBuf;
 import thaumcraft.common.lib.FakeThaumcraftPlayer;
 
-public class CustomDropsHandler {
+@Optional.Interface(iface = "com.kuba6000.mobsinfo.api.IMobExtraInfoProvider", modid = "mobsinfo")
+public class CustomDropsHandler implements IMobExtraInfoProvider {
 
     private LogHelper _mLogger = MainRegistry.Logger;
     private String _mConfigFileName;
@@ -207,6 +220,32 @@ public class CustomDropsHandler {
         }
     }
 
+    @Optional.Method(modid = "mobsinfo")
+    @Override
+    public void provideExtraDropsInformation(@NotNull String entityString, @NotNull ArrayList<MobDrop> drops,
+            @NotNull MobRecipe recipe) {
+        CustomDrops.CustomDrop customDrop = _mCustomDrops.FindDropEntry(recipe.entity);
+        if (customDrop == null) return;
+        for (CustomDrops.CustomDrop.Drop drop : customDrop.getDrops()) {
+            ItemStack stack = ItemDescriptor.fromString(drop.getItemName()).getItemStackwNBT(1, drop.mTag);
+            if (stack == null) continue;
+            double chance = drop.getChance() / 100d;
+            if (drop.getIsRandomAmount()) {
+                chance *= MobDrop.getChanceBasedOnFromTo(1, drop.getAmount());
+            } else {
+                stack.stackSize = drop.getAmount();
+            }
+            MobDrop mobDrop = MobDrop.create(stack).withChance(chance).withHardPlayerRestriction();
+            if (drop.getLimitedDropCount() > 0) {
+                mobDrop.clampChance();
+                mobDrop.withChanceModifiers(
+                        new IChanceModifier.NormalChance(mobDrop.chance / 100d),
+                        new LimitedDropCountModifier(drop.getLimitedDropCount()));
+            }
+            drops.add(mobDrop);
+        }
+    }
+
     private void HandleCustomDrops(CustomDrops.CustomDrop tCustomDrop, EntityLivingBase tEntity, EntityPlayer tEP,
             ArrayList<EntityItem> pDropList) {
         try {
@@ -242,7 +281,7 @@ public class CustomDropsHandler {
                 }
 
                 if (dr.getIsRandomAmount()) {
-                    tFinalAmount = Math.max(1, MainRegistry.Rnd.nextInt(dr.getAmount() + 1));
+                    tFinalAmount = MainRegistry.Rnd.nextInt(dr.getAmount()) + 1;
                 }
 
                 ItemStack tDropStack = ItemDescriptor.fromString(dr.getItemName())
@@ -272,6 +311,38 @@ public class CustomDropsHandler {
         } else {
             _mDeathDebugPlayers.add(tUUID);
             PlayerChatHelper.SendInfo(pEP, "Death-Debug is now enabled");
+        }
+    }
+
+    private static class LimitedDropCountModifier implements IChanceModifier {
+
+        int limit;
+
+        LimitedDropCountModifier() {}
+
+        LimitedDropCountModifier(int limit) {
+            this.limit = limit;
+        }
+
+        @Override
+        public String getDescription() {
+            return StatCollector.translateToLocalFormatted("dreamcraft.mobsinfocompat.limitedropcount", limit);
+        }
+
+        @Override
+        public double apply(double chance, @NotNull World world, @NotNull List<ItemStack> drops, Entity attacker,
+                EntityLiving victim) {
+            return 0;
+        }
+
+        @Override
+        public void writeToByteBuf(ByteBuf byteBuf) {
+            byteBuf.writeInt(limit);
+        }
+
+        @Override
+        public void readFromByteBuf(ByteBuf byteBuf) {
+            limit = byteBuf.readInt();
         }
     }
 }
