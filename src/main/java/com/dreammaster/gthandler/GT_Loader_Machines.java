@@ -2552,7 +2552,7 @@ public class GT_Loader_Machines {
                         GT_MetaTileEntity_BasicMachine_GT_Recipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G', OreDictNames.craftingGrinder },
-                9);
+                6);
 
         GT_ModHandler.addMachineCraftingRecipe(
                 ItemList.MaceratorZPM.get(1L),
