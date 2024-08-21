@@ -16,8 +16,6 @@ import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
 import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
 import static gtPlusPlus.core.material.ALLOY.STELLITE;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -5888,68 +5886,61 @@ public class AssemblerRecipes implements Runnable {
         String[] zblockName = { "zane", "zech", "zest", "zeta", "zion", "zkul", "zoea", "zome", "zone", "zorg", "ztyl",
                 "zyth" };
 
-        Map<String, List<ItemStack>> itemMap = new HashMap<>();
-        itemMap.put(blockName[0], OreDictionary.getOres("dyeLightGray")); // agon
-        itemMap.put(blockName[1], OreDictionary.getOres("dyeBlue")); // azur
-        itemMap.put(blockName[2], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.wool, 1, 0)))); // bitt
-        itemMap.put(blockName[3], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.hardened_clay, 1, 0)))); // cray
-        itemMap.put(blockName[4], OreDictionary.getOres("dyeBrown")); // fort
-        itemMap.put(blockName[5], OreDictionary.getOres("dyeGray")); // iszm
-        itemMap.put(blockName[6], new ArrayList<>(Arrays.asList(new ItemStack(Items.gold_ingot, 1, 0))));// jelt
-        itemMap.put(blockName[7], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.obsidian, 1, 0)))); // korp
-        itemMap.put(blockName[8], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.soul_sand, 1, 0))));// kryp
-        itemMap.put(blockName[9], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.netherrack, 1, 0))));// lair
-        itemMap.put(blockName[10], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.ice, 1, 0))));// lave
-        itemMap.put(blockName[11], new ArrayList<>(Arrays.asList(new ItemStack(Items.slime_ball, 1, 0))));// mint
-        itemMap.put(blockName[12], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.brown_mushroom, 1, 0))));// myst
-        itemMap.put(blockName[13], new ArrayList<>(Arrays.asList(new ItemStack(Items.redstone, 1, 0))));// reds
-        itemMap.put(blockName[14], new ArrayList<>(Arrays.asList(new ItemStack(Items.reeds, 1, 0))));// reed
-        itemMap.put(blockName[15], new ArrayList<>(Arrays.asList(new ItemStack(Blocks.sandstone, 1, 0))));// roen
-        itemMap.put(blockName[16], new ArrayList<>(Arrays.asList(new ItemStack(Items.blaze_powder, 1, 0))));// sols
-        itemMap.put(blockName[17], new ArrayList<>(Arrays.asList(new ItemStack(Items.emerald, 1, 0))));// sync
-        itemMap.put(blockName[18], new ArrayList<>(Arrays.asList(new ItemStack(Items.iron_ingot, 1, 0))));// tank
-        itemMap.put(blockName[19], new ArrayList<>(Arrays.asList(new ItemStack(Items.ghast_tear, 1, 0))));// vect
-        itemMap.put(blockName[20], new ArrayList<>(Arrays.asList(new ItemStack(Items.ender_pearl, 1, 0))));// vena
-        Map<String, List<ItemStack>> zitemMap = new HashMap<>();
-        zitemMap.put(zblockName[0], OreDictionary.getOres("dyeBlack")); // zane
-        zitemMap.put(zblockName[1], OreDictionary.getOres("dyeRed")); // zech
-        zitemMap.put(zblockName[2], OreDictionary.getOres("dyeBlack")); // zest
-        zitemMap.put(zblockName[3], OreDictionary.getOres("dyePurple")); // zeta
-        zitemMap.put(zblockName[4], OreDictionary.getOres("dyeCyan")); // zion
-        zitemMap.put(zblockName[5], OreDictionary.getOres("dyePink")); // zkul
-        zitemMap.put(zblockName[6], OreDictionary.getOres("dyeLime")); // zoea
-        zitemMap.put(zblockName[7], OreDictionary.getOres("dyeYellow")); // zome
-        zitemMap.put(zblockName[8], OreDictionary.getOres("dyeLightBlue")); // zone
-        zitemMap.put(zblockName[9], OreDictionary.getOres("dyeMagenta")); // zorg
-        zitemMap.put(zblockName[10], OreDictionary.getOres("dyeOrange")); // ztyl
-        zitemMap.put(zblockName[11], OreDictionary.getOres("dyeWhite")); // zyth
+        Map<String, ItemStack> itemMap = new HashMap<>();
+        itemMap.put(blockName[0], ItemList.Color_07.get(1)); // agon
+        itemMap.put(blockName[1], ItemList.Color_04.get(1)); // azur
+        itemMap.put(blockName[2], new ItemStack(Blocks.wool, 1, 0)); // bitt
+        itemMap.put(blockName[3], new ItemStack(Blocks.hardened_clay, 1, 0)); // cray
+        itemMap.put(blockName[4], ItemList.Color_03.get(1)); // fort
+        itemMap.put(blockName[5], ItemList.Color_08.get(1)); // iszm
+        itemMap.put(blockName[6], new ItemStack(Items.gold_ingot, 1, 0));// jelt
+        itemMap.put(blockName[7], new ItemStack(Blocks.obsidian, 1, 0)); // korp
+        itemMap.put(blockName[8], new ItemStack(Blocks.soul_sand, 1, 0));// kryp
+        itemMap.put(blockName[9], new ItemStack(Blocks.netherrack, 1, 0));// lair
+        itemMap.put(blockName[10], new ItemStack(Blocks.ice, 1, 0));// lave
+        itemMap.put(blockName[11], new ItemStack(Items.slime_ball, 1, 0));// mint
+        itemMap.put(blockName[12], new ItemStack(Blocks.brown_mushroom, 1, 0));// myst
+        itemMap.put(blockName[13], new ItemStack(Items.redstone, 1, 0));// reds
+        itemMap.put(blockName[14], new ItemStack(Items.reeds, 1, 0));// reed
+        itemMap.put(blockName[15], new ItemStack(Blocks.sandstone, 1, 0));// roen
+        itemMap.put(blockName[16], new ItemStack(Items.blaze_powder, 1, 0));// sols
+        itemMap.put(blockName[17], new ItemStack(Items.emerald, 1, 0));// sync
+        itemMap.put(blockName[18], new ItemStack(Items.iron_ingot, 1, 0));// tank
+        itemMap.put(blockName[19], new ItemStack(Items.ghast_tear, 1, 0));// vect
+        itemMap.put(blockName[20], new ItemStack(Items.ender_pearl, 1, 0));// vena
+        Map<String, ItemStack> zitemMap = new HashMap<>();
+        zitemMap.put(zblockName[0], ItemList.Color_00.get(1)); // zane
+        zitemMap.put(zblockName[1], ItemList.Color_01.get(1)); // zech
+        zitemMap.put(zblockName[2], ItemList.Color_02.get(1)); // zest
+        zitemMap.put(zblockName[3], ItemList.Color_05.get(1)); // zeta
+        zitemMap.put(zblockName[4], ItemList.Color_06.get(1)); // zion
+        zitemMap.put(zblockName[5], ItemList.Color_09.get(1)); // zkul
+        zitemMap.put(zblockName[6], ItemList.Color_10.get(1)); // zoea
+        zitemMap.put(zblockName[7], ItemList.Color_11.get(1)); // zome
+        zitemMap.put(zblockName[8], ItemList.Color_12.get(1)); // zone
+        zitemMap.put(zblockName[9], ItemList.Color_13.get(1)); // zorg
+        zitemMap.put(zblockName[10], ItemList.Color_14.get(1)); // ztyl
+        zitemMap.put(zblockName[11], ItemList.Color_15.get(1)); // zyth
 
         final int ztoneVariants = 16;
 
+        final ItemStack ztoneStone = GT_ModHandler.getModItem(ZTones.ID, "stoneTile", 4L, 0);
+        final ItemStack ztoneAurora = GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 4L, 0);
+
         for (String name : blockName) {
             for (int i = 0; i < ztoneVariants; i++) {
-                for (ItemStack ingredient : itemMap.get(name)) {
-                    GT_Values.RA.stdBuilder()
-                            .itemInputs(
-                                    GT_ModHandler.getModItem(ZTones.ID, "stoneTile", 4L, 0),
-                                    ingredient,
-                                    GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
-                            .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + name + "Block", 8L, i))
-                            .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-                }
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(ztoneStone, itemMap.get(name), GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
+                        .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + name + "Block", 8L, i))
+                        .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
             }
         }
         for (String name : zblockName) {
             for (int i = 0; i < ztoneVariants; i++) {
-                for (ItemStack ingredient : zitemMap.get(name)) {
-                    GT_Values.RA.stdBuilder()
-                            .itemInputs(
-                                    GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 4L, 0),
-                                    ingredient,
-                                    GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
-                            .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + name + "Block", 8L, i))
-                            .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
-                }
+                GT_Values.RA.stdBuilder()
+                        .itemInputs(ztoneAurora, zitemMap.get(name), GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
+                        .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + name + "Block", 8L, i))
+                        .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
             }
         }
         for (int i = 0; i < ztoneVariants; i++) {
