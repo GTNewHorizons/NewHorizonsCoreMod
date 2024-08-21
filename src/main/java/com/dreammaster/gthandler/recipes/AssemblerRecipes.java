@@ -5924,13 +5924,13 @@ public class AssemblerRecipes implements Runnable {
 
         final int ztoneVariants = 16;
 
+        final ItemStack ztoneStone = GT_ModHandler.getModItem(ZTones.ID, "stoneTile", 4L, 0);
+        final ItemStack ztoneAurora = GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 4L, 0);
+
         for (String name : blockName) {
             for (int i = 0; i < ztoneVariants; i++) {
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_ModHandler.getModItem(ZTones.ID, "stoneTile", 4L, 0),
-                                itemMap.get(name),
-                                GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
+                        .itemInputs(ztoneStone, itemMap.get(name), GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
                         .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + name + "Block", 8L, i))
                         .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
             }
@@ -5938,10 +5938,7 @@ public class AssemblerRecipes implements Runnable {
         for (String name : zblockName) {
             for (int i = 0; i < ztoneVariants; i++) {
                 GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_ModHandler.getModItem(ZTones.ID, "auroraBlock", 4L, 0),
-                                zitemMap.get(name),
-                                GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
+                        .itemInputs(ztoneAurora, zitemMap.get(name), GT_Utility.getIntegratedCircuit(i == 0 ? 24 : i))
                         .itemOutputs(GT_ModHandler.getModItem(ZTones.ID, "tile." + name + "Block", 8L, i))
                         .duration(10 * SECONDS).eut(16).addTo(assemblerRecipes);
             }
