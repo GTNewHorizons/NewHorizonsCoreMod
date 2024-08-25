@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DetravScannerMod;
-import static gregtech.api.enums.Mods.GalactiGreg;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -355,12 +354,11 @@ public class MainRegistry {
             PyrolyseOvenLoader.registerRecipes();
         });
 
-        // Registering  all ores for deep dark
+        // Registering all ores for deep dark
         GregTech_API.sAfterGTPostload.add(() -> {
             Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
             VoidMinerLoader.initDeepDark();
         });
-
 
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
