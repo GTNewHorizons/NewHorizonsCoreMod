@@ -9073,6 +9073,23 @@ public class AssemblerRecipes implements Runnable {
                         .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(assemblerRecipes);
             }
         }
+        if (Computronics.isModLoaded()) {
+            // Audio Cable
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Silver, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1))
+                    .fluidInputs(Materials.Bismuth.getMolten(GT_Values.L))
+                    .itemOutputs(GT_ModHandler.getModItem(Computronics.ID, "computronics.audioCable", 1L))
+                    .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+            GT_Values.RA.stdBuilder()
+                    .itemInputs(
+                            GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Silver, 1),
+                            GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1))
+                    .fluidInputs(Materials.Lead.getMolten(GT_Values.L))
+                    .itemOutputs(GT_ModHandler.getModItem(Computronics.ID, "computronics.audioCable", 1L))
+                    .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        }
     }
 
     private void makeSolderingAlloyRecipes() {
@@ -9983,23 +10000,6 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GT_ModHandler.getModItem(Computronics.ID, "computronics.dockingUpgrade", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-
-                // Audio Cable
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Silver, 1),
-                                GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1))
-                        .fluidInputs(Materials.Bismuth.getMolten(GT_Values.L))
-                        .itemOutputs(GT_ModHandler.getModItem(Computronics.ID, "computronics.audioCable", 1L))
-                        .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.Silver, 1),
-                                GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1))
-                        .fluidInputs(Materials.Lead.getMolten(GT_Values.L))
-                        .itemOutputs(GT_ModHandler.getModItem(Computronics.ID, "computronics.audioCable", 1L))
-                        .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
             }
         }
     }
