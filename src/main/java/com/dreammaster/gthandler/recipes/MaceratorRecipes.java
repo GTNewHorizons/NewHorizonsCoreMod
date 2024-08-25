@@ -83,7 +83,6 @@ public class MaceratorRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1))
                 .outputChances(10000).duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(maceratorRecipes);
 
-        // recipes for everything that uses sand
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),

@@ -153,12 +153,9 @@ public class AlloySmelterRecipes implements Runnable {
                 .itemOutputs(com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS().splitStack(3))
                 .duration(60 * SECONDS).eut(256).addTo(alloySmelterRecipes);
 
-        // recipes for everything that uses sand
-        for (int i = 0; i < OreDictionary.getOres("sand").size(); ++i) {
-            GT_Values.RA.stdBuilder().itemInputs(OreDictionary.getOres("sand").get(i), new ItemStack(Items.clay_ball))
-                    .itemOutputs(com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2))
-                    .duration(10 * SECONDS).eut(8).addTo(alloySmelterRecipes);
-        }
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1), new ItemStack(Items.clay_ball))
+                .itemOutputs(com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2)).duration(10 * SECONDS)
+                .eut(8).addTo(alloySmelterRecipes);
 
         if (EnderIO.isModLoaded()) {
             // EnderIO Fused Quartz and Glass
