@@ -355,15 +355,13 @@ public class MainRegistry {
             PyrolyseOvenLoader.registerRecipes();
         });
 
-        // Register Dimensions in GalacticGregGT5
-        if (GalactiGreg.isModLoaded()) {
-            if (BartWorks.isModLoaded()) {
-                GregTech_API.sAfterGTPostload.add(() -> {
-                    Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
-                    VoidMinerLoader.initDeepDark();
-                });
-            }
-        }
+        // Registering  all ores for deep dark
+        GregTech_API.sAfterGTPostload.add(() -> {
+            Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
+            VoidMinerLoader.initDeepDark();
+        });
+
+
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
         }
