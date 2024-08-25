@@ -9243,17 +9243,6 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "screen1", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS).eut(64)
                         .addTo(assemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Casing_MV.get(1L),
-                                ItemList.Cover_Screen.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2L),
-                                ItemList.Circuit_Parts_TransistorSMD.get(1L),
-                                GT_Utility.getIntegratedCircuit(1))
-                        .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "screen1", 1L, 0))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS).eut(64)
-                        .addTo(assemblerRecipes);
                 // display t2
 
                 GT_Values.RA.stdBuilder()
@@ -9266,17 +9255,6 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "screen2", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS)
                         .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Casing_HV.get(1L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "screen1", 1L, 0),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2L),
-                                ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                                GT_Utility.getIntegratedCircuit(1))
-                        .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "screen2", 1L, 0))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
                 // display t3
 
                 GT_Values.RA.stdBuilder()
@@ -9285,17 +9263,6 @@ public class AssemblerRecipes implements Runnable {
                                 GT_ModHandler.getModItem(OpenComputers.ID, "screen2", 1L, 0),
                                 GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2L),
                                 ItemList.Circuit_Parts_Transistor.get(8L),
-                                GT_Utility.getIntegratedCircuit(1))
-                        .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "screen3", 1L, 0))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(12 * SECONDS).eut(256)
-                        .addTo(assemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Casing_EV.get(1L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "screen2", 1L, 0),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2L),
-                                ItemList.Circuit_Parts_TransistorSMD.get(4L),
                                 GT_Utility.getIntegratedCircuit(1))
                         .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "screen3", 1L, 0))
                         .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(12 * SECONDS).eut(256)
@@ -9362,18 +9329,6 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 63))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "capacitor", 1L, 0),
-                                ItemList.Circuit_Parts_TransistorSMD.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedAlloy, 4L),
-                                GT_Utility.getIntegratedCircuit(1))
-                        .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 63))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
                 // battery upgrade 2
 
                 GT_Values.RA.stdBuilder()
@@ -9387,18 +9342,6 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 64))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(256).addTo(assemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Titanium, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "capacitor", 2L, 0),
-                                ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Silver, 8L),
-                                GT_Utility.getIntegratedCircuit(1))
-                        .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 64))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(256).addTo(assemblerRecipes);
                 // battery upgrade 3
 
                 GT_Values.RA.stdBuilder()
@@ -9407,18 +9350,6 @@ public class AssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 2L),
                                 GT_ModHandler.getModItem(OpenComputers.ID, "capacitor", 4L, 0),
                                 ItemList.Circuit_Parts_Transistor.get(8L),
-                                GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 16L),
-                                GT_Utility.getIntegratedCircuit(1))
-                        .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 65))
-                        .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-
-                GT_Values.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Circuit_Board_Fiberglass_Advanced.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.TungstenSteel, 2L),
-                                GT_ModHandler.getModItem(OpenComputers.ID, "capacitor", 4L, 0),
-                                ItemList.Circuit_Parts_TransistorSMD.get(4L),
                                 GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Electrum, 16L),
                                 GT_Utility.getIntegratedCircuit(1))
                         .itemOutputs(GT_ModHandler.getModItem(OpenComputers.ID, "item", 1L, 65))
