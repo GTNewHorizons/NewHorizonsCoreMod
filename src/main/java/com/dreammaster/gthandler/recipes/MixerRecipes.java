@@ -987,11 +987,6 @@ public class MixerRecipes implements Runnable {
                 .itemOutputs(Materials.AstralSilver.getDust(3)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(mixerRecipes);
 
-        GT_Values.RA.stdBuilder()
-                .itemInputs(Materials.Tin.getDust(9), Materials.Antimony.getDust(1), GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(Materials.SolderingAlloy.getDust(10)).duration(3 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(mixerRecipes);
-
         if (PamsHarvestCraft.isModLoaded()) {
 
             GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "soybeanItem", 1, 0))

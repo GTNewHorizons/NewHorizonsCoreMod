@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.OpenBlocks;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
@@ -30,124 +29,6 @@ public class FluidExtractorRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(ItemList.GalliumArsenideCrystal.get(1L))
                 .fluidOutputs(Materials.GalliumArsenide.getMolten(288L)).duration(2 * SECONDS + 8 * TICKS).eut(37)
                 .addTo(fluidExtractionRecipes);
-
-        if (PamsHarvestCraft.isModLoaded()) {
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "catfishrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "crayfishrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "jellyfishrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "mudfishrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "greenheartfishItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "catfishrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "anchovyrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "bassrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "carprawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "octopusrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "charrrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "clamrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "crabrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "crayfishrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "eelrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "frograwItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "grouperrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "herringrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "perchrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "scalloprawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "shrimprawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "snailrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "snapperrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "tilapiarawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "troutrawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "tunarawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "turtlerawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(PamsHarvestCraft.ID, "walleyerawItem", 1, 0))
-                    .fluidOutputs(Materials.FishOil.getFluid(50L)).duration(16 * TICKS).eut(4)
-                    .addTo(fluidExtractionRecipes);
-
-        }
 
         if (OpenBlocks.isModLoaded() && TinkerConstruct.isModLoaded()) {
 
