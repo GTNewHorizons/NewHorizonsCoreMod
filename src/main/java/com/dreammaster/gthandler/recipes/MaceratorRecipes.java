@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -83,7 +84,7 @@ public class MaceratorRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.GalliumArsenide, 1))
                 .outputChances(10000).duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(maceratorRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1))
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),

@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.TinkerConstruct;
@@ -153,7 +154,7 @@ public class AlloySmelterRecipes implements Runnable {
                 .itemOutputs(com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS().splitStack(3))
                 .duration(60 * SECONDS).eut(256).addTo(alloySmelterRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1), new ItemStack(Items.clay_ball))
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard), new ItemStack(Items.clay_ball))
                 .itemOutputs(com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2)).duration(10 * SECONDS)
                 .eut(8).addTo(alloySmelterRecipes);
 
