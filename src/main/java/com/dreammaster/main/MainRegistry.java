@@ -45,7 +45,6 @@ import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
-import com.dreammaster.galacticgreg.SpaceDimRegisterer;
 import com.dreammaster.gthandler.CoreMod_PCBFactory_MaterialLoader;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
@@ -140,7 +139,6 @@ public class MainRegistry {
     public static CoreModDispatcher NW;
     public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
-    private static SpaceDimRegisterer SpaceDimReg;
     private static BacteriaRegistry BacteriaRegistry;
 
     public static void AddLoginError(String pMessage) {
@@ -364,16 +362,6 @@ public class MainRegistry {
                     Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
                     VoidMinerLoader.initDeepDark();
                 });
-            }
-
-            SpaceDimReg = new SpaceDimRegisterer();
-            if (!SpaceDimReg.init()) {
-                Logger.error(
-                        "Unable to register SpaceDimensions; You are probably using the wrong Version of GalacticGreg");
-                AddLoginError("[SpaceDim] Unable to register SpaceDimensions. Wrong Version of GGreg found!");
-            } else {
-                Logger.debug("Registering SpaceDimensions");
-                SpaceDimReg.register();
             }
         }
         if (TwilightForest.isModLoaded()) {
