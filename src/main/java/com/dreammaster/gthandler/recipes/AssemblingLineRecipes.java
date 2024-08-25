@@ -1035,7 +1035,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
 
             // Femtometer-calibrated particle beam casing
-            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.STRANGE))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.TOP))
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
