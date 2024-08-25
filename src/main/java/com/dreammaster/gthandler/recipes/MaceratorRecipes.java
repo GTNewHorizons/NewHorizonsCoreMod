@@ -14,9 +14,9 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
 
@@ -84,15 +84,13 @@ public class MaceratorRecipes implements Runnable {
                 .outputChances(10000).duration(1 * SECONDS + 5 * TICKS).eut(4).addTo(maceratorRecipes);
 
         // recipes for everything that uses sand
-        for (int i = 0; i < OreDictionary.getOres("sand").size(); ++i) {
-            GT_Values.RA.stdBuilder().itemInputs(OreDictionary.getOres("sand").get(i))
-                    .itemOutputs(
-                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L))
-                    .outputChances(10000, 2500, 2000, 1500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
-        }
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 1))
+                .itemOutputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L))
+                .outputChances(10000, 2500, 2000, 1500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
 
         if (OpenPrinters.isModLoaded()) {
 
