@@ -181,11 +181,6 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
         return 0;
     }
 
-    @Override
-    public boolean useModularUI() {
-        return true;
-    }
-
     private static final FallbackableUITexture progressBarTexture = GT_UITextures
             .fallbackableProgressbar("name_remover", CoreMod_UITextures.PROGRESSBAR_NAME_REMOVER);
 

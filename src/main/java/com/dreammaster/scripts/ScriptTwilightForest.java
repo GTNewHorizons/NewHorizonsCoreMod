@@ -104,47 +104,47 @@ public class ScriptTwilightForest implements IScriptLoader {
 
             addShapedRecipe(
                     getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
                     "craftingToolScrewdriver",
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     "ringAnyIron",
                     "screwAnyIron",
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     "craftingToolSaw");
             addShapedRecipe(
                     getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
                     "craftingToolScrewdriver",
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     "ringCopper",
                     "screwCopper",
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     "craftingToolSaw");
             addShapedRecipe(
                     getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
                     "craftingToolSaw",
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     "ringAnyIron",
                     "screwAnyIron",
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     "craftingToolScrewdriver");
             addShapedRecipe(
                     getModItem(TwilightForest.ID, "item.door" + materials[i], 1, 0, missing),
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     getModItem(TwilightForest.ID, "tile.TFTrapDoor" + materials[i], 1, 0, missing),
                     "craftingToolSaw",
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     "ringCopper",
                     "screwCopper",
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
-                    getModItem(TwilightForest.ID, "tile.TFPlanks", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
+                    getModItem(TwilightForest.ID, "tile.TFPlank", 1, i, missing),
                     "craftingToolScrewdriver");
 
             GT_Values.RA.stdBuilder()

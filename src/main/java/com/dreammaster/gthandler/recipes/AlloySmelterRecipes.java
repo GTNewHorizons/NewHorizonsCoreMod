@@ -1,11 +1,11 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -147,10 +147,6 @@ public class AlloySmelterRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Parts_Glass_Tube.get(1L)).duration(6 * SECONDS).eut(16)
                 .addTo(alloySmelterRecipes);
 
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.obsidian, 1, 0), ItemList.Shape_Mold_Ingot.get(0L))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Obsidian, 2L))
-                .duration(6 * SECONDS + 10 * TICKS).eut(3).addTo(alloySmelterRecipes);
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_ModHandler.getModItem(IndustrialCraft2.ID, "itemPartIridium", 2L),
@@ -158,12 +154,9 @@ public class AlloySmelterRecipes implements Runnable {
                 .itemOutputs(com.dreammaster.item.ItemList.IridiumAlloyItemCasing.getIS().splitStack(3))
                 .duration(60 * SECONDS).eut(256).addTo(alloySmelterRecipes);
 
-        // recipes for everything that uses sand
-        for (int i = 0; i < OreDictionary.getOres("sand").size(); ++i) {
-            GT_Values.RA.stdBuilder().itemInputs(OreDictionary.getOres("sand").get(i), new ItemStack(Items.clay_ball))
-                    .itemOutputs(com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2))
-                    .duration(10 * SECONDS).eut(8).addTo(alloySmelterRecipes);
-        }
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, wildcard), new ItemStack(Items.clay_ball))
+                .itemOutputs(com.dreammaster.item.ItemList.CokeOvenBrick.getIS().splitStack(2)).duration(10 * SECONDS)
+                .eut(8).addTo(alloySmelterRecipes);
 
         if (EnderIO.isModLoaded()) {
             // EnderIO Fused Quartz and Glass

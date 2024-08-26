@@ -98,7 +98,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 CustomItemList.MysteriousCrystal,
-                CustomItemList.AcceleratorLuV);
+                ItemList.AcceleratorLuV);
 
         // Quad Core
         GT_Values.RA.stdBuilder()
@@ -1348,6 +1348,18 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateGold",
                 "plateRedAlloy",
                 "plateGold",
+                null,
+                null,
+                null);
+        // priority card
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ToolPriorityCard", 1, 0, missing),
+                "plateTungstenSteel",
+                "circuitElite",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
+                "plateDiamond",
+                "plateRedAlloy",
+                "plateDiamond",
                 null,
                 null,
                 null);
