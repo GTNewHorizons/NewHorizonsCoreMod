@@ -27,6 +27,7 @@ import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
 import static gtPlusPlus.core.material.ALLOY.STELLITE;
+import static gtPlusPlus.core.material.ALLOY.TUNGSTENSTEEL;
 
 import java.util.function.Consumer;
 
@@ -691,6 +692,76 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings10", 1, 1),
                 bits,
                 new Object[] { "PhP", "PFP", "PwP", 'P', STELLITE.getPlate(1), 'F', NITINOL_60.getFrameBox(1) });
+
+        // Industrial Precision Lathe
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Machine_Multi_Lathe.get(1),
+                bits,
+                new Object[] { "CFC", "EAE", "CFC", 'A', ItemList.Machine_EV_Lathe, 'F',
+                        OrePrefixes.circuit.get(Materials.IV), 'C', TUNGSTENSTEEL.getPlate(1), 'E',
+                        ItemList.Electric_Motor_EV });
+
+        // Item Pipe Casings
+        // Tin
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 0),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Tin), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Tin), 'F', OrePrefixes.frameGt.get(Materials.Tin) });
+
+        // Brass
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 1),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Brass), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Brass), 'F', OrePrefixes.frameGt.get(Materials.Brass) });
+
+        // Electrum
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 2),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Electrum), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Electrum), 'F',
+                        OrePrefixes.frameGt.get(Materials.Electrum) });
+
+        // Platinum
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 3),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Platinum), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Platinum), 'F',
+                        OrePrefixes.frameGt.get(Materials.Platinum) });
+
+        // Osmium
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 4),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Osmium), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Osmium), 'F', OrePrefixes.frameGt.get(Materials.Osmium) });
+
+        // Quantium
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 5),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Quantium), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Quantium), 'F',
+                        OrePrefixes.frameGt.get(Materials.Quantium) });
+
+        // Fluxed Electrum
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 6),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.ElectrumFlux), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.ElectrumFlux), 'F',
+                        OrePrefixes.frameGt.get(Materials.ElectrumFlux) });
+
+        // Black Plutronium
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 7),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.BlackPlutonium), 'F',
+                        OrePrefixes.frameGt.get(Materials.BlackPlutonium) });
 
         // BM raw orbs
         GT_ModHandler.addCraftingRecipe(

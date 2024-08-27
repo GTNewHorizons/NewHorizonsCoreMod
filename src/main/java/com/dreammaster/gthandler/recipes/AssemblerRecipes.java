@@ -1823,6 +1823,23 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Machine_Multi_LargeChemicalReactor.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
+        // Industrial Autoclave
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.AutoclaveLuV.get(2L),
+                        ItemList.Casing_Autoclave.get(4L),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateLafiumCompound", 8L))
+                .fluidInputs(Materials.Polybenzimidazole.getMolten(8 * 144))
+                .itemOutputs(ItemList.Machine_Multi_Autoclave.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(assemblerRecipes);
+
+        // Industrial Autoclave
+        GT_Values.RA.stdBuilder()
+                .itemInputs(GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Polytetrafluoroethylene, 1L))
+                .fluidInputs(Materials.StainlessSteel.getMolten(8 * 144)).itemOutputs(ItemList.Casing_Autoclave.get(1L))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+
         if (GraviSuite.isModLoaded() && GalacticraftMars.isModLoaded()) {
             // Gravitational Engine
             GT_Values.RA.stdBuilder()
