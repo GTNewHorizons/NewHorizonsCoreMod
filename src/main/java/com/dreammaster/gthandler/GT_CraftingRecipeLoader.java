@@ -27,7 +27,6 @@ import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
 import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
 import static gtPlusPlus.core.material.ALLOY.STELLITE;
-import static gtPlusPlus.core.material.ALLOY.TUNGSTENSTEEL;
 
 import java.util.function.Consumer;
 
@@ -698,7 +697,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Machine_Multi_Lathe.get(1),
                 bits,
                 new Object[] { "CFC", "EAE", "CFC", 'A', ItemList.Machine_EV_Lathe, 'F',
-                        OrePrefixes.circuit.get(Materials.IV), 'C', TUNGSTENSTEEL.getPlate(1), 'E',
+                        OrePrefixes.circuit.get(Materials.IV), 'C', OrePrefixes.plate.get(Materials.TungstenSteel), 'E',
                         ItemList.Electric_Motor_EV });
 
         // Item Pipe Casings
