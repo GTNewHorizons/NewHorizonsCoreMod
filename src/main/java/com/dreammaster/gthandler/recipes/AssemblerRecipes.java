@@ -1834,6 +1834,16 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Machine_Multi_Autoclave.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
+        // YOTT Casings
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackSteel, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 2L),
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.BlackSteel, 1L))
+                .itemOutputs(GT_ModHandler.getModItem(GoodGenerator.ID, "yottaFluidTankCasing", 1, 0))
+                .duration(24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         // Industrial Autoclave
         GT_Values.RA.stdBuilder()
                 .itemInputs(GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Polytetrafluoroethylene, 1L))
@@ -6081,6 +6091,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(CustomItemList.HeavyDutyRocketEngineTier4.get(1L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+
         // nose cones
 
         GT_Values.RA.stdBuilder()

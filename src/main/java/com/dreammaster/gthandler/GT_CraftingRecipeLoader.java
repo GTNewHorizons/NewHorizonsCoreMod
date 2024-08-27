@@ -754,7 +754,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                         OrePrefixes.pipeMedium.get(Materials.ElectrumFlux), 'F',
                         OrePrefixes.frameGt.get(Materials.ElectrumFlux) });
 
-        // Black Plutronium
+        // Black Plutonium
         GT_ModHandler.addCraftingRecipe(
                 GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 7),
                 bits,
