@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Californium;
 import static com.github.technus.tectech.thing.CustomItemList.DATApipe;
 import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_DataBank;
 import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Switch;
@@ -25,6 +26,8 @@ import static gregtech.api.util.GT_RecipeConstants.RESEARCH_TIME;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
 
+import goodgenerator.items.MyItems;
+import goodgenerator.items.MyMaterial;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
@@ -653,11 +656,11 @@ public class AssemblingLineRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.CosmicNeutronium, 64L),
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Neutronium, 64L),
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 64L),
-                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstickLong", 64L, 39),
+                                Californium.get(OrePrefixes.stickLong, 64),
                                 GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongQuantum", 64L),
                                 GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongHypogen", 64L),
                                 GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongCelestialTungsten", 64L),
-                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstickLong", 64L, 10106),
+                                MyMaterial.tairitsu.get(OrePrefixes.stickLong, 64),
                                 GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongAstralTitanium", 64L),
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64L),
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 64L),

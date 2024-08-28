@@ -14,6 +14,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
+import goodgenerator.items.MyMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
@@ -54,10 +55,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Draconium, 4L),
                                 CustomItemList.DATApipe.get(1L),
-                                // Atomic Separation Catalyst screw
-                                getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10022),
-                                // Precious Metals Alloy screw
-                                getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 4L, 10109) },
+                                MyMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw,4),
+                                MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 4) },
                         new FluidStack[] { new FluidStack(solderUEV, 288) },
                         ItemList.Optically_Perfected_CPU.get(1L),
                         1,
@@ -74,10 +73,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TengamAttuned, 8L),
                                 GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.DraconiumAwakened, 8L),
                                 CustomItemList.DATApipe.get(4L),
-                                // Precious Metals Alloy screw
-                                getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 8L, 10109),
+                                MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 8),
                                 // Enriched Naquadah Alloy screw
-                                getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 8L, 10110) },
+                                MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8) },
                         new FluidStack[] { new FluidStack(solderUEV, 576) },
                         ItemList.Optically_Perfected_CPU.get(4L),
                         2,
@@ -97,9 +95,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
                                             CustomItemList.DATApipe.get(16L),
                                             // Enriched Naquadah Alloy screw
-                                            getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 16L, 10110),
+                                            MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
                                             // Shirabon screw
-                                            getModItem(BartWorks.ID, "gt.bwMetaGeneratedscrew", 16L, 10112) },
+                                            MyMaterial.shirabon.get(OrePrefixes.screw, 16) },
                                     new FluidStack[] { new FluidStack(solderUEV, 1152) },
                                     ItemList.Optically_Perfected_CPU.get(16L),
                                     2,

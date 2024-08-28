@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
 import static gregtech.api.enums.GT_Values.W;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -20,6 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
+import goodgenerator.items.MyMaterial;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -3619,8 +3622,8 @@ public class AssemblerRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedfoil", 4L, 10105),
-                        GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedfoil", 1L, 10102),
+                        MyMaterial.hikarium.get(OrePrefixes.foil, 4),
+                        MyMaterial.artheriumSn.get(OrePrefixes.foil, 1),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_InductorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
@@ -4038,7 +4041,7 @@ public class AssemblerRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedbolt", 4L, 10024),
+                        MyMaterial.extremelyUnstableNaquadah.get(OrePrefixes.bolt,4),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
                         ItemList.Gravistar.get(1L),
                         GT_ModHandler.getModItem(EnderIO.ID, "itemFrankenSkull", 1L, 5),
@@ -5795,27 +5798,14 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GT_ModHandler.getModItem(JABBA.ID, "upgradeStructural", 1L, 8)).duration(10 * SECONDS)
                 .eut(16).addTo(assemblerRecipes);
 
-        if (BartWorks.isModLoaded()) {
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_ModHandler.getModItem(JABBA.ID, "barrel", 1L, 0),
-                            GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedplate", 2L, 88),
-                            GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstick", 2L, 88),
-                            GT_Utility.getIntegratedCircuit(13))
-                    .itemOutputs(GT_ModHandler.getModItem(JABBA.ID, "upgradeStructural", 1L, 9)).duration(10 * SECONDS)
-                    .eut(16).addTo(assemblerRecipes);
-
-        } else {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_ModHandler.getModItem(JABBA.ID, "barrel", 1L, 0),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Chrome, 2),
-                            GT_Utility.getIntegratedCircuit(13))
-                    .itemOutputs(GT_ModHandler.getModItem(JABBA.ID, "upgradeStructural", 1L, 9)).duration(10 * SECONDS)
-                    .eut(16).addTo(assemblerRecipes);
-        }
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_ModHandler.getModItem(JABBA.ID, "barrel", 1L, 0),
+                        LuVTierMaterial.get(OrePrefixes.plate, 2),
+                        LuVTierMaterial.get(OrePrefixes.stick, 2),
+                        GT_Utility.getIntegratedCircuit(13))
+                .itemOutputs(GT_ModHandler.getModItem(JABBA.ID, "upgradeStructural", 1L, 9)).duration(10 * SECONDS)
+                .eut(16).addTo(assemblerRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

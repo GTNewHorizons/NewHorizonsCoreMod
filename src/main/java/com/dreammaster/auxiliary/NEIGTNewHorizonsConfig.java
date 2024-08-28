@@ -1,9 +1,13 @@
 package com.dreammaster.auxiliary;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
+import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.*;
 
+import com.github.bartimaeusnek.bartworks.system.material.GT_Enhancement.BWGTMetaItems;
+import gregtech.api.enums.OrePrefixes;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagString;
@@ -113,21 +117,20 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockPaint", 1));
         }
 
-        if (BartWorks.isModLoaded()) {
-            API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedGTEnhancementcapsule", 1, 477));
-            API.hideItem(
-                    GT_ModHandler
-                            .getModItem(BartWorks.ID, "gt.bwMetaGeneratedGTEnhancementcapsule", 1, 32767, missing));
-            API.hideItem(
-                    GT_ModHandler.getModItem(
-                            BartWorks.ID,
-                            "gt.bwMetaGeneratedGTEnhancementcapsuleMolten",
-                            1,
-                            32767,
-                            missing));
-            API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedcapsuleMolten", 1, 32767, missing));
-            API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedcapsule", 1, 32767, missing));
-        }
+        API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedGTEnhancementcapsule", 1, 477));
+        API.hideItem(
+                GT_ModHandler
+                        .getModItem(BartWorks.ID, "gt.bwMetaGeneratedGTEnhancementcapsule", 1, wildcard, missing));
+        API.hideItem(
+                GT_ModHandler.getModItem(
+                        BartWorks.ID,
+                        "gt.bwMetaGeneratedGTEnhancementcapsuleMolten",
+                        1,
+                        wildcard,
+                        missing));
+        API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedcapsuleMolten", 1, wildcard, missing));
+        API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedcapsule", 1, wildcard, missing));
+
 
         if (Chisel.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(Chisel.ID, "amber", 1));
@@ -157,8 +160,8 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GT_ModHandler.getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing));
         }
         if (MagicBees.isModLoaded()) {
-            API.hideItem(GT_ModHandler.getModItem(MagicBees.ID, "capsule.magic", 1, 32767, missing));
-            API.hideItem(GT_ModHandler.getModItem(MagicBees.ID, "capsule.void", 1, 32767, missing));
+            API.hideItem(GT_ModHandler.getModItem(MagicBees.ID, "capsule.magic", 1, wildcard, missing));
+            API.hideItem(GT_ModHandler.getModItem(MagicBees.ID, "capsule.void", 1, wildcard, missing));
         }
 
         if (ForbiddenMagic.isModLoaded()) {

@@ -455,7 +455,7 @@ public class DTPFRecipes implements Runnable {
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 8L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodOctiron", 8L),
-                            GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstick", 8L, 10106),
+                            MyMaterial.tairitsu.get(OrePrefixes.stick, 8),
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateAbyssalAlloy", 24L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemScrewBotmium", 16L),
@@ -469,7 +469,7 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
-                            GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstick", 12L, 10106),
+                            MyMaterial.tairitsu.get(OrePrefixes.stick, 12),
                             GT_OreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 8L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateBotmium", 24L),
                             GT_ModHandler.getModItem(GTPlusPlus.ID, "itemScrewArcanite", 16L),

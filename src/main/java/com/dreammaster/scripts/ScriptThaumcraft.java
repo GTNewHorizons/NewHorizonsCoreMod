@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Fluorspar;
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.RedZircon;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -40,6 +42,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import goodgenerator.items.MyMaterial;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -2479,19 +2482,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 19, missing))
+                        RedZircon.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 91, missing))
+                        Fluorspar.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 10023, missing))
+                        MyMaterial.orundum.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
 

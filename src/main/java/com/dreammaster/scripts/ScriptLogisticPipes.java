@@ -24,6 +24,8 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -1125,7 +1127,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
-                        getModItem(BartWorks.ID, "BWPumpParts", 1, 0, missing),
+                        new ItemStack(ItemRegistry.PUMPPARTS, 1, 0),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 2L),
                         GT_Utility.getIntegratedCircuit(18))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.PipeItemsBasicTransport", 8, 0, missing))

@@ -14,6 +14,7 @@ import java.util.List;
 import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import goodgenerator.items.MyMaterial;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
@@ -120,7 +121,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'e',
                 getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 1, 8, missing),
                 'f',
-                getModItem(BartWorks.ID, "bw.werkstoffblocks.01", 1, 10112, missing),
+                MyMaterial.shirabon.get(OrePrefixes.block, 1),
                 'g',
                 CustomItemList.StargateShieldingFoil.get(1L),
                 'h',
