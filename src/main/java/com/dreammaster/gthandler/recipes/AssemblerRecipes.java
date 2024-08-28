@@ -827,15 +827,15 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.Casing_UMV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
-        if (GoodGenerator.isModLoaded()) {
-            GT_Values.RA.stdBuilder().itemInputs(
-                    GT_OreDictUnificator
-                            .get(OrePrefixes.plate, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
-                    GT_OreDictUnificator.get("plateShirabon", 4),
-                    GT_Utility.getIntegratedCircuit(8)).itemOutputs(CustomItemList.Casing_UXV.get(1L))
-                    .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
-        }
+        GT_Values.RA.stdBuilder().itemInputs(
+                GT_OreDictUnificator
+                        .get(OrePrefixes.plate, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
+                GT_OreDictUnificator.get("plateShirabon", 4),
+                GT_Utility.getIntegratedCircuit(8)).itemOutputs(CustomItemList.Casing_UXV.get(1L))
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
+
+
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

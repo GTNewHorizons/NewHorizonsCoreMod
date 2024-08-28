@@ -112,14 +112,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 CustomItemList.Casing_UMV.get(1L),
                 GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime) });
-        if (GoodGenerator.isModLoaded()) {
-            GT_ModHandler.addCraftingRecipe(
-                    CustomItemList.Casing_UXV.get(1L),
-                    GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
-                    new Object[] { "PSP", "SwS", "PSP", 'P',
-                            OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
-                            GT_OreDictUnificator.get("plateShirabon", 1) });
-        }
+
+        GT_ModHandler.addCraftingRecipe(
+                CustomItemList.Casing_UXV.get(1L),
+                GT_ModHandler.RecipeBits.BUFFERED | GT_ModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "PSP", "SwS", "PSP", 'P',
+                        OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
+                        GT_OreDictUnificator.get("plateShirabon", 1) });
+
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
 
