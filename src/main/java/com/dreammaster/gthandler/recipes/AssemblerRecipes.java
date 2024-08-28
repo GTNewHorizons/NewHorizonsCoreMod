@@ -8572,7 +8572,7 @@ public class AssemblerRecipes implements Runnable {
     }
 
     private void makeNEIPlanetRecipes() {
-        if (!NEIOrePlugin.isModLoaded() || !Botania.isModLoaded()) {
+        if (!Botania.isModLoaded()) {
             return;
         }
 
