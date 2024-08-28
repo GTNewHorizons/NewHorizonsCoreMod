@@ -117,20 +117,6 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockPaint", 1));
         }
 
-        API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedGTEnhancementcapsule", 1, 477));
-        API.hideItem(
-                GT_ModHandler
-                        .getModItem(BartWorks.ID, "gt.bwMetaGeneratedGTEnhancementcapsule", 1, wildcard, missing));
-        API.hideItem(
-                GT_ModHandler.getModItem(
-                        BartWorks.ID,
-                        "gt.bwMetaGeneratedGTEnhancementcapsuleMolten",
-                        1,
-                        wildcard,
-                        missing));
-        API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedcapsuleMolten", 1, wildcard, missing));
-        API.hideItem(GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedcapsule", 1, wildcard, missing));
-
 
         if (Chisel.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(Chisel.ID, "amber", 1));

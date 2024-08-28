@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry.bw_realglas;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;
@@ -182,7 +183,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 'b',
                 ItemList.Field_Generator_ZPM.get(1L),
                 'c',
-                getModItem(BartWorks.ID, "BW_GlasBlocks", 1, 4, missing),
+                new ItemStack(bw_realglas, 1, 4),
                 'd',
                 "plateDenseNaquadahEnriched",
                 'e',
