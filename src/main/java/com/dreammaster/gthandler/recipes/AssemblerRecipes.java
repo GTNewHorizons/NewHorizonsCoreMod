@@ -2318,16 +2318,16 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Hull_UV.get(1))
                 .itemOutputs(ItemList.AcceleratorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-        if (KekzTech.isModLoaded()) {
-            // LSC controller
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.battery, Materials.EV, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
-                            ItemList.Circuit_Chip_PIC.get(2))
-                    .itemOutputs(TileEntities.lsc.getStackForm(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(assemblerRecipes);
-        }
+
+        // LSC controller
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.battery, Materials.EV, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
+                        ItemList.Circuit_Chip_PIC.get(2))
+                .itemOutputs(TileEntities.lsc.getStackForm(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeQuadruple, MaterialsUEVplus.SpaceTime, 1),
