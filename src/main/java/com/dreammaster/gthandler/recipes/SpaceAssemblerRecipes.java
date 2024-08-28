@@ -84,30 +84,30 @@ public class SpaceAssemblerRecipes implements Runnable {
                     null,
                     null);
 
-            if (GTPlusPlus.isModLoaded()) {
-                IG_RecipeAdder
-                        .addSpaceAssemblerRecipe(
-                                new ItemStack[] { ItemList.Circuit_Chip_Optical.get(16L),
-                                        ItemList.Optical_Cpu_Containment_Housing.get(16L),
-                                        ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
-                                        GT_OreDictUnificator
-                                                .get(OrePrefixes.screw, MaterialsUEVplus.SpaceTime, 16L),
-                                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
-                                        CustomItemList.DATApipe.get(16L),
-                                        // Enriched Naquadah Alloy screw
-                                        MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
-                                        // Shirabon screw
-                                        MyMaterial.shirabon.get(OrePrefixes.screw, 16) },
-                                new FluidStack[] { new FluidStack(solderUEV, 1152) },
-                                ItemList.Optically_Perfected_CPU.get(16L),
-                                2,
-                                20 * 20,
-                                (int) TierEU.RECIPE_UIV,
-                                null,
-                                null);
-            }
 
-            if (GTPlusPlus.isModLoaded()) {
+            IG_RecipeAdder
+                    .addSpaceAssemblerRecipe(
+                            new ItemStack[] { ItemList.Circuit_Chip_Optical.get(16L),
+                                    ItemList.Optical_Cpu_Containment_Housing.get(16L),
+                                    ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
+                                    GT_OreDictUnificator
+                                            .get(OrePrefixes.screw, MaterialsUEVplus.SpaceTime, 16L),
+                                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
+                                    CustomItemList.DATApipe.get(16L),
+                                    // Enriched Naquadah Alloy screw
+                                    MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
+                                    // Shirabon screw
+                                    MyMaterial.shirabon.get(OrePrefixes.screw, 16) },
+                            new FluidStack[] { new FluidStack(solderUEV, 1152) },
+                            ItemList.Optically_Perfected_CPU.get(16L),
+                            2,
+                            20 * 20,
+                            (int) TierEU.RECIPE_UIV,
+                            null,
+                            null);
+
+
+
 
                 // Alternate Energy Orb Cluster Recipe
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
@@ -147,7 +147,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         (int) TierEU.RECIPE_UV,
                         null,
                         null);
-            }
+
 
 
             // Advanced Radiation Proof Plate

@@ -228,18 +228,18 @@ public class CircuitAssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderIndalloy, 72))
                 .requiresCleanRoom().duration(1 * SECONDS + 17 * TICKS).eut(614400).addTo(circuitAssemblerRecipes);
 
-        if (GTPlusPlus.isModLoaded()) {
-            // Bio SoC
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Bio_Ultra.get(1L),
-                            ItemList.Circuit_Parts_Chip_Bioware.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
-                            ELEMENT.STANDALONE.CHRONOMATIC_GLASS.getBolt(8))
-                    .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderUEV, 144))
-                    .requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS).eut(TierEU.RECIPE_UEV)
-                    .addTo(circuitAssemblerRecipes);
-        }
+
+        // Bio SoC
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Board_Bio_Ultra.get(1L),
+                        ItemList.Circuit_Parts_Chip_Bioware.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
+                        ELEMENT.STANDALONE.CHRONOMATIC_GLASS.getBolt(8))
+                .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderUEV, 144))
+                .requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS).eut(TierEU.RECIPE_UEV)
+                .addTo(circuitAssemblerRecipes);
+
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

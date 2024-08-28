@@ -120,13 +120,13 @@ public class AutoclaveRecipes implements Runnable {
                     .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
 
         }
-        if (GTPlusPlus.isModLoaded()) {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(ItemList.Circuit_Silicon_Wafer6.get(1L), ELEMENT.STANDALONE.HYPOGEN.getDust(1))
-                    .itemOutputs(ItemList.Circuit_Wafer_Bioware.get(1L)).outputChances(10000)
-                    .fluidInputs(Materials.BioMediumSterilized.getFluid(8_000L)).duration(60 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(autoclaveRecipes);
-        }
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(ItemList.Circuit_Silicon_Wafer6.get(1L), ELEMENT.STANDALONE.HYPOGEN.getDust(1))
+                .itemOutputs(ItemList.Circuit_Wafer_Bioware.get(1L)).outputChances(10000)
+                .fluidInputs(Materials.BioMediumSterilized.getFluid(8_000L)).duration(60 * SECONDS)
+                .eut(TierEU.RECIPE_UHV).addTo(autoclaveRecipes);
+
     }
 
     public static void spaceRecipes() {

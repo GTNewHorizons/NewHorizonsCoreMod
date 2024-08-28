@@ -1060,60 +1060,57 @@ public class DTPFRecipes implements Runnable {
             }
 
             // UEV Superconductors.
+            long base_quantity = 504L;
+            long tier_up_multiplier = 2L;
 
-            if (GTPlusPlus.isModLoaded()) {
+            DTPFCalculator baseUEV = new DTPFCalculator().setBaseParallel(base_quantity).setLowestCatalystTier(2)
+                    .setHighestCatalystTier(4).calculateGenericEBFBasedRecipe(Materials.SuperconductorUEVBase);
 
-                long base_quantity = 504L;
-                long tier_up_multiplier = 2L;
+            long tier_1_quantity = 144L * base_quantity;
 
-                DTPFCalculator baseUEV = new DTPFCalculator().setBaseParallel(base_quantity).setLowestCatalystTier(2)
-                        .setHighestCatalystTier(4).calculateGenericEBFBasedRecipe(Materials.SuperconductorUEVBase);
+            GT_Values.RA.stdBuilder().fluidInputs(
+                    new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_1_quantity / 12),
+                    new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_1_quantity / 12),
+                    Materials.DraconiumAwakened.getMolten(5L * tier_1_quantity / 12),
+                    Materials.Infinity.getMolten(5L * tier_1_quantity / 12),
+                    Materials.Iron.getPlasma(tier_1_quantity / 12),
+                    MaterialsUEVplus.ExcitedDTRC.getFluid(baseUEV.getCatalystAmount(2)))
+                    .fluidOutputs(
+                            MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(2)),
+                            Materials.SuperconductorUEVBase.getMolten(tier_1_quantity))
+                    .duration(baseUEV.getDuration(2)).eut(baseUEV.getEUt(2)).metadata(COIL_HEAT, hypogen_heat)
+                    .addTo(plasmaForgeRecipes);
 
-                long tier_1_quantity = 144L * base_quantity;
+            long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
 
-                GT_Values.RA.stdBuilder().fluidInputs(
-                        new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_1_quantity / 12),
-                        new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_1_quantity / 12),
-                        Materials.DraconiumAwakened.getMolten(5L * tier_1_quantity / 12),
-                        Materials.Infinity.getMolten(5L * tier_1_quantity / 12),
-                        Materials.Iron.getPlasma(tier_1_quantity / 12),
-                        MaterialsUEVplus.ExcitedDTRC.getFluid(baseUEV.getCatalystAmount(2)))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(2)),
-                                Materials.SuperconductorUEVBase.getMolten(tier_1_quantity))
-                        .duration(baseUEV.getDuration(2)).eut(baseUEV.getEUt(2)).metadata(COIL_HEAT, hypogen_heat)
-                        .addTo(plasmaForgeRecipes);
+            GT_Values.RA.stdBuilder().fluidInputs(
+                    new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_2_quantity / 12),
+                    new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_2_quantity / 12),
+                    Materials.DraconiumAwakened.getMolten(5L * tier_2_quantity / 12),
+                    Materials.Infinity.getMolten(5L * tier_2_quantity / 12),
+                    Materials.Iron.getPlasma(tier_2_quantity / 12),
+                    MaterialsUEVplus.ExcitedDTEC.getFluid(baseUEV.getCatalystAmount(3)))
+                    .fluidOutputs(
+                            MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(3)),
+                            Materials.SuperconductorUEVBase.getMolten(tier_2_quantity))
+                    .duration(baseUEV.getDuration(3)).eut(baseUEV.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
+                    .addTo(plasmaForgeRecipes);
 
-                long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
+            long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
 
-                GT_Values.RA.stdBuilder().fluidInputs(
-                        new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_2_quantity / 12),
-                        new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_2_quantity / 12),
-                        Materials.DraconiumAwakened.getMolten(5L * tier_2_quantity / 12),
-                        Materials.Infinity.getMolten(5L * tier_2_quantity / 12),
-                        Materials.Iron.getPlasma(tier_2_quantity / 12),
-                        MaterialsUEVplus.ExcitedDTEC.getFluid(baseUEV.getCatalystAmount(3)))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(3)),
-                                Materials.SuperconductorUEVBase.getMolten(tier_2_quantity))
-                        .duration(baseUEV.getDuration(3)).eut(baseUEV.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(plasmaForgeRecipes);
+            GT_Values.RA.stdBuilder().fluidInputs(
+                    new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_3_quantity / 12),
+                    new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_3_quantity / 12),
+                    Materials.DraconiumAwakened.getMolten(5L * tier_3_quantity / 12),
+                    Materials.Infinity.getMolten(5L * tier_3_quantity / 12),
+                    Materials.Iron.getPlasma(tier_3_quantity / 12),
+                    MaterialsUEVplus.ExcitedDTSC.getFluid(baseUEV.getCatalystAmount(4)))
+                    .fluidOutputs(
+                            MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(4)),
+                            Materials.SuperconductorUEVBase.getMolten(tier_3_quantity))
+                    .duration(baseUEV.getDuration(4)).eut(baseUEV.getEUt(4)).metadata(COIL_HEAT, eternal_heat)
+                    .addTo(plasmaForgeRecipes);
 
-                long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-
-                GT_Values.RA.stdBuilder().fluidInputs(
-                        new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_3_quantity / 12),
-                        new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_3_quantity / 12),
-                        Materials.DraconiumAwakened.getMolten(5L * tier_3_quantity / 12),
-                        Materials.Infinity.getMolten(5L * tier_3_quantity / 12),
-                        Materials.Iron.getPlasma(tier_3_quantity / 12),
-                        MaterialsUEVplus.ExcitedDTSC.getFluid(baseUEV.getCatalystAmount(4)))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(4)),
-                                Materials.SuperconductorUEVBase.getMolten(tier_3_quantity))
-                        .duration(baseUEV.getDuration(4)).eut(baseUEV.getEUt(4)).metadata(COIL_HEAT, eternal_heat)
-                        .addTo(plasmaForgeRecipes);
-            }
 
             // UIV Superconductors.
             {

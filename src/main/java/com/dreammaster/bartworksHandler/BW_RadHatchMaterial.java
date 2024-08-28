@@ -14,10 +14,6 @@ import gtPlusPlus.core.util.minecraft.ItemUtils;
 public class BW_RadHatchMaterial {
 
     public static void runRadHatchAdder() {
-        if (!GTPlusPlus.isModLoaded()) {
-            return;
-        }
-
         ItemStack err = ItemUtils.getErrorStack(1);
 
         for (Material material : Material.mMaterialMap) {

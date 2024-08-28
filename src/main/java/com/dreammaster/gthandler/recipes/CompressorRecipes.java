@@ -317,9 +317,6 @@ public class CompressorRecipes implements Runnable {
     }
 
     private void makeGTPlusPlusRecipes() {
-        if (!GTPlusPlus.isModLoaded()) {
-            return;
-        }
         // Compressed Glowstone
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glowstone, 9))
                 .itemOutputs(getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 6)).duration(15 * SECONDS).eut(2)

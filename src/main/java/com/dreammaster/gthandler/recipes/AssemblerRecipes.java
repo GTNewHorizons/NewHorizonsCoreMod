@@ -1531,15 +1531,15 @@ public class AssemblerRecipes implements Runnable {
                     .addTo(assemblerRecipes);
         }
 
-        if (GTPlusPlus.isModLoaded()) { // GT++, remember to remove later
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1L),
-                            CustomItemList.SteelBars.get(6L),
-                            GT_Utility.getIntegratedCircuit(1))
-                    .itemOutputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "blockFishTrap", 1L, 0)).duration(10 * SECONDS)
-                    .eut(64).addTo(assemblerRecipes);
-        }
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1L),
+                        CustomItemList.SteelBars.get(6L),
+                        GT_Utility.getIntegratedCircuit(1))
+                .itemOutputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "blockFishTrap", 1L, 0)).duration(10 * SECONDS)
+                .eut(64).addTo(assemblerRecipes);
+
 
         if (ExtraBees.isModLoaded()) {
             ItemStack alveary = GT_ModHandler.getModItem(Forestry.ID, "alveary", 1L, 0);
@@ -2249,40 +2249,40 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Hull_LuV.get(1))
                 .itemOutputs(ItemList.Transformer_ZPM_LuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
-        if (GTPlusPlus.isModLoaded()) {
-            // 16A Zpm to LuV transformer
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.VanadiumGallium, 4),
-                            GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
-                            ItemList.Transformer_ZPM_LuV.get(1),
-                            ItemList.Casing_Coil_TungstenSteel.get(1))
-                    .itemOutputs(GregtechItemList.Transformer_HA_ZPM_LuV.get(1)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
-            // 64A Zpm To LuV transformer
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.cableGt16, Materials.VanadiumGallium, 2),
-                            GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
-                            GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
-                            GregtechItemList.Transformer_HA_ZPM_LuV.get(1),
-                            ItemList.Electric_Pump_LV.get(1))
-                    .fluidInputs(Materials.Lubricant.getFluid(2000)).itemOutputs(ItemList.WetTransformer_ZPM_LuV.get(1))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+        // 16A Zpm to LuV transformer
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.VanadiumGallium, 4),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.Naquadah, 1),
+                        ItemList.Transformer_ZPM_LuV.get(1),
+                        ItemList.Casing_Coil_TungstenSteel.get(1))
+                .itemOutputs(GregtechItemList.Transformer_HA_ZPM_LuV.get(1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
-            // Hastelloy-X Structural Block
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Casing_EV.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
-                            getModItem(GTPlusPlus.ID, "itemGearHastelloyX", 1L),
-                            getModItem(GTPlusPlus.ID, "blockFrameGtHastelloyC276", 1L),
-                            getModItem(GTPlusPlus.ID, "itemRingInconel792", 2L))
-                    .itemOutputs(getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.2", 1L, 2)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-        }
+        // 64A Zpm To LuV transformer
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt16, Materials.VanadiumGallium, 2),
+                        GT_OreDictUnificator.get(OrePrefixes.cableGt08, Materials.Naquadah, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Naquadah, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.VanadiumGallium, 1),
+                        GregtechItemList.Transformer_HA_ZPM_LuV.get(1),
+                        ItemList.Electric_Pump_LV.get(1))
+                .fluidInputs(Materials.Lubricant.getFluid(2000)).itemOutputs(ItemList.WetTransformer_ZPM_LuV.get(1))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+
+        // Hastelloy-X Structural Block
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_EV.get(1L),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
+                        getModItem(GTPlusPlus.ID, "itemGearHastelloyX", 1L),
+                        getModItem(GTPlusPlus.ID, "blockFrameGtHastelloyC276", 1L),
+                        getModItem(GTPlusPlus.ID, "itemRingInconel792", 2L))
+                .itemOutputs(getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.2", 1L, 2)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+
 
         // MagTech Casing
         GT_Values.RA.stdBuilder()
@@ -2365,7 +2365,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Diamond, 1L))
                 .fluidInputs(Materials.Lubricant.getFluid(250L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-        if (TecTech.isModLoaded() && GTPlusPlus.isModLoaded()) {
+        if (TecTech.isModLoaded()) {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
