@@ -14,6 +14,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
+import com.github.technus.tectech.thing.casing.TT_Container_Casings;
 import goodgenerator.items.MyMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -340,7 +341,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator
                                         .get(OrePrefixes.plateDense, MaterialsUEVplus.TranscendentMetal, 64L),
                                 ItemList.Field_Generator_UXV.get(1L), filledUMVCell,
-                                getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 4, 8),
+                                new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
                                 MaterialsUEVplus.Eternity.getNanite(4) },
                         new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
@@ -359,7 +360,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 ItemList.Field_Generator_UXV.get(1L),
                                 getModItem(GoodGenerator.ID, "yottaFluidTankCells", 2, 9),
                                 getModItem(KekzTech.ID, "kekztech_tfftstoragefield_block", 2, 10),
-                                getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 4, 8),
+                                new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
                                 MaterialsUEVplus.Eternity.getNanite(4) },
                         new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },

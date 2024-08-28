@@ -13,12 +13,14 @@ import java.util.List;
 
 import com.dreammaster.gthandler.CustomItemList;
 
+import com.github.technus.tectech.thing.casing.TT_Container_Casings;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import goodgenerator.items.MyMaterial;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
+import net.minecraft.item.ItemStack;
 
 public class ScriptSGCraft implements IScriptLoader {
 
@@ -119,7 +121,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'd',
                 GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 1L),
                 'e',
-                getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 1, 8, missing),
+                new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 1, 8),
                 'f',
                 MyMaterial.shirabon.get(OrePrefixes.block, 1),
                 'g',
@@ -132,7 +134,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 GT_OreDictUnificator
                         .get(OrePrefixes.plateDense, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 1L),
                 'k',
-                getModItem(TecTech.ID, "gt.stabilisation_field_generator", 1, 8, missing),
+                new ItemStack(TT_Container_Casings.StabilisationFieldGenerators, 1, 8),
                 'l',
                 getModItem(GregTech.ID, "gt.blockmachines", 1, 15410, missing),
                 'm',
