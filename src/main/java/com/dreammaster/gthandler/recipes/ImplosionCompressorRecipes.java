@@ -231,15 +231,7 @@ public class ImplosionCompressorRecipes implements Runnable {
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }
-        if (!BartWorks.isModLoaded()) {
 
-            GT_Values.RA.stdBuilder().itemInputs(CustomItemList.HeavyDutyAlloyIngotT4.get(1L))
-                    .itemOutputs(
-                            CustomItemList.HeavyDutyPlateTier4.get(1L),
-                            GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Osmiridium, 4L))
-                    .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 32).addTo(implosionRecipes);
-
-        }
 
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.HeavyDutyAlloyIngotT5.get(1L))
                 .itemOutputs(

@@ -46,67 +46,67 @@ public class SpaceAssemblerRecipes implements Runnable {
                     ? FluidRegistry.getFluid("molten.indalloy140")
                     : FluidRegistry.getFluid("molten.solderingalloy");
 
-            if (BartWorks.isModLoaded()) {
-                // Optically Perfected CPU
-                IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { gregtech.api.enums.ItemList.Circuit_Chip_Optical.get(1L),
-                                ItemList.Optical_Cpu_Containment_Housing.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.InfinityCatalyst, 4L),
-                                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Draconium, 4L),
-                                CustomItemList.DATApipe.get(1L),
-                                MyMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw,4),
-                                MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 4) },
-                        new FluidStack[] { new FluidStack(solderUEV, 288) },
-                        ItemList.Optically_Perfected_CPU.get(1L),
-                        1,
-                        20 * 20,
-                        (int) TierEU.RECIPE_UHV,
-                        null,
-                        null);
 
-                IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Chip_Optical.get(4L),
-                                ItemList.Optical_Cpu_Containment_Housing.get(4L),
-                                GT_OreDictUnificator
-                                        .get(OrePrefixes.screw, Materials.Longasssuperconductornameforuhvwire, 8L),
-                                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TengamAttuned, 8L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.DraconiumAwakened, 8L),
-                                CustomItemList.DATApipe.get(4L),
-                                MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 8),
-                                // Enriched Naquadah Alloy screw
-                                MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8) },
-                        new FluidStack[] { new FluidStack(solderUEV, 576) },
-                        ItemList.Optically_Perfected_CPU.get(4L),
-                        2,
-                        20 * 20,
-                        (int) TierEU.RECIPE_UEV,
-                        null,
-                        null);
+            // Optically Perfected CPU
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { gregtech.api.enums.ItemList.Circuit_Chip_Optical.get(1L),
+                            ItemList.Optical_Cpu_Containment_Housing.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.InfinityCatalyst, 4L),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Draconium, 4L),
+                            CustomItemList.DATApipe.get(1L),
+                            MyMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw,4),
+                            MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 4) },
+                    new FluidStack[] { new FluidStack(solderUEV, 288) },
+                    ItemList.Optically_Perfected_CPU.get(1L),
+                    1,
+                    20 * 20,
+                    (int) TierEU.RECIPE_UHV,
+                    null,
+                    null);
 
-                if (GTPlusPlus.isModLoaded()) {
-                    IG_RecipeAdder
-                            .addSpaceAssemblerRecipe(
-                                    new ItemStack[] { ItemList.Circuit_Chip_Optical.get(16L),
-                                            ItemList.Optical_Cpu_Containment_Housing.get(16L),
-                                            ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
-                                            GT_OreDictUnificator
-                                                    .get(OrePrefixes.screw, MaterialsUEVplus.SpaceTime, 16L),
-                                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
-                                            CustomItemList.DATApipe.get(16L),
-                                            // Enriched Naquadah Alloy screw
-                                            MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
-                                            // Shirabon screw
-                                            MyMaterial.shirabon.get(OrePrefixes.screw, 16) },
-                                    new FluidStack[] { new FluidStack(solderUEV, 1152) },
-                                    ItemList.Optically_Perfected_CPU.get(16L),
-                                    2,
-                                    20 * 20,
-                                    (int) TierEU.RECIPE_UIV,
-                                    null,
-                                    null);
-                }
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { ItemList.Circuit_Chip_Optical.get(4L),
+                            ItemList.Optical_Cpu_Containment_Housing.get(4L),
+                            GT_OreDictUnificator
+                                    .get(OrePrefixes.screw, Materials.Longasssuperconductornameforuhvwire, 8L),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TengamAttuned, 8L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.DraconiumAwakened, 8L),
+                            CustomItemList.DATApipe.get(4L),
+                            MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 8),
+                            // Enriched Naquadah Alloy screw
+                            MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8) },
+                    new FluidStack[] { new FluidStack(solderUEV, 576) },
+                    ItemList.Optically_Perfected_CPU.get(4L),
+                    2,
+                    20 * 20,
+                    (int) TierEU.RECIPE_UEV,
+                    null,
+                    null);
+
+            if (GTPlusPlus.isModLoaded()) {
+                IG_RecipeAdder
+                        .addSpaceAssemblerRecipe(
+                                new ItemStack[] { ItemList.Circuit_Chip_Optical.get(16L),
+                                        ItemList.Optical_Cpu_Containment_Housing.get(16L),
+                                        ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
+                                        GT_OreDictUnificator
+                                                .get(OrePrefixes.screw, MaterialsUEVplus.SpaceTime, 16L),
+                                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
+                                        CustomItemList.DATApipe.get(16L),
+                                        // Enriched Naquadah Alloy screw
+                                        MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
+                                        // Shirabon screw
+                                        MyMaterial.shirabon.get(OrePrefixes.screw, 16) },
+                                new FluidStack[] { new FluidStack(solderUEV, 1152) },
+                                ItemList.Optically_Perfected_CPU.get(16L),
+                                2,
+                                20 * 20,
+                                (int) TierEU.RECIPE_UIV,
+                                null,
+                                null);
             }
+
             if (GTPlusPlus.isModLoaded()) {
 
                 // Alternate Energy Orb Cluster Recipe

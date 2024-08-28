@@ -1020,22 +1020,22 @@ public class MixerRecipes implements Runnable {
 
         }
 
-        if (BartWorks.isModLoaded()) {
-            // UMV Superconductor dust recipe.
 
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.SpaceTime, 6L),
-                            GT_OreDictUnificator.get(OrePrefixes.dust, getBartWorksMaterialByIGNName("Orundum"), 3L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustHypogen", 11L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustTitansteel", 5L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustDragonblood", 2L),
-                            GT_Utility.getIntegratedCircuit(2))
-                    .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUMVBase, 27L))
-                    .fluidInputs(Materials.Oxygen.getPlasma(144L)).duration(10 * 20).eut(TierEU.RECIPE_UMV)
-                    .addTo(mixerRecipes);
+        // UMV Superconductor dust recipe.
 
-        }
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.SpaceTime, 6L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, getBartWorksMaterialByIGNName("Orundum"), 3L),
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustHypogen", 11L),
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustTitansteel", 5L),
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustDragonblood", 2L),
+                        GT_Utility.getIntegratedCircuit(2))
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUMVBase, 27L))
+                .fluidInputs(Materials.Oxygen.getPlasma(144L)).duration(10 * 20).eut(TierEU.RECIPE_UMV)
+                .addTo(mixerRecipes);
+
+
 
         if (EnderIO.isModLoaded()) {
 

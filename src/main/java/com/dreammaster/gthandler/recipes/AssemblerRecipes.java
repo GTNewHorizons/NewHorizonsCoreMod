@@ -738,8 +738,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Conveyor_Module_LuV.get(4L),
                         GT_OreDictUnificator.get(
                                 OrePrefixes.gearGt,
-                                BartWorks.isModLoaded() ? getBartWorksMaterialByIGNName("Rhodium-Plated Palladium")
-                                        : Materials.Chrome,
+                                 LuVTierMaterial.getBridgeMaterial(),
                                 4L),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(ItemList.OreDrill3.get(1L)).fluidInputs(Materials.SolderingAlloy.getMolten(288))
@@ -1437,14 +1436,14 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Neutron_Reflector.get(1L)).requiresCleanRoom()
                 .duration(3 * MINUTES + 7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
-        if (BartWorks.isModLoaded()) {
-            // Humongous input hatch
-            GT_Values.RA.stdBuilder().itemInputs(ItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1))
-                    .itemOutputs(ItemRegistry.humongousInputHatch.copy())
-                    .fluidInputs(MaterialsUEVplus.Space.getMolten(5_760L)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
-                    .addTo(assemblerRecipes);
 
-        }
+        // Humongous input hatch
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Hatch_Input_UXV.get(1), ItemList.Quantum_Tank_IV.get(1))
+                .itemOutputs(ItemRegistry.humongousInputHatch.copy())
+                .fluidInputs(MaterialsUEVplus.Space.getMolten(5_760L)).duration(5 * SECONDS).eut(TierEU.RECIPE_UMV)
+                .addTo(assemblerRecipes);
+
+
 
         // Wood Plates
         GT_Values.RA.stdBuilder()
@@ -2346,16 +2345,16 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304))
                 .itemOutputs(ItemList.Hatch_Input_Multi_2x2_UXV.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_UXV)
                 .addTo(assemblerRecipes);
-        if (BartWorks.isModLoaded()) {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemRegistry.humongousInputHatch.copy(),
-                            GT_OreDictUnificator.get(OrePrefixes.pipeHuge, MaterialsUEVplus.SpaceTime, 4),
-                            GT_Utility.getIntegratedCircuit(4))
-                    .fluidInputs(MaterialsUEVplus.Space.getMolten(5760))
-                    .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_UXV).addTo(assemblerRecipes);
-        }
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemRegistry.humongousInputHatch.copy(),
+                        GT_OreDictUnificator.get(OrePrefixes.pipeHuge, MaterialsUEVplus.SpaceTime, 4),
+                        GT_Utility.getIntegratedCircuit(4))
+                .fluidInputs(MaterialsUEVplus.Space.getMolten(5760))
+                .itemOutputs(ItemList.Hatch_Input_Multi_2x2_Humongous.get(1)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).addTo(assemblerRecipes);
+
 
         // Diamond Gear
         GT_Values.RA.stdBuilder()

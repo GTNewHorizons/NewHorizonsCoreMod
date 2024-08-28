@@ -221,7 +221,7 @@ public class MainRegistry {
         Logger.debug("PRELOAD Create Items");
         if (!ItemList.AddToItemManager(ItemManager)
                 | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))
-                | !(!BartWorks.isModLoaded() || BioItemLoader.preInit())) {
+                | !(BioItemLoader.preInit())) {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
         }
@@ -294,9 +294,9 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
 
-        if (BartWorks.isModLoaded()) {
-            BacteriaRegistry = new BacteriaRegistry();
-        }
+
+        BacteriaRegistry = new BacteriaRegistry();
+
 
         Logger.debug("LOAD abandoned GT++ Aspects");
         if (Thaumcraft.isModLoaded()) {
@@ -366,9 +366,9 @@ public class MainRegistry {
 
         CoreMod_PCBFactory_MaterialLoader.init();
 
-        if (BartWorks.isModLoaded()) {
-            BWGlassAdder.registerGlasses();
-        }
+
+        BWGlassAdder.registerGlasses();
+
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -461,23 +461,23 @@ public class MainRegistry {
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
-        if (BartWorks.isModLoaded()) {
-            Logger.debug("Add Bacteria Stuff to BartWorks");
-            BacteriaRegistry.runAllPostinit();
 
-            Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Platinum,
-                    WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Osmium,
-                    WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01
-                    .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Palladium,
-                    WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
-        }
+        Logger.debug("Add Bacteria Stuff to BartWorks");
+        BacteriaRegistry.runAllPostinit();
+
+        Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
+        GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
+                Materials.Platinum,
+                WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
+        GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
+                Materials.Osmium,
+                WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+        GT_MetaGenerated_Item_01
+                .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
+        GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
+                Materials.Palladium,
+                WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
+
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
@@ -489,9 +489,9 @@ public class MainRegistry {
         RecipeRemover.run();
         ScriptLoader.run();
         new DTPFRecipes().run();
-        if (BartWorks.isModLoaded()) {
-            BW_RadHatchMaterial.runRadHatchAdder();
-        }
+
+        BW_RadHatchMaterial.runRadHatchAdder();
+
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
         if (Loader.isModLoaded("amazingtrophies") && BloodMagic.isModLoaded()
                 && Avaritia.isModLoaded()

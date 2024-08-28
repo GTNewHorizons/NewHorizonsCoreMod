@@ -80,7 +80,7 @@ public class GT_Loader_Machines {
 
     public void recipes() {
 
-        Materials LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
+        Materials LuVMat2 = Materials.get("Rhodium-PlatedPalladium") ;
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Hull_UEV.get(1L),

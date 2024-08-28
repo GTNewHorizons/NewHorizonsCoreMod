@@ -464,18 +464,18 @@ public class FormingPressRecipes implements Runnable {
                     .eut(TierEU.RECIPE_IV).addTo(formingPressRecipes);
 
         }
-        if (BartWorks.isModLoaded()) {
-            // Optical CPU Containment Housing
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Optical.get(1L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilBotmium", 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Bedrockium, 8L))
-                    .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
-        }
+
+        // Optical CPU Containment Housing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Board_Optical.get(1L),
+                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilBotmium", 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Bedrockium, 8L))
+                .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
+
     }
 }

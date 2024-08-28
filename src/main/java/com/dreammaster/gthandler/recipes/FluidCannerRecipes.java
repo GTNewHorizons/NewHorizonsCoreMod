@@ -52,7 +52,7 @@ public class FluidCannerRecipes implements Runnable {
                 .itemOutputs(ItemList.Reactor_Coolant_Sp_6.get(1L)).fluidInputs(Materials.SuperCoolant.getFluid(6000L))
                 .duration(4 * SECONDS + 16 * TICKS).eut(1).addTo(fluidCannerRecipes);
 
-        if (GalaxySpace.isModLoaded() && BartWorks.isModLoaded()) {
+        if (GalaxySpace.isModLoaded()) {
             GT_Values.RA.stdBuilder().itemInputs(CustomItemList.TenKCell.get(1L))
                     .itemOutputs(ItemList.Reactor_Coolant_He_1.get(1L))
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("liquid helium"), 1000)).duration(16 * TICKS)
