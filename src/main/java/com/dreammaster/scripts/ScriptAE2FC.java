@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
@@ -731,7 +732,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'a',
                 "blockCosmicNeutronium",
                 'b',
-                getModItem("Avaritia", "Resource", 1, 5),
+                getModItem(Avaritia.ID, "Resource", 1, 5),
                 'c',
                 ItemList.Quantum_Tank_IV.get(1L),
                 'd',
@@ -739,7 +740,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'e',
                 "blockInfinity",
                 'f',
-                getModItem("eternalsingularity", "eternal_singularity", 1),
+                getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                 'g',
                 T7_YOT);
 

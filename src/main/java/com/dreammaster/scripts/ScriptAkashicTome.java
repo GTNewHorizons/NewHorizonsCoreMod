@@ -23,7 +23,7 @@ public class ScriptAkashicTome implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem("akashictome", "tome", 1, 0, missing),
+                getModItem(AkashicTome.ID, "tome", 1, 0, missing),
                 getModItem(Backpack.ID, "tannedLeather", 1, 0, missing),
                 getModItem(Minecraft.ID, "book", 1, 0, missing),
                 getModItem(Minecraft.ID, "book", 1, 0, missing),

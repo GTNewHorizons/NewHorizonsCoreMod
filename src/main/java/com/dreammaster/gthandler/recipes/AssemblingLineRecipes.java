@@ -5,7 +5,9 @@ import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Data
 import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -350,7 +352,7 @@ public class AssemblingLineRecipes implements Runnable {
                         512,
                         2_000_000,
                         32,
-                        new ItemStack[] { GT_ModHandler.getModItem("eternalsingularity", "eternal_singularity", 1L),
+                        new ItemStack[] { GT_ModHandler.getModItem(EternalSingularity.ID, "eternal_singularity", 1L),
                                 ItemList.Sensor_UV.get(16L),
                                 GT_OreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 16L),
                                 GT_OreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 16L),
@@ -459,7 +461,7 @@ public class AssemblingLineRecipes implements Runnable {
                         8192,
                         32_000_000,
                         64,
-                        new ItemStack[] { GT_ModHandler.getModItem("eternalsingularity", "eternal_singularity", 1L),
+                        new ItemStack[] { GT_ModHandler.getModItem(EternalSingularity.ID, "eternal_singularity", 1L),
                                 ItemList.Sensor_UEV.get(16L),
                                 GT_OreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 16L),
                                 GT_OreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 16L),
@@ -602,7 +604,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 8L),
                                 GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 8L),
                                 ItemList.Sensor_UMV.get(16L), ItemList.Emitter_UMV.get(16L),
-                                GT_ModHandler.getModItem("eternalsingularity", "eternal_singularity", 16L) },
+                                GT_ModHandler.getModItem(EternalSingularity.ID, "eternal_singularity", 16L) },
                         new FluidStack[] { Materials.Neutronium.getMolten(32_768_000L),
                                 MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                                 Materials.SuperconductorUMVBase.getMolten(4 * 36864L),
@@ -651,15 +653,15 @@ public class AssemblingLineRecipes implements Runnable {
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.CosmicNeutronium, 64L),
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Neutronium, 64L),
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 64L),
-                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstickLong", 64L, 39),
-                                GT_ModHandler.getModItem("miscutils", "itemRodLongQuantum", 64L),
-                                GT_ModHandler.getModItem("miscutils", "itemRodLongHypogen", 64L),
-                                GT_ModHandler.getModItem("miscutils", "itemRodLongCelestialTungsten", 64L),
-                                GT_ModHandler.getModItem("bartworks", "gt.bwMetaGeneratedstickLong", 64L, 10106),
-                                GT_ModHandler.getModItem("miscutils", "itemRodLongAstralTitanium", 64L),
+                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstickLong", 64L, 39),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongQuantum", 64L),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongHypogen", 64L),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongCelestialTungsten", 64L),
+                                GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstickLong", 64L, 10106),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongAstralTitanium", 64L),
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64L),
                                 GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 64L),
-                                GT_ModHandler.getModItem("miscutils", "itemRodLongAbyssalAlloy", 64L),
+                                GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongAbyssalAlloy", 64L),
                                 GT_OreDictUnificator
                                         .get(OrePrefixes.stickLong, MaterialsUEVplus.TranscendentMetal, 64L), },
                         new FluidStack[] { Materials.Neutronium.getMolten(32_768_000L),
