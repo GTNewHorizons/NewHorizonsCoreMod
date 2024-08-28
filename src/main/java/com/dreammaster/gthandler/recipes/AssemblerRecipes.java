@@ -2365,15 +2365,15 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.Diamond, 1L))
                 .fluidInputs(Materials.Lubricant.getFluid(250L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-        if (TecTech.isModLoaded()) {
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
-                            (GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFineWireChromaticGlass", 2)))
-                    .itemOutputs(com.github.technus.tectech.thing.CustomItemList.DATApipe.get(64))
-                    .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
-        }
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
+                        (GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFineWireChromaticGlass", 2)))
+                .itemOutputs(com.github.technus.tectech.thing.CustomItemList.DATApipe.get(64))
+                .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+
         // Fusion Coil Block
         GT_Values.RA.stdBuilder()
                 .itemInputs(
