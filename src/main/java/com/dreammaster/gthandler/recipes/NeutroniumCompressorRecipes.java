@@ -367,10 +367,10 @@ public class NeutroniumCompressorRecipes implements Runnable {
             // Recipes which require stabilized black hole - not from original neutronium compressor
             GT_Values.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(72L))
                     .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(3 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).metadata(BLACKHOLE, 1).addTo(neutroniumCompressorRecipes);
+                    .eut(TierEU.RECIPE_HV).metadata(COMPRESSION_TIER, 1).addTo(neutroniumCompressorRecipes);
             GT_Values.RA.stdBuilder().itemInputs(GT_Utility.copyAmountUnsafe(444444, Gangue.get(OrePrefixes.block, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 31))
-                    .duration(120 * SECONDS).eut(TierEU.RECIPE_UEV).metadata(BLACKHOLE, 1)
+                    .duration(120 * SECONDS).eut(TierEU.RECIPE_UEV).metadata(COMPRESSION_TIER, 1)
                     .addTo(neutroniumCompressorRecipes);
         }
     }
