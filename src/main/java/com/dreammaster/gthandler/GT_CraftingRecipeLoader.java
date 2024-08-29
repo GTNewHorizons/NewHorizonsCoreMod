@@ -281,13 +281,13 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_EV.get(1L),
                 bits,
-                new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_MAX, 'G',
+                new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UHV, 'G',
                         ItemList.Field_Generator_ZPM, 'D', OrePrefixes.circuit.get(Materials.UHV), 'P',
                         OrePrefixes.plateDouble.get(Materials.Europium) });
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_IV.get(1L),
                 bits,
-                new Object[] { "DPD", "PMP", "DGD", 'M', CustomItemList.Automation_ChestBuffer_UEV, 'G',
+                new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UEV, 'G',
                         ItemList.Field_Generator_UV, 'D', OrePrefixes.circuit.get(Materials.UEV), 'P',
                         OrePrefixes.plate.get(Materials.Americium) });
 
@@ -692,6 +692,76 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 bits,
                 new Object[] { "PhP", "PFP", "PwP", 'P', STELLITE.getPlate(1), 'F', NITINOL_60.getFrameBox(1) });
 
+        // Industrial Precision Lathe
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Machine_Multi_Lathe.get(1),
+                bits,
+                new Object[] { "CFC", "EAE", "CFC", 'A', ItemList.Machine_EV_Lathe, 'F',
+                        OrePrefixes.circuit.get(Materials.IV), 'C', OrePrefixes.plate.get(Materials.TungstenSteel), 'E',
+                        ItemList.Electric_Motor_EV });
+
+        // Item Pipe Casings
+        // Tin
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 0),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Tin), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Tin), 'F', OrePrefixes.frameGt.get(Materials.Tin) });
+
+        // Brass
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 1),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Brass), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Brass), 'F', OrePrefixes.frameGt.get(Materials.Brass) });
+
+        // Electrum
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 2),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Electrum), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Electrum), 'F',
+                        OrePrefixes.frameGt.get(Materials.Electrum) });
+
+        // Platinum
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 3),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Platinum), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Platinum), 'F',
+                        OrePrefixes.frameGt.get(Materials.Platinum) });
+
+        // Osmium
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 4),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Osmium), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Osmium), 'F', OrePrefixes.frameGt.get(Materials.Osmium) });
+
+        // Quantium
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 5),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Quantium), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.Quantium), 'F',
+                        OrePrefixes.frameGt.get(Materials.Quantium) });
+
+        // Fluxed Electrum
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 6),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.ElectrumFlux), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.ElectrumFlux), 'F',
+                        OrePrefixes.frameGt.get(Materials.ElectrumFlux) });
+
+        // Black Plutonium
+        GT_ModHandler.addCraftingRecipe(
+                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 7),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium), 'Q',
+                        OrePrefixes.pipeMedium.get(Materials.BlackPlutonium), 'F',
+                        OrePrefixes.frameGt.get(Materials.BlackPlutonium) });
+
         // BM raw orbs
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.RawOrbTier1.get(1L),
@@ -760,23 +830,23 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                             break;
                         case 10: // UEV
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 1L);
-                            machinehull = CustomItemList.Hull_UEV.get(1L);
+                            machinehull = ItemList.Hull_UEV.get(1L);
                             break;
                         case 11: // UIV
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 1L);
-                            machinehull = CustomItemList.Hull_UIV.get(1L);
+                            machinehull = ItemList.Hull_UIV.get(1L);
                             break;
                         case 12: // UMV
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L);
-                            machinehull = CustomItemList.Hull_UMV.get(1L);
+                            machinehull = ItemList.Hull_UMV.get(1L);
                             break;
                         case 13: // UXV
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.TranscendentMetal, 1L);
-                            machinehull = CustomItemList.Hull_UXV.get(1L);
+                            machinehull = ItemList.Hull_UXV.get(1L);
                             break;
                         default: // MAX
                             hull = GT_OreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 1L);
-                            machinehull = CustomItemList.Hull_MAXV.get(1L);
+                            machinehull = ItemList.Hull_MAXV.get(1L);
                             break;
                     }
 

@@ -1,22 +1,21 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.48.148:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.49.31:dev")
     api("com.github.GTNewHorizons:Yamcl:0.6.0:dev")
     api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
-    implementation('com.github.GTNewHorizons:GTNEIOrePlugin:1.3.3:dev') { transitive = false }
 
-    compileOnly("com.github.GTNewHorizons:AkashicTome:1.1.4:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:AkashicTome:1.1.6:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Avaritia:1.51:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:twilightforest:2.6.31:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.4.6:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:twilightforest:2.6.33:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.4.8:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.4.1:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.12.6-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.12.8-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.2.2:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
     compileOnly("com.github.GTNewHorizons:Chisel:2.15.2-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Botania:1.11.3-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Botania:1.11.5-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:BloodMagic:1.6.2:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
@@ -24,6 +23,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.2.1-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.9.7:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:DetravScannerMod:1.8.1:dev") { transitive = false }
+    compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.4.2-GTNH:dev")
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:WailaHarvestability:1.2.1-GTNH:dev")
