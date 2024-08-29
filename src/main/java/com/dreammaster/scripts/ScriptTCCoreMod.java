@@ -27,6 +27,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.main.NHItems;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -85,12 +86,12 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 3,
                 2,
                 3,
-                getModItem(NewHorizonsCoreMod.ID, "item.WitherProtectionRing", 1, 0, missing)).setParents("RUNICARMOR")
+                new ItemStack(NHItems.WITHER_PROTECTION_RING.get(), 1)).setParents("RUNICARMOR")
                         .setSiblings("RUNICARMOR").setConcealed()
                         .setPages(new ResearchPage("NewHorizons.research_page.WITHERRING")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "WITHERRING",
-                getModItem(NewHorizonsCoreMod.ID, "item.WitherProtectionRing", 1, 0, missing),
+                new ItemStack(NHItems.WITHER_PROTECTION_RING.get(), 1),
                 3,
                 new AspectList().add(Aspect.getAspect("alienis"), 45).add(Aspect.getAspect("praecantatio"), 35)
                         .add(Aspect.getAspect("spiritus"), 30).add(Aspect.getAspect("superbia"), 25)
@@ -104,8 +105,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
         TCHelper.addResearchPage(
                 "WITHERRING",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(NewHorizonsCoreMod.ID, "item.WitherProtectionRing", 1, 0, missing))));
+                        TCHelper.findInfusionRecipe(new ItemStack(NHItems.WITHER_PROTECTION_RING.get(), 1))));
         ThaumcraftApi.addWarpToResearch("WITHERRING", 2);
         new ResearchItem(
                 "EMINENCESTONE",

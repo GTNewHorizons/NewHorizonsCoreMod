@@ -188,7 +188,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemToolMiningLaser", 1, 0, missing),
                 "plateTitanium",
-                getModItem(NewHorizonsCoreMod.ID, "item.LaserEmitter", 1, 0, missing),
+                com.dreammaster.item.ItemList.LaserEmitter.getIS(1),
                 "plateTitanium",
                 "circuitMaster",
                 ItemList.Battery_RE_MV_Cadmium.get(1L),
@@ -550,7 +550,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateSteel",
                 "screwSteel",
                 "craftingToolWrench",
-                getModItem(NewHorizonsCoreMod.ID, "item.ElectricBoatHull", 1, 0, missing),
+                com.dreammaster.item.ItemList.ElectricBoatHull.getIS(1),
                 "craftingToolScrewdriver",
                 ItemList.Rotor_LV.get(1L),
                 ItemList.Electric_Motor_LV.get(1L),
@@ -1729,32 +1729,32 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GT_Utility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing)).duration(30 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioChunk", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BioChunk.getIS(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0, missing)).duration(1 * MINUTES)
                 .eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioOrganicMesh", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BioOrganicMesh.getIS(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 1, 0, missing))
                 .duration(30 * SECONDS).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "item.BioCarbonPlate", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BioCarbonPlate.getIS(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing))
                 .duration(30 * SECONDS).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 8, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0, missing))
+                        com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Rubber, 4L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0, missing))
+                        com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0, missing))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "item.ElectricBoatHull", 1, 0, missing))
+                        com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
+                .itemOutputs(com.dreammaster.item.ItemList.ElectricBoatHull.getIS(1))
                 .duration(1 * MINUTES).eut(30).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(

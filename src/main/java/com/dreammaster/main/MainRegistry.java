@@ -12,13 +12,17 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
+import static gregtech.api.util.GT_RecipeBuilder.BUCKETS;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static net.minecraftforge.fluids.FluidContainerRegistry.BUCKET_VOLUME;
 
 import java.io.File;
 import java.util.Random;
 
+import com.dreammaster.item.ItemBucketList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
@@ -104,6 +108,9 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_LanguageManager;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
+import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -272,6 +279,12 @@ public class MainRegistry {
             Logger.warn("Some fluids failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Fluids] Some fluids failed to register. Check the logfile for details");
         }
+        ItemBucketList.SodiumPotassium.set(FluidContainerRegistry.fillFluidContainer(FluidList.SodiumPotassium.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.NitricAcid.set(FluidContainerRegistry.fillFluidContainer(FluidList.NitricAcid.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.RadioactiveBacterialSludge.set(FluidContainerRegistry.fillFluidContainer(FluidList.EnrichedBacterialSludge.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.FermentedBacterialSludge.set(FluidContainerRegistry.fillFluidContainer(FluidList.FermentedBacterialSludge.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.Concrete.set(FluidContainerRegistry.fillFluidContainer(FluidList.Concrete.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.Pollution.set(FluidContainerRegistry.fillFluidContainer(FluidList.Pollution.getFluidStack(), new ItemStack(Items.bucket)));
         // ------------------------------------------------------------
 
         // register final list with valid items to forge

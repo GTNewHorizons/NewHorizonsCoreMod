@@ -30,6 +30,7 @@ import static gtPlusPlus.core.material.ALLOY.STELLITE;
 
 import java.util.function.Consumer;
 
+import com.dreammaster.item.ItemBucketList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -570,7 +571,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 tBitMask,
                 new Object[] { "BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C',
                         OrePrefixes.dust.get(Materials.Gypsum), 'W',
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "dreamcraft_Concrete_bucket", 1L) });
+                        ItemBucketList.Concrete.get(1) });
 
         // Air filter multi blocks
         GT_ModHandler.addCraftingRecipe(
@@ -1070,7 +1071,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                         new ItemStack(Items.slime_ball, 1, 0) });
 
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "dreamcraft_Concrete_bucket", 1, 0),
+                ItemBucketList.Concrete.get(1),
                 bits4,
                 new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
                         OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
@@ -1083,7 +1084,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                         new ItemStack(Items.water_bucket, 1, 0) });
         if (IguanaTweaksTinkerConstruct.isModLoaded()) {
             GT_ModHandler.addCraftingRecipe(
-                    GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "dreamcraft_Concrete_bucket", 1, 0),
+                    ItemBucketList.Concrete.get(1),
                     bits4,
                     new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
                             OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',

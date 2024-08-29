@@ -116,15 +116,15 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.plate,
                 Materials.Bedrockium,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.BedrockiumPlate", 1L, 0));
+                com.dreammaster.item.ItemList.BedrockiumPlate.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.plate,
                 Materials.BlackPlutonium,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.BlackPlutoniumPlate", 1L, 0));
+                com.dreammaster.item.ItemList.BlackPlutoniumPlate.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.plateDense,
                 Materials.BlackPlutonium,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.BlackPlutoniumDensePlate", 1L, 0));
+                com.dreammaster.item.ItemList.BlackPlutoniumDensePlate.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.BlackPlutonium,
@@ -132,26 +132,26 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.plate,
                 Materials.Manyullyn,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ManyullynPlate", 1L, 0));
+                com.dreammaster.item.ItemList.ManyullynPlate.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.plate,
                 Materials.Ardite,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ArditePlate", 1L, 0));
+                com.dreammaster.item.ItemList.ArditePlate.getIS(1));
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Alumite, ItemList.AlumiteDust.getIS());
         GT_OreDictUnificator
-                .registerOre("dustQuartzSand", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.SandDust", 1L, 0));
+                .registerOre("dustQuartzSand", com.dreammaster.item.ItemList.SandDust.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.dust,
                 Materials.CertusQuartzCharged,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzDust", 1L, 0));
+                com.dreammaster.item.ItemList.ChargedCertusQuartzDust.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.plate,
                 Materials.CertusQuartzCharged,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzPlate", 1L, 0));
+                com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.stick,
                 Materials.CertusQuartzCharged,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzRod", 1L, 0));
+                com.dreammaster.item.ItemList.ChargedCertusQuartzRod.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.crystal,
                 Materials.CertusQuartzCharged,
@@ -162,19 +162,19 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
         GT_OreDictUnificator.registerOre(
                 "dustCokeOvenBrick",
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrickDust", 1L, 0));
+                com.dreammaster.item.ItemList.CokeOvenBrickDust.getIS(1));
         GT_OreDictUnificator.registerOre(
                 "ingotCokeOvenBrick",
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.CokeOvenBrick", 1L, 0));
+                com.dreammaster.item.ItemList.CokeOvenBrick.getIS(1));
         GT_OreDictUnificator.registerOre(
                 "leather",
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 1L, 0));
+                com.dreammaster.item.ItemList.ArtificialLeather.getIS(1));
         GT_OreDictUnificator.registerOre(
                 "itemLeather",
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ArtificialLeather", 1L, 0));
+                com.dreammaster.item.ItemList.ArtificialLeather.getIS(1));
         GT_OreDictUnificator.registerOre(
                 "dustPotassiumHydroxide",
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 1L, 0));
+                com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(1));
 
         GT_OreDictUnificator.registerOre(OrePrefixes.stickLong, Materials.Obsidian, ItemList.LongObsidianRod.getIS());
 
