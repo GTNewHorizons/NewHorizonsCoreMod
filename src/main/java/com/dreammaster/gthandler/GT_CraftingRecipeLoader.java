@@ -722,7 +722,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 new Object[] { "PQP", "QFQ", "PQP", 'P', MyMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
                         MyMaterial.incoloy903.get(OrePrefixes.pipeMedium), 'F',
                         MyMaterial.incoloy903.get(OrePrefixes.gearGt) });
-      
+
         // Industrial Precision Lathe
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_Lathe.get(1),
