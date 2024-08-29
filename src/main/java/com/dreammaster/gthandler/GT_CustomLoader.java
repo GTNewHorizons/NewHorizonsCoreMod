@@ -54,7 +54,7 @@ public class GT_CustomLoader {
                 BartWorks.isModLoaded() ? "blockGlassUIV" : "glassReinforced", Materials.CosmicNeutronium,
                 MaterialsUEVplus.TranscendentMetal),
 
-        UMV(OrePrefixes.circuit.get(Materials.Piko), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
+        UMV(OrePrefixes.circuit.get(Materials.UMV), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
                 OrePrefixes.wireGt02.get(Materials.Quantium), null, null,
                 BartWorks.isModLoaded() ? "blockGlassUMV" : "glassReinforced", MaterialsUEVplus.TranscendentMetal,
                 MaterialsUEVplus.SpaceTime);

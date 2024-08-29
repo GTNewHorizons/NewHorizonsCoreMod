@@ -5,11 +5,14 @@ import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Data
 import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Switch;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.HOURS;
@@ -23,6 +26,7 @@ import static gregtech.api.util.GT_RecipeConstants.RESEARCH_TIME;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
@@ -30,9 +34,13 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.gthandler.GT_CoreModSupport;
+import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import com.github.technus.tectech.recipe.TT_recipeAdder;
 
 import appeng.api.AEApi;
+import goodgenerator.util.ItemRefer;
+import gregtech.api.GregTech_API;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -41,6 +49,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ELEMENT;
 import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
@@ -317,6 +327,208 @@ public class AssemblingLineRecipes implements Runnable {
                     getModItem(GregTech.ID, "gt.blockmachines", 1, 15447),
                     30 * SECONDS,
                     (int) TierEU.RECIPE_UMV);
+
+            if (GalaxySpace.isModLoaded()) {
+                // Dyson Swarm Module
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        GT_ModHandler.getModItem(OpenComputers.ID, "item", 1, 91),
+                        192_000,
+                        512,
+                        8_000_000,
+                        16,
+                        new Object[] { ItemList.Cover_SolarPanel_LuV.get(4),
+                                GT_ModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 8, 3),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 2),
+                                ItemList.Circuit_Chip_QPIC.get(2), ItemList.Emitter_UEV.get(1),
+                                ItemList.Sensor_UEV.get(1), GT_ModHandler.getModItem(OpenComputers.ID, "item", 4, 91) },
+                        new FluidStack[] { new FluidStack(solderUEV, 18_432) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 64, 0),
+                        5 * SECONDS,
+                        (int) TierEU.RECIPE_UHV);
+
+                // Dyson Swarm Energy Receiver Base Casing
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        ItemList.Circuit_Chip_QPIC.get(1),
+                        192_000,
+                        512,
+                        2_000_000,
+                        32,
+                        new ItemStack[] { GT_Utility.copyAmount(4, ItemRegistry.energyDistributor[9]),
+                                ItemList.Circuit_Chip_QPIC.get(64),
+                                GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 4),
+                                ItemList.UHV_Coil.get(64), ItemList.UHV_Coil.get(64), },
+                        new FluidStack[] { new FluidStack(FluidRegistry.getFluid("liquid helium"), 50_000),
+                                Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 0),
+                        40 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Energy Receiver Dish Block
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 1, 3),
+                        192000,
+                        512,
+                        2000000,
+                        32,
+                        new ItemStack[] { GT_ModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 64, 3),
+                                ItemRefer.Advanced_Radiation_Protection_Plate.get(64),
+                                ItemList.Reactor_Coolant_Sp_6.get(1), ItemList.Reactor_Coolant_Sp_6.get(1),
+                                ItemList.Reactor_Coolant_Sp_6.get(1), ItemList.Reactor_Coolant_Sp_6.get(1),
+                                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 8),
+                                ItemRefer.Field_Restriction_Coil_T2.get(2) },
+                        new FluidStack[] { ELEMENT.STANDALONE.RHUGNOR.getFluidStack(40),
+                                Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 3, 1),
+                        30 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Module Deployment Unit Base Casing
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        ItemList.Quantum_Chest_IV.get(1),
+                        192_000,
+                        512,
+                        2_000_000,
+                        32,
+                        new ItemStack[] { ItemList.Hull_UIV.get(4),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 4),
+                                ItemList.Electric_Pump_UIV.get(32), ItemList.Quantum_Tank_IV.get(2),
+                                ItemList.Conveyor_Module_UIV.get(32), ItemList.Quantum_Chest_IV.get(2) },
+                        new FluidStack[] { Materials.Lubricant.getFluid(50000), Materials.SuperCoolant.getFluid(16_000),
+                                new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 2),
+                        40 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Module Deployment Unit Core
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        new ItemStack(Blocks.dropper),
+                        192_000,
+                        512,
+                        2_000_000,
+                        32,
+                        new ItemStack[] { ItemList.Hull_UIV.get(4), ItemList.Conveyor_Module_UIV.get(32),
+                                ItemList.Robot_Arm_UIV.get(32), ItemList.Electric_Piston_UIV.get(32),
+                                new ItemStack(Blocks.dropper, 64), new ItemStack(Blocks.dropper, 64),
+                                new ItemStack(Blocks.dropper, 64), new ItemStack(Blocks.dropper, 64), },
+                        new FluidStack[] { Materials.Lubricant.getFluid(50_000),
+                                Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 1, 3),
+                        10 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Module Deployment Unit Superconducting Magnet
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        ItemList.PolarizerUEV.get(1),
+                        192_000,
+                        512,
+                        2_000_000,
+                        32,
+                        new ItemStack[] { ItemList.Hull_UIV.get(4),
+                                GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 16),
+                                ItemList.Circuit_Chip_QPIC.get(64),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 8) },
+                        new FluidStack[] { ELEMENT.STANDALONE.RHUGNOR.getFluidStack(40),
+                                Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 4),
+                        40 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Control Center Base Casing
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Computer.get(1),
+                        192_000,
+                        512,
+                        2_000_000,
+                        32,
+                        new ItemStack[] { ItemList.Hull_UIV.get(4),
+                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 4, 103),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 4),
+                                com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Computer.get(4), },
+                        new FluidStack[] { Materials.SuperCoolant.getFluid(32_000), new FluidStack(solderUEV, 11_520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 8, 5),
+                        80 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Control Center Primary Windings
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        com.github.technus.tectech.thing.CustomItemList.tM_TeslaPrimary_6.get(1),
+                        192_000,
+                        512,
+                        2_000_000,
+                        32,
+                        new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4), CustomItemList.MicaInsulatorFoil.get(64),
+                                CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
+                                com.github.technus.tectech.thing.CustomItemList.eM_Coil.get(4),
+                                CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
+                                CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
+                                CustomItemList.MicaInsulatorFoil.get(64) },
+                        new FluidStack[] { GT_CoreModSupport.RadoxPolymer.getMolten(3_456),
+                                Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 6),
+                        40 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Control Center Secondary Windings
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        com.github.technus.tectech.thing.CustomItemList.tM_TeslaSecondary.get(1),
+                        192_000,
+                        512,
+                        2_000_000,
+                        32,
+                        new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4), CustomItemList.MicaInsulatorFoil.get(64),
+                                CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
+                                ItemList.Casing_Coil_AwakenedDraconium.get(4), CustomItemList.MicaInsulatorFoil.get(64),
+                                CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
+                                CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
+                        new FluidStack[] { GT_CoreModSupport.RadoxPolymer.getMolten(3_240),
+                                Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 7),
+                        40 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Control Center Toroid Casing
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        com.github.technus.tectech.thing.CustomItemList.tM_TeslaToroid.get(1),
+                        192_000,
+                        512,
+                        2_000_000,
+                        32,
+                        new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4),
+                                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 8),
+                                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUEVBase, 4), },
+                        new FluidStack[] { GT_CoreModSupport.RadoxPolymer.getMolten(144),
+                                Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 1, 8),
+                        10 * SECONDS,
+                        (int) TierEU.RECIPE_UEV);
+
+                // Dyson Swarm Controller
+                TT_recipeAdder.addResearchableAssemblylineRecipe(
+                        GT_ModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1),
+                        192_000,
+                        512,
+                        8_000_000,
+                        16,
+                        new ItemStack[] { ItemList.Hull_UIV.get(4),
+                                CustomItemList.IrradiantReinforcedBedrockiumPlate.get(4),
+                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 8),
+                                GT_ModHandler.getModItem(Computronics.ID, "computronics.ocSpecialParts", 4),
+                                GT_ModHandler.getModItem(OpenComputers.ID, "item", 8, 103) },
+                        new FluidStack[] { ELEMENT.STANDALONE.RHUGNOR.getFluidStack(100),
+                                Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                                Materials.UUMatter.getFluid(8_000) },
+                        new ItemStack(GregTech_API.sBlockMachines, 1, 14001),
+                        2 * MINUTES,
+                        (int) TierEU.RECIPE_UIV);
+            }
 
             if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 
@@ -1035,7 +1247,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
 
             // Femtometer-calibrated particle beam casing
-            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.CHARM))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.TOP))
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),

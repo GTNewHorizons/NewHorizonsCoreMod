@@ -36,6 +36,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
+import com.elisis.gtnhlanth.common.register.WerkstoffMaterialPool;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -97,6 +98,10 @@ public class CompressorRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 9))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_UV).addTo(compressorRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(WerkstoffMaterialPool.Gangue.get(OrePrefixes.dust, 9))
+                .itemOutputs((WerkstoffMaterialPool.Gangue.get(OrePrefixes.block, 1))).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
 
         // compressed coal variants
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 9))
