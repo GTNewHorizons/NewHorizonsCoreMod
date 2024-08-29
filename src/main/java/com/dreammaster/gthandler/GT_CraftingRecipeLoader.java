@@ -734,21 +734,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         // Item Pipe Casings
         // Tin
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 0),
+                ItemList.Casing_Item_Pipe_Tin.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Tin), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Tin), 'F', OrePrefixes.frameGt.get(Materials.Tin) });
 
         // Brass
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 1),
+                ItemList.Casing_Item_Pipe_Brass.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Brass), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Brass), 'F', OrePrefixes.frameGt.get(Materials.Brass) });
 
         // Electrum
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 2),
+                ItemList.Casing_Item_Pipe_Electrum.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Electrum), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Electrum), 'F',
@@ -756,7 +756,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Platinum
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 3),
+                ItemList.Casing_Item_Pipe_Platinum.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Platinum), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Platinum), 'F',
@@ -764,14 +764,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Osmium
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 4),
+                ItemList.Casing_Item_Pipe_Osmium.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Osmium), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Osmium), 'F', OrePrefixes.frameGt.get(Materials.Osmium) });
 
         // Quantium
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 5),
+                ItemList.Casing_Item_Pipe_Quantium.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.Quantium), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.Quantium), 'F',
@@ -779,7 +779,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Fluxed Electrum
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 6),
+                ItemList.Casing_Item_Pipe_Fluxed_Electrum.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.ElectrumFlux), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.ElectrumFlux), 'F',
@@ -787,7 +787,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Black Plutonium
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings11", 1, 7),
+                ItemList.Casing_Item_Pipe_Black_Plutonium.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.BlackPlutonium), 'F',
