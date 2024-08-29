@@ -7,7 +7,7 @@ import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeConstants.BLACKHOLE;
+import static gregtech.api.util.GT_RecipeConstants.COMPRESSION_TIER;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
