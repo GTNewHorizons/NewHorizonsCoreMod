@@ -13,7 +13,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GoodGenerator;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -650,7 +649,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Magnetic Flux Exhibitor
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 358),
+                ItemList.Machine_Multi_IndustrialElectromagneticSeparator.get(1),
                 bits,
                 new Object[] { "CBC", "FMF", "CBC", 'M', ItemList.Machine_IV_ElectromagneticSeparator, 'B',
                         OrePrefixes.circuit.get(Materials.IV), 'C', OrePrefixes.plate.get(Materials.TungstenSteel), 'F',
@@ -658,21 +657,21 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // MagTech Casing
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings10", 1, 0),
+                ItemList.Casing_Electromagnetic_Separator.get(1),
                 bits,
                 new Object[] { "PhP", "PFP", "PwP", 'P', OrePrefixes.plate.get(Materials.TungstenSteel), 'F',
                         OrePrefixes.frameGt.get(Materials.Titanium) });
 
         // Electromagnet Housing
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 359),
+                ItemList.Hatch_Electromagnet.get(1),
                 bits,
                 new Object[] { "CFC", "FMF", "CFC", 'M', ItemList.Hatch_Input_Bus_IV, 'C',
                         OrePrefixes.plate.get(Materials.Polystyrene), 'F', CustomItemList.TungstenSteelBars });
 
         // TurboCan Pro
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 360),
+                ItemList.Machine_Multi_Canner.get(1),
                 bits,
                 new Object[] { "CFC", "AMB", "CFC", 'A', ItemList.Machine_HV_Canner, 'B',
                         ItemList.Machine_HV_FluidCanner, 'F', OrePrefixes.circuit.get(Materials.HV), 'C',
@@ -688,9 +687,17 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Laser Containment Casing
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockcasings10", 1, 1),
+                ItemList.Casing_Laser.get(1),
                 bits,
                 new Object[] { "PhP", "PFP", "PwP", 'P', STELLITE.getPlate(1), 'F', NITINOL_60.getFrameBox(1) });
+
+        // Dissection Apparatus
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Machine_Multi_IndustrialExtractor.get(1),
+                bits,
+                new Object[] { "CFC", "EAE", "CBC", 'A', ItemList.Machine_HV_Extractor, 'F', ItemList.Robot_Arm_HV, 'C',
+                        OrePrefixes.plate.get(Materials.StainlessSteel), 'E', OrePrefixes.circuit.get(Materials.EV),
+                        'B', ItemList.Electric_Piston_HV });
 
         // BM raw orbs
         GT_ModHandler.addCraftingRecipe(
