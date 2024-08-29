@@ -244,7 +244,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                     GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
-                    GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1L, 0));
+                    com.dreammaster.item.ItemList.ManyullynCrystal.getIS(1));
         }
         // rites
         // TODO write doc

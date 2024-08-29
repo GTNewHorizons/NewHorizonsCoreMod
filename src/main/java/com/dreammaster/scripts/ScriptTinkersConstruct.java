@@ -3291,7 +3291,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 1, 0, missing),
+                com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(1),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,

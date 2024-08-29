@@ -15,7 +15,7 @@ public class GT_Loader_Materials {
 
     private void registerMaterialRecipes() {
         GT_ModHandler.addShapelessCraftingRecipe(
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.AlumiteDust", 8L),
+                com.dreammaster.item.ItemList.AlumiteDust.getIS(8),
                 GT_ModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
                         OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),

@@ -1428,7 +1428,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         missing),
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iridium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
+                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(GTPlusPlus.ID, "magicfeather", 1, 0, missing),
@@ -1438,7 +1438,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(GTPlusPlus.ID, "magicfeather", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
+                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",

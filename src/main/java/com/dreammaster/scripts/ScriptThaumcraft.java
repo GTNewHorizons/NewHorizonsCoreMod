@@ -819,7 +819,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 2,
                 new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("praecantatio"), 12)
                         .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("vitreus"), 6),
-                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzRod", 1, 0, missing),
+                com.dreammaster.item.ItemList.ChargedCertusQuartzRod.getIS(1),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                         getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),

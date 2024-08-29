@@ -261,7 +261,7 @@ public class ScriptGenetics implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.AluminiumItemCasing", 8, 0, missing))
+                        com.dreammaster.item.ItemList.AluminiumItemCasing.getIS(8))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).duration(1 * MINUTES).eut(120)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()

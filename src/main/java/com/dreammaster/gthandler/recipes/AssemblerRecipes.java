@@ -4430,7 +4430,7 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
                             getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
-                            getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorFluidDiamondCore", 2),
+                            com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
                             GT_Utility.getIntegratedCircuit(2))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_interface", 1, 0)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);

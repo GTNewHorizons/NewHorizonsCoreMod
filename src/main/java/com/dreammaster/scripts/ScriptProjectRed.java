@@ -3804,19 +3804,19 @@ public class ScriptProjectRed implements IScriptLoader {
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
+                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
+                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
+                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
@@ -3829,7 +3829,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .itemOutputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
+                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
                         getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
                 .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
 

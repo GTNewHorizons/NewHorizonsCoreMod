@@ -1305,7 +1305,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                            getModItem(NewHorizonsCoreMod.ID, "item.GoldCoreChip", 1, 0, missing),
+                            com.dreammaster.item.ItemList.GoldCoreChip.getIS(1),
                             ItemList.Robot_Arm_MV.get(2L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L),
@@ -1318,7 +1318,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
-                            getModItem(NewHorizonsCoreMod.ID, "item.DiamondCoreChip", 1, 0, missing),
+                            com.dreammaster.item.ItemList.DiamondCoreChip.getIS(1),
                             ItemList.Robot_Arm_HV.get(1L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                             GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L),

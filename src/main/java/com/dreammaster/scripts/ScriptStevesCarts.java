@@ -284,7 +284,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "blockSteel",
                 getModItem(StevesCarts2.ID, "CartModule", 1, 42, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.DiamondDrillTip", 1, 0, missing),
+                com.dreammaster.item.ItemList.DiamondDrillTip.getIS(1),
                 CustomItemList.SteelBars.get(1L),
                 "screwSteel",
                 "craftingToolHardHammer");

@@ -625,7 +625,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 null,
                 null);
         addShapelessRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "item.EdibleSalt", 1, 0, missing),
+                com.dreammaster.item.ItemList.EdibleSalt.getIS(1),
                 "toolPot",
                 "listAllwater");
         addShapelessRecipe(

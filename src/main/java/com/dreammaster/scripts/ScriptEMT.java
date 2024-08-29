@@ -223,7 +223,7 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 0,
                 1,
-                getModItem(NewHorizonsCoreMod.ID, "item.EMT", 1, 0, missing)).setAutoUnlock().setSpecial()
+                com.dreammaster.item.ItemList.EMT.getIS()).setAutoUnlock().setSpecial()
                         .setPages(new ResearchPage("tc.research_page.ElectricMagicTools")).registerResearchItem();
         TCHelper.removeResearch("Diamond Chainsaw");
         new ResearchItem(

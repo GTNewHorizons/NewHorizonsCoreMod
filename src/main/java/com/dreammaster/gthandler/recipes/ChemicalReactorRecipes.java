@@ -55,14 +55,14 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 3L, 0))
+                .itemOutputs(com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(3))
                 .fluidInputs(Materials.Water.getFluid(3000)).fluidOutputs(Materials.Hydrogen.getGas(1000))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         // Rock Salt
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.PotassiumHydroxideDust", 1L, 0),
+                        com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)

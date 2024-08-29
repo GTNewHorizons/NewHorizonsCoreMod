@@ -3693,7 +3693,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "transcendentBloodOrb", 1, 0, missing)));
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
-                        getModItem(NewHorizonsCoreMod.ID, "item.Blaster", 1, 0, missing),
+                        com.dreammaster.item.ItemList.Blaster.getIS(1),
                         "abc",
                         "def",
                         "ghi",
@@ -4680,7 +4680,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "energyBlaster", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.Blaster", 1, 0, missing));
+                com.dreammaster.item.ItemList.Blaster.getIS(1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 1L));
@@ -4949,7 +4949,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "blankSpell", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
+                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
                         CustomItemList.EngravedDiamondCrystalChip.get(1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
