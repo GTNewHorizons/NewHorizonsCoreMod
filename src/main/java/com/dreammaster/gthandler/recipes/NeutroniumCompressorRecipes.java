@@ -331,7 +331,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                         .itemInputs(
                                 GT_Utility.copyAmountUnsafe(
                                         66,
-                                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Unstableingot, 1)))
+                                        getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5)))
                         .itemOutputs(
                                 getModItem(UniversalSingularities.ID, "universal.extraUtilities.singularity", 1, 0))
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
