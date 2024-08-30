@@ -1245,7 +1245,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 16),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 16),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 16),
-                            ItemList.Field_Generator_UEV.get(1),
+                            ItemList.Field_Generator_UHV.get(1),
                             new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                             new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
                             GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 16))
@@ -1270,7 +1270,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator
                                     .get(OrePrefixes.foil, Materials.Longasssuperconductornameforuhvwire, 64),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 64),
-                            ItemList.Field_Generator_UEV.get(1),
+                            ItemList.Electric_Pump_UEV.get(1),
                             new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                             new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
                             GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 16))
