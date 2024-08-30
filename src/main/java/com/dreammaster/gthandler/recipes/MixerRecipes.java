@@ -32,7 +32,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.GT_CoreModSupport;
 
 import goodgenerator.items.MyMaterial;
 import gregtech.api.enums.GT_Values;
@@ -602,7 +601,7 @@ public class MixerRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dust, GT_CoreModSupport.RadoxPolymer, 4L),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.TranscendentMetal, 10L),
                         GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustRhugnor", 6L),
                         GT_ModHandler.getModItem(GTPlusPlus.ID, "itemDustChromaticGlass", 5L),
