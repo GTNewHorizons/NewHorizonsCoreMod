@@ -195,37 +195,37 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 6, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                ItemList.AcceleratorHV.get(1),
                 "gearTitanium",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                ItemList.AcceleratorHV.get(1),
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
                 "gearDiamond",
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                ItemList.AcceleratorHV.get(1),
                 "gearTitanium",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing));
+                ItemList.AcceleratorHV.get(1));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 7, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 6, missing),
                 "gearTungstenSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing));
+                ItemList.AcceleratorEV.get(1));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 8, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                ItemList.AcceleratorIV.get(1),
                 "gearChrome",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                ItemList.AcceleratorIV.get(1),
                 "gearChrome",
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 7, missing),
                 "gearChrome",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                ItemList.AcceleratorIV.get(1),
                 "gearChrome",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing));
+                ItemList.AcceleratorIV.get(1));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 9, missing),
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),

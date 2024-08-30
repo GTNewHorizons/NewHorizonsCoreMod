@@ -9,6 +9,7 @@ import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -1054,7 +1055,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.cableGt16.get(Materials.Lead), 'S', OrePrefixes.spring.get(Materials.Tin), 'X',
                         OrePrefixes.cableGt08.get(Materials.Tin), 'O', OrePrefixes.cell.get(Materials.Lubricant),
                         'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 877) });
+                        GregtechItemList.Transformer_HA_LV_ULV.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_MV_LV.get(1L),
@@ -1063,7 +1064,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.cableGt16.get(Materials.Tin), 'S', OrePrefixes.spring.get(Materials.AnyCopper),
                         'X', OrePrefixes.cableGt08.get(Materials.AnyCopper), 'O',
                         OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 878) });
+                        GregtechItemList.Transformer_HA_MV_LV.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_HV_MV.get(1L),
@@ -1072,7 +1073,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.cableGt16.get(Materials.AnyCopper), 'S', OrePrefixes.spring.get(Materials.Gold),
                         'X', OrePrefixes.cableGt08.get(Materials.Gold), 'O',
                         OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 879) });
+                        GregtechItemList.Transformer_HA_HV_MV.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_EV_HV.get(1L),
@@ -1081,7 +1082,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.cableGt16.get(Materials.Gold), 'S', OrePrefixes.spring.get(Materials.Aluminium),
                         'X', OrePrefixes.cableGt08.get(Materials.Aluminium), 'O',
                         OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 880) });
+                        GregtechItemList.Transformer_HA_EV_HV.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_IV_EV.get(1L),
@@ -1091,7 +1092,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.spring.get(Materials.Tungsten), 'X',
                         OrePrefixes.cableGt08.get(Materials.Tungsten), 'O',
                         OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 881) });
+                        GregtechItemList.Transformer_HA_IV_EV.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_LuV_IV.get(1L),
@@ -1101,7 +1102,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.spring.get(Materials.VanadiumGallium), 'X',
                         OrePrefixes.cableGt08.get(Materials.VanadiumGallium), 'O',
                         OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 882) });
+                        GregtechItemList.Transformer_HA_LuV_IV.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_ZPM_LuV.get(1L),
@@ -1111,7 +1112,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.spring.get(Materials.Naquadah), 'X',
                         OrePrefixes.cableGt08.get(Materials.Naquadah), 'O',
                         OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883) });
+                        GregtechItemList.Transformer_HA_ZPM_LuV.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UV_ZPM.get(1L),
@@ -1121,7 +1122,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.spring.get(Materials.NaquadahAlloy), 'X',
                         OrePrefixes.cableGt08.get(Materials.NaquadahAlloy), 'O',
                         OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 884) });
+                        GregtechItemList.Transformer_HA_UV_ZPM.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UHV_UV.get(1L),
@@ -1131,7 +1132,7 @@ public class GT_Loader_Machines {
                         OrePrefixes.spring.get(Materials.Neutronium), 'X',
                         OrePrefixes.wireGt08.get(Materials.Bedrockium), 'O',
                         OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                        GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 885) });
+                        GregtechItemList.Transformer_HA_MAX_UV.get(1) });
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.WetTransformer_UEV_UHV.get(1L),

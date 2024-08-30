@@ -4,6 +4,14 @@ import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader
 import static com.github.technus.tectech.thing.CustomItemList.DATApipe;
 import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_DataBank;
 import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Switch;
+import static com.github.technus.tectech.thing.CustomItemList.dataInAss_Hatch;
+import static com.github.technus.tectech.thing.CustomItemList.dataInAss_Wireless_Hatch;
+import static com.github.technus.tectech.thing.CustomItemList.dataIn_Hatch;
+import static com.github.technus.tectech.thing.CustomItemList.dataIn_Wireless_Hatch;
+import static com.github.technus.tectech.thing.CustomItemList.dataOutAss_Hatch;
+import static com.github.technus.tectech.thing.CustomItemList.dataOutAss_Wireless_Hatch;
+import static com.github.technus.tectech.thing.CustomItemList.dataOut_Hatch;
+import static com.github.technus.tectech.thing.CustomItemList.dataOut_Wireless_Hatch;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
@@ -201,15 +209,14 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Cloud Computation Client Hatch
         TT_recipeAdder.addResearchableAssemblylineRecipe(
-                // Optical Slave Connector
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15440),
+                dataIn_Hatch.get(1),
                 512000,
                 2000,
                 100_000_000,
                 2,
                 new ItemStack[] {
                         // Regular slave connector
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 15440),
+                        dataIn_Hatch.get(1),
                         // Network Switch With QoS
                         Machine_Multi_Switch.get(1),
                         // Data pipe
@@ -226,21 +233,21 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.EnergisedTesseract.get(1) },
                 new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
                 // Cloud Computation Client Hatch
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15445),
+                dataIn_Wireless_Hatch.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UMV);
 
         // Cloud computation server hatch
         TT_recipeAdder.addResearchableAssemblylineRecipe(
                 // Optical Master Connector
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15441),
+                dataOut_Hatch.get(1),
                 512000,
                 2000,
                 100_000_000,
                 2,
                 new ItemStack[] {
                         // Regular master connector
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 15441),
+                        dataOut_Hatch.get(1),
                         // Network Switch With QoS
                         Machine_Multi_Switch.get(1),
                         // Data pipe
@@ -257,21 +264,21 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.EnergisedTesseract.get(1) },
                 new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
                 // Cloud Computation Server Hatch
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15444),
+                dataOut_Wireless_Hatch.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UMV);
 
         // Wireless assembly line slave connector
         TT_recipeAdder.addResearchableAssemblylineRecipe(
                 // Assembly line slave connector
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15442),
+                dataInAss_Hatch.get(1),
                 512000,
                 2000,
                 100_000_000,
                 2,
                 new ItemStack[] {
                         // Assembly line slave connector
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 15442),
+                        dataInAss_Hatch.get(1),
                         // Data bank
                         Machine_Multi_DataBank.get(1),
                         // Data pipe
@@ -288,21 +295,21 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.EnergisedTesseract.get(1) },
                 new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
                 // Wireless assembly line slave connector
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15446),
+                dataInAss_Wireless_Hatch.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UMV);
 
         // Wireless data bank master connector
         TT_recipeAdder.addResearchableAssemblylineRecipe(
                 // Data bank master connector
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15443),
+                dataOutAss_Hatch.get(1),
                 512000,
                 2000,
                 100_000_000,
                 2,
                 new ItemStack[] {
                         // Data bank master connector
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 15443),
+                        dataOutAss_Hatch.get(1),
                         // Data bank
                         Machine_Multi_DataBank.get(1),
                         // Data pipe
@@ -319,7 +326,7 @@ public class AssemblingLineRecipes implements Runnable {
                         ItemList.EnergisedTesseract.get(1) },
                 new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
                 // Wireless data bank master connector
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15447),
+                dataOutAss_Wireless_Hatch.get(1),
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UMV);
 

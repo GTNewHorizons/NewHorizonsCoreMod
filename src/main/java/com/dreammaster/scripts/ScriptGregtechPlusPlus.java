@@ -16,6 +16,7 @@ import static gtPlusPlus.api.recipe.GTPPRecipeMaps.quantumForceTransformerRecipe
 import java.util.Arrays;
 import java.util.List;
 
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -54,7 +55,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
     @Override
     public void loadRecipes() {
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 875, missing),
+                GregtechItemList.GT4_Thermal_Boiler.get(1),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
                 ItemList.Machine_HV_Centrifuge.get(1L),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
@@ -99,7 +100,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
                 getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 798, missing),
+                GregtechItemList.Industrial_WireFactory.get(1),
                 "plateBlueSteel",
                 ItemList.Casing_IV.get(1L),
                 "plateBlueSteel",
@@ -110,7 +111,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 ItemList.Casing_IV.get(1L),
                 "plateBlueSteel");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 753, missing),
+                GregtechItemList.Boiler_Advanced_LV.get(1),
                 ItemList.Electric_Pump_LV.get(1L),
                 "circuitBasic",
                 ItemList.Electric_Pump_LV.get(1L),
@@ -132,7 +133,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 "plateDoubleLead");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 754, missing),
+                GregtechItemList.Boiler_Advanced_MV.get(1),
                 ItemList.Electric_Pump_MV.get(1L),
                 "circuitGood",
                 ItemList.Electric_Pump_MV.get(1L),
@@ -154,7 +155,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                 "plateDoubleStainlessSteel");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 755, missing),
+                GregtechItemList.Boiler_Advanced_HV.get(1),
                 ItemList.Electric_Pump_HV.get(1L),
                 "circuitAdvanced",
                 ItemList.Electric_Pump_HV.get(1L),
@@ -176,7 +177,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
                 "plateDoubleTitanium");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 820, missing),
+                GregtechItemList.GT_FluidTank_HV.get(1),
                 "circuitPrimitive",
                 "plateAluminium",
                 "circuitPrimitive",

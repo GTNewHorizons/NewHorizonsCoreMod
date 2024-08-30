@@ -651,7 +651,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Magnetic Flux Exhibitor
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 358),
+                ItemList.Machine_Multi_IndustrialElectromagneticSeparator.get(1),
                 bits,
                 new Object[] { "CBC", "FMF", "CBC", 'M', ItemList.Machine_IV_ElectromagneticSeparator, 'B',
                         OrePrefixes.circuit.get(Materials.IV), 'C', OrePrefixes.plate.get(Materials.TungstenSteel), 'F',
@@ -666,14 +666,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Electromagnet Housing
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 359),
+                ItemList.Hatch_Electromagnet.get(1),
                 bits,
                 new Object[] { "CFC", "FMF", "CFC", 'M', ItemList.Hatch_Input_Bus_IV, 'C',
                         OrePrefixes.plate.get(Materials.Polystyrene), 'F', CustomItemList.TungstenSteelBars });
 
         // TurboCan Pro
         GT_ModHandler.addCraftingRecipe(
-                GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 360),
+                ItemList.Machine_Multi_Canner.get(1),
                 bits,
                 new Object[] { "CFC", "AMB", "CFC", 'A', ItemList.Machine_HV_Canner, 'B',
                         ItemList.Machine_HV_FluidCanner, 'F', OrePrefixes.circuit.get(Materials.HV), 'C',
