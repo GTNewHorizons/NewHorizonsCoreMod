@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
-import static com.dreammaster.gthandler.GT_CoreModSupport.Xenoxene;
 import static gregtech.api.enums.GT_Values.W;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -30,7 +29,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 import common.TileEntities;
@@ -2387,8 +2385,8 @@ public class AssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
                             (GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFineWireChromaticGlass", 2)))
                     .itemOutputs(com.github.technus.tectech.thing.CustomItemList.DATApipe.get(64))
-                    .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS)
-                    .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
+                    .fluidInputs(Materials.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
+                    .addTo(assemblerRecipes);
         }
         // Fusion Coil Block
         GT_Values.RA.stdBuilder()
@@ -3595,8 +3593,9 @@ public class AssemblerRecipes implements Runnable {
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
-                .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
-                .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_ResistorXSMD.get(32L))
+                .fluidInputs(Materials.Xenoxene.getFluid(144L)).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(assemblerRecipes);
         // Transistor
 
         GT_Values.RA.stdBuilder()
@@ -3607,8 +3606,9 @@ public class AssemblerRecipes implements Runnable {
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
-                .itemOutputs(ItemList.Circuit_Parts_TransistorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
-                .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_TransistorXSMD.get(32L))
+                .fluidInputs((Materials.Xenoxene.getFluid(144L))).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(assemblerRecipes);
         // Capacitor
 
         GT_Values.RA.stdBuilder()
@@ -3619,8 +3619,9 @@ public class AssemblerRecipes implements Runnable {
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
-                .itemOutputs(ItemList.Circuit_Parts_CapacitorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
-                .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_CapacitorXSMD.get(32L))
+                .fluidInputs((Materials.Xenoxene.getFluid(144L))).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(assemblerRecipes);
         // Diode
 
         GT_Values.RA.stdBuilder()
@@ -3631,7 +3632,7 @@ public class AssemblerRecipes implements Runnable {
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
-                .itemOutputs(ItemList.Circuit_Parts_DiodeXSMD.get(64L)).fluidInputs(Xenoxene.getFluid(144L))
+                .itemOutputs(ItemList.Circuit_Parts_DiodeXSMD.get(64L)).fluidInputs((Materials.Xenoxene.getFluid(144L)))
                 .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
         // Inductor
 
@@ -3641,8 +3642,9 @@ public class AssemblerRecipes implements Runnable {
                         GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedfoil", 1L, 10102),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
-                .itemOutputs(ItemList.Circuit_Parts_InductorXSMD.get(32L)).fluidInputs(Xenoxene.getFluid(144L))
-                .duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Circuit_Parts_InductorXSMD.get(32L))
+                .fluidInputs((Materials.Xenoxene.getFluid(144L))).duration(8 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(assemblerRecipes);
 
     }
 

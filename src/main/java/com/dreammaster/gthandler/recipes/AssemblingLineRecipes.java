@@ -34,7 +34,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import com.github.technus.tectech.recipe.TT_recipeAdder;
 
@@ -467,7 +466,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
                                 CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
                                 CustomItemList.MicaInsulatorFoil.get(64) },
-                        new FluidStack[] { GT_CoreModSupport.RadoxPolymer.getMolten(3_456),
+                        new FluidStack[] { Materials.RadoxPolymer.getMolten(3_456),
                                 Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                                 Materials.UUMatter.getFluid(8_000) },
                         GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 6),
@@ -486,7 +485,7 @@ public class AssemblingLineRecipes implements Runnable {
                                 ItemList.Casing_Coil_AwakenedDraconium.get(4), CustomItemList.MicaInsulatorFoil.get(64),
                                 CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
                                 CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
-                        new FluidStack[] { GT_CoreModSupport.RadoxPolymer.getMolten(3_240),
+                        new FluidStack[] { Materials.RadoxPolymer.getMolten(3_240),
                                 Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                                 Materials.UUMatter.getFluid(8_000) },
                         GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 7),
@@ -503,7 +502,7 @@ public class AssemblingLineRecipes implements Runnable {
                         new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4),
                                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Neutronium, 8),
                                 GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUEVBase, 4), },
-                        new FluidStack[] { GT_CoreModSupport.RadoxPolymer.getMolten(144),
+                        new FluidStack[] { Materials.RadoxPolymer.getMolten(144),
                                 Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                                 Materials.UUMatter.getFluid(8_000) },
                         GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 1, 8),
