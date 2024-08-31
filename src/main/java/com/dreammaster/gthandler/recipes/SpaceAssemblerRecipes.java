@@ -16,6 +16,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
 import com.github.technus.tectech.thing.casing.TT_Container_Casings;
 import goodgenerator.items.MyMaterial;
+import goodgenerator.loader.Loaders;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
@@ -162,7 +163,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 16L) },
                     new FluidStack[] { new FluidStack(solderIndalloy, (32 * 144)),
                             Materials.Lead.getMolten(64 * 144L) },
-                    getModItem(GoodGenerator.ID, "advancedRadiationProtectionPlate", 4L, 0),
+                    new ItemStack(Loaders.advancedRadiationProtectionPlate, 4, 0),
                     1,
                     50 * 20,
                     (int) TierEU.ZPM,
@@ -358,7 +359,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                         new ItemStack[] { getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1),
                                 GT_OreDictUnificator.get("plateDenseShirabon", 16),
                                 ItemList.Field_Generator_UXV.get(1L),
-                                getModItem(GoodGenerator.ID, "yottaFluidTankCells", 2, 9),
+                                new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                                 getModItem(KekzTech.ID, "kekztech_tfftstoragefield_block", 2, 10),
                                 new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),

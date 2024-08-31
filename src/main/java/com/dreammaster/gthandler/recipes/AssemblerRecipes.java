@@ -23,6 +23,7 @@ import java.util.Map;
 
 import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import goodgenerator.items.MyMaterial;
+import goodgenerator.loader.Loaders;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -1844,7 +1845,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 2L),
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.BlackSteel, 1L))
-                .itemOutputs(GT_ModHandler.getModItem(GoodGenerator.ID, "yottaFluidTankCasing", 1, 0))
+                .itemOutputs(new ItemStack(Loaders.yottaFluidTankCasing, 1, 0))
                 .duration(24 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Industrial Autoclave

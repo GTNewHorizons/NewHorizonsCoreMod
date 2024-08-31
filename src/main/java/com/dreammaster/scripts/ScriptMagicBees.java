@@ -21,6 +21,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import goodgenerator.loader.Loaders;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -1132,10 +1133,10 @@ public class ScriptMagicBees implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
                         getModItem(MagicBees.ID, "pollen", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
+                        new ItemStack(Loaders.essentiaCell, 1, 0),
+                        new ItemStack(Loaders.essentiaCell, 1, 0),
+                        new ItemStack(Loaders.essentiaCell, 1, 0),
+                        new ItemStack(Loaders.essentiaCell, 1, 0),
                         getModItem(MagicBees.ID, "pollen", 1, 1, missing) });
         TCHelper.refreshResearchPages("MB_VisAuraProvider");
         TCHelper.refreshResearchPages("MB_EssenceLife");
