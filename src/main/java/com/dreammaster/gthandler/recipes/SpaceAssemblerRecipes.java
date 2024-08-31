@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static common.Blocks.tfftStorageField;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
@@ -360,7 +361,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator.get("plateDenseShirabon", 16),
                                 ItemList.Field_Generator_UXV.get(1L),
                                 new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
-                                getModItem(KekzTech.ID, "kekztech_tfftstoragefield_block", 2, 10),
+                                new ItemStack(tfftStorageField, 2, 10),
                                 new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
                                 MaterialsUEVplus.Eternity.getNanite(4) },
