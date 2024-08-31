@@ -399,7 +399,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing),
+                ItemList.BatteryHull_EV_Full.get(1),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
@@ -421,7 +421,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing),
+                ItemList.BatteryHull_EV_Full.get(1),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),

@@ -15,6 +15,8 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.common.items.CombType;
+import gregtech.loaders.misc.GT_Bees;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -110,7 +112,7 @@ public class ScriptGendustry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Gendustry.ID, "BeeReceptacle", 1, 0, missing),
                 "screwHSSS",
-                getModItem(GregTech.ID, "gt.comb", 1, 78, missing),
+                GT_Bees.combs.getStackForType(CombType.PLUTONIUM),
                 "screwHSSS",
                 CustomItemList.IridiumAlloyItemCasing.get(1L),
                 CustomItemList.OsmiumBars.get(1L),
@@ -121,7 +123,7 @@ public class ScriptGendustry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Gendustry.ID, "PowerModule", 1, 0, missing),
                 "cableGt01VanadiumGallium",
-                getModItem(GregTech.ID, "gt.comb", 1, 79, missing),
+                GT_Bees.combs.getStackForType(CombType.NAQUADAH),
                 "cableGt01VanadiumGallium",
                 CustomItemList.IridiumAlloyItemCasing.get(1L),
                 "circuitMaster",
@@ -153,9 +155,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(Gendustry.ID, "ClimateModule", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.comb", 1, 70, missing),
+                GT_Bees.combs.getStackForType(CombType.IRIDIUM),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.comb", 1, 77, missing),
+                GT_Bees.combs.getStackForType(CombType.URANIUM),
                 "stickPalladium",
                 "rotorOsmium",
                 "stickPalladium",
@@ -212,7 +214,7 @@ public class ScriptGendustry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "factory", 1, 2, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.comb", 1, 79, missing),
+                GT_Bees.combs.getStackForType(CombType.NAQUADAH),
                 'e',
                 ItemList.Robot_Arm_LuV.get(1L),
                 'f',
@@ -253,7 +255,7 @@ public class ScriptGendustry implements IScriptLoader {
                 'h',
                 getModItem(Gendustry.ID, "Sampler", 1, 0, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.comb", 1, 85, missing),
+                GT_Bees.combs.getStackForType(CombType.NEUTRONIUM),
                 'j',
                 getModItem(Gendustry.ID, "Mutatron", 1, 0, missing),
                 'k',

@@ -2087,7 +2087,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 5))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3578,14 +3578,14 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2887, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cocoa, 2),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2888, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coffee, 2),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
@@ -3788,7 +3788,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3806,7 +3806,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3825,13 +3825,13 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .itemOutputs(
                         com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
 
     }

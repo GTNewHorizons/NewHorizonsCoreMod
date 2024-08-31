@@ -3339,7 +3339,7 @@ public class RecipeRemover {
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" });
         removeRecipeShapedDelayed(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11019, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
                 new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing) },
@@ -3350,7 +3350,7 @@ public class RecipeRemover {
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing) });
         removeRecipeShapedDelayed(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11019, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
                 new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 12, missing), null, null },
                 new Object[0],
                 new Object[0]);

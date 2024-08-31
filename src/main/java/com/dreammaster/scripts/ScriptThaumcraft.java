@@ -38,11 +38,14 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.common.items.ID_MetaTool_01.BUTCHERYKNIFE;
+import static gregtech.common.items.ID_MetaTool_01.KNIFE;
 
 import java.util.Arrays;
 import java.util.List;
 
 import goodgenerator.items.MyMaterial;
+import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -4471,7 +4474,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("mortuus"), 32).add(Aspect.getAspect("telum"), 32),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metatool.01", 1, 36, missing),
+                        GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(BUTCHERYKNIFE.ID, 1, null, null, null),
                         getModItem(Minecraft.ID, "iron_sword", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                         getModItem(Minecraft.ID, "bow", 1, 0, missing),
@@ -4499,7 +4502,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "fish", 1, 2, missing),
                         getModItem(Minecraft.ID, "fish", 1, 3, missing),
                         getModItem(Minecraft.ID, "fishing_rod", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metatool.01", 1, 34, missing), });
+                        GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null), });
         TCHelper.setResearchAspects(
                 "COREFISHING",
                 new AspectList().add(Aspect.getAspect("fames"), 12).add(Aspect.getAspect("aqua"), 12)

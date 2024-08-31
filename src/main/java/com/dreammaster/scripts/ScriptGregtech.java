@@ -358,7 +358,7 @@ public class ScriptGregtech implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.02", 1, 22880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1),
                 "stickRubber",
                 "craftingToolHardHammer",
                 "stickRubber");
@@ -1605,7 +1605,7 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L)).duration(20)
                 .eut(16).addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Rubber, 2L))
-                .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.02", 1, 22880, missing)).duration(20).eut(16)
+                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1)).duration(20).eut(16)
                 .addTo(hammerRecipes);
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Apatite, 2L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Apatite, 1L)).duration(20)

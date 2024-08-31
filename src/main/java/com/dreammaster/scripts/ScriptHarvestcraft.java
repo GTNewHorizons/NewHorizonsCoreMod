@@ -19,10 +19,16 @@ import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.common.items.ID_MetaTool_01.KNIFE;
+import static gregtech.common.items.ID_MetaTool_01.MORTAR;
+import static gregtech.common.items.ID_MetaTool_01.ROLLING_PIN;
+import static gregtech.common.items.ID_MetaTool_01.SAW;
+import static gregtech.common.items.ID_MetaTool_01.SOFTMALLET;
 
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -57,11 +63,11 @@ public class ScriptHarvestcraft implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        OreDictionary.registerOre("toolMortarandpestle", getModItem(GregTech.ID, "gt.metatool.01", 1, 24, missing));
-        OreDictionary.registerOre("toolCuttingboard", getModItem(GregTech.ID, "gt.metatool.01", 1, 34, missing));
+        OreDictionary.registerOre("toolMortarandpestle", GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(MORTAR.ID, 1, null, null, null));
+        OreDictionary.registerOre("toolCuttingboard", GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null));
         OreDictionary.registerOre("toolMixingbowl", getModItem(Minecraft.ID, "bowl", 1, 0, missing));
-        OreDictionary.registerOre("toolBakeware", getModItem(GregTech.ID, "gt.metatool.01", 1, 46, missing));
-        OreDictionary.registerOre("toolJuicer", getModItem(GregTech.ID, "gt.metatool.01", 1, 14, missing));
+        OreDictionary.registerOre("toolBakeware", GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(ROLLING_PIN.ID, 1, null, null, null));
+        OreDictionary.registerOre("toolJuicer", GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SOFTMALLET.ID, 1, null, null, null));
 
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),

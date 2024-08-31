@@ -32,6 +32,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import cpw.mods.fml.common.asm.transformers.MarkerTransformer;
 import gregtech.api.GregTech_API;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -1966,7 +1967,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 500,
                 FluidRegistry.getFluidStack("aluminum.molten", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 11019, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
                 GameRegistry.findBlock("gregtech", "gt.blockmachines"),
                 1585,
                 500,
@@ -2008,7 +2009,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 false,
                 20);
         TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 9032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Iron, 1),
                 FluidRegistry.getFluidStack("iron.molten", 16),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 27, missing),
                 false,

@@ -249,7 +249,7 @@ public class ScriptWitchery implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "slab", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Witchery.ID, "snowpressureplate", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);

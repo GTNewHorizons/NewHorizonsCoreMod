@@ -7,6 +7,8 @@ import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.COIL_HEAT;
 
+import gregtech.common.items.CombType;
+import gregtech.loaders.misc.GT_Bees;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -132,7 +134,7 @@ public class DTPFRecipes implements Runnable {
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
+                                GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
                                 GT_Utility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTCC.getFluid(cosmic_neutronium_bee.getCatalystAmount(0)),
@@ -148,7 +150,7 @@ public class DTPFRecipes implements Runnable {
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
+                                GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
                                 GT_Utility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTPC.getFluid(cosmic_neutronium_bee.getCatalystAmount(1)),
@@ -164,7 +166,7 @@ public class DTPFRecipes implements Runnable {
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
+                                GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
                                 GT_Utility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTRC.getFluid(cosmic_neutronium_bee.getCatalystAmount(2)),
@@ -183,7 +185,7 @@ public class DTPFRecipes implements Runnable {
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
+                                GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
                                 GT_Utility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTEC.getFluid(cosmic_neutronium_bee.getCatalystAmount(3)),
@@ -638,7 +640,7 @@ public class DTPFRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5),
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
+                                GT_Bees.combs.getStackForType(CombType.INFINITY),
                                 GT_Utility.getIntegratedCircuit(3))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(infinity_bee.getCatalystAmount(4)))
                         .fluidOutputs(
@@ -651,7 +653,7 @@ public class DTPFRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
+                                GT_Bees.combs.getStackForType(CombType.INFINITY),
                                 GT_Utility.getIntegratedCircuit(3))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(infinity_bee.getCatalystAmount(3)))
                         .fluidOutputs(
@@ -664,7 +666,7 @@ public class DTPFRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
+                                GT_Bees.combs.getStackForType(CombType.INFINITY),
                                 GT_Utility.getIntegratedCircuit(2))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2)))
                         .fluidOutputs(
@@ -677,7 +679,7 @@ public class DTPFRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
+                                GT_Bees.combs.getStackForType(CombType.INFINITY),
                                 GT_Utility.getIntegratedCircuit(3))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2) / 64))
                         .fluidOutputs(

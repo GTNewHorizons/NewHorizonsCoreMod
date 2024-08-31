@@ -297,7 +297,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'i',
                 ItemList.Electric_Motor_EV.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing));
+                ItemList.BatteryHull_EV_Full.get(1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 9, missing),
                 "---------",
@@ -328,7 +328,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'i',
                 ItemList.Electric_Motor_IV.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32545, missing));
+                ItemList.BatteryHull_IV_Full.get(1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 10, missing),
                 "---------",
@@ -359,7 +359,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'i',
                 ItemList.Electric_Motor_LuV.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32550, missing));
+                ItemList.BatteryHull_LuV_Full.get(1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 11, missing),
                 "---------",
@@ -390,7 +390,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'i',
                 ItemList.Electric_Motor_ZPM.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32555, missing));
+                ItemList.BatteryHull_ZPM_Full.get(1));
 
     }
 }

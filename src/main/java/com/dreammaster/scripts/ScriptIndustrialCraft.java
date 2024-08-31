@@ -1334,7 +1334,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .eut(30).addTo(alloySmelterRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 6, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 6),
                         CustomItemList.MoldBoots.get(0L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(30).addTo(alloySmelterRecipes);
@@ -1450,7 +1450,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemBoat", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(20).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1545,42 +1545,42 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 5),
                         CustomItemList.ReinforcedGlassLense.get(2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(25 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 5),
                         CustomItemList.ReinforcedGlassLense.get(2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatHelmet", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(25 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 8),
                         getModItem(Minecraft.ID, "wool", 4, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(25 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 8, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 8),
                         getModItem(Minecraft.ID, "wool", 4, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatChestplate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(25 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 7, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 7),
                         getModItem(Minecraft.ID, "carpet", 4, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("glue", 144)).duration(25 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 7, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 7),
                         getModItem(Minecraft.ID, "carpet", 4, 1, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorHazmatLeggings", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 144)).duration(25 * SECONDS).eut(30)

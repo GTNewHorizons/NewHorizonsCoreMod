@@ -2134,17 +2134,17 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("ignis"), 16),
                 getModItem(ElectroMagicTools.ID, "TaintedMjolnir", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1), });
         TCHelper.addResearchPage(
                 "Mjolnirnew",
                 new ResearchPage(

@@ -22,6 +22,7 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 
+import gregtech.api.GregTech_API;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -170,7 +171,7 @@ public class ChemicalBathRecipes implements Runnable {
 
         // Laser Resistant Plate
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockAlloy", 1))
-                .itemOutputs(getModItem(GregTech.ID, "gt.laserplate", 1, 0))
+                .itemOutputs(new ItemStack(GregTech_API.sLaserRender))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.hastelloyx", 1152)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(chemicalBathRecipes);
 

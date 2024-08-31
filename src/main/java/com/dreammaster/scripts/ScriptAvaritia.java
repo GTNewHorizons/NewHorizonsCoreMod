@@ -887,7 +887,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 .duration(3 * MINUTES + 20 * SECONDS).eut(524000).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11397, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Infinity, 1),
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L))
                 .duration(3 * MINUTES + 20 * SECONDS).eut(524000).addTo(extruderRecipes);
@@ -897,7 +897,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 .duration(2 * MINUTES + 30 * SECONDS).eut(524000).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11982, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.CosmicNeutronium, 1),
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L))
                 .duration(2 * MINUTES + 30 * SECONDS).eut(524000).addTo(extruderRecipes);

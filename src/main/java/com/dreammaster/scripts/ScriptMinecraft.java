@@ -1709,7 +1709,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(ItemList.Plank_Oak.get(2L), getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                .itemInputs(ItemList.Plank_Oak.get(2L), GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1721,7 +1721,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -5111,7 +5111,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "plateWood",
                 "plateWood");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 9, 9032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Iron, 9),
                 "craftingToolSaw",
                 "ingotIron",
                 null,

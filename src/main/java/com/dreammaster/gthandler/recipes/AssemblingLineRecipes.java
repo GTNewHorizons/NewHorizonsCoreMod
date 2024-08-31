@@ -961,7 +961,7 @@ public class AssemblingLineRecipes implements Runnable {
         // Electromagnets
         {
             // Steel Electromagnet
-            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32345))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Electromagnet_Iron.get(1))
                     .metadata(RESEARCH_TIME, 60 * SECONDS)
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NickelZincFerrite, 32L),
@@ -969,7 +969,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.LuV_Coil.get(16L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 32L),
                             ItemList.Field_Generator_LuV.get(2))
-                    .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32346))
+                    .itemOutputs(ItemList.Electromagnet_Steel.get(1))
                     .fluidInputs(
                             new FluidStack(FluidRegistry.getFluid("ic2coolant"), 8000),
                             Materials.Cobalt.getMolten(2304),
@@ -977,7 +977,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .duration(60 * SECONDS).eut((int) TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
             // Neodymium Electromagnet
-            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32346))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Electromagnet_Steel.get(1))
                     .metadata(RESEARCH_TIME, 60 * SECONDS)
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 32L),
@@ -985,7 +985,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.ZPM_Coil.get(16L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorZPM, 32L),
                             ItemList.Field_Generator_ZPM.get(2))
-                    .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32347))
+                    .itemOutputs(ItemList.Electromagnet_Neodymium.get(1))
                     .fluidInputs(
                             new FluidStack(FluidRegistry.getFluid("ic2coolant"), 16000),
                             Materials.Cobalt.getMolten(4608),
@@ -993,7 +993,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
 
             // Samarium Electromagnet
-            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32347))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Electromagnet_Neodymium.get(1))
                     .metadata(RESEARCH_TIME, 60 * SECONDS)
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
@@ -1001,7 +1001,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.UV_Coil.get(32L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUV, 64L),
                             ItemList.Field_Generator_UV.get(2))
-                    .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32348))
+                    .itemOutputs(ItemList.Electromagnet_Samarium.get(1))
                     .fluidInputs(
                             new FluidStack(FluidRegistry.getFluid("supercoolant"), 32000),
                             Materials.Cobalt.getMolten(6912),
@@ -1009,7 +1009,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_UV).addTo(AssemblyLine);
 
             // Tengam Electromagnet
-            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(GregTech.ID, "gt.metaitem.01", 1, 32348))
+            GT_Values.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Electromagnet_Samarium.get(1))
                     .metadata(RESEARCH_TIME, 60 * SECONDS)
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.CosmicNeutronium, 32L),
@@ -1017,7 +1017,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.UHV_Coil.get(32L),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUHV, 64L),
                             ItemList.Field_Generator_UHV.get(2))
-                    .itemOutputs(getModItem(GregTech.ID, "gt.metaitem.01", 1, 32349))
+                    .itemOutputs(ItemList.Electromagnet_Tengam.get(1))
                     .fluidInputs(
                             new FluidStack(FluidRegistry.getFluid("supercoolant"), 64000),
                             Materials.Cobalt.getMolten(9216),

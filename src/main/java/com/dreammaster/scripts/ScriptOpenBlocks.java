@@ -390,13 +390,13 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18307, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -412,13 +412,13 @@ public class ScriptOpenBlocks implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18307, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
