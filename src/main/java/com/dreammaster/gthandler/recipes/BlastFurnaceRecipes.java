@@ -1029,7 +1029,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(12))
                 .itemOutputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingotHot, Materials.Titanium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesiumchloride, 6L))
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Magnesiumchloride, 5L))
                 .fluidInputs(Materials.Titaniumtetrachloride.getFluid(1000L)).duration(40 * SECONDS)
                 .eut(TierEU.RECIPE_HV).metadata(COIL_HEAT, 2140).addTo(blastFurnaceRecipes);
 
