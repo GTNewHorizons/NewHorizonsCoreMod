@@ -13,7 +13,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GoodGenerator;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
@@ -43,6 +42,7 @@ import com.dreammaster.recipes.Recipe;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
+import goodgenerator.items.MyMaterial;
 import gregtech.api.enums.Dyes;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -692,6 +692,37 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Casing_Laser.get(1),
                 bits,
                 new Object[] { "PhP", "PFP", "PwP", 'P', STELLITE.getPlate(1), 'F', NITINOL_60.getFrameBox(1) });
+
+        // Dissection Apparatus
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Machine_Multi_IndustrialExtractor.get(1),
+                bits,
+                new Object[] { "CFC", "EAE", "CBC", 'A', ItemList.Machine_HV_Extractor, 'F', ItemList.Robot_Arm_HV, 'C',
+                        OrePrefixes.plate.get(Materials.StainlessSteel), 'E', OrePrefixes.circuit.get(Materials.EV),
+                        'B', ItemList.Electric_Piston_HV });
+
+        // Large Electric Compressor
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Machine_Multi_IndustrialCompressor.get(1),
+                bits,
+                new Object[] { "BCB", "EAE", "CCC", 'A', ItemList.Machine_EV_Compressor, 'C',
+                        MyMaterial.incoloy903.get(OrePrefixes.plate), 'E', OrePrefixes.circuit.get(Materials.IV), 'B',
+                        ItemList.Electric_Piston_EV });
+
+        // Electric Compressor Casing
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Compressor_Casing.get(1),
+                bits,
+                new Object[] { "PhP", "PFP", "PwP", 'P', MyMaterial.incoloy903.get(OrePrefixes.plate), 'F',
+                        MyMaterial.incoloy903.get(OrePrefixes.block) });
+
+        // Compression Pipe Casing
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Compressor_Pipe_Casing.get(1),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P', MyMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
+                        MyMaterial.incoloy903.get(OrePrefixes.pipeMedium), 'F',
+                        MyMaterial.incoloy903.get(OrePrefixes.gearGt) });
 
         // Industrial Precision Lathe
         GT_ModHandler.addCraftingRecipe(

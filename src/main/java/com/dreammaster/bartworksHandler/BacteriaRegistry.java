@@ -34,7 +34,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.bartimaeusnek.bartworks.common.loaders.BioItemList;
 import com.github.bartimaeusnek.bartworks.util.BioCulture;
 import com.github.bartimaeusnek.bartworks.util.BioDNA;
@@ -186,7 +185,7 @@ public class BacteriaRegistry {
 
     private void runAdditionalFuelRecipes() {
         // XenoxRecycleRecipe
-        GT_Values.RA.stdBuilder().itemOutputs(Ash.getDust(1)).fluidInputs(DelutedXenoxene.getFluid(1000))
+        GT_Values.RA.stdBuilder().itemOutputs(Ash.getDust(1)).fluidInputs(Materials.DilutedXenoxene.getFluid(1000))
                 .fluidOutputs(Xenoxene.getFluid(250), RadoxLight.getGas(300)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(distillationTowerRecipes);
 
@@ -214,10 +213,11 @@ public class BacteriaRegistry {
                 .itemInputs(
                         GT_ModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 64L),
                         GT_Utility.getIntegratedCircuit(24))
-                .itemOutputs(Ash.getDust(8)).fluidInputs(Xenoxene.getFluid(1000)).fluidOutputs(RawRadox.getFluid(1000))
-                .duration(3 * MINUTES).eut(TierEU.RECIPE_UV).addTo(pyrolyseRecipes);
+                .itemOutputs(Ash.getDust(8)).fluidInputs(Materials.Xenoxene.getFluid(1000))
+                .fluidOutputs(Materials.RawRadox.getFluid(1000)).duration(3 * MINUTES).eut(TierEU.RECIPE_UV)
+                .addTo(pyrolyseRecipes);
 
-        GT_Values.RA.stdBuilder().itemOutputs(Ash.getDust(5)).fluidInputs(RawRadox.getFluid(5000))
+        GT_Values.RA.stdBuilder().itemOutputs(Ash.getDust(5)).fluidInputs(Materials.RawRadox.getFluid(5000))
                 .fluidOutputs(
                         OilHeavy.getFluid(600),
                         Oil.getFluid(300),
@@ -227,7 +227,7 @@ public class BacteriaRegistry {
                         FermentedBiomass.getFluid(50),
                         RadoxSuperHeavy.getFluid(100),
                         RadoxHeavy.getFluid(150),
-                        DelutedXenoxene.getFluid(50),
+                        DilutedXenoxene.getFluid(50),
                         RadoxLight.getGas(300),
                         RadoxSuperLight.getGas(500))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(distillationTowerRecipes);
@@ -255,8 +255,8 @@ public class BacteriaRegistry {
 
         GT_Values.RA.stdBuilder().itemInputs(GT_Utility.getIntegratedCircuit(2))
                 .fluidInputs(RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L))
-                .fluidOutputs(GT_CoreModSupport.RadoxPolymer.getMolten(720L)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(multiblockChemicalReactorRecipes);
+                .fluidOutputs(Materials.RadoxPolymer.getMolten(720L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
+                .addTo(multiblockChemicalReactorRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.cell, RadoxPolymer, 1L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.cellMolten, RadoxPolymer, 1L)).duration(30 * SECONDS)
