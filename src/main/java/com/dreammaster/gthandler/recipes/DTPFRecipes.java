@@ -14,7 +14,6 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.DTPFCalculator;
-import com.dreammaster.gthandler.GT_CoreModSupport;
 
 import goodgenerator.items.MyMaterial;
 import goodgenerator.util.ItemRefer;
@@ -1124,7 +1123,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_1_quantity = 144L * base_quantity;
 
                 GT_Values.RA.stdBuilder().fluidInputs(
-                        GT_CoreModSupport.RadoxPolymer.getMolten(4L * tier_1_quantity / 25),
+                        Materials.RadoxPolymer.getMolten(4L * tier_1_quantity / 25),
                         MaterialsUEVplus.TranscendentMetal.getMolten(10L * tier_1_quantity / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_1_quantity * 6 / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_1_quantity * 5 / 25),
@@ -1139,7 +1138,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
 
                 GT_Values.RA.stdBuilder().fluidInputs(
-                        GT_CoreModSupport.RadoxPolymer.getMolten(4L * tier_2_quantity / 25),
+                        Materials.RadoxPolymer.getMolten(4L * tier_2_quantity / 25),
                         MaterialsUEVplus.TranscendentMetal.getMolten(10L * tier_2_quantity / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_2_quantity * 6 / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_2_quantity * 5 / 25),
@@ -1154,7 +1153,7 @@ public class DTPFRecipes implements Runnable {
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
 
                 GT_Values.RA.stdBuilder().fluidInputs(
-                        GT_CoreModSupport.RadoxPolymer.getMolten(4L * tier_3_quantity / 25),
+                        Materials.RadoxPolymer.getMolten(4L * tier_3_quantity / 25),
                         MaterialsUEVplus.TranscendentMetal.getMolten(10L * tier_3_quantity / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_3_quantity * 6 / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), (int) tier_3_quantity * 5 / 25),

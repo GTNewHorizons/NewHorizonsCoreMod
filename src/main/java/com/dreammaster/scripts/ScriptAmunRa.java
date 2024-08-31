@@ -37,7 +37,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.github.technus.tectech.recipe.TT_recipeAdder;
 
 import cpw.mods.fml.common.Optional;
@@ -507,7 +506,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         MaterialsKevlar.Kevlar.getPlates(7),
                         MaterialsKevlar.Kevlar.getPlates(7),
                         new Object[] { OrePrefixes.screw.get(Materials.Neutronium), 12 })
-                .fluidInputs(GT_CoreModSupport.RadoxPolymer.getMolten(4 * INGOTS))
+                .fluidInputs(Materials.RadoxPolymer.getMolten(4 * INGOTS))
                 .itemOutputs(com.dreammaster.item.ItemList.HeavyDutyAlloyIngotT9.getIS())
                 .metadata(GT_RecipeConstants.RESEARCH_ITEM, com.dreammaster.item.ItemList.HeavyDutyPlateTier8.getIS())
                 .metadata(GT_RecipeConstants.RESEARCH_TIME, 750 * SECONDS).duration(15 * SECONDS).eut(8000000)
