@@ -47,6 +47,7 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.GregTech_API;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -165,12 +166,12 @@ public class ScriptProjectRed implements IScriptLoader {
                 FluidRegistry.getFluidStack("redstone.molten", 576),
                 FluidRegistry.getFluidStack("copper.molten", 144));
         ChiselHelper.addVariationFromStack("ruby", getModItem(BiomesOPlenty.ID, "gemOre", 1, 3, missing));
-        ChiselHelper.addVariationFromStack("ruby", getModItem(GregTech.ID, "gt.blockgem2", 1, 11, missing));
+        ChiselHelper.addVariationFromStack("ruby", new ItemStack(GregTech_API.sBlockGem2, 1, 11));
         ChiselHelper.addVariationFromStack(
                 "ruby",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 5, missing));
         ChiselHelper.addVariationFromStack("sapphire", getModItem(BiomesOPlenty.ID, "gemOre", 1, 13, missing));
-        ChiselHelper.addVariationFromStack("sapphire", getModItem(GregTech.ID, "gt.blockgem2", 1, 12, missing));
+        ChiselHelper.addVariationFromStack("sapphire", new ItemStack(GregTech_API.sBlockGem2, 1, 12));
         ChiselHelper.addVariationFromStack(
                 "sapphire",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 6, missing));

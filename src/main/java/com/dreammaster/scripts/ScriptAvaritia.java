@@ -839,7 +839,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'j',
                 "plateNeutronium",
                 'k',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 10812, missing));
+                ItemList.CompressorUV.get(1));
 
         CompressorManager.addRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),

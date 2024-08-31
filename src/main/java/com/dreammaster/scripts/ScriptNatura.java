@@ -3164,7 +3164,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3176,7 +3176,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.sakura", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3188,7 +3188,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.ghostwood", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3200,7 +3200,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.redwood", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3212,7 +3212,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.bloodwood", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3224,7 +3224,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.hopseed", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3236,7 +3236,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.maple", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3248,7 +3248,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.silverbell", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3260,7 +3260,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.amaranth", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3272,7 +3272,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.tiger", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3284,7 +3284,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.willow", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3296,7 +3296,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.darkwood", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3308,7 +3308,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.fusewood", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3321,7 +3321,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);

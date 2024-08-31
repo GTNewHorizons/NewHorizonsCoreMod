@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.GregTech_API.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
@@ -37,6 +38,8 @@ import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.GregTech_API;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -231,7 +234,7 @@ public class ScriptGregtech implements IScriptLoader {
                 null);
         addShapedRecipe(
                 GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L),
-                getModItem(GregTech.ID, "gt.blockores", 1, 817, missing),
+                new ItemStack(sBlockOres1, 1, 817),
                 null,
                 null,
                 "craftingToolMortar",
@@ -515,111 +518,111 @@ public class ScriptGregtech implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1L),
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockstones", 1, 2, missing),
+                new ItemStack(GregTech_API.sBlockStones, 1, 2),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockstones", 1, 1, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
-        addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockstones", 1, 5, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockstones", 1, 3, missing),
+                new ItemStack(GregTech_API.sBlockStones, 1, 1),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockconcretes", 1, 10, missing),
+                new ItemStack(GregTech_API.sBlockStones, 1, 5),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockconcretes", 1, 9, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
-        addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockconcretes", 1, 13, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockconcretes", 1, 11, missing),
+                new ItemStack(GregTech_API.sBlockStones, 1, 3),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockstones", 1, 10, missing),
+                new ItemStack(GregTech_API.sBlockConcretes, 1, 10),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockstones", 1, 9, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
-        addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockstones", 1, 13, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockstones", 1, 11, missing),
+                new ItemStack(GregTech_API.sBlockConcretes, 1, 9),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockgranites", 1, 2, missing),
+                new ItemStack(GregTech_API.sBlockConcretes, 1, 13),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockgranites", 1, 1, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
-        addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockgranites", 1, 5, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockgranites", 1, 3, missing),
+                new ItemStack(GregTech_API.sBlockConcretes, 1, 11),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockgranites", 1, 10, missing),
+                new ItemStack(GregTech_API.sBlockStones, 1, 10),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockgranites", 1, 9, missing),
+                new ItemStack(GregTech_API.sBlockStones, 1, 9),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.blockgranites", 1, 13, missing),
+                new ItemStack(GregTech_API.sBlockStones, 1, 13),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockgranites", 1, 11, missing),
+                new ItemStack(GregTech_API.sBlockStones, 1, 11),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
+        addShapedRecipe(
+                new ItemStack(GregTech_API.sBlockGranites, 1, 2),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                new ItemStack(GregTech_API.sBlockGranites, 1, 1),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
+        addShapedRecipe(
+                new ItemStack(GregTech_API.sBlockGranites, 1, 5),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                new ItemStack(GregTech_API.sBlockGranites, 1, 3),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
+        addShapedRecipe(
+                new ItemStack(GregTech_API.sBlockGranites, 1, 10),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                new ItemStack(GregTech_API.sBlockGranites, 1, 9),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
+        addShapedRecipe(
+                new ItemStack(GregTech_API.sBlockGranites, 1, 13),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
+                new ItemStack(GregTech_API.sBlockGranites, 1, 11),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),

@@ -32,6 +32,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.GregTech_API;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -1893,14 +1894,14 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 4, missing));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "Smeltery", 1, 5, missing));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10, missing));
-        TConstructHelper.removeMeltingRecipe(getModItem(GregTech.ID, "gt.blockores", 1, 33, missing));
+        TConstructHelper.removeMeltingRecipe(new ItemStack(GregTech_API.sBlockOres1, 1, 33));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 1, missing));
         TConstructHelper.removeMeltingRecipe(getModItem(GalaxySpace.ID, "phobosblocks", 1, 4, missing));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "GravelOre", 1, 5, missing));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 39, missing));
         TConstructHelper.removeMeltingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cobalt, 1L));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 2, missing));
-        TConstructHelper.removeMeltingRecipe(getModItem(GregTech.ID, "gt.blockores", 1, 382, missing));
+        TConstructHelper.removeMeltingRecipe(new ItemStack(GregTech_API.sBlockOres1, 1, 382));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 38, missing));
         TConstructHelper.removeMeltingRecipe(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ardite, 1L));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 29, missing));
@@ -1937,7 +1938,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "materials", 1, 3, missing));
         TConstructHelper.removeMeltingRecipe(GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 1L));
         TConstructHelper.removeMeltingRecipe(getModItem(GalaxySpace.ID, "item.Ingots", 1, 1, missing));
-        TConstructHelper.removeMeltingRecipe(getModItem(GregTech.ID, "gt.blockmetal2", 1, 5, missing));
+        TConstructHelper.removeMeltingRecipe(new ItemStack(GregTech_API.sBlockMetal2, 1, 5));
         TConstructHelper.removeBasinRecipe(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 0, missing));
         TConstructHelper.removeBasinRecipe(getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0, missing));
         TConstructHelper.removeMeltingRecipe(getModItem(Minecraft.ID, "sand", 1, 0, missing));
@@ -2223,7 +2224,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 500,
                 FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 32, missing),
+                new ItemStack(GregTech_API.sBlockOres1, 1, 32),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
                 700,
@@ -2421,7 +2422,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 700,
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 28706, missing),
+                new ItemStack(GregTech_API.sBlockOres1, 1, 28706),
                 GameRegistry.findBlock("minecraft", "iron_ore"),
                 0,
                 700,
@@ -2475,7 +2476,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 700,
                 FluidRegistry.getFluidStack("iron.molten", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 35, missing),
+                new ItemStack(GregTech_API.sBlockOres1, 1, 35),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 3,
                 600,
@@ -2511,7 +2512,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 600,
                 FluidRegistry.getFluidStack("copper.molten", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 871, missing),
+                new ItemStack(GregTech_API.sBlockOres1, 1, 871),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 3,
                 600,
@@ -2619,7 +2620,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 600,
                 FluidRegistry.getFluidStack("copper.molten", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 57, missing),
+                new ItemStack(GregTech_API.sBlockOres1, 1, 57),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 4,
                 400,
@@ -2727,7 +2728,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 600,
                 FluidRegistry.getFluidStack("tin.molten", 288));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 86, missing),
+                new ItemStack(GregTech_API.sBlockOres1, 1, 86),
                 GameRegistry.findBlock("minecraft", "gold_ore"),
                 0,
                 600,
@@ -2763,7 +2764,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 600,
                 FluidRegistry.getFluidStack("gold.molten", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 19, missing),
+                new ItemStack(GregTech_API.sBlockOres1, 1, 19),
                 GameRegistry.findBlock("TConstruct", "SearedBrick"),
                 5,
                 400,
@@ -2907,7 +2908,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 800,
                 FluidRegistry.getFluidStack("platinum.molten", 144));
         Smeltery.addMelting(
-                getModItem(GregTech.ID, "gt.blockores", 1, 501, missing),
+                new ItemStack(GregTech_API.sBlockOres1, 1, 501),
                 GameRegistry.findBlock("minecraft", "emerald_ore"),
                 0,
                 800,

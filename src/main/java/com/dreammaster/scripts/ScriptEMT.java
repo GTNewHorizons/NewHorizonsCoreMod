@@ -3055,7 +3055,7 @@ public class ScriptEMT implements IScriptLoader {
                 -2,
                 6,
                 1,
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13001, missing)).setParents("WANDPED", "WARDEDARCANA")
+                ItemList.ResearchCompleter.get(1)).setParents("WANDPED", "WARDEDARCANA")
                         .setRound().setPages(new ResearchPage("tc.research_page.ResearchCompleter"))
                         .registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
@@ -3089,7 +3089,7 @@ public class ScriptEMT implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Casing_Magical.get(1L))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ResearchCompleter",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13001, missing),
+                ItemList.ResearchCompleter.get(1),
                 new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50)
                         .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
@@ -3117,6 +3117,6 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ResearchCompleter",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(GregTech.ID, "gt.blockmachines", 1, 13001, missing))));
+                        TCHelper.findArcaneRecipe(ItemList.ResearchCompleter.get(1))));
     }
 }

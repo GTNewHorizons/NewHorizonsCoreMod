@@ -136,7 +136,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'k',
                 new ItemStack(TT_Container_Casings.StabilisationFieldGenerators, 1, 8),
                 'l',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15410, missing),
+                com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1),
                 'm',
                 getModItem(SGCraft.ID, "stargateRing", 1, 0, missing),
                 'n',
