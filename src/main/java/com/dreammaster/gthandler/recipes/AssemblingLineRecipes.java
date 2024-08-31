@@ -544,7 +544,6 @@ public class AssemblingLineRecipes implements Runnable {
                         (int) TierEU.RECIPE_UIV);
             }
 
-            if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 
         if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 

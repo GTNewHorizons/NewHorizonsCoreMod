@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
 import static gregtech.api.enums.GT_Values.W;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
