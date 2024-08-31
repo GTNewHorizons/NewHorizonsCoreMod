@@ -115,8 +115,6 @@ public class ExtruderRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.StainlessSteel, 1L))
                 .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
-
-
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 9L),
@@ -149,15 +147,15 @@ public class ExtruderRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 9L),
                         GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32040))
-                .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
+                .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(extruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.block, Materials.Steel, 1L),
                         GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32040))
-                .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS)
-                .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
+                .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(extruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(

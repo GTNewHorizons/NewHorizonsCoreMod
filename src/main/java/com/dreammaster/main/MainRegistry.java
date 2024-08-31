@@ -2,7 +2,6 @@ package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DetravScannerMod;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -12,20 +11,18 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
-import static gregtech.api.util.GT_RecipeBuilder.BUCKETS;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static net.minecraftforge.fluids.FluidContainerRegistry.BUCKET_VOLUME;
 
 import java.io.File;
 import java.util.Random;
 
-import com.dreammaster.item.ItemBucketList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
@@ -55,6 +52,7 @@ import com.dreammaster.gthandler.GT_Loader_CasingNH;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.item.CustomPatterns;
+import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.WoodenBrickForm;
 import com.dreammaster.lib.Refstrings;
@@ -108,9 +106,6 @@ import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GT_LanguageManager;
 import gregtech.common.items.GT_MetaGenerated_Item_01;
-import net.minecraftforge.fluids.FluidContainerRegistry;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -279,12 +274,26 @@ public class MainRegistry {
             Logger.warn("Some fluids failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Fluids] Some fluids failed to register. Check the logfile for details");
         }
-        ItemBucketList.SodiumPotassium.set(FluidContainerRegistry.fillFluidContainer(FluidList.SodiumPotassium.getFluidStack(), new ItemStack(Items.bucket)));
-        ItemBucketList.NitricAcid.set(FluidContainerRegistry.fillFluidContainer(FluidList.NitricAcid.getFluidStack(), new ItemStack(Items.bucket)));
-        ItemBucketList.RadioactiveBacterialSludge.set(FluidContainerRegistry.fillFluidContainer(FluidList.EnrichedBacterialSludge.getFluidStack(), new ItemStack(Items.bucket)));
-        ItemBucketList.FermentedBacterialSludge.set(FluidContainerRegistry.fillFluidContainer(FluidList.FermentedBacterialSludge.getFluidStack(), new ItemStack(Items.bucket)));
-        ItemBucketList.Concrete.set(FluidContainerRegistry.fillFluidContainer(FluidList.Concrete.getFluidStack(), new ItemStack(Items.bucket)));
-        ItemBucketList.Pollution.set(FluidContainerRegistry.fillFluidContainer(FluidList.Pollution.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.SodiumPotassium.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.SodiumPotassium.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.NitricAcid.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.NitricAcid.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.RadioactiveBacterialSludge.set(
+                FluidContainerRegistry.fillFluidContainer(
+                        FluidList.EnrichedBacterialSludge.getFluidStack(),
+                        new ItemStack(Items.bucket)));
+        ItemBucketList.FermentedBacterialSludge.set(
+                FluidContainerRegistry.fillFluidContainer(
+                        FluidList.FermentedBacterialSludge.getFluidStack(),
+                        new ItemStack(Items.bucket)));
+        ItemBucketList.Concrete.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.Concrete.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.Pollution.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.Pollution.getFluidStack(), new ItemStack(Items.bucket)));
         // ------------------------------------------------------------
 
         // register final list with valid items to forge
@@ -307,9 +316,7 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
 
-
         BacteriaRegistry = new BacteriaRegistry();
-
 
         Logger.debug("LOAD abandoned GT++ Aspects");
         if (Thaumcraft.isModLoaded()) {
@@ -378,7 +385,6 @@ public class MainRegistry {
         }
 
         CoreMod_PCBFactory_MaterialLoader.init();
-
 
         BWGlassAdder.registerGlasses();
 
@@ -479,18 +485,14 @@ public class MainRegistry {
         BacteriaRegistry.runAllPostinit();
 
         Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
-        GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                Materials.Platinum,
-                WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
-        GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                Materials.Osmium,
-                WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+        GT_MetaGenerated_Item_01
+                .registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
+        GT_MetaGenerated_Item_01
+                .registerCauldronCleaningFor(Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
         GT_MetaGenerated_Item_01
                 .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
-        GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                Materials.Palladium,
-                WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
-
+        GT_MetaGenerated_Item_01
+                .registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 

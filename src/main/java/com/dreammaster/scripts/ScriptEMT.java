@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -3055,9 +3054,8 @@ public class ScriptEMT implements IScriptLoader {
                 -2,
                 6,
                 1,
-                ItemList.ResearchCompleter.get(1)).setParents("WANDPED", "WARDEDARCANA")
-                        .setRound().setPages(new ResearchPage("tc.research_page.ResearchCompleter"))
-                        .registerResearchItem();
+                ItemList.ResearchCompleter.get(1)).setParents("WANDPED", "WARDEDARCANA").setRound()
+                        .setPages(new ResearchPage("tc.research_page.ResearchCompleter")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ResearchCompleter",
                 ItemList.Casing_Magical.get(1L),
@@ -3116,7 +3114,6 @@ public class ScriptEMT implements IScriptLoader {
                 "circuitGood");
         TCHelper.addResearchPage(
                 "ResearchCompleter",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(ItemList.ResearchCompleter.get(1))));
+                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.ResearchCompleter.get(1))));
     }
 }

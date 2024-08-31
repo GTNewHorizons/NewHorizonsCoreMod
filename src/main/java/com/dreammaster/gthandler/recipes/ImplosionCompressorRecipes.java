@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -231,7 +230,6 @@ public class ImplosionCompressorRecipes implements Runnable {
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }
-
 
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.HeavyDutyAlloyIngotT5.get(1L))
                 .itemOutputs(

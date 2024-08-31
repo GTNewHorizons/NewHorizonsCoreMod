@@ -1,7 +1,5 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;

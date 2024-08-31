@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
@@ -624,10 +623,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapelessRecipe(
-                com.dreammaster.item.ItemList.EdibleSalt.getIS(1),
-                "toolPot",
-                "listAllwater");
+        addShapelessRecipe(com.dreammaster.item.ItemList.EdibleSalt.getIS(1), "toolPot", "listAllwater");
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing),
                 "craftingToolHardHammer",

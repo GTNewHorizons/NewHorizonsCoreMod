@@ -133,13 +133,10 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 OrePrefixes.plate,
                 Materials.Manyullyn,
                 com.dreammaster.item.ItemList.ManyullynPlate.getIS(1));
-        GT_OreDictUnificator.registerOre(
-                OrePrefixes.plate,
-                Materials.Ardite,
-                com.dreammaster.item.ItemList.ArditePlate.getIS(1));
-        GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Alumite, ItemList.AlumiteDust.getIS());
         GT_OreDictUnificator
-                .registerOre("dustQuartzSand", com.dreammaster.item.ItemList.SandDust.getIS(1));
+                .registerOre(OrePrefixes.plate, Materials.Ardite, com.dreammaster.item.ItemList.ArditePlate.getIS(1));
+        GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Alumite, ItemList.AlumiteDust.getIS());
+        GT_OreDictUnificator.registerOre("dustQuartzSand", com.dreammaster.item.ItemList.SandDust.getIS(1));
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.dust,
                 Materials.CertusQuartzCharged,
@@ -160,21 +157,12 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
                 OrePrefixes.gem,
                 Materials.CertusQuartzCharged,
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1));
-        GT_OreDictUnificator.registerOre(
-                "dustCokeOvenBrick",
-                com.dreammaster.item.ItemList.CokeOvenBrickDust.getIS(1));
-        GT_OreDictUnificator.registerOre(
-                "ingotCokeOvenBrick",
-                com.dreammaster.item.ItemList.CokeOvenBrick.getIS(1));
-        GT_OreDictUnificator.registerOre(
-                "leather",
-                com.dreammaster.item.ItemList.ArtificialLeather.getIS(1));
-        GT_OreDictUnificator.registerOre(
-                "itemLeather",
-                com.dreammaster.item.ItemList.ArtificialLeather.getIS(1));
-        GT_OreDictUnificator.registerOre(
-                "dustPotassiumHydroxide",
-                com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(1));
+        GT_OreDictUnificator.registerOre("dustCokeOvenBrick", com.dreammaster.item.ItemList.CokeOvenBrickDust.getIS(1));
+        GT_OreDictUnificator.registerOre("ingotCokeOvenBrick", com.dreammaster.item.ItemList.CokeOvenBrick.getIS(1));
+        GT_OreDictUnificator.registerOre("leather", com.dreammaster.item.ItemList.ArtificialLeather.getIS(1));
+        GT_OreDictUnificator.registerOre("itemLeather", com.dreammaster.item.ItemList.ArtificialLeather.getIS(1));
+        GT_OreDictUnificator
+                .registerOre("dustPotassiumHydroxide", com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(1));
 
         GT_OreDictUnificator.registerOre(OrePrefixes.stickLong, Materials.Obsidian, ItemList.LongObsidianRod.getIS());
 

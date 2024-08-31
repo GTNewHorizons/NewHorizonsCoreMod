@@ -3,7 +3,6 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.DraconicEvolution;
@@ -1019,7 +1018,6 @@ public class MixerRecipes implements Runnable {
 
         }
 
-
         // UMV Superconductor dust recipe.
 
         GT_Values.RA.stdBuilder()
@@ -1033,8 +1031,6 @@ public class MixerRecipes implements Runnable {
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUMVBase, 27L))
                 .fluidInputs(Materials.Oxygen.getPlasma(144L)).duration(10 * 20).eut(TierEU.RECIPE_UMV)
                 .addTo(mixerRecipes);
-
-
 
         if (EnderIO.isModLoaded()) {
 

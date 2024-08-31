@@ -11,7 +11,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -5105,8 +5104,7 @@ public class ScriptForestry implements IScriptLoader {
                 null,
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Forestry.ID, "thermionicTubes", 2, 6, missing),
-                new Object[] { "abc", "def", "ghi", 'b',
-                        com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'd',
+                new Object[] { "abc", "def", "ghi", 'b', com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'd',
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
                         com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'f',
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'g',

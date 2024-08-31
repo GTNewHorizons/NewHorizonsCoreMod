@@ -3,7 +3,6 @@ package com.dreammaster.witchery;
 import static com.dreammaster.witchery.WitcheryBrewRegistryAccessor.*;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.StevesCarts2;
 
 import java.util.Arrays;
