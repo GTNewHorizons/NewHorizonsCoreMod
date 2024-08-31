@@ -43,6 +43,7 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.main.NHItems;
 import net.minecraft.item.ItemStack;
@@ -566,7 +567,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 "itemLeather",
                 "itemLeather");
         addShapedRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
+                BlockList.DiamondFrameBox.getIS(),
                 "stickDiamond",
                 "stickDiamond",
                 "stickDiamond",
@@ -1064,21 +1065,21 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 6L))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.BronzePlatedReinforcedStone", 1, 0, missing))
+                .itemOutputs(BlockList.BronzePlatedReinforcedStone.getIS())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 144)).duration(10 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 6L))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.SteelPlatedReinforcedStone", 1, 0, missing))
+                .itemOutputs(BlockList.SteelPlatedReinforcedStone.getIS())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.aluminium", 144)).duration(12 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 6L))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.TitaniumPlatedReinforcedStone", 1, 0, missing))
+                .itemOutputs(BlockList.TitaniumPlatedReinforcedStone.getIS())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.platinum", 144)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1086,21 +1087,21 @@ public class ScriptCoreMod implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 6L))
                 .itemOutputs(
-                        getModItem(NewHorizonsCoreMod.ID, "tile.TungstensteelPlatedReinforcedStone", 1, 0, missing))
+                        BlockList.TungstensteelPlatedReinforcedStone.getIS())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.iridium", 144)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(64).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Naquadah, 6L))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.NaquadahPlatedReinforcedStone", 1, 0, missing))
+                .itemOutputs(BlockList.NaquadahPlatedReinforcedStone.getIS())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.osmium", 144)).duration(22 * SECONDS + 10 * TICKS)
                 .eut(256).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 6L))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.NeutroniumPlatedReinforcedStone", 1, 0, missing))
+                .itemOutputs(BlockList.NeutroniumPlatedReinforcedStone.getIS())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).duration(25 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1125,13 +1126,13 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 4L),
                         GT_Utility.getIntegratedCircuit(4))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing))
+                .itemOutputs(BlockList.DiamondFrameBox.getIS())
                 .duration(3 * SECONDS + 4 * TICKS).eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 2, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Graphite, 1L))
-                .itemOutputs(getModItem(NewHorizonsCoreMod.ID, "tile.CompressedGraphite", 2, 0, missing))
+                .itemOutputs(BlockList.CompressedGraphite.getIS(2))
                 .duration(5 * SECONDS).eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
@@ -1365,7 +1366,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(CustomItemList.IridiumAlloyItemCasing.get(2L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 64)).duration(30 * SECONDS).eut(256)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.CallistoColdIce", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(BlockList.CallistoColdIce.getIS())
                 .itemOutputs(CustomItemList.CallistoIcePlate.get(9L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(3 * MINUTES).eut(30)
                 .addTo(cutterRecipes);
@@ -1914,7 +1915,7 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.RawMytryl.getIS(1))
                 .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.Mytryl", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(BlockList.Mytryl.getIS())
                 .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(9)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.MytrylCompressedPlate.get(1L))
@@ -1950,7 +1951,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(com.dreammaster.item.ItemList.BlackPlutoniumPlate.getIS(1))
                 .itemOutputs(com.dreammaster.item.ItemList.BlackPlutoniumDust.getIS(2))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.CallistoColdIce", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(BlockList.CallistoColdIce.getIS())
                 .itemOutputs(com.dreammaster.item.ItemList.CallistoIceDust.getIS(9))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CallistoIcePlate.get(1L))
@@ -1959,7 +1960,7 @@ public class ScriptCoreMod implements IScriptLoader {
         GT_Values.RA.stdBuilder().itemInputs(CustomItemList.CallistoIceCompressedPlate.get(1L))
                 .itemOutputs(com.dreammaster.item.ItemList.CallistoIceDust.getIS(3))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(NewHorizonsCoreMod.ID, "tile.Ledox", 1, 0, missing))
+        GT_Values.RA.stdBuilder().itemInputs(BlockList.Ledox.getIS())
                 .itemOutputs(com.dreammaster.item.ItemList.LedoxDust.getIS(9)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.LedoxDensePlate.getIS(1))

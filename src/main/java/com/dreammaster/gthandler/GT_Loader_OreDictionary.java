@@ -24,6 +24,7 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -65,12 +66,12 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.Mytryl,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.Mytryl", 1L, 0));
+                BlockList.Mytryl.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.CallistoIce, ItemList.CallistoIceIngot.getIS());
         GT_OreDictUnificator.registerOre("ingotColdCallistoIce", ItemList.CallistoIceColdIngot.getIS());
         GT_OreDictUnificator.registerOre(
                 "blockCallistoIce",
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.CallistoColdIce", 1L, 0));
+                BlockList.CallistoColdIce.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.CallistoIce, ItemList.CallistoIceDust.getIS());
         GT_OreDictUnificator.registerOre("plateColdCallistoIce", ItemList.CallistoIcePlate.getIS());
         GT_OreDictUnificator
@@ -82,7 +83,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(OrePrefixes.ingot, Materials.Ledox, ItemList.LedoxIngot.getIS());
         GT_OreDictUnificator.registerOre("ingotColdLedox", ItemList.LedoxColdIngot.getIS());
         GT_OreDictUnificator
-                .registerOre("blockLedox", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.Ledox", 1L, 0));
+                .registerOre("blockLedox", BlockList.Ledox.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Ledox, ItemList.LedoxDust.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.plate, Materials.Ledox, ItemList.LedoxPlate.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.plateDense, Materials.Ledox, ItemList.LedoxDensePlate.getIS());
@@ -98,7 +99,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre("lensReinforcedGlass", ItemList.ReinforcedGlassLense.getIS());
         GT_OreDictUnificator.registerOre("plateReinforcedGlass", ItemList.ReinforcedGlassPlate.getIS());
         GT_OreDictUnificator
-                .registerOre("blockQuantium", GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.Quantinum", 1L, 0));
+                .registerOre("blockQuantium", BlockList.Quantinum.getIS());
         GT_OreDictUnificator
                 .registerOre(OrePrefixes.compressed, Materials.Quantium, ItemList.QuantinumCompressedPlate.getIS());
         GT_OreDictUnificator.registerOre(OrePrefixes.dust, Materials.Quantium, ItemList.QuantinumDust.getIS());
@@ -108,7 +109,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.MysteriousCrystal,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.MysteriousCrystal", 1L, 0));
+                BlockList.MysteriousCrystal.getIS());
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.compressed,
                 Materials.MysteriousCrystal,
@@ -128,7 +129,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.GT_Loader_
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.block,
                 Materials.BlackPlutonium,
-                GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "tile.BlackPlutonium", 1L, 0));
+                BlockList.BlackPlutonium.getIS());
         GT_OreDictUnificator.registerOre(
                 OrePrefixes.plate,
                 Materials.Manyullyn,

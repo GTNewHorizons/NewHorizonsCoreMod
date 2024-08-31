@@ -38,6 +38,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dreammaster.block.BlockList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -1866,7 +1867,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
+                BlockList.DiamondFrameBox.getIS(),
                 'f',
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
                 'g',
@@ -2864,7 +2865,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("infernus"), 24)
                         .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("superbia"), 16)
                         .add(Aspect.getAspect("terra"), 8),
-                getModItem(NewHorizonsCoreMod.ID, "tile.Mytryl", 1, 0, missing),
+                BlockList.MysteriousCrystal.getIS(),
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
@@ -4627,7 +4628,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "tile.BloodyThaumium", 1, 0, missing),
+                BlockList.BloodyThaumium.getIS(),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 4, missing),
                 2,
                 5000,
@@ -4635,7 +4636,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "tile.BloodyVoid", 1, 0, missing),
+                BlockList.BloodyVoid.getIS(),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
                 3,
                 10000,
@@ -4643,7 +4644,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "tile.BloodyIchorium", 1, 0, missing),
+                BlockList.BloodyIchorium.getIS(),
                 GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
                 5,
                 50000,
