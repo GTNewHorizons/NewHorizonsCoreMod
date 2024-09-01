@@ -6,12 +6,10 @@ import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -55,6 +53,8 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.block.ModBlocks;
+import gtPlusPlus.core.item.ModItems;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -195,37 +195,37 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 6, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                ItemList.AcceleratorHV.get(1),
                 "gearTitanium",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                ItemList.AcceleratorHV.get(1),
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
                 "gearDiamond",
                 getModItem(ExtraUtilities.ID, "nodeUpgrade", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing),
+                ItemList.AcceleratorHV.get(1),
                 "gearTitanium",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11102, missing));
+                ItemList.AcceleratorHV.get(1));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 7, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 6, missing),
                 "gearTungstenSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing),
+                ItemList.AcceleratorEV.get(1),
                 "gearTungstenSteel",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11103, missing));
+                ItemList.AcceleratorEV.get(1));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 8, missing),
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                ItemList.AcceleratorIV.get(1),
                 "gearChrome",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                ItemList.AcceleratorIV.get(1),
                 "gearChrome",
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 7, missing),
                 "gearChrome",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing),
+                ItemList.AcceleratorIV.get(1),
                 "gearChrome",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 11104, missing));
+                ItemList.AcceleratorIV.get(1));
         addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 9, missing),
                 getModItem(ExtraUtilities.ID, "enderQuarryUpgrade", 1, 0, missing),
@@ -1026,7 +1026,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12, missing)));
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
-                        getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 5, missing),
+                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 5),
                         "abc",
                         "def",
                         "ghi",
@@ -1428,17 +1428,17 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         missing),
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Iridium, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
+                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                        getModItem(GTPlusPlus.ID, "magicfeather", 1, 0, missing),
+                        new ItemStack(ModItems.itemMagicFeather),
                         getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
                         getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
                         getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "magicfeather", 1, 0, missing),
+                        new ItemStack(ModItems.itemMagicFeather),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
+                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
                         GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",

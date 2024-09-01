@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Gadomancy;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TaintedMagic;
@@ -839,7 +838,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'j',
                 "plateNeutronium",
                 'k',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 10812, missing));
+                ItemList.CompressorUV.get(1));
 
         CompressorManager.addRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
@@ -887,7 +886,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 .duration(3 * MINUTES + 20 * SECONDS).eut(524000).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11397, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Infinity, 1),
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L))
                 .duration(3 * MINUTES + 20 * SECONDS).eut(524000).addTo(extruderRecipes);
@@ -897,7 +896,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 .duration(2 * MINUTES + 30 * SECONDS).eut(524000).addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11982, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.CosmicNeutronium, 1),
                         ItemList.Shape_Extruder_Plate.get(0L))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L))
                 .duration(2 * MINUTES + 30 * SECONDS).eut(524000).addTo(extruderRecipes);

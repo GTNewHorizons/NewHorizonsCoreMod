@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -30,6 +29,7 @@ import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
+import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -1131,12 +1131,9 @@ public class ScriptMagicBees implements IScriptLoader {
                 new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("tempus"), 50),
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
-                        getModItem(MagicBees.ID, "pollen", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(MagicBees.ID, "pollen", 1, 1, missing) });
+                        getModItem(MagicBees.ID, "pollen", 1, 0, missing), new ItemStack(Loaders.essentiaCell, 1, 0),
+                        new ItemStack(Loaders.essentiaCell, 1, 0), new ItemStack(Loaders.essentiaCell, 1, 0),
+                        new ItemStack(Loaders.essentiaCell, 1, 0), getModItem(MagicBees.ID, "pollen", 1, 1, missing) });
         TCHelper.refreshResearchPages("MB_VisAuraProvider");
         TCHelper.refreshResearchPages("MB_EssenceLife");
         TCHelper.refreshResearchPages("MB_EssenceDeath");

@@ -2,7 +2,6 @@ package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DetravScannerMod;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -19,9 +18,11 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
@@ -51,6 +52,7 @@ import com.dreammaster.gthandler.GT_Loader_CasingNH;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.item.CustomPatterns;
+import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.WoodenBrickForm;
 import com.dreammaster.lib.Refstrings;
@@ -221,7 +223,7 @@ public class MainRegistry {
         Logger.debug("PRELOAD Create Items");
         if (!ItemList.AddToItemManager(ItemManager)
                 | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))
-                | !(!BartWorks.isModLoaded() || BioItemLoader.preInit())) {
+                | !(BioItemLoader.preInit())) {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
         }
@@ -272,6 +274,26 @@ public class MainRegistry {
             Logger.warn("Some fluids failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Fluids] Some fluids failed to register. Check the logfile for details");
         }
+        ItemBucketList.SodiumPotassium.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.SodiumPotassium.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.NitricAcid.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.NitricAcid.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.RadioactiveBacterialSludge.set(
+                FluidContainerRegistry.fillFluidContainer(
+                        FluidList.EnrichedBacterialSludge.getFluidStack(),
+                        new ItemStack(Items.bucket)));
+        ItemBucketList.FermentedBacterialSludge.set(
+                FluidContainerRegistry.fillFluidContainer(
+                        FluidList.FermentedBacterialSludge.getFluidStack(),
+                        new ItemStack(Items.bucket)));
+        ItemBucketList.Concrete.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.Concrete.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.Pollution.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.Pollution.getFluidStack(), new ItemStack(Items.bucket)));
         // ------------------------------------------------------------
 
         // register final list with valid items to forge
@@ -294,9 +316,7 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
 
-        if (BartWorks.isModLoaded()) {
-            BacteriaRegistry = new BacteriaRegistry();
-        }
+        BacteriaRegistry = new BacteriaRegistry();
 
         Logger.debug("LOAD abandoned GT++ Aspects");
         if (Thaumcraft.isModLoaded()) {
@@ -366,9 +386,8 @@ public class MainRegistry {
 
         CoreMod_PCBFactory_MaterialLoader.init();
 
-        if (BartWorks.isModLoaded()) {
-            BWGlassAdder.registerGlasses();
-        }
+        BWGlassAdder.registerGlasses();
+
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -461,23 +480,19 @@ public class MainRegistry {
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
-        if (BartWorks.isModLoaded()) {
-            Logger.debug("Add Bacteria Stuff to BartWorks");
-            BacteriaRegistry.runAllPostinit();
 
-            Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Platinum,
-                    WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Osmium,
-                    WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01
-                    .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Palladium,
-                    WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
-        }
+        Logger.debug("Add Bacteria Stuff to BartWorks");
+        BacteriaRegistry.runAllPostinit();
+
+        Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
+        GT_MetaGenerated_Item_01
+                .registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
+        GT_MetaGenerated_Item_01
+                .registerCauldronCleaningFor(Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+        GT_MetaGenerated_Item_01
+                .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
+        GT_MetaGenerated_Item_01
+                .registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
@@ -489,9 +504,9 @@ public class MainRegistry {
         RecipeRemover.run();
         ScriptLoader.run();
         new DTPFRecipes().run();
-        if (BartWorks.isModLoaded()) {
-            BW_RadHatchMaterial.runRadHatchAdder();
-        }
+
+        BW_RadHatchMaterial.runRadHatchAdder();
+
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
         if (Loader.isModLoaded("amazingtrophies") && BloodMagic.isModLoaded()
                 && Avaritia.isModLoaded()

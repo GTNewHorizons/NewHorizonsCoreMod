@@ -16,7 +16,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MCFrames;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -56,6 +55,7 @@ import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.GregTech_API;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -64,6 +64,7 @@ import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ALLOY;
 import tconstruct.library.crafting.Smeltery;
 
 public class ScriptProjectRed implements IScriptLoader {
@@ -165,12 +166,12 @@ public class ScriptProjectRed implements IScriptLoader {
                 FluidRegistry.getFluidStack("redstone.molten", 576),
                 FluidRegistry.getFluidStack("copper.molten", 144));
         ChiselHelper.addVariationFromStack("ruby", getModItem(BiomesOPlenty.ID, "gemOre", 1, 3, missing));
-        ChiselHelper.addVariationFromStack("ruby", getModItem(GregTech.ID, "gt.blockgem2", 1, 11, missing));
+        ChiselHelper.addVariationFromStack("ruby", new ItemStack(GregTech_API.sBlockGem2, 1, 11));
         ChiselHelper.addVariationFromStack(
                 "ruby",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 5, missing));
         ChiselHelper.addVariationFromStack("sapphire", getModItem(BiomesOPlenty.ID, "gemOre", 1, 13, missing));
-        ChiselHelper.addVariationFromStack("sapphire", getModItem(GregTech.ID, "gt.blockgem2", 1, 12, missing));
+        ChiselHelper.addVariationFromStack("sapphire", new ItemStack(GregTech_API.sBlockGem2, 1, 12));
         ChiselHelper.addVariationFromStack(
                 "sapphire",
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 6, missing));
@@ -200,7 +201,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "itemCasingSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "itemCasingSteel",
-                getModItem(NewHorizonsCoreMod.ID, "item.DiamondDrillTip", 1, 0, missing),
+                com.dreammaster.item.ItemList.DiamondDrillTip.getIS(1),
                 getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing),
                 "circuitBasic",
                 "itemCasingSteel",
@@ -290,7 +291,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                getModItem(NewHorizonsCoreMod.ID, "item.SawBladeRuby", 1, 0, missing),
+                com.dreammaster.item.ItemList.SawBladeRuby.getIS(1),
                 "stickSteel",
                 null,
                 null,
@@ -301,7 +302,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                getModItem(NewHorizonsCoreMod.ID, "item.SawBladeSapphire", 1, 0, missing),
+                com.dreammaster.item.ItemList.SawBladeSapphire.getIS(1),
                 "stickSteel",
                 null,
                 null,
@@ -312,7 +313,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                getModItem(NewHorizonsCoreMod.ID, "item.SawBladePeridot", 1, 0, missing),
+                com.dreammaster.item.ItemList.SawBladePeridot.getIS(1),
                 "stickSteel",
                 null,
                 null,
@@ -2086,7 +2087,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 5, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 5, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 5))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -2511,7 +2512,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
-                            getModItem(GTPlusPlus.ID, "itemPlatePotin", 1, 0, missing),
+                            ALLOY.POTIN.getPlate(1),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))
@@ -3577,14 +3578,14 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2887, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Cocoa, 2),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 2, 2888, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coffee, 2),
                         GT_Utility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
@@ -3787,7 +3788,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3804,19 +3805,19 @@ public class ScriptProjectRed implements IScriptLoader {
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
+                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
+                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
@@ -3824,13 +3825,13 @@ public class ScriptProjectRed implements IScriptLoader {
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 16, missing))
                 .itemOutputs(
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .itemOutputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.ElectrotineWire", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing))
+                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
 
     }

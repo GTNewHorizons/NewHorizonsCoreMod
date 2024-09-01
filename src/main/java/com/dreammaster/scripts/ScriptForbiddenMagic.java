@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -176,13 +175,13 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                         .add(Aspect.getAspect("herba"), 32).add(Aspect.getAspect("instrumentum"), 24)
                         .add(Aspect.getAspect("vacuos"), 24),
                 getModItem(Witchery.ID, "ingredient", 1, 82, missing),
-                new ItemStack[] { getModItem(GregTech.ID, "gt.metaitem.01", 1, 8529, missing),
+                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Vinteum, 1),
                         getModItem(Witchery.ID, "witchsapling", 1, 0, missing),
                         getModItem(Witchery.ID, "ingredient", 1, 34, missing),
                         getModItem(Witchery.ID, "witchsapling", 1, 1, missing),
                         getModItem(Witchery.ID, "ingredient", 1, 36, missing),
                         getModItem(Witchery.ID, "witchsapling", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 8529, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Vinteum, 1),
                         getModItem(Witchery.ID, "witchsapling", 1, 0, missing),
                         getModItem(Witchery.ID, "ingredient", 1, 34, missing),
                         getModItem(Witchery.ID, "witchsapling", 1, 1, missing),
@@ -414,7 +413,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 -4,
                 2,
                 3,
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 8529, missing))
+                GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Vinteum, 1))
                         .setPages(
                                 new ResearchPage("derp.research_page.VINTEUM"),
                                 new ResearchPage(

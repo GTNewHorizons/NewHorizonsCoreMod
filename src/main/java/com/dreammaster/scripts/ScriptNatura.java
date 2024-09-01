@@ -1,7 +1,6 @@
 package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -13,6 +12,7 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.common.items.ID_MetaTool_01.SAW;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,6 +28,7 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gregtech.common.items.GT_MetaGenerated_Tool_01;
 
 public class ScriptNatura implements IScriptLoader {
 
@@ -63,7 +64,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 0, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "tree", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 0, missing),
@@ -74,7 +75,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 0, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -211,7 +212,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 1, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "tree", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 1, missing),
@@ -222,7 +223,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 1, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -374,7 +375,7 @@ public class ScriptNatura implements IScriptLoader {
                 "craftingToolKnife");
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 2, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "tree", 1, 2, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 2, missing),
@@ -385,7 +386,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 2, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -533,7 +534,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 3, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "redwood", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 3, missing),
@@ -544,7 +545,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 3, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -692,21 +693,21 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "bloodwood", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 4, missing),
                 getModItem(Natura.ID, "bloodwood", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "bloodwood", 1, 15, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 4, missing),
                 getModItem(Natura.ID, "bloodwood", 1, 15, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "bloodwood", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 4, missing),
@@ -714,7 +715,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 4, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -872,7 +873,7 @@ public class ScriptNatura implements IScriptLoader {
                 "craftingToolKnife");
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 5, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "tree", 1, 3, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 5, missing),
@@ -883,7 +884,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 5, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -1031,7 +1032,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 6, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "Rare Tree", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 6, missing),
@@ -1042,7 +1043,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 6, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -1190,7 +1191,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 7, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "Rare Tree", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 7, missing),
@@ -1201,7 +1202,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 7, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -1349,7 +1350,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 8, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "Rare Tree", 1, 2, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 8, missing),
@@ -1360,7 +1361,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 8, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -1508,7 +1509,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 9, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "Rare Tree", 1, 3, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 9, missing),
@@ -1519,7 +1520,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 9, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -1667,7 +1668,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 10, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "willow", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 10, missing),
@@ -1678,7 +1679,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 10, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -1826,7 +1827,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 11, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "Dark Tree", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 11, missing),
@@ -1837,7 +1838,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 11, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -1989,7 +1990,7 @@ public class ScriptNatura implements IScriptLoader {
                 "craftingToolKnife");
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 12, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 getModItem(Natura.ID, "Dark Tree", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 12, missing),
@@ -2000,7 +2001,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 12, missing),
-                getModItem(GregTech.ID, "gt.metatool.01", 1, 10, missing),
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
                 null,
                 null,
                 null,
@@ -3164,7 +3165,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.eucalyptus", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3176,7 +3177,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.sakura", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3188,7 +3189,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.ghostwood", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3200,7 +3201,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.redwood", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3212,7 +3213,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.bloodwood", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3224,7 +3225,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 5, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.hopseed", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3236,7 +3237,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.maple", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3248,7 +3249,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab1", 2, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.silverbell", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3260,7 +3261,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.amaranth", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3272,7 +3273,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.tiger", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3284,7 +3285,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.willow", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3296,7 +3297,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 3, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.darkwood", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3308,7 +3309,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Natura.ID, "plankSlab2", 2, 4, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Natura.ID, "pressureplate.fusewood", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -3321,7 +3322,7 @@ public class ScriptNatura implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "netherrack", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(getModItem(Natura.ID, "NetherPressurePlate", 2, 0, missing)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);

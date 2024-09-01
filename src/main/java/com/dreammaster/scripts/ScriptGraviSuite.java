@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GraviSuiteNEO;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Arrays;
@@ -154,7 +153,7 @@ public class ScriptGraviSuite implements IScriptLoader {
         addShapedRecipe(
                 createItemStack(GraviSuite.ID, "advDDrill", 1, 27, "{toolXP:0.0d,charge:0,toolMode:0}", missing),
                 "screwIridium",
-                getModItem(NewHorizonsCoreMod.ID, "item.ReinforcedIridiumDrillTip", 1, 0, missing),
+                com.dreammaster.item.ItemList.ReinforcedIridiumDrillTip.getIS(1),
                 "craftingToolScrewdriver",
                 "gearGtSmallIridium",
                 ItemList.Electric_Motor_EV.get(1L),

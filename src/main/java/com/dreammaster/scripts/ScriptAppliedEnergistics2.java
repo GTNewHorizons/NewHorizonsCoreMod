@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
@@ -1732,7 +1731,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
                 "plateGlowstone",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorSpatialPulsatingCore", 1, 0, missing),
+                com.dreammaster.item.ItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
                 "plateGlowstone",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
@@ -1743,7 +1742,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
                 "plateEnderPearl",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorSpatialPulsatingCore", 1, 0, missing),
+                com.dreammaster.item.ItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
                 "plateEnderPearl",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
@@ -1754,7 +1753,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
                 "plateEnderEye",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.EngineeringProcessorSpatialPulsatingCore", 1, 0, missing),
+                com.dreammaster.item.ItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
                 "plateEnderEye",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),

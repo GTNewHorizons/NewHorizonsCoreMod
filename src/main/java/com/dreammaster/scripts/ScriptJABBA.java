@@ -388,33 +388,17 @@ public class ScriptJABBA implements IScriptLoader {
                 "plateTungstenSteel",
                 "stickTungstenSteel");
 
-        if (BartWorks.isModLoaded()) {
-            addShapedRecipe(
-                    getModItem(JABBA.ID, "upgradeStructural", 1, 9),
-                    "stickRhodium-PlatedPalladium",
-                    "plateRhodium-PlatedPalladium",
-                    "stickRhodium-PlatedPalladium",
-                    "plateRhodium-PlatedPalladium",
-                    getModItem(JABBA.ID, "barrel", 1),
-                    "plateRhodium-PlatedPalladium",
-                    "stickRhodium-PlatedPalladium",
-                    "plateRhodium-PlatedPalladium",
-                    "stickRhodium-PlatedPalladium");
-
-        } else {
-
-            addShapedRecipe(
-                    getModItem(JABBA.ID, "upgradeStructural", 1, 9),
-                    "stickChrome",
-                    "plateChrome",
-                    "stickChrome",
-                    "plateChrome",
-                    getModItem(JABBA.ID, "barrel", 1),
-                    "plateChrome",
-                    "stickChrome",
-                    "plateChrome",
-                    "stickChrome");
-        }
+        addShapedRecipe(
+                getModItem(JABBA.ID, "upgradeStructural", 1, 9),
+                "stickRhodium-PlatedPalladium",
+                "plateRhodium-PlatedPalladium",
+                "stickRhodium-PlatedPalladium",
+                "plateRhodium-PlatedPalladium",
+                getModItem(JABBA.ID, "barrel", 1),
+                "plateRhodium-PlatedPalladium",
+                "stickRhodium-PlatedPalladium",
+                "plateRhodium-PlatedPalladium",
+                "stickRhodium-PlatedPalladium");
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 10),

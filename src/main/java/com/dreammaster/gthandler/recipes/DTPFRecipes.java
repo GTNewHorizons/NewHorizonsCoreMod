@@ -2,7 +2,6 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.plasmaForgeRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.COIL_HEAT;
@@ -26,6 +25,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gregtech.common.items.CombType;
+import gregtech.loaders.misc.GT_Bees;
 import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.core.material.ELEMENT;
 import gtPlusPlus.core.material.Particle;
@@ -132,7 +133,7 @@ public class DTPFRecipes implements Runnable {
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
+                                GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
                                 GT_Utility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTCC.getFluid(cosmic_neutronium_bee.getCatalystAmount(0)),
@@ -148,7 +149,7 @@ public class DTPFRecipes implements Runnable {
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
+                                GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
                                 GT_Utility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTPC.getFluid(cosmic_neutronium_bee.getCatalystAmount(1)),
@@ -164,7 +165,7 @@ public class DTPFRecipes implements Runnable {
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
+                                GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
                                 GT_Utility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTRC.getFluid(cosmic_neutronium_bee.getCatalystAmount(2)),
@@ -183,7 +184,7 @@ public class DTPFRecipes implements Runnable {
 
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 117),
+                                GT_Bees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
                                 GT_Utility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTEC.getFluid(cosmic_neutronium_bee.getCatalystAmount(3)),
@@ -344,7 +345,7 @@ public class DTPFRecipes implements Runnable {
                     .addTo(plasmaForgeRecipes);
 
             // Hypogen v3
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32100))
+            GT_Values.RA.stdBuilder().itemInputs(GregtechItemList.Compressed_Fusion_Reactor.get(0))
                     .fluidInputs(
                             Materials.Neutronium.getMolten(5760L),
                             new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
@@ -357,7 +358,7 @@ public class DTPFRecipes implements Runnable {
                     .addTo(plasmaForgeRecipes);
 
             // Hypogen v4
-            GT_Values.RA.stdBuilder().itemInputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32100))
+            GT_Values.RA.stdBuilder().itemInputs(GregtechItemList.Compressed_Fusion_Reactor.get(0))
                     .fluidInputs(
                             Materials.Neutronium.getMolten(5760L * 2),
                             new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
@@ -439,9 +440,7 @@ public class DTPFRecipes implements Runnable {
 
             // Spacetime v2
             GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.EnergisedTesseract.get(1),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32100))
+                    .itemInputs(ItemList.EnergisedTesseract.get(1), GregtechItemList.Compressed_Fusion_Reactor.get(0))
                     .fluidInputs(
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(5000L),
                             Materials.Infinity.getMolten(1152L))
@@ -453,11 +452,11 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 8L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodOctiron", 8L),
-                            GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstick", 8L, 10106),
+                            ALLOY.OCTIRON.getRod(8),
+                            MyMaterial.tairitsu.get(OrePrefixes.stick, 8),
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateAbyssalAlloy", 24L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemScrewBotmium", 16L),
+                            ALLOY.ABYSSAL.getPlate(24),
+                            ALLOY.BOTMIUM.getScrew(16),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1L))
                     .itemOutputs(ItemList.Tesseract.get(4)).fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(1000))
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000 / 2))
@@ -468,10 +467,10 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
-                            GT_ModHandler.getModItem(BartWorks.ID, "gt.bwMetaGeneratedstick", 12L, 10106),
+                            MyMaterial.tairitsu.get(OrePrefixes.stick, 12),
                             GT_OreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 8L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateBotmium", 24L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemScrewArcanite", 16L),
+                            ALLOY.BOTMIUM.getPlate(24),
+                            ALLOY.ARCANITE.getScrew(16),
                             GT_ModHandler.getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1L))
                     .itemOutputs(ItemList.Tesseract.get(8)).fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(1000))
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000))
@@ -484,7 +483,7 @@ public class DTPFRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 32L),
                             ALLOY.BLACK_TITANIUM.getPlate(24),
                             ALLOY.ZERON_100.getScrew(16),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1L, 32105))
+                            GregtechItemList.Laser_Lens_Special.get(1))
                     .itemOutputs(ItemList.Tesseract.get(16)).fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(1000))
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(2000))
                     .duration(40 * SECONDS).eut(512_000_000).metadata(COIL_HEAT, eternal_heat)
@@ -540,7 +539,7 @@ public class DTPFRecipes implements Runnable {
                     CI.getEnergyCore(9, 0),
                     BlockList.Quantinum.getIS(2),
                     // Quantum Anomaly
-                    GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 2, 32105))
+                    GregtechItemList.Laser_Lens_Special.get(2))
                     .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
                     .fluidInputs(
                             ALLOY.BLACK_TITANIUM.getFluidStack(144 * 320 * 7 / 10),
@@ -560,7 +559,7 @@ public class DTPFRecipes implements Runnable {
                     CI.getEnergyCore(9, 0),
                     BlockList.Quantinum.getIS(4),
                     // Quantum Anomaly
-                    GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 3, 32105))
+                    GregtechItemList.Laser_Lens_Special.get(3))
                     .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(4))
                     .fluidInputs(
                             ALLOY.BLACK_TITANIUM.getFluidStack(144 * 640 * 7 / 10),
@@ -578,7 +577,7 @@ public class DTPFRecipes implements Runnable {
             // Timepiece
             GT_Values.RA.stdBuilder()
                     .itemInputs(
-                            getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.5", 0, 14),
+                            GregtechItemList.SpaceTimeBendingCore.get(0),
                             GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.DarkIron, 1L),
                             Materials.Dilithium.getGems(32),
                             MaterialsUEVplus.Universium.getNanite(1))
@@ -594,11 +593,10 @@ public class DTPFRecipes implements Runnable {
             // Time to Space
             GT_Values.RA.stdBuilder().itemInputs(
                     // Spacetime Continuum Ripper
-                    getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.5", 0, 10),
+                    GregtechItemList.SpaceTimeContinuumRipper.get(0),
                     ItemList.EnergisedTesseract.get(2),
                     // Quantum Anomaly
-                    GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 16, 32105))
-                    .itemOutputs(ItemList.Tesseract.get(1))
+                    GregtechItemList.Laser_Lens_Special.get(16)).itemOutputs(ItemList.Tesseract.get(1))
                     .fluidInputs(
                             MaterialsUEVplus.Time.getMolten(9216L * 64),
                             MaterialsUEVplus.SpaceTime.getMolten(9216L * 16),
@@ -611,7 +609,7 @@ public class DTPFRecipes implements Runnable {
             // Space to Time
             GT_Values.RA.stdBuilder().itemInputs(
                     // Spacetime Continuum Ripper
-                    getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.5", 0, 10),
+                    GregtechItemList.SpaceTimeContinuumRipper.get(0),
                     ItemList.EnergisedTesseract.get(2),
                     ItemList.Timepiece.get(16)).itemOutputs(ItemList.Tesseract.get(1))
                     .fluidInputs(
@@ -638,7 +636,7 @@ public class DTPFRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5),
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
+                                GT_Bees.combs.getStackForType(CombType.INFINITY),
                                 GT_Utility.getIntegratedCircuit(3))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(infinity_bee.getCatalystAmount(4)))
                         .fluidOutputs(
@@ -651,7 +649,7 @@ public class DTPFRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
+                                GT_Bees.combs.getStackForType(CombType.INFINITY),
                                 GT_Utility.getIntegratedCircuit(3))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(infinity_bee.getCatalystAmount(3)))
                         .fluidOutputs(
@@ -664,7 +662,7 @@ public class DTPFRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
+                                GT_Bees.combs.getStackForType(CombType.INFINITY),
                                 GT_Utility.getIntegratedCircuit(2))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2)))
                         .fluidOutputs(
@@ -677,7 +675,7 @@ public class DTPFRecipes implements Runnable {
                 GT_Values.RA.stdBuilder()
                         .itemInputs(
                                 GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                GT_ModHandler.getModItem(GregTech.ID, "gt.comb", 1L, 119),
+                                GT_Bees.combs.getStackForType(CombType.INFINITY),
                                 GT_Utility.getIntegratedCircuit(3))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2) / 64))
                         .fluidOutputs(
@@ -1059,9 +1057,7 @@ public class DTPFRecipes implements Runnable {
             }
 
             // UEV Superconductors.
-
-            if (GTPlusPlus.isModLoaded()) {
-
+            {
                 long base_quantity = 504L;
                 long tier_up_multiplier = 2L;
 

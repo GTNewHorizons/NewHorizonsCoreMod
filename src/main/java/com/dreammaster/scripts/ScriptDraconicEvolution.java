@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -367,7 +366,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 1, 0, missing),
+                com.dreammaster.item.ItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
                 'e',
                 getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 1, 1, missing),
                 'f',
@@ -787,7 +786,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDraconiumAwakened",
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedManyullynCrystalChip", 1, 0, missing),
+                com.dreammaster.item.ItemList.EngravedManyullynCrystalChip.getIS(1),
                 'd',
                 getModItem(DraconicEvolution.ID, "draconiumFluxCapacitor", 1, 1, missing),
                 'e',

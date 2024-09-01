@@ -1,10 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
@@ -24,6 +21,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ALLOY;
 
 public class FormingPressRecipes implements Runnable {
 
@@ -303,11 +301,9 @@ public class FormingPressRecipes implements Runnable {
                 .addTo(formingPressRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Shape_Empty.get(1L),
-                        GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 0, 0))
-                .itemOutputs(GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ExtruderShapeBoat", 1, 0))
-                .duration(10 * SECONDS).eut(256).addTo(formingPressRecipes);
+                .itemInputs(ItemList.Shape_Empty.get(1L), com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
+                .itemOutputs(com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(1)).duration(10 * SECONDS).eut(256)
+                .addTo(formingPressRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_ToolHeadDrill.get(0))
                 .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1)).duration(10 * SECONDS).eut(256)
@@ -464,18 +460,18 @@ public class FormingPressRecipes implements Runnable {
                     .eut(TierEU.RECIPE_IV).addTo(formingPressRecipes);
 
         }
-        if (BartWorks.isModLoaded()) {
-            // Optical CPU Containment Housing
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Circuit_Board_Optical.get(1L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilBotmium", 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),
-                            GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Bedrockium, 8L))
-                    .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
-        }
+
+        // Optical CPU Containment Housing
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Circuit_Board_Optical.get(1L),
+                        ALLOY.BOTMIUM.getFoil(1),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),
+                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Bedrockium, 8L))
+                .itemOutputs(ItemList.Optical_Cpu_Containment_Housing.get(1L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(formingPressRecipes);
+
     }
 }

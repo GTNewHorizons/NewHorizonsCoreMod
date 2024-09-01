@@ -1,9 +1,6 @@
 package com.dreammaster.gthandler;
 
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.*;
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
@@ -29,6 +26,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine_GT_Recipe;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class GT_Loader_Machines {
 
@@ -80,7 +78,7 @@ public class GT_Loader_Machines {
 
     public void recipes() {
 
-        Materials LuVMat2 = BartWorks.isModLoaded() ? Materials.get("Rhodium-PlatedPalladium") : Materials.Chrome;
+        Materials LuVMat2 = Materials.get("Rhodium-PlatedPalladium");
 
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Hull_UEV.get(1L),
@@ -1013,171 +1011,161 @@ public class GT_Loader_Machines {
                 .itemOutputs(new ItemStack(QuantumBread.Instance(), 1)).duration(20 * TICKS).eut(TierEU.RECIPE_UV)
                 .addTo(slicerRecipes);
 
-        if (GTPlusPlus.isModLoaded()) {
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Transformer_HA_UEV_UHV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Transformer_UEV_UHV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.Draconium), 'B',
-                            OrePrefixes.wireGt04.get(Materials.Bedrockium), 'K', ItemList.Casing_Coil_Superconductor });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Transformer_HA_UIV_UEV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Transformer_UIV_UEV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.NetherStar), 'B',
-                            OrePrefixes.wireGt04.get(Materials.Draconium), 'K', ItemList.Casing_Fusion_Coil });
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Transformer_HA_UMV_UIV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_UMV_UIV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.Quantium), 'B',
-                            OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Casing_Fusion_Coil });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Transformer_HA_UEV_UHV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Transformer_UEV_UHV, 'C',
+                        OrePrefixes.wireGt04.get(Materials.Draconium), 'B',
+                        OrePrefixes.wireGt04.get(Materials.Bedrockium), 'K', ItemList.Casing_Coil_Superconductor });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Transformer_HA_UIV_UEV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CM ", "KBB", 'M', ItemList.Transformer_UIV_UEV, 'C',
+                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'B',
+                        OrePrefixes.wireGt04.get(Materials.Draconium), 'K', ItemList.Casing_Fusion_Coil });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Transformer_HA_UMV_UIV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_UMV_UIV, 'C',
+                        OrePrefixes.wireGt04.get(Materials.Quantium), 'B',
+                        OrePrefixes.wireGt04.get(Materials.NetherStar), 'K', ItemList.Casing_Fusion_Coil });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Transformer_HA_UXV_UMV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_UXV_UMV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'B',
-                            OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Casing_Fusion_Coil });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Transformer_HA_UXV_UMV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_UXV_UMV, 'C',
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'B',
+                        OrePrefixes.wireGt04.get(Materials.Quantium), 'K', ItemList.Casing_Fusion_Coil });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.Transformer_HA_MAX_UXV.get(1L),
-                    bitsd,
-                    new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_MAX_UXV, 'C',
-                            OrePrefixes.wireGt04.get(Materials.Infinity), 'B',
-                            OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Casing_Coil_Infinity });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.Transformer_HA_MAX_UXV.get(1L),
+                bitsd,
+                new Object[] { "KBB", "CMK", "KBB", 'M', ItemList.Transformer_MAX_UXV, 'C',
+                        OrePrefixes.wireGt04.get(Materials.Infinity), 'B',
+                        OrePrefixes.wireGt04.get(Materials.BlackPlutonium), 'K', ItemList.Casing_Coil_Infinity });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_LV_ULV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Lead), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Lead), 'S', OrePrefixes.spring.get(Materials.Tin), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Tin), 'O', OrePrefixes.cell.get(Materials.Lubricant),
-                            'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 877) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_LV_ULV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Lead), 'C',
+                        OrePrefixes.cableGt16.get(Materials.Lead), 'S', OrePrefixes.spring.get(Materials.Tin), 'X',
+                        OrePrefixes.cableGt08.get(Materials.Tin), 'O', OrePrefixes.cell.get(Materials.Lubricant), 'P',
+                        ItemList.Electric_Pump_LV, 'T', GregtechItemList.Transformer_HA_LV_ULV.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_MV_LV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tin), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Tin), 'S', OrePrefixes.spring.get(Materials.AnyCopper),
-                            'X', OrePrefixes.cableGt08.get(Materials.AnyCopper), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 878) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_MV_LV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tin), 'C',
+                        OrePrefixes.cableGt16.get(Materials.Tin), 'S', OrePrefixes.spring.get(Materials.AnyCopper), 'X',
+                        OrePrefixes.cableGt08.get(Materials.AnyCopper), 'O', OrePrefixes.cell.get(Materials.Lubricant),
+                        'P', ItemList.Electric_Pump_LV, 'T', GregtechItemList.Transformer_HA_MV_LV.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_HV_MV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.AnyCopper), 'C',
-                            OrePrefixes.cableGt16.get(Materials.AnyCopper), 'S', OrePrefixes.spring.get(Materials.Gold),
-                            'X', OrePrefixes.cableGt08.get(Materials.Gold), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 879) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_HV_MV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.AnyCopper), 'C',
+                        OrePrefixes.cableGt16.get(Materials.AnyCopper), 'S', OrePrefixes.spring.get(Materials.Gold),
+                        'X', OrePrefixes.cableGt08.get(Materials.Gold), 'O', OrePrefixes.cell.get(Materials.Lubricant),
+                        'P', ItemList.Electric_Pump_LV, 'T', GregtechItemList.Transformer_HA_HV_MV.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_EV_HV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Gold), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Gold), 'S', OrePrefixes.spring.get(Materials.Aluminium),
-                            'X', OrePrefixes.cableGt08.get(Materials.Aluminium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 880) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_EV_HV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Gold), 'C',
+                        OrePrefixes.cableGt16.get(Materials.Gold), 'S', OrePrefixes.spring.get(Materials.Aluminium),
+                        'X', OrePrefixes.cableGt08.get(Materials.Aluminium), 'O',
+                        OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                        GregtechItemList.Transformer_HA_EV_HV.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_IV_EV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Aluminium), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Aluminium), 'S',
-                            OrePrefixes.spring.get(Materials.Tungsten), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Tungsten), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 881) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_IV_EV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Aluminium), 'C',
+                        OrePrefixes.cableGt16.get(Materials.Aluminium), 'S', OrePrefixes.spring.get(Materials.Tungsten),
+                        'X', OrePrefixes.cableGt08.get(Materials.Tungsten), 'O',
+                        OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                        GregtechItemList.Transformer_HA_IV_EV.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_LuV_IV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tungsten), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Tungsten), 'S',
-                            OrePrefixes.spring.get(Materials.VanadiumGallium), 'X',
-                            OrePrefixes.cableGt08.get(Materials.VanadiumGallium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 882) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_LuV_IV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Tungsten), 'C',
+                        OrePrefixes.cableGt16.get(Materials.Tungsten), 'S',
+                        OrePrefixes.spring.get(Materials.VanadiumGallium), 'X',
+                        OrePrefixes.cableGt08.get(Materials.VanadiumGallium), 'O',
+                        OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                        GregtechItemList.Transformer_HA_LuV_IV.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_ZPM_LuV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.VanadiumGallium),
-                            'C', OrePrefixes.cableGt16.get(Materials.VanadiumGallium), 'S',
-                            OrePrefixes.spring.get(Materials.Naquadah), 'X',
-                            OrePrefixes.cableGt08.get(Materials.Naquadah), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 883) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_ZPM_LuV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.VanadiumGallium), 'C',
+                        OrePrefixes.cableGt16.get(Materials.VanadiumGallium), 'S',
+                        OrePrefixes.spring.get(Materials.Naquadah), 'X', OrePrefixes.cableGt08.get(Materials.Naquadah),
+                        'O', OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                        GregtechItemList.Transformer_HA_ZPM_LuV.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_UV_ZPM.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Naquadah), 'C',
-                            OrePrefixes.cableGt16.get(Materials.Naquadah), 'S',
-                            OrePrefixes.spring.get(Materials.NaquadahAlloy), 'X',
-                            OrePrefixes.cableGt08.get(Materials.NaquadahAlloy), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 884) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_UV_ZPM.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Naquadah), 'C',
+                        OrePrefixes.cableGt16.get(Materials.Naquadah), 'S',
+                        OrePrefixes.spring.get(Materials.NaquadahAlloy), 'X',
+                        OrePrefixes.cableGt08.get(Materials.NaquadahAlloy), 'O',
+                        OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
+                        GregtechItemList.Transformer_HA_UV_ZPM.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_UHV_UV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy), 'C',
-                            OrePrefixes.cableGt16.get(Materials.NaquadahAlloy), 'S',
-                            OrePrefixes.spring.get(Materials.Neutronium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Bedrockium), 'O',
-                            OrePrefixes.cell.get(Materials.Lubricant), 'P', ItemList.Electric_Pump_LV, 'T',
-                            GT_ModHandler.getModItem(GregTech.ID, "gt.blockmachines", 1, 885) });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_UHV_UV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.NaquadahAlloy), 'C',
+                        OrePrefixes.cableGt16.get(Materials.NaquadahAlloy), 'S',
+                        OrePrefixes.spring.get(Materials.Neutronium), 'X',
+                        OrePrefixes.wireGt08.get(Materials.Bedrockium), 'O', OrePrefixes.cell.get(Materials.Lubricant),
+                        'P', ItemList.Electric_Pump_LV, 'T', GregtechItemList.Transformer_HA_MAX_UV.get(1) });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_UEV_UHV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Neutronium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 'S',
-                            OrePrefixes.spring.get(Materials.Draconium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Draconium), 'O', ItemList.Reactor_Coolant_He_1, 'P',
-                            ItemList.Electric_Pump_MV, 'T', ItemList.Transformer_HA_UEV_UHV });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_UEV_UHV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Neutronium), 'C',
+                        OrePrefixes.wireGt16.get(Materials.SuperconductorUHV), 'S',
+                        OrePrefixes.spring.get(Materials.Draconium), 'X', OrePrefixes.wireGt08.get(Materials.Draconium),
+                        'O', ItemList.Reactor_Coolant_He_1, 'P', ItemList.Electric_Pump_MV, 'T',
+                        ItemList.Transformer_HA_UEV_UHV });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_UIV_UEV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Draconium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.Draconium), 'S',
-                            OrePrefixes.spring.get(Materials.BlackPlutonium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.NetherStar), 'O', ItemList.Reactor_Coolant_He_3, 'P',
-                            ItemList.Electric_Pump_HV, 'T', ItemList.Transformer_HA_UIV_UEV });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_UIV_UEV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.Draconium), 'C',
+                        OrePrefixes.wireGt16.get(Materials.Draconium), 'S',
+                        OrePrefixes.spring.get(Materials.BlackPlutonium), 'X',
+                        OrePrefixes.wireGt08.get(Materials.NetherStar), 'O', ItemList.Reactor_Coolant_He_3, 'P',
+                        ItemList.Electric_Pump_HV, 'T', ItemList.Transformer_HA_UIV_UEV });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_UMV_UIV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.BlackPlutonium), 'C',
-                            OrePrefixes.wireGt16.get(Materials.NetherStar), 'S',
-                            OrePrefixes.spring.get(Materials.Quantium), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Quantium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
-                            ItemList.Electric_Pump_IV, 'T', ItemList.Transformer_HA_UMV_UIV });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_UMV_UIV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(Materials.BlackPlutonium), 'C',
+                        OrePrefixes.wireGt16.get(Materials.NetherStar), 'S', OrePrefixes.spring.get(Materials.Quantium),
+                        'X', OrePrefixes.wireGt08.get(Materials.Quantium), 'O', ItemList.Reactor_Coolant_He_6, 'P',
+                        ItemList.Electric_Pump_IV, 'T', ItemList.Transformer_HA_UMV_UIV });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_UXV_UMV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime),
-                            'C', OrePrefixes.wireGt16.get(Materials.Quantium), 'S',
-                            OrePrefixes.spring.get(Materials.Infinity), 'X',
-                            OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1, 'P',
-                            ItemList.Electric_Pump_LuV, 'T', ItemList.Transformer_HA_UXV_UMV });
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_UXV_UMV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.SpaceTime), 'C',
+                        OrePrefixes.wireGt16.get(Materials.Quantium), 'S', OrePrefixes.spring.get(Materials.Infinity),
+                        'X', OrePrefixes.wireGt08.get(Materials.BlackPlutonium), 'O', ItemList.Reactor_Coolant_Sp_1,
+                        'P', ItemList.Electric_Pump_LuV, 'T', ItemList.Transformer_HA_UXV_UMV });
 
-            GT_ModHandler.addCraftingRecipe(
-                    ItemList.WetTransformer_MAX_UXV.get(1L),
-                    bitsd,
-                    new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium),
-                            'C', OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
-                            OrePrefixes.spring.get(MaterialsUEVplus.SpaceTime), 'X',
-                            OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
-                            ItemList.Electric_Pump_ZPM, 'T', ItemList.Transformer_HA_MAX_UXV });
-        }
+        GT_ModHandler.addCraftingRecipe(
+                ItemList.WetTransformer_MAX_UXV.get(1L),
+                bitsd,
+                new Object[] { "XOC", "STA", "POC", 'A', OrePrefixes.springSmall.get(MaterialsUEVplus.Universium), 'C',
+                        OrePrefixes.wireGt16.get(Materials.BlackPlutonium), 'S',
+                        OrePrefixes.spring.get(MaterialsUEVplus.SpaceTime), 'X',
+                        OrePrefixes.wireGt08.get(Materials.Infinity), 'O', ItemList.Reactor_Coolant_Sp_2, 'P',
+                        ItemList.Electric_Pump_ZPM, 'T', ItemList.Transformer_HA_MAX_UXV });
 
         ItemStack[] inHatches = { ItemList.Hatch_Input_UEV.get(1), ItemList.Hatch_Input_UIV.get(1),
                 ItemList.Hatch_Input_UMV.get(1), ItemList.Hatch_Input_UXV.get(1), ItemList.Hatch_Input_MAX.get(1) };

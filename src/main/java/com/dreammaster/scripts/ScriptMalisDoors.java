@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -17,6 +16,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
@@ -115,7 +115,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 "plateRedstone",
                 GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 "plateRedstone",
-                getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
+                BlockList.DiamondFrameBox.getIS(),
                 "plateRedstone",
                 "craftingToolSaw",
                 "plateEnderPearl",
@@ -1097,7 +1097,7 @@ public class ScriptMalisDoors implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
+                        BlockList.DiamondFrameBox.getIS(),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L))
                 .itemOutputs(getModItem(MalisisDoors.ID, "vanishing_block", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(30 * SECONDS).eut(30)

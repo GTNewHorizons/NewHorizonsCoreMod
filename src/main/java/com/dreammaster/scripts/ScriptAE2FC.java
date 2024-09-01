@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
@@ -28,6 +29,7 @@ import com.dreammaster.gthandler.CustomItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -37,6 +39,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_ModHandler.RecipeBits;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ALLOY;
 
 public class ScriptAE2FC implements IScriptLoader {
 
@@ -163,7 +166,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2_P2P_ME = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460);
         final ItemStack AE2FC_INTERFACE_P2P = getModItem(AE2FluidCraft.ID, "part_fluid_p2p_interface", 1);
         final ItemStack AE2_ADVANCED_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 61);
-        final ItemStack T7_YOT = getModItem(GoodGenerator.ID, "yottaFluidTankCells", 1, 6);
+        final ItemStack T7_YOT = new ItemStack(Loaders.yottaFluidTankCell, 1, 6);
         final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem(
                 AE2FluidCraft.ID,
                 "fluid_storage_housing",
@@ -182,8 +185,8 @@ public class ScriptAE2FC implements IScriptLoader {
         ItemStack[] components = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64, COMPONENT_256,
                 COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
 
-        final ItemStack nitinolPlate = GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateNitinol60", 2L);
-        final ItemStack zeronPlate = GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateZeron100", 2L);
+        final ItemStack nitinolPlate = ALLOY.NITINOL_60.getPlate(2);
+        final ItemStack zeronPlate = ALLOY.ZERON_100.getPlate(2);
 
         // AE2FC_FLUID_STORAGE_HOUSING
         GT_ModHandler.addCraftingRecipe(
@@ -731,7 +734,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'a',
                 "blockCosmicNeutronium",
                 'b',
-                getModItem("Avaritia", "Resource", 1, 5),
+                getModItem(Avaritia.ID, "Resource", 1, 5),
                 'c',
                 ItemList.Quantum_Tank_IV.get(1L),
                 'd',
@@ -739,7 +742,7 @@ public class ScriptAE2FC implements IScriptLoader {
                 'e',
                 "blockInfinity",
                 'f',
-                getModItem("eternalsingularity", "eternal_singularity", 1),
+                getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                 'g',
                 T7_YOT);
 

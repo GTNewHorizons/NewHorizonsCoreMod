@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EnderStorage;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -427,13 +426,13 @@ public class ScriptOpenModularTurrets implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.EnergeticAlloy, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32503, missing))
+                        ItemList.BatteryHull_EV.get(1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFour", 1, 0, missing))
                 .duration(20 * SECONDS).eut(120).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.VibrantAlloy, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 32504, missing))
+                        ItemList.BatteryHull_IV.get(1))
                 .itemOutputs(getModItem(OpenModularTurrets.ID, "expanderPowerTierFive", 1, 0, missing))
                 .duration(20 * SECONDS).eut(256).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()

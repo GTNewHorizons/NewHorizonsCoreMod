@@ -19,7 +19,6 @@ import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -42,6 +41,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
@@ -1866,7 +1866,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
+                BlockList.DiamondFrameBox.getIS(),
                 'f',
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 25, missing),
                 'g',
@@ -2864,7 +2864,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("infernus"), 24)
                         .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("superbia"), 16)
                         .add(Aspect.getAspect("terra"), 8),
-                getModItem(NewHorizonsCoreMod.ID, "tile.Mytryl", 1, 0, missing),
+                BlockList.MysteriousCrystal.getIS(),
                 new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
@@ -3693,7 +3693,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "transcendentBloodOrb", 1, 0, missing)));
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
-                        getModItem(NewHorizonsCoreMod.ID, "item.Blaster", 1, 0, missing),
+                        com.dreammaster.item.ItemList.Blaster.getIS(1),
                         "abc",
                         "def",
                         "ghi",
@@ -4627,7 +4627,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "tile.BloodyThaumium", 1, 0, missing),
+                BlockList.BloodyThaumium.getIS(),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 4, missing),
                 2,
                 5000,
@@ -4635,7 +4635,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "tile.BloodyVoid", 1, 0, missing),
+                BlockList.BloodyVoid.getIS(),
                 getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
                 3,
                 10000,
@@ -4643,7 +4643,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
-                getModItem(NewHorizonsCoreMod.ID, "tile.BloodyIchorium", 1, 0, missing),
+                BlockList.BloodyIchorium.getIS(),
                 GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
                 5,
                 50000,
@@ -4680,7 +4680,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "energyBlaster", 1, 0, missing),
-                getModItem(NewHorizonsCoreMod.ID, "item.Blaster", 1, 0, missing));
+                com.dreammaster.item.ItemList.Blaster.getIS(1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
                 GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 1L));
@@ -4949,7 +4949,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "blankSpell", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.EngravedGoldChip", 1, 0, missing),
+                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
                         CustomItemList.EngravedDiamondCrystalChip.get(1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
