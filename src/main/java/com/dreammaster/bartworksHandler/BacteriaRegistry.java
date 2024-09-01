@@ -1,10 +1,10 @@
 package com.dreammaster.bartworksHandler;
 
-import static com.dreammaster.gthandler.GT_CoreModSupport.*;
 import static bartworks.API.BioObjectAdder.*;
 import static bartworks.API.recipe.BartWorksRecipeMaps.bacterialVatRecipes;
 import static bartworks.API.recipe.BartWorksRecipeMaps.bioLabRecipes;
 import static bartworks.util.BWRecipes.computeSieverts;
+import static com.dreammaster.gthandler.GT_CoreModSupport.*;
 import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Genetics;
@@ -26,10 +26,6 @@ import static gregtech.api.util.GT_RecipeConstants.SIEVERTS;
 import java.awt.Color;
 import java.util.LinkedHashMap;
 
-import bartworks.util.BioCulture;
-import bartworks.util.BioDNA;
-import bartworks.util.BioData;
-import bartworks.util.BioPlasmid;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
@@ -38,8 +34,12 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.CustomItemList;
-import bartworks.common.loaders.BioItemList;
 
+import bartworks.common.loaders.BioItemList;
+import bartworks.util.BioCulture;
+import bartworks.util.BioDNA;
+import bartworks.util.BioData;
+import bartworks.util.BioPlasmid;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;

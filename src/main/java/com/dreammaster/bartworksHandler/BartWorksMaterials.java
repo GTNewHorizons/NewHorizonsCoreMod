@@ -5,7 +5,6 @@ import java.util.Optional;
 import bartworks.API.VoidMinerDropAdder;
 import bartworks.API.WerkstoffAPI;
 import bartworks.system.material.Werkstoff;
-
 import gregtech.api.enums.Materials;
 import gregtech.api.interfaces.ISubTagContainer;
 

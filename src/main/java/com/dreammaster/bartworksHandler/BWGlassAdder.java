@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 
 import bartworks.API.BorosilicateGlass;
-
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 

@@ -36,9 +36,9 @@ import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.main.NHItems;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.recipes.Recipe;
+
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
-
 import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.Dyes;
 import gregtech.api.enums.GT_Values;
@@ -54,9 +54,9 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.GT_Proxy;
-import ic2.core.Ic2Items;
 import gtneioreplugin.plugin.block.ModBlocks;
 import gtneioreplugin.util.DimensionHelper;
+import ic2.core.Ic2Items;
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader implements Runnable {
 

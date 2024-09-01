@@ -14,10 +14,10 @@ import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import bartworks.system.material.Werkstoff;
-import bwcrossmod.galacticgreg.VoidMinerUtility;
 import com.google.common.collect.Maps;
 
+import bartworks.system.material.Werkstoff;
+import bwcrossmod.galacticgreg.VoidMinerUtility;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;

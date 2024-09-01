@@ -78,8 +78,8 @@ import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
-import bartworks.system.material.WerkstoffLoader;
 
+import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;

@@ -40,9 +40,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import bartworks.common.loaders.ItemRegistry;
 
 import appeng.api.AEApi;
+import bartworks.common.loaders.ItemRegistry;
 import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTech_API;
