@@ -1,6 +1,6 @@
 package com.dreammaster.scripts;
 
-import static com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry.bw_realglas;
+import static bartworks.common.loaders.ItemRegistry.bw_realglas;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;

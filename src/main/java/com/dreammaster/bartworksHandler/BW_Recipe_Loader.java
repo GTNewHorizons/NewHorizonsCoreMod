@@ -1,6 +1,6 @@
 package com.dreammaster.bartworksHandler;
 
-import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Ruridit;
+import static bartworks.system.material.WerkstoffLoader.Ruridit;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.OrePrefixes.bolt;
 import static gregtech.api.enums.OrePrefixes.dustTiny;

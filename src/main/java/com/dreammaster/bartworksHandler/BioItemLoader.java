@@ -1,8 +1,8 @@
 package com.dreammaster.bartworksHandler;
 
 import static com.dreammaster.bartworksHandler.BacteriaRegistry.CultureSet;
-import static com.github.bartimaeusnek.bartworks.API.recipe.BartWorksRecipeMaps.bacterialVatRecipes;
-import static com.github.bartimaeusnek.bartworks.util.BWRecipes.computeSieverts;
+import static bartworks.API.recipe.BartWorksRecipeMaps.bacterialVatRecipes;
+import static bartworks.util.BWRecipes.computeSieverts;
 import static gregtech.api.enums.GT_Values.*;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -23,9 +23,9 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.main.MainRegistry;
-import com.github.bartimaeusnek.bartworks.MainMod;
-import com.github.bartimaeusnek.bartworks.common.items.SimpleSubItemClass;
-import com.github.bartimaeusnek.bartworks.common.loaders.BioItemList;
+import bartworks.MainMod;
+import bartworks.common.items.SimpleSubItemClass;
+import bartworks.common.loaders.BioItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GT_Values;

@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Californium;
+import static bartworks.system.material.WerkstoffLoader.Californium;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Computronics;
@@ -40,7 +40,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
+import bartworks.common.loaders.ItemRegistry;
 
 import appeng.api.AEApi;
 import goodgenerator.items.MyMaterial;

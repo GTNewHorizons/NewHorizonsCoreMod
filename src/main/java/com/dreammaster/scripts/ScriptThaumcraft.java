@@ -1,7 +1,7 @@
 package com.dreammaster.scripts;
 
-import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Fluorspar;
-import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.RedZircon;
+import static bartworks.system.material.WerkstoffLoader.Fluorspar;
+import static bartworks.system.material.WerkstoffLoader.RedZircon;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;

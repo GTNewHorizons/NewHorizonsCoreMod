@@ -1,7 +1,7 @@
 package com.dreammaster.bartworksHandler;
 
-import static com.github.bartimaeusnek.bartworks.API.recipe.BartWorksRecipeMaps.radioHatchRecipes;
-import static com.github.bartimaeusnek.bartworks.util.BWRecipes.calcDecayTicks;
+import static bartworks.API.recipe.BartWorksRecipeMaps.radioHatchRecipes;
+import static bartworks.util.BWRecipes.calcDecayTicks;
 import static gregtech.api.util.GT_RecipeConstants.DECAY_TICKS;
 
 import net.minecraft.item.ItemStack;

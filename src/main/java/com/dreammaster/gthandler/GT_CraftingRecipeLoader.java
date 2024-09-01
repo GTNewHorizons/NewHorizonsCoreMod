@@ -36,8 +36,8 @@ import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.main.NHItems;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.recipes.Recipe;
-import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
-import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
+import bartworks.common.loaders.ItemRegistry;
+import bartworks.system.material.WerkstoffLoader;
 
 import goodgenerator.items.MyMaterial;
 import gregtech.api.enums.Dyes;

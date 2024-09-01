@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
+import static bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
 import static gregtech.api.enums.GT_Values.W;
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
@@ -31,8 +31,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
-import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
+import bartworks.common.loaders.ItemRegistry;
+import bartworks.system.material.WerkstoffLoader;
 
 import goodgenerator.items.MyMaterial;
 import goodgenerator.loader.Loaders;
