@@ -3,7 +3,6 @@ package com.dreammaster.gthandler;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
@@ -12,10 +11,8 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenPrinters;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
@@ -29,13 +26,13 @@ import static gtPlusPlus.core.material.ALLOY.STELLITE;
 
 import java.util.function.Consumer;
 
-import com.dreammaster.item.ItemBucketList;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.main.NHItems;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.recipes.Recipe;
@@ -570,8 +567,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Casing_Firebricks.get(1L),
                 tBitMask,
                 new Object[] { "BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C',
-                        OrePrefixes.dust.get(Materials.Gypsum), 'W',
-                        ItemBucketList.Concrete.get(1) });
+                        OrePrefixes.dust.get(Materials.Gypsum), 'W', ItemBucketList.Concrete.get(1) });
 
         // Air filter multi blocks
         GT_ModHandler.addCraftingRecipe(
@@ -836,7 +832,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         // Diodes
         // ===================================================================================================
 
-
         Materials[] cables = { // Cable material used in the acid gen, diode and energy distributor below
                 Materials.Bedrockium, // UHV
                 Materials.Draconium, // UEV
@@ -891,41 +886,36 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 GT_ModHandler.addCraftingRecipe(
                         ItemRegistry.diode12A[i],
                         BITSD,
-                        new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode),
-                                'W',
+                        new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GT_OreDictUnificator
                                         .get(i < 13 ? OrePrefixes.cableGt12 : OrePrefixes.wireGt12, cable, 1L),
                                 'P', hull, 'C', machinehull });
                 GT_ModHandler.addCraftingRecipe(
                         ItemRegistry.diode8A[i],
                         BITSD,
-                        new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode),
-                                'W',
+                        new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GT_OreDictUnificator
                                         .get(i < 13 ? OrePrefixes.cableGt08 : OrePrefixes.wireGt08, cable, 1L),
                                 'P', hull, 'C', machinehull });
                 GT_ModHandler.addCraftingRecipe(
                         ItemRegistry.diode4A[i],
                         BITSD,
-                        new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode),
-                                'W',
+                        new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GT_OreDictUnificator
                                         .get(i < 13 ? OrePrefixes.cableGt04 : OrePrefixes.wireGt04, cable, 1L),
                                 'P', hull, 'C', machinehull });
                 GT_ModHandler.addCraftingRecipe(
                         ItemRegistry.diode2A[i],
                         BITSD,
-                        new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode),
-                                'W',
+                        new Object[] { "WDW", "DCD", "PDP", 'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GT_OreDictUnificator
                                         .get(i < 13 ? OrePrefixes.cableGt02 : OrePrefixes.wireGt02, cable, 1L),
                                 'P', hull, 'C', machinehull });
                 GT_ModHandler.addCraftingRecipe(
                         ItemRegistry.diode16A[i],
                         BITSD,
-                        new Object[] { "WHW", "DCD", "PDP", 'H',
-                                OrePrefixes.componentCircuit.get(Materials.Inductor), 'D',
-                                OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
+                        new Object[] { "WHW", "DCD", "PDP", 'H', OrePrefixes.componentCircuit.get(Materials.Inductor),
+                                'D', OrePrefixes.componentCircuit.get(Materials.Diode), 'W',
                                 GT_OreDictUnificator
                                         .get(i < 13 ? OrePrefixes.cableGt16 : OrePrefixes.wireGt16, cable, 1L),
                                 'P', hull, 'C', machinehull });
@@ -934,7 +924,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 e.printStackTrace();
             }
         }
-
 
         GT_ModHandler.addCraftingRecipe(
                 CustomItemList.UnfiredClayBrick.get(8L),

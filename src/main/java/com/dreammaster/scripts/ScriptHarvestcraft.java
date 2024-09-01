@@ -4,12 +4,10 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
@@ -22,13 +20,11 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.common.items.ID_MetaTool_01.KNIFE;
 import static gregtech.common.items.ID_MetaTool_01.MORTAR;
 import static gregtech.common.items.ID_MetaTool_01.ROLLING_PIN;
-import static gregtech.common.items.ID_MetaTool_01.SAW;
 import static gregtech.common.items.ID_MetaTool_01.SOFTMALLET;
 
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -40,6 +36,7 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.common.items.GT_MetaGenerated_Tool_01;
 
 public class ScriptHarvestcraft implements IScriptLoader {
 
@@ -63,11 +60,19 @@ public class ScriptHarvestcraft implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        OreDictionary.registerOre("toolMortarandpestle", GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(MORTAR.ID, 1, null, null, null));
-        OreDictionary.registerOre("toolCuttingboard", GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null));
+        OreDictionary.registerOre(
+                "toolMortarandpestle",
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(MORTAR.ID, 1, null, null, null));
+        OreDictionary.registerOre(
+                "toolCuttingboard",
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null));
         OreDictionary.registerOre("toolMixingbowl", getModItem(Minecraft.ID, "bowl", 1, 0, missing));
-        OreDictionary.registerOre("toolBakeware", GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(ROLLING_PIN.ID, 1, null, null, null));
-        OreDictionary.registerOre("toolJuicer", GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SOFTMALLET.ID, 1, null, null, null));
+        OreDictionary.registerOre(
+                "toolBakeware",
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(ROLLING_PIN.ID, 1, null, null, null));
+        OreDictionary.registerOre(
+                "toolJuicer",
+                GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(SOFTMALLET.ID, 1, null, null, null));
 
         addShapedRecipe(
                 getModItem(PamsHarvestCraft.ID, "animaltrap", 1, 0, missing),
@@ -630,10 +635,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapelessRecipe(
-                com.dreammaster.item.ItemList.EdibleSalt.getIS(1),
-                "toolPot",
-                "listAllwater");
+        addShapelessRecipe(com.dreammaster.item.ItemList.EdibleSalt.getIS(1), "toolPot", "listAllwater");
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing),
                 "craftingToolHardHammer",

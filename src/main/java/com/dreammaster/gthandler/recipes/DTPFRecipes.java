@@ -2,13 +2,10 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.plasmaForgeRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.COIL_HEAT;
 
-import gregtech.common.items.CombType;
-import gregtech.loaders.misc.GT_Bees;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -28,6 +25,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gregtech.common.items.CombType;
+import gregtech.loaders.misc.GT_Bees;
 import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.core.material.ELEMENT;
 import gtPlusPlus.core.material.Particle;
@@ -441,9 +440,7 @@ public class DTPFRecipes implements Runnable {
 
             // Spacetime v2
             GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.EnergisedTesseract.get(1),
-                            GregtechItemList.Compressed_Fusion_Reactor.get(0))
+                    .itemInputs(ItemList.EnergisedTesseract.get(1), GregtechItemList.Compressed_Fusion_Reactor.get(0))
                     .fluidInputs(
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(5000L),
                             Materials.Infinity.getMolten(1152L))
@@ -539,10 +536,10 @@ public class DTPFRecipes implements Runnable {
                     .setHighestCatalystTier(4).setEUtDivisor(1.12f)
                     .calculateNonEBFRecipe(total_EUt, recipe_time_per_quantum_ingot);
             GT_Values.RA.stdBuilder().itemInputs(
-                            CI.getEnergyCore(9, 0),
-                            BlockList.Quantinum.getIS(2),
-                            // Quantum Anomaly
-                            GregtechItemList.Laser_Lens_Special.get(2))
+                    CI.getEnergyCore(9, 0),
+                    BlockList.Quantinum.getIS(2),
+                    // Quantum Anomaly
+                    GregtechItemList.Laser_Lens_Special.get(2))
                     .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
                     .fluidInputs(
                             ALLOY.BLACK_TITANIUM.getFluidStack(144 * 320 * 7 / 10),
@@ -559,10 +556,10 @@ public class DTPFRecipes implements Runnable {
 
             // Quantum + Astral Titanium v2
             GT_Values.RA.stdBuilder().itemInputs(
-                            CI.getEnergyCore(9, 0),
-                            BlockList.Quantinum.getIS(4),
-                            // Quantum Anomaly
-                            GregtechItemList.Laser_Lens_Special.get(3))
+                    CI.getEnergyCore(9, 0),
+                    BlockList.Quantinum.getIS(4),
+                    // Quantum Anomaly
+                    GregtechItemList.Laser_Lens_Special.get(3))
                     .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(4))
                     .fluidInputs(
                             ALLOY.BLACK_TITANIUM.getFluidStack(144 * 640 * 7 / 10),
@@ -595,12 +592,11 @@ public class DTPFRecipes implements Runnable {
 
             // Time to Space
             GT_Values.RA.stdBuilder().itemInputs(
-                            // Spacetime Continuum Ripper
-                            GregtechItemList.SpaceTimeContinuumRipper.get(0),
-                            ItemList.EnergisedTesseract.get(2),
-                            // Quantum Anomaly
-                            GregtechItemList.Laser_Lens_Special.get(16))
-                    .itemOutputs(ItemList.Tesseract.get(1))
+                    // Spacetime Continuum Ripper
+                    GregtechItemList.SpaceTimeContinuumRipper.get(0),
+                    ItemList.EnergisedTesseract.get(2),
+                    // Quantum Anomaly
+                    GregtechItemList.Laser_Lens_Special.get(16)).itemOutputs(ItemList.Tesseract.get(1))
                     .fluidInputs(
                             MaterialsUEVplus.Time.getMolten(9216L * 64),
                             MaterialsUEVplus.SpaceTime.getMolten(9216L * 16),
@@ -612,10 +608,10 @@ public class DTPFRecipes implements Runnable {
 
             // Space to Time
             GT_Values.RA.stdBuilder().itemInputs(
-                            // Spacetime Continuum Ripper
-                            GregtechItemList.SpaceTimeContinuumRipper.get(0),
-                            ItemList.EnergisedTesseract.get(2),
-                            ItemList.Timepiece.get(16)).itemOutputs(ItemList.Tesseract.get(1))
+                    // Spacetime Continuum Ripper
+                    GregtechItemList.SpaceTimeContinuumRipper.get(0),
+                    ItemList.EnergisedTesseract.get(2),
+                    ItemList.Timepiece.get(16)).itemOutputs(ItemList.Tesseract.get(1))
                     .fluidInputs(
                             MaterialsUEVplus.Space.getMolten(9216L * 64),
                             MaterialsUEVplus.SpaceTime.getMolten(9216L * 16),
@@ -1071,12 +1067,12 @@ public class DTPFRecipes implements Runnable {
                 long tier_1_quantity = 144L * base_quantity;
 
                 GT_Values.RA.stdBuilder().fluidInputs(
-                                new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_1_quantity / 12),
-                                new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_1_quantity / 12),
-                                Materials.DraconiumAwakened.getMolten(5L * tier_1_quantity / 12),
-                                Materials.Infinity.getMolten(5L * tier_1_quantity / 12),
-                                Materials.Iron.getPlasma(tier_1_quantity / 12),
-                                MaterialsUEVplus.ExcitedDTRC.getFluid(baseUEV.getCatalystAmount(2)))
+                        new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_1_quantity / 12),
+                        new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_1_quantity / 12),
+                        Materials.DraconiumAwakened.getMolten(5L * tier_1_quantity / 12),
+                        Materials.Infinity.getMolten(5L * tier_1_quantity / 12),
+                        Materials.Iron.getPlasma(tier_1_quantity / 12),
+                        MaterialsUEVplus.ExcitedDTRC.getFluid(baseUEV.getCatalystAmount(2)))
                         .fluidOutputs(
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(2)),
                                 Materials.SuperconductorUEVBase.getMolten(tier_1_quantity))
@@ -1086,12 +1082,12 @@ public class DTPFRecipes implements Runnable {
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
 
                 GT_Values.RA.stdBuilder().fluidInputs(
-                                new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_2_quantity / 12),
-                                new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_2_quantity / 12),
-                                Materials.DraconiumAwakened.getMolten(5L * tier_2_quantity / 12),
-                                Materials.Infinity.getMolten(5L * tier_2_quantity / 12),
-                                Materials.Iron.getPlasma(tier_2_quantity / 12),
-                                MaterialsUEVplus.ExcitedDTEC.getFluid(baseUEV.getCatalystAmount(3)))
+                        new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_2_quantity / 12),
+                        new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_2_quantity / 12),
+                        Materials.DraconiumAwakened.getMolten(5L * tier_2_quantity / 12),
+                        Materials.Infinity.getMolten(5L * tier_2_quantity / 12),
+                        Materials.Iron.getPlasma(tier_2_quantity / 12),
+                        MaterialsUEVplus.ExcitedDTEC.getFluid(baseUEV.getCatalystAmount(3)))
                         .fluidOutputs(
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(3)),
                                 Materials.SuperconductorUEVBase.getMolten(tier_2_quantity))
@@ -1101,12 +1097,12 @@ public class DTPFRecipes implements Runnable {
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
 
                 GT_Values.RA.stdBuilder().fluidInputs(
-                                new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_3_quantity / 12),
-                                new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_3_quantity / 12),
-                                Materials.DraconiumAwakened.getMolten(5L * tier_3_quantity / 12),
-                                Materials.Infinity.getMolten(5L * tier_3_quantity / 12),
-                                Materials.Iron.getPlasma(tier_3_quantity / 12),
-                                MaterialsUEVplus.ExcitedDTSC.getFluid(baseUEV.getCatalystAmount(4)))
+                        new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_3_quantity / 12),
+                        new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_3_quantity / 12),
+                        Materials.DraconiumAwakened.getMolten(5L * tier_3_quantity / 12),
+                        Materials.Infinity.getMolten(5L * tier_3_quantity / 12),
+                        Materials.Iron.getPlasma(tier_3_quantity / 12),
+                        MaterialsUEVplus.ExcitedDTSC.getFluid(baseUEV.getCatalystAmount(4)))
                         .fluidOutputs(
                                 MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(baseUEV.getResidueAmount(4)),
                                 Materials.SuperconductorUEVBase.getMolten(tier_3_quantity))

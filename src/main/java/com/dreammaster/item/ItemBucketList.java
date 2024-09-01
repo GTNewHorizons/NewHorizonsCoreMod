@@ -1,15 +1,18 @@
 package com.dreammaster.item;
 
-import gregtech.api.util.GT_Utility;
 import net.minecraft.item.ItemStack;
 
+import gregtech.api.util.GT_Utility;
+
 public enum ItemBucketList {
+
     SodiumPotassium,
     NitricAcid,
     RadioactiveBacterialSludge,
     FermentedBacterialSludge,
     Concrete,
     Pollution;
+
     private ItemStack stack;
     private boolean hasNotBeenSet = true;
 
@@ -17,7 +20,6 @@ public enum ItemBucketList {
         hasNotBeenSet = false;
         this.stack = GT_Utility.copyAmount(1, stack);
     }
-
 
     public ItemStack get(int amount) {
         if (hasNotBeenSet) {

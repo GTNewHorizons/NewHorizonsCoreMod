@@ -30,14 +30,12 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.GraviSuiteNEO;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IC2NuclearControl;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -89,10 +87,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Function;
 
-import gtPlusPlus.core.block.ModBlocks;
-import gtPlusPlus.core.item.ModItems;
-import gtPlusPlus.xmod.forestry.bees.items.FR_ItemRegistry;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -111,6 +105,10 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.block.ModBlocks;
+import gtPlusPlus.core.item.ModItems;
+import gtPlusPlus.xmod.forestry.bees.items.FR_ItemRegistry;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class RecipeRemover {
 
@@ -390,8 +388,8 @@ public class RecipeRemover {
         GT_ModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing));
-        GT_ModHandler
-                .removeFurnaceSmelting(getModItem(ProjectRedExploration.ID, "projectred.exploration.ore", 1, 6, missing));
+        GT_ModHandler.removeFurnaceSmelting(
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.ore", 1, 6, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48, missing));
         GT_ModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18, missing));
@@ -2105,17 +2103,22 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 3, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 4, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 5, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.solar_panel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.battery", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 56, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11, missing));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.backpack", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1, 0, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1, 0, missing));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExploration.ID, "projectred.exploration.sawruby", 1, 0, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.sawgold", 1, 0, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedExploration.ID, "projectred.exploration.sawruby", 1, 0, missing));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.sawsapphire", 1, 0, missing));
         removeRecipeByOutputDelayed(
@@ -2230,14 +2233,19 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 7, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 8, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 9, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 1, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 0, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedFabrication.ID, "projectred.integration.icblock", 1, 1, missing));
         removeRecipeByOutputDelayed(
                 getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icblueprint", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedFabrication.ID, "projectred.fabrication.icchip", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(MCFrames.ID, "mcframes.frame", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10, missing));
-        removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 10, missing));
+        removeRecipeByOutputDelayed(
+                getModItem(ProjectRedExpansion.ID, "projectred.expansion.machine2", 1, 11, missing));
         removeRecipeByOutputDelayed(getModItem(ProjectRedExpansion.ID, "projectred.expansion.plan", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "stair", 1, 6, missing));
         removeRecipeByOutputDelayed(getModItem(Railcraft.ID, "stair", 1, 43, missing));

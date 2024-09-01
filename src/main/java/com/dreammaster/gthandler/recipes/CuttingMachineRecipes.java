@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.ProjectRedCore;
@@ -219,7 +218,6 @@ public class CuttingMachineRecipes implements Runnable {
 
         }
 
-
         // Photonically Prepared Wafer
         int wafer_duration_ticks = 50 * SECONDS;
         long wafer_eu_per_tick = TierEU.RECIPE_UEV;
@@ -232,7 +230,6 @@ public class CuttingMachineRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(24))
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1000L)).duration(wafer_duration_ticks / 2)
                 .eut(wafer_eu_per_tick).addTo(cutterRecipes);
-
 
         if (Chisel.isModLoaded()) {
             // Floor Carpet

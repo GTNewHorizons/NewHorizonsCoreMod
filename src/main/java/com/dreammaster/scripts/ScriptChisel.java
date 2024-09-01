@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -20,6 +19,8 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
+
 import com.cricketcraft.chisel.api.carving.CarvingUtils;
 import com.dreammaster.chisel.ChiselHelper;
 
@@ -28,7 +29,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
-import net.minecraft.item.ItemStack;
 
 public class ScriptChisel implements IScriptLoader {
 
@@ -258,20 +258,13 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack(
                 "RCAbyssalBlock",
                 GT_OreDictUnificator.get(OrePrefixes.stone, Materials.GraniteBlack, 1L));
-        ChiselHelper
-                .addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 1));
-        ChiselHelper
-                .addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 2));
-        ChiselHelper
-                .addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 3));
-        ChiselHelper
-                .addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 4));
-        ChiselHelper
-                .addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 5));
-        ChiselHelper
-                .addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 6));
-        ChiselHelper
-                .addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 7));
+        ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 1));
+        ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 2));
+        ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 3));
+        ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 4));
+        ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 5));
+        ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 6));
+        ChiselHelper.addVariationFromStack("RCAbyssalBlock", new ItemStack(GregTech_API.sBlockGranites, 1, 7));
         ChiselHelper.addGroup("basalts");
         ChiselHelper.addVariationFromStack("basalts", new ItemStack(GregTech_API.sBlockStones, 1, 8));
         ChiselHelper.addVariationFromStack("basalts", new ItemStack(GregTech_API.sBlockStones, 1, 9));
@@ -602,8 +595,7 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack(
                 "knightmetalblock",
                 getModItem(TwilightForest.ID, "tile.KnightmetalBlock", 1, 0, missing));
-        ChiselHelper
-                .addVariationFromStack("knightmetalblock", new ItemStack(GregTech_API.sBlockMetal4, 1, 0));
+        ChiselHelper.addVariationFromStack("knightmetalblock", new ItemStack(GregTech_API.sBlockMetal4, 1, 0));
         ChiselHelper.addGroup("ironwoodblock");
         ChiselHelper.addVariationFromStack(
                 "ironwoodblock",

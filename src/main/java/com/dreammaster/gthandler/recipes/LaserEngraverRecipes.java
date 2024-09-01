@@ -1,7 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
@@ -10,7 +8,6 @@ import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.WaferEngravingRecipes;
 
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
@@ -29,16 +26,14 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class LaserEngraverRecipes implements Runnable {
 
     @Override
     public void run() {
         // Energised tesseract
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Tesseract.get(1),
-                        GregtechItemList.Laser_Lens_Special.get(0))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Tesseract.get(1), GregtechItemList.Laser_Lens_Special.get(0))
                 .itemOutputs(ItemList.EnergisedTesseract.get(1))
                 .fluidOutputs(MaterialsUEVplus.ExcitedDTEC.getFluid(100)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(32_000_000).noOptimize().addTo(laserEngraverRecipes);
@@ -169,7 +164,6 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemOutputs(com.dreammaster.item.ItemList.RawPicoWafer.getIS()).requiresCleanRoom()
                 .duration(5 * MINUTES).eut((GT_Values.V[8] - (GT_Values.V[8] / 10))).addTo(laserEngraverRecipes);
 
-
         // Optical Boule
         GT_Values.RA.stdBuilder().itemInputs(
                 ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
@@ -202,7 +196,6 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1))
                 .fluidInputs(Materials.BioMediumSterilized.getFluid(50L)).duration(60 * SECONDS).eut(160_000)
                 .requiresCleanRoom().addTo(laserEngraverRecipes);
-
 
         // GC/GS Wafer
         if (GalacticraftCore.isModLoaded()) {

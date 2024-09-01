@@ -4,10 +4,7 @@ import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.*;
 
-import com.github.bartimaeusnek.bartworks.system.material.GT_Enhancement.BWGTMetaItems;
-import gregtech.api.enums.OrePrefixes;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagString;
@@ -116,7 +113,6 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
         if (AppliedEnergistics2.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockPaint", 1));
         }
-
 
         if (Chisel.isModLoaded()) {
             API.hideItem(GT_ModHandler.getModItem(Chisel.ID, "amber", 1));

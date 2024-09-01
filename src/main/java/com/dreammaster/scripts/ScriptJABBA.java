@@ -388,7 +388,6 @@ public class ScriptJABBA implements IScriptLoader {
                 "plateTungstenSteel",
                 "stickTungstenSteel");
 
-
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 9),
                 "stickRhodium-PlatedPalladium",
@@ -400,8 +399,6 @@ public class ScriptJABBA implements IScriptLoader {
                 "stickRhodium-PlatedPalladium",
                 "plateRhodium-PlatedPalladium",
                 "stickRhodium-PlatedPalladium");
-
-
 
         addShapedRecipe(
                 getModItem(JABBA.ID, "upgradeStructural", 1, 10),

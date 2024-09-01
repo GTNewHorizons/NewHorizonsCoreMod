@@ -15,7 +15,6 @@ import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
@@ -27,10 +26,10 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.main.NHItems;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.main.NHItems;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.ItemList;
@@ -104,8 +103,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         getModItem(Minecraft.ID, "skull", 1, 1, missing), });
         TCHelper.addResearchPage(
                 "WITHERRING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(new ItemStack(NHItems.WITHER_PROTECTION_RING.get(), 1))));
+                new ResearchPage(TCHelper.findInfusionRecipe(new ItemStack(NHItems.WITHER_PROTECTION_RING.get(), 1))));
         ThaumcraftApi.addWarpToResearch("WITHERRING", 2);
         new ResearchItem(
                 "EMINENCESTONE",

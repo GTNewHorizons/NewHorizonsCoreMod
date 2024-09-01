@@ -3,21 +3,13 @@ package com.dreammaster.gthandler.recipes;
 import static common.Blocks.tfftStorageField;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GoodGenerator;
-import static gregtech.api.enums.Mods.KekzTech;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
-import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 
-import com.github.technus.tectech.thing.casing.TT_Container_Casings;
-import goodgenerator.items.MyMaterial;
-import goodgenerator.loader.Loaders;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
@@ -25,8 +17,11 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.github.technus.tectech.thing.CustomItemList;
+import com.github.technus.tectech.thing.casing.TT_Container_Casings;
 import com.gtnewhorizons.gtnhintergalactic.recipe.IG_RecipeAdder;
 
+import goodgenerator.items.MyMaterial;
+import goodgenerator.loader.Loaders;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
@@ -49,7 +44,6 @@ public class SpaceAssemblerRecipes implements Runnable {
                     ? FluidRegistry.getFluid("molten.indalloy140")
                     : FluidRegistry.getFluid("molten.solderingalloy");
 
-
             // Optically Perfected CPU
             IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { gregtech.api.enums.ItemList.Circuit_Chip_Optical.get(1L),
@@ -58,7 +52,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Draconium, 4L),
                             CustomItemList.DATApipe.get(1L),
-                            MyMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw,4),
+                            MyMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw, 4),
                             MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 4) },
                     new FluidStack[] { new FluidStack(solderUEV, 288) },
                     ItemList.Optically_Perfected_CPU.get(1L),
@@ -75,8 +69,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                     .get(OrePrefixes.screw, Materials.Longasssuperconductornameforuhvwire, 8L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TengamAttuned, 8L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.DraconiumAwakened, 8L),
-                            CustomItemList.DATApipe.get(4L),
-                            MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 8),
+                            CustomItemList.DATApipe.get(4L), MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 8),
                             // Enriched Naquadah Alloy screw
                             MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8) },
                     new FluidStack[] { new FluidStack(solderUEV, 576) },
@@ -87,71 +80,60 @@ public class SpaceAssemblerRecipes implements Runnable {
                     null,
                     null);
 
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { ItemList.Circuit_Chip_Optical.get(16L),
+                            ItemList.Optical_Cpu_Containment_Housing.get(16L),
+                            ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
+                            GT_OreDictUnificator.get(OrePrefixes.screw, MaterialsUEVplus.SpaceTime, 16L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
+                            CustomItemList.DATApipe.get(16L),
+                            // Enriched Naquadah Alloy screw
+                            MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
+                            // Shirabon screw
+                            MyMaterial.shirabon.get(OrePrefixes.screw, 16) },
+                    new FluidStack[] { new FluidStack(solderUEV, 1152) },
+                    ItemList.Optically_Perfected_CPU.get(16L),
+                    2,
+                    20 * 20,
+                    (int) TierEU.RECIPE_UIV,
+                    null,
+                    null);
 
-            IG_RecipeAdder
-                    .addSpaceAssemblerRecipe(
-                            new ItemStack[] { ItemList.Circuit_Chip_Optical.get(16L),
-                                    ItemList.Optical_Cpu_Containment_Housing.get(16L),
-                                    ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
-                                    GT_OreDictUnificator
-                                            .get(OrePrefixes.screw, MaterialsUEVplus.SpaceTime, 16L),
-                                    GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
-                                    CustomItemList.DATApipe.get(16L),
-                                    // Enriched Naquadah Alloy screw
-                                    MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
-                                    // Shirabon screw
-                                    MyMaterial.shirabon.get(OrePrefixes.screw, 16) },
-                            new FluidStack[] { new FluidStack(solderUEV, 1152) },
-                            ItemList.Optically_Perfected_CPU.get(16L),
-                            2,
-                            20 * 20,
-                            (int) TierEU.RECIPE_UIV,
-                            null,
-                            null);
+            // Alternate Energy Orb Cluster Recipe
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { ItemList.Circuit_Board_Multifiberglass.get(1L),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 64L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 4L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(8L), ItemList.Circuit_Chip_HPIC.get(64L),
+                            ItemList.Circuit_Parts_DiodeASMD.get(8L), ItemList.Circuit_Parts_CapacitorASMD.get(8L),
+                            ItemList.Circuit_Parts_ResistorASMD.get(8L), ItemList.Circuit_Parts_TransistorASMD.get(8L),
+                            GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 64) },
+                    new FluidStack[] { new FluidStack(solderIndalloy, 720) },
+                    ItemList.Energy_LapotronicOrb2.get(1),
+                    1,
+                    50 * 20,
+                    (int) TierEU.RECIPE_ZPM,
+                    null,
+                    null);
 
-
-
-
-                // Alternate Energy Orb Cluster Recipe
-                IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Multifiberglass.get(1L),
-                                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 64L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 4L),
-                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(8L), ItemList.Circuit_Chip_HPIC.get(64L),
-                                ItemList.Circuit_Parts_DiodeASMD.get(8L), ItemList.Circuit_Parts_CapacitorASMD.get(8L),
-                                ItemList.Circuit_Parts_ResistorASMD.get(8L),
-                                ItemList.Circuit_Parts_TransistorASMD.get(8L),
-                                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 64) },
-                        new FluidStack[] { new FluidStack(solderIndalloy, 720) },
-                        ItemList.Energy_LapotronicOrb2.get(1),
-                        1,
-                        50 * 20,
-                        (int) TierEU.RECIPE_ZPM,
-                        null,
-                        null);
-
-                // Alternate Energy Module Recipe
-                IG_RecipeAdder.addSpaceAssemblerRecipe(
-                        new ItemStack[] { ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bedrockium, 64L),
-                                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4L),
-                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                                ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                                ItemList.Circuit_Chip_UHPIC.get(64L), ItemList.Circuit_Parts_DiodeXSMD.get(8L),
-                                ItemList.Circuit_Parts_CapacitorXSMD.get(8L),
-                                ItemList.Circuit_Parts_ResistorXSMD.get(8L),
-                                ItemList.Circuit_Parts_TransistorXSMD.get(8L),
-                                GT_OreDictUnificator.get("wireFineHypogen", 48), },
-                        new FluidStack[] { new FluidStack(solderUEV, 720) },
-                        ItemList.Energy_Module.get(1),
-                        1,
-                        50 * 20,
-                        (int) TierEU.RECIPE_UV,
-                        null,
-                        null);
-
-
+            // Alternate Energy Module Recipe
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { ItemList.Circuit_Board_Wetware_Extreme.get(1),
+                            GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Bedrockium, 64L),
+                            GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L), ItemList.Circuit_Chip_UHPIC.get(64L),
+                            ItemList.Circuit_Parts_DiodeXSMD.get(8L), ItemList.Circuit_Parts_CapacitorXSMD.get(8L),
+                            ItemList.Circuit_Parts_ResistorXSMD.get(8L), ItemList.Circuit_Parts_TransistorXSMD.get(8L),
+                            GT_OreDictUnificator.get("wireFineHypogen", 48), },
+                    new FluidStack[] { new FluidStack(solderUEV, 720) },
+                    ItemList.Energy_Module.get(1),
+                    1,
+                    50 * 20,
+                    (int) TierEU.RECIPE_UV,
+                    null,
+                    null);
 
             // Advanced Radiation Proof Plate
             IG_RecipeAdder.addSpaceAssemblerRecipe(
@@ -170,7 +152,6 @@ public class SpaceAssemblerRecipes implements Runnable {
                     (int) TierEU.ZPM,
                     null,
                     null);
-
 
             // Alternate Energy Cluster Recipe
             IG_RecipeAdder.addSpaceAssemblerRecipe(
@@ -193,7 +174,6 @@ public class SpaceAssemblerRecipes implements Runnable {
                     null,
                     null);
 
-
             // Alternate Ultimate Battery Recipe
             IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { ItemList.Circuit_Board_Optical.get(1),
@@ -205,9 +185,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
                             ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L),
-                            ItemList.Circuit_Chip_PPIC.get(64L), ItemList.Circuit_Parts_DiodeXSMD.get(64L),
-                            ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
+                            ItemList.Circuit_Parts_Crystal_Chip_Master.get(64L), ItemList.Circuit_Chip_PPIC.get(64L),
+                            ItemList.Circuit_Parts_DiodeXSMD.get(64L), ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
                             ItemList.Circuit_Parts_ResistorXSMD.get(64L),
                             ItemList.Circuit_Parts_TransistorXSMD.get(64L),
                             GT_OreDictUnificator.get(
@@ -223,7 +202,6 @@ public class SpaceAssemblerRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV,
                     null,
                     null);
-
 
             if (OpenComputers.isModLoaded() && SuperSolarPanels.isModLoaded()) {
                 // Optically Compatible Memory
@@ -359,8 +337,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1),
                                 GT_OreDictUnificator.get("plateDenseShirabon", 16),
-                                ItemList.Field_Generator_UXV.get(1L),
-                                new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
+                                ItemList.Field_Generator_UXV.get(1L), new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                                 new ItemStack(tfftStorageField, 2, 10),
                                 new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),

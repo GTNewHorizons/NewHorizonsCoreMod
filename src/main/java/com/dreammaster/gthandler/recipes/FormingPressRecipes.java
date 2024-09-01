@@ -1,17 +1,13 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
-import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedCore;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
-import gtPlusPlus.core.material.ALLOY;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -25,6 +21,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.material.ALLOY;
 
 public class FormingPressRecipes implements Runnable {
 
@@ -304,11 +301,9 @@ public class FormingPressRecipes implements Runnable {
                 .addTo(formingPressRecipes);
 
         GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Shape_Empty.get(1L),
-                        com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
-                .itemOutputs(com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(1))
-                .duration(10 * SECONDS).eut(256).addTo(formingPressRecipes);
+                .itemInputs(ItemList.Shape_Empty.get(1L), com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
+                .itemOutputs(com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(1)).duration(10 * SECONDS).eut(256)
+                .addTo(formingPressRecipes);
 
         GT_Values.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_ToolHeadDrill.get(0))
                 .itemOutputs(ItemList.Shape_Extruder_ToolHeadDrill.get(1)).duration(10 * SECONDS).eut(256)

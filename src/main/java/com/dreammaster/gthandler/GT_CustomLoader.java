@@ -24,10 +24,8 @@ public class GT_CustomLoader {
 
         LuV(OrePrefixes.circuit.get(Materials.LuV), OrePrefixes.wireGt02.get(Materials.YttriumBariumCuprate),
                 Materials.VanadiumGallium, OrePrefixes.wireGt02.get(Materials.HSSG),
-                OrePrefixes.gemExquisite.get(Materials.Diamond), gregtech.api.enums.ItemList.Gravistar,
-                "blockGlassLuV",
-                Materials.get("Rhodium-PlatedPalladium"),
-                Materials.Enderium),
+                OrePrefixes.gemExquisite.get(Materials.Diamond), gregtech.api.enums.ItemList.Gravistar, "blockGlassLuV",
+                Materials.get("Rhodium-PlatedPalladium"), Materials.Enderium),
 
         ZPM(OrePrefixes.circuit.get(Materials.ZPM), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
                 Materials.Naquadah, OrePrefixes.wireGt02.get(Materials.Naquadah),
@@ -36,28 +34,24 @@ public class GT_CustomLoader {
 
         UV(OrePrefixes.circuit.get(Materials.UV), OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),
                 Materials.ElectrumFlux, OrePrefixes.wireGt02.get(Materials.NaquadahAlloy),
-                OrePrefixes.gemExquisite.get(Materials.GarnetRed), new ItemStack(Blocks.dragon_egg, 1),
-                "blockGlassUV", Materials.Osmium, Materials.Neutronium),
+                OrePrefixes.gemExquisite.get(Materials.GarnetRed), new ItemStack(Blocks.dragon_egg, 1), "blockGlassUV",
+                Materials.Osmium, Materials.Neutronium),
 
         UHV(OrePrefixes.circuit.get(Materials.UHV), OrePrefixes.wireGt16.get(Materials.YttriumBariumCuprate),
-                Materials.Bedrockium, OrePrefixes.wireGt02.get(Materials.Bedrockium), null, null,
-                "blockGlassUHV", Materials.Neutronium,
-                Materials.Neutronium),
+                Materials.Bedrockium, OrePrefixes.wireGt02.get(Materials.Bedrockium), null, null, "blockGlassUHV",
+                Materials.Neutronium, Materials.Neutronium),
 
         UEV(OrePrefixes.circuit.get(Materials.UEV), OrePrefixes.wireGt04.get(Materials.Bedrockium), Materials.Draconium,
-                OrePrefixes.wireGt02.get(Materials.Draconium), null, null,
-                "blockGlassUEV", Materials.Bedrockium,
+                OrePrefixes.wireGt02.get(Materials.Draconium), null, null, "blockGlassUEV", Materials.Bedrockium,
                 Materials.Infinity),
 
         UIV(OrePrefixes.circuit.get(Materials.UIV), OrePrefixes.wireGt08.get(Materials.Bedrockium),
-                Materials.NetherStar, OrePrefixes.wireGt02.get(Materials.NetherStar), null, null,
-                "blockGlassUIV", Materials.CosmicNeutronium,
-                MaterialsUEVplus.TranscendentMetal),
+                Materials.NetherStar, OrePrefixes.wireGt02.get(Materials.NetherStar), null, null, "blockGlassUIV",
+                Materials.CosmicNeutronium, MaterialsUEVplus.TranscendentMetal),
 
         UMV(OrePrefixes.circuit.get(Materials.UMV), OrePrefixes.wireGt16.get(Materials.Bedrockium), Materials.Quantium,
-                OrePrefixes.wireGt02.get(Materials.Quantium), null, null,
-                "blockGlassUMV", MaterialsUEVplus.TranscendentMetal,
-                MaterialsUEVplus.SpaceTime);
+                OrePrefixes.wireGt02.get(Materials.Quantium), null, null, "blockGlassUMV",
+                MaterialsUEVplus.TranscendentMetal, MaterialsUEVplus.SpaceTime);
 
         private Object _mCircuit;
         private Object _mHeatingCoil;

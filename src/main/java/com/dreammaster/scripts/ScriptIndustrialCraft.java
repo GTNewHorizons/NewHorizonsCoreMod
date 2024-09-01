@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
@@ -34,7 +33,6 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
-import gtPlusPlus.xmod.ic2.item.IC2_Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -51,6 +49,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.xmod.ic2.item.IC2_Items;
 
 public class ScriptIndustrialCraft implements IScriptLoader {
 
@@ -1755,8 +1754,8 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing),
                         com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
-                .itemOutputs(com.dreammaster.item.ItemList.ElectricBoatHull.getIS(1))
-                .duration(1 * MINUTES).eut(30).addTo(extruderRecipes);
+                .itemOutputs(com.dreammaster.item.ItemList.ElectricBoatHull.getIS(1)).duration(1 * MINUTES).eut(30)
+                .addTo(extruderRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 1L),

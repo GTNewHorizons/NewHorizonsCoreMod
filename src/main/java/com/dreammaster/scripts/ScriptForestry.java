@@ -6,12 +6,10 @@ import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -31,7 +29,6 @@ import static gregtech.api.util.GT_RecipeConstants.FUEL_VALUE;
 import java.util.Arrays;
 import java.util.List;
 
-import gtPlusPlus.xmod.bop.blocks.BOP_Block_Registrator;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -49,6 +46,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_RecipeConstants;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.xmod.bop.blocks.BOP_Block_Registrator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -5106,8 +5104,7 @@ public class ScriptForestry implements IScriptLoader {
                 null,
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Forestry.ID, "thermionicTubes", 2, 6, missing),
-                new Object[] { "abc", "def", "ghi", 'b',
-                        com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'd',
+                new Object[] { "abc", "def", "ghi", 'b', com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'd',
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
                         com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'f',
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'g',
@@ -5130,8 +5127,9 @@ public class ScriptForestry implements IScriptLoader {
                 null,
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Forestry.ID, "thermionicTubes", 2, 8, missing),
-                new Object[] { "abc", "def", "ghi", 'b', GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1),
-                        'd', GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
+                new Object[] { "abc", "def", "ghi", 'b',
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1), 'd',
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
                         GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1), 'f',
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'g',
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 1L), 'h',

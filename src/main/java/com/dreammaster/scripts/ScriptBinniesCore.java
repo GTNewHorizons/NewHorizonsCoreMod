@@ -1,14 +1,14 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BinnieCore;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 
 import java.util.Collections;
 import java.util.List;
 
-import com.dreammaster.block.BlockList;
 import net.minecraftforge.fluids.FluidRegistry;
+
+import com.dreammaster.block.BlockList;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.ItemList;
