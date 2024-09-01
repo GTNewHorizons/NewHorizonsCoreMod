@@ -11,11 +11,13 @@ import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
+import static gtPlusPlus.core.block.ModBlocks.blockFishTrap;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_W;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
 import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
 import static gtPlusPlus.core.material.ALLOY.STELLITE;
+import static gtPlusPlus.core.material.ELEMENT.STANDALONE.CHRONOMATIC_GLASS;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +26,7 @@ import java.util.Map;
 import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import goodgenerator.items.MyMaterial;
 import goodgenerator.loader.Loaders;
+import gtPlusPlus.core.material.ALLOY;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -1539,7 +1542,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1L),
                         CustomItemList.SteelBars.get(6L),
                         GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(GT_ModHandler.getModItem(GTPlusPlus.ID, "blockFishTrap", 1L, 0)).duration(10 * SECONDS)
+                .itemOutputs(new ItemStack(blockFishTrap, 1, 0)).duration(10 * SECONDS)
                 .eut(64).addTo(assemblerRecipes);
 
 
@@ -1833,7 +1836,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.AutoclaveLuV.get(2L),
                         ItemList.Casing_Autoclave.get(4L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateLafiumCompound", 8L))
+                        ALLOY.LAFIUM.getPlate(8))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(8 * 144))
                 .itemOutputs(ItemList.Machine_Multi_Autoclave.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
@@ -2279,10 +2282,10 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_EV.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
-                        getModItem(GTPlusPlus.ID, "itemGearHastelloyX", 1L),
-                        getModItem(GTPlusPlus.ID, "blockFrameGtHastelloyC276", 1L),
-                        getModItem(GTPlusPlus.ID, "itemRingInconel792", 2L))
-                .itemOutputs(getModItem(GTPlusPlus.ID, "gtplusplus.blockcasings.2", 1L, 2)).duration(5 * SECONDS)
+                        HASTELLOY_X.getGear(1),
+                        HASTELLOY_C276.getFrameBox(1),
+                        ALLOY.INCONEL_792.getRing(2))
+                .itemOutputs(GregtechItemList.Casing_Refinery_Structural.get(2)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
 
@@ -2389,7 +2392,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
-                        (GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFineWireChromaticGlass", 2)))
+                        CHRONOMATIC_GLASS.getFineWire(2))
                 .itemOutputs(com.github.technus.tectech.thing.CustomItemList.DATApipe.get(64))
                 .fluidInputs(Materials.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
@@ -3595,7 +3598,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Naquadria, 4L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilPikyonium64B", 2L),
+                        ALLOY.PIKYONIUM.getFoil(2),
                         GT_OreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
@@ -3608,7 +3611,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.BlackPlutonium, 4L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilArceusAlloy2B", 2L),
+                        ALLOY.TRINIUM_REINFORCED_STEEL.getFoil(2),
                         GT_OreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
@@ -3621,7 +3624,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 4L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilCinobiteA243", 2L),
+                        ALLOY.CINOBITE.getFoil(2),
                         GT_OreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
@@ -3634,7 +3637,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tritanium, 4L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilLafiumCompound", 2L),
+                        ALLOY.LAFIUM.getFoil(2),
                         GT_OreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
@@ -4472,7 +4475,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateNitinol60", 2L),
+                            NITINOL_60.getPlate(2),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
                             GT_Utility.getIntegratedCircuit(3))
@@ -4492,7 +4495,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateZeron100", 2L),
+                            ALLOY.ZERON_100.getPlate(2),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
                             GT_Utility.getIntegratedCircuit(3))

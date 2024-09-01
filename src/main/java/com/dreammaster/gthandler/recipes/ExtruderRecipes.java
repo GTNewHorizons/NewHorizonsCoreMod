@@ -13,6 +13,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 @SuppressWarnings("PointlessArithmeticExpression")
 public class ExtruderRecipes implements Runnable {
@@ -120,42 +121,42 @@ public class ExtruderRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 9L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32040))
+                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 9L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32040))
+                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32040))
+                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.block, Materials.WroughtIron, 1L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32040))
+                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(extruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 9L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32040))
+                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.block, Materials.Steel, 1L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 0L, 32040))
+                        GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftSteel.get(1L)).duration(1 * MINUTES + 4 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
 

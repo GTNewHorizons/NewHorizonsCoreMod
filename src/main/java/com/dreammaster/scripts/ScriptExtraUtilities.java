@@ -34,6 +34,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import gtPlusPlus.core.block.ModBlocks;
+import gtPlusPlus.core.item.ModItems;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
@@ -1026,7 +1028,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12, missing)));
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
-                        getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 5, missing),
+                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 5),
                         "abc",
                         "def",
                         "ghi",
@@ -1431,11 +1433,11 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                        getModItem(GTPlusPlus.ID, "magicfeather", 1, 0, missing),
+                        new ItemStack(ModItems.itemMagicFeather),
                         getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
                         getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
                         getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        getModItem(GTPlusPlus.ID, "magicfeather", 1, 0, missing),
+                        new ItemStack(ModItems.itemMagicFeather),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                         com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),

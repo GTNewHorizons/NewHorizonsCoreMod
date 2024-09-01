@@ -41,6 +41,7 @@ import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
 import goodgenerator.items.MyItems;
 import goodgenerator.items.MyMaterial;
 
+import gtPlusPlus.core.material.ALLOY;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -879,14 +880,14 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Neutronium, 64L),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 64L),
                             Californium.get(OrePrefixes.stickLong, 64),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongQuantum", 64L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongHypogen", 64L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongCelestialTungsten", 64L),
+                            ALLOY.QUANTUM.getLongRod(64),
+                            ELEMENT.STANDALONE.HYPOGEN.getLongRod(64),
+                            ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getLongRod(64),
                             MyMaterial.tairitsu.get(OrePrefixes.stickLong, 64),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongAstralTitanium", 64L),
+                            ELEMENT.STANDALONE.ASTRAL_TITANIUM.getLongRod(64),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64L),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 64L),
-                            GT_ModHandler.getModItem(GTPlusPlus.ID, "itemRodLongAbyssalAlloy", 64L),
+                            ALLOY.ABYSSAL.getLongRod(64),
                             GT_OreDictUnificator
                                     .get(OrePrefixes.stickLong, MaterialsUEVplus.TranscendentMetal, 64L), },
                     new FluidStack[] { Materials.Neutronium.getMolten(32_768_000L),

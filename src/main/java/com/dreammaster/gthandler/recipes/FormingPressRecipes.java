@@ -11,6 +11,7 @@ import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 
+import gtPlusPlus.core.material.ALLOY;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -469,7 +470,7 @@ public class FormingPressRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Optical.get(1L),
-                        GT_ModHandler.getModItem(GTPlusPlus.ID, "itemFoilBotmium", 1L),
+                        ALLOY.BOTMIUM.getFoil(1),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),

@@ -23,6 +23,8 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import gtPlusPlus.core.item.chemistry.AgriculturalChem;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
@@ -118,7 +120,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 "dustGlowstone");
         addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 15, missing),
-                getModItem(GTPlusPlus.ID, "item.BasicAgrichemItem", 1, 1, missing),
+                new ItemStack(AgriculturalChem.mAgrichemItem1, 1, 1),
                 "dustGlowstone");
         addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 12, missing),

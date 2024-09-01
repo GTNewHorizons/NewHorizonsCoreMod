@@ -16,7 +16,12 @@ import static gtPlusPlus.api.recipe.GTPPRecipeMaps.quantumForceTransformerRecipe
 import java.util.Arrays;
 import java.util.List;
 
+import gtPlusPlus.core.item.ModItems;
+import gtPlusPlus.core.material.ALLOY;
+import gtPlusPlus.core.material.Material;
+import gtPlusPlus.xmod.forestry.bees.items.FR_ItemRegistry;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -65,40 +70,40 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
                 ItemList.Machine_HV_Centrifuge.get(1L),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing));
-        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), getModItem(GTPlusPlus.ID, "frameUseless", 1, 0, missing));
+        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), new ItemStack(FR_ItemRegistry.hiveFrameVoid));
         addShapedRecipe(
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getRod(1),
                 "craftingToolFile",
                 null,
                 null,
                 null,
-                getModItem(GTPlusPlus.ID, "itemIngotTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getIngot(1),
                 null,
                 null,
                 null,
                 null);
         addShapedRecipe(
-                getModItem(GTPlusPlus.ID, "blockFrameGtTumbaga", 2, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getFrameBox(2),
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getRod(1),
                 "craftingToolWrench",
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing));
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getRod(1));
         addShapedRecipe(
-                getModItem(GTPlusPlus.ID, "itemGearTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getGear(1),
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getPlate(1),
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getPlate(1),
                 "craftingToolWrench",
-                getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemPlateTumbaga", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing));
+                ALLOY.TUMBAGA.getPlate(1),
+                ALLOY.TUMBAGA.getRod(1),
+                ALLOY.TUMBAGA.getPlate(1),
+                ALLOY.TUMBAGA.getRod(1));
         addShapedRecipe(
                 GregtechItemList.Industrial_WireFactory.get(1),
                 "plateBlueSteel",
@@ -115,14 +120,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 ItemList.Electric_Pump_LV.get(1L),
                 "circuitBasic",
                 ItemList.Electric_Pump_LV.get(1L),
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
                 ItemList.Casing_LV.get(1L),
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
                 GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L),
                 ItemList.Machine_Steel_Boiler.get(1L),
                 GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L));
         addShapedRecipe(
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 0, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
                 "plateDoubleLead",
                 GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 "plateDoubleLead",
@@ -137,14 +142,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 ItemList.Electric_Pump_MV.get(1L),
                 "circuitGood",
                 ItemList.Electric_Pump_MV.get(1L),
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
                 ItemList.Casing_MV.get(1L),
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
                 GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L),
                 ItemList.Machine_Steel_Boiler.get(1L),
                 GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L));
         addShapedRecipe(
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 1, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
                 "plateDoubleStainlessSteel",
                 GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                 "plateDoubleStainlessSteel",
@@ -159,14 +164,14 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 ItemList.Electric_Pump_HV.get(1L),
                 "circuitAdvanced",
                 ItemList.Electric_Pump_HV.get(1L),
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
                 ItemList.Casing_HV.get(1L),
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
                 GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L),
                 ItemList.Machine_Steel_Boiler.get(1L),
                 GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L));
         addShapedRecipe(
-                getModItem(GTPlusPlus.ID, "itemBoilerChassis", 1, 2, missing),
+                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
                 "plateDoubleTitanium",
                 GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
                 "plateDoubleTitanium",
@@ -192,7 +197,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "frameAccelerated", 1, 0, missing),
+                new ItemStack(FR_ItemRegistry.hiveFrameAccelerated, 1, 0),
                 "abc",
                 "def",
                 "ghi",
@@ -218,7 +223,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "frameMutagenic", 1, 0, missing),
+                new ItemStack(FR_ItemRegistry.hiveFrameMutagenic, 1, 0),
                 "abc",
                 "def",
                 "ghi",
@@ -244,7 +249,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "frameBusy", 1, 0, missing),
+                new ItemStack(FR_ItemRegistry.hiveFrameBusy),
                 "abc",
                 "def",
                 "ghi",
@@ -270,7 +275,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "frameDecaying", 1, 0, missing),
+                new ItemStack(FR_ItemRegistry.hiveFrameDecay),
                 "abc",
                 "def",
                 "ghi",
@@ -296,33 +301,33 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "frameSlowing", 1, 0, missing),
+                new ItemStack(FR_ItemRegistry.hiveFrameSlow),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                getModItem(GTPlusPlus.ID, "itemRodLongTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getLongRod(1),
                 'b',
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getRod(1),
                 'c',
-                getModItem(GTPlusPlus.ID, "itemRodLongTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getLongRod(1),
                 'd',
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getRod(1),
                 'e',
                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1L),
                 'f',
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getRod(1),
                 'g',
-                getModItem(GTPlusPlus.ID, "itemRodLongTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getLongRod(1),
                 'h',
-                getModItem(GTPlusPlus.ID, "itemRodTumbaga", 1, 0, missing),
+                ALLOY.TUMBAGA.getRod(1),
                 'i',
-                getModItem(GTPlusPlus.ID, "itemRodLongTumbaga", 1, 0, missing));
+                ALLOY.TUMBAGA.getLongRod(1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "frameStabilizing", 1, 0, missing),
+                new ItemStack(FR_ItemRegistry.hiveFrameStalilize),
                 "abc",
                 "def",
                 "ghi",
@@ -348,7 +353,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "frameArborists", 1, 0, missing),
+                new ItemStack(FR_ItemRegistry.hiveFrameArborist),
                 "abc",
                 "def",
                 "ghi",

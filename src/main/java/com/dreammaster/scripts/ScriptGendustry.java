@@ -17,6 +17,7 @@ import java.util.List;
 
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GT_Bees;
+import gtPlusPlus.core.material.ELEMENT;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -220,7 +221,7 @@ public class ScriptGendustry implements IScriptLoader {
                 'f',
                 getModItem(Gendustry.ID, "MutagenTank", 1, 0, missing),
                 'g',
-                getModItem(GTPlusPlus.ID, "itemGearRuthenium", 1, 0, missing),
+                ELEMENT.getInstance().RUTHENIUM.getPlate(1),
                 'h',
                 getModItem(ExtraBees.ID, "alveary", 1, 6, missing),
                 'i',

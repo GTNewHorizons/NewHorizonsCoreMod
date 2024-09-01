@@ -30,6 +30,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 
+import gtPlusPlus.core.block.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -324,12 +325,12 @@ public class CompressorRecipes implements Runnable {
     private void makeGTPlusPlusRecipes() {
         // Compressed Glowstone
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glowstone, 9))
-                .itemOutputs(getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 6)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 6)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
         // Double Compressed Glowstone
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 9L, 6))
-                .itemOutputs(getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 7)).duration(15 * SECONDS).eut(2)
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(ModBlocks.blockCompressedObsidian, 9, 6))
+                .itemOutputs(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 7)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
     }
 

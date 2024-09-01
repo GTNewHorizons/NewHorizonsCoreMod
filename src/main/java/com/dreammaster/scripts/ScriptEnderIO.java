@@ -27,6 +27,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -410,7 +411,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32054, missing),
+                GregtechItemList.Battery_RE_EV_Lithium.get(1),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
@@ -432,7 +433,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32054, missing),
+                GregtechItemList.Battery_RE_EV_Lithium.get(1),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPainter", 1, 0, missing),

@@ -31,6 +31,7 @@ import static gregtech.api.util.GT_RecipeConstants.FUEL_VALUE;
 import java.util.Arrays;
 import java.util.List;
 
+import gtPlusPlus.xmod.bop.blocks.BOP_Block_Registrator;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -5769,25 +5770,25 @@ public class ScriptForestry implements IScriptLoader {
                 'h',
                 getModItem(Minecraft.ID, "stick", 1, 0, missing));
         RecipeManagers.fermenterManager.addRecipe(
-                getModItem(GTPlusPlus.ID, "blockRainforestOakSapling", 1, 0, missing),
+                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("juice", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                getModItem(GTPlusPlus.ID, "blockRainforestOakSapling", 1, 0, missing),
+                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("for.honey", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                getModItem(GTPlusPlus.ID, "blockRainforestOakSapling", 1, 0, missing),
+                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("honey", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                getModItem(GTPlusPlus.ID, "blockRainforestOakSapling", 1, 0, missing),
+                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
                 50,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),

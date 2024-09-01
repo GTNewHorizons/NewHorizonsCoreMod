@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import goodgenerator.loader.Loaders;
+import gtPlusPlus.core.material.ALLOY;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -184,8 +185,8 @@ public class ScriptAE2FC implements IScriptLoader {
         ItemStack[] components = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64, COMPONENT_256,
                 COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
 
-        final ItemStack nitinolPlate = GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateNitinol60", 2L);
-        final ItemStack zeronPlate = GT_ModHandler.getModItem(GTPlusPlus.ID, "itemPlateZeron100", 2L);
+        final ItemStack nitinolPlate = ALLOY.NITINOL_60.getPlate(2);
+        final ItemStack zeronPlate = ALLOY.ZERON_100.getPlate(2);
 
         // AE2FC_FLUID_STORAGE_HOUSING
         GT_ModHandler.addCraftingRecipe(

@@ -20,6 +20,7 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import gtPlusPlus.core.block.ModBlocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -711,7 +712,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 5,
                 new AspectList().add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("vinculum"), 32)
                         .add(Aspect.getAspect("desidia"), 16).add(Aspect.getAspect("sensus"), 16),
-                getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 1, missing),
+                new ItemStack(ModBlocks.blockCompressedObsidian, 1, 1),
                 new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8, missing),
                         getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
@@ -1184,11 +1185,11 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 1, missing),
+                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 1),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 1, missing),
+                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 1),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 1, missing),
+                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 1),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Efficiency",

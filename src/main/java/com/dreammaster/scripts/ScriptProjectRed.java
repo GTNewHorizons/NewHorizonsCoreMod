@@ -48,6 +48,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.GregTech_API;
+import gtPlusPlus.core.material.ALLOY;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -2512,7 +2513,7 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemInputs(
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 44, missing),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
-                            getModItem(GTPlusPlus.ID, "itemPlatePotin", 1, 0, missing),
+                            ALLOY.POTIN.getPlate(1),
                             GT_OreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 2L),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 20, missing),
                             getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 28, missing))

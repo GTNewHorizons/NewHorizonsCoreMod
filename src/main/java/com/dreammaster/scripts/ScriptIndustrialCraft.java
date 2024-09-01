@@ -34,6 +34,7 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import gtPlusPlus.xmod.ic2.item.IC2_Items;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -311,7 +312,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemwcarbonrotor", 1, 1, missing),
-                getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing),
+                new ItemStack(IC2_Items.shaft_Material_2.getItem(), 1, 0),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
                 "craftingToolHardHammer",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
@@ -319,7 +320,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
                 "craftingToolWrench",
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 9, missing),
-                getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing));
+                new ItemStack(IC2_Items.shaft_Material_2.getItem(), 1, 0));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockKineticGenerator", 1, 5, missing),
                 ItemList.Electric_Motor_MV.get(1L),
