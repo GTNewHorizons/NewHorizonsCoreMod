@@ -52,7 +52,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_RecipeConstants;
 import gregtech.api.util.GT_Utility;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
-import tectech.recipe.TT_recipeAdder;
+import tectech.recipe.TTRecipeAdder;
 
 public class ScriptAmunRa implements IScriptLoader {
 
@@ -384,7 +384,7 @@ public class ScriptAmunRa implements IScriptLoader {
          * Assembly Line *
          *****************/
 
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(GameRegistry.findBlock(GalacticraftMars.ID, "tile.marsMachine"), 1, 8),
                 64000,
                 64,
@@ -401,7 +401,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(machines1, 1, 2),
                 15 * MINUTES,
                 2000000);
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 com.dreammaster.item.ItemList.HeavyDutyRocketEngineTier4.getIS(),
                 64000,
                 64,
@@ -419,7 +419,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(machines2),
                 5 * MINUTES,
                 2000000);
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(machines2),
                 80000,
                 64,
@@ -439,7 +439,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(machines2, 1, 1),
                 10 * MINUTES,
                 2500000);
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 com.dreammaster.item.ItemList.Tier4Booster.getIS(),
                 64000,
                 64,
@@ -455,7 +455,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(msBoosters1),
                 5 * MINUTES,
                 2000000);
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(msBoosters1),
                 80000,
                 64,
@@ -473,7 +473,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(msBoosters1, 1, 1),
                 10 * MINUTES,
                 2500000);
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 GameRegistry.findItemStack(GalaxySpace.ID, "item.SchematicTier8", 1),
                 64000,
                 64,

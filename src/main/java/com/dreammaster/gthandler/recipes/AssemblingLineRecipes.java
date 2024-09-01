@@ -59,7 +59,7 @@ import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
-import tectech.recipe.TT_recipeAdder;
+import tectech.recipe.TTRecipeAdder;
 
 public class AssemblingLineRecipes implements Runnable {
 
@@ -187,7 +187,7 @@ public class AssemblingLineRecipes implements Runnable {
                 .itemOutputs(ItemList.Hatch_Input_Bus_ME_Advanced.get(1L)).eut(TierEU.RECIPE_LuV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
 
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
                 2000 * 60 * 8,
                 2000,
@@ -211,7 +211,7 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UIV);
 
         // Cloud Computation Client Hatch
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 dataIn_Hatch.get(1),
                 512000,
                 2000,
@@ -241,7 +241,7 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UMV);
 
         // Cloud computation server hatch
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 // Optical Master Connector
                 dataOut_Hatch.get(1),
                 512000,
@@ -272,7 +272,7 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UMV);
 
         // Wireless assembly line slave connector
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 // Assembly line slave connector
                 dataInAss_Hatch.get(1),
                 512000,
@@ -303,7 +303,7 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UMV);
 
         // Wireless data bank master connector
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 // Data bank master connector
                 dataOutAss_Hatch.get(1),
                 512000,
@@ -335,7 +335,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         if (GalaxySpace.isModLoaded()) {
             // Dyson Swarm Module
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     GT_ModHandler.getModItem(OpenComputers.ID, "item", 1, 91),
                     192_000,
                     512,
@@ -352,7 +352,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UHV);
 
             // Dyson Swarm Energy Receiver Base Casing
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Circuit_Chip_QPIC.get(1),
                     192_000,
                     512,
@@ -370,7 +370,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Energy Receiver Dish Block
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     GT_ModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 1, 3),
                     192000,
                     512,
@@ -390,7 +390,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Module Deployment Unit Base Casing
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Quantum_Chest_IV.get(1),
                     192_000,
                     512,
@@ -407,7 +407,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Module Deployment Unit Core
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     new ItemStack(Blocks.dropper),
                     192_000,
                     512,
@@ -424,7 +424,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Module Deployment Unit Superconducting Magnet
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.PolarizerUEV.get(1),
                     192_000,
                     512,
@@ -442,7 +442,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Control Center Base Casing
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     tectech.thing.CustomItemList.Machine_Multi_Computer.get(1),
                     192_000,
                     512,
@@ -459,7 +459,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Control Center Primary Windings
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     tectech.thing.CustomItemList.tM_TeslaPrimary_6.get(1),
                     192_000,
                     512,
@@ -477,7 +477,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Control Center Secondary Windings
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     tectech.thing.CustomItemList.tM_TeslaSecondary.get(1),
                     192_000,
                     512,
@@ -495,7 +495,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Control Center Toroid Casing
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     tectech.thing.CustomItemList.tM_TeslaToroid.get(1),
                     192_000,
                     512,
@@ -511,7 +511,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Controller
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     GT_ModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1),
                     192_000,
                     512,
@@ -533,7 +533,7 @@ public class AssemblingLineRecipes implements Runnable {
         if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 
             // The first crafted gate
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Circuit_Biomainframe.get(1L),
                     192_000,
                     512,
@@ -555,7 +555,7 @@ public class AssemblingLineRecipes implements Runnable {
                     400 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Infinity, 1L),
                     192_000,
                     512,
@@ -576,7 +576,7 @@ public class AssemblingLineRecipes implements Runnable {
                     1 * HOURS,
                     (int) TierEU.RECIPE_UHV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 1L),
                     192_000,
                     512,
@@ -599,7 +599,7 @@ public class AssemblingLineRecipes implements Runnable {
                     1 * HOURS,
                     (int) TierEU.RECIPE_UHV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Neutronium, 1L),
                     192_000,
                     512,
@@ -617,7 +617,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UHV);
 
             // UEV Gate
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.NanoCircuitOrigin.getIS(1),
                     192000 * 2,
                     512 * 2,
@@ -639,7 +639,7 @@ public class AssemblingLineRecipes implements Runnable {
                     500 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.PikoCircuitPolychrome.getIS(1),
                     192000 * 4,
                     512 * 4,
@@ -660,7 +660,7 @@ public class AssemblingLineRecipes implements Runnable {
                     1000 * SECONDS,
                     (int) TierEU.RECIPE_UIV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.GatePlateOrigin.getIS(1),
                     32_000_000 * 12,
                     8192,
@@ -681,7 +681,7 @@ public class AssemblingLineRecipes implements Runnable {
                     1 * HOURS,
                     (int) TierEU.RECIPE_UIV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.ChevronOrigin.getIS(1),
                     32_000_000 * 12,
                     8192,
@@ -704,7 +704,7 @@ public class AssemblingLineRecipes implements Runnable {
                     1 * HOURS,
                     (int) TierEU.RECIPE_UIV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.FramePartOrigin.getIS(1),
                     32_000_000 * 12,
                     8192,
@@ -722,7 +722,7 @@ public class AssemblingLineRecipes implements Runnable {
                     (int) TierEU.RECIPE_UIV);
 
             // UMV Gate
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     ItemList.Circuit_Wafer_NPIC.get(1L),
                     192_000,
                     512,
@@ -744,7 +744,7 @@ public class AssemblingLineRecipes implements Runnable {
                     400 * SECONDS,
                     (int) TierEU.RECIPE_UIV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.NanoCircuit.getIS(1),
                     384_000,
                     1_024,
@@ -766,7 +766,7 @@ public class AssemblingLineRecipes implements Runnable {
                     500 * SECONDS,
                     (int) TierEU.RECIPE_UMV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.PikoCircuitDimensional.getIS(1),
                     720_000,
                     2_048,
@@ -787,7 +787,7 @@ public class AssemblingLineRecipes implements Runnable {
                     1000 * SECONDS,
                     (int) TierEU.RECIPE_UXV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.GatePlatePolychrome.getIS(1),
                     2_000_000_000,
                     32_768,
@@ -813,7 +813,7 @@ public class AssemblingLineRecipes implements Runnable {
                     1 * HOURS,
                     (int) TierEU.RECIPE_UXV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.ChevronPolychrome.getIS(1),
                     2_000_000_000,
                     32_768,
@@ -841,7 +841,7 @@ public class AssemblingLineRecipes implements Runnable {
                     1 * HOURS,
                     (int) TierEU.RECIPE_UXV);
 
-            TT_recipeAdder.addResearchableAssemblylineRecipe(
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
                     com.dreammaster.item.ItemList.FramePartPolychrome.getIS(1),
                     2_000_000_000,
                     32_768,
@@ -1284,7 +1284,7 @@ public class AssemblingLineRecipes implements Runnable {
         }
 
         // Piko Circuit
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 ItemList.Circuit_OpticalMainframe.get(1L),
                 384000,
                 1024,
@@ -1305,7 +1305,7 @@ public class AssemblingLineRecipes implements Runnable {
                 128_000_000);
 
         // Quantum Circuit
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 CustomItemList.PikoCircuit.get(1L),
                 720000,
                 2048,
@@ -1326,7 +1326,7 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UMV);
 
         // Miniature Wormhole Generator
-        TT_recipeAdder.addResearchableAssemblylineRecipe(
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
                 AEApi.instance().definitions().materials().singularity().maybeStack(1).get(),
                 64000,
                 64,

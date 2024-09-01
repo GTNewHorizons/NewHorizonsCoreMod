@@ -21,7 +21,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
-import tectech.thing.casing.TT_Container_Casings;
+import tectech.thing.casing.TTCasingsContainer;
 
 public class ScriptSGCraft implements IScriptLoader {
 
@@ -122,7 +122,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'd',
                 GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 1L),
                 'e',
-                new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 1, 8),
+                new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 1, 8),
                 'f',
                 GGMaterial.shirabon.get(OrePrefixes.block, 1),
                 'g',
@@ -135,7 +135,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 GT_OreDictUnificator
                         .get(OrePrefixes.plateDense, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 1L),
                 'k',
-                new ItemStack(TT_Container_Casings.StabilisationFieldGenerators, 1, 8),
+                new ItemStack(TTCasingsContainer.StabilisationFieldGenerators, 1, 8),
                 'l',
                 tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1),
                 'm',

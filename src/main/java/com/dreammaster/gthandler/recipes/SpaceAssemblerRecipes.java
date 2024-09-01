@@ -28,7 +28,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
 import tectech.thing.CustomItemList;
-import tectech.thing.casing.TT_Container_Casings;
+import tectech.thing.casing.TTCasingsContainer;
 
 public class SpaceAssemblerRecipes implements Runnable {
 
@@ -321,7 +321,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator
                                         .get(OrePrefixes.plateDense, MaterialsUEVplus.TranscendentMetal, 64L),
                                 ItemList.Field_Generator_UXV.get(1L), filledUMVCell,
-                                new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 4, 8),
+                                new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
                                 MaterialsUEVplus.Eternity.getNanite(4) },
                         new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
@@ -339,7 +339,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GT_OreDictUnificator.get("plateDenseShirabon", 16),
                                 ItemList.Field_Generator_UXV.get(1L), new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                                 new ItemStack(tfftStorageField, 2, 10),
-                                new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 4, 8),
+                                new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
                                 MaterialsUEVplus.Eternity.getNanite(4) },
                         new FluidStack[] { MaterialsUEVplus.Eternity.getMolten(36864) },
