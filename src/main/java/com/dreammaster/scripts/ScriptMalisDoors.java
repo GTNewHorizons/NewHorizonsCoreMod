@@ -16,6 +16,7 @@ import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
