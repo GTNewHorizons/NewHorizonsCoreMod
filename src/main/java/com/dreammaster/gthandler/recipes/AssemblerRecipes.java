@@ -51,7 +51,7 @@ import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import kekztech.common.TileEntities;
-import pers.gwyog.gtneioreplugin.plugin.block.ModBlocks;
+import gtneioreplugin.plugin.block.ModBlocks;
 
 public class AssemblerRecipes implements Runnable {
 

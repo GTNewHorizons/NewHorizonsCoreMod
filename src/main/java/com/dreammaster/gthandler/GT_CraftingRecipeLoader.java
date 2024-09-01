@@ -55,8 +55,8 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.GT_Proxy;
 import ic2.core.Ic2Items;
-import pers.gwyog.gtneioreplugin.plugin.block.ModBlocks;
-import pers.gwyog.gtneioreplugin.util.DimensionHelper;
+import gtneioreplugin.plugin.block.ModBlocks;
+import gtneioreplugin.util.DimensionHelper;
 
 public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_CraftingRecipeLoader implements Runnable {
 
