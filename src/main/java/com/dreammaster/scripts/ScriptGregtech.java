@@ -454,9 +454,9 @@ public class ScriptGregtech implements IScriptLoader {
                 GT_OreDictUnificator.get(OrePrefixes.rod, Materials.Rubber, 1L),
                 ItemList.Sensor_LV.get(1),
                 GT_OreDictUnificator.get(OrePrefixes.rod, Materials.Rubber, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
+                "circuitBasic",
                 null,
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
+                "circuitBasic",
                 getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
                 null,
                 getModItem(Minecraft.ID, "noteblock", 1, 0, missing));
@@ -469,7 +469,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Hull_LV.get(1),
                 getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1L),
+                "circuitBasic",
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L));
         addShapedRecipe(
                 ItemList.BetterJukebox_MV.get(1),
@@ -480,7 +480,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Hull_MV.get(1),
                 getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1L),
+                "circuitGood",
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L));
         addShapedRecipe(
                 ItemList.BetterJukebox_HV.get(1),
@@ -491,7 +491,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Hull_HV.get(1),
                 getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L),
+                "circuitAdvanced",
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L));
         addShapedRecipe(
                 ItemList.BetterJukebox_EV.get(1),
@@ -502,7 +502,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Hull_EV.get(1),
                 getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1L),
+                "circuitData",
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1L));
         addShapedRecipe(
                 ItemList.BetterJukebox_IV.get(1),
@@ -513,7 +513,7 @@ public class ScriptGregtech implements IScriptLoader {
                 ItemList.Hull_IV.get(1),
                 getModItem(Minecraft.ID, "noteblock", 1, 0, missing),
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1L),
+                "circuitElite",
                 GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L));
         addShapedRecipe(
                 new ItemStack(GregTech_API.sBlockStones, 1, 2),
