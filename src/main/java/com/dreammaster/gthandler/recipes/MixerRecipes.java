@@ -32,7 +32,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import goodgenerator.items.MyMaterial;
+import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -1197,7 +1197,7 @@ public class MixerRecipes implements Runnable {
                             getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1L, 2))
                     .itemOutputs(GT_ModHandler.getModItem(Avaritia.ID, "Resource", 1L, 8))
                     .fluidInputs(
-                            MyMaterial.naquadahBasedFuelMkV.getFluidOrGas(1000),
+                            GGMaterial.naquadahBasedFuelMkV.getFluidOrGas(1000),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(128000))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerRecipes);
         }

@@ -14,7 +14,7 @@ import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.DTPFCalculator;
 
-import goodgenerator.items.MyMaterial;
+import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -453,7 +453,7 @@ public class DTPFRecipes implements Runnable {
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 8L),
                             ALLOY.OCTIRON.getRod(8),
-                            MyMaterial.tairitsu.get(OrePrefixes.stick, 8),
+                            GGMaterial.tairitsu.get(OrePrefixes.stick, 8),
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
                             ALLOY.ABYSSAL.getPlate(24),
                             ALLOY.BOTMIUM.getScrew(16),
@@ -467,7 +467,7 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
-                            MyMaterial.tairitsu.get(OrePrefixes.stick, 12),
+                            GGMaterial.tairitsu.get(OrePrefixes.stick, 12),
                             GT_OreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 8L),
                             ALLOY.BOTMIUM.getPlate(24),
                             ALLOY.ARCANITE.getScrew(16),
@@ -748,7 +748,7 @@ public class DTPFRecipes implements Runnable {
                             .fluidInputs(
                                     MaterialsUEVplus.ExcitedDTEC.getFluid(1797693L),
                                     Materials.CosmicNeutronium.getMolten(16384 * 144),
-                                    MyMaterial.tairitsu.getMolten(16384 * 144),
+                                    GGMaterial.tairitsu.getMolten(16384 * 144),
                                     ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
                             .itemOutputs(GT_ModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1L, 14))
                             .duration(80 * SECONDS)

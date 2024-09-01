@@ -43,7 +43,7 @@ import com.dreammaster.gthandler.CustomItemList;
 import bartworks.common.loaders.ItemRegistry;
 
 import appeng.api.AEApi;
-import goodgenerator.items.MyMaterial;
+import goodgenerator.items.GGMaterial;
 import goodgenerator.util.ItemRefer;
 import gregtech.api.GregTech_API;
 import gregtech.api.enums.GT_Values;
@@ -856,7 +856,7 @@ public class AssemblingLineRecipes implements Runnable {
                             Californium.get(OrePrefixes.stickLong, 64), ALLOY.QUANTUM.getLongRod(64),
                             ELEMENT.STANDALONE.HYPOGEN.getLongRod(64),
                             ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getLongRod(64),
-                            MyMaterial.tairitsu.get(OrePrefixes.stickLong, 64),
+                            GGMaterial.tairitsu.get(OrePrefixes.stickLong, 64),
                             ELEMENT.STANDALONE.ASTRAL_TITANIUM.getLongRod(64),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64L),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 64L),

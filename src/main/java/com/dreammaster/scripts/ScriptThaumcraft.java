@@ -50,7 +50,7 @@ import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
-import goodgenerator.items.MyMaterial;
+import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -2495,7 +2495,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        MyMaterial.orundum.get(OrePrefixes.lens, 0))
+                        GGMaterial.orundum.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
 

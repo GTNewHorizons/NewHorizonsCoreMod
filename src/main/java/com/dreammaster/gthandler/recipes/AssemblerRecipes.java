@@ -34,7 +34,7 @@ import com.dreammaster.gthandler.CustomItemList;
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
 
-import goodgenerator.items.MyMaterial;
+import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -2288,17 +2288,17 @@ public class AssemblerRecipes implements Runnable {
         // Electric Compressor Casing
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        MyMaterial.incoloy903.get(OrePrefixes.plate, 6),
-                        MyMaterial.incoloy903.get(OrePrefixes.block, 1))
+                        GGMaterial.incoloy903.get(OrePrefixes.plate, 6),
+                        GGMaterial.incoloy903.get(OrePrefixes.block, 1))
                 .itemOutputs(ItemList.Compressor_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
         // Compression Pipe Casing
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        MyMaterial.incoloy903.get(OrePrefixes.plate, 4),
-                        MyMaterial.incoloy903.get(OrePrefixes.gearGt, 1),
-                        MyMaterial.incoloy903.get(OrePrefixes.pipeMedium, 4))
+                        GGMaterial.incoloy903.get(OrePrefixes.plate, 4),
+                        GGMaterial.incoloy903.get(OrePrefixes.gearGt, 1),
+                        GGMaterial.incoloy903.get(OrePrefixes.pipeMedium, 4))
                 .itemOutputs(ItemList.Compressor_Pipe_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
@@ -3627,8 +3627,8 @@ public class AssemblerRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        MyMaterial.hikarium.get(OrePrefixes.foil, 4),
-                        MyMaterial.artheriumSn.get(OrePrefixes.foil, 1),
+                        GGMaterial.hikarium.get(OrePrefixes.foil, 4),
+                        GGMaterial.artheriumSn.get(OrePrefixes.foil, 1),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
                         GT_Utility.getIntegratedCircuit(9))
                 .itemOutputs(ItemList.Circuit_Parts_InductorXSMD.get(32L))
@@ -4047,7 +4047,7 @@ public class AssemblerRecipes implements Runnable {
 
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        MyMaterial.extremelyUnstableNaquadah.get(OrePrefixes.bolt, 4),
+                        GGMaterial.extremelyUnstableNaquadah.get(OrePrefixes.bolt, 4),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
                         ItemList.Gravistar.get(1L),
                         GT_ModHandler.getModItem(EnderIO.ID, "itemFrankenSkull", 1L, 5),

@@ -18,7 +18,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.gtnewhorizons.gtnhintergalactic.recipe.IG_RecipeAdder;
 
-import goodgenerator.items.MyMaterial;
+import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -52,8 +52,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CosmicNeutronium, 4L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Draconium, 4L),
                             CustomItemList.DATApipe.get(1L),
-                            MyMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw, 4),
-                            MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 4) },
+                            GGMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw, 4),
+                            GGMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 4) },
                     new FluidStack[] { new FluidStack(solderUEV, 288) },
                     ItemList.Optically_Perfected_CPU.get(1L),
                     1,
@@ -69,9 +69,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                     .get(OrePrefixes.screw, Materials.Longasssuperconductornameforuhvwire, 8L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.TengamAttuned, 8L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.DraconiumAwakened, 8L),
-                            CustomItemList.DATApipe.get(4L), MyMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 8),
+                            CustomItemList.DATApipe.get(4L), GGMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 8),
                             // Enriched Naquadah Alloy screw
-                            MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8) },
+                            GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8) },
                     new FluidStack[] { new FluidStack(solderUEV, 576) },
                     ItemList.Optically_Perfected_CPU.get(4L),
                     2,
@@ -88,9 +88,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
                             CustomItemList.DATApipe.get(16L),
                             // Enriched Naquadah Alloy screw
-                            MyMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
+                            GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 16),
                             // Shirabon screw
-                            MyMaterial.shirabon.get(OrePrefixes.screw, 16) },
+                            GGMaterial.shirabon.get(OrePrefixes.screw, 16) },
                     new FluidStack[] { new FluidStack(solderUEV, 1152) },
                     ItemList.Optically_Perfected_CPU.get(16L),
                     2,

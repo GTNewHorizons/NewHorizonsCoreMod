@@ -15,7 +15,7 @@ import net.minecraft.item.ItemStack;
 import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import goodgenerator.items.MyMaterial;
+import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
@@ -124,7 +124,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'e',
                 new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 1, 8),
                 'f',
-                MyMaterial.shirabon.get(OrePrefixes.block, 1),
+                GGMaterial.shirabon.get(OrePrefixes.block, 1),
                 'g',
                 CustomItemList.StargateShieldingFoil.get(1L),
                 'h',

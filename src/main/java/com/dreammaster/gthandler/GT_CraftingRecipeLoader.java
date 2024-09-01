@@ -39,7 +39,7 @@ import com.dreammaster.recipes.Recipe;
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
 
-import goodgenerator.items.MyMaterial;
+import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.Dyes;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -702,23 +702,23 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
                 ItemList.Machine_Multi_IndustrialCompressor.get(1),
                 bits,
                 new Object[] { "BCB", "EAE", "CCC", 'A', ItemList.Machine_EV_Compressor, 'C',
-                        MyMaterial.incoloy903.get(OrePrefixes.plate), 'E', OrePrefixes.circuit.get(Materials.IV), 'B',
+                        GGMaterial.incoloy903.get(OrePrefixes.plate), 'E', OrePrefixes.circuit.get(Materials.IV), 'B',
                         ItemList.Electric_Piston_EV });
 
         // Electric Compressor Casing
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Compressor_Casing.get(1),
                 bits,
-                new Object[] { "PhP", "PFP", "PwP", 'P', MyMaterial.incoloy903.get(OrePrefixes.plate), 'F',
-                        MyMaterial.incoloy903.get(OrePrefixes.block) });
+                new Object[] { "PhP", "PFP", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
+                        GGMaterial.incoloy903.get(OrePrefixes.block) });
 
         // Compression Pipe Casing
         GT_ModHandler.addCraftingRecipe(
                 ItemList.Compressor_Pipe_Casing.get(1),
                 bits,
-                new Object[] { "PQP", "QFQ", "PQP", 'P', MyMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
-                        MyMaterial.incoloy903.get(OrePrefixes.pipeMedium), 'F',
-                        MyMaterial.incoloy903.get(OrePrefixes.gearGt) });
+                new Object[] { "PQP", "QFQ", "PQP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
+                        GGMaterial.incoloy903.get(OrePrefixes.pipeMedium), 'F',
+                        GGMaterial.incoloy903.get(OrePrefixes.gearGt) });
 
         // Industrial Precision Lathe
         GT_ModHandler.addCraftingRecipe(
