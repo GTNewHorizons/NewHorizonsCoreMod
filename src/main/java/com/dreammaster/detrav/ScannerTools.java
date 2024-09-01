@@ -2,8 +2,7 @@ package com.dreammaster.detrav;
 
 import net.minecraft.item.ItemStack;
 
-import com.detrav.items.DetravMetaGeneratedTool01;
-
+import detrav.items.DetravMetaGeneratedTool01;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
