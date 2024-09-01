@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -261,7 +260,7 @@ public class ScriptGenetics implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.AluminiumItemCasing", 8, 0, missing))
+                        com.dreammaster.item.ItemList.AluminiumItemCasing.getIS(8))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).duration(1 * MINUTES).eut(120)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()

@@ -15,7 +15,6 @@ import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
@@ -30,6 +29,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.main.NHItems;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.ItemList;
@@ -85,12 +85,12 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 3,
                 2,
                 3,
-                getModItem(NewHorizonsCoreMod.ID, "item.WitherProtectionRing", 1, 0, missing)).setParents("RUNICARMOR")
+                new ItemStack(NHItems.WITHER_PROTECTION_RING.get(), 1)).setParents("RUNICARMOR")
                         .setSiblings("RUNICARMOR").setConcealed()
                         .setPages(new ResearchPage("NewHorizons.research_page.WITHERRING")).registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "WITHERRING",
-                getModItem(NewHorizonsCoreMod.ID, "item.WitherProtectionRing", 1, 0, missing),
+                new ItemStack(NHItems.WITHER_PROTECTION_RING.get(), 1),
                 3,
                 new AspectList().add(Aspect.getAspect("alienis"), 45).add(Aspect.getAspect("praecantatio"), 35)
                         .add(Aspect.getAspect("spiritus"), 30).add(Aspect.getAspect("superbia"), 25)
@@ -103,9 +103,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         getModItem(Minecraft.ID, "skull", 1, 1, missing), });
         TCHelper.addResearchPage(
                 "WITHERRING",
-                new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                getModItem(NewHorizonsCoreMod.ID, "item.WitherProtectionRing", 1, 0, missing))));
+                new ResearchPage(TCHelper.findInfusionRecipe(new ItemStack(NHItems.WITHER_PROTECTION_RING.get(), 1))));
         ThaumcraftApi.addWarpToResearch("WITHERRING", 2);
         new ResearchItem(
                 "EMINENCESTONE",

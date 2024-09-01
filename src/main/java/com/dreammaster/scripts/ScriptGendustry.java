@@ -4,10 +4,8 @@ import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.Gendustry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
@@ -26,6 +24,9 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.common.items.CombType;
+import gregtech.loaders.misc.GT_Bees;
+import gtPlusPlus.core.material.ELEMENT;
 
 public class ScriptGendustry implements IScriptLoader {
 
@@ -110,7 +111,7 @@ public class ScriptGendustry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Gendustry.ID, "BeeReceptacle", 1, 0, missing),
                 "screwHSSS",
-                getModItem(GregTech.ID, "gt.comb", 1, 78, missing),
+                GT_Bees.combs.getStackForType(CombType.PLUTONIUM),
                 "screwHSSS",
                 CustomItemList.IridiumAlloyItemCasing.get(1L),
                 CustomItemList.OsmiumBars.get(1L),
@@ -121,7 +122,7 @@ public class ScriptGendustry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Gendustry.ID, "PowerModule", 1, 0, missing),
                 "cableGt01VanadiumGallium",
-                getModItem(GregTech.ID, "gt.comb", 1, 79, missing),
+                GT_Bees.combs.getStackForType(CombType.NAQUADAH),
                 "cableGt01VanadiumGallium",
                 CustomItemList.IridiumAlloyItemCasing.get(1L),
                 "circuitMaster",
@@ -153,9 +154,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(Gendustry.ID, "ClimateModule", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.comb", 1, 70, missing),
+                GT_Bees.combs.getStackForType(CombType.IRIDIUM),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.comb", 1, 77, missing),
+                GT_Bees.combs.getStackForType(CombType.URANIUM),
                 "stickPalladium",
                 "rotorOsmium",
                 "stickPalladium",
@@ -212,13 +213,13 @@ public class ScriptGendustry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "factory", 1, 2, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.comb", 1, 79, missing),
+                GT_Bees.combs.getStackForType(CombType.NAQUADAH),
                 'e',
                 ItemList.Robot_Arm_LuV.get(1L),
                 'f',
                 getModItem(Gendustry.ID, "MutagenTank", 1, 0, missing),
                 'g',
-                getModItem(GTPlusPlus.ID, "itemGearRuthenium", 1, 0, missing),
+                ELEMENT.getInstance().RUTHENIUM.getPlate(1),
                 'h',
                 getModItem(ExtraBees.ID, "alveary", 1, 6, missing),
                 'i',
@@ -253,7 +254,7 @@ public class ScriptGendustry implements IScriptLoader {
                 'h',
                 getModItem(Gendustry.ID, "Sampler", 1, 0, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.comb", 1, 85, missing),
+                GT_Bees.combs.getStackForType(CombType.NEUTRONIUM),
                 'j',
                 getModItem(Gendustry.ID, "Mutatron", 1, 0, missing),
                 'k',
@@ -299,13 +300,13 @@ public class ScriptGendustry implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
+                        com.dreammaster.item.ItemList.GeneticCircuit.getIS(1),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(1920).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
+                        com.dreammaster.item.ItemList.EnvironmentalCircuit.getIS(1),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)

@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.ProjectRedCore;
@@ -219,20 +218,18 @@ public class CuttingMachineRecipes implements Runnable {
 
         }
 
-        if (BartWorks.isModLoaded()) {
-            // Photonically Prepared Wafer
-            int wafer_duration_ticks = 50 * SECONDS;
-            long wafer_eu_per_tick = TierEU.RECIPE_UEV;
+        // Photonically Prepared Wafer
+        int wafer_duration_ticks = 50 * SECONDS;
+        long wafer_eu_per_tick = TierEU.RECIPE_UEV;
 
-            GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
-                    .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(16))
-                    .fluidInputs(Materials.Grade7PurifiedWater.getFluid(1000L)).duration(wafer_duration_ticks)
-                    .eut(wafer_eu_per_tick).addTo(cutterRecipes);
-            GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
-                    .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(24))
-                    .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1000L)).duration(wafer_duration_ticks / 2)
-                    .eut(wafer_eu_per_tick).addTo(cutterRecipes);
-        }
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
+                .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(16))
+                .fluidInputs(Materials.Grade7PurifiedWater.getFluid(1000L)).duration(wafer_duration_ticks)
+                .eut(wafer_eu_per_tick).addTo(cutterRecipes);
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Silicon_Ingot6.get(1L)) // Optical boule
+                .itemOutputs(ItemList.Circuit_Silicon_Wafer6.get(24))
+                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1000L)).duration(wafer_duration_ticks / 2)
+                .eut(wafer_eu_per_tick).addTo(cutterRecipes);
 
         if (Chisel.isModLoaded()) {
             // Floor Carpet

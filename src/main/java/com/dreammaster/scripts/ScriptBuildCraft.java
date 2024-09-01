@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
@@ -559,7 +558,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.WroughtIron, 1),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 2, 4, missing),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
@@ -575,7 +574,7 @@ public class ScriptBuildCraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.WroughtIron, 1),
                         ItemList.IC2_Item_Casing_Iron.get(2L),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
@@ -584,15 +583,15 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 18304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 2),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 18304, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.WroughtIron, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 2),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
@@ -600,15 +599,15 @@ public class ScriptBuildCraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
                         GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 18307, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 2),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 20304, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 2, 18307, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.WroughtIron, 1),
+                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 2),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);

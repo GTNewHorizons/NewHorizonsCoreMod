@@ -4,7 +4,6 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.LogisticsPipes;
@@ -31,6 +30,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
+import gregtech.api.GregTech_API;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -170,7 +170,7 @@ public class ChemicalBathRecipes implements Runnable {
 
         // Laser Resistant Plate
         GT_Values.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockAlloy", 1))
-                .itemOutputs(getModItem(GregTech.ID, "gt.laserplate", 1, 0))
+                .itemOutputs(new ItemStack(GregTech_API.sLaserRender))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.hastelloyx", 1152)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(chemicalBathRecipes);
 

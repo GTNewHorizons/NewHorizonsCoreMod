@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -1526,11 +1525,11 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Void, 1),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Void, 1),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11970, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Void, 1),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                         getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0, missing), });
         TCHelper.addResearchPage(

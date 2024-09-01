@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GoodGenerator;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -11,9 +10,14 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.gthandler.CustomItemList;
+import com.github.technus.tectech.thing.casing.TT_Container_Casings;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import goodgenerator.items.MyMaterial;
+import goodgenerator.loader.Loaders;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
@@ -118,9 +122,9 @@ public class ScriptSGCraft implements IScriptLoader {
                 'd',
                 GT_OreDictUnificator.get(OrePrefixes.nanite, MaterialsUEVplus.Universium, 1L),
                 'e',
-                getModItem(TecTech.ID, "gt.spacetime_compression_field_generator", 1, 8, missing),
+                new ItemStack(TT_Container_Casings.SpacetimeCompressionFieldGenerators, 1, 8),
                 'f',
-                getModItem(BartWorks.ID, "bw.werkstoffblocks.01", 1, 10112, missing),
+                MyMaterial.shirabon.get(OrePrefixes.block, 1),
                 'g',
                 CustomItemList.StargateShieldingFoil.get(1L),
                 'h',
@@ -131,9 +135,9 @@ public class ScriptSGCraft implements IScriptLoader {
                 GT_OreDictUnificator
                         .get(OrePrefixes.plateDense, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 1L),
                 'k',
-                getModItem(TecTech.ID, "gt.stabilisation_field_generator", 1, 8, missing),
+                new ItemStack(TT_Container_Casings.StabilisationFieldGenerators, 1, 8),
                 'l',
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 15410, missing),
+                com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1),
                 'm',
                 getModItem(SGCraft.ID, "stargateRing", 1, 0, missing),
                 'n',
@@ -181,7 +185,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'c',
                 ItemList.ZPM4.get(1L),
                 'd',
-                getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 3, missing));
+                new ItemStack(Loaders.compactFusionCoil, 1, 3));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(SGCraft.ID, "sgIrisUpgrade", 1, 0, missing),
                 "--aaaaa--",
@@ -196,7 +200,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'a',
                 getModItem(SGCraft.ID, "sgIrisBlade", 1, 0, missing),
                 'b',
-                getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 3, missing));
+                new ItemStack(Loaders.compactFusionCoil, 1, 3));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(SGCraft.ID, "rfPowerUnit", 1, 0, missing),
                 "aabcccbaa",
@@ -211,7 +215,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'a',
                 GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.BlackDwarfMatter, 1L),
                 'b',
-                getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 3, missing),
+                new ItemStack(Loaders.compactFusionCoil, 1, 3),
                 'c',
                 GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 1L),
                 'd',
@@ -240,7 +244,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'c',
                 GT_OreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.BlackDwarfMatter, 1L),
                 'd',
-                getModItem(GoodGenerator.ID, "compactFusionCoil", 1, 3, missing),
+                new ItemStack(Loaders.compactFusionCoil, 1, 3),
                 'e',
                 ItemList.Sensor_UXV.get(1L));
 

@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry.bw_realglas;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Backpack;
@@ -11,7 +12,6 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
@@ -39,6 +39,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptEnderIO implements IScriptLoader {
 
@@ -182,7 +183,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 'b',
                 ItemList.Field_Generator_ZPM.get(1L),
                 'c',
-                getModItem(BartWorks.ID, "BW_GlasBlocks", 1, 4, missing),
+                new ItemStack(bw_realglas, 1, 4),
                 'd',
                 "plateDenseNaquadahEnriched",
                 'e',
@@ -398,7 +399,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing),
+                ItemList.BatteryHull_EV_Full.get(1),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
@@ -409,7 +410,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing),
-                getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32054, missing),
+                GregtechItemList.Battery_RE_EV_Lithium.get(1),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 2, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
@@ -420,7 +421,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing),
+                ItemList.BatteryHull_EV_Full.get(1),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing));
         addShapedRecipe(
                 createItemStack(EnderIO.ID, "blockCapBank", 1, 3, "{type:\"VIBRANT\",storedEnergyRF:0}", missing),
@@ -431,7 +432,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                 getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing),
-                getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32054, missing),
+                GregtechItemList.Battery_RE_EV_Lithium.get(1),
                 getModItem(EnderIO.ID, "itemBasicCapacitor", 1, 9, missing));
         addShapedRecipe(
                 getModItem(EnderIO.ID, "blockPainter", 1, 0, missing),
@@ -1589,7 +1590,7 @@ public class ScriptEnderIO implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GregTech.ID, "gt.blockmachines", 1, 1380, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.AnnealedCopper, 1),
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemPowerConduitEndergy", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144)).duration(5 * SECONDS).eut(96)

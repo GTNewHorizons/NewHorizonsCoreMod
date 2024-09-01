@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
@@ -23,6 +22,7 @@ import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import gregtech.api.enums.GT_Values;
@@ -32,6 +32,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.core.item.chemistry.AgriculturalChem;
 
 public class ScriptBiomesOPlenty implements IScriptLoader {
 
@@ -118,7 +119,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 "dustGlowstone");
         addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 15, missing),
-                getModItem(GTPlusPlus.ID, "item.BasicAgrichemItem", 1, 1, missing),
+                new ItemStack(AgriculturalChem.mAgrichemItem1, 1, 1),
                 "dustGlowstone");
         addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 12, missing),
@@ -270,7 +271,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GT_Values.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardSand", 1, 0, missing))
                 .itemOutputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.SandDust", 2, 0, missing),
+                        com.dreammaster.item.ItemList.SandDust.getIS(2),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.CassiteriteSand, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Phosphate, 1L))

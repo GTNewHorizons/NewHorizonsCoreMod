@@ -68,12 +68,6 @@ public class BendingMachineRecipes implements Runnable {
                         GT_Utility.getIntegratedCircuit(1))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Plastic, 1L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Plastic, 1L),
-                        GT_Utility.getIntegratedCircuit(1))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Plastic, 1L)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LV / 2).addTo(benderRecipes);
 
         if (GalacticraftCore.isModLoaded()) {
             GT_Values.RA.stdBuilder()

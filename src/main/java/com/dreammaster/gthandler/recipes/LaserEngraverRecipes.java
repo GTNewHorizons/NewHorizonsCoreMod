@@ -1,7 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
@@ -28,16 +26,14 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class LaserEngraverRecipes implements Runnable {
 
     @Override
     public void run() {
         // Energised tesseract
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Tesseract.get(1),
-                        GT_Utility.copyAmount(0, GT_ModHandler.getModItem(GTPlusPlus.ID, "MU-metaitem.01", 1, 32105)))
+        GT_Values.RA.stdBuilder().itemInputs(ItemList.Tesseract.get(1), GregtechItemList.Laser_Lens_Special.get(0))
                 .itemOutputs(ItemList.EnergisedTesseract.get(1))
                 .fluidOutputs(MaterialsUEVplus.ExcitedDTEC.getFluid(100)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(32_000_000).noOptimize().addTo(laserEngraverRecipes);
@@ -168,40 +164,38 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemOutputs(com.dreammaster.item.ItemList.RawPicoWafer.getIS()).requiresCleanRoom()
                 .duration(5 * MINUTES).eut((GT_Values.V[8] - (GT_Values.V[8] / 10))).addTo(laserEngraverRecipes);
 
-        if (BartWorks.isModLoaded()) {
-            // Optical Boule
+        // Optical Boule
+        GT_Values.RA.stdBuilder().itemInputs(
+                ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
+                WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
+                WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
+                CustomItemList.MysteriousCrystalLens.get(0)).itemOutputs(ItemList.Circuit_Silicon_Ingot6.get(1L))
+                .fluidInputs(Materials.UUMatter.getFluid(16000L)).duration(30 * SECONDS).eut(7_864_320)
+                .requiresCleanRoom().addTo(laserEngraverRecipes);
+
+        Fluid oganesson = FluidRegistry.getFluid("oganesson") != null ? FluidRegistry.getFluid("oganesson")
+                : FluidRegistry.getFluid("radon");
+
+        if (SuperSolarPanels.isModLoaded()) {
+            // Photonically Enhanced Wafer
             GT_Values.RA.stdBuilder().itemInputs(
-                    ItemList.Circuit_Silicon_Ingot5.get(1L), // Americium Boule
-                    WerkstoffLoader.MagnetoResonaticDust.get(OrePrefixes.lens, 0), // Magneto resonatic lens
-                    WerkstoffLoader.Fayalit.get(OrePrefixes.lens, 0), // Fayalite lens
-                    CustomItemList.MysteriousCrystalLens.get(0)).itemOutputs(ItemList.Circuit_Silicon_Ingot6.get(1L))
-                    .fluidInputs(Materials.UUMatter.getFluid(16000L)).duration(30 * SECONDS).eut(7_864_320)
+                    ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
+                    Materials.Glowstone.getNanite(1),
+                    GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 0L, 0) // Solar Light Splitter
+            ).itemOutputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
+                    .fluidInputs(Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000))
+                    .fluidOutputs(Materials.Tin.getMolten(1000L)).duration(10 * SECONDS).eut(7_864_320)
                     .requiresCleanRoom().addTo(laserEngraverRecipes);
 
-            Fluid oganesson = FluidRegistry.getFluid("oganesson") != null ? FluidRegistry.getFluid("oganesson")
-                    : FluidRegistry.getFluid("radon");
-
-            if (SuperSolarPanels.isModLoaded()) {
-                // Photonically Enhanced Wafer
-                GT_Values.RA.stdBuilder().itemInputs(
-                        ItemList.Circuit_Silicon_Wafer6.get(1L), // Photonically Prepared Wafer
-                        Materials.Glowstone.getNanite(1),
-                        GT_ModHandler.getModItem(SuperSolarPanels.ID, "solarsplitter", 0L, 0) // Solar Light Splitter
-                ).itemOutputs(ItemList.Circuit_Silicon_Wafer7.get(1L))
-                        .fluidInputs(Materials.Tin.getPlasma(1000L), new FluidStack(oganesson, 4000))
-                        .fluidOutputs(Materials.Tin.getMolten(1000L)).duration(10 * SECONDS).eut(7_864_320)
-                        .requiresCleanRoom().addTo(laserEngraverRecipes);
-
-            }
-
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1)),
-                            ItemList.Circuit_Chip_CrystalSoC2.get(1L))
-                    .itemOutputs(ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1))
-                    .fluidInputs(Materials.BioMediumSterilized.getFluid(50L)).duration(60 * SECONDS).eut(160_000)
-                    .requiresCleanRoom().addTo(laserEngraverRecipes);
         }
+
+        GT_Values.RA.stdBuilder()
+                .itemInputs(
+                        GT_Utility.copyAmount(0, GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1)),
+                        ItemList.Circuit_Chip_CrystalSoC2.get(1L))
+                .itemOutputs(ItemList.Circuit_Parts_Crystal_Chip_Wetware.get(1))
+                .fluidInputs(Materials.BioMediumSterilized.getFluid(50L)).duration(60 * SECONDS).eut(160_000)
+                .requiresCleanRoom().addTo(laserEngraverRecipes);
 
         // GC/GS Wafer
         if (GalacticraftCore.isModLoaded()) {

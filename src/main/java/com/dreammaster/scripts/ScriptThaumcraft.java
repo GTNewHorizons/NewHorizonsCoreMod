@@ -1,5 +1,7 @@
 package com.dreammaster.scripts;
 
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Fluorspar;
+import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.RedZircon;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -9,13 +11,11 @@ import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
@@ -36,6 +36,8 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.common.items.ID_MetaTool_01.BUTCHERYKNIFE;
+import static gregtech.common.items.ID_MetaTool_01.KNIFE;
 
 import java.util.Arrays;
 import java.util.List;
@@ -48,6 +50,7 @@ import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import goodgenerator.items.MyMaterial;
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -55,6 +58,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Item_98;
+import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -816,7 +820,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 2,
                 new AspectList().add(Aspect.getAspect("ordo"), 24).add(Aspect.getAspect("praecantatio"), 12)
                         .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("vitreus"), 6),
-                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzRod", 1, 0, missing),
+                com.dreammaster.item.ItemList.ChargedCertusQuartzRod.getIS(1),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                         getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing),
@@ -2479,19 +2483,19 @@ public class ScriptThaumcraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 19, missing))
+                        RedZircon.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 91, missing))
+                        Fluorspar.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        getModItem(BartWorks.ID, "gt.bwMetaGeneratedlens", 0, 10023, missing))
+                        MyMaterial.orundum.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
 
@@ -4468,7 +4472,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("mortuus"), 32).add(Aspect.getAspect("telum"), 32),
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 3, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metatool.01", 1, 36, missing),
+                        GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(BUTCHERYKNIFE.ID, 1, null, null, null),
                         getModItem(Minecraft.ID, "iron_sword", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                         getModItem(Minecraft.ID, "bow", 1, 0, missing),
@@ -4496,7 +4500,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "fish", 1, 2, missing),
                         getModItem(Minecraft.ID, "fish", 1, 3, missing),
                         getModItem(Minecraft.ID, "fishing_rod", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metatool.01", 1, 34, missing), });
+                        GT_MetaGenerated_Tool_01.INSTANCE.getToolWithStats(KNIFE.ID, 1, null, null, null), });
         TCHelper.setResearchAspects(
                 "COREFISHING",
                 new AspectList().add(Aspect.getAspect("fames"), 12).add(Aspect.getAspect("aqua"), 12)

@@ -6,12 +6,10 @@ import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedExpansion;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -48,6 +46,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_RecipeConstants;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.xmod.bop.blocks.BOP_Block_Registrator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -2895,7 +2894,7 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'b',
-                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzPlate", 1, 0, missing),
+                com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(1),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'd',
@@ -2907,7 +2906,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'h',
-                getModItem(NewHorizonsCoreMod.ID, "item.ChargedCertusQuartzPlate", 1, 0, missing),
+                com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -3895,7 +3894,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -3921,7 +3920,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -3947,7 +3946,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -3973,7 +3972,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -3999,7 +3998,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4025,7 +4024,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4051,7 +4050,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4077,7 +4076,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4103,7 +4102,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4129,7 +4128,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -4155,7 +4154,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing),
                 'h',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 28880, missing),
+                GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Rubber, 1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 11, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -5105,10 +5104,9 @@ public class ScriptForestry implements IScriptLoader {
                 null,
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Forestry.ID, "thermionicTubes", 2, 6, missing),
-                new Object[] { "abc", "def", "ghi", 'b',
-                        getModItem(NewHorizonsCoreMod.ID, "item.LongObsidianRod", 1, 0, missing), 'd',
+                new Object[] { "abc", "def", "ghi", 'b', com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'd',
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
-                        getModItem(NewHorizonsCoreMod.ID, "item.LongObsidianRod", 1, 0, missing), 'f',
+                        com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'f',
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'g',
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 1L), 'h',
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L), 'i',
@@ -5129,9 +5127,10 @@ public class ScriptForestry implements IScriptLoader {
                 null,
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Forestry.ID, "thermionicTubes", 2, 8, missing),
-                new Object[] { "abc", "def", "ghi", 'b', getModItem(GregTech.ID, "gt.metaitem.02", 1, 22880, missing),
-                        'd', GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 22880, missing), 'f',
+                new Object[] { "abc", "def", "ghi", 'b',
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1), 'd',
+                        GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
+                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Rubber, 1), 'f',
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'g',
                         GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 1L), 'h',
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L), 'i',
@@ -5769,25 +5768,25 @@ public class ScriptForestry implements IScriptLoader {
                 'h',
                 getModItem(Minecraft.ID, "stick", 1, 0, missing));
         RecipeManagers.fermenterManager.addRecipe(
-                getModItem(GTPlusPlus.ID, "blockRainforestOakSapling", 1, 0, missing),
+                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("juice", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                getModItem(GTPlusPlus.ID, "blockRainforestOakSapling", 1, 0, missing),
+                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("for.honey", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                getModItem(GTPlusPlus.ID, "blockRainforestOakSapling", 1, 0, missing),
+                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("honey", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                getModItem(GTPlusPlus.ID, "blockRainforestOakSapling", 1, 0, missing),
+                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
                 50,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),

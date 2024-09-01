@@ -13,7 +13,6 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -46,6 +45,8 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
+
 import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GT_Values;
@@ -56,6 +57,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
+import gtPlusPlus.xmod.bop.blocks.BOP_Block_Registrator;
 
 public class ScriptMinecraft implements IScriptLoader {
 
@@ -648,13 +650,13 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 1, wildcard, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 1, wildcard),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).duration(10 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 1, wildcard, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 1, wildcard),
                         getModItem(Minecraft.ID, "flint", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).duration(10 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
@@ -1314,133 +1316,133 @@ public class ScriptMinecraft implements IScriptLoader {
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockRainforestOakLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Rainforest, 2, 0),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(Minecraft.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(BiomesOPlenty.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(ExtraTrees.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(ExtraUtilities.ID, "colorWoodPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(Natura.ID, "planks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 6, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 2, 7, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(PamsHarvestTheNether.ID, "netherPlanks", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(GTPlusPlus.ID, "blockPineLogLog", 2, 0, missing),
+                        new ItemStack(BOP_Block_Registrator.log_Pine, 2, 0),
                         getModItem(Witchery.ID, "witchwood", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
@@ -1711,7 +1713,9 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
-                .itemInputs(ItemList.Plank_Oak.get(2L), getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                .itemInputs(
+                        ItemList.Plank_Oak.get(2L),
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "wooden_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -1723,7 +1727,7 @@ public class ScriptMinecraft implements IScriptLoader {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 1, 24304, missing))
+                        GT_OreDictUnificator.get(OrePrefixes.spring, Materials.WroughtIron, 1))
                 .itemOutputs(getModItem(Minecraft.ID, "stone_pressure_plate", 2, 0, missing)).duration(5 * SECONDS)
                 .eut(8).addTo(assemblerRecipes);
         GT_Values.RA.stdBuilder()
@@ -5116,7 +5120,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "plateWood",
                 "plateWood");
         addShapedRecipe(
-                getModItem(GregTech.ID, "gt.metaitem.01", 9, 9032, missing),
+                GT_OreDictUnificator.get(OrePrefixes.nugget, Materials.Iron, 9),
                 "craftingToolSaw",
                 "ingotIron",
                 null,

@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
@@ -36,6 +35,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
+import com.elisis.gtnhlanth.common.register.WerkstoffMaterialPool;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -43,6 +43,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
+import gtPlusPlus.core.block.ModBlocks;
 
 public class CompressorRecipes implements Runnable {
 
@@ -97,6 +98,10 @@ public class CompressorRecipes implements Runnable {
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 9))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_UV).addTo(compressorRecipes);
+
+        GT_Values.RA.stdBuilder().itemInputs(WerkstoffMaterialPool.Gangue.get(OrePrefixes.dust, 9))
+                .itemOutputs((WerkstoffMaterialPool.Gangue.get(OrePrefixes.block, 1))).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
 
         // compressed coal variants
         GT_Values.RA.stdBuilder().itemInputs(GT_OreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 9))
@@ -317,17 +322,14 @@ public class CompressorRecipes implements Runnable {
     }
 
     private void makeGTPlusPlusRecipes() {
-        if (!GTPlusPlus.isModLoaded()) {
-            return;
-        }
         // Compressed Glowstone
         GT_Values.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glowstone, 9))
-                .itemOutputs(getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 6)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 6)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
         // Double Compressed Glowstone
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 9L, 6))
-                .itemOutputs(getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1L, 7)).duration(15 * SECONDS).eut(2)
+        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(ModBlocks.blockCompressedObsidian, 9, 6))
+                .itemOutputs(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 7)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
     }
 

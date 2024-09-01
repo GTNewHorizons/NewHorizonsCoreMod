@@ -7,7 +7,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -223,7 +222,7 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 0,
                 1,
-                getModItem(NewHorizonsCoreMod.ID, "item.EMT", 1, 0, missing)).setAutoUnlock().setSpecial()
+                com.dreammaster.item.ItemList.EMT.getIS()).setAutoUnlock().setSpecial()
                         .setPages(new ResearchPage("tc.research_page.ElectricMagicTools")).registerResearchItem();
         TCHelper.removeResearch("Diamond Chainsaw");
         new ResearchItem(
@@ -2134,17 +2133,17 @@ public class ScriptEMT implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("ignis"), 16),
                 getModItem(ElectroMagicTools.ID, "TaintedMjolnir", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
                         getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemBatCrystal", 1, wildcard, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing),
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 6, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 17880, missing), });
+                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1), });
         TCHelper.addResearchPage(
                 "Mjolnirnew",
                 new ResearchPage(
@@ -3055,9 +3054,8 @@ public class ScriptEMT implements IScriptLoader {
                 -2,
                 6,
                 1,
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13001, missing)).setParents("WANDPED", "WARDEDARCANA")
-                        .setRound().setPages(new ResearchPage("tc.research_page.ResearchCompleter"))
-                        .registerResearchItem();
+                ItemList.ResearchCompleter.get(1)).setParents("WANDPED", "WARDEDARCANA").setRound()
+                        .setPages(new ResearchPage("tc.research_page.ResearchCompleter")).registerResearchItem();
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ResearchCompleter",
                 ItemList.Casing_Magical.get(1L),
@@ -3089,7 +3087,7 @@ public class ScriptEMT implements IScriptLoader {
                 new ResearchPage(TCHelper.findArcaneRecipe(ItemList.Casing_Magical.get(1L))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ResearchCompleter",
-                getModItem(GregTech.ID, "gt.blockmachines", 1, 13001, missing),
+                ItemList.ResearchCompleter.get(1),
                 new AspectList().add(Aspect.getAspect("aer"), 50).add(Aspect.getAspect("terra"), 50)
                         .add(Aspect.getAspect("ignis"), 50).add(Aspect.getAspect("aqua"), 50)
                         .add(Aspect.getAspect("ordo"), 50).add(Aspect.getAspect("perditio"), 50),
@@ -3116,7 +3114,6 @@ public class ScriptEMT implements IScriptLoader {
                 "circuitGood");
         TCHelper.addResearchPage(
                 "ResearchCompleter",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(getModItem(GregTech.ID, "gt.blockmachines", 1, 13001, missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(ItemList.ResearchCompleter.get(1))));
     }
 }
