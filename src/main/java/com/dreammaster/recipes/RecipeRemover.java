@@ -107,7 +107,7 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.item.ModItems;
-import gtPlusPlus.xmod.forestry.bees.items.FR_ItemRegistry;
+import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class RecipeRemover {
@@ -1168,13 +1168,13 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard, missing));
         removeRecipeByOutputDelayed(GregtechItemList.GT4_Thermal_Boiler.get(1));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameAccelerated));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameMutagenic));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameBusy));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameDecay));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameSlow));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameStalilize));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameArborist));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameAccelerated));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameMutagenic));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameBusy));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameDecay));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameSlow));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameStalilize));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameArborist));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemPersonalCloakingDevice));
         removeRecipeByOutputDelayed(ItemList.Electric_Motor_UHV.get(1L));
         removeRecipeByOutputDelayed(ItemList.Electric_Pump_UHV.get(1L));

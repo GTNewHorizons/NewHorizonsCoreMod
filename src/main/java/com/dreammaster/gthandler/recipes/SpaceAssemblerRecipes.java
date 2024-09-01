@@ -26,7 +26,7 @@ import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
-import gtPlusPlus.core.material.ELEMENT;
+import gtPlusPlus.core.material.MaterialsElements;
 import tectech.thing.CustomItemList;
 import tectech.thing.casing.TT_Container_Casings;
 
@@ -83,7 +83,7 @@ public class SpaceAssemblerRecipes implements Runnable {
             IG_RecipeAdder.addSpaceAssemblerRecipe(
                     new ItemStack[] { ItemList.Circuit_Chip_Optical.get(16L),
                             ItemList.Optical_Cpu_Containment_Housing.get(16L),
-                            ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
+                            MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getScrew(16),
                             GT_OreDictUnificator.get(OrePrefixes.screw, MaterialsUEVplus.SpaceTime, 16L),
                             GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Tritanium, 16L),
                             CustomItemList.DATApipe.get(16L),

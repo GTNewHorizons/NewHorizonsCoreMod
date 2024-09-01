@@ -39,7 +39,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_ModHandler.RecipeBits;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import gtPlusPlus.core.material.ALLOY;
+import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class ScriptAE2FC implements IScriptLoader {
 
@@ -185,8 +185,8 @@ public class ScriptAE2FC implements IScriptLoader {
         ItemStack[] components = new ItemStack[] { COMPONENT_1, COMPONENT_4, COMPONENT_16, COMPONENT_64, COMPONENT_256,
                 COMPONENT_1024, COMPONENT_4096, COMPONENT_16384 };
 
-        final ItemStack nitinolPlate = ALLOY.NITINOL_60.getPlate(2);
-        final ItemStack zeronPlate = ALLOY.ZERON_100.getPlate(2);
+        final ItemStack nitinolPlate = MaterialsAlloy.NITINOL_60.getPlate(2);
+        final ItemStack zeronPlate = MaterialsAlloy.ZERON_100.getPlate(2);
 
         // AE2FC_FLUID_STORAGE_HOUSING
         GT_ModHandler.addCraftingRecipe(

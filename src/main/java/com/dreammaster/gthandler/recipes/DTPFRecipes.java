@@ -6,6 +6,7 @@ import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.COIL_HEAT;
 
+import gtPlusPlus.core.material.MaterialsElements;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -27,8 +28,8 @@ import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.CombType;
 import gregtech.loaders.misc.GT_Bees;
-import gtPlusPlus.core.material.ALLOY;
-import gtPlusPlus.core.material.ELEMENT;
+import gtPlusPlus.core.material.MaterialsAlloy;
+import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.core.recipe.common.CI;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -320,13 +321,13 @@ public class DTPFRecipes implements Runnable {
             // Hypogen v1
             GT_Values.RA.stdBuilder()
                     .fluidInputs(
-                            new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 144),
+                            new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 144),
                             Materials.Neutronium.getMolten(5760L),
-                            new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
+                            new FluidStack(MaterialsAlloy.QUANTUM.getFluid(), 5760),
                             Materials.Infinity.getMolten(1440L),
                             MaterialsUEVplus.ExcitedDTPC.getFluid(1000))
                     .fluidOutputs(
-                            new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1584),
+                            new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 1584),
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L / 4))
                     .duration(1 * MINUTES + 15 * SECONDS).eut(800_000_000).metadata(COIL_HEAT, infinity_heat)
                     .addTo(plasmaForgeRecipes);
@@ -335,11 +336,11 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .fluidInputs(
                             Materials.Neutronium.getMolten(5760L),
-                            new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
+                            new FluidStack(MaterialsAlloy.QUANTUM.getFluid(), 5760),
                             Materials.Infinity.getMolten(1440L),
                             MaterialsUEVplus.ExcitedDTRC.getFluid(1000))
                     .fluidOutputs(
-                            new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 2880),
+                            new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 2880),
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L / 2))
                     .duration(1 * MINUTES + 15 * SECONDS).eut(1_200_000_000).metadata(COIL_HEAT, hypogen_heat)
                     .addTo(plasmaForgeRecipes);
@@ -348,11 +349,11 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder().itemInputs(GregtechItemList.Compressed_Fusion_Reactor.get(0))
                     .fluidInputs(
                             Materials.Neutronium.getMolten(5760L),
-                            new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
+                            new FluidStack(MaterialsAlloy.QUANTUM.getFluid(), 5760),
                             Materials.Infinity.getMolten(1440L),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(1000))
                     .fluidOutputs(
-                            new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 5760),
+                            new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 5760),
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000L))
                     .duration(1 * MINUTES + 15 * SECONDS).eut(1_600_000_000).metadata(COIL_HEAT, eternal_heat)
                     .addTo(plasmaForgeRecipes);
@@ -361,11 +362,11 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder().itemInputs(GregtechItemList.Compressed_Fusion_Reactor.get(0))
                     .fluidInputs(
                             Materials.Neutronium.getMolten(5760L * 2),
-                            new FluidStack(ALLOY.QUANTUM.getFluid(), 5760),
+                            new FluidStack(MaterialsAlloy.QUANTUM.getFluid(), 5760),
                             Materials.Infinity.getMolten(1440L),
                             MaterialsUEVplus.ExcitedDTSC.getFluid(1000))
                     .fluidOutputs(
-                            new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 5760 * 2),
+                            new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 5760 * 2),
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(2000L))
                     .duration(1 * MINUTES + 15 * SECONDS).eut(2_000_000_000).metadata(COIL_HEAT, eternal_heat)
                     .addTo(plasmaForgeRecipes);
@@ -434,7 +435,7 @@ public class DTPFRecipes implements Runnable {
                     .fluidInputs(
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(10000L),
                             Materials.Infinity.getMolten(2304L),
-                            new FluidStack(ELEMENT.STANDALONE.HYPOGEN.getFluid(), 1152))
+                            new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 1152))
                     .fluidOutputs(MaterialsUEVplus.SpaceTime.getMolten(144L)).duration(40 * SECONDS).eut(1_000_000_000)
                     .metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
 
@@ -452,11 +453,11 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 8L),
-                            ALLOY.OCTIRON.getRod(8),
+                            MaterialsAlloy.OCTIRON.getRod(8),
                             GGMaterial.tairitsu.get(OrePrefixes.stick, 8),
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Sunnarium, 8L),
-                            ALLOY.ABYSSAL.getPlate(24),
-                            ALLOY.BOTMIUM.getScrew(16),
+                            MaterialsAlloy.ABYSSAL.getPlate(24),
+                            MaterialsAlloy.BOTMIUM.getScrew(16),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1L))
                     .itemOutputs(ItemList.Tesseract.get(4)).fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(1000))
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000 / 2))
@@ -469,8 +470,8 @@ public class DTPFRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
                             GGMaterial.tairitsu.get(OrePrefixes.stick, 12),
                             GT_OreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 8L),
-                            ALLOY.BOTMIUM.getPlate(24),
-                            ALLOY.ARCANITE.getScrew(16),
+                            MaterialsAlloy.BOTMIUM.getPlate(24),
+                            MaterialsAlloy.ARCANITE.getScrew(16),
                             GT_ModHandler.getModItem(SuperSolarPanels.ID, "enderquantumcomponent", 1L))
                     .itemOutputs(ItemList.Tesseract.get(8)).fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(1000))
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1000))
@@ -481,8 +482,8 @@ public class DTPFRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 32L),
-                            ALLOY.BLACK_TITANIUM.getPlate(24),
-                            ALLOY.ZERON_100.getScrew(16),
+                            MaterialsAlloy.BLACK_TITANIUM.getPlate(24),
+                            MaterialsAlloy.ZERON_100.getScrew(16),
                             GregtechItemList.Laser_Lens_Special.get(1))
                     .itemOutputs(ItemList.Tesseract.get(16)).fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(1000))
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(2000))
@@ -503,7 +504,7 @@ public class DTPFRecipes implements Runnable {
                             MaterialsUEVplus.TranscendentMetal.getBlocks(40),
                             MaterialsUEVplus.TranscendentMetal.getDust(24))
                     .fluidInputs(
-                            ALLOY.TITANSTEEL.getFluidStack(144 * 40 * 9),
+                            MaterialsAlloy.TITANSTEEL.getFluidStack(144 * 40 * 9),
                             Materials.CallistoIce.getMolten(144 * 20 * 9),
                             Materials.Ledox.getMolten(144 * 20 * 9),
                             Materials.Tungsten.getMolten(144 * 40 * 9),
@@ -511,7 +512,7 @@ public class DTPFRecipes implements Runnable {
                     .fluidOutputs(
                             MaterialsUEVplus.DimensionallyTranscendentResidue
                                     .getFluid(transcendent_metal.getResidueAmount(4)),
-                            ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144 * 20 * 9))
+                            MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(144 * 20 * 9))
                     .duration(transcendent_metal.getDuration(4)).eut(transcendent_metal.getEUt(4))
                     .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
@@ -540,17 +541,17 @@ public class DTPFRecipes implements Runnable {
                     BlockList.Quantinum.getIS(2),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(2))
-                    .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
+                    .itemOutputs(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
                     .fluidInputs(
-                            ALLOY.BLACK_TITANIUM.getFluidStack(144 * 320 * 7 / 10),
+                            MaterialsAlloy.BLACK_TITANIUM.getFluidStack(144 * 320 * 7 / 10),
                             Materials.Americium.getMolten(144 * 320 / 10),
                             Materials.Bismuth.getMolten(144 * 320 / 10),
-                            ELEMENT.STANDALONE.HYPOGEN.getFluidStack(144 * 320 / 10),
+                            MaterialsElements.STANDALONE.HYPOGEN.getFluidStack(144 * 320 / 10),
                             Materials.Titanium.getPlasma(144 * 9 * 2 * 2),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(quantum.getCatalystAmount(3)))
                     .fluidOutputs(
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(quantum.getResidueAmount(3)),
-                            ALLOY.QUANTUM.getFluidStack(144 * 320))
+                            MaterialsAlloy.QUANTUM.getFluidStack(144 * 320))
                     .duration(quantum.getDuration(3)).eut(quantum.getEUt(3)).metadata(COIL_HEAT, eternal_heat)
                     .addTo(plasmaForgeRecipes);
 
@@ -560,17 +561,17 @@ public class DTPFRecipes implements Runnable {
                     BlockList.Quantinum.getIS(4),
                     // Quantum Anomaly
                     GregtechItemList.Laser_Lens_Special.get(3))
-                    .itemOutputs(ELEMENT.STANDALONE.ASTRAL_TITANIUM.getBlock(4))
+                    .itemOutputs(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getBlock(4))
                     .fluidInputs(
-                            ALLOY.BLACK_TITANIUM.getFluidStack(144 * 640 * 7 / 10),
+                            MaterialsAlloy.BLACK_TITANIUM.getFluidStack(144 * 640 * 7 / 10),
                             Materials.Americium.getMolten(144 * 640 / 10),
                             Materials.Bismuth.getMolten(144 * 640 / 10),
-                            ELEMENT.STANDALONE.HYPOGEN.getFluidStack(144 * 640 / 10),
+                            MaterialsElements.STANDALONE.HYPOGEN.getFluidStack(144 * 640 / 10),
                             Materials.Titanium.getPlasma(144 * 9 * 4 * 2),
                             MaterialsUEVplus.ExcitedDTSC.getFluid(quantum.getCatalystAmount(4)))
                     .fluidOutputs(
                             MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(quantum.getResidueAmount(4)),
-                            ALLOY.QUANTUM.getFluidStack(144 * 640))
+                            MaterialsAlloy.QUANTUM.getFluidStack(144 * 640))
                     .duration(quantum.getDuration(4)).eut(quantum.getEUt(4)).metadata(COIL_HEAT, eternal_heat)
                     .addTo(plasmaForgeRecipes);
 
@@ -749,7 +750,7 @@ public class DTPFRecipes implements Runnable {
                                     MaterialsUEVplus.ExcitedDTEC.getFluid(1797693L),
                                     Materials.CosmicNeutronium.getMolten(16384 * 144),
                                     GGMaterial.tairitsu.getMolten(16384 * 144),
-                                    ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
+                                    MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getFluidStack(4096 * 144))
                             .itemOutputs(GT_ModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1L, 14))
                             .duration(80 * SECONDS)
                             .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(1797693L))

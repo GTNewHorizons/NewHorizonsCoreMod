@@ -31,7 +31,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import gtPlusPlus.core.material.ELEMENT;
+import gtPlusPlus.core.material.MaterialsElements;
 
 public class CircuitAssemblerRecipes implements Runnable {
 
@@ -233,7 +233,7 @@ public class CircuitAssemblerRecipes implements Runnable {
                         ItemList.Circuit_Board_Bio_Ultra.get(1L),
                         ItemList.Circuit_Parts_Chip_Bioware.get(1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.NiobiumTitanium, 16),
-                        ELEMENT.STANDALONE.CHRONOMATIC_GLASS.getBolt(8))
+                        MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getBolt(8))
                 .itemOutputs(ItemList.Circuit_Bioprocessor.get(1L)).fluidInputs(new FluidStack(solderUEV, 144))
                 .requiresCleanRoom().duration(3 * SECONDS + 15 * TICKS).eut(TierEU.RECIPE_UEV)
                 .addTo(circuitAssemblerRecipes);

@@ -46,7 +46,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_RecipeConstants;
 import gregtech.api.util.GT_Utility;
-import gtPlusPlus.xmod.bop.blocks.BOP_Block_Registrator;
+import gtPlusPlus.xmod.bop.blocks.BOPBlockRegistrator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -5768,25 +5768,25 @@ public class ScriptForestry implements IScriptLoader {
                 'h',
                 getModItem(Minecraft.ID, "stick", 1, 0, missing));
         RecipeManagers.fermenterManager.addRecipe(
-                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
+                new ItemStack(BOPBlockRegistrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("juice", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
+                new ItemStack(BOPBlockRegistrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("for.honey", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
+                new ItemStack(BOPBlockRegistrator.sapling_Rainforest, 1, 0),
                 75,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),
                 FluidRegistry.getFluidStack("honey", 1));
         RecipeManagers.fermenterManager.addRecipe(
-                new ItemStack(BOP_Block_Registrator.sapling_Rainforest, 1, 0),
+                new ItemStack(BOPBlockRegistrator.sapling_Rainforest, 1, 0),
                 50,
                 1.f,
                 FluidRegistry.getFluidStack("biomass", 1000),

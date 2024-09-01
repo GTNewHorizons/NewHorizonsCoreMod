@@ -21,7 +21,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import gtPlusPlus.core.material.ALLOY;
+import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class FormingPressRecipes implements Runnable {
 
@@ -465,7 +465,7 @@ public class FormingPressRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Optical.get(1L),
-                        ALLOY.BOTMIUM.getFoil(1),
+                        MaterialsAlloy.BOTMIUM.getFoil(1),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NickelZincFerrite, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.VibrantAlloy, 1L),

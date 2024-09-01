@@ -22,7 +22,7 @@ import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
-import static gtPlusPlus.core.material.ELEMENT.STANDALONE.CHRONOMATIC_GLASS;
+import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -42,8 +42,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import gtPlusPlus.core.material.ALLOY;
-import gtPlusPlus.core.material.ELEMENT;
+import gtPlusPlus.core.material.MaterialsAlloy;
+import gtPlusPlus.core.material.MaterialsElements;
 
 public class MixerRecipes implements Runnable {
 
@@ -592,8 +592,8 @@ public class MixerRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DraconiumAwakened, 5L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Infinity, 5L),
-                        ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getDust(1),
-                        ELEMENT.STANDALONE.ADVANCED_NITINOL.getDust(1),
+                        MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getDust(1),
+                        MaterialsElements.STANDALONE.ADVANCED_NITINOL.getDust(1),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUEVBase, 12L))
                 .fluidInputs(Materials.Iron.getPlasma(144L)).duration(10 * 20).eut(TierEU.RECIPE_UEV)
@@ -604,7 +604,7 @@ public class MixerRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RadoxPolymer, 4L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.TranscendentMetal, 10L),
-                        ELEMENT.STANDALONE.RHUGNOR.getDust(6),
+                        MaterialsElements.STANDALONE.RHUGNOR.getDust(6),
                         CHRONOMATIC_GLASS.getDust(5),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUIVBase, 25L))
@@ -1026,9 +1026,9 @@ public class MixerRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.SpaceTime, 6L),
                         GT_OreDictUnificator.get(OrePrefixes.dust, getBartWorksMaterialByIGNName("Orundum"), 3L),
-                        ELEMENT.STANDALONE.HYPOGEN.getDust(11),
-                        ALLOY.TITANSTEEL.getDust(5),
-                        ELEMENT.STANDALONE.DRAGON_METAL.getDust(2),
+                        MaterialsElements.STANDALONE.HYPOGEN.getDust(11),
+                        MaterialsAlloy.TITANSTEEL.getDust(5),
+                        MaterialsElements.STANDALONE.DRAGON_METAL.getDust(2),
                         GT_Utility.getIntegratedCircuit(2))
                 .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUMVBase, 27L))
                 .fluidInputs(Materials.Oxygen.getPlasma(144L)).duration(10 * 20).eut(TierEU.RECIPE_UMV)

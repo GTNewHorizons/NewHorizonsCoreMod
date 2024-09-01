@@ -21,8 +21,8 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GT_ModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
-import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
-import static gtPlusPlus.core.material.ALLOY.STELLITE;
+import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
+import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
 
 import java.util.function.Consumer;
 

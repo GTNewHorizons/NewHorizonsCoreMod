@@ -10,12 +10,12 @@ import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeBuilder.TICKS;
 import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 import static gtPlusPlus.core.block.ModBlocks.blockFishTrap;
-import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
-import static gtPlusPlus.core.material.ALLOY.HASTELLOY_W;
-import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
-import static gtPlusPlus.core.material.ALLOY.NITINOL_60;
-import static gtPlusPlus.core.material.ALLOY.STELLITE;
-import static gtPlusPlus.core.material.ELEMENT.STANDALONE.CHRONOMATIC_GLASS;
+import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
+import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_W;
+import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
+import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
+import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
+import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
 import java.util.HashMap;
 import java.util.List;
@@ -48,7 +48,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
-import gtPlusPlus.core.material.ALLOY;
+import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import kekztech.common.TileEntities;
 import gtneioreplugin.plugin.block.ModBlocks;
@@ -1820,7 +1820,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.AutoclaveLuV.get(2L),
                         ItemList.Casing_Autoclave.get(4L),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
-                        ALLOY.LAFIUM.getPlate(8))
+                        MaterialsAlloy.LAFIUM.getPlate(8))
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(8 * 144))
                 .itemOutputs(ItemList.Machine_Multi_Autoclave.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
@@ -2268,7 +2268,7 @@ public class AssemblerRecipes implements Runnable {
                         GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
                         HASTELLOY_X.getGear(1),
                         HASTELLOY_C276.getFrameBox(1),
-                        ALLOY.INCONEL_792.getRing(2))
+                        MaterialsAlloy.INCONEL_792.getRing(2))
                 .itemOutputs(GregtechItemList.Casing_Refinery_Structural.get(2)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
@@ -3577,7 +3577,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Naquadria, 4L),
-                        ALLOY.PIKYONIUM.getFoil(2),
+                        MaterialsAlloy.PIKYONIUM.getFoil(2),
                         GT_OreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
@@ -3590,7 +3590,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.BlackPlutonium, 4L),
-                        ALLOY.TRINIUM_REINFORCED_STEEL.getFoil(2),
+                        MaterialsAlloy.TRINIUM_REINFORCED_STEEL.getFoil(2),
                         GT_OreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
@@ -3603,7 +3603,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 4L),
-                        ALLOY.CINOBITE.getFoil(2),
+                        MaterialsAlloy.CINOBITE.getFoil(2),
                         GT_OreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
@@ -3616,7 +3616,7 @@ public class AssemblerRecipes implements Runnable {
         GT_Values.RA.stdBuilder()
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Tritanium, 4L),
-                        ALLOY.LAFIUM.getFoil(2),
+                        MaterialsAlloy.LAFIUM.getFoil(2),
                         GT_OreDictUnificator
                                 .get(OrePrefixes.foil, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L),
                         GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 1L),
@@ -4474,7 +4474,7 @@ public class AssemblerRecipes implements Runnable {
             GT_Values.RA.stdBuilder()
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L),
-                            ALLOY.ZERON_100.getPlate(2),
+                            MaterialsAlloy.ZERON_100.getPlate(2),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
                             GT_OreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
                             GT_Utility.getIntegratedCircuit(3))

@@ -14,7 +14,7 @@ import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
-import gtPlusPlus.xmod.ic2.item.IC2_Items;
+import gtPlusPlus.xmod.ic2.item.IC2Items;
 
 public class ScriptCompactKineticGenerators implements IScriptLoader {
 
@@ -43,7 +43,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 "plateAlloyIridium");
         addShapedRecipe(
                 getModItem(CompactKineticGenerators.ID, "IridiumRotor", 1, 0, missing),
-                new ItemStack(IC2_Items.shaft_Material_4.getItem(), 1, 0),
+                new ItemStack(IC2Items.shaft_Material_4.getItem(), 1, 0),
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
                 "craftingToolHardHammer",
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
@@ -51,7 +51,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
                 "craftingToolWrench",
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
-                new ItemStack(IC2_Items.shaft_Material_4.getItem(), 1, 0));
+                new ItemStack(IC2Items.shaft_Material_4.getItem(), 1, 0));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 0, missing),
@@ -283,7 +283,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleTungstenSteel",
                 'b',
-                new ItemStack(IC2_Items.shaft_Material_2.getItem(), 1, 0),
+                new ItemStack(IC2Items.shaft_Material_2.getItem(), 1, 0),
                 'c',
                 "rotorTungstenSteel",
                 'd',
@@ -314,7 +314,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleIridium",
                 'b',
-                new ItemStack(IC2_Items.shaft_Material_2.getItem(), 1, 0),
+                new ItemStack(IC2Items.shaft_Material_2.getItem(), 1, 0),
                 'c',
                 "rotorIridium",
                 'd',
@@ -345,7 +345,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNaquadah",
                 'b',
-                new ItemStack(IC2_Items.shaft_Material_4.getItem(), 1, 0),
+                new ItemStack(IC2Items.shaft_Material_4.getItem(), 1, 0),
                 'c',
                 "rotorOsmium",
                 'd',
@@ -376,7 +376,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNeutronium",
                 'b',
-                new ItemStack(IC2_Items.shaft_Material_4.getItem(), 1, 0),
+                new ItemStack(IC2Items.shaft_Material_4.getItem(), 1, 0),
                 'c',
                 "rotorNeutronium",
                 'd',

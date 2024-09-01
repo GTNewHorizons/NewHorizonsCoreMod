@@ -18,8 +18,8 @@ import static gregtech.api.util.GT_RecipeBuilder.WILDCARD;
 import static gregtech.api.util.GT_RecipeConstants.AssemblyLine;
 import static gregtech.api.util.GT_RecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GT_RecipeConstants.RESEARCH_TIME;
-import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
-import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
+import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
+import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
 import static tectech.thing.CustomItemList.DATApipe;
 import static tectech.thing.CustomItemList.Machine_Multi_DataBank;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch;
@@ -55,8 +55,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
-import gtPlusPlus.core.material.ALLOY;
-import gtPlusPlus.core.material.ELEMENT;
+import gtPlusPlus.core.material.MaterialsAlloy;
+import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import tectech.recipe.TT_recipeAdder;
@@ -382,7 +382,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Reactor_Coolant_Sp_6.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 8),
                             ItemRefer.Field_Restriction_Coil_T2.get(2) },
-                    new FluidStack[] { ELEMENT.STANDALONE.RHUGNOR.getFluidStack(40),
+                    new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
                     GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 3, 1),
@@ -434,7 +434,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUEV, 16),
                             ItemList.Circuit_Chip_QPIC.get(64),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 8) },
-                    new FluidStack[] { ELEMENT.STANDALONE.RHUGNOR.getFluidStack(40),
+                    new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
                     GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 4),
@@ -522,7 +522,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 8),
                             GT_ModHandler.getModItem(Computronics.ID, "computronics.ocSpecialParts", 4),
                             GT_ModHandler.getModItem(OpenComputers.ID, "item", 8, 103) },
-                    new FluidStack[] { ELEMENT.STANDALONE.RHUGNOR.getFluidStack(100),
+                    new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(100),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
                     new ItemStack(GregTech_API.sBlockMachines, 1, 14001),
@@ -853,14 +853,14 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.CosmicNeutronium, 64L),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Neutronium, 64L),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 64L),
-                            Californium.get(OrePrefixes.stickLong, 64), ALLOY.QUANTUM.getLongRod(64),
-                            ELEMENT.STANDALONE.HYPOGEN.getLongRod(64),
-                            ELEMENT.STANDALONE.CELESTIAL_TUNGSTEN.getLongRod(64),
+                            Californium.get(OrePrefixes.stickLong, 64), MaterialsAlloy.QUANTUM.getLongRod(64),
+                            MaterialsElements.STANDALONE.HYPOGEN.getLongRod(64),
+                            MaterialsElements.STANDALONE.CELESTIAL_TUNGSTEN.getLongRod(64),
                             GGMaterial.tairitsu.get(OrePrefixes.stickLong, 64),
-                            ELEMENT.STANDALONE.ASTRAL_TITANIUM.getLongRod(64),
+                            MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getLongRod(64),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.SuperconductorUMVBase, 64L),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 64L),
-                            ALLOY.ABYSSAL.getLongRod(64),
+                            MaterialsAlloy.ABYSSAL.getLongRod(64),
                             GT_OreDictUnificator.get(OrePrefixes.stickLong, MaterialsUEVplus.TranscendentMetal, 64L), },
                     new FluidStack[] { Materials.Neutronium.getMolten(32_768_000L),
                             MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),

@@ -31,9 +31,9 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.item.chemistry.GenericChem;
-import gtPlusPlus.core.material.ALLOY;
+import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.util.minecraft.ItemUtils;
-import gtPlusPlus.xmod.forestry.bees.items.FR_ItemRegistry;
+import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
@@ -68,40 +68,40 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
                 ItemList.Machine_HV_Centrifuge.get(1L),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing));
-        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), new ItemStack(FR_ItemRegistry.hiveFrameVoid));
+        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), new ItemStack(FRItemRegistry.hiveFrameVoid));
         addShapedRecipe(
-                ALLOY.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
                 "craftingToolFile",
                 null,
                 null,
                 null,
-                ALLOY.TUMBAGA.getIngot(1),
+                MaterialsAlloy.TUMBAGA.getIngot(1),
                 null,
                 null,
                 null,
                 null);
         addShapedRecipe(
-                ALLOY.TUMBAGA.getFrameBox(2),
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getFrameBox(2),
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
                 "craftingToolWrench",
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getRod(1));
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1));
         addShapedRecipe(
-                ALLOY.TUMBAGA.getGear(1),
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getPlate(1),
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getPlate(1),
+                MaterialsAlloy.TUMBAGA.getGear(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getPlate(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getPlate(1),
                 "craftingToolWrench",
-                ALLOY.TUMBAGA.getPlate(1),
-                ALLOY.TUMBAGA.getRod(1),
-                ALLOY.TUMBAGA.getPlate(1),
-                ALLOY.TUMBAGA.getRod(1));
+                MaterialsAlloy.TUMBAGA.getPlate(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getPlate(1),
+                MaterialsAlloy.TUMBAGA.getRod(1));
         addShapedRecipe(
                 GregtechItemList.Industrial_WireFactory.get(1),
                 "plateBlueSteel",
@@ -195,7 +195,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FR_ItemRegistry.hiveFrameAccelerated, 1, 0),
+                new ItemStack(FRItemRegistry.hiveFrameAccelerated, 1, 0),
                 "abc",
                 "def",
                 "ghi",
@@ -221,7 +221,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FR_ItemRegistry.hiveFrameMutagenic, 1, 0),
+                new ItemStack(FRItemRegistry.hiveFrameMutagenic, 1, 0),
                 "abc",
                 "def",
                 "ghi",
@@ -247,7 +247,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FR_ItemRegistry.hiveFrameBusy),
+                new ItemStack(FRItemRegistry.hiveFrameBusy),
                 "abc",
                 "def",
                 "ghi",
@@ -273,7 +273,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FR_ItemRegistry.hiveFrameDecay),
+                new ItemStack(FRItemRegistry.hiveFrameDecay),
                 "abc",
                 "def",
                 "ghi",
@@ -299,33 +299,33 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FR_ItemRegistry.hiveFrameSlow),
+                new ItemStack(FRItemRegistry.hiveFrameSlow),
                 "abc",
                 "def",
                 "ghi",
                 'a',
-                ALLOY.TUMBAGA.getLongRod(1),
+                MaterialsAlloy.TUMBAGA.getLongRod(1),
                 'b',
-                ALLOY.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
                 'c',
-                ALLOY.TUMBAGA.getLongRod(1),
+                MaterialsAlloy.TUMBAGA.getLongRod(1),
                 'd',
-                ALLOY.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
                 'e',
                 GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1L),
                 'f',
-                ALLOY.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
                 'g',
-                ALLOY.TUMBAGA.getLongRod(1),
+                MaterialsAlloy.TUMBAGA.getLongRod(1),
                 'h',
-                ALLOY.TUMBAGA.getRod(1),
+                MaterialsAlloy.TUMBAGA.getRod(1),
                 'i',
-                ALLOY.TUMBAGA.getLongRod(1));
+                MaterialsAlloy.TUMBAGA.getLongRod(1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FR_ItemRegistry.hiveFrameStalilize),
+                new ItemStack(FRItemRegistry.hiveFrameStalilize),
                 "abc",
                 "def",
                 "ghi",
@@ -351,7 +351,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FR_ItemRegistry.hiveFrameArborist),
+                new ItemStack(FRItemRegistry.hiveFrameArborist),
                 "abc",
                 "def",
                 "ghi",
