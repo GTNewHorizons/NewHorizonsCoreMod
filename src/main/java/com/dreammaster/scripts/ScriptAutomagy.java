@@ -160,13 +160,13 @@ public class ScriptAutomagy implements IScriptLoader {
                 "REDCRYSTAL",
                 getModItem(Automagy.ID, "blockRedcrystal", 9, 0, missing),
                 getModItem(Minecraft.ID, "redstone_block", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("machina"), 3).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("vitreus"), 18));
+                new AspectList().add(Aspect.getAspect("machina"), 4).add(Aspect.getAspect("praecantatio"), 8)
+                        .add(Aspect.getAspect("vitreus"), 8));
         TCHelper.setResearchAspects(
                 "REDCRYSTAL",
-                new AspectList().add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("machina"), 12)
-                        .add(Aspect.getAspect("potentia"), 9).add(Aspect.getAspect("vitreus"), 6)
-                        .add(Aspect.getAspect("ignis"), 3));
+                new AspectList().add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("machina"), 12)
+                        .add(Aspect.getAspect("potentia"), 8).add(Aspect.getAspect("vitreus"), 6)
+                        .add(Aspect.getAspect("ignis"), 4));
         TCHelper.setResearchComplexity("REDCRYSTAL", 3);
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "REDCRYSTAL_AMP",
@@ -594,8 +594,8 @@ public class ScriptAutomagy implements IScriptLoader {
         new ResearchItem(
                 "InfusedGoldGTNH",
                 "AUTOMAGY",
-                new AspectList().add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("praecantatio"), 9)
-                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("metallum"), 3),
+                new AspectList().add(Aspect.getAspect("lucrum"), 12).add(Aspect.getAspect("praecantatio"), 8)
+                        .add(Aspect.getAspect("aer"), 6).add(Aspect.getAspect("metallum"), 4),
                 -5,
                 -2,
                 3,
