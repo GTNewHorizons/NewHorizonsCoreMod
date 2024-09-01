@@ -35,7 +35,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
-import com.elisis.gtnhlanth.common.register.WerkstoffMaterialPool;
+import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;

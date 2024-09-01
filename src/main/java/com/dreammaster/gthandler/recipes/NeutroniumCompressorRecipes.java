@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.elisis.gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
+import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
