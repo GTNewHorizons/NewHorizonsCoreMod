@@ -2079,8 +2079,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         // Pre-add planet block to EOH controller
         for (String dimAbbreviation : DimensionHelper.DimNameDisplayed) {
             ItemStack dimDisplay = new ItemStack(ModBlocks.getBlock(dimAbbreviation));
-            ItemStack EOHController = com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony
-                    .get(1L);
+            ItemStack EOHController = tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L);
             ItemStack NBTController = EOHController.copy();
             NBTTagCompound nbt = new NBTTagCompound();
             nbt.setString("planetBlock", dimAbbreviation);
@@ -2090,8 +2089,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
 
         // Transform EOH controller back to non-NBT one
         GT_ModHandler.addShapelessCraftingRecipe(
-                com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L),
-                new Object[] { com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L) });
+                tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L),
+                new Object[] { tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1L) });
     }
 
     private Consumer<Recipe> shapelessUnremovableGtRecipes() {

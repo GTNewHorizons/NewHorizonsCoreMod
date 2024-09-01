@@ -16,8 +16,6 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.github.technus.tectech.thing.CustomItemList;
-import com.github.technus.tectech.thing.casing.TT_Container_Casings;
 import com.gtnewhorizons.gtnhintergalactic.recipe.IG_RecipeAdder;
 
 import goodgenerator.items.MyMaterial;
@@ -29,6 +27,8 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.material.ELEMENT;
+import tectech.thing.CustomItemList;
+import tectech.thing.casing.TT_Container_Casings;
 
 public class SpaceAssemblerRecipes implements Runnable {
 

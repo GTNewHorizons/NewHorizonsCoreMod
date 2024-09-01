@@ -13,7 +13,6 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.github.technus.tectech.thing.casing.TT_Container_Casings;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import goodgenerator.items.MyMaterial;
@@ -22,6 +21,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GT_OreDictUnificator;
+import tectech.thing.casing.TT_Container_Casings;
 
 public class ScriptSGCraft implements IScriptLoader {
 
@@ -137,7 +137,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'k',
                 new ItemStack(TT_Container_Casings.StabilisationFieldGenerators, 1, 8),
                 'l',
-                com.github.technus.tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1),
+                tectech.thing.CustomItemList.Machine_Multi_EyeOfHarmony.get(1),
                 'm',
                 getModItem(SGCraft.ID, "stargateRing", 1, 0, missing),
                 'n',

@@ -2373,7 +2373,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GT_OreDictUnificator.get(OrePrefixes.foil, Materials.CosmicNeutronium, 2),
                         CHRONOMATIC_GLASS.getFineWire(2))
-                .itemOutputs(com.github.technus.tectech.thing.CustomItemList.DATApipe.get(64))
+                .itemOutputs(tectech.thing.CustomItemList.DATApipe.get(64))
                 .fluidInputs(Materials.RadoxPolymer.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(assemblerRecipes);
 

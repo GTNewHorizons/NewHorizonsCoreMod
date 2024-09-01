@@ -1,17 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader.Californium;
-import static com.github.technus.tectech.thing.CustomItemList.DATApipe;
-import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_DataBank;
-import static com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Switch;
-import static com.github.technus.tectech.thing.CustomItemList.dataInAss_Hatch;
-import static com.github.technus.tectech.thing.CustomItemList.dataInAss_Wireless_Hatch;
-import static com.github.technus.tectech.thing.CustomItemList.dataIn_Hatch;
-import static com.github.technus.tectech.thing.CustomItemList.dataIn_Wireless_Hatch;
-import static com.github.technus.tectech.thing.CustomItemList.dataOutAss_Hatch;
-import static com.github.technus.tectech.thing.CustomItemList.dataOutAss_Wireless_Hatch;
-import static com.github.technus.tectech.thing.CustomItemList.dataOut_Hatch;
-import static com.github.technus.tectech.thing.CustomItemList.dataOut_Wireless_Hatch;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Computronics;
@@ -31,6 +20,17 @@ import static gregtech.api.util.GT_RecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GT_RecipeConstants.RESEARCH_TIME;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_C276;
 import static gtPlusPlus.core.material.ALLOY.HASTELLOY_X;
+import static tectech.thing.CustomItemList.DATApipe;
+import static tectech.thing.CustomItemList.Machine_Multi_DataBank;
+import static tectech.thing.CustomItemList.Machine_Multi_Switch;
+import static tectech.thing.CustomItemList.dataInAss_Hatch;
+import static tectech.thing.CustomItemList.dataInAss_Wireless_Hatch;
+import static tectech.thing.CustomItemList.dataIn_Hatch;
+import static tectech.thing.CustomItemList.dataIn_Wireless_Hatch;
+import static tectech.thing.CustomItemList.dataOutAss_Hatch;
+import static tectech.thing.CustomItemList.dataOutAss_Wireless_Hatch;
+import static tectech.thing.CustomItemList.dataOut_Hatch;
+import static tectech.thing.CustomItemList.dataOut_Wireless_Hatch;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -41,7 +41,6 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
-import com.github.technus.tectech.recipe.TT_recipeAdder;
 
 import appeng.api.AEApi;
 import goodgenerator.items.MyMaterial;
@@ -60,6 +59,7 @@ import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.core.material.ELEMENT;
 import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import tectech.recipe.TT_recipeAdder;
 
 public class AssemblingLineRecipes implements Runnable {
 
@@ -443,7 +443,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Dyson Swarm Control Center Base Casing
             TT_recipeAdder.addResearchableAssemblylineRecipe(
-                    com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Computer.get(1),
+                    tectech.thing.CustomItemList.Machine_Multi_Computer.get(1),
                     192_000,
                     512,
                     2_000_000,
@@ -451,7 +451,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new ItemStack[] { ItemList.Hull_UIV.get(4),
                             GT_ModHandler.getModItem(OpenComputers.ID, "item", 4, 103),
                             GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 4),
-                            com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Computer.get(4), },
+                            tectech.thing.CustomItemList.Machine_Multi_Computer.get(4), },
                     new FluidStack[] { Materials.SuperCoolant.getFluid(32_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
                     GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 8, 5),
@@ -460,17 +460,16 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Dyson Swarm Control Center Primary Windings
             TT_recipeAdder.addResearchableAssemblylineRecipe(
-                    com.github.technus.tectech.thing.CustomItemList.tM_TeslaPrimary_6.get(1),
+                    tectech.thing.CustomItemList.tM_TeslaPrimary_6.get(1),
                     192_000,
                     512,
                     2_000_000,
                     32,
                     new ItemStack[] { ItemList.Circuit_Chip_QPIC.get(4), CustomItemList.MicaInsulatorFoil.get(64),
                             CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
-                            com.github.technus.tectech.thing.CustomItemList.eM_Coil.get(4),
+                            tectech.thing.CustomItemList.eM_Coil.get(4), CustomItemList.MicaInsulatorFoil.get(64),
                             CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
-                            CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64),
-                            CustomItemList.MicaInsulatorFoil.get(64) },
+                            CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
                     new FluidStack[] { Materials.RadoxPolymer.getMolten(3_456), Materials.SuperCoolant.getFluid(16_000),
                             new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
                     GT_ModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 6),
@@ -479,7 +478,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Dyson Swarm Control Center Secondary Windings
             TT_recipeAdder.addResearchableAssemblylineRecipe(
-                    com.github.technus.tectech.thing.CustomItemList.tM_TeslaSecondary.get(1),
+                    tectech.thing.CustomItemList.tM_TeslaSecondary.get(1),
                     192_000,
                     512,
                     2_000_000,
@@ -497,7 +496,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Dyson Swarm Control Center Toroid Casing
             TT_recipeAdder.addResearchableAssemblylineRecipe(
-                    com.github.technus.tectech.thing.CustomItemList.tM_TeslaToroid.get(1),
+                    tectech.thing.CustomItemList.tM_TeslaToroid.get(1),
                     192_000,
                     512,
                     2_000_000,
@@ -1023,7 +1022,7 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.ActivatedCarbonFilterMesh.get(16),
                             ItemList.BlockSterileWaterPlantCasing.get(8),
                             ItemList.Casing_Vent.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
+                            tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
                             ItemList.Electric_Motor_LuV.get(4),
                             ItemList.Electric_Pump_LuV.get(4),
                             new Object[] { OrePrefixes.circuit.get(Materials.LuV), 4 },
@@ -1042,7 +1041,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 8),
                             ItemList.BlockOzoneCasing.get(8),
                             ItemList.Casing_Vent.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
+                            tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
                             HASTELLOY_C276.getPlate(8),
                             HASTELLOY_C276.getRotor(4),
                             HASTELLOY_X.getRotor(4),
@@ -1066,7 +1065,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Adamantium, 8),
                             ItemList.BlockFlocculationCasing.get(8),
                             ItemList.Casing_Vent.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
+                            tectech.thing.CustomItemList.eM_energyMulti64_LuV.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Trinium, 8),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Trinium, 4),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.NaquadahAlloy, 4),
@@ -1091,7 +1090,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 8),
                             ItemList.BlockNaquadahReinforcedWaterPlantCasing.get(8),
                             ItemList.BlockExtremeCorrosionResistantCasing.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_ZPM.get(1),
+                            tectech.thing.CustomItemList.eM_energyMulti64_ZPM.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 8),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.NaquadahAlloy, 4),
                             HASTELLOY_C276.getRotor(4),
@@ -1116,7 +1115,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 8),
                             ItemList.BlockPlasmaHeatingCasing.get(8),
                             ItemList.Casing_Coil_Superconductor.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_UV.get(1),
+                            tectech.thing.CustomItemList.eM_energyMulti64_UV.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 8),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Neutronium, 4),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Osmiridium, 4),
@@ -1141,7 +1140,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 8),
                             ItemList.BlockNaquadriaReinforcedWaterPlantCasing.get(8),
                             ItemList.BlockUltraVioletLaserEmitter.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_UV.get(1),
+                            tectech.thing.CustomItemList.eM_energyMulti64_UV.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 8),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Neutronium, 4),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Draconium, 4),
@@ -1165,8 +1164,8 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemInputs(
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 8),
                             ItemList.BlockPlasmaHeatingCasing.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_Computer_Casing.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_UEV.get(1),
+                            tectech.thing.CustomItemList.eM_Computer_Casing.get(8),
+                            tectech.thing.CustomItemList.eM_energyMulti64_UEV.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 8),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Infinity, 4),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.CosmicNeutronium, 4),
@@ -1190,7 +1189,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 16),
                             ItemList.BlockQuarkContainmentCasing.get(8),
                             ItemList.BlockQuarkReleaseChamber.get(8),
-                            com.github.technus.tectech.thing.CustomItemList.eM_energyMulti64_UEV.get(1),
+                            tectech.thing.CustomItemList.eM_energyMulti64_UEV.get(1),
                             GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 16),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Infinity, 8),
                             GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.CosmicNeutronium, 8),
@@ -1333,12 +1332,12 @@ public class AssemblingLineRecipes implements Runnable {
                 64,
                 200000,
                 4,
-                new Object[] { com.github.technus.tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1),
+                new Object[] { tectech.thing.CustomItemList.Machine_Multi_Transformer.get(1),
                         AEApi.instance().definitions().materials().singularity().maybeStack(4).get(),
                         ItemList.Field_Generator_UHV.get(4), ItemList.Emitter_UHV.get(4),
                         ItemList.Casing_Fusion_Coil.get(4),
                         GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 2),
-                        com.github.technus.tectech.thing.CustomItemList.LASERpipe.get(64), },
+                        tectech.thing.CustomItemList.LASERpipe.get(64), },
                 new FluidStack[] { new FluidStack(Materials.Neutronium.mStandardMoltenFluid, 144 * 12),
                         new FluidStack(Materials.Tritanium.mStandardMoltenFluid, 144 * 12),
                         new FluidStack(solderIndalloy, 144 * 24),

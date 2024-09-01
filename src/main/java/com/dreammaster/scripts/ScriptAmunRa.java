@@ -37,8 +37,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import com.github.technus.tectech.recipe.TT_recipeAdder;
-
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.katzenpapst.amunra.block.ARBlocks;
@@ -54,6 +52,7 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_RecipeConstants;
 import gregtech.api.util.GT_Utility;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
+import tectech.recipe.TT_recipeAdder;
 
 public class ScriptAmunRa implements IScriptLoader {
 
