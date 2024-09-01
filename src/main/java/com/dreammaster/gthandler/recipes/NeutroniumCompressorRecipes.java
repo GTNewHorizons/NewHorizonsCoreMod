@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -13,6 +12,7 @@ import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
 import static gregtech.api.util.GT_RecipeConstants.COMPRESSION_TIER;
+import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;

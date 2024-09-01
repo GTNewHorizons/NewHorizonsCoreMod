@@ -35,7 +35,6 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
-import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.ItemList;
@@ -44,6 +43,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GT_OreDictUnificator;
 import gtPlusPlus.core.block.ModBlocks;
+import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class CompressorRecipes implements Runnable {
 
