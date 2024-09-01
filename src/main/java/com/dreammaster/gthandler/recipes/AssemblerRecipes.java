@@ -33,7 +33,6 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.gthandler.CustomItemList;
 import com.github.bartimaeusnek.bartworks.common.loaders.ItemRegistry;
 import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
-import common.TileEntities;
 
 import goodgenerator.items.MyMaterial;
 import goodgenerator.loader.Loaders;
@@ -51,6 +50,7 @@ import gregtech.api.util.GT_Utility;
 import gregtech.common.items.GT_MetaGenerated_Tool_01;
 import gtPlusPlus.core.material.ALLOY;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
+import kekztech.common.TileEntities;
 import pers.gwyog.gtneioreplugin.plugin.block.ModBlocks;
 
 public class AssemblerRecipes implements Runnable {

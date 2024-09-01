@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static common.Blocks.tfftStorageField;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
@@ -9,6 +8,7 @@ import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.util.GT_ModHandler.getModItem;
 import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
 import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static kekztech.common.Blocks.tfftStorageField;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
