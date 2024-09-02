@@ -18,7 +18,7 @@ public class TravellersGearTransformer implements IDreamTransformer {
     }
 
     @Override
-    public ClassNode transform(ClassNode classNode) {
+    public void transform(ClassNode classNode) {
         for (MethodNode methodNode : classNode.methods) {
             if (checkMethodNode(methodNode, "init", "(Lcpw/mods/fml/common/event/FMLInitializationEvent;)V")) {
                 /*
@@ -45,14 +45,13 @@ public class TravellersGearTransformer implements IDreamTransformer {
                                 classNode.name,
                                 methodNode.name,
                                 methodNode.desc);
-                        return classNode;
+                        return;
                     } else if (addItemCallsCount == 5) {
                         iterator.remove();
                     }
                 }
             }
         }
-        return classNode;
     }
 
 }
