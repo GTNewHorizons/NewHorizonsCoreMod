@@ -16,9 +16,9 @@ public interface IDreamTransformer {
     String[] targetedClasses();
 
     /**
-     * Returns the transformed ClassNode
+     * Performs transformations to the ClassNode
      */
-    ClassNode transform(ClassNode classNode);
+    void transform(ClassNode classNode);
 
     // =================================================
 
