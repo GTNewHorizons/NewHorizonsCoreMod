@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GT_ModHandler.getModItem;
@@ -18,6 +17,8 @@ import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GT_Values;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GT_OreDictUnificator;
 
 public class ScriptEtFuturumRequiem implements IScriptLoader {
 
@@ -167,13 +168,13 @@ public class ScriptEtFuturumRequiem implements IScriptLoader {
 
         ItemStack outputCutterLubricant = result.copy();
         outputCutterLubricant.stackSize = 6;
-        ItemStack sawdustCutterLubricant = getModItem(GregTech.ID, "gt.metaitem.01", 1, 2809);
+        ItemStack sawdustCutterLubricant = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L);
         GT_Values.RA.stdBuilder().itemInputs(ingredient).itemOutputs(outputCutterLubricant, sawdustCutterLubricant)
                 .fluidInputs(getFluidStack("lubricant", 1)).duration(10 * SECONDS).eut(7).addTo(cutterRecipes);
 
         ItemStack outputCutterWater = result.copy();
         outputCutterWater.stackSize = 4;
-        ItemStack sawdustCutterWater = getModItem(GregTech.ID, "gt.metaitem.01", 2, 2809);
+        ItemStack sawdustCutterWater = GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 2L);
         GT_Values.RA.stdBuilder().itemInputs(ingredient).itemOutputs(outputCutterWater, sawdustCutterWater)
                 .fluidInputs(getFluidStack("ic2distilledwater", 3)).duration(20 * SECONDS).eut(7).addTo(cutterRecipes);
 
