@@ -3,7 +3,11 @@ package com.dreammaster.coremod.transformers.recipenukers;
 import java.util.ListIterator;
 
 import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.tree.*;
+import org.objectweb.asm.tree.AbstractInsnNode;
+import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.tree.InsnNode;
+import org.objectweb.asm.tree.MethodNode;
+import org.objectweb.asm.tree.TypeInsnNode;
 
 import com.dreammaster.coremod.DreamCoreMod;
 import com.dreammaster.coremod.IDreamTransformer;
