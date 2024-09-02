@@ -7,9 +7,9 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeConstants.QFT_FOCUS_TIER;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.QFT_FOCUS_TIER;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.quantumForceTransformerRecipes;
 
 import java.util.Arrays;
@@ -21,14 +21,14 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.gthandler.CustomItemList;
 
 import forestry.api.recipes.RecipeManagers;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.item.chemistry.GenericChem;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -121,19 +121,19 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 new ItemStack(ModItems.itemBoilerChassis, 1, 0),
                 ItemList.Casing_LV.get(1L),
                 new ItemStack(ModItems.itemBoilerChassis, 1, 0),
-                GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L),
                 ItemList.Machine_Steel_Boiler.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L));
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L));
         addShapedRecipe(
                 new ItemStack(ModItems.itemBoilerChassis, 1, 0),
                 "plateDoubleLead",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 "plateDoubleLead",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.AnyBronze, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.AnyBronze, 1L),
                 getModItem(IronTanks.ID, "silverTank", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.AnyBronze, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.AnyBronze, 1L),
                 "plateDoubleLead",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 "plateDoubleLead");
         addShapedRecipe(
                 GregtechItemList.Boiler_Advanced_MV.get(1),
@@ -143,19 +143,19 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 new ItemStack(ModItems.itemBoilerChassis, 1, 1),
                 ItemList.Casing_MV.get(1L),
                 new ItemStack(ModItems.itemBoilerChassis, 1, 1),
-                GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L),
                 ItemList.Machine_Steel_Boiler.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L));
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L));
         addShapedRecipe(
                 new ItemStack(ModItems.itemBoilerChassis, 1, 1),
                 "plateDoubleStainlessSteel",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                 "plateDoubleStainlessSteel",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 getModItem(IronTanks.ID, "stainlesssteelTank", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
                 "plateDoubleStainlessSteel",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                 "plateDoubleStainlessSteel");
         addShapedRecipe(
                 GregtechItemList.Boiler_Advanced_HV.get(1),
@@ -165,22 +165,22 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 new ItemStack(ModItems.itemBoilerChassis, 1, 2),
                 ItemList.Casing_HV.get(1L),
                 new ItemStack(ModItems.itemBoilerChassis, 1, 2),
-                GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L),
                 ItemList.Machine_Steel_Boiler.get(1L),
-                GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L));
+                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L));
         addShapedRecipe(
                 new ItemStack(ModItems.itemBoilerChassis, 1, 2),
                 "plateDoubleTitanium",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
                 "plateDoubleTitanium",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                 getModItem(IronTanks.ID, "titaniumTank", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
                 "plateDoubleTitanium",
-                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
                 "plateDoubleTitanium");
         addShapedRecipe(
-                GregtechItemList.GT_FluidTank_HV.get(1),
+                GregtechItemList.GTFluidTank_HV.get(1),
                 "circuitPrimitive",
                 "plateAluminium",
                 "circuitPrimitive",
@@ -200,23 +200,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 1L),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1L),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -226,23 +226,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 1L),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Plutonium241, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Plutonium241, 1L),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -252,23 +252,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 1L),
                 'e',
                 getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -278,23 +278,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 1),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 1),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.WroughtIron, 1),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 1),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 1),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 1));
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -312,7 +312,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 'd',
                 MaterialsAlloy.TUMBAGA.getRod(1),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1L),
                 'f',
                 MaterialsAlloy.TUMBAGA.getRod(1),
                 'g',
@@ -330,23 +330,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 1L),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Osmiridium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Osmiridium, 1L),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -356,31 +356,31 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
                 'e',
                 getModItem(Minecraft.ID, "paper", 1, 0, missing),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L));
 
         // Shirabon and Eternity
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
                         ItemList.EnergisedTesseract.get(1),
                         ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0))
-                .itemOutputs(GT_OreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
+                .itemOutputs(GTOreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
                 .fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
                 .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
                 .metadata(QFT_FOCUS_TIER, 4).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)

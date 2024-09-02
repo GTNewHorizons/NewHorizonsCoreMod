@@ -7,7 +7,7 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTUtility;
 
 public class OreDictHelper {
 
@@ -24,6 +24,6 @@ public class OreDictHelper {
                 throw new RuntimeException(ex);
             }
         }
-        idToStack.get(OreDictionary.getOreID(oreDict)).removeIf(s -> GT_Utility.areStacksEqual(s, toRemove, true));
+        idToStack.get(OreDictionary.getOreID(oreDict)).removeIf(s -> GTUtility.areStacksEqual(s, toRemove, true));
     }
 }

@@ -3,16 +3,16 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersDefence;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
 
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 
 public class ScriptTinkersDefence implements IScriptLoader {
 
@@ -31,19 +31,19 @@ public class ScriptTinkersDefence implements IScriptLoader {
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "arrowhead", 1, 202, missing));
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "AeonSteel Ingot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 201, missing))
                 .duration(1 * MINUTES + 28 * SECONDS).eut(120).addTo(extruderRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "DogbeariumIngot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 203, missing))
                 .duration(1 * MINUTES + 4 * SECONDS).eut(120).addTo(extruderRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkersDefence.ID, "Queen's Gold Ingot", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))

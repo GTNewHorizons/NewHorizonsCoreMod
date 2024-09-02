@@ -17,8 +17,8 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 /**
  * ShapelessOreRecipe implementation with NBT checking support. Use {@link CustomItem} in input objects to check for NBT
@@ -39,11 +39,11 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
             if (value == null) continue;
             if (value instanceof String) {
                 ArrayList<ItemStack> ores = OreDictionary.getOres((String) value);
-                HashSet<GT_Utility.ItemId> oresHashes = new HashSet<>();
+                HashSet<GTUtility.ItemId> oresHashes = new HashSet<>();
                 for (ItemStack o : ores) {
                     ItemStack i = o.copy();
                     i.stackTagCompound = null;
-                    oresHashes.add(GT_Utility.ItemId.createNoCopy(i));
+                    oresHashes.add(GTUtility.ItemId.createNoCopy(i));
                 }
                 this.recipe.add(oresHashes);
                 this.recipeXY.add(ores);
@@ -65,7 +65,7 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                 this.recipeXY.add(i);
             } else if (value instanceof ItemData) {
                 ItemData data = (ItemData) value;
-                ItemStack itemStack = GT_OreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
+                ItemStack itemStack = GTOreDictUnificator.get(data.mPrefix, data.mMaterial.mMaterial, 1);
                 if (itemStack == null) {
                     throw new NullPointerException("bad item passed in the recipe");
                 } else {
@@ -90,17 +90,17 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
             for (Iterator<Object> iterator = required.iterator(); iterator.hasNext();) {
                 Object r = iterator.next();
                 if (r instanceof ItemStack) {
-                    if (!GT_Utility.areStacksEqual((ItemStack) r, stack, true)) continue;
+                    if (!GTUtility.areStacksEqual((ItemStack) r, stack, true)) continue;
                     iterator.remove();
                     continue invloop;
                 } else if (r instanceof HashSet) {
                     ItemStack copy = stack.copy();
                     copy.stackTagCompound = null;
                     // noinspection unchecked
-                    if (!((HashSet<GT_Utility.ItemId>) r).contains(GT_Utility.ItemId.createNoCopy(copy))) {
+                    if (!((HashSet<GTUtility.ItemId>) r).contains(GTUtility.ItemId.createNoCopy(copy))) {
                         Items.feather.setDamage(copy, wildcard);
                         // noinspection unchecked
-                        if (!((HashSet<GT_Utility.ItemId>) r).contains(GT_Utility.ItemId.createNoCopy(copy))) continue;
+                        if (!((HashSet<GTUtility.ItemId>) r).contains(GTUtility.ItemId.createNoCopy(copy))) continue;
                     }
                     iterator.remove();
                     continue invloop;

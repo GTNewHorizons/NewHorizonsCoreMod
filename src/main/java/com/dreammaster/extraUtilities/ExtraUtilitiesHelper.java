@@ -4,12 +4,12 @@ import net.minecraft.item.ItemStack;
 
 import com.rwtema.extrautils.tileentity.enderconstructor.EnderConstructorRecipesHandler;
 
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTUtility;
 
 public class ExtraUtilitiesHelper {
 
     public static void removeQEDRecipe(ItemStack output) {
         EnderConstructorRecipesHandler.recipes
-                .removeIf(r -> GT_Utility.areStacksEqual(r.getRecipeOutput(), output, true));
+                .removeIf(r -> GTUtility.areStacksEqual(r.getRecipeOutput(), output, true));
     }
 }

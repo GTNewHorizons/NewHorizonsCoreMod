@@ -2,7 +2,7 @@ package com.dreammaster.item;
 
 import net.minecraft.item.ItemStack;
 
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTUtility;
 
 public enum ItemBucketList {
 
@@ -18,7 +18,7 @@ public enum ItemBucketList {
 
     public void set(ItemStack stack) {
         hasNotBeenSet = false;
-        this.stack = GT_Utility.copyAmount(1, stack);
+        this.stack = GTUtility.copyAmount(1, stack);
     }
 
     public ItemStack get(int amount) {
@@ -26,6 +26,6 @@ public enum ItemBucketList {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
 
-        return GT_Utility.copyAmount(amount, stack);
+        return GTUtility.copyAmount(amount, stack);
     }
 }

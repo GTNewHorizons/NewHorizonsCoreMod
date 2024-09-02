@@ -13,8 +13,8 @@ import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,12 +26,12 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -90,7 +90,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 SingularityDrive,
                 CECInfusionItems);
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "item.ToolWirelessTerminal", 1, wildcard, missing),
                         getModItem(ThaumicEnergistics.ID, "part.base", 1, 4, missing))
@@ -98,260 +98,260 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 .duration(30 * SECONDS).eut(120).addTo(assemblerRecipes);
 
         // 1k Essentia Storage Component
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(10 * SECONDS).eut(30)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(10 * SECONDS).eut(30)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 2),
                         getModItem(Thaumcraft.ID, "ItemResource", 2, 14, missing),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(10 * SECONDS).eut(30)
                 .addTo(circuitAssemblerRecipes);
 
         // 4k Essentia Storage Component
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(10 * SECONDS).eut(30)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(10 * SECONDS).eut(30)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Coated_Basic.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(10 * SECONDS).eut(30)
                 .addTo(circuitAssemblerRecipes);
 
         // 16k Essentia Storage Component
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(10 * SECONDS).eut(120)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(10 * SECONDS).eut(120)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Phenolic_Good.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(10 * SECONDS).eut(120)
                 .addTo(circuitAssemblerRecipes);
 
         // 64k Essentia Storage Component
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 72)).duration(10 * SECONDS).eut(480)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(10 * SECONDS).eut(480)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Epoxy_Advanced.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 288)).duration(10 * SECONDS).eut(480)
                 .addTo(circuitAssemblerRecipes);
 
         // 256k Essentia Storage Component
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(1920)
                 .addTo(circuitAssemblerRecipes);
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(1920)
                 .addTo(circuitAssemblerRecipes);
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Fiberglass_Advanced.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 5, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(1920).addTo(circuitAssemblerRecipes);
 
         // 1024k Essentia Storage Component
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(7680)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(7680)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Multifiberglass_Elite.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 6, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(7680).addTo(circuitAssemblerRecipes);
 
         // 4096k Essentia Storage Component
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(30720)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(30720)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Wetware_Extreme.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 7, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(30720).addTo(circuitAssemblerRecipes);
 
         // 16384k Essentia Storage Component
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 8, missing))
                 .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(500000)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 8, missing))
                 .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(500000)
                 .addTo(circuitAssemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 16),
                         CustomItemList.EngineeringProcessorEssentiaPulsatingCore.get(1L),
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 8, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
                 .eut(500000).addTo(circuitAssemblerRecipes);
@@ -416,13 +416,13 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                         getModItem(ThaumicEnergistics.ID, "material", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                         getModItem(Thaumcraft.ID, "blockTube", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                         getModItem(ThaumicEnergistics.ID, "material", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEESSPROV",
@@ -498,11 +498,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
                 'b',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 360, missing),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
                 'd',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing),
                 'e',
@@ -510,11 +510,11 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 'f',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L),
                 'h',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedEarth, 1L));
         TCHelper.setResearchAspects(
                 "thaumicenergistics.TEARCANETERM",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("fabrico"), 12)

@@ -1,12 +1,13 @@
 package com.dreammaster.gthandler;
 
 import static com.gtnewhorizon.gtnhlib.util.AnimatedTooltipHandler.addItemTooltip;
-import static gregtech.client.GT_TooltipHandler.Tier.*;
-import static gregtech.client.GT_TooltipHandler.registerTieredTooltip;
+import static gregtech.client.GTTooltipHandler.Tier.*;
+import static gregtech.client.GTTooltipHandler.registerTieredTooltip;
 
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.common.items.MetaGeneratedItem01;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
@@ -14,17 +15,16 @@ import net.minecraft.util.StatCollector;
 import com.dreammaster.item.ItemList;
 
 import gregtech.api.enums.SubTag;
-import gregtech.common.items.GT_MetaGenerated_Item_01;
 
 public class GT_Loader_Items {
 
     public void run() {
-        GT = GT_MetaGenerated_Item_01.INSTANCE;
+        GT = MetaGeneratedItem01.INSTANCE;
         registerItems();
         registerTooltips();
     }
 
-    private GT_MetaGenerated_Item_01 GT;
+    private MetaGeneratedItem01 GT;
 
     private void registerItems() {
         // ID Range: 600 - 699

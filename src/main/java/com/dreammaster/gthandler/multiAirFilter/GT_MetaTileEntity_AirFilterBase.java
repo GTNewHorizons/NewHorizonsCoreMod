@@ -2,16 +2,22 @@ package com.dreammaster.gthandler.multiAirFilter;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
-import static gregtech.api.enums.GT_Values.*;
-import static gregtech.api.util.GT_StructureUtility.ofHatchAdder;
-import static gregtech.api.util.GT_StructureUtility.ofHatchAdderOptional;
-import static gregtech.api.util.GT_Utility.filterValidMTEs;
+import static gregtech.api.enums.GTValues.*;
+import static gregtech.api.util.GTUtility.filterValidMTEs;
+import static gregtech.api.util.StructureUtility.ofHatchAdder;
+import static gregtech.api.util.StructureUtility.ofHatchAdderOptional;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import gregtech.api.items.MetaGeneratedTool;
+import gregtech.api.metatileentity.implementations.MTEEnhancedMultiBlockBase;
+import gregtech.api.metatileentity.implementations.MTEHatchMuffler;
+import gregtech.api.objects.GTRenderedTexture;
+import gregtech.api.util.MultiblockTooltipBuilder;
+import gregtech.common.items.MetaGeneratedTool01;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -31,17 +37,11 @@ import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
-import gregtech.api.items.GT_MetaGenerated_Tool;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_EnhancedMultiBlockBase;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Muffler;
-import gregtech.api.objects.GT_RenderedTexture;
-import gregtech.api.util.GT_Multiblock_Tooltip_Builder;
-import gregtech.api.util.GT_Recipe;
-import gregtech.api.util.GT_Utility;
-import gregtech.common.items.GT_MetaGenerated_Tool_01;
+import gregtech.api.util.GTRecipe;
+import gregtech.api.util.GTUtility;
 
 public abstract class GT_MetaTileEntity_AirFilterBase
-        extends GT_MetaTileEntity_EnhancedMultiBlockBase<GT_MetaTileEntity_AirFilterBase> {
+        extends MTEEnhancedMultiBlockBase<GT_MetaTileEntity_AirFilterBase> {
 
     protected int baseEff = 0;
     protected int multiTier = 0;
@@ -116,7 +116,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                 && mMaintenanceHatches.size() == 1;
     }
 
-    static final GT_Recipe tRecipeT1 = new GT_Recipe(
+    static final GTRecipe tRecipeT1 = new GTRecipe(
             new ItemStack[] { CustomItemList.AdsorptionFilter.get(1L, new Object()) },
             new ItemStack[] { CustomItemList.AdsorptionFilterDirty.get(1L, new Object()) },
             null,
@@ -126,7 +126,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             200,
             30,
             0);
-    static final GT_Recipe tRecipeT2 = new GT_Recipe(
+    static final GTRecipe tRecipeT2 = new GTRecipe(
             new ItemStack[] { CustomItemList.AdsorptionFilter.get(1L, new Object()) },
             new ItemStack[] { CustomItemList.AdsorptionFilterDirty.get(1L, new Object()) },
             null,
@@ -136,7 +136,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             200,
             480,
             0);
-    static final GT_Recipe tRecipeT3 = new GT_Recipe(
+    static final GTRecipe tRecipeT3 = new GTRecipe(
             new ItemStack[] { CustomItemList.AdsorptionFilter.get(1L, new Object()) },
             new ItemStack[] { CustomItemList.AdsorptionFilterDirty.get(1L, new Object()) },
             null,
@@ -168,7 +168,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         }
     }
 
-    public abstract GT_Recipe getRecipe();
+    public abstract GTRecipe getRecipe();
 
     public String getCasingString() {
         switch (getCasingMeta()) {
@@ -197,8 +197,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     }
 
     @Override
-    protected GT_Multiblock_Tooltip_Builder createTooltip() {
-        final GT_Multiblock_Tooltip_Builder tt = new GT_Multiblock_Tooltip_Builder();
+    protected MultiblockTooltipBuilder createTooltip() {
+        final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
         tt.addMachineType("Air Filter").addInfo("Controller block for the Electric Air Filter T" + multiTier)
                 .addInfo("Needs a Turbine in the controller")
                 .addInfo("Can process " + (2 * multiTier + 1) + "x" + (2 * multiTier + 1) + " chunks")
@@ -230,7 +230,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             int colorIndex, boolean aActive, boolean aRedstone) {
         if (side == facing) {
             return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()),
-                    new GT_RenderedTexture(
+                    new GTRenderedTexture(
                             aActive ? Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE
                                     : Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE) };
         }
@@ -243,9 +243,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
-        return aStack != null && aStack.getItem() instanceof GT_MetaGenerated_Tool_01
-                && ((GT_MetaGenerated_Tool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier() > 0
-                && GT_MetaGenerated_Tool.getPrimaryMaterial(aStack).mToolSpeed > 0
+        return aStack != null && aStack.getItem() instanceof MetaGeneratedTool01
+                && ((MetaGeneratedTool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier() > 0
+                && MetaGeneratedTool.getPrimaryMaterial(aStack).mToolSpeed > 0
                 && aStack.getItemDamage() > 169
                 && aStack.getItemDamage() < 180;
     }
@@ -262,9 +262,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     public int getPollutionCleaningRatePerSecond(float turbineEff, float multiEff, boolean isRateBoosted) {
         long tVoltage = getMaxInputVoltage();
-        byte tTier = (byte) max(1, GT_Utility.getTier(tVoltage));
+        byte tTier = (byte) max(1, GTUtility.getTier(tVoltage));
         int pollutionPerSecond = 0;
-        for (GT_MetaTileEntity_Hatch_Muffler tHatch : filterValidMTEs(mMufflerHatches)) {
+        for (MTEHatchMuffler tHatch : filterValidMTEs(mMufflerHatches)) {
             // applying scaling factor
             pollutionPerSecond += (int) Math.pow(MainRegistry.CoreConfig.scalingFactor, min(tTier, tHatch.mTier));
         }
@@ -295,8 +295,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         try {
             // make the turbine to be required
             if (isCorrectMachinePart(aStack)) {
-                baseEff = GT_Utility.safeInt(
-                        (long) ((50.0F + 10.0F * ((GT_MetaGenerated_Tool) aStack.getItem()).getToolCombatDamage(aStack))
+                baseEff = GTUtility.safeInt(
+                        (long) ((50.0F + 10.0F * ((MetaGeneratedTool) aStack.getItem()).getToolCombatDamage(aStack))
                                 * 100));
             } else {
                 return false;
@@ -312,7 +312,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             int tInputList_sS = tInputList.size();
             for (int i = 0; i < tInputList_sS - 1; i++) {
                 for (int j = i + 1; j < tInputList_sS; j++) {
-                    if (GT_Utility.areStacksEqual(tInputList.get(i), tInputList.get(j))) {
+                    if (GTUtility.areStacksEqual(tInputList.get(i), tInputList.get(j))) {
                         if (tInputList.get(i).stackSize >= tInputList.get(j).stackSize) {
                             tInputList.remove(j--);
                             tInputList_sS = tInputList.size();
@@ -528,7 +528,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                         + EnumChatFormatting.RESET
                         + " EU/t(*2A) Tier: "
                         + EnumChatFormatting.YELLOW
-                        + VN[GT_Utility.getTier(getMaxInputVoltage())]
+                        + VN[GTUtility.getTier(getMaxInputVoltage())]
                         + EnumChatFormatting.RESET,
                 "Problems: " + EnumChatFormatting.RED
                         + (getIdealStatus() - getRepairStatus())

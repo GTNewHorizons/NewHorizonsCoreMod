@@ -24,7 +24,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.w3c.dom.Document;
 
-import gregtech.api.interfaces.internal.IGT_Mod;
+import gregtech.api.interfaces.internal.IGTMod;
 import mantle.books.BookData;
 
 @ExtendWith(MockitoExtension.class)
@@ -42,7 +42,7 @@ class MantleBookLoaderTest {
     BookDataReader BOOK_DATA_READER;
 
     @Mock
-    IGT_Mod SIDE_CHECKER;
+    IGTMod SIDE_CHECKER;
 
     @Mock
     Document DOCUMENT;
