@@ -698,7 +698,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.TungstenSteel, 16L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(ItemList.OilDrill4.get(1L)).fluidInputs(Materials.SolderingAlloy.getMolten(1440))
-                .duration(20 * SECONDS).eut(7860).addTo(assemblerRecipes);
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -9161,7 +9161,7 @@ public class AssemblerRecipes implements Runnable {
                                 GTUtility.getIntegratedCircuit(2))
                         .itemOutputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 3))
                         .fluidInputs(tMat.getMolten(1152L * tMultiplier / 2L)).duration(1 * MINUTES + 10 * SECONDS)
-                        .eut(7860).addTo(assemblerRecipes);
+                        .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
             }
 

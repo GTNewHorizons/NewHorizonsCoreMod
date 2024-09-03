@@ -71,7 +71,7 @@ public class CuttingMachineRecipes implements Runnable {
                 .eut(TierEU.RECIPE_EV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_HPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_HPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS).eut(7860)
+                .itemOutputs(ItemList.Circuit_Chip_HPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_UHPIC.get(1L))
