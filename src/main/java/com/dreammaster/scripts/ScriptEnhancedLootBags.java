@@ -16,7 +16,7 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.HashMap;

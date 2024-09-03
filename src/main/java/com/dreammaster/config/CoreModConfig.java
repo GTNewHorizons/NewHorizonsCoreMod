@@ -191,7 +191,7 @@ public class CoreModConfig extends ConfigManager {
                 "WerkstoffWeights",
                 "DeepDarkVoidMiner",
                 WerkstoffWeights,
-                "List of BartWorks material names to adjust weight. Example line: \"Bismutite : 0.3\". Intervening whitespace will be ignored. Use the debug options to get valid names. Use weight <= 0 to disable an ore entirely. Anything not specified in the list will have weight 1. See: com.github.bartimaeusnek.bartworks.system.material.Werkstoff");
+                "List of BartWorks material names to adjust weight. Example line: \"Bismutite : 0.3\". Intervening whitespace will be ignored. Use the debug options to get valid names. Use weight <= 0 to disable an ore entirely. Anything not specified in the list will have weight 1. See: bartworks.system.material.Werkstoff");
         GTPPMaterialWeights = _mainConfig.getStringList(
                 "GTPPMaterialWeights",
                 "DeepDarkVoidMiner",

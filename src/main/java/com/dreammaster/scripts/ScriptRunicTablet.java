@@ -4,7 +4,7 @@ import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;

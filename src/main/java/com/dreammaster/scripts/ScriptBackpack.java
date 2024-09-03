@@ -5,7 +5,7 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.HashMap;

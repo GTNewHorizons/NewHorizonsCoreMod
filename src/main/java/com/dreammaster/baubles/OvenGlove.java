@@ -34,7 +34,7 @@ import eu.usrv.yamcore.auxiliary.Hacks;
 import eu.usrv.yamcore.client.Notification;
 import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.iface.IExtendedModItem;
-import gregtech.api.damagesources.GT_DamageSources.DamageSourceHotItem;
+import gregtech.api.damagesources.GTDamageSources.DamageSourceHotItem;
 
 public final class OvenGlove extends Item implements IBauble, IExtendedModItem<OvenGlove> {
 
