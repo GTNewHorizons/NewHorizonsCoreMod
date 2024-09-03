@@ -54,13 +54,13 @@ public class CircuitAssemblerRecipes implements Runnable {
             CustomItemList.SchematicsTier8.get(1L), };
 
     // Rocket Circuits
-    public final int[] EUperRecipe = new int[] { 480, // t2 = HV
-            1920, // t3 = EV
-            7680, // t4 = IV
-            30720, // t5 = LuV (Gated behind Assline)
-            30720, // t6 = LuV
-            130870, // t7 = ZPM
-            520400, // t8 = UV
+    public final long[] EUperRecipe = new long[] { TierEU.RECIPE_HV, // t2 = HV
+            TierEU.RECIPE_EV, // t3 = EV
+            TierEU.RECIPE_IV, // t4 = IV
+            TierEU.RECIPE_LuV, // t5 = LuV (Gated behind Assline)
+            TierEU.RECIPE_LuV, // t6 = LuV
+            TierEU.RECIPE_ZPM, // t7 = ZPM
+            TierEU.RECIPE_UV, // t8 = UV
     };
 
     public final ItemStack[] ExtraChips = new ItemStack[] { CustomItemList.SchematicsMoonBuggy.get(1L),

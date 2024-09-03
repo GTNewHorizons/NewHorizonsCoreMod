@@ -388,7 +388,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(GameRegistry.findBlock(GalacticraftMars.ID, "tile.marsMachine"), 1, 8),
                 64000,
                 64,
-                (int)TierEU.RECIPE_UHV,
+                (int) TierEU.RECIPE_UHV,
                 8,
                 new Object[] { ItemList.Hull_MAX.get(1), new ItemStack(baseItem, 32, 28),
                         com.dreammaster.item.ItemList.IrradiantReinforcedNeutroniumPlate.getIS(64),
@@ -400,12 +400,12 @@ public class ScriptAmunRa implements IScriptLoader {
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(machines1, 1, 2),
                 15 * MINUTES,
-                (int)TierEU.RECIPE_UHV);
+                (int) TierEU.RECIPE_UHV);
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 com.dreammaster.item.ItemList.HeavyDutyRocketEngineTier4.getIS(),
                 64000,
                 64,
-                (int)TierEU.RECIPE_UHV,
+                (int) TierEU.RECIPE_UHV,
                 8,
                 new Object[] { new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
                         new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
@@ -418,7 +418,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(machines2),
                 5 * MINUTES,
-                (int)TierEU.RECIPE_UHV);
+                (int) TierEU.RECIPE_UHV);
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(machines2),
                 80000,
@@ -443,7 +443,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 com.dreammaster.item.ItemList.Tier4Booster.getIS(),
                 64000,
                 64,
-                (int)TierEU.RECIPE_UHV,
+                (int) TierEU.RECIPE_UHV,
                 8,
                 new Object[] { new ItemStack(dysonSwarmParts, 16, 3), new ItemStack(dysonSwarmParts, 16, 3),
                         new ItemStack(dysonSwarmParts, 16, 3), new ItemStack(dysonSwarmParts, 16, 3),
@@ -454,7 +454,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(msBoosters1),
                 5 * MINUTES,
-                (int)TierEU.RECIPE_UHV);
+                (int) TierEU.RECIPE_UHV);
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(msBoosters1),
                 80000,
@@ -477,7 +477,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 GameRegistry.findItemStack(GalaxySpace.ID, "item.SchematicTier8", 1),
                 64000,
                 64,
-                (int)TierEU.RECIPE_UHV,
+                (int) TierEU.RECIPE_UHV,
                 8,
                 new Object[] { new Object[] { OrePrefixes.ore.get(Materials.Samarium), 64 },
                         new Object[] { OrePrefixes.ore.get(Materials.Tartarite), 64 },
@@ -498,7 +498,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         FluidRegistry.getFluidStack("molten.astraltitanium", 64 * INGOTS) },
                 GameRegistry.findItemStack(GalacticraftAmunRa.ID, "item.schematic", 1),
                 15 * MINUTES,
-                (int)TierEU.RECIPE_UHV);
+                (int) TierEU.RECIPE_UHV);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.HeavyDutyPlateTier8.getIS(),
