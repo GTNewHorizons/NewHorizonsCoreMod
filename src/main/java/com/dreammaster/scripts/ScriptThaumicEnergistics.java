@@ -19,6 +19,7 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.util.Arrays;
 import java.util.List;
 
+import gregtech.api.enums.TierEU;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -333,7 +334,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 8, missing))
-                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(500000)
+                .fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -343,7 +344,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 8, missing))
-                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(500000)
+                .fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom().duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -354,7 +355,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.component", 1, 8, missing))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom().duration(10 * SECONDS)
-                .eut(500000).addTo(circuitAssemblerRecipes);
+                .eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
 
         TCHelper.removeInfusionRecipe(
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.essentia.provider", 1, 0, missing));
