@@ -2299,7 +2299,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.IV_Coil.get(8L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorIV, 16L))
                 .itemOutputs(ItemList.Electromagnet_Iron.get(1)).fluidInputs(Materials.Cobalt.getMolten(1152))
-                .duration(30 * SECONDS).eut(TierEU.IV).addTo(assemblerRecipes);
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
         // Ultimate Time Anomaly
         GTValues.RA.stdBuilder()
