@@ -3,9 +3,9 @@ package com.dreammaster.gthandler.multiAirFilter;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
 import static gregtech.api.enums.GTValues.*;
+import static gregtech.api.util.GTStructureUtility.ofHatchAdder;
+import static gregtech.api.util.GTStructureUtility.ofHatchAdderOptional;
 import static gregtech.api.util.GTUtility.filterValidMTEs;
-import static gregtech.api.util.StructureUtility.ofHatchAdder;
-import static gregtech.api.util.StructureUtility.ofHatchAdderOptional;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
