@@ -231,8 +231,8 @@ public class AlloySmelterRecipes implements Runnable {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 14))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(alloySmelterRecipes);
+                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 14)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).addTo(alloySmelterRecipes);
 
         }
 

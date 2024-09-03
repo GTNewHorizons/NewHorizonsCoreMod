@@ -224,16 +224,12 @@ public class ScriptMagicBees implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(30 * SECONDS).eut(120)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 4, 3, missing),
-                        GTUtility.getIntegratedCircuit(4))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 4, 3, missing), GTUtility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 72)).duration(10 * SECONDS).eut(48)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 6, 5, missing),
-                        GTUtility.getIntegratedCircuit(6))
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 6, 5, missing), GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 288)).duration(20 * SECONDS).eut(256)
                 .addTo(assemblerRecipes);

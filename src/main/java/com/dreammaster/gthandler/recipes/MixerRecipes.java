@@ -510,8 +510,7 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 10L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.dust, Materials.Titaniumonabariumdecacoppereikosaoxid, 40L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titaniumonabariumdecacoppereikosaoxid, 40L))
                 .fluidInputs(Materials.Oxygen.getGas(20000)).duration(10 * 20).eut(TierEU.RECIPE_HV)
                 .addTo(mixerRecipes);
         // EV Superconductor dust recipe.
@@ -1173,8 +1172,7 @@ public class MixerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherQuartz, 1L),
                             GTUtility.getIntegratedCircuit(4))
                     .itemOutputs(GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2L, 8))
-                    .fluidInputs(GTModHandler.getDistilledWater(500L)).duration(20 * TICKS).eut(16)
-                    .addTo(mixerRecipes);
+                    .fluidInputs(GTModHandler.getDistilledWater(500L)).duration(20 * TICKS).eut(16).addTo(mixerRecipes);
 
         }
 

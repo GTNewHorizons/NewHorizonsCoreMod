@@ -30,9 +30,7 @@ public class BW_Recipe_Loader implements Runnable {
                 .addTo(implosionRecipes);
 
         GTValues.RA.stdBuilder()
-                .metadata(
-                        RESEARCH_ITEM,
-                        GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0))
+                .metadata(RESEARCH_ITEM, GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0))
                 .metadata(RESEARCH_TIME, 2 * MINUTES + 5 * SECONDS)
                 .itemInputs(
                         GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),

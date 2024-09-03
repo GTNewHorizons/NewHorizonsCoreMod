@@ -23,8 +23,7 @@ public class WiremillRecipes implements Runnable {
 
     @Override
     public void run() {
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MeteoricIron, 1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.MeteoricIron, 1L))
                 .itemOutputs(CustomItemList.MeteoricIronString.get(4L)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(wiremillRecipes);
 
@@ -32,8 +31,7 @@ public class WiremillRecipes implements Runnable {
                 .itemOutputs(CustomItemList.TungstenString.get(4L)).duration(60 * SECONDS).eut(1024)
                 .addTo(wiremillRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(Materials.BorosilicateGlass.getIngots(1), GTUtility.getIntegratedCircuit(3))
+        GTValues.RA.stdBuilder().itemInputs(Materials.BorosilicateGlass.getIngots(1), GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(ItemList.Circuit_Parts_GlassFiber.get(8L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(wiremillRecipes);
 

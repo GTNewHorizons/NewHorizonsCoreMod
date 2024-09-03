@@ -1374,8 +1374,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.lead", 144)).duration(30 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Machine_LV_Canner.get(1L), ItemList.Machine_LV_FluidCanner.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Machine_LV_Canner.get(1L), ItemList.Machine_LV_FluidCanner.get(1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMachine", 1, 6, missing)).duration(1 * MINUTES)
                 .eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1955,8 +1954,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemArmorRubBoots", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 720)).duration(15 * SECONDS).eut(30)
                 .addTo(fluidSolidifierRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0, missing))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Diamond, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Diamond, 2L))
@@ -1964,8 +1962,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockBasalt", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Basalt, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.LapotronDust.get(30L)).outputChances(10000).duration(15 * SECONDS).eut(2)
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
@@ -1993,8 +1990,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 16, 0, missing)).duration(15 * SECONDS)
                 .eut(64).addTo(wiremillRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.StainlessSteel, 1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.StainlessSteel, 1L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 8, 0, missing)).duration(10 * SECONDS)
                 .eut(64).addTo(wiremillRecipes);
         GTValues.RA.stdBuilder()

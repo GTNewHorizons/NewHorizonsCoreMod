@@ -228,9 +228,7 @@ public class ScriptRandomThings implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 4000)).duration(1 * MINUTES).eut(480)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing),
-                        GTUtility.getIntegratedCircuit(1))
+                .itemInputs(getModItem(ExtraUtilities.ID, "trashcan", 1, 0, missing), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(RandomThings.ID, "dropFilter", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 250)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);

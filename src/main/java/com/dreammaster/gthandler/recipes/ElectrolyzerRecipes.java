@@ -223,8 +223,7 @@ public class ElectrolyzerRecipes implements Runnable {
                 .addTo(electrolyzerRecipes);
         // Potassium Feldspar
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 26L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 26L))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L),

@@ -92,9 +92,11 @@ public class ScriptSuperSolarPanels implements IScriptLoader {
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5, missing))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing)).duration(50 * SECONDS)
                 .eut(7680).addTo(laserEngraverRecipes);
-        GTValues.RA.stdBuilder().itemInputs(
-                GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GreenSapphire, 1L)),
-                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5, missing))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTUtility
+                                .copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.GreenSapphire, 1L)),
+                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5, missing))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing)).duration(50 * SECONDS)
                 .eut(7680).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
@@ -105,8 +107,7 @@ public class ScriptSuperSolarPanels implements IScriptLoader {
                 .eut(7680).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility
-                                .copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEarth, 1L)),
+                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEarth, 1L)),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5, missing))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "greencomponent", 1, 0, missing)).duration(50 * SECONDS)
                 .eut(7680).addTo(laserEngraverRecipes);
@@ -130,8 +131,7 @@ public class ScriptSuperSolarPanels implements IScriptLoader {
                 .eut(7680).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility
-                                .copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L)),
+                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L)),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5, missing))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "bluecomponent", 1, 0, missing)).duration(50 * SECONDS)
                 .eut(7680).addTo(laserEngraverRecipes);
@@ -167,8 +167,7 @@ public class ScriptSuperSolarPanels implements IScriptLoader {
                 .eut(7680).addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility
-                                .copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)),
+                        GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L)),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 5, missing))
                 .itemOutputs(getModItem(SuperSolarPanels.ID, "redcomponent", 1, 0, missing)).duration(50 * SECONDS)
                 .eut(7680).addTo(laserEngraverRecipes);

@@ -41,8 +41,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 2)).duration(3 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(7296, GTOreDictUnificator.get(OrePrefixes.block, Materials.Redstone, 1)))
+                    GTUtility.copyAmountUnsafe(7296, GTOreDictUnificator.get(OrePrefixes.block, Materials.Redstone, 1)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 3)).duration(3 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
@@ -73,8 +72,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 9)).duration(3 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(608, GTOreDictUnificator.get(OrePrefixes.block, Materials.Enderium, 1)))
+                    GTUtility.copyAmountUnsafe(608, GTOreDictUnificator.get(OrePrefixes.block, Materials.Enderium, 1)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 10)).duration(3 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
@@ -89,11 +87,9 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     GTUtility.copyAmountUnsafe(729, GTOreDictUnificator.get(OrePrefixes.block, Materials.Diamond, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTUtility.copyAmountUnsafe(
-                                    1824,
-                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.Aluminium, 1)))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTUtility
+                            .copyAmountUnsafe(1824, GTOreDictUnificator.get(OrePrefixes.block, Materials.Aluminium, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 0))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
@@ -105,24 +101,20 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 2))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(7296, GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1)))
+                    GTUtility.copyAmountUnsafe(7296, GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 3))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(912, GTOreDictUnificator.get(OrePrefixes.block, Materials.Electrum, 1)))
+                    GTUtility.copyAmountUnsafe(912, GTOreDictUnificator.get(OrePrefixes.block, Materials.Electrum, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 4))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
                     GTUtility.copyAmountUnsafe(1824, GTOreDictUnificator.get(OrePrefixes.block, Materials.Invar, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 5))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTUtility.copyAmountUnsafe(
-                                    3648,
-                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.Magnesium, 1)))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTUtility
+                            .copyAmountUnsafe(3648, GTOreDictUnificator.get(OrePrefixes.block, Materials.Magnesium, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 6))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
@@ -138,8 +130,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 9))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(608, GTOreDictUnificator.get(OrePrefixes.block, Materials.Sapphire, 1)))
+                    GTUtility.copyAmountUnsafe(608, GTOreDictUnificator.get(OrePrefixes.block, Materials.Sapphire, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 10))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
@@ -147,13 +138,11 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 11))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(2024, GTOreDictUnificator.get(OrePrefixes.block, Materials.Titanium, 1)))
+                    GTUtility.copyAmountUnsafe(2024, GTOreDictUnificator.get(OrePrefixes.block, Materials.Titanium, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 12))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(244, GTOreDictUnificator.get(OrePrefixes.block, Materials.Tungsten, 1)))
+                    GTUtility.copyAmountUnsafe(244, GTOreDictUnificator.get(OrePrefixes.block, Materials.Tungsten, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 13))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
@@ -172,8 +161,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 16))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(136, GTOreDictUnificator.get(OrePrefixes.block, Materials.Palladium, 1)))
+                    GTUtility.copyAmountUnsafe(136, GTOreDictUnificator.get(OrePrefixes.block, Materials.Palladium, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 17))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
@@ -183,11 +171,9 @@ public class NeutroniumCompressorRecipes implements Runnable {
                                     GTOreDictUnificator.get(OrePrefixes.block, Materials.DamascusSteel, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 18))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTUtility.copyAmountUnsafe(
-                                    304,
-                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.BlackSteel, 1)))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTUtility
+                            .copyAmountUnsafe(304, GTOreDictUnificator.get(OrePrefixes.block, Materials.BlackSteel, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 19))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
@@ -198,8 +184,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 20))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(16416, GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cinnabar, 1)))
+                    GTUtility.copyAmountUnsafe(16416, GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cinnabar, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 21))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
@@ -213,26 +198,21 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     GTUtility.copyAmountUnsafe(62, GTOreDictUnificator.get(OrePrefixes.block, Materials.Iridium, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 23))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTUtility.copyAmountUnsafe(
-                                    512,
-                                    GTOreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1)))
+            GTValues.RA.stdBuilder().itemInputs(
+                    GTUtility
+                            .copyAmountUnsafe(512, GTOreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(406, GTOreDictUnificator.get(OrePrefixes.block, Materials.Platinum, 1)))
+                    GTUtility.copyAmountUnsafe(406, GTOreDictUnificator.get(OrePrefixes.block, Materials.Platinum, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 25))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(66, GTOreDictUnificator.get(OrePrefixes.block, Materials.Naquadria, 1)))
+                    GTUtility.copyAmountUnsafe(66, GTOreDictUnificator.get(OrePrefixes.block, Materials.Naquadria, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 26))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputs(
-                    GTUtility
-                            .copyAmountUnsafe(244, GTOreDictUnificator.get(OrePrefixes.block, Materials.Plutonium, 1)))
+                    GTUtility.copyAmountUnsafe(244, GTOreDictUnificator.get(OrePrefixes.block, Materials.Plutonium, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 27))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
@@ -327,8 +307,9 @@ public class NeutroniumCompressorRecipes implements Runnable {
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             }
             if (ExtraUtilities.isModLoaded()) {
-                GTValues.RA.stdBuilder().itemInputs(
-                        GTUtility.copyAmountUnsafe(66, getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5)))
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                GTUtility.copyAmountUnsafe(66, getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 5)))
                         .itemOutputs(
                                 getModItem(UniversalSingularities.ID, "universal.extraUtilities.singularity", 1, 0))
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
@@ -359,11 +340,9 @@ public class NeutroniumCompressorRecipes implements Runnable {
                         .itemOutputs(
                                 getModItem(UniversalSingularities.ID, "universal.tinkersConstruct.singularity", 1, 1))
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTUtility.copyAmountUnsafe(
-                                        304,
-                                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1)))
+                GTValues.RA.stdBuilder().itemInputs(
+                        GTUtility
+                                .copyAmountUnsafe(304, GTOreDictUnificator.get(OrePrefixes.block, Materials.Ardite, 1)))
                         .itemOutputs(
                                 getModItem(UniversalSingularities.ID, "universal.tinkersConstruct.singularity", 1, 2))
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);

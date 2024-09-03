@@ -2311,8 +2311,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Iron, 1L))));
+                        TCHelper.findInfusionRecipe(GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Iron, 1L))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Copper, 32L),
@@ -2355,8 +2354,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Gold, 1L))));
+                        TCHelper.findInfusionRecipe(GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Gold, 1L))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Uranium, 32L),
@@ -2400,8 +2398,7 @@ public class ScriptEMT implements IScriptLoader {
         TCHelper.addResearchPage(
                 "UUMatterInfusion",
                 new ResearchPage(
-                        TCHelper.findInfusionRecipe(
-                                GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Lead, 1L))));
+                        TCHelper.findInfusionRecipe(GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Lead, 1L))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "UUMatterInfusion",
                 GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Redstone, 24L),

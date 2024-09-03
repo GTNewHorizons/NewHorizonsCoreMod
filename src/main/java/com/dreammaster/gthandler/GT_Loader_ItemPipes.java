@@ -236,16 +236,8 @@ public final class GT_Loader_ItemPipes {
                         80).getStackForm(1L));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeMedium.get(Materials.Tin),
-                new MTEItem(
-                        5591,
-                        "GT_Pipe_Tin",
-                        displayName + " Item Pipe",
-                        0.5F,
-                        Materials.Tin,
-                        1,
-                        65536,
-                        false,
-                        40).getStackForm(1L));
+                new MTEItem(5591, "GT_Pipe_Tin", displayName + " Item Pipe", 0.5F, Materials.Tin, 1, 65536, false, 40)
+                        .getStackForm(1L));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeLarge.get(Materials.Tin),
                 new MTEItem(

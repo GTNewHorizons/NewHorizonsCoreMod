@@ -482,8 +482,7 @@ public class ScriptBuildCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4L))
                 .itemOutputs(getModItem(BuildCraftRobotics.ID, "robotStation", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "paper", 8, 0, missing), ItemList.Color_11.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "paper", 8, 0, missing), ItemList.Color_11.get(1L))
                 .itemOutputs(getModItem(BuildCraftCore.ID, "mapLocation", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

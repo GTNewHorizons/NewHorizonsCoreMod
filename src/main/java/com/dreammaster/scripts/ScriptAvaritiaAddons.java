@@ -166,8 +166,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     .fluidOutputs(Materials.Hydrogen.getPlasma(576), Materials.Helium.getPlasma(576))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(hammerRecipes);
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing))
                     .fluidInputs(MaterialsUEVplus.Eternity.getMolten(144))
                     .fluidOutputs(Materials.Infinity.getMolten(576)).duration(5 * SECONDS).eut(TierEU.RECIPE_UXV)

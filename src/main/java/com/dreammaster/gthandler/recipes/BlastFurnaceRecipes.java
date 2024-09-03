@@ -876,8 +876,8 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 30L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cryolite, 15L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 12L))
-                .duration(4 * MINUTES).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 963).addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 12L)).duration(4 * MINUTES)
+                .eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 963).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1203,8 +1203,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Pentacadmiummagnesiumhexaoxid, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Pentacadmiummagnesiumhexaoxid, 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Pentacadmiummagnesiumhexaoxid, 1L))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_HV).metadata(COIL_HEAT, 2500).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1338,8 +1337,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Longasssuperconductornameforuvwire, 1L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.ingotHot, Materials.Longasssuperconductornameforuvwire, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Longasssuperconductornameforuvwire, 1L))
                 .duration(5 * MINUTES + 50 * SECONDS).eut(TierEU.RECIPE_LuV).metadata(COIL_HEAT, 9900)
                 .addTo(blastFurnaceRecipes);
 
@@ -1348,8 +1346,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Longasssuperconductornameforuvwire, 1L),
                         GTUtility.getIntegratedCircuit(11))
                 .itemOutputs(
-                        GTOreDictUnificator
-                                .get(OrePrefixes.ingotHot, Materials.Longasssuperconductornameforuvwire, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Longasssuperconductornameforuvwire, 1L))
                 .fluidInputs(Materials.Radon.getGas(1000L)).duration(5 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .metadata(COIL_HEAT, 9900).addTo(blastFurnaceRecipes);
 
@@ -1565,8 +1562,8 @@ public class BlastFurnaceRecipes implements Runnable {
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1300).addTo(blastFurnaceRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glass, 1, 0), GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
+                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(new ItemStack(Blocks.glass_pane, 1, 0), GTUtility.getIntegratedCircuit(1))

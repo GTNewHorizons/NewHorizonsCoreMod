@@ -5,10 +5,6 @@ import static net.minecraft.util.EnumChatFormatting.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import gregtech.api.gui.modularui.GTUITextures;
-import gregtech.api.metatileentity.implementations.MTEBasicMachine;
-import gregtech.api.objects.GTRenderedTexture;
-import gregtech.common.items.ItemIntegratedCircuit;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
@@ -16,10 +12,14 @@ import com.dreammaster.gthandler.gui.CoreMod_UITextures;
 import com.gtnewhorizons.modularui.api.drawable.FallbackableUITexture;
 
 import gregtech.api.enums.Textures;
+import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
+import gregtech.api.metatileentity.implementations.MTEBasicMachine;
+import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.BasicUIProperties;
+import gregtech.common.items.ItemIntegratedCircuit;
 
 /**
  * Created by Tec on 28.03.2017.

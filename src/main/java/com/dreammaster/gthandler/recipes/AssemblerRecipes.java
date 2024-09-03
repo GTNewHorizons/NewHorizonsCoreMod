@@ -436,8 +436,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.NagaScaleFragment.get(1L)).fluidInputs(Materials.Thaumium.getMolten(72L))
                 .duration(10 * SECONDS).eut(48).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.NagaScaleFragment.get(6L), GTUtility.getIntegratedCircuit(6))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.NagaScaleFragment.get(6L), GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(GTModHandler.getModItem(TwilightForest.ID, "item.nagaScale", 1L, 0))
                 .fluidInputs(Materials.Thaumium.getMolten(216L)).duration(10 * SECONDS).eut(96).addTo(assemblerRecipes);
 
@@ -445,8 +444,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.LichBoneFragment.get(1L)).fluidInputs(Materials.Thaumium.getMolten(72L))
                 .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.LichBoneFragment.get(6L), GTUtility.getIntegratedCircuit(6))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.LichBoneFragment.get(6L), GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(CustomItemList.LichBone.get(1L)).fluidInputs(Materials.Thaumium.getMolten(216L))
                 .duration(12 * SECONDS + 10 * TICKS).eut(256).addTo(assemblerRecipes);
 
@@ -460,8 +458,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CarminiteFragment.get(1L)).fluidInputs(Materials.Thaumium.getMolten(72L))
                 .duration(17 * SECONDS + 10 * TICKS).eut(1024).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CarminiteFragment.get(6L), GTUtility.getIntegratedCircuit(6))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CarminiteFragment.get(6L), GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(GTModHandler.getModItem(TwilightForest.ID, "item.carminite", 1L, 0))
                 .fluidInputs(Materials.Thaumium.getMolten(216L)).duration(17 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
@@ -762,8 +759,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Iron, 4L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
                 .itemOutputs(
-                        MetaGeneratedTool01.INSTANCE
-                                .getToolWithStats(170, 1, Materials.Iron, Materials.Steel, null))
+                        MetaGeneratedTool01.INSTANCE.getToolWithStats(170, 1, Materials.Iron, Materials.Steel, null))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -780,8 +776,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Bronze, 4L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
                 .itemOutputs(
-                        MetaGeneratedTool01.INSTANCE
-                                .getToolWithStats(170, 1, Materials.Bronze, Materials.Steel, null))
+                        MetaGeneratedTool01.INSTANCE.getToolWithStats(170, 1, Materials.Bronze, Materials.Steel, null))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -789,8 +784,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Steel, 4L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
                 .itemOutputs(
-                        MetaGeneratedTool01.INSTANCE
-                                .getToolWithStats(170, 1, Materials.Steel, Materials.Steel, null))
+                        MetaGeneratedTool01.INSTANCE.getToolWithStats(170, 1, Materials.Steel, Materials.Steel, null))
                 .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -955,17 +949,13 @@ public class AssemblerRecipes implements Runnable {
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Firebrick.get(24),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 8L))
+                .itemInputs(ItemList.Firebrick.get(24), GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 8L))
                 .itemOutputs(ItemList.Casing_Firebricks.get(4L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("concrete"), 4608)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Firebrick.get(24),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 8L))
+                .itemInputs(ItemList.Firebrick.get(24), GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gypsum, 8L))
                 .itemOutputs(ItemList.Casing_Firebricks.get(4L)).fluidInputs(Materials.Concrete.getMolten(4608L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
@@ -1655,8 +1645,8 @@ public class AssemblerRecipes implements Runnable {
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Unstable, 9L),
                             GTUtility.getIntegratedCircuit(1))
-                    .itemOutputs(GTModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2))
-                    .duration(1 * TICKS).eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
+                    .itemOutputs(GTModHandler.getModItem(ExtraUtilities.ID, "unstableingot", 1L, 2)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
 
         }
 
@@ -4519,8 +4509,7 @@ public class AssemblerRecipes implements Runnable {
                         GTModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 2L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Tin, 1L))
                 .itemOutputs(
-                        GTModHandler
-                                .getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowercobblestone", 1L))
+                        GTModHandler.getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowercobblestone", 1L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4561,8 +4550,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 2L),
                         GTModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 2L),
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L))
-                .itemOutputs(
-                        GTModHandler.getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerquartz", 1L))
+                .itemOutputs(GTModHandler.getModItem(BuildCraftTransport.ID, "item.buildcraftPipe.pipepowerquartz", 1L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -5972,8 +5960,8 @@ public class AssemblerRecipes implements Runnable {
                             GTModHandler.getModItem(ZTones.ID, "auroraBlock", 1L, 0),
                             new ItemStack(Blocks.glass, 4, 0),
                             GTUtility.getIntegratedCircuit(i == 0 ? 24 : i))
-                    .itemOutputs(GTModHandler.getModItem(ZTones.ID, "tile.glaxx", 8L, i)).duration(10 * SECONDS)
-                    .eut(16).addTo(assemblerRecipes);
+                    .itemOutputs(GTModHandler.getModItem(ZTones.ID, "tile.glaxx", 8L, i)).duration(10 * SECONDS).eut(16)
+                    .addTo(assemblerRecipes);
         }
     }
 
@@ -6544,8 +6532,8 @@ public class AssemblerRecipes implements Runnable {
                         new ItemStack(Blocks.stone, 4),
                         new ItemStack(Items.quartz, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(GTModHandler.getModItem(Chisel.ID, "laboratoryblock", 8L, 0)).duration(5 * SECONDS)
-                .eut(24).addTo(assemblerRecipes);
+                .itemOutputs(GTModHandler.getModItem(Chisel.ID, "laboratoryblock", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
         // Lavastone
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.stone, 4), GTUtility.getIntegratedCircuit(24))
@@ -6567,8 +6555,8 @@ public class AssemblerRecipes implements Runnable {
                         new ItemStack(Items.paper, 4),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         GTUtility.getIntegratedCircuit(11))
-                .itemOutputs(GTModHandler.getModItem(Chisel.ID, "paperwall_block", 8L, 0)).duration(5 * SECONDS)
-                .eut(24).addTo(assemblerRecipes);
+                .itemOutputs(GTModHandler.getModItem(Chisel.ID, "paperwall_block", 8L, 0)).duration(5 * SECONDS).eut(24)
+                .addTo(assemblerRecipes);
         // Road Lines
 
         GTValues.RA.stdBuilder()
@@ -7693,13 +7681,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CoinAdventureI.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinAdventureI.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinAdventureI.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinAdventureII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinAdventureII.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinAdventureII.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinAdventureIII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
@@ -7752,8 +7738,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CoinChemistIII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinChemistIII.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinChemistIII.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinChemistIV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
@@ -7773,13 +7758,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CoinCookIV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinDarkWizard.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinDarkWizard.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinDarkWizardI.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinDarkWizardI.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinDarkWizardI.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinDarkWizardII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -7817,13 +7800,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CoinForestryII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinForestryII.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinForestryII.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinForestryIII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinForestryIII.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinForestryIII.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinForestryIV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
@@ -7851,23 +7832,19 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CoinSurvivorII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinSurvivorII.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinSurvivorII.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinSurvivorIII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinSurvivorIII.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinSurvivorIII.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinSurvivorIV.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinTechnician.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinTechnician.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinTechnicianI.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinTechnicianI.get(10L), GTUtility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinTechnicianI.get(10L), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(CustomItemList.CoinTechnicianII.get(1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -7937,8 +7914,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CoinAdventureI.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinAdventureIII.get(1L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinAdventureIII.get(1L), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.CoinAdventureII.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
@@ -8014,18 +7990,15 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CoinDarkWizard.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinDarkWizardII.get(1L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinDarkWizardII.get(1L), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.CoinDarkWizardI.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinDarkWizardIII.get(1L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinDarkWizardIII.get(1L), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.CoinDarkWizardII.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinDarkWizardIV.get(1L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinDarkWizardIV.get(1L), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.CoinDarkWizardIII.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 
@@ -8097,18 +8070,15 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(CustomItemList.CoinTechnician.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinTechnicianII.get(1L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinTechnicianII.get(1L), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.CoinTechnicianI.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinTechnicianIII.get(1L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinTechnicianIII.get(1L), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.CoinTechnicianII.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CoinTechnicianIV.get(1L), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CoinTechnicianIV.get(1L), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.CoinTechnicianIII.get(10L)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 

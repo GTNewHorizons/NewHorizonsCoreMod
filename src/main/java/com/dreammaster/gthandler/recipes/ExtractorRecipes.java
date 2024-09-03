@@ -36,8 +36,7 @@ public class ExtractorRecipes implements Runnable {
         if (GalaxySpace.isModLoaded() && SGCraft.isModLoaded()) {
             for (int i = 0; i < 6; ++i) {
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tcetiedandelions", 64L, i))
+                GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tcetiedandelions", 64L, i))
                         .itemOutputs(com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS()).duration(3 * MINUTES)
                         .eut(262144).addTo(extractorRecipes);
 
@@ -47,8 +46,8 @@ public class ExtractorRecipes implements Runnable {
         if (TinkerConstruct.isModLoaded()) {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 2))
-                    .duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 2)).duration(15 * SECONDS)
+                    .eut(2).addTo(extractorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "slime.sapling", 1L, 0))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "strangeFood", 1L, 0))

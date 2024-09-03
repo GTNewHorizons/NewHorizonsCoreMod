@@ -7,8 +7,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import gregtech.common.items.MetaGeneratedItem01;
-import gregtech.common.items.MetaGeneratedItem02;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.JsonToNBT;
@@ -23,6 +21,8 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
+import gregtech.common.items.MetaGeneratedItem01;
+import gregtech.common.items.MetaGeneratedItem02;
 
 public interface IScriptLoader {
     // todo: cache the lookups for the itemstacks

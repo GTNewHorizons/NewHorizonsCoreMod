@@ -7,7 +7,6 @@ import static gregtech.client.GTTooltipHandler.registerTieredTooltip;
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.common.items.MetaGeneratedItem01;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
@@ -15,6 +14,7 @@ import net.minecraft.util.StatCollector;
 import com.dreammaster.item.ItemList;
 
 import gregtech.api.enums.SubTag;
+import gregtech.common.items.MetaGeneratedItem01;
 
 public class GT_Loader_Items {
 

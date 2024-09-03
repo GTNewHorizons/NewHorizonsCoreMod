@@ -2016,10 +2016,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         // Add storage component recipes to pre-apply cache upgrades
 
-        final ItemStack COMPONENT_1 = GTModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35);
-        final ItemStack COMPONENT_4 = GTModHandler
-                .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36);
+        final ItemStack COMPONENT_1 = GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 35);
+        final ItemStack COMPONENT_4 = GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 36);
         final ItemStack COMPONENT_16 = GTModHandler
                 .getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1L, 37);
         final ItemStack COMPONENT_64 = GTModHandler

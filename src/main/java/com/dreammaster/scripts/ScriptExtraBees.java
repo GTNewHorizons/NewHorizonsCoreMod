@@ -396,8 +396,8 @@ public class ScriptExtraBees implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ruby, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sapphire, 1L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sapphire, 1L)).outputChances(10000)
+                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 5, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Lapis, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);

@@ -59,8 +59,8 @@ public class BendingMachineRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 9L),
                         GTUtility.getIntegratedCircuit(9))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lapis, 1L))
-                .duration(3 * MINUTES).eut(TierEU.RECIPE_MV * 3 / 4).addTo(benderRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Lapis, 1L)).duration(3 * MINUTES)
+                .eut(TierEU.RECIPE_MV * 3 / 4).addTo(benderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(

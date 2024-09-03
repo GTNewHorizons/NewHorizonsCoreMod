@@ -269,8 +269,7 @@ public class GT_Recipe_Remover implements Runnable {
                 .removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatChargeCrystal", 1L, GTValues.W));
         GTModHandler.removeRecipeByOutputDelayed(
                 getModItem(IndustrialCraft2.ID, "itemBatChargeLamaCrystal", 1L, GTValues.W));
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTreetapElectric", 1, GTValues.W));
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemTreetapElectric", 1, GTValues.W));
         GTModHandler.removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, GTValues.W));
         // Natural Compass
         GTModHandler
@@ -394,34 +393,20 @@ public class GT_Recipe_Remover implements Runnable {
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 7), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 8), true, false, true);
         GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 9), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 10), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 11), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 12), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 13), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 14), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 15), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 0), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 1), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 2), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 3), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 5), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 6), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 8), true, false, true);
-        GTModHandler
-                .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 9), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 10), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 11), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 12), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 13), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 14), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineBeta, 1L, 15), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 0), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 1), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 2), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 3), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 5), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 6), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 8), true, false, true);
+        GTModHandler.removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 9), true, false, true);
         GTModHandler
                 .removeRecipeByOutputDelayed(getModItem(Railcraft.ID, aTextMachineAlpha, 1L, 10), true, false, true);
         GTModHandler

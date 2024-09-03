@@ -369,24 +369,22 @@ public class BacteriaRegistry {
 
         GTValues.RA.stdBuilder().itemInputs(MysteriousCrystal.getDust(4))
                 .special(BioItemList.getPetriDish(CultureSet.get("Mutagen")))
-                .fluidInputs(GTModHandler.getDistilledWater(4L))
-                .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1)).duration(1 * MINUTES).eut(TierEU.RECIPE_IV)
+                .fluidInputs(GTModHandler.getDistilledWater(4L)).fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1))
+                .duration(1 * MINUTES).eut(TierEU.RECIPE_IV)
                 .metadata(SIEVERTS, computeSieverts(Uranium, 6, false, true, false)).noOptimize().requiresCleanRoom()
                 .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(InfinityCatalyst.getDustTiny(1))
                 .special(BioItemList.getPetriDish(CultureSet.get("Mutagen")))
-                .fluidInputs(GTModHandler.getDistilledWater(8L))
-                .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 2)).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
+                .fluidInputs(GTModHandler.getDistilledWater(8L)).fluidOutputs(FluidRegistry.getFluidStack("mutagen", 2))
+                .duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .metadata(SIEVERTS, computeSieverts(Plutonium, 7, true, true, false)).noOptimize().requiresCleanRoom()
                 .addTo(bacterialVatRecipes);
     }
 
     private void bioLabRecipes() {
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        BioItemList.getPetriDish(null),
-                        GTModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 1L))
+                .itemInputs(BioItemList.getPetriDish(null), GTModHandler.getModItem(GalaxySpace.ID, "barnardaClog", 1L))
                 .itemOutputs(BioItemList.getPetriDish(CultureSet.get("BarnadaCBac"))).outputChances(2_50)
                 .fluidInputs(FluidRegistry.getFluidStack("unknowwater", 8000)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(bioLabRecipes);

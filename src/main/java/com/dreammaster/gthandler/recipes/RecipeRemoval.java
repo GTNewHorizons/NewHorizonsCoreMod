@@ -18,8 +18,7 @@ public class RecipeRemoval implements Runnable {
             GTModHandler.removeRecipeByOutput(GTModHandler.getIC2Item("quantumBoots", 1, GTValues.W));
         }
         if (GraviSuite.isModLoaded()) {
-            GTModHandler
-                    .removeRecipeByOutput(GTModHandler.getModItem(GraviSuite.ID, "graviChestPlate", 1, GTValues.W));
+            GTModHandler.removeRecipeByOutput(GTModHandler.getModItem(GraviSuite.ID, "graviChestPlate", 1, GTValues.W));
             GTModHandler.removeRecipeByOutput(GTModHandler.getModItem(GraviSuite.ID, "relocator", 1, GTValues.W));
         }
     }

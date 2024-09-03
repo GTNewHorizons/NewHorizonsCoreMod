@@ -1756,8 +1756,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ICHORIUM",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L))));
+                        TCHelper.findArcaneRecipe(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L))));
         TCHelper.setResearchAspects(
                 "ICHORIUM",
                 new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 15)

@@ -135,9 +135,7 @@ public class OreDictHandler {
                     GTModHandler.getModItem(GalaxySpace.ID, "europaunderwatergeyser", 1L, 0));
             reg_rock(OreDictTypes.Europa.name(), GTModHandler.getModItem(GalaxySpace.ID, "europageyser", 1L, 0));
             reg_rock(OreDictTypes.Haumea.name(), GTModHandler.getModItem(GalaxySpace.ID, "haumeablocks", 1L, 0));
-            reg_rock(
-                    OreDictTypes.CentauriA.name(),
-                    GTModHandler.getModItem(GalaxySpace.ID, "acentauribbgrunt", 1L, 0));
+            reg_rock(OreDictTypes.CentauriA.name(), GTModHandler.getModItem(GalaxySpace.ID, "acentauribbgrunt", 1L, 0));
             reg_rock(
                     OreDictTypes.CentauriA.name(),
                     GTModHandler.getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1L, 0));

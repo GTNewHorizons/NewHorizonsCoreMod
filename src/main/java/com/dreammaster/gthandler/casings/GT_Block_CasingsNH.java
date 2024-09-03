@@ -38,8 +38,7 @@ public class GT_Block_CasingsNH extends BlockCasingsAbstract {
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".0.name", "Air Filter Turbine Casing"); // adding
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".1.name", "Air Filter Vent Casing"); // adding
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".2.name", "Pyrolyse Oven Casing"); // adding
-        GTLanguageManager
-                .addStringLocalization(getUnlocalizedName() + ".3.name", "Advanced Air Filter Turbine Casing"); // adding
+        GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".3.name", "Advanced Air Filter Turbine Casing"); // adding
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".4.name", "Advanced Air Filter Vent Casing"); // adding
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".5.name", "Super Air Filter Turbine Casing"); // adding
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".6.name", "Super Air Filter Vent Casing"); // adding

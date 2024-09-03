@@ -12,12 +12,6 @@ import static java.lang.Math.min;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import gregtech.api.items.MetaGeneratedTool;
-import gregtech.api.metatileentity.implementations.MTEEnhancedMultiBlockBase;
-import gregtech.api.metatileentity.implementations.MTEHatchMuffler;
-import gregtech.api.objects.GTRenderedTexture;
-import gregtech.api.util.MultiblockTooltipBuilder;
-import gregtech.common.items.MetaGeneratedTool01;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -37,8 +31,14 @@ import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.items.MetaGeneratedTool;
+import gregtech.api.metatileentity.implementations.MTEEnhancedMultiBlockBase;
+import gregtech.api.metatileentity.implementations.MTEHatchMuffler;
+import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.MultiblockTooltipBuilder;
+import gregtech.common.items.MetaGeneratedTool01;
 
 public abstract class GT_MetaTileEntity_AirFilterBase
         extends MTEEnhancedMultiBlockBase<GT_MetaTileEntity_AirFilterBase> {

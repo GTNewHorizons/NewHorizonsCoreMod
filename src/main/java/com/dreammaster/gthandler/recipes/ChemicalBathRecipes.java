@@ -256,8 +256,7 @@ public class ChemicalBathRecipes implements Runnable {
         }
 
         if (PamsHarvestCraft.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2L, 0))
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(PamsHarvestCraft.ID, "wovencottonItem", 2L, 0))
                     .itemOutputs(CustomItemList.ArtificialLeather.get(2L))
                     .fluidInputs(Materials.PolyvinylChloride.getMolten(144L)).duration(15 * SECONDS)
                     .eut(TierEU.RECIPE_MV).addTo(chemicalBathRecipes);
@@ -334,8 +333,7 @@ public class ChemicalBathRecipes implements Runnable {
                     .duration(1 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_LV).addTo(chemicalBathRecipes);
         }
         if (OpenModularTurrets.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L))
+            GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L))
                     .itemOutputs(getModItem(OpenModularTurrets.ID, "hardWallTierOne", 1, 0, missing))
                     .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 144)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_LV / 2).addTo(chemicalBathRecipes);

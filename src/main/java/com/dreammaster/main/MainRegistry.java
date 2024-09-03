@@ -16,7 +16,6 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import java.io.File;
 import java.util.Random;
 
-import gregtech.common.items.MetaGeneratedItem01;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -106,6 +105,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GTLanguageManager;
+import gregtech.common.items.MetaGeneratedItem01;
 
 @Mod(
         modid = Refstrings.MODID,

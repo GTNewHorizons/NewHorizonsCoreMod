@@ -147,8 +147,8 @@ public class TCHelper {
                     for (Object craft : CraftingManager.getInstance().getRecipeList()) {
                         if (craft instanceof IRecipe) {
                             IRecipe theCraft = (IRecipe) craft;
-                            if (theCraft.getRecipeOutput() != null && GTUtility
-                                    .areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
+                            if (theCraft.getRecipeOutput() != null
+                                    && GTUtility.areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
                                 pages[x] = new ResearchPage(theCraft);
                                 break;
                             }
@@ -159,8 +159,8 @@ public class TCHelper {
                     for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
                         if (craft instanceof IArcaneRecipe) {
                             IArcaneRecipe theCraft = (IArcaneRecipe) craft;
-                            if (theCraft.getRecipeOutput() != null && GTUtility
-                                    .areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
+                            if (theCraft.getRecipeOutput() != null
+                                    && GTUtility.areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
                                 pages[x] = new ResearchPage(theCraft);
                                 break;
                             }
@@ -171,8 +171,8 @@ public class TCHelper {
                     for (Object craft : ThaumcraftApi.getCraftingRecipes()) {
                         if (craft instanceof CrucibleRecipe) {
                             CrucibleRecipe theCraft = (CrucibleRecipe) craft;
-                            if (theCraft.getRecipeOutput() != null && GTUtility
-                                    .areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
+                            if (theCraft.getRecipeOutput() != null
+                                    && GTUtility.areStacksEqual(theCraft.getRecipeOutput(), recipe.getRecipeOutput())) {
                                 pages[x] = new ResearchPage(theCraft);
                                 break;
                             }

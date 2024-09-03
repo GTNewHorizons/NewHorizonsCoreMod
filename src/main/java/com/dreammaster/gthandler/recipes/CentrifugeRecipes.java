@@ -440,8 +440,7 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(5000, 2500, 1000, 750, 150, 50).duration(6 * MINUTES + 28 * SECONDS + 16 * TICKS)
                 .eut(TierEU.RECIPE_LuV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(CustomItemList.CokeOvenBrickDust.get(4L), GTUtility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CokeOvenBrickDust.get(4L), GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 2L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.SiliconDioxide, 1L),
@@ -582,8 +581,8 @@ public class CentrifugeRecipes implements Runnable {
                 .outputChances(5000, 2000, 1000).duration(60 * SECONDS).eut(TierEU.RECIPE_EV).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.MaceratedPlantmass.get(1L))
-                .itemOutputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 1L, 0))
-                .duration(15 * SECONDS).eut(4).addTo(centrifugeRecipes);
+                .itemOutputs(GTModHandler.getModItem(IndustrialCraft2.ID, "itemBiochaff", 1L, 0)).duration(15 * SECONDS)
+                .eut(4).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrotine, 8L))
                 .itemOutputs(

@@ -1267,26 +1267,23 @@ public class GT_Loader_Machines {
                 ItemList.AmplifabricatorLuV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "PMP", "CPC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), },
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), },
                 6);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AmplifabricatorZPM.get(1L),
                 bitsd,
                 new Object[] { "WPW", "PMP", "CPC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4(), },
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4(), },
                 7);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AmplifabricatorUV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "PMP", "CPC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable4(), },
                 8);
 
@@ -1294,16 +1291,14 @@ public class GT_Loader_Machines {
                 ItemList.AmplifabricatorUHV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "PMP", "CPC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4(), },
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4(), },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AmplifabricatorUEV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "PMP", "CPC", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "WPW", "PMP", "CPC", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4(), },
                 10);
@@ -1311,8 +1306,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AmplifabricatorUIV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "PMP", "CPC", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "WPW", "PMP", "CPC", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4(), },
                 11);
@@ -1320,8 +1314,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AmplifabricatorUMV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "PMP", "CPC", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "WPW", "PMP", "CPC", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), },
                 12);
@@ -1332,8 +1325,7 @@ public class GT_Loader_Machines {
                 ItemList.AssemblingMachineLuV.get(1L),
                 bitsd,
                 new Object[] { "ACA", "VMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A',
-                        MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A', MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
@@ -1342,8 +1334,7 @@ public class GT_Loader_Machines {
                 ItemList.AssemblingMachineZPM.get(1L),
                 bitsd,
                 new Object[] { "ACA", "VMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A',
-                        MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A', MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
@@ -1352,8 +1343,7 @@ public class GT_Loader_Machines {
                 ItemList.AssemblingMachineUV.get(1L),
                 bitsd,
                 new Object[] { "ACA", "VMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A',
-                        MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A', MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
@@ -1362,8 +1352,7 @@ public class GT_Loader_Machines {
                 ItemList.AssemblingMachineUHV.get(1L),
                 bitsd,
                 new Object[] { "ACA", "VMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A',
-                        MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A', MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
@@ -1371,9 +1360,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AssemblingMachineUEV.get(1L),
                 bitsd,
-                new Object[] { "ACA", "VMV", "WCW", 'M', ItemList.Hull_UEV, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A',
-                        MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
+                new Object[] { "ACA", "VMV", "WCW", 'M', ItemList.Hull_UEV, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'A', MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
@@ -1381,9 +1369,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AssemblingMachineUIV.get(1L),
                 bitsd,
-                new Object[] { "ACA", "VMV", "WCW", 'M', ItemList.Hull_UIV, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A',
-                        MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
+                new Object[] { "ACA", "VMV", "WCW", 'M', ItemList.Hull_UIV, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'A', MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
@@ -1391,9 +1378,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AssemblingMachineUMV.get(1L),
                 bitsd,
-                new Object[] { "ACA", "VMV", "WCW", 'M', ItemList.Hull_UMV, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'A',
-                        MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
+                new Object[] { "ACA", "VMV", "WCW", 'M', ItemList.Hull_UMV, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'A', MTEBasicMachineWithRecipe.X.ROBOT_ARM, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
@@ -1405,9 +1391,8 @@ public class GT_Loader_Machines {
                 ItemList.AutoclaveLuV.get(1L),
                 bitsd,
                 new Object[] { "IGI", "IMI", "CPC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'I',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'I',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() },
                 6);
@@ -1416,9 +1401,8 @@ public class GT_Loader_Machines {
                 ItemList.AutoclaveZPM.get(1L),
                 bitsd,
                 new Object[] { "IGI", "IMI", "CPC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'I',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'I',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() },
                 7);
@@ -1427,8 +1411,7 @@ public class GT_Loader_Machines {
                 ItemList.AutoclaveUV.get(1L),
                 bitsd,
                 new Object[] { "IGI", "IMI", "CPC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'I',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), },
@@ -1438,9 +1421,8 @@ public class GT_Loader_Machines {
                 ItemList.AutoclaveUHV.get(1L),
                 bitsd,
                 new Object[] { "IGI", "IMI", "CPC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'I',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'I',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getPlate(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), },
                 9);
@@ -1448,8 +1430,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AutoclaveUEV.get(1L),
                 bitsd,
-                new Object[] { "IGI", "IMI", "CPC", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "IGI", "IMI", "CPC", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'I',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getPlate(), 'G',
@@ -1459,8 +1440,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AutoclaveUIV.get(1L),
                 bitsd,
-                new Object[] { "IGI", "IMI", "CPC", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "IGI", "IMI", "CPC", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'I',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getPlate(), 'G',
@@ -1470,8 +1450,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.AutoclaveUMV.get(1L),
                 bitsd,
-                new Object[] { "IGI", "IMI", "CPC", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "IGI", "IMI", "CPC", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'I',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getPlate(), 'G',
@@ -1485,8 +1464,7 @@ public class GT_Loader_Machines {
                 ItemList.BendingMachineLuV.get(1L),
                 bitsd,
                 new Object[] { "PWP", "CMC", "EWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
@@ -1495,8 +1473,7 @@ public class GT_Loader_Machines {
                 ItemList.BendingMachineZPM.get(1L),
                 bitsd,
                 new Object[] { "PWP", "CMC", "EWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
@@ -1505,8 +1482,7 @@ public class GT_Loader_Machines {
                 ItemList.BendingMachineUV.get(1L),
                 bitsd,
                 new Object[] { "PWP", "CMC", "EWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
@@ -1515,8 +1491,7 @@ public class GT_Loader_Machines {
                 ItemList.BendingMachineUHV.get(1L),
                 bitsd,
                 new Object[] { "PWP", "CMC", "EWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
@@ -1524,31 +1499,25 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.BendingMachineUEV.get(1L),
                 bitsd,
-                new Object[] { "PWP", "CMC", "EWE", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
+                new Object[] { "PWP", "CMC", "EWE", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.BendingMachineUIV.get(1L),
                 bitsd,
-                new Object[] { "PWP", "CMC", "EWE", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
+                new Object[] { "PWP", "CMC", "EWE", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.BendingMachineUMV.get(1L),
                 bitsd,
-                new Object[] { "PWP", "CMC", "EWE", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
+                new Object[] { "PWP", "CMC", "EWE", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
     }
 
@@ -1558,62 +1527,55 @@ public class GT_Loader_Machines {
                 ItemList.CompressorLuV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CompressorZPM.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CompressorUV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CompressorUHV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CompressorUEV.get(1L),
                 bitsd,
-                new Object[] { "WCW", "PMP", "WCW", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                new Object[] { "WCW", "PMP", "WCW", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CompressorUIV.get(1L),
                 bitsd,
-                new Object[] { "WCW", "PMP", "WCW", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                new Object[] { "WCW", "PMP", "WCW", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CompressorUMV.get(1L),
                 bitsd,
-                new Object[] { "WCW", "PMP", "WCW", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                new Object[] { "WCW", "PMP", "WCW", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
     }
@@ -1624,8 +1586,7 @@ public class GT_Loader_Machines {
                 ItemList.CuttingMachineLuV.get(1L),
                 bitsd,
                 new Object[] { "WCG", "VMB", "CWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'B', OreDictNames.craftingDiamondBlade },
@@ -1635,8 +1596,7 @@ public class GT_Loader_Machines {
                 ItemList.CuttingMachineZPM.get(1L),
                 bitsd,
                 new Object[] { "WCG", "VMB", "CWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'B', OreDictNames.craftingDiamondBlade },
@@ -1646,8 +1606,7 @@ public class GT_Loader_Machines {
                 ItemList.CuttingMachineUV.get(1L),
                 bitsd,
                 new Object[] { "WCG", "VMB", "CWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'B', OreDictNames.craftingDiamondBlade },
@@ -1657,8 +1616,7 @@ public class GT_Loader_Machines {
                 ItemList.CuttingMachineUHV.get(1L),
                 bitsd,
                 new Object[] { "WCG", "VMB", "CWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'B', OreDictNames.craftingDiamondBlade },
@@ -1667,33 +1625,27 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CuttingMachineUEV.get(1L),
                 bitsd,
-                new Object[] { "WCG", "VMB", "CWE", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
+                new Object[] { "WCG", "VMB", "CWE", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'V',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), 'B', OreDictNames.craftingDiamondBlade },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CuttingMachineUIV.get(1L),
                 bitsd,
-                new Object[] { "WCG", "VMB", "CWE", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
+                new Object[] { "WCG", "VMB", "CWE", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'V',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'B', OreDictNames.craftingDiamondBlade },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CuttingMachineUMV.get(1L),
                 bitsd,
-                new Object[] { "WCG", "VMB", "CWE", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
+                new Object[] { "WCG", "VMB", "CWE", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'V',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B', OreDictNames.craftingDiamondBlade },
                 12);
 
@@ -1705,8 +1657,7 @@ public class GT_Loader_Machines {
                 ItemList.DistilleryLuV.get(1L),
                 bitsd,
                 new Object[] { "GBG", "CMC", "WPW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'B',
-                        OrePrefixes.pipeMedium.get(Materials.Enderium), 'C',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'B', OrePrefixes.pipeMedium.get(Materials.Enderium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() },
@@ -1716,8 +1667,7 @@ public class GT_Loader_Machines {
                 ItemList.DistilleryZPM.get(1L),
                 bitsd,
                 new Object[] { "GBG", "CMC", "WPW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'B',
-                        OrePrefixes.pipeMedium.get(Materials.Naquadah), 'C',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'B', OrePrefixes.pipeMedium.get(Materials.Naquadah), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() },
@@ -1727,8 +1677,7 @@ public class GT_Loader_Machines {
                 ItemList.DistilleryUV.get(1L),
                 bitsd,
                 new Object[] { "GBG", "CMC", "WPW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'B',
-                        OrePrefixes.pipeMedium.get(Materials.Neutronium), 'C',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'B', OrePrefixes.pipeMedium.get(Materials.Neutronium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() },
@@ -1738,8 +1687,7 @@ public class GT_Loader_Machines {
                 ItemList.DistilleryUHV.get(1L),
                 bitsd,
                 new Object[] { "GBG", "CMC", "WPW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'B',
-                        OrePrefixes.pipeLarge.get(Materials.Neutronium), 'C',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'B', OrePrefixes.pipeLarge.get(Materials.Neutronium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() },
@@ -1748,8 +1696,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.DistilleryUEV.get(1L),
                 bitsd,
-                new Object[] { "GBG", "CMC", "WPW", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'B',
+                new Object[] { "GBG", "CMC", "WPW", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'B',
                         OrePrefixes.pipeHuge.get(Materials.Neutronium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
@@ -1759,8 +1706,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.DistilleryUIV.get(1L),
                 bitsd,
-                new Object[] { "GBG", "CMC", "WPW", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'B',
+                new Object[] { "GBG", "CMC", "WPW", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'B',
                         OrePrefixes.pipeMedium.get(Materials.Infinity), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
@@ -1770,8 +1716,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.DistilleryUMV.get(1L),
                 bitsd,
-                new Object[] { "GBG", "CMC", "WPW", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'B',
+                new Object[] { "GBG", "CMC", "WPW", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'B',
                         OrePrefixes.pipeMedium.get(MaterialsUEVplus.SpaceTime), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
@@ -1851,9 +1796,8 @@ public class GT_Loader_Machines {
                 ItemList.ElectrolyzerLuV.get(1L),
                 bitsd,
                 new Object[] { "IGI", "IMI", "CWC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'I',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'I',
                         OrePrefixes.wireGt02.get(Materials.Osmium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() },
                 6);
@@ -1862,9 +1806,8 @@ public class GT_Loader_Machines {
                 ItemList.ElectrolyzerZPM.get(1L),
                 bitsd,
                 new Object[] { "IGI", "IMI", "CWC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'I',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'I',
                         OrePrefixes.wireGt02.get(Materials.NiobiumTitanium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() },
                 7);
@@ -1873,9 +1816,8 @@ public class GT_Loader_Machines {
                 ItemList.ElectrolyzerUV.get(1L),
                 bitsd,
                 new Object[] { "IGI", "IMI", "CWC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'I',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'I',
                         OrePrefixes.wireGt04.get(Materials.VanadiumGallium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() },
                 8);
@@ -1884,9 +1826,8 @@ public class GT_Loader_Machines {
                 ItemList.ElectrolyzerUHV.get(1L),
                 bitsd,
                 new Object[] { "IGI", "IMI", "CWC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'I',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'I',
                         OrePrefixes.wireGt04.get(Materials.Osmiridium), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() },
                 9);
@@ -1894,8 +1835,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ElectrolyzerUEV.get(1L),
                 bitsd,
-                new Object[] { "IGI", "IMI", "CWC", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "IGI", "IMI", "CWC", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'I',
                         OrePrefixes.wireGt04.get(Materials.Draconium), 'G',
@@ -1905,8 +1845,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ElectrolyzerUIV.get(1L),
                 bitsd,
-                new Object[] { "IGI", "IMI", "CWC", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "IGI", "IMI", "CWC", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'I',
                         OrePrefixes.wireGt04.get(Materials.DraconiumAwakened), 'G',
@@ -1916,8 +1855,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ElectrolyzerUMV.get(1L),
                 bitsd,
-                new Object[] { "IGI", "IMI", "CWC", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "IGI", "IMI", "CWC", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'I',
                         OrePrefixes.wireGt04.get(Materials.Infinity), 'G',
@@ -1932,9 +1870,8 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "VWZ", "WMS", "CWZ", 'M', MTEBasicMachineWithRecipe.X.HULL, 'S',
                         MTEBasicMachineWithRecipe.X.STICK_ELECTROMAGNETIC, 'Z',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getWire(), 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getWire(), 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
 
@@ -1943,9 +1880,8 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "VWZ", "WMS", "CWZ", 'M', MTEBasicMachineWithRecipe.X.HULL, 'S',
                         MTEBasicMachineWithRecipe.X.STICK_ELECTROMAGNETIC, 'Z',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getWire(), 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getWire(), 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
 
@@ -1954,9 +1890,8 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "VWZ", "WMS", "CWZ", 'M', MTEBasicMachineWithRecipe.X.HULL, 'S',
                         MTEBasicMachineWithRecipe.X.STICK_ELECTROMAGNETIC, 'Z',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getWire(), 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getWire(), 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
 
@@ -1965,9 +1900,8 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "VWZ", "WMS", "CWZ", 'M', MTEBasicMachineWithRecipe.X.HULL, 'S',
                         MTEBasicMachineWithRecipe.X.STICK_ELECTROMAGNETIC, 'Z',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getWire(), 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getWire(), 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
 
@@ -1976,9 +1910,8 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "VWZ", "WMS", "CWZ", 'M', ItemList.Hull_UEV, 'S',
                         MTEBasicMachineWithRecipe.X.STICK_ELECTROMAGNETIC, 'Z',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getWire(), 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getWire(), 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
 
@@ -1987,9 +1920,8 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "VWZ", "WMS", "CWZ", 'M', ItemList.Hull_UIV, 'S',
                         MTEBasicMachineWithRecipe.X.STICK_ELECTROMAGNETIC, 'Z',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getWire(), 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getWire(), 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
 
@@ -1998,9 +1930,8 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "VWZ", "WMS", "CWZ", 'M', ItemList.Hull_UMV, 'S',
                         MTEBasicMachineWithRecipe.X.STICK_ELECTROMAGNETIC, 'Z',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getWire(), 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getWire(), 'V', MTEBasicMachineWithRecipe.X.CONVEYOR,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
     }
@@ -2011,8 +1942,7 @@ public class GT_Loader_Machines {
                 ItemList.ExtractorLuV.get(1L),
                 bitsd,
                 new Object[] { "GCG", "EMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass() },
@@ -2022,8 +1952,7 @@ public class GT_Loader_Machines {
                 ItemList.ExtractorZPM.get(1L),
                 bitsd,
                 new Object[] { "GCG", "EMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass() },
@@ -2033,8 +1962,7 @@ public class GT_Loader_Machines {
                 ItemList.ExtractorUV.get(1L),
                 bitsd,
                 new Object[] { "GCG", "EMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass() },
@@ -2044,8 +1972,7 @@ public class GT_Loader_Machines {
                 ItemList.ExtractorUHV.get(1L),
                 bitsd,
                 new Object[] { "GCG", "EMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass() },
@@ -2054,9 +1981,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ExtractorUEV.get(1L),
                 bitsd,
-                new Object[] { "GCG", "EMP", "WCW", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "GCG", "EMP", "WCW", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.PISTON,
+                        'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass() },
@@ -2065,9 +1991,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ExtractorUIV.get(1L),
                 bitsd,
-                new Object[] { "GCG", "EMP", "WCW", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "GCG", "EMP", "WCW", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.PISTON,
+                        'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass() },
@@ -2076,9 +2001,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ExtractorUMV.get(1L),
                 bitsd,
-                new Object[] { "GCG", "EMP", "WCW", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "GCG", "EMP", "WCW", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.PISTON,
+                        'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass() },
@@ -2092,9 +2016,8 @@ public class GT_Loader_Machines {
                 ItemList.ExtruderLuV.get(1L),
                 bitsd,
                 new Object[] { "CCE", "XMP", "CCE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'X',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'E',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'P',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getPipe(), 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'E', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'P', GT_CustomLoader.AdvancedGTMaterials.LuV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil() },
                 6);
 
@@ -2102,9 +2025,8 @@ public class GT_Loader_Machines {
                 ItemList.ExtruderZPM.get(1L),
                 bitsd,
                 new Object[] { "CCE", "XMP", "CCE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'X',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'E',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'P',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getPipe(), 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'E', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'P', GT_CustomLoader.AdvancedGTMaterials.ZPM.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getHCoil() },
                 7);
 
@@ -2112,9 +2034,8 @@ public class GT_Loader_Machines {
                 ItemList.ExtruderUV.get(1L),
                 bitsd,
                 new Object[] { "CCE", "XMP", "CCE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'X',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'E',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'P',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getPipe(), 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'E', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'P', GT_CustomLoader.AdvancedGTMaterials.UV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil() },
                 8);
 
@@ -2122,18 +2043,16 @@ public class GT_Loader_Machines {
                 ItemList.ExtruderUHV.get(1L),
                 bitsd,
                 new Object[] { "CCE", "XMP", "CCE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'X',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'E',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'P',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getPipe(), 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'E', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'P', GT_CustomLoader.AdvancedGTMaterials.UHV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ExtruderUEV.get(1L),
                 bitsd,
-                new Object[] { "CCE", "XMP", "CCE", 'M', ItemList.Hull_UEV, 'X',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'E',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'P',
+                new Object[] { "CCE", "XMP", "CCE", 'M', ItemList.Hull_UEV, 'X', MTEBasicMachineWithRecipe.X.PISTON,
+                        'E', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'P',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() },
                 10);
@@ -2141,9 +2060,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ExtruderUIV.get(1L),
                 bitsd,
-                new Object[] { "CCE", "XMP", "CCE", 'M', ItemList.Hull_UIV, 'X',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'E',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'P',
+                new Object[] { "CCE", "XMP", "CCE", 'M', ItemList.Hull_UIV, 'X', MTEBasicMachineWithRecipe.X.PISTON,
+                        'E', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'P',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil() },
                 11);
@@ -2151,9 +2069,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ExtruderUMV.get(1L),
                 bitsd,
-                new Object[] { "CCE", "XMP", "CCE", 'M', ItemList.Hull_UMV, 'X',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'E',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'P',
+                new Object[] { "CCE", "XMP", "CCE", 'M', ItemList.Hull_UMV, 'X', MTEBasicMachineWithRecipe.X.PISTON,
+                        'E', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'P',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getPipe(), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() },
                 12);
@@ -2166,9 +2083,8 @@ public class GT_Loader_Machines {
                 ItemList.FluidSolidifierLuV.get(1L),
                 bitsd,
                 new Object[] { "PGP", "WMW", "CBC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getGlass(), 'B', OreDictNames.craftingChest },
                 6);
 
@@ -2176,9 +2092,8 @@ public class GT_Loader_Machines {
                 ItemList.FluidSolidifierZPM.get(1L),
                 bitsd,
                 new Object[] { "PGP", "WMW", "CBC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getGlass(), 'B', OreDictNames.craftingChest },
                 7);
 
@@ -2186,8 +2101,7 @@ public class GT_Loader_Machines {
                 ItemList.FluidSolidifierUV.get(1L),
                 bitsd,
                 new Object[] { "PGP", "WMW", "CBC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getGlass(), 'B', OreDictNames.craftingChest },
                 8);
@@ -2196,17 +2110,15 @@ public class GT_Loader_Machines {
                 ItemList.FluidSolidifierUHV.get(1L),
                 bitsd,
                 new Object[] { "PGP", "WMW", "CBC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 'B', OreDictNames.craftingChest },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FluidSolidifierUEV.get(1L),
                 bitsd,
-                new Object[] { "PGP", "WMW", "CBC", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "PGP", "WMW", "CBC", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getGlass(), 'B', OreDictNames.craftingChest },
@@ -2215,8 +2127,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FluidSolidifierUIV.get(1L),
                 bitsd,
-                new Object[] { "PGP", "WMW", "CBC", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "PGP", "WMW", "CBC", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getGlass(), 'B', OreDictNames.craftingChest },
@@ -2225,8 +2136,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FluidSolidifierUMV.get(1L),
                 bitsd,
-                new Object[] { "PGP", "WMW", "CBC", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "PGP", "WMW", "CBC", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getGlass(), 'B', OreDictNames.craftingChest },
@@ -2240,62 +2150,55 @@ public class GT_Loader_Machines {
                 ItemList.FormingPressLuV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "WPW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FormingPressZPM.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "WPW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FormingPressUV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "WPW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FormingPressUHV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "WPW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FormingPressUEV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "WPW", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                new Object[] { "WPW", "CMC", "WPW", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FormingPressUIV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "WPW", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                new Object[] { "WPW", "CMC", "WPW", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.FormingPressUMV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "WPW", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                new Object[] { "WPW", "CMC", "WPW", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
 
@@ -2307,9 +2210,8 @@ public class GT_Loader_Machines {
                 ItemList.ForgeHammerLuV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "WAW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'O',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil(), 'A', OreDictNames.craftingAnvil },
                 6);
 
@@ -2317,9 +2219,8 @@ public class GT_Loader_Machines {
                 ItemList.ForgeHammerZPM.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "WAW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'O',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getHCoil(), 'A', OreDictNames.craftingAnvil },
                 7);
 
@@ -2327,9 +2228,8 @@ public class GT_Loader_Machines {
                 ItemList.ForgeHammerUV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "WAW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'O',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil(), 'A', OreDictNames.craftingAnvil },
                 8);
 
@@ -2337,18 +2237,16 @@ public class GT_Loader_Machines {
                 ItemList.ForgeHammerUHV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "WAW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'O',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil(), 'A', OreDictNames.craftingAnvil },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ForgeHammerUEV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "WAW", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                new Object[] { "WPW", "CMC", "WAW", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil(), 'A', OreDictNames.craftingAnvil },
                 10);
@@ -2356,9 +2254,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ForgeHammerUIV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "WAW", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                new Object[] { "WPW", "CMC", "WAW", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil(), 'A', OreDictNames.craftingAnvil },
                 11);
@@ -2366,9 +2263,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ForgeHammerUMV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "WAW", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                new Object[] { "WPW", "CMC", "WAW", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil(), 'A', OreDictNames.craftingAnvil },
                 12);
@@ -2381,8 +2277,7 @@ public class GT_Loader_Machines {
                 ItemList.LatheLuV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "EMD", "CWP", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond },
@@ -2392,8 +2287,7 @@ public class GT_Loader_Machines {
                 ItemList.LatheZPM.get(1L),
                 bitsd,
                 new Object[] { "WCW", "EMD", "CWP", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond },
@@ -2403,8 +2297,7 @@ public class GT_Loader_Machines {
                 ItemList.LatheUV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "EMD", "CWP", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond },
@@ -2414,8 +2307,7 @@ public class GT_Loader_Machines {
                 ItemList.LatheUHV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "EMD", "CWP", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond },
@@ -2424,33 +2316,27 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.LatheUEV.get(1L),
                 bitsd,
-                new Object[] { "WCW", "EMD", "CWP", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'D',
+                new Object[] { "WCW", "EMD", "CWP", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.LatheUIV.get(1L),
                 bitsd,
-                new Object[] { "WCW", "EMD", "CWP", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'D',
+                new Object[] { "WCW", "EMD", "CWP", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.LatheUMV.get(1L),
                 bitsd,
-                new Object[] { "WCW", "EMD", "CWP", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'D',
+                new Object[] { "WCW", "EMD", "CWP", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'D',
                         OreDictNames.craftingIndustrialDiamond },
                 12);
 
@@ -2462,8 +2348,7 @@ public class GT_Loader_Machines {
                 ItemList.PrecisionLaserEngraverLuV.get(1L),
                 bitsd,
                 new Object[] { "PEP", "CMC", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.EMITTER, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
@@ -2472,8 +2357,7 @@ public class GT_Loader_Machines {
                 ItemList.PrecisionLaserEngraverZPM.get(1L),
                 bitsd,
                 new Object[] { "PEP", "CMC", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.EMITTER, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
@@ -2482,8 +2366,7 @@ public class GT_Loader_Machines {
                 ItemList.PrecisionLaserEngraverUV.get(1L),
                 bitsd,
                 new Object[] { "PEP", "CMC", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.EMITTER, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
@@ -2492,8 +2375,7 @@ public class GT_Loader_Machines {
                 ItemList.PrecisionLaserEngraverUHV.get(1L),
                 bitsd,
                 new Object[] { "PEP", "CMC", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.EMITTER, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
@@ -2501,9 +2383,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.PrecisionLaserEngraverUEV.get(1L),
                 bitsd,
-                new Object[] { "PEP", "CMC", "WCW", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                new Object[] { "PEP", "CMC", "WCW", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.EMITTER,
+                        'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
@@ -2511,9 +2392,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.PrecisionLaserEngraverUIV.get(1L),
                 bitsd,
-                new Object[] { "PEP", "CMC", "WCW", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                new Object[] { "PEP", "CMC", "WCW", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.EMITTER,
+                        'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
@@ -2521,9 +2401,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.PrecisionLaserEngraverUMV.get(1L),
                 bitsd,
-                new Object[] { "PEP", "CMC", "WCW", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                new Object[] { "PEP", "CMC", "WCW", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.EMITTER,
+                        'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
@@ -2536,8 +2415,7 @@ public class GT_Loader_Machines {
                 ItemList.MaceratorLuV.get(1L),
                 bitsd,
                 new Object[] { "PEG", "WWM", "CCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G', OreDictNames.craftingGrinder },
                 6);
@@ -2546,8 +2424,7 @@ public class GT_Loader_Machines {
                 ItemList.MaceratorZPM.get(1L),
                 bitsd,
                 new Object[] { "PEG", "WWM", "CCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G', OreDictNames.craftingGrinder },
                 7);
@@ -2556,8 +2433,7 @@ public class GT_Loader_Machines {
                 ItemList.MaceratorUV.get(1L),
                 bitsd,
                 new Object[] { "PEG", "WWM", "CCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G', OreDictNames.craftingGrinder },
                 8);
@@ -2566,8 +2442,7 @@ public class GT_Loader_Machines {
                 ItemList.MaceratorUHV.get(1L),
                 bitsd,
                 new Object[] { "PEG", "WWM", "CCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'P', MTEBasicMachineWithRecipe.X.PISTON, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G', OreDictNames.craftingGrinder },
                 9);
@@ -2575,31 +2450,25 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.MaceratorUEV.get(1L),
                 bitsd,
-                new Object[] { "PEG", "WWM", "CCW", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G', OreDictNames.craftingGrinder },
+                new Object[] { "PEG", "WWM", "CCW", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G', OreDictNames.craftingGrinder },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.MaceratorUIV.get(1L),
                 bitsd,
-                new Object[] { "PEG", "WWM", "CCW", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G', OreDictNames.craftingGrinder },
+                new Object[] { "PEG", "WWM", "CCW", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G', OreDictNames.craftingGrinder },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.MaceratorUMV.get(1L),
                 bitsd,
-                new Object[] { "PEG", "WWM", "CCW", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G', OreDictNames.craftingGrinder },
+                new Object[] { "PEG", "WWM", "CCW", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'P',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G', OreDictNames.craftingGrinder },
                 12);
 
     }
@@ -2610,10 +2479,8 @@ public class GT_Loader_Machines {
                 ItemList.MicrowaveLuV.get(1L),
                 bitsd,
                 new Object[] { "LWC", "LMR", "LEC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'R',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'C',
-                        MTEBasicMachineWithRecipe.X.CIRCUIT, 'W',
-                        MTEBasicMachineWithRecipe.X.WIRE, 'L',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'R', MTEBasicMachineWithRecipe.X.EMITTER, 'C',
+                        MTEBasicMachineWithRecipe.X.CIRCUIT, 'W', MTEBasicMachineWithRecipe.X.WIRE, 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) },
                 6);
 
@@ -2621,10 +2488,8 @@ public class GT_Loader_Machines {
                 ItemList.MicrowaveZPM.get(1L),
                 bitsd,
                 new Object[] { "LWC", "LMR", "LEC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'R',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'C',
-                        MTEBasicMachineWithRecipe.X.CIRCUIT, 'W',
-                        MTEBasicMachineWithRecipe.X.WIRE, 'L',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'R', MTEBasicMachineWithRecipe.X.EMITTER, 'C',
+                        MTEBasicMachineWithRecipe.X.CIRCUIT, 'W', MTEBasicMachineWithRecipe.X.WIRE, 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) },
                 7);
 
@@ -2632,10 +2497,8 @@ public class GT_Loader_Machines {
                 ItemList.MicrowaveUV.get(1L),
                 bitsd,
                 new Object[] { "LWC", "LMR", "LEC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'R',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'C',
-                        MTEBasicMachineWithRecipe.X.CIRCUIT, 'W',
-                        MTEBasicMachineWithRecipe.X.WIRE, 'L',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'R', MTEBasicMachineWithRecipe.X.EMITTER, 'C',
+                        MTEBasicMachineWithRecipe.X.CIRCUIT, 'W', MTEBasicMachineWithRecipe.X.WIRE, 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) },
                 8);
 
@@ -2643,8 +2506,7 @@ public class GT_Loader_Machines {
                 ItemList.MicrowaveUHV.get(1L),
                 bitsd,
                 new Object[] { "LWC", "LMR", "LEC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'R',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'C',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'R', MTEBasicMachineWithRecipe.X.EMITTER, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getWire(), 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) },
@@ -2653,33 +2515,27 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.MicrowaveUEV.get(1L),
                 bitsd,
-                new Object[] { "LWC", "LMR", "LEC", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'R',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getWire(), 'L',
+                new Object[] { "LWC", "LMR", "LEC", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'R',
+                        MTEBasicMachineWithRecipe.X.EMITTER, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getWire(), 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.MicrowaveUIV.get(1L),
                 bitsd,
-                new Object[] { "LWC", "LMR", "LEC", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'R',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getWire(), 'L',
+                new Object[] { "LWC", "LMR", "LEC", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'R',
+                        MTEBasicMachineWithRecipe.X.EMITTER, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getWire(), 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.MicrowaveUMV.get(1L),
                 bitsd,
-                new Object[] { "LWC", "LMR", "LEC", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'R',
-                        MTEBasicMachineWithRecipe.X.EMITTER, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getWire(), 'L',
+                new Object[] { "LWC", "LMR", "LEC", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'R',
+                        MTEBasicMachineWithRecipe.X.EMITTER, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getWire(), 'L',
                         OrePrefixes.plateDense.get(Materials.Lead) },
                 12);
 
@@ -2693,72 +2549,61 @@ public class GT_Loader_Machines {
                 new Object[] { "RGR", "CEC", "WMW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'R',
                         OrePrefixes.rotor.get(LuVMat2), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.PUMP },
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G', MTEBasicMachineWithRecipe.X.PUMP },
                 6);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.OreWashingPlantZPM.get(1L),
                 bitsd,
                 new Object[] { "RGR", "CEC", "WMW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'R',
-                        OrePrefixes.rotor.get(Materials.Iridium), 'E', MTEBasicMachineWithRecipe.X.MOTOR,
-                        'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.PUMP },
+                        OrePrefixes.rotor.get(Materials.Iridium), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G', MTEBasicMachineWithRecipe.X.PUMP },
                 7);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.OreWashingPlantUV.get(1L),
                 bitsd,
                 new Object[] { "RGR", "CEC", "WMW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'R',
-                        OrePrefixes.rotor.get(Materials.Osmium), 'E', MTEBasicMachineWithRecipe.X.MOTOR,
-                        'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.PUMP },
+                        OrePrefixes.rotor.get(Materials.Osmium), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G', MTEBasicMachineWithRecipe.X.PUMP },
                 8);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.OreWashingPlantUHV.get(1L),
                 bitsd,
                 new Object[] { "RGR", "CEC", "WMW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'R',
-                        OrePrefixes.rotor.get(Materials.Neutronium), 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                        OrePrefixes.rotor.get(Materials.Neutronium), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.PUMP },
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G', MTEBasicMachineWithRecipe.X.PUMP },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.OreWashingPlantUEV.get(1L),
                 bitsd,
                 new Object[] { "RGR", "CEC", "WMW", 'M', ItemList.Hull_UEV, 'R',
-                        OrePrefixes.rotor.get(Materials.CosmicNeutronium), 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                        OrePrefixes.rotor.get(Materials.CosmicNeutronium), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.PUMP },
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G', MTEBasicMachineWithRecipe.X.PUMP },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.OreWashingPlantUIV.get(1L),
                 bitsd,
                 new Object[] { "RGR", "CEC", "WMW", 'M', ItemList.Hull_UIV, 'R',
-                        OrePrefixes.rotor.get(Materials.Infinity), 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                        OrePrefixes.rotor.get(Materials.Infinity), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.PUMP },
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G', MTEBasicMachineWithRecipe.X.PUMP },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.OreWashingPlantUMV.get(1L),
                 bitsd,
                 new Object[] { "RGR", "CEC", "WMW", 'M', ItemList.Hull_UMV, 'R',
-                        OrePrefixes.rotor.get(MaterialsUEVplus.SpaceTime), 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                        OrePrefixes.rotor.get(MaterialsUEVplus.SpaceTime), 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.PUMP },
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G', MTEBasicMachineWithRecipe.X.PUMP },
                 12);
 
     }
@@ -2836,9 +2681,8 @@ public class GT_Loader_Machines {
                 ItemList.RecyclerLuV.get(1L),
                 bitsd,
                 new Object[] { "GCG", "PMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) },
                 6);
 
@@ -2846,9 +2690,8 @@ public class GT_Loader_Machines {
                 ItemList.RecyclerZPM.get(1L),
                 bitsd,
                 new Object[] { "GCG", "PMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) },
                 7);
 
@@ -2856,9 +2699,8 @@ public class GT_Loader_Machines {
                 ItemList.RecyclerUV.get(1L),
                 bitsd,
                 new Object[] { "GCG", "PMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) },
                 8);
 
@@ -2866,18 +2708,16 @@ public class GT_Loader_Machines {
                 ItemList.RecyclerUHV.get(1L),
                 bitsd,
                 new Object[] { "GCG", "PMP", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.RecyclerUEV.get(1L),
                 bitsd,
-                new Object[] { "GCG", "PMP", "WCW", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
+                new Object[] { "GCG", "PMP", "WCW", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) },
                 10);
@@ -2885,9 +2725,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.RecyclerUIV.get(1L),
                 bitsd,
-                new Object[] { "GCG", "PMP", "WCW", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
+                new Object[] { "GCG", "PMP", "WCW", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) },
                 11);
@@ -2895,9 +2734,8 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.RecyclerUMV.get(1L),
                 bitsd,
-                new Object[] { "GCG", "PMP", "WCW", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
+                new Object[] { "GCG", "PMP", "WCW", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                         OrePrefixes.dust.get(Materials.NetherStar) },
                 12);
@@ -2945,28 +2783,25 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.SiftingMachineUEV.get(1L),
                 bitsd,
-                new Object[] { "WFW", "PMP", "CFC", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'F', OreDictNames.craftingFilter, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
+                new Object[] { "WFW", "PMP", "CFC", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'F', OreDictNames.craftingFilter, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.SiftingMachineUIV.get(1L),
                 bitsd,
-                new Object[] { "WFW", "PMP", "CFC", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'F', OreDictNames.craftingFilter, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
+                new Object[] { "WFW", "PMP", "CFC", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'F', OreDictNames.craftingFilter, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.SiftingMachineUMV.get(1L),
                 bitsd,
-                new Object[] { "WFW", "PMP", "CFC", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'F', OreDictNames.craftingFilter, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
+                new Object[] { "WFW", "PMP", "CFC", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PISTON,
+                        'F', OreDictNames.craftingFilter, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
 
     }
@@ -2977,8 +2812,7 @@ public class GT_Loader_Machines {
                 ItemList.SlicingMachineLuV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
@@ -2987,8 +2821,7 @@ public class GT_Loader_Machines {
                 ItemList.SlicingMachineZPM.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
@@ -2997,8 +2830,7 @@ public class GT_Loader_Machines {
                 ItemList.SlicingMachineUV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
@@ -3007,8 +2839,7 @@ public class GT_Loader_Machines {
                 ItemList.SlicingMachineUHV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMV", "WCW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
@@ -3017,8 +2848,7 @@ public class GT_Loader_Machines {
                 ItemList.SlicingMachineUEV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMV", "WCW", 'M', ItemList.Hull_UEV.get(1), 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
@@ -3027,8 +2857,7 @@ public class GT_Loader_Machines {
                 ItemList.SlicingMachineUIV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMV", "WCW", 'M', ItemList.Hull_UIV.get(1), 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
@@ -3037,8 +2866,7 @@ public class GT_Loader_Machines {
                 ItemList.SlicingMachineUMV.get(1L),
                 bitsd,
                 new Object[] { "WCW", "PMV", "WCW", 'M', ItemList.Hull_UMV.get(1), 'P',
-                        MTEBasicMachineWithRecipe.X.PISTON, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PISTON, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
@@ -3051,9 +2879,8 @@ public class GT_Loader_Machines {
                 ItemList.ThermalCentrifugeLuV.get(1L),
                 bitsd,
                 new Object[] { "CEC", "OMO", "WEW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'O',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getHCoil() },
                 6);
 
@@ -3061,9 +2888,8 @@ public class GT_Loader_Machines {
                 ItemList.ThermalCentrifugeZPM.get(1L),
                 bitsd,
                 new Object[] { "CEC", "OMO", "WEW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'O',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getHCoil() },
                 7);
 
@@ -3071,9 +2897,8 @@ public class GT_Loader_Machines {
                 ItemList.ThermalCentrifugeUV.get(1L),
                 bitsd,
                 new Object[] { "CEC", "OMO", "WEW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'O',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getHCoil() },
                 8);
 
@@ -3081,17 +2906,15 @@ public class GT_Loader_Machines {
                 ItemList.ThermalCentrifugeUHV.get(1L),
                 bitsd,
                 new Object[] { "CEC", "OMO", "WEW", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'O',
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getHCoil() },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ThermalCentrifugeUEV.get(1L),
                 bitsd,
-                new Object[] { "CEC", "OMO", "WEW", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "CEC", "OMO", "WEW", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getHCoil() },
@@ -3100,8 +2923,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ThermalCentrifugeUIV.get(1L),
                 bitsd,
-                new Object[] { "CEC", "OMO", "WEW", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "CEC", "OMO", "WEW", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getHCoil() },
@@ -3110,8 +2932,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ThermalCentrifugeUMV.get(1L),
                 bitsd,
-                new Object[] { "CEC", "OMO", "WEW", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "CEC", "OMO", "WEW", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'O',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getHCoil() },
@@ -3125,43 +2946,38 @@ public class GT_Loader_Machines {
                 ItemList.WiremillLuV.get(1L),
                 bitsd,
                 new Object[] { "EWE", "CMC", "EWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.WiremillZPM.get(1L),
                 bitsd,
                 new Object[] { "EWE", "CMC", "EWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.WiremillUV.get(1L),
                 bitsd,
                 new Object[] { "EWE", "CMC", "EWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.WiremillUHV.get(1L),
                 bitsd,
                 new Object[] { "EWE", "CMC", "EWE", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.WiremillUEV.get(1L),
                 bitsd,
-                new Object[] { "EWE", "CMC", "EWE", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "EWE", "CMC", "EWE", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
@@ -3169,8 +2985,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.WiremillUIV.get(1L),
                 bitsd,
-                new Object[] { "EWE", "CMC", "EWE", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "EWE", "CMC", "EWE", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
@@ -3178,8 +2993,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.WiremillUMV.get(1L),
                 bitsd,
-                new Object[] { "EWE", "CMC", "EWE", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "EWE", "CMC", "EWE", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
@@ -3265,34 +3079,30 @@ public class GT_Loader_Machines {
                 ItemList.CentrifugeLuV.get(1L),
                 bitsd,
                 new Object[] { "CEC", "WMW", "CEC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable() },
                 6);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CentrifugeZPM.get(1L),
                 bitsd,
                 new Object[] { "CEC", "WMW", "CEC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable() },
                 7);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CentrifugeUV.get(1L),
                 bitsd,
                 new Object[] { "CEC", "WMW", "CEC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
+                        MTEBasicMachineWithRecipe.X.MOTOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UV.getCable() },
                 8);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CentrifugeUHV.get(1L),
                 bitsd,
-                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_MAX, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_MAX, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCable() },
                 9);
@@ -3300,8 +3110,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CentrifugeUEV.get(1L),
                 bitsd,
-                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_UEV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_UEV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCable() },
                 10);
@@ -3309,8 +3118,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CentrifugeUIV.get(1L),
                 bitsd,
-                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_UIV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_UIV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCable() },
                 11);
@@ -3318,8 +3126,7 @@ public class GT_Loader_Machines {
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CentrifugeUMV.get(1L),
                 bitsd,
-                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_UMV, 'E',
-                        MTEBasicMachineWithRecipe.X.MOTOR, 'C',
+                new Object[] { "CEC", "WMW", "CEC", 'M', ItemList.Hull_UMV, 'E', MTEBasicMachineWithRecipe.X.MOTOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCable() },
                 12);
@@ -3333,9 +3140,8 @@ public class GT_Loader_Machines {
                 bitsd,
                 new Object[] { "WGW", "CMC", "TPT", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
                         OrePrefixes.plateDouble.get(LuVMat2), 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
-                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), 'T',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'G',
-                        OrePrefixes.cell.get(Materials.Graphite) },
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable4(), 'T', MTEBasicMachineWithRecipe.X.PUMP,
+                        'G', OrePrefixes.cell.get(Materials.Graphite) },
                 6);
 
         GTModHandler.addMachineCraftingRecipe(
@@ -3344,8 +3150,7 @@ public class GT_Loader_Machines {
                 new Object[] { "WGW", "CMC", "TPT", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
                         OrePrefixes.plateDouble.get(Materials.Iridium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4(), 'T',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable4(), 'T', MTEBasicMachineWithRecipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) },
                 7);
 
@@ -3355,8 +3160,7 @@ public class GT_Loader_Machines {
                 new Object[] { "WGW", "CMC", "TPT", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
                         OrePrefixes.plateDouble.get(Materials.Osmium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable4(), 'T',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable4(), 'T', MTEBasicMachineWithRecipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) },
                 8);
 
@@ -3366,8 +3170,7 @@ public class GT_Loader_Machines {
                 new Object[] { "WGW", "CMC", "TPT", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
                         OrePrefixes.plateTriple.get(Materials.Osmium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4(), 'T',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable4(), 'T', MTEBasicMachineWithRecipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) },
                 9);
 
@@ -3377,8 +3180,7 @@ public class GT_Loader_Machines {
                 new Object[] { "WGW", "CMC", "TPT", 'M', ItemList.Hull_UEV, 'P',
                         OrePrefixes.plateQuadruple.get(Materials.Osmium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4(), 'T',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable4(), 'T', MTEBasicMachineWithRecipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) },
                 10);
 
@@ -3388,8 +3190,7 @@ public class GT_Loader_Machines {
                 new Object[] { "WGW", "CMC", "TPT", 'M', ItemList.Hull_UIV, 'P',
                         OrePrefixes.plateDouble.get(Materials.Osmiridium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4(), 'T',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable4(), 'T', MTEBasicMachineWithRecipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) },
                 11);
 
@@ -3399,8 +3200,7 @@ public class GT_Loader_Machines {
                 new Object[] { "WGW", "CMC", "TPT", 'M', ItemList.Hull_UMV, 'P',
                         OrePrefixes.plateQuadruple.get(Materials.Osmiridium), 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'T',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'G',
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable4(), 'T', MTEBasicMachineWithRecipe.X.PUMP, 'G',
                         OrePrefixes.cell.get(Materials.Graphite) },
                 12);
     }
@@ -3410,9 +3210,8 @@ public class GT_Loader_Machines {
                 ItemList.CanningMachineLuV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "GGG", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
                         MTEBasicMachineWithRecipe.X.GLASS },
                 6);
 
@@ -3420,9 +3219,8 @@ public class GT_Loader_Machines {
                 ItemList.CanningMachineZPM.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "GGG", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
                         MTEBasicMachineWithRecipe.X.GLASS },
                 7);
 
@@ -3430,50 +3228,41 @@ public class GT_Loader_Machines {
                 ItemList.CanningMachineUV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "GGG", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.GLASS },
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G', MTEBasicMachineWithRecipe.X.GLASS },
                 8);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CanningMachineUHV.get(1L),
                 bitsd,
                 new Object[] { "WPW", "CMC", "GGG", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'C', GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
                         MTEBasicMachineWithRecipe.X.GLASS },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CanningMachineUEV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "GGG", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "WPW", "CMC", "GGG", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.GLASS },
+                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G', MTEBasicMachineWithRecipe.X.GLASS },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CanningMachineUIV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "GGG", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "WPW", "CMC", "GGG", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.GLASS },
+                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G', MTEBasicMachineWithRecipe.X.GLASS },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.CanningMachineUMV.get(1L),
                 bitsd,
-                new Object[] { "WPW", "CMC", "GGG", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'C',
+                new Object[] { "WPW", "CMC", "GGG", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.GLASS },
+                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G', MTEBasicMachineWithRecipe.X.GLASS },
                 12);
     }
 
@@ -3482,76 +3271,62 @@ public class GT_Loader_Machines {
                 ItemList.ChemicalBathLuV.get(1L),
                 bitsd,
                 new Object[] { "VGW", "PGV", "CMC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.GLASS },
+                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCable(), 'G', MTEBasicMachineWithRecipe.X.GLASS },
                 6);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ChemicalBathZPM.get(1L),
                 bitsd,
                 new Object[] { "VGW", "PGV", "CMC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.GLASS },
+                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCable(), 'G', MTEBasicMachineWithRecipe.X.GLASS },
                 7);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ChemicalBathUV.get(1L),
                 bitsd,
                 new Object[] { "VGW", "PGV", "CMC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.GLASS },
+                        GT_CustomLoader.AdvancedGTMaterials.UV.getCable(), 'G', MTEBasicMachineWithRecipe.X.GLASS },
                 8);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ChemicalBathUHV.get(1L),
                 bitsd,
                 new Object[] { "VGW", "PGV", "CMC", 'M', MTEBasicMachineWithRecipe.X.HULL, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
+                        MTEBasicMachineWithRecipe.X.PUMP, 'V', MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
                         GT_CustomLoader.AdvancedGTMaterials.UHV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G',
-                        MTEBasicMachineWithRecipe.X.GLASS },
+                        GT_CustomLoader.AdvancedGTMaterials.UHV.getCable(), 'G', MTEBasicMachineWithRecipe.X.GLASS },
                 9);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ChemicalBathUEV.get(1L),
                 bitsd,
-                new Object[] { "VGW", "PGV", "CMC", 'M', ItemList.Hull_UEV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
+                new Object[] { "VGW", "PGV", "CMC", 'M', ItemList.Hull_UEV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'V',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UEV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UEV.getCable(), 'G',
                         MTEBasicMachineWithRecipe.X.GLASS },
                 10);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ChemicalBathUIV.get(1L),
                 bitsd,
-                new Object[] { "VGW", "PGV", "CMC", 'M', ItemList.Hull_UIV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
+                new Object[] { "VGW", "PGV", "CMC", 'M', ItemList.Hull_UIV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'V',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UIV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UIV.getCable(), 'G',
                         MTEBasicMachineWithRecipe.X.GLASS },
                 11);
 
         GTModHandler.addMachineCraftingRecipe(
                 ItemList.ChemicalBathUMV.get(1L),
                 bitsd,
-                new Object[] { "VGW", "PGV", "CMC", 'M', ItemList.Hull_UMV, 'P',
-                        MTEBasicMachineWithRecipe.X.PUMP, 'V',
-                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(), 'W',
-                        GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
+                new Object[] { "VGW", "PGV", "CMC", 'M', ItemList.Hull_UMV, 'P', MTEBasicMachineWithRecipe.X.PUMP, 'V',
+                        MTEBasicMachineWithRecipe.X.CONVEYOR, 'C', GT_CustomLoader.AdvancedGTMaterials.UMV.getCircuit(),
+                        'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                         MTEBasicMachineWithRecipe.X.GLASS },
                 12);
     }

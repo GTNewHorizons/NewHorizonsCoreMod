@@ -104,8 +104,7 @@ public class CuttingMachineRecipes implements Runnable {
                 .addTo(cutterRecipes);
         if (IndustrialCraft2.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0))
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0))
                     .itemOutputs(CustomItemList.ReinforcedGlassPLate.get(2L)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(cutterRecipes);
 
@@ -236,12 +235,12 @@ public class CuttingMachineRecipes implements Runnable {
             for (int meta = 0; meta < 16; ++meta) {
                 GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(Materials.Water.getFluid(4L))
-                        .itemOutputs(GTModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS)
-                        .eut(7).addTo(cutterRecipes);
+                        .itemOutputs(GTModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS).eut(7)
+                        .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(GTModHandler.getDistilledWater(3L))
-                        .itemOutputs(GTModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS)
-                        .eut(7).addTo(cutterRecipes);
+                        .itemOutputs(GTModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(5 * SECONDS).eut(7)
+                        .addTo(cutterRecipes);
                 GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Chisel.ID, "carpet_block", 1, meta))
                         .fluidInputs(Materials.Lubricant.getFluid(1L))
                         .itemOutputs(GTModHandler.getModItem(Chisel.ID, "carpet", 2, meta)).duration(50).eut(7)

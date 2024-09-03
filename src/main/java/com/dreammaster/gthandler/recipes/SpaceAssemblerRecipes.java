@@ -336,9 +336,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                 // Artificial Fluid Universe Cell
                 IG_RecipeAdder.addSpaceAssemblerRecipe(
                         new ItemStack[] { getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1),
-                                GTOreDictUnificator.get("plateDenseShirabon", 16),
-                                ItemList.Field_Generator_UXV.get(1L), new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
-                                new ItemStack(tfftStorageField, 2, 10),
+                                GTOreDictUnificator.get("plateDenseShirabon", 16), ItemList.Field_Generator_UXV.get(1L),
+                                new ItemStack(Loaders.yottaFluidTankCell, 2, 9), new ItemStack(tfftStorageField, 2, 10),
                                 new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
                                 com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
                                 MaterialsUEVplus.Eternity.getNanite(4) },
