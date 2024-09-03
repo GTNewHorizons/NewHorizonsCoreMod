@@ -15,7 +15,7 @@ import com.dreammaster.item.ItemList;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.creativetabs.ModCreativeTab;
 import eu.usrv.yamcore.items.ModItemManager;
-import gregtech.api.GregTech_API;
+import gregtech.api.GregTechAPI;
 
 public final class ModTabList {
 
@@ -68,7 +68,7 @@ public final class ModTabList {
                         }
                         // te adder
                         for (CustomItemList item : CustomItemList.values()) {
-                            if (item.hasBeenSet() && item.getBlock() == GregTech_API.sBlockMachines) {
+                            if (item.hasBeenSet() && item.getBlock() == GregTechAPI.sBlockMachines) {
                                 stuffToShow.add(item.get(1));
                             }
                         }

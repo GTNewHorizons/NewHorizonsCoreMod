@@ -2,7 +2,7 @@ package com.dreammaster.recipes;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
-import static gregtech.api.GregTech_API.sBlockOres1;
+import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AkashicTome;
@@ -76,7 +76,7 @@ import static gregtech.api.enums.Mods.WirelessRedstoneCBEAddons;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBECore;
 import static gregtech.api.enums.Mods.WirelessRedstoneCBELogic;
 import static gregtech.api.enums.Mods.Witchery;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -102,12 +102,12 @@ import com.dreammaster.main.MainRegistry;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.item.ModItems;
-import gtPlusPlus.xmod.forestry.bees.items.FR_ItemRegistry;
+import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class RecipeRemover {
@@ -117,10 +117,10 @@ public class RecipeRemover {
     @SuppressWarnings("unchecked")
     private static final ArrayList<IRecipe> tList = (ArrayList<IRecipe>) CraftingManager.getInstance().getRecipeList();
 
-    private static final HashMap<GT_Utility.ItemId, List<Function<IRecipe, Boolean>>> bufferMap = new HashMap<>();
+    private static final HashMap<GTUtility.ItemId, List<Function<IRecipe, Boolean>>> bufferMap = new HashMap<>();
 
-    private static void addToBuffer(HashSet<GT_Utility.ItemId> outputs, Function<IRecipe, Boolean> whenToRemove) {
-        for (GT_Utility.ItemId output : outputs) {
+    private static void addToBuffer(HashSet<GTUtility.ItemId> outputs, Function<IRecipe, Boolean> whenToRemove) {
+        for (GTUtility.ItemId output : outputs) {
             bufferMap.computeIfAbsent(output, o -> new ArrayList<>()).add(whenToRemove);
         }
         if (!bufferingRecipes) stopBuffering();
@@ -144,10 +144,10 @@ public class RecipeRemover {
                 rCopy = rCopy.copy();
                 rCopy.stackTagCompound = null;
             }
-            GT_Utility.ItemId key = GT_Utility.ItemId.createNoCopy(rCopy);
+            GTUtility.ItemId key = GTUtility.ItemId.createNoCopy(rCopy);
             rCopy = rCopy.copy();
             Items.feather.setDamage(rCopy, wildcard);
-            GT_Utility.ItemId keyWildcard = GT_Utility.ItemId.createNoCopy(rCopy);
+            GTUtility.ItemId keyWildcard = GTUtility.ItemId.createNoCopy(rCopy);
             List<Function<IRecipe, Boolean>> listWhenToRemove = bufferMap.get(key);
             if (listWhenToRemove == null) listWhenToRemove = bufferMap.get(keyWildcard);
             if (listWhenToRemove == null) return false;
@@ -160,24 +160,24 @@ public class RecipeRemover {
         bufferMap.clear();
     }
 
-    private static HashSet<GT_Utility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
-        HashSet<GT_Utility.ItemId> hashedItems = new HashSet<>();
+    private static HashSet<GTUtility.ItemId> getItemsHashed(Object item, boolean includeWildcardVariants) {
+        HashSet<GTUtility.ItemId> hashedItems = new HashSet<>();
         if (item instanceof ItemStack) {
             ItemStack iCopy = ((ItemStack) item).copy();
             iCopy.stackTagCompound = null;
-            hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+            hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
             if (includeWildcardVariants) {
                 iCopy = iCopy.copy();
                 Items.feather.setDamage(iCopy, wildcard);
-                hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+                hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
             }
         } else if (item instanceof String) {
             for (ItemStack stack : OreDictionary.getOres((String) item)) {
-                hashedItems.add(GT_Utility.ItemId.createNoCopy(stack));
+                hashedItems.add(GTUtility.ItemId.createNoCopy(stack));
                 if (includeWildcardVariants) {
                     stack = stack.copy();
                     Items.feather.setDamage(stack, wildcard);
-                    hashedItems.add(GT_Utility.ItemId.createNoCopy(stack));
+                    hashedItems.add(GTUtility.ItemId.createNoCopy(stack));
                 }
             }
         } else if (item instanceof ArrayList) {
@@ -185,11 +185,11 @@ public class RecipeRemover {
             for (ItemStack stack : (ArrayList<ItemStack>) item) {
                 ItemStack iCopy = stack.copy();
                 iCopy.stackTagCompound = null;
-                hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+                hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
                 if (includeWildcardVariants) {
                     iCopy = iCopy.copy();
                     Items.feather.setDamage(iCopy, wildcard);
-                    hashedItems.add(GT_Utility.ItemId.createNoCopy(iCopy));
+                    hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
                 }
             }
         } else throw new IllegalArgumentException("Invalid input");
@@ -211,8 +211,8 @@ public class RecipeRemover {
             List<?> rInputs = (r instanceof ShapelessOreRecipe ? ((ShapelessOreRecipe) r).getInput()
                     : ((ShapelessRecipes) r).recipeItems);
             for (Object rInput : rInputs) {
-                HashSet<GT_Utility.ItemId> rInputHashed;
-                HashSet<GT_Utility.ItemId> rInputHashedNoWildcard;
+                HashSet<GTUtility.ItemId> rInputHashed;
+                HashSet<GTUtility.ItemId> rInputHashedNoWildcard;
                 try {
                     rInputHashed = getItemsHashed(rInput, true);
                     rInputHashedNoWildcard = getItemsHashed(rInput, false);
@@ -222,7 +222,7 @@ public class RecipeRemover {
                 boolean found = false;
                 for (Iterator<Object> iterator = recipe.iterator(); iterator.hasNext();) {
                     Object o = iterator.next();
-                    for (GT_Utility.ItemId id : getItemsHashed(o, false)) {
+                    for (GTUtility.ItemId id : getItemsHashed(o, false)) {
                         if (rInputHashed.contains(id)) {
                             found = true;
                             iterator.remove();
@@ -230,7 +230,7 @@ public class RecipeRemover {
                         }
                     }
                     if (!found) {
-                        for (GT_Utility.ItemId id : getItemsHashed(o, true)) {
+                        for (GTUtility.ItemId id : getItemsHashed(o, true)) {
                             if (rInputHashedNoWildcard.contains(id)) {
                                 found = true;
                                 iterator.remove();
@@ -282,14 +282,14 @@ public class RecipeRemover {
                     Object rRecipe = (x >= recipe[y].length ? null : recipe[y][x]);
                     if (rStack == null ^ rRecipe == null) return false;
                     if (rStack == null) continue;
-                    HashSet<GT_Utility.ItemId> rInputHashed;
+                    HashSet<GTUtility.ItemId> rInputHashed;
                     try {
                         rInputHashed = getItemsHashed(rStack, true);
                     } catch (Exception ex) {
                         return false;
                     }
                     boolean found = false;
-                    for (GT_Utility.ItemId id : getItemsHashed(rRecipe, false)) {
+                    for (GTUtility.ItemId id : getItemsHashed(rRecipe, false)) {
                         if (rInputHashed.contains(id)) {
                             found = true;
                             break;
@@ -297,7 +297,7 @@ public class RecipeRemover {
                     }
                     if (!found) {
                         rInputHashed = getItemsHashed(rStack, false);
-                        for (GT_Utility.ItemId id : getItemsHashed(rRecipe, true)) {
+                        for (GTUtility.ItemId id : getItemsHashed(rRecipe, true)) {
                             if (rInputHashed.contains(id)) {
                                 found = true;
                                 break;
@@ -336,102 +336,102 @@ public class RecipeRemover {
 
         // AUTOGENERATED FROM SCRIPTS
 
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 1L));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 1L));
-        GT_ModHandler
-                .removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Sunnarium, 1L));
-        GT_ModHandler.removeFurnaceSmelting(
-                GT_OreDictUnificator.get(OrePrefixes.toolHeadUniversalSpade, Materials.Sunnarium, 1L));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.spring, Materials.Sunnarium, 1L));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Sunnarium, 1L));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Backpack.ID, "boundLeather", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "gravel", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(EnderIO.ID, "itemMaterial", 1, 2, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "quartz_block", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 9, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(FloodLights.ID, "rawFilament", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 4, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 4, missing));
-        GT_ModHandler
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 1L));
+        GTModHandler
+                .removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(
+                GTOreDictUnificator.get(OrePrefixes.toolHeadUniversalSpade, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.spring, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Sunnarium, 1L));
+        GTModHandler.removeFurnaceSmelting(getModItem(Backpack.ID, "boundLeather", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "gravel", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(EnderIO.ID, "itemMaterial", 1, 2, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "quartz_block", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 9, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(FloodLights.ID, "rawFilament", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 4, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 4, missing));
+        GTModHandler
                 .removeFurnaceSmelting(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "item.null", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "chainmail_boots", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "slime_ball", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 4, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "obsidian", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "clay_ball", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "netherrack", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(ItemList.Food_Raw_Bread.get(1L));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 1, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 2, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 3, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 4, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "sand", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "soul_sand", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "heatsand", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 1, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 2, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 3, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 1, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 2, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "stone", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 41, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing));
-        GT_ModHandler.removeFurnaceSmelting(
+        GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "item.null", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "chainmail_boots", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "slime_ball", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 4, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "obsidian", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "clay_ball", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "netherrack", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(ItemList.Food_Raw_Bread.get(1L));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 1, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 2, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 3, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "oreBerries", 1, 4, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "sand", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "soul_sand", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "heatsand", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 1, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 2, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "tree", 1, 3, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 1, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Natura.ID, "redwood", 1, 2, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "stone", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 41, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 43, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 57, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 58, missing));
+        GTModHandler.removeFurnaceSmelting(
                 getModItem(ProjectRedExploration.ID, "projectred.exploration.ore", 1, 6, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 1, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 2, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "blockCustomOre", 1, 7, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(BiomesOPlenty.ID, "gemOre", 1, 14, missing));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.oreBasalt, Materials.Amber, 1L));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Amber, 1L));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Amber, 1L));
-        GT_ModHandler.removeFurnaceSmelting(new ItemStack(sBlockOres1, 1, 514));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.oreMarble, Materials.Amber, 1L));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Amber, 1L));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Amber, 1L));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L));
-        GT_ModHandler.removeFurnaceSmelting(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDust", 1, 11, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemPlates", 1, 7, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "dust", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, wildcard, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "machine.beta", 1, 10, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(EnderIO.ID, "itemPowderIngot", 1, 7, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing));
-        GT_ModHandler.removeFurnaceSmelting(ItemList.Conveyor_Module_LV.get(1L));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 36, missing));
-        GT_ModHandler.removeFurnaceSmelting(ItemList.Automation_ItemDistributor_ULV.get(1L));
-        GT_ModHandler.removeFurnaceSmelting(ItemList.Automation_ItemDistributor_LV.get(1L));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 2, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 39, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 38, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 41, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 42, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 5, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "GravelOre", 1, 4, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 40, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing));
-        GT_ModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "item.ironwoodRaw", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 46, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 48, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 18, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 11, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(StevesCarts2.ID, "ModuleComponents", 1, 21, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 1, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 2, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "blockCustomOre", 1, 7, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(BiomesOPlenty.ID, "gemOre", 1, 14, missing));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBasalt, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(new ItemStack(sBlockOres1, 1, 514));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreMarble, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Amber, 1L));
+        GTModHandler.removeFurnaceSmelting(getModItem(Thaumcraft.ID, "ItemShard", 1, 6, missing));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L));
+        GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDust", 1, 11, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemPlates", 1, 7, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "dust", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "tile.GiantObsidian", 1, wildcard, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(Railcraft.ID, "machine.beta", 1, 10, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(EnderIO.ID, "itemPowderIngot", 1, 7, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing));
+        GTModHandler.removeFurnaceSmelting(ItemList.Conveyor_Module_LV.get(1L));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 36, missing));
+        GTModHandler.removeFurnaceSmelting(ItemList.Automation_ItemDistributor_ULV.get(1L));
+        GTModHandler.removeFurnaceSmelting(ItemList.Automation_ItemDistributor_LV.get(1L));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 0, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 2, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 39, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 38, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 41, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 42, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "SearedBrick", 1, 5, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "GravelOre", 1, 4, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "materials", 1, 40, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 6, missing));
+        GTModHandler.removeFurnaceSmelting(getModItem(TwilightForest.ID, "item.ironwoodRaw", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Encoder", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Grower", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(AE2Stuff.ID, "Inscriber", 1, 0, missing));
@@ -1168,13 +1168,13 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard, missing));
         removeRecipeByOutputDelayed(GregtechItemList.GT4_Thermal_Boiler.get(1));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameAccelerated));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameMutagenic));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameBusy));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameDecay));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameSlow));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameStalilize));
-        removeRecipeByOutputDelayed(new ItemStack(FR_ItemRegistry.hiveFrameArborist));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameAccelerated));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameMutagenic));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameBusy));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameDecay));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameSlow));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameStalilize));
+        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameArborist));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemPersonalCloakingDevice));
         removeRecipeByOutputDelayed(ItemList.Electric_Motor_UHV.get(1L));
         removeRecipeByOutputDelayed(ItemList.Electric_Pump_UHV.get(1L));
@@ -1196,7 +1196,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemBoilerChassis, 1, 1));
         removeRecipeByOutputDelayed(GregtechItemList.Boiler_Advanced_HV.get(1));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemBoilerChassis, 1, 2));
-        removeRecipeByOutputDelayed(GregtechItemList.GT_FluidTank_HV.get(1));
+        removeRecipeByOutputDelayed(GregtechItemList.GTFluidTank_HV.get(1));
         removeRecipeByOutputDelayed(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 5));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing));
@@ -1262,11 +1262,11 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "graviTool", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "ultimateLappack", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(GraviSuiteNEO.ID, "epicLappack", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Diamond, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Diamond, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Diamond, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Diamond, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Diamond, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Diamond, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Diamond, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Diamond, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Diamond, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Diamond, 1L));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "resource", 1, 0, missing));
@@ -1579,15 +1579,15 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockReactorRedstonePort", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadSense, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadPlow, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GT_OreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadSense, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadPlow, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iridium, 1L));
+        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Iridium, 1L));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemPartCFPowder", 1, 0, missing));
@@ -2906,8 +2906,8 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed("nuggetIron");
         removeRecipeByOutputDelayed("torchStone");
 
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
         removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1, 4, missing));
         removeRecipeShapelessDelayed(
                 getModItem(Minecraft.ID, "dye", 3, 15, missing),
@@ -2942,17 +2942,17 @@ public class RecipeRemover {
         removeRecipeShapelessDelayed(
                 getModItem(BiomesOPlenty.ID, "misc", 1, 6, missing),
                 getModItem(BiomesOPlenty.ID, "plants", 1, 7, missing));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Ruby, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
         removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "dye", 1, 4, missing));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Sapphire, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wheat, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Saltpeter, 1L));
         removeRecipeShapelessDelayed("dustEnderPearl");
         removeRecipeShapelessDelayed("gemEnderPearl");
         removeRecipeShapelessDelayed("dustEnderEye");
@@ -3022,10 +3022,10 @@ public class RecipeRemover {
         removeRecipeShapelessDelayed("dustCoal"/* ERRORSTACK <- itemcount */, "blockCoal");
         removeRecipeShapelessDelayed(
                 getModItem(Minecraft.ID, "coal", 9, 1, missing),
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
         removeRecipeShapelessDelayed(
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 9L),
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 9L),
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 1L));
         removeRecipeShapelessDelayed(getModItem(PamsHarvestCraft.ID, "cottonItem", 1, 0, missing));
         removeRecipeShapelessDelayed(
                 getModItem(IndustrialCraft2.ID, "itemCofeePowder", 1, 0, missing),
@@ -3037,8 +3037,8 @@ public class RecipeRemover {
         removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 4, missing));
         removeRecipeShapelessDelayed(getModItem(Thaumcraft.ID, "ItemShard", 1, 5, missing));
         removeRecipeShapelessDelayed(getModItem(Minecraft.ID, "string", 1, 0, missing));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L));
-        removeRecipeShapelessDelayed(GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 1L));
+        removeRecipeShapelessDelayed(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Emerald, 1L));
         removeRecipeShapelessDelayed(
                 getModItem(Minecraft.ID, "gunpowder", 1, 0, missing),
                 getModItem(Minecraft.ID, "coal", 1, 1, missing),
@@ -3140,7 +3140,7 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing));
         removeRecipeShapedDelayed(
-                GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
                 new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
                         getModItem(MagicBees.ID, "beeNugget", 1, 7) },
                 new Object[] { getModItem(MagicBees.ID, "beeNugget", 1, 7), getModItem(MagicBees.ID, "beeNugget", 1, 7),
@@ -3350,7 +3350,7 @@ public class RecipeRemover {
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" },
                 new Object[] { "nuggetBronze", "nuggetBronze", "nuggetBronze" });
         removeRecipeShapedDelayed(
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
                 new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing) },
@@ -3361,7 +3361,7 @@ public class RecipeRemover {
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 22, missing) });
         removeRecipeShapedDelayed(
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
                 new Object[] { getModItem(TinkerConstruct.ID, "materials", 1, 12, missing), null, null },
                 new Object[0],
                 new Object[0]);

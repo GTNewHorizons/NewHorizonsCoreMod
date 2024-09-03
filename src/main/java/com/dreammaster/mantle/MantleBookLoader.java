@@ -9,8 +9,8 @@ import net.minecraft.util.StatCollector;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 
-import gregtech.GT_Mod;
-import gregtech.api.interfaces.internal.IGT_Mod;
+import gregtech.GTMod;
+import gregtech.api.interfaces.internal.IGTMod;
 import mantle.books.BookData;
 
 /**
@@ -22,16 +22,16 @@ final class MantleBookLoader implements BookLoader {
     private static final BookDataStoreProxy BOOK_DATA_STORE_PROXY = BookDataStoreProxy.getInstance();
     private final BookDataStoreProxy bookDataStoreProxy;
     private final BookData data;
-    private final IGT_Mod sideChecker;
+    private final IGTMod sideChecker;
     private final BookDataReader bookDataReader;
 
     static BookLoader readBook(String unlocalizedName, String modId, String xmlDocumentPath) {
-        return new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER, GT_Mod.gregtechproxy)
+        return new MantleBookLoader(BOOK_DATA_STORE_PROXY, BOOK_DATA_READER, GTMod.gregtechproxy)
                 .setRequiredData(unlocalizedName, modId, xmlDocumentPath);
     }
 
     @VisibleForTesting
-    MantleBookLoader(BookDataStoreProxy bookDataStoreProxy, BookDataReader bookDataReader, IGT_Mod sideChecker) {
+    MantleBookLoader(BookDataStoreProxy bookDataStoreProxy, BookDataReader bookDataReader, IGTMod sideChecker) {
         Stream.of(bookDataStoreProxy, bookDataReader, sideChecker).forEach(Objects::requireNonNull);
         this.bookDataStoreProxy = bookDataStoreProxy;
         this.bookDataReader = bookDataReader;

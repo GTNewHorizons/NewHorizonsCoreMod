@@ -9,7 +9,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +22,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -599,26 +599,26 @@ public class ScriptAutomagy implements IScriptLoader {
                 -5,
                 -2,
                 3,
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L))
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L))
                         .setPages(new ResearchPage("tc.research_page.InfusedGoldGTNH.1"))
                         .setParents("INFUSION", "THAUMIUM").registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "InfusedGoldGTNH",
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L),
                 2,
                 new AspectList().add(Aspect.getAspect("lucrum"), 16).add(Aspect.getAspect("metallum"), 12)
                         .add(Aspect.getAspect("ordo"), 8).add(Aspect.getAspect("praecantatio"), 4)
                         .add(Aspect.getAspect("aer"), 4),
                 getModItem(Minecraft.ID, "gold_ingot", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), });
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), });
         TCHelper.addResearchPage(
                 "InfusedGoldGTNH",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L))));
+                                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.InfusedGold, 1L))));
         TCHelper.clearPrereq("MAGICHOURGLASS");
         TCHelper.addResearchPrereq("MAGICHOURGLASS", "INFUSION", false);
         TCHelper.addResearchPrereq("MAGICHOURGLASS", "InfusedGoldGTNH", false);
