@@ -673,7 +673,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16384).fluidInputs(Materials.Lead.getMolten(288)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(500000).addTo(circuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -684,7 +684,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16384).fluidInputs(Materials.Tin.getMolten(144)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(500000).addTo(circuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -695,7 +695,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         ItemList.Circuit_Board_Bio_Ultra.get(1),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16384).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
-                .duration(10 * SECONDS).eut(500000).addTo(circuitAssemblerRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
 
         // Fluid Quantum Drive
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
