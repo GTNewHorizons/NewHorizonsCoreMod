@@ -5,8 +5,8 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,12 +16,12 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -58,15 +58,15 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing),
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing));
 
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(20 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(20 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 11, missing))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
@@ -221,7 +221,7 @@ public class ScriptGadomancy implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("permutatio"), 24)
                         .add(Aspect.getAspect("motus"), 8),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
@@ -244,13 +244,13 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "GADOMANCY.NODE_MANIPULATOR",
@@ -271,15 +271,15 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 5, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 8, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "GADOMANCY.INFUSIONCLAW",
@@ -453,13 +453,13 @@ public class ScriptGadomancy implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 8, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing), });
         TCHelper.setResearchAspects(
                 "GADOMANCY.E_PORTAL_CREATOR",

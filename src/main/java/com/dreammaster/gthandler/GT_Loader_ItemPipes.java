@@ -2,9 +2,9 @@ package com.dreammaster.gthandler;
 
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.metatileentity.implementations.GT_MetaPipeEntity_Item;
-import gregtech.api.util.GT_LanguageManager;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.metatileentity.implementations.MTEItem;
+import gregtech.api.util.GTLanguageManager;
+import gregtech.api.util.GTOreDictUnificator;
 
 public final class GT_Loader_ItemPipes {
 
@@ -15,10 +15,10 @@ public final class GT_Loader_ItemPipes {
         // These IDs are totally messed up. Watch out if you want to add or change something here!
 
         // Brass
-        String displayName = GT_LanguageManager.i18nPlaceholder ? "%material" : Materials.Brass.mDefaultLocalName;
-        GT_OreDictUnificator.registerOre(
+        String displayName = GTLanguageManager.i18nPlaceholder ? "%material" : Materials.Brass.mDefaultLocalName;
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeTiny.get(Materials.Brass),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5600,
                         "GT_Pipe_Brass_Tiny",
                         "Tiny " + displayName + " Item Pipe",
@@ -28,9 +28,9 @@ public final class GT_Loader_ItemPipes {
                         131072,
                         false,
                         80).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeSmall.get(Materials.Brass),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5601,
                         "GT_Pipe_Brass_Small",
                         "Small " + displayName + " Item Pipe",
@@ -40,9 +40,9 @@ public final class GT_Loader_ItemPipes {
                         65536,
                         false,
                         40).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveTiny.get(Materials.Brass),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5640,
                         "GT_Pipe_Restrictive_Brass_Tiny",
                         "Tiny Restrictive " + displayName + " Item Pipe",
@@ -52,9 +52,9 @@ public final class GT_Loader_ItemPipes {
                         13107200,
                         true,
                         80).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveSmall.get(Materials.Brass),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5641,
                         "GT_Pipe_Restrictive_Brass_Small",
                         "Small Restrictive " + displayName + " Item Pipe",
@@ -66,10 +66,10 @@ public final class GT_Loader_ItemPipes {
                         40).getStackForm(1L));
 
         // Electrum
-        displayName = GT_LanguageManager.i18nPlaceholder ? "%material" : Materials.Electrum.mDefaultLocalName;
-        GT_OreDictUnificator.registerOre(
+        displayName = GTLanguageManager.i18nPlaceholder ? "%material" : Materials.Electrum.mDefaultLocalName;
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeTiny.get(Materials.Electrum),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5610,
                         "GT_Pipe_Electrum_Tiny",
                         "Tiny " + displayName + " Item Pipe",
@@ -79,9 +79,9 @@ public final class GT_Loader_ItemPipes {
                         65536,
                         false,
                         40).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeSmall.get(Materials.Electrum),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5611,
                         "GT_Pipe_Electrum_Small",
                         "Small " + displayName + " Item Pipe",
@@ -90,9 +90,9 @@ public final class GT_Loader_ItemPipes {
                         1,
                         32768,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveTiny.get(Materials.Electrum),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5642,
                         "GT_Pipe_Restrictive_Electrum_Tiny",
                         "Tiny Restrictive " + displayName + " Item Pipe",
@@ -102,9 +102,9 @@ public final class GT_Loader_ItemPipes {
                         6553600,
                         true,
                         40).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveSmall.get(Materials.Electrum),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5643,
                         "GT_Pipe_Restrictive_Electrum_Small",
                         "Small Restrictive " + displayName + " Item Pipe",
@@ -115,10 +115,10 @@ public final class GT_Loader_ItemPipes {
                         true).getStackForm(1L));
 
         // Platinum
-        displayName = GT_LanguageManager.i18nPlaceholder ? "%material" : Materials.Platinum.mDefaultLocalName;
-        GT_OreDictUnificator.registerOre(
+        displayName = GTLanguageManager.i18nPlaceholder ? "%material" : Materials.Platinum.mDefaultLocalName;
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeTiny.get(Materials.Platinum),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5620,
                         "GT_Pipe_Platinum_Tiny",
                         "Tiny " + displayName + " Item Pipe",
@@ -127,9 +127,9 @@ public final class GT_Loader_ItemPipes {
                         1,
                         32768,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeSmall.get(Materials.Platinum),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5621,
                         "GT_Pipe_Platinum_Small",
                         "Small " + displayName + " Item Pipe",
@@ -138,9 +138,9 @@ public final class GT_Loader_ItemPipes {
                         2,
                         16384,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveTiny.get(Materials.Platinum),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5644,
                         "GT_Pipe_Restrictive_Platinum_Tiny",
                         "Tiny Restrictive " + displayName + " Item Pipe",
@@ -149,9 +149,9 @@ public final class GT_Loader_ItemPipes {
                         1,
                         3276800,
                         true).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveSmall.get(Materials.Platinum),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5645,
                         "GT_Pipe_Restrictive_Platinum_Small",
                         "Small Restrictive " + displayName + " Item Pipe",
@@ -162,10 +162,10 @@ public final class GT_Loader_ItemPipes {
                         true).getStackForm(1L));
 
         // Osmium
-        displayName = GT_LanguageManager.i18nPlaceholder ? "%material" : Materials.Osmium.mDefaultLocalName;
-        GT_OreDictUnificator.registerOre(
+        displayName = GTLanguageManager.i18nPlaceholder ? "%material" : Materials.Osmium.mDefaultLocalName;
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeTiny.get(Materials.Osmium),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5630,
                         "GT_Pipe_Osmium_Tiny",
                         "Tiny " + displayName + " Item Pipe",
@@ -174,9 +174,9 @@ public final class GT_Loader_ItemPipes {
                         2,
                         16384,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeSmall.get(Materials.Osmium),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5631,
                         "GT_Pipe_Osmium_Small",
                         "Small " + displayName + " Item Pipe",
@@ -185,9 +185,9 @@ public final class GT_Loader_ItemPipes {
                         4,
                         8192,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveTiny.get(Materials.Osmium),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5646,
                         "GT_Pipe_Restrictive_Osmium_Tiny",
                         "Tiny Restrictive " + displayName + " Item Pipe",
@@ -196,9 +196,9 @@ public final class GT_Loader_ItemPipes {
                         2,
                         1638400,
                         true).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveSmall.get(Materials.Osmium),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5647,
                         "GT_Pipe_Restrictive_Osmium_Small",
                         "Small Restrictive " + displayName + " Item Pipe",
@@ -209,10 +209,10 @@ public final class GT_Loader_ItemPipes {
                         true).getStackForm(1L));
 
         // Tin
-        displayName = GT_LanguageManager.i18nPlaceholder ? "%material" : Materials.Tin.mDefaultLocalName;
-        GT_OreDictUnificator.registerOre(
+        displayName = GTLanguageManager.i18nPlaceholder ? "%material" : Materials.Tin.mDefaultLocalName;
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeTiny.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5589,
                         "GT_Pipe_Tin_Tiny",
                         "Tiny " + displayName + " Item Pipe",
@@ -222,9 +222,9 @@ public final class GT_Loader_ItemPipes {
                         262144,
                         false,
                         160).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeSmall.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5590,
                         "GT_Pipe_Tin_Small",
                         "Small " + displayName + " Item Pipe",
@@ -234,21 +234,13 @@ public final class GT_Loader_ItemPipes {
                         131072,
                         false,
                         80).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeMedium.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
-                        5591,
-                        "GT_Pipe_Tin",
-                        displayName + " Item Pipe",
-                        0.5F,
-                        Materials.Tin,
-                        1,
-                        65536,
-                        false,
-                        40).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+                new MTEItem(5591, "GT_Pipe_Tin", displayName + " Item Pipe", 0.5F, Materials.Tin, 1, 65536, false, 40)
+                        .getStackForm(1L));
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeLarge.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5592,
                         "GT_Pipe_Tin_Large",
                         "Large " + displayName + " Item Pipe",
@@ -257,9 +249,9 @@ public final class GT_Loader_ItemPipes {
                         1,
                         32768,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeHuge.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5593,
                         "GT_Pipe_Tin_Huge",
                         "Huge " + displayName + " Item Pipe",
@@ -269,9 +261,9 @@ public final class GT_Loader_ItemPipes {
                         16384,
                         false).getStackForm(1L));
 
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveTiny.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5594,
                         "GT_Pipe_Restrictive_Tin_Tiny",
                         "Tiny Restrictive " + displayName + " Item Pipe",
@@ -281,9 +273,9 @@ public final class GT_Loader_ItemPipes {
                         26214400,
                         true,
                         160).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveSmall.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5595,
                         "GT_Pipe_Restrictive_Tin_Small",
                         "Small Restrictive " + displayName + " Item Pipe",
@@ -293,9 +285,9 @@ public final class GT_Loader_ItemPipes {
                         13107200,
                         true,
                         80).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveMedium.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5596,
                         "GT_Pipe_Restrictive_Tin",
                         "Restrictive " + displayName + " Pipe",
@@ -305,9 +297,9 @@ public final class GT_Loader_ItemPipes {
                         6553600,
                         true,
                         40).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveLarge.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5597,
                         "GT_Pipe_Restrictive_Tin_Large",
                         "Large Restrictive " + displayName + " Item Pipe",
@@ -316,9 +308,9 @@ public final class GT_Loader_ItemPipes {
                         1,
                         3276800,
                         true).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveHuge.get(Materials.Tin),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         5598,
                         "GT_Pipe_Restrictive_Tin_Huge",
                         "Huge Restrictive " + displayName + " Item Pipe",
@@ -338,16 +330,16 @@ public final class GT_Loader_ItemPipes {
         generateItemPipes(
                 aMaterial,
                 name,
-                GT_LanguageManager.i18nPlaceholder ? "%material" : aMaterial.mDefaultLocalName,
+                GTLanguageManager.i18nPlaceholder ? "%material" : aMaterial.mDefaultLocalName,
                 startID,
                 baseInvSlots);
     }
 
     private static void generateItemPipes(Materials aMaterial, String name, String displayName, int startID,
             int baseInvSlots) {
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeTiny.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID,
                         "GT_Pipe_" + name + "_Tiny",
                         "Tiny " + displayName + " Item Pipe",
@@ -356,9 +348,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots / 4,
                         131072 / baseInvSlots,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeSmall.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 1,
                         "GT_Pipe_" + name + "_Small",
                         "Small " + displayName + " Item Pipe",
@@ -367,9 +359,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots / 2,
                         65536 / baseInvSlots,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeMedium.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 2,
                         "GT_Pipe_" + name,
                         displayName + " Item Pipe",
@@ -378,9 +370,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots,
                         32768 / baseInvSlots,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeLarge.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 3,
                         "GT_Pipe_" + name + "_Large",
                         "Large " + displayName + " Item Pipe",
@@ -389,9 +381,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots * 2,
                         16384 / baseInvSlots,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeHuge.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 4,
                         "GT_Pipe_" + name + "_Huge",
                         "Huge " + displayName + " Item Pipe",
@@ -400,9 +392,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots * 4,
                         8192 / baseInvSlots,
                         false).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveTiny.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 5,
                         "GT_Pipe_Restrictive_" + name + "_Tiny",
                         "Tiny Restrictive " + displayName + " Item Pipe",
@@ -411,9 +403,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots / 4,
                         13107200 / baseInvSlots,
                         true).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveSmall.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 6,
                         "GT_Pipe_Restrictive_" + name + "_Small",
                         "Small Restrictive " + displayName + " Item Pipe",
@@ -422,9 +414,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots / 2,
                         6553600 / baseInvSlots,
                         true).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveMedium.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 7,
                         "GT_Pipe_Restrictive_" + name,
                         "Restrictive " + displayName + " Item Pipe",
@@ -433,9 +425,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots,
                         3276800 / baseInvSlots,
                         true).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveLarge.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 8,
                         "GT_Pipe_Restrictive_" + name + "_Large",
                         "Large Restrictive " + displayName + " Item Pipe",
@@ -444,9 +436,9 @@ public final class GT_Loader_ItemPipes {
                         baseInvSlots * 2,
                         1638400 / baseInvSlots,
                         true).getStackForm(1L));
-        GT_OreDictUnificator.registerOre(
+        GTOreDictUnificator.registerOre(
                 OrePrefixes.pipeRestrictiveHuge.get(aMaterial),
-                new GT_MetaPipeEntity_Item(
+                new MTEItem(
                         startID + 9,
                         "GT_Pipe_Restrictive_" + name + "_Huge",
                         "Huge Restrictive " + displayName + " Item Pipe",

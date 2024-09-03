@@ -2,10 +2,9 @@ package com.dreammaster.bartworksHandler;
 
 import java.util.Optional;
 
-import com.github.bartimaeusnek.bartworks.API.VoidMinerDropAdder;
-import com.github.bartimaeusnek.bartworks.API.WerkstoffAPI;
-import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
-
+import bartworks.API.VoidMinerDropAdder;
+import bartworks.API.WerkstoffAPI;
+import bartworks.system.material.Werkstoff;
 import gregtech.api.enums.Materials;
 import gregtech.api.interfaces.ISubTagContainer;
 

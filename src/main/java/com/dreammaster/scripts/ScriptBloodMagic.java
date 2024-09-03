@@ -30,9 +30,9 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,12 +51,12 @@ import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -136,10 +136,10 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
                 getModItem(Witchery.ID, "ingredient", 1, 18, missing),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 1L),
                 getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing));
         addShapedRecipe(
                 getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellModifier", 1, 0, missing),
@@ -303,130 +303,130 @@ public class ScriptBloodMagic implements IScriptLoader {
         orbRecipes();
         altarAlchemyRecipes();
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "apprenticeBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "magicianBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "masterBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "archmageBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodMagic.ID, "transcendentBloodOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(BloodArsenal.ID, "transparent_orb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(ForbiddenMagic.ID, "EldritchOrb", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing),
                         getModItem(Avaritia.ID, "Orb_Armok", 0, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 1152)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "itemRitualDiviner", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone_torch", 2, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "ritualDismantler", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GT_Utility.getIntegratedCircuit(2))
+                        GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 1, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GT_Utility.getIntegratedCircuit(3))
+                        GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 2, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GT_Utility.getIntegratedCircuit(4))
+                        GTUtility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 3, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BloodMagic.ID, "inputRoutingFocus", 1, 0, missing),
-                        GT_Utility.getIntegratedCircuit(5))
+                        GTUtility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(BloodMagic.ID, "outputRoutingFocus", 1, 4, missing)).duration(10 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 6, missing))
                 .itemOutputs(CustomItemList.ArcaneSlate.get(9L))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(10 * SECONDS).eut(48)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "blankSlate", 9, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(20 * SECONDS).eut(64)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 1, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 1, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "reinforcedSlate", 9, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(30 * SECONDS).eut(120)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 2, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 2, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "imbuedSlate", 9, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(40 * SECONDS).eut(480)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 3, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 3, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "demonicSlate", 9, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(50 * SECONDS).eut(1920)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "blood_stone", 1, 4, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "bloodMagicBaseItems", 9, 27, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 1000)).duration(1 * MINUTES).eut(7680)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BloodMagic.ID, "AlchemicalWizardrybloodRune", 1, 0, missing))
                 .itemOutputs(getModItem(BloodMagic.ID, "blankSlate", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lifeessence", 250)).duration(20 * SECONDS).eut(64)
                 .addTo(cutterRecipes);
@@ -509,14 +509,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("fames"), 8).add(Aspect.getAspect("terra"), 8),
                 getModItem(BloodMagic.ID, "Altar", 1, 0, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.BloodInfusedIron, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BloodInfusedIron, 1L),
                         getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 1, 251, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 1, 251, missing),
                         getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.BloodInfusedIron, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.BloodInfusedIron, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BloodInfusedIron, 1L), });
         TCHelper.addResearchPage(
                 "LIFEINFUSER",
                 new ResearchPage(
@@ -1095,19 +1095,19 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'a',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
                 'c',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
                 'e',
                 getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
                 'g',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
                 'i',
                 getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing));
         TCHelper.addResearchPage(
@@ -1136,7 +1136,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 1, missing),
                 new ItemStack[] { getModItem(TinkerConstruct.ID, "materials", 1, 7, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 2, missing), });
         TCHelper.addResearchPage(
                 "BMLAVACRYSTAL",
@@ -1228,15 +1228,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "AIRSIGIL",
@@ -1329,7 +1329,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 16),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
                 new ItemStack[] { getModItem(BloodArsenal.ID, "blood_burned_string", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Minecraft.ID, "bucket", 1, 0, missing),
                         getModItem(BloodMagic.ID, "tennebrae", 1, 0, missing),
                         getModItem(Minecraft.ID, "bucket", 1, 0, missing),
@@ -1339,7 +1339,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(Minecraft.ID, "bucket", 1, 0, missing),
                         getModItem(BloodMagic.ID, "tennebrae", 1, 0, missing),
                         getModItem(Minecraft.ID, "bucket", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         TCHelper.addResearchPage(
                 "VOIDSIGIL",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(BloodMagic.ID, "voidSigil", 1, 0, missing))));
@@ -2126,13 +2126,13 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(IronChests.ID, "BlockIronChest", 1, 2, missing),
                         getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
                         getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
                         getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(BloodMagic.ID, "demonicSlate", 1, 0, missing), });
         TCHelper.addResearchPage(
@@ -2198,16 +2198,16 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("electrum"), 24).add(Aspect.getAspect("auram"), 16)
                         .add(Aspect.getAspect("cognitio"), 12).add(Aspect.getAspect("praecantatio"), 6),
                 getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.block, Materials.NeodymiumMagnetic, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.block, Materials.NeodymiumMagnetic, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.NeodymiumMagnetic, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.NeodymiumMagnetic, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.NeodymiumMagnetic, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.NeodymiumMagnetic, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.NeodymiumMagnetic, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.NeodymiumMagnetic, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         getModItem(BloodMagic.ID, "reinforcedSlate", 1, 0, missing), });
         TCHelper.addResearchPage(
@@ -2301,13 +2301,13 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "seerSigil", 1, 0, missing),
                 new ItemStack[] { getModItem(Witchery.ID, "chalkritual", 1, 0, missing),
                         getModItem(BloodMagic.ID, "waterScribeTool", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(BloodMagic.ID, "fireScribeTool", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
                         getModItem(BloodMagic.ID, "earthScribeTool", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(BloodMagic.ID, "airScribeTool", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L), });
         TCHelper.addResearchPage(
                 "RITUALDIVINER",
                 new ResearchPage(
@@ -2850,7 +2850,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 -10,
                 2,
                 3,
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))
                         .setParents("INFUSION", "CRYSTALCLUSTER").setConcealed()
                         .setPages(
                                 new ResearchPage("tc.research_page.ICHORIUMBLOCK.1"),
@@ -2858,18 +2858,18 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .registerResearchItem();
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ICHORIUMBLOCK",
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
                 12,
                 new AspectList().add(Aspect.getAspect("victus"), 64).add(Aspect.getAspect("fames"), 48)
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("infernus"), 24)
                         .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("superbia"), 16)
                         .add(Aspect.getAspect("terra"), 8),
                 BlockList.MysteriousCrystal.getIS(),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
                         getModItem(BloodMagic.ID, "standardBindingAgent", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 29, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 4, missing), });
@@ -2877,7 +2877,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "ICHORIUMBLOCK",
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(
-                                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))));
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))));
         ThaumcraftApi.addWarpToResearch("ICHORIUMBLOCK", 3);
         new ResearchItem(
                 "GLYPHSTONE",
@@ -3241,10 +3241,10 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("limus"), 32).add(Aspect.getAspect("nebrisum"), 8),
                 getModItem(BloodMagic.ID, "sigilOfEnderSeverance", 1, 0, missing),
                 new ItemStack[] { getModItem(EnderStorage.ID, "enderChest", 1, 0, missing), ItemList.Gravistar.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 1L),
                         ItemList.QuantumEye.get(1L), getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
                         getModItem(Minecraft.ID, "ender_eye", 1, 0, missing), ItemList.QuantumEye.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.HeeEndium, 1L),
                         ItemList.Gravistar.get(1L), });
         TCHelper.addResearchPage(
                 "ENDERSIGIL",
@@ -3377,11 +3377,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                 'd',
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0, missing),
                 'e',
@@ -3389,11 +3389,11 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'f',
                 getModItem(BloodArsenal.ID, "blood_infused_diamond_block", 1, 0, missing),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                 'h',
                 getModItem(BloodMagic.ID, "demonicTelepositionFocus", 1, 0, missing),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L));
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L));
         TCHelper.addResearchPage(
                 "ENERGYBAZOOKAI",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "energyBazooka", 1, 0, missing))));
@@ -3487,15 +3487,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(ForbiddenMagic.ID, "WandCaps", 1, 0, missing),
                 new ItemStack[] { getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0, missing),
                         getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.BloodInfusedIron, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
                         getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0, missing),
                         getModItem(BloodArsenal.ID, "amorphic_catalyst", 1, 0, missing),
                         getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.BloodInfusedIron, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.BloodInfusedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.BloodInfusedIron, 1L),
                         getModItem(BloodArsenal.ID, "blood_infused_glowstone_dust", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "CAP_blood_iron",
@@ -3648,7 +3648,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'g',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         'h',
-                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1L),
                         'i',
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing)));
         GameRegistry.addRecipe(
@@ -3772,19 +3772,19 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "weakBloodOrb", 1, 0, missing),
                         'b',
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         'c',
                         getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
                         'd',
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         'e',
                         CustomItemList.ArcaneSlate.get(1L),
                         'f',
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         'g',
                         getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
                         'h',
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L)));
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L)));
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 4, missing),
@@ -3988,7 +3988,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
                         'b',
-                        GT_OreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.cell, Materials.Helium, 1L),
                         'c',
                         getModItem(BloodMagic.ID, "aether", 1, 0, missing),
                         'd',
@@ -4012,7 +4012,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         'a',
                         getModItem(BloodMagic.ID, "terrae", 1, 0, missing),
                         'b',
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         'c',
                         getModItem(BloodMagic.ID, "terrae", 1, 0, missing),
                         'd',
@@ -4644,7 +4644,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 false);
         AltarRecipeRegistry.registerAltarRecipe(
                 BlockList.BloodyIchorium.getIS(),
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
                 5,
                 50000,
                 20,
@@ -4683,13 +4683,13 @@ public class ScriptBloodMagic implements IScriptLoader {
                 com.dreammaster.item.ItemList.Blaster.getIS(1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 1L));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.CertusQuartz, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.CertusQuartz, 1L));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Quartzite, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Quartzite, 1L));
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "largeBloodStoneBrick", 4, 0, missing),
                 25,
@@ -4712,18 +4712,18 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "crystallos", 1, 0, missing),
                 10,
                 new ItemStack[] { getModItem(BiomesOPlenty.ID, "hardIce", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "sanctus", 1, 0, missing),
                 10,
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RoseGold, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.RoseGold, 1L),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4740,14 +4740,14 @@ public class ScriptBloodMagic implements IScriptLoader {
                 20,
                 new ItemStack[] { getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L) },
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silicon, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "mundaneLengtheningCatalyst", 1, 0, missing),
                 40,
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing),
@@ -4772,7 +4772,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "mundanePowerCatalyst", 1, 0, missing),
                 40,
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing),
@@ -4797,7 +4797,7 @@ public class ScriptBloodMagic implements IScriptLoader {
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "standardBindingAgent", 1, 0, missing),
                 40,
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 1L),
                         getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBindingAgent", 1, 0, missing),
                         getModItem(BloodMagic.ID, "sanctus", 1, 0, missing),
@@ -4843,16 +4843,16 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(Minecraft.ID, "fire_charge", 1, 0, missing),
                 9,
                 new ItemStack[] { getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0, missing) },
                 1);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "incendium", 1, 0, missing),
                 10,
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 1L),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Firestone, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Firestone, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 1L),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4860,7 +4860,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 10,
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(Minecraft.ID, "gunpowder", 1, 0, missing),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing) },
                 2);
@@ -4877,27 +4877,27 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "terrae", 1, 0, missing),
                 10,
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 45, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.BasalticMineralSand, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.GraniticMineralSand, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.BasalticMineralSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GraniticMineralSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "aquasalus", 1, 0, missing),
                 10,
                 new ItemStack[] { getModItem(Minecraft.ID, "potion", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedWater, 1L),
                         getModItem(Minecraft.ID, "dye", 1, 0, missing),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "tennebrae", 1, 0, missing),
                 10,
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Lignite, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lignite, 1L),
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing) },
                 2);
         AlchemyRecipeRegistry.registerRecipe(
@@ -4941,7 +4941,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
                         getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 5, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gold, 1L) },
+                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gold, 1L) },
                 4);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "itemComplexSpellCrystal", 1, 0, missing),
@@ -5023,15 +5023,15 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3, missing),
                         getModItem(BloodMagic.ID, "terrae", 1, 0, missing),
                         getModItem(BloodMagic.ID, "terrae", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L) },
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 6, missing),
                 40,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.FierySteel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.FierySteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.FierySteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.FierySteel, 1L),
                         CustomItemList.ChargedCertusQuartzDust.get(1L),
                         CustomItemList.ChargedCertusQuartzDust.get(1L) },
                 3);
@@ -5039,10 +5039,10 @@ public class ScriptBloodMagic implements IScriptLoader {
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 7, missing),
                 40,
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Soularium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Soularium, 1L) },
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ice, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soularium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soularium, 1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 8, missing),
@@ -5050,8 +5050,8 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "bloodMagicBaseAlchemyItems", 1, 3, missing),
                         getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2, missing),
                         getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.VibrantAlloy, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.VibrantAlloy, 1L) },
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.VibrantAlloy, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.VibrantAlloy, 1L) },
                 3);
     }
 }

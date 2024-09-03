@@ -2,14 +2,14 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Natura;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
 
 import com.dreammaster.item.ItemList;
 
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptIguanaTweaks implements IScriptLoader {
 
@@ -55,7 +55,7 @@ public class ScriptIguanaTweaks implements IScriptLoader {
         /*
          * oredict so the recipes modified in iguanatweaks will work those are exceptionnally in iguanatweaks because
          * the items in the recipes are registered at PostInit=
-         */ GT_OreDictUnificator.registerOre("toolHeadSawArdite", ItemList.SawBladeArdite.getIS());
-        GT_OreDictUnificator.registerOre("toolHeadSawManyullyn", ItemList.SawBladeManyullyn.getIS());
+         */ GTOreDictUnificator.registerOre("toolHeadSawArdite", ItemList.SawBladeArdite.getIS());
+        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", ItemList.SawBladeManyullyn.getIS());
     }
 }

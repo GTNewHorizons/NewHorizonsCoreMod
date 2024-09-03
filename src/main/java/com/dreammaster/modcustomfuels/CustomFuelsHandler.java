@@ -15,7 +15,7 @@ import com.dreammaster.main.MainRegistry;
 
 import cpw.mods.fml.common.IFuelHandler;
 import eu.usrv.yamcore.auxiliary.LogHelper;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTUtility;
 
 public class CustomFuelsHandler implements IFuelHandler {
 
@@ -24,14 +24,14 @@ public class CustomFuelsHandler implements IFuelHandler {
     private CustomFuelsFactory _mCfF = new CustomFuelsFactory();
     private CustomFuels _mCustomFuels;
 
-    private HashMap<GT_Utility.ItemId, Short> customFuelToValueMap = new HashMap<>();
+    private HashMap<GTUtility.ItemId, Short> customFuelToValueMap = new HashMap<>();
 
     public CustomFuelsHandler() {
         _mConfigFileName = String.format("config/%s/CustomFuels.xml", Refstrings.COLLECTIONID);
     }
 
     public void registerCustomFuelValue(ItemStack fuel, short value) {
-        customFuelToValueMap.put(GT_Utility.ItemId.createNoCopy(fuel), value);
+        customFuelToValueMap.put(GTUtility.ItemId.createNoCopy(fuel), value);
     }
 
     public void InitSampleConfig() {
@@ -105,7 +105,7 @@ public class CustomFuelsHandler implements IFuelHandler {
             stack.stackTagCompound = null;
         }
 
-        Short fuelValue = customFuelToValueMap.get(GT_Utility.ItemId.createNoCopy(stack));
+        Short fuelValue = customFuelToValueMap.get(GTUtility.ItemId.createNoCopy(stack));
         if (fuelValue != null) return fuelValue;
 
         try {

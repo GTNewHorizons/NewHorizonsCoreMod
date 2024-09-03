@@ -2,7 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicHorizons;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +14,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -147,13 +147,13 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("vinculum"), 32),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
                 new ItemStack[] { getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Olivine, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Olivine, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Olivine, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Olivine, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L), });
         TCHelper.setResearchAspects(
                 "vortexStabilizer",
                 new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("fames"), 18)
@@ -170,17 +170,17 @@ public class ScriptThaumicHorizons implements IScriptLoader {
                         .add(Aspect.getAspect("sensus"), 16).add(Aspect.getAspect("praecantatio"), 24),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                         getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
                         getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
                         getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Amber, 1L), });
         TCHelper.setResearchAspects(
                 "recombinator",
                 new AspectList().add(Aspect.getAspect("auram"), 21).add(Aspect.getAspect("permutatio"), 18)

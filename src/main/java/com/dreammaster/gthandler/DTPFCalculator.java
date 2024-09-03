@@ -12,9 +12,9 @@ import net.minecraftforge.fluids.FluidStack;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Recipe;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTRecipe;
+import gregtech.api.util.GTUtility;
 
 public class DTPFCalculator {
 
@@ -36,8 +36,8 @@ public class DTPFCalculator {
     protected long recipeDuration = 0;
     protected long scalingFactor = 2;
     protected float EUtDivisor = 1f;
-    Collection<GT_Recipe> ebfRecipes = blastFurnaceRecipes.getAllRecipes();
-    Collection<GT_Recipe> freezerRecipes = vacuumFreezerRecipes.getAllRecipes();
+    Collection<GTRecipe> ebfRecipes = blastFurnaceRecipes.getAllRecipes();
+    Collection<GTRecipe> freezerRecipes = vacuumFreezerRecipes.getAllRecipes();
     private int[] catalystAmounts = new int[5];
     private static final FluidStack[] CATALYSTS = new FluidStack[] { MaterialsUEVplus.ExcitedDTCC.getFluid(1),
             MaterialsUEVplus.ExcitedDTPC.getFluid(1), MaterialsUEVplus.ExcitedDTRC.getFluid(1),
@@ -81,19 +81,19 @@ public class DTPFCalculator {
      * Finds the material's respective EBF recipe and calculates what it would look like when using Oganesson.
      */
     private void determineEBFParams(Materials material) {
-        ArrayList<GT_Recipe> foundEBFRecipes = new ArrayList<>();
+        ArrayList<GTRecipe> foundEBFRecipes = new ArrayList<>();
         ItemStack input = material.getDust(1);
         if (customInput != null) {
             input = customInput;
         }
         // Find correct ebf recipes
-        for (GT_Recipe recipe : ebfRecipes) {
-            if (GT_Utility.areStacksEqual(input, recipe.mInputs[0])) {
+        for (GTRecipe recipe : ebfRecipes) {
+            if (GTUtility.areStacksEqual(input, recipe.mInputs[0])) {
                 foundEBFRecipes.add(recipe);
             }
         }
         // Determine oganesson recipe stats
-        for (GT_Recipe recipe : foundEBFRecipes) {
+        for (GTRecipe recipe : foundEBFRecipes) {
             if (recipe.mFluidInputs.length == 0) {
                 ebfDuration = (long) (recipe.mDuration * 0.3);
                 ebfEUpertick = recipe.mEUt;
@@ -111,9 +111,9 @@ public class DTPFCalculator {
      */
     private void determineFreezerParams(Materials material) {
         // Find correct freezer recipe
-        for (GT_Recipe recipe : freezerRecipes) {
-            if (recipe.mInputs.length != 0 && GT_Utility
-                    .areStacksEqual(GT_OreDictUnificator.get(OrePrefixes.ingotHot, material, 1L), recipe.mInputs[0])) {
+        for (GTRecipe recipe : freezerRecipes) {
+            if (recipe.mInputs.length != 0 && GTUtility
+                    .areStacksEqual(GTOreDictUnificator.get(OrePrefixes.ingotHot, material, 1L), recipe.mInputs[0])) {
                 // There's only one freezer recipe per material
                 freezerDuration = recipe.mDuration;
                 freezerEUpertick = recipe.mEUt;
