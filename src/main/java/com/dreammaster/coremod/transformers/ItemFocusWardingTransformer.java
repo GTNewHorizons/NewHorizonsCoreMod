@@ -25,7 +25,7 @@ public class ItemFocusWardingTransformer implements IDreamTransformer {
     }
 
     @Override
-    public ClassNode transform(ClassNode classNode) {
+    public void transform(ClassNode classNode) {
         if (DreamCoreMod.patchItemFocusWarding) {
             DreamCoreMod.logger.info("Transforming ItemFocusWarding");
             for (final MethodNode methodNode : classNode.methods) {
@@ -73,7 +73,6 @@ public class ItemFocusWardingTransformer implements IDreamTransformer {
             mv.visitMaxs(1, 2);
             mv.visitEnd();
         }
-        return classNode;
     }
 
 }
