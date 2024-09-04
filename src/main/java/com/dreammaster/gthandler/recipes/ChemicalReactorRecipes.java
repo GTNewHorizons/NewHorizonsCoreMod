@@ -585,7 +585,7 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 3L))
                 .fluidInputs(new FluidStack(ItemList.sIndiumConcentrate, 72000))
                 .fluidOutputs(new FluidStack(ItemList.sLeadZincSolution, 72000)).duration(22 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
+                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -596,7 +596,7 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 6),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.TricalciumPhosphate, 5))
-                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Indium, 4),
