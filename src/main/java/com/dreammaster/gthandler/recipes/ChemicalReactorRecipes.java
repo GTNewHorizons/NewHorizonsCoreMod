@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static goodgenerator.items.GGMaterial.indiumPhosphate;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
@@ -14,15 +15,12 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
-import static goodgenerator.items.GGMaterial.indiumPhosphate;
 
-import gregtech.common.items.CombType;
-import gregtech.loaders.misc.GTBees;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
@@ -34,6 +32,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gregtech.common.items.CombType;
+import gregtech.loaders.misc.GTBees;
 import ic2.core.Ic2Items;
 
 public class ChemicalReactorRecipes implements Runnable {
@@ -584,8 +584,8 @@ public class ChemicalReactorRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 3L))
                 .fluidInputs(new FluidStack(ItemList.sIndiumConcentrate, 72000))
-                .fluidOutputs(new FluidStack(ItemList.sLeadZincSolution, 72000))
-                .duration(22 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
+                .fluidOutputs(new FluidStack(ItemList.sLeadZincSolution, 72000)).duration(22 * SECONDS + 10 * TICKS)
+                .eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -596,17 +596,14 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 6),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.TricalciumPhosphate, 5))
-                .duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV)
-                .addTo(UniversalChemical);
+                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Indium, 4),
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Indium, 4),
                         GTBees.combs.getStackForType(CombType.INDIUM, 16))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.crushedPurified, Materials.Indium, 12))
-                .fluidInputs(Materials.PhthalicAcid.getFluid(2688))
-                .duration(14 * SECONDS + 8 * TICKS)
-                .eut(TierEU.RECIPE_IV)
-                .addTo(UniversalChemical);
+                .fluidInputs(Materials.PhthalicAcid.getFluid(2688)).duration(14 * SECONDS + 8 * TICKS)
+                .eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
     }
 
 }

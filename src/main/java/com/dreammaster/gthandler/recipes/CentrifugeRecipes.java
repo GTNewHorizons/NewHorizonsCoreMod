@@ -22,18 +22,18 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
+import bartworks.system.material.WerkstoffLoader;
+import goodgenerator.items.GGMaterial;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import bartworks.system.material.WerkstoffLoader;
-import goodgenerator.items.GGMaterial;
-import gregtech.common.items.CombType;
-import gregtech.loaders.misc.GTBees;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gregtech.common.items.CombType;
+import gregtech.loaders.misc.GTBees;
 
 public class CentrifugeRecipes implements Runnable {
 
@@ -594,9 +594,8 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrum, 1L))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().
-                itemInputs(GTUtility.getIntegratedCircuit(2),
-                        GTBees.combs.getStackForType(CombType.INDIUM, 8))
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTUtility.getIntegratedCircuit(2), GTBees.combs.getStackForType(CombType.INDIUM, 8))
                 .fluidInputs(GGMaterial.thoriumBasedLiquidFuelDepleted.getFluidOrGas(1000))
                 .itemOutputs(
                         WerkstoffLoader.Thorium232.get(OrePrefixes.dust, 64),
@@ -605,10 +604,8 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Praseodymium, 32),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Boron, 2),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 12))
-                .outputChances(10000, 8000, 10000, 8000, 3000, 5000)
-                .duration(1 * MINUTES + 15 * SECONDS)
-                .eut(TierEU.RECIPE_EV / 2)
-                .addTo(centrifugeRecipes);
+                .outputChances(10000, 8000, 10000, 8000, 3000, 5000).duration(1 * MINUTES + 15 * SECONDS)
+                .eut(TierEU.RECIPE_EV / 2).addTo(centrifugeRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(5L))
                 .itemOutputs(Materials.Oxygen.getCells(1), ItemList.Cell_Empty.get(4L))
