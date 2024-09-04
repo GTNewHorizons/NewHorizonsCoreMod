@@ -16,15 +16,13 @@ public class BibliocraftTransformer implements IDreamTransformer {
     }
 
     @Override
-    public ClassNode transform(ClassNode classNode) {
-        for (final MethodNode methodNode : classNode.methods) {
-            if ("addRecipies".equals(methodNode.name) || "initRecipes".equals(methodNode.name)) {
-                DreamCoreMod.logger
-                        .info("Taking a sledgehammer to {}.{}{}", classNode.name, methodNode.name, methodNode.desc);
-                emptyTheMethodNode(methodNode);
+    public void transform(ClassNode classNode) {
+        for (final MethodNode mn : classNode.methods) {
+            if (("addRecipies".equals(mn.name) || "initRecipes".equals(mn.name)) && "()V".equals(mn.desc)) {
+                DreamCoreMod.logger.info("Taking a sledgehammer to {}.{}{}", classNode.name, mn.name, mn.desc);
+                emptyMethodNode(mn);
             }
         }
-        return classNode;
     }
 
 }

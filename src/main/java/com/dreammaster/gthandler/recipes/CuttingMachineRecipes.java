@@ -71,8 +71,8 @@ public class CuttingMachineRecipes implements Runnable {
                 .eut(TierEU.RECIPE_EV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_HPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_HPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS).eut(7860)
-                .addTo(cutterRecipes);
+                .itemOutputs(ItemList.Circuit_Chip_HPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_UHPIC.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_UHPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS)
@@ -83,12 +83,12 @@ public class CuttingMachineRecipes implements Runnable {
                 .eut(TierEU.RECIPE_ZPM).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_PPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_PPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS).eut(500000)
-                .addTo(cutterRecipes);
+                .itemOutputs(ItemList.Circuit_Chip_PPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_QPIC.get(1L))
-                .itemOutputs(ItemList.Circuit_Chip_QPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS).eut(2000000)
-                .addTo(cutterRecipes);
+                .itemOutputs(ItemList.Circuit_Chip_QPIC.get(2L)).requiresCleanRoom().duration(45 * SECONDS)
+                .eut(TierEU.RECIPE_UHV).addTo(cutterRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Wafer_NanoCPU.get(1L))
                 .itemOutputs(ItemList.Circuit_Chip_NanoCPU.get(8L)).requiresCleanRoom().duration(45 * SECONDS)

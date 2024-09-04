@@ -1061,7 +1061,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         com.dreammaster.item.ItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.getIS(1),
                         com.dreammaster.item.ItemList.BedrockiumPlate.getIS(18))
                 .itemOutputs(com.dreammaster.item.ItemList.EnrichedXSunnariumAlloy.getIS(1))
-                .duration(2 * MINUTES + 20 * SECONDS).eut(8000000).addTo(assemblerRecipes);
+                .duration(2 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
@@ -1312,7 +1312,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(CustomItemList.IrradiantReinforcedBedrockiumPlate.get(1L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36864)).duration(30 * SECONDS)
-                .eut(8000000).addTo(assemblerRecipes);
+                .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(8000)
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(3 * MINUTES).eut(480)
@@ -1780,37 +1780,37 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(8000000)
+                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.BedrockiumPlate.getIS(2),
                         getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(8000000)
+                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(8000000)
+                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.BedrockiumPlate.getIS(2),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(8000000)
+                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(8000000)
+                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.BedrockiumPlate.getIS(2),
                         getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(8000000)
+                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "obsidian", 1, 0, missing))
                 .itemOutputs(com.dreammaster.item.ItemList.LongObsidianRod.getIS(4)).duration(32 * SECONDS).eut(16)
