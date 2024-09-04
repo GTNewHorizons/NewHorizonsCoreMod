@@ -597,6 +597,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 6),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.TricalciumPhosphate, 5))
                 .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Indium, 4),

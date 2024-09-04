@@ -44,6 +44,7 @@ public class VacuumFurnaceRecipes implements Runnable {
                 .fluidOutputs(FluidUtils.getFluidStack(AgriculturalChem.RedMud, 2000), FluidUtils.getWater(2000))
                 .eut((int) TierEU.RECIPE_LuV).metadata(COIL_HEAT, 5500).duration(2 * MINUTES)
                 .addTo(vacuumFurnaceRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(GTUtility.getIntegratedCircuit(13), GTBees.combs.getStackForType(CombType.INDIUM, 40))
                 .itemOutputs(
