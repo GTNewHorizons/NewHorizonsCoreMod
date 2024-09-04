@@ -249,7 +249,7 @@ public class ChemicalReactorRecipes implements Runnable {
                         ItemList.Circuit_Wafer_PIC.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.IndiumGalliumPhosphide, 2))
                 .itemOutputs(ItemList.Circuit_Wafer_HPIC.get(1L)).fluidInputs(Materials.VanadiumGallium.getMolten(288L))
-                .requiresCleanRoom().duration(60 * SECONDS).eut(7860).addTo(UniversalChemical);
+                .requiresCleanRoom().duration(60 * SECONDS).eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(

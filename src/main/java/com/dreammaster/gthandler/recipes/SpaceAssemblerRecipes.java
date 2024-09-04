@@ -149,7 +149,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                     new ItemStack(Loaders.advancedRadiationProtectionPlate, 4, 0),
                     1,
                     50 * 20,
-                    (int) TierEU.ZPM,
+                    (int) TierEU.RECIPE_ZPM,
                     null,
                     null);
 

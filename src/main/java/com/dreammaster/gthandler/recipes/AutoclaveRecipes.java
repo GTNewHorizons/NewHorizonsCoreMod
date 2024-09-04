@@ -157,7 +157,7 @@ public class AutoclaveRecipes implements Runnable {
                     .itemInputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).outputChances(10000)
                     .fluidInputs(Materials.Silver.getPlasma(8000L)).requiresCleanRoom().requiresLowGravity()
-                    .duration(3 * MINUTES).eut(131000).addTo(autoclaveRecipes);
+                    .duration(3 * MINUTES).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
 
         }
 
