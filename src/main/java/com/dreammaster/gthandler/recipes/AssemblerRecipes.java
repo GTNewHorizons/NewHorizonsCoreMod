@@ -1069,9 +1069,9 @@ public class AssemblerRecipes implements Runnable {
                         Materials.Aluminium.getPlates(4),
                         Materials.Glass.getPlates(1),
                         Materials.Glowstone.getDust(1),
-                        new ItemStack(Items.dye, 1, 1),
-                        new ItemStack(Items.dye, 1, 10),
-                        new ItemStack(Items.dye, 1, 4))
+                        ItemList.DYE_ONLY_ITEMS[1].get(1),
+                        ItemList.DYE_ONLY_ITEMS[10].get(1),
+                        ItemList.DYE_ONLY_ITEMS[4].get(1))
                 .itemOutputs(ItemList.Cover_Screen.get(1L)).duration(5 * SECONDS).eut(5).addTo(assemblerRecipes);
         // Nukes
 
