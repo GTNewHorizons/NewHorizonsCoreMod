@@ -431,7 +431,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                         getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 2, missing),
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 2, 28, missing))
                 .itemOutputs(getModItem(LogisticsPipes.ID, "item.itemModule", 4, 502, missing)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         // Creative Tab Based ItemSink module
         GTValues.RA.stdBuilder()
