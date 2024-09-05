@@ -728,6 +728,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         OrePrefixes.circuit.get(Materials.IV), 'C', OrePrefixes.plate.get(Materials.TungstenSteel), 'E',
                         ItemList.Electric_Motor_EV });
 
+        // Large Fluid Extractor
+        GTModHandler.addCraftingRecipe(
+                ItemList.LargeFluidExtractor.get(1),
+                bits,
+                new Object[] { "TCT", "VMP", "TCT", 'M', ItemList.Machine_EV_FluidExtractor, 'V',
+                        ItemList.Conveyor_Module_EV, 'P', ItemList.Electric_Pump_EV, 'T',
+                        OrePrefixes.plate.get(Materials.TungstenSteel), 'C', OrePrefixes.circuit.get(Materials.IV) });
+
         // Item Pipe Casings
         // Tin
         GTModHandler.addCraftingRecipe(
