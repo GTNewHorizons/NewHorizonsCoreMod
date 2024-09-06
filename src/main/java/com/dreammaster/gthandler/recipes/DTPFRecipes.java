@@ -765,9 +765,9 @@ public class DTPFRecipes implements Runnable {
                             CustomItemList.MysteriousCrystalLens.get(0),
                             ItemRefer.HiC_T5.get(0))
                     .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
-                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(30 * SECONDS)
+                    .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(92))
-                    .eut((int) TierEU.RECIPE_UMV).metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                    .eut((int) TierEU.RECIPE_UIV).metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
             // LuV Superconductor
             {
