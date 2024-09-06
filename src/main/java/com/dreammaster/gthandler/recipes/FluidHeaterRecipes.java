@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
-import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+
 import static gregtech.api.recipe.RecipeMaps.fluidHeaterRecipes;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
@@ -13,8 +14,7 @@ public class FluidHeaterRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().fluidInputs(FluidUtils.getSteam(3840))
                 .fluidOutputs(FluidUtils.getSuperHeatedSteam(3840)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
-                .noOptimize()
-                .addTo(fluidHeaterRecipes);
+                .noOptimize().addTo(fluidHeaterRecipes);
 
     }
 }
