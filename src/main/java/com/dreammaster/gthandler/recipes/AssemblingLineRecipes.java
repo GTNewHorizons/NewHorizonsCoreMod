@@ -400,8 +400,9 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 4),
                             ItemList.Electric_Pump_UIV.get(32), ItemList.Quantum_Tank_IV.get(2),
                             ItemList.Conveyor_Module_UIV.get(32), ItemList.Quantum_Chest_IV.get(2) },
-                    new FluidStack[] { Materials.Lubricant.getFluid(50000), Materials.SuperCoolant.getFluid(16_000),
-                            new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
+                    new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50000),
+                            Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                            Materials.UUMatter.getFluid(8_000) },
                     GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 2),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
@@ -417,8 +418,9 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Robot_Arm_UIV.get(32), ItemList.Electric_Piston_UIV.get(32),
                             new ItemStack(Blocks.dropper, 64), new ItemStack(Blocks.dropper, 64),
                             new ItemStack(Blocks.dropper, 64), new ItemStack(Blocks.dropper, 64), },
-                    new FluidStack[] { Materials.Lubricant.getFluid(50_000), Materials.SuperCoolant.getFluid(16_000),
-                            new FluidStack(solderUEV, 11520), Materials.UUMatter.getFluid(8_000) },
+                    new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50_000),
+                            Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11520),
+                            Materials.UUMatter.getFluid(8_000) },
                     GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 1, 3),
                     10 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
@@ -1212,25 +1214,25 @@ public class AssemblingLineRecipes implements Runnable {
                     .metadata(RESEARCH_TIME, 1 * HOURS)
                     .itemInputs(
                             GTOreDictUnificator
-                                    .get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuhvwire, 16),
-                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Ledox, 16),
-                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CallistoIce, 16),
-                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.EnrichedHolmium, 16),
+                                    .get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuhvwire, 32),
+                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Ledox, 32),
+                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CallistoIce, 32),
+                            GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.EnrichedHolmium, 32),
                             GTOreDictUnificator
-                                    .get(OrePrefixes.plate, Materials.Longasssuperconductornameforuhvwire, 16),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Ledox, 16),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 16),
-                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnrichedHolmium, 16),
+                                    .get(OrePrefixes.plate, Materials.Longasssuperconductornameforuhvwire, 32),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Ledox, 32),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 32),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnrichedHolmium, 32),
                             ItemList.Field_Generator_UEV.get(1),
-                            new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
-                            new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
-                            GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 16))
+                            new Object[] { OrePrefixes.circuit.get(Materials.UEV), 8 },
+                            new Object[] { OrePrefixes.circuit.get(Materials.UIV), 4 },
+                            GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 32))
                     .fluidInputs(
-                            Materials.Longasssuperconductornameforuhvwire.getMolten(32 * 144),
-                            Materials.Ledox.getMolten(32 * 144),
-                            Materials.CallistoIce.getMolten(32 * 144),
-                            MaterialsUEVplus.ExcitedDTRC.getFluid(4000L))
-                    .itemOutputs(ItemList.BlockQuarkContainmentCasing.get(4)).duration(60 * SECONDS)
+                            Materials.Longasssuperconductornameforuhvwire.getMolten(64 * 144),
+                            Materials.Ledox.getMolten(64 * 144),
+                            Materials.CallistoIce.getMolten(64 * 144),
+                            MaterialsUEVplus.ExcitedDTRC.getFluid(8000L))
+                    .itemOutputs(ItemList.BlockQuarkContainmentCasing.get(8)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
 
             // Femtometer-calibrated particle beam casing
@@ -1245,7 +1247,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 16),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 16),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 16),
-                            ItemList.Field_Generator_UEV.get(1),
+                            ItemList.Field_Generator_UHV.get(1),
                             new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                             new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
                             GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 16))
@@ -1270,7 +1272,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator
                                     .get(OrePrefixes.foil, Materials.Longasssuperconductornameforuhvwire, 64),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.Draconium, 64),
-                            ItemList.Field_Generator_UEV.get(1),
+                            ItemList.Electric_Pump_UEV.get(1),
                             new Object[] { OrePrefixes.circuit.get(Materials.UEV), 4 },
                             new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2 },
                             GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Infinity, 16))
