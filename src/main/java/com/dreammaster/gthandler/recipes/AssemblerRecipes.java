@@ -11,11 +11,15 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gtPlusPlus.core.block.ModBlocks.blockFishTrap;
+import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_W;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
+import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
+import static gtPlusPlus.core.material.MaterialsAlloy.LEAGRISIUM;
 import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
 import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
+import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
 import java.util.HashMap;
@@ -2276,6 +2280,16 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(STELLITE.getPlate(6), NITINOL_60.getFrameBox(1))
                 .itemOutputs(ItemList.Casing_Laser.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
+
+        // Solidifier Casing
+        GTValues.RA.stdBuilder().itemInputs(INCONEL_792.getPlate(4), AQUATIC_STEEL.getFrameBox(1), TALONITE.getPlate(2))
+                .itemOutputs(ItemList.Casing_Fluid_Solidifier.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
+
+        // Solidifier Radiator Casing
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Casing_Fluid_Solidifier.get(1), ItemList.Electric_Pump_IV.get(1))
+                .fluidInputs(LEAGRISIUM.getFluidStack(1008)).itemOutputs(ItemList.Radiator_Fluid_Solidifier.get(2))
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         // Electric Compressor Casing
         GTValues.RA.stdBuilder()

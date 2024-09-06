@@ -21,8 +21,12 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.enums.OrePrefixes.screw;
 import static gregtech.api.util.GTModHandler.RecipeBits.DELETE_ALL_OTHER_RECIPES;
+import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
+import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
+import static gtPlusPlus.core.material.MaterialsAlloy.LEAGRISIUM;
 import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
 import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
+import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
 
 import java.util.function.Consumer;
 
@@ -696,6 +700,28 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "CFC", "EAE", "CBC", 'A', ItemList.Machine_HV_Extractor, 'F', ItemList.Robot_Arm_HV, 'C',
                         OrePrefixes.plate.get(Materials.StainlessSteel), 'E', OrePrefixes.circuit.get(Materials.EV),
                         'B', ItemList.Electric_Piston_HV });
+
+        // Fluid Shaper
+        GTModHandler.addCraftingRecipe(
+                ItemList.Machine_Multi_Solidifier.get(1),
+                bits,
+                new Object[] { "CFC", "EAE", "CFC", 'A', ItemList.Machine_IV_FluidSolidifier, 'E',
+                        ItemList.Electric_Pump_IV, 'F', OrePrefixes.circuit.get(Materials.LuV), 'C',
+                        INCONEL_792.getPlate(1) });
+
+        // Solidifier Casing
+        GTModHandler.addCraftingRecipe(
+                ItemList.Casing_Fluid_Solidifier.get(1),
+                bits,
+                new Object[] { "PhP", "TFT", "PwP", 'P', INCONEL_792.getPlate(1), 'F', AQUATIC_STEEL.getFrameBox(1),
+                        'T', TALONITE.getPlate(1) });
+
+        // Solidifier Radiator Casing
+        GTModHandler.addCraftingRecipe(
+                ItemList.Radiator_Fluid_Solidifier.get(2),
+                bits,
+                new Object[] { "BBB", "BPB", "BKB", 'P', ItemList.Casing_Fluid_Solidifier, 'K',
+                        ItemList.Electric_Pump_IV, 'B', LEAGRISIUM.getPlate(1) });
 
         // Large Electric Compressor
         GTModHandler.addCraftingRecipe(
