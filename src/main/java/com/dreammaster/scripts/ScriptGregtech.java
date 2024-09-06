@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.CropsPlusPlus;
@@ -51,6 +52,8 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import tconstruct.library.TConstructRegistry;
+import vexatos.tgregworks.reference.PartTypes;
+import vexatos.tgregworks.util.TGregUtils;
 
 public class ScriptGregtech implements IScriptLoader {
 
@@ -882,6 +885,46 @@ public class ScriptGregtech implements IScriptLoader {
                 "circuitBio",
                 'm',
                 ItemList.Cover_SolarPanel_ZPM.get(1L));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                ItemList.Spray_Color_Infinite.get(1L),
+                "---RR----",
+                "---PsR---",
+                "---RRR---",
+                "--rrrrr--",
+                "--If-AI--",
+                "--IF-AI--",
+                "--IWCcI--",
+                "--IbSEI--",
+                "---III---",
+                'I',
+                TGregUtils.newItemStack(Materials.Iridium, PartTypes.LargePlate, 1),
+                'R',
+                TGregUtils.newItemStack(Materials.Tungsten, PartTypes.LargePlate, 1),
+                'r',
+                TGregUtils.newItemStack(Materials.Palladium, PartTypes.LargePlate, 1),
+                'S',
+                getModItem(Minecraft.ID, "sand", 1, 0, missing),
+                'C',
+                getModItem(ThaumicBases.ID, "rainbowCactus", 1, 0, missing),
+                'E',
+                getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
+                'W',
+                ItemList.AcceleratorIV.get(1L),
+                'F',
+                "fenceWood",
+                'f',
+                getModItem(OpenBlocks.ID, "fan", 1, 0, missing),
+                'c',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 36),
+                'A',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 300, missing),
+                's',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 57),
+                'P',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320, missing),
+                'b',
+                ItemList.Battery_Buffer_3by3_IV.get(1L));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L)).duration(15 * SECONDS)
