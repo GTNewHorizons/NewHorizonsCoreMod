@@ -200,13 +200,13 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("terminus"), 512).add(Aspect.getAspect("gula"), 512)
                         .add(Aspect.getAspect("superbia"), 512),
                 ItemList.Block_BedrockiumCompressed.get(1L),
-                new ItemStack[] { ItemList.Field_Generator_UMV.get(1L),
+                new ItemStack[] { ItemList.Field_Generator_UIV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        ItemList.Field_Generator_UMV.get(1L),
+                        ItemList.Field_Generator_UIV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        ItemList.Field_Generator_UMV.get(1L),
+                        ItemList.Field_Generator_UIV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        ItemList.Field_Generator_UMV.get(1L),
+                        ItemList.Field_Generator_UIV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "PORTALDEEPDARK",
