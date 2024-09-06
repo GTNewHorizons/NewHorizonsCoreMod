@@ -400,8 +400,9 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 4),
                             ItemList.Electric_Pump_UIV.get(32), ItemList.Quantum_Tank_IV.get(2),
                             ItemList.Conveyor_Module_UIV.get(32), ItemList.Quantum_Chest_IV.get(2) },
-                    new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50000), Materials.SuperCoolant.getFluid(16_000),
-                            new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
+                    new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50000),
+                            Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
+                            Materials.UUMatter.getFluid(8_000) },
                     GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 2),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
@@ -417,8 +418,9 @@ public class AssemblingLineRecipes implements Runnable {
                             ItemList.Robot_Arm_UIV.get(32), ItemList.Electric_Piston_UIV.get(32),
                             new ItemStack(Blocks.dropper, 64), new ItemStack(Blocks.dropper, 64),
                             new ItemStack(Blocks.dropper, 64), new ItemStack(Blocks.dropper, 64), },
-                    new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50_000), Materials.SuperCoolant.getFluid(16_000),
-                            new FluidStack(solderUEV, 11520), Materials.UUMatter.getFluid(8_000) },
+                    new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50_000),
+                            Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11520),
+                            Materials.UUMatter.getFluid(8_000) },
                     GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 1, 3),
                     10 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
