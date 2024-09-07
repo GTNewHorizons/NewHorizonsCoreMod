@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler;
 
 import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.*;
+import static gregtech.api.enums.GTValues.VP;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -1187,10 +1188,10 @@ public class GT_Loader_Machines {
         for (int aTier = 10; aTier < 15; aTier++) {
             GTValues.RA.stdBuilder().itemInputs(flInputs[aTier - 10]).itemOutputs(inHatches[aTier - 10])
                     .fluidInputs(Materials.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
-                    .duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1)))).addTo(assemblerRecipes);
+                    .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
             GTValues.RA.stdBuilder().itemInputs(flInputs2[aTier - 10]).itemOutputs(outHatches[aTier - 10])
                     .fluidInputs(Materials.RadoxPolymer.getMolten((long) (2.25 * Math.pow(2, (aTier - 9)))))
-                    .duration(24 * SECONDS).eut((int) (30 * Math.pow(4, (aTier - 1)))).addTo(assemblerRecipes);
+                    .duration(24 * SECONDS).eut(VP[aTier]).addTo(assemblerRecipes);
         }
 
     }
