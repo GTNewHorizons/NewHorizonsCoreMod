@@ -2297,10 +2297,6 @@ public class AssemblerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(16))
                 .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1), GTUtility.getIntegratedCircuit(16))
-                .itemOutputs(getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         // Background Radiation Absorbent Casing
         GTValues.RA.stdBuilder()
