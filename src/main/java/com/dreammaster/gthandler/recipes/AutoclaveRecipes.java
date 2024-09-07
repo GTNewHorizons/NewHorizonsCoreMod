@@ -150,16 +150,5 @@ public class AutoclaveRecipes implements Runnable {
                 .itemOutputs(ItemList.Tool_DataOrb.get(1L)).outputChances(10000)
                 .fluidInputs(Materials.UUMatter.getFluid(250L)).requiresCleanRoom().requiresLowGravity()
                 .duration(10 * MINUTES).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
-
-        if (SGCraft.isModLoaded()) {
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64))
-                    .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).outputChances(10000)
-                    .fluidInputs(Materials.Silver.getPlasma(8000L)).requiresCleanRoom().requiresLowGravity()
-                    .duration(3 * MINUTES).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
-
-        }
-
     }
 }
