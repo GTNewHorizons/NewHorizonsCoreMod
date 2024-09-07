@@ -18,6 +18,7 @@ import com.dreammaster.gthandler.CustomItemList;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
@@ -1624,6 +1625,7 @@ public class BlastFurnaceRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64))
+                    .fluidInputs(MaterialsUEVplus.StargateCrystalSlurry.getFluid(100_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).duration(7 * 24 * HOURS * 2)
                     .eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000).addTo(blastFurnaceRecipes); // ^ 2 weeks
 
