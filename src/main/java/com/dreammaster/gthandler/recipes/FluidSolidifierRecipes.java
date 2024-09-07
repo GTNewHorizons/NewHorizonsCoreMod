@@ -14,6 +14,7 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 
+import bartworks.common.loaders.ItemRegistry;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -424,6 +425,10 @@ public class FluidSolidifierRecipes implements Runnable {
                     .fluidInputs(Materials.Steel.getMolten(576L)).duration(20 * TICKS).eut(TierEU.RECIPE_MV)
                     .addTo(fluidSolidifierRecipes);
 
+            // Hawking Radiation Realignment Focus
+            GTValues.RA.stdBuilder().itemInputs(new ItemStack(ItemRegistry.bw_glasses[0], 1, 15))
+                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), 1152)).duration(20 * SECONDS)
+                    .eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Hawking_Glass.get(1)).addTo(fluidSolidifierRecipes);
         }
     }
 }

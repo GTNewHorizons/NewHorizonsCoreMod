@@ -36,7 +36,6 @@ import static tectech.thing.CustomItemList.dataOutAss_Wireless_Hatch;
 import static tectech.thing.CustomItemList.dataOut_Hatch;
 import static tectech.thing.CustomItemList.dataOut_Wireless_Hatch;
 
-import gregtech.api.enums.MaterialsKevlar;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -54,6 +53,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -65,7 +65,6 @@ import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
-import scala.xml.PrettyPrinter;
 import tectech.recipe.TTRecipeAdder;
 
 public class AssemblingLineRecipes implements Runnable {

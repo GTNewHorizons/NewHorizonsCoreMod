@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
+import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
 import static gregtech.api.enums.GTValues.L;
 import static gregtech.api.enums.GTValues.W;
 import static gregtech.api.enums.Mods.*;
@@ -37,6 +38,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 
 import bartworks.common.loaders.ItemRegistry;
@@ -2295,6 +2297,28 @@ public class AssemblerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(16))
                 .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
+
+        // Background Radiation Absorbent Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_RadiationProof.get(1),
+                        new ItemStack(advancedRadiationProtectionPlate, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 1),
+                        GTUtility.getIntegratedCircuit(16))
+                .fluidInputs(Materials.UUMatter.getFluid(64000L))
+                .itemOutputs(ItemList.Background_Radiation_Casing.get(1)).duration(10).eut(TierEU.RECIPE_UIV)
+                .addTo(assemblerRecipes);
+
+        // Extreme Density Space-Bending Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        BlockList.NeutroniumPlatedReinforcedStone.getIS(),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Steel, 64),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Iron, 64),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 64),
+                        GTUtility.getIntegratedCircuit(16))
+                .fluidInputs(Materials.Concrete.getFluid(16000L)).itemOutputs(ItemList.Extreme_Density_Casing.get(1))
+                .duration(5).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
         // Laser Containment Casing
         GTValues.RA.stdBuilder().itemInputs(STELLITE.getPlate(6), NITINOL_60.getFrameBox(1))
