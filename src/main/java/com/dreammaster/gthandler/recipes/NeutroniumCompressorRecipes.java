@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static bartworks.API.recipe.BartWorksRecipeMaps.electricImplosionCompressorRecipes;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -24,8 +23,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 
 // All recipes from Avaritia's Neutronium Compressor - now in GT!
 public class NeutroniumCompressorRecipes implements Runnable {
@@ -34,8 +31,9 @@ public class NeutroniumCompressorRecipes implements Runnable {
     public void run() {
 
         if (Avaritia.isModLoaded() && UniversalSingularities.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputsUnsafe(
-                    GTUtility.copyAmount(7296, GTOreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1)))
+            GTValues.RA.stdBuilder()
+                    .itemInputsUnsafe(
+                            GTUtility.copyAmount(7296, GTOreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 0)).duration(3 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputsUnsafe(
@@ -190,7 +188,8 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 20))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             if (ThaumicBases.isModLoaded()) {
-                GTValues.RA.stdBuilder().itemInputsUnsafe(
+                GTValues.RA.stdBuilder()
+                        .itemInputsUnsafe(
                                 GTUtility.copyAmountUnsafe(1824, getModItem(ThaumicBases.ID, "quicksilverBlock", 1)))
                         .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 21))
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
@@ -388,32 +387,20 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .addTo(neutroniumCompressorRecipes);
 
             // Recipes which require stabilized black hole - not from original neutronium compressor
-            GTValues.RA.stdBuilder()
-                    .fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(72L))
-                    .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1))
-                    .duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_UIV)
-                    .metadata(COMPRESSION_TIER, 2)
-                    .addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .fluidInputs(Materials.Iron.getMolten(9455616L))
-                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 0))
-                    .duration(100 * SECONDS)
-                    .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2)
-                    .addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(72L))
+                    .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Iron.getMolten(9455616L))
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 0)).duration(100 * SECONDS)
+                    .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder()
                     .itemInputsUnsafe(GTUtility.copyAmountUnsafe(444444, Gangue.get(OrePrefixes.block, 1)))
                     .itemOutputs(getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 31))
-                    .duration(120 * SECONDS).eut(TierEU.RECIPE_UEV)
-                    .metadata(COMPRESSION_TIER, 2)
+                    .duration(120 * SECONDS).eut(TierEU.RECIPE_UEV).metadata(COMPRESSION_TIER, 2)
                     .addTo(neutroniumCompressorRecipes);
-            GTValues.RA.stdBuilder()
-                    .fluidInputs(Materials.Copper.getMolten(3648 * 9 * 144L))
-                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 5))
-                    .duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_UIV)
-                    .metadata(COMPRESSION_TIER, 2)
-                    .addTo(neutroniumCompressorRecipes);
+            GTValues.RA.stdBuilder().fluidInputs(Materials.Copper.getMolten(3648 * 9 * 144L))
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 5)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
         }
     }
 }

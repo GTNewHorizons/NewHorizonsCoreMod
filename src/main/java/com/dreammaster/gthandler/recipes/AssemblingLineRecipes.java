@@ -1002,7 +1002,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(AssemblyLine);
         }
 
-        //Compressor controllers
+        // Compressor controllers
         {
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Machine_Multi_IndustrialCompressor.get(1))
                     .metadata(RESEARCH_TIME, 1800 * SECONDS)

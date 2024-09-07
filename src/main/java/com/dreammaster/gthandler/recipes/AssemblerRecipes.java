@@ -16,10 +16,12 @@ import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_W;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
 import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
+import static gtPlusPlus.core.material.MaterialsAlloy.INDALLOY_140;
 import static gtPlusPlus.core.material.MaterialsAlloy.LEAGRISIUM;
 import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
 import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
+import static gtPlusPlus.core.material.MaterialsAlloy.TRINIUM_NAQUADAH_CARBON;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
 import java.util.HashMap;
@@ -2307,6 +2309,43 @@ public class AssemblerRecipes implements Runnable {
                         GGMaterial.incoloy903.get(OrePrefixes.pipeMedium, 4))
                 .itemOutputs(ItemList.Compressor_Pipe_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
+
+        // Heating Duct Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_Pipe_Bronze.get(1),
+                        ItemList.Electric_Pump_LuV.get(2),
+                        ItemList.Duct_Tape.get(4),
+                        TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
+                        HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 32))
+                .fluidInputs(FluidRegistry.getFluidStack("pyrotheum", 2000))
+                .itemOutputs(ItemList.Heating_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(assemblerRecipes);
+
+        // Coolant Duct Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_Pipe_TungstenSteel.get(1),
+                        ItemList.Electric_Pump_LuV.get(2),
+                        ItemList.Duct_Tape.get(4),
+                        TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
+                        HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 32))
+                .fluidInputs(FluidRegistry.getFluidStack("cryotheum", 2000))
+                .itemOutputs(ItemList.Coolant_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(assemblerRecipes);
+
+        // Heat Sensor Hatch
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_ZPM.get(1),
+                        ItemList.Compressor_Casing.get(1),
+                        ItemList.Sensor_ZPM.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        GTUtility.getIntegratedCircuit(4))
+                .fluidInputs(INDALLOY_140.getFluidStack(16000)).itemOutputs(ItemList.Hatch_HeatSensor.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         // Iron Electromagnet
         GTValues.RA.stdBuilder()
