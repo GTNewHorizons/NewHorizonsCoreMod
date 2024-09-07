@@ -806,41 +806,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
 
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing),
-                "abacdcaba",
-                "c-e-f-e-c",
-                "dghgfghgd",
-                "b-eijie-b",
-                "bffjkjffb",
-                "b-eijie-b",
-                "dghgfghgd",
-                "c-e-f-e-c",
-                "abacdcaba",
-                'a',
-                getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
-                'b',
-                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId),
-                'c',
-                getModItem(Avaritia.ID, "Resource", 1, 1, missing),
-                'd',
-                new ItemStack(TinkerTools.largePlate, 1, ExtraUtils.tcon_bedrock_material_id),
-                'e',
-                ItemList.Electric_Piston_UV.get(1L),
-                'f',
-                TGregUtils.newItemStack(Materials.BlackPlutonium, PartTypes.LargePlate, 1),
-                'g',
-                ItemList.Conveyor_Module_UV.get(1L),
-                'h',
-                ItemList.Electric_Motor_UV.get(1L),
-                'i',
-                "circuitInfinite",
-                'j',
-                "plateNeutronium",
-                'k',
-                ItemList.CompressorUV.get(1));
-
-        // Somewhat-duplicate recipe for neutronium multiblock, for now
+        // Neutronium Compressor Multi Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Machine_Multi_NeutroniumCompressor.get(1),
                 "abacdcaba",

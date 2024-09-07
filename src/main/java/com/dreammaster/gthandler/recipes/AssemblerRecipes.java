@@ -2297,6 +2297,10 @@ public class AssemblerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(16))
                 .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1), GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing))
+                .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         // Background Radiation Absorbent Casing
         GTValues.RA.stdBuilder()
@@ -2317,8 +2321,9 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Iron, 64),
                         GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 64),
                         GTUtility.getIntegratedCircuit(16))
-                .fluidInputs(Materials.Concrete.getFluid(16000L)).itemOutputs(ItemList.Extreme_Density_Casing.get(1))
-                .duration(5).eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 16000))
+                .itemOutputs(ItemList.Extreme_Density_Casing.get(1)).duration(5).eut(TierEU.RECIPE_UHV)
+                .addTo(assemblerRecipes);
 
         // Laser Containment Casing
         GTValues.RA.stdBuilder().itemInputs(STELLITE.getPlate(6), NITINOL_60.getFrameBox(1))
