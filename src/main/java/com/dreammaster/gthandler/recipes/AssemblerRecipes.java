@@ -2278,6 +2278,24 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Casing_Electromagnetic_Separator.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
 
+        // Neutronium Stabilization Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Field_Generator_ZPM.get(4),
+                        ItemList.Casing_Coil_NaquadahAlloy.get(4),
+                        ItemList.Casing_MAX.get(1),
+                        GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(ItemList.Neutronium_Stable_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
+
+        // Neutronium Compressor conversion
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(16).addTo(assemblerRecipes);
+
         // Laser Containment Casing
         GTValues.RA.stdBuilder().itemInputs(STELLITE.getPlate(6), NITINOL_60.getFrameBox(1))
                 .itemOutputs(ItemList.Casing_Laser.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
