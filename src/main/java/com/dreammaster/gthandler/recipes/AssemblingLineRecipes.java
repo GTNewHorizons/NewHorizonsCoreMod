@@ -1425,7 +1425,7 @@ public class AssemblingLineRecipes implements Runnable {
                         Materials.Osmium.getMolten(1152L) },
                 com.dreammaster.item.ItemList.PikoCircuit.getIS(1),
                 10000,
-                128_000_000);
+                (int) TierEU.RECIPE_UMV);
 
         // Quantum Circuit
         TTRecipeAdder.addResearchableAssemblylineRecipe(
