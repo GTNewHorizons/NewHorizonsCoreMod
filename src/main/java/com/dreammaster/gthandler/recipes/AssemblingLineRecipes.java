@@ -1432,7 +1432,7 @@ public class AssemblingLineRecipes implements Runnable {
                 CustomItemList.PikoCircuit.get(1L),
                 720000,
                 2048,
-                8000000,
+                (int) TierEU.RECIPE_UEV,
                 128,
                 new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 16),
                         CustomItemList.PikoCircuit.get(2L), ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
