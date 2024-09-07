@@ -840,6 +840,41 @@ public class ScriptAvaritia implements IScriptLoader {
                 'k',
                 ItemList.CompressorUV.get(1));
 
+        // Somewhat-duplicate recipe for neutronium multiblock, for now
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                ItemList.Machine_Multi_NeutroniumCompressor.get(1),
+                "abacdcaba",
+                "c-e-c-e-c",
+                "aghgcghga",
+                "c-eijie-c",
+                "fccjkjccf",
+                "c-eijie-c",
+                "aghgcghga",
+                "c-e-c-e-c",
+                "abacdcaba",
+                'a',
+                getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
+                'b',
+                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId),
+                'c',
+                getModItem(Avaritia.ID, "Resource", 1, 1, missing),
+                'd',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 1),
+                'e',
+                ItemList.Electric_Piston_UV.get(1L),
+                'f',
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackPlutonium, 1),
+                'g',
+                ItemList.Conveyor_Module_UV.get(1L),
+                'h',
+                ItemList.Electric_Motor_UV.get(1L),
+                'i',
+                "circuitInfinite",
+                'j',
+                "plateNeutronium",
+                'k',
+                ItemList.CompressorUV.get(1));
+
         CompressorManager.addRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
                 64,
