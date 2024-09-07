@@ -36,7 +36,7 @@ public class LaserEngraverRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tesseract.get(1), GregtechItemList.Laser_Lens_Special.get(0))
                 .itemOutputs(ItemList.EnergisedTesseract.get(1))
                 .fluidOutputs(MaterialsUEVplus.ExcitedDTEC.getFluid(100)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(32_000_000).noOptimize().addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_UIV).noOptimize().addTo(laserEngraverRecipes);
 
         // Mysterious crystal upgrading
 
