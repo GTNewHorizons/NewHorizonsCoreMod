@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.I18n;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -47,7 +48,7 @@ public class MixinMinecraft_ConfirmExit {
                 final ImageIcon imageIcon = resource == null ? null : new ImageIcon(resource);
                 final int result = JOptionPane.showConfirmDialog(
                         frame,
-                        "Are you sure you want to exit the game ?",
+                        I18n.format("dreamcraft.gui.quitmessage"),
                         Refstrings.NAME,
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE,
