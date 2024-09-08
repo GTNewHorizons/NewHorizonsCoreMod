@@ -174,6 +174,11 @@ public class ChemicalBathRecipes implements Runnable {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.hastelloyx", 1152)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(chemicalBathRecipes);
 
+        // Neutronium Casing
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Casing_AdvancedRadiationProof.get(1))
+                .itemOutputs(ItemList.Neutronium_Casing.get(1)).fluidInputs(Materials.Neutronium.getMolten(8064))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(chemicalBathRecipes);
+
         // Superplasticizer-treated high strength concrete
         Fluid naphthalene = FluidRegistry.getFluid("fluid.naphthalene");
         GTValues.RA.stdBuilder().itemInputs(GTModHandler.getIC2Item("reinforcedStone", 1))
