@@ -59,6 +59,7 @@ public class ScriptSGCraft implements IScriptLoader {
         ItemStack irisUpgrade = getModItem(SGCraft.ID, "sgIrisUpgrade", 1, 0, missing);
         ItemStack rfUnit = getModItem(SGCraft.ID, "rfPowerUnit", 1, 0, missing);
         ItemStack ocInterface = getModItem(SGCraft.ID, "ocInterface", 1, 0, missing);
+        ItemStack stargateController = getModItem(SGCraft.ID, "stargateController", 1, 0, missing);
 
         ItemStack universeCell = getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1, 0, missing);
         ItemStack universeFluidCell = getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1, 0, missing);
@@ -246,6 +247,27 @@ public class ScriptSGCraft implements IScriptLoader {
                 'r', ringBlock,
                 'n', magmatterNanite,
                 'g', ItemList.GigaChad.get(1L));
+
+        // Stargate Controller
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                stargateController,
+                "---mdm---",
+                "--mcccm--",
+                "-dcnnncd-",
+                "mcnspsncm",
+                "-dcnpncd-",
+                "--gcscg--",
+                "--msrsm--",
+                "--dgrgd--",
+                "--mmdmm--",
+                'm', magmatterBlock,
+                'd', darkMatterBlock,
+                'c', compact5Coil,
+                's', singularityStorage,
+                'r', ringBlock,
+                'n', magmatterNanite,
+                'g', ItemList.GigaChad.get(1L),
+                'p', magmatterSuperdensePlate);
 
         // spotless:on
     }
