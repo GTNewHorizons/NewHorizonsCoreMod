@@ -3459,13 +3459,6 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemDust", 2, 12, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(Botania.ID, "dye", 2, 11, missing),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 30, missing))
@@ -3571,13 +3564,6 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(PamsHarvestCraft.ID, "cocoapowderItem", 2, 0, missing),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Cocoa, 2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
@@ -3599,14 +3585,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        ItemList.Color_03.get(2L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemCofeePowder", 2, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coffee, 2L),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
