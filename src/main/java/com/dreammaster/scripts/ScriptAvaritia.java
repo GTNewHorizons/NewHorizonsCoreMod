@@ -963,11 +963,6 @@ public class ScriptAvaritia implements IScriptLoader {
                         10 * MINUTES + 40 * SECONDS,
                         TierEU.RECIPE_MV),
                 new TinkerMaterialWrapper(
-                        Materials.Ardite.getIngots(1),
-                        TinkerTools.MaterialID.Ardite,
-                        8 * MINUTES + 5 * SECONDS + 4 * TICKS,
-                        TierEU.RECIPE_MV),
-                new TinkerMaterialWrapper(
                         Materials.Manyullyn.getIngots(1),
                         TinkerTools.MaterialID.Manyullyn,
                         16 * MINUTES,
@@ -991,11 +986,6 @@ public class ScriptAvaritia implements IScriptLoader {
                         Materials.Steel.getIngots(1),
                         TinkerTools.MaterialID.Steel,
                         5 * MINUTES + 20 * SECONDS,
-                        TierEU.RECIPE_LV),
-                new TinkerMaterialWrapper(
-                        Materials.PigIron.getIngots(1),
-                        TinkerTools.MaterialID.PigIron,
-                        8 * MINUTES + 53 * SECONDS + 4 * TICKS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
                         new ItemStack(ExtraUtils.unstableIngot, 1, 0),
