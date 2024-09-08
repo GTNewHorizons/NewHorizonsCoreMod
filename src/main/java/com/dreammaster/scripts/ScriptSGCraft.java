@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GoodGenerator;
+import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.TecTech;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -53,6 +54,7 @@ public class ScriptSGCraft implements IScriptLoader {
         ItemStack chevronBlock = getModItem(SGCraft.ID, "stargateRing", 1, 1, missing);
         ItemStack chevronUpgrade = getModItem(SGCraft.ID, "sgChevronUpgrade", 1, 0, missing);
         ItemStack stargateCrystal = getModItem(SGCraft.ID, "sgCoreCrystal", 1, 0, missing);
+        ItemStack stargateControllerCrystal = getModItem(SGCraft.ID, "sgControllerCrystal", 1, 0, missing);
         ItemStack stargateCapacitor = getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing);
         ItemStack stargateBase = getModItem(SGCraft.ID, "stargateBase", 1, 0, missing);
         ItemStack irisBlade = getModItem(SGCraft.ID, "sgIrisBlade", 1, 0, missing);
@@ -65,6 +67,7 @@ public class ScriptSGCraft implements IScriptLoader {
         ItemStack universeFluidCell = getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1, 0, missing);
         ItemStack singularityStorage = getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1, 0, missing);
         ItemStack chaoticCapacitor = createItemStack(EnderIO.ID, "blockCapBank", 1, 0, "{type:\"CREATIVE\",storedEnergyRF:2500000}", missing);
+        ItemStack keyboard = getModItem(OpenComputers.ID, "keyboard", 1, 0, missing);
 
         // Stargate Ring Block
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -251,23 +254,26 @@ public class ScriptSGCraft implements IScriptLoader {
         // Stargate Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 stargateController,
-                "---mdm---",
-                "--mcccm--",
-                "-dcnnncd-",
-                "mcnspsncm",
-                "-dcnpncd-",
-                "--gcscg--",
-                "--msrsm--",
-                "--dgrgd--",
-                "--mmdmm--",
+                "---mmm---",
+                "--dkfkd--",
+                "-mkfsfkm-",
+                "-mfecefm-",
+                "-mkfsfkm-",
+                "--dkfkd--",
+                "--mpbpm--",
+                "--mpopm--",
+                "--mpupm--",
                 'm', magmatterBlock,
                 'd', darkMatterBlock,
-                'c', compact5Coil,
-                's', singularityStorage,
-                'r', ringBlock,
-                'n', magmatterNanite,
-                'g', ItemList.GigaChad.get(1L),
-                'p', magmatterSuperdensePlate);
+                'k', keyboard,
+                'f', CustomItemList.StargateFramePart.get(1L),
+                's', ItemList.Sensor_UXV.get(1L),
+                'e', ItemList.Emitter_UXV.get(1L),
+                'c', stargateControllerCrystal,
+                'p', CustomItemList.StargateShieldingFoil.get(1L),
+                'b', ItemList.ZPM6.get(1L),
+                'o', ocInterface,
+                'u', universeFluidCell);
 
         // spotless:on
     }

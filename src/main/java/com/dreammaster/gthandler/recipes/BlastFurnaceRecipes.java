@@ -1629,6 +1629,13 @@ public class BlastFurnaceRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).duration(7 * 24 * HOURS * 2)
                     .eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000).addTo(blastFurnaceRecipes); // ^ 2 weeks
 
+            GTValues.RA.stdBuilder()
+                    .itemInputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64))
+                    .fluidInputs(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(128_000_000L))
+                    .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgControllerCrystal", 1L))
+                    .duration(7 * 24 * HOURS * 2).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000)
+                    .addTo(blastFurnaceRecipes);
+
         }
     }
 }
