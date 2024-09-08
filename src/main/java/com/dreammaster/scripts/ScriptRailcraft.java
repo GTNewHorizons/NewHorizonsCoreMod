@@ -17,7 +17,6 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
-import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
@@ -2427,10 +2426,6 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "fuel.coke", 9, 0, missing)).duration(5 * SECONDS).eut(24)
                 .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Anvil.get(0L))
-                .itemOutputs(getModItem(Railcraft.ID, "anvil", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.steel", 4464)).duration(24 * SECONDS).eut(64)
-                .addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clay_ball", 1, 0, missing),
