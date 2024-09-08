@@ -120,7 +120,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PSP", "SwS", "PSP", 'P',
                         OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
-                        GTOreDictUnificator.get("plateShirabon", 1) });
+                        OrePrefixes.plate.get(MaterialsUEVplus.MagMatter) });
 
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
