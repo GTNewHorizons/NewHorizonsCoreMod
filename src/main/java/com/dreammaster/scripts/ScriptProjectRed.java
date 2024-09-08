@@ -35,7 +35,6 @@ import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
-import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
 import static gregtech.api.recipe.RecipeMaps.unpackagerRecipes;
@@ -2953,10 +2952,6 @@ public class ScriptProjectRed implements IScriptLoader {
                     .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 59, missing))
                     .duration(30 * SECONDS).eut(30).addTo(laserEngraverRecipes);
         }
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(ProjectRedExploration.ID, "projectred.exploration.stone", 1, 11, missing))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 9, 56, missing)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(ItemList.Circuit_Silicon_Wafer.get(1L), getModItem(Minecraft.ID, "redstone", 8, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 42, missing))
