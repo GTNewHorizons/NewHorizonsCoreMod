@@ -274,26 +274,6 @@ public class MainRegistry {
             Logger.warn("Some fluids failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Fluids] Some fluids failed to register. Check the logfile for details");
         }
-        ItemBucketList.SodiumPotassium.set(
-                FluidContainerRegistry
-                        .fillFluidContainer(FluidList.SodiumPotassium.getFluidStack(), new ItemStack(Items.bucket)));
-        ItemBucketList.NitricAcid.set(
-                FluidContainerRegistry
-                        .fillFluidContainer(FluidList.NitricAcid.getFluidStack(), new ItemStack(Items.bucket)));
-        ItemBucketList.RadioactiveBacterialSludge.set(
-                FluidContainerRegistry.fillFluidContainer(
-                        FluidList.EnrichedBacterialSludge.getFluidStack(),
-                        new ItemStack(Items.bucket)));
-        ItemBucketList.FermentedBacterialSludge.set(
-                FluidContainerRegistry.fillFluidContainer(
-                        FluidList.FermentedBacterialSludge.getFluidStack(),
-                        new ItemStack(Items.bucket)));
-        ItemBucketList.Concrete.set(
-                FluidContainerRegistry
-                        .fillFluidContainer(FluidList.Concrete.getFluidStack(), new ItemStack(Items.bucket)));
-        ItemBucketList.Pollution.set(
-                FluidContainerRegistry
-                        .fillFluidContainer(FluidList.Pollution.getFluidStack(), new ItemStack(Items.bucket)));
         // ------------------------------------------------------------
 
         // register final list with valid items to forge
@@ -437,6 +417,26 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void PostLoad(FMLPostInitializationEvent PostEvent) {
+        ItemBucketList.SodiumPotassium.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.SodiumPotassium.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.NitricAcid.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.NitricAcid.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.RadioactiveBacterialSludge.set(
+                FluidContainerRegistry.fillFluidContainer(
+                        FluidList.EnrichedBacterialSludge.getFluidStack(),
+                        new ItemStack(Items.bucket)));
+        ItemBucketList.FermentedBacterialSludge.set(
+                FluidContainerRegistry.fillFluidContainer(
+                        FluidList.FermentedBacterialSludge.getFluidStack(),
+                        new ItemStack(Items.bucket)));
+        ItemBucketList.Concrete.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.Concrete.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.Pollution.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.Pollution.getFluidStack(), new ItemStack(Items.bucket)));
 
         if (CoreConfig.ModHazardousItems_Enabled) {
             Module_HazardousItems.LoadConfig();

@@ -4,6 +4,7 @@ import static bartworks.system.material.WerkstoffLoader.Californium;
 import static gregtech.api.enums.GTValues.L;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GalaxySpace;
@@ -11,6 +12,7 @@ import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
@@ -21,6 +23,7 @@ import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GTRecipeConstants.RESEARCH_TIME;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
+import static gtPlusPlus.core.material.MaterialsAlloy.STABALLOY;
 import static tectech.thing.CustomItemList.DATApipe;
 import static tectech.thing.CustomItemList.Machine_Multi_DataBank;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch;
@@ -50,6 +53,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
@@ -999,6 +1003,58 @@ public class AssemblingLineRecipes implements Runnable {
                             Materials.Cobalt.getMolten(9216),
                             Materials.Naquadria.getMolten(2304))
                     .duration(60 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(AssemblyLine);
+        }
+
+        // Compressor controllers
+        {
+            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Machine_Multi_IndustrialCompressor.get(1))
+                    .metadata(RESEARCH_TIME, 1800 * SECONDS)
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.block, Materials.StellarAlloy, 64L),
+                            ItemList.Heating_Duct_Casing.get(32L),
+                            ItemList.Coolant_Duct_Casing.get(32L),
+                            STABALLOY.getBlock(32),
+                            GTModHandler.getIC2Item("mixedMetalIngot", 24L),
+                            new Object[] { OrePrefixes.circuit.get(Materials.LuV), 4 },
+                            new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 },
+                            ItemList.Electric_Piston_ZPM.get(8),
+                            ItemList.Conveyor_Module_ZPM.get(4),
+                            ItemList.Sensor_ZPM.get(2),
+                            ItemList.Field_Generator_ZPM.get(1))
+                    .itemOutputs(ItemList.Machine_Multi_HIPCompressor.get(1))
+                    .fluidInputs(
+                            Materials.Naquadria.getMolten(1152),
+                            Materials.LiquidAir.getFluid(16000),
+                            Materials.Lubricant.getFluid(16000),
+                            Materials.Neutronium.getMolten(1152))
+                    .duration(120 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
+
+            GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(Avaritia.ID, "Singularity", 1L, 0))
+                    .metadata(RESEARCH_TIME, 7200 * SECONDS)
+                    .itemInputs(
+                            ItemList.Machine_Multi_HIPCompressor.get(1),
+                            ItemList.Machine_Multi_NeutroniumCompressor.get(1),
+                            GregtechItemList.Machine_Adv_ImplosionCompressor.get(16),
+                            ItemList.CompressorUIV.get(8L),
+                            GTUtility.copyAmount(4, ItemRegistry.eic.copy()),
+                            ItemList.Field_Generator_UIV.get(4),
+                            ItemList.ZPM3.get(2),
+                            new Object[] { OrePrefixes.circuit.get(Materials.UMV), 4 },
+                            GregtechItemList.Laser_Lens_Special.get(64),
+                            GTOreDictUnificator.get(OrePrefixes.ring, MaterialsUEVplus.ProtoHalkonite, 32),
+                            GTOreDictUnificator.get(OrePrefixes.rotor, MaterialsUEVplus.ProtoHalkonite, 16),
+                            GTOreDictUnificator.get(OrePrefixes.gear, MaterialsUEVplus.ProtoHalkonite, 8),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Neutronium, 16),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 16),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 8),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsKevlar.Kevlar, 4))
+                    .itemOutputs(ItemList.Machine_Multi_BlackHoleCompressor.get(1))
+                    .fluidInputs(
+                            MaterialsUEVplus.SpaceTime.getMolten(1440),
+                            new FluidStack(FluidRegistry.getFluid("oganesson"), 256000),
+                            Materials.SuperconductorUIVBase.getMolten(144 * 300),
+                            Materials.Infinity.getMolten(144 * 100))
+                    .duration(120 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(AssemblyLine);
         }
 
         // Waterline controllers
