@@ -3,6 +3,7 @@ package com.dreammaster.gthandler.recipes;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -25,6 +26,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
 import tectech.thing.CustomItemList;
@@ -43,6 +45,56 @@ public class SpaceAssemblerRecipes implements Runnable {
             Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
                     ? FluidRegistry.getFluid("molten.indalloy140")
                     : FluidRegistry.getFluid("molten.solderingalloy");
+
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { ItemList.Emitter_UHV.get(1),
+                            GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
+                            GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
+                            ItemList.Emitter_UHV.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                            ItemList.EnergisedTesseract.get(1), ItemList.EnergisedTesseract.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                            ItemList.EnergisedTesseract.get(1), ItemList.EnergisedTesseract.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                            ItemList.Emitter_UHV.get(1),
+                            GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
+                            GTModHandler.getModItem(IndustrialCraft2.ID, "blockGenerator", 16, 5),
+                            ItemList.Emitter_UHV.get(1), },
+                    new FluidStack[] { Materials.Plutonium.getMolten(512 * 144),
+                            GGMaterial.atomicSeparationCatalyst.getMolten(512 * 144),
+                            Materials.Tartarite.getMolten(512 * 144),
+                            Materials.Longasssuperconductornameforuvwire.getMolten(512 * 144), },
+                    ItemList.Black_Hole_Opener.get(1),
+                    1,
+                    120 * SECONDS,
+                    (int) TierEU.RECIPE_UHV,
+                    null,
+                    null);
+            IG_RecipeAdder.addSpaceAssemblerRecipe(
+                    new ItemStack[] { ItemList.Sensor_UHV.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
+                            ItemList.Sensor_UHV.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                            ItemList.Tesseract.get(1), ItemList.Tesseract.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                            ItemList.Tesseract.get(1), ItemList.Tesseract.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 8),
+                            ItemList.Sensor_UHV.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
+                            GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Naquadria, 16),
+                            ItemList.Sensor_UHV.get(1), },
+                    new FluidStack[] { Materials.Longasssuperconductornameforuhvwire.getMolten(512 * 144),
+                            Materials.Osmiridium.getMolten(512 * 144), Materials.Ledox.getMolten(512 * 144),
+                            Materials.CallistoIce.getMolten(512 * 144), },
+                    ItemList.Black_Hole_Closer.get(1),
+                    1,
+                    120 * SECONDS,
+                    (int) TierEU.RECIPE_UHV,
+                    null,
+                    null);
 
             // Optically Perfected CPU
             IG_RecipeAdder.addSpaceAssemblerRecipe(
