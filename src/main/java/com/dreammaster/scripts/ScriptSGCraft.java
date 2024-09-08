@@ -267,7 +267,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'r', ringBlock,
                 'n', magmatterNanite,
                 'g', ItemList.GigaChad.get(1L),
-                "p", magmatterSuperdensePlate);
+                'p', magmatterSuperdensePlate);
 
         // spotless:on
     }
