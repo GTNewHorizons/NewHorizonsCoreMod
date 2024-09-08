@@ -88,7 +88,7 @@ public class ScriptSGCraft implements IScriptLoader {
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 chevronUpgrade,
                 "---------",
-                "fpfgpfp--",
+                "fpfgfpf--",
                 "-fcpcf---",
                 "--sgs----",
                 "--fpfgfpf",
