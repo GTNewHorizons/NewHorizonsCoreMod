@@ -34,9 +34,8 @@ public class NeutroniumCompressorRecipes implements Runnable {
     public void run() {
 
         if (Avaritia.isModLoaded() && UniversalSingularities.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputsUnsafe(
-                            GTUtility.copyAmountUnsafe(7296, GTOreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1)))
+            GTValues.RA.stdBuilder().itemInputsUnsafe(
+                    GTUtility.copyAmountUnsafe(7296, GTOreDictUnificator.get(OrePrefixes.block, Materials.Iron, 1)))
                     .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 0)).duration(3 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             GTValues.RA.stdBuilder().itemInputsUnsafe(
