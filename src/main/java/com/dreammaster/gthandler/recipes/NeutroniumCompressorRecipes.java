@@ -393,13 +393,13 @@ public class NeutroniumCompressorRecipes implements Runnable {
 
             // Eternal Singularity
             GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(72L))
-                    .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(1 * TICKS)
-                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+                    .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(100 * SECONDS)
+                    .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Iron Singularity
             GTValues.RA.stdBuilder().fluidInputs(Materials.Iron.getMolten(9455616L))
-                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 0)).duration(100 * SECONDS)
-                    .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+                    .itemOutputs(getModItem(Avaritia.ID, "Singularity", 1L, 0)).duration(1 * TICKS)
+                    .eut(TierEU.RECIPE_UIV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Gangue Singularity
             GTValues.RA.stdBuilder()
