@@ -980,7 +980,7 @@ public class MixerRecipes implements Runnable {
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.ETA_MESON)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.LAMBDA)),
                         GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
-                        GTOreDictUnificator.get(OrePrefixes.gem, MaterialsUEVplus.GravitonShard, 64))
+                        GTOreDictUnificator.get(OrePrefixes.gem, MaterialsUEVplus.GravitonShard, 4))
                 .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
                 .itemOutputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS()).duration(3 * MINUTES)
                 .eut(TierEU.RECIPE_UXV).addTo(mixerRecipes);
