@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -42,7 +41,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
 
@@ -1027,20 +1025,6 @@ public class MixerRecipes implements Runnable {
                     .addTo(mixerRecipes);
 
         }
-
-        // UMV Superconductor dust recipe.
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.SpaceTime, 6L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, getBartWorksMaterialByIGNName("Orundum"), 3L),
-                        MaterialsElements.STANDALONE.HYPOGEN.getDust(11),
-                        MaterialsAlloy.TITANSTEEL.getDust(5),
-                        MaterialsElements.STANDALONE.DRAGON_METAL.getDust(2),
-                        GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUMVBase, 27L))
-                .fluidInputs(Materials.Oxygen.getPlasma(144L)).duration(10 * 20).eut(TierEU.RECIPE_UMV)
-                .addTo(mixerRecipes);
 
         if (EnderIO.isModLoaded()) {
 
