@@ -2123,7 +2123,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             NBTTagCompound nbt = new NBTTagCompound();
             nbt.setString("planetBlock", dimAbbreviation);
             NBTController.setTagCompound(nbt);
-            GTModHandler.addShapelessCraftingRecipe(NBTController, new Object[] { EOHController, dimDisplay });
+            GTModHandler.addShapelessCraftingRecipe(
+                    NBTController,
+                    GTModHandler.RecipeBits.OVERWRITE_NBT,
+                    new Object[] { EOHController, dimDisplay });
         }
 
         // Transform EOH controller back to non-NBT one
