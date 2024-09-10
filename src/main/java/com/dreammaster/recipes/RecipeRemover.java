@@ -1168,13 +1168,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard, missing));
         removeRecipeByOutputDelayed(GregtechItemList.GT4_Thermal_Boiler.get(1));
-        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameAccelerated));
-        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameMutagenic));
-        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameBusy));
-        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameDecay));
-        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameSlow));
-        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameStalilize));
-        removeRecipeByOutputDelayed(new ItemStack(FRItemRegistry.hiveFrameArborist));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemPersonalCloakingDevice));
         removeRecipeByOutputDelayed(ItemList.Electric_Motor_UHV.get(1L));
         removeRecipeByOutputDelayed(ItemList.Electric_Pump_UHV.get(1L));
