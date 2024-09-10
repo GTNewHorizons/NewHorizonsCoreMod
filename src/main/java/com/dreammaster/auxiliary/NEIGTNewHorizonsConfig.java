@@ -154,10 +154,6 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
             API.hideItem(GTModHandler.getModItem(Natura.ID, "barleyFood", 1, 8, missing));
         }
 
-        if (SGCraft.isModLoaded()) {
-            API.hideItem(GTModHandler.getModItem(SGCraft.ID, "sgControllerCrystal", 1, 0, missing));
-        }
-
         if (EnderIO.isModLoaded()) {
             ItemStack creativeBank = GTModHandler.getModItem(EnderIO.ID, "blockCapBank", 1, 0, missing);
             creativeBank.setTagInfo("type", new NBTTagString("CREATIVE"));
