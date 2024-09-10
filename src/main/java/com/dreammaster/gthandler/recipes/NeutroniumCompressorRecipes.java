@@ -383,10 +383,7 @@ public class NeutroniumCompressorRecipes implements Runnable {
                         .duration(3 * SECONDS).eut(TierEU.RECIPE_HV).addTo(neutroniumCompressorRecipes);
             }
             GTValues.RA.stdBuilder()
-                    .itemInputsUnsafe(
-                            GTUtility.copyAmountUnsafe(
-                                    512,
-                                    GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 1)))
+                    .itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 64))
                     .itemOutputs(getModItem(Avaritia.ID, "Resource", 1L, 5)).duration(3 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(neutroniumCompressorRecipes);
 

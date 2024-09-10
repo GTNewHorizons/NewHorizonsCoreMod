@@ -748,9 +748,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         // Neutronium Stabilization Casing
         GTModHandler.addCraftingRecipe(
-                ItemList.Neutronium_Stable_Casing.get(1),
+                ItemList.Neutronium_Stable_Casing.get(2),
                 bits,
-                new Object[] { "PQP", "QFQ", "PQP", 'P', ItemList.Casing_Coil_NaquadahAlloy.get(1), 'Q',
+                new Object[] { "PQP", "QFQ", "PQP", 'P',
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1), 'Q',
                         ItemList.Field_Generator_ZPM.get(1), 'F', ItemList.Casing_MAX.get(1) });
 
         // Industrial Precision Lathe
