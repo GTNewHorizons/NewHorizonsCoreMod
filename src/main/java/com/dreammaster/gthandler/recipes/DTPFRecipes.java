@@ -131,70 +131,73 @@ public class DTPFRecipes implements Runnable {
                 long tier_1_quantity = 144L * base_quantity;
                 // Bee Recipes
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
-                                GTUtility.getIntegratedCircuit(1))
-                        .fluidInputs(
-                                MaterialsUEVplus.ExcitedDTCC.getFluid(cosmic_neutronium_bee.getCatalystAmount(0)),
-                                Materials.Copper.getMolten(tier_1_quantity))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue
-                                        .getFluid(cosmic_neutronium_bee.getResidueAmount(0)),
-                                Materials.CosmicNeutronium.getMolten(tier_1_quantity))
-                        .duration(cosmic_neutronium_bee.getDuration(0)).eut(cosmic_neutronium_bee.getEUt(0))
-                        .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
+                if (Forestry.isModLoaded()) {
 
-                long tier_2_bee_quantity = 144L * base_quantity * tier_up_multiplier;
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
+                                    GTUtility.getIntegratedCircuit(1))
+                            .fluidInputs(
+                                    MaterialsUEVplus.ExcitedDTCC.getFluid(cosmic_neutronium_bee.getCatalystAmount(0)),
+                                    Materials.Copper.getMolten(tier_1_quantity))
+                            .fluidOutputs(
+                                    MaterialsUEVplus.DimensionallyTranscendentResidue
+                                            .getFluid(cosmic_neutronium_bee.getResidueAmount(0)),
+                                    Materials.CosmicNeutronium.getMolten(tier_1_quantity))
+                            .duration(cosmic_neutronium_bee.getDuration(0)).eut(cosmic_neutronium_bee.getEUt(0))
+                            .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
-                                GTUtility.getIntegratedCircuit(1))
-                        .fluidInputs(
-                                MaterialsUEVplus.ExcitedDTPC.getFluid(cosmic_neutronium_bee.getCatalystAmount(1)),
-                                Materials.Copper.getMolten(tier_2_bee_quantity))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue
-                                        .getFluid(cosmic_neutronium_bee.getResidueAmount(1)),
-                                Materials.CosmicNeutronium.getMolten(tier_2_bee_quantity))
-                        .duration(cosmic_neutronium_bee.getDuration(1)).eut(cosmic_neutronium_bee.getEUt(1))
-                        .metadata(COIL_HEAT, infinity_heat).addTo(plasmaForgeRecipes);
+                    long tier_2_bee_quantity = 144L * base_quantity * tier_up_multiplier;
 
-                long tier_3_bee_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
+                                    GTUtility.getIntegratedCircuit(1))
+                            .fluidInputs(
+                                    MaterialsUEVplus.ExcitedDTPC.getFluid(cosmic_neutronium_bee.getCatalystAmount(1)),
+                                    Materials.Copper.getMolten(tier_2_bee_quantity))
+                            .fluidOutputs(
+                                    MaterialsUEVplus.DimensionallyTranscendentResidue
+                                            .getFluid(cosmic_neutronium_bee.getResidueAmount(1)),
+                                    Materials.CosmicNeutronium.getMolten(tier_2_bee_quantity))
+                            .duration(cosmic_neutronium_bee.getDuration(1)).eut(cosmic_neutronium_bee.getEUt(1))
+                            .metadata(COIL_HEAT, infinity_heat).addTo(plasmaForgeRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
-                                GTUtility.getIntegratedCircuit(1))
-                        .fluidInputs(
-                                MaterialsUEVplus.ExcitedDTRC.getFluid(cosmic_neutronium_bee.getCatalystAmount(2)),
-                                Materials.Copper.getMolten(tier_3_bee_quantity))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue
-                                        .getFluid(cosmic_neutronium_bee.getResidueAmount(2)),
-                                Materials.CosmicNeutronium.getMolten(tier_3_bee_quantity))
-                        .duration(cosmic_neutronium_bee.getDuration(2)).eut(cosmic_neutronium_bee.getEUt(2))
-                        .metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
+                    long tier_3_bee_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
 
-                long tier_4_bee_quantity = 144L * base_quantity
-                        * tier_up_multiplier
-                        * tier_up_multiplier
-                        * tier_up_multiplier;
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
+                                    GTUtility.getIntegratedCircuit(1))
+                            .fluidInputs(
+                                    MaterialsUEVplus.ExcitedDTRC.getFluid(cosmic_neutronium_bee.getCatalystAmount(2)),
+                                    Materials.Copper.getMolten(tier_3_bee_quantity))
+                            .fluidOutputs(
+                                    MaterialsUEVplus.DimensionallyTranscendentResidue
+                                            .getFluid(cosmic_neutronium_bee.getResidueAmount(2)),
+                                    Materials.CosmicNeutronium.getMolten(tier_3_bee_quantity))
+                            .duration(cosmic_neutronium_bee.getDuration(2)).eut(cosmic_neutronium_bee.getEUt(2))
+                            .metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
-                                GTUtility.getIntegratedCircuit(1))
-                        .fluidInputs(
-                                MaterialsUEVplus.ExcitedDTEC.getFluid(cosmic_neutronium_bee.getCatalystAmount(3)),
-                                Materials.Copper.getMolten(tier_4_bee_quantity))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue
-                                        .getFluid(cosmic_neutronium_bee.getResidueAmount(3)),
-                                Materials.CosmicNeutronium.getMolten(tier_4_bee_quantity))
-                        .duration(cosmic_neutronium_bee.getDuration(3)).eut(cosmic_neutronium_bee.getEUt(3))
-                        .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                    long tier_4_bee_quantity = 144L * base_quantity
+                            * tier_up_multiplier
+                            * tier_up_multiplier
+                            * tier_up_multiplier;
+
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
+                                    GTUtility.getIntegratedCircuit(1))
+                            .fluidInputs(
+                                    MaterialsUEVplus.ExcitedDTEC.getFluid(cosmic_neutronium_bee.getCatalystAmount(3)),
+                                    Materials.Copper.getMolten(tier_4_bee_quantity))
+                            .fluidOutputs(
+                                    MaterialsUEVplus.DimensionallyTranscendentResidue
+                                            .getFluid(cosmic_neutronium_bee.getResidueAmount(3)),
+                                    Materials.CosmicNeutronium.getMolten(tier_4_bee_quantity))
+                            .duration(cosmic_neutronium_bee.getDuration(3)).eut(cosmic_neutronium_bee.getEUt(3))
+                            .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                }
 
                 // normal ones
 
@@ -632,59 +635,59 @@ public class DTPFRecipes implements Runnable {
                         .setProcessingTimeDiscount(50).setEUtDivisor(2).calculateNonEBFRecipe(32_000_000, base_time);
 
                 // Bee comb catalyst recipes for infinity
+                if (Forestry.isModLoaded()) {
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5),
+                                    GTBees.combs.getStackForType(CombType.INFINITY),
+                                    GTUtility.getIntegratedCircuit(3))
+                            .fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(infinity_bee.getCatalystAmount(4)))
+                            .fluidOutputs(
+                                    MaterialsUEVplus.DimensionallyTranscendentResidue
+                                            .getFluid(infinity_bee.getResidueAmount(4)),
+                                    Materials.Infinity.getMolten(256L * 144L))
+                            .duration(infinity_bee.getDuration(4)).eut(infinity_bee.getEUt(4))
+                            .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5),
-                                GTBees.combs.getStackForType(CombType.INFINITY),
-                                GTUtility.getIntegratedCircuit(3))
-                        .fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(infinity_bee.getCatalystAmount(4)))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue
-                                        .getFluid(infinity_bee.getResidueAmount(4)),
-                                Materials.Infinity.getMolten(256L * 144L))
-                        .duration(infinity_bee.getDuration(4)).eut(infinity_bee.getEUt(4))
-                        .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
+                                    GTBees.combs.getStackForType(CombType.INFINITY),
+                                    GTUtility.getIntegratedCircuit(3))
+                            .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(infinity_bee.getCatalystAmount(3)))
+                            .fluidOutputs(
+                                    MaterialsUEVplus.DimensionallyTranscendentResidue
+                                            .getFluid(infinity_bee.getResidueAmount(3)),
+                                    Materials.Infinity.getMolten(128L * 144L))
+                            .duration(infinity_bee.getDuration(3)).eut(infinity_bee.getEUt(3))
+                            .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
-                                GTBees.combs.getStackForType(CombType.INFINITY),
-                                GTUtility.getIntegratedCircuit(3))
-                        .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(infinity_bee.getCatalystAmount(3)))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue
-                                        .getFluid(infinity_bee.getResidueAmount(3)),
-                                Materials.Infinity.getMolten(128L * 144L))
-                        .duration(infinity_bee.getDuration(3)).eut(infinity_bee.getEUt(3))
-                        .metadata(COIL_HEAT, eternal_heat).addTo(plasmaForgeRecipes);
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
+                                    GTBees.combs.getStackForType(CombType.INFINITY),
+                                    GTUtility.getIntegratedCircuit(2))
+                            .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2)))
+                            .fluidOutputs(
+                                    MaterialsUEVplus.DimensionallyTranscendentResidue
+                                            .getFluid(infinity_bee.getResidueAmount(2)),
+                                    Materials.Infinity.getMolten(64L * 144L))
+                            .duration(infinity_bee.getDuration(2)).eut(infinity_bee.getEUt(2))
+                            .metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                GTBees.combs.getStackForType(CombType.INFINITY),
-                                GTUtility.getIntegratedCircuit(2))
-                        .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2)))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue
-                                        .getFluid(infinity_bee.getResidueAmount(2)),
-                                Materials.Infinity.getMolten(64L * 144L))
-                        .duration(infinity_bee.getDuration(2)).eut(infinity_bee.getEUt(2))
-                        .metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                GTBees.combs.getStackForType(CombType.INFINITY),
-                                GTUtility.getIntegratedCircuit(3))
-                        .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2) / 64))
-                        .fluidOutputs(
-                                MaterialsUEVplus.DimensionallyTranscendentResidue
-                                        .getFluid(infinity_bee.getResidueAmount(2) / 64),
-                                Materials.Infinity.getMolten(144L))
-                        .duration(infinity_bee.getDuration(2) / 128).eut(infinity_bee.getEUt(2) / 64)
-                        .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
-
+                    GTValues.RA.stdBuilder()
+                            .itemInputs(
+                                    GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
+                                    GTBees.combs.getStackForType(CombType.INFINITY),
+                                    GTUtility.getIntegratedCircuit(3))
+                            .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2) / 64))
+                            .fluidOutputs(
+                                    MaterialsUEVplus.DimensionallyTranscendentResidue
+                                            .getFluid(infinity_bee.getResidueAmount(2) / 64),
+                                    Materials.Infinity.getMolten(144L))
+                            .duration(infinity_bee.getDuration(2) / 128).eut(infinity_bee.getEUt(2) / 64)
+                            .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
+                }
                 // normal recipes
 
                 DTPFCalculator infinity = new DTPFCalculator().setBaseParallel(base_quantity).setLowestCatalystTier(2)
