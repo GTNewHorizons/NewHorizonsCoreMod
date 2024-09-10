@@ -13,7 +13,6 @@ import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gregtech.api.util.GTRecipeConstants.COMPRESSION_TIER;
 import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
 
 import gregtech.api.enums.GTValues;
@@ -21,6 +20,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -32,6 +32,8 @@ public class NeutroniumCompressorRecipes implements Runnable {
 
     @Override
     public void run() {
+
+        final CompressionTierKey COMPRESSION_TIER = CompressionTierKey.INSTANCE;
 
         if (Avaritia.isModLoaded() && UniversalSingularities.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputsUnsafe(
