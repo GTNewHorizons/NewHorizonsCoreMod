@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
@@ -76,6 +77,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 Backpack.ID,
                 BiomesOPlenty.ID,
                 CarpentersBlocks.ID,
+                EtFuturumRequiem.ID,
                 ExtraTrees.ID,
                 ExtraUtilities.ID,
                 ForbiddenMagic.ID,
@@ -4576,7 +4578,10 @@ public class ScriptMinecraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "flower_pot", 1, 0, missing),
                 "craftingToolFile",
                 getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketFired", 1, 0, missing));
-        addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 0, missing), "craftingToolSaw", "stone");
+        addShapelessRecipe(
+                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                "craftingToolSaw",
+                getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, missing));
         addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 1, missing), "craftingToolSaw", "sandstone");
         addShapelessRecipe(getModItem(Minecraft.ID, "stone_slab", 1, 3, missing), "craftingToolSaw", "cobblestone");
         addShapelessRecipe(

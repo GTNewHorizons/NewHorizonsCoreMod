@@ -56,6 +56,7 @@ public class ScriptLoader {
                         new ScriptEnderIO(),
                         new ScriptEnderZoo(),
                         new ScriptEnhancedLootBags(),
+                        new ScriptEtFuturumRequiem(),
                         new ScriptExtraBees(),
                         new ScriptExtraTrees(),
                         new ScriptExtraUtilities(),
