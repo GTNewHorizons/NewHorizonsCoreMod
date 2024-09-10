@@ -107,7 +107,6 @@ import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.item.ModItems;
-import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class RecipeRemover {
