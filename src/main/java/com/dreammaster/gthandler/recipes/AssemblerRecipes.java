@@ -2284,10 +2284,10 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Field_Generator_ZPM.get(4),
-                        ItemList.Casing_Coil_NaquadahAlloy.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
                         ItemList.Casing_MAX.get(1),
                         GTUtility.getIntegratedCircuit(16))
-                .itemOutputs(ItemList.Neutronium_Stable_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .itemOutputs(ItemList.Neutronium_Stable_Casing.get(2)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
         // Neutronium Compressor conversion
