@@ -383,9 +383,6 @@ public class ScriptOpenBlocks implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Machine_LV_Mixer.get(1L), ItemList.IC2_Item_Casing_Iron.get(4L))
-                .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
@@ -402,10 +399,6 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4, missing))
-                .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "factory", 1, 0, missing), ItemList.IC2_Item_Casing_Iron.get(4L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

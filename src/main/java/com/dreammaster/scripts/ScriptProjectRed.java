@@ -3580,13 +3580,6 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coffee, 2L),
-                        GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
-                .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(mixerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "glowstone_dust", 2, 0, missing),
                         getModItem(ExtraBees.ID, "misc", 2, 25, missing),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 8, 31, missing))
