@@ -20,6 +20,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
 
+import cpw.mods.fml.common.Optional;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -68,7 +69,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
                 ItemList.Machine_HV_Centrifuge.get(1L),
                 getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing));
-        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), new ItemStack(FRItemRegistry.hiveFrameVoid));
+
         addShapedRecipe(
                 MaterialsAlloy.TUMBAGA.getRod(1),
                 "craftingToolFile",
@@ -191,6 +192,23 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 ItemList.Electric_Pump_MV.get(1L),
                 "circuitPrimitive");
 
+        // Shirabon and Eternity
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
+                        ItemList.EnergisedTesseract.get(1),
+                        ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0))
+                .itemOutputs(GTOreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
+                .fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
+                .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
+                .metadata(QFT_FOCUS_TIER, 4).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)
+                .addTo(quantumForceTransformerRecipes);
+        addForestryRecipes();
+    }
+
+    @Optional.Method(modid = Mods.Names.FORESTRY)
+    private void addForestryRecipes() {
+        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), new ItemStack(FRItemRegistry.hiveFrameVoid));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
@@ -373,17 +391,5 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 1L),
                 'i',
                 GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 1L));
-
-        // Shirabon and Eternity
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
-                        ItemList.EnergisedTesseract.get(1),
-                        ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0))
-                .itemOutputs(GTOreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
-                .fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
-                .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
-                .metadata(QFT_FOCUS_TIER, 4).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .addTo(quantumForceTransformerRecipes);
     }
 }

@@ -21,6 +21,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.mixerNonCellRecipes;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
 import net.minecraft.init.Blocks;
@@ -1190,7 +1191,7 @@ public class MixerRecipes implements Runnable {
                     .fluidInputs(
                             GGMaterial.naquadahBasedFuelMkV.getFluidOrGas(1000),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(128000))
-                    .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerRecipes);
+                    .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerNonCellRecipes);
         }
     }
 }

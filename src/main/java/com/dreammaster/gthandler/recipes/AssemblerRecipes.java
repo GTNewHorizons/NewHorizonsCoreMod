@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.LuVTierMaterial;
+import static goodgenerator.loader.Loaders.advancedRadiationProtectionPlate;
 import static gregtech.api.enums.GTValues.L;
 import static gregtech.api.enums.GTValues.W;
 import static gregtech.api.enums.Mods.*;
@@ -16,10 +17,12 @@ import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_W;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
 import static gtPlusPlus.core.material.MaterialsAlloy.INCONEL_792;
+import static gtPlusPlus.core.material.MaterialsAlloy.INDALLOY_140;
 import static gtPlusPlus.core.material.MaterialsAlloy.LEAGRISIUM;
 import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
 import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
+import static gtPlusPlus.core.material.MaterialsAlloy.TRINIUM_NAQUADAH_CARBON;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
 
 import java.util.HashMap;
@@ -35,6 +38,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 
 import bartworks.common.loaders.ItemRegistry;
@@ -2276,6 +2280,47 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Casing_Electromagnetic_Separator.get(1)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
 
+        // Neutronium Stabilization Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Field_Generator_ZPM.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
+                        ItemList.Casing_MAX.get(1),
+                        GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(ItemList.Neutronium_Stable_Casing.get(2)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
+
+        // Neutronium Compressor conversion
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(ItemList.Machine_Multi_NeutroniumCompressor.get(1)).duration(2 * SECONDS + 10 * TICKS)
+                .eut(16).addTo(assemblerRecipes);
+
+        // Background Radiation Absorbent Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_RadiationProof.get(1),
+                        new ItemStack(advancedRadiationProtectionPlate, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Naquadria, 1),
+                        GTUtility.getIntegratedCircuit(16))
+                .fluidInputs(Materials.UUMatter.getFluid(64000L))
+                .itemOutputs(ItemList.Background_Radiation_Casing.get(1)).duration(10).eut(TierEU.RECIPE_UIV)
+                .addTo(assemblerRecipes);
+
+        // Extreme Density Space-Bending Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        BlockList.NeutroniumPlatedReinforcedStone.getIS(),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Steel, 64),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Iron, 64),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 64),
+                        GTUtility.getIntegratedCircuit(16))
+                .fluidInputs(FluidRegistry.getFluidStack("wet.concrete", 16000))
+                .itemOutputs(ItemList.Extreme_Density_Casing.get(1)).duration(5).eut(TierEU.RECIPE_UHV)
+                .addTo(assemblerRecipes);
+
         // Laser Containment Casing
         GTValues.RA.stdBuilder().itemInputs(STELLITE.getPlate(6), NITINOL_60.getFrameBox(1))
                 .itemOutputs(ItemList.Casing_Laser.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
@@ -2307,6 +2352,43 @@ public class AssemblerRecipes implements Runnable {
                         GGMaterial.incoloy903.get(OrePrefixes.pipeMedium, 4))
                 .itemOutputs(ItemList.Compressor_Pipe_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
+
+        // Heating Duct Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_Pipe_Bronze.get(1),
+                        ItemList.Electric_Pump_LuV.get(2),
+                        ItemList.Duct_Tape.get(4),
+                        TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
+                        HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 32))
+                .fluidInputs(FluidRegistry.getFluidStack("pyrotheum", 2000))
+                .itemOutputs(ItemList.Heating_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(assemblerRecipes);
+
+        // Coolant Duct Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_Pipe_TungstenSteel.get(1),
+                        ItemList.Electric_Pump_LuV.get(2),
+                        ItemList.Duct_Tape.get(4),
+                        TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
+                        HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 32))
+                .fluidInputs(FluidRegistry.getFluidStack("cryotheum", 2000))
+                .itemOutputs(ItemList.Coolant_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(assemblerRecipes);
+
+        // Heat Sensor Hatch
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Casing_ZPM.get(1),
+                        ItemList.Compressor_Casing.get(1),
+                        ItemList.Sensor_ZPM.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 4),
+                        GTUtility.getIntegratedCircuit(4))
+                .fluidInputs(INDALLOY_140.getFluidStack(16000)).itemOutputs(ItemList.Hatch_HeatSensor.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
         // Iron Electromagnet
         GTValues.RA.stdBuilder()

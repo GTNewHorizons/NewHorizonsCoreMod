@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.GregTechAPI.sBlockOres1;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.CropsPlusPlus;
@@ -51,6 +52,8 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import tconstruct.library.TConstructRegistry;
+import vexatos.tgregworks.reference.PartTypes;
+import vexatos.tgregworks.util.TGregUtils;
 
 public class ScriptGregtech implements IScriptLoader {
 
@@ -883,6 +886,46 @@ public class ScriptGregtech implements IScriptLoader {
                 'm',
                 ItemList.Cover_SolarPanel_ZPM.get(1L));
 
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                ItemList.Spray_Color_Infinite.get(1L),
+                "---RR----",
+                "---PsR---",
+                "---RRR---",
+                "--rrrrr--",
+                "--If-AI--",
+                "--IF-AI--",
+                "--IWCcI--",
+                "--IbSEI--",
+                "---III---",
+                'I',
+                TGregUtils.newItemStack(Materials.Iridium, PartTypes.LargePlate, 1),
+                'R',
+                TGregUtils.newItemStack(Materials.Tungsten, PartTypes.LargePlate, 1),
+                'r',
+                TGregUtils.newItemStack(Materials.Palladium, PartTypes.LargePlate, 1),
+                'S',
+                getModItem(Minecraft.ID, "sand", 1, 0, missing),
+                'C',
+                getModItem(ThaumicBases.ID, "rainbowCactus", 1, 0, missing),
+                'E',
+                getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0, missing),
+                'W',
+                ItemList.AcceleratorIV.get(1L),
+                'F',
+                "fenceWood",
+                'f',
+                getModItem(OpenBlocks.ID, "fan", 1, 0, missing),
+                'c',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 36),
+                'A',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 300, missing),
+                's',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 57),
+                'P',
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 320, missing),
+                'b',
+                ItemList.Battery_Buffer_3by3_IV.get(1L));
+
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.RawRubber, 2L)).duration(15 * SECONDS)
                 .eut(2).addTo(extractorRecipes);
@@ -1322,12 +1365,6 @@ public class ScriptGregtech implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
                 .eut(16).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 27L),
-                        GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Tin, 9L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 4L)).duration(10 * SECONDS)
-                .eut(16).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(ThaumicBases.ID, "resource", 9, 0, missing), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(ThaumicBases.ID, "resource", 1, 1, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(alloySmelterRecipes);
@@ -1656,9 +1693,6 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockTaint", 1, 2, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 9L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestCraft.ID, "walleyerawItem", 1, 0, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)).outputChances(10000)
-                .duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(TinkerConstruct.ID, "GlassBlock", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
@@ -1668,9 +1702,6 @@ public class ScriptGregtech implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BloodArsenal.ID, "glass_shard", 2, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ore, Materials.CassiteriteSand, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.crushed, Materials.CassiteriteSand, 4L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTModHandler.addSmeltingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.ore, Materials.Magnetite, 1L),
                 getModItem(Minecraft.ID, "iron_ingot", 1, 0, missing));

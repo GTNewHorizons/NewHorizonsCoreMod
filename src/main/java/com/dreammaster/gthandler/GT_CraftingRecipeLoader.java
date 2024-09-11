@@ -746,6 +746,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         GGMaterial.incoloy903.get(OrePrefixes.pipeMedium), 'F',
                         GGMaterial.incoloy903.get(OrePrefixes.gearGt) });
 
+        // Neutronium Stabilization Casing
+        GTModHandler.addCraftingRecipe(
+                ItemList.Neutronium_Stable_Casing.get(2),
+                bits,
+                new Object[] { "PQP", "QFQ", "PQP", 'P',
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1), 'Q',
+                        ItemList.Field_Generator_ZPM.get(1), 'F', ItemList.Casing_MAX.get(1) });
+
         // Industrial Precision Lathe
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_Lathe.get(1),
