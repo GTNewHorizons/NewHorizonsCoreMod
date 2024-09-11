@@ -16,6 +16,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtnhlanth.common.register.WerkstoffMaterialPool.Gangue;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
@@ -393,6 +394,12 @@ public class NeutroniumCompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(72L))
                     .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1)).duration(100 * SECONDS)
                     .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+
+            // Eternal Singularity Alternate Recipe
+            GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(72L * 64))
+                    .itemInputs(ItemList.Black_Hole_Opener.get(1))
+                    .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 64)).duration(100 * SECONDS)
+                    .eut(TierEU.RECIPE_MAX).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Iron Singularity
             GTValues.RA.stdBuilder().fluidInputs(Materials.Iron.getMolten(9455616L))
