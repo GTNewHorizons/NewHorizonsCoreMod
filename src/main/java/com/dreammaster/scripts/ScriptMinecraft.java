@@ -209,12 +209,6 @@ public class ScriptMinecraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(Minecraft.ID, "wool", 1, wildcard, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "torch", 5, 0, missing))
-                .fluidInputs(getFluidStack("creosote", 500)).duration(5 * SECONDS).eut(4).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Charcoal, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 4, 0, missing)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
@@ -223,12 +217,6 @@ public class ScriptMinecraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L))
                 .itemOutputs(getModItem(Minecraft.ID, "torch", 6, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 1L))
-                .itemOutputs(getModItem(Minecraft.ID, "torch", 4, 0, missing)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -700,12 +688,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Thaumcraft.ID, "blockMagicalLog", 1, wildcard, missing),
-                        getModItem(Minecraft.ID, "flint", 2, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing)).duration(10 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 2L),
                         getModItem(Minecraft.ID, "planks", 2, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "fence_gate", 1, 0, missing)).duration(15 * SECONDS).eut(8)
@@ -738,12 +720,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 .itemInputs(
                         getModItem(Minecraft.ID, "log", 2, wildcard, missing),
                         getModItem(Forestry.ID, "planks", 2, wildcard, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "log", 2, wildcard, missing),
-                        getModItem(Forestry.ID, "planksFireproof", 2, wildcard, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "chest", 1, 0, missing)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1445,12 +1421,6 @@ public class ScriptMinecraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).duration(2 * SECONDS + 10 * TICKS)
-                .eut(16).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BiomesOPlenty.ID, "plants", 1, 8, missing),
                         getModItem(Minecraft.ID, "stone_button", 1, 0, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "lever", 1, 0, missing)).duration(2 * SECONDS + 10 * TICKS)
                 .eut(16).addTo(assemblerRecipes);
@@ -1603,98 +1573,6 @@ public class ScriptMinecraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Wood, 1L),
-                        ItemList.Plank_Greenheart.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Oak.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Spruce.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Birch.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Jungle.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Acacia.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_DarkOak.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Larch.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Teak.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        ItemList.Plank_Acacia_Green.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Lime.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        ItemList.Plank_Chestnut.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Wenge.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Baobab.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Sequoia.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Kapok.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Ebony.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
-                        ItemList.Plank_Mahagony.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Balsa.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Willow.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing), ItemList.Plank_Walnut.get(1L))
-                .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Natura.ID, "natura.stick", 1, wildcard, missing),
                         ItemList.Plank_Greenheart.get(1L))
                 .itemOutputs(getModItem(Minecraft.ID, "sign", 3, 0, missing)).duration(5 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
