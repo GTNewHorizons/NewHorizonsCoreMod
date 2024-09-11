@@ -1240,49 +1240,7 @@ public class ScriptMalisDoors implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 2, wildcard, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "bamboo", 2, 0, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "plants", 2, 8, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.iron", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 2, 0, missing),
                         getModItem(Minecraft.ID, "stick", 2, 0, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                        getModItem(Natura.ID, "natura.stick", 2, wildcard, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "bamboo", 2, 0, missing))
-                .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "paper", 2, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "plants", 2, 8, missing))
                 .itemOutputs(getModItem(MalisisDoors.ID, "item.shoji_door", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.copper", 16)).duration(20 * SECONDS).eut(4)
                 .addTo(assemblerRecipes);
