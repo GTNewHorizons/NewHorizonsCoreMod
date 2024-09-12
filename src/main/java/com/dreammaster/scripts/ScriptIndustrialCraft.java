@@ -1803,11 +1803,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 .duration(1 * SECONDS + 12 * TICKS).eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 1, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.darkcoffee", 500)).duration(8).eut(1)
+                .fluidInputs(FluidRegistry.getFluidStack("potion.coffee", 500)).duration(8).eut(1)
                 .addTo(fluidCannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemMugEmpty", 1, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemMugCoffee", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("potion.cafeaulait", 500)).duration(8).eut(1)
+                .fluidInputs(FluidRegistry.getFluidStack("potion.Latte", 500)).duration(8).eut(1)
                 .addTo(fluidCannerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFoamSprayer", 1, 0, missing))
                 .itemOutputs(
