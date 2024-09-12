@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static goodgenerator.items.GGMaterial.indiumPhosphate;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
@@ -577,34 +578,36 @@ public class ChemicalReactorRecipes implements Runnable {
                 .fluidInputs(Materials.Water.getFluid(16000L)).fluidOutputs(Materials.Hydrogen.getGas(48000L))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 36L),
-                        GTBees.combs.getStackForType(CombType.INDIUM, 4),
-                        GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 3L))
-                .fluidInputs(new FluidStack(ItemList.sIndiumConcentrate, 72000))
-                .fluidOutputs(new FluidStack(ItemList.sLeadZincSolution, 72000)).duration(22 * SECONDS + 10 * TICKS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+        if (Forestry.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 36L),
+                            GTBees.combs.getStackForType(CombType.INDIUM, 4),
+                            GTUtility.getIntegratedCircuit(3))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 3L))
+                    .fluidInputs(new FluidStack(ItemList.sIndiumConcentrate, 72000))
+                    .fluidOutputs(new FluidStack(ItemList.sLeadZincSolution, 72000)).duration(22 * SECONDS + 10 * TICKS)
+                    .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        indiumPhosphate.get(OrePrefixes.dust, 12),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 3),
-                        GTBees.combs.getStackForType(CombType.INDIUM, 8),
-                        GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 6),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.TricalciumPhosphate, 5))
-                .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            indiumPhosphate.get(OrePrefixes.dust, 12),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcium, 3),
+                            GTBees.combs.getStackForType(CombType.INDIUM, 8),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 6),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.TricalciumPhosphate, 5))
+                    .duration(1 * SECONDS).eut(TierEU.RECIPE_LV).addTo(multiblockChemicalReactorRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Indium, 4),
-                        GTBees.combs.getStackForType(CombType.INDIUM, 16))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.crushedPurified, Materials.Indium, 12))
-                .fluidInputs(Materials.PhthalicAcid.getFluid(2688)).duration(14 * SECONDS + 8 * TICKS)
-                .eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Indium, 4),
+                            GTBees.combs.getStackForType(CombType.INDIUM, 16))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.crushedPurified, Materials.Indium, 12))
+                    .fluidInputs(Materials.PhthalicAcid.getFluid(2688)).duration(14 * SECONDS + 8 * TICKS)
+                    .eut(TierEU.RECIPE_IV).addTo(UniversalChemical);
+        }
     }
 
 }
