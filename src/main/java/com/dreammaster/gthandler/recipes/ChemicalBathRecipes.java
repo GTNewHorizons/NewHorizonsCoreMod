@@ -176,7 +176,7 @@ public class ChemicalBathRecipes implements Runnable {
 
         // Neutronium Casing
         GTValues.RA.stdBuilder().itemInputs(ItemList.Casing_AdvancedRadiationProof.get(1))
-                .itemOutputs(ItemList.Neutronium_Casing.get(1)).fluidInputs(Materials.Neutronium.getMolten(8064))
+                .itemOutputs(ItemList.Neutronium_Casing.get(1)).fluidInputs(Materials.Neutronium.getMolten(8 * 144))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(chemicalBathRecipes);
 
         // Superplasticizer-treated high strength concrete
