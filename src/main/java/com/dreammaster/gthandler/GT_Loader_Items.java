@@ -448,6 +448,11 @@ public class GT_Loader_Items {
         CustomItemList.GatePlateDimensional.set(ItemList.GatePlateDimensional.getIS());
         CustomItemList.ChevronDimensional.set(ItemList.ChevronDimensional.getIS());
         CustomItemList.FramePartDimensional.set(ItemList.FramePartDimensional.getIS());
+        CustomItemList.GatePlateHarmonic.set(ItemList.GatePlateHarmonic.getIS());
+        CustomItemList.ChevronHarmonic.set(ItemList.ChevronHarmonic.getIS());
+        CustomItemList.FramePartHarmonic.set(ItemList.FramePartHarmonic.getIS());
+        CustomItemList.StargateDustAncients.set(ItemList.StargateDustAncients.getIS());
+        CustomItemList.StargateCrystalAncients.set(ItemList.StargateCrystalAncients.getIS());
     }
 
     private void registerTooltips() {
@@ -457,7 +462,9 @@ public class GT_Loader_Items {
                 ItemList.ChevronOrigin.getIS(),
                 ItemList.FramePartOrigin.getIS(),
                 ItemList.GatePlateOrigin.getIS(),
-                ItemList.NanoCircuitOrigin.getIS());
+                ItemList.NanoCircuitOrigin.getIS(),
+                ItemList.StargateDustAncients.getIS(),
+                ItemList.StargateCrystalAncients.getIS());
         List<ItemStack> polychrome = Arrays.asList(
                 ItemList.PikoCircuitPolychrome.getIS(),
                 ItemList.QuantumCircuitPolychrome.getIS(),
@@ -470,6 +477,10 @@ public class GT_Loader_Items {
                 ItemList.GatePlateDimensional.getIS(),
                 ItemList.ChevronDimensional.getIS(),
                 ItemList.FramePartDimensional.getIS());
+        List<ItemStack> harmonic = Arrays.asList(
+                ItemList.GatePlateHarmonic.getIS(),
+                ItemList.ChevronHarmonic.getIS(),
+                ItemList.FramePartHarmonic.getIS());
         for (ItemStack itemStack : origin) {
             addItemTooltip(
                     itemStack,
@@ -500,5 +511,14 @@ public class GT_Loader_Items {
                             + StatCollector.translateToLocal("item.Dimensional.version"));
         }
 
+        for (ItemStack itemStack : harmonic) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.DARK_PURPLE + StatCollector.translateToLocal("item.Harmonic.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Harmonic.version"));
+        }
     }
 }
