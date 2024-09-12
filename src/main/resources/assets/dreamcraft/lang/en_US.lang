@@ -670,6 +670,13 @@ item.DimensionalQuantumCircuit.name=Quantum Circuit of Dimensional Duplicity
 item.DimensionalGatePlate.name=Stargate Plate of Dimensional Duplicity
 item.DimensionalChevron.name=Stargate Chevron of Dimensional Duplicity
 item.DimensionalFramePart.name=Stargate Frame Part of Dimensional Duplicity
+item.Harmonic.tooltip=Universes torn apart
+item.Harmonic.version=(2.3.0)
+item.HarmonicGatePlate.name=Stargate Plate of Harmonic Breakthrough
+item.HarmonicChevron.name=Stargate Chevron of Harmonic Breakthrough
+item.HarmonicFramePart.name=Stargate Frame Part of Harmonic Breakthrough
+item.StargateDustAncients.name=Stargate-Crystal Dust of the Ancients
+item.StargateCrystalAncients.name=Stargate Core Crystal of the Ancients
 
 tc.aspect.custom1=Equality, Balance, Uniformity
 tc.aspect.custom2=Insanity, Madness, Craziness

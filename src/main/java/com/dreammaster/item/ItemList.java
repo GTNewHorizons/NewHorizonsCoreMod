@@ -611,6 +611,11 @@ public enum ItemList {
     GatePlateDimensional(new ModSimpleBaseItem("DimensionalGatePlate", ModTabList.ModSpaceTab)),
     ChevronDimensional(new ModSimpleBaseItem("DimensionalChevron", ModTabList.ModSpaceTab)),
     FramePartDimensional(new ModSimpleBaseItem("DimensionalFramePart", ModTabList.ModSpaceTab)),
+    GatePlateHarmonic(new ModSimpleBaseItem("HarmonicGatePlate", ModTabList.ModSpaceTab)),
+    ChevronHarmonic(new ModSimpleBaseItem("HarmonicChevron", ModTabList.ModSpaceTab)),
+    FramePartHarmonic(new ModSimpleBaseItem("HarmonicFramePart", ModTabList.ModSpaceTab)),
+    StargateDustAncients(new ModSimpleBaseItem("StargateDustAncients", ModTabList.ModSpaceTab)),
+    StargateCrystalAncients(new ModSimpleBaseItem("StargateCrystalAncients", ModTabList.ModSpaceTab)),
 
     // Do not delete this
     EndOfList(null);
