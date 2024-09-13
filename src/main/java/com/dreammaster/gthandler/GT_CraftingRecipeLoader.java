@@ -120,7 +120,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PSP", "SwS", "PSP", 'P',
                         OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
-                        GTOreDictUnificator.get("plateShirabon", 1) });
+                        OrePrefixes.plate.get(MaterialsUEVplus.MagMatter) });
 
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];
@@ -2124,7 +2124,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
             NBTTagCompound nbt = new NBTTagCompound();
             nbt.setString("planetBlock", dimAbbreviation);
             NBTController.setTagCompound(nbt);
-            GTModHandler.addShapelessCraftingRecipe(NBTController, new Object[] { EOHController, dimDisplay });
+            GTModHandler.addShapelessCraftingRecipe(
+                    NBTController,
+                    GTModHandler.RecipeBits.OVERWRITE_NBT,
+                    new Object[] { EOHController, dimDisplay });
         }
 
         // Transform EOH controller back to non-NBT one

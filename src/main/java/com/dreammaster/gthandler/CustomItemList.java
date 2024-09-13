@@ -429,7 +429,12 @@ public enum CustomItemList implements IItemContainer {
     QuantumCircuitDimensional,
     GatePlateDimensional,
     ChevronDimensional,
-    FramePartDimensional;
+    FramePartDimensional,
+    GatePlateHarmonic,
+    ChevronHarmonic,
+    FramePartHarmonic,
+    StargateDustAncients,
+    StargateCrystalAncients;
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;

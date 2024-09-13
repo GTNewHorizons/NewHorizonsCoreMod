@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.recipes;
 
-import static com.dreammaster.bartworksHandler.BartWorksMaterials.getBartWorksMaterialByIGNName;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -43,8 +42,8 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
+import gtPlusPlus.core.material.Particle;
 
 public class MixerRecipes implements Runnable {
 
@@ -969,6 +968,23 @@ public class MixerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(CustomItemList.BioBall.get(1L)).duration(10 * SECONDS).eut(16).addTo(mixerRecipes);
 
+        // Stargate-Crystal Dust
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.StableAdhesive.get(64),
+                        ItemList.SuperconductorComposite.get(64),
+                        ItemList.NaquadriaSupersolid.get(64),
+                        ItemList.Timepiece.get(64),
+                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.Z_BOSON)),
+                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.ETA_MESON)),
+                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.LAMBDA)),
+                        GTUtility.copyAmount(64, Particle.getBaseParticle(Particle.OMEGA)),
+                        GTOreDictUnificator.get(OrePrefixes.gem, MaterialsUEVplus.GravitonShard, 4))
+                .fluidInputs(Materials.Grade8PurifiedWater.getFluid(1_000_000_000L))
+                .itemOutputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS()).duration(3 * MINUTES)
+                .eut(TierEU.RECIPE_UXV).addTo(mixerRecipes);
+
+        // Legacy Stargate Crystal Dust
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS().splitStack(64),
@@ -977,7 +993,7 @@ public class MixerRecipes implements Runnable {
                         Materials.ChromiumDioxide.getDust(64),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 54L),
                         GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Opal, 47L))
-                .itemOutputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS()).duration(3 * MINUTES)
+                .itemOutputs(com.dreammaster.item.ItemList.StargateDustAncients.getIS()).duration(3 * MINUTES)
                 .eut(262144).addTo(mixerRecipes);
 
         // Astral Silver & Soldering Alloy + reverse
@@ -1022,20 +1038,6 @@ public class MixerRecipes implements Runnable {
                     .addTo(mixerRecipes);
 
         }
-
-        // UMV Superconductor dust recipe.
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, MaterialsUEVplus.SpaceTime, 6L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, getBartWorksMaterialByIGNName("Orundum"), 3L),
-                        MaterialsElements.STANDALONE.HYPOGEN.getDust(11),
-                        MaterialsAlloy.TITANSTEEL.getDust(5),
-                        MaterialsElements.STANDALONE.DRAGON_METAL.getDust(2),
-                        GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.SuperconductorUMVBase, 27L))
-                .fluidInputs(Materials.Oxygen.getPlasma(144L)).duration(10 * 20).eut(TierEU.RECIPE_UMV)
-                .addTo(mixerRecipes);
 
         if (EnderIO.isModLoaded()) {
 
