@@ -61,6 +61,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.material.Particle;
@@ -1623,5 +1624,169 @@ public class AssemblingLineRecipes implements Runnable {
                 ItemList.WormholeGenerator.get(1L),
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UEV);
+
+        // Antimatter Forge
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                ItemRefer.Naquadah_Fuel_Refinery.get(1),
+                512000,
+                2048,
+                8000000,
+                64,
+                new Object[] { ItemRefer.Compact_Fusion_MK5.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.ProtoHalkonite, 16),
+                        GregtechItemList.CosmicFabricManipulator.get(16), ItemRefer.Field_Restriction_Coil_T3.get(16),
+                        MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, MaterialsUEVplus.ProtoHalkonite, 64),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16),
+                        ItemList.Electric_Pump_UIV.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsUEVplus.ProtoHalkonite, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.TranscendentMetal, 64) },
+                new FluidStack[] { MaterialsUEVplus.Protomatter.getFluid(10000),
+                        MaterialsUEVplus.SixPhasedCopper.getMolten(9216),
+                        MaterialsUEVplus.TranscendentMetal.getMolten(9216),
+                        MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(10000) },
+                ItemRefer.AntimatterForge.get(1),
+                1800 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Antimatter Generator
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                ItemRefer.Large_Naquadah_Reactor.get(1),
+                512000,
+                2048,
+                8000000,
+                64,
+                new Object[] { ItemList.WormholeGenerator.get(1),
+                        tectech.thing.CustomItemList.eM_dynamoTunnel7_UIV.get(4),
+                        ItemRefer.ProtomatterActivationCoil.get(16),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 16), ItemList.Emitter_UIV.get(32),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsUEVplus.ProtoHalkonite, 4),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, MaterialsUEVplus.ProtoHalkonite, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 64),
+                        MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64),
+                        MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64),
+                        MaterialsElements.STANDALONE.HYPOGEN.getFineWire(64) },
+                new FluidStack[] { MaterialsUEVplus.Antimatter.getFluid(1000),
+                        MaterialsUEVplus.SixPhasedCopper.getMolten(9216),
+                        MaterialsUEVplus.TranscendentMetal.getMolten(9216),
+                        Materials.SuperconductorUMVBase.getMolten(9216) },
+                ItemRefer.AntimatterGenerator.get(1),
+                1800 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Antimatter Hatch
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                ItemList.Hatch_Output_UIV.get(1),
+                256000,
+                1024,
+                4000000,
+                64,
+                new Object[] { ItemList.Hatch_Output_UIV.get(1), ItemList.Field_Generator_UEV.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsUEVplus.ProtoHalkonite, 1),
+                        ItemList.Electric_Pump_UIV.get(4), ItemList.Electromagnet_Tengam.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.foil, MaterialsUEVplus.ProtoHalkonite, 32) },
+                new FluidStack[] { Materials.RadoxPolymer.getMolten(1296), MaterialsUEVplus.Protomatter.getFluid(250),
+                        MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(1000) },
+                goodgenerator.loader.Loaders.AMHatch,
+                300 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Antimatter Containment Casing
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                new ItemStack(GregTechAPI.sBlockGlass1, 1, 3),
+                128000,
+                1024,
+                2000000,
+                32,
+                new Object[] { new ItemStack(GregTechAPI.sBlockGlass1, 4, 3),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, MaterialsUEVplus.ProtoHalkonite, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, MaterialsUEVplus.TranscendentMetal, 12),
+                        ItemList.Emitter_UIV.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 16), },
+                new FluidStack[] { Materials.RadoxPolymer.getMolten(16),
+                        MaterialsUEVplus.TranscendentMetal.getMolten(2304) },
+                ItemRefer.AntimatterContainmentCasing.get(4),
+                60 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Gravity Stabilization Casing
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                new ItemStack(GregTechAPI.sBlockCasings10, 1, 8),
+                128000,
+                1024,
+                2000000,
+                32,
+                new Object[] { new ItemStack(GregTechAPI.sBlockCasings10, 4, 8), ItemList.Emitter_UIV.get(2),
+                        GregtechItemList.Battery_Gem_4.get(1), // Graviton Anomaly
+                        GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.ProtoHalkonite, 4),
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, MaterialsUEVplus.ProtoHalkonite, 1),
+                        ItemList.Gravistar.get(4), GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 16), },
+                new FluidStack[] { new FluidStack(FluidRegistry.getFluid("molten.chromaticglass"), 9216),
+                        MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(2304) },
+                ItemRefer.GravityStabilizationCasing.get(4),
+                60 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Magnetic Flux Casing
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                GTOreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.ProtoHalkonite, 1),
+                128000,
+                1024,
+                2000000,
+                32,
+                new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.ProtoHalkonite, 4),
+                        ItemList.Sensor_UIV.get(2), ItemList.Electromagnet_Tengam.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.ProtoHalkonite, 1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, MaterialsUEVplus.TranscendentMetal, 16),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUIV, 16), },
+                new FluidStack[] { Materials.TengamPurified.getMolten(9216),
+                        MaterialsUEVplus.TranscendentMetal.getMolten(2304), Materials.SuperCoolant.getFluid(10000) },
+                ItemRefer.MagneticFluxCasing.get(4),
+                60 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Protomatter Activation Coil
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                new ItemStack(ModBlocks.blockCasingsMisc, 1, 8),
+                128000,
+                1024,
+                2000000,
+                32,
+                new Object[] { ItemRefer.Field_Restriction_Coil_T3.get(1), ItemList.Electric_Pump_UIV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 8),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 1),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, MaterialsUEVplus.ProtoHalkonite, 4),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
+                        ItemList.Field_Generator_UEV.get(4) },
+                new FluidStack[] { MaterialsUEVplus.Protomatter.getFluid(100),
+                        MaterialsUEVplus.TranscendentMetal.getMolten(2304),
+                        MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(1000) },
+                ItemRefer.ProtomatterActivationCoil.get(4),
+                60 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
+        // Antimatter Annihilation Matrix
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                MaterialsUEVplus.Antimatter.getCells(1),
+                256000,
+                2048,
+                8000000,
+                32,
+                new Object[] { ItemRefer.ProtomatterActivationCoil.get(1),
+                        MaterialsElements.STANDALONE.HYPOGEN.getFoil(64), ItemList.Emitter_UIV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, MaterialsUEVplus.ProtoHalkonite, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUIV, 8),
+                        ItemList.Sensor_UIV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, MaterialsUEVplus.ProtoHalkonite, 4), },
+                new FluidStack[] { MaterialsUEVplus.Antimatter.getFluid(4),
+                        MaterialsElements.STANDALONE.HYPOGEN.getFluidStack(1440),
+                        MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(1000) },
+                ItemRefer.AntimatterAnnihilationMatrix.get(4),
+                60 * SECONDS,
+                (int) TierEU.RECIPE_UIV);
+
     }
 }
