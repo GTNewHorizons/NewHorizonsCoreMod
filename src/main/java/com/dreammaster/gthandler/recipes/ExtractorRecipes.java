@@ -173,7 +173,7 @@ public class ExtractorRecipes implements Runnable {
         if (GalacticraftAmunRa.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(GTModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1L, 14))
-                    .itemOutputs(GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 8L, 26))
+                    .itemOutputs(GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 64L, 26))
                     .duration(15 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(extractorRecipes);
         }
 

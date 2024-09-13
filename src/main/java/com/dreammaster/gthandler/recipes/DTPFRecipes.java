@@ -746,7 +746,7 @@ public class DTPFRecipes implements Runnable {
                     GTValues.RA.stdBuilder()
                             .itemInputs(
                                     GTOreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 16),
-                                    GTModHandler.getModItem(Avaritia.ID, "Resource", 32L, 8),
+                                    GTModHandler.getModItem(Avaritia.ID, "Resource", 16L, 8),
                                     GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
                             .fluidInputs(
                                     MaterialsUEVplus.ExcitedDTEC.getFluid(1797693L),
