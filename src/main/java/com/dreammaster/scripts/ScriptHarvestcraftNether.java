@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.oredict.OreDictHelper.removeOreDict;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -165,5 +166,6 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS).eut(16)
                 .addTo(cutterRecipes);
 
+        removeOreDict("listAllmeatraw", getModItem(PamsHarvestTheNether.ID, "fleshrootItem", 1));
     }
 }
