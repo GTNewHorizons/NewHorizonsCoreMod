@@ -309,10 +309,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
 
         GTOreDictUnificator
                 .registerOre("craftingToolShears", GTModHandler.getModItem(Railcraft.ID, "tool.steel.shears", 1L, 0));
-        GTOreDictUnificator.registerOre(
-                OrePrefixes.plate,
-                Materials.Lead,
-                GTModHandler.getModItem(Railcraft.ID, "part.plate", 1L, 4));
         GTOreDictUnificator
                 .registerOre("craftingToolCrowbar", GTModHandler.getModItem(Railcraft.ID, "tool.crowbar", 1L, 0));
         GTOreDictUnificator.registerOre(
