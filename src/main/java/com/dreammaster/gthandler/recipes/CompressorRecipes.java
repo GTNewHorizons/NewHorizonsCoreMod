@@ -23,7 +23,6 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersDefence;
-import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -58,7 +57,6 @@ public class CompressorRecipes implements Runnable {
         makeExtraUtilitiesRecipes();
         makeGTPlusPlusRecipes();
         makeHardcoreEnderExpansionRecipes();
-        makeNaturaRecipes();
         makePamsHarvestCraftRecipes();
         makeRailcraftRecipes();
         makeTinkerConstructRecipes();
@@ -163,18 +161,6 @@ public class CompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sapling", 8, WILDCARD, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockRubSapling", 8, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
-
-        if (TwilightForest.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(TwilightForest.ID, "tile.TFSapling", 8, WILDCARD, missing))
-                    .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing))
-                    .duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
-        }
 
         if (StevesCarts2.isModLoaded()) {
             GTValues.RA.stdBuilder()
@@ -218,11 +204,6 @@ public class CompressorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartzItem", 4, 0, missing))
                     .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing)).duration(15 * SECONDS)
                     .eut(2).addTo(compressorRecipes);
-        }
-        if (Forestry.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(getModItem(Forestry.ID, "sapling", 8, WILDCARD, missing))
-                    .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing))
-                    .duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
         }
     }
 
@@ -269,13 +250,6 @@ public class CompressorRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "bones", 2, 1, missing))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "bones", 1, 2, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "saplings", 8, WILDCARD, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "colorizedSaplings", 8, WILDCARD, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
     }
 
     private void makeBloodMagicRecipes() {
@@ -345,20 +319,6 @@ public class CompressorRecipes implements Runnable {
                 .eut(2).addTo(compressorRecipes);
     }
 
-    private void makeNaturaRecipes() {
-        if (!Natura.isModLoaded()) {
-            return;
-        }
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "barleyFood", 8, 0))
-                .itemOutputs(ItemList.IC2_Plantball.get(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "florasapling", 8, WILDCARD, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Rare Sapling", 8, WILDCARD, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
-    }
-
     private void makePamsHarvestCraftRecipes() {
         if (!PamsHarvestCraft.isModLoaded()) {
             return;
@@ -416,13 +376,6 @@ public class CompressorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemResource", 9, 3, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 8, 0, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
-                .eut(2).addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "blockCustomPlant", 8, 1, missing))
-                .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
     }
 
