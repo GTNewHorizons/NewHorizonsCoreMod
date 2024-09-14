@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedCore;
@@ -26,7 +25,6 @@ import static gregtech.api.enums.Mods.TinkersDefence;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
