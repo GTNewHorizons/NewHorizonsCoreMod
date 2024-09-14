@@ -155,30 +155,6 @@ public class ImplosionCompressorRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 2L))
                 .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Ledox, 1L))
-                .itemOutputs(
-                        CustomItemList.LedoxCompressedPlate.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
-                .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Mytryl, 1L))
-                .itemOutputs(
-                        CustomItemList.MytrylCompressedPlate.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
-                .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Quantium, 1L))
-                .itemOutputs(
-                        CustomItemList.QuantinumCompressedPlate.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
-                .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.CallistoIce, 1L))
-                .itemOutputs(
-                        CustomItemList.CallistoIceCompressedPlate.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ash, 1L))
-                .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 1).addTo(implosionRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.MytrylCompressedPlate.get(2L))
                 .itemOutputs(
                         CustomItemList.MytrylDualCompressedPlates.get(1L),
