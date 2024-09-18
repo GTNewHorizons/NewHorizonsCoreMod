@@ -32,6 +32,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsElements;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class CircuitAssemblerRecipes implements Runnable {
 
@@ -1579,6 +1580,25 @@ public class CircuitAssemblerRecipes implements Runnable {
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(circuitAssemblerRecipes);
 
+                // Meteor Miner Schematic 1
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                ItemList.Circuit_Board_Wetware.get(32L),
+                                GregtechItemList.Laser_Lens_Special.get(1L),
+                                com.dreammaster.item.ItemList.LaserEmitter.getIS(4),
+                                ItemList.Tool_DataOrb.get(1L))
+                        .itemOutputs(ItemList.MeteorMinerSchematic1.get(1)).requiresCleanRoom().requiresLowGravity()
+                        .duration(1 * MINUTES).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
+
+                // Meteor Miner Schematic 2
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                ItemList.Circuit_Board_Bio.get(32L),
+                                GregtechItemList.Laser_Lens_Special.get(1L),
+                                ItemList.MeteorMinerSchematic1.get(1L),
+                                ItemList.Tool_DataOrb.get(1L))
+                        .itemOutputs(ItemList.MeteorMinerSchematic2.get(1)).requiresCleanRoom().requiresLowGravity()
+                        .duration(1 * MINUTES).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
             }
 
         }
