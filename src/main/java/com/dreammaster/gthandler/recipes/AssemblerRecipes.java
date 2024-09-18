@@ -1481,18 +1481,18 @@ public class AssemblerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(trophies[0], new ItemStack(Items.golden_carrot))
                     .itemOutputs(new ItemStack(Items.potionitem, 1, 8262)).duration(6 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(assemblerRecipes);
+                    .nbtSensitive().addTo(assemblerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(trophies[1], new ItemStack(Items.iron_sword))
                     .itemOutputs(new ItemStack(Items.leather, 64)).duration(6 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(assemblerRecipes);
+                    .nbtSensitive().addTo(assemblerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(trophies[2], new ItemStack(Items.feather)).itemOutputs(flightpotion)
-                    .duration(6 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                    .duration(6 * SECONDS).eut(TierEU.RECIPE_MV).nbtSensitive().addTo(assemblerRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(trophies[3], new ItemStack(Items.shears))
                     .itemOutputs(new ItemStack(Blocks.wool, 64)).duration(6 * SECONDS).eut(TierEU.RECIPE_MV)
-                    .addTo(assemblerRecipes);
+                    .nbtSensitive().addTo(assemblerRecipes);
 
         }
 
