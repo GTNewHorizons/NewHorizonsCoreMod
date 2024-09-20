@@ -1,21 +1,14 @@
 package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.DetravScannerMod;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.SGCraft;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.io.File;
 import java.util.Random;
 
+import com.dreammaster.recipes.RecipeIC2CropSeedDuplication;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -367,6 +360,10 @@ public class MainRegistry {
         CoreMod_PCBFactory_MaterialLoader.init();
 
         BWGlassAdder.registerGlasses();
+
+        if (IndustrialCraft2.isModLoaded() && Botania.isModLoaded()) {
+            RecipeIC2CropSeedDuplication.register();
+        }
 
     }
 
