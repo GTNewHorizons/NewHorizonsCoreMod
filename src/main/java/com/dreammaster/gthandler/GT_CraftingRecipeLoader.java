@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler;
 
+import static bartworks.common.loaders.ItemRegistry.bw_realglas;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
@@ -831,6 +832,24 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "PQP", "QFQ", "PQP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium), 'Q',
                         OrePrefixes.pipeMedium.get(Materials.BlackPlutonium), 'F',
                         OrePrefixes.frameGt.get(Materials.BlackPlutonium) });
+
+        GTModHandler.addCraftingRecipe(
+                ItemList.MeteorMiner.get(1L),
+                bits,
+                new Object[] { "ABA", "CDC", "ECE", 'A', OrePrefixes.circuit.get(Materials.LuV), 'B',
+                        tectech.thing.CustomItemList.eM_dynamoTunnel1_LuV, 'C', ItemList.Casing_Coil_Superconductor,
+                        'D', ItemList.OreDrill3, 'E', ItemList.LuV_Coil });
+
+        GTModHandler.addCraftingRecipe(
+                ItemList.Laser_Beacon.get(1L),
+                bits,
+                new Object[] { "AAA", "BCB", "DED", 'A', new ItemStack(bw_realglas, 1, 3), 'B',
+                        new ItemStack(
+                                ItemRegistry.TecTechPipeEnergyLowPower.getItem(),
+                                1,
+                                ItemRegistry.TecTechPipeEnergyLowPower.getItemDamage()),
+                        'C', OrePrefixes.lens.get(Materials.NetherStar), 'D', OrePrefixes.circuit.get(Materials.LuV),
+                        'E', ItemList.Casing_Coil_Superconductor });
 
         // BM raw orbs
         GTModHandler.addCraftingRecipe(
