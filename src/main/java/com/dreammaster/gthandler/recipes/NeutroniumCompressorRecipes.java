@@ -396,9 +396,9 @@ public class NeutroniumCompressorRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Eternal Singularity Alternate Recipe
-            GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.Eternity.getMolten(72L * 32))
+            GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.Eternity.getMolten(72L * 8))
                     .itemInputs(ItemList.Black_Hole_Opener.get(1))
-                    .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 64)).duration(100 * SECONDS)
+                    .itemOutputs(getModItem(EternalSingularity.ID, "eternal_singularity", 16)).duration(100 * SECONDS)
                     .eut(TierEU.RECIPE_MAX).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
 
             // Iron Singularity
