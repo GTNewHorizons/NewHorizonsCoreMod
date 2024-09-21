@@ -1546,8 +1546,6 @@ public class ScriptCoreMod implements IScriptLoader {
                         new ItemStack(CustomPatterns.BowStringCast, 0))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "bowstring", 1, 1, missing)).duration(20 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing))
-                .itemOutputs(CustomItemList.ChargedCertusQuartzDust.get(1L)).duration(10).eut(16).addTo(hammerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.EngravedManyullynCrystalChip.getIS(1),
@@ -1605,26 +1603,8 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.AluminiumIronPlate.get(1L)).duration(30 * SECONDS).eut(120)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(CustomItemList.AluminiumIronPlate.get(1L)).duration(30 * SECONDS).eut(120)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.AluminiumIronPlate.get(1L)).duration(30 * SECONDS).eut(120)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.TitaniumIronPlate.get(1L)).duration(30 * SECONDS).eut(480)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1634,33 +1614,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.TitaniumIronPlate.get(1L)).duration(30 * SECONDS).eut(480)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.TungstenIronPlate.get(1L)).duration(30 * SECONDS).eut(1920)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(CustomItemList.TungstenIronPlate.get(1L)).duration(30 * SECONDS).eut(1920)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tungsten, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.TungstenIronPlate.get(1L)).duration(30 * SECONDS).eut(1920)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.TungstenSteelIronPlate.get(1L)).duration(30 * SECONDS).eut(7680)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1670,34 +1626,10 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.TungstenSteelIronPlate.get(1L)).duration(30 * SECONDS).eut(7680)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.ChromeIronPlate.get(1L)).duration(30 * SECONDS).eut(30720)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(CustomItemList.ChromeIronPlate.get(1L)).duration(30 * SECONDS).eut(30720)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.ChromeIronPlate.get(1L)).duration(30 * SECONDS).eut(30720)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6, missing))
-                .duration(30 * SECONDS).eut(122880).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
@@ -1706,33 +1638,9 @@ public class ScriptCoreMod implements IScriptLoader {
                 .duration(30 * SECONDS).eut(122880).addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 6, missing))
-                .duration(30 * SECONDS).eut(122880).addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.NaquadriaIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
                 .itemOutputs(CustomItemList.NaquadriaIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Naquadria, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.NaquadriaIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.NeutroniumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UHV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1742,44 +1650,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.NeutroniumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UHV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        com.dreammaster.item.ItemList.BedrockiumPlate.getIS(2),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 4, 4, missing))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        com.dreammaster.item.ItemList.BedrockiumPlate.getIS(2),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 2L),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
-                .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        com.dreammaster.item.ItemList.BedrockiumPlate.getIS(2),
-                        getModItem(Railcraft.ID, "part.plate", 4, 0, missing))
                 .itemOutputs(CustomItemList.BedrockiumIronPlate.get(1L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "obsidian", 1, 0, missing))
