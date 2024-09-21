@@ -187,7 +187,9 @@ public class ScriptForestry implements IScriptLoader {
                 .itemOutputs(getModItem(Forestry.ID, "alveary", 1, 0, missing)).duration(1 * MINUTES).eut(64)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Bronze, 4))
+                .itemInputs(
+                        ItemList.Casing_LV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Bronze, 4))
                 .itemOutputs(getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing)).duration(40 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
