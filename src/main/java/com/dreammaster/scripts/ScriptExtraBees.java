@@ -389,46 +389,6 @@ public class ScriptExtraBees implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 1, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Diamond, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Emerald, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 3, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ruby, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sapphire, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 5, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Lapis, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 8, missing))
-                .itemOutputs(ItemList.Color_01.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 9, missing))
-                .itemOutputs(ItemList.Color_11.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 10, missing))
-                .itemOutputs(ItemList.Color_04.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 11, missing))
-                .itemOutputs(ItemList.Color_02.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 13, missing))
-                .itemOutputs(ItemList.Color_15.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 12, missing))
-                .itemOutputs(ItemList.Color_00.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 14, missing))
-                .itemOutputs(ItemList.Color_03.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
 
         new ResearchItem(
                 "HEALINGFRAME",
