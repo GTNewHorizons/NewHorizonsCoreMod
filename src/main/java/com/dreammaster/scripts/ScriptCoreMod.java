@@ -1660,11 +1660,6 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone", 1, 0, missing))
                 .itemOutputs(com.dreammaster.item.ItemList.LongStoneRod.getIS(4)).duration(16 * SECONDS).eut(16)
                 .addTo(latheRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 1, missing))
-                .itemOutputs(
-                        com.dreammaster.item.ItemList.ChargedCertusQuartzRod.getIS(2),
-                        CustomItemList.ChargedCertusQuartzDust.get(1L))
-                .duration(10 * SECONDS).eut(16).addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sandstone", 1, wildcard, missing))
                 .itemOutputs(CustomItemList.SandStoneRod.get(1L)).duration(8 * SECONDS).eut(16).addTo(latheRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "cobblestone", 1, 0, missing))
@@ -1702,36 +1697,9 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.MarshmallowForm.get(1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 4L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.AluminiumItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Aluminium, 2L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.StainlessSteelItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.StainlessSteel, 2L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.TitaniumItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Titanium, 2L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.ChromeItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Chrome, 2L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.TungstenItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Tungsten, 2L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.TungstenSteelItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.TungstenSteel, 2L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.IridiumItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Iridium, 2L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.IridiumAlloyItemCasing.get(1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Iridium, 8L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.OsmiumItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Osmium, 2L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.NeutroniumItemCasing.getIS(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Neutronium, 2L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
@@ -1741,69 +1709,12 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.RawMytryl.getIS(1))
                 .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.Mytryl.getIS())
-                .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(9)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.MytrylCompressedPlate.get(1L))
-                .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(3)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.MytrylIngot.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(1)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.MytrylPlate.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(1)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.MytrylDensePlate.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(9)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.QuantinumDensePlate.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.QuantinumDust.getIS(9)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.QuantinumPlate.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.QuantinumDust.getIS(1)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.QuantinumCompressedPlate.get(1L))
-                .itemOutputs(com.dreammaster.item.ItemList.QuantinumDust.getIS(3)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.QuantinumRod.getIS(2))
                 .itemOutputs(com.dreammaster.item.ItemList.QuantinumDust.getIS(1)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BlackPlutoniumDensePlate.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.BlackPlutoniumDust.getIS(18)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BlackPlutoniumPlate.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.BlackPlutoniumDust.getIS(2)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CallistoColdIce.getIS())
-                .itemOutputs(com.dreammaster.item.ItemList.CallistoIceDust.getIS(9)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.CallistoIcePlate.get(1L))
                 .itemOutputs(com.dreammaster.item.ItemList.CallistoIceDust.getIS(1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CallistoIceCompressedPlate.get(1L))
-                .itemOutputs(com.dreammaster.item.ItemList.CallistoIceDust.getIS(3)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.Ledox.getIS())
-                .itemOutputs(com.dreammaster.item.ItemList.LedoxDust.getIS(9)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.LedoxDensePlate.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.LedoxDust.getIS(9)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.LedoxPlate.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.LedoxDust.getIS(1)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.LedoxCompressedPlate.get(1L))
-                .itemOutputs(com.dreammaster.item.ItemList.LedoxDust.getIS(3)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 1, missing))
-                .itemOutputs(CustomItemList.ChargedCertusQuartzDust.get(1L)).outputChances(10000).duration(15 * SECONDS)
-                .eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(1))
-                .itemOutputs(CustomItemList.ChargedCertusQuartzDust.get(1L)).outputChances(10000).duration(15 * SECONDS)
-                .eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.ChargedCertusQuartzRod.getIS(2))
-                .itemOutputs(CustomItemList.ChargedCertusQuartzDust.get(1L)).outputChances(10000).duration(15 * SECONDS)
-                .eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 55, missing))
                 .itemOutputs(com.dreammaster.item.ItemList.ElectrotineWire.getIS(2)).duration(5 * SECONDS).eut(4)
                 .addTo(wiremillRecipes);
