@@ -1208,16 +1208,6 @@ public class ScriptCoreMod implements IScriptLoader {
                         CustomItemList.ReinforcedTitaniumIronPlate.get(1L),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.MeteoricSteel, 1L),
-                        getModItem(IndustrialCraft2.ID, "itemPlates", 2, 8, missing),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
-                .itemOutputs(CustomItemList.IrradiantReinforcedTitaniumPlate.get(1L))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).duration(30 * SECONDS).eut(480)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.ReinforcedTitaniumIronPlate.get(1L),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.MeteoricSteel, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                 .itemOutputs(CustomItemList.IrradiantReinforcedTitaniumPlate.get(1L))
@@ -1273,26 +1263,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(CustomItemList.IrradiantReinforcedNaquadriaPlate.get(1L))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.ReinforcedNaquadriaIronPlate.get(1L),
-                        com.dreammaster.item.ItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
-                        com.dreammaster.item.ItemList.QuantinumPlate.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
-                .itemOutputs(CustomItemList.IrradiantReinforcedNaquadriaPlate.get(1L))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.ReinforcedNeutroniumIronPlate.get(1L),
-                        com.dreammaster.item.ItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
-                .itemOutputs(CustomItemList.IrradiantReinforcedNeutroniumPlate.get(1L))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 18432)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.ReinforcedNeutroniumIronPlate.get(1L),
