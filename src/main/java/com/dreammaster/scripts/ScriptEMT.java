@@ -101,10 +101,6 @@ public class ScriptEMT implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS).eut(16)
                 .addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 288)).duration(5 * SECONDS).eut(16)
-                .addTo(fluidSolidifierRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).duration(5 * SECONDS).eut(30)
                 .addTo(fluidSolidifierRecipes);
@@ -117,9 +113,6 @@ public class ScriptEMT implements IScriptLoader {
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(5 * SECONDS).eut(30)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 1, 21, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Cinnabar, 22L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
