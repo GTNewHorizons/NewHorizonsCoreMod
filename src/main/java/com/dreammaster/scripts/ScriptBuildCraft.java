@@ -549,64 +549,8 @@ public class ScriptBuildCraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 4, missing),
-                        ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.WroughtIron, 1),
-                        getModItem(IndustrialCraft2.ID, "itemCasing", 2, 4, missing),
-                        ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                        ItemList.IC2_Item_Casing_Iron.get(2L),
-                        ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.WroughtIron, 1),
-                        ItemList.IC2_Item_Casing_Iron.get(2L),
-                        ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 2),
-                        ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.WroughtIron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 2),
-                        ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 2),
-                        ItemList.Electric_Motor_LV.get(1L))
-                .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
-                .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "factory2", 1, 2, missing),
-                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.WroughtIron, 1),
-                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 2),
+                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Iron, 1),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 2),
                         ItemList.Electric_Motor_LV.get(1L))
                 .itemOutputs(getModItem(BuildCraftFactory.ID, "autoWorkbenchBlock", 1, 0, missing))
                 .duration(10 * SECONDS).eut(30).addTo(assemblerRecipes);
