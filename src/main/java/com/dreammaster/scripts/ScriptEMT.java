@@ -36,6 +36,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -2814,7 +2815,7 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("permutatio"), 32)
                         .add(Aspect.getAspect("machina"), 16).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("metallum"), 32),
-                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 7, missing),
+                GregtechItemList.Generator_SemiFluid_LV.get(1),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusTrade", 1, 0, missing), ItemList.Emitter_MV.get(1L),
                         getModItem(Minecraft.ID, "hopper", 1, 0, missing), ItemList.Electric_Motor_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing),
