@@ -2339,9 +2339,10 @@ public class AssemblerRecipes implements Runnable {
         // Electric Compressor Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GGMaterial.incoloy903.get(OrePrefixes.plate, 6),
+                        GGMaterial.incoloy903.get(OrePrefixes.plate, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 2),
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1))
-                .itemOutputs(ItemList.Compressor_Casing.get(2)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .itemOutputs(ItemList.Compressor_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
         // Compression Pipe Casing

@@ -733,10 +733,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         // Electric Compressor Casing
         GTModHandler.addCraftingRecipe(
-                ItemList.Compressor_Casing.get(2),
+                ItemList.Compressor_Casing.get(1),
                 bits,
-                new Object[] { "PhP", "PFP", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
-                        OrePrefixes.frameGt.get(Materials.Titanium) });
+                new Object[] { "PhP", "SFS", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
+                        OrePrefixes.frameGt.get(Materials.Titanium), 'S', OrePrefixes.plate.get(Materials.Steel) });
 
         // Compression Pipe Casing
         GTModHandler.addCraftingRecipe(
