@@ -1392,12 +1392,6 @@ public class ScriptEnderIO implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EndSteel, 1L),
-                        GTUtility.getIntegratedCircuit(5))
-                .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBall", 1, 9, missing)).duration(10 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.CrudeSteel, 1L),
                         GTUtility.getIntegratedCircuit(5))
                 .itemOutputs(getModItem(EnderIO.ID, "itemGrindingBallEndergy", 1, 0, missing)).duration(10 * SECONDS)
@@ -1470,12 +1464,6 @@ public class ScriptEnderIO implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Soularium, 3L),
-                        GTUtility.getIntegratedCircuit(3))
-                .itemOutputs(getModItem(EnderIO.ID, "blockSoulariumBars", 4, 0, missing)).duration(30 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.EndSteel, 3L),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EnderIO.ID, "blockEndSteelBars", 4, 0, missing)).duration(30 * SECONDS).eut(64)
@@ -1531,13 +1519,6 @@ public class ScriptEnderIO implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 0, missing)).duration(5 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedstoneAlloy, 1L))
-                .itemOutputs(getModItem(EnderIO.ID, "itemRedstoneConduit", 1, 2, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

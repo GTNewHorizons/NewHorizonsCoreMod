@@ -736,20 +736,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Casing.get(1),
                 bits,
-                new Object[] { "PhP", "PFP", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
-                        GGMaterial.incoloy903.get(OrePrefixes.block) });
+                new Object[] { "PhP", "SFS", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
+                        OrePrefixes.frameGt.get(Materials.Titanium), 'S', OrePrefixes.plate.get(Materials.Steel) });
 
         // Compression Pipe Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Pipe_Casing.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
-                        GGMaterial.incoloy903.get(OrePrefixes.pipeMedium), 'F',
-                        GGMaterial.incoloy903.get(OrePrefixes.gearGt) });
+                        GGMaterial.incoloy903.get(OrePrefixes.pipeSmall), 'F',
+                        OrePrefixes.gearGt.get(Materials.Titanium) });
 
         // Neutronium Stabilization Casing
         GTModHandler.addCraftingRecipe(
-                ItemList.Neutronium_Stable_Casing.get(2),
+                ItemList.Neutronium_Stable_Casing.get(4),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P',
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1), 'Q',
@@ -770,6 +770,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "TCT", "VMP", "TCT", 'M', ItemList.Machine_EV_FluidExtractor, 'V',
                         ItemList.Conveyor_Module_EV, 'P', ItemList.Electric_Pump_EV, 'T',
                         OrePrefixes.plate.get(Materials.TungstenSteel), 'C', OrePrefixes.circuit.get(Materials.IV) });
+
+        // Big Barrel Brewery
+        GTModHandler.addCraftingRecipe(
+                ItemList.Machine_Multi_IndustrialBrewery.get(1),
+                bits,
+                new Object[] { "TCT", "PMP", "TCT", 'M', ItemList.Machine_HV_Brewery, 'P', ItemList.Electric_Pump_HV,
+                        'T', OrePrefixes.plate.get(Materials.WoodSealed), 'C', OrePrefixes.circuit.get(Materials.EV) });
+
+        // Reinforced Wooden Casing
+        GTModHandler.addCraftingRecipe(
+                ItemList.Casing_Reinforced_Wood.get(1),
+                bits,
+                new Object[] { "PhP", "PFP", "PwP", 'P', OrePrefixes.plate.get(Materials.WoodSealed), 'F',
+                        OrePrefixes.frameGt.get(Materials.StainlessSteel) });
 
         // Item Pipe Casings
         // Tin

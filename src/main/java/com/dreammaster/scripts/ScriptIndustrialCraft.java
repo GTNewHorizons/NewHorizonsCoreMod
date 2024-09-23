@@ -1000,17 +1000,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "rotorStainlessSteel",
                 "circuitAdvanced");
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 7, missing),
-                "itemCasingSteel",
-                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
-                "itemCasingSteel",
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.RedAlloy, 1L),
-                ItemList.Hull_LV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.RedAlloy, 1L),
-                "itemCasingSteel",
-                ItemList.Electric_Motor_LV.get(1L),
-                "itemCasingSteel");
-        addShapedRecipe(
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 1L),
                 "craftingToolHardHammer",
                 null,
