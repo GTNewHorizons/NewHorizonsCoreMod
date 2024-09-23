@@ -735,20 +735,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Casing.get(1),
                 bits,
-                new Object[] { "PhP", "PFP", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
-                        GGMaterial.incoloy903.get(OrePrefixes.block) });
+                new Object[] { "PhP", "SFS", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
+                        OrePrefixes.frameGt.get(Materials.Titanium), 'S', OrePrefixes.plate.get(Materials.Steel) });
 
         // Compression Pipe Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Pipe_Casing.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
-                        GGMaterial.incoloy903.get(OrePrefixes.pipeMedium), 'F',
-                        GGMaterial.incoloy903.get(OrePrefixes.gearGt) });
+                        GGMaterial.incoloy903.get(OrePrefixes.pipeSmall), 'F',
+                        OrePrefixes.gearGt.get(Materials.Titanium) });
 
         // Neutronium Stabilization Casing
         GTModHandler.addCraftingRecipe(
-                ItemList.Neutronium_Stable_Casing.get(2),
+                ItemList.Neutronium_Stable_Casing.get(4),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P',
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1), 'Q',
