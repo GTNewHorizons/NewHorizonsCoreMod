@@ -2287,7 +2287,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
                         ItemList.Casing_MAX.get(1),
                         GTUtility.getIntegratedCircuit(16))
-                .itemOutputs(ItemList.Neutronium_Stable_Casing.get(2)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .itemOutputs(ItemList.Neutronium_Stable_Casing.get(4)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
         // Neutronium Compressor conversion
@@ -2340,16 +2340,16 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GGMaterial.incoloy903.get(OrePrefixes.plate, 6),
-                        GGMaterial.incoloy903.get(OrePrefixes.block, 1))
-                .itemOutputs(ItemList.Compressor_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1))
+                .itemOutputs(ItemList.Compressor_Casing.get(2)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
         // Compression Pipe Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GGMaterial.incoloy903.get(OrePrefixes.plate, 4),
-                        GGMaterial.incoloy903.get(OrePrefixes.gearGt, 1),
-                        GGMaterial.incoloy903.get(OrePrefixes.pipeMedium, 4))
+                        GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.Titanium, 1),
+                        GGMaterial.incoloy903.get(OrePrefixes.pipeSmall, 4))
                 .itemOutputs(ItemList.Compressor_Pipe_Casing.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 

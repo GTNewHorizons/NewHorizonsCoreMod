@@ -733,22 +733,22 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         // Electric Compressor Casing
         GTModHandler.addCraftingRecipe(
-                ItemList.Compressor_Casing.get(1),
+                ItemList.Compressor_Casing.get(2),
                 bits,
                 new Object[] { "PhP", "PFP", "PwP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'F',
-                        GGMaterial.incoloy903.get(OrePrefixes.block) });
+                        OrePrefixes.frameGt.get(Materials.Titanium) });
 
         // Compression Pipe Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Compressor_Pipe_Casing.get(1),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P', GGMaterial.incoloy903.get(OrePrefixes.plate), 'Q',
-                        GGMaterial.incoloy903.get(OrePrefixes.pipeMedium), 'F',
-                        GGMaterial.incoloy903.get(OrePrefixes.gearGt) });
+                        GGMaterial.incoloy903.get(OrePrefixes.pipeSmall), 'F',
+                        OrePrefixes.gearGt.get(Materials.Titanium) });
 
         // Neutronium Stabilization Casing
         GTModHandler.addCraftingRecipe(
-                ItemList.Neutronium_Stable_Casing.get(2),
+                ItemList.Neutronium_Stable_Casing.get(4),
                 bits,
                 new Object[] { "PQP", "QFQ", "PQP", 'P',
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1), 'Q',
