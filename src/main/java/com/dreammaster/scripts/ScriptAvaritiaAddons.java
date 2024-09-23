@@ -14,7 +14,6 @@ import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gregtech.api.util.GTRecipeConstants.COMPRESSION_TIER;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,6 +31,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -181,7 +181,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     getModItem(UniversalSingularities.ID, "universal.general.singularity", 1L, 20))
                     .fluidInputs(MaterialsUEVplus.Mellion.getMolten(4 * 144L))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1L, 2)).duration(1 * SECONDS)
-                    .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+                    .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
 
             // Cryptic Singularity
             GTValues.RA.stdBuilder().itemInputs(
@@ -189,7 +189,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     getModItem(Avaritia.ID, "Singularity", 1L, 0))
                     .fluidInputs(MaterialsUEVplus.Creon.getMolten(4 * 144L))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1L, 4)).duration(1 * SECONDS)
-                    .eut(TierEU.RECIPE_UMV).metadata(COMPRESSION_TIER, 2).addTo(neutroniumCompressorRecipes);
+                    .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
         }
     }
 }
