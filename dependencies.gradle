@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.50.09:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.50.10:dev")
     api("com.github.GTNewHorizons:Yamcl:0.6.0:dev")
     api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
 
@@ -10,7 +10,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:twilightforest:2.6.34:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.4.20:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.4.1:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.12.9-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.12.10-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.2.2:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
@@ -20,7 +20,7 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.7.0:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:Galacticraft:3.2.4-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:Galacticraft:3.2.5-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.9.16:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.4.6-GTNH:dev")
 
