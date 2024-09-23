@@ -774,15 +774,15 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_IndustrialBrewery.get(1),
                 bits,
-                new Object[] { "TCT", "PMP", "TCT", 'M', ItemList.Machine_EV_Brewery, 'P', ItemList.Electric_Pump_EV,
-                        'T', OrePrefixes.plate.get(Materials.WoodSealed), 'C', OrePrefixes.circuit.get(Materials.IV) });
+                new Object[] { "TCT", "PMP", "TCT", 'M', ItemList.Machine_HV_Brewery, 'P', ItemList.Electric_Pump_HV,
+                        'T', OrePrefixes.plate.get(Materials.WoodSealed), 'C', OrePrefixes.circuit.get(Materials.EV) });
 
         // Reinforced Wooden Casing
         GTModHandler.addCraftingRecipe(
                 ItemList.Casing_Reinforced_Wood.get(1),
                 bits,
                 new Object[] { "PhP", "PFP", "PwP", 'P', OrePrefixes.plate.get(Materials.WoodSealed), 'F',
-                        OrePrefixes.frameGt.get(Materials.Titanium) });
+                        OrePrefixes.frameGt.get(Materials.StainlessSteel) });
 
         // Item Pipe Casings
         // Tin

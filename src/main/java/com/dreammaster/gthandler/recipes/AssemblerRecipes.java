@@ -2395,7 +2395,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 6),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1))
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.StainlessSteel, 1))
                 .itemOutputs(ItemList.Casing_Reinforced_Wood.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
