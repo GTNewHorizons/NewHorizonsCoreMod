@@ -2391,6 +2391,14 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(INDALLOY_140.getFluidStack(16000)).itemOutputs(ItemList.Hatch_HeatSensor.get(1))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
+        // Reinforced Wooden Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WoodSealed, 6),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1))
+                .itemOutputs(ItemList.Casing_Reinforced_Wood.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
+
         // Iron Electromagnet
         GTValues.RA.stdBuilder()
                 .itemInputs(
