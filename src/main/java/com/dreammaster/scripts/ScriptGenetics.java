@@ -260,7 +260,7 @@ public class ScriptGenetics implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        com.dreammaster.item.ItemList.AluminiumItemCasing.getIS(8))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 8))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).duration(1 * MINUTES).eut(120)
                 .addTo(assemblerRecipes);
 
