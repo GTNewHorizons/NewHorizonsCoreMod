@@ -809,7 +809,7 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(CustomItemList.BedrockiumPlate.get(8L)),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 8),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(CustomItemList.Casing_UEV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);

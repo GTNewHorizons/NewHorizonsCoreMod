@@ -80,17 +80,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 OrePrefixes.compressed,
                 Materials.MysteriousCrystal,
                 ItemList.MysteriousCrystalCompressedPlate.getIS());
-        GTOreDictUnificator.registerOre(
-                OrePrefixes.plate,
-                Materials.Bedrockium,
-                com.dreammaster.item.ItemList.BedrockiumPlate.getIS(1));
         GTOreDictUnificator.registerOre(OrePrefixes.block, Materials.BlackPlutonium, BlockList.BlackPlutonium.getIS());
-        GTOreDictUnificator.registerOre(
-                OrePrefixes.plate,
-                Materials.Manyullyn,
-                com.dreammaster.item.ItemList.ManyullynPlate.getIS(1));
-        GTOreDictUnificator
-                .registerOre(OrePrefixes.plate, Materials.Ardite, com.dreammaster.item.ItemList.ArditePlate.getIS(1));
         GTOreDictUnificator.registerOre("dustQuartzSand", com.dreammaster.item.ItemList.SandDust.getIS(1));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.dust,

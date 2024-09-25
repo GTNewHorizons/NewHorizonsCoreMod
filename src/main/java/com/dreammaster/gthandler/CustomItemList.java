@@ -327,7 +327,6 @@ public enum CustomItemList implements IItemContainer {
     MedalEngineer,
     MedalWarp,
     MaceratedPlantmass,
-    BedrockiumPlate,
     EngineCore,
     nameRemover,
     TwilightCrystal,

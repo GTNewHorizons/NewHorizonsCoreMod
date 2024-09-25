@@ -343,7 +343,6 @@ public class GT_Loader_Items {
         CustomItemList.MedalWarp.getItem().setMaxStackSize(1);
         CustomItemList.AluminoSilicateWool.set(ItemList.AluminoSilicateWool.getIS());
         CustomItemList.MaceratedPlantmass.set(ItemList.MaceratedPlantmass.getIS());
-        CustomItemList.BedrockiumPlate.set(ItemList.BedrockiumPlate.getIS());
         CustomItemList.EngineCore.set(ItemList.EngineCore.getIS());
         CustomItemList.TwilightCrystal.set(ItemList.TwilightCrystal.getIS());
         CustomItemList.UnfiredClayBrick.set(ItemList.UnfiredClayBrick.getIS());
