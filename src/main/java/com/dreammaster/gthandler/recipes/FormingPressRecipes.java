@@ -3,7 +3,6 @@ package com.dreammaster.gthandler.recipes;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.ProjectRedCore;
-import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -450,13 +449,6 @@ public class FormingPressRecipes implements Runnable {
                             CustomItemList.EtchedLowVoltageWiring.get(1L))
                     .itemOutputs(GTModHandler.getModItem(ProjectRedCore.ID, "projectred.core.part", 1L, 0))
                     .duration(5 * SECONDS).eut(16).addTo(formingPressRecipes);
-
-        }
-
-        if (Thaumcraft.isModLoaded()) {
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3))
-                    .itemOutputs(CustomItemList.PrimordialPearlFragment.get(3L)).duration(16 * TICKS)
-                    .eut(TierEU.RECIPE_IV).addTo(formingPressRecipes);
 
         }
 
