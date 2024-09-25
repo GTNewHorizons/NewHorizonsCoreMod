@@ -266,7 +266,6 @@ public class GT_Loader_Items {
         CustomItemList.MediumFuelCanister.set(ItemList.MediumFuelCanister.getIS());
         CustomItemList.LargeFuelCanister.set(ItemList.LargeFuelCanister.getIS());
         CustomItemList.ExtraLargeFuelCanister.set(ItemList.ExtraLargeFuelCanister.getIS());
-        CustomItemList.CallistoIcePlate.set(ItemList.CallistoIcePlate.getIS());
         CustomItemList.MytrylCrystal.set(ItemList.MytrylCrystal.getIS());
         CustomItemList.CallistoIceCompressedPlate.set(ItemList.CallistoIceCompressedPlate.getIS());
         CustomItemList.HeavyDutyRocketEngineTier3.set(ItemList.HeavyDutyRocketEngineTier3.getIS());
