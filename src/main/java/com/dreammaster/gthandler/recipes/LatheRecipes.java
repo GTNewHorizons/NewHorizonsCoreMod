@@ -25,11 +25,5 @@ public class LatheRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(Materials.RadoxPolymer.getPlates(1))
                 .itemOutputs(CustomItemList.RadoxPolymerLens.get(1)).duration(1 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(latheRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ReinforcedGlassPLate.get(1L))
-                .itemOutputs(
-                        CustomItemList.ReinforcedGlassLense.get(1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L))
-                .duration(20 * SECONDS).eut(16).addTo(latheRecipes);
     }
 }

@@ -109,13 +109,6 @@ public class ExtruderRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StainlessSteel, 2L),
-                        ItemList.Shape_Extruder_Hoe.get(0L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.StainlessSteel, 1L))
-                .duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV).addTo(extruderRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Iron, 9L),
                         GregtechItemList.Shape_Extruder_WindmillShaft.get(0))
                 .itemOutputs(ItemList.IC2_ShaftIron.get(1L)).duration(32 * SECONDS).eut(TierEU.RECIPE_MV)
