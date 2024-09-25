@@ -369,11 +369,6 @@ public enum ItemList {
     MysteriousCrystalDualCompressedPlates(
             new ModSimpleBaseItem("MysteriousCrystalDualCompressedPlates", ModTabList.ModSpaceTab)),
     MytrylCrystal(new ModSimpleBaseItem("MytrylCrystal", ModTabList.ModSpaceTab)),
-    MytrylDust(new ModSimpleBaseItem("MytrylDust", ModTabList.ModSpaceTab)),
-    MytrylIngot(new ModSimpleBaseItem("MytrylIngot", ModTabList.ModSpaceTab)),
-    MytrylHotIngot(new ModSimpleBaseItem("MytrylHotIngot", ModTabList.ModSpaceTab)),
-    MytrylPlate(new ModSimpleBaseItem("MytrylPlate", ModTabList.ModSpaceTab)),
-    MytrylDensePlate(new ModSimpleBaseItem("MytrylDensePlate", ModTabList.ModSpaceTab)),
     MytrylCompressedPlate(new ModSimpleBaseItem("MytrylCompressedPlate", ModTabList.ModSpaceTab)),
     MytrylDualCompressedPlates(new ModSimpleBaseItem("MytrylDualCompressedPlates", ModTabList.ModSpaceTab)),
     NagaScaleChip(new ModSimpleBaseItem("NagaScaleChip", ModTabList.ModThaumcraftTab)),

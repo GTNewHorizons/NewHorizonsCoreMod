@@ -129,7 +129,6 @@ public enum CustomItemList implements IItemContainer {
     LedoxPlate,
     QuantinumPlate,
     CallistoIcePlate,
-    MytrylPlate,
     MytrylCrystal,
     CallistoIceCompressedPlate,
     MarshmallowForm,

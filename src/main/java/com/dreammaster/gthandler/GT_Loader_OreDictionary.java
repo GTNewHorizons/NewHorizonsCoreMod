@@ -56,12 +56,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 GTModHandler.getModItem(BiomesOPlenty.ID, "logs4", 1L, 3));
         GTOreDictUnificator.registerOre("cropCarrot", GTModHandler.getModItem(BiomesOPlenty.ID, "food", 1L, 2));
 
-        GTOreDictUnificator.registerOre(OrePrefixes.ingot, Materials.Mytryl, ItemList.MytrylIngot.getIS());
-        GTOreDictUnificator.registerOre(OrePrefixes.dust, Materials.Mytryl, ItemList.MytrylDust.getIS());
-        GTOreDictUnificator.registerOre(OrePrefixes.plate, Materials.Mytryl, ItemList.MytrylPlate.getIS());
         GTOreDictUnificator
                 .registerOre(OrePrefixes.compressed, Materials.Mytryl, ItemList.MytrylCompressedPlate.getIS());
-        GTOreDictUnificator.registerOre(OrePrefixes.plateDense, Materials.Mytryl, ItemList.MytrylDensePlate.getIS());
         GTOreDictUnificator.registerOre(OrePrefixes.block, Materials.Mytryl, BlockList.Mytryl.getIS());
         GTOreDictUnificator.registerOre(OrePrefixes.ingot, Materials.CallistoIce, ItemList.CallistoIceIngot.getIS());
         GTOreDictUnificator.registerOre("ingotColdCallistoIce", ItemList.CallistoIceColdIngot.getIS());

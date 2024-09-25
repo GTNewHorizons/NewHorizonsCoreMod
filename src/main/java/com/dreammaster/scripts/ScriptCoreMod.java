@@ -1706,7 +1706,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.RawMytryl.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(1)).outputChances(10000)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mytryl, 1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.QuantinumRod.getIS(2))
                 .itemOutputs(com.dreammaster.item.ItemList.QuantinumDust.getIS(1)).outputChances(10000)
