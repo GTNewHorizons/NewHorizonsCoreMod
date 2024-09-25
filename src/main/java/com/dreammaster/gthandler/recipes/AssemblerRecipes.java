@@ -5746,7 +5746,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Paper, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.IronMagnetic, 2L),
                         ItemList.Circuit_Parts_Transistor.get(1L),
-                        GTUtility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(GTModHandler.getModItem(OpenSecurity.ID, "opensecurity.magCard", 2L, 0))
                 .fluidInputs(Materials.Glue.getFluid(144L)).duration(7 * SECONDS + 10 * TICKS).eut(64)
                 .addTo(assemblerRecipes);
