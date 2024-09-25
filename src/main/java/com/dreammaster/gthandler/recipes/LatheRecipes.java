@@ -9,9 +9,7 @@ import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTOreDictUnificator;
 
 public class LatheRecipes implements Runnable {
 
