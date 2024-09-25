@@ -1058,7 +1058,7 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.getIS(1),
-                        com.dreammaster.item.ItemList.BedrockiumPlate.getIS(18))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 18))
                 .itemOutputs(com.dreammaster.item.ItemList.EnrichedXSunnariumAlloy.getIS(1))
                 .duration(2 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -1331,7 +1331,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 64)).duration(30 * SECONDS).eut(256)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(BlockList.CallistoColdIce.getIS())
-                .itemOutputs(CustomItemList.CallistoIcePlate.get(9L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(3 * MINUTES).eut(30)
                 .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
@@ -1418,13 +1418,13 @@ public class ScriptCoreMod implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Tanzanite, 1L)),
-                        com.dreammaster.item.ItemList.ManyullynPlate.getIS(4))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 4))
                 .itemOutputs(CustomItemList.ManyullynCrystal.get(1L)).duration(1 * MINUTES).eut(1920)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.copyAmount(0L, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Amethyst, 1L)),
-                        com.dreammaster.item.ItemList.ManyullynPlate.getIS(4))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 4))
                 .itemOutputs(CustomItemList.ManyullynCrystal.get(1L)).duration(1 * MINUTES).eut(1920)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder()
@@ -1495,8 +1495,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 5, missing),
                         ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(com.dreammaster.item.ItemList.ManyullynPlate.getIS(1)).duration(5 * SECONDS).eut(480)
-                .addTo(extruderRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1)).duration(5 * SECONDS)
+                .eut(480).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "feather", 1, 0, missing),
@@ -1706,13 +1706,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 9L))
                 .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.RawMytryl.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.MytrylDust.getIS(1)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.QuantinumRod.getIS(2))
-                .itemOutputs(com.dreammaster.item.ItemList.QuantinumDust.getIS(1)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(CustomItemList.CallistoIcePlate.get(1L))
-                .itemOutputs(com.dreammaster.item.ItemList.CallistoIceDust.getIS(1)).outputChances(10000)
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Mytryl, 1)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 55, missing))
                 .itemOutputs(com.dreammaster.item.ItemList.ElectrotineWire.getIS(2)).duration(5 * SECONDS).eut(4)

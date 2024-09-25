@@ -266,10 +266,6 @@ public class GT_Loader_Items {
         CustomItemList.MediumFuelCanister.set(ItemList.MediumFuelCanister.getIS());
         CustomItemList.LargeFuelCanister.set(ItemList.LargeFuelCanister.getIS());
         CustomItemList.ExtraLargeFuelCanister.set(ItemList.ExtraLargeFuelCanister.getIS());
-        CustomItemList.LedoxPlate.set(ItemList.LedoxPlate.getIS());
-        CustomItemList.QuantinumPlate.set(ItemList.QuantinumPlate.getIS());
-        CustomItemList.CallistoIcePlate.set(ItemList.CallistoIcePlate.getIS());
-        CustomItemList.MytrylPlate.set(ItemList.MytrylPlate.getIS());
         CustomItemList.MytrylCrystal.set(ItemList.MytrylCrystal.getIS());
         CustomItemList.CallistoIceCompressedPlate.set(ItemList.CallistoIceCompressedPlate.getIS());
         CustomItemList.HeavyDutyRocketEngineTier3.set(ItemList.HeavyDutyRocketEngineTier3.getIS());
@@ -347,9 +343,7 @@ public class GT_Loader_Items {
         CustomItemList.MedalWarp.getItem().setMaxStackSize(1);
         CustomItemList.AluminoSilicateWool.set(ItemList.AluminoSilicateWool.getIS());
         CustomItemList.MaceratedPlantmass.set(ItemList.MaceratedPlantmass.getIS());
-        CustomItemList.BedrockiumPlate.set(ItemList.BedrockiumPlate.getIS());
         CustomItemList.EngineCore.set(ItemList.EngineCore.getIS());
-        CustomItemList.AlumiteDust.set(ItemList.AlumiteDust.getIS());
         CustomItemList.TwilightCrystal.set(ItemList.TwilightCrystal.getIS());
         CustomItemList.UnfiredClayBrick.set(ItemList.UnfiredClayBrick.getIS());
         CustomItemList.UnfiredSearedBrick.set(ItemList.UnfiredSearedBrick.getIS());
@@ -357,7 +351,6 @@ public class GT_Loader_Items {
         CustomItemList.UnfiredSlimeSoulBrick.set(ItemList.UnfiredSlimeSoulBrick.getIS());
         CustomItemList.RawLapotronCrystal.set(ItemList.RawLapotronCrystal.getIS());
         CustomItemList.LapotronDust.set(ItemList.LapotronDust.getIS());
-        CustomItemList.SandDust.set(ItemList.SandDust.getIS());
         CustomItemList.AluminiumIronPlate.set(ItemList.AluminiumIronPlate.getIS());
         CustomItemList.ReinforcedAluminiumIronPlate.set(ItemList.ReinforcedAluminiumIronPlate.getIS());
         CustomItemList.IrradiantReinforcedAluminiumPlate.set(ItemList.IrradiantReinforcedAluminiumPlate.getIS());

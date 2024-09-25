@@ -13,7 +13,7 @@ public class GT_Loader_Materials {
 
     private void registerMaterialRecipes() {
         GTModHandler.addShapelessCraftingRecipe(
-                com.dreammaster.item.ItemList.AlumiteDust.getIS(8),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 8),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
                         OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
