@@ -126,7 +126,6 @@ public enum CustomItemList implements IItemContainer {
     IronDualCompressedPlates,
     MeteoricIronDualCompressedPlates,
     LedoxCompressedPlate,
-    LedoxPlate,
     QuantinumPlate,
     CallistoIcePlate,
     MytrylCrystal,

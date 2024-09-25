@@ -70,12 +70,7 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 OrePrefixes.compressed,
                 Materials.CallistoIce,
                 ItemList.CallistoIceCompressedPlate.getIS());
-        GTOreDictUnificator.registerOre(OrePrefixes.ingot, Materials.Ledox, ItemList.LedoxIngot.getIS());
-        GTOreDictUnificator.registerOre("ingotColdLedox", ItemList.LedoxColdIngot.getIS());
         GTOreDictUnificator.registerOre("blockLedox", BlockList.Ledox.getIS());
-        GTOreDictUnificator.registerOre(OrePrefixes.dust, Materials.Ledox, ItemList.LedoxDust.getIS());
-        GTOreDictUnificator.registerOre(OrePrefixes.plate, Materials.Ledox, ItemList.LedoxPlate.getIS());
-        GTOreDictUnificator.registerOre(OrePrefixes.plateDense, Materials.Ledox, ItemList.LedoxDensePlate.getIS());
         GTOreDictUnificator.registerOre(OrePrefixes.compressed, Materials.Ledox, ItemList.LedoxCompressedPlate.getIS());
         GTOreDictUnificator.registerOre(OrePrefixes.stick, Materials.Stone, ItemList.CobbleStoneRod.getIS());
         GTOreDictUnificator.registerOre(OrePrefixes.plate, Materials.Stone, ItemList.StonePlate.getIS());
