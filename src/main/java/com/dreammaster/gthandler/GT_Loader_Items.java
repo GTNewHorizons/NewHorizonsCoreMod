@@ -345,7 +345,6 @@ public class GT_Loader_Items {
         CustomItemList.MaceratedPlantmass.set(ItemList.MaceratedPlantmass.getIS());
         CustomItemList.BedrockiumPlate.set(ItemList.BedrockiumPlate.getIS());
         CustomItemList.EngineCore.set(ItemList.EngineCore.getIS());
-        CustomItemList.AlumiteDust.set(ItemList.AlumiteDust.getIS());
         CustomItemList.TwilightCrystal.set(ItemList.TwilightCrystal.getIS());
         CustomItemList.UnfiredClayBrick.set(ItemList.UnfiredClayBrick.getIS());
         CustomItemList.UnfiredSearedBrick.set(ItemList.UnfiredSearedBrick.getIS());

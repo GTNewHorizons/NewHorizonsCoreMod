@@ -27,7 +27,6 @@ public enum ItemList {
     AdsorptionFilterDirty(new ModSimpleBaseItem("AdsorptionFilterDirty", ModTabList.ModGenericTab)),
     AluminiumBars(new ModSimpleBaseItem("AluminiumBars", ModTabList.ModBarsAndCasingsTab)),
     AluminiumIronPlate(new ModSimpleBaseItem("AluminiumIronPlate", ModTabList.ModSolarTab)),
-    AlumiteDust(new ModSimpleBaseItem("AlumiteDust", ModTabList.ModGenericTab)),
     AdvancedCokeOvenBrick(new ModSimpleBaseItem("AdvancedCokeOvenBrick", ModTabList.ModGenericTab)),
     AdvancedCokeOvenBrickDust(new ModSimpleBaseItem("AdvancedCokeOvenBrickDust", ModTabList.ModGenericTab)),
     AdvancedBoard(new ModSimpleBaseItem("AdvancedBoard", ModTabList.ModCircuitsTab)),

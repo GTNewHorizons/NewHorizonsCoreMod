@@ -329,7 +329,6 @@ public enum CustomItemList implements IItemContainer {
     MaceratedPlantmass,
     BedrockiumPlate,
     EngineCore,
-    AlumiteDust,
     nameRemover,
     TwilightCrystal,
     UnfiredClayBrick,

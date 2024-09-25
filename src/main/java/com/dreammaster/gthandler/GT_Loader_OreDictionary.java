@@ -91,7 +91,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 com.dreammaster.item.ItemList.ManyullynPlate.getIS(1));
         GTOreDictUnificator
                 .registerOre(OrePrefixes.plate, Materials.Ardite, com.dreammaster.item.ItemList.ArditePlate.getIS(1));
-        GTOreDictUnificator.registerOre(OrePrefixes.dust, Materials.Alumite, ItemList.AlumiteDust.getIS());
         GTOreDictUnificator.registerOre("dustQuartzSand", com.dreammaster.item.ItemList.SandDust.getIS(1));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.dust,
