@@ -81,7 +81,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 Materials.MysteriousCrystal,
                 ItemList.MysteriousCrystalCompressedPlate.getIS());
         GTOreDictUnificator.registerOre(OrePrefixes.block, Materials.BlackPlutonium, BlockList.BlackPlutonium.getIS());
-        GTOreDictUnificator.registerOre("dustQuartzSand", com.dreammaster.item.ItemList.SandDust.getIS(1));
         GTOreDictUnificator.registerOre(
                 OrePrefixes.dust,
                 Materials.CertusQuartzCharged,

@@ -336,7 +336,6 @@ public enum CustomItemList implements IItemContainer {
     UnfiredSlimeSoulBrick,
     RawLapotronCrystal,
     LapotronDust,
-    SandDust,
     AluminiumIronPlate,
     ReinforcedAluminiumIronPlate,
     IrradiantReinforcedAluminiumPlate,

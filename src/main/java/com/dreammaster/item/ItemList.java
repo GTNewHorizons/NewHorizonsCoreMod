@@ -423,7 +423,6 @@ public enum ItemList {
     RuneOfDefenseFragment(new ModSimpleBaseItem("RuneOfDefenseFragment", ModTabList.ModGenericTab)),
     RuneOfMagicFragment(new ModSimpleBaseItem("RuneOfMagicFragment", ModTabList.ModGenericTab)),
     RuneOfVoidFragment(new ModSimpleBaseItem("RuneOfVoidFragment", ModTabList.ModGenericTab)),
-    SandDust(new ModSimpleBaseItem("SandDust", ModTabList.ModGenericTab)),
     SandStoneRod(new ModSimpleBaseItem("SandStoneRod", ModTabList.ModGenericTab)),
     SawBladeStone(new ModSimpleBaseItem("SawBladeStone", ModTabList.ModGenericTab)),
     SawBladeDiamond(new ModSimpleBaseItem("SawBladeDiamond", ModTabList.ModGenericTab)),

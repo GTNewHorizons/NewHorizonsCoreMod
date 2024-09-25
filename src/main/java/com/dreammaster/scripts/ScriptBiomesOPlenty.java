@@ -271,7 +271,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "hardSand", 1, 0, missing))
                 .itemOutputs(
-                        com.dreammaster.item.ItemList.SandDust.getIS(2),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 2),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Flint, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.CassiteriteSand, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Phosphate, 1L))
