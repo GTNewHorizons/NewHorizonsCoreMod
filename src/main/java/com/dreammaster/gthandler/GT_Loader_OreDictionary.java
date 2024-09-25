@@ -88,14 +88,6 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 OrePrefixes.plate,
                 Materials.Bedrockium,
                 com.dreammaster.item.ItemList.BedrockiumPlate.getIS(1));
-        GTOreDictUnificator.registerOre(
-                OrePrefixes.plate,
-                Materials.BlackPlutonium,
-                com.dreammaster.item.ItemList.BlackPlutoniumPlate.getIS(1));
-        GTOreDictUnificator.registerOre(
-                OrePrefixes.plateDense,
-                Materials.BlackPlutonium,
-                com.dreammaster.item.ItemList.BlackPlutoniumDensePlate.getIS(1));
         GTOreDictUnificator.registerOre(OrePrefixes.block, Materials.BlackPlutonium, BlockList.BlackPlutonium.getIS());
         GTOreDictUnificator.registerOre(
                 OrePrefixes.plate,
