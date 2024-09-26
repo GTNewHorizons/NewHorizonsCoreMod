@@ -593,13 +593,6 @@ public class CentrifugeRecipes implements Runnable {
                 .fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS).eut(8)
                 .addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.AstralSilver.getDust(3))
-                .itemOutputs(Materials.Silver.getDust(2), Materials.Thaumium.getDust(1)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(Materials.SolderingAlloy.getDust(10))
-                .itemOutputs(Materials.Tin.getDust(9), Materials.Antimony.getDust(1)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
         // Liquid Fertilizer reverse recipe
 
         GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))

@@ -1283,14 +1283,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36864)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
-                .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(8000)
-                .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(3 * MINUTES).eut(480)
-                .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
-                .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(9000)
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 800)).duration(2 * MINUTES).eut(480)
-                .addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 288)).duration(1 * MINUTES).eut(480)
                 .addTo(autoclaveRecipes);

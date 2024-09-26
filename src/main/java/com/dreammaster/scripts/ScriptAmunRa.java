@@ -100,17 +100,6 @@ public class ScriptAmunRa implements IScriptLoader {
 
         final Fluid mutatedLivingSolder = FluidRegistry.getFluid("molten.mutatedlivingsolder");
 
-        addWoodRecipes(
-                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.log1", 1),
-                new ItemStack(wood1, 1, 2),
-                new ItemStack(woodSlab, 1, 1),
-                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.methanePlanks.stairs", 4));
-        addWoodRecipes(
-                new ItemStack(wood1),
-                new ItemStack(wood1, 1, 3),
-                new ItemStack(woodSlab),
-                GameRegistry.findItemStack(GalacticraftAmunRa.ID, "tile.podPlanks.stairs", 4));
-
         addSlabAndStairRecipes(
                 new ItemStack(baseBlockRock, 1, 1),
                 new ItemStack(rockSlab, 2, 0),
