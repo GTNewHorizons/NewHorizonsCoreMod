@@ -62,8 +62,8 @@ public class CompressorRecipes implements Runnable {
         makeThaumcraftRecipes();
 
         // custom dust to plate compression
-        Materials[] dustToPlateList = new Materials[] { Materials.CertusQuartz, Materials.NetherQuartz,
-                Materials.Quartzite, Materials.Lazurite, Materials.Sodalite, Materials.CertusQuartzCharged };
+        Materials[] dustToPlateList = new Materials[] { Materials.NetherQuartz, Materials.Quartzite, Materials.Lazurite,
+                Materials.Sodalite, Materials.CertusQuartzCharged };
         for (Materials material : dustToPlateList) {
             GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, material, 1L))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, material, 1L)).duration(15 * SECONDS).eut(2)
