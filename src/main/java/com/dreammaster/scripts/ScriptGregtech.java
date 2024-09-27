@@ -48,6 +48,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -1473,163 +1474,190 @@ public class ScriptGregtech implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 1, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toolRod", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 2, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "pickaxeHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 3, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "shovelHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 4, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "hatchetHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 5, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "swordBlade", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 6, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "wideGuard", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 7, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "handGuard", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 8, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "crossbar", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 9, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "binding", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 10, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "frypanHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 11, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "signHead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 12, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "knifeBlade", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 13, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "chiselHead", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 14, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toughRod", 1, 11, missing))
-                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 15, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "toughBinding", 1, 11, missing))
-                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 16, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "heavyPlate", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 17, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "broadAxeHead", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 18, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "scytheBlade", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 19, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "excavatorHead", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 20, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "largeSwordBlade", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 8L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 21, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "hammerHead", 1, 11, missing))
-                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(8 * MINUTES + 5 * SECONDS + 4 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 3L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 22, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "fullGuard", 1, 11, missing))
-                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(3 * MINUTES + 1 * SECONDS + 19 * TICKS).recipeCategory(RecipeCategories.ticPartExtruding)
+                .eut(120).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "metalPattern", 0, 25, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "arrowhead", 1, 11, missing))
-                .duration(1 * MINUTES + 13 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(1 * MINUTES + 13 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 1L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 0, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "ShurikenPart", 1, 11, missing))
-                .duration(30 * SECONDS + 6 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(30 * SECONDS + 6 * TICKS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 4L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 1, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "CrossbowLimbPart", 1, 11, missing))
-                .duration(4 * MINUTES + 2 * SECONDS + 12 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(4 * MINUTES + 2 * SECONDS + 12 * TICKS).eut(120)
+                .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 5L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 2, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "CrossbowBodyPart", 1, 11, missing))
-                .duration(5 * MINUTES + 3 * SECONDS + 5 * TICKS).eut(120).addTo(extruderRecipes);
+                .duration(5 * MINUTES + 3 * SECONDS + 5 * TICKS).eut(120)
+                .recipeCategory(RecipeCategories.ticPartExtruding).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ardite, 2L),
                         getModItem(TinkerConstruct.ID, "Cast", 0, 3, missing))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "BowLimbPart", 1, 11, missing))
-                .duration(1 * MINUTES + 31 * SECONDS).eut(120).addTo(extruderRecipes);
+                .duration(1 * MINUTES + 31 * SECONDS).eut(120).recipeCategory(RecipeCategories.ticPartExtruding)
+                .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "materials", 1, 18, missing),
