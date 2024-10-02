@@ -48,7 +48,6 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsKevlar;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
@@ -354,12 +353,10 @@ public class ScriptAmunRa implements IScriptLoader {
          * Implosion Compressor *
          ************************/
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        com.dreammaster.item.ItemList.HeavyDutyAlloyIngotT9.getIS(),
-                        GTModHandler.getIC2Item("industrialTnt", 18))
-                .itemOutputs(new ItemStack(baseItem, 1, 15), Materials.Neutronium.getDustTiny(8)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(implosionRecipes);
+        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.HeavyDutyAlloyIngotT9.getIS())
+                .itemOutputs(new ItemStack(baseItem, 1, 15), Materials.Neutronium.getDustTiny(8))
+                .metadata(GTRecipeConstants.ADDITIVE_AMOUNT, 64).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(implosionRecipes);
 
         /*********
          * Mixer *
