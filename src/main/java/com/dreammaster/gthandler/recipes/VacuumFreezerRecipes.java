@@ -41,10 +41,6 @@ public class VacuumFreezerRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.StellarAlloy, 1L))
                 .duration(50 * SECONDS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Naquadah, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Naquadah, 1L))
-                .duration(49 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Tritanium, 1L))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Tritanium, 1L))
                 .duration(48 * SECONDS + 9 * TICKS).eut(TierEU.RECIPE_IV).addTo(vacuumFreezerRecipes);

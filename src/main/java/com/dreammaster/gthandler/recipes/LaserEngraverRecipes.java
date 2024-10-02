@@ -36,7 +36,7 @@ public class LaserEngraverRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tesseract.get(1), GregtechItemList.Laser_Lens_Special.get(0))
                 .itemOutputs(ItemList.EnergisedTesseract.get(1))
                 .fluidOutputs(MaterialsUEVplus.ExcitedDTEC.getFluid(100)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(32_000_000).noOptimize().addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_UIV).noOptimize().addTo(laserEngraverRecipes);
 
         // Mysterious crystal upgrading
 
@@ -241,6 +241,26 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NPIC.get(32)).requiresCleanRoom().duration(60 * 20)
                 .eut(TierEU.RECIPE_UV).addTo(WaferEngravingRecipes);
+
+        // Protomatter recipes
+        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(100L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UIV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(100L))
+                .requiresCleanRoom().noOptimize().addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(100L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(1000L)).requiresCleanRoom()
+                .noOptimize().addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(100L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(10000L)).requiresCleanRoom()
+                .noOptimize().addTo(laserEngraverRecipes);
+
+        // Bootstrap antimatter recipe
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsUEVplus.HotProtoHalkonite, 1))
+                .fluidInputs(MaterialsUEVplus.Protomatter.getFluid(100L)).duration(10000 * SECONDS)
+                .eut(TierEU.RECIPE_UIV).fluidOutputs(MaterialsUEVplus.Antimatter.getFluid(1L)).requiresCleanRoom()
+                .addTo(laserEngraverRecipes);
 
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT

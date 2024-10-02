@@ -90,12 +90,6 @@ public class CentrifugeRecipes implements Runnable {
                 .fluidOutputs(Materials.Water.getFluid(500L)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Forestry.ID, "beeCombs", 1L, 9))
-                .itemOutputs(
-                        GTModHandler.getModItem(Forestry.ID, "beeswax", 1L, 0),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L))
-                .outputChances(10000, 11).duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.fire_charge, 1, 0))
                 .itemOutputs(
                         new ItemStack(Items.blaze_powder, 1, 0),
@@ -594,31 +588,11 @@ public class CentrifugeRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrum, 1L))
                 .duration(40 * SECONDS).eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTUtility.getIntegratedCircuit(2), GTBees.combs.getStackForType(CombType.INDIUM, 8))
-                .fluidInputs(GGMaterial.thoriumBasedLiquidFuelDepleted.getFluidOrGas(1000))
-                .itemOutputs(
-                        WerkstoffLoader.Thorium232.get(OrePrefixes.dust, 64),
-                        WerkstoffLoader.Thorium232.get(OrePrefixes.dust, 16),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Praseodymium, 64),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Praseodymium, 32),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Boron, 2),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 12))
-                .outputChances(10000, 8000, 10000, 8000, 3000, 5000).duration(1 * MINUTES + 15 * SECONDS)
-                .eut(TierEU.RECIPE_EV / 2).addTo(centrifugeRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(ItemList.Cell_Air.get(5L))
                 .itemOutputs(Materials.Oxygen.getCells(1), ItemList.Cell_Empty.get(4L))
                 .fluidOutputs(Materials.Nitrogen.getGas(3900L)).duration(1 * MINUTES + 20 * SECONDS).eut(8)
                 .addTo(centrifugeRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(Materials.AstralSilver.getDust(3))
-                .itemOutputs(Materials.Silver.getDust(2), Materials.Thaumium.getDust(1)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(centrifugeRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(Materials.SolderingAlloy.getDust(10))
-                .itemOutputs(Materials.Tin.getDust(9), Materials.Antimony.getDust(1)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(centrifugeRecipes);
         // Liquid Fertilizer reverse recipe
 
         GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
@@ -672,6 +646,24 @@ public class CentrifugeRecipes implements Runnable {
                     .fluidOutputs(Materials.FierySteel.getFluid(10L)).duration(12 * TICKS).eut(TierEU.RECIPE_HV)
                     .addTo(centrifugeRecipes);
         }
-
+        if (Forestry.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Forestry.ID, "beeCombs", 1L, 9))
+                    .itemOutputs(
+                            GTModHandler.getModItem(Forestry.ID, "beeswax", 1L, 0),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L))
+                    .outputChances(10000, 11).duration(15 * SECONDS).eut(TierEU.RECIPE_IV).addTo(centrifugeRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTUtility.getIntegratedCircuit(2), GTBees.combs.getStackForType(CombType.INDIUM, 8))
+                    .fluidInputs(GGMaterial.thoriumBasedLiquidFuelDepleted.getFluidOrGas(1000))
+                    .itemOutputs(
+                            WerkstoffLoader.Thorium232.get(OrePrefixes.dust, 64),
+                            WerkstoffLoader.Thorium232.get(OrePrefixes.dust, 16),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Praseodymium, 64),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Praseodymium, 32),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Boron, 2),
+                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Indium, 12))
+                    .outputChances(10000, 8000, 10000, 8000, 3000, 5000).duration(1 * MINUTES + 15 * SECONDS)
+                    .eut(TierEU.RECIPE_EV / 2).addTo(centrifugeRecipes);
+        }
     }
 }

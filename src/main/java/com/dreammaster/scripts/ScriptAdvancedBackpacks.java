@@ -99,7 +99,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         'a',
                         "itemLeather",
                         'b',
-                        getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, 1, missing),
+                        getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, GTValues.W, missing),
                         'c',
                         getModItem(Minecraft.ID, "potion", 1, 8262, missing),
                         'd',

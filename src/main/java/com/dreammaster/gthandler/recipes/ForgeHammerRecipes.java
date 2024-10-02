@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
@@ -8,6 +9,8 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
+import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -42,6 +45,13 @@ public class ForgeHammerRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(ZTones.ID, "minicharcoal", 9L, 0))
                     .duration(2 * SECONDS + 10 * TICKS).eut(8).addTo(hammerRecipes);
         }
+
+        if (Thaumcraft.isModLoaded()) {
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3))
+                    .itemOutputs(CustomItemList.PrimordialPearlFragment.get(3L)).duration(16 * TICKS)
+                    .eut(TierEU.RECIPE_IV).addTo(hammerRecipes);
+        }
+
         // Raw optical chip
         int chip_duration_ticks = 10 * SECONDS;
         long chip_eu_per_tick = TierEU.RECIPE_UEV;

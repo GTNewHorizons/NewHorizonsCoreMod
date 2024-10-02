@@ -806,16 +806,17 @@ public class ScriptAvaritia implements IScriptLoader {
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
 
+        // Neutronium Compressor Multi Controller
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(Avaritia.ID, "Neutronium_Compressor", 1, 0, missing),
+                ItemList.Machine_Multi_NeutroniumCompressor.get(1),
                 "abacdcaba",
-                "c-e-f-e-c",
-                "dghgfghgd",
-                "b-eijie-b",
-                "bffjkjffb",
-                "b-eijie-b",
-                "dghgfghgd",
-                "c-e-f-e-c",
+                "c-e-c-e-c",
+                "aghgcghga",
+                "c-eijie-c",
+                "fccjkjccf",
+                "c-eijie-c",
+                "aghgcghga",
+                "c-e-c-e-c",
                 "abacdcaba",
                 'a',
                 getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing),
@@ -824,11 +825,11 @@ public class ScriptAvaritia implements IScriptLoader {
                 'c',
                 getModItem(Avaritia.ID, "Resource", 1, 1, missing),
                 'd',
-                new ItemStack(TinkerTools.largePlate, 1, ExtraUtils.tcon_bedrock_material_id),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Bedrockium, 1),
                 'e',
                 ItemList.Electric_Piston_UV.get(1L),
                 'f',
-                TGregUtils.newItemStack(Materials.BlackPlutonium, PartTypes.LargePlate, 1),
+                GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.BlackPlutonium, 1),
                 'g',
                 ItemList.Conveyor_Module_UV.get(1L),
                 'h',
@@ -845,10 +846,6 @@ public class ScriptAvaritia implements IScriptLoader {
                 64,
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfinityCatalyst, 1L));
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 4, missing), ItemList.Shape_Mold_Nugget.get(0L))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 3, missing)).duration(2 * MINUTES)
-                .eut(TierEU.RECIPE_HV).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Avaritia.ID, "Resource_Block", 1, 0, missing), ItemList.Shape_Mold_Ingot.get(0L))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 4, missing)).duration(4 * MINUTES)
@@ -880,26 +877,6 @@ public class ScriptAvaritia implements IScriptLoader {
                         ItemList.Shape_Extruder_Ingot.get(0L))
                 .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 6, missing)).duration(1 * MINUTES)
                 .eut(TierEU.RECIPE_UV).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 6, missing), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L))
-                .duration(3 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_UV).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Infinity, 1),
-                        ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 1L))
-                .duration(3 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_UV).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(getModItem(Avaritia.ID, "Resource", 1, 4, missing), ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L))
-                .duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.CosmicNeutronium, 1),
-                        ItemList.Shape_Extruder_Plate.get(0L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.CosmicNeutronium, 1L))
-                .duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_UV).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 4L),
@@ -963,11 +940,6 @@ public class ScriptAvaritia implements IScriptLoader {
                         10 * MINUTES + 40 * SECONDS,
                         TierEU.RECIPE_MV),
                 new TinkerMaterialWrapper(
-                        Materials.Ardite.getIngots(1),
-                        TinkerTools.MaterialID.Ardite,
-                        8 * MINUTES + 5 * SECONDS + 4 * TICKS,
-                        TierEU.RECIPE_MV),
-                new TinkerMaterialWrapper(
                         Materials.Manyullyn.getIngots(1),
                         TinkerTools.MaterialID.Manyullyn,
                         16 * MINUTES,
@@ -991,11 +963,6 @@ public class ScriptAvaritia implements IScriptLoader {
                         Materials.Steel.getIngots(1),
                         TinkerTools.MaterialID.Steel,
                         5 * MINUTES + 20 * SECONDS,
-                        TierEU.RECIPE_LV),
-                new TinkerMaterialWrapper(
-                        Materials.PigIron.getIngots(1),
-                        TinkerTools.MaterialID.PigIron,
-                        8 * MINUTES + 53 * SECONDS + 4 * TICKS,
                         TierEU.RECIPE_LV),
                 new TinkerMaterialWrapper(
                         new ItemStack(ExtraUtils.unstableIngot, 1, 0),
