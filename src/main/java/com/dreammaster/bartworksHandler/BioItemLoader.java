@@ -7,6 +7,7 @@ import static gregtech.api.enums.GTValues.*;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
@@ -85,7 +86,7 @@ public class BioItemLoader {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(BIOTEMS, 4, 0), Materials.PhosphoricAcid.getCells(1))
                 .itemOutputs(Materials.Empty.getCells(1)).fluidInputs(Materials.Water.getFluid(3000))
                 .fluidOutputs(new FluidStack(BIOFLUIDS[0], 4000)).duration(1 * MINUTES + 20 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
+                .eut(TierEU.RECIPE_HV).addTo(chemicalReactorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(Materials.Phosphorus.getDust(1), new ItemStack(BIOTEMS, 4, 1))
