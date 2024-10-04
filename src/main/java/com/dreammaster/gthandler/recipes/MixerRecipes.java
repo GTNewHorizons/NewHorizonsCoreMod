@@ -784,14 +784,6 @@ public class MixerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrum, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Redstone, 1L),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Electrotine, 1L))
-                .duration(10 * SECONDS).eut(8).addTo(mixerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 2L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Stone, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
