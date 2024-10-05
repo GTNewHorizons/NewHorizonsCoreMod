@@ -6,9 +6,11 @@ import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
+import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -29,6 +31,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -171,6 +174,22 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     .fluidInputs(MaterialsUEVplus.Eternity.getMolten(144))
                     .fluidOutputs(Materials.Infinity.getMolten(576)).duration(5 * SECONDS).eut(TierEU.RECIPE_UXV)
                     .addTo(plasmaArcFurnaceRecipes);
+
+            // Spaghettic Singularity
+            GTValues.RA.stdBuilder().itemInputs(
+                    // fluxed electrum singularity
+                    getModItem(UniversalSingularities.ID, "universal.general.singularity", 1L, 20))
+                    .fluidInputs(MaterialsUEVplus.Mellion.getMolten(4 * 144L))
+                    .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1L, 2)).duration(1 * SECONDS)
+                    .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
+
+            // Cryptic Singularity
+            GTValues.RA.stdBuilder().itemInputs(
+                    // iron singularity
+                    getModItem(Avaritia.ID, "Singularity", 1L, 0))
+                    .fluidInputs(MaterialsUEVplus.Creon.getMolten(4 * 144L))
+                    .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1L, 4)).duration(1 * SECONDS)
+                    .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
         }
     }
 }

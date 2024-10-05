@@ -242,6 +242,26 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Wafer_NPIC.get(32)).requiresCleanRoom().duration(60 * 20)
                 .eut(TierEU.RECIPE_UV).addTo(WaferEngravingRecipes);
 
+        // Protomatter recipes
+        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(100L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UIV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(100L))
+                .requiresCleanRoom().noOptimize().addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(100L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UMV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(1000L)).requiresCleanRoom()
+                .noOptimize().addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(100L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UXV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(10000L)).requiresCleanRoom()
+                .noOptimize().addTo(laserEngraverRecipes);
+
+        // Bootstrap antimatter recipe
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.plateSuperdense, MaterialsUEVplus.HotProtoHalkonite, 1))
+                .fluidInputs(MaterialsUEVplus.Protomatter.getFluid(100L)).duration(10000 * SECONDS)
+                .eut(TierEU.RECIPE_UIV).fluidOutputs(MaterialsUEVplus.Antimatter.getFluid(1L)).requiresCleanRoom()
+                .addTo(laserEngraverRecipes);
+
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT
             makeFloppy("OpenOS (Operating System)", "openos", 2, 1);

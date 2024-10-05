@@ -11,12 +11,19 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.CRC32;
+import java.util.zip.CheckedInputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import javax.swing.JOptionPane;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -220,28 +227,58 @@ public class DepLoader implements IFMLCallHook {
 
     private void precheck(List<Dependency> deps) {
         for (Dependency dep : deps) {
-            if (dep.isDisabled()) {
+            if (dep.isDisabled() || dep.isFound()) {
                 continue;
             }
             File location = new File(mcLocation, dep.getPath());
-            if (location.exists()) {
-                if (location.isDirectory()) {
-                    // stupid user
-                    LOGGER.warn("Directory {} will be removed as it should be a mod jar!", dep.getPath());
-                    try {
-                        Files.delete(location.toPath());
-                    } catch (IOException e) {
-                        JOptionPane.showMessageDialog(
-                                null,
-                                String.format(
-                                        "Path %s is expected to be a mod jar, but it is a directory! Please check what's inside manually and move it. This pack cannot continue without that directory removed!",
-                                        location.toString()));
-                        throw new RuntimeException(e);
-                    }
-                } else {
-                    // TODO implement checksum if a big crowd starts to complain about partially downloaded mod jars
-                    LOGGER.debug("Dependency {} found locally", dep.getPath());
-                    dep.setFound(true);
+            if (!location.exists()) {
+                continue;
+            }
+            if (location.isDirectory()) {
+                // stupid user
+                LOGGER.warn("Directory {} will be removed as it should be a mod jar!", dep.getPath());
+                try {
+                    Files.delete(location.toPath());
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(
+                            null,
+                            String.format(
+                                    "Path %s is expected to be a mod jar, but it is a directory! Please check what's inside manually and move it. This pack cannot continue without that directory removed!",
+                                    location));
+                    throw new RuntimeException(e);
+                }
+            } else {
+                // TODO implement checksum if a big crowd starts to complain about partially downloaded mod jars
+                LOGGER.debug("Dependency {} found locally", dep.getPath());
+                // instead of a full-fledged checksum check, we do a jar sanity check instead.
+                try {
+                    checkZipFile(location);
+                } catch (IOException ex) {
+                    LOGGER.warn("Dependency {} is corrupted. It will be redownloaded", dep.getPath(), ex);
+                    continue;
+                }
+                dep.setFound(true);
+            }
+        }
+    }
+
+    private static void checkZipFile(File location) throws IOException {
+        String fname = location.getName();
+        if (!fname.endsWith(".zip") && !fname.endsWith(".jar")) {
+            // we don't download anything else at the moment, but it never hurts to be safe
+            return;
+        }
+        try (ZipFile zf = new ZipFile(location)) {
+            Enumeration<? extends ZipEntry> entries = zf.entries();
+            while (entries.hasMoreElements()) {
+                ZipEntry entry = entries.nextElement();
+                if (entry.isDirectory()) {
+                    continue;
+                }
+                CheckedInputStream is = new CheckedInputStream(zf.getInputStream(entry), new CRC32());
+                long len = IOUtils.skip(is, Long.MAX_VALUE);
+                if (len != entry.getSize() || is.getChecksum().getValue() != entry.getCrc()) {
+                    throw new IOException("Invalid entry: " + entry);
                 }
             }
         }
@@ -249,21 +286,35 @@ public class DepLoader implements IFMLCallHook {
 
     private void download(Dependency dep) throws IOException {
         final Path downloadTemp = new File(mcLocation, ".__gtnh_download_temp__").toPath();
-        LOGGER.info("Downloading {} to {}", dep.getUrl(), dep.getPath());
-        try (FileChannel fc = FileChannel.open(
-                downloadTemp,
-                StandardOpenOption.WRITE,
-                StandardOpenOption.CREATE,
-                StandardOpenOption.TRUNCATE_EXISTING);
-                ReadableByteChannel net = Channels.newChannel(new URL(dep.getUrl()).openStream())) {
-            fc.transferFrom(net, 0, Long.MAX_VALUE);
+        boolean ok = false;
+        for (int i = 0; i < 3; i++) {
+            LOGGER.info("Downloading {} to {} Attempt {}", dep.getUrl(), dep.getPath(), i);
+            try (FileChannel fc = FileChannel.open(
+                    downloadTemp,
+                    StandardOpenOption.WRITE,
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.TRUNCATE_EXISTING);
+                    ReadableByteChannel net = Channels.newChannel(new URL(dep.getUrl()).openStream())) {
+                fc.transferFrom(net, 0, Long.MAX_VALUE);
+            }
+            try {
+                checkZipFile(downloadTemp.toFile());
+            } catch (IOException e) {
+                LOGGER.warn("Downloaded file looks like corrupted.");
+                continue;
+            }
+            ok = true;
+            break;
+        }
+        if (!ok) {
+            throw new IOException("Could not download frm " + dep.getUrl() + " to " + dep.getPath());
         }
         final Path target = new File(mcLocation, dep.getPath()).toPath();
         final Path dir = target.getParent();
         if (!Files.exists(dir)) {
             Files.createDirectories(dir);
         }
-        Files.move(downloadTemp, target);
+        Files.move(downloadTemp, target, StandardCopyOption.REPLACE_EXISTING);
         dialog.progress();
     }
 }

@@ -36,6 +36,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -101,10 +102,6 @@ public class ScriptEMT implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(5 * SECONDS).eut(16)
                 .addTo(fluidSolidifierRecipes);
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
-                .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("glue", 288)).duration(5 * SECONDS).eut(16)
-                .addTo(fluidSolidifierRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 576)).duration(5 * SECONDS).eut(30)
                 .addTo(fluidSolidifierRecipes);
@@ -117,9 +114,6 @@ public class ScriptEMT implements IScriptLoader {
                         ItemList.Shape_Mold_Ball.get(0L))
                 .itemOutputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).duration(5 * SECONDS).eut(30)
                 .addTo(formingPressRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 1, 21, missing))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Cinnabar, 22L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 4L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
@@ -2821,7 +2815,7 @@ public class ScriptEMT implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("potentia"), 48).add(Aspect.getAspect("permutatio"), 32)
                         .add(Aspect.getAspect("machina"), 16).add(Aspect.getAspect("praecantatio"), 32)
                         .add(Aspect.getAspect("metallum"), 32),
-                getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 7, missing),
+                GregtechItemList.Generator_SemiFluid_LV.get(1),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusTrade", 1, 0, missing), ItemList.Emitter_MV.get(1L),
                         getModItem(Minecraft.ID, "hopper", 1, 0, missing), ItemList.Electric_Motor_MV.get(1L),
                         getModItem(IndustrialCraft2.ID, "blockElectric", 1, 7, missing),

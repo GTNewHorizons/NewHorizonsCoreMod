@@ -28,9 +28,6 @@ public class ScriptBinniesMods implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Avaritia.ID, "Resource", 1, 3, missing))
-                .itemOutputs(getModItem(Avaritia.ID, "Resource", 9, 2, missing)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Emerald, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);

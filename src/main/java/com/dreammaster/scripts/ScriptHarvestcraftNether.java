@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.oredict.OreDictHelper.removeOreDict;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -152,24 +153,6 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 getModItem(PamsHarvestTheNether.ID, "glowflowerseedItem", 1, 0, missing),
                 getModItem(PamsHarvestTheNether.ID, "glowFlower", 1, 0, missing));
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
-                .itemOutputs(
-                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(10 * SECONDS).eut(8)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
-                .itemOutputs(
-                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 3)).duration(10 * SECONDS).eut(8)
-                .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(PamsHarvestTheNether.ID, "netherLog", 1, 0, missing))
-                .itemOutputs(
-                        getModItem(PamsHarvestTheNether.ID, "netherPlanks", 6, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(10 * SECONDS).eut(8)
-                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "stone_slab", 1, 7, missing))
                 .itemOutputs(getModItem(PamsHarvestTheNether.ID, "quartzingotItem", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(5 * SECONDS).eut(16)
@@ -183,5 +166,6 @@ public class ScriptHarvestcraftNether implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(5 * SECONDS).eut(16)
                 .addTo(cutterRecipes);
 
+        removeOreDict("listAllmeatraw", getModItem(PamsHarvestTheNether.ID, "fleshrootItem", 1));
     }
 }

@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GTValues;
 import gtPlusPlus.core.material.Material;
+import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.util.minecraft.ItemUtils;
 
 public class BW_RadHatchMaterial {
@@ -17,6 +18,13 @@ public class BW_RadHatchMaterial {
 
         for (Material material : Material.mMaterialMap) {
             if (material == null || material.vRadiationLevel <= 0) {
+                continue;
+            }
+
+            // already generated in BW
+            if (material == MaterialsElements.getInstance().THORIUM
+                    || material == MaterialsElements.getInstance().THORIUM232
+                    || material == MaterialsElements.getInstance().CALIFORNIUM) {
                 continue;
             }
 
