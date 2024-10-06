@@ -1381,7 +1381,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Ledox, 32),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 32),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnrichedHolmium, 32),
-                            ItemList.Field_Generator_UEV.get(1),
+                            ItemList.Field_Generator_UHV.get(1),
                             new Object[] { OrePrefixes.circuit.get(Materials.UEV), 8 },
                             new Object[] { OrePrefixes.circuit.get(Materials.UIV), 4 },
                             GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Infinity, 32))
