@@ -98,6 +98,10 @@ public class CompressorRecipes implements Runnable {
                 .itemOutputs((WerkstoffMaterialPool.Gangue.get(OrePrefixes.block, 1))).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 9L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L)).duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_UIV).addTo(compressorRecipes);
+
         // compressed coal variants
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 9))
                 .itemOutputs(BlockList.CompressedCharcoal.getIS(1)).duration(15 * SECONDS).eut(2)
