@@ -86,6 +86,7 @@ public class WikiCommand implements ICommand {
     private void openURIConfirmationScreen(URI uri) {
         GuiScreen oldScreen = Minecraft.getMinecraft().currentScreen;
         Minecraft.getMinecraft().displayGuiScreen(new GuiConfirmOpenLink(new GuiYesNoCallback() {
+
             @Override
             public void confirmClicked(boolean result, int id) {
                 if (result) openURI(uri);
