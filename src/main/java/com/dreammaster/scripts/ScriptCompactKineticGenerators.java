@@ -2,17 +2,19 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.CompactKineticGenerators;
 import static gregtech.api.enums.Mods.GTPlusPlus;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
+
+import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
+import gtPlusPlus.xmod.ic2.item.IC2Items;
 
 public class ScriptCompactKineticGenerators implements IScriptLoader {
 
@@ -41,7 +43,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 "plateAlloyIridium");
         addShapedRecipe(
                 getModItem(CompactKineticGenerators.ID, "IridiumRotor", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing),
+                new ItemStack(IC2Items.shaft_Material_4.getItem(), 1, 0),
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
                 "craftingToolHardHammer",
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
@@ -49,7 +51,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
                 "craftingToolWrench",
                 getModItem(CompactKineticGenerators.ID, "IridiumBlade", 1, 0, missing),
-                getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing));
+                new ItemStack(IC2Items.shaft_Material_4.getItem(), 1, 0));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 0, missing),
@@ -281,7 +283,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleTungstenSteel",
                 'b',
-                getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing),
+                new ItemStack(IC2Items.shaft_Material_2.getItem(), 1, 0),
                 'c',
                 "rotorTungstenSteel",
                 'd',
@@ -297,7 +299,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'i',
                 ItemList.Electric_Motor_EV.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32540, missing));
+                ItemList.BatteryHull_EV_Full.get(1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 9, missing),
                 "---------",
@@ -312,7 +314,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleIridium",
                 'b',
-                getModItem(GTPlusPlus.ID, "itemTungstenSteelShaft", 1, 0, missing),
+                new ItemStack(IC2Items.shaft_Material_2.getItem(), 1, 0),
                 'c',
                 "rotorIridium",
                 'd',
@@ -328,7 +330,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'i',
                 ItemList.Electric_Motor_IV.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32545, missing));
+                ItemList.BatteryHull_IV_Full.get(1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 10, missing),
                 "---------",
@@ -343,7 +345,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNaquadah",
                 'b',
-                getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing),
+                new ItemStack(IC2Items.shaft_Material_4.getItem(), 1, 0),
                 'c',
                 "rotorOsmium",
                 'd',
@@ -359,7 +361,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'i',
                 ItemList.Electric_Motor_LuV.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32550, missing));
+                ItemList.BatteryHull_LuV_Full.get(1));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(CompactKineticGenerators.ID, "BlockCkg", 1, 11, missing),
                 "---------",
@@ -374,7 +376,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'a',
                 "plateTripleNeutronium",
                 'b',
-                getModItem(GTPlusPlus.ID, "itemIridiumShaft", 1, 0, missing),
+                new ItemStack(IC2Items.shaft_Material_4.getItem(), 1, 0),
                 'c',
                 "rotorNeutronium",
                 'd',
@@ -390,7 +392,7 @@ public class ScriptCompactKineticGenerators implements IScriptLoader {
                 'i',
                 ItemList.Electric_Motor_ZPM.get(1L),
                 'j',
-                getModItem(GregTech.ID, "gt.metaitem.01", 1, 32555, missing));
+                ItemList.BatteryHull_ZPM_Full.get(1));
 
     }
 }

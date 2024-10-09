@@ -8,11 +8,9 @@ import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,11 +22,11 @@ import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -92,11 +90,11 @@ public class ScriptExtraBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Emerald, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'd',
                 "itemCasingGold",
                 'e',
@@ -104,11 +102,11 @@ public class ScriptExtraBees implements IScriptLoader {
                 'f',
                 "itemCasingGold",
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Diamond, 1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("for.honey", 7500),
@@ -120,19 +118,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12, missing),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12, missing),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                 'e',
                 getModItem(ExtraBees.ID, "hiveFrame.soul", 1, 0, missing),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12, missing),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 12, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -152,7 +150,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'd',
                 getModItem(Forestry.ID, "frameProven", 1, 0, missing),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WoodSealed, 1L),
                 'f',
                 getModItem(Forestry.ID, "frameProven", 1, 0, missing),
                 'g',
@@ -224,7 +222,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'd',
@@ -236,7 +234,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Silver, 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 1, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -250,7 +248,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing),
                 'd',
@@ -262,7 +260,7 @@ public class ScriptExtraBees implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 3, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -280,15 +278,15 @@ public class ScriptExtraBees implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'e',
                 ItemList.Hull_HV.get(1L),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.cableGt02, Materials.Aluminium, 1L),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 0, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -320,7 +318,7 @@ public class ScriptExtraBees implements IScriptLoader {
         RecipeManagers.carpenterManager.addRecipe(
                 20,
                 FluidRegistry.getFluidStack("for.honey", 1000),
-                GT_OreDictUnificator.get(OrePrefixes.gearGt, Materials.WoodSealed, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gearGt, Materials.WoodSealed, 1L),
                 getModItem(ExtraBees.ID, "misc", 1, 0, missing),
                 "abc",
                 "def",
@@ -386,49 +384,9 @@ public class ScriptExtraBees implements IScriptLoader {
                 ItemList.Color_03.get(1L),
                 100);
 
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 1, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Diamond, 1L)).outputChances(10000)
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 1, missing))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Diamond, 1L)).outputChances(10000)
                 .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 2, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Emerald, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 3, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Ruby, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 4, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Sapphire, 1L))
-                .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "misc", 1, 5, missing))
-                .itemOutputs(GT_OreDictUnificator.get(OrePrefixes.dustTiny, Materials.Lapis, 1L)).outputChances(10000)
-                .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 8, missing))
-                .itemOutputs(ItemList.Color_01.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 9, missing))
-                .itemOutputs(ItemList.Color_11.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 10, missing))
-                .itemOutputs(ItemList.Color_04.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 11, missing))
-                .itemOutputs(ItemList.Color_02.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 13, missing))
-                .itemOutputs(ItemList.Color_15.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 12, missing))
-                .itemOutputs(ItemList.Color_00.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ExtraBees.ID, "honeyDrop", 1, 14, missing))
-                .itemOutputs(ItemList.Color_03.get(1L)).outputChances(1000)
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 200)).duration(1 * SECONDS + 12 * TICKS).eut(7)
-                .addTo(fluidExtractionRecipes);
 
         new ResearchItem(
                 "HEALINGFRAME",
@@ -452,19 +410,19 @@ public class ScriptExtraBees implements IScriptLoader {
                 'a',
                 "screwIron",
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 'c',
                 "screwIron",
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 'e',
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 'g',
                 "screwIron",
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
                 'i',
                 "screwIron");
         TCHelper.addResearchPage(

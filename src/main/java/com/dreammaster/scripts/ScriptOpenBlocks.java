@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.BuildCraftCore;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
@@ -20,10 +19,10 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalBathRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeConstants.UniversalChemical;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,13 +34,13 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -80,13 +79,13 @@ public class ScriptOpenBlocks implements IScriptLoader {
         ItemStack devNull = getModItem(OpenBlocks.ID, "devnull", 1);
         ItemStack voidDropFilter = getModItem(RandomThings.ID, "dropFilter", 1, 1);
         ItemStack trashCan = getModItem(ExtraUtilities.ID, "trashcan", 1);
-        ItemStack circuit2 = GT_Utility.getIntegratedCircuit(2);
+        ItemStack circuit2 = GTUtility.getIntegratedCircuit(2);
 
         FluidStack ender250 = FluidRegistry.getFluidStack("ender", 250);
 
         addShapelessRecipe(devNull, voidDropFilter);
 
-        GT_Values.RA.stdBuilder().itemInputs(trashCan, circuit2).itemOutputs(devNull).fluidInputs(ender250)
+        GTValues.RA.stdBuilder().itemInputs(trashCan, circuit2).itemOutputs(devNull).fluidInputs(ender250)
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         addShapedRecipe(
@@ -161,7 +160,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "plateEnderPearl",
                 "plateSteel",
                 "gearGtSmallSteel",
-                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1L),
                 "gearGtSmallSteel",
                 "plateSteel",
                 "plateSteel",
@@ -257,17 +256,17 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "gearGtSmallWood",
                 "plateSteel",
                 "gearGtSmallWood",
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "wireGt01RedAlloy",
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "village_highlighter", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "plateEmerald",
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "plateStone",
                 "plateStone",
                 "plateStone");
@@ -304,9 +303,9 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 getModItem(OpenBlocks.ID, "generic", 1, 10, missing),
                 getModItem(OpenBlocks.ID, "generic", 1, 11, missing),
                 getModItem(OpenBlocks.ID, "generic", 1, 10, missing),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                 "screwSteel",
                 "craftingToolScrewdriver",
                 "screwSteel");
@@ -323,7 +322,7 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "pipeSmallSteel");
         addShapelessRecipe(
                 getModItem(OpenBlocks.ID, "scaffolding", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L));
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Wood, 1L));
         addShapedRecipe(
                 getModItem(OpenBlocks.ID, "generic", 1, 9, missing),
                 getModItem(ProjectBlue.ID, "miniatureLamp", 1, 14, missing),
@@ -361,373 +360,366 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "screwAluminium");
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "string", 64, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 64L))
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Wood, 64L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "ropeladder", 64, 0, missing)).duration(30 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "trapdoor", 1, 0, missing),
                         getModItem(Minecraft.ID, "ladder", 1, 0, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "ladder", 1, 0, missing)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0, missing), GT_Utility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(OpenBlocks.ID, "sky", 1, 0, missing), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "sky", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Machine_LV_Mixer.get(1L), ItemList.IC2_Item_Casing_Iron.get(4L))
-                .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18304, missing))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Machine_LV_Mixer.get(1L),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18307, missing))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "paintmixer", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0, missing),
                         getModItem(IndustrialCraft2.ID, "itemCasing", 4, 4, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "factory", 1, 0, missing), ItemList.IC2_Item_Casing_Iron.get(4L))
-                .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).duration(30 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18304, missing))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WroughtIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "factory", 1, 0, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.02", 4, 18307, missing))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.PigIron, 4))
                 .itemOutputs(getModItem(OpenBlocks.ID, "xpbottler", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 10, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stick", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.Graphite, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Graphite, 1L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(5 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "generic", 1, 11, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderEye, 1L))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 0, "{Uses:10.0f}", missing))
                 .duration(5 * SECONDS).eut(16).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "generic", 1, 6, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "generic", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(20 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "generic", 1, 6, missing),
                         getModItem(OpenBlocks.ID, "generic", 4, 7, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:0b}", missing))
                 .duration(30 * SECONDS).eut(30).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:0b}", missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 1, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:1b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.tin", 144)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:1b}", missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(40 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:2b}", missing),
-                        ItemList.Circuit_Good.get(2L))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redalloy", 144)).duration(50 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:3b}", missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "emptyMap", 1, 0, "{Scale:4b}", missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).duration(1 * MINUTES).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "generic", 1, 9, missing),
                         getModItem(Minecraft.ID, "ender_eye", 1, 0, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "cartographer", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ender", 1000)).duration(30 * SECONDS).eut(120)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuit", 2, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 2))
                 .itemOutputs(getModItem(OpenBlocks.ID, "pedometer", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "guide", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L))
                 .itemOutputs(getModItem(OpenBlocks.ID, "builder_guide", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 288)).duration(15 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1))
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 0, missing)).duration(10 * SECONDS).eut(8)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(OpenBlocks.ID, "elevator", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1))
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Steel, 1))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(16).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 15, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblack", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 14, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyered", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 13, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 12, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyebrown", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 11, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblue", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 10, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepurple", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 9, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyecyan", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 8, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightgray", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 7, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegray", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 6, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepink", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 5, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelime", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 4, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeyellow", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 3, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightblue", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 2, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyemagenta", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 1, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeorange", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyewhite", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 15, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblack", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 14, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyered", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 13, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 12, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyebrown", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 11, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblue", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 10, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepurple", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 9, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyecyan", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 8, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightgray", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 7, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegray", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 6, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepink", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 5, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelime", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 4, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeyellow", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 3, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightblue", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 2, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyemagenta", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 1, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeorange", 144)).duration(10 * SECONDS)
                 .eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, wildcard, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "elevator_rotating", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyewhite", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:1973019}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblack", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:11743532}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyered", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:3887386}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:5320730}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyebrown", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:2437522}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeblue", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:8073150}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepurple", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:2651799}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyecyan", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:11250603}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightgray", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:4408131}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegray", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:14188952}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyepink", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:4312372}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelime", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:14602026}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeyellow", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:6719955}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyelightblue", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:12801229}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyemagenta", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:15435844}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyeorange", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(OpenBlocks.ID, "imaginary", 1, 0, missing))
                 .itemOutputs(createItemStack(OpenBlocks.ID, "imaginary", 1, 1, "{Uses:10.0f,Color:15790320}", missing))
                 .outputChances(10000).fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyewhite", 144))
                 .duration(10 * SECONDS).eut(20).addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "ender_eye", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "ender_eye", 1, 0, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "goldenEye", 1, 100, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 144)).duration(10 * SECONDS).eut(20)
                 .addTo(chemicalBathRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "wool", 1, 0, missing),
                         getModItem(Minecraft.ID, "slime_ball", 1, 0, missing))
                 .itemOutputs(getModItem(OpenBlocks.ID, "sponge", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(10 * SECONDS).eut(30)
                 .addTo(UniversalChemical);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clay_ball", 1, 0, missing),
                         getModItem(Minecraft.ID, "dye", 1, 3, missing))
@@ -752,11 +744,11 @@ public class ScriptOpenBlocks implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("alienis"), 75).add(Aspect.getAspect("bestia"), 50)
                         .add(Aspect.getAspect("victus"), 50).add(Aspect.getAspect("humanus"), 25),
                 getModItem(Minecraft.ID, "egg", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
                         getModItem(Minecraft.ID, "skull", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
                         getModItem(Minecraft.ID, "skull", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Gold, 1L),
                         getModItem(Minecraft.ID, "skull", 1, 3, missing), });
         TCHelper.addResearchPage(
                 "GOLDENEGG",

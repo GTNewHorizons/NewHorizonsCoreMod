@@ -1,33 +1,44 @@
 package com.dreammaster.bartworksHandler;
 
-import static gregtech.api.enums.Mods.GTPlusPlus;
+import static bartworks.API.recipe.BartWorksRecipeMaps.radioHatchRecipes;
+import static bartworks.util.BWRecipes.calcDecayTicks;
+import static gregtech.api.util.GTRecipeConstants.DECAY_TICKS;
 
 import net.minecraft.item.ItemStack;
 
-import com.github.bartimaeusnek.bartworks.util.BWRecipes;
-
+import gregtech.api.enums.GTValues;
 import gtPlusPlus.core.material.Material;
+import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.util.minecraft.ItemUtils;
 
 public class BW_RadHatchMaterial {
 
     public static void runRadHatchAdder() {
+        ItemStack err = ItemUtils.getErrorStack(1);
 
-        if (GTPlusPlus.isModLoaded()) {
-            ItemStack err = ItemUtils.getErrorStack(1);
-
-            for (Material material : Material.mMaterialMap) {
-                if (material != null && material.vRadiationLevel > 0) {
-                    int level = (int) material.getProtons();
-                    short[] rgba = material.getRGBA();
-                    if (material.getRod(1) != null && !material.getRod(1).isItemEqual(err)) {
-                        BWRecipes.instance.addRadHatch(material.getRod(1), level, 1, rgba);
-                    }
-                    if (material.getLongRod(1) != null && !material.getLongRod(1).isItemEqual(err)) {
-                        BWRecipes.instance.addRadHatch(material.getLongRod(1), level, 2, rgba);
-                    }
-                }
+        for (Material material : Material.mMaterialMap) {
+            if (material == null || material.vRadiationLevel <= 0) {
+                continue;
             }
+
+            // already generated in BW
+            if (material == MaterialsElements.getInstance().THORIUM
+                    || material == MaterialsElements.getInstance().THORIUM232
+                    || material == MaterialsElements.getInstance().CALIFORNIUM) {
+                continue;
+            }
+
+            int level = (int) material.getProtons();
+            if (material.getRod(1) != null && !material.getRod(1).isItemEqual(err)) {
+                GTValues.RA.stdBuilder().itemInputs(material.getRod(1)).duration(1).eut(level)
+                        .metadata(DECAY_TICKS, (int) calcDecayTicks(level)).noOptimize().addTo(radioHatchRecipes);
+            }
+            if (material.getLongRod(1) != null && !material.getLongRod(1).isItemEqual(err)) {
+                GTValues.RA.stdBuilder().itemInputs(material.getLongRod(1)).duration(2).eut(level)
+                        .metadata(DECAY_TICKS, (int) calcDecayTicks(level)).noOptimize().addTo(radioHatchRecipes);
+            }
+
         }
+
     }
 }

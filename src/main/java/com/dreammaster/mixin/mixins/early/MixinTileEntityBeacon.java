@@ -18,7 +18,7 @@ import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
 
-import gregtech.api.GregTech_API;
+import gregtech.api.GregTechAPI;
 
 @Mixin(TileEntityBeacon.class)
 public class MixinTileEntityBeacon extends TileEntity {
@@ -31,7 +31,7 @@ public class MixinTileEntityBeacon extends TileEntity {
             method = "func_146003_y")
     private void dreamcraft$countEternalBlocks(CallbackInfo ci, int i, int j, int k, boolean flag, int l, int i1,
             Block block, @Share("eternalCount") LocalIntRef eternalCount) {
-        if (block == GregTech_API.sBlockMetal9 && this.worldObj.getBlockMetadata(l, k, i1) == 9) {
+        if (block == GregTechAPI.sBlockMetal9 && this.worldObj.getBlockMetadata(l, k, i1) == 9) {
             eternalCount.set(eternalCount.get() + 1);
         }
     }

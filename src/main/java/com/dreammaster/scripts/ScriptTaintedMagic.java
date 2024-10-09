@@ -4,11 +4,10 @@ import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +19,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -130,9 +129,9 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
                 'c',
                 "craftingToolHardHammer",
                 'd',
@@ -153,11 +152,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
                 'd',
                 "craftingToolFile",
                 'e',
@@ -178,13 +177,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
                 'c',
                 "craftingToolHardHammer",
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                 'e',
                 "stickWood",
                 'g',
@@ -205,7 +204,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'a',
                 "craftingToolFile",
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Shadow, 1L),
                 'c',
                 "craftingToolHardHammer",
                 'e',
@@ -224,11 +223,11 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                 'd',
                 "craftingToolFile",
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                 'f',
                 "craftingToolHardHammer",
                 'h',
@@ -382,15 +381,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("sensus"), 8),
                 getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0, missing),
                 new ItemStack[] { getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEntropy, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEntropy, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEntropy, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEntropy, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "WarpedGogglesGTNH",
                 new ResearchPage(
@@ -463,16 +462,16 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 48).add(Aspect.getAspect("telum"), 64)
                         .add(Aspect.getAspect("cognitio"), 8),
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Shadow, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Shadow, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Shadow, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "MaceFocusGTNH",
                 new ResearchPage(
@@ -503,19 +502,19 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 'a',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Shadow, 1L),
                 'c',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Shadow, 1L),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Thaumium, 1L),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Shadow, 1L),
                 'g',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Shadow, 1L),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Shadow, 1L),
                 'i',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing));
         TCHelper.addResearchPage(
@@ -538,15 +537,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .setConcealed().setPages(new ResearchPage("tm.text.CREATIONSHARD.1")).registerResearchItem();
         ThaumcraftApi.addCrucibleRecipe(
                 "CreationShardGTNH",
-                getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 2, 0, missing),
+                com.dreammaster.item.ItemList.VoidEssence.getIS(2),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing),
                 new AspectList().add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("vacuos"), 16)
                         .add(Aspect.getAspect("tenebrae"), 16));
         TCHelper.addResearchPage(
                 "CreationShardGTNH",
-                new ResearchPage(
-                        TCHelper.findCrucibleRecipe(
-                                getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing))));
+                new ResearchPage(TCHelper.findCrucibleRecipe(com.dreammaster.item.ItemList.VoidEssence.getIS(1))));
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "CreationShardGTNH",
                 getModItem(TaintedMagic.ID, "ItemMaterial", 2, 5, missing),
@@ -558,13 +555,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing), });
         TCHelper.addResearchPage(
@@ -596,17 +593,17 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("ira"), 32).add(Aspect.getAspect("potentia"), 16),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         TCHelper.addResearchPage(
                 "EldritchFocusGTNH",
                 new ResearchPage(
@@ -862,22 +859,22 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("alienis"), 32)
                         .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("ignis"), 32)
                         .add(Aspect.getAspect("fames"), 32),
-                GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Thaumium, 1L),
                 new ItemStack[] { getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.FierySteel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Ultimet, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Knightmetal, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.AstralSilver, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.FierySteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.FierySteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Ultimet, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Knightmetal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.AstralSilver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.FierySteel, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.FierySteel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Ultimet, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.Knightmetal, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.foil, Materials.AstralSilver, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.FierySteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.FierySteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Ultimet, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Knightmetal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.AstralSilver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.FierySteel, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing), });
         TCHelper.addResearchPage(
                 "KnightRobesGTNH",
@@ -997,18 +994,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
                 getModItem(Thaumcraft.ID, "ItemHelmetCultistPlate", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
@@ -1023,18 +1020,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
                 getModItem(Thaumcraft.ID, "ItemChestplateCultistPlate", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
@@ -1048,18 +1045,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 64).add(Aspect.getAspect("alienis"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
                 getModItem(Thaumcraft.ID, "ItemLeggingsCultistPlate", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "PraetorarmorGTNH",
                 new ResearchPage(
@@ -1117,7 +1114,7 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 7, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 8, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 2, missing),
@@ -1153,15 +1150,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("metallum"), 16),
                 getModItem(TaintedMagic.ID, "ItemWarpedGoggles", 1, 0, missing),
                 new ItemStack[] { getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.bolt, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         TCHelper.addResearchPage(
                 "VoidgogglesGTNH",
                 new ResearchPage(
@@ -1303,13 +1300,13 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 16).add(Aspect.getAspect("potentia"), 16),
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 6, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemPickVoid", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(Thaumcraft.ID, "ItemShovelVoid", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(Thaumcraft.ID, "ItemAxeVoid", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "ThaumicdisassemblerGTNH",
                 new ResearchPage(
@@ -1340,19 +1337,19 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 64).add(Aspect.getAspect("praecantatio"), 32),
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Polytetrafluoroethylene, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Polytetrafluoroethylene, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Polytetrafluoroethylene, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Polytetrafluoroethylene, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         TCHelper.addResearchPage(
                 "VoidWalkerBootsGTNH",
                 new ResearchPage(
@@ -1387,17 +1384,17 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 16),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemGirdleRunic", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Tanzanite, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Tanzanite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         TCHelper.addResearchPage(
                 "VoidSashGTNH",
                 new ResearchPage(
@@ -1427,16 +1424,16 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 16)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("victus"), 32),
                 getModItem(Thaumcraft.ID, "ItemHelmetVoid", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L), });
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
@@ -1452,20 +1449,20 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("tenebrae"), 16)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("cognitio"), 32),
                 getModItem(Thaumcraft.ID, "ItemChestplateVoid", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
@@ -1481,15 +1478,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("terra"), 32),
                 getModItem(Thaumcraft.ID, "ItemLeggingsVoid", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polytetrafluoroethylene, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L), });
         TCHelper.addResearchPage(
                 "VoidFortressGTNH",
                 new ResearchPage(
@@ -1519,16 +1516,16 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("tenebrae"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("victus"), 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressHelmet", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L), });
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
@@ -1544,20 +1541,20 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 48).add(Aspect.getAspect("tenebrae"), 32)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("cognitio"), 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressChestplate", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
@@ -1573,15 +1570,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("terra"), 48),
                 getModItem(TaintedMagic.ID, "ItemVoidFortressLeggings", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L), });
         TCHelper.addResearchPage(
                 "ShadowFortressArmorGTNH",
                 new ResearchPage(
@@ -1609,18 +1606,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("telum"), 48).add(Aspect.getAspect("mortuus"), 24)
                         .add(Aspect.getAspect("potentia"), 16).add(Aspect.getAspect("motus"), 8),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L), });
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L), });
         TCHelper.addResearchPage(
                 "ThaumiumKatanaGTNH",
                 new ResearchPage(
@@ -1650,18 +1647,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("mortuus"), 32).add(Aspect.getAspect("potentia"), 24)
                         .add(Aspect.getAspect("motus"), 16).add(Aspect.getAspect("vacuos"), 32),
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Manyullyn, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         TCHelper.addResearchPage(
                 "VoidMetalKatanaGTNH",
                 new ResearchPage(
@@ -1692,18 +1689,18 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("motus"), 24).add(Aspect.getAspect("vacuos"), 48)
                         .add(Aspect.getAspect("tenebrae"), 48),
                 getModItem(TaintedMagic.ID, "ItemShadowmetalSword", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L), });
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "ShadowMetalKatanaGTNH",
                 new ResearchPage(
@@ -1759,21 +1756,21 @@ public class ScriptTaintedMagic implements IScriptLoader {
                         .add(Aspect.getAspect("instrumentum"), 32).add(Aspect.getAspect("terra"), 24),
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 new ItemStack[] { getModItem(TaintedMagic.ID, "BlockWarpwoodLog", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Tungsten, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Tungsten, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Void, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Tungsten, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Tungsten, 1L),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Tungsten, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Tungsten, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Void, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Tungsten, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Tungsten, 1L), });
         TCHelper.addResearchPage(
                 "ROD_warpwood",
                 new ResearchPage(
@@ -1851,15 +1848,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "FocusTimeGTNH",
@@ -1893,15 +1890,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemMaterial", 1, 5, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                         getModItem(Thaumcraft.ID, "FocusFrost", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing), });
         TCHelper.addResearchPage(
                 "FocusWeatherGTNH",
@@ -1938,19 +1935,19 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemPrimalCrusher", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 5, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
                         getModItem(TaintedMagic.ID, "ItemCrystalDagger", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.VoidEssence", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
+                        com.dreammaster.item.ItemList.VoidEssence.getIS(1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Shadow, 1L), });
         TCHelper.addResearchPage(
                 "PrimalBladeGTNH",
                 new ResearchPage(
@@ -2113,15 +2110,15 @@ public class ScriptTaintedMagic implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 3, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "WandCap", 1, 7, missing),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Tanzanite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Tanzanite, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Shadow, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Shadow, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Shadow, 1L),
                         getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing), });
         TCHelper.addResearchPage(
                 "CAP_shadowmetal",

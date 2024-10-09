@@ -2,7 +2,7 @@ package com.dreammaster.gthandler.multiAirFilter;
 
 import net.minecraft.world.World;
 
-import gregtech.common.GT_Pollution;
+import gregtech.common.Pollution;
 
 public class ChunkCoordinates {
 
@@ -28,10 +28,10 @@ public class ChunkCoordinates {
     }
 
     public int getPollution() {
-        return GT_Pollution.getPollution(world, chunkX, chunkZ);
+        return Pollution.getPollution(world, chunkX, chunkZ);
     }
 
     public void removePollution(int amount) {
-        GT_Pollution.addPollution(world, chunkX, chunkZ, -amount);
+        Pollution.addPollution(world, chunkX, chunkZ, -amount);
     }
 }

@@ -2,9 +2,8 @@ package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
 import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.GalactiGreg;
+import static gregtech.api.enums.Mods.DetravScannerMod;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -12,22 +11,25 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.io.File;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
 import com.dreammaster.bartworksHandler.BWGlassAdder;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
+import com.dreammaster.bartworksHandler.BioItemLoader;
 import com.dreammaster.bartworksHandler.PyrolyseOvenLoader;
 import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import com.dreammaster.baubles.OvenGlove;
@@ -42,14 +44,16 @@ import com.dreammaster.command.ItemInHandInfoCommand;
 import com.dreammaster.command.WikiCommand;
 import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
+import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
-import com.dreammaster.galacticgreg.SpaceDimRegisterer;
 import com.dreammaster.gthandler.CoreMod_PCBFactory_MaterialLoader;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_CasingNH;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
+import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.item.CustomPatterns;
+import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.item.WoodenBrickForm;
 import com.dreammaster.lib.Refstrings;
@@ -75,8 +79,8 @@ import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
-import com.github.bartimaeusnek.bartworks.system.material.WerkstoffLoader;
 
+import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -97,12 +101,12 @@ import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
-import gregtech.GT_Mod;
-import gregtech.api.GregTech_API;
-import gregtech.api.enums.GT_Values;
+import gregtech.GTMod;
+import gregtech.api.GregTechAPI;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
-import gregtech.api.util.GT_LanguageManager;
-import gregtech.common.items.GT_MetaGenerated_Item_01;
+import gregtech.api.util.GTLanguageManager;
+import gregtech.common.items.MetaGeneratedItem01;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -137,13 +141,16 @@ public class MainRegistry {
     public static CoreModDispatcher NW;
     public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
-    private static SpaceDimRegisterer SpaceDimReg;
     private static BacteriaRegistry BacteriaRegistry;
 
     public static void AddLoginError(String pMessage) {
         if (Module_AdminErrorLogs != null) {
             Module_AdminErrorLogs.AddErrorLogOnAdminJoin(pMessage);
         }
+    }
+
+    public MainRegistry() {
+        if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
     }
 
     @Mod.EventHandler
@@ -177,8 +184,8 @@ public class MainRegistry {
         Configuration tMainConfig = new Configuration(tFile);
         tMainConfig.load();
 
-        GregTech_API.sUseMachineMetal = tMainConfig.get("machines", "use_machine_metal_tint", true).getBoolean(true);
-        if (GregTech_API.sUseMachineMetal) {
+        GregTechAPI.sUseMachineMetal = tMainConfig.get("machines", "use_machine_metal_tint", true).getBoolean(true);
+        if (GregTechAPI.sUseMachineMetal) {
             // use default in GregTech Dyes enum.
         } else {
             // Override MACHINE_METAL dye color with white
@@ -209,14 +216,15 @@ public class MainRegistry {
         // ------------------------------------------------------------
 
         // Materials init
-        if (!GT_Mod.gregtechproxy.mEnableAllMaterials) {
+        if (!GTMod.gregtechproxy.mEnableAllMaterials) {
             new GT_CoreModSupport();
         }
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
         if (!ItemList.AddToItemManager(ItemManager)
-                | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))) {
+                | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))
+                | !(BioItemLoader.preInit())) {
             Logger.warn("Some items failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Items] Some items failed to register. Check the logfile for details");
         }
@@ -289,9 +297,7 @@ public class MainRegistry {
             FMLCommonHandler.instance().bus().register(new NotificationTickHandler());
         }
 
-        if (BartWorks.isModLoaded()) {
-            BacteriaRegistry = new BacteriaRegistry();
-        }
+        BacteriaRegistry = new BacteriaRegistry();
 
         Logger.debug("LOAD abandoned GT++ Aspects");
         if (Thaumcraft.isModLoaded()) {
@@ -344,39 +350,25 @@ public class MainRegistry {
         // Register additional OreDictionary Names
         if (CoreConfig.OreDictItems_Enabled) OreDictHandler.register_all();
 
-        GregTech_API.sAfterGTPostload.add(() -> {
+        GregTechAPI.sAfterGTPostload.add(() -> {
             Logger.debug("Add Runnable to GT to create pyrolyse oven logWood recipes");
             PyrolyseOvenLoader.registerRecipes();
         });
 
-        // Register Dimensions in GalacticGregGT5
-        if (GalactiGreg.isModLoaded()) {
-            if (BartWorks.isModLoaded()) {
-                GregTech_API.sAfterGTPostload.add(() -> {
-                    Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
-                    VoidMinerLoader.initDeepDark();
-                });
-            }
+        // Registering all ores for deep dark
+        GregTechAPI.sAfterGTPostload.add(() -> {
+            Logger.debug("Add Runnable to GT to add Ores to BW VoidMiner in the DeepDark");
+            VoidMinerLoader.initDeepDark();
+        });
 
-            SpaceDimReg = new SpaceDimRegisterer();
-            if (!SpaceDimReg.init()) {
-                Logger.error(
-                        "Unable to register SpaceDimensions; You are probably using the wrong Version of GalacticGreg");
-                AddLoginError("[SpaceDim] Unable to register SpaceDimensions. Wrong Version of GGreg found!");
-            } else {
-                Logger.debug("Registering SpaceDimensions");
-                SpaceDimReg.register();
-            }
-        }
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
         }
 
         CoreMod_PCBFactory_MaterialLoader.init();
 
-        if (BartWorks.isModLoaded()) {
-            BWGlassAdder.registerGlasses();
-        }
+        BWGlassAdder.registerGlasses();
+
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -385,7 +377,7 @@ public class MainRegistry {
         GameRegistry.registerBlock(_mBlockBabyChest, ItemBlockBabyChest.class, "BabyChest");
         GameRegistry.addShapelessRecipe(new ItemStack(_mBlockBabyChest, 9), new ItemStack(Blocks.chest, 1, 0));
 
-        GT_Values.RA.stdBuilder().itemInputs(new ItemStack(_mBlockBabyChest, 9))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(_mBlockBabyChest, 9))
                 .itemOutputs(new ItemStack(Blocks.chest, 1, 0)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GameRegistry.registerTileEntity(TileEntityBabyChest.class, "teBabyChest");
@@ -426,6 +418,26 @@ public class MainRegistry {
 
     @Mod.EventHandler
     public void PostLoad(FMLPostInitializationEvent PostEvent) {
+        ItemBucketList.SodiumPotassium.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.SodiumPotassium.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.NitricAcid.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.NitricAcid.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.RadioactiveBacterialSludge.set(
+                FluidContainerRegistry.fillFluidContainer(
+                        FluidList.EnrichedBacterialSludge.getFluidStack(),
+                        new ItemStack(Items.bucket)));
+        ItemBucketList.FermentedBacterialSludge.set(
+                FluidContainerRegistry.fillFluidContainer(
+                        FluidList.FermentedBacterialSludge.getFluidStack(),
+                        new ItemStack(Items.bucket)));
+        ItemBucketList.Concrete.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.Concrete.getFluidStack(), new ItemStack(Items.bucket)));
+        ItemBucketList.Pollution.set(
+                FluidContainerRegistry
+                        .fillFluidContainer(FluidList.Pollution.getFluidStack(), new ItemStack(Items.bucket)));
 
         if (CoreConfig.ModHazardousItems_Enabled) {
             Module_HazardousItems.LoadConfig();
@@ -449,43 +461,39 @@ public class MainRegistry {
 
         registerModFixes();
 
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
-        GT_LanguageManager
+        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4", "Rocket Plate Tier 4!");
+        GTLanguageManager
                 .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT4.desc", "On your way to the T4 Dims!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");
-        GT_LanguageManager
+        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5", "Rocket Plate Tier 5!");
+        GTLanguageManager
                 .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT5.desc", "On your way to the T5 Dims!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6", "Rocket Plate Tier 6!");
-        GT_LanguageManager
+        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6", "Rocket Plate Tier 6!");
+        GTLanguageManager
                 .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT6.desc", "On your way to the T6 Dims!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7", "Rocket Plate Tier 7!");
-        GT_LanguageManager
+        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7", "Rocket Plate Tier 7!");
+        GTLanguageManager
                 .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT7.desc", "On your way to the T7 Dims!");
-        GT_LanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8", "Rocket Plate Tier 8!");
-        GT_LanguageManager
+        GTLanguageManager.addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8", "Rocket Plate Tier 8!");
+        GTLanguageManager
                 .addStringLocalization("achievement.item.HeavyDutyAlloyIngotT8.desc", "On your way to the T8 Dims!");
 
         // Register modfixes in registerModFixes()
         // Don't call enableModFixes() yourself
         // Don't register fixes after enableModFixes() has been executed
         ModFixesMaster.enableModFixes();
-        if (BartWorks.isModLoaded()) {
-            Logger.debug("Add Bacteria Stuff to BartWorks");
-            BacteriaRegistry.runAllPostinit();
 
-            Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Platinum,
-                    WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Osmium,
-                    WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01
-                    .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
-            GT_MetaGenerated_Item_01.registerCauldronCleaningFor(
-                    Materials.Palladium,
-                    WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
-        }
+        Logger.debug("Add Bacteria Stuff to BartWorks");
+        BacteriaRegistry.runAllPostinit();
+
+        Logger.debug("Nerf Platinum Metal Cauldron Cleaning");
+        MetaGeneratedItem01
+                .registerCauldronCleaningFor(Materials.Platinum, WerkstoffLoader.PTMetallicPowder.getBridgeMaterial());
+        MetaGeneratedItem01
+                .registerCauldronCleaningFor(Materials.Osmium, WerkstoffLoader.IrOsLeachResidue.getBridgeMaterial());
+        MetaGeneratedItem01
+                .registerCauldronCleaningFor(Materials.Iridium, WerkstoffLoader.IrLeachResidue.getBridgeMaterial());
+        MetaGeneratedItem01
+                .registerCauldronCleaningFor(Materials.Palladium, WerkstoffLoader.PDMetallicPowder.getBridgeMaterial());
 
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
@@ -496,9 +504,10 @@ public class MainRegistry {
     public void CompleteLoad(FMLLoadCompleteEvent event) {
         RecipeRemover.run();
         ScriptLoader.run();
-        if (BartWorks.isModLoaded()) {
-            BW_RadHatchMaterial.runRadHatchAdder();
-        }
+        new DTPFRecipes().run();
+
+        BW_RadHatchMaterial.runRadHatchAdder();
+
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
         if (Loader.isModLoaded("amazingtrophies") && BloodMagic.isModLoaded()
                 && Avaritia.isModLoaded()

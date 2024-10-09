@@ -1,6 +1,6 @@
 package com.dreammaster.gthandler.IDSU;
 
-import static gregtech.api.enums.GT_Values.V;
+import static gregtech.api.enums.GTValues.V;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
-import gregtech.api.objects.GT_RenderedTexture;
+import gregtech.api.objects.GTRenderedTexture;
 
 public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
 
@@ -68,7 +68,7 @@ public class GT_MetaTileEntity_IDSU extends MetaTileEntity {
     @Override
     public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection facing,
             int colorIndex, boolean aActive, boolean aRedstone) {
-        return new ITexture[] { side == facing ? new GT_RenderedTexture(_mIDSU_Out) : new GT_RenderedTexture(_mIDSU) };
+        return new ITexture[] { side == facing ? new GTRenderedTexture(_mIDSU_Out) : new GTRenderedTexture(_mIDSU) };
     }
 
     @Override

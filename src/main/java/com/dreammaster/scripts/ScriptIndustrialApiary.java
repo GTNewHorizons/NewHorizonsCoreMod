@@ -10,8 +10,8 @@ import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +24,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -111,7 +111,7 @@ public class ScriptIndustrialApiary implements IScriptLoader {
                 AlvearyLighting);
 
         // Upgrade Frame
-        GT_Values.RA.stdBuilder().itemInputs(ItemList.Circuit_Board_Plastic.get(1), IntegratedCPU)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Circuit_Board_Plastic.get(1), IntegratedCPU)
                 .itemOutputs(UpgradeFrame).duration(10 * SECONDS).eut(24).addTo(assemblerRecipes);
 
         final ItemList[] AccelerationUpgrades = new ItemList[] { ItemList.IndustrialApiary_Upgrade_Acceleration_1,
@@ -120,11 +120,9 @@ public class ScriptIndustrialApiary implements IScriptLoader {
                 ItemList.IndustrialApiary_Upgrade_Acceleration_6, ItemList.IndustrialApiary_Upgrade_Acceleration_7,
                 ItemList.IndustrialApiary_Upgrade_Acceleration_8 };
 
-        final ItemStack[] Accelerators = new ItemStack[] { CustomItemList.AcceleratorLV.get(1),
-                CustomItemList.AcceleratorMV.get(1), CustomItemList.AcceleratorHV.get(1),
-                CustomItemList.AcceleratorEV.get(1), CustomItemList.AcceleratorIV.get(1),
-                CustomItemList.AcceleratorLuV.get(1), CustomItemList.AcceleratorZPM.get(1),
-                CustomItemList.AcceleratorUV.get(1) };
+        final ItemStack[] Accelerators = new ItemStack[] { ItemList.AcceleratorLV.get(1), ItemList.AcceleratorMV.get(1),
+                ItemList.AcceleratorHV.get(1), ItemList.AcceleratorEV.get(1), ItemList.AcceleratorIV.get(1),
+                ItemList.AcceleratorLuV.get(1), ItemList.AcceleratorZPM.get(1), ItemList.AcceleratorUV.get(1) };
 
         // Acceleration Upgrade 1-8
         for (int i = 0; i < AccelerationUpgrades.length; i++) {

@@ -5,7 +5,6 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -14,9 +13,9 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,13 +29,14 @@ import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
-import gregtech.api.enums.GT_Values;
+import goodgenerator.loader.Loaders;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -70,22 +70,22 @@ public class ScriptMagicBees implements IScriptLoader {
     public void loadRecipes() {
 
         addShapelessRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedAir, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedAir, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 18, missing));
         addShapelessRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedWater, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedWater, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 19, missing));
         addShapelessRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedFire, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedFire, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 20, missing));
         addShapelessRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedEarth, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedEarth, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 21, missing));
         addShapelessRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedOrder, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedOrder, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 22, missing));
         addShapelessRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedEntropy, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.InfusedEntropy, 1L),
                 getModItem(MagicBees.ID, "miscResources", 1, 23, missing));
         addShapedRecipe(
                 getModItem(MagicBees.ID, "backpack.thaumaturgeT1", 1, 0, missing),
@@ -209,200 +209,196 @@ public class ScriptMagicBees implements IScriptLoader {
         OreDictionary.registerOre("beeComb", getModItem(MagicBees.ID, "comb", 1, 19, missing));
         OreDictionary.registerOre("beeComb", getModItem(MagicBees.ID, "comb", 1, 20, missing));
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Genetics.ID, "misc", 2, 8, missing),
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.void", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(30 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 5, 0, missing),
                         getModItem(MagicBees.ID, "pollen", 1, 0, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "effectJar", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(30 * SECONDS).eut(120)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 4, 3, missing),
-                        GT_Utility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 4, 3, missing), GTUtility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 72)).duration(10 * SECONDS).eut(48)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(MagicBees.ID, "miscResources", 6, 5, missing),
-                        GT_Utility.getIntegratedCircuit(6))
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(MagicBees.ID, "miscResources", 6, 5, missing), GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(MagicBees.ID, "miscResources", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.thaumium", 288)).duration(20 * SECONDS).eut(256)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "clock", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Jade, 4L))
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Jade, 4L))
                 .itemOutputs(getModItem(MagicBees.ID, "moonDial", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("dye.watermixed.dyegreen", 576)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 0, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 1, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 2, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(20 * SECONDS).eut(120)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 3, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(20 * SECONDS).eut(120)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 4, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(30 * SECONDS).eut(256)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 5, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(30 * SECONDS).eut(256)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 6, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(40 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 7, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 8, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(40 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 8, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(50 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 9, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(50 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 10, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 12, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 11, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 12, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 12, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 14, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 10 * SECONDS)
                 .eut(4096).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 13, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 14, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 10 * SECONDS)
                 .eut(4096).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 14, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 16, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(7680).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(MagicBees.ID, "miscResources", 1, 17, missing),
                         getModItem(MagicBees.ID, "magnet", 2, 15, missing))
                 .itemOutputs(getModItem(MagicBees.ID, "magnet", 1, 16, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 1296)).duration(1 * MINUTES + 20 * SECONDS)
                 .eut(7680).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 3, 0, missing), ItemList.Shape_Extruder_Cell.get(0L))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.magic", 1, 0, missing)).duration(5 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(MagicBees.ID, "wax", 3, 2, missing), ItemList.Shape_Extruder_Cell.get(0L))
                 .itemOutputs(getModItem(MagicBees.ID, "capsule.magic", 1, 0, missing)).duration(5 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 2, wildcard, missing),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 6, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(16)
                 .addTo(mixerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 12, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(16)
                 .addTo(mixerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "sand", 2, wildcard, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 5, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(16)
                 .addTo(mixerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Ash, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 10, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 100)).duration(5 * SECONDS).eut(16)
                 .addTo(mixerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemFertilizer", 8, 0, missing),
                         getModItem(MagicBees.ID, "miscResources", 1, 2, missing))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 32, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(16)
                 .addTo(mixerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemFertilizer", 8, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Apatite, 1L))
                 .itemOutputs(getModItem(Forestry.ID, "fertilizerCompound", 30, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(16)
                 .addTo(mixerRecipes);
@@ -484,11 +480,11 @@ public class ScriptMagicBees implements IScriptLoader {
                 'f',
                 getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5, missing),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Gold, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L));
+                GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Gold, 1L));
         TCHelper.addResearchPage(
                 "MB_VisAuraProvider",
                 new ResearchPage(
@@ -507,7 +503,7 @@ public class ScriptMagicBees implements IScriptLoader {
         ThaumcraftApi.addCrucibleRecipe(
                 "CONCENTRATEDCOMPOUND",
                 getModItem(MagicBees.ID, "miscResources", 1, 2, missing),
-                GT_OreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gem, Materials.Apatite, 1L),
                 new AspectList().add(Aspect.getAspect("messis"), 6).add(Aspect.getAspect("vitreus"), 3));
         TCHelper.addResearchPage(
                 "CONCENTRATEDCOMPOUND",
@@ -531,7 +527,7 @@ public class ScriptMagicBees implements IScriptLoader {
                         .add(Aspect.getAspect("herba"), 6).add(Aspect.getAspect("terra"), 3));
         TCHelper.setResearchComplexity("MB_EssenceLife", 3);
         TCHelper.clearPages("MB_EssenceDeath");
-        TCHelper.addResearchPage("MB_EssenceDeath", new ResearchPage("tc.reseacrh_page.MB_EssenceDeath.1"));
+        TCHelper.addResearchPage("MB_EssenceDeath", new ResearchPage("tc.research_page.MB_EssenceDeath.1"));
         ThaumcraftApi.addCrucibleRecipe(
                 "MB_EssenceDeath",
                 getModItem(MagicBees.ID, "miscResources", 1, 8, missing),
@@ -959,21 +955,21 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'g',
                 "craftingToolWireCutter",
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'i',
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
@@ -996,21 +992,21 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'g',
                 "craftingToolWireCutter",
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'i',
                 "craftingToolHardHammer");
         TCHelper.addResearchPage(
@@ -1033,13 +1029,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'd',
                 "craftingToolFile",
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 2, missing),
                 'i',
@@ -1064,13 +1060,13 @@ public class ScriptMagicBees implements IScriptLoader {
                 "def",
                 "ghi",
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'd',
                 "craftingToolFile",
                 'e',
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Void, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                 'h',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 16, missing),
                 'i',
@@ -1131,12 +1127,9 @@ public class ScriptMagicBees implements IScriptLoader {
                 new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HARVEST, 75).add(Aspect.getAspect("tempus"), 50),
                 getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTube", 1, 2, missing),
-                        getModItem(MagicBees.ID, "pollen", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(GoodGenerator.ID, "essentiaCell", 1, 0, missing),
-                        getModItem(MagicBees.ID, "pollen", 1, 1, missing) });
+                        getModItem(MagicBees.ID, "pollen", 1, 0, missing), new ItemStack(Loaders.essentiaCell, 1, 0),
+                        new ItemStack(Loaders.essentiaCell, 1, 0), new ItemStack(Loaders.essentiaCell, 1, 0),
+                        new ItemStack(Loaders.essentiaCell, 1, 0), getModItem(MagicBees.ID, "pollen", 1, 1, missing) });
         TCHelper.refreshResearchPages("MB_VisAuraProvider");
         TCHelper.refreshResearchPages("MB_EssenceLife");
         TCHelper.refreshResearchPages("MB_EssenceDeath");

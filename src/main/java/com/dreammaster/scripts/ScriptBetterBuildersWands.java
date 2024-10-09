@@ -5,13 +5,13 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 
 public class ScriptBetterBuildersWands implements IScriptLoader {
 
@@ -50,13 +50,13 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
                 null,
                 "craftingToolScrewdriver");
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "toolRod", 2, 2, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 1, 2, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandIron", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         createItemStack(
                                 TinkersGregworks.ID,
@@ -74,37 +74,37 @@ public class ScriptBetterBuildersWands implements IScriptLoader {
                                 missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandDiamond", 1, 0, missing)).duration(30 * SECONDS)
                 .eut(64).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "toughRod", 1, 314, missing),
                         getModItem(ExtraUtilities.ID, "builderswand", 1, 0, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 4, missing))
                 .duration(30 * SECONDS).eut(120).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 4, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 1, 314, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 5, missing))
                 .duration(30 * SECONDS).eut(256).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 5, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 2, 314, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 6, missing))
                 .duration(30 * SECONDS).eut(480).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 6, missing),
                         getModItem(ExtraUtilities.ID, "creativebuilderswand", 1, 0, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 12, missing))
                 .duration(30 * SECONDS).eut(1024).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 12, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 4, 314, missing))
                 .itemOutputs(getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 13, missing))
                 .duration(30 * SECONDS).eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(BetterBuildersWands.ID, "wandUnbreakable", 1, 13, missing),
                         getModItem(TinkerConstruct.ID, "heavyPlate", 8, 314, missing))

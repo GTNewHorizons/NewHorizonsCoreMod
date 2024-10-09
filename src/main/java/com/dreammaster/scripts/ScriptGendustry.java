@@ -4,13 +4,11 @@ import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.Gendustry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,12 +18,15 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.common.items.CombType;
+import gregtech.loaders.misc.GTBees;
+import gtPlusPlus.core.material.MaterialsElements;
 
 public class ScriptGendustry implements IScriptLoader {
 
@@ -110,7 +111,7 @@ public class ScriptGendustry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Gendustry.ID, "BeeReceptacle", 1, 0, missing),
                 "screwHSSS",
-                getModItem(GregTech.ID, "gt.comb", 1, 78, missing),
+                GTBees.combs.getStackForType(CombType.PLUTONIUM),
                 "screwHSSS",
                 CustomItemList.IridiumAlloyItemCasing.get(1L),
                 CustomItemList.OsmiumBars.get(1L),
@@ -121,7 +122,7 @@ public class ScriptGendustry implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Gendustry.ID, "PowerModule", 1, 0, missing),
                 "cableGt01VanadiumGallium",
-                getModItem(GregTech.ID, "gt.comb", 1, 79, missing),
+                GTBees.combs.getStackForType(CombType.NAQUADAH),
                 "cableGt01VanadiumGallium",
                 CustomItemList.IridiumAlloyItemCasing.get(1L),
                 "circuitMaster",
@@ -153,9 +154,9 @@ public class ScriptGendustry implements IScriptLoader {
                 "plateStainlessSteel");
         addShapedRecipe(
                 getModItem(Gendustry.ID, "ClimateModule", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.comb", 1, 70, missing),
+                GTBees.combs.getStackForType(CombType.IRIDIUM),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                getModItem(GregTech.ID, "gt.comb", 1, 77, missing),
+                GTBees.combs.getStackForType(CombType.URANIUM),
                 "stickPalladium",
                 "rotorOsmium",
                 "stickPalladium",
@@ -212,13 +213,13 @@ public class ScriptGendustry implements IScriptLoader {
                 'c',
                 getModItem(Forestry.ID, "factory", 1, 2, missing),
                 'd',
-                getModItem(GregTech.ID, "gt.comb", 1, 79, missing),
+                GTBees.combs.getStackForType(CombType.NAQUADAH),
                 'e',
                 ItemList.Robot_Arm_LuV.get(1L),
                 'f',
                 getModItem(Gendustry.ID, "MutagenTank", 1, 0, missing),
                 'g',
-                getModItem(GTPlusPlus.ID, "itemGearRuthenium", 1, 0, missing),
+                MaterialsElements.getInstance().RUTHENIUM.getPlate(1),
                 'h',
                 getModItem(ExtraBees.ID, "alveary", 1, 6, missing),
                 'i',
@@ -237,11 +238,11 @@ public class ScriptGendustry implements IScriptLoader {
                 "-aaaaaaa-",
                 "---------",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.Europium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.Europium, 1L),
                 'b',
                 getModItem(Gendustry.ID, "Replicator", 1, 0, missing),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.Naquadria, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.Naquadria, 1L),
                 'd',
                 getModItem(Gendustry.ID, "Liquifier", 1, 0, missing),
                 'e',
@@ -253,7 +254,7 @@ public class ScriptGendustry implements IScriptLoader {
                 'h',
                 getModItem(Gendustry.ID, "Sampler", 1, 0, missing),
                 'i',
-                getModItem(GregTech.ID, "gt.comb", 1, 85, missing),
+                GTBees.combs.getStackForType(CombType.NEUTRONIUM),
                 'j',
                 getModItem(Gendustry.ID, "Mutatron", 1, 0, missing),
                 'k',
@@ -263,107 +264,68 @@ public class ScriptGendustry implements IScriptLoader {
                 'm',
                 getModItem(Gendustry.ID, "Extractor", 1, 0, missing));
 
-        GT_ModHandler.addSmeltingRecipe(
+        GTModHandler.addSmeltingRecipe(
                 getModItem(Gendustry.ID, "GeneSample", 1, 0, missing),
                 getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0, missing));
-        GT_ModHandler.addSmeltingRecipe(
+        GTModHandler.addSmeltingRecipe(
                 getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing),
                 getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing));
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Steel, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "Labware", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 576)).duration(5 * SECONDS).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 4L),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.RedAlloy, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Tin, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.RedAlloy, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneSampleBlank", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glass", 144)).duration(20).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Gendustry.ID, "GeneSampleBlank", 4, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneTemplate", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 576)).duration(10 * SECONDS).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronTanks.ID, "diamondTank", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Palladium, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Palladium, 1L))
                 .itemOutputs(getModItem(Gendustry.ID, "MutagenTank", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.plutonium", 576)).duration(15 * SECONDS).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
-                        ItemList.Circuit_Elite.get(1L))
+                        com.dreammaster.item.ItemList.GeneticCircuit.getIS(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
                 .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
-                        ItemList.Circuit_Elitenanocomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
-                        ItemList.Circuit_Quantumcomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.GeneticCircuit", 1, 0, missing),
-                        ItemList.Circuit_Crystalprocessor.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "GeneticsProcessor", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
-                        ItemList.Circuit_Elite.get(1L))
+                        com.dreammaster.item.ItemList.EnvironmentalCircuit.getIS(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1))
                 .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
-                        ItemList.Circuit_Elitenanocomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
-                        ItemList.Circuit_Quantumcomputer.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(NewHorizonsCoreMod.ID, "item.EnvironmentalCircuit", 1, 0, missing),
-                        ItemList.Circuit_Crystalprocessor.get(1L))
-                .itemOutputs(getModItem(Gendustry.ID, "EnvProcessor", 1, 0, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("liquiddna", 500)).duration(20 * SECONDS).eut(1920)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 3, missing))
                 .itemOutputs(getModItem(Gendustry.ID, "EjectCover", 1, 0, missing)).duration(10 * SECONDS).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 6, missing))
                 .itemOutputs(getModItem(Gendustry.ID, "ImportCover", 1, 0, missing)).duration(10 * SECONDS).eut(1920)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Palladium, 1L),
                         getModItem(IndustrialCraft2.ID, "upgradeModule", 1, 5, missing))
                 .itemOutputs(getModItem(Gendustry.ID, "ErrorSensorCover", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(1920).addTo(assemblerRecipes);

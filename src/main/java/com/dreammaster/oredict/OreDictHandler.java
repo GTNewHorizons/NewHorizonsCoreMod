@@ -18,7 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.dreammaster.item.ItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import gregtech.api.util.GT_ModHandler;
+import gregtech.api.util.GTModHandler;
 
 public class OreDictHandler {
 
@@ -132,33 +132,31 @@ public class OreDictHandler {
             }
             reg_rock(
                     OreDictTypes.Europa.name(),
-                    GT_ModHandler.getModItem(GalaxySpace.ID, "europaunderwatergeyser", 1L, 0));
-            reg_rock(OreDictTypes.Europa.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "europageyser", 1L, 0));
-            reg_rock(OreDictTypes.Haumea.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "haumeablocks", 1L, 0));
+                    GTModHandler.getModItem(GalaxySpace.ID, "europaunderwatergeyser", 1L, 0));
+            reg_rock(OreDictTypes.Europa.name(), GTModHandler.getModItem(GalaxySpace.ID, "europageyser", 1L, 0));
+            reg_rock(OreDictTypes.Haumea.name(), GTModHandler.getModItem(GalaxySpace.ID, "haumeablocks", 1L, 0));
+            reg_rock(OreDictTypes.CentauriA.name(), GTModHandler.getModItem(GalaxySpace.ID, "acentauribbgrunt", 1L, 0));
             reg_rock(
                     OreDictTypes.CentauriA.name(),
-                    GT_ModHandler.getModItem(GalaxySpace.ID, "acentauribbgrunt", 1L, 0));
-            reg_rock(
-                    OreDictTypes.CentauriA.name(),
-                    GT_ModHandler.getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1L, 0));
-            reg_rock(OreDictTypes.VegaB.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "vegabsubgrunt", 1L, 0));
-            reg_rock(OreDictTypes.VegaB.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "vegabgrunt", 1L, 0));
-            reg_rock(OreDictTypes.BarnardaE.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "barnardaEgrunt", 1L, 0));
+                    GTModHandler.getModItem(GalaxySpace.ID, "acentauribbsubgrunt", 1L, 0));
+            reg_rock(OreDictTypes.VegaB.name(), GTModHandler.getModItem(GalaxySpace.ID, "vegabsubgrunt", 1L, 0));
+            reg_rock(OreDictTypes.VegaB.name(), GTModHandler.getModItem(GalaxySpace.ID, "vegabgrunt", 1L, 0));
+            reg_rock(OreDictTypes.BarnardaE.name(), GTModHandler.getModItem(GalaxySpace.ID, "barnardaEgrunt", 1L, 0));
             reg_rock(
                     OreDictTypes.BarnardaE.name(),
-                    GT_ModHandler.getModItem(GalaxySpace.ID, "barnardaEsubgrunt", 1L, 0));
+                    GTModHandler.getModItem(GalaxySpace.ID, "barnardaEsubgrunt", 1L, 0));
             reg_rock(
                     OreDictTypes.BarnardaF.name(),
-                    GT_ModHandler.getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 1L, 0));
-            reg_rock(OreDictTypes.BarnardaF.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "barnardaFgrunt", 1L, 0));
-            reg_rock(OreDictTypes.Io.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "ioglowstone", 1L, 0));
+                    GTModHandler.getModItem(GalaxySpace.ID, "barnardaFsubgrunt", 1L, 0));
+            reg_rock(OreDictTypes.BarnardaF.name(), GTModHandler.getModItem(GalaxySpace.ID, "barnardaFgrunt", 1L, 0));
+            reg_rock(OreDictTypes.Io.name(), GTModHandler.getModItem(GalaxySpace.ID, "ioglowstone", 1L, 0));
             reg_rock(
                     OreDictTypes.Enceladus.name(),
-                    GT_ModHandler.getModItem(GalaxySpace.ID, "enceladusglowstone", 1L, 0));
-            reg_rock(OreDictTypes.Pluto.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "plutoglowstone", 1L, 0));
-            reg_rock(OreDictTypes.Proteus.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "proteusglowstone", 1L, 0));
-            reg_rock(OreDictTypes.Ceres.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "ceresglowstone", 1L, 0));
-            reg_rock(OreDictTypes.Enceladus.name(), GT_ModHandler.getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 3));
+                    GTModHandler.getModItem(GalaxySpace.ID, "enceladusglowstone", 1L, 0));
+            reg_rock(OreDictTypes.Pluto.name(), GTModHandler.getModItem(GalaxySpace.ID, "plutoglowstone", 1L, 0));
+            reg_rock(OreDictTypes.Proteus.name(), GTModHandler.getModItem(GalaxySpace.ID, "proteusglowstone", 1L, 0));
+            reg_rock(OreDictTypes.Ceres.name(), GTModHandler.getModItem(GalaxySpace.ID, "ceresglowstone", 1L, 0));
+            reg_rock(OreDictTypes.Enceladus.name(), GTModHandler.getModItem(GalaxySpace.ID, "enceladusblocks", 1L, 3));
         }
     }
 
@@ -195,10 +193,10 @@ public class OreDictHandler {
 
     private static void reg_fenceWood() {
         for (ItemStack itemStack : new ItemStack[] { new ItemStack(Blocks.fence),
-                GT_ModHandler.getModItem(ExtraTrees.ID, "fence", 1, WILDCARD_VALUE),
-                GT_ModHandler.getModItem(Forestry.ID, "fences", 1, WILDCARD_VALUE),
-                GT_ModHandler.getModItem(Forestry.ID, "fencesFireproof", 1, WILDCARD_VALUE),
-                GT_ModHandler.getModItem(Natura.ID, "Natura.fence", 1, WILDCARD_VALUE) }) {
+                GTModHandler.getModItem(ExtraTrees.ID, "fence", 1, WILDCARD_VALUE),
+                GTModHandler.getModItem(Forestry.ID, "fences", 1, WILDCARD_VALUE),
+                GTModHandler.getModItem(Forestry.ID, "fencesFireproof", 1, WILDCARD_VALUE),
+                GTModHandler.getModItem(Natura.ID, "Natura.fence", 1, WILDCARD_VALUE) }) {
             if (itemStack != null) {
                 OreDictionary.registerOre("fenceWood", itemStack);
             }

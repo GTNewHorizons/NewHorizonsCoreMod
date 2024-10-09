@@ -10,11 +10,12 @@ import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
+import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,12 +27,13 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.core.block.ModBlocks;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -77,209 +79,161 @@ public class ScriptThaumicBases implements IScriptLoader {
 
         OreDictHelper.removeOreDict("gravel", getModItem(ThaumicBases.ID, "oldGravel", 1, 0, missing));
 
-        GT_ModHandler.addSmeltingRecipe(
+        GTModHandler.addSmeltingRecipe(
                 getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 9, 3, missing));
-        GT_ModHandler.addSmeltingRecipe(
+        GTModHandler.addSmeltingRecipe(
                 getModItem(ThaumicBases.ID, "quicksilverBrick", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemResource", 9, 3, missing));
 
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "eldritchArk", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldBrick", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobble", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldCobbleMossy", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldDiamond", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldDiamond", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldDiamond", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 4, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 32)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldGold", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 5, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldIron", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldIron", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldIron", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 6, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldLapis", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldLapis", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "oldLapis", 1, 0, missing))
-                .itemOutputs(getModItem(ThaumicBases.ID, "genericSlab", 2, 7, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
-                .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 2, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 2, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 3, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 3, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 4, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 20)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing))
                 .itemOutputs(getModItem(ThaumicBases.ID, "crystalSlab", 2, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "quicksilverBlock", 1, 0, missing))
                 .fluidOutputs(FluidRegistry.getFluidStack("mercury", 9000)).duration(1152).eut(4)
                 .addTo(fluidExtractionRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "quicksilverBrick", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicBases.ID, "quicksilverBrick", 1, 0, missing))
                 .fluidOutputs(FluidRegistry.getFluidStack("mercury", 9000)).duration(1152).eut(4)
                 .addTo(fluidExtractionRecipes);
 
@@ -390,12 +344,12 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 24),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 0, missing),
                 new ItemStack[] { getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Steel, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Steel, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Steel, 1L), });
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.ThaumicAnvil",
                 getModItem(ThaumicBases.ID, "thaumicAnvil", 1, 0, missing),
@@ -430,19 +384,19 @@ public class ScriptThaumicBases implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("auram"), 16)
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("vitreus"), 16)
                         .add(Aspect.getAspect("instrumentum"), 32),
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Thaumium, 1L),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 1L), });
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.BloodyRobes",
                 getModItem(ThaumicBases.ID, "bloodyChest", 1, 0, missing),
@@ -571,15 +525,27 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("alienis"), 16)
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("mortuus"), 16),
                 getModItem(ThaumicBases.ID, "spike", 1, 2, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.toolHeadArrow, Materials.Void, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1520,
+                                "{material:\"Titanium\"}",
+                                missing),
                         getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
                         getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemSwordVoid", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.toolHeadArrow, Materials.Void, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        createItemStack(
+                                TinkersGregworks.ID,
+                                "tGregToolPartArrowHead",
+                                1,
+                                1583,
+                                "{material:\"Void\"}",
+                                missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.VoidAnvil",
                 getModItem(ThaumicBases.ID, "voidAnvil", 1, 0, missing),
@@ -589,15 +555,15 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("vacuos"), 16)
                         .add(Aspect.getAspect("metallum"), 16).add(Aspect.getAspect("praecantatio"), 16),
                 getModItem(ThaumicBases.ID, "thaumicAnvil", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(ThaumicBases.ID, "voidBlock", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.VoidSeed",
                 getModItem(ThaumicBases.ID, "voidSeed", 1, 0, missing),
@@ -643,13 +609,13 @@ public class ScriptThaumicBases implements IScriptLoader {
                 6,
                 new AspectList().add(Aspect.getAspect("lucrum"), 32).add(Aspect.getAspect("vitreus"), 32)
                         .add(Aspect.getAspect("cognitio"), 16).add(Aspect.getAspect("permutatio"), 16),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1L),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.Emerald, 1L),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 3, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.Foci.Activation",
@@ -657,7 +623,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 4,
                 new AspectList().add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("vitreus"), 32)
                         .add(Aspect.getAspect("iter"), 16).add(Aspect.getAspect("sensus"), 16),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), ItemList.Emitter_LV.get(1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 4, missing), ItemList.Sensor_LV.get(1L),
@@ -668,7 +634,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 5,
                 new AspectList().add(Aspect.getAspect("vacuos"), 32).add(Aspect.getAspect("perditio"), 32)
                         .add(Aspect.getAspect("aqua"), 16),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L),
                 new ItemStack[] { getModItem(Minecraft.ID, "bucket", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 2, missing),
                         getModItem(Thaumcraft.ID, "blockJar", 1, 3, missing),
@@ -684,7 +650,7 @@ public class ScriptThaumicBases implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("vitium"), 32).add(Aspect.getAspect("perditio"), 32)
                         .add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("sano"), 16),
-                GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L),
+                GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "blockCustomPlant", 1, 4, missing),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 6, missing),
@@ -698,11 +664,11 @@ public class ScriptThaumicBases implements IScriptLoader {
                 5,
                 new AspectList().add(Aspect.getAspect("iter"), 32).add(Aspect.getAspect("vinculum"), 32)
                         .add(Aspect.getAspect("desidia"), 16).add(Aspect.getAspect("sensus"), 16),
-                getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 1, missing),
+                new ItemStack(ModBlocks.blockCompressedObsidian, 1, 1),
                 new ItemStack[] { getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 8, missing),
                         getModItem(CarpentersBlocks.ID, "itemCarpentersBed", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Thaumium, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Thaumium, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.TaintFlask",
                 getModItem(ThaumicBases.ID, "concentratedTaint", 1, 0, missing),
@@ -723,13 +689,13 @@ public class ScriptThaumicBases implements IScriptLoader {
                         .add(Aspect.getAspect("mortuus"), 16).add(Aspect.getAspect("praecantatio"), 16),
                 getModItem(Thaumcraft.ID, "blockTable", 1, 14, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedAir, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedFire, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedWater, 1L),
                         getModItem(Minecraft.ID, "light_weighted_pressure_plate", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEarth, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEntropy, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEarth, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedEntropy, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "ROD_tbvoid",
                 getModItem(ThaumicBases.ID, "resource", 1, 4, missing),
@@ -742,11 +708,11 @@ public class ScriptThaumicBases implements IScriptLoader {
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
                         getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
                         getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 7, missing),
                         getModItem(ThaumicBases.ID, "knoseFragment", 1, 7, missing),
                         getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Void, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.NodeMan",
                 getModItem(ThaumicBases.ID, "nodeManipulator", 1, 0, missing),
@@ -757,13 +723,13 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 11, missing),
                 new ItemStack[] { getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
                         ItemList.Emitter_EV.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Knightmetal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Knightmetal, 1L),
                         getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing), ItemList.Sensor_EV.get(1L),
                         getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 14, missing), ItemList.Sensor_EV.get(1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 10, missing),
                         getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 10, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Knightmetal, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Knightmetal, 1L),
                         ItemList.Emitter_EV.get(1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.NodeLinker",
@@ -799,8 +765,8 @@ public class ScriptThaumicBases implements IScriptLoader {
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 6, missing),
                         getModItem(ThaumicBases.ID, "blockSalisMundus", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L), });
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "TB.Bracelet.Iron",
                 getModItem(ThaumicBases.ID, "castingBracelet", 1, 0, missing),
@@ -1139,9 +1105,9 @@ public class ScriptThaumicBases implements IScriptLoader {
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 5, missing),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 6, missing),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iridium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iridium, 1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 4, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iridium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iridium, 1L),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 8, missing),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 9, missing),
                         getModItem(ThaumicBases.ID, "castingBracelet", 1, 10, missing),
@@ -1171,11 +1137,11 @@ public class ScriptThaumicBases implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 12, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusPrimal", 1, 0, missing),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 1, missing),
+                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 1),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 1, missing),
+                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 1),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing),
-                        getModItem(GTPlusPlus.ID, "blockCompressedObsidian", 1, 1, missing),
+                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 1),
                         getModItem(ThaumicBases.ID, "crystalBlock", 1, 5, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "TB.NodeFoci.Efficiency",

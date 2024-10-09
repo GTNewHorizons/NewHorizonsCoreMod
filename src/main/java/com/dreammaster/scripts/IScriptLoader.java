@@ -1,6 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,8 +21,8 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.interfaces.IItemContainer;
 import gregtech.api.objects.ItemData;
-import gregtech.common.items.GT_MetaGenerated_Item_01;
-import gregtech.common.items.GT_MetaGenerated_Item_02;
+import gregtech.common.items.MetaGeneratedItem01;
+import gregtech.common.items.MetaGeneratedItem02;
 
 public interface IScriptLoader {
     // todo: cache the lookups for the itemstacks
@@ -107,7 +107,7 @@ public interface IScriptLoader {
      * @return an itemstack with a stacksize of 1 corresponding to the item looked for.
      */
     default ItemStack getMeta02(int meta) {
-        return new ItemStack(GT_MetaGenerated_Item_02.INSTANCE, 1, meta);
+        return new ItemStack(MetaGeneratedItem02.INSTANCE, 1, meta);
     }
 
     /**
@@ -117,12 +117,12 @@ public interface IScriptLoader {
      * @return an itemstack with a stacksize of 1 corresponding to the item looked for.
      */
     default ItemStack getMeta01(int meta) {
-        return new ItemStack(GT_MetaGenerated_Item_01.INSTANCE, 1, meta);
+        return new ItemStack(MetaGeneratedItem01.INSTANCE, 1, meta);
     }
 
     /**
      * Helper function to get a new ItemStack with specified damage (meta) value and NBT tags. Calls
-     * {@link gregtech.api.util.GT_ModHandler#getModItem(java.lang.String, java.lang.String, long, int)} internally
+     * {@link gregtech.api.util.GTModHandler#getModItem(java.lang.String, java.lang.String, long, int)} internally
      *
      * @param aModID       Mod ID of an the item
      * @param aItem        Item registry name

@@ -6,7 +6,6 @@ import static gregtech.api.enums.Mods.EnderStorage;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -15,9 +14,9 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,12 +26,12 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -71,42 +70,42 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 "craftingToolSaw",
                 getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing));
 
-        GT_ModHandler.addSmeltingRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 2L));
+        GTModHandler.addSmeltingRecipe(
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 2L));
 
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 5)).duration(5 * SECONDS).eut(8).addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 4)).duration(5 * SECONDS).eut(8)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartzSlab", 2, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 1)).duration(2 * SECONDS + 10 * TICKS).eut(8)
                 .addTo(cutterRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Dilithium, 1L),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.InfusedOrder, 1L),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Glass, 1L),
                         getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 0, missing))
                 .itemOutputs(getModItem(ThaumicTinkerer.ID, "darkQuartz", 1, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(laserEngraverRecipes);
@@ -880,15 +879,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("fabrico"), 32).add(Aspect.getAspect("instrumentum"), 32)
                         .add(Aspect.getAspect("ordo"), 16).add(Aspect.getAspect("praecantatio"), 16)
                         .add(Aspect.getAspect("potentia"), 8),
-                GT_OreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.Thaumium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
                         getModItem(PamsHarvestCraft.ID, "hardenedleatherItem", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.ReinforceGlass, 1),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L), });
         TCHelper.setResearchAspects(
                 "REPAIRER",
                 new AspectList().add(Aspect.getAspect("instrumentum"), 15).add(Aspect.getAspect("fabrico"), 12)
@@ -1003,14 +1002,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 15).add(Aspect.getAspect("aer"), 25)
                         .add(Aspect.getAspect("potentia"), 10),
                 getModItem(Thaumcraft.ID, "blockLifter", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.Iron, 1L), });
         TCHelper.setResearchAspects(
                 "LEVITATOR_LOCOMOTIVE",
                 new AspectList().add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("ordo"), 15)
@@ -1103,13 +1102,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 16).add(Aspect.getAspect("tenebrae"), 24)
                         .add(Aspect.getAspect("telum"), 16),
                 getModItem(Thaumcraft.ID, "ItemSwordThaumium", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(Minecraft.ID, "rotten_flesh", 1, 0, missing),
                         getModItem(Minecraft.ID, "porkchop", 1, 0, missing),
                         getModItem(Minecraft.ID, "fish", 1, 0, missing),
                         getModItem(Minecraft.ID, "nether_wart", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(Minecraft.ID, "bone", 1, 0, missing),
                         getModItem(Minecraft.ID, "beef", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing),
@@ -1196,12 +1195,12 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 48).add(Aspect.getAspect("iter"), 24)
                         .add(Aspect.getAspect("motus"), 32).add(Aspect.getAspect("volatus"), 24),
                 getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Thaumium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Thaumium, 1L),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rotor, Materials.Thaumium, 1L),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 1L), });
         TCHelper.setResearchAspects(
                 "FOCUS_FLIGHT",
                 new AspectList().add(Aspect.getAspect("motus"), 15).add(Aspect.getAspect("aer"), 12)
@@ -1271,13 +1270,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("lucrum"), 16),
                 getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SteelMagnetic, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.SteelMagnetic, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.SteelMagnetic, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.SteelMagnetic, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L), });
         TCHelper.setResearchAspects(
                 "FOCUS_TELEKINESIS",
                 new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("motus"), 15)
@@ -1293,14 +1292,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 32).add(Aspect.getAspect("vacuos"), 32)
                         .add(Aspect.getAspect("vitium"), 16).add(Aspect.getAspect("permutatio"), 16),
                 getModItem(Thaumcraft.ID, "FocusTrade", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Amber, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Amber, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L), });
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Amber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Amber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L), });
         TCHelper.setResearchAspects(
                 "FOCUS_DISLOCATION",
                 new AspectList().add(Aspect.getAspect("alienis"), 15).add(Aspect.getAspect("permutatio"), 15)
@@ -1317,11 +1316,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(Thaumcraft.ID, "FocusPech", 1, 0, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "golden_apple", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                         getModItem(Minecraft.ID, "golden_carrot", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing), });
         TCHelper.setResearchAspects(
                 "FOCUS_HEAL",
@@ -1341,16 +1340,16 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("vacuos"), 64),
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                         getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                         getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "spellCloth", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "ENCHANTER",
@@ -1382,13 +1381,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("humanus"), 8),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L), });
         TCHelper.setResearchAspects(
                 "XP_TALISMAN",
                 new AspectList().add(Aspect.getAspect("lucrum"), 15).add(Aspect.getAspect("praecantatio"), 12)
@@ -1679,7 +1678,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 64).add(Aspect.getAspect("alienis"), 16)
                         .add(Aspect.getAspect("ordo"), 16),
                 getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
                         getModItem(Minecraft.ID, "ender_eye", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing), });
@@ -1729,7 +1728,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.addResearchPage("ICHORIUM", new ResearchPage("ttresearch.page.ICHORIUM.0"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "ICHORIUM",
-                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                 new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("aqua"), 125)
                         .add(Aspect.getAspect("ignis"), 125).add(Aspect.getAspect("terra"), 125)
                         .add(Aspect.getAspect("ordo"), 125).add(Aspect.getAspect("perditio"), 125),
@@ -1757,8 +1756,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
         TCHelper.addResearchPage(
                 "ICHORIUM",
                 new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L))));
+                        TCHelper.findArcaneRecipe(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L))));
         TCHelper.setResearchAspects(
                 "ICHORIUM",
                 new AspectList().add(Aspect.getAspect("metallum"), 15).add(Aspect.getAspect("fabrico"), 15)
@@ -1827,12 +1825,12 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("tenebrae"), 16).add(Aspect.getAspect("mortuus"), 16),
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
                 new ItemStack[] { getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 10, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Gold, 1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
                         getModItem(Minecraft.ID, "fish", 1, 0, missing), getModItem(Minecraft.ID, "dye", 1, 3, missing),
                         getModItem(Minecraft.ID, "leaves", 1, 3, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.Gold, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.Gold, 1L), });
         TCHelper.setResearchAspects(
                 "CAT_AMULET",
                 new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("ordo"), 15)
@@ -1854,7 +1852,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "TrunkSpawner", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L), });
         TCHelper.setResearchAspects(
                 "ICHOR_POUCH",
                 new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("pannus"), 15)
@@ -1994,24 +1992,12 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("telum"), 64).add(Aspect.getAspect("tenebrae"), 64)
                         .add(Aspect.getAspect("tempestas"), 32),
                 getModItem(Thaumcraft.ID, "FocusShock", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ring, Materials.Ichorium, 1),
                         getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25543,
-                                "{ench:[0:{lvl:3s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25543,
-                                "{ench:[0:{lvl:3s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 2, missing), // Water arrow
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 2, missing), // Water arrow
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "FOCUS_SHADOWBEAM",
@@ -2027,11 +2013,11 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("auram"), 64).add(Aspect.getAspect("cognitio"), 64)
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("vitium"), 32),
                 getModItem(Minecraft.ID, "experience_bottle", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(ThaumicTinkerer.ID, "enchanter", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderPearl, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Emerald, 1L),
                         getModItem(ThaumicTinkerer.ID, "xpTalisman", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "FOCUS_XP_DRAIN",
@@ -2049,13 +2035,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("fames"), 64).add(Aspect.getAspect("lux"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothHelm", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemHelmetThaumium", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.EnderEye, 1L),
                         getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
                         getModItem(Minecraft.ID, "potion", 1, 8262, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
                         getModItem(Minecraft.ID, "fish", 1, wildcard, missing),
                         getModItem(Minecraft.ID, "cake", 1, 0, missing),
@@ -2078,27 +2064,15 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("sensus"), 64).add(Aspect.getAspect("tutamen"), 64)
                         .add(Aspect.getAspect("volatus"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothChest", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.plate, Materials.Ichorium, 1),
                         getModItem(Thaumcraft.ID, "ItemChestplateThaumium", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "focusFlight", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25330,
-                                "{ench:[0:{lvl:2s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 0, missing), // Air Arrow
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Ichorium, 1),
                         getModItem(Minecraft.ID, "ghast_tear", 1, 0, missing),
-                        createItemStack(
-                                GregTech.ID,
-                                "gt.metaitem.02",
-                                1,
-                                25330,
-                                "{ench:[0:{lvl:2s,id:21s}],GT.HasBeenUpdated:1b}",
-                                missing),
+                        getModItem(Thaumcraft.ID, "PrimalArrow", 1, 0, missing), // Air Arrow
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
                         getModItem(ThaumicTinkerer.ID, "focusDeflect", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "HoverHarness", 1, 0, missing), });
@@ -2119,13 +2093,13 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 64).add(Aspect.getAspect("sano"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothLegs", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemLeggingsThaumium", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "focusSmelt", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
                         getModItem(Minecraft.ID, "potion", 1, 8259, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(ThaumicTinkerer.ID, "brightNitor", 1, 0, missing),
                         getModItem(Minecraft.ID, "fire_charge", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
@@ -2148,7 +2122,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("perfodio"), 64).add(Aspect.getAspect("terra"), 64)
                         .add(Aspect.getAspect("tutamen"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorclothBoots", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemBootsThaumium", 1, 0, missing),
                         createItemStack(
                                 ThaumicTinkerer.ID,
@@ -2159,8 +2133,8 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                                 missing),
                         getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "wovencottonItem", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 8, missing),
                         getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 5, missing),
                         getModItem(Minecraft.ID, "lead", 1, 0, missing),
@@ -2187,7 +2161,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "WARP_GATE",
@@ -2201,7 +2175,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 7, missing),
                         getModItem(ElectroMagicTools.ID, "EMTItems", 1, 7, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing), });
         TCHelper.setResearchAspects(
                 "WARP_GATE",
@@ -2220,7 +2194,7 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 getModItem(ThaumicTinkerer.ID, "focusEnderChest", 1, 0, missing),
                 new ItemStack[] { getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "skyPearl", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(ThaumicTinkerer.ID, "skyPearl", 1, 0, missing), });
         TCHelper.setResearchAspects(
                 "FOCUS_RECALL",
@@ -2341,14 +2315,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("messis"), 64).add(Aspect.getAspect("perfodio"), 64)
                         .add(Aspect.getAspect("terra"), 64).add(Aspect.getAspect("sensus"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorPick", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemPickaxeElemental", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "FocusFire", 1, 0, missing),
                         getModItem(StevesCarts2.ID, "CartModule", 1, 9, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
                         getModItem(StevesCarts2.ID, "CartModule", 1, 9, missing),
                         getModItem(Thaumcraft.ID, "FocusFire", 1, 0, missing),
@@ -2370,14 +2344,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("terra"), 64).add(Aspect.getAspect("vinculum"), 64)
                         .add(Aspect.getAspect("ordo"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorShovel", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
                         ItemList.Electric_Piston_HV.get(1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
                         ItemList.Electric_Piston_HV.get(1L),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
@@ -2399,14 +2373,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("meto"), 64).add(Aspect.getAspect("perfodio"), 64)
                         .add(Aspect.getAspect("sensus"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorAxe", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemAxeElemental", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
                         ItemList.Component_Sawblade_Diamond.get(1L),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
                         ItemList.Component_Sawblade_Diamond.get(1L),
                         getModItem(Thaumcraft.ID, "FocusExcavation", 1, 0, missing),
@@ -2428,14 +2402,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 64).add(Aspect.getAspect("telum"), 64)
                         .add(Aspect.getAspect("vitreus"), 64),
                 getModItem(ThaumicTinkerer.ID, "ichorSword", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemSwordElemental", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "FocusFrost", 1, 0, missing),
                         getModItem(ExtraUtilities.ID, "spike_base_diamond", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing),
                         getModItem(ExtraUtilities.ID, "spike_base_diamond", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "FocusFrost", 1, 0, missing),
@@ -2478,14 +2452,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("vacuos"), 72).add(Aspect.getAspect("tenebrae"), 48)
                         .add(Aspect.getAspect("spiritus"), 32),
                 getModItem(Thaumcraft.ID, "FocusPortableHole", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(EnderStorage.ID, "enderChest", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
                         getModItem(Thaumcraft.ID, "blockJar", 1, 3, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L), });
         TCHelper.setResearchAspects(
                 "BLOCK_TALISMAN",
                 new AspectList().add(Aspect.getAspect("vacuos"), 15).add(Aspect.getAspect("tenebrae"), 12)
@@ -2501,14 +2475,14 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 64).add(Aspect.getAspect("vitreus"), 48)
                         .add(Aspect.getAspect("alienis"), 32),
                 getModItem(ThaumicTinkerer.ID, "blockTalisman", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                         getModItem(Minecraft.ID, "dropper", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(Minecraft.ID, "blaze_rod", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockMirror", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Emerald, 1L), });
         TCHelper.setResearchAspects(
                 "PLACEMENT_MIRROR",
                 new AspectList().add(Aspect.getAspect("cognitio"), 15).add(Aspect.getAspect("fabrico"), 12)
