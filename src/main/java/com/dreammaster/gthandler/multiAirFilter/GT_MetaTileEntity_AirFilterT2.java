@@ -4,7 +4,7 @@ import com.dreammaster.main.MainRegistry;
 
 import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
-import gregtech.api.util.GT_Recipe;
+import gregtech.api.util.GTRecipe;
 
 public class GT_MetaTileEntity_AirFilterT2 extends GT_MetaTileEntity_AirFilterBase {
 
@@ -24,7 +24,7 @@ public class GT_MetaTileEntity_AirFilterT2 extends GT_MetaTileEntity_AirFilterBa
     }
 
     @Override
-    public GT_Recipe getRecipe() {
+    public GTRecipe getRecipe() {
         return tRecipeT2;
     }
 

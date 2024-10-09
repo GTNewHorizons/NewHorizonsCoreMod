@@ -2,10 +2,12 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
+
+import gregtech.api.enums.ItemList;
 
 public class ScriptAE2Stuff implements IScriptLoader {
 
@@ -68,6 +70,17 @@ public class ScriptAE2Stuff implements IScriptLoader {
                 "crystalPureFluix",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 16, missing),
                 "crystalPureFluix");
+        addShapedRecipe(
+                getModItem(AE2Stuff.ID, "AdvWirelessKit", 1, 0, missing),
+                ItemList.Sensor_ZPM,
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                ItemList.Sensor_ZPM,
+                "crystalPureFluix",
+                getModItem(AE2Stuff.ID, "WirelessKit", 1, 0, missing),
+                "crystalPureFluix",
+                "plateTitanium",
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing),
+                "plateTitanium");
         addShapedRecipe(
                 getModItem(AE2Stuff.ID, "Visualiser", 1, 0, missing),
                 "crystalPureFluix",

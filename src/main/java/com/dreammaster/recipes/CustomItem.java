@@ -17,7 +17,7 @@ import net.minecraft.nbt.NBTException;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTUtility;
 
 /**
  * Custom item matcher interface. For use in {@link ShapedUniversalRecipe} / {@link ShapelessUniversalRecipe}
@@ -66,7 +66,7 @@ public interface CustomItem {
 
         @Override
         public boolean matches(ItemStack stack) {
-            if (!GT_Utility.areStacksEqual(this.stack, stack, true)) return false;
+            if (!GTUtility.areStacksEqual(this.stack, stack, true)) return false;
             if (nbt == null && stack.stackTagCompound != null) return !exact;
             if (nbt == null) return true;
             if (exact) return nbt.equals(stack.stackTagCompound);

@@ -2,19 +2,19 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AFSU;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class ScriptAFSU implements IScriptLoader {
 
@@ -42,11 +42,11 @@ public class ScriptAFSU implements IScriptLoader {
                 getModItem(AFSU.ID, "ALC", 1),
                 "circuitMaster");
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
                         ItemList.Energy_LapotronicOrb.get(1L),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AFSU.ID, "ALC", 1)).duration(2 * MINUTES).eut(TierEU.RECIPE_EV)
                 .addTo(assemblerRecipes);
 

@@ -10,9 +10,9 @@ import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SleepingBags;
 import static gregtech.api.recipe.RecipeMaps.brewingRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +28,7 @@ import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.recipes.ShapedUniversalRecipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 
 public class ScriptAdvancedBackpacks implements IScriptLoader {
@@ -99,7 +99,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                         'a',
                         "itemLeather",
                         'b',
-                        getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, 1, missing),
+                        getModItem(IndustrialCraft2.ID, "itemNightvisionGoggles", 1, GTValues.W, missing),
                         'c',
                         getModItem(Minecraft.ID, "potion", 1, 8262, missing),
                         'd',
@@ -384,7 +384,7 @@ public class ScriptAdvancedBackpacks implements IScriptLoader {
                 getModItem(Railcraft.ID, "machine.beta", 1, 5, missing),
                 "pipeTinySteel");
 
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "melon", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "melon", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("melonjuice", 750)).duration(6 * SECONDS + 8 * TICKS).eut(4)
                 .addTo(brewingRecipes);

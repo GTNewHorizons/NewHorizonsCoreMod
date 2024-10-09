@@ -1,15 +1,15 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.api.enums.GT_Values.W;
+import static gregtech.api.enums.GTValues.W;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import gregtech.api.interfaces.IItemContainer;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public enum CustomItemList implements IItemContainer {
 
@@ -23,448 +23,17 @@ public enum CustomItemList implements IItemContainer {
     Casing_AirFilter_Turbine_T2,
     Casing_AirFilter_Vent_T3,
     Casing_AirFilter_Turbine_T3,
-    Hatch_Dynamo_UEV,
-    Hatch_Dynamo_UIV,
-    Hatch_Dynamo_UMV,
-    Hatch_Dynamo_UXV,
-    Hatch_Energy_UEV,
-    Hatch_Energy_UIV,
-    Hatch_Energy_UMV,
-    Hatch_Energy_UXV,
-    Hatch_Input_UEV,
-    Hatch_Input_UIV,
-    Hatch_Input_UMV,
-    Hatch_Input_UXV,
-    Hatch_Input_MAX,
-    Hatch_Output_UEV,
-    Hatch_Output_UIV,
-    Hatch_Output_UMV,
-    Hatch_Output_UXV,
-    Hatch_Output_MAX,
-    Battery_TurboCharger_4by4_ULV,
-    Battery_TurboCharger_4by4_LV,
-    Battery_TurboCharger_4by4_MV,
-    Battery_TurboCharger_4by4_HV,
-    Battery_TurboCharger_4by4_EV,
-    Battery_TurboCharger_4by4_IV,
-    Battery_TurboCharger_4by4_LuV,
-    Battery_TurboCharger_4by4_ZPM,
-    Battery_TurboCharger_4by4_UV,
-    Battery_TurboCharger_4by4_UHV,
-    Battery_Charger_4by4_UEV,
-    Battery_Charger_4by4_UIV,
-    Battery_Charger_4by4_UMV,
-    Battery_Charger_4by4_UXV,
-    Battery_Buffer_1by1_UEV,
-    Battery_Buffer_1by1_UIV,
-    Battery_Buffer_1by1_UMV,
-    Battery_Buffer_1by1_UXV,
-    Battery_Buffer_1by1_MAXV,
-    Battery_Buffer_2by2_UEV,
-    Battery_Buffer_2by2_UIV,
-    Battery_Buffer_2by2_UMV,
-    Battery_Buffer_2by2_UXV,
-    Battery_Buffer_2by2_MAXV,
-    Battery_Buffer_3by3_UEV,
-    Battery_Buffer_3by3_UIV,
-    Battery_Buffer_3by3_UMV,
-    Battery_Buffer_3by3_UXV,
-    Battery_Buffer_3by3_MAXV,
-    Battery_Buffer_4by4_UEV,
-    Battery_Buffer_4by4_UIV,
-    Battery_Buffer_4by4_UMV,
-    Battery_Buffer_4by4_UXV,
-    Battery_Buffer_4by4_MAXV,
-    Hull_UEV,
-    Hull_UIV,
-    Hull_UMV,
-    Hull_UXV,
-    Hull_MAXV, // since Hull_MAX is in gt
+    // todo: remap them to GT5U namespace
+    @Deprecated
     Casing_UEV,
+    @Deprecated
     Casing_UIV,
+    @Deprecated
     Casing_UMV,
+    @Deprecated
     Casing_UXV,
-    Casing_MAXV, // since Hull_MAX is in gt
-    Transformer_UEV_UHV,
-    Transformer_UIV_UEV,
-    Transformer_UMV_UIV,
-    Transformer_UXV_UMV,
-    Transformer_MAX_UXV,
-    WetTransformer_LV_ULV,
-    WetTransformer_MV_LV,
-    WetTransformer_HV_MV,
-    WetTransformer_EV_HV,
-    WetTransformer_IV_EV,
-    WetTransformer_LuV_IV,
-    WetTransformer_ZPM_LuV,
-    WetTransformer_UV_ZPM,
-    WetTransformer_UHV_UV,
-    WetTransformer_UEV_UHV,
-    WetTransformer_UIV_UEV,
-    WetTransformer_UMV_UIV,
-    WetTransformer_UXV_UMV,
-    WetTransformer_MAX_UXV,
-    Transformer_HA_UEV_UHV,
-    Transformer_HA_UIV_UEV,
-    Transformer_HA_UMV_UIV,
-    Transformer_HA_UXV_UMV,
-    Transformer_HA_MAX_UXV,
-    BatteryHull_EV,
-    BatteryHull_IV,
-    BatteryHull_LuV,
-    BatteryHull_ZPM,
-    BatteryHull_UV,
-    BatteryHull_UHV,
-    BatteryHull_UEV,
-    BatteryHull_UIV,
-    BatteryHull_UMV,
-    BatteryHull_UxV,
-    BatteryHull_EV_Full,
-    BatteryHull_IV_Full,
-    BatteryHull_LuV_Full,
-    BatteryHull_ZPM_Full,
-    BatteryHull_UV_Full,
-    BatteryHull_UHV_Full,
-    BatteryHull_UEV_Full,
-    BatteryHull_UIV_Full,
-    BatteryHull_UMV_Full,
-    BatteryHull_UxV_Full,
-
-    Generator_Plasma_ZPMV,
-    Generator_Plasma_UV,
-    Generator_Plasma_UHV,
-    Generator_Plasma_UEV,
-    Generator_Plasma_UIV,
-    Generator_Plasma_UMV,
-    AlloySmelterLuV,
-    AlloySmelterZPM,
-    AlloySmelterUV,
-    AlloySmelterUHV,
-    AlloySmelterUEV,
-    AlloySmelterUIV,
-    AlloySmelterUMV,
-    AmplifabricatorLuV,
-    AmplifabricatorZPM,
-    AmplifabricatorUV,
-    AmplifabricatorUHV,
-    AmplifabricatorUEV,
-    AmplifabricatorUIV,
-    AmplifabricatorUMV,
-    ArcFurnaceLuV,
-    ArcFurnaceZPM,
-    ArcFurnaceUV,
-    ArcFurnaceUHV,
-    ArcFurnaceUEV,
-    ArcFurnaceUIV,
-    ArcFurnaceUMV,
-    AssemblingMachineLuV,
-    AssemblingMachineZPM,
-    AssemblingMachineUV,
-    AssemblingMachineUHV,
-    AssemblingMachineUEV,
-    AssemblingMachineUIV,
-    AssemblingMachineUMV,
-    AutoclaveLuV,
-    AutoclaveZPM,
-    AutoclaveUV,
-    AutoclaveUHV,
-    AutoclaveUEV,
-    AutoclaveUIV,
-    AutoclaveUMV,
-    BendingMachineLuV,
-    BendingMachineZPM,
-    BendingMachineUV,
-    BendingMachineUHV,
-    BendingMachineUEV,
-    BendingMachineUIV,
-    BendingMachineUMV,
-    BreweryLuV,
-    BreweryZPM,
-    BreweryUV,
-    BreweryUHV,
-    BreweryUEV,
-    BreweryUIV,
-    BreweryUMV,
-    CanningMachineLuV,
-    CanningMachineZPM,
-    CanningMachineUV,
-    CanningMachineUHV,
-    CanningMachineUEV,
-    CanningMachineUIV,
-    CanningMachineUMV,
-    CentrifugeLuV,
-    CentrifugeZPM,
-    CentrifugeUV,
-    CentrifugeUHV,
-    CentrifugeUEV,
-    CentrifugeUIV,
-    CentrifugeUMV,
-    ChemicalBathLuV,
-    ChemicalBathZPM,
-    ChemicalBathUV,
-    ChemicalBathUHV,
-    ChemicalBathUEV,
-    ChemicalBathUIV,
-    ChemicalBathUMV,
-    ChemicalReactorLuV,
-    ChemicalReactorZPM,
-    ChemicalReactorUV,
-    ChemicalReactorUHV,
-    ChemicalReactorUEV,
-    ChemicalReactorUIV,
-    ChemicalReactorUMV,
-    CircuitAssemblerUHV,
-    CircuitAssemblerUEV,
-    CircuitAssemblerUIV,
-    CircuitAssemblerUMV,
-    CircuitAssemblerUXV,
-    CircuitAssemblerMAX,
-    CompressorLuV,
-    CompressorZPM,
-    CompressorUV,
-    CompressorUHV,
-    CompressorUEV,
-    CompressorUIV,
-    CompressorUMV,
-    CuttingMachineLuV,
-    CuttingMachineZPM,
-    CuttingMachineUV,
-    CuttingMachineUHV,
-    CuttingMachineUEV,
-    CuttingMachineUIV,
-    CuttingMachineUMV,
-    DistilleryLuV,
-    DistilleryZPM,
-    DistilleryUV,
-    DistilleryUHV,
-    DistilleryUEV,
-    DistilleryUIV,
-    DistilleryUMV,
-    ElectricFurnaceLuV,
-    ElectricFurnaceZPM,
-    ElectricFurnaceUV,
-    ElectricFurnaceUHV,
-    ElectricFurnaceUEV,
-    ElectricFurnaceUIV,
-    ElectricFurnaceUMV,
-    ElectricOvenLuV,
-    ElectricOvenZPM,
-    ElectricOvenUV,
-    ElectricOvenUHV,
-    ElectricOvenUEV,
-    ElectricOvenUIV,
-    ElectricOvenUMV,
-    ElectrolyzerLuV,
-    ElectrolyzerZPM,
-    ElectrolyzerUV,
-    ElectrolyzerUHV,
-    ElectrolyzerUEV,
-    ElectrolyzerUIV,
-    ElectrolyzerUMV,
-    ElectromagneticSeparatorLuV,
-    ElectromagneticSeparatorZPM,
-    ElectromagneticSeparatorUV,
-    ElectromagneticSeparatorUHV,
-    ElectromagneticSeparatorUEV,
-    ElectromagneticSeparatorUIV,
-    ElectromagneticSeparatorUMV,
-    ExtractorLuV,
-    ExtractorZPM,
-    ExtractorUV,
-    ExtractorUHV,
-    ExtractorUEV,
-    ExtractorUIV,
-    ExtractorUMV,
-    ExtruderLuV,
-    ExtruderZPM,
-    ExtruderUV,
-    ExtruderUHV,
-    ExtruderUEV,
-    ExtruderUIV,
-    ExtruderUMV,
-    FermenterLuV,
-    FermenterZPM,
-    FermenterUV,
-    FermenterUHV,
-    FermenterUEV,
-    FermenterUIV,
-    FermenterUMV,
-    FluidCannerLuV,
-    FluidCannerZPM,
-    FluidCannerUV,
-    FluidCannerUHV,
-    FluidCannerUEV,
-    FluidCannerUIV,
-    FluidCannerUMV,
-    FluidExtractorLuV,
-    FluidExtractorZPM,
-    FluidExtractorUV,
-    FluidExtractorUHV,
-    FluidExtractorUEV,
-    FluidExtractorUIV,
-    FluidExtractorUMV,
-    FluidHeaterLuV,
-    FluidHeaterZPM,
-    FluidHeaterUV,
-    FluidHeaterUHV,
-    FluidHeaterUEV,
-    FluidHeaterUIV,
-    FluidHeaterUMV,
-    FluidSolidifierLuV,
-    FluidSolidifierZPM,
-    FluidSolidifierUV,
-    FluidSolidifierUHV,
-    FluidSolidifierUEV,
-    FluidSolidifierUIV,
-    FluidSolidifierUMV,
-    FormingPressLuV,
-    FormingPressZPM,
-    FormingPressUV,
-    FormingPressUHV,
-    FormingPressUEV,
-    FormingPressUIV,
-    FormingPressUMV,
-    ForgeHammerLuV,
-    ForgeHammerZPM,
-    ForgeHammerUV,
-    ForgeHammerUHV,
-    ForgeHammerUEV,
-    ForgeHammerUIV,
-    ForgeHammerUMV,
-    LatheLuV,
-    LatheZPM,
-    LatheUV,
-    LatheUHV,
-    LatheUEV,
-    LatheUIV,
-    LatheUMV,
-    PrecisionLaserEngraverLuV,
-    PrecisionLaserEngraverZPM,
-    PrecisionLaserEngraverUV,
-    PrecisionLaserEngraverUHV,
-    PrecisionLaserEngraverUEV,
-    PrecisionLaserEngraverUIV,
-    PrecisionLaserEngraverUMV,
-    MaceratorLuV,
-    MaceratorZPM,
-    MaceratorUV,
-    MaceratorUHV,
-    MaceratorUEV,
-    MaceratorUIV,
-    MaceratorUMV,
-    MassFabricatorLuV,
-    MassFabricatorZPM,
-    MassFabricatorUV,
-    MassFabricatorUHV,
-    MassFabricatorUEV,
-    MassFabricatorUIV,
-    MassFabricatorUMV,
-    MicrowaveLuV,
-    MicrowaveZPM,
-    MicrowaveUV,
-    MicrowaveUHV,
-    MicrowaveUEV,
-    MicrowaveUIV,
-    MicrowaveUMV,
-    MixerLuV,
-    MixerZPM,
-    MixerUV,
-    MixerUHV,
-    MixerUEV,
-    MixerUIV,
-    MixerUMV,
-    OreWashingPlantLuV,
-    OreWashingPlantZPM,
-    OreWashingPlantUV,
-    OreWashingPlantUHV,
-    OreWashingPlantUEV,
-    OreWashingPlantUIV,
-    OreWashingPlantUMV,
-    PlasmaArcFurnaceLuV,
-    PlasmaArcFurnaceZPM,
-    PlasmaArcFurnaceUV,
-    PlasmaArcFurnaceUHV,
-    PlasmaArcFurnaceUEV,
-    PlasmaArcFurnaceUIV,
-    PlasmaArcFurnaceUMV,
-    PolarizerLuV,
-    PolarizerZPM,
-    PolarizerUV,
-    PolarizerUHV,
-    PolarizerUEV,
-    PolarizerUIV,
-    PolarizerUMV,
-    RockBreakerLuV,
-    RockBreakerZPM,
-    RockBreakerUV,
-    RockBreakerUHV,
-    RockBreakerUEV,
-    RockBreakerUIV,
-    RockBreakerUMV,
-    RecyclerLuV,
-    RecyclerZPM,
-    RecyclerUV,
-    RecyclerUHV,
-    RecyclerUEV,
-    RecyclerUIV,
-    RecyclerUMV,
-    ReplicatorLuV,
-    ReplicatorZPM,
-    ReplicatorUV,
-    ReplicatorUHV,
-    ReplicatorUEV,
-    ReplicatorUIV,
-    ReplicatorUMV,
-    ScannerLuV,
-    ScannerZPM,
-    ScannerUV,
-    ScannerUHV,
-    ScannerUEV,
-    ScannerUIV,
-    ScannerUMV,
-    SiftingMachineLuV,
-    SiftingMachineZPM,
-    SiftingMachineUV,
-    SiftingMachineUHV,
-    SiftingMachineUEV,
-    SiftingMachineUIV,
-    SiftingMachineUMV,
-    SlicingMachineLuV,
-    SlicingMachineZPM,
-    SlicingMachineUV,
-    SlicingMachineUHV,
-    SlicingMachineUEV,
-    SlicingMachineUIV,
-    SlicingMachineUMV,
-    ThermalCentrifugeLuV,
-    ThermalCentrifugeZPM,
-    ThermalCentrifugeUV,
-    ThermalCentrifugeUHV,
-    ThermalCentrifugeUEV,
-    ThermalCentrifugeUIV,
-    ThermalCentrifugeUMV,
-    WiremillLuV,
-    WiremillZPM,
-    WiremillUV,
-    WiremillUHV,
-    WiremillUEV,
-    WiremillUIV,
-    WiremillUMV,
-    PumpLuV,
-    PumpZPM,
-    AcceleratorLV,
-    AcceleratorMV,
-    AcceleratorHV,
-    AcceleratorEV,
-    AcceleratorIV,
-    AcceleratorLuV,
-    AcceleratorZPM,
-    AcceleratorUV,
-    Automation_ChestBuffer_UHV,
-    Automation_ChestBuffer_UEV,
-    Automation_ChestBuffer_UIV,
-    Automation_ChestBuffer_UMV,
-    Automation_ChestBuffer_UXV,
+    @Deprecated
+    Casing_MAXV,
 
     // CoreModItems
     EtchedLowVoltageWiring,
@@ -557,11 +126,6 @@ public enum CustomItemList implements IItemContainer {
     IronDualCompressedPlates,
     MeteoricIronDualCompressedPlates,
     LedoxCompressedPlate,
-    MysteriousCrystalPlate,
-    LedoxPlate,
-    QuantinumPlate,
-    CallistoIcePlate,
-    MytrylPlate,
     MytrylCrystal,
     CallistoIceCompressedPlate,
     MarshmallowForm,
@@ -738,7 +302,6 @@ public enum CustomItemList implements IItemContainer {
     VegaBStoneDust,
     BarnardaEStoneDust,
     BarnardaFStoneDust,
-    MysteriousCrystalDust,
     TCetiEStoneDust,
     MirandaStoneDust,
     WaferTier3,
@@ -764,9 +327,7 @@ public enum CustomItemList implements IItemContainer {
     MedalEngineer,
     MedalWarp,
     MaceratedPlantmass,
-    BedrockiumPlate,
     EngineCore,
-    AlumiteDust,
     nameRemover,
     TwilightCrystal,
     UnfiredClayBrick,
@@ -775,7 +336,6 @@ public enum CustomItemList implements IItemContainer {
     UnfiredSlimeSoulBrick,
     RawLapotronCrystal,
     LapotronDust,
-    SandDust,
     AluminiumIronPlate,
     ReinforcedAluminiumIronPlate,
     IrradiantReinforcedAluminiumPlate,
@@ -848,7 +408,26 @@ public enum CustomItemList implements IItemContainer {
     BioBall,
     PotassiumHydroxideDust,
     ChromaticLens,
-    RadoxPolymerLens;
+    RadoxPolymerLens,
+    NanoCircuitOrigin,
+    ChevronOrigin,
+    FramePartOrigin,
+    GatePlateOrigin,
+    PikoCircuitPolychrome,
+    QuantumCircuitPolychrome,
+    GatePlatePolychrome,
+    ChevronPolychrome,
+    FramePartPolychrome,
+    PikoCircuitDimensional,
+    QuantumCircuitDimensional,
+    GatePlateDimensional,
+    ChevronDimensional,
+    FramePartDimensional,
+    GatePlateHarmonic,
+    ChevronHarmonic,
+    FramePartHarmonic,
+    StargateDustAncients,
+    StargateCrystalAncients;
 
     private ItemStack mStack;
     private boolean mHasNotBeenSet = true;
@@ -860,14 +439,14 @@ public enum CustomItemList implements IItemContainer {
             return this;
         }
         ItemStack aStack = new ItemStack(aItem, 1, 0);
-        mStack = GT_Utility.copyAmount(1, aStack);
+        mStack = GTUtility.copyAmount(1, aStack);
         return this;
     }
 
     @Override
     public IItemContainer set(ItemStack aStack) {
         mHasNotBeenSet = false;
-        mStack = GT_Utility.copyAmount(1, aStack);
+        mStack = GTUtility.copyAmount(1, aStack);
         return this;
     }
 
@@ -876,7 +455,7 @@ public enum CustomItemList implements IItemContainer {
         if (mHasNotBeenSet) {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
-        if (GT_Utility.isStackInvalid(mStack)) {
+        if (GTUtility.isStackInvalid(mStack)) {
             return null;
         }
         return mStack.getItem();
@@ -887,7 +466,7 @@ public enum CustomItemList implements IItemContainer {
         if (mHasNotBeenSet) {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
-        return GT_Utility.getBlockFromItem(getItem());
+        return GTUtility.getBlockFromItem(getItem());
     }
 
     @Override
@@ -902,8 +481,8 @@ public enum CustomItemList implements IItemContainer {
 
     @Override
     public boolean isStackEqual(Object aStack, boolean aWildcard, boolean aIgnoreNBT) {
-        return !GT_Utility.isStackInvalid(aStack)
-                && GT_Utility.areUnificationsEqual((ItemStack) aStack, aWildcard ? getWildcard(1) : get(1), aIgnoreNBT);
+        return !GTUtility.isStackInvalid(aStack)
+                && GTUtility.areUnificationsEqual((ItemStack) aStack, aWildcard ? getWildcard(1) : get(1), aIgnoreNBT);
     }
 
     @Override
@@ -911,10 +490,10 @@ public enum CustomItemList implements IItemContainer {
         if (mHasNotBeenSet) {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
-        if (GT_Utility.isStackInvalid(mStack)) {
-            return GT_Utility.copyAmount(aAmount, aReplacements);
+        if (GTUtility.isStackInvalid(mStack)) {
+            return GTUtility.copyAmount(aAmount, aReplacements);
         }
-        return GT_Utility.copyAmount(aAmount, GT_OreDictUnificator.get(mStack));
+        return GTUtility.copyAmount(aAmount, GTOreDictUnificator.get(mStack));
     }
 
     @Override
@@ -922,10 +501,10 @@ public enum CustomItemList implements IItemContainer {
         if (mHasNotBeenSet) {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
-        if (GT_Utility.isStackInvalid(mStack)) {
-            return GT_Utility.copyAmount(aAmount, aReplacements);
+        if (GTUtility.isStackInvalid(mStack)) {
+            return GTUtility.copyAmount(aAmount, aReplacements);
         }
-        return GT_Utility.copyAmountAndMetaData(aAmount, W, GT_OreDictUnificator.get(mStack));
+        return GTUtility.copyAmountAndMetaData(aAmount, W, GTOreDictUnificator.get(mStack));
     }
 
     @Override
@@ -933,10 +512,10 @@ public enum CustomItemList implements IItemContainer {
         if (mHasNotBeenSet) {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
-        if (GT_Utility.isStackInvalid(mStack)) {
-            return GT_Utility.copyAmount(aAmount, aReplacements);
+        if (GTUtility.isStackInvalid(mStack)) {
+            return GTUtility.copyAmount(aAmount, aReplacements);
         }
-        return GT_Utility.copyAmountAndMetaData(aAmount, 0, GT_OreDictUnificator.get(mStack));
+        return GTUtility.copyAmountAndMetaData(aAmount, 0, GTOreDictUnificator.get(mStack));
     }
 
     @Override
@@ -944,30 +523,30 @@ public enum CustomItemList implements IItemContainer {
         if (mHasNotBeenSet) {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
-        if (GT_Utility.isStackInvalid(mStack)) {
-            return GT_Utility.copyAmount(aAmount, aReplacements);
+        if (GTUtility.isStackInvalid(mStack)) {
+            return GTUtility.copyAmount(aAmount, aReplacements);
         }
-        return GT_Utility.copyAmountAndMetaData(aAmount, mStack.getMaxDamage() - 1, GT_OreDictUnificator.get(mStack));
+        return GTUtility.copyAmountAndMetaData(aAmount, mStack.getMaxDamage() - 1, GTOreDictUnificator.get(mStack));
     }
 
     @Override
     public ItemStack getWithName(long aAmount, String aDisplayName, Object... aReplacements) {
         ItemStack rStack = get(1, aReplacements);
-        if (GT_Utility.isStackInvalid(rStack)) {
+        if (GTUtility.isStackInvalid(rStack)) {
             return null;
         }
         rStack.setStackDisplayName(aDisplayName);
-        return GT_Utility.copyAmount(aAmount, rStack);
+        return GTUtility.copyAmount(aAmount, rStack);
     }
 
     @Override
     public ItemStack getWithCharge(long aAmount, int aEnergy, Object... aReplacements) {
         ItemStack rStack = get(1, aReplacements);
-        if (GT_Utility.isStackInvalid(rStack)) {
+        if (GTUtility.isStackInvalid(rStack)) {
             return null;
         }
-        GT_ModHandler.chargeElectricItem(rStack, aEnergy, Integer.MAX_VALUE, true, false);
-        return GT_Utility.copyAmount(aAmount, rStack);
+        GTModHandler.chargeElectricItem(rStack, aEnergy, Integer.MAX_VALUE, true, false);
+        return GTUtility.copyAmount(aAmount, rStack);
     }
 
     @Override
@@ -975,10 +554,10 @@ public enum CustomItemList implements IItemContainer {
         if (mHasNotBeenSet) {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
-        if (GT_Utility.isStackInvalid(mStack)) {
-            return GT_Utility.copyAmount(aAmount, aReplacements);
+        if (GTUtility.isStackInvalid(mStack)) {
+            return GTUtility.copyAmount(aAmount, aReplacements);
         }
-        return GT_Utility.copyAmountAndMetaData(aAmount, aMetaValue, GT_OreDictUnificator.get(mStack));
+        return GTUtility.copyAmountAndMetaData(aAmount, aMetaValue, GTOreDictUnificator.get(mStack));
     }
 
     @Override
@@ -987,7 +566,7 @@ public enum CustomItemList implements IItemContainer {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
         for (Object tOreName : aOreNames) {
-            GT_OreDictUnificator.registerOre(tOreName, get(1));
+            GTOreDictUnificator.registerOre(tOreName, get(1));
         }
         return this;
     }
@@ -998,7 +577,7 @@ public enum CustomItemList implements IItemContainer {
             throw new IllegalAccessError("The Enum '" + name() + "' has not been set to an Item at this time!");
         }
         for (Object tOreName : aOreNames) {
-            GT_OreDictUnificator.registerOre(tOreName, getWildcard(1));
+            GTOreDictUnificator.registerOre(tOreName, getWildcard(1));
         }
         return this;
     }

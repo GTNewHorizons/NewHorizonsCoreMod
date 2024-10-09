@@ -2,12 +2,11 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +19,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -1379,15 +1378,15 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 24).add(Aspect.getAspect("lucrum"), 16),
                 getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 2, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "blockTable", 1, 15, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Amber, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Amber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L), });
         TCHelper.addResearchPage(
                 "ReplicatorGTNH",
                 new ResearchPage(
@@ -1456,13 +1455,13 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 16),
                 getModItem(Thaumcraft.ID, "BootsTraveller", 1, wildcard, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "FocusFire", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L),
                         getModItem(Thaumcraft.ID, "blockCrystal", 1, 1, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Firestone, 1L), });
         TCHelper.addResearchPage(
                 "MeteorbootsGTNH",
                 new ResearchPage(
@@ -1526,11 +1525,11 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11970, missing),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Void, 1),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11970, missing),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Void, 1),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
-                        getModItem(GregTech.ID, "gt.metaitem.01", 1, 11970, missing),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Void, 1),
                         getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                         getModItem(Thaumcraft.ID, "ItemSanitySoap", 1, 0, missing), });
         TCHelper.addResearchPage(
@@ -1561,13 +1560,13 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 new ItemStack[] { getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "netherbrick", 1, 0, missing),
                         getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
                         getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "netherbrick", 1, 0, missing),
                         getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "brick", 1, 0, missing),
                         getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
                         getModItem(Minecraft.ID, "water_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "brick", 1, 0, missing), });
         TCHelper.addResearchPage(
@@ -1599,7 +1598,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         getModItem(Minecraft.ID, "netherbrick", 1, 0, missing),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
                         ItemList.Casing_Coil_TungstenSteel.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
                         ItemList.Casing_Coil_TungstenSteel.get(1L),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "netherbrick", 1, 0, missing),
@@ -1607,7 +1606,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         getModItem(Minecraft.ID, "brick", 1, 0, missing),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
                         ItemList.Casing_Coil_TungstenSteel.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1L),
                         ItemList.Casing_Coil_TungstenSteel.get(1L),
                         getModItem(Minecraft.ID, "lava_bucket", 1, 0, missing),
                         getModItem(Minecraft.ID, "brick", 1, 0, missing), });
@@ -1669,11 +1668,11 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("aer"), 16).add(Aspect.getAspect("ordo"), 16),
                 getModItem(ThaumicExploration.ID, "sojournerCapUncharged", 1, 0, missing),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L), });
         TCHelper.addResearchPage(
                 "CAP_SOJOURNER",
                 new ResearchPage(
@@ -1764,13 +1763,13 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("tutamen"), 32).add(Aspect.getAspect("praecantatio"), 16),
                 getModItem(Thaumcraft.ID, "ItemBaubleBlanks", 1, 2, missing),
                 new ItemStack[] { ItemList.Electric_Piston_LV.get(1L),
-                        GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Thaumium, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.springSmall, Materials.Thaumium, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.Diamond, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Thaumium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.springSmall, Materials.Thaumium, 1L), });
         TCHelper.addResearchPage(
                 "StabilizerbeltGTNH",
                 new ResearchPage(
@@ -1874,7 +1873,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         .add(Aspect.getAspect("messis"), 24).add(Aspect.getAspect("sano"), 24)
                         .add(Aspect.getAspect("permutatio"), 32).add(Aspect.getAspect("ordo"), 16),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 1L),
                         getModItem(PamsHarvestCraft.ID, "heartybreakfastItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "rainbowcurryItem", 1, 0, missing),
                         getModItem(PamsHarvestCraft.ID, "supremepizzaItem", 1, 0, missing),
@@ -2085,7 +2084,7 @@ public class ScriptThaumicExploration implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("vinculum"), 32)
                         .add(Aspect.getAspect("auram"), 24).add(Aspect.getAspect("vitreus"), 16)
                         .add(Aspect.getAspect("arbor"), 8).add(Aspect.getAspect("alienis"), 8),
-                GT_OreDictUnificator.get(OrePrefixes.stick, Materials.Amber, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stick, Materials.Amber, 1L),
                 new ItemStack[] { getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),

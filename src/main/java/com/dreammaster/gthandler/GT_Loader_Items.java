@@ -1,21 +1,30 @@
 package com.dreammaster.gthandler;
 
-import static gregtech.client.GT_TooltipHandler.Tier.*;
-import static gregtech.client.GT_TooltipHandler.registerTieredTooltip;
+import static com.gtnewhorizon.gtnhlib.util.AnimatedTooltipHandler.addItemTooltip;
+import static gregtech.client.GTTooltipHandler.Tier.*;
+import static gregtech.client.GTTooltipHandler.registerTieredTooltip;
+
+import java.util.Arrays;
+import java.util.List;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 
 import com.dreammaster.item.ItemList;
 
 import gregtech.api.enums.SubTag;
-import gregtech.common.items.GT_MetaGenerated_Item_01;
+import gregtech.common.items.MetaGeneratedItem01;
 
 public class GT_Loader_Items {
 
     public void run() {
-        GT = GT_MetaGenerated_Item_01.INSTANCE;
+        GT = MetaGeneratedItem01.INSTANCE;
         registerItems();
+        registerTooltips();
     }
 
-    private GT_MetaGenerated_Item_01 GT;
+    private MetaGeneratedItem01 GT;
 
     private void registerItems() {
         // ID Range: 600 - 699
@@ -69,11 +78,8 @@ public class GT_Loader_Items {
         CustomItemList.AdvancedProcessorBoard.set(ItemList.AdvancedProcessorBoard.getIS());
         CustomItemList.HighEnergyFlowCircuit.set(ItemList.HighEnergyFlowCircuit.getIS());
         CustomItemList.NanoCircuit.set(ItemList.NanoCircuit.getIS());
-        registerTieredTooltip(CustomItemList.NanoCircuit.get(1), UIV);
         CustomItemList.PikoCircuit.set(ItemList.PikoCircuit.getIS());
-        registerTieredTooltip(CustomItemList.PikoCircuit.get(1), UMV);
         CustomItemList.QuantumCircuit.set(ItemList.QuantumCircuit.getIS());
-        registerTieredTooltip(CustomItemList.QuantumCircuit.get(1), UXV);
         CustomItemList.CarbonPartBoots.set(ItemList.CarbonPartBoots.getIS());
         CustomItemList.CarbonPartChestplate.set(ItemList.CarbonPartChestplate.getIS());
         CustomItemList.CarbonPartHelmet.set(ItemList.CarbonPartHelmet.getIS());
@@ -260,11 +266,6 @@ public class GT_Loader_Items {
         CustomItemList.MediumFuelCanister.set(ItemList.MediumFuelCanister.getIS());
         CustomItemList.LargeFuelCanister.set(ItemList.LargeFuelCanister.getIS());
         CustomItemList.ExtraLargeFuelCanister.set(ItemList.ExtraLargeFuelCanister.getIS());
-        CustomItemList.MysteriousCrystalPlate.set(ItemList.MysteriousCrystalPlate.getIS());
-        CustomItemList.LedoxPlate.set(ItemList.LedoxPlate.getIS());
-        CustomItemList.QuantinumPlate.set(ItemList.QuantinumPlate.getIS());
-        CustomItemList.CallistoIcePlate.set(ItemList.CallistoIcePlate.getIS());
-        CustomItemList.MytrylPlate.set(ItemList.MytrylPlate.getIS());
         CustomItemList.MytrylCrystal.set(ItemList.MytrylCrystal.getIS());
         CustomItemList.CallistoIceCompressedPlate.set(ItemList.CallistoIceCompressedPlate.getIS());
         CustomItemList.HeavyDutyRocketEngineTier3.set(ItemList.HeavyDutyRocketEngineTier3.getIS());
@@ -312,7 +313,6 @@ public class GT_Loader_Items {
         CustomItemList.VegaBStoneDust.set(ItemList.VegaBStoneDust.getIS());
         CustomItemList.BarnardaEStoneDust.set(ItemList.BarnardaEStoneDust.getIS());
         CustomItemList.BarnardaFStoneDust.set(ItemList.BarnardaFStoneDust.getIS());
-        CustomItemList.MysteriousCrystalDust.set(ItemList.MysteriousCrystalDust.getIS());
         CustomItemList.IndustryFrame.set(ItemList.IndustryFrame.getIS());
         CustomItemList.TCetiEStoneDust.set(ItemList.TCetiEStoneDust.getIS());
         CustomItemList.AdsorptionFilterCasing.set(ItemList.AdsorptionFilterCasing.getIS());
@@ -343,9 +343,7 @@ public class GT_Loader_Items {
         CustomItemList.MedalWarp.getItem().setMaxStackSize(1);
         CustomItemList.AluminoSilicateWool.set(ItemList.AluminoSilicateWool.getIS());
         CustomItemList.MaceratedPlantmass.set(ItemList.MaceratedPlantmass.getIS());
-        CustomItemList.BedrockiumPlate.set(ItemList.BedrockiumPlate.getIS());
         CustomItemList.EngineCore.set(ItemList.EngineCore.getIS());
-        CustomItemList.AlumiteDust.set(ItemList.AlumiteDust.getIS());
         CustomItemList.TwilightCrystal.set(ItemList.TwilightCrystal.getIS());
         CustomItemList.UnfiredClayBrick.set(ItemList.UnfiredClayBrick.getIS());
         CustomItemList.UnfiredSearedBrick.set(ItemList.UnfiredSearedBrick.getIS());
@@ -353,7 +351,6 @@ public class GT_Loader_Items {
         CustomItemList.UnfiredSlimeSoulBrick.set(ItemList.UnfiredSlimeSoulBrick.getIS());
         CustomItemList.RawLapotronCrystal.set(ItemList.RawLapotronCrystal.getIS());
         CustomItemList.LapotronDust.set(ItemList.LapotronDust.getIS());
-        CustomItemList.SandDust.set(ItemList.SandDust.getIS());
         CustomItemList.AluminiumIronPlate.set(ItemList.AluminiumIronPlate.getIS());
         CustomItemList.ReinforcedAluminiumIronPlate.set(ItemList.ReinforcedAluminiumIronPlate.getIS());
         CustomItemList.IrradiantReinforcedAluminiumPlate.set(ItemList.IrradiantReinforcedAluminiumPlate.getIS());
@@ -430,5 +427,91 @@ public class GT_Loader_Items {
         CustomItemList.PotassiumHydroxideDust.set(ItemList.PotassiumHydroxideDust.getIS());
         CustomItemList.RadoxPolymerLens.set(ItemList.RadoxPolymerLens.getIS());
         CustomItemList.ChromaticLens.set(ItemList.ChromaticLens.getIS());
+        CustomItemList.NanoCircuitOrigin.set(ItemList.NanoCircuitOrigin.getIS());
+        CustomItemList.ChevronOrigin.set(ItemList.ChevronOrigin.getIS());
+        CustomItemList.FramePartOrigin.set(ItemList.FramePartOrigin.getIS());
+        CustomItemList.GatePlateOrigin.set(ItemList.GatePlateOrigin.getIS());
+        CustomItemList.PikoCircuitPolychrome.set(ItemList.PikoCircuitPolychrome.getIS());
+        CustomItemList.QuantumCircuitPolychrome.set(ItemList.QuantumCircuitPolychrome.getIS());
+        CustomItemList.GatePlatePolychrome.set(ItemList.GatePlatePolychrome.getIS());
+        CustomItemList.ChevronPolychrome.set(ItemList.ChevronPolychrome.getIS());
+        CustomItemList.FramePartPolychrome.set(ItemList.FramePartPolychrome.getIS());
+        CustomItemList.PikoCircuitDimensional.set(ItemList.PikoCircuitDimensional.getIS());
+        CustomItemList.QuantumCircuitDimensional.set(ItemList.QuantumCircuitDimensional.getIS());
+        CustomItemList.GatePlateDimensional.set(ItemList.GatePlateDimensional.getIS());
+        CustomItemList.ChevronDimensional.set(ItemList.ChevronDimensional.getIS());
+        CustomItemList.FramePartDimensional.set(ItemList.FramePartDimensional.getIS());
+        CustomItemList.GatePlateHarmonic.set(ItemList.GatePlateHarmonic.getIS());
+        CustomItemList.ChevronHarmonic.set(ItemList.ChevronHarmonic.getIS());
+        CustomItemList.FramePartHarmonic.set(ItemList.FramePartHarmonic.getIS());
+        CustomItemList.StargateDustAncients.set(ItemList.StargateDustAncients.getIS());
+        CustomItemList.StargateCrystalAncients.set(ItemList.StargateCrystalAncients.getIS());
+    }
+
+    private void registerTooltips() {
+        registerTieredTooltip(CustomItemList.PikoCircuit.get(1), UMV);
+        registerTieredTooltip(CustomItemList.QuantumCircuit.get(1), UXV);
+        List<ItemStack> origin = Arrays.asList(
+                ItemList.ChevronOrigin.getIS(),
+                ItemList.FramePartOrigin.getIS(),
+                ItemList.GatePlateOrigin.getIS(),
+                ItemList.NanoCircuitOrigin.getIS(),
+                ItemList.StargateDustAncients.getIS(),
+                ItemList.StargateCrystalAncients.getIS());
+        List<ItemStack> polychrome = Arrays.asList(
+                ItemList.PikoCircuitPolychrome.getIS(),
+                ItemList.QuantumCircuitPolychrome.getIS(),
+                ItemList.GatePlatePolychrome.getIS(),
+                ItemList.ChevronPolychrome.getIS(),
+                ItemList.FramePartPolychrome.getIS());
+        List<ItemStack> dimensional = Arrays.asList(
+                ItemList.PikoCircuitDimensional.getIS(),
+                ItemList.QuantumCircuitDimensional.getIS(),
+                ItemList.GatePlateDimensional.getIS(),
+                ItemList.ChevronDimensional.getIS(),
+                ItemList.FramePartDimensional.getIS());
+        List<ItemStack> harmonic = Arrays.asList(
+                ItemList.GatePlateHarmonic.getIS(),
+                ItemList.ChevronHarmonic.getIS(),
+                ItemList.FramePartHarmonic.getIS());
+        for (ItemStack itemStack : origin) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.YELLOW + StatCollector.translateToLocal("item.Origin.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Origin.version"));
+        }
+
+        for (ItemStack itemStack : polychrome) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.AQUA + StatCollector.translateToLocal("item.Polychrome.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Polychrome.version"));
+        }
+
+        for (ItemStack itemStack : dimensional) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.LIGHT_PURPLE + StatCollector.translateToLocal("item.Dimensional.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Dimensional.version"));
+        }
+
+        for (ItemStack itemStack : harmonic) {
+            addItemTooltip(
+                    itemStack,
+                    () -> EnumChatFormatting.DARK_PURPLE + StatCollector.translateToLocal("item.Harmonic.tooltip")
+                            + EnumChatFormatting.RESET
+                            + EnumChatFormatting.BLUE
+                            + " "
+                            + StatCollector.translateToLocal("item.Harmonic.version"));
+        }
     }
 }

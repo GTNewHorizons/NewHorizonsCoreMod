@@ -12,19 +12,19 @@ import com.dreammaster.gthandler.gui.CoreMod_UITextures;
 import com.gtnewhorizons.modularui.api.drawable.FallbackableUITexture;
 
 import gregtech.api.enums.Textures;
-import gregtech.api.gui.modularui.GT_UITextures;
+import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
-import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_BasicMachine;
-import gregtech.api.objects.GT_RenderedTexture;
+import gregtech.api.metatileentity.implementations.MTEBasicMachine;
+import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.BasicUIProperties;
-import gregtech.common.items.GT_IntegratedCircuit_Item;
+import gregtech.common.items.ItemIntegratedCircuit;
 
 /**
  * Created by Tec on 28.03.2017.
  */
-public class NameRemover extends GT_MetaTileEntity_BasicMachine {
+public class NameRemover extends MTEBasicMachine {
 
     public NameRemover(int aID, String aName, String aNameRegional, int aTier) {
         super(
@@ -36,14 +36,14 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
                 "Can fix GT items with broken NBT data, will erase everything!",
                 2,
                 1,
-                new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER_ACTIVE),
-                new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER),
-                new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER_ACTIVE),
-                new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER),
-                new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER_ACTIVE),
-                new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER),
-                new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER_ACTIVE),
-                new GT_RenderedTexture(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER));
+                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER_ACTIVE),
+                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER),
+                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER_ACTIVE),
+                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER),
+                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER_ACTIVE),
+                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER),
+                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER_ACTIVE),
+                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER));
     }
 
     public NameRemover(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {
@@ -67,7 +67,7 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
         if (nbt != null) {
             ItemStack circuit = getInputAt(1);
             int circuitSetting = 0;
-            if (circuit != null && circuit.getItem() instanceof GT_IntegratedCircuit_Item)
+            if (circuit != null && circuit.getItem() instanceof ItemIntegratedCircuit)
                 circuitSetting = circuit.getItemDamage();
 
             switch (circuitSetting) {
@@ -181,12 +181,7 @@ public class NameRemover extends GT_MetaTileEntity_BasicMachine {
         return 0;
     }
 
-    @Override
-    public boolean useModularUI() {
-        return true;
-    }
-
-    private static final FallbackableUITexture progressBarTexture = GT_UITextures
+    private static final FallbackableUITexture progressBarTexture = GTUITextures
             .fallbackableProgressbar("name_remover", CoreMod_UITextures.PROGRESSBAR_NAME_REMOVER);
 
     @Override

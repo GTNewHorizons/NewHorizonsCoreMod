@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -19,10 +18,10 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.packagerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
-import static gregtech.api.util.GT_RecipeBuilder.TICKS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,11 +33,11 @@ import com.dreammaster.gthandler.CustomItemList;
 
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.tools.TinkerTools;
 
 public class ScriptDraconicEvolution implements IScriptLoader {
@@ -97,13 +96,13 @@ public class ScriptDraconicEvolution implements IScriptLoader {
         addShapedRecipe(
                 getModItem(DraconicEvolution.ID, "xRayBlock", 8, 0, missing),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 getModItem(Minecraft.ID, "glass_pane", 1, 0, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -367,7 +366,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
                 'd',
-                getModItem(NewHorizonsCoreMod.ID, "item.EnrichedNaquadriaSunnariumAlloy", 1, 0, missing),
+                com.dreammaster.item.ItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
                 'e',
                 getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 1, 1, missing),
                 'f',
@@ -787,7 +786,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDraconiumAwakened",
                 'c',
-                getModItem(NewHorizonsCoreMod.ID, "item.EngravedManyullynCrystalChip", 1, 0, missing),
+                com.dreammaster.item.ItemList.EngravedManyullynCrystalChip.getIS(1),
                 'd',
                 getModItem(DraconicEvolution.ID, "draconiumFluxCapacitor", 1, 1, missing),
                 'e',
@@ -1185,64 +1184,64 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'd',
                 ItemList.Electric_Motor_IV.get(1L));
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Stone, 4),
                         getModItem(DraconicEvolution.ID, "draconiumDust", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infoTablet", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "energyCrystal", 1, 0, missing),
                         getModItem(DraconicEvolution.ID, "particleGenerator", 2, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "energyCrystal", 1, 4, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.enderium", 864)).duration(1 * MINUTES).eut(1024)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "energyCrystal", 1, 1, missing),
                         getModItem(DraconicEvolution.ID, "particleGenerator", 2, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "energyCrystal", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.enderium", 864)).duration(2 * MINUTES).eut(4096)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "arrow", 1, 0, missing),
                         getModItem(Minecraft.ID, "ender_pearl", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "enderArrow", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Railcraft.ID, "detector", 1, 5, missing),
                         getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "playerDetector", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedIntegration.ID, "projectred.integration.gate", 1, 16, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "rainSensor", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
                         getModItem(Minecraft.ID, "blaze_powder", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "infusedObsidian", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.draconium", 144)).duration(1 * MINUTES).eut(1920)
                 .specialValue(7500).addTo(blastFurnaceRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosShard", 1, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosShard", 1, 0, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 2, missing)).duration(5 * SECONDS)
                 .eut(480).addTo(hammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 2, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 2, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 1, missing))
                 .duration(2 * SECONDS + 10 * TICKS).eut(480).addTo(hammerRecipes);
-        GT_Values.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 1, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(DraconicEvolution.ID, "chaosFragment", 1, 1, missing))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "chaosFragment", 9, 0, missing))
                 .duration(1 * SECONDS + 5 * TICKS).eut(480).addTo(hammerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(DraconicEvolution.ID, "safetyMatch", 16, 1000, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0, missing))
                 .duration(3 * SECONDS + 4 * TICKS).eut(16).addTo(packagerRecipes);
 

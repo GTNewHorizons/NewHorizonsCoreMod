@@ -3,7 +3,6 @@ package com.dreammaster.witchery;
 import static com.dreammaster.witchery.WitcheryBrewRegistryAccessor.*;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.StevesCarts2;
 
 import java.util.Arrays;
@@ -28,8 +27,8 @@ import alkalus.main.api.RecipeManager.SpinningWheel;
 import alkalus.main.api.plugin.base.BasePluginWitchery;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_ModHandler;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class WitcheryPlugin extends BasePluginWitchery {
 
@@ -180,7 +179,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
 
         // add a Spinning Wheel recipes
         SpinningWheel.addRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L),
+                GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Gold, 8L),
                 Witchery.Items.GENERIC.itemGoldenThread.createStack(1),
                 new ItemStack[] { new ItemStack(Items.string, 8, 0),
                         Witchery.Items.GENERIC.itemWhiffOfMagic.createStack(1) });
@@ -190,7 +189,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack[] { new ItemStack(Witchery.Blocks.WISPY_COTTON, 4),
                         Witchery.Items.GENERIC.itemOdourOfPurity.createStack(1) });
         SpinningWheel.addRecipe(
-                GT_ModHandler.getModItem(BloodArsenal.ID, "blood_burned_string", 1L),
+                GTModHandler.getModItem(BloodArsenal.ID, "blood_burned_string", 1L),
                 Witchery.Items.GENERIC.itemTormentedTwine.createStack(1),
                 new ItemStack[] { Witchery.Items.GENERIC.itemDisturbedCotton.createStack(4),
                         Witchery.Items.GENERIC.itemReekOfMisfortune.createStack(1) });
@@ -213,8 +212,8 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 true,
                 Witchery.Items.GENERIC.itemRedstoneSoup.createStack(),
                 Witchery.Items.GENERIC.itemBrewOfFlowingSpirit.createStack(),
-                GT_ModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45),
-                GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
+                GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45),
+                GTModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                 Witchery.Items.GENERIC.itemDropOfLuck.createStack(),
                 Witchery.Items.GENERIC.itemBatWool.createStack());
 
@@ -227,7 +226,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                 new ItemStack(Witchery.Items.CHALK_GOLDEN),
                 new ItemStack(Witchery.Items.CHALK_RITUAL),
                 Witchery.Items.GENERIC.itemMandrakeRoot.createStack(),
-                GT_OreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L),
                 Witchery.Items.GENERIC.itemDiamondVapour.createStack());
         addBrewRecipe(
                 2000,
@@ -241,10 +240,10 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     4000,
                     new ItemStack(Witchery.Items.CHALK_OTHERWHERE),
                     new ItemStack(Witchery.Items.CHALK_RITUAL),
-                    GT_OreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
-                    GT_ModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
+                    GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
+                    GTModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
-                    GT_ModHandler.getModItem(NewHorizonsCoreMod.ID, "item.ManyullynCrystal", 1L, 0));
+                    com.dreammaster.item.ItemList.ManyullynCrystal.getIS(1));
         }
         // rites
         // TODO write doc

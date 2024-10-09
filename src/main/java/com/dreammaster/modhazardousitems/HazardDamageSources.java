@@ -13,16 +13,16 @@ import com.dreammaster.modhazardousitems.cause.InventoryItemHazardCause;
 import com.google.common.collect.ImmutableMap;
 
 import eu.usrv.yamcore.gameregistry.DamageTypeHelper;
-import gregtech.api.damagesources.GT_DamageSources;
+import gregtech.api.damagesources.GTDamageSources;
 
 public class HazardDamageSources {
 
     public static final Map<String, Function<HazardCause, DamageSource>> EXTRA_SOURCE_FACTORIES = ImmutableMap
             .<String, Function<HazardCause, DamageSource>>builder().put("gregtech:hot", cause -> {
                 if (cause.getType() == Type.INVENTORY) {
-                    return new GT_DamageSources.DamageSourceHotItem(((InventoryItemHazardCause) cause).getStack());
+                    return new GTDamageSources.DamageSourceHotItem(((InventoryItemHazardCause) cause).getStack());
                 } else {
-                    return GT_DamageSources.getHeatDamage();
+                    return GTDamageSources.getHeatDamage();
                 }
             }).build();
 

@@ -3,7 +3,6 @@ package com.dreammaster.coremod;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.InsnList;
 import org.objectweb.asm.tree.InsnNode;
 import org.objectweb.asm.tree.LdcInsnNode;
 import org.objectweb.asm.tree.MethodInsnNode;
@@ -17,9 +16,9 @@ public interface IDreamTransformer {
     String[] targetedClasses();
 
     /**
-     * Returns the transformed ClassNode
+     * Performs transformations to the ClassNode
      */
-    ClassNode transform(ClassNode classNode);
+    void transform(ClassNode classNode);
 
     // =================================================
 
@@ -50,13 +49,16 @@ public interface IDreamTransformer {
     /**
      * Method to empty the methodNode and replace its body with just a RETURN Opcode
      */
-    default void emptyTheMethodNode(MethodNode methodNode) {
-        final InsnList insnList = new InsnList();
-        insnList.add(new InsnNode(Opcodes.RETURN));
-        methodNode.instructions = insnList;
-        methodNode.localVariables.clear();
+    default void emptyMethodNode(MethodNode methodNode) {
+        if (!methodNode.desc.equals("()V")) {
+            throw new IllegalArgumentException("emptyMethodNode can only be used for ()V methods");
+        }
+        methodNode.instructions.clear();
+        methodNode.instructions.add(new InsnNode(Opcodes.RETURN));
         methodNode.maxStack = 0;
         methodNode.maxLocals = 0;
+        methodNode.localVariables = null;
+        methodNode.tryCatchBlocks = null;
     }
 
 }

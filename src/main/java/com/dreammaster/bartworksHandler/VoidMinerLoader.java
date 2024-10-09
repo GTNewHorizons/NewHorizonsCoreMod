@@ -14,12 +14,17 @@ import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.github.bartimaeusnek.bartworks.system.material.Werkstoff;
 import com.google.common.collect.Maps;
 
+import bartworks.system.material.Werkstoff;
+import bwcrossmod.galacticgreg.VoidMinerUtility;
+import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.interfaces.ISubTagContainer;
+import gtPlusPlus.core.material.Material;
+import gtPlusPlus.everglades.gen.gt.WorldGen_GT_Ore_Layer;
+import gtPlusPlus.everglades.gen.gt.WorldGen_Ores;
 
 public class VoidMinerLoader {
 
@@ -44,6 +49,13 @@ public class VoidMinerLoader {
         addVoidMinerDropsToDimension(DEEPDARK_ID, materials, weight);
     }
 
+    private static void addVoidDimerDrops(Material material, float weight) {
+        if (weight <= 0f) {
+            return;
+        }
+        VoidMinerUtility.addBlockToDimensionList(DEEPDARK_ID, material.getOreBlock(1), 0, weight);
+    }
+
     public static void initDeepDark() {
         // Map of material name to Materials.
         Map<String, Materials> materials = Arrays.stream(values()).filter(VoidMinerLoader::hasOres).collect(
@@ -56,6 +68,15 @@ public class VoidMinerLoader {
                         Function.identity(),
                         VoidMinerLoader::keyConflict,
                         HashMap::new));
+
+        // Map of GT++ material name to GT++ Material.
+        Map<String, Material> GTPPMaterials = new HashMap<>();
+        for (WorldGen_GT_Ore_Layer t : WorldGen_Ores.validOreveins.values()) {
+            GTPPMaterials.put(t.mPrimary.getLocalizedName(), t.mPrimary);
+            GTPPMaterials.put(t.mSecondary.getLocalizedName(), t.mSecondary);
+            GTPPMaterials.put(t.mBetween.getLocalizedName(), t.mBetween);
+            GTPPMaterials.put(t.mSporadic.getLocalizedName(), t.mSporadic);
+        }
 
         if (CoreConfig.DebugPrintAllOres) {
             log.info("==========");
@@ -73,6 +94,14 @@ public class VoidMinerLoader {
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintAllOres]: End all werkstoff list");
             log.info("==========");
+
+            log.info("==========");
+            log.info("[DeepDarkVoidMiner/DebugPrintAllOres]: Begin all GT++ material list");
+            log.info("==========");
+            GTPPMaterials.keySet().stream().sorted().forEach(name -> log.info("  " + name));
+            log.info("==========");
+            log.info("[DeepDarkVoidMiner/DebugPrintAllOres]: End all GT++ material list");
+            log.info("==========");
         }
 
         // Map of material name to weight, prefilled with 1.
@@ -83,11 +112,18 @@ public class VoidMinerLoader {
         Map<String, Float> werkstoffWeights = werkstoff.keySet().stream()
                 .collect(Collectors.toMap(Function.identity(), k -> 1f, VoidMinerLoader::keyConflict, HashMap::new));
 
+        // Map of werkstoff name to weight, prefilled with 1.
+        Map<String, Float> GTPPMaterialWeights = GTPPMaterials.keySet().stream()
+                .collect(Collectors.toMap(Function.identity(), k -> 1f, VoidMinerLoader::keyConflict, HashMap::new));
+
         Arrays.stream(CoreConfig.MaterialWeights).forEach(line -> parseWeight(line, materialWeights));
         Arrays.stream(CoreConfig.WerkstoffWeights).forEach(line -> parseWeight(line, werkstoffWeights));
+        Arrays.stream(CoreConfig.GTPPMaterialWeights).forEach(line -> parseWeight(line, GTPPMaterialWeights));
 
         Map<String, Materials> addedMaterials = Maps.filterKeys(materials, name -> materialWeights.get(name) > 0f);
         Map<String, Werkstoff> addedWerkstoff = Maps.filterKeys(werkstoff, name -> werkstoffWeights.get(name) > 0f);
+        Map<String, Material> addedGTPPMaterial = Maps
+                .filterKeys(GTPPMaterials, name -> GTPPMaterialWeights.get(name) > 0f);
 
         if (CoreConfig.DebugPrintAddedOres) {
             // Here's how to use the logged metadata:
@@ -120,8 +156,24 @@ public class VoidMinerLoader {
             log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: End added werkstoff list");
             log.info("==========");
 
-            double totalWeight = Stream.concat(materialWeights.values().stream(), werkstoffWeights.values().stream())
-                    .filter(f -> f > 0f).mapToDouble(f -> f).sum();
+            // Here's how to use the logged metadata:
+            // /give @p <block id> 1
+            log.info("==========");
+            log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: Begin added GT++ material list");
+            log.info("==========");
+            addedGTPPMaterial.keySet().stream().sorted().forEach(
+                    name -> log.info(
+                            "  {} (weight: {} / block id: {})",
+                            name,
+                            GTPPMaterialWeights.get(name),
+                            GameRegistry.findUniqueIdentifierFor(GTPPMaterials.get(name).getOreBlock(1))));
+            log.info("==========");
+            log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: End added GT++ material list");
+            log.info("==========");
+
+            double totalWeight = Stream.concat(
+                    Stream.concat(materialWeights.values().stream(), werkstoffWeights.values().stream()),
+                    GTPPMaterialWeights.values().stream()).filter(f -> f > 0f).mapToDouble(f -> f).sum();
             log.info("==========");
             log.info("[DeepDarkVoidMiner/DebugPrintAddedOres]: Total weight: {}", totalWeight);
             log.info("==========");
@@ -129,6 +181,7 @@ public class VoidMinerLoader {
 
         addedMaterials.forEach((k, v) -> VoidMinerLoader.addVoidDimerDrops(v, materialWeights.get(k)));
         addedWerkstoff.forEach((k, v) -> VoidMinerLoader.addVoidDimerDrops(v, werkstoffWeights.get(k)));
+        addedGTPPMaterial.forEach((k, v) -> VoidMinerLoader.addVoidDimerDrops(v, GTPPMaterialWeights.get(k)));
     }
 
     /**

@@ -1,13 +1,14 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BinnieCore;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Collections;
 import java.util.List;
 
 import net.minecraftforge.fluids.FluidRegistry;
+
+import com.dreammaster.block.BlockList;
 
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.ItemList;
@@ -289,7 +290,7 @@ public class ScriptBinniesCore implements IScriptLoader {
                 'd',
                 "gearDiamond",
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
+                BlockList.DiamondFrameBox.getIS(),
                 'f',
                 "gearDiamond",
                 'g',
@@ -315,7 +316,7 @@ public class ScriptBinniesCore implements IScriptLoader {
                 'd',
                 "chestDiamond",
                 'e',
-                getModItem(NewHorizonsCoreMod.ID, "tile.DiamondFrameBox", 1, 0, missing),
+                BlockList.DiamondFrameBox.getIS(),
                 'f',
                 "chestDiamond",
                 'g',

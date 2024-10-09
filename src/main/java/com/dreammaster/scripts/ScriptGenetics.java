@@ -8,12 +8,11 @@ import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,13 +23,13 @@ import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.gthandler.CustomItemList;
 
 import forestry.api.recipes.RecipeManagers;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class ScriptGenetics implements IScriptLoader {
 
@@ -188,23 +187,23 @@ public class ScriptGenetics implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'e',
                 "circuitData",
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L));
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.EnderEye, 1L));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 4320),
@@ -228,7 +227,7 @@ public class ScriptGenetics implements IScriptLoader {
                 'g',
                 getModItem(Genetics.ID, "misc", 1, 9, missing),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
                 'i',
                 getModItem(Genetics.ID, "misc", 1, 9, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -258,71 +257,56 @@ public class ScriptGenetics implements IScriptLoader {
                 'i',
                 getModItem(Genetics.ID, "misc", 1, 9, missing));
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        getModItem(NewHorizonsCoreMod.ID, "item.AluminiumItemCasing", 8, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 8))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).duration(1 * MINUTES).eut(120)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Forestry.ID, "sturdyMachine", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 8L))
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 0, missing)).duration(1 * MINUTES).eut(120)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 6, 0, missing), GT_Utility.getIntegratedCircuit(6))
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 6, 0, missing), GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 8, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 2, 0, missing), GT_Utility.getIntegratedCircuit(2))
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 2, 0, missing), GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 5, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 288)).duration(10 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 4, 0, missing), GT_Utility.getIntegratedCircuit(4))
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(Minecraft.ID, "glass_pane", 4, 0, missing), GTUtility.getIntegratedCircuit(4))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 6, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 144)).duration(10 * SECONDS).eut(48)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Genetics.ID, "misc", 10, 6, missing), GT_Utility.getIntegratedCircuit(10))
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(Genetics.ID, "misc", 10, 6, missing), GTUtility.getIntegratedCircuit(10))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 7, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.gold", 576)).duration(10 * SECONDS).eut(96)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "chipsets", 1, 1, missing),
-                        getModItem(IndustrialCraft2.ID, "itemPartCircuitAdv", 2, 0, missing))
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "chipsets", 1, 1, missing), ItemList.Circuit_Nanoprocessor.get(2L))
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
-                .itemInputs(getModItem(Forestry.ID, "chipsets", 1, 1, missing), ItemList.Circuit_Computer.get(2L))
-                .itemOutputs(getModItem(Genetics.ID, "misc", 1, 9, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.stainlesssteel", 64)).duration(20 * SECONDS).eut(64)
-                .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing),
                         getModItem(Genetics.ID, "misc", 2, 10, missing),
-                        GT_Utility.getIntegratedCircuit(2))
+                        GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 11, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 288)).duration(1 * MINUTES + 15 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Circuit_Board_Plastic_Advanced.get(1L),
                         getModItem(Forestry.ID, "thermionicTubes", 1, 5, missing),
-                        GT_Utility.getIntegratedCircuit(2))
+                        GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 10, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.glowstone", 144)).duration(30 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
@@ -331,7 +315,7 @@ public class ScriptGenetics implements IScriptLoader {
                 .itemOutputs(getModItem(Genetics.ID, "misc", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.blaze", 144)).duration(5 * SECONDS).eut(30)
                 .addTo(mixerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "redstone", 1, 0, missing),
                         getModItem(Minecraft.ID, "glowstone_dust", 1, 0, missing),
