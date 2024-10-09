@@ -24,6 +24,7 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersDefence;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import net.minecraft.init.Blocks;
@@ -38,6 +39,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.block.ModBlocks;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
@@ -99,8 +101,9 @@ public class CompressorRecipes implements Runnable {
                 .eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 9L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_UIV).addTo(compressorRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Ichorium, 1L))
+                .fluidInputs(Materials.UUMatter.getFluid(750L)).duration(2 * MINUTES)
+                .metadata(CompressionTierKey.INSTANCE, 1).eut(TierEU.RECIPE_UV).addTo(compressorRecipes);
 
         // compressed coal variants
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.Charcoal, 9))
