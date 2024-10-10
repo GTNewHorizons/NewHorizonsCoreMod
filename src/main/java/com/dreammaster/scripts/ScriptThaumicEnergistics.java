@@ -92,6 +92,9 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
 
         final ItemStack InfusionIntercepter = getModItem("thaumicinsurgence", "infusionIntercepter", 1, 0);
 
+        final ItemStack ZPMEmitter = ItemList.Emitter_ZPM.get(1);
+        final ItemStack ZPMSensor = ItemList.Sensor_ZPM.get(1);
+
         final FluidStack[] solders = new FluidStack[] { Materials.Lead.getMolten(288), Materials.Tin.getMolten(144),
                 Materials.SolderingAlloy.getMolten(72) };
 
@@ -1613,9 +1616,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 new AspectList().add(Aspect.MECHANISM, 64).add(Aspect.MAGIC, 64).add(Aspect.EXCHANGE, 64)
                         .add(Aspect.MIND, 64).add(Aspect.GREED, 64),
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.infusion.provider", 1, 0, missing),
-                new ItemStack[] { InfusionIntercepter, PrimalCharm, DiffusionCore, EssentialComponent64K, DiffusionCore,
-                        PrimalCharm, CraftingUnit, PrimalCharm, EngProcessor, EssentialComponent64K, EngProcessor,
-                        PrimalCharm });
+                new ItemStack[] { InfusionIntercepter, PrimalCharm, DiffusionCore, ZPMEmitter, DiffusionCore,
+                        PrimalCharm, CraftingUnit, PrimalCharm, EngProcessor, ZPMSensor, EngProcessor, PrimalCharm });
 
         TCHelper.refreshResearchPages("thaumicenergistics.TEESSPROV");
         TCHelper.refreshResearchPages("thaumicenergistics.TEIRONGEARBOX");
