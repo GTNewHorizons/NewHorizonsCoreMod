@@ -35,7 +35,7 @@ public class ScriptOpenComputers implements IScriptLoader {
          *************************************/
         
         addShapelessRecipe(
-            ItemList.Circuit_Parts_Transistor.get(1)
+            ItemList.Circuit_Parts_Transistor.get(1),
             getModItem(OpenComputers.ID, "transistor", 1)
         );
         
