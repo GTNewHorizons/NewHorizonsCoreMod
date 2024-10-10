@@ -11,6 +11,7 @@ import java.util.List;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
+import gregtech.api.util.GTUtility;
 
 public class ScriptOpenComputers implements IScriptLoader {
 
@@ -21,11 +22,23 @@ public class ScriptOpenComputers implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Mods.OpenComputers.ID, HardcoreEnderExpansion.ID, IndustrialCraft2.ID);
+        return Arrays.asList(
+            Mods.OpenComputers.ID,
+            HardcoreEnderExpansion.ID,
+            IndustrialCraft2.ID);
     }
 
     @Override
     public void loadRecipes() {
+        /*************************************
+         * Simple OC -> GT Transistor Recipe *
+         *************************************/
+        
+        addShapelessRecipe(
+            getModItem(OpenComputers.ID, "transistor", 1),
+            ItemList.Circuit_Parts_Transistor.get(1)
+        );
+        
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(OpenComputers.ID, "item", 1, 69, missing),
                 "---------",
