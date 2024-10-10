@@ -1820,5 +1820,53 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing))
                 .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
 
+        // Vibrant Capacitor Bank
+        ItemStack vibrantCapacitor = createItemStack(
+                EnderIO.ID,
+                "blockCapBank",
+                1,
+                3,
+                "{type:\"VIBRANT\",storedEnergyRF:0}",
+                missing);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                        getModItem(EnderIO.ID, "itemMaterial", 2, 6, missing),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                        getModItem(EnderIO.ID, "itemBasicCapacitor", 4, 2, missing),
+                        ItemList.BatteryHull_EV_Full.get(1))
+                .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                        getModItem(EnderIO.ID, "itemMaterial", 2, 6, missing),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                        getModItem(EnderIO.ID, "itemBasicCapacitor", 4, 9, missing),
+                        ItemList.BatteryHull_EV_Full.get(1))
+                .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                        getModItem(EnderIO.ID, "itemMaterial", 2, 6, missing),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                        getModItem(EnderIO.ID, "itemBasicCapacitor", 4, 2, missing),
+                        GregtechItemList.Battery_RE_EV_Lithium.get(1))
+                .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
+                        getModItem(EnderIO.ID, "itemMaterial", 2, 6, missing),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
+                        getModItem(EnderIO.ID, "itemBasicCapacitor", 4, 9, missing),
+                        GregtechItemList.Battery_RE_EV_Lithium.get(1))
+                .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
     }
 }
