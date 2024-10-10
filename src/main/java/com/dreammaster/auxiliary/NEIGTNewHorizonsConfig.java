@@ -22,6 +22,14 @@ public class NEIGTNewHorizonsConfig implements IConfigureNEI {
     @Override
     public void loadConfig() {
         API.hideItem(new ItemStack(QuantumBread.Instance()));
+
+        API.hideItem(GTModHandler.getModItem(GoodGenerator.ID, "antimatterRenderBlock", 1));
+        API.hideItem(GTModHandler.getModItem(GregTech.ID, "tile.gt.dronerender", 1));
+        API.hideItem(GTModHandler.getModItem(GregTech.ID, "gt.wormholerenderer", 1));
+        API.hideItem(GTModHandler.getModItem(GregTech.ID, "gt.blackholerenderer", 1));
+        API.hideItem(GTModHandler.getModItem(TecTech.ID, "Eye of Harmony Renderer", 1));
+        API.hideItem(GTModHandler.getModItem(TecTech.ID, "ForgeOfGodsRenderBlock", 1));
+
         if (Aroma1997Core.isModLoaded()) {
             API.hideItem(GTModHandler.getModItem(Aroma1997Core.ID, "wrenched", 1));
         }
