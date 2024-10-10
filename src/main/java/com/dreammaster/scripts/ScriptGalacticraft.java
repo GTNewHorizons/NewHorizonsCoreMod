@@ -1765,6 +1765,15 @@ public class ScriptGalacticraft implements IScriptLoader {
                         getModItem(GalacticraftMars.ID, "tile.walkway", 1, 0, missing))
                 .itemOutputs(getModItem(GalacticraftMars.ID, "tile.walkwayWire", 1, 0, missing)).duration(1 * SECONDS)
                 .eut(120).addTo(assemblerRecipes);
+
+        // Oxygen Vent
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(GalacticraftCore.ID, "item.basicItem", 4, 7, missing),
+                        getModItem(GalacticraftCore.ID, "item.basicItem", 1, 9, missing),
+                        new ItemStack(Blocks.iron_bars, 4))
+                .itemOutputs(getModItem(GalacticraftCore.ID, "item.airVent", 1, 0, missing)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
     }
 
     private void blastFurnaceRecipes() {
