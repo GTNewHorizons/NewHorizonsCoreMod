@@ -2554,6 +2554,52 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.SolderingAlloy.getMolten(L * 2))
                 .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_IV.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+
+        // EV Battery Buffer (16 Slots)
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hull_EV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Aluminium, 4),
+                        new ItemStack(Blocks.chest))
+                .itemOutputs(ItemList.Battery_Buffer_4by4_EV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
+
+        // Firebox Casings
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Bronze, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Bronze, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Casing_Firebox_Bronze.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Casing_Firebox_Steel.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Casing_Firebox_Titanium.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Casing_Firebox_TungstenSteel.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
     }
 
     private void makeElectricMachinePartRecipes() {
