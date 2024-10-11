@@ -490,20 +490,6 @@ public class MixerRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 4L)).duration(10 * SECONDS)
                 .eut(8).addTo(mixerRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Silver, 32L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Platinum, 32L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 64L),
-                        GTUtility.getIntegratedCircuit(12))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L)).duration(16 * MINUTES)
-                .eut(TierEU.RECIPE_MV).noOptimize().addTo(mixerRecipes);
-
         // Superconductor dust recipes in mixer.
 
         // MV Superconductor dust recipe.
@@ -697,21 +683,6 @@ public class MixerRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(CustomItemList.LapotronDust.get(15L)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(mixerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.IC2_Energium_Dust.get(64L),
-                        ItemList.IC2_Energium_Dust.get(64L),
-                        ItemList.IC2_Energium_Dust.get(16L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Lapis, 32L),
-                        GTUtility.getIntegratedCircuit(12))
-                .itemOutputs(
-                        CustomItemList.LapotronDust.get(64L),
-                        CustomItemList.LapotronDust.get(64L),
-                        CustomItemList.LapotronDust.get(64L),
-                        CustomItemList.LapotronDust.get(48L))
-                .duration(8 * MINUTES).eut(TierEU.RECIPE_EV).noOptimize().addTo(mixerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
