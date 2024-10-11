@@ -15,13 +15,24 @@ import com.dreammaster.main.MainRegistry;
 
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
+import goodgenerator.loader.Loaders;
+import gregtech.api.GregTechAPI;
 import gregtech.api.util.GTModHandler;
+import tectech.thing.casing.TTCasingsContainer;
 
 public class NEIGTNewHorizonsConfig implements IConfigureNEI {
 
     @Override
     public void loadConfig() {
         API.hideItem(new ItemStack(QuantumBread.Instance()));
+
+        API.hideItem(new ItemStack(Loaders.antimatterRenderBlock));
+        API.hideItem(new ItemStack(GregTechAPI.sDroneRender));
+        API.hideItem(new ItemStack(GregTechAPI.sWormholeRender));
+        API.hideItem(new ItemStack(GregTechAPI.sBlackholeRender));
+        API.hideItem(new ItemStack(TTCasingsContainer.eyeOfHarmonyRenderBlock));
+        API.hideItem(new ItemStack(TTCasingsContainer.forgeOfGodsRenderBlock));
+
         if (Aroma1997Core.isModLoaded()) {
             API.hideItem(GTModHandler.getModItem(Aroma1997Core.ID, "wrenched", 1));
         }
