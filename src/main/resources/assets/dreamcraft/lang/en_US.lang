@@ -1740,3 +1740,12 @@ item.tconstruct.manual.weaponry.bolts=\n\nBolts:\nCrafting bolts is a delicate p
 
 dreamcraft.mobsinfocompat.limitedropcount=Drops only %s times per person
 dreamcraft.gui.quitmessage=Are you sure you want to exit the game ?
+
+dreamcraft.welcome.welcome=Welcome to Gregtech: New Horizons
+dreamcraft.welcome.questbook=The Quest Book has a shortcut key, check your keybindings.
+dreamcraft.welcome.gtnh_wiki=GTNH WIKI link :
+dreamcraft.welcome.click_wiki=Click to open the wiki!
+dreamcraft.welcome.report_bug=Please report bugs on Github :
+dreamcraft.welcome.click_github=Click to open the Github!
+dreamcraft.welcome.visitdiscord=Visit our discord at
+dreamcraft.welcome.click_discord=Click to open discord!
