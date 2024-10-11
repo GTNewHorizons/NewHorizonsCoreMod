@@ -1,11 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gregtech.api.util.GTRecipeConstants.RECYCLE;
 import static gregtech.api.util.GTRecipeConstants.UniversalArcFurnace;
 
 import net.minecraft.init.Blocks;
