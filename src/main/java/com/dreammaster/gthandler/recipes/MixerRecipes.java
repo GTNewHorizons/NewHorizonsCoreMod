@@ -498,11 +498,12 @@ public class MixerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Thaumium, 64L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderPearl, 64L),
                         GTUtility.getIntegratedCircuit(12))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L),
+                .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L)).duration(16 * MINUTES)
-                .eut(TierEU.RECIPE_MV).noOptimize().addTo(mixerRecipes);
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Enderium, 64L))
+                .duration(16 * MINUTES).eut(TierEU.RECIPE_MV).noOptimize().addTo(mixerRecipes);
 
         // Superconductor dust recipes in mixer.
 
