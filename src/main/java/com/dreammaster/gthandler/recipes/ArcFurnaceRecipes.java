@@ -25,12 +25,6 @@ public class ArcFurnaceRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Steel, 2L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(90).addTo(UniversalArcFurnace);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.zeta", 1L, 7))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Titanium, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Glass, 3))
-                .duration(13 * SECONDS + 10 * TICKS).eut(210).metadata(RECYCLE, true).addTo(UniversalArcFurnace);
-
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sand, 1, 0))
                 .itemOutputs(new ItemStack(Blocks.glass, 2)).duration(1 * SECONDS).eut(256).addTo(UniversalArcFurnace);
 
