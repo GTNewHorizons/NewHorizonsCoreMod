@@ -2864,7 +2864,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         .add(Aspect.getAspect("praecantatio"), 32).add(Aspect.getAspect("infernus"), 24)
                         .add(Aspect.getAspect("alienis"), 16).add(Aspect.getAspect("superbia"), 16)
                         .add(Aspect.getAspect("terra"), 8),
-                BlockList.MysteriousCrystal.getIS(),
+                BlockList.Mytryl.getIS(),
                 new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Ichorium, 1L),
                         getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 28, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
