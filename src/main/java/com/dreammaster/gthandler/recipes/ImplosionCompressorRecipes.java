@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static bartworks.API.recipe.BartWorksRecipeMaps.electricImplosionCompressorRecipes;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -352,5 +353,10 @@ public class ImplosionCompressorRecipes implements Runnable {
                     .duration(20 * TICKS).eut(TierEU.RECIPE_LV).metadata(ADDITIVE_AMOUNT, 2).addTo(implosionRecipes);
 
         }
+
+        // Nether Star Dust -> Gem EIC recipe
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 4))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 3)).duration(25)
+                .eut(TierEU.RECIPE_UEV).addTo(electricImplosionCompressorRecipes);
     }
 }
