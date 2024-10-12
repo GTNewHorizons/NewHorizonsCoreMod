@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
@@ -719,32 +718,6 @@ public class ScriptAE2FC implements IScriptLoader {
                 COMPONENT_16384,
                 'e',
                 AE2FC_ADVANCED_FLUID_STORAGE_HOUSING);
-        // ME Digital Singularity
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                AE2FC_SINGULARITY_CELL,
-                "----a----",
-                "---aba---",
-                "--ecdce--",
-                "-acdgdca-",
-                "abdgfgdba",
-                "-acdgdca-",
-                "--ecdce--",
-                "---aba---",
-                "----a----",
-                'a',
-                "blockCosmicNeutronium",
-                'b',
-                getModItem(Avaritia.ID, "Resource", 1, 5),
-                'c',
-                ItemList.Quantum_Tank_IV.get(1L),
-                'd',
-                COMPONENT_16384,
-                'e',
-                "blockInfinity",
-                'f',
-                getModItem(EternalSingularity.ID, "eternal_singularity", 1),
-                'g',
-                T7_YOT);
 
         // level maintainer
         addShapedRecipe(

@@ -2,6 +2,8 @@ package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
@@ -383,6 +385,22 @@ public class SpaceAssemblerRecipes implements Runnable {
                         (int) TierEU.RECIPE_UXV,
                         null,
                         null);
+
+                // Digital Singularity ME Storage Cell
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { getModItem(EternalSingularity.ID, "eternal_singularity", 1),
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 12, 60),
+                                ItemList.Quantum_Chest_IV.get(8L),
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                                getModItem(Avaritia.ID, "Resource", 4, 5),
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L) },
+                        new FluidStack[] { new FluidStack(solderUEV, 2304) },
+                        getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
+                        1,
+                        10 * SECONDS,
+                        (int) TierEU.RECIPE_UHV,
+                        null,
+                        null);
             }
             if (AE2FluidCraft.isModLoaded()) {
                 // Artificial Fluid Universe Cell
@@ -398,6 +416,22 @@ public class SpaceAssemblerRecipes implements Runnable {
                         3,
                         1 * MINUTES,
                         (int) TierEU.RECIPE_UXV,
+                        null,
+                        null);
+
+                // ME Fluid Digital Singularity Storage Cell
+                IG_RecipeAdder.addSpaceAssemblerRecipe(
+                        new ItemStack[] { getModItem(EternalSingularity.ID, "eternal_singularity", 1),
+                                new ItemStack(Loaders.yottaFluidTankCell, 4, 6),
+                                getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7), ItemList.Quantum_Tank_IV.get(8L),
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                                getModItem(Avaritia.ID, "Resource", 4, 5),
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L) },
+                        new FluidStack[] { new FluidStack(solderUEV, 2304) },
+                        getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0),
+                        1,
+                        10 * SECONDS,
+                        (int) TierEU.RECIPE_UHV,
                         null,
                         null);
             }
