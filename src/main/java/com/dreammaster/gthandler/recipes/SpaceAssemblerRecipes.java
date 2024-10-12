@@ -8,6 +8,8 @@ import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -434,6 +436,28 @@ public class SpaceAssemblerRecipes implements Runnable {
                         (int) TierEU.RECIPE_UHV,
                         null,
                         null);
+
+                // ME Essentia Digital Singularity Storage Cell
+                if (ThaumicEnergistics.isModLoaded()) {
+                    IG_RecipeAdder
+                            .addSpaceAssemblerRecipe(
+                                    new ItemStack[] { getModItem(EternalSingularity.ID, "eternal_singularity", 1),
+                                            getModItem(ThaumicEnergistics.ID, "storage.component", 12, 8),
+                                            getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 8, 0),
+                                            getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                                            ItemList.Quantum_Tank_IV.get(8L),
+                                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
+                                            getModItem(Avaritia.ID, "Resource", 4, 5),
+                                            GTOreDictUnificator
+                                                    .get(OrePrefixes.block, Materials.CosmicNeutronium, 12L) },
+                                    new FluidStack[] { new FluidStack(solderUEV, 2304) },
+                                    getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10),
+                                    1,
+                                    10 * SECONDS,
+                                    (int) TierEU.RECIPE_UHV,
+                                    null,
+                                    null);
+                }
             }
         }
     }

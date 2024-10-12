@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Gadomancy;
@@ -1381,30 +1380,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 EssentialComponent16384K,
                 'e',
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing));
-        // ME Digital Singularity
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10, missing),
-                "----a----",
-                "---aba---",
-                "--ecdce--",
-                "-acdddca-",
-                "abddfddba",
-                "-acdddca-",
-                "--ecdce--",
-                "---aba---",
-                "----a----",
-                'a',
-                "blockCosmicNeutronium",
-                'b',
-                getModItem(Avaritia.ID, "Resource", 1, 5),
-                'c',
-                getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
-                'd',
-                EssentialComponent16384K,
-                'e',
-                "blockInfinity",
-                'f',
-                getModItem(EternalSingularity.ID, "eternal_singularity", 1));
 
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
