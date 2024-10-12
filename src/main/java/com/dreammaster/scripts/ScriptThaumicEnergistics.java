@@ -110,7 +110,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Gadomancy.ID, "BlockEssentiaCompressor", 1) };
 
         // ItemStacks for in/out
-        ItemStack SingularityDrive = getModItem(EternalSingularity.ID, "eternal_singularity", 1);
+        ItemStack DigitalSingularity = getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10);
         // Creative Essentia Cell
         ItemStack CEC = EssentialCellCreative;
 
@@ -120,7 +120,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 10,
                 new AspectList().add(Aspect.AIR, 2000).add(Aspect.FIRE, 2000).add(Aspect.ORDER, 2000)
                         .add(Aspect.ENTROPY, 2000).add(Aspect.EARTH, 2000).add(Aspect.WATER, 2000),
-                SingularityDrive,
+                DigitalSingularity,
                 CECInfusionItems);
 
         GTValues.RA.stdBuilder()

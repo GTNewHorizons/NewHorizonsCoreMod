@@ -444,8 +444,6 @@ public class SpaceAssemblerRecipes implements Runnable {
                                     new ItemStack[] { getModItem(EternalSingularity.ID, "eternal_singularity", 1),
                                             getModItem(ThaumicEnergistics.ID, "storage.component", 12, 8),
                                             getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 8, 0),
-                                            getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
-                                            ItemList.Quantum_Tank_IV.get(8L),
                                             GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 4L),
                                             getModItem(Avaritia.ID, "Resource", 4, 5),
                                             GTOreDictUnificator
