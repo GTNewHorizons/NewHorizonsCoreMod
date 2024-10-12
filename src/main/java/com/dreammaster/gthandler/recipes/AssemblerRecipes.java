@@ -2642,6 +2642,35 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1))
                 .itemOutputs(ItemList.Casing_Assembler.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
+
+        if (IronChests.isModLoaded()) {
+            for (FluidStack fluid : new FluidStack[] { Materials.SolderingAlloy.getMolten(L / 2),
+                    Materials.Tin.getMolten(L), Materials.Lead.getMolten(L * 2), }) {
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                new ItemStack(Blocks.chest),
+                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1),
+                                GTUtility.getIntegratedCircuit(1))
+                        .fluidInputs(fluid.copy()).itemOutputs(ItemList.Cover_Chest_Basic.get(1)).duration(40 * SECONDS)
+                        .eut(16).addTo(assemblerRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(IronChests.ID, "BlockIronChest", 1, 3),
+                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1),
+                                GTUtility.getIntegratedCircuit(1))
+                        .fluidInputs(fluid.copy()).itemOutputs(ItemList.Cover_Chest_Good.get(1)).duration(40 * SECONDS)
+                        .eut(16).addTo(assemblerRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(IronChests.ID, "BlockIronChest", 1, 0),
+                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1),
+                                GTUtility.getIntegratedCircuit(1))
+                        .fluidInputs(fluid.copy()).itemOutputs(ItemList.Cover_Chest_Advanced.get(1))
+                        .duration(40 * SECONDS).eut(16).addTo(assemblerRecipes);
+            }
+        }
     }
 
     private void makeElectricMachinePartRecipes() {
