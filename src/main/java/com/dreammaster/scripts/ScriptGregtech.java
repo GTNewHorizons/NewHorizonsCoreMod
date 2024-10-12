@@ -29,16 +29,22 @@ import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
+import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
+import static gregtech.api.util.GTRecipeConstants.RESEARCH_TIME;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 
@@ -48,6 +54,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
@@ -652,240 +659,125 @@ public class ScriptGregtech implements IScriptLoader {
                 "dyeBlue",
                 "dyeWhite");
 
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                ItemList.Cover_SolarPanel_LV.get(1L),
-                "---------",
-                "---------",
-                "---aba---",
-                "---cdc---",
-                "---efe---",
-                "---cdc---",
-                "---aba---",
-                "---------",
-                "---------",
-                'a',
-                "wireGt01SuperconductorMV",
-                'b',
-                CustomItemList.IrradiantReinforcedAluminiumPlate.get(1L),
-                'c',
-                ItemList.Circuit_Silicon_Wafer2.get(1L),
-                'd',
-                "platePolytetrafluoroethylene",
-                'e',
-                "circuitAdvanced",
-                'f',
-                ItemList.Cover_SolarPanel_8V.get(1L));
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                ItemList.Cover_SolarPanel_MV.get(1L),
-                "---------",
-                "----a----",
-                "---bcb---",
-                "---ded---",
-                "---fgf---",
-                "---ded---",
-                "---bcb---",
-                "----a----",
-                "---------",
-                'a',
-                ItemList.Circuit_Chip_ULPIC.get(1L),
-                'b',
-                "wireGt01SuperconductorHV",
-                'c',
-                CustomItemList.IrradiantReinforcedTitaniumPlate.get(1L),
-                'd',
-                ItemList.Circuit_Silicon_Wafer2.get(1L),
-                'e',
-                "plateEpoxid",
-                'f',
-                "circuitData",
-                'g',
-                ItemList.Cover_SolarPanel_LV.get(1L));
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                ItemList.Cover_SolarPanel_HV.get(1L),
-                "---------",
-                "----a----",
-                "---bcb---",
-                "---ded---",
-                "--ffgff--",
-                "---ded---",
-                "---bcb---",
-                "----a----",
-                "---------",
-                'a',
-                ItemList.Circuit_Chip_LPIC.get(1L),
-                'b',
-                "wireGt01SuperconductorEV",
-                'c',
-                CustomItemList.IrradiantReinforcedTungstenPlate.get(1L),
-                'd',
-                ItemList.Circuit_Silicon_Wafer2.get(1L),
-                'e',
-                "plateIndiumGalliumPhosphide",
-                'f',
-                "circuitElite",
-                'g',
-                ItemList.Cover_SolarPanel_MV.get(1L));
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                ItemList.Cover_SolarPanel_EV.get(1L),
-                "---------",
-                "----a----",
-                "--bcdcb--",
-                "---efe---",
-                "-bgghggb-",
-                "---efe---",
-                "--bcdcb--",
-                "----a----",
-                "---------",
-                'a',
-                ItemList.Circuit_Chip_PIC.get(1L),
-                'b',
-                "wireGt01SuperconductorIV",
-                'c',
-                "plateTripleSiliconSolarGrade",
-                'd',
-                CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(1L),
-                'e',
-                ItemList.Circuit_Silicon_Wafer3.get(1L),
-                'f',
-                "platePolybenzimidazole",
-                'g',
-                "circuitMaster",
-                'h',
-                ItemList.Cover_SolarPanel_HV.get(1L));
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                ItemList.Cover_SolarPanel_IV.get(1L),
-                "---------",
-                "----a----",
-                "--bcdcb--",
-                "--efgfe--",
-                "-bhhihhb-",
-                "--efgfe--",
-                "--bcdcb--",
-                "----a----",
-                "---------",
-                'a',
-                ItemList.Circuit_Chip_HPIC.get(1L),
-                'b',
-                "wireGt01SuperconductorLuV",
-                'c',
-                ItemList.Circuit_Silicon_Wafer2.get(1L),
-                'd',
-                CustomItemList.IrradiantReinforcedChromePlate.get(1L),
-                'e',
-                "plateQuadrupleSiliconSolarGrade",
-                'f',
-                ItemList.Circuit_Silicon_Wafer3.get(1L),
-                'g',
-                "plateDoublePolybenzimidazole",
-                'h',
-                "circuitUltimate",
-                'i',
-                ItemList.Cover_SolarPanel_EV.get(1L));
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                ItemList.Cover_SolarPanel_LuV.get(1L),
-                "----a----",
-                "---bcb---",
-                "--bdedb--",
-                "--fghgf--",
-                "-icjkjci-",
-                "--fghgf--",
-                "--bdedb--",
-                "---bcb---",
-                "----a----",
-                'a',
-                ItemList.Circuit_Chip_UHPIC.get(1L),
-                'b',
-                "wireGt02SuperconductorZPM",
-                'c',
-                "circuitUltimate",
-                'd',
-                ItemList.Circuit_Silicon_Wafer3.get(1L),
-                'e',
-                getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 8, missing),
-                'f',
-                "plateQuintupleSiliconSolarGrade",
-                'g',
-                ItemList.Circuit_Silicon_Wafer4.get(1L),
-                'h',
-                GTOreDictUnificator.get(OrePrefixes.plateTriple, Materials.Polybenzimidazole, 1L),
-                'i',
-                getModItem(SuperSolarPanels.ID, "solarsplitter", 1, 0, missing),
-                'j',
-                "circuitSuperconductor",
-                'k',
-                ItemList.Cover_SolarPanel_IV.get(1L));
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                ItemList.Cover_SolarPanel_ZPM.get(1L),
-                "---aba---",
-                "--cadac--",
-                "--aefea--",
-                "--ghihg--",
-                "-fjklkjf-",
-                "--ghihg--",
-                "--aefea--",
-                "--cadac--",
-                "---aba---",
-                'a',
-                "wireGt02SuperconductorUV",
-                'b',
-                ItemList.Circuit_Wafer_SoC2.get(1L),
-                'c',
-                ItemList.Circuit_Chip_NPIC.get(1L),
-                'd',
-                ItemList.Circuit_Wafer_QPIC.get(1L),
-                'e',
-                ItemList.Circuit_Silicon_Wafer4.get(1L),
-                'f',
-                CustomItemList.IrradiantReinforcedNaquadriaPlate.get(1L),
-                'g',
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
-                'h',
-                ItemList.Circuit_Silicon_Wafer5.get(1L),
-                'i',
-                GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Polybenzimidazole, 1L),
-                'j',
-                "circuitSuperconductor",
-                'k',
-                "circuitInfinite",
-                'l',
-                ItemList.Cover_SolarPanel_LuV.get(1L));
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                ItemList.Cover_SolarPanel_UV.get(1L),
-                "--abcba--",
-                "-daefead-",
-                "-agbhbga-",
-                "-aibjbia-",
-                "ahklmlkha",
-                "-aibjbia-",
-                "-agbhbga-",
-                "-daefead-",
-                "--abcba--",
-                'a',
-                "wireGt02Superconductor",
-                'b',
-                "plateDenseSiliconSolarGrade",
-                'c',
-                ItemList.Circuit_Chip_CrystalSoC2.get(1L),
-                'd',
-                ItemList.Circuit_Chip_PPIC.get(1L),
-                'e',
-                ItemList.Circuit_Silicon_Wafer5.get(1L),
-                'f',
-                CustomItemList.RawPicoWafer.get(1L),
-                'g',
-                CustomItemList.PicoWafer.get(1L),
-                'h',
-                CustomItemList.IrradiantReinforcedNeutroniumPlate.get(1L),
-                'i',
-                getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing),
-                'j',
-                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 1L),
-                'k',
-                "circuitInfinite",
-                'l',
-                "circuitBio",
-                'm',
-                ItemList.Cover_SolarPanel_ZPM.get(1L));
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Cover_SolarPanel_8V.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2L),
+                        CustomItemList.IrradiantReinforcedAluminiumPlate.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polytetrafluoroethylene, 2L),
+                        ItemList.Circuit_Silicon_Wafer2.get(4L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorMV, 4L))
+                .itemOutputs(ItemList.Cover_SolarPanel_LV.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Cover_SolarPanel_LV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 2L),
+                        CustomItemList.IrradiantReinforcedTitaniumPlate.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Epoxid, 2L),
+                        ItemList.Circuit_Silicon_Wafer2.get(4L),
+                        ItemList.Circuit_Chip_ULPIC.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 4L))
+                .itemOutputs(ItemList.Cover_SolarPanel_MV.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Cover_SolarPanel_MV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 4L),
+                        CustomItemList.IrradiantReinforcedTungstenPlate.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.IndiumGalliumPhosphide, 2L),
+                        ItemList.Circuit_Silicon_Wafer2.get(4L),
+                        ItemList.Circuit_Chip_LPIC.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorEV, 4L))
+                .itemOutputs(ItemList.Cover_SolarPanel_HV.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Cover_SolarPanel_HV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4L),
+                        CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Polybenzimidazole, 2L),
+                        ItemList.Circuit_Silicon_Wafer3.get(4L),
+                        ItemList.Circuit_Chip_PIC.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 4L))
+                .itemOutputs(ItemList.Cover_SolarPanel_EV.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Cover_SolarPanel_EV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4L),
+                        CustomItemList.IrradiantReinforcedChromePlate.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.SiliconSG, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Polybenzimidazole, 2L),
+                        ItemList.Circuit_Silicon_Wafer2.get(4L),
+                        ItemList.Circuit_Silicon_Wafer3.get(4L),
+                        ItemList.Circuit_Chip_HPIC.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 6L))
+                .itemOutputs(ItemList.Cover_SolarPanel_IV.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .addTo(assemblerRecipes);
+
+        Fluid solderIndalloy = FluidRegistry.getFluid("molten.indalloy140") != null
+                ? FluidRegistry.getFluid("molten.indalloy140")
+                : FluidRegistry.getFluid("molten.solderingalloy");
+
+        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Cover_SolarPanel_IV.get(1L))
+                .metadata(RESEARCH_TIME, 30 * MINUTES)
+                .itemInputs(
+                        ItemList.Cover_SolarPanel_IV.get(1L),
+                        getModItem(SuperSolarPanels.ID, "solarsplitter", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 4L),
+                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.SiliconSG, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Polybenzimidazole, 2L),
+                        ItemList.Circuit_Silicon_Wafer2.get(4L),
+                        ItemList.Circuit_Silicon_Wafer3.get(4L),
+                        ItemList.Circuit_Chip_UHPIC.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 8L))
+                .fluidInputs(new FluidStack(solderIndalloy, 144 * 4)).itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
+
+        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Cover_SolarPanel_LuV.get(1L))
+                .metadata(RESEARCH_TIME, HOURS)
+                .itemInputs(
+                        ItemList.Cover_SolarPanel_LuV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 2L),
+                        CustomItemList.IrradiantReinforcedNaquadriaPlate.get(4L),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.SiliconSG, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuintuple, Materials.Polybenzimidazole, 2L),
+                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 4, 0, missing),
+                        ItemList.Circuit_Silicon_Wafer3.get(4L),
+                        ItemList.Circuit_Silicon_Wafer4.get(4L),
+                        ItemList.Circuit_Wafer_QPIC.get(2L),
+                        ItemList.Circuit_Wafer_SoC2.get(2L),
+                        ItemList.Circuit_Chip_NPIC.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUV, 12L))
+                .fluidInputs(new FluidStack(solderIndalloy, 144 * 6)).itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(AssemblyLine);
+
+        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Cover_SolarPanel_ZPM.get(1L))
+                .metadata(RESEARCH_TIME, 90 * MINUTES)
+                .itemInputs(
+                        ItemList.Cover_SolarPanel_ZPM.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 2L),
+                        CustomItemList.IrradiantReinforcedNeutroniumPlate.get(4L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.SiliconSG, 12L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Polybenzimidazole, 2L),
+                        getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 4, 0, missing),
+                        ItemList.Circuit_Silicon_Wafer4.get(4L),
+                        CustomItemList.PicoWafer.get(4L),
+                        CustomItemList.RawPicoWafer.get(2L),
+                        ItemList.Circuit_Chip_PPIC.get(4L),
+                        ItemList.Circuit_Chip_CrystalSoC2.get(2L),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 18L))
+                .fluidInputs(new FluidStack(solderIndalloy, 144 * 8)).itemOutputs(ItemList.Cover_SolarPanel_UV.get(1L))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(AssemblyLine);
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemList.Spray_Color_Infinite.get(1L),
