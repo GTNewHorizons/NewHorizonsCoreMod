@@ -220,7 +220,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'F',
                 new ItemStack(machineFrames),
                 'P',
-                ItemList.Pump_EV.get(1));
+                ItemList.Pump_HV.get(1));
         addShapedOredictRecipe(
                 new ItemStack(baseItem, 1, 14),
                 "H8F",
