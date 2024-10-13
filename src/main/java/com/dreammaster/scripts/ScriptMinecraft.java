@@ -28,7 +28,6 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
-import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
@@ -180,12 +179,6 @@ public class ScriptMinecraft implements IScriptLoader {
                         CustomItemList.MoldBoots.get(0L))
                 .itemOutputs(getModItem(Minecraft.ID, "golden_boots", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(alloySmelterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, 1, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "glass", 2, 0, missing)).outputChances(10000)
-                .fluidInputs(Materials.Oxygen.getGas(2)).duration(1 * SECONDS).eut(256).addTo(arcFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "sand", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "glass", 2, 0, missing)).outputChances(10000)
-                .fluidInputs(Materials.Oxygen.getGas(2)).duration(1 * SECONDS).eut(256).addTo(arcFurnaceRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(Natura.ID, "barleyFood", 2, 3, missing), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "string", 1, 0, missing)).duration(10 * SECONDS).eut(24)
