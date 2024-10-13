@@ -92,10 +92,6 @@ public class CompressorRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.WroughtIron, 1L))
                 .duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 9))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.NetherStar, 1)).duration(15 * SECONDS)
-                .eut(TierEU.RECIPE_UV).addTo(compressorRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(WerkstoffMaterialPool.Gangue.get(OrePrefixes.dust, 9))
                 .itemOutputs((WerkstoffMaterialPool.Gangue.get(OrePrefixes.block, 1))).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(compressorRecipes);
