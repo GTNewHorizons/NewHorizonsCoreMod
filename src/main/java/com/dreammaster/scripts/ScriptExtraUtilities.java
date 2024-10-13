@@ -949,7 +949,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'g',
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing),
                         'h',
-                        ItemList.Pump_EV.get(1L),
+                        ItemList.Pump_HV.get(1L),
                         'i',
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 1, missing)));
         EnderConstructorRecipesHandler.registerRecipe(

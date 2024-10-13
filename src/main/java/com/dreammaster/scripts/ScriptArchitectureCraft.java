@@ -75,6 +75,18 @@ public class ScriptArchitectureCraft implements IScriptLoader {
                 "screwIron",
                 "craftingToolScrewdriver");
 
+        addShapedRecipe(
+                getModItem(ArchitectureCraft.ID, "glowbrush", 1),
+                null,
+                "materialCloth",
+                "dustGlowstone",
+                null,
+                "gearWood",
+                "materialCloth",
+                "stickWood",
+                null,
+                null);
+
         addShapelessRecipe(getModItem(ArchitectureCraft.ID, "sawblade", 1), "toolHeadBuzzSawAnyIron");
 
         addShapelessRecipe(
