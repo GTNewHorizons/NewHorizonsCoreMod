@@ -2554,6 +2554,123 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.SolderingAlloy.getMolten(L * 2))
                 .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_IV.get(1)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+
+        // EV Battery Buffer (16 Slots)
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hull_EV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Aluminium, 4),
+                        new ItemStack(Blocks.chest))
+                .itemOutputs(ItemList.Battery_Buffer_4by4_EV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
+                .addTo(assemblerRecipes);
+
+        // Firebox Casings
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Bronze, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Bronze, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Casing_Firebox_Bronze.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Casing_Firebox_Steel.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Casing_Firebox_Titanium.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(ItemList.Casing_Firebox_TungstenSteel.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // Alloy Blast Smelter
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Machine_IV_AlloySmelter.get(1),
+                        MaterialsAlloy.ZIRCONIUM_CARBIDE.getPlate(2),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Tungsten, 2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2))
+                .itemOutputs(GregtechItemList.Industrial_AlloyBlastSmelter.get(1)).duration(1 * SECONDS)
+                .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+
+        // IV Alloy Smelter
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hull_IV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.TPV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Platinum, 2),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 2))
+                .itemOutputs(ItemList.Machine_IV_AlloySmelter.get(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_EV)
+                .addTo(assemblerRecipes);
+
+        // LuV World Accelerator
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Electric_Motor_LuV.get(2),
+                        ItemList.Electric_Pump_LuV.get(1),
+                        ItemList.Conveyor_Module_LuV.get(1),
+                        ItemList.Robot_Arm_LuV.get(2),
+                        ItemList.Electric_Piston_LuV.get(2),
+                        ItemList.Hull_LuV.get(1))
+                .itemOutputs(ItemList.AcceleratorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        // Assembler Machine Casing
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
+                        ItemList.Electric_Motor_IV.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 6),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1))
+                .itemOutputs(ItemList.Casing_Assembler.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        if (IronChests.isModLoaded()) {
+            for (FluidStack fluid : new FluidStack[] { Materials.SolderingAlloy.getMolten(L / 2),
+                    Materials.Tin.getMolten(L), Materials.Lead.getMolten(L * 2), }) {
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                new ItemStack(Blocks.chest),
+                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1),
+                                GTUtility.getIntegratedCircuit(1))
+                        .fluidInputs(fluid.copy()).itemOutputs(ItemList.Cover_Chest_Basic.get(1)).duration(40 * SECONDS)
+                        .eut(16).addTo(assemblerRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(IronChests.ID, "BlockIronChest", 1, 3),
+                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 1),
+                                GTUtility.getIntegratedCircuit(1))
+                        .fluidInputs(fluid.copy()).itemOutputs(ItemList.Cover_Chest_Good.get(1)).duration(40 * SECONDS)
+                        .eut(16).addTo(assemblerRecipes);
+
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                getModItem(IronChests.ID, "BlockIronChest", 1, 0),
+                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1),
+                                GTUtility.getIntegratedCircuit(1))
+                        .fluidInputs(fluid.copy()).itemOutputs(ItemList.Cover_Chest_Advanced.get(1))
+                        .duration(40 * SECONDS).eut(16).addTo(assemblerRecipes);
+            }
+        }
     }
 
     private void makeElectricMachinePartRecipes() {
