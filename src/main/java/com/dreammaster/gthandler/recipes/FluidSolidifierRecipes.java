@@ -1,7 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -27,8 +27,12 @@ import gregtech.api.util.GTUtility;
 
 public class FluidSolidifierRecipes implements Runnable {
 
+    ItemStack missing = new ItemStack(Blocks.fire);
+
     @Override
     public void run() {
+        makeAvaritiaRecipes();
+
         // Sodium Dust
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
@@ -430,5 +434,15 @@ public class FluidSolidifierRecipes implements Runnable {
                     .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), 1152)).duration(20 * SECONDS)
                     .eut(TierEU.RECIPE_UIV).itemOutputs(ItemList.Hawking_Glass.get(1)).addTo(fluidSolidifierRecipes);
         }
+    }
+
+    private void makeAvaritiaRecipes() {
+        if (!Avaritia.isModLoaded()) {
+            return;
+        }
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(Materials.CosmicNeutronium.getBlocks(1))
+                .fluidInputs(Materials.CosmicNeutronium.getMolten(1296L)).duration(15 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                .addTo(fluidSolidifierRecipes);
     }
 }
