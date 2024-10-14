@@ -1,7 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.*;
 import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
