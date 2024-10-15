@@ -35,6 +35,7 @@ import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
+import com.dreammaster.client.util.GTNHPauseScreen;
 import com.dreammaster.command.AllPurposeDebugCommand;
 import com.dreammaster.command.CustomDropsCommand;
 import com.dreammaster.command.CustomFuelsCommand;
@@ -367,6 +368,10 @@ public class MainRegistry {
         CoreMod_PCBFactory_MaterialLoader.init();
 
         BWGlassAdder.registerGlasses();
+
+        if (CoreConfig.gtnhPauseMenuButtons && event.getSide().isClient()) {
+            MinecraftForge.EVENT_BUS.register(new GTNHPauseScreen());
+        }
 
     }
 
