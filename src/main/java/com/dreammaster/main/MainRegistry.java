@@ -35,6 +35,7 @@ import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
+import com.dreammaster.client.util.GTNHPauseScreen;
 import com.dreammaster.command.AllPurposeDebugCommand;
 import com.dreammaster.command.CustomDropsCommand;
 import com.dreammaster.command.CustomFuelsCommand;
@@ -112,6 +113,7 @@ import gregtech.common.items.MetaGeneratedItem01;
         name = Refstrings.NAME,
         version = Refstrings.VERSION,
         dependencies = "required-before:gregtech;" + "required-after:Forge@[10.13.2.1291,);"
+                + "required-after:gtnhlib@[0.5.15,);"
                 + "required-after:YAMCore@[0.5.76,);"
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"
@@ -367,6 +369,10 @@ public class MainRegistry {
         CoreMod_PCBFactory_MaterialLoader.init();
 
         BWGlassAdder.registerGlasses();
+
+        if (CoreConfig.gtnhPauseMenuButtons && event.getSide().isClient()) {
+            MinecraftForge.EVENT_BUS.register(new GTNHPauseScreen());
+        }
 
     }
 
