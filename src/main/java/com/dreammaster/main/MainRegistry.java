@@ -113,6 +113,7 @@ import gregtech.common.items.MetaGeneratedItem01;
         name = Refstrings.NAME,
         version = Refstrings.VERSION,
         dependencies = "required-before:gregtech;" + "required-after:Forge@[10.13.2.1291,);"
+                + "required-after:gtnhlib@[0.5.15,);"
                 + "required-after:YAMCore@[0.5.76,);"
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"

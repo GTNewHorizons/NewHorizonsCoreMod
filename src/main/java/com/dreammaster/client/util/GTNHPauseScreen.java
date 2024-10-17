@@ -13,6 +13,7 @@ import net.minecraftforge.client.event.GuiScreenEvent;
 import org.lwjgl.opengl.GL11;
 
 import com.dreammaster.main.MainRegistry;
+import com.gtnewhorizon.gtnhlib.util.FilesUtil;
 
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -78,9 +79,7 @@ public class GTNHPauseScreen {
     private static void gtnh$openUrl(String address) {
         try {
             final URI uri = new URI(address);
-            Class<?> oclass = Class.forName("java.awt.Desktop");
-            Object object = oclass.getMethod("getDesktop", new Class[0]).invoke(null);
-            oclass.getMethod("browse", new Class[] { URI.class }).invoke(object, uri);
+            FilesUtil.openUri(uri);
         } catch (Throwable throwable) {
             MainRegistry.Logger.error("Couldn't open link", throwable);
         }
