@@ -296,19 +296,19 @@ public class AssemblingLineRecipes implements Runnable {
                         DATApipe.get(64),
                         // Internet card
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
-                        // Dense infinity plate
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
-                        // Shirabon foil
-                        GTOreDictUnificator.get("foilShirabon", 64),
-                        // Quantum circuit
-                        new Object[] { OrePrefixes.circuit.get(Materials.UXV), 1L },
-                        // Energized tesseract
-                        ItemList.EnergisedTesseract.get(1) },
-                new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                        // Superdense neutronium plate
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Neutronium, 4),
+                        // infinity foil
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Infinity, 64),
+                        // UIV circuit
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2L },
+                        // UEV emitter
+                        ItemList.Sensor_UEV.get(1) },
+                new FluidStack[] { new FluidStack(solderUEV, 1296) },
                 // Wireless assembly line slave connector
                 dataInAss_Wireless_Hatch.get(1),
                 30 * SECONDS,
-                (int) TierEU.RECIPE_UMV);
+                (int) TierEU.RECIPE_UEV);
 
         // Wireless data bank master connector
         TTRecipeAdder.addResearchableAssemblylineRecipe(
@@ -327,19 +327,19 @@ public class AssemblingLineRecipes implements Runnable {
                         DATApipe.get(64),
                         // Internet card
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 44),
-                        // Dense infinity plate
-                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 64),
-                        // Shirabon foil
-                        GTOreDictUnificator.get("foilShirabon", 64),
-                        // Quantum circuit
-                        new Object[] { OrePrefixes.circuit.get(Materials.UXV), 1L },
-                        // Energized tesseract
-                        ItemList.EnergisedTesseract.get(1) },
-                new FluidStack[] { new FluidStack(solderUEV, 1296), MaterialsUEVplus.ExcitedDTEC.getFluid(500L) },
+                        // Superdense neutronium plate
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Neutronium, 4),
+                        // infinity foil
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Infinity, 64),
+                        // UIV circuit
+                        new Object[] { OrePrefixes.circuit.get(Materials.UIV), 2L },
+                        // UEV emitter
+                        ItemList.Emitter_UEV.get(1) },
+                new FluidStack[] { new FluidStack(solderUEV, 1296) },
                 // Wireless data bank master connector
                 dataOutAss_Wireless_Hatch.get(1),
                 30 * SECONDS,
-                (int) TierEU.RECIPE_UMV);
+                (int) TierEU.RECIPE_UEV);
 
         if (GalaxySpace.isModLoaded()) {
             // Dyson Swarm Module
