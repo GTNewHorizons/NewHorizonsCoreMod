@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -537,6 +538,12 @@ public class MainRegistry {
         }
         if (CoreConfig.MinetweakerFurnaceFixEnabled) {
             ModFixesMaster.registerModFix(new MinetweakerFurnaceFix());
+        }
+        if (ZTones.isModLoaded()) {
+            final Block block = GameRegistry.findBlock(ZTones.ID, "tile.glaxx");
+            if (block != null) {
+                block.setHardness(0.3F);
+            }
         }
     }
 
