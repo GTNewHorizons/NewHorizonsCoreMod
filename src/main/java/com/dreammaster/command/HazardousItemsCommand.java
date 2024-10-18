@@ -16,14 +16,6 @@ import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 
 public class HazardousItemsCommand implements ICommand {
 
-    private List aliases;
-
-    public HazardousItemsCommand() {
-        aliases = new ArrayList();
-        aliases.add("hazarditems");
-        aliases.add("hazit");
-    }
-
     @Override
     public int compareTo(Object arg0) {
         return 0;
@@ -41,7 +33,9 @@ public class HazardousItemsCommand implements ICommand {
 
     @Override
     public List getCommandAliases() {
-
+        ArrayList<String> aliases = new ArrayList<>();
+        aliases.add("hazarditems");
+        aliases.add("hazit");
         return aliases;
     }
 
