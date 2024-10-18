@@ -15,6 +15,7 @@ public class CoreModConfig extends ConfigManager {
 
     public boolean OreDictItems_Enabled;
     public static boolean ModLoginMessage_Enabled;
+    public boolean gtnhPauseMenuButtons;
     public static String ModPackVersion = Refstrings.MODPACKPACK_VERSION;
 
     public boolean ModHazardousItems_Enabled;
@@ -57,6 +58,7 @@ public class CoreModConfig extends ConfigManager {
     @Override
     protected void PreInit() {
         ModLoginMessage_Enabled = true;
+        gtnhPauseMenuButtons = true;
         ModDebugVersionDisplay_Enabled = true;
         ModHazardousItems_Enabled = false;
         ModCustomToolTips_Enabled = false;
@@ -99,6 +101,11 @@ public class CoreModConfig extends ConfigManager {
                 "Modules",
                 ModLoginMessage_Enabled,
                 "Set to true to show login message with modpack version");
+        gtnhPauseMenuButtons = _mainConfig.getBoolean(
+                "GTNH Pause menu buttons",
+                "Modules",
+                gtnhPauseMenuButtons,
+                "Set to true to display GTNH buttons in the pause menu");
         ModPackVersion = _mainConfig.getString("ModPackVersion", "Modules", ModPackVersion, "Version of the Modpack");
         ModDebugVersionDisplay_Enabled = _mainConfig.getBoolean(
                 "DebugVersionDisplay",

@@ -2,7 +2,6 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.Gadomancy;
@@ -92,6 +91,9 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
 
         final ItemStack InfusionIntercepter = getModItem("thaumicinsurgence", "infusionIntercepter", 1, 0);
 
+        final ItemStack ZPMEmitter = ItemList.Emitter_ZPM.get(1);
+        final ItemStack ZPMSensor = ItemList.Sensor_ZPM.get(1);
+
         final FluidStack[] solders = new FluidStack[] { Materials.Lead.getMolten(288), Materials.Tin.getMolten(144),
                 Materials.SolderingAlloy.getMolten(72) };
 
@@ -111,7 +113,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 getModItem(Gadomancy.ID, "BlockEssentiaCompressor", 1) };
 
         // ItemStacks for in/out
-        ItemStack SingularityDrive = getModItem(EternalSingularity.ID, "eternal_singularity", 1);
+        ItemStack DigitalSingularity = getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10);
         // Creative Essentia Cell
         ItemStack CEC = EssentialCellCreative;
 
@@ -121,7 +123,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 10,
                 new AspectList().add(Aspect.AIR, 2000).add(Aspect.FIRE, 2000).add(Aspect.ORDER, 2000)
                         .add(Aspect.ENTROPY, 2000).add(Aspect.EARTH, 2000).add(Aspect.WATER, 2000),
-                SingularityDrive,
+                DigitalSingularity,
                 CECInfusionItems);
 
         GTValues.RA.stdBuilder()
@@ -1381,30 +1383,6 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 EssentialComponent16384K,
                 'e',
                 getModItem(ThaumicEnergistics.ID, "storage.casing", 1, 0, missing));
-        // ME Digital Singularity
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10, missing),
-                "----a----",
-                "---aba---",
-                "--ecdce--",
-                "-acdddca-",
-                "abddfddba",
-                "-acdddca-",
-                "--ecdce--",
-                "---aba---",
-                "----a----",
-                'a',
-                "blockCosmicNeutronium",
-                'b',
-                getModItem(Avaritia.ID, "Resource", 1, 5),
-                'c',
-                getModItem(Thaumcraft.ID, "blockEssentiaReservoir", 1, 0, missing),
-                'd',
-                EssentialComponent16384K,
-                'e',
-                "blockInfinity",
-                'f',
-                getModItem(EternalSingularity.ID, "eternal_singularity", 1));
 
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "thaumicenergistics.TESTORAGE",
@@ -1613,9 +1591,8 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
                 new AspectList().add(Aspect.MECHANISM, 64).add(Aspect.MAGIC, 64).add(Aspect.EXCHANGE, 64)
                         .add(Aspect.MIND, 64).add(Aspect.GREED, 64),
                 getModItem(ThaumicEnergistics.ID, "thaumicenergistics.block.infusion.provider", 1, 0, missing),
-                new ItemStack[] { InfusionIntercepter, PrimalCharm, DiffusionCore, EssentialComponent64K, DiffusionCore,
-                        PrimalCharm, CraftingUnit, PrimalCharm, EngProcessor, EssentialComponent64K, EngProcessor,
-                        PrimalCharm });
+                new ItemStack[] { InfusionIntercepter, PrimalCharm, DiffusionCore, ZPMEmitter, DiffusionCore,
+                        PrimalCharm, CraftingUnit, PrimalCharm, EngProcessor, ZPMSensor, EngProcessor, PrimalCharm });
 
         TCHelper.refreshResearchPages("thaumicenergistics.TEESSPROV");
         TCHelper.refreshResearchPages("thaumicenergistics.TEIRONGEARBOX");

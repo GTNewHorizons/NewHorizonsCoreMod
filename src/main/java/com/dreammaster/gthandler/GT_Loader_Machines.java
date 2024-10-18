@@ -276,20 +276,6 @@ public class GT_Loader_Machines {
                         OrePrefixes.cableGt01.get(Materials.Draconium) });
 
         GTModHandler.addCraftingRecipe(
-                ItemList.PumpLuV.get(1L),
-                bitsd,
-                new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_LuV, 'B',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getPipeL(), 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.LuV.getCircuit(), 'P', ItemList.Electric_Pump_LuV });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.PumpZPM.get(1L),
-                bitsd,
-                new Object[] { "CPC", "PMP", "BPB", 'M', ItemList.Hull_ZPM, 'B',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getPipeL(), 'C',
-                        GT_CustomLoader.AdvancedGTMaterials.ZPM.getCircuit(), 'P', ItemList.Electric_Pump_ZPM });
-
-        GTModHandler.addCraftingRecipe(
                 ItemList.AcceleratorLV.get(1L),
                 bitsd,
                 new Object[] { "RMR", "PBC", "IMI", 'R', ItemList.Robot_Arm_LV, 'M', ItemList.Electric_Motor_LV, 'P',

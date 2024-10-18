@@ -911,71 +911,57 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L),
                         GTUtility.getIntegratedCircuit(11))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 1L),
-                        Materials.Ash.getDustTiny(1))
-                .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(25 * SECONDS).eut(TierEU.RECIPE_MV)
-                .metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 1L), Materials.Ash.getDust(1))
+                .outputChances(10000, 1111).fluidInputs(Materials.Oxygen.getGas(1000L)).duration(25 * SECONDS)
+                .eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
-                        Materials.Ash.getDustTiny(1))
-                .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 2000)
-                .addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L), Materials.Ash.getDust(1))
+                .outputChances(10000, 1111).duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV)
+                .metadata(COIL_HEAT, 2000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.WroughtIron, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Coal, 1L))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
-                        Materials.Ash.getDustTiny(1))
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 2000)
-                .addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L), Materials.Ash.getDust(1))
+                .outputChances(10000, 1111).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV)
+                .metadata(COIL_HEAT, 2000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
-                        Materials.Ash.getDustTiny(1))
-                .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 2000)
-                .addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L), Materials.Ash.getDust(1))
+                .outputChances(10000, 1111).duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV)
+                .metadata(COIL_HEAT, 2000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.WroughtIron, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L),
-                        Materials.Ash.getDustTiny(1))
-                .duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 2000)
-                .addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 4L), Materials.Ash.getDust(1))
+                .outputChances(10000, 1111).duration(2 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_EV)
+                .metadata(COIL_HEAT, 2000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.PigIron, 1L),
                         GTUtility.getIntegratedCircuit(11))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 1L),
-                        Materials.Ash.getDustTiny(1))
-                .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 1L), Materials.Ash.getDust(1))
+                .outputChances(10000, 1111).fluidInputs(Materials.Oxygen.getGas(1000L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.WroughtIron, 1L),
                         GTUtility.getIntegratedCircuit(11))
-                .itemOutputs(
-                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 1L),
-                        Materials.Ash.getDustTiny(1))
-                .fluidInputs(Materials.Oxygen.getGas(1000L)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Steel, 1L), Materials.Ash.getDust(1))
+                .outputChances(10000, 1111).fluidInputs(Materials.Oxygen.getGas(1000L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1533,20 +1519,23 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemInputs(
                         Materials.Sapphire.getDust(1),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L))
-                .itemOutputs(Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(blastFurnaceRecipes);
+                .itemOutputs(Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDust(1))
+                .outputChances(10000, 1111).duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200)
+                .addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         Materials.GreenSapphire.getDust(1),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L))
-                .itemOutputs(Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(blastFurnaceRecipes);
+                .itemOutputs(Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDust(1))
+                .outputChances(10000, 1111).duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200)
+                .addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(Materials.Ruby.getDust(1), GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L))
-                .itemOutputs(Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDustTiny(1))
-                .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200).addTo(blastFurnaceRecipes);
+                .itemOutputs(Materials.Aluminiumoxide.getDust(1), Materials.DarkAsh.getDust(1))
+                .outputChances(10000, 1111).duration(30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1200)
+                .addTo(blastFurnaceRecipes);
 
         if (TinkerConstruct.isModLoaded()) {
 

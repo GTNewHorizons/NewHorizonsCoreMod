@@ -199,8 +199,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     @Override
     protected MultiblockTooltipBuilder createTooltip() {
         final MultiblockTooltipBuilder tt = new MultiblockTooltipBuilder();
-        tt.addMachineType("Air Filter").addInfo("Controller block for the Electric Air Filter T" + multiTier)
-                .addInfo("Needs a Turbine in the controller")
+        tt.addMachineType("Air Filter").addInfo("Needs a Turbine in the controller")
                 .addInfo("Can process " + (2 * multiTier + 1) + "x" + (2 * multiTier + 1) + " chunks")
                 .addInfo("Each muffler hatch reduces pollution in one chunk of the working area by:")
                 .addInfo(
@@ -214,14 +213,12 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                 .addInfo("- Effective muffler tier is limited by energy input tier").addSeparator()
                 .addInfo("Insert " + ItemList.AdsorptionFilter.getIS().getDisplayName() + " in an input bus")
                 .addInfo("  to double pollution cleaning amount (30 uses per item)")
-                .addInfo("Each maintenance issue reduces cleaning amount by 10%").addSeparator()
-                .beginStructureBlock(3, 4, 3, true).addController("Front bottom")
-                .addOtherStructurePart(getCasingString(), "Top and bottom layers")
+                .addInfo("Each maintenance issue reduces cleaning amount by 10%").beginStructureBlock(3, 4, 3, true)
+                .addController("Front bottom").addOtherStructurePart(getCasingString(), "Top and bottom layers")
                 .addOtherStructurePart(getPipeString(), "Corners of the middle two layers")
                 .addOtherStructurePart("Muffler Hatch", "Sides of the middle two layers")
                 .addEnergyHatch("Any bottom layer casing", 1).addMaintenanceHatch("Any bottom layer casing", 1)
-                .addInputBus("Any bottom layer casing", 1).addOutputBus("Any bottom layer casing", 1)
-                .toolTipFinisher("GTNH Coremod");
+                .addInputBus("Any bottom layer casing", 1).addOutputBus("Any bottom layer casing", 1).toolTipFinisher();
         return tt;
     }
 

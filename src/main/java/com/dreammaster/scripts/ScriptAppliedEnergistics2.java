@@ -472,31 +472,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 'e',
                 AE2_ADVANCED_HOUSING);
 
-        // ME Digital Singularity
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
-                "----a----",
-                "---aba---",
-                "--ecdce--",
-                "-acdddca-",
-                "abddfddba",
-                "-acdddca-",
-                "--ecdce--",
-                "---aba---",
-                "----a----",
-                'a',
-                "blockCosmicNeutronium",
-                'b',
-                getModItem(Avaritia.ID, "Resource", 1, 5),
-                'c',
-                ItemList.Quantum_Chest_IV.get(1L),
-                'd',
-                components[3],
-                'e',
-                "blockInfinity",
-                'f',
-                getModItem(EternalSingularity.ID, "eternal_singularity", 1));
-
         // ME Singularity crafting storage
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(AppliedEnergistics2.ID, "tile.BlockSingularityCraftingStorage", 1),
