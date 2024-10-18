@@ -1,6 +1,6 @@
 package com.dreammaster.command;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import net.minecraft.command.ICommand;
@@ -14,13 +14,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 
 public class ItemInHandInfoCommand implements ICommand {
-
-    private List aliases;
-
-    public ItemInHandInfoCommand() {
-        aliases = new ArrayList();
-        aliases.add("iih");
-    }
 
     @Override
     public int compareTo(Object arg0) {
@@ -39,8 +32,7 @@ public class ItemInHandInfoCommand implements ICommand {
 
     @Override
     public List getCommandAliases() {
-
-        return aliases;
+        return Collections.singletonList("iih");
     }
 
     @Override

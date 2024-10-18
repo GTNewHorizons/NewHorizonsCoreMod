@@ -1,6 +1,5 @@
 package com.dreammaster.command;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -26,12 +25,6 @@ import eu.usrv.yamcore.auxiliary.PlayerHelper;
 // command is only available while running in debug mode
 public class AllPurposeDebugCommand implements ICommand {
 
-    private List aliases;
-
-    public AllPurposeDebugCommand() {
-        aliases = new ArrayList();
-    }
-
     @Override
     public int compareTo(Object arg0) {
         return 0;
@@ -49,8 +42,7 @@ public class AllPurposeDebugCommand implements ICommand {
 
     @Override
     public List getCommandAliases() {
-
-        return aliases;
+        return null;
     }
 
     private void moarArgs(ICommandSender pCmdSender) {
