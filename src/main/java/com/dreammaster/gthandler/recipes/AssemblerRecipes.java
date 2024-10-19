@@ -10278,21 +10278,7 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.dockingUpgrade", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-
             }
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(
-                            GT_ModHandler.getModItem(Computronics.ID, "computronics.droneStation", 1L, 0),
-                            GT_ModHandler.getModItem(OpenComputers.ID, "item", 2L, 26),
-                            ItemList.Circuit_Parts_TransistorSMD.get(2L),
-                            GT_OreDictUnificator.get(OrePrefixes.itemCasing, Materials.Aluminium, 2L),
-                            GT_Utility.getIntegratedCircuit(1))
-                    .itemOutputs(GT_ModHandler.getModItem(Computronics.ID, "computronics.dockingUpgrade", 1L, 0))
-                    .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
-                    .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
-            // Fluid Shaper 2024
-
         }
-
     }
 }
