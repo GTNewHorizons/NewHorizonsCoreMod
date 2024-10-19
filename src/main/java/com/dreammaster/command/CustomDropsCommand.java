@@ -15,14 +15,6 @@ import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 
 public class CustomDropsCommand implements ICommand {
 
-    private List aliases;
-
-    public CustomDropsCommand() {
-        aliases = new ArrayList();
-        aliases.add("cdrops");
-        aliases.add("cdr");
-    }
-
     @Override
     public int compareTo(Object arg0) {
         return 0;
@@ -40,7 +32,9 @@ public class CustomDropsCommand implements ICommand {
 
     @Override
     public List getCommandAliases() {
-
+        List<String> aliases = new ArrayList<>();
+        aliases.add("cdrops");
+        aliases.add("cdr");
         return aliases;
     }
 

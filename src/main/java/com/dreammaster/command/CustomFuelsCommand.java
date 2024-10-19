@@ -15,14 +15,6 @@ import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 
 public class CustomFuelsCommand implements ICommand {
 
-    private List aliases;
-
-    public CustomFuelsCommand() {
-        aliases = new ArrayList();
-        aliases.add("cfuels");
-        aliases.add("cfl");
-    }
-
     @Override
     public int compareTo(Object arg0) {
         return 0;
@@ -40,7 +32,9 @@ public class CustomFuelsCommand implements ICommand {
 
     @Override
     public List getCommandAliases() {
-
+        ArrayList<String> aliases = new ArrayList<>();
+        aliases.add("cfuels");
+        aliases.add("cfl");
         return aliases;
     }
 
