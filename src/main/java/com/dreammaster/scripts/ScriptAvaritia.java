@@ -14,6 +14,7 @@ import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -21,6 +22,7 @@ import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.UniversalSingularities;
+import static gregtech.api.enums.Mods.WarpTheory;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
@@ -60,6 +62,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import tconstruct.smeltery.TinkerSmeltery;
 import tconstruct.tools.TinkerTools;
 import tconstruct.tools.items.Pattern;
@@ -840,6 +843,41 @@ public class ScriptAvaritia implements IScriptLoader {
                 "plateNeutronium",
                 'k',
                 ItemList.CompressorUV.get(1));
+
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing),
+
+                "-aaaaaaa-",
+                "a-------a",
+                "-aaabaaa-",
+                "---bcb---",
+                "--bbbbb--",
+                "--bdefb--",
+                "--bghib--",
+                "--bbhbb--",
+                "---jhk---",
+                'a',
+                "wireFineIchorium",
+                'b',
+                "foilIchorium",
+                'c',
+                getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing),
+                'd',
+                ItemList.Conveyor_Module_UV.get(1L),
+                'e',
+                getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12, missing),
+                'f',
+                ItemList.Electric_Pump_UV.get(1L),
+                'g',
+                ItemList.Quantum_Chest_EV.get(1L),
+                'h',
+                "pipeTinyNeutronium",
+                'i',
+                GregtechItemList.Hatch_Reservoir.get(1L),
+                'j',
+                getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
+                'k',
+                getModItem(OpenBlocks.ID, "xpshower", 1, 0, missing));
 
         CompressorManager.addRecipe(
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing),
