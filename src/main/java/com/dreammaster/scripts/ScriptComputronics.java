@@ -5,7 +5,7 @@ import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;

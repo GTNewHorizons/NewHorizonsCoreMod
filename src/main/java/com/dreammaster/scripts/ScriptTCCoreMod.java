@@ -21,7 +21,7 @@ import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,7 +35,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -126,23 +126,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'b',
                 getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 18, missing),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                 'e',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.EnderPearl, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'h',
                 getModItem(ProjectRedIllumination.ID, "projectred.illumination.lamp", 1, 26, missing),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L));
         TCHelper.addResearchPage(
                 "EMINENCESTONE",
                 new ResearchPage(
@@ -200,13 +200,13 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("terminus"), 512).add(Aspect.getAspect("gula"), 512)
                         .add(Aspect.getAspect("superbia"), 512),
                 ItemList.Block_BedrockiumCompressed.get(1L),
-                new ItemStack[] { ItemList.Field_Generator_UMV.get(1L),
+                new ItemStack[] { ItemList.Field_Generator_UIV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        ItemList.Field_Generator_UMV.get(1L),
+                        ItemList.Field_Generator_UIV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        ItemList.Field_Generator_UMV.get(1L),
+                        ItemList.Field_Generator_UIV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing),
-                        ItemList.Field_Generator_UMV.get(1L),
+                        ItemList.Field_Generator_UIV.get(1L),
                         getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing), });
         TCHelper.addResearchPage(
                 "PORTALDEEPDARK",
@@ -241,11 +241,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'c',
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'e',
                 getModItem(Minecraft.ID, "bookshelf", 1, 0, missing),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Thaumium, 1L),
                 'g',
                 getModItem(Thaumcraft.ID, "blockMagicalLog", 1, 0, missing),
                 'h',
@@ -274,11 +274,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
                 'd',
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
                 'e',
@@ -286,11 +286,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L),
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.RoseGold, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedAir, 1L));
         TCHelper.addResearchPage(
                 "ANGELBLOCK",
                 new ResearchPage(
@@ -501,17 +501,17 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("ignis"), 64).add(Aspect.getAspect("terra"), 64),
                 getModItem(Minecraft.ID, "diamond_block", 1, 0, missing),
                 new ItemStack[] { getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L),
                         getModItem(Minecraft.ID, "glass", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
-                        GT_OreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L), });
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1L), });
         TCHelper.addResearchPage(
                 "BEACON",
                 new ResearchPage(TCHelper.findInfusionRecipe(getModItem(Minecraft.ID, "beacon", 1, 0, missing))));
@@ -596,7 +596,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("terra"), 20)
                         .add(Aspect.getAspect("ordo"), 35).add(Aspect.getAspect("praecantatio"), 35)
                         .add(Aspect.getAspect("vitreus"), 20),
-                GT_OreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gemFlawless, Materials.Diamond, 1L),
                 new ItemStack[] { getModItem(TinkerConstruct.ID, "materials", 1, 25, missing),
                         getModItem(Thaumcraft.ID, "ItemShard", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 25, missing),
@@ -655,10 +655,10 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("sano"), 30).add(Aspect.getAspect("terra"), 25)
                         .add(Aspect.getAspect("instrumentum"), 35),
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
                         getModItem(TwilightForest.ID, "tile.TFPlant", 1, 3, missing),
                         getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedEarth, 1L),
                         getModItem(TwilightForest.ID, "tile.TFPlant", 1, 3, missing),
                         getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing), });
         TCHelper.addResearchPage(
@@ -934,11 +934,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
                 'd',
                 ItemList.Sensor_IV.get(1L),
                 'e',
@@ -946,11 +946,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 ItemList.Emitter_IV.get(1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1L));
         TCHelper.addResearchPage(
                 "ENDERCHEST",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(EnderStorage.ID, "enderChest", 1, 0, missing))));
@@ -975,11 +975,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
                 'd',
                 ItemList.Sensor_IV.get(1L),
                 'e',
@@ -987,11 +987,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 ItemList.Emitter_IV.get(1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L));
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Blaze, 1L));
         TCHelper.addResearchPage(
                 "ENDERTANK",
                 new ResearchPage(
@@ -1017,11 +1017,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                 'b',
-                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                 'd',
                 ItemList.Sensor_IV.get(1L),
                 'e',
@@ -1029,11 +1029,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 ItemList.Emitter_IV.get(1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L),
                 'h',
-                GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Enderium, 1L),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L));
+                GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Diamond, 1L));
         TCHelper.addResearchPage(
                 "ENDERPOUCHE",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(EnderStorage.ID, "enderPouch", 1, 0, missing))));
@@ -1060,23 +1060,23 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
                 'b',
                 getModItem(Minecraft.ID, "book", 1, 0, missing),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 1L),
                 'd',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'e',
                 getModItem(Minecraft.ID, "enchanting_table", 1, 0, missing),
                 'f',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L),
                 'h',
                 getModItem(Minecraft.ID, "redstone_block", 1, 0, missing),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L));
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L));
         TCHelper.addResearchPage(
                 "AUTOENCHANTINGTABLE",
                 new ResearchPage(
@@ -1107,11 +1107,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 "def",
                 "ghi",
                 'a',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'b',
                 getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing),
                 'c',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'd',
                 getModItem(Automagy.ID, "crystalBrain", 1, 3, missing),
                 'e',
@@ -1119,11 +1119,11 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 'f',
                 getModItem(Automagy.ID, "crystalBrain", 1, 3, missing),
                 'g',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L),
                 'h',
                 getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 2, missing),
                 'i',
-                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L));
+                GTOreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, 1L));
         TCHelper.addResearchPage(
                 "LUGGAGE",
                 new ResearchPage(TCHelper.findArcaneRecipe(getModItem(OpenBlocks.ID, "luggage", 1, 0, missing))));
@@ -1150,16 +1150,16 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         .add(Aspect.getAspect("spiritus"), 32).add(Aspect.getAspect("corpus"), 16)
                         .add(Aspect.getAspect("alienis"), 24).add(Aspect.getAspect("lucrum"), 8),
                 getModItem(HardcoreEnderExpansion.ID, "ghost_amulet", 1, 0, missing),
-                new ItemStack[] { GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Draconium, 1L),
+                new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Draconium, 1L),
                         getModItem(HardcoreEnderExpansion.ID, "instability_orb", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 1L),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "fire_shard", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "igneous_rock", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Draconium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Draconium, 1L),
                         getModItem(HardcoreEnderExpansion.ID, "instability_orb", 1, 0, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ring, Materials.HeeEndium, 1L),
                         getModItem(HardcoreEnderExpansion.ID, "end_powder", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "igneous_rock", 1, 0, missing),
                         getModItem(HardcoreEnderExpansion.ID, "fire_shard", 1, 0, missing),
@@ -1194,7 +1194,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         getModItem(Avaritia.ID, "Resource", 1, 0, missing), CustomItemList.LichBone.get(1L),
                         getModItem(Avaritia.ID, "Resource", 1, 0, missing),
                         getModItem(TinkerConstruct.ID, "materials", 1, 8, missing),
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Silver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Silver, 1L),
                         getModItem(TinkerConstruct.ID, "materials", 1, 8, missing),
                         getModItem(Avaritia.ID, "Resource", 1, 0, missing), CustomItemList.LichBone.get(1L),
                         getModItem(Avaritia.ID, "Resource", 1, 0, missing),

@@ -1,13 +1,14 @@
 package com.dreammaster.bartworksHandler;
 
-import static com.github.bartimaeusnek.bartworks.API.recipe.BartWorksRecipeMaps.radioHatchRecipes;
-import static com.github.bartimaeusnek.bartworks.util.BWRecipes.calcDecayTicks;
-import static gregtech.api.util.GT_RecipeConstants.DECAY_TICKS;
+import static bartworks.API.recipe.BartWorksRecipeMaps.radioHatchRecipes;
+import static bartworks.util.BWRecipes.calcDecayTicks;
+import static gregtech.api.util.GTRecipeConstants.DECAY_TICKS;
 
 import net.minecraft.item.ItemStack;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gtPlusPlus.core.material.Material;
+import gtPlusPlus.core.material.MaterialsElements;
 import gtPlusPlus.core.util.minecraft.ItemUtils;
 
 public class BW_RadHatchMaterial {
@@ -20,13 +21,20 @@ public class BW_RadHatchMaterial {
                 continue;
             }
 
+            // already generated in BW
+            if (material == MaterialsElements.getInstance().THORIUM
+                    || material == MaterialsElements.getInstance().THORIUM232
+                    || material == MaterialsElements.getInstance().CALIFORNIUM) {
+                continue;
+            }
+
             int level = (int) material.getProtons();
             if (material.getRod(1) != null && !material.getRod(1).isItemEqual(err)) {
-                GT_Values.RA.stdBuilder().itemInputs(material.getRod(1)).duration(1).eut(level)
+                GTValues.RA.stdBuilder().itemInputs(material.getRod(1)).duration(1).eut(level)
                         .metadata(DECAY_TICKS, (int) calcDecayTicks(level)).noOptimize().addTo(radioHatchRecipes);
             }
             if (material.getLongRod(1) != null && !material.getLongRod(1).isItemEqual(err)) {
-                GT_Values.RA.stdBuilder().itemInputs(material.getLongRod(1)).duration(2).eut(level)
+                GTValues.RA.stdBuilder().itemInputs(material.getLongRod(1)).duration(2).eut(level)
                         .metadata(DECAY_TICKS, (int) calcDecayTicks(level)).noOptimize().addTo(radioHatchRecipes);
             }
 

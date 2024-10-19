@@ -6,12 +6,14 @@ import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
+import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
+import static gregtech.api.recipe.RecipeMaps.neutroniumCompressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.plasmaArcFurnaceRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,14 +25,15 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.Config;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GT_OreDictUnificator;
-import gregtech.api.util.GT_Utility;
+import gregtech.api.recipe.metadata.CompressionTierKey;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class ScriptAvaritiaAddons implements IScriptLoader {
 
@@ -65,13 +68,13 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 getModItem(IronChests.ID, "BlockIronChest", 1, 9, missing),
                 "craftingToolScrewdriver");
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IronChests.ID, "BlockIronChest", 1, 6),
                         getModItem(IronChests.ID, "BlockIronChest", 1, 9),
                         ItemList.Electric_Piston_HV.get(1),
-                        GT_OreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
-                        GT_Utility.getIntegratedCircuit(1))
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Obsidian, 1),
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(AvaritiaAddons.ID, "CompressedChest", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
@@ -155,7 +158,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
         }
         // Chronic Singularity
         {
-            GT_Values.RA.stdBuilder()
+            GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(EternalSingularity.ID, "eternal_singularity", 8, 0, missing),
                             ItemList.Timepiece.get(1))
@@ -166,12 +169,27 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                     .fluidOutputs(Materials.Hydrogen.getPlasma(576), Materials.Helium.getPlasma(576))
                     .duration(5 * SECONDS).eut(TierEU.RECIPE_UXV).addTo(hammerRecipes);
 
-            GT_Values.RA.stdBuilder()
-                    .itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing))
+            GTValues.RA.stdBuilder().itemInputs(getModItem(EternalSingularity.ID, "eternal_singularity", 1, 0, missing))
                     .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing))
                     .fluidInputs(MaterialsUEVplus.Eternity.getMolten(144))
                     .fluidOutputs(Materials.Infinity.getMolten(576)).duration(5 * SECONDS).eut(TierEU.RECIPE_UXV)
                     .addTo(plasmaArcFurnaceRecipes);
+
+            // Spaghettic Singularity
+            GTValues.RA.stdBuilder().itemInputs(
+                    // fluxed electrum singularity
+                    getModItem(UniversalSingularities.ID, "universal.general.singularity", 1L, 20))
+                    .fluidInputs(MaterialsUEVplus.Mellion.getMolten(4 * 144L))
+                    .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1L, 2)).duration(1 * SECONDS)
+                    .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
+
+            // Cryptic Singularity
+            GTValues.RA.stdBuilder().itemInputs(
+                    // iron singularity
+                    getModItem(Avaritia.ID, "Singularity", 1L, 0))
+                    .fluidInputs(MaterialsUEVplus.Creon.getMolten(4 * 144L))
+                    .itemOutputs(getModItem(EternalSingularity.ID, "combined_singularity", 1L, 4)).duration(1 * SECONDS)
+                    .eut(TierEU.RECIPE_UMV).metadata(CompressionTierKey.INSTANCE, 2).addTo(neutroniumCompressorRecipes);
         }
     }
 }

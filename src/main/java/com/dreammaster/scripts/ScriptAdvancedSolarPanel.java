@@ -4,18 +4,18 @@ import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
-import static gregtech.api.util.GT_RecipeBuilder.SECONDS;
+import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptAdvancedSolarPanel implements IScriptLoader {
 
@@ -122,25 +122,25 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 "craftingToolHardHammer",
                 "craftingToolFile");
 
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 1L),
                         getModItem(Minecraft.ID, "glowstone", 4, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 2, missing))
                 .duration(30 * SECONDS).eut(1920).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 2, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing))
                 .duration(1 * MINUTES).eut(7680).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 4L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 8, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing))
                 .duration(40 * SECONDS).eut(30720).addTo(assemblerRecipes);
-        GT_Values.RA.stdBuilder()
+        GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 3, missing))

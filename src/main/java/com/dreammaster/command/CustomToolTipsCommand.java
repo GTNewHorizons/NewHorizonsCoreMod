@@ -15,14 +15,6 @@ import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 
 public class CustomToolTipsCommand implements ICommand {
 
-    private List aliases;
-
-    public CustomToolTipsCommand() {
-        aliases = new ArrayList();
-        aliases.add("ctooltip");
-        aliases.add("ctt");
-    }
-
     @Override
     public int compareTo(Object arg0) {
         return 0;
@@ -40,7 +32,9 @@ public class CustomToolTipsCommand implements ICommand {
 
     @Override
     public List getCommandAliases() {
-
+        ArrayList<String> aliases = new ArrayList<>();
+        aliases.add("ctooltip");
+        aliases.add("ctt");
         return aliases;
     }
 

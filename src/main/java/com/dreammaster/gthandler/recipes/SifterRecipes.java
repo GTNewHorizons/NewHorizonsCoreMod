@@ -1,20 +1,20 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.recipe.RecipeMaps.sifterRecipes;
-import static gregtech.api.util.GT_RecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 
-import gregtech.api.enums.GT_Values;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class SifterRecipes implements Runnable {
 
     @Override
     public void run() {
-        GT_Values.RA.stdBuilder()
-                .itemInputs(GT_OreDictUnificator.get(OrePrefixes.crushedPurified, Materials.Cinnabar, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(GTOreDictUnificator.get(OrePrefixes.crushedPurified, Materials.Cinnabar, 1L))
                 .itemOutputs(
                         Materials.Mercury.getGems(1),
                         Materials.Mercury.getGems(1),

@@ -4,14 +4,14 @@ import static gregtech.api.enums.Mods.ArchitectureCraft;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.util.GT_ModHandler.getModItem;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
 
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GT_OreDictUnificator;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptArchitectureCraft implements IScriptLoader {
 
@@ -75,10 +75,22 @@ public class ScriptArchitectureCraft implements IScriptLoader {
                 "screwIron",
                 "craftingToolScrewdriver");
 
+        addShapedRecipe(
+                getModItem(ArchitectureCraft.ID, "glowbrush", 1),
+                null,
+                "materialCloth",
+                "dustGlowstone",
+                null,
+                "gearWood",
+                "materialCloth",
+                "stickWood",
+                null,
+                null);
+
         addShapelessRecipe(getModItem(ArchitectureCraft.ID, "sawblade", 1), "toolHeadBuzzSawAnyIron");
 
         addShapelessRecipe(
-                GT_OreDictUnificator.get(OrePrefixes.toolHeadBuzzSaw, Materials.Iron, 1L),
+                GTOreDictUnificator.get(OrePrefixes.toolHeadBuzzSaw, Materials.Iron, 1L),
                 getModItem(ArchitectureCraft.ID, "sawblade", 1));
     }
 }
