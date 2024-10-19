@@ -28,8 +28,6 @@ import gregtech.api.util.GTUtility;
 
 public class FluidSolidifierRecipes implements Runnable {
 
-    ItemStack missing = new ItemStack(Blocks.fire);
-
     @Override
     public void run() {
         makeAvaritiaRecipes();
