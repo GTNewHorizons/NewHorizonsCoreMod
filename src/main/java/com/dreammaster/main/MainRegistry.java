@@ -10,6 +10,7 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -35,6 +36,7 @@ import com.dreammaster.bartworksHandler.VoidMinerLoader;
 import com.dreammaster.baubles.OvenGlove;
 import com.dreammaster.baubles.WitherProtectionRing;
 import com.dreammaster.block.BlockList;
+import com.dreammaster.client.util.GTNHPauseScreen;
 import com.dreammaster.command.AllPurposeDebugCommand;
 import com.dreammaster.command.CustomDropsCommand;
 import com.dreammaster.command.CustomFuelsCommand;
@@ -112,6 +114,7 @@ import gregtech.common.items.MetaGeneratedItem01;
         name = Refstrings.NAME,
         version = Refstrings.VERSION,
         dependencies = "required-before:gregtech;" + "required-after:Forge@[10.13.2.1291,);"
+                + "required-after:gtnhlib@[0.5.15,);"
                 + "required-after:YAMCore@[0.5.76,);"
                 + "required-after:Baubles@[1.0.1.10,);"
                 + "after:EnderIO;"
@@ -368,6 +371,10 @@ public class MainRegistry {
 
         BWGlassAdder.registerGlasses();
 
+        if (CoreConfig.gtnhPauseMenuButtons && event.getSide().isClient()) {
+            MinecraftForge.EVENT_BUS.register(new GTNHPauseScreen());
+        }
+
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -531,6 +538,12 @@ public class MainRegistry {
         }
         if (CoreConfig.MinetweakerFurnaceFixEnabled) {
             ModFixesMaster.registerModFix(new MinetweakerFurnaceFix());
+        }
+        if (ZTones.isModLoaded()) {
+            final Block block = GameRegistry.findBlock(ZTones.ID, "tile.glaxx");
+            if (block != null) {
+                block.setHardness(0.3F);
+            }
         }
     }
 
