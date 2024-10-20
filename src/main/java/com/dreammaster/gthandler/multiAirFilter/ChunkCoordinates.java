@@ -2,12 +2,13 @@ package com.dreammaster.gthandler.multiAirFilter;
 
 import net.minecraft.world.World;
 
-import gregtech.common.Pollution;
+import gregtech.common.pollution.Pollution;
 
 public class ChunkCoordinates {
 
-    private int chunkX, chunkZ;
-    private World world;
+    private final int chunkX;
+    private final int chunkZ;
+    private final World world;
 
     public ChunkCoordinates(int chunkX, int chunkZ, World world) {
         this.chunkX = chunkX;
