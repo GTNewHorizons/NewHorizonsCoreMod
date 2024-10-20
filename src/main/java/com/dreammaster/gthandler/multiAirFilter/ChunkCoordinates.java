@@ -8,12 +8,10 @@ public class ChunkCoordinates {
 
     private final int chunkX;
     private final int chunkZ;
-    private final World world;
 
-    public ChunkCoordinates(int chunkX, int chunkZ, World world) {
+    public ChunkCoordinates(int chunkX, int chunkZ) {
         this.chunkX = chunkX;
         this.chunkZ = chunkZ;
-        this.world = world;
     }
 
     public int getChunkX() {
@@ -24,15 +22,11 @@ public class ChunkCoordinates {
         return chunkZ;
     }
 
-    public World getWorld() {
-        return world;
-    }
-
-    public int getPollution() {
+    public int getPollution(World world) {
         return Pollution.getPollution(world, chunkX, chunkZ);
     }
 
-    public void removePollution(int amount) {
+    public void removePollution(int amount, World world) {
         Pollution.addPollution(world, chunkX, chunkZ, -amount);
     }
 }

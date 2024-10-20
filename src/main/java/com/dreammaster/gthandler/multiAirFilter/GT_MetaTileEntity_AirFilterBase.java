@@ -157,14 +157,13 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     protected void populateChunkList() {
         chunkList = new ChunkCoordinates[size * size];
-        World world = this.getBaseMetaTileEntity().getWorld();
         int xCoordMulti = this.getBaseMetaTileEntity().getXCoord();
         int zCoordMulti = this.getBaseMetaTileEntity().getZCoord();
 
         for (int i = 0; i < size * size; i++) {
             int xCoordChunk = (xCoordMulti - 16 * (size / 2 - (i % (size)))) >> 4;
             int zCoordChunk = (zCoordMulti + 16 * (size / 2 - (i / (size)))) >> 4;
-            chunkList[i] = new ChunkCoordinates(xCoordChunk, zCoordChunk, world);
+            chunkList[i] = new ChunkCoordinates(xCoordChunk, zCoordChunk);
         }
     }
 
@@ -376,8 +375,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                 mEfficiency / 10000f,
                 isFilterLoaded);
         if (pollutionCleaningRatePerSecond > 0) {
+            World world = this.getBaseMetaTileEntity().getWorld();
             if (mode == 0) { // processing chunk normally
-                chunkList[chunkIndex].removePollution(pollutionCleaningRatePerSecond);
+                chunkList[chunkIndex].removePollution(pollutionCleaningRatePerSecond, world);
                 chunkIndex += 1;
                 if (chunkIndex == chunkList.length) {
                     chunkIndex = 0;
@@ -387,7 +387,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                 // list all the polluted chunks
                 ArrayList<ChunkCoordinates> pollutedChunkList = new ArrayList<>();
                 for (ChunkCoordinates chunk : chunkList) {
-                    if (chunk.getPollution() > 0) {
+                    if (chunk.getPollution(world) > 0) {
                         pollutedChunkList.add(chunk);
                     }
                 }
@@ -396,10 +396,10 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                 ChunkCoordinates pollutedChunk;
                 if (pollutedChunkList.size() > 1) {
                     pollutedChunk = pollutedChunkList.get(MainRegistry.Rnd.nextInt(pollutedChunkList.size()));
-                    pollutedChunk.removePollution(pollutionCleaningRatePerSecond);
+                    pollutedChunk.removePollution(pollutionCleaningRatePerSecond, world);
                 } else if (pollutedChunkList.size() == 1) { // no random on only one element
                     pollutedChunk = pollutedChunkList.get(0);
-                    pollutedChunk.removePollution(pollutionCleaningRatePerSecond);
+                    pollutedChunk.removePollution(pollutionCleaningRatePerSecond, world);
                 }
             }
         }
@@ -427,8 +427,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     public int getTotalPollution() {
         int pollutionAmount = 0;
+        World world = this.getBaseMetaTileEntity().getWorld();
         for (ChunkCoordinates chunk : chunkList) {
-            pollutionAmount += chunk.getPollution();
+            pollutionAmount += chunk.getPollution(world);
         }
         return pollutionAmount;
     }
