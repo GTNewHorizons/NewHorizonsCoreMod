@@ -262,6 +262,24 @@ public class LaserEngraverRecipes implements Runnable {
                 .eut(TierEU.RECIPE_UIV).fluidOutputs(MaterialsUEVplus.Antimatter.getFluid(1L)).requiresCleanRoom()
                 .addTo(laserEngraverRecipes);
 
+        // Meteor Miner Schematic 1
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CustomItemList.SchematicsTier6.get(0),
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.ZPM), 1L))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 1440))
+                .itemOutputs(ItemList.MeteorMinerSchematic1.get(1)).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
+                .requiresCleanRoom().addTo(laserEngraverRecipes);
+
+        // Meteor Miner Schematic 2
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CustomItemList.SchematicsTier7.get(0),
+                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 1L))
+                .fluidInputs(FluidRegistry.getFluidStack("molten.indalloy140", 1440))
+                .itemOutputs(ItemList.MeteorMinerSchematic2.get(1)).duration(1 * MINUTES + 30 * SECONDS)
+                .eut(TierEU.RECIPE_ZPM).requiresCleanRoom().addTo(laserEngraverRecipes);
+
         if (OpenComputers.isModLoaded()) {
             // floppys w NBT
             makeFloppy("OpenOS (Operating System)", "openos", 2, 1);
