@@ -1,8 +1,7 @@
 package com.dreammaster.gthandler.multiAirFilter;
 
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
-import static com.gtnewhorizon.structurelib.structure.StructureUtility.ofBlock;
-import static gregtech.api.enums.GTValues.*;
+import static gregtech.api.enums.GTValues.VN;
 import static gregtech.api.util.GTStructureUtility.ofHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofHatchAdderOptional;
 import static gregtech.api.util.GTUtility.filterValidMTEs;
@@ -39,7 +38,9 @@ import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.items.MetaGeneratedTool01;
+import gregtech.common.pollution.Pollution;
 
+// TODO move this multi to GT5u
 public abstract class GT_MetaTileEntity_AirFilterBase
         extends MTEEnhancedMultiBlockBase<GT_MetaTileEntity_AirFilterBase> {
 
@@ -47,7 +48,6 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     protected int multiTier = 0;
     protected int chunkIndex = 0;
     protected boolean hasPollution = false;
-    protected ChunkCoordinates[] chunkList; // list of the chunks in the working area
     protected int mode = 0; // 0 for processing chunks in order, 1 for processing chunks randomly
     protected int size; // current working size of the multi, max is 2*multiTier + 1
     protected boolean isFilterLoaded = false;
@@ -153,18 +153,6 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     public GT_MetaTileEntity_AirFilterBase(String aName) {
         super(aName);
-    }
-
-    protected void populateChunkList() {
-        chunkList = new ChunkCoordinates[size * size];
-        int xCoordMulti = this.getBaseMetaTileEntity().getXCoord();
-        int zCoordMulti = this.getBaseMetaTileEntity().getZCoord();
-
-        for (int i = 0; i < size * size; i++) {
-            int xCoordChunk = (xCoordMulti - 16 * (size / 2 - (i % (size)))) >> 4;
-            int zCoordChunk = (zCoordMulti + 16 * (size / 2 - (i / (size)))) >> 4;
-            chunkList[i] = new ChunkCoordinates(xCoordChunk, zCoordChunk);
-        }
     }
 
     public abstract GTRecipe getRecipe();
@@ -362,39 +350,46 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     }
 
     public void cleanPollution() {
-        int pollutionCleaningRatePerSecond = getPollutionCleaningRatePerSecond(
-                baseEff / 10000f,
-                mEfficiency / 10000f,
-                isFilterLoaded);
-        if (pollutionCleaningRatePerSecond > 0) {
+        int cleaningRate = getPollutionCleaningRatePerSecond(baseEff / 10000f, mEfficiency / 10000f, isFilterLoaded);
+        if (cleaningRate > 0) {
             World world = this.getBaseMetaTileEntity().getWorld();
             if (mode == 0) { // processing chunk normally
-                chunkList[chunkIndex].removePollution(pollutionCleaningRatePerSecond, world);
+                removePollutionFromChunk(cleaningRate, world, chunkIndex);
                 chunkIndex += 1;
-                if (chunkIndex == chunkList.length) {
+                if (chunkIndex >= size * size) {
                     chunkIndex = 0;
                 }
             } else { // process chunks randomly
-
                 // list all the polluted chunks
-                ArrayList<ChunkCoordinates> pollutedChunkList = new ArrayList<>();
-                for (ChunkCoordinates chunk : chunkList) {
-                    if (chunk.getPollution(world) > 0) {
-                        pollutedChunkList.add(chunk);
+                ArrayList<Integer> pollutedChunks = new ArrayList<>();
+                for (int index = 0; index < size * size; index++) {
+                    if (getPollutionInChunk(world, index) > 0) {
+                        pollutedChunks.add(index);
                     }
                 }
-
                 // pick the chunk randomly
-                ChunkCoordinates pollutedChunk;
-                if (pollutedChunkList.size() > 1) {
-                    pollutedChunk = pollutedChunkList.get(MainRegistry.Rnd.nextInt(pollutedChunkList.size()));
-                    pollutedChunk.removePollution(pollutionCleaningRatePerSecond, world);
-                } else if (pollutedChunkList.size() == 1) { // no random on only one element
-                    pollutedChunk = pollutedChunkList.get(0);
-                    pollutedChunk.removePollution(pollutionCleaningRatePerSecond, world);
+                if (!pollutedChunks.isEmpty()) {
+                    int index = pollutedChunks.get(MainRegistry.Rnd.nextInt(pollutedChunks.size()));
+                    removePollutionFromChunk(cleaningRate, world, index);
                 }
             }
         }
+    }
+
+    protected final int getPollutionInChunk(World world, int chunkIndexIn) {
+        final int xCoordMulti = this.getBaseMetaTileEntity().getXCoord();
+        final int zCoordMulti = this.getBaseMetaTileEntity().getZCoord();
+        final int chunkX = xCoordMulti - 16 * (size / 2 - chunkIndexIn % size) >> 4;
+        final int chunkZ = zCoordMulti + 16 * (size / 2 - chunkIndexIn / size) >> 4;
+        return Pollution.getPollution(world, chunkX, chunkZ);
+    }
+
+    protected final void removePollutionFromChunk(int amount, World world, int chunkIndexIn) {
+        final int xCoordMulti = this.getBaseMetaTileEntity().getXCoord();
+        final int zCoordMulti = this.getBaseMetaTileEntity().getZCoord();
+        final int chunkX = xCoordMulti - 16 * (size / 2 - chunkIndexIn % size) >> 4;
+        final int chunkZ = zCoordMulti + 16 * (size / 2 - chunkIndexIn / size) >> 4;
+        Pollution.addPollution(world, chunkX, chunkZ, -amount);
     }
 
     public abstract int getPipeMeta();
@@ -408,11 +403,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     @Override
     public void onPreTick(IGregTechTileEntity aBaseMetaTileEntity, long aTick) {
-        if (chunkList == null) {
-            if (size == 0) { // here in case it's not set by NBT loading
-                size = 2 * multiTier + 1;
-            }
-            populateChunkList();
+        if (size == 0) { // here in case it's not set by NBT loading
+            size = 2 * multiTier + 1;
         }
         super.onPreTick(aBaseMetaTileEntity, aTick);
     }
@@ -420,8 +412,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     public int getTotalPollution() {
         int pollutionAmount = 0;
         World world = this.getBaseMetaTileEntity().getWorld();
-        for (ChunkCoordinates chunk : chunkList) {
-            pollutionAmount += chunk.getPollution(world);
+        for (int i = 0; i < size * size; i++) {
+            pollutionAmount += getPollutionInChunk(world, i);
+
         }
         return pollutionAmount;
     }
@@ -486,7 +479,6 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                 size -= 2; // always get odd number
             }
             chunkIndex = 0;
-            populateChunkList();
             PlayerChatHelper
                     .SendInfo(aPlayer, "Electric air filter is now working in a " + size + "x" + size + " area");
         }
