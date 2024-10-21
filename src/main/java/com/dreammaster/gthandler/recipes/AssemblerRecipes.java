@@ -97,6 +97,36 @@ public class AssemblerRecipes implements Runnable {
         makeElectricMachinePartRecipes();
         makeCircuitPartRecipes();
 
+        // Bronze Hull
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 8))
+                .itemOutputs(GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 1))
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(2 * SECONDS + 10)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // Bricked Bronze Hull
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 5),
+                        new ItemStack(Blocks.brick_block, 3))
+                .itemOutputs(GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 2))
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(2 * SECONDS + 10)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // Steel Hull
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 8))
+                .itemOutputs(GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 3))
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(2 * SECONDS + 10)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        // Bricked Wrought Iron Hull
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5),
+                        new ItemStack(Blocks.brick_block, 3))
+                .itemOutputs(GTModHandler.getModItem("gregtech", "gt.blockmachines", 1, 4))
+                .fluidInputs(FluidRegistry.getFluidStack("refinedglue", 288)).duration(2 * SECONDS + 10)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0),
@@ -10278,6 +10308,7 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.dockingUpgrade", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
             }
         }
     }
