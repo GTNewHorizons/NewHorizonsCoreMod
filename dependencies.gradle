@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.50.44:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.50.49:dev")
     api("com.github.GTNewHorizons:Yamcl:0.6.0:dev")
     api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
 
@@ -18,7 +18,7 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
     compileOnly("com.github.GTNewHorizons:Chisel:2.15.2-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Botania:1.11.5-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:BloodMagic:1.6.6:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:BloodMagic:1.6.7:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.7.0:dev") { transitive = false }
