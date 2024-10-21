@@ -170,29 +170,21 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     public abstract GTRecipe getRecipe();
 
     public String getCasingString() {
-        switch (getCasingMeta()) {
-            case 0:
-                return "Air Filter Turbine Casing";
-            case 3:
-                return "Advanced Air Filter Turbine Casing";
-            case 5:
-                return "Super Air Filter Turbine Casing";
-            default:
-                return "fill a ticket on github if you read this";
-        }
+        return switch (getCasingMeta()) {
+            case 0 -> "Air Filter Turbine Casing";
+            case 3 -> "Advanced Air Filter Turbine Casing";
+            case 5 -> "Super Air Filter Turbine Casing";
+            default -> "fill a ticket on github if you read this";
+        };
     }
 
     public String getPipeString() {
-        switch (getPipeMeta()) {
-            case 1:
-                return "Air Filter Vent Casing";
-            case 4:
-                return "Advanced Air Filter Vent Casing";
-            case 6:
-                return "Super Air Filter Vent Casing";
-            default:
-                return "fill a ticket on github if you read this";
-        }
+        return switch (getPipeMeta()) {
+            case 1 -> "Air Filter Vent Casing";
+            case 4 -> "Advanced Air Filter Vent Casing";
+            case 6 -> "Super Air Filter Vent Casing";
+            default -> "fill a ticket on github if you read this";
+        };
     }
 
     @Override
