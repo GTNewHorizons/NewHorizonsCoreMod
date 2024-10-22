@@ -852,7 +852,7 @@ public class BlastFurnaceRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 14L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumhydroxide, 8L),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminiumoxide, 5L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).metadata(COIL_HEAT, 1300).addTo(blastFurnaceRecipes);
