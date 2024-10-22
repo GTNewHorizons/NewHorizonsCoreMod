@@ -2668,7 +2668,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Robot_Arm_LuV.get(2),
                         ItemList.Electric_Piston_LuV.get(2),
                         ItemList.Hull_LuV.get(1))
-                .itemOutputs(ItemList.AcceleratorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.AcceleratorLuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         // Assembler Machine Casing
