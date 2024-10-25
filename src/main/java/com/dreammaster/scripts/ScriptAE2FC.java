@@ -161,6 +161,12 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_LEVEL_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_level_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
+        final ItemStack AE2FC_DEFECTIVE_SINGULARITY_CELL = getModItem(
+                AE2FluidCraft.ID,
+                "fluid_storage.singularity.defective",
+                1,
+                0);
+        final ItemStack AE2_SINGULARITY = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47);
         final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 0);
         final ItemStack AE2_P2P_ME = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460);
         final ItemStack AE2FC_INTERFACE_P2P = getModItem(AE2FluidCraft.ID, "part_fluid_p2p_interface", 1);
@@ -416,6 +422,26 @@ public class ScriptAE2FC implements IScriptLoader {
                         COMPONENT_4096,
                         'P',
                         FLUID_CORE_2));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        AE2FC_DEFECTIVE_SINGULARITY_CELL,
+                        "dCW",
+                        "SKS",
+                        "WAh",
+                        'C',
+                        "plateCertusQuartz",
+                        'W',
+                        "screwCertusQuartz",
+                        'S',
+                        "plateTungstenSteel",
+                        'A',
+                        "plateStainlessSteel",
+                        'K',
+                        AE2_SINGULARITY,
+                        'd',
+                        "craftingToolHardHammer",
+                        'h',
+                        "craftingToolScrewdriver"));
 
         // Fluid Storage Bus
         GTValues.RA.stdBuilder()
