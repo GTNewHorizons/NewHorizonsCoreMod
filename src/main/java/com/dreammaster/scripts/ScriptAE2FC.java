@@ -39,6 +39,7 @@ import gregtech.api.util.GTModHandler.RecipeBits;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptAE2FC implements IScriptLoader {
 
@@ -161,10 +162,16 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_LEVEL_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_level_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
+        final ItemStack AE2FC_INFINITY_WATER_FLUID_STORAGE = getModItem(
+                AE2FluidCraft.ID,
+                "fluid_storage.infinity.water",
+                1,
+                0);
         final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 0);
         final ItemStack AE2_P2P_ME = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460);
         final ItemStack AE2FC_INTERFACE_P2P = getModItem(AE2FluidCraft.ID, "part_fluid_p2p_interface", 1);
         final ItemStack AE2_ADVANCED_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 61);
+        final ItemStack AE2_MATTER_CONDENSER = getModItem(AppliedEnergistics2.ID, "tile.BlockCondenser", 1, 0);
         final ItemStack T7_YOT = new ItemStack(Loaders.yottaFluidTankCell, 1, 6);
         final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem(
                 AE2FluidCraft.ID,
@@ -416,6 +423,18 @@ public class ScriptAE2FC implements IScriptLoader {
                         COMPONENT_4096,
                         'P',
                         FLUID_CORE_2));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        AE2FC_INFINITY_WATER_FLUID_STORAGE,
+                        "CBC",
+                        "BAB",
+                        "CBC",
+                        'A',
+                        AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
+                        'B',
+                        GregtechItemList.Hatch_Reservoir.get(1L),
+                        'C',
+                        AE2_MATTER_CONDENSER));
 
         // Fluid Storage Bus
         GTValues.RA.stdBuilder()
