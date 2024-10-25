@@ -981,6 +981,18 @@ public class ScriptAE2FC implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_LEVEL_TERMINAL).itemOutputs(AE2FC_LEVEL_WIRELESS)
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
+        // DEFECTIVE SINGULARITY CELL
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
+                        AE2_SINGULARITY,
+                        GTUtility.getIntegratedCircuit(2))
+                .itemOutputs(AE2FC_DEFECTIVE_SINGULARITY_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE, AE2FC_INTERFACE_SMALL);
