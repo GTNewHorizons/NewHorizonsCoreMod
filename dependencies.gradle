@@ -24,10 +24,6 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:amunra:0.7.0:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.2.5-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.9.16:dev") { transitive = false }
-    api("com.github.GTNewHorizons:Eternal-Singularity:1.2.1:dev") { transitive = false }
-    api("com.github.GTNewHorizons:OpenComputers:1.10.26-GTNH:dev") { transitive = false }
-    api("com.github.GTNewHorizons:WanionLib:1.9.0:dev") { transitive = false }
-    api("com.github.GTNewHorizons:Avaritia:1.54:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.4.6-GTNH:dev")
 
     runtimeOnlyNonPublishable rfg.deobf("curse.maven:biomes-o-plenty-220318:2499612")
