@@ -2425,7 +2425,8 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.battery, Materials.EV, 4),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 2),
-                        ItemList.Circuit_Chip_PIC.get(2))
+                        ItemList.Circuit_Chip_PIC.get(2),
+                        new ItemStack(kekztech.common.Blocks.lscLapotronicEnergyUnit, 1, 0))
                 .itemOutputs(TileEntities.lsc.getStackForm(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
@@ -2630,7 +2631,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Robot_Arm_LuV.get(2),
                         ItemList.Electric_Piston_LuV.get(2),
                         ItemList.Hull_LuV.get(1))
-                .itemOutputs(ItemList.AcceleratorUV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.AcceleratorLuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         // Assembler Machine Casing
