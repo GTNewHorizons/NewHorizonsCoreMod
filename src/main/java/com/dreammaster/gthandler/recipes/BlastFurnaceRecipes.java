@@ -967,7 +967,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.ShadowIron, 4L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Carbon, 1L))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.ShadowSteel, 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.ShadowSteel, 4L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 2000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
