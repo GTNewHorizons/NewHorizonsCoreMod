@@ -1,16 +1,16 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.50.50:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.50.51:dev")
     api("com.github.GTNewHorizons:Yamcl:0.6.0:dev")
     api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
 
     implementation("com.github.GTNewHorizons:GTNHLib:0.5.17:dev")
 
-    compileOnly("com.github.GTNewHorizons:AkashicTome:1.1.7:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:AkashicTome:1.1.8:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Avaritia:1.54:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.6.34:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.4.22:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.4.23:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.4.1:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.12.12-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.2.2:dev") { transitive = false }
