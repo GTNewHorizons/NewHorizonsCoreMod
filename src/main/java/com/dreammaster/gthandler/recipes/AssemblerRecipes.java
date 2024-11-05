@@ -9340,7 +9340,7 @@ public class AssemblerRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
-                            GTOreDictUnificator.get(OrePrefixes.stone, Materials.GraniteBlack, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.stone, Materials.GraniteBlack, 64L),
                             getModItem(GalacticraftMars.ID, "tile.denseIce", 64, 0),
                             GTModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1L, 14),
                             GTUtility.getIntegratedCircuit(17))
