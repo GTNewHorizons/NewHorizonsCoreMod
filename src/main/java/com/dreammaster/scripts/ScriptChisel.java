@@ -227,65 +227,29 @@ public class ScriptChisel implements IScriptLoader {
         ChiselHelper.addVariationFromStack("CobblestoneBricks", getModItem(Chisel.ID, "cobblestone", 1, 13, missing));
         ChiselHelper.addVariationFromStack("CobblestoneBricks", getModItem(Chisel.ID, "cobblestone", 1, 14, missing));
         ChiselHelper.addVariationFromStack("CobblestoneBricks", getModItem(Chisel.ID, "cobblestone", 1, 15, missing));
+
         ChiselHelper.addGroup("diamond_block");
         ChiselHelper.addVariationFromStack("diamond_block", getModItem(Minecraft.ID, "diamond_block", 1, 0, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 1, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 2, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 3, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 4, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 5, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 6, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 7, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 8, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 9, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 10, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 11, missing));
-        ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, 12, missing));
+        for (int i = 1; i <= 12; i++) {
+            ChiselHelper.addVariationFromStack("diamond_block", getModItem(Chisel.ID, "diamond_block", 1, i, missing));
+        }
         ChiselHelper.addGroup("gold_block");
         ChiselHelper.addVariationFromStack("gold_block", getModItem(Minecraft.ID, "gold_block", 1, 0, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 1, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 2, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 3, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 4, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 5, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 6, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 7, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 8, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 9, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 10, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 11, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 12, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 13, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, 14, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold2", 1, 0, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold2", 1, 1, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold2", 1, 2, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold2", 1, 3, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold2", 1, 4, missing));
-        ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold2", 1, 5, missing));
+        for (int i = 1; i <= 14; i++) {
+            ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold_block", 1, i, missing));
+        }
+        for (int i = 0; i <= 5; i++) {
+            ChiselHelper.addVariationFromStack("gold_block", getModItem(Chisel.ID, "gold2", 1, i, missing));
+        }
         ChiselHelper.addGroup("iron_block");
         ChiselHelper.addVariationFromStack("iron_block", getModItem(Minecraft.ID, "iron_block", 1, 0, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 1, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 2, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 3, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 4, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 5, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 6, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 7, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 8, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 9, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 10, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 11, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 12, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 13, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 14, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, 15, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron2", 1, 0, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron2", 1, 1, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron2", 1, 2, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron2", 1, 3, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron2", 1, 4, missing));
-        ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron2", 1, 5, missing));
+        for (int i = 1; i <= 15; i++) {
+            ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron_block", 1, i, missing));
+        }
+        for (int i = 0; i <= 5; i++) {
+            ChiselHelper.addVariationFromStack("iron_block", getModItem(Chisel.ID, "iron2", 1, i, missing));
+        }
+
         ChiselHelper.addVariationFromStack("glasswork", getModItem(Minecraft.ID, "glass", 1, 0, missing));
         ChiselHelper.addVariationFromStack("glasswork", getModItem(Chisel.ID, "glass", 1, 1, missing));
         ChiselHelper.addVariationFromStack("glasswork", getModItem(Chisel.ID, "glass", 1, 2, missing));
