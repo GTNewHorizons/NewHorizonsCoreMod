@@ -177,6 +177,13 @@ public class ScriptAE2FC implements IScriptLoader {
                 "fluid_storage_housing",
                 1,
                 3);
+        final ItemStack AE2_ADV_CARD = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28);
+        final ItemStack AE2_NEUTRONIUM_ENERGY_CELL = getModItem(
+                AppliedEnergistics2.ID,
+                "tile.BlockCreativeEnergyCell",
+                1,
+                0);
+        final ItemStack AE2FC_ENERGY_CARD = getModItem(AE2FluidCraft.ID, "energy_card", 1, 0);
         ItemStack[] mCells = new ItemStack[] { CELL_1M, CELL_4M, CELL_16M, CELL_64M, CELL_256M, CELL_1024M, CELL_4096M,
                 CELL_16384M };
         ItemStack[] sCells = new ItemStack[] { CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096,
@@ -979,5 +986,6 @@ public class ScriptAE2FC implements IScriptLoader {
         // Dual interface P2P
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE_SMALL);
+        GameRegistry.addShapelessRecipe(AE2FC_ENERGY_CARD, AE2_ADV_CARD, AE2_NEUTRONIUM_ENERGY_CELL);
     }
 }
