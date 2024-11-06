@@ -9337,6 +9337,18 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(new ItemStack(ModBlocks.blocks.get("Ho"), 1, 0)).duration(15 * SECONDS)
                         .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
             }
+            // Mehen Belt
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                            GTOreDictUnificator.get(OrePrefixes.stone, Materials.GraniteBlack, 64L),
+                            getModItem(GalacticraftMars.ID, "tile.denseIce", 64, 0),
+                            GTModHandler.getModItem(GalacticraftAmunRa.ID, "tile.baseBlockRock", 1L, 14),
+                            GTUtility.getIntegratedCircuit(17))
+                    .fluidInputs(FluidRegistry.getFluidStack("ice", 10000))
+                    .itemOutputs(new ItemStack(ModBlocks.blocks.get("MB"), 1, 0)).duration(15 * SECONDS)
+                    .eut(TierEU.RECIPE_UIV).addTo(assemblerRecipes);
+
             // Technically T10
             // Deep Dark
             for (OrePrefixes orePrefix : allOrePrefixes) {
