@@ -136,7 +136,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "coral2", 1, 8, missing),
                 "dustGlowstone",
                 "dyeBlue");
-        addShapelessRecipe(ItemList.Color_00.get(1L), getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing));
+        addShapelessRecipe(ItemList.Color_08.get(1L), getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing));
         addShapelessRecipe(ItemList.Color_15.get(1L), getModItem(BiomesOPlenty.ID, "flowers", 1, 9, missing));
         addShapelessRecipe(ItemList.Color_15.get(1L), getModItem(BiomesOPlenty.ID, "flowers2", 1, 1, missing));
         addShapelessRecipe(ItemList.Color_04.get(1L), getModItem(BiomesOPlenty.ID, "flowers2", 1, 5, missing));
@@ -191,7 +191,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 6, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 2, missing))
-                .itemOutputs(ItemList.Color_00.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
+                .itemOutputs(ItemList.Color_08.get(2L)).duration(15 * SECONDS).eut(2).addTo(extractorRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 4, missing))
                 .itemOutputs(getModItem(Minecraft.ID, "dye", 2, 12, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(extractorRecipes);
