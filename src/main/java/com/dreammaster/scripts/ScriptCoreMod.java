@@ -1322,10 +1322,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(CustomItemList.IridiumAlloyItemCasing.get(2L))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 64)).duration(30 * SECONDS).eut(256)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CallistoColdIce.getIS())
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.plate, Materials.CallistoIce, 9))
-                .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 1000)).duration(3 * MINUTES).eut(30)
-                .addTo(cutterRecipes);
         GTValues.RA.stdBuilder().fluidInputs(FluidRegistry.getFluidStack("enrichedbacterialsludge", 750))
                 .fluidOutputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 75)).duration(2 * MINUTES).eut(2)
                 .addTo(fermentingRecipes);

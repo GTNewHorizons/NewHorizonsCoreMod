@@ -56,13 +56,19 @@ public class TCLoader {
                 if (researchName == null || (!(output instanceof ItemStack) && !(output instanceof String))) continue;
                 String outputString;
                 if (output instanceof ItemStack) {
-                    Item i = ((ItemStack) output).getItem();
+                    Item item = ((ItemStack) output).getItem();
+                    if (item == null) continue;
                     GameRegistry.UniqueIdentifier ui;
-                    if (i instanceof ItemBlock) ui = GameRegistry.findUniqueIdentifierFor(Block.getBlockFromItem(i));
-                    else ui = GameRegistry.findUniqueIdentifierFor(i);
-                    outputString = (ui != null ? ui.toString() : Item.getIdFromItem(i)) + ":"
+                    if (item instanceof ItemBlock) {
+                        ui = GameRegistry.findUniqueIdentifierFor(Block.getBlockFromItem(item));
+                    } else {
+                        ui = GameRegistry.findUniqueIdentifierFor(item);
+                    }
+                    outputString = (ui != null ? ui.toString() : Item.getIdFromItem(item)) + ":"
                             + ((ItemStack) output).getItemDamage();
-                } else outputString = (String) output;
+                } else {
+                    outputString = (String) output;
+                }
                 if (!availableResearches.contains(researchName)) {
                     MainRegistry.Logger.warn(
                             "WARNING!! Thaumcraft recipe for " + outputString
