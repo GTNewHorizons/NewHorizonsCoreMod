@@ -1696,27 +1696,19 @@ public class ScriptThaumicTinkerer implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 125).add(Aspect.getAspect("aqua"), 125)
                         .add(Aspect.getAspect("ignis"), 125).add(Aspect.getAspect("terra"), 125)
                         .add(Aspect.getAspect("ordo"), 125).add(Aspect.getAspect("perditio"), 125),
-                "abc",
-                "def",
-                "ghi",
+                "aba",
+                "cdc",
+                "ebe",
                 'a',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
+                "foilVoid",
                 'b',
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
                 'c',
                 getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 0, missing),
                 'd',
-                "gemFlawlessDiamond",
+                "foilOsmiridium",
                 'e',
-                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
-                'f',
-                "gemFlawlessDiamond",
-                'g',
-                "screwOsmiridium",
-                'h',
-                "craftingToolScrewdriver",
-                'i',
-                "screwOsmiridium");
+                "gemFlawlessDiamond");
         TCHelper.setResearchAspects(
                 "ICHOR_CLOTH",
                 new AspectList().add(Aspect.getAspect("pannus"), 15).add(Aspect.getAspect("fabrico"), 15)
