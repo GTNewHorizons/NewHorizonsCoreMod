@@ -118,6 +118,7 @@ public class ScriptLoader {
                         new ScriptWarpTheory(),
                         new ScriptWirelessRedstone(),
                         new ScriptWitchery(),
+                        new ScriptTB(),
                         ScriptZZClientOnly.instance));
 
         // Java somehow tries to load XU / TiC class when instantiating this class
