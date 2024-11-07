@@ -8,11 +8,16 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 
 public class ScriptOpenComputers implements IScriptLoader {
+
+    private static final Log log = LogFactory.getLog(ScriptOpenComputers.class);
 
     @Override
     public String getScriptName() {
@@ -26,6 +31,12 @@ public class ScriptOpenComputers implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        addShapelessRecipe(
+                getModItem(OpenComputers.ID, "item", 1, 23, missing),
+                ItemList.Circuit_Parts_Transistor.get(1));
+        addShapelessRecipe(
+                ItemList.Circuit_Parts_Transistor.get(1),
+                getModItem(OpenComputers.ID, "item", 1, 23, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(OpenComputers.ID, "item", 1, 69, missing),
                 "---------",
