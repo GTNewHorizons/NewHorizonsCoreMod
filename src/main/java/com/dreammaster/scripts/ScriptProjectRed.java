@@ -3801,7 +3801,10 @@ public class ScriptProjectRed implements IScriptLoader {
                         com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.RedAlloy, 1L),
+                        GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing))
                 .duration(SECONDS).eut(8).addTo(wiremillRecipes);
 
