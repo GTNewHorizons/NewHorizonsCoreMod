@@ -16,7 +16,7 @@ public class GT_Loader_Wires {
     private void registerWires() {
 
         // ID Range: 1200 - 4100
-        // Free IDs: 2050 - 4100
+        // Free IDs: 2050 - 4100 Do not trust this.
 
         // ===================================================================================================
         // Make wires
@@ -26,7 +26,7 @@ public class GT_Loader_Wires {
         makeWires(Materials.ElectricalSteel, 11490, 1L, 2L, 3L, GTValues.V[2], true, false);
         makeWires(Materials.EnergeticAlloy, 11510, 1L, 2L, 4L, gregtech.api.enums.GTValues.V[3], true, false);
         makeWires(Materials.VibrantAlloy, 11530, 3L, 6L, 6L, gregtech.api.enums.GTValues.V[4], true, false);
-        makeWires(Materials.EndSteel, 2030, 3L, 6L, 6L, gregtech.api.enums.GTValues.V[5], true, false);
+        makeWires(Materials.EndSteel, 1852, 3L, 6L, 6L, gregtech.api.enums.GTValues.V[5], true, false);
         makeWires(Materials.MelodicAlloy, 11550, 2L, 4L, 6L, gregtech.api.enums.GTValues.V[6], true, false);
         makeWires(Materials.StellarAlloy, 11570, 12L, 24L, 12L, gregtech.api.enums.GTValues.V[8], true, false);
         makeWires(Materials.Trinium, 11450, 3L, 6L, 6L, GTValues.V[7], true, false);
