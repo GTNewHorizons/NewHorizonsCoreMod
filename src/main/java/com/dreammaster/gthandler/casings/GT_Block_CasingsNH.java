@@ -71,7 +71,7 @@ public class GT_Block_CasingsNH extends BlockCasingsAbstract {
     public IIcon getIcon(int aSide, int aMeta) {
         switch (aMeta) {
             case 0:
-                return Textures.BlockIcons.MACHINE_CASING_TURBINE.getIcon();
+                return Textures.BlockIcons.MACHINE_CASING_TURBINE_STEEL.getIcon();
             case 1:
                 return Textures.BlockIcons.MACHINE_CASING_PIPE_STEEL.getIcon();
             case 2:
