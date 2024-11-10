@@ -127,6 +127,10 @@ public class NameRemover extends MTEBasicMachine {
             if (removeSpray && nbt.hasKey("mColor")) {
                 nbt.removeTag("mColor");
             }
+            // from MTEBuffer
+            if (nbt.hasKey("mTargetStackSize")) {
+                nbt.removeTag("mTargetStackSize");
+            }
             if (nbt.hasNoTags()) {
                 output.setTagCompound(null);
             }
