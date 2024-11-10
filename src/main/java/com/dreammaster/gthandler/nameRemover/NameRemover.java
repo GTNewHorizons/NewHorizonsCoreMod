@@ -61,14 +61,20 @@ public class NameRemover extends MTEBasicMachine {
 
         ItemStack output = getInputAt(0).copy();
         NBTTagCompound nbt = output.getTagCompound();
-        boolean removeName = false, removeDye = false, removeDisassembly = false, removeColor = false,
-                removeRepair = false, removeSpray = false;
-
         if (nbt != null) {
+
+            boolean removeName = false;
+            boolean removeDisassembly = false;
+            boolean removeColor = false;
+            boolean removeRepair = false;
+            boolean removeDye = false;
+            boolean removeSpray = false;
+
             ItemStack circuit = getInputAt(1);
             int circuitSetting = 0;
-            if (circuit != null && circuit.getItem() instanceof ItemIntegratedCircuit)
+            if (circuit != null && circuit.getItem() instanceof ItemIntegratedCircuit) {
                 circuitSetting = circuit.getItemDamage();
+            }
 
             switch (circuitSetting) {
                 case 1:
