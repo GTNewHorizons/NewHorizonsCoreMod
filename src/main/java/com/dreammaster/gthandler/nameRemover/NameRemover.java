@@ -116,6 +116,15 @@ public class NameRemover extends MTEBasicMachine {
             }
             if (removeSpray) removeTag(nbt, "mColor");
             removeTag(nbt, "mTargetStackSize"); // MTEBuffer
+            removeTag(nbt, "mOutputFluid"); // MTEDigitalTankBase
+            removeTag(nbt, "mVoidOverflow"); // MTEDigitalTankBase & MTEQuantumChest
+            removeTag(nbt, "mVoidFluidFull"); // MTEDigitalTankBase
+            removeTag(nbt, "mLockFluid"); // MTEDigitalTankBase
+            removeTag(nbt, "lockedFluidName"); // MTEDigitalTankBase
+            removeTag(nbt, "mAllowInputFromOutputSide"); // MTEDigitalTankBase
+            removeTag(nbt, "mItemsPerSide"); // MTEItemDistributor
+            removeTag(nbt, "radiusConfig"); // MTEMiner & MTEPump
+            removeTag(nbt, "mDisallowRetract"); // MTEPump
             if (nbt.hasNoTags()) {
                 output.setTagCompound(null);
             }
