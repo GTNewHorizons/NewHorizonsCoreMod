@@ -58,24 +58,20 @@ public class NameRemover extends MTEBasicMachine {
     @Override
     public int checkRecipe() {
         if (getInputAt(0) == null) return 0;
-
         ItemStack output = getInputAt(0).copy();
         NBTTagCompound nbt = output.getTagCompound();
         if (nbt != null) {
-
+            int circuitSetting = 0;
+            ItemStack circuit = getInputAt(1);
+            if (circuit != null && circuit.getItem() instanceof ItemIntegratedCircuit) {
+                circuitSetting = circuit.getItemDamage();
+            }
             boolean removeName = false;
             boolean removeDisassembly = false;
             boolean removeColor = false;
             boolean removeRepair = false;
             boolean removeDye = false;
             boolean removeSpray = false;
-
-            ItemStack circuit = getInputAt(1);
-            int circuitSetting = 0;
-            if (circuit != null && circuit.getItem() instanceof ItemIntegratedCircuit) {
-                circuitSetting = circuit.getItemDamage();
-            }
-
             switch (circuitSetting) {
                 case 1:
                     removeName = true;
@@ -109,28 +105,17 @@ public class NameRemover extends MTEBasicMachine {
                     nbt.removeTag("display");
                 }
             }
-            if (removeDisassembly && nbt.hasKey("GT.CraftingComponents")) {
-                nbt.removeTag("GT.CraftingComponents");
-            }
-            if (removeColor && nbt.hasKey("color")) {
-                nbt.removeTag("color");
-            }
-            if (removeRepair && nbt.hasKey("RepairCost")) {
-                nbt.removeTag("RepairCost");
-            }
+            if (removeDisassembly) removeTag(nbt, "GT.CraftingComponents");
+            if (removeColor) removeTag(nbt, "color");
+            if (removeRepair) removeTag(nbt, "RepairCost");
             if (removeDye && nbt.hasKey("display")) {
                 nbt.getCompoundTag("display").removeTag("color");
                 if (nbt.getCompoundTag("display").hasNoTags()) {
                     nbt.removeTag("display");
                 }
             }
-            if (removeSpray && nbt.hasKey("mColor")) {
-                nbt.removeTag("mColor");
-            }
-            // from MTEBuffer
-            if (nbt.hasKey("mTargetStackSize")) {
-                nbt.removeTag("mTargetStackSize");
-            }
+            if (removeSpray) removeTag(nbt, "mColor");
+            removeTag(nbt, "mTargetStackSize"); // MTEBuffer
             if (nbt.hasNoTags()) {
                 output.setTagCompound(null);
             }
@@ -143,6 +128,12 @@ public class NameRemover extends MTEBasicMachine {
             return 2;
         }
         return 0;
+    }
+
+    private static void removeTag(NBTTagCompound nbt, String key) {
+        if (nbt.hasKey(key)) {
+            nbt.removeTag(key);
+        }
     }
 
     @Override
