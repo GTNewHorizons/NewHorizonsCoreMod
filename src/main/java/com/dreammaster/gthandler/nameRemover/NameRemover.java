@@ -177,7 +177,7 @@ public class NameRemover extends MTEBasicMachine {
         description.add(
                 BOLD + "Circuit 24:"
                         + RESET
-                        + "  Remove everything as well as covers, careful you won't recover the covers!");
+                        + "  Remove everything including covers. Be careful you won't recover the covers!");
         description.add(" ");
         description.add(BOLD + "No Circuit:" + RESET + " Remove everything except covers");
         return description.toArray(new String[0]);
