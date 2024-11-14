@@ -26,6 +26,12 @@ public class ScriptOpenComputers implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        addShapelessRecipe(
+                getModItem(OpenComputers.ID, "item", 1, 23, missing),
+                ItemList.Circuit_Parts_Transistor.get(1));
+        addShapelessRecipe(
+                ItemList.Circuit_Parts_Transistor.get(1),
+                getModItem(OpenComputers.ID, "item", 1, 23, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(OpenComputers.ID, "item", 1, 69, missing),
                 "---------",

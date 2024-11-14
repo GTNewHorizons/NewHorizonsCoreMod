@@ -21,7 +21,6 @@ public class CoreModConfig extends ConfigManager {
     public boolean ModHazardousItems_Enabled;
     public boolean ModDebugVersionDisplay_Enabled;
     public boolean ModCustomToolTips_Enabled;
-    public boolean ModItemInHandInfo_Enabled;
     public boolean ModCustomFuels_Enabled;
     public boolean ModCustomDrops_Enabled;
     public boolean ModAdminErrorLogs_Enabled;
@@ -62,7 +61,6 @@ public class CoreModConfig extends ConfigManager {
         ModDebugVersionDisplay_Enabled = true;
         ModHazardousItems_Enabled = false;
         ModCustomToolTips_Enabled = false;
-        ModItemInHandInfo_Enabled = false;
         ModCustomFuels_Enabled = false;
         ModCustomDrops_Enabled = false;
         ModAdminErrorLogs_Enabled = true;
@@ -122,11 +120,6 @@ public class CoreModConfig extends ConfigManager {
                 "Modules",
                 ModCustomToolTips_Enabled,
                 "Set to true to enable CustomToolTips module. This needs a separate config file which is created once you start with this setting enabled");
-        ModItemInHandInfo_Enabled = _mainConfig.getBoolean(
-                "ItemInHandInfo",
-                "Modules",
-                ModItemInHandInfo_Enabled,
-                "Set to true to enable ItemInHandInfo module. If enabled, type /iih to display the item's name-info");
         ModCustomDrops_Enabled = _mainConfig.getBoolean(
                 "CustomDrops",
                 "Modules",
