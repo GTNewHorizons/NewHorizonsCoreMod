@@ -4,8 +4,10 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.WarpTheory;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -21,6 +23,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -202,8 +205,35 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("praecantatio"), 9)
                         .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("terra"), 3));
         TCHelper.setResearchComplexity("warptheory.amulet", 4);
+
+        TCHelper.orphanResearch("warptheory.warpwardamulet");
+        TCHelper.clearPrereq("warptheory.warpwardamulet");
+        TCHelper.addResearchPrereq("warptheory.warpwardamulet", "PURETEAR", false);
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "warptheory.warpwardamulet",
+                getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing),
+                64,
+                new AspectList().add(Aspect.getAspect("aequalitas"), 16).add(Aspect.getAspect("gloria"), 16)
+                        .add(Aspect.getAspect("aer"), 1024).add(Aspect.getAspect("aqua"), 1024)
+                        .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("tutamen"), 256)
+                        .add(Aspect.getAspect("cognitio"), 256).add(Aspect.getAspect("tutamen"), 256),
+                getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing),
+                new ItemStack[] { ItemList.Conveyor_Module_UV.get(1L),
+                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12, missing),
+                        ItemList.Electric_Pump_UV.get(1L), ItemList.Quantum_Chest_EV.get(1L),
+                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Neutronium, 1L),
+                        GregtechItemList.Hatch_Reservoir.get(1L), getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
+                        getModItem(OpenBlocks.ID, "xpshower", 1, 0, missing),
+                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing) });
+        TCHelper.setResearchAspects(
+                "warptheory.warpwardamulet",
+                new AspectList().add(Aspect.getAspect("aequalitas"), 5).add(Aspect.getAspect("gloria"), 5)
+                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 20)
+                        .add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("aer"), 32));
+        TCHelper.setResearchComplexity("warptheory.warpwardamulet", 4);
         TCHelper.refreshResearchPages("warptheory.paper");
         TCHelper.refreshResearchPages("warptheory.something");
         TCHelper.refreshResearchPages("warptheory.amulet");
+        TCHelper.refreshResearchPages("warptheory.warpwardamulet");
     }
 }
