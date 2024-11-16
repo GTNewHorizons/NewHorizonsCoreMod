@@ -55,6 +55,7 @@ public class ScriptWarpTheory implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing));
         TCHelper.clearPrereq("warptheory.paper");
         TCHelper.addResearchPrereq("warptheory.paper", "RESEARCHER2", false);
         TCHelper.clearPages("warptheory.paper");
@@ -206,11 +207,11 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("terra"), 3));
         TCHelper.setResearchComplexity("warptheory.amulet", 4);
 
-        TCHelper.orphanResearch("warptheory.warpwardamulet");
-        TCHelper.clearPrereq("warptheory.warpwardamulet");
-        TCHelper.addResearchPrereq("warptheory.warpwardamulet", "PURETEAR", false);
+        TCHelper.orphanResearch("warptheory.portableshower");
+        TCHelper.clearPrereq("warptheory.portableshower");
+        TCHelper.addResearchPrereq("warptheory.portableshower", "PURETEAR", false);
         ThaumcraftApi.addInfusionCraftingRecipe(
-                "warptheory.warpwardamulet",
+                "warptheory.portableshower",
                 getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing),
                 64,
                 new AspectList().add(Aspect.getAspect("aequalitas"), 16).add(Aspect.getAspect("gloria"), 16)
@@ -226,14 +227,14 @@ public class ScriptWarpTheory implements IScriptLoader {
                         getModItem(OpenBlocks.ID, "xpshower", 1, 0, missing),
                         getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing) });
         TCHelper.setResearchAspects(
-                "warptheory.warpwardamulet",
+                "warptheory.portableshower",
                 new AspectList().add(Aspect.getAspect("aequalitas"), 5).add(Aspect.getAspect("gloria"), 5)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 20)
                         .add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("aer"), 32));
-        TCHelper.setResearchComplexity("warptheory.warpwardamulet", 4);
+        TCHelper.setResearchComplexity("warptheory.portableshower", 4);
         TCHelper.refreshResearchPages("warptheory.paper");
         TCHelper.refreshResearchPages("warptheory.something");
         TCHelper.refreshResearchPages("warptheory.amulet");
-        TCHelper.refreshResearchPages("warptheory.warpwardamulet");
+        TCHelper.refreshResearchPages("warptheory.portableshower");
     }
 }
