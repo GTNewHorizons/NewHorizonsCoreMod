@@ -1710,14 +1710,30 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         }
 
         if (ZTones.isModLoaded()) {
+            // for recycling
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(ZTones.ID, "stoneTile", 8L, 0),
-                    bits,
+                    GTModHandler.RecipeBits.REVERSIBLE,
+                    new Object[] { " S ", "STS", " S ", 'S', new ItemStack(Blocks.stone_slab, 1), 'T',
+                            new ItemStack(Blocks.stone, 1) });
+            GTModHandler.removeRecipeByOutput(GTModHandler.getModItem(ZTones.ID, "stoneTile", 8L, 0));
+            // actual
+            GTModHandler.addCraftingRecipe(
+                    GTModHandler.getModItem(ZTones.ID, "stoneTile", 8L, 0),
+                    bits4,
                     new Object[] { "SSS", "STS", "SSS", 'S', new ItemStack(Blocks.stone_slab, 1), 'T',
                             new ItemStack(Blocks.stone, 1) });
+            // for recycling
             GTModHandler.addCraftingRecipe(
                     GTModHandler.getModItem(ZTones.ID, "auroraBlock", 8L, 0),
-                    bits,
+                    GTModHandler.RecipeBits.REVERSIBLE,
+                    new Object[] { " G ", "GDG", " G ", 'G', new ItemStack(Blocks.glass, 1), 'D',
+                            new ItemStack(Items.dye, 1, GTValues.W) });
+            GTModHandler.removeRecipeByOutput(GTModHandler.getModItem(ZTones.ID, "auroraBlock", 8L, 0));
+            // actual
+            GTModHandler.addCraftingRecipe(
+                    GTModHandler.getModItem(ZTones.ID, "auroraBlock", 8L, 0),
+                    bits4,
                     new Object[] { "GGG", "GDG", "GGG", 'G', new ItemStack(Blocks.glass, 1), 'D',
                             new ItemStack(Items.dye, 1, GTValues.W) });
             GTModHandler.addCraftingRecipe(

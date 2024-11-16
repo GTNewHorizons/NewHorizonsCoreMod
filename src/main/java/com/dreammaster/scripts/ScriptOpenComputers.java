@@ -8,16 +8,11 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
 
 public class ScriptOpenComputers implements IScriptLoader {
-
-    private static final Log log = LogFactory.getLog(ScriptOpenComputers.class);
 
     @Override
     public String getScriptName() {
