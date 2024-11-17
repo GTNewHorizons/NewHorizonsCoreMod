@@ -16,7 +16,7 @@ public class GT_Loader_Wires {
     private void registerWires() {
 
         // ID Range: 1200 - 4100
-        // Free IDs: 2050 - 4100
+        // Free IDs: 2030 - 4100
 
         // ===================================================================================================
         // Make wires
