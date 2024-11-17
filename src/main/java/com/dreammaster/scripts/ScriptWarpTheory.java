@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.WarpTheory;
 import static gregtech.api.enums.Mods.Witchery;
@@ -23,7 +24,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -214,21 +214,24 @@ public class ScriptWarpTheory implements IScriptLoader {
                 "warptheory.portableshower",
                 getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing),
                 64,
-                new AspectList().add(Aspect.getAspect("aequalitas"), 16).add(Aspect.getAspect("gloria"), 16)
+                new AspectList().add(Aspect.getAspect("custom1"), 16).add(Aspect.getAspect("custom5"), 16)
                         .add(Aspect.getAspect("aer"), 1024).add(Aspect.getAspect("aqua"), 1024)
                         .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("tutamen"), 256)
-                        .add(Aspect.getAspect("cognitio"), 256).add(Aspect.getAspect("tutamen"), 256),
+                        .add(Aspect.getAspect("cognitio"), 256).add(Aspect.getAspect("tutamen"), 256)
+                        .add(Aspect.getAspect("sano"), 1024),
                 getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing),
-                new ItemStack[] { ItemList.Conveyor_Module_UV.get(1L),
+                new ItemStack[] { getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
                         getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12, missing),
-                        ItemList.Electric_Pump_UV.get(1L), ItemList.Quantum_Chest_EV.get(1L),
+                        getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing),
+                        getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Neutronium, 1L),
-                        GregtechItemList.Hatch_Reservoir.get(1L), getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
                         getModItem(OpenBlocks.ID, "xpshower", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing) });
+                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Ichorium, 1L) });
         TCHelper.setResearchAspects(
                 "warptheory.portableshower",
-                new AspectList().add(Aspect.getAspect("aequalitas"), 5).add(Aspect.getAspect("gloria"), 5)
+                new AspectList().add(Aspect.getAspect("custom1"), 5).add(Aspect.getAspect("custom3"), 5)
                         .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 20)
                         .add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("aer"), 32));
         TCHelper.setResearchComplexity("warptheory.portableshower", 4);
