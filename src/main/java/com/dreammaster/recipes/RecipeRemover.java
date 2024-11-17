@@ -1167,11 +1167,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(ItemList.Emitter_UHV.get(1L));
         removeRecipeByOutputDelayed(ItemList.Sensor_UHV.get(1L));
         removeRecipeByOutputDelayed(ItemList.Field_Generator_UHV.get(1L));
-        removeRecipeByOutputDelayed(GregtechItemList.Super_Chest_LV.get(1));
-        removeRecipeByOutputDelayed(GregtechItemList.Super_Chest_MV.get(1));
-        removeRecipeByOutputDelayed(GregtechItemList.Super_Chest_HV.get(1));
-        removeRecipeByOutputDelayed(GregtechItemList.Super_Chest_EV.get(1));
-        removeRecipeByOutputDelayed(GregtechItemList.Super_Chest_IV.get(1));
         removeRecipeByOutputDelayed(GregtechItemList.Industrial_WireFactory.get(1));
         removeRecipeByOutputDelayed(GregtechItemList.Boiler_Advanced_LV.get(1));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemBoilerChassis, 1, 0));
