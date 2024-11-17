@@ -190,8 +190,8 @@ public class MaceratorRecipes implements Runnable {
                     .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L))
-                    .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L)).outputChances(10000)
+                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 3))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L)).outputChances(10000)
