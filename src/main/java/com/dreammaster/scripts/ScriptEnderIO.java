@@ -122,6 +122,16 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
+        // ME Ultra Dense Conduit
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemMEConduit", 16, 1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1L),
+                        circuit2)
+                .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 2))
+                .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(960)
+                .addTo(assemblerRecipes);
+
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 createItemStack(
                         EnderIO.ID,

@@ -15,7 +15,6 @@ import gregtech.api.enums.Textures;
 import gregtech.api.gui.modularui.GTUITextures;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
-import gregtech.api.metatileentity.CoverableTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.MTEBasicMachine;
 import gregtech.api.objects.GTRenderedTexture;
@@ -59,21 +58,18 @@ public class NameRemover extends MTEBasicMachine {
     @Override
     public int checkRecipe() {
         if (getInputAt(0) == null) return 0;
+
         ItemStack output = getInputAt(0).copy();
         NBTTagCompound nbt = output.getTagCompound();
+        boolean removeName = false, removeDye = false, removeDisassembly = false, removeColor = false,
+                removeRepair = false, removeSpray = false;
+
         if (nbt != null) {
-            int circuitSetting = 0;
             ItemStack circuit = getInputAt(1);
-            if (circuit != null && circuit.getItem() instanceof ItemIntegratedCircuit) {
+            int circuitSetting = 0;
+            if (circuit != null && circuit.getItem() instanceof ItemIntegratedCircuit)
                 circuitSetting = circuit.getItemDamage();
-            }
-            boolean removeName = false;
-            boolean removeDisassembly = false;
-            boolean removeColor = false;
-            boolean removeRepair = false;
-            boolean removeDye = false;
-            boolean removeSpray = false;
-            boolean removeCovers = false;
+
             switch (circuitSetting) {
                 case 1:
                     removeName = true;
@@ -93,8 +89,6 @@ public class NameRemover extends MTEBasicMachine {
                 case 6:
                     removeSpray = true;
                     break;
-                case 24:
-                    removeCovers = true;
                 default:
                     removeName = true;
                     removeDisassembly = true;
@@ -109,35 +103,23 @@ public class NameRemover extends MTEBasicMachine {
                     nbt.removeTag("display");
                 }
             }
-            if (removeDisassembly) removeTag(nbt, "GT.CraftingComponents");
-            if (removeColor) removeTag(nbt, "color");
-            if (removeRepair) removeTag(nbt, "RepairCost");
+            if (removeDisassembly && nbt.hasKey("GT.CraftingComponents")) {
+                nbt.removeTag("GT.CraftingComponents");
+            }
+            if (removeColor && nbt.hasKey("color")) {
+                nbt.removeTag("color");
+            }
+            if (removeRepair && nbt.hasKey("RepairCost")) {
+                nbt.removeTag("RepairCost");
+            }
             if (removeDye && nbt.hasKey("display")) {
                 nbt.getCompoundTag("display").removeTag("color");
                 if (nbt.getCompoundTag("display").hasNoTags()) {
                     nbt.removeTag("display");
                 }
             }
-            if (removeSpray) removeTag(nbt, "mColor");
-            removeTag(nbt, "mTargetStackSize"); // MTEBuffer
-            removeTag(nbt, "mOutputFluid"); // MTEDigitalTankBase
-            removeTag(nbt, "mVoidOverflow"); // MTEDigitalTankBase & MTEQuantumChest
-            removeTag(nbt, "mVoidFluidFull"); // MTEDigitalTankBase
-            removeTag(nbt, "mLockFluid"); // MTEDigitalTankBase
-            removeTag(nbt, "lockedFluidName"); // MTEDigitalTankBase
-            removeTag(nbt, "mAllowInputFromOutputSide"); // MTEDigitalTankBase
-            removeTag(nbt, "mItemsPerSide"); // MTEItemDistributor
-            removeTag(nbt, "radiusConfig"); // MTEMiner & MTEPump
-            removeTag(nbt, "mDisallowRetract"); // MTEPump
-            removeTag(nbt, "mStrongRedstone"); // BaseMetaTileEntity
-            if (removeCovers) { // BaseMetaTileEntity
-                removeTag(nbt, "mMuffler");
-                removeTag(nbt, "mLockUpgrade");
-                removeTag(nbt, "mCoverSides");
-                removeTag(nbt, "gt.covers");
-                for (String key : CoverableTileEntity.COVER_DATA_NBT_KEYS) {
-                    removeTag(nbt, key);
-                }
+            if (removeSpray && nbt.hasKey("mColor")) {
+                nbt.removeTag("mColor");
             }
             if (nbt.hasNoTags()) {
                 output.setTagCompound(null);
@@ -153,16 +135,10 @@ public class NameRemover extends MTEBasicMachine {
         return 0;
     }
 
-    private static void removeTag(NBTTagCompound nbt, String key) {
-        if (nbt.hasKey(key)) {
-            nbt.removeTag(key);
-        }
-    }
-
     @Override
     public String[] getDescription() {
         List<String> description = new ArrayList<>();
-        description.add("Removes various NBT tags as well as covers.");
+        description.add("Removes various NBT tags.");
         description.add(" ");
         description.add(UNDERLINE + "First Slot" + RESET);
         description.add("The item you want to strip of NBT");
@@ -174,12 +150,9 @@ public class NameRemover extends MTEBasicMachine {
         description.add(BOLD + "Circuit 4:" + RESET + "  Remove Anvil repair tag");
         description.add(BOLD + "Circuit 5:" + RESET + "  Remove Dye from Leather armor");
         description.add(BOLD + "Circuit 6:" + RESET + "  Remove Spray color from GT items");
-        description.add(
-                BOLD + "Circuit 24:"
-                        + RESET
-                        + "  Remove everything including covers. Be careful you won't recover the covers!");
         description.add(" ");
-        description.add(BOLD + "No Circuit:" + RESET + " Remove everything except covers");
+        description.add(BOLD + "No Circuit:" + RESET + " Remove all of the above");
+
         return description.toArray(new String[0]);
     }
 
