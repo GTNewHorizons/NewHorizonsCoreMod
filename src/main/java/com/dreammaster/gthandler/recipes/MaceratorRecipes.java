@@ -183,23 +183,23 @@ public class MaceratorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 0))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 1))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 2))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L))
-                    .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 3))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 4))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))
-                    .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+                    .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
         }
 
