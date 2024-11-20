@@ -4524,6 +4524,8 @@ public class ScriptThaumcraft implements IScriptLoader {
                         .add(Aspect.getAspect("instrumentum"), 9).add(Aspect.getAspect("meto"), 12)
                         .add(Aspect.getAspect("motus"), 6).add(Aspect.getAspect("praecantatio"), 3));
         TCHelper.setResearchComplexity("CORELUMBER", 3);
+
+        TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "GolemBell", 1, 0));
         TCHelper.clearPages("GOLEMBELL");
         TCHelper.addResearchPage("GOLEMBELL", new ResearchPage("tc.research_page.GOLEMBELL.1"));
         TCHelper.addResearchPage("GOLEMBELL", new ResearchPage("tc.research_page.GOLEMBELL.2"));
