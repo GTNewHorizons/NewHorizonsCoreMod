@@ -23,7 +23,6 @@ import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
 import static gregtech.api.util.GTRecipeConstants.RESEARCH_TIME;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
-import static gtPlusPlus.core.material.MaterialsAlloy.STABALLOY;
 import static tectech.thing.CustomItemList.DATApipe;
 import static tectech.thing.CustomItemList.Machine_Multi_DataBank;
 import static tectech.thing.CustomItemList.Machine_Multi_Switch;
@@ -1107,23 +1106,20 @@ public class AssemblingLineRecipes implements Runnable {
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Machine_Multi_IndustrialCompressor.get(1))
                     .metadata(RESEARCH_TIME, 1800 * SECONDS)
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.block, Materials.StellarAlloy, 64L),
-                            ItemList.Heating_Duct_Casing.get(32L),
-                            ItemList.Coolant_Duct_Casing.get(32L),
-                            STABALLOY.getBlock(32),
-                            GTModHandler.getIC2Item("mixedMetalIngot", 24L),
-                            new Object[] { OrePrefixes.circuit.get(Materials.LuV), 4 },
-                            new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 },
-                            ItemList.Electric_Piston_ZPM.get(8),
-                            ItemList.Conveyor_Module_ZPM.get(4),
-                            ItemList.Sensor_ZPM.get(2),
-                            ItemList.Field_Generator_ZPM.get(1))
+                            ItemList.Machine_Multi_IndustrialCompressor.get(4),
+                            ItemList.Heating_Duct_Casing.get(4L),
+                            ItemList.Coolant_Duct_Casing.get(4L),
+                            GTOreDictUnificator.get(OrePrefixes.block, Materials.Naquadria, 4),
+                            ItemList.Electric_Piston_ZPM.get(16),
+                            ItemList.Robot_Arm_ZPM.get(4),
+                            ItemList.Electric_Pump_ZPM.get(4),
+                            new Object[] { OrePrefixes.circuit.get(Materials.UV), 4 })
                     .itemOutputs(ItemList.Machine_Multi_HIPCompressor.get(1))
                     .fluidInputs(
-                            Materials.Naquadria.getMolten(1152),
+                            GGMaterial.incoloy903.getMolten(256 * 144),
+                            Materials.NaquadahEnriched.getMolten(64 * 144),
                             Materials.LiquidAir.getFluid(16000),
-                            Materials.Lubricant.getFluid(16000),
-                            Materials.Neutronium.getMolten(1152))
+                            Materials.Lubricant.getFluid(16000))
                     .duration(120 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
 
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(Avaritia.ID, "Singularity", 1L, 0))
