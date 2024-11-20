@@ -4531,7 +4531,7 @@ public class ScriptThaumcraft implements IScriptLoader {
         TCHelper.addResearchPage("GOLEMBELL", new ResearchPage("tc.research_page.GOLEMBELL.2"));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "GOLEMBELL",
-                createItemStack(Thaumcraft.ID, "GolemBell", 1, 0, "{markers:[0:{side:1b}]}", missing),
+                getModItem(Thaumcraft.ID, "GolemBell", 1, 0, missing),
                 new AspectList().add(Aspect.getAspect("ordo"), 10).add(Aspect.getAspect("aer"), 5),
                 "abc",
                 "def",
@@ -4556,15 +4556,7 @@ public class ScriptThaumcraft implements IScriptLoader {
                 "craftingToolFile");
         TCHelper.addResearchPage(
                 "GOLEMBELL",
-                new ResearchPage(
-                        TCHelper.findArcaneRecipe(
-                                createItemStack(
-                                        Thaumcraft.ID,
-                                        "GolemBell",
-                                        1,
-                                        0,
-                                        "{markers:[0:{side:1b}]}",
-                                        missing))));
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "GolemBell", 1, 0, missing))));
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "UPGRADEAIR",
                 getModItem(Thaumcraft.ID, "ItemGolemUpgrade", 1, 0, missing),
