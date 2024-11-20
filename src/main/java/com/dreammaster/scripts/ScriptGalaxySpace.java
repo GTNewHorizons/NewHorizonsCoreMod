@@ -7,6 +7,8 @@ import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.OpenModularTurrets;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
@@ -37,12 +39,11 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gregtech.common.items.MetaGeneratedItem01;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
-import micdoodle8.mods.galacticraft.core.util.RecipeUtil;
 import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 
@@ -61,7 +62,8 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 GalaxySpace.ID,
                 OpenComputers.ID,
                 BuildCraftBuilders.ID,
-                IndustrialCraft2.ID);
+                IndustrialCraft2.ID,
+                OpenModularTurrets.ID);
     }
 
     @Override
@@ -71,8 +73,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(new ItemStack(Blocks.glass), GTOreDictUnificator.get(OrePrefixes.stick, Materials.Desh, 8))
                 .itemOutputs(getGSItem("futureglass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(GCItems.battery, 1, W), GTUtility.getIntegratedCircuit(1))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(GCItems.battery, 1, W), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getGSItem("item.LeadBattery", 1, 100)).fluidInputs(Materials.Lead.getMolten(6000))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 0), GTUtility.getIntegratedCircuit(1))
@@ -449,176 +450,467 @@ public class ScriptGalaxySpace implements IScriptLoader {
         addDecorativeMetalBlockRecipe(8, getGSItem("item.CompressedPlates", 1, 9));
         addDecorativeMetalBlockRecipe(9, new ItemStack(GCItems.basicItem, 1, 6));
 
-        RecipeUtil.addRecipe(
-                new ItemStack(GSBlocks.MachineFrames),
-                new Object[] { "MWM", "CTC", "MWM", 'M', new ItemStack(GSItems.CompressedPlates, 1, 5), 'W',
-                        CustomItemList.WaferTier3.get(1), 'C', new ItemStack(GCBlocks.aluminumWire, 1, 1), 'T',
-                        new ItemStack(GregTechAPI.sBlockCasings4) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSBlocks.StorageModuleT3),
-                new Object[] { "CEC", "WFW", "CEC", 'C', new ItemStack(GSItems.CompressedPlates, 1, 9), 'E',
-                        new ItemStack(GCBlocks.machineTiered, 1, 8), 'W', CustomItemList.WaferTier3.get(1), 'F',
-                        new ItemStack(GSBlocks.MachineFrames) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSBlocks.OxStorageModuleT2),
-                new Object[] { "SCS", "PFP", "SWS", 'S', new ItemStack(GCBlocks.machineBase2, 1, 8), 'C',
-                        new ItemStack(GCItems.oxygenConcentrator), 'P', new ItemStack(GCBlocks.oxygenPipe), 'F',
-                        new ItemStack(GSBlocks.MachineFrames), 'W', CustomItemList.WaferTier3.get(1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSBlocks.SolarWindPanel),
-                new Object[] { "TFT", "APA", "MWS", 'T', new ItemStack(AsteroidsItems.basicItem, 1, 6), 'F',
-                        new ItemStack(GSItems.SolarFlares, 1, 1), 'A', new ItemStack(GCBlocks.aluminumWire, 1, 1), 'P',
-                        new ItemStack(GCItems.flagPole), 'M', ItemList.Electric_Motor_LV.get(1), 'W',
-                        new ItemStack(GCItems.basicItem, 1, 14), 'S', ItemList.Sensor_LV.get(1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSBlocks.SolarPanel),
-                new Object[] { "DSD", "AFA", "MWs", 'D', new ItemStack(GSItems.CompressedPlates, 1, 2), 'S',
-                        new ItemStack(GCItems.basicItem, 1, 1), 'A', new ItemStack(GCBlocks.aluminumWire, 1, 1), 'F',
-                        new ItemStack(GSBlocks.MachineFrames), 'M', ItemList.Electric_Motor_MV.get(1), 'W',
-                        CustomItemList.WaferTier3.get(1), 's', ItemList.Sensor_MV.get(1) });
+        addShapedRecipe(
+                new ItemStack(IGBlocks.GasSiphonCasing),
+                "MWM",
+                "CTC",
+                "MWM",
+                'M',
+                getGSItem("item.CompressedPlates", 1, 5), // Compressed Mithril
+                'W',
+                CustomItemList.WaferTier3.get(1),
+                'C',
+                new ItemStack(GCBlocks.aluminumWire, 1, 1),
+                'T',
+                new ItemStack(GregTechAPI.sBlockCasings4)); // Robust Tungstensteel Machine Casing
 
-        RecipeUtil.addRecipe(
-                new ItemStack(BRBlocks.BarnardaCPlanks, 4),
-                new Object[] { "L", 'L', new ItemStack(BRBlocks.BarnardaCLog) }); // GT replaces this recipe
-        // automatically
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.SpacesuitBoots),
-                new Object[] { "ABA", "ADA", "CDC", 'A', new ItemStack(GSItems.CompressedSDHD120), 'B',
-                        new ItemStack(GSItems.LeadBoots), 'D', new ItemStack(MarsItems.marsItemBasic, 1, 5), 'C',
-                        new ItemStack(GSItems.CompressedPlates, 1, 2) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.QuantBow),
-                new Object[] { "LMS", "m S", "LMS", 'L',
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Lead, 1), 'M',
-                        getGTNHItem("MytrylCrystal"), 'S', getModItem("TConstruct", "bowstring", 1, 2),
-                        'm', getGTNHItem("MysteriousCrystal") });
+        addShapedRecipe(
+                getGSItem("storagemoduleT3", 1, 0),
+                "CEC",
+                "WFW",
+                "CEC",
+                'C',
+                getGSItem("item.CompressedPlates", 1, 9), // Compressed Tungsten
+                'E',
+                new ItemStack(GCBlocks.machineTiered, 1, 8), // Energy Storage Cluster
+                'W',
+                CustomItemList.WaferTier3.get(1),
+                'F',
+                new ItemStack(IGBlocks.GasSiphonCasing));
 
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.LeadHelmet),
-                new Object[] { "LLL", "LHL", "D D", 'L', new ItemStack(GSItems.CompressedPlates, 1, 3), 'H',
-                        "craftingToolHardHammer", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.LeadPlate),
-                new Object[] { "LHL", "LDL", "L L", 'L', new ItemStack(GSItems.CompressedPlates, 1, 3), 'H',
-                        "craftingToolHardHammer", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.LeadLeg),
-                new Object[] { "LLL", "LDL", "LHL", 'L', new ItemStack(GSItems.CompressedPlates, 1, 3), 'H',
-                        "craftingToolHardHammer", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.LeadBoots),
-                new Object[] { "D D", "LHL", "L L", 'L', new ItemStack(GSItems.CompressedPlates, 1, 3), 'H',
-                        "craftingToolHardHammer", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.CobaltumHelmet),
-                new Object[] { "CCC", "CHC", "D D", 'C', new ItemStack(GSItems.CompressedPlates, 1, 1), 'H',
-                        "craftingToolHardHammer", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.CobaltumPlate),
-                new Object[] { "CHC", "CDC", "C C", 'C', new ItemStack(GSItems.CompressedPlates, 1, 1), 'H',
-                        "craftingToolHardHammer", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.CobaltumLeg),
-                new Object[] { "CCC", "CDC", "CHC", 'C', new ItemStack(GSItems.CompressedPlates, 1, 1), 'H',
-                        "craftingToolHardHammer", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.CobaltumBoots),
-                new Object[] { "D D", "CHC", "C C", 'C', new ItemStack(GSItems.CompressedPlates, 1, 1), 'H',
-                        "craftingToolHardHammer", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.SpacesuitHelmet),
-                new Object[] { "AHA", "AMA", "DCD", 'A', new ItemStack(GSItems.CompressedSDHD120), 'H',
-                        new ItemStack(GSItems.LeadHelmet), 'M', new ItemStack(GCItems.oxMask), 'D',
-                        new ItemStack(MarsItems.marsItemBasic, 1, 5), 'C', new ItemStack(GCItems.oxygenConcentrator) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.SpacesuitPlate),
-                new Object[] { "APA", "ACA", "ADA", 'A', new ItemStack(GSItems.CompressedSDHD120), 'P',
-                        new ItemStack(GSItems.LeadPlate), 'C', new ItemStack(GSItems.CompressedPlates, 1, 2), 'D',
-                        new ItemStack(MarsItems.marsItemBasic, 1, 5) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.SpacesuitLeg),
-                new Object[] { "ALA", "CAC", "CDC", 'A', new ItemStack(GSItems.CompressedSDHD120), 'L',
-                        new ItemStack(GSItems.LeadLeg), 'C', new ItemStack(GSItems.CompressedPlates, 1, 2), 'D',
-                        new ItemStack(MarsItems.marsItemBasic, 1, 5) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.ModuleLander),
-                new Object[] { "FSS", "SBC", "PEP", 'F', new ItemStack(GCItems.basicItem, 1, 19), 'S',
-                        new ItemStack(GCItems.basicItem, 1, 9), 'B', new ItemStack(GCItems.partBuggy, 1, 1), 'C',
-                        new ItemStack(GCItems.basicItem, 1, 6), 'P', new ItemStack(GCItems.flagPole), 'E',
-                        new ItemStack(GCItems.rocketEngine) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.ModuleLanderT2),
-                new Object[] { "FPF", "CLC", "FCF", 'F', GTOreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1),
-                        'P', new ItemStack(GCItems.parachute, 1, W), 'C', new ItemStack(GCItems.canvas),
-                        'L', new ItemStack(GSItems.ModuleLander) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.ModuleLanderT3),
-                new Object[] { "DDD", "PLP", "DDD", 'D', new ItemStack(MarsItems.marsItemBasic, 1, 5), 'P',
-                        new ItemStack(GCItems.flagPole), 'L', new ItemStack(GSItems.ModuleLanderT2) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.PlasmaSword, 1, 100),
-                new Object[] { "DCD", "FCH", "DBW", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
-                        'C', new ItemStack(GSItems.CompressedPlates, 1, 1), 'F', "craftingToolFile", 'H',
-                        "craftingToolHardHammer", 'B', new ItemStack(GCItems.battery, 1, W), 'W',
-                        new ItemStack(GCBlocks.aluminumWire, 1, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.PlasmaPickaxe, 1, 100),
-                new Object[] { "CCC", "FPH", "DBW", 'C', new ItemStack(GSItems.CompressedPlates, 1, 1), 'F',
-                        "craftingToolFile", 'P', new ItemStack(GCItems.flagPole), 'H', "craftingToolHardHammer", 'D',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'B',
-                        new ItemStack(GCItems.battery, 1, W), 'W',
-                        new ItemStack(GCBlocks.aluminumWire, 1, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.PlasmaAxe, 1, 100),
-                new Object[] { "CCH", "CPD", "FBW", 'C', new ItemStack(GSItems.CompressedPlates, 1, 1), 'H',
-                        "craftingToolHardHammer", 'P', new ItemStack(GCItems.flagPole), 'D',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'F', "craftingToolFile", 'B',
-                        new ItemStack(GCItems.battery, 1, W), 'W',
-                        new ItemStack(GCBlocks.aluminumWire, 1, 1) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.PlasmaShovel, 1, 100),
-                new Object[] { "FCH", "DPD", "WBW", 'F', "craftingToolFile", 'C',
-                        new ItemStack(GSItems.CompressedPlates, 1, 1), 'H', "craftingToolHardHammer", 'D',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'P',
-                        new ItemStack(GCItems.flagPole), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B',
-                        new ItemStack(GCItems.battery, 1, W) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.PlasmaHoe, 1, 100),
-                new Object[] { "CCH", "FPD", "WBD", 'C', new ItemStack(GSItems.CompressedPlates, 1, 1), 'H',
-                        "craftingToolHardHammer", 'F', "craftingToolFile", 'P', new ItemStack(GCItems.flagPole), 'D',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'W',
-                        new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B',
-                        new ItemStack(GCItems.battery, 1, W) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.SolarFlares),
-                new Object[] { "IPI", "PSP", "PsP", 'I', new ItemStack(GCItems.basicItem, 1, 11), 'P',
-                        new ItemStack(GCItems.flagPole), 'S', new ItemStack(GCItems.basicItem, 1, 1), 's',
-                        new ItemStack(GCItems.basicItem, 1, 9) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.SolarFlares, 1, 1),
-                new Object[] { "DFD", "FTF", "DFD", 'D', new ItemStack(MarsItems.marsItemBasic, 1, 5), 'F',
-                        new ItemStack(GSItems.SolarFlares), 'T', new ItemStack(AsteroidsItems.basicItem, 1, 6) });
-        RecipeUtil.addRecipe(
-                new ItemStack(GSItems.RobotArm),
-                new Object[] { "NNL", "MRA", "PCR", 'N',
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1), 'L',
-                        new ItemStack(GCItems.sensorLens), 'M', new ItemStack(MetaGeneratedItem01.INSTANCE, 1, 32602),
-                        'R', GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 1), 'A',
-                        ItemList.Robot_Arm_HV.get(1), 'P', ItemList.Electric_Piston_HV.get(1), 'C', "circuitData" });
+        addShapedRecipe(
+                getGSItem("oxstoragemoduleT2", 1, 0),
+                "SCS",
+                "PFP",
+                "SWS",
+                'S',
+                new ItemStack(GCBlocks.machineBase2, 1, 8), // Oxygen Storage Module
+                'C',
+                new ItemStack(GCItems.oxygenConcentrator),
+                'P',
+                new ItemStack(GCBlocks.oxygenPipe),
+                'F',
+                new ItemStack(IGBlocks.GasSiphonCasing),
+                'W',
+                CustomItemList.WaferTier3.get(1));
+
+        addShapedRecipe(
+                getGSItem("solarwindpanel", 1, 0),
+                "TFT",
+                "APA",
+                "MWS",
+                'T',
+                new ItemStack(AsteroidsItems.basicItem, 1, 6), // Compressed Titanium Plate
+                'F',
+                getGSItem("item.SolarFlares", 1, 1), // Solar Flares
+                'A',
+                new ItemStack(GCBlocks.aluminumWire, 1, 1),
+                'P',
+                new ItemStack(GCItems.flagPole),
+                'M',
+                ItemList.Electric_Motor_LV.get(1),
+                'W',
+                new ItemStack(GCItems.basicItem, 1, 14), // Advanced Wafer
+                'S',
+                ItemList.Sensor_LV.get(1));
+
+        addShapedRecipe(
+                getGSItem("solarPanel", 1, 0),
+                "DSD",
+                "AFA",
+                "MWs",
+                'D',
+                getGSItem("item.CompressedPlates", 1, 2), // Compressed Duralumin
+                'S',
+                new ItemStack(GCItems.basicItem, 1, 1), // Full Solar Panel
+                'A',
+                new ItemStack(GCBlocks.aluminumWire, 1, 1),
+                'F',
+                new ItemStack(IGBlocks.GasSiphonCasing),
+                'M',
+                ItemList.Electric_Motor_MV.get(1),
+                'W',
+                CustomItemList.WaferTier3.get(1),
+                's',
+                ItemList.Sensor_MV.get(1));
+
+        // todo move somewhere else not in a script
+        // GT replaces this recipe automatically
+        addShapelessRecipe(getGSItem("barnardaClog", 1, 0), getGSItem("barnardaCplanks", 4, 0));
+
+        addShapedRecipe(
+                getGSItem("item.spacesuit_boots", 1, 0),
+                "ABA",
+                "ADA",
+                "CDC",
+                'A',
+                getGSItem("item.CompressedSDHD120", 1, 0),
+                'B',
+                getGSItem("item.lead_boots", 1, 0),
+                'D',
+                new ItemStack(MarsItems.marsItemBasic, 1, 5), // Compressed Desh
+                'C',
+                getGSItem("item.CompressedPlates", 1, 2)); // Compressed Duralumin
+
+        addShapedRecipe(
+                getGSItem("item.QuantBow", 1, 0),
+                "LMS",
+                "m S",
+                "LMS",
+                'L',
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Lead, 1),
+                'M',
+                CustomItemList.MytrylCrystal.get(1),
+                'S',
+                getModItem(TinkerConstruct.ID, "bowstring", 1, 2), // Fiery Bowstring
+                'm',
+                CustomItemList.MysteriousCrystal.get(1));
+
+        addShapedRecipe(
+                getGSItem("item.lead_helmet", 1, 0),
+                "LLL",
+                "LHL",
+                "D D",
+                'L',
+                getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+
+        addShapedRecipe(
+                getGSItem("item.lead_plate", 1, 0),
+                "LHL",
+                "LDL",
+                "L L",
+                'L',
+                getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+
+        addShapedRecipe(
+                getGSItem("item.lead_leg", 1, 0),
+                "LLL",
+                "LDL",
+                "LHL",
+                'L',
+                getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+
+        addShapedRecipe(
+                getGSItem("item.lead_boots", 1, 0),
+                "D D",
+                "LHL",
+                "L L",
+                'L',
+                getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+
+        addShapedRecipe(
+                getGSItem("item.cobaltum_helmet", 1, 0),
+                "CCC",
+                "CHC",
+                "D D",
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+
+        addShapedRecipe(
+                getGSItem("item.cobaltum_plate", 1, 0),
+                "CHC",
+                "CDC",
+                "C C",
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'H',
+                "craftingToolHardHammer",
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+
+        addShapedRecipe(
+                getGSItem("item.cobaltum_leg", 1, 0),
+                "CCC",
+                "CDC",
+                "CHC",
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+
+        addShapedRecipe(
+                getGSItem("item.cobaltum_boots", 1, 0),
+                "D D",
+                "CHC",
+                "C C",
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+
+        addShapedRecipe(
+                getGSItem("item.spacesuit_helmet", 1, 0),
+                "AHA",
+                "AMA",
+                "DCD",
+                'A',
+                getGSItem("item.CompressedSDHD120", 1, 0),
+                'H',
+                getGSItem("item.lead_helmet", 1, 0),
+                'M',
+                new ItemStack(GCItems.oxMask),
+                'D',
+                new ItemStack(MarsItems.marsItemBasic, 1, 5), // Compressed Desh
+                'C',
+                new ItemStack(GCItems.oxygenConcentrator));
+
+        addShapedRecipe(
+                getGSItem("item.spacesuit_plate", 1, 0),
+                "APA",
+                "ACA",
+                "ADA",
+                'A',
+                getGSItem("item.CompressedSDHD120", 1, 0),
+                'P',
+                getGSItem("item.lead_plate", 1, 0),
+                'C',
+                getGSItem("item.CompressedPlates", 1, 2), // Compressed Duralumin
+                'D',
+                new ItemStack(MarsItems.marsItemBasic, 1, 5)); // Compressed Desh
+
+        addShapedRecipe(
+                getGSItem("item.spacesuit_leg", 1, 0),
+                "ALA",
+                "CAC",
+                "CDC",
+                'A',
+                getGSItem("item.CompressedSDHD120", 1, 0),
+                'L',
+                getGSItem("item.lead_leg", 1, 0),
+                'C',
+                getGSItem("item.CompressedPlates", 1, 2), // Compressed Duralumin
+                'D',
+                new ItemStack(MarsItems.marsItemBasic, 1, 5)); // Compressed Desh
+
+        addShapedRecipe(
+                getGSItem("item.ModuleLander", 1, 0),
+                "FSS",
+                "SBC",
+                "PEP",
+                'F',
+                new ItemStack(GCItems.basicItem, 1, 19), // Frequency Module
+                'S',
+                new ItemStack(GCItems.basicItem, 1, 9), // Compressed Steel
+                'B',
+                new ItemStack(GCItems.partBuggy, 1, 1), // Buggy Seat
+                'C',
+                new ItemStack(GCItems.basicItem, 1, 6), // Compressed Copper
+                'P',
+                new ItemStack(GCItems.flagPole),
+                'E',
+                new ItemStack(GCItems.rocketEngine));
+
+        addShapedRecipe(
+                getGSItem("item.ModuleLander2", 1, 0),
+                "FPF",
+                "CLC",
+                "FCF",
+                'F',
+                GTOreDictUnificator.get(OrePrefixes.foil, Materials.Gold, 1),
+                'P',
+                new ItemStack(GCItems.parachute, 1, W),
+                'C',
+                new ItemStack(GCItems.canvas),
+                'L',
+                getGSItem("item.ModuleLander", 1, 0));
+
+        addShapedRecipe(
+                getGSItem("item.ModuleLander3", 1, 0),
+                "DDD",
+                "PLP",
+                "DDD",
+                'D',
+                new ItemStack(MarsItems.marsItemBasic, 1, 5), // Compressed Desh
+                'P',
+                new ItemStack(GCItems.flagPole),
+                'L',
+                getGSItem("item.ModuleLander2", 1, 0));
+
+        addShapedRecipe(
+                getGSItem("item.plasmasword", 1, 100),
+                "DCD",
+                "FCH",
+                "DBW",
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'F',
+                ToolDictNames.craftingToolFile,
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'B',
+                new ItemStack(GCItems.battery, 1, W),
+                'W',
+                new ItemStack(GCBlocks.aluminumWire, 1, 1));
+
+        addShapedRecipe(
+                getGSItem("item.plasmapickaxe", 1, 100),
+                "CCC",
+                "FPH",
+                "DBW",
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'F',
+                ToolDictNames.craftingToolFile,
+                'P',
+                new ItemStack(GCItems.flagPole),
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
+                'B',
+                new ItemStack(GCItems.battery, 1, W),
+                'W',
+                new ItemStack(GCBlocks.aluminumWire, 1, 1));
+
+        addShapedRecipe(
+                getGSItem("item.plasmaaxe", 1, 100),
+                "CCH",
+                "CPD",
+                "FBW",
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'P',
+                new ItemStack(GCItems.flagPole),
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
+                'F',
+                ToolDictNames.craftingToolFile,
+                'B',
+                new ItemStack(GCItems.battery, 1, W),
+                'W',
+                new ItemStack(GCBlocks.aluminumWire, 1, 1));
+
+        addShapedRecipe(
+                getGSItem("item.plasmashovel", 1, 100),
+                "FCH",
+                "DPD",
+                "WBW",
+                'F',
+                ToolDictNames.craftingToolFile,
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
+                'P',
+                new ItemStack(GCItems.flagPole),
+                'W',
+                new ItemStack(GCBlocks.aluminumWire, 1, 1),
+                'B',
+                new ItemStack(GCItems.battery, 1, W));
+
+        addShapedRecipe(
+                getGSItem("item.plasmahoe", 1, 100),
+                "CCH",
+                "FPD",
+                "WBD",
+                'C',
+                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                'H',
+                ToolDictNames.craftingToolHardHammer,
+                'F',
+                ToolDictNames.craftingToolFile,
+                'P',
+                new ItemStack(GCItems.flagPole),
+                'D',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
+                'W',
+                new ItemStack(GCBlocks.aluminumWire, 1, 1),
+                'B',
+                new ItemStack(GCItems.battery, 1, W));
+
+        addShapedRecipe(
+                getGSItem("item.SolarFlares", 1, 0), // Solar Flares Part
+                "IPI",
+                "PSP",
+                "PsP",
+                'I',
+                new ItemStack(GCItems.basicItem, 1, 11), // Compressed Iron
+                'P',
+                new ItemStack(GCItems.flagPole),
+                'S',
+                new ItemStack(GCItems.basicItem, 1, 1), // Full Solar Panel
+                's',
+                new ItemStack(GCItems.basicItem, 1, 9)); // Compressed Steel
+
+        addShapedRecipe(
+                getGSItem("item.SolarFlares", 1, 1), // Solar Flares
+                "DFD",
+                "FTF",
+                "DFD",
+                'D',
+                new ItemStack(MarsItems.marsItemBasic, 1, 5), // Compressed Desh
+                'F',
+                getGSItem("item.SolarFlares", 1, 0), // Solar Flares Part
+                'T',
+                new ItemStack(AsteroidsItems.basicItem, 1, 6)); // Compressed Titanium
+
+        addShapedRecipe(
+                getGSItem("item.RobotArm", 1, 0),
+                "NNL",
+                "MRA",
+                "PCR",
+                'N',
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherStar, 1),
+                'L',
+                new ItemStack(GCItems.sensorLens),
+                'M',
+                ItemList.Electric_Motor_HV.get(1),
+                'R',
+                GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.StainlessSteel, 1),
+                'A',
+                ItemList.Robot_Arm_HV.get(1),
+                'P',
+                ItemList.Electric_Piston_HV.get(1),
+                'C',
+                OrePrefixes.circuit.get(Materials.EV));
+
         if (OpenModularTurrets.isModLoaded()) {
-            RecipeUtil.addRecipe(
+            addShapedRecipe(
                     new ItemStack(GCBlocks.nasaWorkbench),
-                    new Object[] { "RRR", "CDC", "WAW", 'R', new ItemStack(GSItems.RobotArm), 'C', "circuitElite", 'D',
-                            CustomItemList.Display.get(1), 'W', getModItem("openmodularturrets", "hardWallTierFour", 1),
-                            'A', new ItemStack(GregTechAPI.sBlockMachines, 1, 213) });
+                    "RRR",
+                    "CDC",
+                    "WAW",
+                    'R',
+                    getGSItem("item.RobotArm", 1, 0),
+                    'C',
+                    OrePrefixes.circuit.get(Materials.IV),
+                    'D',
+                    CustomItemList.Display.get(1),
+                    'W',
+                    getModItem(OpenModularTurrets.ID, "hardWallTierFour", 1),
+                    'A',
+                    ItemList.Machine_HV_Assembler.get(1));
         }
-        RecipeUtil.addRecipe(
-                CustomItemList.RawSDHCAlloy.get(1),
-                new Object[] { "SDS", "BCA", "SHS", 'S',
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.StainlessSteel, 1), 'D',
-                        "craftingToolScrewDriver", 'B', new ItemStack(GSItems.CompressedDualBronze), 'C',
-                        new ItemStack(GSItems.CompressedCoal), 'A', new ItemStack(GSItems.CompressedDualAluminium), 'H',
-                        "craftingToolHardHammer" });
     }
 
     private void addDyedFutureGlassRecipe(int meta, String color) {
@@ -640,13 +932,13 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 "PSP",
                 " PW",
                 'H',
-                "craftingToolHardHammer",
+                ToolDictNames.craftingToolHardHammer,
                 'P',
                 plate,
                 'S',
                 "stone",
                 'W',
-                "craftingToolWrench");
+                ToolDictNames.craftingToolWrench);
     }
 
     private static ItemStack getGSItem(String name, int amount, int meta) {
