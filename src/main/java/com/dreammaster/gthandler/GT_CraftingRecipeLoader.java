@@ -2119,24 +2119,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         for (int i = 0; i <= 7; i++) {
             ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
-            NBTTagCompound hatchNBT = modifiedHatch.getTagCompound();
-            if (hatchNBT != null) {
-                hatchNBT.setLong("baseCapacity", capacities[i]);
-            } else {
-                hatchNBT = new NBTTagCompound();
-                hatchNBT.setLong("baseCapacity", capacities[i] * 256);
-                modifiedHatch.setTagCompound(hatchNBT);
-            }
+            NBTTagCompound hatchNBT = new NBTTagCompound();
+            hatchNBT.setLong("baseCapacity", capacities[i] * 256);
+            modifiedHatch.setTagCompound(hatchNBT);
 
             ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
-            NBTTagCompound busNBT = modifiedBus.getTagCompound();
-            if (busNBT != null) {
-                busNBT.setLong("baseCapacity", capacities[i]);
-            } else {
-                busNBT = new NBTTagCompound();
-                busNBT.setLong("baseCapacity", capacities[i]);
-                modifiedBus.setTagCompound(busNBT);
-            }
+            NBTTagCompound busNBT = new NBTTagCompound();
+            busNBT.setLong("baseCapacity", capacities[i]);
+            modifiedBus.setTagCompound(busNBT);
 
             GTModHandler.addShapelessCraftingRecipe(
                     modifiedHatch,
@@ -2145,6 +2135,27 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     modifiedBus,
                     new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), itemComponents[i] });
         }
+        final ItemStack SINGULARITY = GTModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1);
+        final ItemStack FLUID_SINGULARITY = GTModHandler
+                .getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
+
+        ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
+        NBTTagCompound hatchNBT = new NBTTagCompound();
+        hatchNBT.setLong("baseCapacity", Long.MAX_VALUE);
+        modifiedHatch.setTagCompound(hatchNBT);
+
+        ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
+        NBTTagCompound busNBT = new NBTTagCompound();
+        busNBT.setLong("baseCapacity", Long.MAX_VALUE);
+        modifiedBus.setTagCompound(busNBT);
+
+        GTModHandler.addShapelessCraftingRecipe(
+                modifiedBus,
+                new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), SINGULARITY });
+        GTModHandler.addShapelessCraftingRecipe(
+                modifiedHatch,
+                new Object[] { ItemList.Hatch_Output_ME.get(1L), FLUID_SINGULARITY });
 
         // Pre-add planet block to EOH controller
         for (String dimAbbreviation : DimensionHelper.DimNameDisplayed) {
