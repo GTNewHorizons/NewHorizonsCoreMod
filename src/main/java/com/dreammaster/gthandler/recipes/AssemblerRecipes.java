@@ -2359,11 +2359,14 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_Pipe_Bronze.get(1),
                         ItemList.Electric_Pump_LuV.get(2),
-                        ItemList.Duct_Tape.get(4),
-                        TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
-                        HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 32))
-                .fluidInputs(FluidRegistry.getFluidStack("pyrotheum", 2000))
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Invar, 8),
+                        CustomItemList.MicaInsulatorFoil.get(64),
+                        CustomItemList.MicaInsulatorFoil.get(64),
+                        CustomItemList.MicaInsulatorFoil.get(64),
+                        TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
+                        HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 2))
+                .fluidInputs(FluidRegistry.getFluidStack("pyrotheum", 16000))
                 .itemOutputs(ItemList.Heating_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
@@ -2372,11 +2375,14 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Casing_Pipe_TungstenSteel.get(1),
                         ItemList.Electric_Pump_LuV.get(2),
-                        ItemList.Duct_Tape.get(4),
-                        TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
-                        HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 16),
-                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 32))
-                .fluidInputs(FluidRegistry.getFluidStack("cryotheum", 2000))
+                        GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Aluminium, 8),
+                        ItemList.Reactor_Coolant_Sp_3.get(1),
+                        ItemList.Reactor_Coolant_Sp_3.get(1),
+                        ItemList.Reactor_Coolant_Sp_3.get(1),
+                        TRINIUM_NAQUADAH_CARBON.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
+                        HASTELLOY_X.getComponentByPrefix(OrePrefixes.pipeMedium, 2),
+                        GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 2))
+                .fluidInputs(FluidRegistry.getFluidStack("cryotheum", 16000))
                 .itemOutputs(ItemList.Coolant_Duct_Casing.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 

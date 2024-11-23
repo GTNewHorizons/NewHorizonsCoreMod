@@ -4,8 +4,11 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.ThaumicExploration;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.WarpTheory;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -52,6 +55,7 @@ public class ScriptWarpTheory implements IScriptLoader {
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanserminor", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.cleanser", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing));
+        TCHelper.removeInfusionRecipe(getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing));
         TCHelper.clearPrereq("warptheory.paper");
         TCHelper.addResearchPrereq("warptheory.paper", "RESEARCHER2", false);
         TCHelper.clearPages("warptheory.paper");
@@ -202,8 +206,38 @@ public class ScriptWarpTheory implements IScriptLoader {
                         .add(Aspect.getAspect("potentia"), 12).add(Aspect.getAspect("praecantatio"), 9)
                         .add(Aspect.getAspect("permutatio"), 6).add(Aspect.getAspect("terra"), 3));
         TCHelper.setResearchComplexity("warptheory.amulet", 4);
+
+        TCHelper.orphanResearch("warptheory.portableshower");
+        TCHelper.clearPrereq("warptheory.portableshower");
+        TCHelper.addResearchPrereq("warptheory.portableshower", "PURETEAR", false);
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "warptheory.portableshower",
+                getModItem(WarpTheory.ID, "item.warptheory.portableshower", 1, 0, missing),
+                64,
+                new AspectList().add(Aspect.getAspect("custom1"), 16).add(Aspect.getAspect("custom5"), 16)
+                        .add(Aspect.getAspect("aer"), 1024).add(Aspect.getAspect("aqua"), 1024)
+                        .add(Aspect.getAspect("praecantatio"), 256).add(Aspect.getAspect("tutamen"), 256)
+                        .add(Aspect.getAspect("cognitio"), 256).add(Aspect.getAspect("tutamen"), 256)
+                        .add(Aspect.getAspect("sano"), 1024),
+                getModItem(WarpTheory.ID, "item.warptheory.amulet", 1, 0, missing),
+                new ItemStack[] { getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 1, missing),
+                        getModItem(Thaumcraft.ID, "blockStoneDevice", 1, 12, missing),
+                        getModItem(ThaumicExploration.ID, "everfullUrn", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemGolemCore", 1, 0, missing),
+                        getModItem(OpenBlocks.ID, "sprinkler", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Neutronium, 1L),
+                        getModItem(OpenBlocks.ID, "xpshower", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "ItemEldritchObject", 1L, 3),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Ichorium, 1L) });
+        TCHelper.setResearchAspects(
+                "warptheory.portableshower",
+                new AspectList().add(Aspect.getAspect("custom1"), 5).add(Aspect.getAspect("custom3"), 5)
+                        .add(Aspect.getAspect("potentia"), 32).add(Aspect.getAspect("praecantatio"), 20)
+                        .add(Aspect.getAspect("aqua"), 32).add(Aspect.getAspect("aer"), 32));
+        TCHelper.setResearchComplexity("warptheory.portableshower", 4);
         TCHelper.refreshResearchPages("warptheory.paper");
         TCHelper.refreshResearchPages("warptheory.something");
         TCHelper.refreshResearchPages("warptheory.amulet");
+        TCHelper.refreshResearchPages("warptheory.portableshower");
     }
 }
