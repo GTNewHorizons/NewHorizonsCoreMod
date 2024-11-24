@@ -448,10 +448,7 @@ public class ScriptAE2FC implements IScriptLoader {
                     .itemOutputs(preconfiguredStorageBus).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(circuitAssemblerRecipes);
 
-            addShapelessRecipe(
-                    preconfiguredStorageBus,
-                    AE2FC_FLUID_STORAGE_BUS,
-                    GTUtility.getIntegratedCircuit(i));
+            addShapelessRecipe(preconfiguredStorageBus, AE2FC_FLUID_STORAGE_BUS, GTUtility.getIntegratedCircuit(i));
         }
 
         // Big Long But: Components in Circuit Assembler
