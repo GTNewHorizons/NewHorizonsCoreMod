@@ -101,7 +101,12 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
             preconfiguredStorageBus.setTagCompound(tag);
             GTValues.RA.stdBuilder().itemInputs(storageBus, GTUtility.getIntegratedCircuit(i))
                     .itemOutputs(preconfiguredStorageBus).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(assemblerRecipes);
+                    .addTo(circuitAssemblerRecipes);
+
+            addShapelessRecipe(
+                    preconfiguredStorageBus,
+                    storageBus,
+                    GTUtility.getIntegratedCircuit(i));
         }
         // Hyper-Acceleration Card
         addShapelessRecipe(
