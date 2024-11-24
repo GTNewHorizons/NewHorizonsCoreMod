@@ -22,6 +22,7 @@ import java.util.Map;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
@@ -436,6 +437,17 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(AE2_STORAGE_BUS, GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
                 .itemOutputs(AE2FC_FLUID_STORAGE_BUS).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
+
+        // preconfigurated priorities for storage buses
+        ItemStack preconfiguredStorageBus = AE2FC_FLUID_STORAGE_BUS.copy();
+        for (int i = 1; i < 25; i++) {
+            NBTTagCompound tag = new NBTTagCompound();
+            tag.setInteger("priority", i);
+            preconfiguredStorageBus.setTagCompound(tag);
+            GTValues.RA.stdBuilder().itemInputs(AE2FC_FLUID_STORAGE_BUS, GTUtility.getIntegratedCircuit(i))
+                    .itemOutputs(preconfiguredStorageBus).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(assemblerRecipes);
+        }
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
