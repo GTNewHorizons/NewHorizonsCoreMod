@@ -349,11 +349,11 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 ItemList.Field_Generator_UXV.get(1L),
                                 filledUMVCell,
                                 new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                                com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
+                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 4),
                                 MaterialsUEVplus.Eternity.getNanite(4))
                         .fluidInputs(MaterialsUEVplus.Eternity.getMolten(36864))
                         .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
-                        .specialValue(3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
+                        .specialValue(3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 // Digital Singularity ME Storage Cell
@@ -381,11 +381,12 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                                 new ItemStack(tfftStorageField, 2, 10),
                                 new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                                com.dreammaster.item.ItemList.CircuitUXV.getIS(4),
+                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 4),
                                 MaterialsUEVplus.Eternity.getNanite(4))
                         .fluidInputs(MaterialsUEVplus.Eternity.getMolten(36864))
                         .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1)).specialValue(3)
-                        .duration(1 * MINUTES).eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
+                        .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 // ME Fluid Digital Singularity Storage Cell
                 GTValues.RA.stdBuilder()
