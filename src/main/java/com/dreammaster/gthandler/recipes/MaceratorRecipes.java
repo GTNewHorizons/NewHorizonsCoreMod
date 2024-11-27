@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IScriptLoader.missing;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.Avaritia;
@@ -19,6 +20,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.GTValues;
@@ -91,6 +93,60 @@ public class MaceratorRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L))
                 .outputChances(10000, 2500, 2000, 1500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Concrete, 1L))
+                .outputChances(10000, 10000).duration(10 * SECONDS).eut(4).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(BlockList.BronzePlatedReinforcedStone.getIS())
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bronze, 6L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 3L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Concrete, 1L))
+                .outputChances(10000, 10000, 10000).duration(10 * SECONDS).eut(4).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(BlockList.SteelPlatedReinforcedStone.getIS())
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 8L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Concrete, 1L))
+                .outputChances(10000, 10000, 10000).duration(12 * SECONDS + 10 * TICKS).eut(16).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(BlockList.TitaniumPlatedReinforcedStone.getIS())
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Titanium, 6L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Platinum, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Concrete, 1L))
+                .outputChances(10000, 10000, 10000, 10000).duration(15 * SECONDS).eut(30).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(BlockList.TungstensteelPlatedReinforcedStone.getIS())
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.TungstenSteel, 6L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iridium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Concrete, 1L))
+                .outputChances(10000, 10000, 10000, 10000).duration(17 * SECONDS + 10 * TICKS).eut(64)
+                .addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(BlockList.NaquadahPlatedReinforcedStone.getIS())
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadah, 6L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Osmium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Concrete, 1L))
+                .outputChances(10000, 10000, 10000, 10000).duration(22 * SECONDS + 10 * TICKS).eut(256)
+                .addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(BlockList.NeutroniumPlatedReinforcedStone.getIS())
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Neutronium, 6L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Naquadria, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Concrete, 1L))
+                .outputChances(10000, 10000, 10000, 10000).duration(25 * SECONDS).eut(480).addTo(maceratorRecipes);
 
         if (OpenPrinters.isModLoaded()) {
 
