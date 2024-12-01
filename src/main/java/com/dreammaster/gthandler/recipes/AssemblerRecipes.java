@@ -2283,11 +2283,12 @@ public class AssemblerRecipes implements Runnable {
         // Neutronium Stabilization Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        ItemList.Field_Generator_ZPM.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
                         ItemList.Casing_MAX.get(1),
+                        ItemList.Field_Generator_ZPM.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 4),
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.NaquadahAlloy, 24),
                         GTUtility.getIntegratedCircuit(16))
-                .itemOutputs(ItemList.Neutronium_Stable_Casing.get(4)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .itemOutputs(ItemList.Neutronium_Stable_Casing.get(4)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                 .addTo(assemblerRecipes);
 
         // Neutronium Compressor conversion
