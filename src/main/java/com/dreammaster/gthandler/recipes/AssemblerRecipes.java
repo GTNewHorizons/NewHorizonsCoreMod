@@ -2587,7 +2587,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 4),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 4),
-                        GTUtility.getIntegratedCircuit(3))
+                        GTUtility.getIntegratedCircuit(13))
                 .itemOutputs(ItemList.Casing_Firebox_Steel.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -2596,7 +2596,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Titanium, 4),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4),
-                        GTUtility.getIntegratedCircuit(3))
+                        GTUtility.getIntegratedCircuit(13))
                 .itemOutputs(ItemList.Casing_Firebox_Titanium.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -2605,7 +2605,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.TungstenSteel, 4),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4),
-                        GTUtility.getIntegratedCircuit(3))
+                        GTUtility.getIntegratedCircuit(13))
                 .itemOutputs(ItemList.Casing_Firebox_TungstenSteel.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
