@@ -97,6 +97,40 @@ public class AssemblerRecipes implements Runnable {
         makeElectricMachinePartRecipes();
         makeCircuitPartRecipes();
 
+        // Bronze Hull
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 8),
+                        GTUtility.getIntegratedCircuit(6))
+                .itemOutputs(ItemList.Hull_Bronze.get(1)).duration(2 * SECONDS + 10).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // Bricked Bronze Hull
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 5),
+                        new ItemStack(Blocks.brick_block, 3),
+                        GTUtility.getIntegratedCircuit(6))
+                .itemOutputs(ItemList.Hull_Bronze_Bricks.get(1)).duration(2 * SECONDS + 10).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // Steel Hull
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 8),
+                        GTUtility.getIntegratedCircuit(6))
+                .itemOutputs(ItemList.Hull_HP.get(1)).duration(2 * SECONDS + 10).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // Bricked Wrought Iron Hull
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5),
+                        new ItemStack(Blocks.brick_block, 3),
+                        GTUtility.getIntegratedCircuit(6))
+                .itemOutputs(ItemList.Hull_HP_Bricks.get(1)).duration(2 * SECONDS + 10).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(IndustrialCraft2.ID, "blockAlloyGlass", 1L, 0),
@@ -969,7 +1003,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Casing_Firebricks.get(4L)).fluidInputs(Materials.Concrete.getMolten(4608L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.brick_block), Materials.AnyBronze.getPlates(6))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.brick_block),
+                        Materials.AnyBronze.getPlates(6),
+                        GTUtility.getIntegratedCircuit(16))
                 .itemOutputs(ItemList.Casing_BronzePlatedBricks.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -10298,6 +10336,7 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.dockingUpgrade", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
             }
         }
     }
