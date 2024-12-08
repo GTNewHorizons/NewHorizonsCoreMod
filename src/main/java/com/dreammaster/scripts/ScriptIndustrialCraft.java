@@ -47,6 +47,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.ic2.item.IC2Items;
@@ -1620,6 +1621,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lead, 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing))
                 .duration(10 * SECONDS).eut(120).addTo(assemblerRecipes);
+        GTOreDictUnificator.addItemData(
+                getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
+                new ItemData(
+                        new ItemData(Materials.Steel, 2 * GTValues.M),
+                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),
