@@ -1739,6 +1739,19 @@ public class ScriptEnderIO implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
+                .fluidInputs(Materials.Silicone.getMolten(144)).duration(15 * SECONDS).eut(64).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
+                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144)).duration(15 * SECONDS).eut(64)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         getModItem(EnderIO.ID, "blockFusedQuartz", 3, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.round, Materials.Soularium, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemSoulVessel", 1, 0, missing)).duration(10 * SECONDS).eut(48)

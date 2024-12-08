@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.I18n;
+import net.minecraft.util.StatCollector;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -48,7 +48,12 @@ public class MixinMinecraft_ConfirmExit {
                 final ImageIcon imageIcon = resource == null ? null : new ImageIcon(resource);
                 final int result = JOptionPane.showConfirmDialog(
                         frame,
-                        I18n.format("dreamcraft.gui.quitmessage"),
+                        // When FML encounters an error, the only way to close the window is through the close button,
+                        // which will show this message, unfortunately at this point, no localisations will have been
+                        // loaded, so we add a hardcoded fallback message here.
+                        StatCollector.canTranslate("dreamcraft.gui.quitmessage")
+                                ? StatCollector.translateToLocal("dreamcraft.gui.quitmessage")
+                                : "Are you sure you want to exit the game?",
                         Refstrings.NAME,
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE,
