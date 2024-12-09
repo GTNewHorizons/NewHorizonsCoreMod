@@ -14,9 +14,6 @@ import static java.lang.Math.min;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.gtnewhorizon.structurelib.alignment.enumerable.ExtendedFacing;
-import gregtech.api.interfaces.IIconContainer;
-import gregtech.api.util.GTUtilityClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,11 +28,13 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.main.MainRegistry;
 import com.gtnewhorizon.structurelib.alignment.IAlignmentLimits;
+import com.gtnewhorizon.structurelib.alignment.enumerable.ExtendedFacing;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import gregtech.api.enums.Textures;
+import gregtech.api.interfaces.IIconContainer;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.items.MetaGeneratedTool;
@@ -44,6 +43,7 @@ import gregtech.api.metatileentity.implementations.MTEHatchMuffler;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.GTUtilityClient;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.items.MetaGeneratedTool01;
 import gregtech.common.pollution.Pollution;
@@ -459,11 +459,19 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         if (!mFormed) return false;
         int[] xyz = new int[3];
         ExtendedFacing ext = getExtendedFacing();
-        ext.getWorldOffset(new int[]{0, -3, 1}, xyz);
+        ext.getWorldOffset(new int[] { 0, -3, 1 }, xyz);
         IIconContainer[] tTextures = getBaseMetaTileEntity().isActive() ? TURBINE_NEW_ACTIVE : TURBINE_NEW;
         // we know this multi can only ever face upwards, so just use +y directly
         ExtendedFacing direction = ExtendedFacing.of(ForgeDirection.UP);
-        GTUtilityClient.renderTurbineOverlay(aWorld, xyz[0] + aX, xyz[1] + aY, xyz[2] + aZ, aRenderer, direction, sBlockCasingsNH, tTextures);
+        GTUtilityClient.renderTurbineOverlay(
+                aWorld,
+                xyz[0] + aX,
+                xyz[1] + aY,
+                xyz[2] + aZ,
+                aRenderer,
+                direction,
+                sBlockCasingsNH,
+                tTextures);
         return false;
     }
 

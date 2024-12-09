@@ -2,21 +2,13 @@ package com.dreammaster.gthandler.casings;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import gregtech.api.enums.Dyes;
 import gregtech.api.enums.Textures;
-import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
-import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.objects.GTCopiedBlockTexture;
 import gregtech.api.util.GTLanguageManager;
 import gregtech.common.blocks.BlockCasingsAbstract;
