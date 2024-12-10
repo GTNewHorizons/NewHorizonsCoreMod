@@ -1112,7 +1112,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3), 'C',
                         OrePrefixes.cableGt01.get(Materials.Tin), 'S', screw.get(Materials.Steel) });
 
-
         if (OpenComputers.isModLoaded()) GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(OpenComputers.ID, "wrench", 1, 0),
                 GTProxy.tBits,
