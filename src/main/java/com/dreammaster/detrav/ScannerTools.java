@@ -12,8 +12,7 @@ import gregtech.api.util.GTModHandler;
 
 public class ScannerTools implements IOreRecipeRegistrator {
 
-    public ScannerTools() {
-    }
+    public ScannerTools() {}
 
     public void registerOre(OrePrefixes o, Materials material, String s, String s2, ItemStack i) {
         GTModHandler.addCraftingRecipe(
