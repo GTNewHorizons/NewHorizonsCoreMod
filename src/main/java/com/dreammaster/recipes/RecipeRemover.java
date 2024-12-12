@@ -328,10 +328,7 @@ public class RecipeRemover {
 
         GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 1L));
         GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Sunnarium, 1L));
-        GTModHandler
-                .removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Sunnarium, 1L));
-        GTModHandler.removeFurnaceSmelting(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadUniversalSpade, Materials.Sunnarium, 1L));
+
         GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.spring, Materials.Sunnarium, 1L));
         GTModHandler.removeFurnaceSmelting(GTOreDictUnificator.get(OrePrefixes.gearGtSmall, Materials.Sunnarium, 1L));
         GTModHandler.removeFurnaceSmelting(getModItem(Backpack.ID, "boundLeather", 1, wildcard, missing));
@@ -1240,11 +1237,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "graviTool", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(GraviSuite.ID, "ultimateLappack", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(GraviSuiteNEO.ID, "epicLappack", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Diamond, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Diamond, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Diamond, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Diamond, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Diamond, 1L));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemRTGPellet", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemOreIridium", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(ThaumicBases.ID, "resource", 1, 0, missing));
@@ -1558,14 +1550,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "blockGenerator", 1, 5, missing));
         removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadSense, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadPlow, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Iridium, 1L));
         removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iridium, 1L));
-        removeRecipeByOutputDelayed(GTOreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Iridium, 1L));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemBatLamaCrystal", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemDust2", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem(IndustrialCraft2.ID, "itemPartCFPowder", 1, 0, missing));
