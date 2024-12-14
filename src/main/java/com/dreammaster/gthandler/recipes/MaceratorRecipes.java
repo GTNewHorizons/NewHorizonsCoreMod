@@ -181,25 +181,25 @@ public class MaceratorRecipes implements Runnable {
                     .duration(10 * SECONDS).eut(2).addTo(maceratorRecipes);
             // Oreberries
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 1L, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Iron, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 0))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Iron, 1L)).outputChances(10000)
+                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 1L, 1))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Gold, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 1))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 1L)).outputChances(10000)
+                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 1L, 2))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Copper, 1L))
-                    .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 2))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L)).outputChances(10000)
+                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 1L, 3))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Tin, 1L)).outputChances(10000)
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 3))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Tin, 1L)).outputChances(10000)
+                    .duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 1L, 4))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Aluminium, 1L))
-                    .outputChances(10000).duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "oreBerries", 9L, 4))
+                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))
+                    .outputChances(10000).duration(15 * SECONDS).eut(18).addTo(maceratorRecipes);
 
         }
 

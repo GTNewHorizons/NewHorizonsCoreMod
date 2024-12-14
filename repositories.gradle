@@ -1,6 +1,7 @@
 // Add any additional repositories for your dependencies here
 
 repositories {
+    mavenLocal()
     ivy {
         url 'https://files.vexatos.com/'
         patternLayout {
