@@ -7476,5 +7476,27 @@ public class ScriptExtraTrees implements IScriptLoader {
                 "stickWood",
                 getModItem(Minecraft.ID, "planks", 1, 5, missing),
                 "stickWood");
+        addShapedRecipe(
+                createItemStack(ExtraTrees.ID, "food", 1, 23, "{meta:23}", missing),
+                "dustSugar",
+                getModItem(Minecraft.ID, "sand", 1, 1, missing),
+                "dustSugar",
+                getModItem(Minecraft.ID, "sand", 1, 1, missing),
+                "cropPear",
+                getModItem(Minecraft.ID, "sand", 1, 1, missing),
+                "dustSugar",
+                getModItem(Minecraft.ID, "sand", 1, 1, missing),
+                "dustSugar");
+        addShapedRecipe(
+                createItemStack(ExtraTrees.ID, "food", 1, 40, "{meta:40}", missing),
+                "dustLazurite",
+                "gemChippedOlivine",
+                "dustLapis",
+                "dustSugar",
+                getModItem(Forestry.ID, "fruits", 1, 6, missing),
+                "gemChippedOlivine",
+                "dustSodalite",
+                "dustSugar",
+                "dustLazurite");
     }
 }
