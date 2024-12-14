@@ -9,7 +9,6 @@ import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.KubaTech;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -1199,7 +1198,7 @@ public class MixerRecipes implements Runnable {
                             MaterialsUEVplus.ExcitedDTEC.getFluid(128000))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerNonCellRecipes);
         }
-        if (KubaTech.isModLoaded() && EnderIO.isModLoaded() && BiomesOPlenty.isModLoaded() && Witchery.isModLoaded()) {
+        if (EnderIO.isModLoaded() && BiomesOPlenty.isModLoaded() && Witchery.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             kubatech.api.enums.ItemList.EarlGrayTea.get(1),
