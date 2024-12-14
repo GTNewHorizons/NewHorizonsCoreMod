@@ -746,14 +746,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         GGMaterial.incoloy903.get(OrePrefixes.pipeSmall), 'F',
                         OrePrefixes.gearGt.get(Materials.Titanium) });
 
-        // Neutronium Stabilization Casing
-        GTModHandler.addCraftingRecipe(
-                ItemList.Neutronium_Stable_Casing.get(4),
-                bits,
-                new Object[] { "PQP", "QFQ", "PQP", 'P',
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1), 'Q',
-                        ItemList.Field_Generator_ZPM.get(1), 'F', ItemList.Casing_MAX.get(1) });
-
         // Industrial Precision Lathe
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_Lathe.get(1),
@@ -1061,11 +1053,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { " h ", "SSS", "SSS", 'S',
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1) });
-        GTModHandler.addCraftingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Steel, 1L),
-                GTProxy.tBits,
-                new Object[] { "PIh", "f  ", 'P', OrePrefixes.plate.get(Materials.Steel), 'I',
-                        OrePrefixes.ingot.get(Materials.Steel) });
 
         GTModHandler.addShapelessCraftingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
@@ -1124,14 +1111,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatRE", 1, GTValues.W), 'E',
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3), 'C',
                         OrePrefixes.cableGt01.get(Materials.Tin), 'S', screw.get(Materials.Steel) });
-        GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, GTValues.W),
-                bits,
-                new Object[] { "dPH", "PGB", "ECS", 'S', screw.get(Materials.Steel), 'H',
-                        OrePrefixes.toolHeadHoe.get(Materials.Steel), 'G', OrePrefixes.gearGtSmall.get(Materials.Steel),
-                        'B', GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatRE", 1, GTValues.W), 'E',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3), 'P',
-                        OrePrefixes.plate.get(Materials.Steel) });
 
         if (OpenComputers.isModLoaded()) GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(OpenComputers.ID, "wrench", 1, 0),
