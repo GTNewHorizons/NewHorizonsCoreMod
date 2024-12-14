@@ -15,8 +15,8 @@ public class GT_Loader_Wires {
 
     private void registerWires() {
 
-        //Take a look in gt5u MetaTileEntityIDs for free spaces
-        
+        // Take a look in gt5u MetaTileEntityIDs for free spaces
+
         // ===================================================================================================
         // Make wires
         // ===================================================================================================
