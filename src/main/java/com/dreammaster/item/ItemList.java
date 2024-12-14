@@ -511,7 +511,7 @@ public enum ItemList {
     UnfiredClayBrick(new ModSimpleBaseItem("UnfiredClayBrick", ModTabList.ModGenericTab)),
     UnfiredCokeOvenBrick(new ModSimpleBaseItem("UnfiredCokeOvenBrick", ModTabList.ModGenericTab)),
     UnfiredSearedBrick(new ModSimpleBaseItem("UnfiredSearedBrick", ModTabList.ModGenericTab)),
-    UnfiredSlimeSoulBrick(new ModSimpleBaseItem("UnfiredSlimeSoulBrick", ModTabList.ModGenericTab)),
+    UnfiredSlimeSoilBrick(new ModSimpleBaseItem("UnfiredSlimeSoilBrick", ModTabList.ModGenericTab)),
     VegaBStoneDust(new ModSimpleBaseItem("VegaBStoneDust", ModTabList.ModSpaceTab)),
     VenusStoneDust(new ModSimpleBaseItem("VenusStoneDust", ModTabList.ModSpaceTab)),
     VibrantAlloyBars(new ModSimpleBaseItem("VibrantAlloyBars", ModTabList.ModBarsAndCasingsTab)),

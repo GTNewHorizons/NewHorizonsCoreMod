@@ -348,7 +348,7 @@ public class GT_Loader_Items {
         CustomItemList.UnfiredClayBrick.set(ItemList.UnfiredClayBrick.getIS());
         CustomItemList.UnfiredSearedBrick.set(ItemList.UnfiredSearedBrick.getIS());
         CustomItemList.UnfiredCokeOvenBrick.set(ItemList.UnfiredCokeOvenBrick.getIS());
-        CustomItemList.UnfiredSlimeSoulBrick.set(ItemList.UnfiredSlimeSoulBrick.getIS());
+        CustomItemList.UnfiredSlimeSoilBrick.set(ItemList.UnfiredSlimeSoilBrick.getIS());
         CustomItemList.RawLapotronCrystal.set(ItemList.RawLapotronCrystal.getIS());
         CustomItemList.LapotronDust.set(ItemList.LapotronDust.getIS());
         CustomItemList.AluminiumIronPlate.set(ItemList.AluminiumIronPlate.getIS());
