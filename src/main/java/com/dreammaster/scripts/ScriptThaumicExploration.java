@@ -2,7 +2,9 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
@@ -1888,6 +1890,23 @@ public class ScriptThaumicExploration implements IScriptLoader {
                         TCHelper.findInfusionRecipe(getModItem(ThaumicExploration.ID, "talismanFood", 1, 0, missing))));
         TCHelper.addResearchPrereq("THINKTANK", "BraincureGTNH", false);
         ThaumcraftApi.addWarpToResearch("THINKTANK", 2);
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "TalismanfoodtGTNH",
+                getModItem(ThaumicExploration.ID, "taintBerry", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("aer"), 20).add(Aspect.getAspect("aqua"), 20)
+                        .add(Aspect.getAspect("ignis"), 20).add(Aspect.getAspect("terra"), 20)
+                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                "tft",
+                "gbg",
+                "ggg",
+                't',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 12, missing),
+                'g',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 11, missing),
+                'b',
+                getModItem(Natura.ID, "berry.nether", 1, missing),
+                'f',
+                getModItem(ForbiddenMagic.ID, "TaintFruit", 1, missing));
         TCHelper.orphanResearch("DREAMCATCHER");
         TCHelper.removeResearch("DREAMCATCHER");
         new ResearchItem(
