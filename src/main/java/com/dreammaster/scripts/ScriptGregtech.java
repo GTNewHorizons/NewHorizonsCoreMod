@@ -99,61 +99,6 @@ public class ScriptGregtech implements IScriptLoader {
                 getModItem(SGCraft.ID, "ocInterface", 1, 0, missing),
                 getModItem(SGCraft.ID, "ic2Capacitor", 1, 0, missing));
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Diamond, 1L),
-                null,
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                null,
-                "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                "craftingToolHardHammer",
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Diamond, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                "gemDiamond",
-                "gemDiamond",
-                "craftingToolFile",
-                null,
-                "craftingToolHardHammer",
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Diamond, 1L),
-                "craftingToolFile",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                "craftingToolHardHammer",
-                null,
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Diamond, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                "gemDiamond",
-                "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                null,
-                null,
-                "craftingToolFile",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Diamond, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
-                "gemDiamond",
-                "craftingToolHardHammer",
-                "craftingToolFile",
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
                 GTOreDictUnificator.get(OrePrefixes.ring, Materials.Wood, 1L),
                 "craftingToolKnife",
                 null,

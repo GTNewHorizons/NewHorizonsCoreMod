@@ -57,6 +57,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -1061,6 +1062,7 @@ public class ScriptCoreMod implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 18))
                 .itemOutputs(com.dreammaster.item.ItemList.EnrichedXSunnariumAlloy.getIS(1))
                 .duration(2 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
@@ -1103,6 +1105,47 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(BlockList.NeutroniumPlatedReinforcedStone.getIS())
                 .fluidInputs(FluidRegistry.getFluidStack("molten.naquadria", 144)).duration(25 * SECONDS).eut(480)
                 .addTo(assemblerRecipes);
+        GTOreDictUnificator.addItemData(
+                BlockList.BronzePlatedReinforcedStone.getIS(),
+                new ItemData(
+                        new ItemData(Materials.Bronze, 6 * GTValues.M),
+                        new ItemData(Materials.Steel, 3 * GTValues.M),
+                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+        GTOreDictUnificator.addItemData(
+                BlockList.SteelPlatedReinforcedStone.getIS(),
+                new ItemData(
+                        new ItemData(Materials.Steel, 8 * GTValues.M),
+                        new ItemData(Materials.Aluminium, 1 * GTValues.M),
+                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+        GTOreDictUnificator.addItemData(
+                BlockList.TitaniumPlatedReinforcedStone.getIS(),
+                new ItemData(
+                        new ItemData(Materials.Titanium, 6 * GTValues.M),
+                        new ItemData(Materials.Platinum, 1 * GTValues.M),
+                        new ItemData(Materials.Steel, 2 * GTValues.M),
+                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+        GTOreDictUnificator.addItemData(
+                BlockList.TungstensteelPlatedReinforcedStone.getIS(),
+                new ItemData(
+                        new ItemData(Materials.TungstenSteel, 6 * GTValues.M),
+                        new ItemData(Materials.Iridium, 1 * GTValues.M),
+                        new ItemData(Materials.Steel, 2 * GTValues.M),
+                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+        GTOreDictUnificator.addItemData(
+                BlockList.NaquadahPlatedReinforcedStone.getIS(),
+                new ItemData(
+                        new ItemData(Materials.Naquadah, 6 * GTValues.M),
+                        new ItemData(Materials.Osmium, 1 * GTValues.M),
+                        new ItemData(Materials.Steel, 2 * GTValues.M),
+                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+        GTOreDictUnificator.addItemData(
+                BlockList.NeutroniumPlatedReinforcedStone.getIS(),
+                new ItemData(
+                        new ItemData(Materials.Neutronium, 6 * GTValues.M),
+                        new ItemData(Materials.Naquadria, 1 * GTValues.M),
+                        new ItemData(Materials.Steel, 2 * GTValues.M),
+                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 2, 6, missing),

@@ -47,6 +47,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.objects.ItemData;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.ic2.item.IC2Items;
@@ -1018,33 +1019,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.ingotDouble, Materials.Iridium, 1L),
                 null,
                 null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadAxe, Materials.Iridium, 1L),
-                "plateIridium",
-                "ingotIridium",
-                "craftingToolHardHammer",
-                "plateIridium",
-                null,
-                null,
-                "craftingToolFile",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Iridium, 1L),
-                "plateIridium",
-                "ingotIridium",
-                "craftingToolHardHammer",
-                "craftingToolFile",
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadSense, Materials.Iridium, 1L),
-                "plateIridium",
-                "plateIridium",
-                "ingotIridium",
-                "craftingToolHardHammer",
-                "craftingToolFile",
-                null);
+
         addShapedRecipe(
                 createItemStack(
                         GregTech.ID,
@@ -1063,39 +1038,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "ingotIridium",
                 null);
         addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadPickaxe, Materials.Iridium, 1L),
-                "plateIridium",
-                "ingotIridium",
-                "ingotIridium",
-                "craftingToolFile",
-                null,
-                "craftingToolHardHammer",
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadPlow, Materials.Iridium, 1L),
-                "plateIridium",
-                "plateIridium",
-                null,
-                "plateIridium",
-                "plateIridium",
-                null,
-                "craftingToolHardHammer",
-                "craftingToolFile",
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadSword, Materials.Iridium, 1L),
-                null,
-                "plateIridium",
-                null,
-                "craftingToolFile",
-                "plateIridium",
-                "craftingToolHardHammer",
-                null,
-                null,
-                null);
-        addShapedRecipe(
                 GTOreDictUnificator.get(OrePrefixes.toolHeadSaw, Materials.Iridium, 1L),
                 "plateIridium",
                 "plateIridium",
@@ -1106,11 +1048,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadShovel, Materials.Iridium, 1L),
-                "craftingToolFile",
-                "plateIridium",
-                "craftingToolHardHammer");
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemWeedingTrowel", 1, 0, missing),
                 "screwSteel",
@@ -1620,6 +1557,11 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lead, 2L))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing))
                 .duration(10 * SECONDS).eut(120).addTo(assemblerRecipes);
+        GTOreDictUnificator.addItemData(
+                getModItem(IndustrialCraft2.ID, "blockAlloy", 1, 0, missing),
+                new ItemData(
+                        new ItemData(Materials.Steel, 2 * GTValues.M),
+                        new ItemData(Materials.Concrete, 1 * GTValues.M)));
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "blockreactorvessel", 1, 0, missing),

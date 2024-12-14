@@ -236,8 +236,8 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
                 stack.stackSize = drop.getAmount();
             }
             MobDrop mobDrop = MobDrop.create(stack).withChance(chance).withHardPlayerRestriction();
+            mobDrop.clampChance();
             if (drop.getLimitedDropCount() > 0) {
-                mobDrop.clampChance();
                 mobDrop.withChanceModifiers(
                         new IChanceModifier.NormalChance(mobDrop.chance / 100d),
                         new LimitedDropCountModifier(drop.getLimitedDropCount()));
