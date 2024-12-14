@@ -2,11 +2,14 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
@@ -14,6 +17,7 @@ import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -29,6 +33,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -283,6 +288,24 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Gypsum, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Calcite, 1L))
                 .outputChances(10000, 7500, 2500, 2500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(HardcoreEnderExpansion.ID, "end_powder", 8L),
+                        getModItem(RandomThings.ID, "ingredient", 1L, 6))
+                .itemOutputs(GTModHandler.getModItem(BiomesOPlenty.ID, "misc", 1L, 4))
+                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(mixerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L),
+                        getModItem(PamsHarvestCraft.ID, "seaweedItem", 32L),
+                        getModItem(Botany.ID, "misc", 1L, 7))
+                .itemOutputs(GTModHandler.getModItem(BiomesOPlenty.ID, "coral1", 32L, 11))
+                .fluidInputs(FluidRegistry.getFluidStack("weedex9000", 100)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(mixerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "jarEmpty", 1L))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "jarFilled", 1L)).fluidInputs(Materials.Honey.getFluid(1000L))
+                .duration(2 * SECONDS).eut(1).addTo(fluidCannerRecipes);
 
     }
 }

@@ -8,7 +8,9 @@ import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.Genetics;
+import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.KubaTech;
 import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
@@ -1197,6 +1199,37 @@ public class MixerRecipes implements Runnable {
                             GGMaterial.naquadahBasedFuelMkV.getFluidOrGas(1000),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(128000))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerNonCellRecipes);
+        }
+        if (KubaTech.isModLoaded() && EnderIO.isModLoaded()
+                && BiomesOPlenty.isModLoaded()
+                && Witchery.isModLoaded()
+                && GregTech.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(KubaTech.ID, "kubaitems", 1L, 14),
+                            GTModHandler.getModItem(KubaTech.ID, "kubaitems", 1L, 16),
+                            GTModHandler.getModItem(KubaTech.ID, "kubaitems", 1L, 17),
+                            GTModHandler.getModItem(KubaTech.ID, "kubaitems", 1L, 19),
+                            GTModHandler.getModItem(EnderIO.ID, "bucketVapor_of_levity", 1L),
+                            GTModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32009),
+                            GTModHandler.getModItem(BiomesOPlenty.ID, "food", 1L, 10),
+                            GTModHandler.getModItem(Witchery.ID, "potion", 1L),
+                            GTModHandler.getModItem(Witchery.ID, "ingredient", 1L, 40))
+                    .itemOutputs(
+                            new ItemStack(Items.glass_bottle, 2, 0),
+                            new ItemStack(Items.bucket, 1, 0),
+                            GTModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32404))
+                    .fluidInputs(
+                            FluidRegistry.getFluidStack("potion.diablosauce", 7500),
+                            FluidRegistry.getFluidStack("potion.piratebrew", 2500),
+                            FluidRegistry.getFluidStack("potion.jagi", 2500),
+                            FluidRegistry.getFluidStack("potion.alcopops", 2500),
+                            FluidRegistry.getFluidStack("potion.goldencider", 2500),
+                            FluidRegistry.getFluidStack("potion.chocolatemilk", 7500))
+                    .fluidOutputs(
+                            FluidRegistry.getFluidStack("potion.diablosauce.strong", 12000),
+                            FluidRegistry.getFluidStack("potion.mundane", 22000))
+                    .duration(200 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(mixerNonCellRecipes);
         }
     }
 }
