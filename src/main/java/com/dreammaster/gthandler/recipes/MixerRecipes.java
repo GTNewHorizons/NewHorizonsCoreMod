@@ -8,7 +8,6 @@ import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.KubaTech;
 import static gregtech.api.enums.Mods.Natura;
@@ -1215,7 +1214,7 @@ public class MixerRecipes implements Runnable {
                     .itemOutputs(
                             new ItemStack(Items.glass_bottle, 2, 0),
                             new ItemStack(Items.bucket, 1, 0),
-                            GTModHandler.getModItem(GregTech.ID, "gt.metaitem.01", 1L, 32404))
+                            ItemList.ThermosCan_Empty.get(1L))
                     .fluidInputs(
                             FluidRegistry.getFluidStack("potion.diablosauce", 7500),
                             FluidRegistry.getFluidStack("potion.piratebrew", 2500),
