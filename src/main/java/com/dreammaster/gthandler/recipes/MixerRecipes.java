@@ -1200,18 +1200,15 @@ public class MixerRecipes implements Runnable {
                             MaterialsUEVplus.ExcitedDTEC.getFluid(128000))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerNonCellRecipes);
         }
-        if (KubaTech.isModLoaded() && EnderIO.isModLoaded()
-                && BiomesOPlenty.isModLoaded()
-                && Witchery.isModLoaded()
-                && GregTech.isModLoaded()) {
+        if (KubaTech.isModLoaded() && EnderIO.isModLoaded() && BiomesOPlenty.isModLoaded() && Witchery.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTModHandler.getModItem(KubaTech.ID, "kubaitems", 1L, 14),
-                            GTModHandler.getModItem(KubaTech.ID, "kubaitems", 1L, 16),
-                            GTModHandler.getModItem(KubaTech.ID, "kubaitems", 1L, 17),
-                            GTModHandler.getModItem(KubaTech.ID, "kubaitems", 1L, 19),
+                            kubatech.api.enums.ItemList.EarlGrayTea.get(1),
+                            kubatech.api.enums.ItemList.LemonTea.get(1),
+                            kubatech.api.enums.ItemList.MilkTea.get(1),
+                            kubatech.api.enums.ItemList.PeppermintTea.get(1),
                             GTModHandler.getModItem(EnderIO.ID, "bucketVapor_of_levity", 1L),
-                            GTModHandler.getModItem(GregTech.ID, "gt.metaitem.02", 1L, 32009),
+                            ItemList.ThermosCan_Ice_Tea.get(1L),
                             GTModHandler.getModItem(BiomesOPlenty.ID, "food", 1L, 10),
                             GTModHandler.getModItem(Witchery.ID, "potion", 1L),
                             GTModHandler.getModItem(Witchery.ID, "ingredient", 1L, 40))
