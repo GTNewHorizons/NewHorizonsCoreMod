@@ -1447,7 +1447,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.NiobiumTitanium, 1L),
                             WerkstoffMaterialPool.MuMetal.get(OrePrefixes.stickLong, 8),
                             GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.HSSS, 2L),
-                            ItemList.Reactor_Coolant_Sp_6.get(1),
+                            ItemList.Reactor_Coolant_Sp_3.get(2),
                             ItemList.Electric_Pump_LuV.get(1))
                     .fluidInputs(new FluidStack(solderIndalloy, (int) (L * 4)))
                     .itemOutputs(ItemList.Superconducting_Magnet_Solenoid_LuV.get(1)).duration(20 * SECONDS)
