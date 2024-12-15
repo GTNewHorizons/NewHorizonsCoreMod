@@ -746,14 +746,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         GGMaterial.incoloy903.get(OrePrefixes.pipeSmall), 'F',
                         OrePrefixes.gearGt.get(Materials.Titanium) });
 
-        // Neutronium Stabilization Casing
-        GTModHandler.addCraftingRecipe(
-                ItemList.Neutronium_Stable_Casing.get(4),
-                bits,
-                new Object[] { "PQP", "QFQ", "PQP", 'P',
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 1), 'Q',
-                        ItemList.Field_Generator_ZPM.get(1), 'F', ItemList.Casing_MAX.get(1) });
-
         // Industrial Precision Lathe
         GTModHandler.addCraftingRecipe(
                 ItemList.Machine_Multi_Lathe.get(1),
@@ -1061,11 +1053,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 GTModHandler.RecipeBits.NOT_REMOVABLE | GTModHandler.RecipeBits.REVERSIBLE,
                 new Object[] { " h ", "SSS", "SSS", 'S',
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Steel, 1) });
-        GTModHandler.addCraftingRecipe(
-                GTOreDictUnificator.get(OrePrefixes.toolHeadHoe, Materials.Steel, 1L),
-                GTProxy.tBits,
-                new Object[] { "PIh", "f  ", 'P', OrePrefixes.plate.get(Materials.Steel), 'I',
-                        OrePrefixes.ingot.get(Materials.Steel) });
 
         GTModHandler.addShapelessCraftingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Clay, 1L),
@@ -1124,14 +1111,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatRE", 1, GTValues.W), 'E',
                         GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3), 'C',
                         OrePrefixes.cableGt01.get(Materials.Tin), 'S', screw.get(Materials.Steel) });
-        GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(IndustrialCraft2.ID, "itemToolHoe", 1, GTValues.W),
-                bits,
-                new Object[] { "dPH", "PGB", "ECS", 'S', screw.get(Materials.Steel), 'H',
-                        OrePrefixes.toolHeadHoe.get(Materials.Steel), 'G', OrePrefixes.gearGtSmall.get(Materials.Steel),
-                        'B', GTModHandler.getModItem(IndustrialCraft2.ID, "itemBatRE", 1, GTValues.W), 'E',
-                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3), 'P',
-                        OrePrefixes.plate.get(Materials.Steel) });
 
         if (OpenComputers.isModLoaded()) GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(OpenComputers.ID, "wrench", 1, 0),
@@ -2119,24 +2098,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         for (int i = 0; i <= 7; i++) {
             ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
-            NBTTagCompound hatchNBT = modifiedHatch.getTagCompound();
-            if (hatchNBT != null) {
-                hatchNBT.setLong("baseCapacity", capacities[i]);
-            } else {
-                hatchNBT = new NBTTagCompound();
-                hatchNBT.setLong("baseCapacity", capacities[i] * 256);
-                modifiedHatch.setTagCompound(hatchNBT);
-            }
+            NBTTagCompound hatchNBT = new NBTTagCompound();
+            hatchNBT.setLong("baseCapacity", capacities[i] * 256);
+            modifiedHatch.setTagCompound(hatchNBT);
 
             ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
-            NBTTagCompound busNBT = modifiedBus.getTagCompound();
-            if (busNBT != null) {
-                busNBT.setLong("baseCapacity", capacities[i]);
-            } else {
-                busNBT = new NBTTagCompound();
-                busNBT.setLong("baseCapacity", capacities[i]);
-                modifiedBus.setTagCompound(busNBT);
-            }
+            NBTTagCompound busNBT = new NBTTagCompound();
+            busNBT.setLong("baseCapacity", capacities[i]);
+            modifiedBus.setTagCompound(busNBT);
 
             GTModHandler.addShapelessCraftingRecipe(
                     modifiedHatch,
@@ -2145,6 +2114,27 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                     modifiedBus,
                     new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), itemComponents[i] });
         }
+        final ItemStack SINGULARITY = GTModHandler
+                .getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1);
+        final ItemStack FLUID_SINGULARITY = GTModHandler
+                .getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
+
+        ItemStack modifiedHatch = ItemList.Hatch_Output_ME.get(1L);
+        NBTTagCompound hatchNBT = new NBTTagCompound();
+        hatchNBT.setLong("baseCapacity", Long.MAX_VALUE);
+        modifiedHatch.setTagCompound(hatchNBT);
+
+        ItemStack modifiedBus = ItemList.Hatch_Output_Bus_ME.get(1L);
+        NBTTagCompound busNBT = new NBTTagCompound();
+        busNBT.setLong("baseCapacity", Long.MAX_VALUE);
+        modifiedBus.setTagCompound(busNBT);
+
+        GTModHandler.addShapelessCraftingRecipe(
+                modifiedBus,
+                new Object[] { ItemList.Hatch_Output_Bus_ME.get(1L), SINGULARITY });
+        GTModHandler.addShapelessCraftingRecipe(
+                modifiedHatch,
+                new Object[] { ItemList.Hatch_Output_ME.get(1L), FLUID_SINGULARITY });
 
         // Pre-add planet block to EOH controller
         for (String dimAbbreviation : DimensionHelper.DimNameDisplayed) {

@@ -1,7 +1,10 @@
 package com.dreammaster.gthandler.multiAirFilter;
 
+import static com.dreammaster.gthandler.casings.GT_Container_CasingsNH.sBlockCasingsNH;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.enums.GTValues.VN;
+import static gregtech.api.enums.Textures.BlockIcons.TURBINE_NEW;
+import static gregtech.api.enums.Textures.BlockIcons.TURBINE_NEW_ACTIVE;
 import static gregtech.api.util.GTStructureUtility.ofHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofHatchAdderOptional;
 import static gregtech.api.util.GTUtility.filterValidMTEs;
@@ -11,23 +14,27 @@ import static java.lang.Math.min;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.casings.GT_Container_CasingsNH;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.main.MainRegistry;
 import com.gtnewhorizon.structurelib.alignment.IAlignmentLimits;
+import com.gtnewhorizon.structurelib.alignment.enumerable.ExtendedFacing;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import gregtech.api.enums.Textures;
+import gregtech.api.interfaces.IIconContainer;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.items.MetaGeneratedTool;
@@ -36,6 +43,7 @@ import gregtech.api.metatileentity.implementations.MTEHatchMuffler;
 import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.GTUtilityClient;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.items.MetaGeneratedTool01;
 import gregtech.common.pollution.Pollution;
@@ -53,6 +61,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     protected boolean isFilterLoaded = false;
     protected int filterUsageRemaining = 0;
     protected int tickCounter = 0; // because we can't trust the world tick, it may be in a dim with eternal day, etc
+    private boolean mFormed;
     protected static final String STRUCTURE_PIECE_MAIN = "main";
     protected static final ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>> STRUCTURE_DEFINITION = new ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>>() {
 
@@ -68,7 +77,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                             'c',
                             lazy(
                                     x -> ofChain(
-                                            ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta()),
+                                            ofBlock(sBlockCasingsNH, x.getCasingMeta()),
                                             ofHatchAdder(
                                                     GT_MetaTileEntity_AirFilterBase::addMaintenanceToMachineList,
                                                     x.getCasingIndex(),
@@ -85,8 +94,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                                                     GT_MetaTileEntity_AirFilterBase::addEnergyInputToMachineList,
                                                     x.getCasingIndex(),
                                                     1))))
-                    .addElement('x', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta())))
-                    .addElement('v', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getPipeMeta())))
+                    .addElement('x', lazy(x -> ofBlock(sBlockCasingsNH, x.getCasingMeta())))
+                    .addElement('v', lazy(x -> ofBlock(sBlockCasingsNH, x.getPipeMeta())))
                     .addElement(
                             'm',
                             lazy(
@@ -94,7 +103,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                                             GT_MetaTileEntity_AirFilterBase::addMufflerToMachineList,
                                             x.getCasingIndex(),
                                             2,
-                                            GT_Container_CasingsNH.sBlockCasingsNH,
+                                            sBlockCasingsNH,
                                             x.getCasingMeta())))
                     .build();
         }
@@ -433,6 +442,37 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             } catch (Exception ignored) {}
         }
         super.onPostTick(aBaseMetaTileEntity, aTick);
+    }
+
+    @Override
+    public void onValueUpdate(byte aValue) {
+        mFormed = aValue == 1;
+    }
+
+    @Override
+    public byte getUpdateData() {
+        return (byte) (mMachine ? 1 : 0);
+    }
+
+    @Override
+    public boolean renderInWorld(IBlockAccess aWorld, int aX, int aY, int aZ, Block aBlock, RenderBlocks aRenderer) {
+        if (!mFormed) return false;
+        int[] xyz = new int[3];
+        ExtendedFacing ext = getExtendedFacing();
+        ext.getWorldOffset(new int[] { 0, -3, 1 }, xyz);
+        IIconContainer[] tTextures = getBaseMetaTileEntity().isActive() ? TURBINE_NEW_ACTIVE : TURBINE_NEW;
+        // we know this multi can only ever face upwards, so just use +y directly
+        ExtendedFacing direction = ExtendedFacing.of(ForgeDirection.UP);
+        GTUtilityClient.renderTurbineOverlay(
+                aWorld,
+                xyz[0] + aX,
+                xyz[1] + aY,
+                xyz[2] + aZ,
+                aRenderer,
+                direction,
+                sBlockCasingsNH,
+                tTextures);
+        return false;
     }
 
     @Override

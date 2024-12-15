@@ -15,30 +15,30 @@ public class GT_Loader_Wires {
 
     private void registerWires() {
 
-        // ID Range: 1200 - 4100
-        // Free IDs: 2030 - 4100
+        // Take a look in gt5u MetaTileEntityIDs for free spaces
 
         // ===================================================================================================
         // Make wires
         // ===================================================================================================
 
         // Takes 20!!! slots per wire
-        makeWires(Materials.ElectricalSteel, 11490, 1L, 2L, 2L, GTValues.V[2], true, false);
-        makeWires(Materials.EnergeticAlloy, 11510, 2L, 4L, 2L, gregtech.api.enums.GTValues.V[3], true, false);
-        makeWires(Materials.VibrantAlloy, 11530, 2L, 4L, 4L, gregtech.api.enums.GTValues.V[4], true, false);
-        makeWires(Materials.MelodicAlloy, 11550, 2L, 4L, 4L, gregtech.api.enums.GTValues.V[5], true, false);
-        makeWires(Materials.StellarAlloy, 11570, 4L, 8L, 6L, gregtech.api.enums.GTValues.V[6], true, false);
-        makeWires(Materials.Trinium, 11450, 4L, 8L, 6L, GTValues.V[7], true, false);
-        makeWires(Materials.ElectrumFlux, 1900, 1L, 2L, 3L, GTValues.V[8], true, false);
-        makeWires(Materials.Bedrockium, 11310, 1L, 32L, 2L, GTValues.V[9], true, false);
-        makeWires(Materials.Osmiridium, 11610, 1L, 2L, 8L, GTValues.V[6], true, false);
-        makeWires(Materials.HSSE, 11590, 2L, 4L, 6L, GTValues.V[6], true, false);
-        makeWires(Materials.HSSS, 11470, 4L, 8L, 6L, GTValues.V[9], true, false);
-        makeWires(Materials.Draconium, 11330, 4L, 32L, 8L, GTValues.V[10], true, false);
-        makeWires(Materials.NetherStar, 11350, 4L, 16L, 4L, GTValues.V[11], true, false);
-        makeWires(Materials.Quantium, 11370, 4L, 16L, 2L, GTValues.V[12], true, false);
-        makeWires(Materials.BlackPlutonium, 11390, 4L, 16L, 1L, GTValues.V[13], false, false);
-        makeWires(Materials.DraconiumAwakened, 11410, 4L, 16L, 1L, GTValues.V[14], false, false);
+        makeWires(Materials.ElectricalSteel, 11490, 1L, 2L, 3L, GTValues.V[2], true, false);
+        makeWires(Materials.EnergeticAlloy, 11510, 1L, 2L, 4L, gregtech.api.enums.GTValues.V[3], true, false);
+        makeWires(Materials.VibrantAlloy, 11530, 3L, 6L, 6L, gregtech.api.enums.GTValues.V[4], true, false);
+        makeWires(Materials.EndSteel, 1860, 3L, 6L, 6L, gregtech.api.enums.GTValues.V[5], true, false);
+        makeWires(Materials.MelodicAlloy, 11550, 2L, 4L, 4L, gregtech.api.enums.GTValues.V[6], true, false);
+        makeWires(Materials.StellarAlloy, 11570, 12L, 24L, 12L, gregtech.api.enums.GTValues.V[8], true, false);
+        makeWires(Materials.Trinium, 11450, 3L, 6L, 6L, GTValues.V[7], true, false);
+        makeWires(Materials.ElectrumFlux, 1900, 3L, 2L, 6L, GTValues.V[8], true, false);
+        makeWires(Materials.Bedrockium, 11310, 6L, 48L, 3L, GTValues.V[9], true, false);
+        makeWires(Materials.Osmiridium, 11610, 1L, 2L, 16L, GTValues.V[7], true, false);
+        makeWires(Materials.HSSE, 11590, 4L, 8L, 6L, GTValues.V[6], true, false);
+        makeWires(Materials.HSSS, 11470, 4L, 8L, 8L, GTValues.V[9], true, false);
+        makeWires(Materials.Draconium, 11330, 32L, 64L, 8L, GTValues.V[10], true, false);
+        makeWires(Materials.NetherStar, 11350, 16L, 32L, 4L, GTValues.V[11], true, false);
+        makeWires(Materials.Quantium, 11370, 32L, 128L, 4L, GTValues.V[12], true, false);
+        makeWires(Materials.BlackPlutonium, 11390, 8L, 8L, 8L, GTValues.V[13], false, false);
+        makeWires(Materials.DraconiumAwakened, 11410, 64L, 64L, 8L, GTValues.V[14], false, false);
         makeWires(Materials.Infinity, 11430, 0L, 0L, 8192L, GTValues.V[14], false, true);
 
         /**

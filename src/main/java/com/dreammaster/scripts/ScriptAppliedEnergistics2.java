@@ -27,6 +27,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -90,7 +91,20 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         ItemStack[] FluixSmartCableColor = new ItemStack[16];
         ItemStack[] FluixDenseSmartCableColor = new ItemStack[16];
         ItemStack[] FluixGlassCableColor = new ItemStack[16];
+        final ItemStack storageBus = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing);
 
+        // preconfigurated priorities for storage buses
+        ItemStack preconfiguredStorageBus = storageBus.copy();
+        for (int i = 1; i < 25; i++) {
+            NBTTagCompound tag = new NBTTagCompound();
+            tag.setInteger("priority", i);
+            preconfiguredStorageBus.setTagCompound(tag);
+            GTValues.RA.stdBuilder().itemInputs(storageBus, GTUtility.getIntegratedCircuit(i))
+                    .itemOutputs(preconfiguredStorageBus).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(circuitAssemblerRecipes);
+
+            addShapelessRecipe(preconfiguredStorageBus, storageBus, GTUtility.getIntegratedCircuit(i));
+        }
         // Hyper-Acceleration Card
         addShapelessRecipe(
                 SuperSpeedCard,
@@ -1411,7 +1425,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
         // ME storage bus
         addShapedRecipe(
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing),
+                storageBus,
                 "craftingToolScrewdriver",
                 "chestWood",
                 "craftingToolHardHammer",
@@ -1911,8 +1925,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 440, missing),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 2),
                         ItemList.Electric_Piston_LV.get(1L))
-                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(storageBus).duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 1),
