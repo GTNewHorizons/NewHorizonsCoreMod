@@ -3,7 +3,6 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
-import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -113,7 +112,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(BuildCraftFactory.ID, "tankBlock", 1),
+                        getModItem(IndustrialCraft2.ID, "itemFluidCell", 1),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 463, missing))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
@@ -141,21 +140,21 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Redstone, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 461, missing))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.block, Materials.Glowstone, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 467, missing))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Computronics.ID, "ironNoteBlock", 1),
+                        getModItem(Computronics.ID, "computronics.ironNoteBlock", 1),
                         getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 472, missing))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
