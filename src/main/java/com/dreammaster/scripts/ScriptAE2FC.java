@@ -3,12 +3,15 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
+import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -172,6 +175,11 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_INFINITY_WATER_STORAGE_CELL = getModItem(
                 AE2FluidCraft.ID,
                 "fluid_storage.infinity.water",
+                1,
+                0);
+        final ItemStack AE2FC_INFINITY_LAVA_STORAGE_CELL = getModItem(
+                AE2FluidCraft.ID,
+                "fluid_storage.infinity.lava",
                 1,
                 0);
         final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem(
@@ -765,6 +773,56 @@ public class ScriptAE2FC implements IScriptLoader {
                         1,
                         0,
                         "{FluidStack:{FluidName:water,Amount:2147483647}}",
+                        missing));
+        // Infinite Lava Cell
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                (AE2FC_INFINITY_LAVA_STORAGE_CELL),
+                "--ebcbe--",
+                "-dalflad-",
+                "egNlhlNge",
+                "illFUFlli",
+                "cfhjkjhfc",
+                "illFJFlli",
+                "egNlhlNge",
+                "-dalflad-",
+                "--ebcbe--",
+                'a',
+                "plateSuperdensePlutonium",
+                'b',
+                "plateSuperdenseMeteoricSteel",
+                'c',
+                "plateSuperdenseArdite",
+                'd',
+                "plateSuperdenseRubidium",
+                'F',
+                "plateSuperdenseFierySteel",
+                'e',
+                "blockCosmicNeutronium",
+                'f',
+                ItemList.Field_Generator_UV.get(1L),
+                'g',
+                "plateSuperdensePlutonium241",
+                'h',
+                getModItem(Avaritia.ID, "Resource", 1, 5),
+                'j',
+                getModItem(BloodMagic.ID, "AlchemicalWizardrytile.blockSpellEffect", 1),
+                'J',
+                getModItem(BloodMagic.ID, "lavaSigil", 1),
+                'U',
+                getModItem(ThaumicExploration.ID, "everburnUrn", 1),
+                'N',
+                getModItem(Railcraft.ID, "firestone.refined", 1, missing),
+                'i',
+                "plateSuperdenseBloodInfusedIron",
+                'k',
+                AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
+                'l',
+                createItemStack(
+                        AE2FluidCraft.ID,
+                        "fluid_packet",
+                        1,
+                        0,
+                        "{FluidStack:{FluidName:lava,Amount:666666}}",
                         missing));
 
         // Fluid Quantum Drive
