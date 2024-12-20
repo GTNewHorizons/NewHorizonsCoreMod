@@ -3,12 +3,15 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BartWorks;
+import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
@@ -105,6 +108,64 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
 
             addShapelessRecipe(preconfiguredStorageBus, storageBus, GTUtility.getIntegratedCircuit(i));
         }
+        // Preconfigured p2ps
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(IndustrialCraft2.ID, "itemFluidCell", 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 463, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(OpenComputers.ID, "cable", 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 468, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemPowerConduit", 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 466, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.RedstoneAlloy, 1L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 470, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Redstone, 1L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 461, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glowstone, 1L),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 467, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Computronics.ID, "computronics.ironNoteBlock", 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 472, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(ExtraUtilities.ID, "chestMini", 1),
+                        getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 460, missing))
+                .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 16, 462, missing))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(circuitAssemblerRecipes);
+
         // Hyper-Acceleration Card
         addShapelessRecipe(
                 SuperSpeedCard,
