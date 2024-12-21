@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
@@ -21,6 +22,7 @@ import java.util.Map;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
@@ -39,6 +41,7 @@ import gregtech.api.util.GTModHandler.RecipeBits;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptAE2FC implements IScriptLoader {
 
@@ -172,6 +175,11 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_INTERFACE_P2P = getModItem(AE2FluidCraft.ID, "part_fluid_p2p_interface", 1);
         final ItemStack AE2_ADVANCED_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 61);
         final ItemStack T7_YOT = new ItemStack(Loaders.yottaFluidTankCell, 1, 6);
+        final ItemStack AE2FC_INFINITY_WATER_STORAGE_CELL = getModItem(
+                AE2FluidCraft.ID,
+                "fluid_storage.infinity.water",
+                1,
+                0);
         final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem(
                 AE2FluidCraft.ID,
                 "fluid_storage_housing",
@@ -456,6 +464,19 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemOutputs(AE2FC_FLUID_STORAGE_BUS).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
+        // preconfigurated priorities for storage buses
+        ItemStack preconfiguredStorageBus = AE2FC_FLUID_STORAGE_BUS.copy();
+        for (int i = 1; i < 25; i++) {
+            NBTTagCompound tag = new NBTTagCompound();
+            tag.setInteger("priority", i);
+            preconfiguredStorageBus.setTagCompound(tag);
+            GTValues.RA.stdBuilder().itemInputs(AE2FC_FLUID_STORAGE_BUS, GTUtility.getIntegratedCircuit(i))
+                    .itemOutputs(preconfiguredStorageBus).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(circuitAssemblerRecipes);
+
+            addShapelessRecipe(preconfiguredStorageBus, AE2FC_FLUID_STORAGE_BUS, GTUtility.getIntegratedCircuit(i));
+        }
+
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
         GTValues.RA.stdBuilder()
@@ -728,6 +749,49 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16384).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
+
+        // Infinite Water Cell
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                (AE2FC_INFINITY_WATER_STORAGE_CELL),
+                "--ebcbe--",
+                "-dalflad-",
+                "egllhllge",
+                "illljllli",
+                "cfhjkjhfc",
+                "illljllli",
+                "egllhllge",
+                "-dalflad-",
+                "--ebcbe--",
+                'a',
+                "plateSuperdenseCeruclase",
+                'b',
+                "plateSuperdenseCallistoIce",
+                'c',
+                "plateSuperdenseEnrichedHolmium",
+                'd',
+                "plateSuperdenseOsmiridium",
+                'e',
+                "blockCosmicNeutronium",
+                'f',
+                ItemList.Field_Generator_UV.get(1L),
+                'g',
+                "plateSuperdenseOsmium",
+                'h',
+                getModItem(Avaritia.ID, "Resource", 1, 5),
+                'i',
+                "plateSuperdenseLedox",
+                'j',
+                GregtechItemList.Hatch_Reservoir.get(1L),
+                'k',
+                AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
+                'l',
+                createItemStack(
+                        AE2FluidCraft.ID,
+                        "fluid_packet",
+                        1,
+                        0,
+                        "{FluidStack:{FluidName:water,Amount:2147483647}}",
+                        missing));
 
         // Fluid Quantum Drive
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
