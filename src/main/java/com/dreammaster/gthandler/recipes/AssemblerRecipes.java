@@ -1889,33 +1889,14 @@ public class AssemblerRecipes implements Runnable {
                             GTModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 2, 2))
                     .itemOutputs(GTModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 3)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-            // IV Transformer
+            // Fluid Manipulator
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 4),
-                            GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.VanadiumGallium, 1),
-                            ItemList.Circuit_Chip_PIC.get(2),
-                            ItemList.Hull_IV.get(1))
-                    .itemOutputs(ItemList.Transformer_LuV_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(assemblerRecipes);
-            // Tesla Coil
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1),
-                            GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2),
-                            GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 5, 0),
-                            ItemList.Transformer_HV_MV.get(1))
-                    .itemOutputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1))
-                    .duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-            // MV Transformer
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 4),
-                            GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
-                            ItemList.Hull_MV.get(1),
-                            ItemList.Circuit_Parts_InductorSMD.get(2))
-                    .itemOutputs(ItemList.Transformer_HV_MV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
-                    .addTo(assemblerRecipes);
+                            ItemList.Large_Fluid_Cell_Steel.get(1),
+                            GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 4),
+                            ItemList.Electric_Motor_HV.get(4))
+                    .itemOutputs(GTModHandler.getModItem(GalacticraftMars.ID, "item.null", 1, 6)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
             // Cooling Core With NaK
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -1936,16 +1917,104 @@ public class AssemblerRecipes implements Runnable {
                             GTModHandler.getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 2, 0))
                     .itemOutputs(GTModHandler.getModItem(GraviSuite.ID, "itemSimpleItem", 1, 2)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-            // Fluid Manipulator
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            ItemList.Large_Fluid_Cell_Steel.get(1),
-                            GTOreDictUnificator.get(OrePrefixes.pipeQuadruple, Materials.Steel, 4),
-                            ItemList.Electric_Motor_HV.get(4))
-                    .itemOutputs(GTModHandler.getModItem(GalacticraftMars.ID, "item.null", 1, 6)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         }
+        // ULV Transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Lead, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1),
+                        ItemList.Hull_ULV.get(1))
+                .itemOutputs(ItemList.Transformer_LV_ULV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
 
+        // LV Transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 1),
+                        ItemList.Hull_LV.get(1))
+                .itemOutputs(ItemList.Transformer_MV_LV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // MV Transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.AnyCopper, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1),
+                        ItemList.Hull_MV.get(1),
+                        ItemList.Circuit_Parts_InductorSMD.get(2))
+                .itemOutputs(ItemList.Transformer_HV_MV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // HV Transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 1),
+                        ItemList.Hull_HV.get(1),
+                        ItemList.Circuit_Chip_ULPIC.get(2))
+                .itemOutputs(ItemList.Transformer_EV_HV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // EV Transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Aluminium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1),
+                        ItemList.Hull_EV.get(1),
+                        ItemList.Circuit_Chip_LPIC.get(2))
+                .itemOutputs(ItemList.Transformer_IV_EV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // IV Transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.VanadiumGallium, 1),
+                        ItemList.Circuit_Chip_PIC.get(2),
+                        ItemList.Hull_IV.get(1))
+                .itemOutputs(ItemList.Transformer_LuV_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // LuV transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.VanadiumGallium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Naquadah, 1),
+                        ItemList.Circuit_Chip_HPIC.get(2),
+                        ItemList.Hull_LuV.get(1))
+                .itemOutputs(ItemList.Transformer_ZPM_LuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // ZPM Transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Naquadah, 4),
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.NaquadahAlloy, 1),
+                        ItemList.Hull_ZPM.get(1),
+                        ItemList.Circuit_Chip_UHPIC.get(2))
+                .itemOutputs(ItemList.Transformer_UV_ZPM.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // UV Transformer
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.NaquadahAlloy, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.Bedrockium, 1),
+                        ItemList.Hull_UV.get(1),
+                        ItemList.Circuit_Chip_NPIC.get(2))
+                .itemOutputs(ItemList.Transformer_MAX_UV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        // Tesla Coil
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Gold, 1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 2),
+                        GTModHandler.getModItem(IndustrialCraft2.ID, "itemRecipePart", 5, 0),
+                        ItemList.Transformer_HV_MV.get(1))
+                .itemOutputs(GTModHandler.getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // Super Tank V
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2267,15 +2336,6 @@ public class AssemblerRecipes implements Runnable {
                     .duration(10 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         }
-        // 4A Zpm to LuV transformer
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.VanadiumGallium, 4),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Naquadah, 1),
-                        ItemList.Circuit_Chip_HPIC.get(2),
-                        ItemList.Hull_LuV.get(1))
-                .itemOutputs(ItemList.Transformer_ZPM_LuV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_EV)
-                .addTo(assemblerRecipes);
 
         // 16A Zpm to LuV transformer
         GTValues.RA.stdBuilder()
