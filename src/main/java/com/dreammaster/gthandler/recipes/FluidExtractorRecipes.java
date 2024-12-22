@@ -6,7 +6,6 @@ import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
-import gregtech.api.recipe.RecipeCategories;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -16,6 +15,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 
 public class FluidExtractorRecipes implements Runnable {
@@ -71,13 +71,11 @@ public class FluidExtractorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0))
                     .fluidOutputs(Materials.Glass.getMolten(144L)).duration(24 * TICKS).eut(54)
-                    .recipeCategory(RecipeCategories.fluidExtractorRecycling)
-                    .addTo(fluidExtractionRecipes);
+                    .recipeCategory(RecipeCategories.fluidExtractorRecycling).addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 1L, 0))
                     .fluidOutputs(Materials.Glass.getMolten(54L)).duration(9 * TICKS).eut(54)
-                    .recipeCategory(RecipeCategories.fluidExtractorRecycling)
-                    .addTo(fluidExtractionRecipes);
+                    .recipeCategory(RecipeCategories.fluidExtractorRecycling).addTo(fluidExtractionRecipes);
 
         }
     }
