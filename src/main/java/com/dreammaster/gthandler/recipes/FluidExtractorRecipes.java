@@ -70,7 +70,7 @@ public class FluidExtractorRecipes implements Runnable {
                     .addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0))
-                    .fluidOutputs(Materials.Glass.getMolten(144L)).duration(30 * TICKS).eut(54)
+                    .fluidOutputs(Materials.Glass.getMolten(144L)).duration(24 * TICKS).eut(54)
                     .recipeCategory(RecipeCategories.fluidExtractorRecycling)
                     .addTo(fluidExtractionRecipes);
 
