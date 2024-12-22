@@ -6,6 +6,7 @@ import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
+import gregtech.api.recipe.RecipeCategories;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -66,6 +67,16 @@ public class FluidExtractorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 36))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS).eut(16)
+                    .addTo(fluidExtractionRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0))
+                    .fluidOutputs(Materials.Glass.getMolten(144L)).duration(30 * TICKS).eut(54)
+                    .recipeCategory(RecipeCategories.fluidExtractorRecycling)
+                    .addTo(fluidExtractionRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 1L, 0))
+                    .fluidOutputs(Materials.Glass.getMolten(54L)).duration(9 * TICKS).eut(54)
+                    .recipeCategory(RecipeCategories.fluidExtractorRecycling)
                     .addTo(fluidExtractionRecipes);
 
         }
