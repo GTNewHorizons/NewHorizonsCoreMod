@@ -31,6 +31,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
+import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.GregTechAPI;
@@ -271,17 +273,17 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         getModItem("dreamcraft", "tile.NeutroniumPlatedReinforcedStone", 1),
                         WerkstoffLoader.HDCS.get(OrePrefixes.plate, 8))
-                .itemOutputs(new ItemStack(GSBlocks.DysonSwarmBlocks, 1, 9))
+                .itemOutputs(new ItemStack(IGBlocks.DysonSwarmCasing, 1, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(GSItems.DysonSwarmItems, 4, 1), new ItemStack(GSItems.DysonSwarmItems, 4, 2))
-                .itemOutputs(new ItemStack(GSItems.DysonSwarmItems, 1, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .itemInputs(new ItemStack(IGItems.DysonSwarmItems, 4, 1), new ItemStack(IGItems.DysonSwarmItems, 4, 2))
+                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
         // Chemical Reactor
         GTValues.RA.stdBuilder().itemInputs(Materials.Carbon.getDust(1), GTOreDictUnificator.get("dustHafnia", 1))
-                .itemOutputs(GSMaterials.hafniumCarbide.get(OrePrefixes.dust))
+                .itemOutputs(WerkstoffLoader.HafniumCarbide.get(OrePrefixes.dust))
                 .fluidOutputs(Materials.Oxygen.getGas(2000)).duration(20 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
 
@@ -289,20 +291,20 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get("dustTantalumCarbide", 4),
-                        GSMaterials.hafniumCarbide.get(OrePrefixes.dust),
+                        WerkstoffLoader.HafniumCarbide.get(OrePrefixes.dust),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(GSMaterials.tantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust, 5))
+                .itemOutputs(WerkstoffLoader.TantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust, 5))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_EV).addTo(mixerRecipes);
 
         // Plasma Arc Furnace
-        GTValues.RA.stdBuilder().itemInputs(GSMaterials.tantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust))
-                .itemOutputs(GSMaterials.tantalumHafniumCarbide.get(OrePrefixes.ingot, 1))
+        GTValues.RA.stdBuilder().itemInputs(WerkstoffLoader.TantalumCarbideHafniumCarbideMixture.get(OrePrefixes.dust))
+                .itemOutputs(WerkstoffLoader.TantalumHafniumCarbide.get(OrePrefixes.ingot, 1))
                 .fluidInputs(Materials.Nitrogen.getPlasma(2)).fluidOutputs(Materials.Nitrogen.getGas(1))
                 .duration(5 * TICKS).eut(TierEU.RECIPE_IV).addTo(plasmaArcFurnaceRecipes);
 
         // Vacuum Freezer
         GTValues.RA.stdBuilder().fluidInputs(Materials.Helium.getGas(1000))
-                .fluidOutputs(GSMaterials.liquidHelium.getFluidOrGas(1000)).duration(1 * MINUTES + 30 * SECONDS)
+                .fluidOutputs(WerkstoffLoader.LiquidHelium.getFluidOrGas(1000)).duration(1 * MINUTES + 30 * SECONDS)
                 .eut(TierEU.RECIPE_MV).addTo(vacuumFreezerRecipes);
 
         // Autoclave
@@ -314,12 +316,12 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 1000)).duration(2 * MINUTES)
                 .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(GSItems.DysonSwarmItems, 1, 4))
-                .itemOutputs(new ItemStack(GSItems.DysonSwarmItems, 5, 1))
-                .fluidInputs(GSMaterials.tantalumHafniumCarbide.getMolten(576)).duration(50 * SECONDS)
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(IGItems.DysonSwarmItems, 1, 4))
+                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 5, 1))
+                .fluidInputs(WerkstoffLoader.TantalumHafniumCarbide.getMolten(576)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(GSItems.DysonSwarmItems, 1, 5))
-                .itemOutputs(new ItemStack(GSItems.DysonSwarmItems, 5, 2))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(IGItems.DysonSwarmItems, 1, 5))
+                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 5, 2))
                 .fluidInputs(Materials.Neutronium.getMolten(576)).duration(50 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(autoclaveRecipes);
 
@@ -415,11 +417,11 @@ public class ScriptGalaxySpace implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(getGSItem("plutoglowstone", 1, 0))
                 .itemOutputs(getGSItem("item.GlowstoneDusts", 4, 4)).duration(15 * SECONDS).eut(2)
                 .addTo(maceratorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(GSMaterials.tantalumHafniumCarbide.get(OrePrefixes.dust))
-                .itemOutputs(new ItemStack(GSItems.DysonSwarmItems, 1, 4)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+        GTValues.RA.stdBuilder().itemInputs(WerkstoffLoader.TantalumHafniumCarbide.get(OrePrefixes.dust))
+                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 4)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(Materials.Neutronium.getDust(1))
-                .itemOutputs(new ItemStack(GSItems.DysonSwarmItems, 1, 5)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 5)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(maceratorRecipes);
 
         // Shaped Crafting
