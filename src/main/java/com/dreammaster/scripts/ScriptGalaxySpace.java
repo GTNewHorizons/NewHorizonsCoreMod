@@ -2,10 +2,10 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.GTValues.W;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
+import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
