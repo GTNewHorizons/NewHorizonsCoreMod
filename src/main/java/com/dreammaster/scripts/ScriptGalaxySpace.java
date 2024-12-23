@@ -2,10 +2,10 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.GTValues.W;
 import static gregtech.api.enums.Mods.BuildCraftBuilders;
+import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.OpenModularTurrets;
@@ -31,6 +31,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
+import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
 import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
@@ -273,7 +274,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem("dreamcraft", "tile.NeutroniumPlatedReinforcedStone", 1),
+                        BlockList.NeutroniumPlatedReinforcedStone.getIS(),
                         WerkstoffLoader.HDCS.get(OrePrefixes.plate, 8))
                 .itemOutputs(new ItemStack(IGBlocks.DysonSwarmCasing, 1, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
