@@ -44,9 +44,9 @@ import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.items.MetaGeneratedTool;
 import gregtech.api.metatileentity.implementations.MTEEnhancedMultiBlockBase;
 import gregtech.api.metatileentity.implementations.MTEHatchMuffler;
-import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.check.CheckRecipeResult;
 import gregtech.api.recipe.check.CheckRecipeResultRegistry;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.GTUtilityClient;
@@ -220,13 +220,19 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     @Override
     public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection facing,
             int colorIndex, boolean aActive, boolean aRedstone) {
+        ITexture casingTexture = Textures.BlockIcons.getCasingTextureForId(getCasingIndex());
         if (side == facing) {
-            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()),
-                    new GTRenderedTexture(
-                            aActive ? Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE
-                                    : Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE) };
+            if (aActive) {
+                return new ITexture[] { casingTexture,
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE_GLOW)
+                                .glow().build() };
+            }
+            return new ITexture[] { casingTexture, TextureFactory.of(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE),
+                    TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_GLOW).glow()
+                            .build() };
         }
-        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()) };
+        return new ITexture[] { casingTexture };
     }
 
     public abstract float getBonusByTier();
