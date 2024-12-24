@@ -1,8 +1,8 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.Thaumcraft;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +19,7 @@ public class ScriptEFR implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(EtFuturumRequiem.ID, IndustrialCraft2.ID);
+        return Arrays.asList(EtFuturumRequiem.ID, Thaumcraft.ID);
     }
 
     @Override
@@ -53,5 +53,13 @@ public class ScriptEFR implements IScriptLoader {
                 new Object[] { "ABA", "BCB", "ABA", 'A',
                         GTModHandler.getModItem(EtFuturumRequiem.ID, "wood_slab", 1L, 3), 'B', "stickWood", 'C',
                         "screwSteel" });
+        for (int i = 0; i < 16; i++) {
+            addShapelessRecipe(
+                    GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i),
+                    createItemStack(Thaumcraft.ID, "blockWoodenDevice", 1, 8, "{color:" + i + "b}", missing));
+            addShapelessRecipe(
+                    createItemStack(Thaumcraft.ID, "blockWoodenDevice", 1, 8, "{color:" + i + "b}", missing),
+                    GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
+        }
     }
 }
