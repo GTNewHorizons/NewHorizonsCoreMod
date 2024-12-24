@@ -33,7 +33,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
-import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import bartworks.system.material.WerkstoffLoader;
@@ -276,7 +275,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         BlockList.NeutroniumPlatedReinforcedStone.getIS(),
                         WerkstoffLoader.HDCS.get(OrePrefixes.plate, 8))
-                .itemOutputs(new ItemStack(IGBlocks.DysonSwarmCasing, 1, 9))
+                .itemOutputs(getIGItem("dysonswarmparts", 1, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
@@ -456,7 +455,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         addDecorativeMetalBlockRecipe(9, new ItemStack(GCItems.basicItem, 1, 6));
 
         addShapedRecipe(
-                new ItemStack(IGBlocks.GasSiphonCasing),
+                getIGItem("gassiphoncasing", 1, 0),
                 "MWM",
                 "CTC",
                 "MWM",
@@ -481,7 +480,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'W',
                 CustomItemList.WaferTier3.get(1),
                 'F',
-                new ItemStack(IGBlocks.GasSiphonCasing));
+                getIGItem("gassiphoncasing", 1, 0));
 
         addShapedRecipe(
                 getGSItem("oxstoragemoduleT2", 1, 0),
@@ -495,7 +494,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'P',
                 new ItemStack(GCBlocks.oxygenPipe),
                 'F',
-                new ItemStack(IGBlocks.GasSiphonCasing),
+                getIGItem("gassiphoncasing", 1, 0),
                 'W',
                 CustomItemList.WaferTier3.get(1));
 
@@ -531,7 +530,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'A',
                 new ItemStack(GCBlocks.aluminumWire, 1, 1),
                 'F',
-                new ItemStack(IGBlocks.GasSiphonCasing),
+                getIGItem("gassiphoncasing", 1, 0),
                 'M',
                 ItemList.Electric_Motor_MV.get(1),
                 'W',
@@ -948,5 +947,9 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
     private static ItemStack getGSItem(String name, int amount, int meta) {
         return getModItem(GalaxySpace.ID, name, amount, meta, missing);
+    }
+
+    private static ItemStack getIGItem(String name, int amount, int meta) {
+        return getModItem(GTNHIntergalactic.ID, name, amount, meta, missing);
     }
 }
