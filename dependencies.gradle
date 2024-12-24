@@ -10,7 +10,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:AkashicTome:1.1.9:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Avaritia:1.57:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.7.1:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.5.5:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:GTNH-Intergalactic:1.5.7:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.4.2:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.13.0-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.2.3:dev") { transitive = false }
