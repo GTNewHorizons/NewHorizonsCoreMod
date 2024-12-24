@@ -3,9 +3,12 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.util.GTModHandler.getModItem;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.dreammaster.recipes.CustomItem;
 
 import gregtech.api.enums.ItemList;
 import gregtech.api.util.GTModHandler;
@@ -56,7 +59,8 @@ public class ScriptEFR implements IScriptLoader {
         for (int i = 0; i < 16; i++) {
             addShapelessRecipe(
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i),
-                    createItemStack(Thaumcraft.ID, "blockWoodenDevice", 1, 8, "{color:" + i + "b}", missing));
+                    new CustomItem.NBTItem(getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 8))
+                            .setNBT("{color:" + i + "b}"));
             addShapelessRecipe(
                     createItemStack(Thaumcraft.ID, "blockWoodenDevice", 1, 8, "{color:" + i + "b}", missing),
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
