@@ -9,7 +9,7 @@ import com.dreammaster.gthandler.CustomItemList;
 
 import gregtech.api.enums.Dyes;
 import gregtech.api.enums.Textures;
-import gregtech.api.objects.GTCopiedBlockTexture;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTLanguageManager;
 import gregtech.common.blocks.BlockCasingsAbstract;
 import gregtech.common.blocks.MaterialCasings;
@@ -19,12 +19,10 @@ import gregtech.common.blocks.MaterialCasings;
  */
 public class GT_Block_CasingsNH extends BlockCasingsAbstract {
 
-    public static boolean mConnectedMachineTextures = true;
-
     public GT_Block_CasingsNH() {
         super(GT_Item_CasingsNH.class, "gt.blockcasingsNH", MaterialCasings.INSTANCE);
         for (byte b = 0; b < 16; b = (byte) (b + 1)) {
-            Textures.BlockIcons.casingTexturePages[8][b + 64] = new GTCopiedBlockTexture(this, 6, b);
+            Textures.BlockIcons.casingTexturePages[8][b + 64] = TextureFactory.of(this, b);
             /* IMPORTANT for block recoloring */
         }
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".0.name", "Air Filter Turbine Casing"); // adding

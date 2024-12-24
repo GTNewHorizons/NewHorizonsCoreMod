@@ -341,15 +341,21 @@ public class SpaceAssemblerRecipes implements Runnable {
                     filledUMVCell.setTagCompound(euNBT);
                 }
 
+                ItemStack item_singularity = getModItem(
+                        AppliedEnergistics2.ID,
+                        "item.ItemExtremeStorageCell.Singularity",
+                        1);
+                item_singularity.setTagCompound(new NBTTagCompound());
+
                 GTValues.RA.stdBuilder()
                         .itemInputs(
-                                getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
+                                item_singularity,
                                 GTOreDictUnificator
                                         .get(OrePrefixes.plateDense, MaterialsUEVplus.TranscendentMetal, 64L),
                                 ItemList.Field_Generator_UXV.get(1L),
                                 filledUMVCell,
                                 new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 4),
+                                MaterialsUEVplus.MagMatter.getNanite(4),
                                 MaterialsUEVplus.Eternity.getNanite(4))
                         .fluidInputs(MaterialsUEVplus.Eternity.getMolten(36864))
                         .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
@@ -381,12 +387,11 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 new ItemStack(Loaders.yottaFluidTankCell, 2, 9),
                                 new ItemStack(tfftStorageField, 2, 10),
                                 new ItemStack(TTCasingsContainer.SpacetimeCompressionFieldGenerators, 4, 8),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 4),
+                                MaterialsUEVplus.MagMatter.getNanite(4),
                                 MaterialsUEVplus.Eternity.getNanite(4))
                         .fluidInputs(MaterialsUEVplus.Eternity.getMolten(36864))
                         .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1)).specialValue(3)
-                        .nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
-                        .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .duration(1 * MINUTES).eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 // ME Fluid Digital Singularity Storage Cell
                 GTValues.RA.stdBuilder()
