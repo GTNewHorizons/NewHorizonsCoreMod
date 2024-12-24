@@ -24,6 +24,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.main.MainRegistry;
@@ -33,14 +35,18 @@ import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.IIconContainer;
 import gregtech.api.interfaces.ITexture;
+import gregtech.api.interfaces.IToolStats;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.items.MetaGeneratedTool;
 import gregtech.api.metatileentity.implementations.MTEEnhancedMultiBlockBase;
 import gregtech.api.metatileentity.implementations.MTEHatchMuffler;
-import gregtech.api.objects.GTRenderedTexture;
+import gregtech.api.recipe.check.CheckRecipeResult;
+import gregtech.api.recipe.check.CheckRecipeResultRegistry;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.GTUtilityClient;
@@ -214,13 +220,19 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     @Override
     public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection facing,
             int colorIndex, boolean aActive, boolean aRedstone) {
+        ITexture casingTexture = Textures.BlockIcons.getCasingTextureForId(getCasingIndex());
         if (side == facing) {
-            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()),
-                    new GTRenderedTexture(
-                            aActive ? Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE
-                                    : Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE) };
+            if (aActive) {
+                return new ITexture[] { casingTexture,
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE_GLOW)
+                                .glow().build() };
+            }
+            return new ITexture[] { casingTexture, TextureFactory.of(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE),
+                    TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_GLOW).glow()
+                            .build() };
         }
-        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()) };
+        return new ITexture[] { casingTexture };
     }
 
     public abstract float getBonusByTier();
@@ -229,11 +241,22 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
-        return aStack != null && aStack.getItem() instanceof MetaGeneratedTool01
-                && ((MetaGeneratedTool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier() > 0
-                && MetaGeneratedTool.getPrimaryMaterial(aStack).mToolSpeed > 0
-                && aStack.getItemDamage() > 169
-                && aStack.getItemDamage() < 180;
+        if (aStack == null) return false;
+        if (!(aStack.getItem() instanceof MetaGeneratedTool01 tool)) return false;
+        if (aStack.getItemDamage() < 170 || aStack.getItemDamage() > 179) return false;
+
+        IToolStats stats = tool.getToolStats(aStack);
+        if (stats == null || stats.getSpeedMultiplier() <= 0) return false;
+
+        Materials material = MetaGeneratedTool.getPrimaryMaterial(aStack);
+        return material != null && material.mToolSpeed > 0;
+    }
+
+    private float getTurbineDamage(ItemStack aStack) {
+        if (aStack == null || !(aStack.getItem() instanceof MetaGeneratedTool tool)) {
+            return -1;
+        }
+        return tool.getToolCombatDamage(aStack);
     }
 
     @Override
@@ -266,8 +289,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         return pollutionPerSecond;
     }
 
+    @NotNull
     @Override
-    public boolean checkRecipe(ItemStack aStack) {
+    public CheckRecipeResult checkProcessing() {
         mEfficiencyIncrease = 10000;
         mEfficiency = 10000 - (getIdealStatus() - getRepairStatus()) * 1000;
         // check pollution for next cycle:
@@ -275,25 +299,23 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         mMaxProgresstime = getRecipe().mDuration;
         mEUt = -getRecipe().mEUt;
         if (!hasPollution) {
-            return true;
+            return CheckRecipeResultRegistry.SUCCESSFUL;
         }
 
-        try {
-            // make the turbine to be required
-            if (isCorrectMachinePart(aStack)) {
-                baseEff = GTUtility.safeInt(
-                        (long) ((50.0F + 10.0F * ((MetaGeneratedTool) aStack.getItem()).getToolCombatDamage(aStack))
-                                * 100));
-            } else {
-                return false;
-            }
-        } catch (Exception e) {
-            return false;
+        ItemStack aStack = getControllerSlot();
+        if (!isCorrectMachinePart(aStack)) {
+            return CheckRecipeResultRegistry.NO_TURBINE_FOUND;
         }
+
+        float damage = getTurbineDamage(aStack);
+        if (damage == -1) {
+            return CheckRecipeResultRegistry.NO_TURBINE_FOUND;
+        }
+        baseEff = GTUtility.safeInt((long) ((50.0F + 10.0F * damage) * 100));
         tickCounter = 0; // resetting the counter in case of a power failure, etc
 
         // scan the inventory to search for filter if none has been loaded previously
-        if (!isFilterLoaded && isCorrectMachinePart(aStack)) {
+        if (!isFilterLoaded) {
             ArrayList<ItemStack> tInputList = getStoredInputs();
             int tInputList_sS = tInputList.size();
             for (int i = 0; i < tInputList_sS - 1; i++) {
@@ -336,7 +358,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             }
         }
 
-        return true;
+        return CheckRecipeResultRegistry.SUCCESSFUL;
     }
 
     @Override
