@@ -190,7 +190,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         CustomItemList.Display.get(1),
                         ItemList.Emitter_IV.get(1),
                         ItemList.Sensor_IV.get(1),
-                        getGSItem("item.HeavyDutyPlateTier4", 1, 0))
+                        CustomItemList.HeavyDutyPlateTier4.get(1))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 4))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(1728)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
@@ -201,7 +201,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         CustomItemList.Display.get(1),
                         ItemList.Emitter_LuV.get(1),
                         ItemList.Sensor_LuV.get(1),
-                        getGSItem("item.HeavyDutyPlateTier5", 1, 0))
+                        CustomItemList.HeavyDutyPlateTier5.get(1))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 5))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(2304)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
@@ -212,7 +212,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         CustomItemList.Display.get(1),
                         ItemList.Emitter_ZPM.get(1),
                         ItemList.Sensor_ZPM.get(1),
-                        getGSItem("item.HeavyDutyPlateTier6", 1, 0))
+                        CustomItemList.HeavyDutyPlateTier6.get(1))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 6))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(3456)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
@@ -223,7 +223,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         CustomItemList.Display.get(1),
                         ItemList.Emitter_UV.get(1),
                         ItemList.Sensor_UV.get(1),
-                        getGSItem("item.HeavyDutyPlateTier7", 1, 0))
+                        CustomItemList.HeavyDutyPlateTier7.get(1))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 7))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(4608)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
@@ -234,7 +234,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                         CustomItemList.Display.get(1),
                         ItemList.Emitter_UV.get(1),
                         ItemList.Sensor_UV.get(1),
-                        getGSItem("item.HeavyDutyPlateTier8", 1, 0))
+                        CustomItemList.HeavyDutyPlateTier8.get(1))
                 .itemOutputs(getGSItem("item.RocketControlComputer", 1, 8))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(6912)).requiresCleanRoom().duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
