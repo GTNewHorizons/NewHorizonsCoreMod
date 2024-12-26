@@ -160,11 +160,6 @@ public class ScriptProjectRed implements IScriptLoader {
         ChiselHelper.addGroup("ruby");
         ChiselHelper.addGroup("sapphire");
         ChiselHelper.addGroup("peridot");
-        TConstructHelper.removeSmelterAlloyMix(FluidRegistry.getFluidStack("redmetal.molten", 144));
-        Smeltery.addAlloyMixing(
-                FluidRegistry.getFluidStack("redmetal.molten", 144),
-                FluidRegistry.getFluidStack("redstone.molten", 576),
-                FluidRegistry.getFluidStack("copper.molten", 144));
         ChiselHelper.addVariationFromStack("ruby", getModItem(BiomesOPlenty.ID, "gemOre", 1, 3, missing));
         ChiselHelper.addVariationFromStack("ruby", new ItemStack(GregTechAPI.sBlockGem2, 1, 11));
         ChiselHelper.addVariationFromStack(
