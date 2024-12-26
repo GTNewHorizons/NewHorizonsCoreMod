@@ -65,6 +65,7 @@ public class ScriptLoader {
                         new ScriptForgeMultipart(),
                         new ScriptGadomancy(),
                         new ScriptGalacticraft(),
+                        new ScriptGalaxySpace(),
                         new ScriptGendustry(),
                         new ScriptGenetics(),
                         new ScriptGraviSuite(),
