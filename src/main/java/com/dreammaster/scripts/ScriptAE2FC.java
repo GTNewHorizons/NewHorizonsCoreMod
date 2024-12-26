@@ -161,9 +161,9 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_LEVEL_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_level_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
-        final ItemStack AE2FC_DEFECTIVE_SINGULARITY_CELL = getModItem(
+        final ItemStack AE2FC_FLUID_VOID_CELL = getModItem(
                 AE2FluidCraft.ID,
-                "fluid_storage.singularity.defective",
+                "fluid_storage.void",
                 1,
                 0);
         final ItemStack AE2_SINGULARITY = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47);
@@ -424,7 +424,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         FLUID_CORE_2));
         GameRegistry.addRecipe(
                 new ShapedOreRecipe(
-                        AE2FC_DEFECTIVE_SINGULARITY_CELL,
+                        AE2FC_FLUID_VOID_CELL,
                         "dCW",
                         "SKS",
                         "WAh",
@@ -990,7 +990,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
                         AE2_SINGULARITY,
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(AE2FC_DEFECTIVE_SINGULARITY_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
         // Interface from Small to Block and opposite
