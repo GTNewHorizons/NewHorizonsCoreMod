@@ -52,6 +52,7 @@ public class ScriptLoader {
                         new ScriptComputronics(),
                         new ScriptCoreMod(),
                         new ScriptDraconicEvolution(),
+                        new ScriptEFR(),
                         new ScriptEMT(),
                         new ScriptEnderIO(),
                         new ScriptEnderZoo(),
