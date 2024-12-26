@@ -52,7 +52,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
-import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.GregTechAPI;
@@ -65,7 +64,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
-import tconstruct.library.crafting.Smeltery;
 
 public class ScriptProjectRed implements IScriptLoader {
 
