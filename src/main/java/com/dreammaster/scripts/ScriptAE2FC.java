@@ -164,11 +164,7 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_LEVEL_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_level_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
-        final ItemStack AE2FC_FLUID_VOID_CELL = getModItem(
-                AE2FluidCraft.ID,
-                "fluid_storage.void",
-                1,
-                0);
+        final ItemStack AE2FC_FLUID_VOID_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.void", 1, 0);
         final ItemStack AE2_SINGULARITY = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47);
         final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 0);
         final ItemStack AE2_P2P_ME = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460);
@@ -1061,8 +1057,7 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
                         AE2_SINGULARITY,
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
