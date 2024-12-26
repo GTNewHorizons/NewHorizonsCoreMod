@@ -304,9 +304,9 @@ public class ScriptNuclearControl implements IScriptLoader {
 
         GTValues.RA.stdBuilder() // Color upgrade
                 .itemInputs(
-                        new ItemStack(Items.dye, 1, 1),
-                        new ItemStack(Items.dye, 1, 2),
-                        new ItemStack(Items.dye, 1, 4),
+                        ItemList.Color_01.get(1L),
+                        ItemList.Color_02.get(1L),
+                        ItemList.Color_04.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1L))
                 .itemOutputs(getModItem(IC2NuclearControl.ID, "ItemUpgrade", 1, 1, missing)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
