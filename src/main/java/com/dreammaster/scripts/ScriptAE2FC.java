@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GoodGenerator;
@@ -21,6 +22,7 @@ import java.util.Map;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
@@ -39,6 +41,7 @@ import gregtech.api.util.GTModHandler.RecipeBits;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptAE2FC implements IScriptLoader {
 
@@ -172,6 +175,11 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_INTERFACE_P2P = getModItem(AE2FluidCraft.ID, "part_fluid_p2p_interface", 1);
         final ItemStack AE2_ADVANCED_HOUSING = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 61);
         final ItemStack T7_YOT = new ItemStack(Loaders.yottaFluidTankCell, 1, 6);
+        final ItemStack AE2FC_INFINITY_WATER_STORAGE_CELL = getModItem(
+                AE2FluidCraft.ID,
+                "fluid_storage.infinity.water",
+                1,
+                0);
         final ItemStack AE2FC_ADVANCED_FLUID_STORAGE_HOUSING = getModItem(
                 AE2FluidCraft.ID,
                 "fluid_storage_housing",
@@ -183,6 +191,13 @@ public class ScriptAE2FC implements IScriptLoader {
                 "fluid_storage_housing",
                 1,
                 3);
+        final ItemStack AE2_ADV_CARD = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28);
+        final ItemStack AE2_NEUTRONIUM_ENERGY_CELL = getModItem(
+                AppliedEnergistics2.ID,
+                "tile.BlockCreativeEnergyCell",
+                1,
+                0);
+        final ItemStack AE2FC_ENERGY_CARD = getModItem(AE2FluidCraft.ID, "energy_card", 1, 0);
         ItemStack[] mCells = new ItemStack[] { CELL_1M, CELL_4M, CELL_16M, CELL_64M, CELL_256M, CELL_1024M, CELL_4096M,
                 CELL_16384M };
         ItemStack[] sCells = new ItemStack[] { CELL_1, CELL_4, CELL_16, CELL_64, CELL_256, CELL_1024, CELL_4096,
@@ -448,6 +463,19 @@ public class ScriptAE2FC implements IScriptLoader {
                 .itemInputs(AE2_STORAGE_BUS, GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 3))
                 .itemOutputs(AE2FC_FLUID_STORAGE_BUS).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
+
+        // preconfigurated priorities for storage buses
+        ItemStack preconfiguredStorageBus = AE2FC_FLUID_STORAGE_BUS.copy();
+        for (int i = 1; i < 25; i++) {
+            NBTTagCompound tag = new NBTTagCompound();
+            tag.setInteger("priority", i);
+            preconfiguredStorageBus.setTagCompound(tag);
+            GTValues.RA.stdBuilder().itemInputs(AE2FC_FLUID_STORAGE_BUS, GTUtility.getIntegratedCircuit(i))
+                    .itemOutputs(preconfiguredStorageBus).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(circuitAssemblerRecipes);
+
+            addShapelessRecipe(preconfiguredStorageBus, AE2FC_FLUID_STORAGE_BUS, GTUtility.getIntegratedCircuit(i));
+        }
 
         // Big Long But: Components in Circuit Assembler
         // 1k ME Storage Component
@@ -721,6 +749,49 @@ public class ScriptAE2FC implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(COMPONENT_16384).fluidInputs(Materials.SolderingAlloy.getMolten(72)).requiresCleanRoom()
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(circuitAssemblerRecipes);
+
+        // Infinite Water Cell
+        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+                (AE2FC_INFINITY_WATER_STORAGE_CELL),
+                "--ebcbe--",
+                "-dalflad-",
+                "egllhllge",
+                "illljllli",
+                "cfhjkjhfc",
+                "illljllli",
+                "egllhllge",
+                "-dalflad-",
+                "--ebcbe--",
+                'a',
+                "plateSuperdenseCeruclase",
+                'b',
+                "plateSuperdenseCallistoIce",
+                'c',
+                "plateSuperdenseEnrichedHolmium",
+                'd',
+                "plateSuperdenseOsmiridium",
+                'e',
+                "blockCosmicNeutronium",
+                'f',
+                ItemList.Field_Generator_UV.get(1L),
+                'g',
+                "plateSuperdenseOsmium",
+                'h',
+                getModItem(Avaritia.ID, "Resource", 1, 5),
+                'i',
+                "plateSuperdenseLedox",
+                'j',
+                GregtechItemList.Hatch_Reservoir.get(1L),
+                'k',
+                AE2FC_ADVANCED_FLUID_STORAGE_HOUSING,
+                'l',
+                createItemStack(
+                        AE2FluidCraft.ID,
+                        "fluid_packet",
+                        1,
+                        0,
+                        "{FluidStack:{FluidName:water,Amount:2147483647}}",
+                        missing));
 
         // Fluid Quantum Drive
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
@@ -1017,5 +1088,6 @@ public class ScriptAE2FC implements IScriptLoader {
         // Dual interface P2P
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE_SMALL);
+        GameRegistry.addShapelessRecipe(AE2FC_ENERGY_CARD, AE2_ADV_CARD, AE2_NEUTRONIUM_ENERGY_CELL);
     }
 }

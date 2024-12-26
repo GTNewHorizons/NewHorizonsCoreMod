@@ -1,8 +1,12 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicHorizons;
+import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +15,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
@@ -35,6 +40,7 @@ public class ScriptThaumicHorizons implements IScriptLoader {
     public void loadRecipes() {
         TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "boatGreatwood", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "boatThaumium", 1, 0, missing));
+        TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "Golemancy Bell TH", 1, 0));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "planarConduit", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(ThaumicHorizons.ID, "transductionAmplifier", 1, 0, missing));
         TCHelper.removeInfusionRecipe(getModItem(ThaumicHorizons.ID, "vortexStabilizer", 1, 0, missing));
@@ -194,5 +200,11 @@ public class ScriptThaumicHorizons implements IScriptLoader {
         TCHelper.refreshResearchPages("transductionAmplifier");
         TCHelper.refreshResearchPages("vortexStabilizer");
         TCHelper.refreshResearchPages("recombinator");
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "flesh", 2, missing))
+                .itemOutputs(getModItem(ThaumicHorizons.ID, "meatTH", 1, missing)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(ThaumicHorizons.ID, "meatCookedTH", 1, missing))
+                .itemOutputs(getModItem(ThaumicHorizons.ID, "meatNuggetTH", 4, missing)).duration(15 * SECONDS).eut(2)
+                .addTo(extractorRecipes);
     }
 }

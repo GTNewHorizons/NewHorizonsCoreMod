@@ -122,16 +122,6 @@ public class ScriptEnderIO implements IScriptLoader {
                 .fluidInputs(Materials.EnergeticAlloy.getMolten(144L)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
 
-        // ME Ultra Dense Conduit
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EnderIO.ID, "itemMEConduit", 16, 1),
-                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1L),
-                        circuit2)
-                .itemOutputs(getModItem(EnderIO.ID, "itemMEConduit", 4, 2))
-                .fluidInputs(Materials.VibrantAlloy.getMolten(144L)).duration(10 * SECONDS).eut(960)
-                .addTo(assemblerRecipes);
-
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 createItemStack(
                         EnderIO.ID,
@@ -1746,6 +1736,19 @@ public class ScriptEnderIO implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.rubber", 144)).duration(15 * SECONDS).eut(64)
+                .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
+                .fluidInputs(Materials.Silicone.getMolten(144)).duration(15 * SECONDS).eut(64).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getModItem(EnderIO.ID, "itemExtractSpeedUpgrade", 1, 1, missing))
+                .fluidInputs(Materials.StyreneButadieneRubber.getMolten(144)).duration(15 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(

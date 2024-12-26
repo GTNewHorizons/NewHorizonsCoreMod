@@ -15,6 +15,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.recipe.RecipeCategories;
 import gregtech.api.util.GTModHandler;
 
 public class FluidExtractorRecipes implements Runnable {
@@ -67,6 +68,14 @@ public class FluidExtractorRecipes implements Runnable {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 36))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("glue"), 144)).duration(5 * SECONDS).eut(16)
                     .addTo(fluidExtractionRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassBlock", 1L, 0))
+                    .fluidOutputs(Materials.Glass.getMolten(144L)).duration(24 * TICKS).eut(54)
+                    .recipeCategory(RecipeCategories.fluidExtractorRecycling).addTo(fluidExtractionRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 1L, 0))
+                    .fluidOutputs(Materials.Glass.getMolten(54L)).duration(9 * TICKS).eut(54)
+                    .recipeCategory(RecipeCategories.fluidExtractorRecycling).addTo(fluidExtractionRecipes);
 
         }
     }

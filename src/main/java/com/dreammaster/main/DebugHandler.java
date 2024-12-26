@@ -13,7 +13,12 @@ public final class DebugHandler {
     public void onDrawDebug(RenderGameOverlayEvent.Text event) {
         if (Minecraft.getMinecraft().gameSettings.showDebugInfo) {
             if (MainRegistry.CoreConfig.ModDebugVersionDisplay_Enabled) {
-                event.left.add(1, String.format("%s %s", Refstrings.NAME, Refstrings.MODPACKPACK_VERSION));
+                final String text = String.format("%s %s", Refstrings.NAME, Refstrings.MODPACKPACK_VERSION);
+                if (event.left.isEmpty()) {
+                    event.left.add(text);
+                } else {
+                    event.left.add(1, text);
+                }
             }
         }
     }
