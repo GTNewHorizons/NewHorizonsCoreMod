@@ -1198,5 +1198,33 @@ public class MixerRecipes implements Runnable {
                             MaterialsUEVplus.ExcitedDTEC.getFluid(128000))
                     .duration(3 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(mixerNonCellRecipes);
         }
+        if (EnderIO.isModLoaded() && BiomesOPlenty.isModLoaded() && Witchery.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            kubatech.api.enums.ItemList.EarlGrayTea.get(1),
+                            kubatech.api.enums.ItemList.LemonTea.get(1),
+                            kubatech.api.enums.ItemList.MilkTea.get(1),
+                            kubatech.api.enums.ItemList.PeppermintTea.get(1),
+                            GTModHandler.getModItem(EnderIO.ID, "bucketVapor_of_levity", 1L),
+                            ItemList.ThermosCan_Ice_Tea.get(1L),
+                            GTModHandler.getModItem(BiomesOPlenty.ID, "food", 1L, 10),
+                            GTModHandler.getModItem(Witchery.ID, "potion", 1L),
+                            GTModHandler.getModItem(Witchery.ID, "ingredient", 1L, 40))
+                    .itemOutputs(
+                            new ItemStack(Items.glass_bottle, 2, 0),
+                            new ItemStack(Items.bucket, 1, 0),
+                            ItemList.ThermosCan_Empty.get(1L))
+                    .fluidInputs(
+                            FluidRegistry.getFluidStack("potion.diablosauce", 7500),
+                            FluidRegistry.getFluidStack("potion.piratebrew", 2500),
+                            FluidRegistry.getFluidStack("potion.jagi", 2500),
+                            FluidRegistry.getFluidStack("potion.alcopops", 2500),
+                            FluidRegistry.getFluidStack("potion.goldencider", 2500),
+                            FluidRegistry.getFluidStack("potion.chocolatemilk", 7500))
+                    .fluidOutputs(
+                            FluidRegistry.getFluidStack("potion.diablosauce.strong", 12000),
+                            FluidRegistry.getFluidStack("potion.mundane", 22000))
+                    .duration(200 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(mixerNonCellRecipes);
+        }
     }
 }

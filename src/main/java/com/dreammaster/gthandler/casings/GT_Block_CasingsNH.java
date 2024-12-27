@@ -2,22 +2,14 @@ package com.dreammaster.gthandler.casings;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import gregtech.api.enums.Dyes;
 import gregtech.api.enums.Textures;
-import gregtech.api.interfaces.metatileentity.IMetaTileEntity;
-import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
-import gregtech.api.objects.GTCopiedBlockTexture;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTLanguageManager;
 import gregtech.common.blocks.BlockCasingsAbstract;
 import gregtech.common.blocks.MaterialCasings;
@@ -27,12 +19,10 @@ import gregtech.common.blocks.MaterialCasings;
  */
 public class GT_Block_CasingsNH extends BlockCasingsAbstract {
 
-    public static boolean mConnectedMachineTextures = true;
-
     public GT_Block_CasingsNH() {
         super(GT_Item_CasingsNH.class, "gt.blockcasingsNH", MaterialCasings.INSTANCE);
         for (byte b = 0; b < 16; b = (byte) (b + 1)) {
-            Textures.BlockIcons.casingTexturePages[8][b + 64] = new GTCopiedBlockTexture(this, 6, b);
+            Textures.BlockIcons.casingTexturePages[8][b + 64] = TextureFactory.of(this, b);
             /* IMPORTANT for block recoloring */
         }
         GTLanguageManager.addStringLocalization(getUnlocalizedName() + ".0.name", "Air Filter Turbine Casing"); // adding
@@ -93,95 +83,6 @@ public class GT_Block_CasingsNH extends BlockCasingsAbstract {
                 }
                 return Textures.BlockIcons.MACHINECASINGS_SIDE[aMeta].getIcon();
         }
-    }
-
-    private IIcon getTurbineCasing(int meta, int iconIndex, boolean active) {
-        switch (meta) {
-            case 3:
-                return active ? Textures.BlockIcons.TURBINE_ACTIVE2[iconIndex].getIcon()
-                        : Textures.BlockIcons.TURBINE2[iconIndex].getIcon();
-            case 5:
-                return active ? Textures.BlockIcons.TURBINE_ACTIVE3[iconIndex].getIcon()
-                        : Textures.BlockIcons.TURBINE3[iconIndex].getIcon();
-            default: // 0 or undefined turbine meta casing
-                return active ? Textures.BlockIcons.TURBINE_ACTIVE[iconIndex].getIcon()
-                        : Textures.BlockIcons.TURBINE[iconIndex].getIcon();
-        }
-    }
-
-    public boolean isTurbineMeta(int tMeta) {
-        return tMeta == 0 || tMeta == 3 || tMeta == 5;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(IBlockAccess aWorld, int xCoord, int yCoord, int zCoord, int ordinalSide) {
-        int tMeta = aWorld.getBlockMetadata(xCoord, yCoord, zCoord);
-        if (!isTurbineMeta(tMeta) && tMeta < 9 || tMeta == 15) {
-            return getIcon(ordinalSide, tMeta);
-        }
-        if (!isTurbineMeta(tMeta) || !mConnectedMachineTextures) {
-            return getIcon(ordinalSide, tMeta);
-        }
-        if (ordinalSide == 1) {
-            TileEntity tTileEntity;
-            IMetaTileEntity tMetaTileEntity;
-
-            for (int xi = -2; xi <= 2; xi++) {
-                for (int zi = -2; zi <= 2; zi++) {
-                    if (null != (tTileEntity = aWorld.getTileEntity(xCoord + xi, Math.max(yCoord - 3, 0), zCoord + zi))
-                            && tTileEntity instanceof IGregTechTileEntity
-                            && null != (tMetaTileEntity = ((IGregTechTileEntity) tTileEntity).getMetaTileEntity())
-                            && (tMetaTileEntity instanceof GT_MetaTileEntity_AirFilterT1
-                                    || tMetaTileEntity instanceof GT_MetaTileEntity_AirFilterT2
-                                    || tMetaTileEntity instanceof GT_MetaTileEntity_AirFilterT3)) {
-                        boolean active = false;
-                        if (((IGregTechTileEntity) tTileEntity).isActive()) {
-                            active = true;
-                        }
-                        // check for direction and placement and apply the texture
-                        switch (((IGregTechTileEntity) tTileEntity).getFrontFacing()) {
-                            case NORTH:
-                                if (xi < 2 && xi > -2 && zi < 1) { // if invalid position ignore (aka too far away)
-                                    try {
-                                        return getTurbineCasing(tMeta, -xi + 1 - zi * 3, active);
-                                    } catch (Exception e) {
-                                        return getIcon(ordinalSide, tMeta);
-                                    }
-                                }
-                                break;
-                            case SOUTH:
-                                if (xi < 2 && xi > -2 && zi > -1) {
-                                    try {
-                                        return getTurbineCasing(tMeta, -xi + 1 + (2 - zi) * 3, active);
-                                    } catch (Exception e) {
-                                        return getIcon(ordinalSide, tMeta);
-                                    }
-                                }
-                                break;
-                            case WEST:
-                                if (zi < 2 && zi > -2 && xi < 1) {
-                                    try {
-                                        return getTurbineCasing(tMeta, -xi + (1 - zi) * 3, active);
-                                    } catch (Exception e) {
-                                        return getIcon(ordinalSide, tMeta);
-                                    }
-                                }
-                                break;
-                            case EAST:
-                                if (zi < 2 && zi > -2 && xi > -1) {
-                                    try {
-                                        return getTurbineCasing(tMeta, -xi + 2 + (1 - zi) * 3, active);
-                                    } catch (Exception e) {
-                                        return getIcon(ordinalSide, tMeta);
-                                    }
-                                }
-                        }
-                    }
-                }
-            }
-        }
-        return getIcon(ordinalSide, tMeta);
     }
 
     @Override

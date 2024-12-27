@@ -52,7 +52,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
-import com.dreammaster.tinkersConstruct.TConstructHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.GregTechAPI;
@@ -65,7 +64,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
-import tconstruct.library.crafting.Smeltery;
 
 public class ScriptProjectRed implements IScriptLoader {
 
@@ -160,11 +158,6 @@ public class ScriptProjectRed implements IScriptLoader {
         ChiselHelper.addGroup("ruby");
         ChiselHelper.addGroup("sapphire");
         ChiselHelper.addGroup("peridot");
-        TConstructHelper.removeSmelterAlloyMix(FluidRegistry.getFluidStack("redmetal.molten", 144));
-        Smeltery.addAlloyMixing(
-                FluidRegistry.getFluidStack("redmetal.molten", 144),
-                FluidRegistry.getFluidStack("redstone.molten", 576),
-                FluidRegistry.getFluidStack("copper.molten", 144));
         ChiselHelper.addVariationFromStack("ruby", getModItem(BiomesOPlenty.ID, "gemOre", 1, 3, missing));
         ChiselHelper.addVariationFromStack("ruby", new ItemStack(GregTechAPI.sBlockGem2, 1, 11));
         ChiselHelper.addVariationFromStack(

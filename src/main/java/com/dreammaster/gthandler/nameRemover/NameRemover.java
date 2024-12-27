@@ -18,8 +18,8 @@ import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.CoverableTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.implementations.MTEBasicMachine;
-import gregtech.api.objects.GTRenderedTexture;
 import gregtech.api.recipe.BasicUIProperties;
+import gregtech.api.render.TextureFactory;
 import gregtech.common.items.ItemIntegratedCircuit;
 
 /**
@@ -37,14 +37,38 @@ public class NameRemover extends MTEBasicMachine {
                 "Can fix GT items with broken NBT data, will erase everything!",
                 2,
                 1,
-                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER_ACTIVE),
-                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER),
-                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER_ACTIVE),
-                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER),
-                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER_ACTIVE),
-                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER),
-                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER_ACTIVE),
-                new GTRenderedTexture(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER));
+                TextureFactory.of(
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER_ACTIVE),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER_ACTIVE_GLOW)
+                                .glow().build()),
+                TextureFactory.of(
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_SIDE_DISASSEMBLER_GLOW).glow()
+                                .build()),
+                TextureFactory.of(
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER_ACTIVE),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER_ACTIVE_GLOW)
+                                .glow().build()),
+                TextureFactory.of(
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_FRONT_DISASSEMBLER_GLOW).glow()
+                                .build()),
+                TextureFactory.of(
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER_ACTIVE),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER_ACTIVE_GLOW)
+                                .glow().build()),
+                TextureFactory.of(
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_TOP_DISASSEMBLER_GLOW).glow()
+                                .build()),
+                TextureFactory.of(
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER_ACTIVE),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER_ACTIVE_GLOW)
+                                .glow().build()),
+                TextureFactory.of(
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_BOTTOM_DISASSEMBLER_GLOW).glow()
+                                .build()));
     }
 
     public NameRemover(String aName, int aTier, String[] aDescription, ITexture[][][] aTextures) {

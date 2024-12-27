@@ -472,13 +472,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'j',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                createItemStack(
-                        Avaritia.ID,
-                        "Infinity_Pickaxe",
-                        1,
-                        0,
-                        "{ench:[0:{lvl:10s,id:35s}],hammer:0b}",
-                        missing),
+                createItemStack(Avaritia.ID, "Infinity_Pickaxe", 1, 0, "{ench:[0:{lvl:10s,id:35s}]}", missing),
                 "-aaaaaaa-",
                 "abbcdebba",
                 "aa-fgh-aa",
@@ -511,7 +505,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'k',
                 getModItem(Avaritia.ID, "Resource", 1, 5, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
-                createItemStack(Avaritia.ID, "Infinity_Shovel", 1, 0, "{destroyer:0b}", missing),
+                getModItem(Avaritia.ID, "Infinity_Shovel", 1, 0, missing),
                 "------aaa",
                 "-----abca",
                 "------dea",

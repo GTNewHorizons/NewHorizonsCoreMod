@@ -21,16 +21,13 @@ import com.dreammaster.modbabychest.TileEntityBabyChest;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
-import gregtech.api.enums.Textures;
-import gregtech.api.interfaces.ITexture;
+import gregtech.api.util.GTUtility;
 
 public class ClientProxy extends CommonProxy implements IResourceManagerReloadListener {
 
     @Override
     public void addTexturePage() {
-        if (Textures.BlockIcons.casingTexturePages[8] == null) {
-            Textures.BlockIcons.casingTexturePages[8] = new ITexture[128];
-        }
+        GTUtility.addTexturePage((byte) 8);
     }
 
     @Override

@@ -1,7 +1,10 @@
 package com.dreammaster.gthandler.multiAirFilter;
 
+import static com.dreammaster.gthandler.casings.GT_Container_CasingsNH.sBlockCasingsNH;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.enums.GTValues.VN;
+import static gregtech.api.enums.Textures.BlockIcons.TURBINE_NEW;
+import static gregtech.api.enums.Textures.BlockIcons.TURBINE_NEW_ACTIVE;
 import static gregtech.api.util.GTStructureUtility.ofHatchAdder;
 import static gregtech.api.util.GTStructureUtility.ofHatchAdderOptional;
 import static gregtech.api.util.GTUtility.filterValidMTEs;
@@ -11,31 +14,42 @@ import static java.lang.Math.min;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import org.jetbrains.annotations.NotNull;
+
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.casings.GT_Container_CasingsNH;
 import com.dreammaster.item.ItemList;
 import com.dreammaster.main.MainRegistry;
 import com.gtnewhorizon.structurelib.alignment.IAlignmentLimits;
+import com.gtnewhorizon.structurelib.alignment.enumerable.ExtendedFacing;
 import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
+import gregtech.api.interfaces.IIconContainer;
 import gregtech.api.interfaces.ITexture;
+import gregtech.api.interfaces.IToolStats;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.items.MetaGeneratedTool;
 import gregtech.api.metatileentity.implementations.MTEEnhancedMultiBlockBase;
 import gregtech.api.metatileentity.implementations.MTEHatchMuffler;
-import gregtech.api.objects.GTRenderedTexture;
+import gregtech.api.recipe.check.CheckRecipeResult;
+import gregtech.api.recipe.check.CheckRecipeResultRegistry;
+import gregtech.api.render.TextureFactory;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.GTUtilityClient;
 import gregtech.api.util.MultiblockTooltipBuilder;
 import gregtech.common.items.MetaGeneratedTool01;
 import gregtech.common.pollution.Pollution;
@@ -53,6 +67,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     protected boolean isFilterLoaded = false;
     protected int filterUsageRemaining = 0;
     protected int tickCounter = 0; // because we can't trust the world tick, it may be in a dim with eternal day, etc
+    private boolean mFormed;
     protected static final String STRUCTURE_PIECE_MAIN = "main";
     protected static final ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>> STRUCTURE_DEFINITION = new ClassValue<IStructureDefinition<GT_MetaTileEntity_AirFilterBase>>() {
 
@@ -68,7 +83,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                             'c',
                             lazy(
                                     x -> ofChain(
-                                            ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta()),
+                                            ofBlock(sBlockCasingsNH, x.getCasingMeta()),
                                             ofHatchAdder(
                                                     GT_MetaTileEntity_AirFilterBase::addMaintenanceToMachineList,
                                                     x.getCasingIndex(),
@@ -85,8 +100,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                                                     GT_MetaTileEntity_AirFilterBase::addEnergyInputToMachineList,
                                                     x.getCasingIndex(),
                                                     1))))
-                    .addElement('x', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getCasingMeta())))
-                    .addElement('v', lazy(x -> ofBlock(GT_Container_CasingsNH.sBlockCasingsNH, x.getPipeMeta())))
+                    .addElement('x', lazy(x -> ofBlock(sBlockCasingsNH, x.getCasingMeta())))
+                    .addElement('v', lazy(x -> ofBlock(sBlockCasingsNH, x.getPipeMeta())))
                     .addElement(
                             'm',
                             lazy(
@@ -94,7 +109,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                                             GT_MetaTileEntity_AirFilterBase::addMufflerToMachineList,
                                             x.getCasingIndex(),
                                             2,
-                                            GT_Container_CasingsNH.sBlockCasingsNH,
+                                            sBlockCasingsNH,
                                             x.getCasingMeta())))
                     .build();
         }
@@ -205,13 +220,19 @@ public abstract class GT_MetaTileEntity_AirFilterBase
     @Override
     public ITexture[] getTexture(IGregTechTileEntity aBaseMetaTileEntity, ForgeDirection side, ForgeDirection facing,
             int colorIndex, boolean aActive, boolean aRedstone) {
+        ITexture casingTexture = Textures.BlockIcons.getCasingTextureForId(getCasingIndex());
         if (side == facing) {
-            return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()),
-                    new GTRenderedTexture(
-                            aActive ? Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE
-                                    : Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE) };
+            if (aActive) {
+                return new ITexture[] { casingTexture,
+                        TextureFactory.of(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE),
+                        TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_ACTIVE_GLOW)
+                                .glow().build() };
+            }
+            return new ITexture[] { casingTexture, TextureFactory.of(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE),
+                    TextureFactory.builder().addIcon(Textures.BlockIcons.OVERLAY_FRONT_DIESEL_ENGINE_GLOW).glow()
+                            .build() };
         }
-        return new ITexture[] { Textures.BlockIcons.getCasingTextureForId(getCasingIndex()) };
+        return new ITexture[] { casingTexture };
     }
 
     public abstract float getBonusByTier();
@@ -220,11 +241,22 @@ public abstract class GT_MetaTileEntity_AirFilterBase
 
     @Override
     public boolean isCorrectMachinePart(ItemStack aStack) {
-        return aStack != null && aStack.getItem() instanceof MetaGeneratedTool01
-                && ((MetaGeneratedTool) aStack.getItem()).getToolStats(aStack).getSpeedMultiplier() > 0
-                && MetaGeneratedTool.getPrimaryMaterial(aStack).mToolSpeed > 0
-                && aStack.getItemDamage() > 169
-                && aStack.getItemDamage() < 180;
+        if (aStack == null) return false;
+        if (!(aStack.getItem() instanceof MetaGeneratedTool01 tool)) return false;
+        if (aStack.getItemDamage() < 170 || aStack.getItemDamage() > 179) return false;
+
+        IToolStats stats = tool.getToolStats(aStack);
+        if (stats == null || stats.getSpeedMultiplier() <= 0) return false;
+
+        Materials material = MetaGeneratedTool.getPrimaryMaterial(aStack);
+        return material != null && material.mToolSpeed > 0;
+    }
+
+    private float getTurbineDamage(ItemStack aStack) {
+        if (aStack == null || !(aStack.getItem() instanceof MetaGeneratedTool tool)) {
+            return -1;
+        }
+        return tool.getToolCombatDamage(aStack);
     }
 
     @Override
@@ -257,8 +289,9 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         return pollutionPerSecond;
     }
 
+    @NotNull
     @Override
-    public boolean checkRecipe(ItemStack aStack) {
+    public CheckRecipeResult checkProcessing() {
         mEfficiencyIncrease = 10000;
         mEfficiency = 10000 - (getIdealStatus() - getRepairStatus()) * 1000;
         // check pollution for next cycle:
@@ -266,25 +299,23 @@ public abstract class GT_MetaTileEntity_AirFilterBase
         mMaxProgresstime = getRecipe().mDuration;
         mEUt = -getRecipe().mEUt;
         if (!hasPollution) {
-            return true;
+            return CheckRecipeResultRegistry.SUCCESSFUL;
         }
 
-        try {
-            // make the turbine to be required
-            if (isCorrectMachinePart(aStack)) {
-                baseEff = GTUtility.safeInt(
-                        (long) ((50.0F + 10.0F * ((MetaGeneratedTool) aStack.getItem()).getToolCombatDamage(aStack))
-                                * 100));
-            } else {
-                return false;
-            }
-        } catch (Exception e) {
-            return false;
+        ItemStack aStack = getControllerSlot();
+        if (!isCorrectMachinePart(aStack)) {
+            return CheckRecipeResultRegistry.NO_TURBINE_FOUND;
         }
+
+        float damage = getTurbineDamage(aStack);
+        if (damage == -1) {
+            return CheckRecipeResultRegistry.NO_TURBINE_FOUND;
+        }
+        baseEff = GTUtility.safeInt((long) ((50.0F + 10.0F * damage) * 100));
         tickCounter = 0; // resetting the counter in case of a power failure, etc
 
         // scan the inventory to search for filter if none has been loaded previously
-        if (!isFilterLoaded && isCorrectMachinePart(aStack)) {
+        if (!isFilterLoaded) {
             ArrayList<ItemStack> tInputList = getStoredInputs();
             int tInputList_sS = tInputList.size();
             for (int i = 0; i < tInputList_sS - 1; i++) {
@@ -327,7 +358,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             }
         }
 
-        return true;
+        return CheckRecipeResultRegistry.SUCCESSFUL;
     }
 
     @Override
@@ -433,6 +464,37 @@ public abstract class GT_MetaTileEntity_AirFilterBase
             } catch (Exception ignored) {}
         }
         super.onPostTick(aBaseMetaTileEntity, aTick);
+    }
+
+    @Override
+    public void onValueUpdate(byte aValue) {
+        mFormed = aValue == 1;
+    }
+
+    @Override
+    public byte getUpdateData() {
+        return (byte) (mMachine ? 1 : 0);
+    }
+
+    @Override
+    public boolean renderInWorld(IBlockAccess aWorld, int aX, int aY, int aZ, Block aBlock, RenderBlocks aRenderer) {
+        if (!mFormed) return false;
+        int[] xyz = new int[3];
+        ExtendedFacing ext = getExtendedFacing();
+        ext.getWorldOffset(new int[] { 0, -3, 1 }, xyz);
+        IIconContainer[] tTextures = getBaseMetaTileEntity().isActive() ? TURBINE_NEW_ACTIVE : TURBINE_NEW;
+        // we know this multi can only ever face upwards, so just use +y directly
+        ExtendedFacing direction = ExtendedFacing.of(ForgeDirection.UP);
+        GTUtilityClient.renderTurbineOverlay(
+                aWorld,
+                xyz[0] + aX,
+                xyz[1] + aY,
+                xyz[2] + aZ,
+                aRenderer,
+                direction,
+                sBlockCasingsNH,
+                tTextures);
+        return false;
     }
 
     @Override
