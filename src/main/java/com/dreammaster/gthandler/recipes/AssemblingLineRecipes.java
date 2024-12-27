@@ -341,8 +341,7 @@ public class AssemblingLineRecipes implements Runnable {
                 (int) TierEU.RECIPE_UEV);
 
         // Solar Factory Controller
-        GTValues.RA.stdBuilder()
-                .metadata(RESEARCH_ITEM, ItemList.Cover_SolarPanel.get(1))
+        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Cover_SolarPanel.get(1))
                 .metadata(RESEARCH_TIME, 2 * HOURS)
                 .itemInputs(
                         ItemList.Hull_LuV.get(2),
@@ -358,9 +357,7 @@ public class AssemblingLineRecipes implements Runnable {
                         new FluidStack(solderIndalloy, 2880),
                         Materials.Lubricant.getFluid(1440),
                         Materials.Electrotine.getMolten(720))
-                .duration(60 * SECONDS)
-                .eut(TierEU.RECIPE_LuV)
-                .addTo(AssemblyLine);
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
         if (GalaxySpace.isModLoaded()) {
             // Dyson Swarm Module
