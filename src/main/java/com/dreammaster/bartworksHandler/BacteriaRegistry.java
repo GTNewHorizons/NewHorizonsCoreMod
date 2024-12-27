@@ -20,6 +20,7 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.FUSION_THRESHOLD;
+import static gregtech.api.util.GTRecipeConstants.SIEVERTS;
 import gregtech.api.recipe.metadata.Sieverts;
 
 import java.awt.Color;
@@ -270,7 +271,7 @@ public class BacteriaRegistry {
                 .special(BioItemList.getPetriDish(CultureSet.get("CombinedBac"))).fluidInputs(Oil.getFluid(20))
                 .fluidOutputs(Xenoxene.getFluid(20)).duration(3 * MINUTES).eut(TierEU.RECIPE_UEV)
                 .metadata(GLASS, 8)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(NaquadahEnriched), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(NaquadahEnriched), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -284,7 +285,7 @@ public class BacteriaRegistry {
                 .fluidInputs(GrowthMediumRaw.getFluid(8)).fluidOutputs(BioMediumRaw.getFluid(2)).duration(3 * MINUTES)
                 .eut(TierEU.RECIPE_LuV)
                 .metadata(GLASS, 6)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Plutonium), true))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Plutonium), true))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -298,7 +299,7 @@ public class BacteriaRegistry {
                 .fluidInputs(GrowthMediumRaw.getFluid(5)).fluidOutputs(BioMediumRaw.getFluid(5)).duration(3 * MINUTES)
                 .eut(TierEU.RECIPE_ZPM)
                 .metadata(GLASS, 7)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(NaquadahEnriched), true))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(NaquadahEnriched), true))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -311,7 +312,7 @@ public class BacteriaRegistry {
                 .fluidInputs(GrowthMediumRaw.getFluid(5)).fluidOutputs(BioMediumRaw.getFluid(10)).duration(3 * MINUTES)
                 .eut(TierEU.RECIPE_UV)
                 .metadata(GLASS, 8)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Naquadria), true))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Naquadria), true))
                 .noOptimize()
                 .requiresCleanRoom().addTo(bacterialVatRecipes);
 
@@ -330,7 +331,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 4)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_EV)
                 .metadata(GLASS, 5)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Bismuth), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Bismuth), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -340,7 +341,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 8)).duration(7 * SECONDS + 10 * TICKS)
                 .eut(TierEU.RECIPE_IV)
                 .metadata(GLASS, 5)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Uranium), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Uranium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -350,7 +351,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.growthmedium", 8 * 9))
                 .duration(9 * (7 * SECONDS + 10 * TICKS)).eut(TierEU.RECIPE_IV)
                 .metadata(GLASS, 5)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Uranium), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Uranium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -360,7 +361,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 2)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_HV)
                 .metadata(GLASS, 4)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Bismuth), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Bismuth), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -370,7 +371,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 4)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_EV)
                 .metadata(GLASS, 5)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Uranium), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Uranium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -380,7 +381,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 8)).duration(15 * SECONDS)
                 .eut(TierEU.RECIPE_IV)
                 .metadata(GLASS, 6)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Plutonium), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Plutonium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -390,7 +391,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("binnie.bacteria", 8 * 9)).duration(9 * 15 * SECONDS)
                 .eut(TierEU.RECIPE_IV)
                 .metadata(GLASS, 6)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Plutonium), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Plutonium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -400,7 +401,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("bacterialsludge", 1)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_EV)
                 .metadata(GLASS, 5)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Bismuth), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Bismuth), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -410,7 +411,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("bacterialsludge", 2)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_IV)
                 .metadata(GLASS, 6)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Uranium), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Uranium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -420,7 +421,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("bacterialsludge", 4)).duration(30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV)
                 .metadata(GLASS, 7)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Plutonium), true))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Plutonium), true))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -430,7 +431,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("bacterialsludge", 4 * 9)).duration(9 * 30 * SECONDS)
                 .eut(TierEU.RECIPE_LuV)
                 .metadata(GLASS, 7)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Plutonium), true))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Plutonium), true))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -439,7 +440,7 @@ public class BacteriaRegistry {
                 .fluidInputs(GTModHandler.getDistilledWater(4L)).fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_IV)
                 .metadata(GLASS, 6)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Uranium), false))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Uranium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -448,7 +449,7 @@ public class BacteriaRegistry {
                 .fluidInputs(GTModHandler.getDistilledWater(8L)).fluidOutputs(FluidRegistry.getFluidStack("mutagen", 2))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .metadata(GLASS, 7)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Plutonium), true))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Plutonium), true))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -458,7 +459,7 @@ public class BacteriaRegistry {
                 .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 2 * 9)).duration(9 * MINUTES)
                 .eut(TierEU.RECIPE_LuV)
                 .metadata(GLASS, 7)
-                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Plutonium), true))
+                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Plutonium), true))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
     }
