@@ -1,9 +1,11 @@
 package com.dreammaster.bartworksHandler;
 
 import static bartworks.API.recipe.BartWorksRecipeMaps.bacterialVatRecipes;
-import static bartworks.util.BWRecipes.computeSieverts;
 import static com.dreammaster.bartworksHandler.BacteriaRegistry.CultureSet;
 import static gregtech.api.enums.GTValues.*;
+import static gregtech.api.enums.Materials.NaquadahEnriched;
+import static gregtech.api.enums.Materials.Plutonium;
+import static gregtech.api.enums.Materials.Uranium;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
@@ -13,9 +15,11 @@ import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.GLASS;
 import static gregtech.api.util.GTRecipeConstants.SIEVERTS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
+import bartworks.util.BWUtil;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -121,7 +125,9 @@ public class BioItemLoader {
                 .special(BioItemList.getPetriDish(CultureSet.get("TcetiEBac")))
                 .fluidInputs(new FluidStack(BIOFLUIDS[2], 50)).fluidOutputs(new FluidStack(BIOFLUIDS[3], 50))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_UV)
-                .metadata(SIEVERTS, computeSieverts(100, 8, false, false, false)).noOptimize()
+                .metadata(GLASS, 8)
+                .metadata(SIEVERTS, new Sievert(100, false))
+                .noOptimize()
                 .addTo(bacterialVatRecipes);
 
         for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
@@ -140,7 +146,9 @@ public class BioItemLoader {
                 .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(1)).duration(1 * MINUTES).eut(TierEU.RECIPE_IV)
-                .metadata(SIEVERTS, computeSieverts(Materials.Uranium, 5, false, true, false)).noOptimize()
+                .metadata(GLASS, 5)
+                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Uranium), false))
+                .noOptimize()
                 .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
@@ -152,7 +160,9 @@ public class BioItemLoader {
                 .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(2)).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
-                .metadata(SIEVERTS, computeSieverts(Materials.Plutonium, 6, false, true, false)).noOptimize()
+                .metadata(GLASS, 6)
+                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(Plutonium), false))
+                .noOptimize()
                 .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
@@ -164,7 +174,9 @@ public class BioItemLoader {
                 .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
                 .fluidInputs(FluidRegistry.getFluidStack("mutagen", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(4)).duration(1 * MINUTES).eut(TierEU.RECIPE_ZPM)
-                .metadata(SIEVERTS, computeSieverts(Materials.NaquadahEnriched, 7, true, true, false)).noOptimize()
+                .metadata(GLASS, 7)
+                .metadata(SIEVERTS, new Sievert(BWUtil.calculateSv(NaquadahEnriched), true))
+                .noOptimize()
                 .addTo(bacterialVatRecipes);
     }
 }
