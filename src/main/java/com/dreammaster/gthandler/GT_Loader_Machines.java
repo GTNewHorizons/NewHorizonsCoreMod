@@ -83,7 +83,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Hull_UEV.get(1L),
-                bitsd,
+                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UEV, 'W',
                         OrePrefixes.cableGt08.get(Materials.Draconium), 'H',
                         OrePrefixes.plate.get(Materials.Bedrockium), 'P',
@@ -91,7 +91,7 @@ public class GT_Loader_Machines {
 
         GTModHandler.addCraftingRecipe(
                 ItemList.Hull_UIV.get(1L),
-                bitsd,
+                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
                 new Object[] { "PHP", "WMW", 'M', CustomItemList.Casing_UIV, 'W',
                         OrePrefixes.cableGt08.get(Materials.NetherStar), 'H',
                         OrePrefixes.plate.get(Materials.BlackPlutonium), 'P',
