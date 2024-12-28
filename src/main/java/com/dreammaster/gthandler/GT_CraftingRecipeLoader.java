@@ -104,23 +104,48 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // UEV, UIV, UMV, UXV casings
         GTModHandler.addCraftingRecipe(
                 CustomItemList.Casing_UEV.get(1L),
-                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
+                bits,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium) });
         GTModHandler.addCraftingRecipe(
                 CustomItemList.Casing_UIV.get(1L),
-                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
+                bits,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium) });
         GTModHandler.addCraftingRecipe(
                 CustomItemList.Casing_UMV.get(1L),
-                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
+                bits,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime) });
 
         GTModHandler.addCraftingRecipe(
                 CustomItemList.Casing_UXV.get(1L),
-                GTModHandler.RecipeBits.BUFFERED | GTModHandler.RecipeBits.NOT_REMOVABLE,
+                bits,
                 new Object[] { "PSP", "SwS", "PSP", 'P',
                         OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
                         OrePrefixes.plate.get(MaterialsUEVplus.MagMatter) });
+
+        // Hull recycling placed here after the casing recipes for proper item data
+        GTOreDictUnificator.addItemDataFromInputs(
+                ItemList.Hull_UEV.get(1L),
+                CustomItemList.Casing_UEV.get(1L),
+                OrePrefixes.cableGt08.get(Materials.Draconium),
+                OrePrefixes.cableGt08.get(Materials.Draconium));
+
+        GTOreDictUnificator.addItemDataFromInputs(
+                ItemList.Hull_UIV.get(1L),
+                CustomItemList.Casing_UIV.get(1L),
+                OrePrefixes.cableGt08.get(Materials.NetherStar),
+                OrePrefixes.cableGt08.get(Materials.NetherStar));
+
+        GTOreDictUnificator.addItemDataFromInputs(
+                ItemList.Hull_UMV.get(1L),
+                CustomItemList.Casing_UMV.get(1L),
+                OrePrefixes.wireGt12.get(Materials.Quantium),
+                OrePrefixes.wireGt12.get(Materials.Quantium));
+
+        GTOreDictUnificator.addItemDataFromInputs(
+                ItemList.Hull_UXV.get(1L),
+                CustomItemList.Casing_UXV.get(1L),
+                OrePrefixes.wireGt16.get(Materials.BlackPlutonium),
+                OrePrefixes.wireGt16.get(Materials.BlackPlutonium));
 
         // Mine and Blade Battlegear remove recipes NBT?
         Object[] o = new Object[0];

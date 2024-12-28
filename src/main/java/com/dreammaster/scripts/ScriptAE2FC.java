@@ -164,6 +164,8 @@ public class ScriptAE2FC implements IScriptLoader {
         final ItemStack AE2FC_LEVEL_WIRELESS = getModItem(AE2FluidCraft.ID, "wireless_level_terminal", 1, 0);
         final ItemStack AE2FC_QUANTUM_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.quantum", 1, 0);
         final ItemStack AE2FC_SINGULARITY_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0);
+        final ItemStack AE2FC_FLUID_VOID_CELL = getModItem(AE2FluidCraft.ID, "fluid_storage.void", 1, 0);
+        final ItemStack AE2_SINGULARITY = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 47);
         final ItemStack AE2FC_FLUID_STORAGE_HOUSING = getModItem(AE2FluidCraft.ID, "fluid_storage_housing", 1, 0);
         final ItemStack AE2_P2P_ME = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 460);
         final ItemStack AE2FC_INTERFACE_P2P = getModItem(AE2FluidCraft.ID, "part_fluid_p2p_interface", 1);
@@ -431,6 +433,26 @@ public class ScriptAE2FC implements IScriptLoader {
                         COMPONENT_4096,
                         'P',
                         FLUID_CORE_2));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        AE2FC_FLUID_VOID_CELL,
+                        "dCW",
+                        "SKS",
+                        "WAh",
+                        'C',
+                        "plateCertusQuartz",
+                        'W',
+                        "screwCertusQuartz",
+                        'S',
+                        "plateTungstenSteel",
+                        'A',
+                        "plateStainlessSteel",
+                        'K',
+                        AE2_SINGULARITY,
+                        'd',
+                        "craftingToolHardHammer",
+                        'h',
+                        "craftingToolScrewdriver"));
 
         // Fluid Storage Bus
         GTValues.RA.stdBuilder()
@@ -1025,6 +1047,17 @@ public class ScriptAE2FC implements IScriptLoader {
         // Wireless Level Terminal
         GTValues.RA.stdBuilder().itemInputs(AE2_ITEM_WIRELESS, AE2FC_LEVEL_TERMINAL).itemOutputs(AE2FC_LEVEL_WIRELESS)
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        // DEFECTIVE SINGULARITY CELL
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.CertusQuartz, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 2L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 1L),
+                        AE2_SINGULARITY,
+                        GTUtility.getIntegratedCircuit(2))
+                .itemOutputs(AE2FC_FLUID_VOID_CELL).duration(5 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Interface from Small to Block and opposite
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_SMALL, AE2FC_INTERFACE);
