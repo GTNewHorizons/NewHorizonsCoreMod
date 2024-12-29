@@ -43,7 +43,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import appeng.api.AEApi;
@@ -373,7 +372,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { new FluidStack(FluidRegistry.getFluid("liquid helium"), 50_000),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 4, 0),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 0),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -393,7 +392,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 3, 1),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 3, 1),
                     30 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -411,7 +410,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50000),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 4, 2),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 2),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -429,7 +428,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50_000),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11520),
                             Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 1, 3),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 1, 3),
                     10 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -447,7 +446,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 4, 4),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 4),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -463,7 +462,7 @@ public class AssemblingLineRecipes implements Runnable {
                             tectech.thing.CustomItemList.Machine_Multi_Computer.get(4), },
                     new FluidStack[] { Materials.SuperCoolant.getFluid(32_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 8, 5),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 8, 5),
                     80 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -481,7 +480,7 @@ public class AssemblingLineRecipes implements Runnable {
                             CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
                     new FluidStack[] { Materials.RadoxPolymer.getMolten(3_456), Materials.SuperCoolant.getFluid(16_000),
                             new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 4, 6),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 6),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -499,7 +498,7 @@ public class AssemblingLineRecipes implements Runnable {
                             CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
                     new FluidStack[] { Materials.RadoxPolymer.getMolten(3_240), Materials.SuperCoolant.getFluid(16_000),
                             new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 4, 7),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 7),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -515,7 +514,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUEVBase, 4), },
                     new FluidStack[] { Materials.RadoxPolymer.getMolten(144), Materials.SuperCoolant.getFluid(16_000),
                             new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
-                    new ItemStack(IGBlocks.DysonSwarmCasing, 1, 8),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 1, 8),
                     10 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 

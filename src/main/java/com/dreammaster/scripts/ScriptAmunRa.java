@@ -38,7 +38,6 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
-import com.gtnewhorizons.gtnhintergalactic.block.IGBlocks;
 import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import cpw.mods.fml.common.Optional;
@@ -93,7 +92,7 @@ public class ScriptAmunRa implements IScriptLoader {
         final Block machines4 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines4");
         final Block msBoosters1 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.msBoosters1");
         final Block airLockFrame = GameRegistry.findBlock(GalacticraftCore.ID, "tile.airLockFrame");
-        final Block machineFrames = IGBlocks.GasSiphonCasing;
+        final Block machineFrames = GameRegistry.findBlock(GTNHIntergalactic.ID, "machineframes");
 
         final Item baseItem = GameRegistry.findItem(GalacticraftAmunRa.ID, "item.baseItem");
         final Item basicItem = GameRegistry.findItem(GalacticraftCore.ID, "item.basicItem");
