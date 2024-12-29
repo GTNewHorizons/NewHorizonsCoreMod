@@ -275,7 +275,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         BlockList.NeutroniumPlatedReinforcedStone.getIS(),
                         WerkstoffLoader.HDCS.get(OrePrefixes.plate, 8))
-                .itemOutputs(getIGItem("dysonswarmparts", 1, 9))
+                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
