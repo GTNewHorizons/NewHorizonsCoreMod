@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.GTNHIntergalactic;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GalacticraftCore;
@@ -37,6 +38,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
+
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import de.katzenpapst.amunra.block.ARBlocks;
@@ -68,6 +71,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 GalaxySpace.ID,
                 GoodGenerator.ID,
                 GraviSuite.ID,
+                GTNHIntergalactic.ID,
                 GTPlusPlus.ID,
                 IronChests.ID,
                 RandomThings.ID,
@@ -88,11 +92,11 @@ public class ScriptAmunRa implements IScriptLoader {
         final Block machines4 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines4");
         final Block msBoosters1 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.msBoosters1");
         final Block airLockFrame = GameRegistry.findBlock(GalacticraftCore.ID, "tile.airLockFrame");
-        final Block machineFrames = GameRegistry.findBlock(GalaxySpace.ID, "machineframes");
+        final Block machineFrames = GameRegistry.findBlock(GTNHIntergalactic.ID, "machineframes");
 
         final Item baseItem = GameRegistry.findItem(GalacticraftAmunRa.ID, "item.baseItem");
         final Item basicItem = GameRegistry.findItem(GalacticraftCore.ID, "item.basicItem");
-        final Item dysonSwarmParts = GameRegistry.findItem(GalaxySpace.ID, "item.DysonSwarmParts");
+        final Item dysonSwarmParts = IGItems.DysonSwarmItems;
         final Item advancedRadiationProtectionPlate = GameRegistry
                 .findItem(GoodGenerator.ID, "advancedRadiationProtectionPlate");
         final Item simpleItem = GameRegistry.findItem(GraviSuite.ID, "itemSimpleItem");
