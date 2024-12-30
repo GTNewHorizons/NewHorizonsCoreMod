@@ -16,9 +16,9 @@ import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.GLASS;
-import static gregtech.api.util.GTRecipeConstants.SIEVERTS;
+import static gregtech.api.util.GTRecipeConstants.SIEVERT;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
-import gregtech.api.recipe.metadata.Sieverts;
+import gregtech.api.util.recipe.Sievert;
 
 import bartworks.util.BWUtil;
 import net.minecraft.init.Items;
@@ -127,7 +127,7 @@ public class BioItemLoader {
                 .fluidInputs(new FluidStack(BIOFLUIDS[2], 50)).fluidOutputs(new FluidStack(BIOFLUIDS[3], 50))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_UV)
                 .metadata(GLASS, 8)
-                .metadata(SIEVERTS, new Sieverts(100, false))
+                .metadata(SIEVERT, new Sievert(100, false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -148,7 +148,7 @@ public class BioItemLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(1)).duration(1 * MINUTES).eut(TierEU.RECIPE_IV)
                 .metadata(GLASS, 5)
-                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Uranium), false))
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -162,7 +162,7 @@ public class BioItemLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(2)).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
                 .metadata(GLASS, 6)
-                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(Plutonium), false))
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
 
@@ -176,7 +176,7 @@ public class BioItemLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("mutagen", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(4)).duration(1 * MINUTES).eut(TierEU.RECIPE_ZPM)
                 .metadata(GLASS, 7)
-                .metadata(SIEVERTS, new Sieverts(BWUtil.calculateSv(NaquadahEnriched), true))
+                .metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), true))
                 .noOptimize()
                 .addTo(bacterialVatRecipes);
     }
