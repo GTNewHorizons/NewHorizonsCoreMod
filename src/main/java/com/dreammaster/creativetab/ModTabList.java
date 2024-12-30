@@ -1,13 +1,10 @@
 package com.dreammaster.creativetab;
 
-import static com.dreammaster.gthandler.casings.GT_Container_CasingsNH.sBlockCasingsNH;
-
 import java.util.List;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.ItemList;
@@ -59,13 +56,6 @@ public final class ModTabList {
 
                     @Override
                     public void displayAllReleventItems(List stuffToShow) {
-                        // casing adder
-                        for (int i = 0; i < 16; ++i) {
-                            ItemStack aStack = new ItemStack(sBlockCasingsNH, 1, i);
-                            if (!aStack.getDisplayName().contains(".name")) {
-                                stuffToShow.add(aStack);
-                            }
-                        }
                         // te adder
                         for (CustomItemList item : CustomItemList.values()) {
                             if (item.hasBeenSet() && item.getBlock() == GregTechAPI.sBlockMachines) {
