@@ -1,6 +1,7 @@
 package com.dreammaster.scripts;
 
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -10,7 +11,6 @@ import java.util.List;
 
 import com.dreammaster.recipes.CustomItem;
 
-import gregtech.api.enums.ItemList;
 import gregtech.api.util.GTModHandler;
 
 public class ScriptEFR implements IScriptLoader {
@@ -22,7 +22,7 @@ public class ScriptEFR implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(EtFuturumRequiem.ID, Thaumcraft.ID);
+        return Arrays.asList(EtFuturumRequiem.ID, ExtraUtilities.ID, Thaumcraft.ID);
     }
 
     @Override
@@ -32,9 +32,9 @@ public class ScriptEFR implements IScriptLoader {
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "observer", 1L),
                 bits,
-                new Object[] { "AEA", "BCD", "AAA", 'A', "cobblestone", 'B',
-                        GTModHandler.getModItem(Minecraft.ID, "comparator", 1, 0), 'C', ItemList.Sensor_LV, 'D',
-                        ItemList.Emitter_LV, 'E', "gearGtSmallAnyIron" });
+                new Object[] { "AEA", "BCD", "AAA", 'A', "cobblestone", 'B', "dustRedstone", 'C',
+                        GTModHandler.getModItem(ExtraUtilities.ID, "budoff", 1, 0), 'D',
+                        GTModHandler.getModItem(Minecraft.ID, "comparator", 1, 0), 'E', "gearGtSmallAnyIron" });
 
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 1L),
