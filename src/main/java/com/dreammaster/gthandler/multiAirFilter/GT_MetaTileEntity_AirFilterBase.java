@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler.multiAirFilter;
 
-import static com.dreammaster.gthandler.casings.GT_Container_CasingsNH.sBlockCasingsNH;
 import static com.gtnewhorizon.structurelib.structure.StructureUtility.*;
 import static gregtech.api.enums.GTValues.VN;
 import static gregtech.api.enums.Textures.BlockIcons.TURBINE_NEW;
@@ -35,6 +34,7 @@ import com.gtnewhorizon.structurelib.structure.IStructureDefinition;
 import com.gtnewhorizon.structurelib.structure.StructureDefinition;
 
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
+import gregtech.api.GregTechAPI;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Textures;
 import gregtech.api.interfaces.IIconContainer;
@@ -83,7 +83,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                             'c',
                             lazy(
                                     x -> ofChain(
-                                            ofBlock(sBlockCasingsNH, x.getCasingMeta()),
+                                            ofBlock(GregTechAPI.sBlockCasingsNH, x.getCasingMeta()),
                                             ofHatchAdder(
                                                     GT_MetaTileEntity_AirFilterBase::addMaintenanceToMachineList,
                                                     x.getCasingIndex(),
@@ -100,8 +100,8 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                                                     GT_MetaTileEntity_AirFilterBase::addEnergyInputToMachineList,
                                                     x.getCasingIndex(),
                                                     1))))
-                    .addElement('x', lazy(x -> ofBlock(sBlockCasingsNH, x.getCasingMeta())))
-                    .addElement('v', lazy(x -> ofBlock(sBlockCasingsNH, x.getPipeMeta())))
+                    .addElement('x', lazy(x -> ofBlock(GregTechAPI.sBlockCasingsNH, x.getCasingMeta())))
+                    .addElement('v', lazy(x -> ofBlock(GregTechAPI.sBlockCasingsNH, x.getPipeMeta())))
                     .addElement(
                             'm',
                             lazy(
@@ -109,7 +109,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                                             GT_MetaTileEntity_AirFilterBase::addMufflerToMachineList,
                                             x.getCasingIndex(),
                                             2,
-                                            sBlockCasingsNH,
+                                            GregTechAPI.sBlockCasingsNH,
                                             x.getCasingMeta())))
                     .build();
         }
@@ -492,7 +492,7 @@ public abstract class GT_MetaTileEntity_AirFilterBase
                 xyz[2] + aZ,
                 aRenderer,
                 direction,
-                sBlockCasingsNH,
+                GregTechAPI.sBlockCasingsNH,
                 tTextures);
         return false;
     }
