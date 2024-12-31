@@ -2183,311 +2183,261 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Bus and Hatch Conversion
         // Input bus to Output bus
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_ULV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_ULV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_ULV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_LV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_LV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_LV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_MV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_MV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_MV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_HV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_HV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_HV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_EV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_EV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_EV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_IV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_IV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_IV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_LuV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_LuV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_LuV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_ZPM.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_ZPM, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_ZPM, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_UV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_UV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_UV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_MAX.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_Bus_MAX, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_Bus_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // Output bus to Input bus
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_ULV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_ULV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_ULV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_LV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_LV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_LV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_MV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_MV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_MV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_HV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_HV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_HV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_EV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_EV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_EV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_IV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_IV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_IV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_LuV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_LuV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_LuV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_ZPM.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_ZPM, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_ZPM, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_UV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_UV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_UV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_MAX.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_Bus_MAX, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_Bus_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // Input hatch to Output Hatch
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_ULV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_ULV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_ULV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_LV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_LV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_LV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_MV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_MV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_MV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_HV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_HV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_HV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_EV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_EV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_EV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_IV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_IV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_IV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_LuV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_LuV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_LuV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_ZPM.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_ZPM, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_ZPM, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_UV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_UV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UHV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_UHV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_UHV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UEV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_UEV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_UEV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UIV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_UIV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_UIV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UMV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_UMV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_UMV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_UXV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_UXV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_UXV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_MAX.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Input_MAX, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Input_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // Output hatch to Input Hatch
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_ULV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_ULV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_ULV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_LV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_LV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_LV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_MV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_MV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_MV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_HV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_HV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_HV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_EV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_EV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_EV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_IV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_IV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_IV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_LuV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_LuV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_LuV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_ZPM.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_ZPM, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_ZPM, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_UV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_UV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UHV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_UHV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_UHV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UEV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_UEV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_UEV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UIV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_UIV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_UIV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UMV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_UMV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_UMV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_UXV.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_UXV, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_UXV, ToolDictNames.craftingToolScrewdriver, });
 
-        GTModHandler.addCraftingRecipe(
+        GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_MAX.get(1),
                 bits,
-                new Object[] { " S ", " B ", "   ", 'B', ItemList.Hatch_Output_MAX, 'S',
-                        ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { ItemList.Hatch_Output_MAX, ToolDictNames.craftingToolScrewdriver, });
     }
 
     private Consumer<Recipe> shapelessUnremovableGtRecipes() {
