@@ -27,7 +27,7 @@ import tconstruct.library.tools.ToolCore;
 public class AchievementHandler {
 
     private static final Map<UUID, Integer> LAST_DEATHCOUNT = new HashMap<>();
-    private static final HashMap<UUID, Float> LAST_DAMAGE = new HashMap<>();
+    private static final Map<UUID, Float> LAST_DAMAGE = new HashMap<>();
 
     private static StatBase infinityArmorAchievement;
     private static StatBase omegaArmorAchievement;
