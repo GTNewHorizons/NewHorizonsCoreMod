@@ -13,27 +13,9 @@ import gregtech.api.util.GTUtility;
 
 public enum CustomItemList implements IItemContainer {
 
-    Casing_Pyrolyse,
     Machine_Multi_AirFilterT1,
     Machine_Multi_AirFilterT2,
     Machine_Multi_AirFilterT3,
-    Casing_AirFilter_Vent_T1,
-    Casing_AirFilter_Turbine_T1,
-    Casing_AirFilter_Vent_T2,
-    Casing_AirFilter_Turbine_T2,
-    Casing_AirFilter_Vent_T3,
-    Casing_AirFilter_Turbine_T3,
-    // todo: remap them to GT5U namespace
-    @Deprecated
-    Casing_UEV,
-    @Deprecated
-    Casing_UIV,
-    @Deprecated
-    Casing_UMV,
-    @Deprecated
-    Casing_UXV,
-    @Deprecated
-    Casing_MAXV,
 
     // CoreModItems
     EtchedLowVoltageWiring,
