@@ -50,7 +50,6 @@ import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.CoreMod_PCBFactory_MaterialLoader;
 import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
-import com.dreammaster.gthandler.GT_Loader_CasingNH;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.item.CustomPatterns;
@@ -393,7 +392,6 @@ public class MainRegistry {
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
         proxy.registerRenderInfo();
-        GT_Loader_CasingNH.load();
     }
 
     private void RegisterModuleEvents() {

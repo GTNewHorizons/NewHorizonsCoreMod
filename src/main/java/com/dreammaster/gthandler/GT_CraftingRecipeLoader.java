@@ -103,20 +103,20 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
     public void run() {
         // UEV, UIV, UMV, UXV casings
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_UEV.get(1L),
+                ItemList.Casing_UEV.get(1L),
                 bits,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.Bedrockium) });
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_UIV.get(1L),
+                ItemList.Casing_UIV.get(1L),
                 bits,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(Materials.BlackPlutonium) });
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_UMV.get(1L),
+                ItemList.Casing_UMV.get(1L),
                 bits,
                 new Object[] { "PPP", "PwP", "PPP", 'P', OrePrefixes.plate.get(MaterialsUEVplus.SpaceTime) });
 
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_UXV.get(1L),
+                ItemList.Casing_UXV.get(1L),
                 bits,
                 new Object[] { "PSP", "SwS", "PSP", 'P',
                         OrePrefixes.plate.get(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter), 'S',
@@ -125,25 +125,25 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         // Hull recycling placed here after the casing recipes for proper item data
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UEV.get(1L),
-                CustomItemList.Casing_UEV.get(1L),
+                ItemList.Casing_UEV.get(1L),
                 OrePrefixes.cableGt08.get(Materials.Draconium),
                 OrePrefixes.cableGt08.get(Materials.Draconium));
 
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UIV.get(1L),
-                CustomItemList.Casing_UIV.get(1L),
+                ItemList.Casing_UIV.get(1L),
                 OrePrefixes.cableGt08.get(Materials.NetherStar),
                 OrePrefixes.cableGt08.get(Materials.NetherStar));
 
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UMV.get(1L),
-                CustomItemList.Casing_UMV.get(1L),
+                ItemList.Casing_UMV.get(1L),
                 OrePrefixes.wireGt12.get(Materials.Quantium),
                 OrePrefixes.wireGt12.get(Materials.Quantium));
 
         GTOreDictUnificator.addItemDataFromInputs(
                 ItemList.Hull_UXV.get(1L),
-                CustomItemList.Casing_UXV.get(1L),
+                ItemList.Casing_UXV.get(1L),
                 OrePrefixes.wireGt16.get(Materials.BlackPlutonium),
                 OrePrefixes.wireGt16.get(Materials.BlackPlutonium));
 
@@ -600,14 +600,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         // Air filter multi blocks
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_AirFilter_Vent_T1.get(1L),
+                ItemList.Casing_AirFilter_Vent_T1.get(1L),
                 bits,
                 new Object[] { "ThT", "TFT", "TwT", 'T', CustomItemList.SteelBars, 'F',
                         OrePrefixes.frameGt.get(Materials.Steel) });
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_AirFilter_Turbine_T1.get(1L),
+                ItemList.Casing_AirFilter_Turbine_T1.get(1L),
                 bits,
-                new Object[] { "SSS", "RVR", "MSM", 'V', CustomItemList.Casing_AirFilter_Vent_T1, 'S',
+                new Object[] { "SSS", "RVR", "MSM", 'V', ItemList.Casing_AirFilter_Vent_T1, 'S',
                         OrePrefixes.stickLong.get(Materials.Steel), 'R', OrePrefixes.rotor.get(Materials.Steel), 'M',
                         ItemList.Electric_Motor_LV, 'R', OrePrefixes.screw.get(Materials.Steel) });
         GTModHandler.addCraftingRecipe(
@@ -617,14 +617,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         'P', ItemList.Electric_Pump_LV, 'M', ItemList.Electric_Motor_LV, 'C',
                         OrePrefixes.cableGt01.get(Materials.Copper), 'G', ItemList.Casing_Turbine });
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_AirFilter_Vent_T2.get(1L),
+                ItemList.Casing_AirFilter_Vent_T2.get(1L),
                 bits,
                 new Object[] { "ThT", "TFT", "TwT", 'T', CustomItemList.TitaniumBars, 'F',
                         OrePrefixes.frameGt.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_AirFilter_Turbine_T2.get(1L),
+                ItemList.Casing_AirFilter_Turbine_T2.get(1L),
                 bits,
-                new Object[] { "SSS", "RVR", "MSM", 'V', CustomItemList.Casing_AirFilter_Vent_T2, 'S',
+                new Object[] { "SSS", "RVR", "MSM", 'V', ItemList.Casing_AirFilter_Vent_T2, 'S',
                         OrePrefixes.stickLong.get(Materials.Titanium), 'R', OrePrefixes.rotor.get(Materials.Titanium),
                         'M', ItemList.Electric_Motor_HV, 'R', OrePrefixes.screw.get(Materials.Titanium) });
         GTModHandler.addCraftingRecipe(
@@ -635,14 +635,14 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         ItemList.Electric_Motor_HV, 'C', OrePrefixes.cableGt01.get(Materials.Gold), 'G',
                         ItemList.Casing_Turbine2 });
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_AirFilter_Vent_T3.get(1L),
+                ItemList.Casing_AirFilter_Vent_T3.get(1L),
                 bits,
                 new Object[] { "ThT", "TFT", "TwT", 'T', CustomItemList.TungstenSteelBars, 'F',
                         OrePrefixes.frameGt.get(Materials.TungstenSteel) });
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_AirFilter_Turbine_T3.get(1L),
+                ItemList.Casing_AirFilter_Turbine_T3.get(1L),
                 bits,
-                new Object[] { "SSS", "RVR", "MSM", 'V', CustomItemList.Casing_AirFilter_Vent_T3, 'S',
+                new Object[] { "SSS", "RVR", "MSM", 'V', ItemList.Casing_AirFilter_Vent_T3, 'S',
                         OrePrefixes.stickLong.get(Materials.TungstenSteel), 'R',
                         OrePrefixes.rotor.get(Materials.TungstenSteel), 'M', ItemList.Electric_Motor_IV, 'R',
                         OrePrefixes.screw.get(Materials.TungstenSteel) });
@@ -655,7 +655,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                         ItemList.Casing_Turbine3 });
 
         GTModHandler.addCraftingRecipe(
-                CustomItemList.Casing_Pyrolyse.get(1L),
+                ItemList.Casing_Pyrolyse.get(1L),
                 bits,
                 new Object[] { "PhP", "SFS", "PwP", 'P', OrePrefixes.plate.get(Materials.Steel), 'S',
                         OrePrefixes.plate.get(Materials.Iron), 'F', ItemList.Casing_BronzePlatedBricks });
