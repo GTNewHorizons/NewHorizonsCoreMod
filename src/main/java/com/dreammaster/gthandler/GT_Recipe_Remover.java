@@ -794,8 +794,6 @@ public class GT_Recipe_Remover implements Runnable {
                 false,
                 true);
 
-
-
         // --- Astro Miner Base
         GTModHandler.removeRecipeByOutputDelayed(
                 getModItem(GalacticraftMars.ID, "tile.minerBase", 1L, 0),
