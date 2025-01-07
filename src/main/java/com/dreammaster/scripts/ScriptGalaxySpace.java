@@ -279,8 +279,12 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(IGItems.DysonSwarmItems, 4, 1), new ItemStack(IGItems.DysonSwarmItems, 4, 2))
-                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
+                .itemInputs(
+                        new ItemStack(IGItems.DysonSwarmItems, 4, 1),
+                        new ItemStack(IGItems.DysonSwarmItems, 4, 2))
+                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 3))
+                .duration(10 * SECONDS)
+                .eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
         // Chemical Reactor
