@@ -705,103 +705,45 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'L',
                 getGSItem("item.ModuleLander2", 1, 0));
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmasword", 1, 100),
-                "DCD",
-                "FCH",
-                "DBW",
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'F',
-                ToolDictNames.craftingToolFile,
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'B',
-                new ItemStack(GCItems.battery, 1, W),
-                'W',
-                new ItemStack(GCBlocks.aluminumWire, 1, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "DCD", "fCh", "DBW", 'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
+                        'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'B', new ItemStack(GCItems.battery, 1, W), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmapickaxe", 1, 100),
-                "CCC",
-                "FPH",
-                "DBW",
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'F',
-                ToolDictNames.craftingToolFile,
-                'P',
-                new ItemStack(GCItems.flagPole),
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
-                'B',
-                new ItemStack(GCItems.battery, 1, W),
-                'W',
-                new ItemStack(GCBlocks.aluminumWire, 1, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "CCC", "fPh", "DBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'P', new ItemStack(GCItems.flagPole), 'D',
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'B',
+                        new ItemStack(GCItems.battery, 1, W), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmaaxe", 1, 100),
-                "CCH",
-                "CPD",
-                "FBW",
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'P',
-                new ItemStack(GCItems.flagPole),
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
-                'F',
-                ToolDictNames.craftingToolFile,
-                'B',
-                new ItemStack(GCItems.battery, 1, W),
-                'W',
-                new ItemStack(GCBlocks.aluminumWire, 1, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "CCh", "CPD", "fBW", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'P', new ItemStack(GCItems.flagPole), 'D',
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'B',
+                        new ItemStack(GCItems.battery, 1, W), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmashovel", 1, 100),
-                "FCH",
-                "DPD",
-                "WBW",
-                'F',
-                ToolDictNames.craftingToolFile,
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
-                'P',
-                new ItemStack(GCItems.flagPole),
-                'W',
-                new ItemStack(GCBlocks.aluminumWire, 1, 1),
-                'B',
-                new ItemStack(GCItems.battery, 1, W));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "FCh", "DPD", "WBW", 'F', ToolDictNames.craftingToolFile, 'C',
+                        getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'P',
+                        new ItemStack(GCItems.flagPole), 'W', new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B',
+                        new ItemStack(GCItems.battery, 1, W) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.plasmahoe", 1, 100),
-                "CCH",
-                "FPD",
-                "WBD",
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'F',
-                ToolDictNames.craftingToolFile,
-                'P',
-                new ItemStack(GCItems.flagPole),
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1),
-                'W',
-                new ItemStack(GCBlocks.aluminumWire, 1, 1),
-                'B',
-                new ItemStack(GCItems.battery, 1, W));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "CCh", "fPD", "WBD", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'P', new ItemStack(GCItems.flagPole), 'D',
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1), 'W',
+                        new ItemStack(GCBlocks.aluminumWire, 1, 1), 'B', new ItemStack(GCItems.battery, 1, W) });
 
         addShapedRecipe(
                 getGSItem("item.SolarFlares", 1, 0), // Solar Flares Part
