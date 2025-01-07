@@ -569,101 +569,53 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'm',
                 CustomItemList.MysteriousCrystal.get(1));
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.lead_helmet", 1, 0),
-                "LLL",
-                "LHL",
-                "D D",
-                'L',
-                getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "LLL", "LhL", "D D", 'L', getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.lead_plate", 1, 0),
-                "LHL",
-                "LDL",
-                "L L",
-                'L',
-                getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "LhL", "LDL", "L L", 'L', getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.lead_leg", 1, 0),
-                "LLL",
-                "LDL",
-                "LHL",
-                'L',
-                getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "LLL", "LDL", "LhL", 'L', getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.lead_boots", 1, 0),
-                "D D",
-                "LHL",
-                "L L",
-                'L',
-                getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "D D", "LhL", "L L", 'L', getGSItem("item.CompressedPlates", 1, 3), // Compressed Lead
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.cobaltum_helmet", 1, 0),
-                "CCC",
-                "CHC",
-                "D D",
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "CCC", "ChC", "D D", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.cobaltum_plate", 1, 0),
-                "CHC",
-                "CDC",
-                "C C",
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'H',
-                "craftingToolHardHammer",
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "ChC", "CDC", "C C", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.cobaltum_leg", 1, 0),
-                "CCC",
-                "CDC",
-                "CHC",
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "CCC", "CDC", "ChC", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("item.cobaltum_boots", 1, 0),
-                "D D",
-                "CHC",
-                "C C",
-                'C',
-                getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'D',
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1));
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "D D", "ChC", "C C", 'C', getGSItem("item.CompressedPlates", 1, 1), // Compressed Cobalt
+                        'D', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Desh, 1) });
 
         addShapedRecipe(
                 getGSItem("item.spacesuit_helmet", 1, 0),
