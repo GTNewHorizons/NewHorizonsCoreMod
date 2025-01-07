@@ -783,14 +783,6 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Bronze, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
-                .itemOutputs(
-                        MetaGeneratedTool01.INSTANCE.getToolWithStats(170, 1, Materials.Bronze, Materials.Steel, null))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Steel, 4L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
                 .itemOutputs(
