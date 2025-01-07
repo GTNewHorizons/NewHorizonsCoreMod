@@ -1184,7 +1184,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemBoilerChassis, 1, 1));
         removeRecipeByOutputDelayed(GregtechItemList.Boiler_Advanced_HV.get(1));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemBoilerChassis, 1, 2));
-        removeRecipeByOutputDelayed(GregtechItemList.GTFluidTank_HV.get(1));
         removeRecipeByOutputDelayed(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 5));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing));

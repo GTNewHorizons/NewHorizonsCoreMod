@@ -4768,6 +4768,18 @@ public class AssemblerRecipes implements Runnable {
                             GTUtility.getIntegratedCircuit(2))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_interface", 1, 0)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+            // Dual Interface (flat version)
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
+                            getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                            com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
+                            GTUtility.getIntegratedCircuit(3))
+                    .itemOutputs(getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, 0)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
             // Fluid Storage Housing
             GTValues.RA.stdBuilder()
                     .itemInputs(
