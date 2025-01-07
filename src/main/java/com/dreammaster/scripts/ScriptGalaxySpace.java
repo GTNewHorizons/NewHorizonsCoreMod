@@ -43,6 +43,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.enums.ToolDictNames;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
@@ -443,7 +444,6 @@ public class ScriptGalaxySpace implements IScriptLoader {
         addDyedFutureGlassRecipe(13, "Magenta");
         addDyedFutureGlassRecipe(14, "Orange");
         addDyedFutureGlassRecipe(15, "White");
-        addDecorativeMetalBlockRecipe(0, getGSItem("item.CompressedPlates", 1, 3));
         addDecorativeMetalBlockRecipe(1, getGSItem("item.CompressedPlates", 1, 0));
         addDecorativeMetalBlockRecipe(2, getGSItem("item.CompressedPlates", 1, 1));
         addDecorativeMetalBlockRecipe(3, getGSItem("item.CompressedPlates", 1, 4));
@@ -452,7 +452,6 @@ public class ScriptGalaxySpace implements IScriptLoader {
         addDecorativeMetalBlockRecipe(6, getGSItem("item.CompressedPlates", 1, 7));
         addDecorativeMetalBlockRecipe(7, getGSItem("item.CompressedPlates", 1, 8));
         addDecorativeMetalBlockRecipe(8, getGSItem("item.CompressedPlates", 1, 9));
-        addDecorativeMetalBlockRecipe(9, new ItemStack(GCItems.basicItem, 1, 6));
 
         addShapedRecipe(
                 getIGItem("gassiphoncasing", 1, 0),
@@ -930,19 +929,10 @@ public class ScriptGalaxySpace implements IScriptLoader {
     }
 
     private void addDecorativeMetalBlockRecipe(int meta, ItemStack plate) {
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getGSItem("metalsblock", 1, meta),
-                "HP ",
-                "PSP",
-                " PW",
-                'H',
-                ToolDictNames.craftingToolHardHammer,
-                'P',
-                plate,
-                'S',
-                "stone",
-                'W',
-                ToolDictNames.craftingToolWrench);
+                GTModHandler.RecipeBits.NOT_REMOVABLE,
+                new Object[] { "hP ", "PSP", " Pw", 'P', plate, 'S', "stone" });
     }
 
     private static ItemStack getGSItem(String name, int amount, int meta) {
