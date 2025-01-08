@@ -1,11 +1,12 @@
 package com.dreammaster.variant.api;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import com.google.common.collect.ImmutableList;
+import com.dreammaster.scripts.IScriptLoader;
 
 /**
  * Represents an optional game variant, which can configurably be loaded by the player.
@@ -33,9 +34,19 @@ public interface IGameVariant {
      * @return Any classes that should be registered to the event bus.
      */
     default @NotNull List<Class<?>> getEventBusSubscribers() {
-        return ImmutableList.of();
+        return Collections.emptyList();
     }
 
+    /**
+     * @return A logger to use for this game variant.
+     */
     @NotNull
     Logger getLogger();
+
+    /**
+     * @return Recipe change scripts for this game variant.
+     */
+    default @NotNull List<@NotNull IScriptLoader> getScripts() {
+        return Collections.emptyList();
+    }
 }

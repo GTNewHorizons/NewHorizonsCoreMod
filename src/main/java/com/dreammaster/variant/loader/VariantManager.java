@@ -7,6 +7,7 @@ import java.util.Set;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.dreammaster.scripts.IScriptLoader;
 import com.dreammaster.variant.api.GameVariant;
 import com.dreammaster.variant.api.IFullGameVariant;
 import com.dreammaster.variant.api.IGameVariant;
@@ -122,6 +123,32 @@ public final class VariantManager {
     }
 
     public void onLoadComplete(FMLLoadCompleteEvent event) {
+        // todo move this to somewhere during world load/server join to not require a pack reload
+        for (IGameVariant variant : loadedVariants) {
+            List<IScriptLoader> scripts = variant.getScripts();
+            if (scripts.isEmpty()) continue;
+
+            long totalTimeStart = System.currentTimeMillis();
+            for (IScriptLoader script : scripts) {
+                if (!script.isScriptLoadable()) {
+                    variant.getLogger().info(
+                            "Missing dependencies to load {} script. It won't be loaded.",
+                            script.getScriptName());
+                }
+
+                try {
+                    long timeStart = System.currentTimeMillis();
+                    script.loadRecipes();
+                    long timeToLoad = System.currentTimeMillis() - timeStart;
+                    variant.getLogger().info("Loaded {} script in {} ms.", script.getScriptName(), timeToLoad);
+                } catch (Throwable t) {
+                    variant.getLogger().error("Failed to load script " + script.getScriptName(), t);
+                }
+            }
+            long totalTimeToLoad = System.currentTimeMillis() - totalTimeStart;
+            variant.getLogger().info("Script loader took {} ms.", totalTimeToLoad);
+        }
+
         for (IGameVariant variant : loadedVariants) {
             if (variant instanceof IFullGameVariant fullVariant) {
                 fullVariant.getLogger().debug("Load-complete start");
