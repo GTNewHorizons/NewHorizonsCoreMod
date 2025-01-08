@@ -341,15 +341,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                     filledUMVCell.setTagCompound(euNBT);
                 }
 
-                ItemStack item_singularity = getModItem(
-                        AppliedEnergistics2.ID,
-                        "item.ItemExtremeStorageCell.Singularity",
-                        1);
-                item_singularity.setTagCompound(new NBTTagCompound());
-
                 GTValues.RA.stdBuilder()
                         .itemInputs(
-                                item_singularity,
+                                getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1),
                                 GTOreDictUnificator
                                         .get(OrePrefixes.plateDense, MaterialsUEVplus.TranscendentMetal, 64L),
                                 ItemList.Field_Generator_UXV.get(1L),
