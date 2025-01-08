@@ -31,7 +31,6 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
@@ -357,8 +356,6 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(FloodLights.ID, "rawFilament", 1, 0, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 4, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 4, missing));
-        GTModHandler
-                .removeFurnaceSmelting(getModItem(GalacticraftCore.ID, "item.meteoricIronRaw", 1, wildcard, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "item.null", 1, 0, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "chainmail_boots", 1, 0, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0, missing));
@@ -1187,7 +1184,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemBoilerChassis, 1, 1));
         removeRecipeByOutputDelayed(GregtechItemList.Boiler_Advanced_HV.get(1));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemBoilerChassis, 1, 2));
-        removeRecipeByOutputDelayed(GregtechItemList.GTFluidTank_HV.get(1));
         removeRecipeByOutputDelayed(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 5));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing));
