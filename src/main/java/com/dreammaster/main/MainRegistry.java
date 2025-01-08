@@ -78,6 +78,7 @@ import com.dreammaster.recipes.RecipeRemover;
 import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
+import com.dreammaster.variant.loader.VariantManager;
 import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
@@ -85,11 +86,17 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLConstructionEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerAboutToStartEvent;
+import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.event.FMLServerStoppedEvent;
+import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
@@ -129,6 +136,8 @@ public class MainRegistry {
     @Mod.Instance(Refstrings.MODID)
     public static MainRegistry instance;
 
+    public static VariantManager variantManager;
+
     public static ModItemManager ItemManager;
     public static CreativeTabsManager TabManager;
     public static ModFluidManager FluidManager;
@@ -153,6 +162,13 @@ public class MainRegistry {
 
     public MainRegistry() {
         if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
+    }
+
+    @Mod.EventHandler
+    public void construction(FMLConstructionEvent event) {
+        variantManager = VariantManager.getInstance();
+        variantManager.setup(event.getASMHarvestedData());
+        variantManager.onConstruction(event);
     }
 
     @Mod.EventHandler
@@ -319,6 +335,8 @@ public class MainRegistry {
         Logger.warn("==================================================");
 
         MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
+
+        variantManager.onPreInit(PreEvent);
     }
 
     private static boolean RegisterNonEnumItems() {
@@ -376,6 +394,8 @@ public class MainRegistry {
         }
 
         VillagerRegistry.instance().registerVillageTradeHandler(2, new NHTradeHandler());
+
+        variantManager.onInit(event);
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -504,6 +524,9 @@ public class MainRegistry {
         if (Thaumcraft.isModLoaded()) TCLoader.run();
 
         if (TinkerConstruct.isModLoaded()) TiCoLoader.doPostInitialization();
+
+        variantManager.onPostInit(PostEvent);
+        variantManager.processIMC(FMLInterModComms.fetchRuntimeMessages(instance));
     }
 
     @Mod.EventHandler
@@ -524,6 +547,8 @@ public class MainRegistry {
             MinecraftForge.EVENT_BUS.register(handler);
             FMLCommonHandler.instance().bus().register(handler);
         }
+
+        variantManager.onLoadComplete(event);
     }
 
     /**
@@ -545,6 +570,11 @@ public class MainRegistry {
                 block.setHardness(0.3F);
             }
         }
+    }
+
+    @Mod.EventHandler
+    public void serverAboutToStart(FMLServerAboutToStartEvent event) {
+        variantManager.onServerAboutToStart(event);
     }
 
     /**
@@ -569,5 +599,27 @@ public class MainRegistry {
         if (YAMCore.isDebug()) {
             pEvent.registerServerCommand(new AllPurposeDebugCommand());
         }
+
+        variantManager.onServerStarting(pEvent);
+    }
+
+    @Mod.EventHandler
+    public void serverStarted(FMLServerStartedEvent event) {
+        variantManager.onServerStarted(event);
+    }
+
+    @Mod.EventHandler
+    public void serverStopping(FMLServerStoppingEvent event) {
+        variantManager.onServerStopping(event);
+    }
+
+    @Mod.EventHandler
+    public void serverStopped(FMLServerStoppedEvent event) {
+        variantManager.onServerStopped(event);
+    }
+
+    @Mod.EventHandler
+    public void respondIMC(FMLInterModComms.IMCEvent event) {
+        variantManager.processIMC(event.getMessages());
     }
 }
