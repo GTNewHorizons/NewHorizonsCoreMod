@@ -504,7 +504,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 .fluidInputs(Materials.RadoxPolymer.getMolten(4 * INGOTS))
                 .itemOutputs(com.dreammaster.item.ItemList.HeavyDutyAlloyIngotT9.getIS())
                 .metadata(GTRecipeConstants.RESEARCH_ITEM, com.dreammaster.item.ItemList.HeavyDutyPlateTier8.getIS())
-                .metadata(SCANNING, new SCANNING(18 * MINUTES + 40 * SECONDS, TierEU.RECIPE_ZPM))
+                .metadata(SCANNING, new SCANNING(2 * MINUTES + 20 * SECONDS, TierEU.RECIPE_UV))
                 .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV)
                 .addTo(GTRecipeConstants.AssemblyLine);
     }

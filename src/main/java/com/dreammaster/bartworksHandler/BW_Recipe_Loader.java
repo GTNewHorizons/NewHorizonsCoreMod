@@ -31,7 +31,7 @@ public class BW_Recipe_Loader implements Runnable {
         // Heavy Duty Alloy Ingot T4
         GTValues.RA.stdBuilder()
                 .metadata(RESEARCH_ITEM, GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0))
-                .metadata(SCANNING, new SCANNING(12 * MINUTES, TierEU.RECIPE_EV))
+                .metadata(SCANNING, new SCANNING(1 * MINUTES + 30 * SECONDS, TierEU.RECIPE_EV))
                 .itemInputs(
                         GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),
                         CustomItemList.IceCompressedPlate.get(3L),
