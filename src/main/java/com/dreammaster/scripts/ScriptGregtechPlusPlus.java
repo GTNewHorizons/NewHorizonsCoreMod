@@ -180,17 +180,6 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 "plateDoubleTitanium",
                 GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
                 "plateDoubleTitanium");
-        addShapedRecipe(
-                GregtechItemList.GTFluidTank_HV.get(1),
-                "circuitPrimitive",
-                "plateAluminium",
-                "circuitPrimitive",
-                "plateDarkSteel",
-                "pipeMediumSteel",
-                "plateDarkSteel",
-                "circuitPrimitive",
-                ItemList.Electric_Pump_MV.get(1L),
-                "circuitPrimitive");
 
         // Shirabon and Eternity
         GTValues.RA.stdBuilder()

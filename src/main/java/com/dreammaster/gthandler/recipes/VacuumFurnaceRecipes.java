@@ -27,7 +27,7 @@ public class VacuumFurnaceRecipes implements Runnable {
         if (Forestry.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTUtility.getIntegratedCircuit(12),
+                            GTUtility.getIntegratedCircuit(2),
                             GTBees.combs.getStackForType(CombType.INDIUM, 64),
                             GTBees.combs.getStackForType(CombType.INDIUM, 64),
                             GTBees.combs.getStackForType(CombType.INDIUM, 64),
@@ -48,7 +48,7 @@ public class VacuumFurnaceRecipes implements Runnable {
                     .addTo(vacuumFurnaceRecipes);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(GTUtility.getIntegratedCircuit(13), GTBees.combs.getStackForType(CombType.INDIUM, 40))
+                    .itemInputs(GTUtility.getIntegratedCircuit(2), GTBees.combs.getStackForType(CombType.INDIUM, 40))
                     .itemOutputs(
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 64L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 64L),
