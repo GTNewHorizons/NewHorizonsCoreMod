@@ -30,12 +30,10 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.item.ModItems;
 import gtPlusPlus.core.item.chemistry.GenericChem;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.util.minecraft.ItemUtils;
 import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
 
