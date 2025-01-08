@@ -58,17 +58,6 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapedRecipe(
-                GregtechItemList.GT4_Thermal_Boiler.get(1),
-                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                ItemList.Machine_HV_Centrifuge.get(1L),
-                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                "gearGtTungstenSteel",
-                "circuitElite",
-                "gearGtTungstenSteel",
-                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                ItemList.Machine_HV_Centrifuge.get(1L),
-                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing));
 
         addShapedRecipe(
                 MaterialsAlloy.TUMBAGA.getRod(1),
@@ -103,83 +92,6 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 MaterialsAlloy.TUMBAGA.getRod(1),
                 MaterialsAlloy.TUMBAGA.getPlate(1),
                 MaterialsAlloy.TUMBAGA.getRod(1));
-        addShapedRecipe(
-                GregtechItemList.Industrial_WireFactory.get(1),
-                "plateBlueSteel",
-                ItemList.Casing_IV.get(1L),
-                "plateBlueSteel",
-                "circuitElite",
-                ItemList.Machine_IV_Wiremill.get(1L),
-                "circuitElite",
-                "plateBlueSteel",
-                ItemList.Casing_IV.get(1L),
-                "plateBlueSteel");
-        addShapedRecipe(
-                GregtechItemList.Boiler_Advanced_LV.get(1),
-                ItemList.Electric_Pump_LV.get(1L),
-                "circuitBasic",
-                ItemList.Electric_Pump_LV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
-                ItemList.Casing_LV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L),
-                ItemList.Machine_Steel_Boiler.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L));
-        addShapedRecipe(
-                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
-                "plateDoubleLead",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                "plateDoubleLead",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.AnyBronze, 1L),
-                getModItem(IronTanks.ID, "silverTank", 1, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.AnyBronze, 1L),
-                "plateDoubleLead",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                "plateDoubleLead");
-        addShapedRecipe(
-                GregtechItemList.Boiler_Advanced_MV.get(1),
-                ItemList.Electric_Pump_MV.get(1L),
-                "circuitGood",
-                ItemList.Electric_Pump_MV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
-                ItemList.Casing_MV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L),
-                ItemList.Machine_Steel_Boiler.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L));
-        addShapedRecipe(
-                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
-                "plateDoubleStainlessSteel",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                "plateDoubleStainlessSteel",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                getModItem(IronTanks.ID, "stainlesssteelTank", 1, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                "plateDoubleStainlessSteel",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                "plateDoubleStainlessSteel");
-        addShapedRecipe(
-                GregtechItemList.Boiler_Advanced_HV.get(1),
-                ItemList.Electric_Pump_HV.get(1L),
-                "circuitAdvanced",
-                ItemList.Electric_Pump_HV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
-                ItemList.Casing_HV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L),
-                ItemList.Machine_Steel_Boiler.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L));
-        addShapedRecipe(
-                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
-                "plateDoubleTitanium",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
-                "plateDoubleTitanium",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                getModItem(IronTanks.ID, "titaniumTank", 1, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                "plateDoubleTitanium",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
-                "plateDoubleTitanium");
 
         // Shirabon and Eternity
         GTValues.RA.stdBuilder()
