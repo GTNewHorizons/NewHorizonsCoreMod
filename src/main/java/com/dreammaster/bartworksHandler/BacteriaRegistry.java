@@ -4,7 +4,6 @@ import static bartworks.API.BioObjectAdder.*;
 import static bartworks.API.recipe.BartWorksRecipeMaps.bacterialVatRecipes;
 import static bartworks.API.recipe.BartWorksRecipeMaps.bioLabRecipes;
 import static bartworks.util.BWRecipes.computeSieverts;
-import static com.dreammaster.gthandler.GT_CoreModSupport.*;
 import static gregtech.api.enums.Materials.*;
 import static gregtech.api.enums.Mods.GalaxySpace;
 import static gregtech.api.enums.Mods.Genetics;

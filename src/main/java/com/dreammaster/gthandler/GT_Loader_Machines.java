@@ -1,6 +1,5 @@
 package com.dreammaster.gthandler;
 
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.*;
 import static gregtech.api.enums.GTValues.VP;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
@@ -10,10 +9,6 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT1;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT2;
-import com.dreammaster.gthandler.multiAirFilter.GT_MetaTileEntity_AirFilterT3;
-import com.dreammaster.gthandler.nameRemover.NameRemover;
 import com.dreammaster.item.food.QuantumBread;
 
 import gregtech.api.enums.GTValues;
@@ -70,8 +65,6 @@ public class GT_Loader_Machines {
         registerPlasmaArcFurnace();
         registerCanningMachine();
         registerChemicalBath();
-        registerAirFilter();
-        registerNameRemover();
         registerCircuitAssembler();
         registerMachines2();
         recipes();
@@ -939,7 +932,7 @@ public class GT_Loader_Machines {
                         OreDictNames.craftingChest, 'X', OrePrefixes.circuit.get(Materials.UMV) });
 
         GTModHandler.addCraftingRecipe(
-                CustomItemList.nameRemover.get(1L),
+                ItemList.NameRemover.get(1L),
                 bitsd,
                 new Object[] { "SsS", "VMV", "SXS", 'M', ItemList.Hull_ULV, 'V',
                         OrePrefixes.gearGtSmall.get(Materials.AnyBronze), 'S', OrePrefixes.screw.get(Materials.AnyIron),
@@ -3316,29 +3309,6 @@ public class GT_Loader_Machines {
                         'W', GT_CustomLoader.AdvancedGTMaterials.UMV.getCable(), 'G',
                         MTEBasicMachineWithRecipe.X.GLASS },
                 12);
-    }
-
-    private void registerAirFilter() {
-        CustomItemList.Machine_Multi_AirFilterT1.set(
-                new GT_MetaTileEntity_AirFilterT1(
-                        AIR_FILTER_CONTROLLER_T1.ID,
-                        "multimachine.airfilter.01",
-                        "Electric Air Filter T1").getStackForm(1L));
-        CustomItemList.Machine_Multi_AirFilterT2.set(
-                new GT_MetaTileEntity_AirFilterT2(
-                        AIR_FILTER_CONTROLLER_T2.ID,
-                        "multimachine.airfilter.02",
-                        "Electric Air Filter T2").getStackForm(1L));
-        CustomItemList.Machine_Multi_AirFilterT3.set(
-                new GT_MetaTileEntity_AirFilterT3(
-                        AIR_FILTER_CONTROLLER_T3.ID,
-                        "multimachine.airfilter.03",
-                        "Electric Air Filter T3").getStackForm(1L));
-    }
-
-    private void registerNameRemover() {
-        CustomItemList.nameRemover
-                .set(new NameRemover(NAME_REMOVER.ID, "fix.name.remover", "Name Remover", 0).getStackForm(1L));
     }
 
     private void registerCircuitAssembler() {
