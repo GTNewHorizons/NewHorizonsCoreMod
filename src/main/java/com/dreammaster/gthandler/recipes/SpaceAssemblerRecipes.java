@@ -333,7 +333,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                 // Crafting Input Buffer (ME)
                 GTValues.RA.stdBuilder()
                         .itemInputs(
-                                ItemList.Hatch_Input_Bus_ME_Advanced.get(1),
+                                ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1),
                                 ItemList.Hatch_Input_Multi_2x2_UEV.get(1),
                                 // 16384k storage component
                                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
