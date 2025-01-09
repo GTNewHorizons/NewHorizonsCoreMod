@@ -1681,12 +1681,6 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .addTo(assemblerRecipes);
 
-        // crafting input slave
-        GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L), ItemList.Sensor_UV.get(1L))
-                .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
-
         // Gear Box Casings
         GTValues.RA.stdBuilder()
                 .itemInputs(
