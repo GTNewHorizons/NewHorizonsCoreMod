@@ -4030,7 +4030,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_LV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT1.get(1L))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT1.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -4043,7 +4043,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_LV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT1.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT1.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4055,9 +4055,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_LV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT1.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(576)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT1.get(1L)).fluidInputs(Materials.Lead.getMolten(576))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -4121,7 +4120,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_HV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT2.get(1L))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT2.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -4134,7 +4133,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_HV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT2.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT2.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4146,9 +4145,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_HV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT2.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(576)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT2.get(1L)).fluidInputs(Materials.Lead.getMolten(576))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -4212,7 +4210,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_IV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT3.get(1L))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT3.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -4225,7 +4223,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_IV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT3.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT3.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4237,9 +4235,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_IV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT3.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(576)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT3.get(1L)).fluidInputs(Materials.Lead.getMolten(576))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
     }
 
