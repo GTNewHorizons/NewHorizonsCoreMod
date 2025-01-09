@@ -13,10 +13,6 @@ import gregtech.api.util.GTUtility;
 
 public enum CustomItemList implements IItemContainer {
 
-    Machine_Multi_AirFilterT1,
-    Machine_Multi_AirFilterT2,
-    Machine_Multi_AirFilterT3,
-
     // CoreModItems
     EtchedLowVoltageWiring,
     EtchedInsaneVoltageWiring,
@@ -310,7 +306,6 @@ public enum CustomItemList implements IItemContainer {
     MedalWarp,
     MaceratedPlantmass,
     EngineCore,
-    nameRemover,
     TwilightCrystal,
     UnfiredClayBrick,
     UnfiredSearedBrick,
