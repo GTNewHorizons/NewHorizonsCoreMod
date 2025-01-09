@@ -310,7 +310,6 @@ public enum CustomItemList implements IItemContainer {
     MedalWarp,
     MaceratedPlantmass,
     EngineCore,
-    nameRemover,
     TwilightCrystal,
     UnfiredClayBrick,
     UnfiredSearedBrick,
