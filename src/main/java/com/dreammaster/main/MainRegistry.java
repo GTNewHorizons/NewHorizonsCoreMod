@@ -47,8 +47,6 @@ import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
-import com.dreammaster.gthandler.CoreMod_PCBFactory_MaterialLoader;
-import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
@@ -102,7 +100,6 @@ import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
-import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
@@ -216,11 +213,6 @@ public class MainRegistry {
         TabManager = new CreativeTabsManager();
         ModTabList.InitModTabs(TabManager, ItemManager);
         // ------------------------------------------------------------
-
-        // Materials init
-        if (!GTMod.gregtechproxy.mEnableAllMaterials) {
-            new GT_CoreModSupport();
-        }
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
@@ -366,8 +358,6 @@ public class MainRegistry {
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
         }
-
-        CoreMod_PCBFactory_MaterialLoader.init();
 
         BWGlassAdder.registerGlasses();
 
