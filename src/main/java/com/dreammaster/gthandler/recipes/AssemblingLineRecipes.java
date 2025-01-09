@@ -2,7 +2,6 @@ package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Californium;
 import static gregtech.api.enums.GTValues.L;
-import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
@@ -15,7 +14,6 @@ import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
-import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
@@ -199,29 +197,6 @@ public class AssemblingLineRecipes implements Runnable {
                 .fluidInputs(new FluidStack(solderIndalloy, 288), FluidRegistry.getFluidStack("lubricant", 500))
                 .itemOutputs(ItemList.Hatch_Input_Bus_ME_Advanced.get(1L)).eut(TierEU.RECIPE_LuV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
-
-        TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
-                2000 * 60 * 8,
-                2000,
-                3000000,
-                2,
-                new ItemStack[] { ItemList.Hatch_Input_Bus_ME.get(1L), ItemList.Hatch_Input_Multi_2x2_UEV.get(1L),
-                        // 16384k storage component
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
-                        // 16384k fluid storage component
-                        GTModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
-                        // ME Controller
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, WILDCARD),
-                        // Dual Interface
-                        GTModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, WILDCARD),
-                        // Pattern capacity card
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54) },
-                new FluidStack[] { FluidRegistry.getFluidStack("molten.spacetime", 16 * INGOTS),
-                        FluidRegistry.getFluidStack("molten.mutatedlivingsolder", 2000), },
-                ItemList.Hatch_CraftingInput_Bus_ME.get(1L),
-                30 * SECONDS,
-                (int) TierEU.RECIPE_UIV);
 
         // Cloud Computation Client Hatch
         TTRecipeAdder.addResearchableAssemblylineRecipe(
