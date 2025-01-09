@@ -953,7 +953,7 @@ public class AssemblingLineRecipes implements Runnable {
         }
 
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_Bus_ME_Advanced.get(1L))
-                .metadata(SCANNING, new SCANNING(1 * MINUTES + 40 * SECONDS , TierEU.RECIPE_EV))
+                .metadata(SCANNING, new SCANNING(1 * MINUTES + 40 * SECONDS, TierEU.RECIPE_EV))
                 .itemInputs(
                         ItemList.Hatch_Input_Bus_ME_Advanced.get(1L),
                         // 4096k Me Storage Component

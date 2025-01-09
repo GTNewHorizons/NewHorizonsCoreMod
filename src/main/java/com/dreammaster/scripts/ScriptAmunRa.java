@@ -397,15 +397,11 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] {
-                        new ItemStack(dysonSwarmParts, 64, 3),
-                        new ItemStack(dysonSwarmParts, 64, 3),
-                        new ItemStack(dysonSwarmParts, 64, 3),
-                        new ItemStack(dysonSwarmParts, 64, 3),
+                new Object[] { new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
+                        new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
                         com.dreammaster.item.ItemList.HeavyDutyRocketEngineTier4.getIS(64),
                         new Object[] { OrePrefixes.pipeHuge.get(Materials.Infinity), 8 },
-                        ItemList.Electric_Pump_UHV.get(16),
-                        new Object[] { OrePrefixes.circuit.get(Materials.UHV), 8 },
+                        ItemList.Electric_Pump_UHV.get(16), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 8 },
                         new ItemStack(baseItem, 4, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(50 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
@@ -504,9 +500,8 @@ public class ScriptAmunRa implements IScriptLoader {
                 .fluidInputs(Materials.RadoxPolymer.getMolten(4 * INGOTS))
                 .itemOutputs(com.dreammaster.item.ItemList.HeavyDutyAlloyIngotT9.getIS())
                 .metadata(GTRecipeConstants.RESEARCH_ITEM, com.dreammaster.item.ItemList.HeavyDutyPlateTier8.getIS())
-                .metadata(SCANNING, new SCANNING(2 * MINUTES + 20 * SECONDS, TierEU.RECIPE_UV))
-                .duration(15 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .addTo(GTRecipeConstants.AssemblyLine);
+                .metadata(SCANNING, new SCANNING(2 * MINUTES + 20 * SECONDS, TierEU.RECIPE_UV)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(GTRecipeConstants.AssemblyLine);
     }
 
     @Optional.Method(modid = "GalacticraftAmunRa")
