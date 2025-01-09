@@ -1,7 +1,7 @@
 package com.dreammaster.gthandler;
 
-import static com.dreammaster.gthandler.enums.MetaTileEntityIDs.*;
 import static gregtech.api.enums.GTValues.VP;
+import static gregtech.api.enums.MetaTileEntityIDs.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.slicerRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
