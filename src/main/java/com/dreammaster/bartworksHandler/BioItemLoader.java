@@ -64,7 +64,6 @@ public class BioItemLoader {
                             .withStateAndTemperature(FluidState.LIQUID, 300).buildAndRegister().asFluid() };
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             MainRegistry.Logger.error(e);
             return false;
         }
