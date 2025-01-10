@@ -925,7 +925,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         'g',
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing),
                         'h',
-                        getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 11, missing),
+                        ItemList.OreDrill2.get(1L),
                         'i',
                         getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 11, missing)));
         EnderConstructorRecipesHandler.registerRecipe(
