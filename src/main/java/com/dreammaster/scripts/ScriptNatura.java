@@ -12,7 +12,6 @@ import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
-import static gregtech.common.items.IDMetaTool01.SAW;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +27,6 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gregtech.common.items.MetaGeneratedTool01;
 
 public class ScriptNatura implements IScriptLoader {
 
