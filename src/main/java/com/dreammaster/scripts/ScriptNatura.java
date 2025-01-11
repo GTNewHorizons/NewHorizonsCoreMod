@@ -64,7 +64,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Minecraft.ID, "string", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 0, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "tree", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 0, missing),
@@ -75,7 +75,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 0, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -212,7 +212,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 1, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "tree", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 1, missing),
@@ -223,7 +223,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 1, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 1, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -375,7 +375,7 @@ public class ScriptNatura implements IScriptLoader {
                 "craftingToolKnife");
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 2, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "tree", 1, 2, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 2, missing),
@@ -386,7 +386,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 2, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 2, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -534,7 +534,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 3, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "redwood", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 3, missing),
@@ -545,7 +545,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 3, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 3, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -693,21 +693,21 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "bloodwood", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 4, missing),
                 getModItem(Natura.ID, "bloodwood", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "bloodwood", 1, 15, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 4, missing),
                 getModItem(Natura.ID, "bloodwood", 1, 15, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 4, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "bloodwood", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "natura.stick", 2, 4, missing),
@@ -715,7 +715,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 4, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 4, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -873,7 +873,7 @@ public class ScriptNatura implements IScriptLoader {
                 "craftingToolKnife");
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 5, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "tree", 1, 3, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 5, missing),
@@ -884,7 +884,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 5, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 5, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -1032,7 +1032,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 6, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "Rare Tree", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 6, missing),
@@ -1043,7 +1043,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 6, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 6, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -1191,7 +1191,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 7, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "Rare Tree", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 7, missing),
@@ -1202,7 +1202,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 7, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 7, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -1350,7 +1350,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 8, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "Rare Tree", 1, 2, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 8, missing),
@@ -1361,7 +1361,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 8, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 8, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -1509,7 +1509,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 9, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "Rare Tree", 1, 3, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 9, missing),
@@ -1520,7 +1520,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 9, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 9, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -1668,7 +1668,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 10, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "willow", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 10, missing),
@@ -1679,7 +1679,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 10, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 10, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -1827,7 +1827,7 @@ public class ScriptNatura implements IScriptLoader {
                 null);
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 11, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "Dark Tree", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 11, missing),
@@ -1838,7 +1838,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 11, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 11, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
@@ -1990,7 +1990,7 @@ public class ScriptNatura implements IScriptLoader {
                 "craftingToolKnife");
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 4, 12, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 getModItem(Natura.ID, "Dark Tree", 1, 1, missing));
         addShapelessRecipe(
                 getModItem(Natura.ID, "planks", 2, 12, missing),
@@ -2001,7 +2001,7 @@ public class ScriptNatura implements IScriptLoader {
                 getModItem(Natura.ID, "planks", 1, 12, missing));
         addShapedRecipe(
                 getModItem(Natura.ID, "natura.stick", 4, 12, missing),
-                MetaGeneratedTool01.INSTANCE.getToolWithStats(SAW.ID, 1, null, null, null),
+                "craftingToolSaw",
                 null,
                 null,
                 null,
