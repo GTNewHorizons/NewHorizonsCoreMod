@@ -9,7 +9,6 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
 import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
-import static gregtech.api.util.GTRecipeConstants.RESEARCH_TIME;
 
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -19,6 +18,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTRecipeConstants;
+import gregtech.api.util.recipe.Scanning;
 
 public class BW_Recipe_Loader implements Runnable {
 
@@ -29,9 +29,10 @@ public class BW_Recipe_Loader implements Runnable {
                 .metadata(GTRecipeConstants.ADDITIVE_AMOUNT, 32).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(implosionRecipes);
 
+        // Heavy Duty Alloy Ingot T4
         GTValues.RA.stdBuilder()
                 .metadata(RESEARCH_ITEM, GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0))
-                .metadata(RESEARCH_TIME, 2 * MINUTES + 5 * SECONDS)
+                .metadata(SCANNING, new Scanning(1 * MINUTES + 30 * SECONDS, TierEU.RECIPE_EV))
                 .itemInputs(
                         GTModHandler.getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1L, 0),
                         CustomItemList.IceCompressedPlate.get(3L),
