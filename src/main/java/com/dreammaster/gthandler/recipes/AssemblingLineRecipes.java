@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EternalSingularity;
 import static gregtech.api.enums.Mods.GTNHIntergalactic;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
@@ -539,6 +540,44 @@ public class AssemblingLineRecipes implements Runnable {
                     2 * MINUTES,
                     (int) TierEU.RECIPE_UIV);
         }
+
+        if (GalacticraftAmunRa.isModLoaded()) {
+            // Nanite Containment Bus
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
+                    GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 28),
+                    32_000,
+                    64,
+                    (int) TierEU.RECIPE_UV,
+                    16,
+                    new Object[] { ItemList.Hatch_Input_Bus_MAX.get(1), ItemList.Quantum_Chest_EV.get(1),
+                            ItemList.Field_Generator_UHV.get(1),
+                            GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4, 28),
+                            GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.plateDense, 4),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 4) },
+                    new FluidStack[] { new FluidStack(solderUEV, 2_304) },
+                    ItemList.Hatch_Nanite.get(1),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UHV);
+        }
+
+        // Bulk Catalyst Housing
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                GregtechItemList.Bus_Catalysts.get(1),
+                2_048_000,
+                64,
+                (int) TierEU.RECIPE_UEV,
+                16,
+                new Object[] { ItemList.Hull_UEV.get(1), ItemList.Quantum_Chest_IV.get(1),
+                        MaterialsAlloy.QUANTUM.getFrameBox(16), ItemList.Field_Generator_UEV.get(1),
+                        GregtechItemList.Laser_Lens_Special.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TengamAttuned, 32),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.InfinityCatalyst, 16),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 8) },
+                new FluidStack[] { new FluidStack(solderUEV, 9_216), MaterialsAlloy.ABYSSAL.getFluidStack(144 * 128),
+                        MaterialsAlloy.OCTIRON.getFluidStack(144 * 256) },
+                ItemList.Hatch_Catalyst_Bulk.get(1),
+                30 * SECONDS,
+                (int) TierEU.RECIPE_UEV);
 
         if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 
