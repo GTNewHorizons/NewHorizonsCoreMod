@@ -709,28 +709,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "batteryAdvanced",
                 "itemCasingAnyIron");
         addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemScanner", 1, 0, missing),
-                "itemCasingGold",
-                "plateStainlessSteel",
-                "itemCasingGold",
-                "circuitAdvanced",
-                CustomItemList.Display.get(1L),
-                "circuitAdvanced",
-                "cableGt01Gold",
-                "batteryAdvanced",
-                "cableGt01Gold");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "itemScannerAdv", 1, 0, missing),
-                "itemCasingTitanium",
-                getModItem(IndustrialCraft2.ID, "itemScanner", 1, wildcard, missing),
-                "itemCasingTitanium",
-                "circuitData",
-                CustomItemList.Display.get(1L),
-                "circuitData",
-                "cableGt01Nichrome",
-                "batteryData",
-                "cableGt01Nichrome");
-        addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 3, missing),
                 "cableGt01AnyCopper",
                 "itemCasingSteel",
@@ -873,17 +851,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "itemCasingSteel",
                 "circuitBasic",
                 "itemCasingSteel");
-        addShapedRecipe(
-                getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 11, missing),
-                "circuitElite",
-                getModItem(IndustrialCraft2.ID, "blockElectric", 1, 2, missing),
-                "circuitElite",
-                ItemList.Electric_Motor_IV.get(1L),
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 12, missing),
-                ItemList.Electric_Motor_IV.get(1L),
-                ItemList.Robot_Arm_IV.get(1L),
-                getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 0, missing),
-                ItemList.Robot_Arm_IV.get(1L));
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
