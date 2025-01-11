@@ -52,7 +52,7 @@ import com.dreammaster.gthandler.GT_Loader_ItemPipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.ItemBucketList;
-import com.dreammaster.item.ItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.item.WoodenBrickForm;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
@@ -216,7 +216,7 @@ public class MainRegistry {
 
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
-        if (!ItemList.AddToItemManager(ItemManager)
+        if (!NHItemList.AddToItemManager(ItemManager)
                 | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))
                 | !(BioItemLoader.preInit())) {
             Logger.warn("Some items failed to register. Check the logfile for details");

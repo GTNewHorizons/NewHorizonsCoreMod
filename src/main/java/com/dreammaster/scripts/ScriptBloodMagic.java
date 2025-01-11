@@ -44,6 +44,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import com.dreammaster.block.BlockList;
 import com.dreammaster.bloodmagic.BloodMagicHelper;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
@@ -3693,7 +3694,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "transcendentBloodOrb", 1, 0, missing)));
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
-                        com.dreammaster.item.ItemList.Blaster.getIS(1),
+                        NHItemList.Blaster.getIS(1),
                         "abc",
                         "def",
                         "ghi",
@@ -4678,9 +4679,8 @@ public class ScriptBloodMagic implements IScriptLoader {
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "boundShovel", 1, 0, missing),
                 getModItem(Thaumcraft.ID, "ItemShovelElemental", 1, 0, missing));
-        BindingRegistry.registerRecipe(
-                getModItem(BloodMagic.ID, "energyBlaster", 1, 0, missing),
-                com.dreammaster.item.ItemList.Blaster.getIS(1));
+        BindingRegistry
+                .registerRecipe(getModItem(BloodMagic.ID, "energyBlaster", 1, 0, missing), NHItemList.Blaster.getIS(1));
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.NetherQuartz, 1L));
@@ -4949,8 +4949,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 new ItemStack[] { getModItem(BloodMagic.ID, "blankSpell", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
                         getModItem(BloodMagic.ID, "weakBloodShard", 1, 0, missing),
-                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
-                        CustomItemList.EngravedDiamondCrystalChip.get(1L) },
+                        NHItemList.EngravedGoldChip.getIS(1), CustomItemList.EngravedDiamondCrystalChip.get(1L) },
                 3);
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 2, 15, missing),

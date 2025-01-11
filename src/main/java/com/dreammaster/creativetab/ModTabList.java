@@ -7,7 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.item.ItemList;
+import com.dreammaster.item.NHItemList;
 
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.creativetabs.ModCreativeTab;
@@ -32,27 +32,27 @@ public final class ModTabList {
 
     public static void InitModTabs(CreativeTabsManager pTabManager, ModItemManager pItemManager) {
         pTabManager.AddCreativeTab(
-                new ModCreativeTab(ModGenericTab, ItemList.AsteroidsStoneDust.Item.getConstructedItem()));
-        pTabManager.AddCreativeTab(new ModCreativeTab(ModShapesTab, ItemList.ShapeBlock.Item.getConstructedItem()));
-        pTabManager.AddCreativeTab(new ModCreativeTab(ModMoldsTab, ItemList.MoldFormAnvil.Item.getConstructedItem()));
+                new ModCreativeTab(ModGenericTab, NHItemList.AsteroidsStoneDust.Item.getConstructedItem()));
+        pTabManager.AddCreativeTab(new ModCreativeTab(ModShapesTab, NHItemList.ShapeBlock.Item.getConstructedItem()));
+        pTabManager.AddCreativeTab(new ModCreativeTab(ModMoldsTab, NHItemList.MoldFormAnvil.Item.getConstructedItem()));
         pTabManager.AddCreativeTab(
-                new ModCreativeTab(ModThaumcraftTab, ItemList.ChargedVoidWandCap.Item.getConstructedItem()));
-        pTabManager
-                .AddCreativeTab(new ModCreativeTab(ModCircuitsTab, ItemList.QuantumCircuit.Item.getConstructedItem()));
+                new ModCreativeTab(ModThaumcraftTab, NHItemList.ChargedVoidWandCap.Item.getConstructedItem()));
+        pTabManager.AddCreativeTab(
+                new ModCreativeTab(ModCircuitsTab, NHItemList.QuantumCircuit.Item.getConstructedItem()));
         pTabManager.AddCreativeTab(new ModCreativeTab(ModFluidsTab, Items.bucket));
         pTabManager.AddCreativeTab(new ModCreativeTab(ModBlocksTab, Item.getItemFromBlock(Blocks.stone)));
         pTabManager.AddCreativeTab(
-                new ModCreativeTab(ModSpaceTab, ItemList.HeavyDutyNoseConeTier3.Item.getConstructedItem()));
+                new ModCreativeTab(ModSpaceTab, NHItemList.HeavyDutyNoseConeTier3.Item.getConstructedItem()));
         pTabManager.AddCreativeTab(
                 new ModCreativeTab(
                         ModSolarTab,
-                        ItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.Item.getConstructedItem()));
+                        NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.Item.getConstructedItem()));
         pTabManager.AddCreativeTab(
-                new ModCreativeTab(ModBarsAndCasingsTab, ItemList.ChromeBars.Item.getConstructedItem()));
+                new ModCreativeTab(ModBarsAndCasingsTab, NHItemList.ChromeBars.Item.getConstructedItem()));
         pTabManager.AddCreativeTab(
                 new ModCreativeTab(
                         ModAdditionsToGregTechTab,
-                        ItemList.EtchedLudicrousVoltageWiring.Item.getConstructedItem()) {
+                        NHItemList.EtchedLudicrousVoltageWiring.Item.getConstructedItem()) {
 
                     @Override
                     public void displayAllReleventItems(List stuffToShow) {
