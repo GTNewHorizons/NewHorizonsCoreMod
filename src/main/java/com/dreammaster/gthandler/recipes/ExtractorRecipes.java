@@ -15,6 +15,8 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.item.NHItemList;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
@@ -37,8 +39,8 @@ public class ExtractorRecipes implements Runnable {
             for (int i = 0; i < 6; ++i) {
 
                 GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(GalaxySpace.ID, "tcetiedandelions", 64L, i))
-                        .itemOutputs(com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS()).duration(3 * MINUTES)
-                        .eut(262144).addTo(extractorRecipes);
+                        .itemOutputs(NHItemList.TCetiESeaweedExtract.getIS()).duration(3 * MINUTES).eut(262144)
+                        .addTo(extractorRecipes);
 
             }
         }

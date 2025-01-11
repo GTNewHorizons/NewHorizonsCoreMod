@@ -36,6 +36,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.forestry.ForestryHelper;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import forestry.api.recipes.RecipeManagers;
@@ -2919,7 +2920,7 @@ public class ScriptForestry implements IScriptLoader {
                 'a',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'b',
-                com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(1),
+                NHItemList.ChargedCertusQuartzPlate.getIS(1),
                 'c',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'd',
@@ -2931,7 +2932,7 @@ public class ScriptForestry implements IScriptLoader {
                 'g',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing),
                 'h',
-                com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(1),
+                NHItemList.ChargedCertusQuartzPlate.getIS(1),
                 'i',
                 getModItem(Forestry.ID, "thermionicTubes", 1, 4, missing));
         RecipeManagers.carpenterManager.addRecipe(
@@ -5129,9 +5130,9 @@ public class ScriptForestry implements IScriptLoader {
                 null,
                 FluidRegistry.getFluidStack("glass", 2000),
                 getModItem(Forestry.ID, "thermionicTubes", 2, 6, missing),
-                new Object[] { "abc", "def", "ghi", 'b', com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'd',
+                new Object[] { "abc", "def", "ghi", 'b', NHItemList.LongObsidianRod.getIS(1), 'd',
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'e',
-                        com.dreammaster.item.ItemList.LongObsidianRod.getIS(1), 'f',
+                        NHItemList.LongObsidianRod.getIS(1), 'f',
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 1L), 'g',
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Gold, 1L), 'h',
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 1L), 'i',

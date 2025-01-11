@@ -12,6 +12,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import com.dreammaster.item.NHItemList;
 import com.emoniph.witchery.Witchery;
 import com.emoniph.witchery.brewing.AltarPower;
 import com.emoniph.witchery.brewing.BrewItemKey;
@@ -243,7 +244,7 @@ public class WitcheryPlugin extends BasePluginWitchery {
                     GTOreDictUnificator.get(OrePrefixes.dust, Materials.EnderEye, 1L),
                     GTModHandler.getModItem(HardcoreEnderExpansion.ID, "end_powder", 1L),
                     Witchery.Items.GENERIC.itemTearOfTheGoddess.createStack(),
-                    com.dreammaster.item.ItemList.ManyullynCrystal.getIS(1));
+                    NHItemList.ManyullynCrystal.getIS(1));
         }
         // rites
         // TODO write doc
