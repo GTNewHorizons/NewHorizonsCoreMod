@@ -22,6 +22,7 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.QUARTER_INGOT;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gregtech.api.util.GTRecipeConstants.SCANNING;
 import static gregtech.api.util.GTUtility.getIntegratedCircuit;
 
 import java.util.Arrays;
@@ -53,6 +54,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.recipe.Scanning;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import tectech.recipe.TTRecipeAdder;
 
@@ -489,6 +491,8 @@ public class ScriptAmunRa implements IScriptLoader {
                 GameRegistry.findItemStack(GalacticraftAmunRa.ID, "item.schematic", 1),
                 15 * MINUTES,
                 (int) TierEU.RECIPE_UHV);
+
+        // Lightweight Alloy Ingot
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         com.dreammaster.item.ItemList.HeavyDutyPlateTier8.getIS(),
@@ -498,8 +502,8 @@ public class ScriptAmunRa implements IScriptLoader {
                 .fluidInputs(Materials.RadoxPolymer.getMolten(4 * INGOTS))
                 .itemOutputs(com.dreammaster.item.ItemList.HeavyDutyAlloyIngotT9.getIS())
                 .metadata(GTRecipeConstants.RESEARCH_ITEM, com.dreammaster.item.ItemList.HeavyDutyPlateTier8.getIS())
-                .metadata(GTRecipeConstants.RESEARCH_TIME, 750 * SECONDS).duration(15 * SECONDS).eut(TierEU.RECIPE_UEV)
-                .addTo(GTRecipeConstants.AssemblyLine);
+                .metadata(SCANNING, new Scanning(2 * MINUTES + 20 * SECONDS, TierEU.RECIPE_UV)).duration(15 * SECONDS)
+                .eut(TierEU.RECIPE_UEV).addTo(GTRecipeConstants.AssemblyLine);
     }
 
     @Optional.Method(modid = "GalacticraftAmunRa")
