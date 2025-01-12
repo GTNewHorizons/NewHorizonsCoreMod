@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
+import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
@@ -13,6 +14,7 @@ import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static kekztech.common.Blocks.tfftStorageField;
 
 import net.minecraft.item.ItemStack;
@@ -280,21 +282,6 @@ public class SpaceAssemblerRecipes implements Runnable {
                         .fluidInputs(new FluidStack(solderUEV, 1152))
                         .itemOutputs(ItemList.Optically_Compatible_Memory.get(32)).specialValue(2)
                         .duration(20 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
-
-                // Advanced Stocking Input Hatch (ME)
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hatch_Input_Multi_2x2_UEV.get(4L),
-                                getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
-                                ItemList.Optically_Compatible_Memory.get(2),
-                                ItemList.Electric_Pump_UEV.get(1L),
-                                // 16384k Me Fluid Storage Component
-                                getModItem(AE2FluidCraft.ID, "fluid_part", 4, 7),
-                                // Hyper-Acceleration Card
-                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56))
-                        .fluidInputs(new FluidStack(solderUEV, 2304))
-                        .itemOutputs(ItemList.Hatch_Input_ME_Advanced.get(1)).specialValue(1).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
             }
 
             if (OpenComputers.isModLoaded()) {
@@ -327,6 +314,61 @@ public class SpaceAssemblerRecipes implements Runnable {
                         .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockPatternOptimizationMatrix", 1))
                         .specialValue(1).duration(5 * MINUTES).eut(TierEU.RECIPE_UHV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+                // Advanced Stocking Input Hatch (ME)
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                ItemList.Hatch_Input_Multi_2x2_UHV.get(4L),
+                                getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
+                                ItemList.Circuit_Chip_BioCPU.get(1),
+                                ItemList.Electric_Pump_UHV.get(1L),
+                                // 16384k Me Fluid Storage Component
+                                getModItem(AE2FluidCraft.ID, "fluid_part", 4, 7),
+                                // Hyper-Acceleration Card
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56))
+                        .fluidInputs(new FluidStack(solderUEV, 2304))
+                        .itemOutputs(ItemList.Hatch_Input_ME_Advanced.get(1)).specialValue(1).duration(15 * SECONDS)
+                        .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+                // Crafting Input Buffer (ME)
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1),
+                                ItemList.Hatch_Input_Multi_2x2_UEV.get(1),
+                                // 16384k storage component
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
+                                // 16384k Me Fluid Storage Component
+                                getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                                // ME Controller
+                                getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, WILDCARD),
+                                // Dual Interface
+                                getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, WILDCARD),
+                                // Pattern capacity card
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54))
+                        .fluidInputs(new FluidStack(solderUEV, 2304), Materials.Grade7PurifiedWater.getFluid(4000))
+                        .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME.get(1)).specialValue(1).duration(15 * SECONDS)
+                        .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+                if (AE2Stuff.isModLoaded()) {
+                    // Crafting Input Proxy
+                    GTValues.RA.stdBuilder().itemInputs(
+                            ItemList.Hatch_CraftingInput_Bus_ME.get(1),
+                            // 64 Core Co-Processing Unit
+                            getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingUnit", 1, 0),
+                            // 16384k storage component
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
+                            // 16384k Me Fluid Storage Component
+                            getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                            // Wireless Connector
+                            getModItem(AE2Stuff.ID, "Wireless", 2, 0),
+                            ItemList.Sensor_UEV.get(1),
+                            ItemList.EnergisedTesseract.get(1))
+                            .fluidInputs(
+                                    new FluidStack(solderUEV, 2304),
+                                    MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(4000))
+                            .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).specialValue(2)
+                            .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                }
             }
 
             if (AppliedEnergistics2.isModLoaded()) {
