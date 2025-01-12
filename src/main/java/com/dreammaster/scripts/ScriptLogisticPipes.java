@@ -1365,15 +1365,15 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Logistics Disk
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemDisk", 1, 0, missing),
-                "plateCarbon",
-                "plateCarbon",
-                "plateCarbon",
-                "plateCarbon",
+                "platePlastic",
+                "platePlastic",
+                "platePlastic",
+                "platePlastic",
                 getModItem(OpenComputers.ID, "item", 1, 19, missing),
-                "plateCarbon",
-                "plateCarbon",
-                "circuitULV",
-                "plateCarbon");
+                "platePlastic",
+                "platePlastic",
+                "circuitPrimitive",
+                "platePlastic");
 
         // Logistics HUD Glasses
         addShapedRecipe(
