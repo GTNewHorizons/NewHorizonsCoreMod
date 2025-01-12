@@ -36,6 +36,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.avaritia.AvaritiaHelper;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
@@ -1781,7 +1782,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
                 "plateGlowstone",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
-                com.dreammaster.item.ItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
+                NHItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
                 "plateGlowstone",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 9, missing),
@@ -1792,7 +1793,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
                 "plateEnderPearl",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
-                com.dreammaster.item.ItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
+                NHItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
                 "plateEnderPearl",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 32, missing),
@@ -1803,7 +1804,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
                 "plateEnderEye",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
-                com.dreammaster.item.ItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
+                NHItemList.EngineeringProcessorSpatialPulsatingCore.getIS(1),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),
                 "plateEnderEye",
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 33, missing),

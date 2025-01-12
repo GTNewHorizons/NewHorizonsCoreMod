@@ -15,7 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.dreammaster.item.ItemList;
+import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.util.GTModHandler;
@@ -28,37 +28,37 @@ public class OreDictHandler {
 
     public static void register_space_dust() {
 
-        reg_dust(OreDictTypes.Asteroids.name(), ItemList.AsteroidsStoneDust.getIS());
-        reg_dust(OreDictTypes.BarnardaE.name(), ItemList.BarnardaEStoneDust.getIS());
-        reg_dust(OreDictTypes.BarnardaF.name(), ItemList.BarnardaFStoneDust.getIS());
-        reg_dust(OreDictTypes.Callisto.name(), ItemList.CallistoStoneDust.getIS());
-        reg_dust(OreDictTypes.CentauriA.name(), ItemList.CentauriAStoneDust.getIS());
-        reg_dust(OreDictTypes.CentauriA.name(), ItemList.CentauriASurfaceDust.getIS());
-        reg_dust(OreDictTypes.Ceres.name(), ItemList.CeresStoneDust.getIS());
-        reg_dust(OreDictTypes.Deimos.name(), ItemList.DeimosStoneDust.getIS());
-        reg_dust(OreDictTypes.Enceladus.name(), ItemList.EnceladusStoneDust.getIS());
-        reg_dust(OreDictTypes.Enceladus.name(), ItemList.EnceladusIceDust.getIS());
-        reg_dust(OreDictTypes.Europa.name(), ItemList.EuropaIceDust.getIS());
-        reg_dust(OreDictTypes.Europa.name(), ItemList.EuropaStoneDust.getIS());
-        reg_dust(OreDictTypes.Ganymede.name(), ItemList.GanymedeStoneDust.getIS());
-        reg_dust(OreDictTypes.Haumea.name(), ItemList.HaumeaStoneDust.getIS());
-        reg_dust(OreDictTypes.Io.name(), ItemList.IoStoneDust.getIS());
-        reg_dust(OreDictTypes.MakeMake.name(), ItemList.MakeMakeStoneDust.getIS());
-        reg_dust(OreDictTypes.Mars.name(), ItemList.MarsStoneDust.getIS());
-        reg_dust(OreDictTypes.PlanetMercury.name(), ItemList.MercuryStoneDust.getIS());
-        reg_dust(OreDictTypes.PlanetMercury.name(), ItemList.MercuryCoreDust.getIS());
-        reg_dust(OreDictTypes.Miranda.name(), ItemList.MirandaStoneDust.getIS());
-        reg_dust(OreDictTypes.Moon.name(), ItemList.MoonStoneDust.getIS());
-        reg_dust(OreDictTypes.Oberon.name(), ItemList.OberonStoneDust.getIS());
-        reg_dust(OreDictTypes.Phobos.name(), ItemList.PhobosStoneDust.getIS());
-        reg_dust(OreDictTypes.Pluto.name(), ItemList.PlutoIceDust.getIS());
-        reg_dust(OreDictTypes.Pluto.name(), ItemList.PlutoStoneDust.getIS());
-        reg_dust(OreDictTypes.Proteus.name(), ItemList.ProteusStoneDust.getIS());
-        reg_dust(OreDictTypes.TcetiE.name(), ItemList.TCetiEStoneDust.getIS());
-        reg_dust(OreDictTypes.Titan.name(), ItemList.TitanStoneDust.getIS());
-        reg_dust(OreDictTypes.Triton.name(), ItemList.TritonStoneDust.getIS());
-        reg_dust(OreDictTypes.VegaB.name(), ItemList.VegaBStoneDust.getIS());
-        reg_dust(OreDictTypes.Venus.name(), ItemList.VenusStoneDust.getIS());
+        reg_dust(OreDictTypes.Asteroids.name(), NHItemList.AsteroidsStoneDust.getIS());
+        reg_dust(OreDictTypes.BarnardaE.name(), NHItemList.BarnardaEStoneDust.getIS());
+        reg_dust(OreDictTypes.BarnardaF.name(), NHItemList.BarnardaFStoneDust.getIS());
+        reg_dust(OreDictTypes.Callisto.name(), NHItemList.CallistoStoneDust.getIS());
+        reg_dust(OreDictTypes.CentauriA.name(), NHItemList.CentauriAStoneDust.getIS());
+        reg_dust(OreDictTypes.CentauriA.name(), NHItemList.CentauriASurfaceDust.getIS());
+        reg_dust(OreDictTypes.Ceres.name(), NHItemList.CeresStoneDust.getIS());
+        reg_dust(OreDictTypes.Deimos.name(), NHItemList.DeimosStoneDust.getIS());
+        reg_dust(OreDictTypes.Enceladus.name(), NHItemList.EnceladusStoneDust.getIS());
+        reg_dust(OreDictTypes.Enceladus.name(), NHItemList.EnceladusIceDust.getIS());
+        reg_dust(OreDictTypes.Europa.name(), NHItemList.EuropaIceDust.getIS());
+        reg_dust(OreDictTypes.Europa.name(), NHItemList.EuropaStoneDust.getIS());
+        reg_dust(OreDictTypes.Ganymede.name(), NHItemList.GanymedeStoneDust.getIS());
+        reg_dust(OreDictTypes.Haumea.name(), NHItemList.HaumeaStoneDust.getIS());
+        reg_dust(OreDictTypes.Io.name(), NHItemList.IoStoneDust.getIS());
+        reg_dust(OreDictTypes.MakeMake.name(), NHItemList.MakeMakeStoneDust.getIS());
+        reg_dust(OreDictTypes.Mars.name(), NHItemList.MarsStoneDust.getIS());
+        reg_dust(OreDictTypes.PlanetMercury.name(), NHItemList.MercuryStoneDust.getIS());
+        reg_dust(OreDictTypes.PlanetMercury.name(), NHItemList.MercuryCoreDust.getIS());
+        reg_dust(OreDictTypes.Miranda.name(), NHItemList.MirandaStoneDust.getIS());
+        reg_dust(OreDictTypes.Moon.name(), NHItemList.MoonStoneDust.getIS());
+        reg_dust(OreDictTypes.Oberon.name(), NHItemList.OberonStoneDust.getIS());
+        reg_dust(OreDictTypes.Phobos.name(), NHItemList.PhobosStoneDust.getIS());
+        reg_dust(OreDictTypes.Pluto.name(), NHItemList.PlutoIceDust.getIS());
+        reg_dust(OreDictTypes.Pluto.name(), NHItemList.PlutoStoneDust.getIS());
+        reg_dust(OreDictTypes.Proteus.name(), NHItemList.ProteusStoneDust.getIS());
+        reg_dust(OreDictTypes.TcetiE.name(), NHItemList.TCetiEStoneDust.getIS());
+        reg_dust(OreDictTypes.Titan.name(), NHItemList.TitanStoneDust.getIS());
+        reg_dust(OreDictTypes.Triton.name(), NHItemList.TritonStoneDust.getIS());
+        reg_dust(OreDictTypes.VegaB.name(), NHItemList.VegaBStoneDust.getIS());
+        reg_dust(OreDictTypes.Venus.name(), NHItemList.VenusStoneDust.getIS());
 
         if (GalaxySpace.isModLoaded()) {
             Item glowstoneDusts = GameRegistry.findItem(GalaxySpace.ID, "item.GlowstoneDusts");
@@ -174,9 +174,9 @@ public class OreDictHandler {
             OreDictionary.registerOre("logWood", GameRegistry.findBlock(PamsHarvestTheNether.ID, "netherLog"));
         }
 
-        OreDictionary.registerOre("foodSalt", ItemList.EdibleSalt.getIS());
+        OreDictionary.registerOre("foodSalt", NHItemList.EdibleSalt.getIS());
 
-        OreDictionary.registerOre("ingotHotBrickNether", ItemList.HotNetherrackBrick.getIS());
+        OreDictionary.registerOre("ingotHotBrickNether", NHItemList.HotNetherrackBrick.getIS());
 
         // Olivine = Peridot
         for (ItemStack stack : OreDictionary.getOres("blockOlivine")) {

@@ -33,6 +33,7 @@ import net.minecraft.item.ItemStack;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -152,11 +153,10 @@ public class CompressorRecipes implements Runnable {
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.BioBall.get(1L))
-                .itemOutputs(com.dreammaster.item.ItemList.CompressedBioBall.getIS(1)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(NHItemList.CompressedBioBall.getIS(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BioOrganicMesh.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.BioCarbonPlate.getIS(1)).duration(15 * SECONDS).eut(2)
-                .addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.getIS(1))
+                .itemOutputs(NHItemList.BioCarbonPlate.getIS(1)).duration(15 * SECONDS).eut(2).addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing)).duration(15 * SECONDS)

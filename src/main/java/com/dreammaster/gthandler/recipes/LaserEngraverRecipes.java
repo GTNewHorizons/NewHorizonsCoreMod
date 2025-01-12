@@ -15,6 +15,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.enums.GTValues;
@@ -161,8 +162,8 @@ public class LaserEngraverRecipes implements Runnable {
                 .itemInputs(
                         ItemList.Circuit_Wafer_SoC2.get(1L),
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
-                .itemOutputs(com.dreammaster.item.ItemList.RawPicoWafer.getIS()).requiresCleanRoom()
-                .duration(5 * MINUTES).eut((GTValues.V[8] - (GTValues.V[8] / 10))).addTo(laserEngraverRecipes);
+                .itemOutputs(NHItemList.RawPicoWafer.getIS()).requiresCleanRoom().duration(5 * MINUTES)
+                .eut((GTValues.V[8] - (GTValues.V[8] / 10))).addTo(laserEngraverRecipes);
 
         // Optical Boule
         GTValues.RA.stdBuilder().itemInputs(

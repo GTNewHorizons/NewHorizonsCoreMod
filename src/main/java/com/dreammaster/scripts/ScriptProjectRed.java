@@ -52,6 +52,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.chisel.ChiselHelper;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.GregTechAPI;
@@ -194,7 +195,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "itemCasingSteel",
                 ItemList.Electric_Motor_LV.get(1L),
                 "itemCasingSteel",
-                com.dreammaster.item.ItemList.DiamondDrillTip.getIS(1),
+                NHItemList.DiamondDrillTip.getIS(1),
                 getModItem(IndustrialCraft2.ID, "blockMiningPipe", 1, 0, missing),
                 "circuitBasic",
                 "itemCasingSteel",
@@ -284,7 +285,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                com.dreammaster.item.ItemList.SawBladeRuby.getIS(1),
+                NHItemList.SawBladeRuby.getIS(1),
                 "stickSteel",
                 null,
                 null,
@@ -295,7 +296,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                com.dreammaster.item.ItemList.SawBladeSapphire.getIS(1),
+                NHItemList.SawBladeSapphire.getIS(1),
                 "stickSteel",
                 null,
                 null,
@@ -306,7 +307,7 @@ public class ScriptProjectRed implements IScriptLoader {
                 "stickSteel",
                 "stickSteel",
                 "stickWood",
-                com.dreammaster.item.ItemList.SawBladePeridot.getIS(1),
+                NHItemList.SawBladePeridot.getIS(1),
                 "stickSteel",
                 null,
                 null,
@@ -3766,19 +3767,19 @@ public class ScriptProjectRed implements IScriptLoader {
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
+                        NHItemList.ElectrotineWire.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
+                        NHItemList.ElectrotineWire.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StyreneButadieneRubber, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
+                        NHItemList.ElectrotineWire.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silicone, 1L))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .duration(5 * SECONDS).eut(8).addTo(packagerRecipes);
@@ -3791,7 +3792,7 @@ public class ScriptProjectRed implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 34, missing))
                 .itemOutputs(
-                        com.dreammaster.item.ItemList.ElectrotineWire.getIS(1),
+                        NHItemList.ElectrotineWire.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1))
                 .duration(5 * SECONDS).eut(8).addTo(unpackagerRecipes);
         GTValues.RA.stdBuilder()
