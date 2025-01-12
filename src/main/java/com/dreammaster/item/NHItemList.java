@@ -9,7 +9,7 @@ import com.dreammaster.main.MainRegistry;
 import eu.usrv.yamcore.items.ModItemManager;
 import eu.usrv.yamcore.items.ModSimpleBaseItem;
 
-public enum ItemList {
+public enum NHItemList {
 
     MicaBasedPulp(new ModSimpleBaseItem("MicaBasedPulp", ModTabList.ModGenericTab)),
     MicaBasedSheet(new ModSimpleBaseItem("MicaBasedSheet", ModTabList.ModGenericTab)),
@@ -580,7 +580,7 @@ public enum ItemList {
     // ################################################################################
     public ModSimpleBaseItem Item;
 
-    ItemList(ModSimpleBaseItem pItem) {
+    NHItemList(ModSimpleBaseItem pItem) {
         Item = pItem;
         if (Item != null) {
             Item.setModIDName(Refstrings.MODID);
@@ -589,7 +589,7 @@ public enum ItemList {
 
     public static boolean AddToItemManager(ModItemManager pItemManager) {
         boolean tResult = true;
-        for (ItemList il : ItemList.values()) {
+        for (NHItemList il : NHItemList.values()) {
             if (il.Item != null) {
                 if (!pItemManager.AddItemToManagedRegistry(il.Item)) {
                     MainRegistry.Logger.error(String.format("Item [%s] failed to register", il.toString()));

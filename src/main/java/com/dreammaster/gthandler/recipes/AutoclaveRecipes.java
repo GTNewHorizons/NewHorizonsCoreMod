@@ -1,6 +1,8 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.EnderZoo;
+import static gregtech.api.enums.Mods.GalacticraftMars;
+import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -10,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -151,8 +154,8 @@ public class AutoclaveRecipes implements Runnable {
                 .fluidInputs(Materials.UUMatter.getFluid(250L)).requiresCleanRoom().requiresLowGravity()
                 .duration(10 * MINUTES).eut(TierEU.RECIPE_EV).addTo(autoclaveRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.StargateDustAncients.getIS().splitStack(64))
-                .itemOutputs(com.dreammaster.item.ItemList.StargateCrystalAncients.getIS()).outputChances(10000)
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateDustAncients.getIS().splitStack(64))
+                .itemOutputs(NHItemList.StargateCrystalAncients.getIS()).outputChances(10000)
                 .fluidInputs(Materials.Silver.getPlasma(8000L)).requiresCleanRoom().requiresLowGravity()
                 .duration(3 * MINUTES).eut(TierEU.RECIPE_ZPM).addTo(autoclaveRecipes);
     }
