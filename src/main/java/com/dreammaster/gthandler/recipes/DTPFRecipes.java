@@ -758,12 +758,12 @@ public class DTPFRecipes implements Runnable {
 
                 if (GalacticraftAmunRa.isModLoaded()) {
                     // Dark Matter
-                    GTValues.RA.stdBuilder()
-                            .itemInputs(
-                                    GTUtility.getIntegratedCircuit(4),
-                                    GTOreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 16),
-                                    GTModHandler.getModItem(Avaritia.ID, "Resource", 16L, 8),
-                                    GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
+                    GTValues.RA.stdBuilder().itemInputs(
+
+                            GTOreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 16),
+                            GTModHandler.getModItem(Avaritia.ID, "Resource", 16L, 8),
+                            GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)),
+                            GTUtility.getIntegratedCircuit(4))
                             .fluidInputs(
                                     MaterialsUEVplus.ExcitedDTEC.getFluid(1797693L),
                                     Materials.CosmicNeutronium.getMolten(16384 * 144),
@@ -779,11 +779,11 @@ public class DTPFRecipes implements Runnable {
             // Quantum anomaly
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTUtility.getIntegratedCircuit(4),
                             GregtechItemList.Laser_Lens_Special.get(1),
                             new ItemStack(Particle.getBaseParticle(Particle.GRAVITON).getItem(), 4),
                             CustomItemList.MysteriousCrystalLens.get(0),
-                            ItemRefer.HiC_T5.get(0))
+                            ItemRefer.HiC_T5.get(0),
+                            GTUtility.getIntegratedCircuit(4))
                     .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(92), Materials.Tritanium.getMolten(144))
                     .itemOutputs(GregtechItemList.Laser_Lens_Special.get(4)).duration(5 * SECONDS)
                     .fluidOutputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(92))
