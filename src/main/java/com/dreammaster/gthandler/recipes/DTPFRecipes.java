@@ -62,7 +62,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_1_quantity = 144L * base_quantity;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTCC.getFluid(neutronium.getCatalystAmount(0)),
                                 Materials.Iron.getMolten(tier_1_quantity))
@@ -75,7 +75,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTPC.getFluid(neutronium.getCatalystAmount(1)),
                                 Materials.Iron.getMolten(tier_2_quantity))
@@ -88,7 +88,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTRC.getFluid(neutronium.getCatalystAmount(2)),
                                 Materials.Iron.getMolten(tier_3_quantity))
@@ -104,7 +104,7 @@ public class DTPFRecipes implements Runnable {
                         * tier_up_multiplier
                         * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTEC.getFluid(neutronium.getCatalystAmount(3)),
                                 Materials.Iron.getMolten(tier_4_quantity))
@@ -136,7 +136,7 @@ public class DTPFRecipes implements Runnable {
                     GTValues.RA.stdBuilder()
                             .itemInputs(
                                     GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
-                                    GTUtility.getIntegratedCircuit(1))
+                                    GTUtility.getIntegratedCircuit(11))
                             .fluidInputs(
                                     MaterialsUEVplus.ExcitedDTCC.getFluid(cosmic_neutronium_bee.getCatalystAmount(0)),
                                     Materials.Copper.getMolten(tier_1_quantity))
@@ -152,7 +152,7 @@ public class DTPFRecipes implements Runnable {
                     GTValues.RA.stdBuilder()
                             .itemInputs(
                                     GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
-                                    GTUtility.getIntegratedCircuit(1))
+                                    GTUtility.getIntegratedCircuit(12))
                             .fluidInputs(
                                     MaterialsUEVplus.ExcitedDTPC.getFluid(cosmic_neutronium_bee.getCatalystAmount(1)),
                                     Materials.Copper.getMolten(tier_2_bee_quantity))
@@ -168,7 +168,7 @@ public class DTPFRecipes implements Runnable {
                     GTValues.RA.stdBuilder()
                             .itemInputs(
                                     GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
-                                    GTUtility.getIntegratedCircuit(1))
+                                    GTUtility.getIntegratedCircuit(13))
                             .fluidInputs(
                                     MaterialsUEVplus.ExcitedDTRC.getFluid(cosmic_neutronium_bee.getCatalystAmount(2)),
                                     Materials.Copper.getMolten(tier_3_bee_quantity))
@@ -187,7 +187,7 @@ public class DTPFRecipes implements Runnable {
                     GTValues.RA.stdBuilder()
                             .itemInputs(
                                     GTBees.combs.getStackForType(CombType.COSMICNEUTRONIUM),
-                                    GTUtility.getIntegratedCircuit(1))
+                                    GTUtility.getIntegratedCircuit(14))
                             .fluidInputs(
                                     MaterialsUEVplus.ExcitedDTEC.getFluid(cosmic_neutronium_bee.getCatalystAmount(3)),
                                     Materials.Copper.getMolten(tier_4_bee_quantity))
@@ -204,7 +204,7 @@ public class DTPFRecipes implements Runnable {
                 DTPFCalculator cosmic_neutronium = new DTPFCalculator().setBaseParallel(base_quantity)
                         .calculateGenericEBFBasedRecipe(Materials.CosmicNeutronium);
 
-                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTCC.getFluid(cosmic_neutronium.getCatalystAmount(0)),
                                 Materials.Copper.getMolten(tier_1_quantity))
@@ -217,7 +217,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTPC.getFluid(cosmic_neutronium.getCatalystAmount(1)),
                                 Materials.Copper.getMolten(tier_2_quantity))
@@ -230,7 +230,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTRC.getFluid(cosmic_neutronium.getCatalystAmount(2)),
                                 Materials.Copper.getMolten(tier_3_quantity))
@@ -269,7 +269,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_1_quantity = 144L * base_quantity;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTCC.getFluid(bedrockium.getCatalystAmount(0)),
                                 Materials.Steel.getMolten(tier_1_quantity))
@@ -282,7 +282,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_2_quantity = tier_1_quantity * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTPC.getFluid(bedrockium.getCatalystAmount(1)),
                                 Materials.Steel.getMolten(tier_2_quantity))
@@ -295,7 +295,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_3_quantity = tier_2_quantity * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTRC.getFluid(bedrockium.getCatalystAmount(2)),
                                 Materials.Steel.getMolten(tier_3_quantity))
@@ -308,7 +308,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTEC.getFluid(bedrockium.getCatalystAmount(3)),
                                 Materials.Steel.getMolten(tier_4_quantity))
@@ -321,7 +321,7 @@ public class DTPFRecipes implements Runnable {
             }
 
             // Hypogen v1
-            GTValues.RA.stdBuilder()
+            GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                     .fluidInputs(
                             new FluidStack(MaterialsElements.STANDALONE.HYPOGEN.getFluid(), 144),
                             Materials.Neutronium.getMolten(5760L),
@@ -335,7 +335,7 @@ public class DTPFRecipes implements Runnable {
                     .addTo(plasmaForgeRecipes);
 
             // Hypogen v2
-            GTValues.RA.stdBuilder()
+            GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
                     .fluidInputs(
                             Materials.Neutronium.getMolten(5760L),
                             new FluidStack(MaterialsAlloy.QUANTUM.getFluid(), 5760),
@@ -348,7 +348,8 @@ public class DTPFRecipes implements Runnable {
                     .addTo(plasmaForgeRecipes);
 
             // Hypogen v3
-            GTValues.RA.stdBuilder().itemInputs(GregtechItemList.Compressed_Fusion_Reactor.get(0))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTUtility.getIntegratedCircuit(4), GregtechItemList.Compressed_Fusion_Reactor.get(0))
                     .fluidInputs(
                             Materials.Neutronium.getMolten(5760L),
                             new FluidStack(MaterialsAlloy.QUANTUM.getFluid(), 5760),
@@ -361,7 +362,8 @@ public class DTPFRecipes implements Runnable {
                     .addTo(plasmaForgeRecipes);
 
             // Hypogen v4
-            GTValues.RA.stdBuilder().itemInputs(GregtechItemList.Compressed_Fusion_Reactor.get(0))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTUtility.getIntegratedCircuit(5), GregtechItemList.Compressed_Fusion_Reactor.get(0))
                     .fluidInputs(
                             Materials.Neutronium.getMolten(5760L * 2),
                             new FluidStack(MaterialsAlloy.QUANTUM.getFluid(), 5760),
@@ -384,7 +386,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_1_quantity = 144L * base_quantity;
 
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTCC.getFluid(chromatic_glass.getCatalystAmount(0)),
                                 Materials.Glass.getMolten(tier_1_quantity))
@@ -396,7 +398,7 @@ public class DTPFRecipes implements Runnable {
                         .metadata(COIL_HEAT, awakened_heat).addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = tier_1_quantity * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTPC.getFluid(chromatic_glass.getCatalystAmount(1)),
                                 Materials.Glass.getMolten(tier_2_quantity))
@@ -408,7 +410,7 @@ public class DTPFRecipes implements Runnable {
                         .metadata(COIL_HEAT, infinity_heat).addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = tier_2_quantity * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTRC.getFluid(chromatic_glass.getCatalystAmount(2)),
                                 Materials.Glass.getMolten(tier_3_quantity))
@@ -420,7 +422,7 @@ public class DTPFRecipes implements Runnable {
                         .metadata(COIL_HEAT, hypogen_heat).addTo(plasmaForgeRecipes);
 
                 long tier_4_quantity = tier_3_quantity * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
                         .fluidInputs(
                                 MaterialsUEVplus.ExcitedDTEC.getFluid(chromatic_glass.getCatalystAmount(3)),
                                 Materials.Glass.getMolten(tier_4_quantity))
@@ -454,6 +456,7 @@ public class DTPFRecipes implements Runnable {
             // 16 Vertices, 24 faces and 32 edges.
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            GTUtility.getIntegratedCircuit(3),
                             GTOreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 8L),
                             MaterialsAlloy.OCTIRON.getRod(8),
                             GGMaterial.tairitsu.get(OrePrefixes.stick, 8),
@@ -469,6 +472,7 @@ public class DTPFRecipes implements Runnable {
             // Raw Tesseract v2
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            GTUtility.getIntegratedCircuit(4),
                             GTOreDictUnificator.get(OrePrefixes.stick, Materials.CosmicNeutronium, 12L),
                             GGMaterial.tairitsu.get(OrePrefixes.stick, 12),
                             GTOreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 8L),
@@ -483,6 +487,7 @@ public class DTPFRecipes implements Runnable {
             // Raw Tesseract v3
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            GTUtility.getIntegratedCircuit(5),
                             GTOreDictUnificator.get(OrePrefixes.stick, MaterialsUEVplus.TranscendentMetal, 32L),
                             MaterialsAlloy.BLACK_TITANIUM.getPlate(24),
                             MaterialsAlloy.ZERON_100.getScrew(16),
@@ -501,7 +506,10 @@ public class DTPFRecipes implements Runnable {
                     .calculateNonEBFRecipe(total_EU_per_ingot / recipe_time, recipe_time);
 
             GTValues.RA.stdBuilder()
-                    .itemInputs(ItemList.Tesseract.get(32), GTOreDictUnificator.get("blockCosmicNeutronium", 40))
+                    .itemInputs(
+                            GTUtility.getIntegratedCircuit(5),
+                            ItemList.Tesseract.get(32),
+                            GTOreDictUnificator.get("blockCosmicNeutronium", 40))
                     .itemOutputs(
                             MaterialsUEVplus.TranscendentMetal.getBlocks(40),
                             MaterialsUEVplus.TranscendentMetal.getDust(24))
@@ -538,11 +546,13 @@ public class DTPFRecipes implements Runnable {
             DTPFCalculator quantum = new DTPFCalculator().setBaseParallel(320).setLowestCatalystTier(3)
                     .setHighestCatalystTier(4).setEUtDivisor(1.12f)
                     .calculateNonEBFRecipe(total_EUt, recipe_time_per_quantum_ingot);
-            GTValues.RA.stdBuilder().itemInputs(
-                    CI.getEnergyCore(9, 0),
-                    BlockList.Quantinum.getIS(2),
-                    // Quantum Anomaly
-                    GregtechItemList.Laser_Lens_Special.get(2))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTUtility.getIntegratedCircuit(4),
+                            CI.getEnergyCore(9, 0),
+                            BlockList.Quantinum.getIS(2),
+                            // Quantum Anomaly
+                            GregtechItemList.Laser_Lens_Special.get(2))
                     .itemOutputs(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getBlock(2))
                     .fluidInputs(
                             MaterialsAlloy.BLACK_TITANIUM.getFluidStack(144 * 320 * 7 / 10),
@@ -558,11 +568,13 @@ public class DTPFRecipes implements Runnable {
                     .addTo(plasmaForgeRecipes);
 
             // Quantum + Astral Titanium v2
-            GTValues.RA.stdBuilder().itemInputs(
-                    CI.getEnergyCore(9, 0),
-                    BlockList.Quantinum.getIS(4),
-                    // Quantum Anomaly
-                    GregtechItemList.Laser_Lens_Special.get(3))
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTUtility.getIntegratedCircuit(5),
+                            CI.getEnergyCore(9, 0),
+                            BlockList.Quantinum.getIS(4),
+                            // Quantum Anomaly
+                            GregtechItemList.Laser_Lens_Special.get(3))
                     .itemOutputs(MaterialsElements.STANDALONE.ASTRAL_TITANIUM.getBlock(4))
                     .fluidInputs(
                             MaterialsAlloy.BLACK_TITANIUM.getFluidStack(144 * 640 * 7 / 10),
@@ -580,6 +592,7 @@ public class DTPFRecipes implements Runnable {
             // Timepiece
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            GTUtility.getIntegratedCircuit(5),
                             GregtechItemList.SpaceTimeBendingCore.get(0),
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.DarkIron, 1L),
                             Materials.Dilithium.getGems(32),
@@ -595,6 +608,7 @@ public class DTPFRecipes implements Runnable {
 
             // Time to Space
             GTValues.RA.stdBuilder().itemInputs(
+                    GTUtility.getIntegratedCircuit(5),
                     // Spacetime Continuum Ripper
                     GregtechItemList.SpaceTimeContinuumRipper.get(0),
                     ItemList.EnergisedTesseract.get(2),
@@ -611,6 +625,7 @@ public class DTPFRecipes implements Runnable {
 
             // Space to Time
             GTValues.RA.stdBuilder().itemInputs(
+                    GTUtility.getIntegratedCircuit(5),
                     // Spacetime Continuum Ripper
                     GregtechItemList.SpaceTimeContinuumRipper.get(0),
                     ItemList.EnergisedTesseract.get(2),
@@ -640,7 +655,7 @@ public class DTPFRecipes implements Runnable {
                             .itemInputs(
                                     GTModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5),
                                     GTBees.combs.getStackForType(CombType.INFINITY),
-                                    GTUtility.getIntegratedCircuit(3))
+                                    GTUtility.getIntegratedCircuit(15))
                             .fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(infinity_bee.getCatalystAmount(4)))
                             .fluidOutputs(
                                     MaterialsUEVplus.DimensionallyTranscendentResidue
@@ -653,7 +668,7 @@ public class DTPFRecipes implements Runnable {
                             .itemInputs(
                                     GTModHandler.getModItem(Avaritia.ID, "Resource", 2L, 5),
                                     GTBees.combs.getStackForType(CombType.INFINITY),
-                                    GTUtility.getIntegratedCircuit(3))
+                                    GTUtility.getIntegratedCircuit(14))
                             .fluidInputs(MaterialsUEVplus.ExcitedDTEC.getFluid(infinity_bee.getCatalystAmount(3)))
                             .fluidOutputs(
                                     MaterialsUEVplus.DimensionallyTranscendentResidue
@@ -666,7 +681,7 @@ public class DTPFRecipes implements Runnable {
                             .itemInputs(
                                     GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
                                     GTBees.combs.getStackForType(CombType.INFINITY),
-                                    GTUtility.getIntegratedCircuit(2))
+                                    GTUtility.getIntegratedCircuit(13))
                             .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2)))
                             .fluidOutputs(
                                     MaterialsUEVplus.DimensionallyTranscendentResidue
@@ -679,7 +694,7 @@ public class DTPFRecipes implements Runnable {
                             .itemInputs(
                                     GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
                                     GTBees.combs.getStackForType(CombType.INFINITY),
-                                    GTUtility.getIntegratedCircuit(3))
+                                    GTUtility.getIntegratedCircuit(12))
                             .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity_bee.getCatalystAmount(2) / 64))
                             .fluidOutputs(
                                     MaterialsUEVplus.DimensionallyTranscendentResidue
@@ -696,7 +711,7 @@ public class DTPFRecipes implements Runnable {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                GTUtility.getIntegratedCircuit(4))
+                                GTUtility.getIntegratedCircuit(3))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2) / 64))
                         .fluidOutputs(
                                 MaterialsUEVplus.DimensionallyTranscendentResidue
@@ -708,7 +723,7 @@ public class DTPFRecipes implements Runnable {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                GTUtility.getIntegratedCircuit(1))
+                                GTUtility.getIntegratedCircuit(23))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2)))
                         .fluidOutputs(
                                 MaterialsUEVplus.DimensionallyTranscendentResidue
@@ -732,7 +747,7 @@ public class DTPFRecipes implements Runnable {
                 GTValues.RA.stdBuilder()
                         .itemInputs(
                                 GTModHandler.getModItem(Avaritia.ID, "Resource", 4L, 5),
-                                GTUtility.getIntegratedCircuit(4))
+                                GTUtility.getIntegratedCircuit(5))
                         .fluidInputs(MaterialsUEVplus.ExcitedDTSC.getFluid(infinity.getCatalystAmount(4)))
                         .fluidOutputs(
                                 MaterialsUEVplus.DimensionallyTranscendentResidue
@@ -745,6 +760,7 @@ public class DTPFRecipes implements Runnable {
                     // Dark Matter
                     GTValues.RA.stdBuilder()
                             .itemInputs(
+                                    GTUtility.getIntegratedCircuit(4),
                                     GTOreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.TranscendentMetal, 16),
                                     GTModHandler.getModItem(Avaritia.ID, "Resource", 16L, 8),
                                     GTUtility.copyAmount(0, Particle.getBaseParticle(Particle.HIGGS_BOSON)))
@@ -763,6 +779,7 @@ public class DTPFRecipes implements Runnable {
             // Quantum anomaly
             GTValues.RA.stdBuilder()
                     .itemInputs(
+                            GTUtility.getIntegratedCircuit(4),
                             GregtechItemList.Laser_Lens_Special.get(1),
                             new ItemStack(Particle.getBaseParticle(Particle.GRAVITON).getItem(), 4),
                             CustomItemList.MysteriousCrystalLens.get(0),
@@ -783,7 +800,7 @@ public class DTPFRecipes implements Runnable {
                                 Materials.Tetraindiumditindibariumtitaniumheptacoppertetrakaidekaoxid);
 
                 long tier_1_quantity = 144L * base_quantity;
-                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(6))
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(21))
                         .fluidInputs(
                                 Materials.Indium.getMolten(4L * tier_1_quantity / 30),
                                 Materials.Tin.getMolten(2L * tier_1_quantity / 30),
@@ -800,7 +817,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(6))
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(22))
                         .fluidInputs(
                                 Materials.Indium.getMolten(4L * tier_2_quantity / 30),
                                 Materials.Tin.getMolten(2L * tier_2_quantity / 30),
@@ -817,7 +834,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(6))
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(23))
                         .fluidInputs(
                                 Materials.Indium.getMolten(4L * tier_3_quantity / 30),
                                 Materials.Tin.getMolten(2L * tier_3_quantity / 30),
@@ -837,7 +854,7 @@ public class DTPFRecipes implements Runnable {
                         * tier_up_multiplier
                         * tier_up_multiplier
                         * tier_up_multiplier;
-                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(6))
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(24))
                         .fluidInputs(
                                 Materials.Indium.getMolten(4L * tier_4_quantity / 30),
                                 Materials.Tin.getMolten(2L * tier_4_quantity / 30),
@@ -864,7 +881,7 @@ public class DTPFRecipes implements Runnable {
                         .calculateGenericEBFBasedRecipe(Materials.Tetranaquadahdiindiumhexaplatiumosminid);
 
                 long tier_1_quantity = 144L * base_quantity;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 Materials.Palladium.getMolten(6L * tier_1_quantity / 13),
                                 Materials.Indium.getMolten(2L * tier_1_quantity / 13),
@@ -878,7 +895,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                         .fluidInputs(
                                 Materials.Palladium.getMolten(6L * tier_2_quantity / 13),
                                 Materials.Indium.getMolten(2L * tier_2_quantity / 13),
@@ -892,7 +909,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
                         .fluidInputs(
                                 Materials.Palladium.getMolten(6L * tier_3_quantity / 13),
                                 Materials.Indium.getMolten(2L * tier_3_quantity / 13),
@@ -909,7 +926,7 @@ public class DTPFRecipes implements Runnable {
                         * tier_up_multiplier
                         * tier_up_multiplier
                         * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
                         .fluidInputs(
                                 Materials.Palladium.getMolten(6L * tier_4_quantity / 13),
                                 Materials.Indium.getMolten(2L * tier_4_quantity / 13),
@@ -933,7 +950,7 @@ public class DTPFRecipes implements Runnable {
                         .calculateGenericEBFBasedRecipe(Materials.Longasssuperconductornameforuvwire);
 
                 long tier_1_quantity = 144L * base_quantity;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
                         .fluidInputs(
                                 Materials.Samarium.getMolten(tier_1_quantity / 9),
                                 Materials.Europium.getMolten(tier_1_quantity / 9),
@@ -947,7 +964,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                         .fluidInputs(
                                 Materials.Samarium.getMolten(tier_2_quantity / 9),
                                 Materials.Europium.getMolten(tier_2_quantity / 9),
@@ -961,7 +978,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
                         .fluidInputs(
                                 Materials.Samarium.getMolten(tier_3_quantity / 9),
                                 Materials.Europium.getMolten(tier_3_quantity / 9),
@@ -978,7 +995,7 @@ public class DTPFRecipes implements Runnable {
                         * tier_up_multiplier
                         * tier_up_multiplier
                         * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
                         .fluidInputs(
                                 Materials.Samarium.getMolten(tier_4_quantity / 9),
                                 Materials.Europium.getMolten(tier_4_quantity / 9),
@@ -1003,7 +1020,7 @@ public class DTPFRecipes implements Runnable {
                         .calculateGenericEBFBasedRecipe(Materials.Longasssuperconductornameforuhvwire);
 
                 long tier_1_quantity = 144L * base_quantity;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                         .fluidInputs(
                                 Materials.Draconium.getMolten(6L * tier_1_quantity / 24),
                                 Materials.Americium.getMolten(6L * tier_1_quantity / 24),
@@ -1017,7 +1034,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
                         .fluidInputs(
                                 Materials.Draconium.getMolten(6L * tier_2_quantity / 24),
                                 Materials.Americium.getMolten(6L * tier_2_quantity / 24),
@@ -1031,7 +1048,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4))
                         .fluidInputs(
                                 Materials.Draconium.getMolten(6L * tier_3_quantity / 24),
                                 Materials.Americium.getMolten(6L * tier_3_quantity / 24),
@@ -1045,7 +1062,7 @@ public class DTPFRecipes implements Runnable {
                         .addTo(plasmaForgeRecipes);
 
                 long tier_4_quantity = 144L * base_quantity * (long) Math.pow(tier_up_multiplier, 3);
-                GTValues.RA.stdBuilder()
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(5))
                         .fluidInputs(
                                 Materials.Draconium.getMolten(6L * tier_4_quantity / 24),
                                 Materials.Americium.getMolten(6L * tier_4_quantity / 24),
@@ -1069,7 +1086,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_1_quantity = 144L * base_quantity;
 
-                GTValues.RA.stdBuilder().fluidInputs(
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3)).fluidInputs(
                         new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_1_quantity / 12),
                         new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_1_quantity / 12),
                         Materials.DraconiumAwakened.getMolten(5L * tier_1_quantity / 12),
@@ -1084,7 +1101,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder().fluidInputs(
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4)).fluidInputs(
                         new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_2_quantity / 12),
                         new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_2_quantity / 12),
                         Materials.DraconiumAwakened.getMolten(5L * tier_2_quantity / 12),
@@ -1099,7 +1116,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder().fluidInputs(
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(5)).fluidInputs(
                         new FluidStack(FluidRegistry.getFluid("molten.advancednitinol"), (int) tier_3_quantity / 12),
                         new FluidStack(FluidRegistry.getFluid("molten.celestialtungsten"), (int) tier_3_quantity / 12),
                         Materials.DraconiumAwakened.getMolten(5L * tier_3_quantity / 12),
@@ -1124,7 +1141,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_1_quantity = 144L * base_quantity;
 
-                GTValues.RA.stdBuilder().fluidInputs(
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3)).fluidInputs(
                         Materials.RadoxPolymer.getMolten(4L * tier_1_quantity / 25),
                         MaterialsUEVplus.TranscendentMetal.getMolten(10L * tier_1_quantity / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_1_quantity * 6 / 25),
@@ -1139,7 +1156,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder().fluidInputs(
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4)).fluidInputs(
                         Materials.RadoxPolymer.getMolten(4L * tier_2_quantity / 25),
                         MaterialsUEVplus.TranscendentMetal.getMolten(10L * tier_2_quantity / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_2_quantity * 6 / 25),
@@ -1154,7 +1171,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_3_quantity = 144L * base_quantity * tier_up_multiplier * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder().fluidInputs(
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(5)).fluidInputs(
                         Materials.RadoxPolymer.getMolten(4L * tier_3_quantity / 25),
                         MaterialsUEVplus.TranscendentMetal.getMolten(10L * tier_3_quantity / 25),
                         new FluidStack(FluidRegistry.getFluid("molten.rhugnor"), (int) tier_3_quantity * 6 / 25),
@@ -1178,7 +1195,7 @@ public class DTPFRecipes implements Runnable {
                         .setHighestCatalystTier(4).calculateGenericEBFBasedRecipe(Materials.SuperconductorUMVBase);
 
                 long tier_1_quantity = 144L * base_quantity;
-                GTValues.RA.stdBuilder().fluidInputs(
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(4)).fluidInputs(
                         MaterialsUEVplus.SpaceTime.getMolten(6L * tier_1_quantity / 27),
                         new FluidStack(FluidRegistry.getFluid("molten.orundum"), (int) tier_1_quantity * 3 / 27),
                         new FluidStack(FluidRegistry.getFluid("molten.hypogen"), (int) tier_1_quantity * 11 / 27),
@@ -1194,7 +1211,7 @@ public class DTPFRecipes implements Runnable {
 
                 long tier_2_quantity = 144L * base_quantity * tier_up_multiplier;
 
-                GTValues.RA.stdBuilder().fluidInputs(
+                GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(5)).fluidInputs(
                         MaterialsUEVplus.SpaceTime.getMolten(6L * tier_2_quantity / 27),
                         new FluidStack(FluidRegistry.getFluid("molten.orundum"), (int) tier_2_quantity * 3 / 27),
                         new FluidStack(FluidRegistry.getFluid("molten.hypogen"), (int) tier_2_quantity * 11 / 27),
