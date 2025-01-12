@@ -37,7 +37,7 @@ public class TConstructHelper {
     }
 
     public static MeltingRecipeAdder getMeltingAdder(Block renderBlock, int renderBlockMeta, int meltingTemperature,
-                                                     String fluidName, int amount) {
+            String fluidName, int amount) {
         return new MeltingRecipeAdder(renderBlock, renderBlockMeta, meltingTemperature, fluidName, amount);
     }
 
