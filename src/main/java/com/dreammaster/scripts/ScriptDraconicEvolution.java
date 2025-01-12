@@ -30,6 +30,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -366,7 +367,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
                 'd',
-                com.dreammaster.item.ItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
+                NHItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
                 'e',
                 getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 1, 1, missing),
                 'f',
@@ -786,7 +787,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDraconiumAwakened",
                 'c',
-                com.dreammaster.item.ItemList.EngravedManyullynCrystalChip.getIS(1),
+                NHItemList.EngravedManyullynCrystalChip.getIS(1),
                 'd',
                 getModItem(DraconicEvolution.ID, "draconiumFluxCapacitor", 1, 1, missing),
                 'e',

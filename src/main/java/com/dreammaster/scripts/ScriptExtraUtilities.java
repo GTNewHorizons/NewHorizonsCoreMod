@@ -41,6 +41,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
@@ -1428,7 +1429,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         missing),
                 new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.ring, Materials.Iridium, 1L),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L),
-                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
+                        NHItemList.EngravedGoldChip.getIS(1),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         new ItemStack(ModItems.itemMagicFeather),
@@ -1438,7 +1439,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         new ItemStack(ModItems.itemMagicFeather),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        com.dreammaster.item.ItemList.EngravedGoldChip.getIS(1),
+                        NHItemList.EngravedGoldChip.getIS(1),
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L), });
         ThaumcraftApi.addInfusionCraftingRecipe(
                 "EXURINGS_CRAFTING",

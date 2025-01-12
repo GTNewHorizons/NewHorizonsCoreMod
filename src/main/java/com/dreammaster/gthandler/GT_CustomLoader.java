@@ -5,7 +5,7 @@ import static gregtech.api.enums.Mods.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.item.ItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.item.food.QuantumBread;
 import com.dreammaster.modfixes.biomesoplenty.BlockHarvestToolFix;
 import com.dreammaster.modfixes.enderIO.FrankenskullFix;
@@ -29,7 +29,7 @@ public class GT_CustomLoader {
 
         ZPM(OrePrefixes.circuit.get(Materials.ZPM), OrePrefixes.wireGt04.get(Materials.YttriumBariumCuprate),
                 Materials.Naquadah, OrePrefixes.wireGt02.get(Materials.Naquadah),
-                OrePrefixes.gemExquisite.get(Materials.GarnetYellow), ItemList.MysteriousCrystal.getIS(),
+                OrePrefixes.gemExquisite.get(Materials.GarnetYellow), NHItemList.MysteriousCrystal.getIS(),
                 "blockGlassZPM", Materials.Iridium, Materials.Naquadah),
 
         UV(OrePrefixes.circuit.get(Materials.UV), OrePrefixes.wireGt08.get(Materials.YttriumBariumCuprate),

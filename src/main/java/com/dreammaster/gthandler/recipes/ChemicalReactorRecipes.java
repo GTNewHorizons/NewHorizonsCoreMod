@@ -25,6 +25,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -60,15 +61,13 @@ public class ChemicalReactorRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Potassium, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(3))
-                .fluidInputs(Materials.Water.getFluid(3000)).fluidOutputs(Materials.Hydrogen.getGas(1000))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_LV).addTo(UniversalChemical);
+                .itemOutputs(NHItemList.PotassiumHydroxideDust.getIS(3)).fluidInputs(Materials.Water.getFluid(3000))
+                .fluidOutputs(Materials.Hydrogen.getGas(1000)).duration(60 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(UniversalChemical);
         // Rock Salt
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        com.dreammaster.item.ItemList.PotassiumHydroxideDust.getIS(),
-                        GTUtility.getIntegratedCircuit(2))
+                .itemInputs(NHItemList.PotassiumHydroxideDust.getIS(), GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(Materials.RockSalt.getDust(1)).fluidInputs(Materials.HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(Materials.Water.getFluid(1000)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(UniversalChemical);
@@ -561,14 +560,14 @@ public class ChemicalReactorRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        com.dreammaster.item.ItemList.RawPicoWafer.getIS(),
+                        NHItemList.RawPicoWafer.getIS(),
                         Materials.MysteriousCrystal.getDust(2),
                         GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.InfinityCatalyst, 1L).copy()
                                 .splitStack(0),
-                        com.dreammaster.item.ItemList.TCetiESeaweedExtract.getIS(1))
-                .itemOutputs(com.dreammaster.item.ItemList.PicoWafer.getIS())
-                .fluidInputs(Materials.Neutronium.getMolten(144L)).duration(2 * MINUTES + 30 * SECONDS)
-                .eut((GTValues.V[9] - (GTValues.V[9] / 10))).addTo(multiblockChemicalReactorRecipes);
+                        NHItemList.TCetiESeaweedExtract.getIS(1))
+                .itemOutputs(NHItemList.PicoWafer.getIS()).fluidInputs(Materials.Neutronium.getMolten(144L))
+                .duration(2 * MINUTES + 30 * SECONDS).eut((GTValues.V[9] - (GTValues.V[9] / 10)))
+                .addTo(multiblockChemicalReactorRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(

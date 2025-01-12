@@ -37,6 +37,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.recipes.Recipe;
@@ -3290,7 +3291,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 800,
                 FluidRegistry.getFluidStack("steel.molten", 576));
         Smeltery.addMelting(
-                com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(1),
+                NHItemList.ExtruderShapeBoat.getIS(1),
                 GameRegistry.findBlock("IC2", "blockMetal"),
                 5,
                 800,
