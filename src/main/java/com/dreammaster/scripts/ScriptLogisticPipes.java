@@ -28,6 +28,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import bartworks.common.loaders.ItemRegistry;
 import gregtech.api.enums.GTValues;
@@ -1304,7 +1305,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 5, missing),
-                            com.dreammaster.item.ItemList.GoldCoreChip.getIS(1),
+                            NHItemList.GoldCoreChip.getIS(1),
                             ItemList.Robot_Arm_MV.get(2L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 2, 0, missing),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 16L),
@@ -1317,7 +1318,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             getModItem(LogisticsPipes.ID, "item.logisticsParts", 1, 7, missing),
-                            com.dreammaster.item.ItemList.DiamondCoreChip.getIS(1),
+                            NHItemList.DiamondCoreChip.getIS(1),
                             ItemList.Robot_Arm_HV.get(1L),
                             getModItem(IndustrialCraft2.ID, "upgradeModule", 4, 0, missing),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.RedSteel, 32L),
@@ -1365,15 +1366,15 @@ public class ScriptLogisticPipes implements IScriptLoader {
         // Logistics Disk
         addShapedRecipe(
                 getModItem(LogisticsPipes.ID, "item.itemDisk", 1, 0, missing),
-                "plateCarbon",
-                "plateCarbon",
-                "plateCarbon",
-                "plateCarbon",
+                "platePlastic",
+                "platePlastic",
+                "platePlastic",
+                "platePlastic",
                 getModItem(OpenComputers.ID, "item", 1, 19, missing),
-                "plateCarbon",
-                "plateCarbon",
-                "circuitULV",
-                "plateCarbon");
+                "platePlastic",
+                "platePlastic",
+                "circuitPrimitive",
+                "platePlastic");
 
         // Logistics HUD Glasses
         addShapedRecipe(

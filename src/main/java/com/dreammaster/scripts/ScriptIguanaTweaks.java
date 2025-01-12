@@ -7,7 +7,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dreammaster.item.ItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.util.GTOreDictUnificator;
 
@@ -55,7 +55,7 @@ public class ScriptIguanaTweaks implements IScriptLoader {
         /*
          * oredict so the recipes modified in iguanatweaks will work those are exceptionnally in iguanatweaks because
          * the items in the recipes are registered at PostInit=
-         */ GTOreDictUnificator.registerOre("toolHeadSawArdite", ItemList.SawBladeArdite.getIS());
-        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", ItemList.SawBladeManyullyn.getIS());
+         */ GTOreDictUnificator.registerOre("toolHeadSawArdite", NHItemList.SawBladeArdite.getIS());
+        GTOreDictUnificator.registerOre("toolHeadSawManyullyn", NHItemList.SawBladeManyullyn.getIS());
     }
 }
