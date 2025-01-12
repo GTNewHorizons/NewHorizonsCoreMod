@@ -329,8 +329,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 // Hyper-Acceleration Card
                                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56))
                         .fluidInputs(new FluidStack(solderUEV, 2304))
-                        .itemOutputs(ItemList.Hatch_Input_ME_Advanced.get(1)).specialValue(1).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .itemOutputs(ItemList.Hatch_Input_ME_Advanced.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 // Crafting Input Buffer (ME)
                 GTValues.RA.stdBuilder()
@@ -348,8 +348,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 // Pattern capacity card
                                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54))
                         .fluidInputs(new FluidStack(solderUEV, 2304), Materials.Grade7PurifiedWater.getFluid(4000))
-                        .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME.get(1)).specialValue(1).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 if (AE2Stuff.isModLoaded()) {
                     // Crafting Input Proxy
@@ -368,8 +368,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                             .fluidInputs(
                                     new FluidStack(solderUEV, 2304),
                                     MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(4000))
-                            .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).specialValue(2)
-                            .duration(15 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                            .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1))
+                            .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(15 * SECONDS).eut(TierEU.RECIPE_UIV)
+                            .addTo(IGRecipeMaps.spaceAssemblerRecipes);
                 }
             }
 
