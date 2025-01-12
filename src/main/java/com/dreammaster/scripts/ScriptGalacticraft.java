@@ -43,6 +43,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import codechicken.nei.PositionedStack;
 import cpw.mods.fml.common.Optional;
@@ -2741,35 +2742,35 @@ public class ScriptGalacticraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.CeresStoneDust.getIS(2),
+                        NHItemList.CeresStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 0)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.IoStoneDust.getIS(2),
+                        NHItemList.IoStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 1)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.EnceladusStoneDust.getIS(2),
+                        NHItemList.EnceladusStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 2)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.ProteusStoneDust.getIS(2),
+                        NHItemList.ProteusStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 3)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         new ItemStack(Items.glowstone_dust, 2),
-                        com.dreammaster.item.ItemList.PlutoStoneDust.getIS(2),
+                        NHItemList.PlutoStoneDust.getIS(2),
                         GTUtility.getIntegratedCircuit(8))
                 .itemOutputs(GTModHandler.getModItem(GalaxySpace.ID, "item.GlowstoneDusts", 1, 4)).duration(4 * SECONDS)
                 .eut(TierEU.RECIPE_HV).addTo(mixerRecipes);

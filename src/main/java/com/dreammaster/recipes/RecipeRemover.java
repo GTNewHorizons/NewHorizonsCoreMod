@@ -31,7 +31,6 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
-import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.Gendustry;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.GraviSuite;
@@ -353,9 +352,6 @@ public class RecipeRemover {
         GTModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 7, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(ExtraUtilities.ID, "decorativeBlock1", 1, 9, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(FloodLights.ID, "rawFilament", 1, 0, missing));
-        GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 4, missing));
-        GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "tile.asteroidsBlock", 1, 4, missing));
-        GTModHandler.removeFurnaceSmelting(getModItem(GalacticraftMars.ID, "item.null", 1, 0, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "chainmail_boots", 1, 0, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(IndustrialCraft2.ID, "blockRubWood", 1, 0, missing));
         GTModHandler.removeFurnaceSmelting(getModItem(Minecraft.ID, "slime_ball", 1, 0, missing));

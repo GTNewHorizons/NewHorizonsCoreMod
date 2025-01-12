@@ -28,6 +28,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.thaumcraft.TCHelper;
 
 import gregtech.api.enums.GTValues;
@@ -216,7 +217,7 @@ public class ScriptEMT implements IScriptLoader {
                 0,
                 0,
                 1,
-                com.dreammaster.item.ItemList.EMT.getIS()).setAutoUnlock().setSpecial()
+                NHItemList.EMT.getIS()).setAutoUnlock().setSpecial()
                         .setPages(new ResearchPage("tc.research_page.ElectricMagicTools")).registerResearchItem();
         TCHelper.removeResearch("Diamond Chainsaw");
         new ResearchItem(

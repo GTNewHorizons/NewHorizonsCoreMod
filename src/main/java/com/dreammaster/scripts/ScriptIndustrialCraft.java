@@ -39,6 +39,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.oredict.OreDictHelper;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -189,7 +190,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IndustrialCraft2.ID, "itemToolMiningLaser", 1, 0, missing),
                 "plateTitanium",
-                com.dreammaster.item.ItemList.LaserEmitter.getIS(1),
+                NHItemList.LaserEmitter.getIS(1),
                 "plateTitanium",
                 "circuitMaster",
                 ItemList.Battery_RE_MV_Cadmium.get(1L),
@@ -551,7 +552,7 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "plateSteel",
                 "screwSteel",
                 "craftingToolWrench",
-                com.dreammaster.item.ItemList.ElectricBoatHull.getIS(1),
+                NHItemList.ElectricBoatHull.getIS(1),
                 "craftingToolScrewdriver",
                 ItemList.Rotor_LV.get(1L),
                 ItemList.Electric_Motor_LV.get(1L),
@@ -1618,33 +1619,32 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 5, missing)).duration(30 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BioChunk.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioChunk.getIS(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCoalChunk", 1, 0, missing)).duration(1 * MINUTES)
                 .eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BioOrganicMesh.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioOrganicMesh.getIS(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 1, 0, missing))
                 .duration(30 * SECONDS).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
-        GTValues.RA.stdBuilder().itemInputs(com.dreammaster.item.ItemList.BioCarbonPlate.getIS(1))
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.getIS(1))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemPartCarbonPlate", 1, 0, missing))
                 .duration(30 * SECONDS).eut(120).specialValue(1000).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(IndustrialCraft2.ID, "itemPartCarbonMesh", 8, 0, missing),
-                        com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
+                        NHItemList.ExtruderShapeBoat.getIS(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 0, missing)).duration(30 * SECONDS).eut(30)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Rubber, 4L),
-                        com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
+                        NHItemList.ExtruderShapeBoat.getIS(0))
                 .itemOutputs(getModItem(IndustrialCraft2.ID, "itemBoat", 1, 1, missing)).duration(10 * SECONDS).eut(16)
                 .addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "iron_ingot", 8, 0, missing),
-                        com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
-                .itemOutputs(com.dreammaster.item.ItemList.ElectricBoatHull.getIS(1)).duration(1 * MINUTES).eut(30)
-                .addTo(extruderRecipes);
+                        NHItemList.ExtruderShapeBoat.getIS(0))
+                .itemOutputs(NHItemList.ElectricBoatHull.getIS(1)).duration(1 * MINUTES).eut(30).addTo(extruderRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.pipeTiny, Materials.Steel, 1L),
