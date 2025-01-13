@@ -311,6 +311,10 @@ public class MainRegistry {
         Logger.warn("==================================================");
 
         MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
+
+        if (TinkerConstruct.isModLoaded()) {
+            TiCoLoader.doPreInitialization();
+        }
     }
 
     private static boolean RegisterNonEnumItems() {
@@ -366,6 +370,10 @@ public class MainRegistry {
         }
 
         VillagerRegistry.instance().registerVillageTradeHandler(2, new NHTradeHandler());
+
+        if (TinkerConstruct.isModLoaded()) {
+            TiCoLoader.doInitialization();
+        }
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();

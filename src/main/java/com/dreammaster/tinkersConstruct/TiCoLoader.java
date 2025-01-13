@@ -2,9 +2,38 @@ package com.dreammaster.tinkersConstruct;
 
 import static gregtech.api.enums.Mods.TinkerConstruct;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
+
+import com.dreammaster.main.NHItems;
 import com.dreammaster.mantle.BookLoader;
+import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOre;
+import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOreItem;
+import com.dreammaster.tinkersConstruct.worldgen.ZincGravelWorldgen;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class TiCoLoader {
+
+    public static void doPreInitialization() {
+        registerZincGravelOre();
+    }
+
+    private static void registerZincGravelOre() {
+        NHItems.ZINC_GRAVEL_ORE = new ZincGravelOre().setBlockName("block.ore.gravel.zinc");
+        NHItems.ZINC_GRAVEL_ORE.setHarvestLevel("shovel", 1, 0);
+        GameRegistry.registerBlock(NHItems.ZINC_GRAVEL_ORE, ZincGravelOreItem.class, "ZincGravelOre");
+        OreDictionary.registerOre("oreZinc", new ItemStack(NHItems.ZINC_GRAVEL_ORE, 1, 0));
+    }
+
+    public static void doInitialization() {
+        registerZincGravelOreWorldGen();
+    }
+
+    private static void registerZincGravelOreWorldGen() {
+        MinecraftForge.TERRAIN_GEN_BUS.register(new ZincGravelWorldgen());
+    }
 
     public static void doPostInitialization() {
         addTiCoManuals();
