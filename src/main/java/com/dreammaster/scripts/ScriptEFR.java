@@ -92,11 +92,15 @@ public class ScriptEFR implements IScriptLoader {
                 new Object[] { "IGI", "PCP", "III", 'I', "plateIron", 'G', "dustGlowstone", 'P', "paneGlassColorless",
                         'C', getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1, 0, missing) });
 
+        GTModHandler.addSmeltingRecipe(
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing));
+
         GTModHandler.addCraftingRecipe(
                 getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 bits,
-                new Object[] { "PPP", "PFP", "SSS", 'S', getModItem(Minecraft.ID, "stone", 1, 0, missing), 'F',
-                        getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
+                new Object[] { "PPP", "PFP", "SSS", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
+                        'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
         GTModHandler.addCraftingRecipe(
                 getModItem(Minecraft.ID, "leather", 1, 0, missing),
                 bits,
