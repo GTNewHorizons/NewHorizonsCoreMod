@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.QFT_CATALYST;
 import static gregtech.api.util.GTRecipeConstants.QFT_FOCUS_TIER;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.quantumForceTransformerRecipes;
 
@@ -30,9 +31,9 @@ import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.item.chemistry.GenericChem;
 import gtPlusPlus.core.material.MaterialsAlloy;
-import gtPlusPlus.core.util.minecraft.ItemUtils;
 import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
@@ -95,11 +96,11 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
-                        ItemList.EnergisedTesseract.get(1),
-                        ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0))
+                        ItemList.EnergisedTesseract.get(1))
                 .itemOutputs(GTOreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
                 .fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
                 .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
+                .metadata(QFT_CATALYST, GTUtility.copyAmount(0, GenericChem.TemporalHarmonyCatalyst))
                 .metadata(QFT_FOCUS_TIER, 4).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(quantumForceTransformerRecipes);
         addForestryRecipes();
