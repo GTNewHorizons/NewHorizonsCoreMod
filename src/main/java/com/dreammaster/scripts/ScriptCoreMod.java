@@ -53,7 +53,6 @@ import com.dreammaster.item.NHItemList;
 import com.dreammaster.main.NHItems;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -65,6 +64,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.FluidType;
 
 public class ScriptCoreMod implements IScriptLoader {
 
@@ -585,8 +585,7 @@ public class ScriptCoreMod implements IScriptLoader {
 
         GTModHandler
                 .addSmeltingRecipe(CustomItemList.UnfiredCokeOvenBrick.get(1L), CustomItemList.CokeOvenBrick.get(1L));
-        TConstructHelper
-                .getMeltingAdder(GameRegistry.findBlock("TConstruct", "MetalBlock"), 7, 500, "aluminumbrass.molten", 72)
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType("AluminumBrass"), 150, 72)
                 .add(
                         Stream.of(
                                 NHItemList.ShapeBolt,
