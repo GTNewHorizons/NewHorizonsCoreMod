@@ -75,6 +75,7 @@ import com.dreammaster.railcraftStones.NH_QuarryPopulator;
 import com.dreammaster.recipes.RecipeRemover;
 import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
+import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
 
@@ -314,6 +315,7 @@ public class MainRegistry {
 
         if (TinkerConstruct.isModLoaded()) {
             TiCoLoader.doPreInitialization();
+            GregTechAPI.sAfterGTPreload.add(SmelteryFluidTypes::registerGregtechFluidTypes);
         }
     }
 
