@@ -12,7 +12,6 @@ import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
-import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
