@@ -3,15 +3,23 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
 
 import com.dreammaster.recipes.CustomItem;
 
+import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptEFR implements IScriptLoader {
 
@@ -65,5 +73,38 @@ public class ScriptEFR implements IScriptLoader {
                     createItemStack(Thaumcraft.ID, "blockWoodenDevice", 1, 8, "{color:" + i + "b}", missing),
                     GTModHandler.getModItem(EtFuturumRequiem.ID, "banner", 1L, i));
         }
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
+                bits,
+                new Object[] { "hPs", "PCP", " P ", 'P', GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
+                        'C', "chestWood" });
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Minecraft.ID, "chest", 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(assemblerRecipes);
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "lantern", 1, 0, missing),
+                bits,
+                new Object[] { "IGI", "PCP", "III", 'I', "plateIron", 'G', "dustGlowstone", 'P', "paneGlassColorless",
+                        'C', getModItem(PamsHarvestCraft.ID, "pamcandleDeco1", 1, 0, missing) });
+
+        GTModHandler.addSmeltingRecipe(
+                getModItem(Minecraft.ID, "stone", 1, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing));
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
+                bits,
+                new Object[] { "PPP", "PFP", "SSS", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
+                        'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
+        GTModHandler.addCraftingRecipe(
+                getModItem(Minecraft.ID, "leather", 1, 0, missing),
+                bits,
+                new Object[] { "SSS", "HHH", "SSS", 'S', getModItem(Minecraft.ID, "string", 1, 0, missing), 'H',
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing) });
     }
 }

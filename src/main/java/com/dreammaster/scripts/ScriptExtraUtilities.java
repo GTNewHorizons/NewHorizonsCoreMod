@@ -689,17 +689,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 0, missing),
                 getModItem(ExtraUtilities.ID, "unstableingot", 1, 2, missing));
         addShapedRecipe(
-                getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing),
-                "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                "craftingToolSaw",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                "chestWood",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                null,
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
-                null);
-        addShapedRecipe(
                 getModItem(ExtraUtilities.ID, "chestMini", 1, 0, missing),
                 "craftingToolHardHammer",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
@@ -1189,12 +1178,6 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 4L))
                 .itemOutputs(getModItem(ExtraUtilities.ID, "decorativeBlock2", 1, 11, missing)).duration(20 * SECONDS)
                 .eut(30).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "chest", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 2L))
-                .itemOutputs(getModItem(ExtraUtilities.ID, "chestFull", 1, 0, missing)).duration(5 * SECONDS).eut(30)
-                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "flint", 1, 0, missing),
