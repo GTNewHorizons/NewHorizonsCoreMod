@@ -525,7 +525,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Dyson Swarm Controller
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    GTModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1),
+                    ItemList.Machine_UV_SolarPanel.get(1),
                     192_000,
                     512,
                     (int) TierEU.RECIPE_UEV,
