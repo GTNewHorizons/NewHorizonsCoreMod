@@ -3,6 +3,7 @@ package com.dreammaster.tinkersConstruct;
 import java.lang.reflect.Field;
 import java.util.Map;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
@@ -33,6 +34,11 @@ public class TConstructHelper {
         Smeltery.getSmeltingList().remove(wrap);
         Smeltery.getTemperatureList().remove(wrap);
         Smeltery.getRenderIndex().remove(wrap);
+    }
+
+    public static MeltingRecipeAdder getMeltingAdder(Block renderBlock, int renderBlockMeta, int meltingTemperature,
+            String fluidName, int amount) {
+        return new MeltingRecipeAdder(renderBlock, renderBlockMeta, meltingTemperature, fluidName, amount);
     }
 
     private static Map<Fluid, Integer[]> smelteryFuelList = null;

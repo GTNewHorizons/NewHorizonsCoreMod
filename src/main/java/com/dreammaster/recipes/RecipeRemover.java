@@ -3257,6 +3257,13 @@ public class RecipeRemover {
                 new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6, missing),
                         getModItem(Natura.ID, "barleyFood", 1, 6, missing) },
                 new Object[0]);
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "leather", 1, 0, missing),
+                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing) },
+                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing) },
+                new Object[0]);
         removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "paintBrush", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "goldenEye", 1, wildcard, missing));
         removeRecipeShapedDelayed(getModItem(Railcraft.ID, "cart.energy.batbox", 1, 0, missing));
