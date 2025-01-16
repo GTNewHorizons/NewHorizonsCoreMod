@@ -979,14 +979,6 @@ public class ScriptIndustrialCraft implements IScriptLoader {
                 "ingotIridium",
                 null,
                 null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 1L),
-                "craftingToolHardHammer",
-                null,
-                null,
-                GTOreDictUnificator.get(OrePrefixes.ingotDouble, Materials.Iridium, 1L),
-                null,
-                null);
 
         addShapedRecipe(
                 createItemStack(
