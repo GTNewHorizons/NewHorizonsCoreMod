@@ -1876,7 +1876,7 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         // Overflow Void Card
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 68, missing),
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 68, missing), // Basic Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 25, missing), // Basic Card
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing), // Calculation Proc.
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing), // Calculation Proc.
                 getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1, 0, missing));
