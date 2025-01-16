@@ -1853,6 +1853,40 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 "plateNetherQuartz",
                 "gemNetherQuartz",
                 "craftingToolFile");
+        // Creative Energy Anchor
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 690, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing), // Cable Anchor
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing)); // Quartz Fiber
+        // Fake Crafting Card
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 66, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing), // Advanced Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing), // Engineering Proc.
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing), // Logic Proc.
+                ItemList.Cover_Crafting.get(1));
+        // Superliminal Acceleration Card
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 67, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing), // Advanced Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing), // Engineering Proc.
+                GTOreDictUnificator.get(OrePrefixes.gem, Materials.Dilithium, 1),
+                ItemList.AcceleratorUV.get(1));
+        // Overflow Void Card
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 68, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 68, missing), // Basic Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing), // Calculation Proc.
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing), // Calculation Proc.
+                getModItem(AppliedEnergistics2.ID, "item.ItemVoidStorageCell", 1, 0, missing));
+        // Equal Distribution Card
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 69, missing),
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 28, missing), // Advanced Card
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing), // Engineering Proc.
+                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 22, missing), // Logic Proc.
+                ItemList.Automation_ItemDistributor_EV.get(1));
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
