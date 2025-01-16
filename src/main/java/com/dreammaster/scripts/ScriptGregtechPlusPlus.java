@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.QFT_CATALYST;
@@ -30,6 +31,7 @@ import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.item.chemistry.GenericChem;
@@ -108,6 +110,83 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Optional.Method(modid = Mods.Names.FORESTRY)
     private void addForestryRecipes() {
+
+        // Arborist Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 4),
+                        GTModHandler.getModItem(Minecraft.ID, "paper", 1, 0, missing),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameArborist)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Stabilization Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Osmiridium, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameStalilize)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Slowing Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialsAlloy.TUMBAGA.getLongRod(4),
+                        MaterialsAlloy.TUMBAGA.getRod(4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameSlow, 1, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Decaying Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.WroughtIron, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameDecay)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        // Working Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(new ItemStack(FRItemRegistry.hiveFrameBusy))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Mutagenic Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Plutonium241, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameMutagenic)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Accelerated Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameAccelerated)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), new ItemStack(FRItemRegistry.hiveFrameVoid));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
