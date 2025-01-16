@@ -30,6 +30,14 @@ public class ForgeHammerRecipes implements Runnable {
                 .itemOutputs(ItemList.GalliumArsenideCrystalSmallPart.get(4L)).duration(2 * SECONDS + 10 * TICKS).eut(4)
                 .addTo(hammerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemExquisite.get(1))
+                .itemOutputs(CustomItemList.ChromaticGemFlawless.get(2)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemFlawless.get(1))
+                .itemOutputs(CustomItemList.ChromaticGem.get(2)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(hammerRecipes);
+
         if (TinkerConstruct.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "Smeltery", 1L, 2))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 3L, 2)).duration(1 * SECONDS)

@@ -28,6 +28,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.core.material.MaterialsElements;
 
 public class MaceratorRecipes implements Runnable {
 
@@ -91,6 +92,18 @@ public class MaceratorRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L))
                 .outputChances(10000, 2500, 2000, 1500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemExquisite.get(1))
+                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(8)).duration(16 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemFlawless.get(1))
+                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(4)).duration(8 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGem.get(1))
+                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(2)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
 
         if (OpenPrinters.isModLoaded()) {
 

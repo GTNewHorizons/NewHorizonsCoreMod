@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AE2FluidCraft;
+import static gregtech.api.enums.Mods.AE2Stuff;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.EternalSingularity;
@@ -13,6 +14,7 @@ import static gregtech.api.enums.Mods.ThaumicEnergistics;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static kekztech.common.Blocks.tfftStorageField;
 
 import net.minecraft.item.ItemStack;
@@ -74,8 +76,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GGMaterial.atomicSeparationCatalyst.getMolten(64 * 144),
                             Materials.Tartarite.getMolten(64 * 144),
                             Materials.Longasssuperconductornameforuvwire.getMolten(64 * 144))
-                    .itemOutputs(ItemList.Black_Hole_Opener.get(1)).specialValue(1).duration(120 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                    .itemOutputs(ItemList.Black_Hole_Opener.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(120 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -100,8 +102,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             Materials.Osmiridium.getMolten(64 * 144),
                             Materials.Ledox.getMolten(64 * 144),
                             Materials.CallistoIce.getMolten(64 * 144))
-                    .itemOutputs(ItemList.Black_Hole_Closer.get(1)).specialValue(1).duration(120 * SECONDS)
-                    .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                    .itemOutputs(ItemList.Black_Hole_Closer.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                    .duration(120 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             // Optically Perfected CPU
             GTValues.RA.stdBuilder()
@@ -115,7 +117,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GGMaterial.atomicSeparationCatalyst.get(OrePrefixes.screw, 4),
                             GGMaterial.preciousMetalAlloy.get(OrePrefixes.screw, 4))
                     .fluidInputs(new FluidStack(solderUEV, 288)).itemOutputs(ItemList.Optically_Perfected_CPU.get(1L))
-                    .specialValue(1).duration(20 * SECONDS).eut(TierEU.RECIPE_UHV)
+                    .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(20 * SECONDS).eut(TierEU.RECIPE_UHV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
@@ -131,7 +133,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             // Enriched Naquadah Alloy screw
                             GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.screw, 8))
                     .fluidInputs(new FluidStack(solderUEV, 576)).itemOutputs(ItemList.Optically_Perfected_CPU.get(4L))
-                    .specialValue(2).duration(20 * SECONDS).eut(TierEU.RECIPE_UEV)
+                    .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(20 * SECONDS).eut(TierEU.RECIPE_UEV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             GTValues.RA.stdBuilder()
@@ -147,7 +149,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             // Shirabon screw
                             GGMaterial.shirabon.get(OrePrefixes.screw, 16))
                     .fluidInputs(new FluidStack(solderUEV, 1152)).itemOutputs(ItemList.Optically_Perfected_CPU.get(16L))
-                    .specialValue(2).duration(20 * SECONDS).eut(TierEU.RECIPE_UIV)
+                    .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(20 * SECONDS).eut(TierEU.RECIPE_UIV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             // Alternate Energy Orb Cluster Recipe
@@ -165,7 +167,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Parts_TransistorASMD.get(8L),
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Platinum, 64))
                     .fluidInputs(new FluidStack(solderIndalloy, 720)).itemOutputs(ItemList.Energy_LapotronicOrb2.get(1))
-                    .specialValue(1).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                    .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             // Alternate Energy Module Recipe
@@ -183,7 +185,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Parts_TransistorXSMD.get(8L),
                             GTOreDictUnificator.get("wireFineHypogen", 48))
                     .fluidInputs(new FluidStack(solderUEV, 720)).itemOutputs(ItemList.Energy_Module.get(1))
-                    .specialValue(1).duration(50 * SECONDS).eut(TierEU.RECIPE_UV)
+                    .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_UV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             // Advanced Radiation Proof Plate
@@ -197,8 +199,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 16L),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.VibrantAlloy, 16L))
                     .fluidInputs(new FluidStack(solderIndalloy, (32 * 144)), Materials.Lead.getMolten(64 * 144L))
-                    .itemOutputs(new ItemStack(Loaders.advancedRadiationProtectionPlate, 4, 0)).specialValue(1)
-                    .duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                    .itemOutputs(new ItemStack(Loaders.advancedRadiationProtectionPlate, 4, 0))
+                    .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_ZPM)
+                    .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             // Alternate Energy Cluster Recipe
             GTValues.RA.stdBuilder()
@@ -217,7 +220,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                             ItemList.Circuit_Parts_TransistorXSMD.get(32L),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, MaterialsUEVplus.SpaceTime, 12L))
                     .fluidInputs(new FluidStack(solderUEV, 1440)).itemOutputs(ItemList.Energy_Cluster.get(1))
-                    .specialValue(1).duration(50 * SECONDS).eut(TierEU.RECIPE_UHV)
+                    .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(50 * SECONDS).eut(TierEU.RECIPE_UHV)
                     .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             // Alternate Ultimate Battery Recipe
@@ -243,8 +246,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                             new FluidStack(solderUEV, 2880),
                             MaterialsUEVplus.WhiteDwarfMatter.getMolten(576),
                             MaterialsUEVplus.BlackDwarfMatter.getMolten(576))
-                    .itemOutputs(ItemList.ZPM2.get(1)).specialValue(2).duration(50 * SECONDS).eut(TierEU.RECIPE_UEV)
-                    .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                    .itemOutputs(ItemList.ZPM2.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 2).duration(50 * SECONDS)
+                    .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
             if (OpenComputers.isModLoaded() && SuperSolarPanels.isModLoaded()) {
                 // Optically Compatible Memory
@@ -256,8 +259,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 8L),
                         getModItem(SuperSolarPanels.ID, "solarsplitter", 1L, 0)) // Solar Light Splitter
                         .fluidInputs(new FluidStack(solderUEV, 288))
-                        .itemOutputs(ItemList.Optically_Compatible_Memory.get(2)).specialValue(1).duration(20 * SECONDS)
-                        .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .itemOutputs(ItemList.Optically_Compatible_Memory.get(2)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                        .duration(20 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 GTValues.RA.stdBuilder().itemInputs(
                         getModItem(OpenComputers.ID, "item", 4L, 39), // Memory tier 3.5
@@ -267,8 +270,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 16L),
                         getModItem(SuperSolarPanels.ID, "solarsplitter", 4L, 0)) // Solar Light Splitter
                         .fluidInputs(new FluidStack(solderUEV, 576))
-                        .itemOutputs(ItemList.Optically_Compatible_Memory.get(8)).specialValue(2).duration(20 * SECONDS)
-                        .eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .itemOutputs(ItemList.Optically_Compatible_Memory.get(8)).metadata(IGRecipeMaps.MODULE_TIER, 2)
+                        .duration(20 * SECONDS).eut(TierEU.RECIPE_UEV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 GTValues.RA.stdBuilder().itemInputs(
                         getModItem(OpenComputers.ID, "item", 16L, 39), // Memory tier 3.5
@@ -278,23 +281,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Infinity, 32L),
                         getModItem(SuperSolarPanels.ID, "solarsplitter", 16L, 0)) // Solar Light Splitter
                         .fluidInputs(new FluidStack(solderUEV, 1152))
-                        .itemOutputs(ItemList.Optically_Compatible_Memory.get(32)).specialValue(2)
+                        .itemOutputs(ItemList.Optically_Compatible_Memory.get(32)).metadata(IGRecipeMaps.MODULE_TIER, 2)
                         .duration(20 * SECONDS).eut(TierEU.RECIPE_UIV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
-
-                // Advanced Stocking Input Hatch (ME)
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hatch_Input_Multi_2x2_UEV.get(4L),
-                                getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
-                                ItemList.Optically_Compatible_Memory.get(2),
-                                ItemList.Electric_Pump_UEV.get(1L),
-                                // 16384k Me Fluid Storage Component
-                                getModItem(AE2FluidCraft.ID, "fluid_part", 4, 7),
-                                // Hyper-Acceleration Card
-                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56))
-                        .fluidInputs(new FluidStack(solderUEV, 2304))
-                        .itemOutputs(ItemList.Hatch_Input_ME_Advanced.get(1)).specialValue(1).duration(15 * SECONDS)
-                        .eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
             }
 
             if (OpenComputers.isModLoaded()) {
@@ -308,8 +296,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1L),
                                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L))
                         .fluidInputs(new FluidStack(solderIndalloy, 1152))
-                        .itemOutputs(getModItem(OpenComputers.ID, "item", 64L, 39)).specialValue(1)
-                        .duration(10 * SECONDS).eut(TierEU.RECIPE_UV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .itemOutputs(getModItem(OpenComputers.ID, "item", 64L, 39))
+                        .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
+                        .addTo(IGRecipeMaps.spaceAssemblerRecipes);
             }
 
             if (AppliedEnergistics2.isModLoaded() && AE2FluidCraft.isModLoaded()) {
@@ -325,8 +314,64 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 getModItem(AE2FluidCraft.ID, "part_fluid_pattern_terminal_ex", 1))
                         .fluidInputs(new FluidStack(solderUEV, 9216))
                         .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockPatternOptimizationMatrix", 1))
-                        .specialValue(1).duration(5 * MINUTES).eut(TierEU.RECIPE_UHV)
+                        .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(5 * MINUTES).eut(TierEU.RECIPE_UHV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+                // Advanced Stocking Input Hatch (ME)
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                ItemList.Hatch_Input_Multi_2x2_UHV.get(4L),
+                                getModItem(AE2FluidCraft.ID, "fluid_interface", 1L),
+                                ItemList.Circuit_Chip_BioCPU.get(1),
+                                ItemList.Electric_Pump_UHV.get(1L),
+                                // 16384k Me Fluid Storage Component
+                                getModItem(AE2FluidCraft.ID, "fluid_part", 4, 7),
+                                // Hyper-Acceleration Card
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 4L, 56))
+                        .fluidInputs(new FluidStack(solderUEV, 2304))
+                        .itemOutputs(ItemList.Hatch_Input_ME_Advanced.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+                // Crafting Input Buffer (ME)
+                GTValues.RA.stdBuilder()
+                        .itemInputs(
+                                ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1),
+                                ItemList.Hatch_Input_Multi_2x2_UEV.get(1),
+                                // 16384k storage component
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
+                                // 16384k Me Fluid Storage Component
+                                getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                                // ME Controller
+                                getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, WILDCARD),
+                                // Dual Interface
+                                getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, WILDCARD),
+                                // Pattern capacity card
+                                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54))
+                        .fluidInputs(new FluidStack(solderUEV, 2304), Materials.Grade7PurifiedWater.getFluid(4000))
+                        .itemOutputs(ItemList.Hatch_CraftingInput_Bus_ME.get(1)).metadata(IGRecipeMaps.MODULE_TIER, 1)
+                        .duration(15 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+
+                if (AE2Stuff.isModLoaded()) {
+                    // Crafting Input Proxy
+                    GTValues.RA.stdBuilder().itemInputs(
+                            ItemList.Hatch_CraftingInput_Bus_ME.get(1),
+                            // 64 Core Co-Processing Unit
+                            getModItem(AppliedEnergistics2.ID, "tile.BlockAdvancedCraftingUnit", 1, 0),
+                            // 16384k storage component
+                            getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
+                            // 16384k Me Fluid Storage Component
+                            getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
+                            // Wireless Connector
+                            getModItem(AE2Stuff.ID, "Wireless", 2, 0),
+                            ItemList.Sensor_UEV.get(1),
+                            ItemList.EnergisedTesseract.get(1))
+                            .fluidInputs(
+                                    new FluidStack(solderUEV, 2304),
+                                    MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(4000))
+                            .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1))
+                            .metadata(IGRecipeMaps.MODULE_TIER, 2).duration(15 * SECONDS).eut(TierEU.RECIPE_UIV)
+                            .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                }
             }
 
             if (AppliedEnergistics2.isModLoaded()) {
@@ -353,8 +398,8 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 MaterialsUEVplus.Eternity.getNanite(4))
                         .fluidInputs(MaterialsUEVplus.Eternity.getMolten(36864))
                         .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Universe", 1))
-                        .specialValue(3).nbtSensitive().duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
-                        .addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .metadata(IGRecipeMaps.MODULE_TIER, 3).nbtSensitive().duration(1 * MINUTES)
+                        .eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 // Digital Singularity ME Storage Cell
                 GTValues.RA.stdBuilder()
@@ -367,7 +412,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
                         .fluidInputs(new FluidStack(solderUEV, 2304))
                         .itemOutputs(getModItem(AppliedEnergistics2.ID, "item.ItemExtremeStorageCell.Singularity", 1))
-                        .specialValue(1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
+                        .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
             }
 
@@ -384,8 +429,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 MaterialsUEVplus.MagMatter.getNanite(4),
                                 MaterialsUEVplus.Eternity.getNanite(4))
                         .fluidInputs(MaterialsUEVplus.Eternity.getMolten(36864))
-                        .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1)).specialValue(3)
-                        .duration(1 * MINUTES).eut(TierEU.RECIPE_UXV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.Universe", 1))
+                        .metadata(IGRecipeMaps.MODULE_TIER, 3).duration(1 * MINUTES).eut(TierEU.RECIPE_UXV)
+                        .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 // ME Fluid Digital Singularity Storage Cell
                 GTValues.RA.stdBuilder()
@@ -398,8 +444,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 getModItem(Avaritia.ID, "Resource", 4, 5),
                                 GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
                         .fluidInputs(new FluidStack(solderUEV, 2304))
-                        .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0)).specialValue(1)
-                        .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                        .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_storage.singularity", 1, 0))
+                        .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
+                        .addTo(IGRecipeMaps.spaceAssemblerRecipes);
 
                 // ME Essentia Digital Singularity Storage Cell
                 if (ThaumicEnergistics.isModLoaded()) {
@@ -412,8 +459,9 @@ public class SpaceAssemblerRecipes implements Runnable {
                                     getModItem(Avaritia.ID, "Resource", 4, 5),
                                     GTOreDictUnificator.get(OrePrefixes.block, Materials.CosmicNeutronium, 12L))
                             .fluidInputs(new FluidStack(solderUEV, 2304))
-                            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10)).specialValue(1)
-                            .duration(10 * SECONDS).eut(TierEU.RECIPE_UHV).addTo(IGRecipeMaps.spaceAssemblerRecipes);
+                            .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10))
+                            .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
+                            .addTo(IGRecipeMaps.spaceAssemblerRecipes);
                 }
             }
         }
