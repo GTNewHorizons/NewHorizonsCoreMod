@@ -1813,7 +1813,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "painting", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dragon_egg", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "map", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 1, missing));
