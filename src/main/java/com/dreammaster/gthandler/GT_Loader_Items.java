@@ -427,6 +427,9 @@ public class GT_Loader_Items {
         CustomItemList.PotassiumHydroxideDust.set(NHItemList.PotassiumHydroxideDust.getIS());
         CustomItemList.RadoxPolymerLens.set(NHItemList.RadoxPolymerLens.getIS());
         CustomItemList.ChromaticLens.set(NHItemList.ChromaticLens.getIS());
+        CustomItemList.ChromaticGem.set(NHItemList.ChromaticGem.getIS());
+        CustomItemList.ChromaticGemFlawless.set(NHItemList.ChromaticGemFlawless.getIS());
+        CustomItemList.ChromaticGemExquisite.set(NHItemList.ChromaticGemExquisite.getIS());
         CustomItemList.NanoCircuitOrigin.set(NHItemList.NanoCircuitOrigin.getIS());
         CustomItemList.ChevronOrigin.set(NHItemList.ChevronOrigin.getIS());
         CustomItemList.FramePartOrigin.set(NHItemList.FramePartOrigin.getIS());
