@@ -4859,6 +4859,12 @@ public class AssemblerRecipes implements Runnable {
                             GTUtility.getIntegratedCircuit(2))
                     .itemOutputs(getModItem(AE2Stuff.ID, "Wireless", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(assemblerRecipes);
+
+            // Wireless Hub
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(AE2Stuff.ID, "Wireless", 8, 0, missing), ItemList.Emitter_LuV.get(1))
+                    .itemOutputs(getModItem(AE2Stuff.ID, "Wireless", 1, 17, missing)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         }
 
         if (TinkerConstruct.isModLoaded()) {
