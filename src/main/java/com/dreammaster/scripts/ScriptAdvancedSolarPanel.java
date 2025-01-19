@@ -37,7 +37,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "advanced_solar_helmet", 1, 0, missing),
                 "craftingToolWrench",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
+                ItemList.Machine_LV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "circuitAdvanced",
                 getModItem(IndustrialCraft2.ID, "itemArmorNanoHelmet", 1, wildcard, missing),
@@ -48,7 +48,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, 0, missing),
                 "craftingToolWrench",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
+                ItemList.Machine_MV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "circuitMaster",
                 getModItem(IndustrialCraft2.ID, "itemArmorQuantumHelmet", 1, wildcard, missing),
@@ -61,9 +61,9 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                 "craftingToolWrench",
                 "circuitUltimate",
                 "craftingToolScrewdriver",
-                "craftingSolarPanelHV",
+                ItemList.Machine_HV_SolarPanel.get(1),
                 getModItem(AdvancedSolarPanel.ID, "hybrid_solar_helmet", 1, wildcard, missing),
-                "craftingSolarPanelHV",
+                ItemList.Machine_HV_SolarPanel.get(1),
                 "cableGt04VanadiumGallium",
                 ItemList.Transformer_IV_EV.get(1L),
                 "cableGt04VanadiumGallium");
@@ -92,7 +92,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Cover_SolarPanel_LV.get(1L),
                 "craftingToolCrowbar",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 0, missing),
+                ItemList.Machine_LV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "craftingToolWrench",
                 "craftingToolHardHammer",
@@ -100,7 +100,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Cover_SolarPanel_MV.get(1L),
                 "craftingToolCrowbar",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 1, missing),
+                ItemList.Machine_MV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "craftingToolWrench",
                 "craftingToolHardHammer",
@@ -108,7 +108,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Cover_SolarPanel_HV.get(1L),
                 "craftingToolCrowbar",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 2, missing),
+                ItemList.Machine_HV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "craftingToolWrench",
                 "craftingToolHardHammer",
@@ -116,7 +116,7 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
         addShapedRecipe(
                 ItemList.Cover_SolarPanel_EV.get(1L),
                 "craftingToolCrowbar",
-                getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1, 3, missing),
+                ItemList.Machine_EV_SolarPanel.get(1),
                 "craftingToolScrewdriver",
                 "craftingToolWrench",
                 "craftingToolHardHammer",

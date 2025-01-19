@@ -4278,17 +4278,6 @@ public class ScriptMinecraft implements IScriptLoader {
                 null,
                 "craftingToolScrewdriver",
                 null);
-        addShapedRecipe(
-                getModItem(Minecraft.ID, "map", 1, 0, missing),
-                "paperEmpty",
-                "paperEmpty",
-                "paperEmpty",
-                "paperEmpty",
-                getModItem(Minecraft.ID, "compass", 1, 0, missing),
-                "paperEmpty",
-                "paperEmpty",
-                "paperEmpty",
-                "paperEmpty");
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "dye", 3, 15, missing),
                 getModItem(Minecraft.ID, "bone", 1, 0, missing),

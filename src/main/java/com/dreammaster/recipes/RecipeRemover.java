@@ -1813,7 +1813,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "painting", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dragon_egg", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "map", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 1, missing));
@@ -3256,6 +3255,13 @@ public class RecipeRemover {
                         getModItem(Natura.ID, "barleyFood", 1, 6, missing) },
                 new Object[] { getModItem(Natura.ID, "barleyFood", 1, 6, missing),
                         getModItem(Natura.ID, "barleyFood", 1, 6, missing) },
+                new Object[0]);
+        removeRecipeShapedDelayed(
+                getModItem(Minecraft.ID, "leather", 1, 0, missing),
+                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing) },
+                new Object[] { getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "rabbit_hide", 1, 0, missing) },
                 new Object[0]);
         removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "paintBrush", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(OpenBlocks.ID, "goldenEye", 1, wildcard, missing));
