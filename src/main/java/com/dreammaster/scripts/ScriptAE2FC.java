@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static goodgenerator.api.recipe.GoodGeneratorRecipeMaps.preciseAssemblerRecipes;
 import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
@@ -13,6 +14,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.PRECISE_ASSEMBLER_CASING_TIER;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -31,6 +33,7 @@ import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -1085,5 +1088,21 @@ public class ScriptAE2FC implements IScriptLoader {
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE);
         GameRegistry.addShapelessRecipe(AE2FC_INTERFACE_P2P, AE2_P2P_ME, AE2FC_INTERFACE_SMALL);
         GameRegistry.addShapelessRecipe(AE2FC_ENERGY_CARD, AE2_ADV_CARD, AE2_NEUTRONIUM_ENERGY_CELL);
+        // Quantum bridge card
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 16, 42, missing),
+                        GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockQuantumRing", 8),
+                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemPaintBall", 6, 2, missing),
+                        GTModHandler.getModItem(OpenComputers.ID, "item.ae", 1, 2))
+                .itemOutputs(getModItem(AE2FluidCraft.ID, "quantum_bridge_card", 1, missing))
+                .fluidInputs(
+                        Materials.Quantium.getMolten(576),
+                        GGMaterial.artheriumSn.getMolten(144),
+                        GGMaterial.titaniumBetaC.getMolten(288),
+                        Materials.Enderium.getMolten(144))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_LuV).metadata(PRECISE_ASSEMBLER_CASING_TIER, 2).noOptimize()
+                .addTo(preciseAssemblerRecipes);
+
     }
 }

@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AE2WCT;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
@@ -59,7 +60,7 @@ public class ScriptAE2WC implements IScriptLoader {
                 "abcbabcba",
                 "aaaaaaaaa",
                 'a',
-                getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 42, missing),
+                getModItem(AE2FluidCraft.ID, "quantum_bridge_card", 1, missing),
                 'b',
                 getModItem(Avaritia.ID, "Resource", 1, 6, missing),
                 'c',
