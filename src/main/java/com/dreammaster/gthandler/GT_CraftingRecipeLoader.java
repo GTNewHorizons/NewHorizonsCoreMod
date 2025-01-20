@@ -262,25 +262,25 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_LV, 'G',
                         OrePrefixes.plate.get(Materials.PulsatingIron), 'D', OrePrefixes.circuit.get(Materials.LV), 'P',
-                        OrePrefixes.plateDense.get(Materials.Iron) });
+                        OrePrefixes.plateQuadruple.get(Materials.Iron) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_MV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_MV, 'G',
                         OrePrefixes.plate.get(Materials.VibrantAlloy), 'D', OrePrefixes.circuit.get(Materials.MV), 'P',
-                        OrePrefixes.plateDense.get(Materials.Steel) });
+                        OrePrefixes.plateQuadruple.get(Materials.Steel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_HV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_HV, 'G',
                         ItemList.Field_Generator_LV, 'D', OrePrefixes.circuit.get(Materials.HV), 'P',
-                        OrePrefixes.plateQuintuple.get(Materials.Aluminium) });
+                        OrePrefixes.plateQuadruple.get(Materials.Aluminium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_EV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_EV, 'G',
                         ItemList.Field_Generator_MV, 'D', OrePrefixes.circuit.get(Materials.EV), 'P',
-                        OrePrefixes.plateQuintuple.get(Materials.StainlessSteel) });
+                        OrePrefixes.plateQuadruple.get(Materials.StainlessSteel) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Super_Chest_IV.get(1L),
                 bits,
@@ -299,25 +299,25 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_ZPM, 'G',
                         ItemList.Field_Generator_IV, 'D', OrePrefixes.circuit.get(Materials.ZPM), 'P',
-                        OrePrefixes.plateTriple.get(Materials.HSSG) });
+                        OrePrefixes.plateQuadruple.get(Materials.HSSG) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_HV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UV, 'G',
                         ItemList.Field_Generator_LuV, 'D', OrePrefixes.circuit.get(Materials.UV), 'P',
-                        OrePrefixes.plateTriple.get(Materials.HSSS) });
+                        OrePrefixes.plateQuadruple.get(Materials.HSSS) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_EV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UHV, 'G',
                         ItemList.Field_Generator_ZPM, 'D', OrePrefixes.circuit.get(Materials.UHV), 'P',
-                        OrePrefixes.plateDouble.get(Materials.Europium) });
+                        OrePrefixes.plateQuadruple.get(Materials.Europium) });
         GTModHandler.addCraftingRecipe(
                 ItemList.Quantum_Chest_IV.get(1L),
                 bits,
                 new Object[] { "DPD", "PMP", "DGD", 'M', ItemList.Automation_ChestBuffer_UEV, 'G',
                         ItemList.Field_Generator_UV, 'D', OrePrefixes.circuit.get(Materials.UEV), 'P',
-                        OrePrefixes.plate.get(Materials.Americium) });
+                        OrePrefixes.plateQuadruple.get(Materials.Americium) });
 
         // Hermetic casings
         GTModHandler.addCraftingRecipe(
