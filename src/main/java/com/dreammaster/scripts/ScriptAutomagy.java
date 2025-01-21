@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -724,5 +725,12 @@ public class ScriptAutomagy implements IScriptLoader {
         TCHelper.refreshResearchPages("REDCRYSTAL_RES");
         TCHelper.refreshResearchPages("REDCRYSTAL_MIRRORBOUND");
         TCHelper.refreshResearchPages("FOCUSCRAFTING");
+        addShapelessRecipe(
+                createItemStack(AE2FluidCraft.ID, "fluid_drop", 1, 0, "{Fluid:milk}", missing),
+                createItemStack(AE2FluidCraft.ID, "fluid_drop", 1, 0, "{Fluid:fluidmilk}", missing));
+        addShapelessRecipe(
+                createItemStack(AE2FluidCraft.ID, "fluid_drop", 1, 0, "{Fluid:fluidmilk}", missing),
+                createItemStack(AE2FluidCraft.ID, "fluid_drop", 1, 0, "{Fluid:milk}", missing));
+
     }
 }
