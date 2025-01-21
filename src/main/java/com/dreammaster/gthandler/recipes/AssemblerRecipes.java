@@ -98,6 +98,53 @@ public class AssemblerRecipes implements Runnable {
         makeElectricMachinePartRecipes();
         makeCircuitPartRecipes();
 
+        // --- Advanced Solar Panel
+        if (AdvancedSolarPanel.isModLoaded()) {
+            // Conversion recipes to gt solars
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_LV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 1))
+                    .itemOutputs(ItemList.Machine_MV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 2))
+                    .itemOutputs(ItemList.Machine_HV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 3))
+                    .itemOutputs(ItemList.Machine_EV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+        }
+
+        // --- Super Solar Panel
+        if (SuperSolarPanels.isModLoaded()) {
+            // Conversion recipes to gt solars
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "SpectralSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_IV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "SingularSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_LuV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "AdminSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_ZPM_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_UV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+        }
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 8),
@@ -9508,54 +9555,6 @@ public class AssemblerRecipes implements Runnable {
                         .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(10 * SECONDS)
                         .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
-            }
-
-            // --- Advanced Solar Panel
-            if (AdvancedSolarPanel.isModLoaded()) {
-                // Conversion recipes to gt solars
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 0))
-                        .itemOutputs(ItemList.Machine_LV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 1))
-                        .itemOutputs(ItemList.Machine_MV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 2))
-                        .itemOutputs(ItemList.Machine_HV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 3))
-                        .itemOutputs(ItemList.Machine_EV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-            }
-
-            // --- Super Solar Panel
-            if (SuperSolarPanels.isModLoaded()) {
-                // Conversion recipes to gt solars
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "SpectralSolarPanel", 1L, 0))
-                        .itemOutputs(ItemList.Machine_IV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "SingularSolarPanel", 1L, 0))
-                        .itemOutputs(ItemList.Machine_LuV_SolarPanel.get(1L)).duration(1 * SECONDS)
-                        .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "AdminSolarPanel", 1L, 0))
-                        .itemOutputs(ItemList.Machine_ZPM_SolarPanel.get(1L)).duration(1 * SECONDS)
-                        .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1L, 0))
-                        .itemOutputs(ItemList.Machine_UV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
-                        .addTo(assemblerRecipes);
             }
 
             // GT solars
