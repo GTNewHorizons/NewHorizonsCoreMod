@@ -2,6 +2,7 @@ package com.dreammaster.scripts;
 
 import static com.dreammaster.scripts.GameRegistryProxy.shapedRecipes;
 import static com.dreammaster.scripts.GameRegistryProxy.shapelessRecipes;
+import static com.dreammaster.tinkersConstruct.SmelteryFluidTypes.getMoltenPatternFluidTypeName;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftCore;
@@ -2028,7 +2029,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 0, missing),
                 false,
                 100);
-        TConstructHelper.getMeltingAdder(FluidType.getFluidType("AluminumBrass"), 150, 72).add(
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType(getMoltenPatternFluidTypeName()), 150, 72).add(
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 2, missing),
