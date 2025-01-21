@@ -293,9 +293,12 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 ItemList.Circuit_Chip_Ram.get(64),
                                 ItemList.Circuit_Chip_SoC.get(64),
                                 ItemList.Circuit_Chip_NAND.get(64),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1L),
+                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2L),
                                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L))
-                        .fluidInputs(new FluidStack(solderIndalloy, 1152))
+                        .fluidInputs(
+                                new FluidStack(solderIndalloy, 1152),
+                                new FluidStack(solderUEV, 720),
+                                Materials.Gold.getMolten(16 * 144L))
                         .itemOutputs(getModItem(OpenComputers.ID, "item", 64L, 39))
                         .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
@@ -461,25 +464,6 @@ public class SpaceAssemblerRecipes implements Runnable {
                             .fluidInputs(new FluidStack(solderUEV, 2304))
                             .itemOutputs(getModItem(ThaumicEnergistics.ID, "storage.essentia", 1, 10))
                             .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
-                            .addTo(IGRecipeMaps.spaceAssemblerRecipes);
-                }
-
-                // Microchip Memory Recipe
-                if (OpenComputers.isModLoaded()) {
-                    GTValues.RA.stdBuilder()
-                            .itemInputs(
-                                    ItemList.Circuit_Board_Multifiberglass_Elite.get(8),
-                                    ItemList.Circuit_Chip_Ram.get(64),
-                                    ItemList.Circuit_Chip_SoC.get(64),
-                                    ItemList.Circuit_Chip_NAND.get(64),
-                                    getModItem(OpenComputers.ID, "item", 64L, 26),
-                                    GTOreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L))
-                            .fluidInputs(
-                                    new FluidStack(solderIndalloy, 1152),
-                                    new FluidStack(solderUEV, 720),
-                                    Materials.Gold.getMolten(16 * 144L))
-                            .itemOutputs(getModItem(OpenComputers.ID, "item", 32L, 39))
-                            .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
                             .addTo(IGRecipeMaps.spaceAssemblerRecipes);
                 }
             }
