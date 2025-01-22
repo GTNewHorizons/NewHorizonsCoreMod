@@ -158,8 +158,8 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6), });
 
         addShapelessRecipe(
-                getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing),
-                getModItem(Minecraft.ID, "magma_cream", 9, 0, missing));
+                getModItem(Minecraft.ID, "magma_cream", 9, 0, missing),
+                getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "magma_cream", 9, 0, missing))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing)).duration(8 * SECONDS).eut(2)
