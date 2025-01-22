@@ -305,7 +305,7 @@ public class SpaceAssemblerRecipes implements Runnable {
                                 ItemList.Circuit_Chip_Ram.get(64),
                                 ItemList.Circuit_Chip_SoC.get(64),
                                 ItemList.Circuit_Chip_NAND.get(64),
-                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1L),
+                                GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 2L),
                                 GTOreDictUnificator.get(OrePrefixes.foil, Materials.VanadiumGallium, 64L))
                         .fluidInputs(new FluidStack(solderIndalloy, 1152))
                         .itemOutputs(getModItem(OpenComputers.ID, "item", 64L, 39)).specialValue(1)
