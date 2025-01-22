@@ -12,11 +12,15 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
+
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.recipes.CustomItem;
 
@@ -157,16 +161,18 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 5), 'G',
                         GTModHandler.getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6), });
 
-        addShapelessRecipe(
-                getModItem(Minecraft.ID, "magma_cream", 9, 0, missing),
-                getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing));
-
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "magma_cream", 9, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "magma_cream", 3, 0, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 6000))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dye", 9, 15, missing))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "bone", 1, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "magma_cream", 3, 0, missing))
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("lava"), 6000)).duration(10 * SECONDS).eut(48)
+                .addTo(fluidExtractionRecipes);
     }
 }
