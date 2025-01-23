@@ -160,9 +160,9 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 5), 'G',
                         GTModHandler.getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6), });
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "magma_cream", 3, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "magma_cream", 4, 0, missing))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing)).duration(8 * SECONDS).eut(2)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing)).duration(10 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "dye", 9, 15, missing))
@@ -170,7 +170,7 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "magma_cream", 3, 0, missing))
+                .itemOutputs(getModItem(Minecraft.ID, "magma_cream", 4, 0, missing))
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000)).duration(10 * SECONDS).eut(48)
                 .addTo(fluidExtractionRecipes);
     }
