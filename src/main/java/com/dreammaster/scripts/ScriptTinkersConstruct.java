@@ -54,6 +54,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import mantle.lib.client.MantleClientRegistry;
+import tconstruct.TConstruct;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.DryingRackRecipes;
 import tconstruct.library.crafting.FluidType;
@@ -2393,10 +2394,10 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 false,
                 400);
         Smeltery.addAlloyMixing(
-                FluidRegistry.getFluidStack("alumite.molten", 32),
-                FluidRegistry.getFluidStack("aluminum.molten", 80),
-                FluidRegistry.getFluidStack("steel.molten", 32),
-                FluidRegistry.getFluidStack("obsidian.molten", 32));
+                FluidRegistry.getFluidStack("alumite.molten", TConstruct.nuggetLiquidValue * 2),
+                FluidRegistry.getFluidStack("molten.zinc", TConstruct.nuggetLiquidValue * 5),
+                FluidRegistry.getFluidStack("steel.molten", TConstruct.nuggetLiquidValue * 2),
+                FluidRegistry.getFluidStack("obsidian.molten", TConstruct.nuggetLiquidValue * 2));
         Smeltery.addSmelteryFuel(FluidRegistry.getFluid("ic2hotcoolant"), 900, 55);
         Smeltery.addSmelteryFuel(FluidRegistry.getFluid("ic2pahoehoelava"), 3000, 90);
         DryingRackRecipes.addDryingRecipe(
