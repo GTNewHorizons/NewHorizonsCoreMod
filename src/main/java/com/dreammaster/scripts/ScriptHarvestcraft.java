@@ -28,6 +28,7 @@ import java.util.List;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -635,7 +636,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 null,
                 null,
                 null);
-        addShapelessRecipe(com.dreammaster.item.ItemList.EdibleSalt.getIS(1), "toolPot", "listAllwater");
+        addShapelessRecipe(NHItemList.EdibleSalt.getIS(1), "toolPot", "listAllwater");
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "soymilkItem", 1, 0, missing),
                 "craftingToolHardHammer",

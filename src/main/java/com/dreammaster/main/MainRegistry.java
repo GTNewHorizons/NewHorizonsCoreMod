@@ -47,15 +47,12 @@ import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
-import com.dreammaster.gthandler.CoreMod_PCBFactory_MaterialLoader;
-import com.dreammaster.gthandler.GT_CoreModSupport;
 import com.dreammaster.gthandler.GT_CustomLoader;
-import com.dreammaster.gthandler.GT_Loader_CasingNH;
 import com.dreammaster.gthandler.GT_Loader_ItemPipes;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.ItemBucketList;
-import com.dreammaster.item.ItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.item.WoodenBrickForm;
 import com.dreammaster.lib.Refstrings;
 import com.dreammaster.loginhandler.LoginHandler;
@@ -103,7 +100,6 @@ import eu.usrv.yamcore.client.NotificationTickHandler;
 import eu.usrv.yamcore.creativetabs.CreativeTabsManager;
 import eu.usrv.yamcore.fluids.ModFluidManager;
 import eu.usrv.yamcore.items.ModItemManager;
-import gregtech.GTMod;
 import gregtech.api.GregTechAPI;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
@@ -218,14 +214,9 @@ public class MainRegistry {
         ModTabList.InitModTabs(TabManager, ItemManager);
         // ------------------------------------------------------------
 
-        // Materials init
-        if (!GTMod.gregtechproxy.mEnableAllMaterials) {
-            new GT_CoreModSupport();
-        }
-
         // ------------------------------------------------------------
         Logger.debug("PRELOAD Create Items");
-        if (!ItemList.AddToItemManager(ItemManager)
+        if (!NHItemList.AddToItemManager(ItemManager)
                 | !(!TinkerConstruct.isModLoaded() || CustomPatterns.RegisterPatterns(TabManager))
                 | !(BioItemLoader.preInit())) {
             Logger.warn("Some items failed to register. Check the logfile for details");
@@ -368,8 +359,6 @@ public class MainRegistry {
             TF_Loot_Chests.init();
         }
 
-        CoreMod_PCBFactory_MaterialLoader.init();
-
         BWGlassAdder.registerGlasses();
 
         if (CoreConfig.gtnhPauseMenuButtons && event.getSide().isClient()) {
@@ -393,7 +382,6 @@ public class MainRegistry {
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
         proxy.registerRenderInfo();
-        GT_Loader_CasingNH.load();
     }
 
     private void RegisterModuleEvents() {

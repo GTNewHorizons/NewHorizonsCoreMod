@@ -39,6 +39,7 @@ import java.util.List;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
@@ -283,7 +284,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 "craftingToolScrewdriver",
                 "blockSteel",
                 getModItem(StevesCarts2.ID, "CartModule", 1, 42, missing),
-                com.dreammaster.item.ItemList.DiamondDrillTip.getIS(1),
+                NHItemList.DiamondDrillTip.getIS(1),
                 CustomItemList.SteelBars.get(1L),
                 "screwSteel",
                 "craftingToolHardHammer");
@@ -1930,15 +1931,15 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 31, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(2 * SECONDS + 10 * TICKS).eut(30)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 8)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 6)).duration(10 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.IC2_Item_Casing_Iron.get(1L))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Iron, 1L))
                 .itemOutputs(getModItem(StevesCarts2.ID, "ModuleComponents", 4, 34, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("lubricant", 2)).duration(5 * SECONDS).eut(30)
                 .addTo(cutterRecipes);

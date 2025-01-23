@@ -28,6 +28,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.core.material.MaterialsElements;
 
 public class MaceratorRecipes implements Runnable {
 
@@ -92,6 +93,18 @@ public class MaceratorRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 1L))
                 .outputChances(10000, 2500, 2000, 1500).duration(10 * SECONDS).eut(8).addTo(maceratorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemExquisite.get(1))
+                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(8)).duration(16 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemFlawless.get(1))
+                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(4)).duration(8 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGem.get(1))
+                .itemOutputs(MaterialsElements.STANDALONE.CHRONOMATIC_GLASS.getDust(2)).duration(4 * SECONDS)
+                .eut(TierEU.RECIPE_UV).addTo(maceratorRecipes);
+
         if (OpenPrinters.isModLoaded()) {
 
             // Open Printers
@@ -132,16 +145,6 @@ public class MaceratorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Ardite, 2L),
                             Materials.Ardite.getDust(1))
                     .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GravelOre", 1L, 4))
-                    .itemOutputs(
-                            GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Aluminium, 2L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Bauxite, 1L))
-                    .outputChances(10000, 1000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
-
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "GravelOre", 1L, 0))
-                    .itemOutputs(GTOreDictUnificator.get(OrePrefixes.crushed, Materials.Iron, 2L))
-                    .duration(15 * SECONDS).eut(2).addTo(maceratorRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 12))
                     .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L))

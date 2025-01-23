@@ -11,6 +11,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -298,9 +299,8 @@ public class FormingPressRecipes implements Runnable {
                 .itemOutputs(ItemList.Shape_Extruder_Turbine_Blade.get(1L)).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Shape_Empty.get(1L), com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(0))
-                .itemOutputs(com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(1)).duration(10 * SECONDS).eut(256)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), NHItemList.ExtruderShapeBoat.getIS(0))
+                .itemOutputs(NHItemList.ExtruderShapeBoat.getIS(1)).duration(10 * SECONDS).eut(256)
                 .addTo(formingPressRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Empty.get(1L), ItemList.Shape_Extruder_ToolHeadDrill.get(0))
@@ -333,92 +333,92 @@ public class FormingPressRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ULV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitULV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitULV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitLV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitLV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitMV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitMV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.HV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitHV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitHV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.EV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitEV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitEV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.IV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitIV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitIV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitLuV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitLuV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.ZPM, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitZPM.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitZPM.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitUV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitUV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UHV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitUHV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitUHV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UEV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitUEV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitUEV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UIV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitUIV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitUIV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UMV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitUMV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitUMV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.UXV, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitUXV.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitUXV.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MAX, 1),
                         GTUtility.getIntegratedCircuit(24))
-                .itemOutputs(com.dreammaster.item.ItemList.CircuitMAX.getIS(1)).duration(1 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(formingPressRecipes);
+                .itemOutputs(NHItemList.CircuitMAX.getIS(1)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                .addTo(formingPressRecipes);
 
         if (BloodArsenal.isModLoaded()) {
 

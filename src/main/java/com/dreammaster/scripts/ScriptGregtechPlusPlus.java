@@ -7,8 +7,10 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.IronTanks;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.RemoteIO;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.QFT_CATALYST;
 import static gregtech.api.util.GTRecipeConstants.QFT_FOCUS_TIER;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.quantumForceTransformerRecipes;
 
@@ -29,13 +31,12 @@ import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.item.ModItems;
+import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.item.chemistry.GenericChem;
 import gtPlusPlus.core.material.MaterialsAlloy;
-import gtPlusPlus.core.util.minecraft.ItemUtils;
 import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
-import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
 
@@ -58,17 +59,6 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        addShapedRecipe(
-                GregtechItemList.GT4_Thermal_Boiler.get(1),
-                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                ItemList.Machine_HV_Centrifuge.get(1L),
-                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                "gearGtTungstenSteel",
-                "circuitElite",
-                "gearGtTungstenSteel",
-                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing),
-                ItemList.Machine_HV_Centrifuge.get(1L),
-                getModItem(RemoteIO.ID, "tile.machine", 1, 1, missing));
 
         addShapedRecipe(
                 MaterialsAlloy.TUMBAGA.getRod(1),
@@ -103,104 +93,16 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 MaterialsAlloy.TUMBAGA.getRod(1),
                 MaterialsAlloy.TUMBAGA.getPlate(1),
                 MaterialsAlloy.TUMBAGA.getRod(1));
-        addShapedRecipe(
-                GregtechItemList.Industrial_WireFactory.get(1),
-                "plateBlueSteel",
-                ItemList.Casing_IV.get(1L),
-                "plateBlueSteel",
-                "circuitElite",
-                ItemList.Machine_IV_Wiremill.get(1L),
-                "circuitElite",
-                "plateBlueSteel",
-                ItemList.Casing_IV.get(1L),
-                "plateBlueSteel");
-        addShapedRecipe(
-                GregtechItemList.Boiler_Advanced_LV.get(1),
-                ItemList.Electric_Pump_LV.get(1L),
-                "circuitBasic",
-                ItemList.Electric_Pump_LV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
-                ItemList.Casing_LV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L),
-                ItemList.Machine_Steel_Boiler.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Steel, 1L));
-        addShapedRecipe(
-                new ItemStack(ModItems.itemBoilerChassis, 1, 0),
-                "plateDoubleLead",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                "plateDoubleLead",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.AnyBronze, 1L),
-                getModItem(IronTanks.ID, "silverTank", 1, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.AnyBronze, 1L),
-                "plateDoubleLead",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                "plateDoubleLead");
-        addShapedRecipe(
-                GregtechItemList.Boiler_Advanced_MV.get(1),
-                ItemList.Electric_Pump_MV.get(1L),
-                "circuitGood",
-                ItemList.Electric_Pump_MV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
-                ItemList.Casing_MV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L),
-                ItemList.Machine_Steel_Boiler.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1L));
-        addShapedRecipe(
-                new ItemStack(ModItems.itemBoilerChassis, 1, 1),
-                "plateDoubleStainlessSteel",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                "plateDoubleStainlessSteel",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                getModItem(IronTanks.ID, "stainlesssteelTank", 1, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 1L),
-                "plateDoubleStainlessSteel",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                "plateDoubleStainlessSteel");
-        addShapedRecipe(
-                GregtechItemList.Boiler_Advanced_HV.get(1),
-                ItemList.Electric_Pump_HV.get(1L),
-                "circuitAdvanced",
-                ItemList.Electric_Pump_HV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
-                ItemList.Casing_HV.get(1L),
-                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L),
-                ItemList.Machine_Steel_Boiler.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Titanium, 1L));
-        addShapedRecipe(
-                new ItemStack(ModItems.itemBoilerChassis, 1, 2),
-                "plateDoubleTitanium",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
-                "plateDoubleTitanium",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                getModItem(IronTanks.ID, "titaniumTank", 1, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.StainlessSteel, 1L),
-                "plateDoubleTitanium",
-                GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Titanium, 1L),
-                "plateDoubleTitanium");
-        addShapedRecipe(
-                GregtechItemList.GTFluidTank_HV.get(1),
-                "circuitPrimitive",
-                "plateAluminium",
-                "circuitPrimitive",
-                "plateDarkSteel",
-                "pipeMediumSteel",
-                "plateDarkSteel",
-                "circuitPrimitive",
-                ItemList.Electric_Pump_MV.get(1L),
-                "circuitPrimitive");
 
         // Shirabon and Eternity
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EternalSingularity.ID, "combined_singularity", 1, 15, missing),
-                        ItemList.EnergisedTesseract.get(1),
-                        ItemUtils.getSimpleStack(GenericChem.TemporalHarmonyCatalyst, 0))
+                        ItemList.EnergisedTesseract.get(1))
                 .itemOutputs(GTOreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
                 .fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
                 .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
+                .metadata(QFT_CATALYST, GTUtility.copyAmount(0, GenericChem.TemporalHarmonyCatalyst))
                 .metadata(QFT_FOCUS_TIER, 4).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)
                 .addTo(quantumForceTransformerRecipes);
         addForestryRecipes();
@@ -208,6 +110,83 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
     @Optional.Method(modid = Mods.Names.FORESTRY)
     private void addForestryRecipes() {
+
+        // Arborist Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WoodSealed, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 4),
+                        GTModHandler.getModItem(Minecraft.ID, "paper", 1, 0, missing),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameArborist)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Stabilization Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Osmiridium, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameStalilize)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Slowing Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialsAlloy.TUMBAGA.getLongRod(4),
+                        MaterialsAlloy.TUMBAGA.getRod(4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameSlow, 1, 0)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Decaying Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.WroughtIron, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.WroughtIron, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameDecay)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
+
+        // Working Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.BlueSteel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 4),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(new ItemStack(FRItemRegistry.hiveFrameBusy))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Mutagenic Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Uranium235, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Plutonium241, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameMutagenic)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+        // Accelerated Frame
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Electrum, 4),
+                        GTOreDictUnificator.get(OrePrefixes.stick, Materials.Electrum, 4),
+                        GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1),
+                        GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
+                .fluidInputs(Materials.Redstone.getMolten(576))
+                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameAccelerated)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
         addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), new ItemStack(FRItemRegistry.hiveFrameVoid));
         RecipeManagers.carpenterManager.addRecipe(
                 60,

@@ -40,6 +40,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import bartworks.common.loaders.ItemRegistry;
 import bartworks.system.material.WerkstoffLoader;
@@ -96,6 +97,83 @@ public class AssemblerRecipes implements Runnable {
         makeSolderingAlloyRecipes();
         makeElectricMachinePartRecipes();
         makeCircuitPartRecipes();
+
+        // --- Advanced Solar Panel
+        if (AdvancedSolarPanel.isModLoaded()) {
+            // Conversion recipes to gt solars
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_LV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 1))
+                    .itemOutputs(ItemList.Machine_MV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 2))
+                    .itemOutputs(ItemList.Machine_HV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 3))
+                    .itemOutputs(ItemList.Machine_EV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+        }
+
+        // --- Super Solar Panel
+        if (SuperSolarPanels.isModLoaded()) {
+            // Conversion recipes to gt solars
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "SpectralSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_IV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "SingularSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_LuV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "AdminSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_ZPM_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(GTModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1L, 0))
+                    .itemOutputs(ItemList.Machine_UV_SolarPanel.get(1L)).duration(1 * SECONDS).eut(TierEU.RECIPE_LV)
+                    .addTo(assemblerRecipes);
+        }
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 8),
+                        GTUtility.getIntegratedCircuit(8))
+                .itemOutputs(ItemList.Hull_Bronze.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bronze, 5),
+                        new ItemStack(Blocks.brick_block, 3),
+                        GTUtility.getIntegratedCircuit(6))
+                .itemOutputs(ItemList.Hull_Bronze_Bricks.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 8),
+                        GTUtility.getIntegratedCircuit(6))
+                .itemOutputs(ItemList.Hull_HP.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.WroughtIron, 5),
+                        new ItemStack(Blocks.brick_block, 3),
+                        GTUtility.getIntegratedCircuit(6))
+                .itemOutputs(ItemList.Hull_HP_Bricks.get(1)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -783,14 +861,6 @@ public class AssemblerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Bronze, 4L),
-                        GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
-                .itemOutputs(
-                        MetaGeneratedTool01.INSTANCE.getToolWithStats(170, 1, Materials.Bronze, Materials.Steel, null))
-                .duration(16 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.turbineBlade, Materials.Steel, 4L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 1L))
                 .itemOutputs(
@@ -811,55 +881,55 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Bedrockium, 8),
                         GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(CustomItemList.Casing_UEV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .itemOutputs(ItemList.Casing_UEV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.BlackPlutonium, 8L),
                         GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(CustomItemList.Casing_UIV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .itemOutputs(ItemList.Casing_UIV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.SpaceTime, 8L),
                         GTUtility.getIntegratedCircuit(8))
-                .itemOutputs(CustomItemList.Casing_UMV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
+                .itemOutputs(ItemList.Casing_UMV.get(1L)).duration(2 * SECONDS + 10 * TICKS).eut(16)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(
                 GTOreDictUnificator
                         .get(OrePrefixes.plate, MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter, 4L),
                 GTOreDictUnificator.get(OrePrefixes.plate, MaterialsUEVplus.MagMatter, 4L),
-                GTUtility.getIntegratedCircuit(8)).itemOutputs(CustomItemList.Casing_UXV.get(1L))
+                GTUtility.getIntegratedCircuit(8)).itemOutputs(ItemList.Casing_UXV.get(1L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.Draconium, 2L),
-                        CustomItemList.Casing_UEV.get(1L))
+                        ItemList.Casing_UEV.get(1L))
                 .itemOutputs(ItemList.Hull_UEV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.cableGt08, Materials.NetherStar, 2L),
-                        CustomItemList.Casing_UIV.get(1L))
+                        ItemList.Casing_UIV.get(1L))
                 .itemOutputs(ItemList.Hull_UIV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.Quantium, 2L),
-                        CustomItemList.Casing_UMV.get(1L))
+                        ItemList.Casing_UMV.get(1L))
                 .itemOutputs(ItemList.Hull_UMV.get(1L)).fluidInputs(Materials.Polybenzimidazole.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.BlackPlutonium, 2L),
-                        CustomItemList.Casing_UXV.get(1L))
+                        ItemList.Casing_UXV.get(1L))
                 .itemOutputs(ItemList.Hull_UXV.get(1L)).fluidInputs(MaterialsKevlar.Kevlar.getMolten(576L))
                 .duration(2 * SECONDS + 10 * TICKS).eut(16).addTo(assemblerRecipes);
 
@@ -969,7 +1039,11 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(ItemList.Casing_Firebricks.get(4L)).fluidInputs(Materials.Concrete.getMolten(4608L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.brick_block), Materials.AnyBronze.getPlates(6))
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.brick_block),
+                        Materials.AnyBronze.getPlates(6),
+                        GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(ItemList.Casing_BronzePlatedBricks.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
@@ -978,7 +1052,7 @@ public class AssemblerRecipes implements Runnable {
                         Materials.Steel.getPlates(4),
                         Materials.Iron.getPlates(2),
                         ItemList.Casing_BronzePlatedBricks.get(1L))
-                .itemOutputs(CustomItemList.Casing_Pyrolyse.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
+                .itemOutputs(ItemList.Casing_Pyrolyse.get(1L)).duration(10 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
         // Extreme Engine Intake Casing
@@ -1689,12 +1763,6 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Polybenzimidazole.getMolten(2304L)).duration(30 * SECONDS).eut(TierEU.RECIPE_UIV)
                 .addTo(assemblerRecipes);
 
-        // crafting input slave
-        GTValues.RA.stdBuilder()
-                .itemInputs(ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L), ItemList.Sensor_UV.get(1L))
-                .itemOutputs(ItemList.Hatch_CraftingInput_Bus_Slave.get(1)).duration(10 * SECONDS)
-                .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
-
         // Gear Box Casings
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -2032,7 +2100,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
-                        Materials.Americium.getPlates(3),
+                        GTOreDictUnificator.get(OrePrefixes.plateQuadruple.get(Materials.Americium), 3),
                         ItemList.Field_Generator_UV.get(1),
                         ItemList.Automation_ChestBuffer_UEV.get(1L))
                 .itemOutputs(ItemList.Quantum_Chest_IV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
@@ -3987,7 +4055,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.SteelBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T1.get(1L))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T1.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -3996,7 +4064,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.SteelBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T1.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T1.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4004,38 +4072,36 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Steel, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.SteelBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T1.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T1.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T1.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T1.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
                         ItemList.Electric_Motor_LV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T1.get(1L))
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T1.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T1.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T1.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
                         ItemList.Electric_Motor_LV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T1.get(1L))
-                .fluidInputs(Materials.Tin.getMolten(144)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T1.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T1.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T1.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Steel, 2L),
                         ItemList.Electric_Motor_LV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T1.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(288)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T1.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -4046,7 +4112,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_LV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT1.get(1L))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT1.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -4059,7 +4125,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_LV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT1.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT1.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4071,16 +4137,15 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_LV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Copper, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT1.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(576)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT1.get(1L)).fluidInputs(Materials.Lead.getMolten(576))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.TitaniumBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T2.get(1L))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T2.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -4089,7 +4154,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.TitaniumBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T2.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T2.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4097,38 +4162,36 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Titanium, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.TitaniumBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T2.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T2.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T2.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T2.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Titanium, 2L),
                         ItemList.Electric_Motor_HV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T2.get(1L))
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T2.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T2.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T2.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Titanium, 2L),
                         ItemList.Electric_Motor_HV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T2.get(1L))
-                .fluidInputs(Materials.Tin.getMolten(144)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T2.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T2.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T2.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Titanium, 2L),
                         ItemList.Electric_Motor_HV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T2.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(288)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T2.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -4139,7 +4202,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_HV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT2.get(1L))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT2.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -4152,7 +4215,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_HV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT2.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT2.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4164,16 +4227,15 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_HV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Gold, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT2.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(576)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT2.get(1L)).fluidInputs(Materials.Lead.getMolten(576))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.TungstenSteelBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T3.get(1L))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T3.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -4182,7 +4244,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.TungstenSteelBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T3.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T3.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4190,38 +4252,36 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 1L),
                         GTUtility.getIntegratedCircuit(1),
                         CustomItemList.TungstenSteelBars.get(2))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Vent_T3.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
+                .itemOutputs(ItemList.Casing_AirFilter_Vent_T3.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T3.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T3.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TungstenSteel, 2L),
                         ItemList.Electric_Motor_IV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T3.get(1L))
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T3.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(72)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T3.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T3.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TungstenSteel, 2L),
                         ItemList.Electric_Motor_IV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T3.get(1L))
-                .fluidInputs(Materials.Tin.getMolten(144)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T3.get(1L)).fluidInputs(Materials.Tin.getMolten(144))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        CustomItemList.Casing_AirFilter_Vent_T3.get(1L),
+                        ItemList.Casing_AirFilter_Vent_T3.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.TungstenSteel, 2L),
                         ItemList.Electric_Motor_IV.get(2L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Casing_AirFilter_Turbine_T3.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(288)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Casing_AirFilter_Turbine_T3.get(1L)).fluidInputs(Materials.Lead.getMolten(288))
+                .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -4232,7 +4292,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_IV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT3.get(1L))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT3.get(1L))
                 .fluidInputs(Materials.SolderingAlloy.getMolten(144)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
@@ -4245,7 +4305,7 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_IV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT3.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT3.get(1L)).fluidInputs(Materials.Tin.getMolten(288))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
@@ -4257,9 +4317,8 @@ public class AssemblerRecipes implements Runnable {
                         ItemList.Electric_Pump_IV.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tungsten, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(CustomItemList.Machine_Multi_AirFilterT3.get(1L))
-                .fluidInputs(Materials.Lead.getMolten(576)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
+                .itemOutputs(ItemList.Machine_Multi_AirFilterT3.get(1L)).fluidInputs(Materials.Lead.getMolten(576))
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
     }
 
@@ -4778,10 +4837,22 @@ public class AssemblerRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
                             getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
-                            com.dreammaster.item.ItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
+                            NHItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
                             GTUtility.getIntegratedCircuit(2))
                     .itemOutputs(getModItem(AE2FluidCraft.ID, "fluid_interface", 1, 0)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
+            // Dual Interface (flat version)
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 4L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
+                            getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1),
+                            NHItemList.EngineeringProcessorFluidDiamondCore.getIS(2),
+                            GTUtility.getIntegratedCircuit(3))
+                    .itemOutputs(getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, 0)).duration(5 * SECONDS)
+                    .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+
             // Fluid Storage Housing
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -4835,6 +4906,12 @@ public class AssemblerRecipes implements Runnable {
                             GTUtility.getIntegratedCircuit(2))
                     .itemOutputs(getModItem(AE2Stuff.ID, "Wireless", 1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                     .addTo(assemblerRecipes);
+
+            // Wireless Hub
+            GTValues.RA.stdBuilder()
+                    .itemInputs(getModItem(AE2Stuff.ID, "Wireless", 8, 0, missing), ItemList.Emitter_LuV.get(1))
+                    .itemOutputs(getModItem(AE2Stuff.ID, "Wireless", 1, 17, missing)).duration(10 * SECONDS)
+                    .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         }
 
         if (TinkerConstruct.isModLoaded()) {
@@ -5064,7 +5141,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         alveary,
                         GTModHandler.getModItem(Forestry.ID, "thermionicTubes", 4L, 4),
-                        com.dreammaster.item.ItemList.ChargedCertusQuartzPlate.getIS(2),
+                        NHItemList.ChargedCertusQuartzPlate.getIS(2),
                         ItemList.Component_Filter.get(2L),
                         GTModHandler.getModItem(Forestry.ID, "royalJelly", 1L, 0))
                 .itemOutputs(GTModHandler.getModItem(Forestry.ID, "alveary", 1L, 6))
@@ -9480,103 +9557,95 @@ public class AssemblerRecipes implements Runnable {
 
             }
 
-            // --- Advanced Solar Panel
-            if (AdvancedSolarPanel.isModLoaded()) {
+            // GT solars
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hull_LV.get(1L),
-                                ItemList.Cover_SolarPanel_LV.get(1L),
-                                ItemList.Robot_Arm_LV.get(1L),
-                                ItemList.Battery_RE_LV_Lithium.get(1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 0))
-                        .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(40 * SECONDS)
-                        .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Hull_LV.get(1L),
+                            ItemList.Cover_SolarPanel_LV.get(1L),
+                            ItemList.Robot_Arm_LV.get(1L),
+                            ItemList.Battery_RE_LV_Lithium.get(1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(ItemList.Machine_LV_SolarPanel.get(1L))
+                    .fluidInputs(tMat.getMolten(288L * tMultiplier / 2L)).duration(40 * SECONDS).eut(TierEU.RECIPE_MV)
+                    .addTo(assemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hull_MV.get(1L),
-                                ItemList.Cover_SolarPanel_MV.get(1L),
-                                ItemList.Robot_Arm_MV.get(1L),
-                                ItemList.Battery_RE_MV_Lithium.get(1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 1))
-                        .fluidInputs(tMat.getMolten(576L * tMultiplier / 2L)).duration(50 * SECONDS)
-                        .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Hull_MV.get(1L),
+                            ItemList.Cover_SolarPanel_MV.get(1L),
+                            ItemList.Robot_Arm_MV.get(1L),
+                            ItemList.Battery_RE_MV_Lithium.get(1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(ItemList.Machine_MV_SolarPanel.get(1L))
+                    .fluidInputs(tMat.getMolten(576L * tMultiplier / 2L)).duration(50 * SECONDS).eut(TierEU.RECIPE_HV)
+                    .addTo(assemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hull_HV.get(1L),
-                                ItemList.Cover_SolarPanel_HV.get(1L),
-                                ItemList.Robot_Arm_HV.get(1L),
-                                ItemList.Battery_RE_HV_Lithium.get(1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 2))
-                        .fluidInputs(tMat.getMolten(864L * tMultiplier / 2L)).duration(60 * SECONDS)
-                        .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Hull_HV.get(1L),
+                            ItemList.Cover_SolarPanel_HV.get(1L),
+                            ItemList.Robot_Arm_HV.get(1L),
+                            ItemList.Battery_RE_HV_Lithium.get(1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(ItemList.Machine_HV_SolarPanel.get(1L))
+                    .fluidInputs(tMat.getMolten(864L * tMultiplier / 2L)).duration(60 * SECONDS).eut(TierEU.RECIPE_EV)
+                    .addTo(assemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hull_EV.get(1L),
-                                ItemList.Cover_SolarPanel_EV.get(1L),
-                                ItemList.Robot_Arm_EV.get(1L),
-                                ItemList.BatteryHull_EV_Full.get(1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(AdvancedSolarPanel.ID, "BlockAdvSolarPanel", 1L, 3))
-                        .fluidInputs(tMat.getMolten(1152L * tMultiplier / 2L)).duration(1 * MINUTES + 10 * SECONDS)
-                        .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Hull_EV.get(1L),
+                            ItemList.Cover_SolarPanel_EV.get(1L),
+                            ItemList.Robot_Arm_EV.get(1L),
+                            ItemList.BatteryHull_EV_Full.get(1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(ItemList.Machine_EV_SolarPanel.get(1L))
+                    .fluidInputs(tMat.getMolten(1152L * tMultiplier / 2L)).duration(1 * MINUTES + 10 * SECONDS)
+                    .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
 
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Hull_IV.get(1L),
+                            ItemList.Cover_SolarPanel_IV.get(1L),
+                            ItemList.Robot_Arm_IV.get(1L),
+                            ItemList.BatteryHull_IV_Full.get(1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(ItemList.Machine_IV_SolarPanel.get(1L))
+                    .fluidInputs(tMat.getMolten(1440 * tMultiplier / 2L)).duration(1 * MINUTES + 20 * SECONDS)
+                    .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
-            // --- Super Solar Panel
-            if (SuperSolarPanels.isModLoaded()) {
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Hull_LuV.get(1L),
+                            ItemList.Cover_SolarPanel_LuV.get(1L),
+                            ItemList.Robot_Arm_LuV.get(1L),
+                            ItemList.BatteryHull_LuV_Full.get(1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(ItemList.Machine_LuV_SolarPanel.get(1L))
+                    .fluidInputs(tMat.getMolten(1728 * tMultiplier / 2L)).duration(1 * MINUTES + 30 * SECONDS)
+                    .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hull_IV.get(1L),
-                                ItemList.Cover_SolarPanel_IV.get(1L),
-                                ItemList.Robot_Arm_IV.get(1L),
-                                ItemList.BatteryHull_IV_Full.get(1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(SuperSolarPanels.ID, "SpectralSolarPanel", 1L, 0))
-                        .fluidInputs(tMat.getMolten(1440 * tMultiplier / 2L)).duration(1 * MINUTES + 20 * SECONDS)
-                        .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Hull_ZPM.get(1L),
+                            ItemList.Cover_SolarPanel_ZPM.get(1L),
+                            ItemList.Robot_Arm_ZPM.get(1L),
+                            ItemList.BatteryHull_ZPM_Full.get(1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(ItemList.Machine_ZPM_SolarPanel.get(1L))
+                    .fluidInputs(tMat.getMolten(2016 * tMultiplier / 2L)).duration(1 * MINUTES + 40 * SECONDS)
+                    .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
 
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hull_LuV.get(1L),
-                                ItemList.Cover_SolarPanel_LuV.get(1L),
-                                ItemList.Robot_Arm_LuV.get(1L),
-                                ItemList.BatteryHull_LuV_Full.get(1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(SuperSolarPanels.ID, "SingularSolarPanel", 1L, 0))
-                        .fluidInputs(tMat.getMolten(1728 * tMultiplier / 2L)).duration(1 * MINUTES + 30 * SECONDS)
-                        .eut(TierEU.RECIPE_ZPM).addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hull_ZPM.get(1L),
-                                ItemList.Cover_SolarPanel_ZPM.get(1L),
-                                ItemList.Robot_Arm_ZPM.get(1L),
-                                ItemList.BatteryHull_ZPM_Full.get(1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(SuperSolarPanels.ID, "AdminSolarPanel", 1L, 0))
-                        .fluidInputs(tMat.getMolten(2016 * tMultiplier / 2L)).duration(1 * MINUTES + 40 * SECONDS)
-                        .eut(TierEU.RECIPE_UV).addTo(assemblerRecipes);
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                ItemList.Hull_UV.get(1L),
-                                ItemList.Cover_SolarPanel_UV.get(1L),
-                                ItemList.Robot_Arm_UV.get(1L),
-                                ItemList.BatteryHull_UV_Full.get(1L),
-                                GTUtility.getIntegratedCircuit(2))
-                        .itemOutputs(GTModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1L, 0))
-                        .fluidInputs(tMat.getMolten(2304 * tMultiplier / 2L)).duration(1 * MINUTES + 50 * SECONDS)
-                        .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
-
-            }
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            ItemList.Hull_UV.get(1L),
+                            ItemList.Cover_SolarPanel_UV.get(1L),
+                            ItemList.Robot_Arm_UV.get(1L),
+                            ItemList.BatteryHull_UV_Full.get(1L),
+                            GTUtility.getIntegratedCircuit(2))
+                    .itemOutputs(ItemList.Machine_UV_SolarPanel.get(1L))
+                    .fluidInputs(tMat.getMolten(2304 * tMultiplier / 2L)).duration(1 * MINUTES + 50 * SECONDS)
+                    .eut(TierEU.RECIPE_UHV).addTo(assemblerRecipes);
 
             // solar 1EU
 

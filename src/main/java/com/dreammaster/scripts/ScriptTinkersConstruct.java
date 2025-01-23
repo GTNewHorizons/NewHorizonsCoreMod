@@ -37,6 +37,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.mantle.MantleManualRecipeRegistry;
 import com.dreammaster.oredict.OreDictHelper;
 import com.dreammaster.recipes.Recipe;
@@ -1957,42 +1958,27 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeMeltingRecipe(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 14, missing));
         TConstructHelper.removeMeltingRecipe(getModItem(ExtraUtilities.ID, "cobblestone_compressed", 1, 15, missing));
         TConstructHelper.removeBasinRecipe(getModItem(IndustrialCraft2.ID, "blockMetal", 1, 5, missing));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
-                1585,
-                500,
-                FluidRegistry.getFluidStack("aluminum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1),
-                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
-                1585,
-                500,
-                FluidRegistry.getFluidStack("aluminum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Aluminium, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
-                1585,
-                500,
-                FluidRegistry.getFluidStack("aluminum.molten", 16));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Aluminium, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
-                1585,
-                500,
-                FluidRegistry.getFluidStack("aluminum.molten", 36));
+        TConstructHelper
+                .getMeltingAdder(
+                        GameRegistry.findBlock("gregtech", "gt.blockmachines"),
+                        1585,
+                        500,
+                        "aluminum.molten",
+                        144)
+                .add(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Aluminium, 1))
+                .withAmount(16)
+                .add(
+                        GTOreDictUnificator.get(OrePrefixes.dustTiny, Materials.Aluminium, 1L),
+                        getModItem(TinkerConstruct.ID, "oreBerries", 1, 4, missing))
+                .withAmount(36).add(GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Aluminium, 1L));
         Smeltery.addMelting(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Glass, 1L),
                 GameRegistry.findBlock("minecraft", "sand"),
                 0,
                 800,
                 FluidRegistry.getFluidStack("glass.molten", 1000));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "oreBerries", 1, 4, missing),
-                GameRegistry.findBlock("gregtech", "gt.blockmachines"),
-                1585,
-                500,
-                FluidRegistry.getFluidStack("aluminum.molten", 16));
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.nugget, Materials.Copper, 1L),
                 FluidRegistry.getFluidStack("copper.molten", 16),
@@ -2041,1320 +2027,253 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 0, missing),
                 false,
                 100);
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 0, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 1, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 2, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 3, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 4, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 5, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 6, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 7, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 8, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 9, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 10, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 11, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 12, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 13, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 14, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 15, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 16, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 17, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 18, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 19, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 20, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 21, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 22, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 25, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 26, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 27, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "Cast", 1, 0, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "Cast", 1, 1, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "Cast", 1, 2, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                getModItem(TinkerConstruct.ID, "Cast", 1, 3, missing),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 32),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Iron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Iron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Iron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.AnyIron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Iron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.BrownLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.BrownLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.BrownLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.BrownLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.BrownLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.BrownLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.YellowLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.YellowLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.YellowLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.YellowLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.YellowLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.YellowLimonite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.BandedIron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.BandedIron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.BandedIron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.BandedIron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.BandedIron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.BandedIron, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.GraniticMineralSand, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.GraniticMineralSand, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.GraniticMineralSand, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.GraniticMineralSand, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.GraniticMineralSand, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.GraniticMineralSand, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Magnetite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Magnetite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Magnetite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 28706),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Magnetite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Pyrite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Pyrite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Pyrite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Pyrite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Pyrite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Pyrite, 1L),
-                GameRegistry.findBlock("minecraft", "iron_ore"),
-                0,
-                700,
-                FluidRegistry.getFluidStack("iron.molten", 144));
-        Smeltery.addMelting(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 35),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Copper, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Copper, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Copper, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Copper, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Copper, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 871),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Malachite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Malachite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Malachite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Malachite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Malachite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Tetrahedrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Tetrahedrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Tetrahedrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Tetrahedrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Tetrahedrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Tetrahedrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Chalcopyrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Chalcopyrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Chalcopyrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Chalcopyrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Chalcopyrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Chalcopyrite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                3,
-                600,
-                FluidRegistry.getFluidStack("copper.molten", 144));
-        Smeltery.addMelting(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 57),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("tin.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Tin, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("tin.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Tin, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("tin.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Tin, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("tin.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Tin, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("tin.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Tin, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("tin.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Cassiterite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Cassiterite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Cassiterite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Cassiterite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Cassiterite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Cassiterite, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                400,
-                FluidRegistry.getFluidStack("tin.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.CassiteriteSand, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.CassiteriteSand, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.CassiteriteSand, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.CassiteriteSand, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.CassiteriteSand, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.CassiteriteSand, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                4,
-                600,
-                FluidRegistry.getFluidStack("tin.molten", 288));
-        Smeltery.addMelting(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 86),
-                GameRegistry.findBlock("minecraft", "gold_ore"),
-                0,
-                600,
-                FluidRegistry.getFluidStack("gold.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Gold, 1L),
-                GameRegistry.findBlock("minecraft", "gold_ore"),
-                0,
-                600,
-                FluidRegistry.getFluidStack("gold.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Gold, 1L),
-                GameRegistry.findBlock("minecraft", "gold_ore"),
-                0,
-                600,
-                FluidRegistry.getFluidStack("gold.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Gold, 1L),
-                GameRegistry.findBlock("minecraft", "gold_ore"),
-                0,
-                600,
-                FluidRegistry.getFluidStack("gold.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Gold, 1L),
-                GameRegistry.findBlock("minecraft", "gold_ore"),
-                0,
-                600,
-                FluidRegistry.getFluidStack("gold.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Gold, 1L),
-                GameRegistry.findBlock("minecraft", "gold_ore"),
-                0,
-                600,
-                FluidRegistry.getFluidStack("gold.molten", 144));
-        Smeltery.addMelting(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 19),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                5,
-                400,
-                FluidRegistry.getFluidStack("aluminum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Aluminium, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                5,
-                400,
-                FluidRegistry.getFluidStack("aluminum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Aluminium, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                5,
-                400,
-                FluidRegistry.getFluidStack("aluminum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Aluminium, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                5,
-                400,
-                FluidRegistry.getFluidStack("aluminum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Aluminium, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                5,
-                400,
-                FluidRegistry.getFluidStack("aluminum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Aluminium, 1L),
-                GameRegistry.findBlock("TConstruct", "SearedBrick"),
-                5,
-                400,
-                FluidRegistry.getFluidStack("aluminum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Nickel, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                34,
-                400,
-                FluidRegistry.getFluidStack("nickel.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Nickel, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                34,
-                400,
-                FluidRegistry.getFluidStack("nickel.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Nickel, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                34,
-                400,
-                FluidRegistry.getFluidStack("nickel.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Nickel, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                34,
-                400,
-                FluidRegistry.getFluidStack("nickel.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Nickel, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                34,
-                400,
-                FluidRegistry.getFluidStack("nickel.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Nickel, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                34,
-                400,
-                FluidRegistry.getFluidStack("nickel.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Silver, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                54,
-                500,
-                FluidRegistry.getFluidStack("silver.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Silver, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                54,
-                500,
-                FluidRegistry.getFluidStack("silver.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Silver, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                54,
-                500,
-                FluidRegistry.getFluidStack("silver.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Silver, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                54,
-                500,
-                FluidRegistry.getFluidStack("silver.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Silver, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                54,
-                500,
-                FluidRegistry.getFluidStack("silver.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Silver, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                54,
-                500,
-                FluidRegistry.getFluidStack("silver.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ore, Materials.Platinum, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                85,
-                800,
-                FluidRegistry.getFluidStack("platinum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Platinum, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                85,
-                800,
-                FluidRegistry.getFluidStack("platinum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Platinum, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                85,
-                800,
-                FluidRegistry.getFluidStack("platinum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Platinum, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                85,
-                800,
-                FluidRegistry.getFluidStack("platinum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Platinum, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                85,
-                800,
-                FluidRegistry.getFluidStack("platinum.molten", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Platinum, 1L),
-                GameRegistry.findBlock("gregtech", "gt.blockores"),
-                85,
-                800,
-                FluidRegistry.getFluidStack("platinum.molten", 144));
-        Smeltery.addMelting(
-                new ItemStack(GregTechAPI.sBlockOres1, 1, 501),
-                GameRegistry.findBlock("minecraft", "emerald_ore"),
-                0,
-                800,
-                FluidRegistry.getFluidStack("emerald.liquid", 640));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Emerald, 1L),
-                GameRegistry.findBlock("minecraft", "emerald_ore"),
-                0,
-                800,
-                FluidRegistry.getFluidStack("emerald.liquid", 640));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Emerald, 1L),
-                GameRegistry.findBlock("minecraft", "emerald_ore"),
-                0,
-                800,
-                FluidRegistry.getFluidStack("emerald.liquid", 640));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Emerald, 1L),
-                GameRegistry.findBlock("minecraft", "emerald_ore"),
-                0,
-                800,
-                FluidRegistry.getFluidStack("emerald.liquid", 640));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Emerald, 1L),
-                GameRegistry.findBlock("minecraft", "emerald_ore"),
-                0,
-                800,
-                FluidRegistry.getFluidStack("emerald.liquid", 640));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Emerald, 1L),
-                GameRegistry.findBlock("minecraft", "emerald_ore"),
-                0,
-                800,
-                FluidRegistry.getFluidStack("emerald.liquid", 640));
-        Smeltery.addMelting(
+        TConstructHelper
+                .getMeltingAdder(GameRegistry.findBlock("TConstruct", "MetalBlock"), 7, 500, "aluminumbrass.molten", 72)
+                .add(
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 0, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 1, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 2, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 3, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 4, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 5, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 6, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 7, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 8, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 9, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 10, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 11, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 12, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 13, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 14, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 15, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 16, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 17, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 18, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 19, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 20, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 21, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 22, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 25, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 26, missing),
+                        getModItem(TinkerConstruct.ID, "metalPattern", 1, 27, missing),
+                        getModItem(TinkerConstruct.ID, "Cast", 1, 0, missing),
+                        getModItem(TinkerConstruct.ID, "Cast", 1, 1, missing),
+                        getModItem(TinkerConstruct.ID, "Cast", 1, 2, missing),
+                        getModItem(TinkerConstruct.ID, "Cast", 1, 3, missing));
+        TConstructHelper.getMeltingAdder(GameRegistry.findBlock("minecraft", "iron_ore"), 0, 700, "iron.molten", 144)
+                .add(
+                        new ItemStack(GregTechAPI.sBlockOres1, 1, 32),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.AnyIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.BrownLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.BrownLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.BrownLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.BrownLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.BrownLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.BrownLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.YellowLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.YellowLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.YellowLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.YellowLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.YellowLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.YellowLimonite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.BandedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.BandedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.BandedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.BandedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.BandedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.BandedIron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.GraniticMineralSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.GraniticMineralSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.GraniticMineralSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.GraniticMineralSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.GraniticMineralSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.GraniticMineralSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Magnetite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Magnetite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Magnetite, 1L),
+                        new ItemStack(GregTechAPI.sBlockOres1, 1, 28706),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Magnetite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Magnetite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Pyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Pyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Pyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Pyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Pyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Pyrite, 1L));
+        TConstructHelper
+                .getMeltingAdder(GameRegistry.findBlock("TConstruct", "SearedBrick"), 3, 600, "copper.molten", 144).add(
+                        new ItemStack(GregTechAPI.sBlockOres1, 1, 35),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Copper, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Copper, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Copper, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Copper, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Copper, 1L),
+                        new ItemStack(GregTechAPI.sBlockOres1, 1, 871),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Malachite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Malachite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Malachite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Malachite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Malachite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Tetrahedrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Tetrahedrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Tetrahedrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Tetrahedrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Tetrahedrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Tetrahedrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Chalcopyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Chalcopyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Chalcopyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Chalcopyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Chalcopyrite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Chalcopyrite, 1L));
+        TConstructHelper.getMeltingAdder(GameRegistry.findBlock("TConstruct", "SearedBrick"), 4, 400, "tin.molten", 144)
+                .add(
+                        new ItemStack(GregTechAPI.sBlockOres1, 1, 57),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Tin, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Tin, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Tin, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Tin, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Tin, 1L));
+        TConstructHelper.getMeltingAdder(GameRegistry.findBlock("TConstruct", "SearedBrick"), 4, 600, "tin.molten", 288)
+                .add(
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Cassiterite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Cassiterite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Cassiterite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Cassiterite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Cassiterite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Cassiterite, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.CassiteriteSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.CassiteriteSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.CassiteriteSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.CassiteriteSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.CassiteriteSand, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.CassiteriteSand, 1L));
+        TConstructHelper.getMeltingAdder(GameRegistry.findBlock("minecraft", "gold_ore"), 0, 600, "gold.molten", 144)
+                .add(
+                        new ItemStack(GregTechAPI.sBlockOres1, 1, 86),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Gold, 1L));
+        TConstructHelper
+                .getMeltingAdder(GameRegistry.findBlock("TConstruct", "SearedBrick"), 5, 400, "aluminum.molten", 144)
+                .add(
+                        new ItemStack(GregTechAPI.sBlockOres1, 1, 19),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Aluminium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Aluminium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Aluminium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Aluminium, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Aluminium, 1L));
+        TConstructHelper
+                .getMeltingAdder(GameRegistry.findBlock("gregtech", "gt.blockores"), 34, 400, "nickel.molten", 144).add(
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Nickel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Nickel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Nickel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Nickel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Nickel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Nickel, 1L));
+        TConstructHelper
+                .getMeltingAdder(GameRegistry.findBlock("gregtech", "gt.blockores"), 54, 500, "silver.molten", 144).add(
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Silver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Silver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Silver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Silver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Silver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Silver, 1L));
+        TConstructHelper
+                .getMeltingAdder(GameRegistry.findBlock("gregtech", "gt.blockores"), 85, 800, "platinum.molten", 144)
+                .add(
+                        GTOreDictUnificator.get(OrePrefixes.ore, Materials.Platinum, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Platinum, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Platinum, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Platinum, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Platinum, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Platinum, 1L));
+        TConstructHelper
+                .getMeltingAdder(GameRegistry.findBlock("minecraft", "emerald_ore"), 0, 800, "emerald.liquid", 640).add(
+                        new ItemStack(GregTechAPI.sBlockOres1, 1, 501),
+                        GTOreDictUnificator.get(OrePrefixes.rawOre, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreNetherrack, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreEndstone, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreBlackgranite, Materials.Emerald, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.oreRedgranite, Materials.Emerald, 1L));
+        TConstructHelper.getMeltingAdder(GameRegistry.findBlock("IC2", "blockMetal"), 5, 800, "steel.molten", 576).add(
                 ItemList.Shape_Empty.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Plate.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Casing.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Gear.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Credit.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Bottle.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Ingot.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Ball.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Block.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Nugget.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Bun.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Bread.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Baguette.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Cylinder.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Anvil.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Name.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Arrow.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Gear_Small.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Rod.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Bolt.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Round.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Screw.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Ring.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Rod_Long.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Rotor.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Turbine_Blade.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Pipe_Tiny.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Pipe_Small.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Pipe_Medium.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Pipe_Large.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Mold_Pipe_Huge.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Plate.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Rod.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Bolt.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Ring.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Cell.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Ingot.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Wire.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Casing.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Pipe_Tiny.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Pipe_Small.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Pipe_Medium.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Pipe_Large.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Pipe_Huge.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Block.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Sword.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Pickaxe.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Shovel.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Axe.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Hoe.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Hammer.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_File.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Saw.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Gear.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Bottle.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Rotor.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Small_Gear.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 ItemList.Shape_Extruder_Turbine_Blade.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
-                com.dreammaster.item.ItemList.ExtruderShapeBoat.getIS(1),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
+                NHItemList.ExtruderShapeBoat.getIS(1),
                 CustomItemList.MarshmallowForm.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 CustomItemList.MoldChestplate.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 CustomItemList.MoldHelmet.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
                 CustomItemList.MoldLeggings.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
-                CustomItemList.MoldBoots.get(1L),
-                GameRegistry.findBlock("IC2", "blockMetal"),
-                5,
-                800,
-                FluidRegistry.getFluidStack("steel.molten", 576));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 1L),
-                GameRegistry.findBlock("TConstruct", "GlueBlock"),
-                0,
-                250,
-                FluidRegistry.getFluidStack("glue", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Rubber, 1L),
-                GameRegistry.findBlock("TConstruct", "GlueBlock"),
-                0,
-                300,
-                FluidRegistry.getFluidStack("glue", 144));
-        Smeltery.addMelting(
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1L),
-                GameRegistry.findBlock("TConstruct", "GlueBlock"),
-                0,
-                350,
-                FluidRegistry.getFluidStack("glue", 144));
-        Smeltery.addMelting(
-                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing),
-                GameRegistry.findBlock("TConstruct", "GlueBlock"),
-                0,
-                400,
-                FluidRegistry.getFluidStack("glue", 576));
-        Smeltery.addMelting(
-                getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing),
-                GameRegistry.findBlock("TConstruct", "GlueBlock"),
-                0,
-                200,
-                FluidRegistry.getFluidStack("glue", 288));
+                CustomItemList.MoldBoots.get(1L));
+        TConstructHelper.getMeltingAdder(GameRegistry.findBlock("TConstruct", "GlueBlock"), 0, 250, "glue", 144)
+                .add(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Rubber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Rubber, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Rubber, 1L))
+                .withAmount(576).add(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 10, missing)).withAmount(288)
+                .add(getModItem(ElectroMagicTools.ID, "EMTItems", 1, 8, missing));
         Smeltery.addMelting(
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 1L),
                 GameRegistry.findBlock("TConstruct", "GravelOre"),
@@ -3391,18 +2310,10 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "cobblestone", 1, 0, missing),
                 false,
                 245);
-        Smeltery.addMelting(
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0, missing),
-                GameRegistry.findBlock("minecraft", "obsidian"),
-                0,
-                850,
-                FluidRegistry.getFluidStack("obsidian.molten", 288));
-        Smeltery.addMelting(
-                getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing),
-                GameRegistry.findBlock("minecraft", "obsidian"),
-                0,
-                850,
-                FluidRegistry.getFluidStack("obsidian.molten", 288));
+        TConstructHelper
+                .getMeltingAdder(GameRegistry.findBlock("minecraft", "obsidian"), 0, 850, "obsidian.molten", 288).add(
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0, missing),
+                        getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 1, missing));
         TConstructRegistry.getBasinCasting().addCastingRecipe(
                 getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10, missing),
                 FluidRegistry.getFluidStack("ender", 2250),

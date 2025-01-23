@@ -14,6 +14,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -1191,7 +1192,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Pentacadmiummagnesiumhexaoxid, 1L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Pentacadmiummagnesiumhexaoxid, 1L))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Pentacadmiummagnesiumhexaoxid, 1L))
                 .duration(2 * MINUTES).eut(TierEU.RECIPE_HV).metadata(COIL_HEAT, 2500).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
@@ -1611,14 +1612,12 @@ public class BlastFurnaceRecipes implements Runnable {
 
         if (SGCraft.isModLoaded()) {
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64))
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.getIS().splitStack(64))
                     .fluidInputs(MaterialsUEVplus.StargateCrystalSlurry.getFluid(128_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgCoreCrystal", 1L)).duration(7 * 24 * HOURS * 2)
                     .eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000).addTo(blastFurnaceRecipes); // ^ 2 weeks
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(com.dreammaster.item.ItemList.StargateCrystalDust.getIS().splitStack(64))
+            GTValues.RA.stdBuilder().itemInputs(NHItemList.StargateCrystalDust.getIS().splitStack(64))
                     .fluidInputs(MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(128_000_000L))
                     .itemOutputs(GTModHandler.getModItem(SGCraft.ID, "sgControllerCrystal", 1L))
                     .duration(7 * 24 * HOURS * 2).eut(TierEU.RECIPE_MAX).metadata(COIL_HEAT, 100_000)

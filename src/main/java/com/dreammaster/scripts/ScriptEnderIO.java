@@ -1762,7 +1762,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMachinePart", 1, 0, missing),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 1, missing),
                         GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LV, 1),
-                        ItemList.IC2_Item_Casing_Steel.get(2L))
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.Steel, 2L))
                 .itemOutputs(getModItem(EnderIO.ID, "blockCrafter", 1, 0, missing)).duration(10 * SECONDS).eut(64)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()

@@ -13,6 +13,7 @@ import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
@@ -22,6 +23,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gtPlusPlus.core.recipe.common.CI.bits;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,6 +32,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import fox.spiteful.avaritia.compat.ticon.Tonkers;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
@@ -37,6 +40,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import tconstruct.tools.TinkerTools;
 
@@ -366,7 +370,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'c',
                 getModItem(DraconicEvolution.ID, "awakenedCore", 1, 0, missing),
                 'd',
-                com.dreammaster.item.ItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
+                NHItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
                 'e',
                 getModItem(DraconicEvolution.ID, "draconiumEnergyCore", 1, 1, missing),
                 'f',
@@ -786,7 +790,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 'b',
                 "plateDraconiumAwakened",
                 'c',
-                com.dreammaster.item.ItemList.EngravedManyullynCrystalChip.getIS(1),
+                NHItemList.EngravedManyullynCrystalChip.getIS(1),
                 'd',
                 getModItem(DraconicEvolution.ID, "draconiumFluxCapacitor", 1, 1, missing),
                 'e',
@@ -1244,6 +1248,14 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Paper, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "safetyMatch", 1, 0, missing))
                 .duration(3 * SECONDS + 4 * TICKS).eut(16).addTo(packagerRecipes);
+
+        GTModHandler.addCraftingRecipe(
+                getModItem(DraconicEvolution.ID, "dislocatorInhibitor", 1, 0, missing),
+                bits,
+                new Object[] { "PSP", "BMB", "PSP", 'P', "plateSteelMagnetic", 'S',
+                        getModItem(TinkerConstruct.ID, "heavyPlate", 1, 6, missing), 'B',
+                        getModItem(EnderIO.ID, "blockDarkIronBars", 1, 0, missing), 'M',
+                        getModItem(DraconicEvolution.ID, "magnet", 1, 0, missing) });
 
     }
 }

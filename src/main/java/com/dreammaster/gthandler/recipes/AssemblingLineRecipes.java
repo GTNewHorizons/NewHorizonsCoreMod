@@ -2,25 +2,23 @@ package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Californium;
 import static gregtech.api.enums.GTValues.L;
-import static gregtech.api.enums.Mods.AE2FluidCraft;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EternalSingularity;
-import static gregtech.api.enums.Mods.GalaxySpace;
+import static gregtech.api.enums.Mods.GTNHIntergalactic;
+import static gregtech.api.enums.Mods.GalacticraftAmunRa;
 import static gregtech.api.enums.Mods.GraviSuite;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SGCraft;
-import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.HOURS;
-import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
 import static gregtech.api.util.GTRecipeConstants.AssemblyLine;
 import static gregtech.api.util.GTRecipeConstants.RESEARCH_ITEM;
-import static gregtech.api.util.GTRecipeConstants.RESEARCH_TIME;
+import static gregtech.api.util.GTRecipeConstants.SCANNING;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
 import static tectech.thing.CustomItemList.DATApipe;
@@ -43,6 +41,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
+import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import appeng.api.AEApi;
 import bartworks.common.loaders.ItemRegistry;
@@ -60,6 +60,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.recipe.Scanning;
 import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.core.material.MaterialsElements;
@@ -83,7 +84,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Heavy duty alloy ingot T5
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, CustomItemList.HeavyDutyPlateTier4.get(1L))
-                .metadata(RESEARCH_TIME, 4 * MINUTES + 10 * SECONDS)
+                .metadata(SCANNING, new Scanning(1 * MINUTES + 40 * SECONDS, TierEU.RECIPE_IV))
                 .itemInputs(
                         CustomItemList.HeavyDutyPlateTier4.get(1L),
                         CustomItemList.QuantinumCompressedPlate.get(4L),
@@ -95,7 +96,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Heavy duty alloy ingot T6
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, CustomItemList.HeavyDutyPlateTier5.get(1L))
-                .metadata(RESEARCH_TIME, 375 * SECONDS)
+                .metadata(SCANNING, new Scanning(1 * MINUTES + 50 * SECONDS, TierEU.RECIPE_LuV))
                 .itemInputs(
                         CustomItemList.HeavyDutyPlateTier5.get(1L),
                         CustomItemList.LeadOriharukonPlate.get(5L),
@@ -107,7 +108,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Heavy duty alloy ingot T7
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, CustomItemList.HeavyDutyPlateTier6.get(1L))
-                .metadata(RESEARCH_TIME, 500 * SECONDS)
+                .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_ZPM))
                 .itemInputs(
                         CustomItemList.HeavyDutyPlateTier6.get(1L),
                         CustomItemList.MysteriousCrystalCompressedPlate.get(6L),
@@ -119,7 +120,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Heavy duty alloy ingot T8
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, CustomItemList.HeavyDutyPlateTier7.get(1L))
-                .metadata(RESEARCH_TIME, 625 * SECONDS)
+                .metadata(SCANNING, new Scanning(2 * MINUTES + 10 * SECONDS, TierEU.RECIPE_UV))
                 .itemInputs(
                         CustomItemList.HeavyDutyPlateTier7.get(1L),
                         CustomItemList.BlackPlutoniumCompressedPlate.get(7L),
@@ -129,9 +130,9 @@ public class AssemblingLineRecipes implements Runnable {
                 .itemOutputs(CustomItemList.HeavyDutyAlloyIngotT8.get(1L)).eut(TierEU.RECIPE_UEV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
 
-        // Mainframe Circuits and Neuro CPU
+        // Neuro CPU
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Circuit_Chip_Stemcell.get(1L))
-                .metadata(RESEARCH_TIME, 1 * HOURS)
+                .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_LuV))
                 .itemInputs(
                         ItemList.Circuit_Board_Wetware_Extreme.get(1L),
                         ItemList.Circuit_Chip_Stemcell.get(16L),
@@ -147,8 +148,9 @@ public class AssemblingLineRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Chip_NeuroCPU.get(1L)).eut(TierEU.RECIPE_ZPM).duration(30 * SECONDS)
                 .addTo(AssemblyLine);
 
+        // Bio CPU
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Circuit_Chip_NeuroCPU.get(1L))
-                .metadata(RESEARCH_TIME, 2 * HOURS)
+                .metadata(SCANNING, new Scanning(1 * MINUTES + 30 * SECONDS, TierEU.RECIPE_ZPM))
                 .itemInputs(
                         ItemList.Circuit_Board_Bio_Ultra.get(1L),
                         ItemList.Circuit_Chip_Biocell.get(16L),
@@ -164,8 +166,9 @@ public class AssemblingLineRecipes implements Runnable {
                 .itemOutputs(ItemList.Circuit_Chip_BioCPU.get(1L)).eut(TierEU.RECIPE_UHV / 2).duration(30 * SECONDS)
                 .addTo(AssemblyLine);
 
+        // Lapotronic Energy Orb Cluster
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Energy_LapotronicOrb.get(1L))
-                .metadata(RESEARCH_TIME, 4 * HOURS)
+                .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                 .itemInputs(
                         ItemList.Circuit_Board_Multifiberglass.get(1L),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.NaquadahAlloy, 64L),
@@ -183,7 +186,7 @@ public class AssemblingLineRecipes implements Runnable {
 
         // Advanced Stocking Input Bus (ME)
         GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_Bus_ME.get(1L))
-                .metadata(RESEARCH_TIME, 1 * HOURS)
+                .metadata(SCANNING, new Scanning(50 * SECONDS, TierEU.RECIPE_EV))
                 .itemInputs(
                         ItemList.Hatch_Input_Bus_LuV.get(1L),
                         GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1L),
@@ -193,29 +196,6 @@ public class AssemblingLineRecipes implements Runnable {
                 .fluidInputs(new FluidStack(solderIndalloy, 288), FluidRegistry.getFluidStack("lubricant", 500))
                 .itemOutputs(ItemList.Hatch_Input_Bus_ME_Advanced.get(1L)).eut(TierEU.RECIPE_LuV).duration(15 * SECONDS)
                 .addTo(AssemblyLine);
-
-        TTRecipeAdder.addResearchableAssemblylineRecipe(
-                ItemList.Hatch_CraftingInput_Bus_ME_ItemOnly.get(1L),
-                2000 * 60 * 8,
-                2000,
-                3000000,
-                2,
-                new ItemStack[] { ItemList.Hatch_Input_Bus_ME.get(1L), ItemList.Hatch_Input_Multi_2x2_UEV.get(1L),
-                        // 16384k storage component
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 8, 60),
-                        // 16384k fluid storage component
-                        GTModHandler.getModItem(AE2FluidCraft.ID, "fluid_part", 8, 7),
-                        // ME Controller
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, WILDCARD),
-                        // Dual Interface
-                        GTModHandler.getModItem(AE2FluidCraft.ID, "part_fluid_interface", 1, WILDCARD),
-                        // Pattern capacity card
-                        GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 3, 54) },
-                new FluidStack[] { FluidRegistry.getFluidStack("molten.spacetime", 16 * INGOTS),
-                        FluidRegistry.getFluidStack("molten.mutatedlivingsolder", 2000), },
-                ItemList.Hatch_CraftingInput_Bus_ME.get(1L),
-                30 * SECONDS,
-                (int) TierEU.RECIPE_UIV);
 
         // Cloud Computation Client Hatch
         TTRecipeAdder.addResearchableAssemblylineRecipe(
@@ -340,26 +320,7 @@ public class AssemblingLineRecipes implements Runnable {
                 30 * SECONDS,
                 (int) TierEU.RECIPE_UEV);
 
-        // Solar Factory Controller
-        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Cover_SolarPanel.get(1))
-                .metadata(RESEARCH_TIME, 2 * HOURS)
-                .itemInputs(
-                        ItemList.Hull_LuV.get(2),
-                        ItemList.AssemblingMachineLuV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.BlueAlloy, 4),
-                        ItemList.Robot_Arm_LuV.get(8),
-                        ItemList.Electric_Motor_LuV.get(4),
-                        ItemList.Electric_Piston_LuV.get(4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.ZPM), 4),
-                        GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 8))
-                .itemOutputs(ItemList.SolarFactory.get(1))
-                .fluidInputs(
-                        new FluidStack(solderIndalloy, 2880),
-                        Materials.Lubricant.getFluid(1440),
-                        Materials.Electrotine.getMolten(720))
-                .duration(60 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
-
-        if (GalaxySpace.isModLoaded()) {
+        if (GTNHIntergalactic.isModLoaded()) {
             // Dyson Swarm Module
             TTRecipeAdder.addResearchableAssemblylineRecipe(
                     GTModHandler.getModItem(OpenComputers.ID, "item", 1, 91),
@@ -367,13 +328,12 @@ public class AssemblingLineRecipes implements Runnable {
                     512,
                     (int) TierEU.RECIPE_UEV,
                     16,
-                    new Object[] { ItemList.Cover_SolarPanel_LuV.get(4),
-                            GTModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 8, 3),
+                    new Object[] { ItemList.Cover_SolarPanel_LuV.get(4), new ItemStack(IGItems.DysonSwarmItems, 8, 3),
                             new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2L },
                             ItemList.Circuit_Chip_QPIC.get(2), ItemList.Emitter_UEV.get(1), ItemList.Sensor_UEV.get(1),
                             GTModHandler.getModItem(OpenComputers.ID, "item", 4, 91) },
                     new FluidStack[] { new FluidStack(solderUEV, 18_432) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 64, 0),
+                    new ItemStack(IGItems.DysonSwarmItems, 64, 0),
                     5 * SECONDS,
                     (int) TierEU.RECIPE_UHV);
 
@@ -391,18 +351,18 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { new FluidStack(FluidRegistry.getFluid("liquid helium"), 50_000),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 0),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 0),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Energy Receiver Dish Block
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    GTModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 1, 3),
+                    new ItemStack(IGItems.DysonSwarmItems, 1, 3),
                     192000,
                     512,
                     (int) TierEU.RECIPE_UHV,
                     32,
-                    new ItemStack[] { GTModHandler.getModItem(GalaxySpace.ID, "item.DysonSwarmParts", 64, 3),
+                    new ItemStack[] { new ItemStack(IGItems.DysonSwarmItems, 64, 3),
                             ItemRefer.Advanced_Radiation_Protection_Plate.get(64), ItemList.Reactor_Coolant_Sp_6.get(1),
                             ItemList.Reactor_Coolant_Sp_6.get(1), ItemList.Reactor_Coolant_Sp_6.get(1),
                             ItemList.Reactor_Coolant_Sp_6.get(1),
@@ -411,7 +371,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 3, 1),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 3, 1),
                     30 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -429,7 +389,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50000),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 2),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 2),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -447,7 +407,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(50_000),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11520),
                             Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 1, 3),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 1, 3),
                     10 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -465,7 +425,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { MaterialsElements.STANDALONE.RHUGNOR.getFluidStack(40),
                             Materials.SuperCoolant.getFluid(16_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 4),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 4),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -481,7 +441,7 @@ public class AssemblingLineRecipes implements Runnable {
                             tectech.thing.CustomItemList.Machine_Multi_Computer.get(4), },
                     new FluidStack[] { Materials.SuperCoolant.getFluid(32_000), new FluidStack(solderUEV, 11_520),
                             Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 8, 5),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 8, 5),
                     80 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -499,7 +459,7 @@ public class AssemblingLineRecipes implements Runnable {
                             CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
                     new FluidStack[] { Materials.RadoxPolymer.getMolten(3_456), Materials.SuperCoolant.getFluid(16_000),
                             new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 6),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 6),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -517,7 +477,7 @@ public class AssemblingLineRecipes implements Runnable {
                             CustomItemList.MicaInsulatorFoil.get(64), CustomItemList.MicaInsulatorFoil.get(64) },
                     new FluidStack[] { Materials.RadoxPolymer.getMolten(3_240), Materials.SuperCoolant.getFluid(16_000),
                             new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 4, 7),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 4, 7),
                     40 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -533,13 +493,13 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.SuperconductorUEVBase, 4), },
                     new FluidStack[] { Materials.RadoxPolymer.getMolten(144), Materials.SuperCoolant.getFluid(16_000),
                             new FluidStack(solderUEV, 11_520), Materials.UUMatter.getFluid(8_000) },
-                    GTModHandler.getModItem(GalaxySpace.ID, "dysonswarmparts", 1, 8),
+                    GTModHandler.getModItem(GTNHIntergalactic.ID, "dysonswarmparts", 1, 8),
                     10 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
             // Dyson Swarm Controller
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    GTModHandler.getModItem(SuperSolarPanels.ID, "PhotonicSolarPanel", 1),
+                    ItemList.Machine_UV_SolarPanel.get(1),
                     192_000,
                     512,
                     (int) TierEU.RECIPE_UEV,
@@ -555,6 +515,44 @@ public class AssemblingLineRecipes implements Runnable {
                     2 * MINUTES,
                     (int) TierEU.RECIPE_UIV);
         }
+
+        if (GalacticraftAmunRa.isModLoaded()) {
+            // Nanite Containment Bus
+            TTRecipeAdder.addResearchableAssemblylineRecipe(
+                    GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 1, 28),
+                    32_000,
+                    64,
+                    (int) TierEU.RECIPE_UV,
+                    16,
+                    new Object[] { ItemList.Hatch_Input_Bus_MAX.get(1), ItemList.Quantum_Chest_EV.get(1),
+                            ItemList.Field_Generator_UHV.get(1),
+                            GTModHandler.getModItem(GalacticraftAmunRa.ID, "item.baseItem", 4, 28),
+                            GGMaterial.enrichedNaquadahAlloy.get(OrePrefixes.plateDense, 4),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.CosmicNeutronium, 4) },
+                    new FluidStack[] { new FluidStack(solderUEV, 2_304) },
+                    ItemList.Hatch_Nanite.get(1),
+                    30 * SECONDS,
+                    (int) TierEU.RECIPE_UHV);
+        }
+
+        // Bulk Catalyst Housing
+        TTRecipeAdder.addResearchableAssemblylineRecipe(
+                GregtechItemList.Bus_Catalysts.get(1),
+                2_048_000,
+                64,
+                (int) TierEU.RECIPE_UEV,
+                16,
+                new Object[] { ItemList.Hull_UEV.get(1), ItemList.Quantum_Chest_IV.get(1),
+                        MaterialsAlloy.QUANTUM.getFrameBox(16), ItemList.Field_Generator_UEV.get(1),
+                        GregtechItemList.Laser_Lens_Special.get(4),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.TengamAttuned, 32),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.InfinityCatalyst, 16),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.Infinity, 8) },
+                new FluidStack[] { new FluidStack(solderUEV, 9_216), MaterialsAlloy.ABYSSAL.getFluidStack(144 * 128),
+                        MaterialsAlloy.OCTIRON.getFluidStack(144 * 256) },
+                ItemList.Hatch_Catalyst_Bulk.get(1),
+                30 * SECONDS,
+                (int) TierEU.RECIPE_UEV);
 
         if (SGCraft.isModLoaded() && EternalSingularity.isModLoaded()) {
 
@@ -577,7 +575,7 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { Materials.SolderingAlloy.getMolten(3_744L),
                             Materials.Naquadria.getMolten(4_032L),
                             new FluidStack(FluidRegistry.getFluid("ic2coolant"), 20_000) },
-                    com.dreammaster.item.ItemList.NanoCircuitOrigin.getIS(1),
+                    NHItemList.NanoCircuitOrigin.getIS(1),
                     400 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
@@ -594,11 +592,11 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.NaquadahAlloy, 64L),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.NaquadahAlloy, 64L),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.NaquadahAlloy, 64L),
-                            com.dreammaster.item.ItemList.NanoCircuitOrigin.getIS(16) },
+                            NHItemList.NanoCircuitOrigin.getIS(16) },
                     new FluidStack[] { Materials.Neutronium.getMolten(36_864L), Materials.Tritanium.getMolten(36_864L),
                             Materials.Tetranaquadahdiindiumhexaplatiumosminid.getMolten(36_864L),
                             Materials.Silver.getPlasma(36_864L) },
-                    com.dreammaster.item.ItemList.GatePlateOrigin.getIS(1),
+                    NHItemList.GatePlateOrigin.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UHV);
 
@@ -617,11 +615,11 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 8L),
                             GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 64L),
                             GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 64L),
-                            com.dreammaster.item.ItemList.NanoCircuitOrigin.getIS(32) },
+                            NHItemList.NanoCircuitOrigin.getIS(32) },
                     new FluidStack[] { Materials.Neutronium.getMolten(9_216L), Materials.Tritanium.getMolten(9_216L),
                             Materials.Tetranaquadahdiindiumhexaplatiumosminid.getMolten(9_216L),
                             Materials.Silver.getPlasma(9_216L) },
-                    com.dreammaster.item.ItemList.ChevronOrigin.getIS(1),
+                    NHItemList.ChevronOrigin.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UHV);
 
@@ -638,21 +636,19 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 64L) },
                     new FluidStack[] { Materials.Neutronium.getMolten(73728L), Materials.Tritanium.getMolten(73_728L),
                             Materials.Concrete.getMolten(73_728L) },
-                    com.dreammaster.item.ItemList.FramePartOrigin.getIS(1),
+                    NHItemList.FramePartOrigin.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UHV);
 
             // UEV Gate
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.NanoCircuitOrigin.getIS(1),
+                    NHItemList.NanoCircuitOrigin.getIS(1),
                     192000 * 2,
                     512 * 2,
                     4_000_000,
                     32 * 2,
-                    new Object[] { ItemList.Circuit_Board_Bio_Ultra.get(1L),
-                            com.dreammaster.item.ItemList.PicoWafer.getIS(4),
-                            com.dreammaster.item.ItemList.NanoCircuitOrigin.getIS(2),
-                            ItemList.Circuit_Parts_TransistorXSMD.get(48L),
+                    new Object[] { ItemList.Circuit_Board_Bio_Ultra.get(1L), NHItemList.PicoWafer.getIS(4),
+                            NHItemList.NanoCircuitOrigin.getIS(2), ItemList.Circuit_Parts_TransistorXSMD.get(48L),
                             ItemList.Circuit_Parts_ResistorXSMD.get(48L), ItemList.Circuit_Parts_CapacitorXSMD.get(48L),
                             ItemList.Circuit_Parts_DiodeXSMD.get(48L), ItemList.Circuit_Chip_PPIC.get(64L),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 16),
@@ -661,20 +657,19 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64) },
                     new FluidStack[] { Materials.SolderingAlloy.getMolten(3744L), Materials.UUMatter.getFluid(8_000L),
                             Materials.Osmium.getMolten(1_152L) },
-                    com.dreammaster.item.ItemList.PikoCircuitPolychrome.getIS(1),
+                    NHItemList.PikoCircuitPolychrome.getIS(1),
                     500 * SECONDS,
                     (int) TierEU.RECIPE_UEV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.PikoCircuitPolychrome.getIS(1),
+                    NHItemList.PikoCircuitPolychrome.getIS(1),
                     192000 * 4,
                     512 * 4,
                     (int) TierEU.RECIPE_UEV,
                     32 * 4,
                     new Object[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 16),
-                            com.dreammaster.item.ItemList.PikoCircuitPolychrome.getIS(2),
-                            ItemList.Circuit_Parts_CapacitorXSMD.get(64L), ItemList.Circuit_Parts_DiodeXSMD.get(64L),
-                            ItemList.Circuit_Parts_TransistorXSMD.get(64L),
+                            NHItemList.PikoCircuitPolychrome.getIS(2), ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
+                            ItemList.Circuit_Parts_DiodeXSMD.get(64L), ItemList.Circuit_Parts_TransistorXSMD.get(64L),
                             ItemList.Circuit_Parts_ResistorXSMD.get(64L), ItemList.Circuit_Chip_QPIC.get(64L),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 64),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Indium, 64),
@@ -682,12 +677,12 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64) },
                     new FluidStack[] { Materials.SolderingAlloy.getMolten(3744L), Materials.UUMatter.getFluid(24_000L),
                             Materials.Osmium.getMolten(2_304L) },
-                    com.dreammaster.item.ItemList.QuantumCircuitPolychrome.getIS(1),
+                    NHItemList.QuantumCircuitPolychrome.getIS(1),
                     1000 * SECONDS,
                     (int) TierEU.RECIPE_UIV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.GatePlateOrigin.getIS(1),
+                    NHItemList.GatePlateOrigin.getIS(1),
                     32_000_000 * 12,
                     8192,
                     (int) TierEU.RECIPE_UIV,
@@ -699,16 +694,16 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.NaquadahAlloy, 64L),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.NaquadahAlloy, 64L),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.NaquadahAlloy, 64L),
-                            com.dreammaster.item.ItemList.QuantumCircuitPolychrome.getIS(16) },
+                            NHItemList.QuantumCircuitPolychrome.getIS(16) },
                     new FluidStack[] { Materials.Neutronium.getMolten(36_864L), Materials.Tritanium.getMolten(36_864L),
                             Materials.Longasssuperconductornameforuhvwire.getMolten(36_864L),
                             Materials.Silver.getPlasma(36_864L) },
-                    com.dreammaster.item.ItemList.GatePlatePolychrome.getIS(1),
+                    NHItemList.GatePlatePolychrome.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UIV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.ChevronOrigin.getIS(1),
+                    NHItemList.ChevronOrigin.getIS(1),
                     32_000_000 * 12,
                     8192,
                     (int) TierEU.RECIPE_UIV,
@@ -722,16 +717,16 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Ardite, 8L),
                             GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Ruby, 64L),
                             GTOreDictUnificator.get(OrePrefixes.gemExquisite, Materials.Jasper, 64L),
-                            com.dreammaster.item.ItemList.QuantumCircuitPolychrome.getIS(32) },
+                            NHItemList.QuantumCircuitPolychrome.getIS(32) },
                     new FluidStack[] { Materials.Neutronium.getMolten(9_216L), Materials.Tritanium.getMolten(9_216L),
                             Materials.Longasssuperconductornameforuhvwire.getMolten(9_216L),
                             Materials.Silver.getPlasma(9_216L) },
-                    com.dreammaster.item.ItemList.ChevronPolychrome.getIS(1),
+                    NHItemList.ChevronPolychrome.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UIV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.FramePartOrigin.getIS(1),
+                    NHItemList.FramePartOrigin.getIS(1),
                     32_000_000 * 12,
                     8192,
                     (int) TierEU.RECIPE_UIV,
@@ -743,7 +738,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.stickLong, Materials.Osmiridium, 64L) },
                     new FluidStack[] { Materials.Neutronium.getMolten(73_728L), Materials.Tritanium.getMolten(73_728L),
                             Materials.Concrete.getMolten(73_728L) },
-                    com.dreammaster.item.ItemList.FramePartPolychrome.getIS(1),
+                    NHItemList.FramePartPolychrome.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UIV);
 
@@ -766,20 +761,18 @@ public class AssemblingLineRecipes implements Runnable {
                     new FluidStack[] { new FluidStack(FluidRegistry.getFluid("molten.mutatedlivingsolder"), 3_744),
                             Materials.Naquadria.getMolten(4_032L),
                             new FluidStack(FluidRegistry.getFluid("ic2coolant"), 20_000) },
-                    com.dreammaster.item.ItemList.NanoCircuit.getIS(1),
+                    NHItemList.NanoCircuit.getIS(1),
                     400 * SECONDS,
                     (int) TierEU.RECIPE_UIV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.NanoCircuit.getIS(1),
+                    NHItemList.NanoCircuit.getIS(1),
                     384_000,
                     1_024,
                     4_000_000,
                     64,
-                    new Object[] { ItemList.Circuit_Board_Bio_Ultra.get(1L),
-                            com.dreammaster.item.ItemList.PicoWafer.getIS(4),
-                            com.dreammaster.item.ItemList.NanoCircuit.getIS(2),
-                            ItemList.Circuit_Parts_TransistorXSMD.get(48L),
+                    new Object[] { ItemList.Circuit_Board_Bio_Ultra.get(1L), NHItemList.PicoWafer.getIS(4),
+                            NHItemList.NanoCircuit.getIS(2), ItemList.Circuit_Parts_TransistorXSMD.get(48L),
                             ItemList.Circuit_Parts_ResistorXSMD.get(48L), ItemList.Circuit_Parts_CapacitorXSMD.get(48L),
                             ItemList.Circuit_Parts_DiodeXSMD.get(48L), ItemList.Circuit_Chip_PPIC.get(64L),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 16),
@@ -788,20 +781,19 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64) },
                     new FluidStack[] { new FluidStack(FluidRegistry.getFluid("molten.mutatedlivingsolder"), 3_744),
                             Materials.UUMatter.getFluid(8000L), Materials.Osmium.getMolten(1152L) },
-                    com.dreammaster.item.ItemList.PikoCircuitDimensional.getIS(1),
+                    NHItemList.PikoCircuitDimensional.getIS(1),
                     500 * SECONDS,
                     (int) TierEU.RECIPE_UMV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.PikoCircuitDimensional.getIS(1),
+                    NHItemList.PikoCircuitDimensional.getIS(1),
                     720_000,
                     2_048,
                     (int) TierEU.RECIPE_UEV,
                     128,
                     new ItemStack[] { GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 16),
-                            com.dreammaster.item.ItemList.PikoCircuitDimensional.getIS(2),
-                            ItemList.Circuit_Parts_CapacitorXSMD.get(64L), ItemList.Circuit_Parts_DiodeXSMD.get(64L),
-                            ItemList.Circuit_Parts_TransistorXSMD.get(64L),
+                            NHItemList.PikoCircuitDimensional.getIS(2), ItemList.Circuit_Parts_CapacitorXSMD.get(64L),
+                            ItemList.Circuit_Parts_DiodeXSMD.get(64L), ItemList.Circuit_Parts_TransistorXSMD.get(64L),
                             ItemList.Circuit_Parts_ResistorXSMD.get(64L), ItemList.Circuit_Chip_QPIC.get(64L),
                             GTOreDictUnificator.get(OrePrefixes.foil, Materials.NiobiumTitanium, 64),
                             GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Indium, 64),
@@ -809,12 +801,12 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64) },
                     new FluidStack[] { new FluidStack(FluidRegistry.getFluid("molten.mutatedlivingsolder"), 3_744),
                             Materials.UUMatter.getFluid(24_000L), Materials.Osmium.getMolten(2_304L) },
-                    com.dreammaster.item.ItemList.QuantumCircuitDimensional.getIS(1),
+                    NHItemList.QuantumCircuitDimensional.getIS(1),
                     1000 * SECONDS,
                     (int) TierEU.RECIPE_UXV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.GatePlatePolychrome.getIS(1),
+                    NHItemList.GatePlatePolychrome.getIS(1),
                     2_000_000_000,
                     32_768,
                     (int) TierEU.RECIPE_UXV,
@@ -824,7 +816,7 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 64L),
                             GTOreDictUnificator.get(OrePrefixes.block, Materials.Infinity, 64L),
                             GTOreDictUnificator.get(OrePrefixes.block, MaterialsUEVplus.SpaceTime, 16L),
-                            com.dreammaster.item.ItemList.QuantumCircuitDimensional.getIS(16),
+                            NHItemList.QuantumCircuitDimensional.getIS(16),
                             GTOreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.SpaceTime, 8L),
                             GTOreDictUnificator.get(OrePrefixes.plateDense, MaterialsUEVplus.SpaceTime, 8L),
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Infinity, 8L),
@@ -835,12 +827,12 @@ public class AssemblingLineRecipes implements Runnable {
                             MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                             Materials.SuperconductorUMVBase.getMolten(4 * 36864L),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(4 * 36864L) },
-                    com.dreammaster.item.ItemList.GatePlateDimensional.getIS(1),
+                    NHItemList.GatePlateDimensional.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UXV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.ChevronPolychrome.getIS(1),
+                    NHItemList.ChevronPolychrome.getIS(1),
                     2_000_000_000,
                     32_768,
                     (int) TierEU.RECIPE_UXV,
@@ -857,18 +849,17 @@ public class AssemblingLineRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Osmiridium, 8L),
                             GTOreDictUnificator.get(OrePrefixes.plateDense, Materials.Osmiridium, 8L),
                             ItemList.Electric_Motor_UMV.get(64L), ItemList.Electric_Piston_UMV.get(64L),
-                            ItemList.Field_Generator_UMV.get(16L),
-                            com.dreammaster.item.ItemList.QuantumCircuitDimensional.getIS(32), },
+                            ItemList.Field_Generator_UMV.get(16L), NHItemList.QuantumCircuitDimensional.getIS(32), },
                     new FluidStack[] { Materials.Neutronium.getMolten(32_768_000L),
                             MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                             Materials.SuperconductorUMVBase.getMolten(4 * 36864L),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(4 * 36864L) },
-                    com.dreammaster.item.ItemList.ChevronDimensional.getIS(1),
+                    NHItemList.ChevronDimensional.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UXV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.FramePartPolychrome.getIS(1),
+                    NHItemList.FramePartPolychrome.getIS(1),
                     2_000_000_000,
                     32_768,
                     (int) TierEU.RECIPE_UXV,
@@ -892,13 +883,13 @@ public class AssemblingLineRecipes implements Runnable {
                             MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                             Materials.SuperconductorUMVBase.getMolten(4 * 36864L),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(4 * 36864L) },
-                    com.dreammaster.item.ItemList.FramePartDimensional.getIS(1),
+                    NHItemList.FramePartDimensional.getIS(1),
                     1 * HOURS,
                     (int) TierEU.RECIPE_UXV);
 
             // EOH Gate
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.GatePlateDimensional.getIS(1),
+                    NHItemList.GatePlateDimensional.getIS(1),
                     (int) TierEU.RECIPE_MAX,
                     32768,
                     (int) TierEU.RECIPE_UXV,
@@ -921,12 +912,12 @@ public class AssemblingLineRecipes implements Runnable {
                             MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                             Materials.SuperconductorUMVBase.getMolten(4 * 36864L),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(4 * 36864L) },
-                    com.dreammaster.item.ItemList.GatePlateHarmonic.getIS(1),
+                    NHItemList.GatePlateHarmonic.getIS(1),
                     125_000 * SECONDS,
                     (int) TierEU.RECIPE_UMV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.ChevronDimensional.getIS(1),
+                    NHItemList.ChevronDimensional.getIS(1),
                     (int) TierEU.RECIPE_MAX,
                     32_768,
                     (int) TierEU.RECIPE_UXV,
@@ -955,12 +946,12 @@ public class AssemblingLineRecipes implements Runnable {
                             MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                             MaterialsUEVplus.MagnetohydrodynamicallyConstrainedStarMatter.getMolten(36864L),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(4 * 36864L) },
-                    com.dreammaster.item.ItemList.ChevronHarmonic.getIS(1),
+                    NHItemList.ChevronHarmonic.getIS(1),
                     125_000 * SECONDS,
                     (int) TierEU.RECIPE_UMV);
 
             TTRecipeAdder.addResearchableAssemblylineRecipe(
-                    com.dreammaster.item.ItemList.FramePartDimensional.getIS(1),
+                    NHItemList.FramePartDimensional.getIS(1),
                     (int) TierEU.RECIPE_MAX,
                     32_768,
                     (int) TierEU.RECIPE_UXV,
@@ -989,14 +980,16 @@ public class AssemblingLineRecipes implements Runnable {
                             MaterialsUEVplus.SpaceTime.getMolten(4 * 36864L),
                             MaterialsUEVplus.Universium.getMolten(4 * 36864L),
                             MaterialsUEVplus.ExcitedDTEC.getFluid(4 * 36864L) },
-                    com.dreammaster.item.ItemList.FramePartHarmonic.getIS(1),
+                    NHItemList.FramePartHarmonic.getIS(1),
                     125_000 * SECONDS,
                     (int) TierEU.RECIPE_UMV);
         }
 
-        GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Hatch_Input_Bus_ME_Advanced.get(1L))
-                .metadata(RESEARCH_TIME, 1 * HOURS).itemInputs(
-                        ItemList.Hatch_Input_Bus_ME_Advanced.get(1L),
+        GTValues.RA.stdBuilder()
+                .metadata(RESEARCH_ITEM, GTModHandler.getModItem(AppliedEnergistics2.ID, "tile.BlockInterface", 1L))
+                .metadata(SCANNING, new Scanning(1 * MINUTES + 40 * SECONDS, TierEU.RECIPE_EV))
+                .itemInputs(
+                        ItemList.Hatch_Input_Bus_ME.get(1L),
                         // 4096k Me Storage Component
                         GTModHandler.getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 59),
                         // ME Controller
@@ -1010,9 +1003,10 @@ public class AssemblingLineRecipes implements Runnable {
                 .duration(30 * SECONDS).addTo(AssemblyLine);
 
         if (GraviSuite.isModLoaded()) {
+            // GraviChestPlate
             GTValues.RA.stdBuilder()
                     .metadata(RESEARCH_ITEM, GTModHandler.getIC2Item("quantumBodyarmor", 1L, GTValues.W))
-                    .metadata(RESEARCH_TIME, 2 * HOURS)
+                    .metadata(SCANNING, new Scanning(2 * MINUTES + 20 * SECONDS, TierEU.RECIPE_LuV))
                     .itemInputs(
                             GTModHandler.getIC2Item("quantumBodyarmor", 1L, WILDCARD),
                             ItemList.Transformer_ZPM_LuV.get(1L),
@@ -1030,8 +1024,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(GTModHandler.getModItem(GraviSuite.ID, "graviChestPlate", 1, 26))
                     .eut(TierEU.RECIPE_LuV / 2).duration(1 * MINUTES + 15 * SECONDS).addTo(AssemblyLine);
 
+            // Relocator
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Casing_Coil_Superconductor.get(1L))
-                    .metadata(RESEARCH_TIME, 4 * HOURS)
+                    .metadata(SCANNING, new Scanning(2 * MINUTES, TierEU.RECIPE_ZPM))
                     .itemInputs(
                             ItemList.Casing_Fusion_Coil.get(16L),
                             GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.SuperconductorUV, 16L),
@@ -1057,7 +1052,7 @@ public class AssemblingLineRecipes implements Runnable {
         {
             // Steel Electromagnet
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Electromagnet_Iron.get(1))
-                    .metadata(RESEARCH_TIME, 60 * SECONDS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.NickelZincFerrite, 32L),
                             GTOreDictUnificator.get(OrePrefixes.ring, Materials.SteelMagnetic, 16L),
@@ -1073,7 +1068,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Neodymium Electromagnet
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Electromagnet_Steel.get(1))
-                    .metadata(RESEARCH_TIME, 60 * SECONDS)
+                    .metadata(SCANNING, new Scanning(50 * SECONDS, TierEU.RECIPE_LuV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.NaquadahAlloy, 32L),
                             GTOreDictUnificator.get(OrePrefixes.ring, Materials.NeodymiumMagnetic, 16L),
@@ -1089,7 +1084,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Samarium Electromagnet
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Electromagnet_Neodymium.get(1))
-                    .metadata(RESEARCH_TIME, 60 * SECONDS)
+                    .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_ZPM))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Neutronium, 32L),
                             GTOreDictUnificator.get(OrePrefixes.ring, Materials.SamariumMagnetic, 32L),
@@ -1105,7 +1100,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Tengam Electromagnet
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Electromagnet_Samarium.get(1))
-                    .metadata(RESEARCH_TIME, 60 * SECONDS)
+                    .metadata(SCANNING, new Scanning(1 * MINUTES + 10 * SECONDS, TierEU.RECIPE_UV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.CosmicNeutronium, 32L),
                             GTOreDictUnificator.get(OrePrefixes.ring, Materials.TengamAttuned, 32L),
@@ -1123,7 +1118,7 @@ public class AssemblingLineRecipes implements Runnable {
         // Compressor controllers
         {
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Machine_Multi_IndustrialCompressor.get(1))
-                    .metadata(RESEARCH_TIME, 1800 * SECONDS)
+                    .metadata(SCANNING, new Scanning(1 * MINUTES + 20 * SECONDS, TierEU.RECIPE_LuV))
                     .itemInputs(
                             ItemList.Machine_Multi_IndustrialCompressor.get(4),
                             ItemList.Heating_Duct_Casing.get(4L),
@@ -1142,7 +1137,7 @@ public class AssemblingLineRecipes implements Runnable {
                     .duration(120 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
 
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, getModItem(Avaritia.ID, "Singularity", 1L, 0))
-                    .metadata(RESEARCH_TIME, 7200 * SECONDS)
+                    .metadata(SCANNING, new Scanning(3 * MINUTES, TierEU.RECIPE_UEV))
                     .itemInputs(
                             ItemList.Machine_Multi_HIPCompressor.get(1),
                             ItemList.Machine_Multi_NeutroniumCompressor.get(1),
@@ -1172,8 +1167,9 @@ public class AssemblingLineRecipes implements Runnable {
         // Waterline controllers
         {
 
+            // Water Purification Plant
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, new ItemStack(Items.water_bucket, 1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(30 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Tungsten, 4L),
                             ItemList.BlockIndustrialWaterPlantCasing.get(8),
@@ -1188,8 +1184,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationPlant.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
+            // Clarifier Purification Unit
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, GregtechItemList.Industrial_Sifter.get(1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             ItemList.ActivatedCarbonFilterMesh.get(16),
                             ItemList.BlockSterileWaterPlantCasing.get(8),
@@ -1207,8 +1204,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitClarifier.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
+            // Ozonation Purification Unit
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade1PurifiedWater.getCells(1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.TungstenSteel, 8),
                             ItemList.BlockOzoneCasing.get(8),
@@ -1231,8 +1229,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitOzonation.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_LuV).addTo(AssemblyLine);
 
+            // Flocculation Purification Unit
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade2PurifiedWater.getCells(1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(50 * SECONDS, TierEU.RECIPE_LuV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Adamantium, 8),
                             ItemList.BlockFlocculationCasing.get(8),
@@ -1256,8 +1255,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitFlocculator.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
 
+            // pH Neutralization Purification Unit
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade3PurifiedWater.getCells(1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(50 * SECONDS, TierEU.RECIPE_LuV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.NaquadahAlloy, 8),
                             ItemList.BlockNaquadahReinforcedWaterPlantCasing.get(8),
@@ -1281,8 +1281,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitPhAdjustment.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_ZPM).addTo(AssemblyLine);
 
+            // Extreme Temperature Fluctuation Purification Unit
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade4PurifiedWater.getCells(1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_ZPM))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Neutronium, 8),
                             ItemList.BlockPlasmaHeatingCasing.get(8),
@@ -1306,8 +1307,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitPlasmaHeater.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(AssemblyLine);
 
+            // High Energy Laser Purification Unit
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade5PurifiedWater.getCells(1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(1 * MINUTES, TierEU.RECIPE_ZPM))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 8),
                             ItemList.BlockNaquadriaReinforcedWaterPlantCasing.get(8),
@@ -1331,8 +1333,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitUVTreatment.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_UV).addTo(AssemblyLine);
 
+            // Residual Decontaminant Degasser Purification Unit
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade6PurifiedWater.getCells(1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(1 * MINUTES + 10 * SECONDS, TierEU.RECIPE_UHV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 8),
                             ItemList.BlockPlasmaHeatingCasing.get(8),
@@ -1355,8 +1358,9 @@ public class AssemblingLineRecipes implements Runnable {
                     .itemOutputs(ItemList.Machine_Multi_PurificationUnitDegasifier.get(1)).duration(60 * SECONDS)
                     .eut(TierEU.RECIPE_UEV).addTo(AssemblyLine);
 
+            // Absolute Baryonic Perfection Purification Unit
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Materials.Grade7PurifiedWater.getCells(1))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(1 * MINUTES + 10 * SECONDS, TierEU.RECIPE_UHV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 16),
                             ItemList.BlockQuarkContainmentCasing.get(8),
@@ -1381,7 +1385,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Quark exclusion casing
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.STRANGE))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UHV))
                     .itemInputs(
                             GTOreDictUnificator
                                     .get(OrePrefixes.frameGt, Materials.Longasssuperconductornameforuhvwire, 32),
@@ -1407,7 +1411,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Femtometer-calibrated particle beam casing
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.TOP))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UHV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Infinity, 16),
@@ -1431,7 +1435,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // Particle beam guidance pipe casing
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, Particle.getBaseParticle(Particle.BOTTOM))
-                    .metadata(RESEARCH_TIME, 1 * HOURS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UHV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.CosmicNeutronium, 16),
                             GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Naquadria, 16),
@@ -1459,7 +1463,7 @@ public class AssemblingLineRecipes implements Runnable {
         {
             // LuV
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Superconducting_Magnet_Solenoid_IV.get(1))
-                    .metadata(RESEARCH_TIME, 120 * SECONDS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_IV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorLuV, 8L),
                             GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.HSSG, 2L),
@@ -1475,7 +1479,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // ZPM
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Superconducting_Magnet_Solenoid_LuV.get(1))
-                    .metadata(RESEARCH_TIME, 120 * SECONDS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_LuV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorZPM, 8L),
                             GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Naquadah, 2L),
@@ -1491,7 +1495,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // UV
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Superconducting_Magnet_Solenoid_ZPM.get(1))
-                    .metadata(RESEARCH_TIME, 120 * SECONDS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_ZPM))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUV, 16L),
                             GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.ElectrumFlux, 2L),
@@ -1508,7 +1512,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // UHV
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Superconducting_Magnet_Solenoid_UV.get(1))
-                    .metadata(RESEARCH_TIME, 120 * SECONDS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 16L),
                             GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Bedrockium, 2L),
@@ -1525,7 +1529,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // UEV
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Superconducting_Magnet_Solenoid_UHV.get(1))
-                    .metadata(RESEARCH_TIME, 120 * SECONDS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UHV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUEV, 16L),
                             GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Draconium, 2L),
@@ -1542,7 +1546,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // UIV
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Superconducting_Magnet_Solenoid_UEV.get(1))
-                    .metadata(RESEARCH_TIME, 120 * SECONDS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UEV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUIV, 16L),
                             GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.NetherStar, 2L),
@@ -1559,7 +1563,7 @@ public class AssemblingLineRecipes implements Runnable {
 
             // UMV
             GTValues.RA.stdBuilder().metadata(RESEARCH_ITEM, ItemList.Superconducting_Magnet_Solenoid_UIV.get(1))
-                    .metadata(RESEARCH_TIME, 120 * SECONDS)
+                    .metadata(SCANNING, new Scanning(40 * SECONDS, TierEU.RECIPE_UIV))
                     .itemInputs(
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUMV, 16L),
                             GTOreDictUnificator.get(OrePrefixes.cableGt04, Materials.Quantium, 2L),
@@ -1592,7 +1596,7 @@ public class AssemblingLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 64) },
                 new FluidStack[] { new FluidStack(solderUEV, 3744), Materials.UUMatter.getFluid(8000L),
                         Materials.Osmium.getMolten(1152L) },
-                com.dreammaster.item.ItemList.PikoCircuit.getIS(1),
+                NHItemList.PikoCircuit.getIS(1),
                 10000,
                 (int) TierEU.RECIPE_UMV);
 
@@ -1613,7 +1617,7 @@ public class AssemblingLineRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Lanthanum, 16) },
                 new FluidStack[] { new FluidStack(solderUEV, 3744), Materials.UUMatter.getFluid(24000L),
                         Materials.Osmium.getMolten(2304L) },
-                com.dreammaster.item.ItemList.QuantumCircuit.getIS(1),
+                NHItemList.QuantumCircuit.getIS(1),
                 20000,
                 (int) TierEU.RECIPE_UMV);
 
