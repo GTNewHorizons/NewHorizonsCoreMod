@@ -1,7 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
-import static gregtech.api.enums.Mods.NewHorizonsCoreMod;
 import static gregtech.api.recipe.RecipeMaps.solarFactoryRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -130,7 +129,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Cover_SolarPanel_ZPM.get(1),
                             CustomItemList.IrradiantReinforcedNaquadriaPlate.get(8),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
-                            getModItem(NewHorizonsCoreMod.ID, "item.PicoWafer", 8),
+                            CustomItemList.PicoWafer.get(8),
                             ItemList.Circuit_Chip_PPIC.get(8),
                             ItemList.Circuit_Chip_CrystalSoC2.get(8),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 12),
@@ -242,7 +241,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .itemInputs(
                             CustomItemList.IrradiantReinforcedBedrockiumPlate.get(8),
                             ItemList.Circuit_Silicon_Wafer5.get(16),
-                            getModItem(NewHorizonsCoreMod.ID, "item.PicoWafer", 8),
+                            CustomItemList.PicoWafer.get(8),
                             ItemList.Circuit_Chip_PPIC.get(8),
                             ItemList.Circuit_Chip_CrystalSoC2.get(8),
                             GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUHV, 16),
