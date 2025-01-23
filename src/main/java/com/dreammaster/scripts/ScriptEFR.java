@@ -149,9 +149,8 @@ public class ScriptEFR implements IScriptLoader {
                 bits,
                 new Object[] { "VGV", "VSV", "VQV", 'V',
                         getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzLamp", 1, 0, missing), 'G',
-                        getModItem(HardcoreEnderExpansion.ID, "living_matter", 1, 0, missing),
-                        // 'S', ItemList.QuantumStar.get(1),
-                        'S', getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing), 'Q',
+                        getModItem(HardcoreEnderExpansion.ID, "living_matter", 1, 0, missing), 'S',
+                        getModItem(DraconicEvolution.ID, "wyvernCore", 1, 0, missing), 'Q',
                         ItemList.QuantumEye.get(1), });
 
         GTModHandler.addCraftingRecipe(
