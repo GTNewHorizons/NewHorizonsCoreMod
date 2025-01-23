@@ -1669,28 +1669,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "stone", 1, 0, missing),
                 getModItem(Railcraft.ID, "detector", 1, 4, missing),
                 getModItem(Minecraft.ID, "stone", 1, 0, missing));
-        addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "materials", 1, 40, missing),
-                null,
-                null,
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
-                null,
-                null,
-                null,
-                null,
-                null,
-                null);
-        addShapedRecipe(
-                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 1L),
-                null,
-                null,
-                getModItem(TinkerConstruct.ID, "materials", 1, 40, missing),
-                null,
-                null,
-                null,
-                null,
-                null,
-                null);
         // Obsidian Stick conversions
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "toolRod", 2, 6, missing),
@@ -1944,6 +1922,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructHelper.removeBasinRecipe(getModItem(BloodArsenal.ID, "blood_infused_iron_block", 1, 0, missing));
         TConstructHelper.removeMeltingRecipe(getModItem(Minecraft.ID, "sand", 1, 0, missing));
         TConstructHelper.removeSmelterAlloyMix(FluidRegistry.getFluidStack("alumite.molten", 32));
+        TConstructHelper.removeSmelterAlloyMix(FluidRegistry.getFluidStack("aluminumbrass.molten", 32));
         TConstructHelper.removeMeltingRecipe(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 1, missing));
         TConstructHelper.removeTableRecipe(getModItem(Minecraft.ID, "golden_apple", 1, 0, missing));
         TConstructHelper.removeTableRecipe(getModItem(TinkerConstruct.ID, "gearCast", 1, 0, missing));
@@ -2020,12 +1999,6 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Bronze, 1L),
                 FluidRegistry.getFluidStack("bronze.molten", 144),
-                getModItem(TinkerConstruct.ID, "metalPattern", 1, 0, missing),
-                false,
-                100);
-        TConstructRegistry.getTableCasting().addCastingRecipe(
-                getModItem(TinkerConstruct.ID, "materials", 1, 14, missing),
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
                 getModItem(TinkerConstruct.ID, "metalPattern", 1, 0, missing),
                 false,
                 100);

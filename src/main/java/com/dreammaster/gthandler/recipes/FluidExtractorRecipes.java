@@ -41,10 +41,6 @@ public class FluidExtractorRecipes implements Runnable {
 
         if (TinkerConstruct.isModLoaded()) {
 
-            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 14))
-                    .fluidOutputs(FluidRegistry.getFluidStack("aluminumbrass.molten", 144))
-                    .duration(1 * SECONDS + 4 * TICKS).eut(48).addTo(fluidExtractionRecipes);
-
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.ender_pearl, 1, 0))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ender"), 250)).duration(5 * SECONDS)
                     .eut(TierEU.RECIPE_LV).addTo(fluidExtractionRecipes);

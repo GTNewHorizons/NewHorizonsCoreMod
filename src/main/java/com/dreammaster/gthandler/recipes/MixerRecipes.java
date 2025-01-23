@@ -1061,14 +1061,6 @@ public class MixerRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L),
-                            GTUtility.getIntegratedCircuit(2))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 42))
-                    .duration(10 * SECONDS).eut(8).addTo(mixerRecipes);
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
                             GTModHandler.getModItem(TinkerConstruct.ID, "slime.gel", 1L, 2),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Diamond, 1L),
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.CrystallineAlloy, 1L),
