@@ -2,7 +2,12 @@ package com.dreammaster.tinkersConstruct;
 
 import static gregtech.api.enums.Mods.TinkerConstruct;
 
+import javax.annotation.Nonnull;
+
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -11,6 +16,9 @@ import com.dreammaster.mantle.BookLoader;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOre;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOreItem;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelWorldgen;
+import com.gtnewhorizons.postea.api.BlockReplacementManager;
+import com.gtnewhorizons.postea.api.ItemStackReplacementManager;
+import com.gtnewhorizons.postea.utility.BlockConversionInfo;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -37,6 +45,7 @@ public class TiCoLoader {
 
     public static void doPostInitialization() {
         addTiCoManuals();
+        registerGravelOrePosteaTransformers();
     }
 
     private static void addTiCoManuals() {
@@ -50,5 +59,28 @@ public class TiCoLoader {
     private static void addTiCoManual(String bookName, String unlocalizedName, String tooltip, String itemImage) {
         BookLoader.of(unlocalizedName, TinkerConstruct.ID, "/assets/dreamcraft/tinker/manuals/" + bookName + ".xml")
                 .setTooltip(tooltip).setItemImage(itemImage).makeTranslatable().addToBookDataStore();
+    }
+
+    private static void registerGravelOrePosteaTransformers() {
+        BlockReplacementManager
+                .addBlockReplacement("TConstruct:GravelOre", TiCoLoader::convertTicoGravelOreBlockToZincGravelOre);
+        ItemStackReplacementManager
+                .addItemReplacement("TConstruct:GravelOre", TiCoLoader::convertTicoGravelOreItemToZincGravelOre);
+    }
+
+    @Nonnull
+    private static BlockConversionInfo convertTicoGravelOreBlockToZincGravelOre(
+            BlockConversionInfo blockConversionInfoOld, World world) {
+        BlockConversionInfo blockConversionInfoNew = new BlockConversionInfo();
+        blockConversionInfoNew.blockID = Block.getIdFromBlock(NHItems.ZINC_GRAVEL_ORE);
+        blockConversionInfoNew.metadata = 0;
+        return blockConversionInfoNew;
+    }
+
+    @Nonnull
+    private static NBTTagCompound convertTicoGravelOreItemToZincGravelOre(NBTTagCompound tag) {
+        tag.setShort("id", (short) Block.getIdFromBlock(NHItems.ZINC_GRAVEL_ORE));
+        tag.setShort("Damage", (short) 0);
+        return tag;
     }
 }
