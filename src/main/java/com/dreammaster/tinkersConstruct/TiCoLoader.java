@@ -8,6 +8,8 @@ import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTModHandler.getModItem;
 
+import java.util.stream.Collectors;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -42,6 +44,8 @@ public class TiCoLoader {
         Materials.Alumite.mMaterialList.addAll(
                 ImmutableList
                         .of(new MaterialStack(Zinc, 5), new MaterialStack(Steel, 2), new MaterialStack(Obsidian, 2)));
+        Materials.Alumite.mChemicalFormula = Materials.Alumite.mMaterialList.stream().map(MaterialStack::toString)
+                .collect(Collectors.joining()).replaceAll("_", "-");
     }
 
     public static void doPreInitialization() {
