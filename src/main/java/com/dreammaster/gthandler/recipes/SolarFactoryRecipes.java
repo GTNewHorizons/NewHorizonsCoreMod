@@ -246,9 +246,13 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Circuit_Chip_CrystalSoC2.get(8),
                             GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUHV, 16),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 16),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 64))
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 64),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Steeleaf), 2))
                     .itemOutputs(ItemList.Cover_SolarPanel_UV.get(1))
-                    .fluidInputs(Materials.Infinity.getMolten(4 * 144), MaterialsKevlar.Kevlar.getMolten(8 * 144))
+                    .fluidInputs(
+                            Materials.Infinity.getMolten(4 * 144),
+                            MaterialsKevlar.Kevlar.getMolten(8 * 144),
+                            Materials.Knightmetal.getMolten(2 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS)
                     .eut(TierEU.RECIPE_UEV) };
 
