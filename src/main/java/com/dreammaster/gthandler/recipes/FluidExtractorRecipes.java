@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.OpenBlocks;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -51,6 +52,14 @@ public class FluidExtractorRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "MetalBlock", 1L, 10))
                     .fluidOutputs(new FluidStack(FluidRegistry.getFluid("ender"), 2250)).duration(10 * SECONDS).eut(48)
+                    .addTo(fluidExtractionRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 1L, 2))
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("stone.seared"), 18)).duration(10 * SECONDS)
+                    .eut(48).addTo(fluidExtractionRecipes);
+
+            GTValues.RA.stdBuilder().itemInputs(GTModHandler.getModItem(Thaumcraft.ID, "blockTaint", 1L, 2))
+                    .fluidOutputs(new FluidStack(FluidRegistry.getFluid("blood"), 45)).duration(50 * SECONDS).eut(48)
                     .addTo(fluidExtractionRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.slime_ball, 1, 0))

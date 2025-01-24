@@ -22,10 +22,15 @@ import static gregtech.api.enums.Mods.RandomThings;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TinkersMechworks;
+import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +39,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -48,6 +54,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -3592,6 +3599,45 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(6))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "decoration.stoneladder", 4, 0, missing))
                 .duration(3 * SECONDS).eut(30).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
+                        GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 7, missing)).eut(30).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(TinkerConstruct.ID, "strangeFood", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 6, missing)).eut(30).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(PamsHarvestCraft.ID, "muttonrawItem", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(30).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(getModItem(WitchingGadgets.ID, "item.WG_MagicFood", 1, 2, missing)).eut(30)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Ball.get(0L))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("blood"), 160)).duration(20 * TICKS)
+                .eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "MetalBlock", 1, 10, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ender"), 2250)).duration(20 * TICKS)
+                .eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(ItemList.Shape_Mold_Block.get(0L))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "Smeltery", 1, 4, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("stone.seared"), 360)).duration(20 * TICKS)
+                .eut(TierEU.RECIPE_MV).addTo(fluidSolidifierRecipes);
 
         registerManualIcons();
     }
