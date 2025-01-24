@@ -130,14 +130,14 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 'h',
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 60));
         // Asgardandelion
-        ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
+        ExtremeCraftingManager.getInstance().addRecipe(
                 ItemBlockSpecialFlower.ofType("asgardandelion"),
                 "R0D0G0E0M",
-                "000iii000",
-                "d0i876i0n",
+                "0009i9000",
+                "d0987690n",
                 "00iAZai00",
-                "T0i5B4i0r",
-                "010iii010",
+                "T095B490r",
+                "0109i9010",
                 "t1102011H",
                 "001121100",
                 "e0K131S0m",
@@ -178,25 +178,27 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 '1',
                 new ItemStack(LudicrousItems.resource, 1, 3), // Neutronium nugget
                 '2',
-                "blockCosmicNeutronium",
+                Materials.CosmicNeutronium.getBlocks(1),
                 'i',
-                "plateInfinity",
+                Materials.Infinity.getPlates(1),
                 'A',
-                "gemExquisiteBotaniaDragonstone",
+                GTOreDictUnificator.get("gemExquisiteBotaniaDragonstone", 1),
                 'a',
-                "gemExquisiteManaDiamond",
+                GTOreDictUnificator.get("gemExquisiteManaDiamond", 1),
                 'B',
-                "plateGaiaSpirit",
+                GTOreDictUnificator.get("plateGaiaSpirit", 1),
                 '4',
-                "plateLivingwood",
+                GTOreDictUnificator.get("plateLivingwood", 1),
                 '5',
-                "plateLivingrock",
+                GTOreDictUnificator.get("plateLivingrock", 1),
                 '6',
-                "plateElvenElementium",
+                GTOreDictUnificator.get("plateElvenElementium", 1),
                 '7',
-                "plateManasteel",
+                GTOreDictUnificator.get("plateManasteel", 1),
                 '8',
-                "plateTerrasteel");
+                GTOreDictUnificator.get("plateTerrasteel", 1),
+                '9',
+                GTOreDictUnificator.get("nuggetInfinity", 1));
         // Infinity Egg (Witchery)
         if (Config.witch) {
 
