@@ -15,9 +15,9 @@ public class GT_Loader_Materials {
         GTModHandler.addShapelessCraftingRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 8),
                 GTModHandler.RecipeBits.NOT_REMOVABLE,
-                new Object[] { OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
-                        OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Aluminium),
-                        OrePrefixes.dust.get(Materials.Aluminium), OrePrefixes.dust.get(Materials.Steel),
+                new Object[] { OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Zinc),
+                        OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Zinc),
+                        OrePrefixes.dust.get(Materials.Zinc), OrePrefixes.dust.get(Materials.Steel),
                         OrePrefixes.dust.get(Materials.Steel), OrePrefixes.dust.get(Materials.Obsidian),
                         OrePrefixes.dust.get(Materials.Obsidian) });
 

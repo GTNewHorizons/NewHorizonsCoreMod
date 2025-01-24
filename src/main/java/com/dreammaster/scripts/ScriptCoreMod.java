@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.tinkersConstruct.SmelteryFluidTypes.getMoltenPatternFluidTypeName;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
@@ -51,9 +52,9 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.main.NHItems;
+import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TConstructHelper;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -65,6 +66,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.FluidType;
 
 public class ScriptCoreMod implements IScriptLoader {
 
@@ -450,7 +452,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "materials", 1, 40, missing),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -585,8 +587,7 @@ public class ScriptCoreMod implements IScriptLoader {
 
         GTModHandler
                 .addSmeltingRecipe(CustomItemList.UnfiredCokeOvenBrick.get(1L), CustomItemList.CokeOvenBrick.get(1L));
-        TConstructHelper
-                .getMeltingAdder(GameRegistry.findBlock("TConstruct", "MetalBlock"), 7, 500, "aluminumbrass.molten", 72)
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType(getMoltenPatternFluidTypeName()), 150, 72)
                 .add(
                         Stream.of(
                                 NHItemList.ShapeBolt,
@@ -709,13 +710,13 @@ public class ScriptCoreMod implements IScriptLoader {
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 new ItemStack(CustomPatterns.BowFletchingCast, 1),
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
+                FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144),
                 getModItem(TinkerConstruct.ID, "fletching", 1, wildcard, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 new ItemStack(CustomPatterns.BowStringCast, 1),
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
+                FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144),
                 getModItem(TinkerConstruct.ID, "bowstring", 1, wildcard, missing),
                 true,
                 100);
