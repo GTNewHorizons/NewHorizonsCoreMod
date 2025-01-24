@@ -151,7 +151,6 @@ public class MainRegistry {
 
     public MainRegistry() {
         if (DetravScannerMod.isModLoaded()) GregTechAPI.sAfterGTPreload.add(ScannerTools::new);
-        GregTechAPI.sBeforeGTPreload.add(TiCoLoader::overrideAlumiteMaterial);
     }
 
     @Mod.EventHandler

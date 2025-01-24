@@ -1,14 +1,9 @@
 package com.dreammaster.tinkersConstruct;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
-import static gregtech.api.enums.Materials.Obsidian;
-import static gregtech.api.enums.Materials.Steel;
-import static gregtech.api.enums.Materials.Zinc;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.UniversalSingularities;
 import static gregtech.api.util.GTModHandler.getModItem;
-
-import java.util.stream.Collectors;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
@@ -24,7 +19,6 @@ import com.dreammaster.mantle.BookLoader;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOre;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelOreItem;
 import com.dreammaster.tinkersConstruct.worldgen.ZincGravelWorldgen;
-import com.google.common.collect.ImmutableList;
 import com.gtnewhorizons.postea.api.BlockReplacementManager;
 import com.gtnewhorizons.postea.api.ItemStackReplacementManager;
 import com.gtnewhorizons.postea.api.TileEntityReplacementManager;
@@ -33,20 +27,9 @@ import com.gtnewhorizons.postea.utility.BlockConversionInfo;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
-import gregtech.api.objects.MaterialStack;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class TiCoLoader {
-
-    public static void overrideAlumiteMaterial() {
-        Materials.Alumite.mDefaultLocalName = "Obzinite";
-        Materials.Alumite.mMaterialList.clear();
-        Materials.Alumite.mMaterialList.addAll(
-                ImmutableList
-                        .of(new MaterialStack(Zinc, 5), new MaterialStack(Steel, 2), new MaterialStack(Obsidian, 2)));
-        Materials.Alumite.mChemicalFormula = Materials.Alumite.mMaterialList.stream().map(MaterialStack::toString)
-                .collect(Collectors.joining()).replaceAll("_", "-");
-    }
 
     public static void doPreInitialization() {
         registerZincGravelOre();
