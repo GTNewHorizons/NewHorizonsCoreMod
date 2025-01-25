@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.recipe.RecipeMaps.solarFactoryRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -106,6 +107,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Circuit_Chip_UHPIC.get(8),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 24),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 8),
+                            getModItem(SuperSolarPanels.ID, "solarsplitter", 2),
                             GTOreDictUnificator.get(OrePrefixes.block.get(Materials.SiliconSG), 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1))
                     .fluidInputs(Materials.Polybenzimidazole.getMolten(12 * 144))
@@ -118,6 +120,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Circuit_Silicon_Wafer5.get(8),
                             ItemList.Circuit_Wafer_QPIC.get(4),
                             ItemList.Circuit_Chip_NPIC.get(8),
+                            ItemList.Circuit_Wafer_SoC2.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUV, 32),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1))
@@ -149,7 +152,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_LV.get(1))
                     .fluidInputs(Materials.VibrantAlloy.getMolten(4 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(2, 4, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV),
+                    .metadata(data, new SolarFactoryRecipeData(2, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -161,7 +164,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_MV.get(1))
                     .fluidInputs(Materials.Barium.getMolten(16 * 144), Materials.MeteoricSteel.getMolten(4 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(2, 4, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV),
+                    .metadata(data, new SolarFactoryRecipeData(2, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -174,7 +177,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 16))
                     .itemOutputs(ItemList.Cover_SolarPanel_HV.get(1))
                     .fluidInputs(Materials.Uranium.getMolten(4 * 144), Materials.Sunnarium.getMolten(8 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(2, 4, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV),
+                    .metadata(data, new SolarFactoryRecipeData(2, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -190,7 +193,7 @@ public class SolarFactoryRecipes implements Runnable {
                             Materials.Plutonium.getMolten(2 * 144),
                             Materials.Knightmetal.getMolten(4 * 144),
                             Materials.Ultimet.getMolten(8 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(3, 4, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV),
+                    .metadata(data, new SolarFactoryRecipeData(3, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -206,7 +209,7 @@ public class SolarFactoryRecipes implements Runnable {
                             Materials.Chrome.getMolten(8 * 144),
                             Materials.NaquadahAlloy.getMolten(4 * 144),
                             Materials.FierySteel.getMolten(2 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(3, 8, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM),
+                    .metadata(data, new SolarFactoryRecipeData(3, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -216,13 +219,14 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 16),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 8),
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Steeleaf), 1),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 32))
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 32),
+                            getModItem(SuperSolarPanels.ID, "solarsplitter", 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1))
                     .fluidInputs(
                             new FluidStack(FluidRegistry.getFluid("molten.indalloy140"), 8 * 144),
                             Materials.FierySteel.getMolten(4 * 144),
                             Materials.Knightmetal.getMolten(4 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(4, 8, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV),
+                    .metadata(data, new SolarFactoryRecipeData(4, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -230,6 +234,7 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Circuit_Silicon_Wafer5.get(14),
                             ItemList.Circuit_Wafer_QPIC.get(4),
                             ItemList.Circuit_Chip_NPIC.get(8),
+                            ItemList.Circuit_Wafer_SoC2.get(16),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 16),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 12),
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 64))
@@ -257,7 +262,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .eut(TierEU.RECIPE_UEV) };
 
     public void run() {
-        if (AdvancedSolarPanel.isModLoaded()) {
+        if (AdvancedSolarPanel.isModLoaded() && SuperSolarPanels.isModLoaded()) {
             // Fake
             for (GTRecipeBuilder recipeBuilder : SolarFactoryRawRecipes) {
                 GTRecipeBuilder tempRecipe = recipeBuilder.copy();
