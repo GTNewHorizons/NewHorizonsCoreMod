@@ -11,6 +11,7 @@ import net.minecraftforge.fluids.FluidStack;
 import gregtech.api.util.GTUtility;
 import mantle.utils.ItemMetaWrapper;
 import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.FluidType;
 import tconstruct.library.crafting.Smeltery;
 
 public class TConstructHelper {
@@ -39,6 +40,15 @@ public class TConstructHelper {
     public static MeltingRecipeAdder getMeltingAdder(Block renderBlock, int renderBlockMeta, int meltingTemperature,
             String fluidName, int amount) {
         return new MeltingRecipeAdder(renderBlock, renderBlockMeta, meltingTemperature, fluidName, amount);
+    }
+
+    public static MeltingRecipeAdder getMeltingAdder(FluidType fluidType, int temperatureDifference, int amount) {
+        return new MeltingRecipeAdder(
+                fluidType.renderBlock,
+                fluidType.renderMeta,
+                fluidType.baseTemperature + temperatureDifference,
+                fluidType.fluid.getName(),
+                amount);
     }
 
     private static Map<Fluid, Integer[]> smelteryFuelList = null;

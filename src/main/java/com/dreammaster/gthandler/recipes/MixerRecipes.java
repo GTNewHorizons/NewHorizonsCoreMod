@@ -671,7 +671,7 @@ public class MixerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Steel, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 5L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 5L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Obsidian, 2L),
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Alumite, 9)).duration(10 * SECONDS)
@@ -1058,14 +1058,6 @@ public class MixerRecipes implements Runnable {
         }
 
         if (TinkerConstruct.isModLoaded() && Natura.isModLoaded()) {
-
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L),
-                            GTUtility.getIntegratedCircuit(2))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 42))
-                    .duration(10 * SECONDS).eut(8).addTo(mixerRecipes);
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
