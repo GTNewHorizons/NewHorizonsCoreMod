@@ -366,7 +366,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'e',
                 getModItem(UniversalSingularities.ID, "universal.projectRed.singularity", 1, 0, missing),
                 'f',
-                getModItem(UniversalSingularities.ID, "universal.tinkersConstruct.singularity", 1, 0, missing),
+                getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 32, missing),
                 'g',
                 getModItem(UniversalSingularities.ID, "universal.tinkersConstruct.singularity", 1, 1, missing),
                 'h',
