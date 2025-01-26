@@ -575,22 +575,22 @@ public class ScriptGregtech implements IScriptLoader {
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing),
                 getModItem(BiomesOPlenty.ID, "moss", 1, 0, missing));
-        addShapelessRecipe(ItemList.Color_03.get(1L), "dyeBrown");
-        addShapelessRecipe(ItemList.Color_07.get(1L), "dyeLightGray");
-        addShapelessRecipe(ItemList.Color_11.get(1L), "dyeYellow");
-        addShapelessRecipe(ItemList.Color_15.get(1L), "dyeWhite");
-        addShapelessRecipe(ItemList.Color_04.get(1L), "dyeBlue");
-        addShapelessRecipe(ItemList.Color_08.get(1L), "dyeGray");
-        addShapelessRecipe(ItemList.Color_10.get(1L), "dyeLime");
-        addShapelessRecipe(ItemList.Color_14.get(1L), "dyeOrange");
-        addShapelessRecipe(ItemList.Color_01.get(1L), "dyeRed");
-        addShapelessRecipe(ItemList.Color_05.get(1L), "dyePurple");
-        addShapelessRecipe(ItemList.Color_09.get(1L), "dyePink");
-        addShapelessRecipe(ItemList.Color_13.get(1L), "dyeMagenta");
-        addShapelessRecipe(ItemList.Color_00.get(1L), "dyeBlack");
-        addShapelessRecipe(ItemList.Color_02.get(1L), "dyeGreen");
-        addShapelessRecipe(ItemList.Color_06.get(1L), "dyeCyan");
-        addShapelessRecipe(ItemList.Color_12.get(1L), "dyeLightBlue");
+        addShapedRecipe(ItemList.Color_03.get(1L), null, null, null, "dyeBrown", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_07.get(1L), null, null, null, "dyeLightGray", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_11.get(1L), null, null, null, "dyeYellow", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_15.get(1L), null, null, null, "dyeWhite", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_04.get(1L), null, null, null, "dyeBlue", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_08.get(1L), null, null, null, "dyeGray", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_10.get(1L), null, null, null, "dyeLime", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_14.get(1L), null, null, null, "dyeOrange", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_01.get(1L), null, null, null, "dyeRed", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_05.get(1L), null, null, null, "dyePurple", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_09.get(1L), null, null, null, "dyePink", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_13.get(1L), null, null, null, "dyeMagenta", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_00.get(1L), null, null, null, "dyeBlack", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_02.get(1L), null, null, null, "dyeGreen", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_06.get(1L), null, null, null, "dyeCyan", null, null, null, null, null);
+        addShapedRecipe(ItemList.Color_12.get(1L), null, null, null, "dyeLightBlue", null, null, null, null, null);
         addShapelessRecipe(
                 getModItem(StructureLib.ID, "item.structurelib.constructableTrigger", 1, 0, missing),
                 "dyeBlue",

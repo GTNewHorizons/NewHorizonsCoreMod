@@ -1,5 +1,6 @@
 package com.dreammaster.scripts;
 
+import static com.dreammaster.tinkersConstruct.SmelteryFluidTypes.getMoltenPatternFluidTypeName;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BartWorks;
@@ -41,6 +42,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -50,8 +52,9 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.main.NHItems;
+import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
+import com.dreammaster.tinkersConstruct.TConstructHelper;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import forestry.api.recipes.RecipeManagers;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -63,7 +66,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import tconstruct.library.TConstructRegistry;
-import tconstruct.library.crafting.Smeltery;
+import tconstruct.library.crafting.FluidType;
 
 public class ScriptCoreMod implements IScriptLoader {
 
@@ -449,7 +452,7 @@ public class ScriptCoreMod implements IScriptLoader {
                 null,
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing));
         addShapedRecipe(
-                getModItem(TinkerConstruct.ID, "materials", 1, 40, missing),
+                GTOreDictUnificator.get(OrePrefixes.dust, Materials.Zinc, 1L),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
                 getModItem(OpenBlocks.ID, "filledbucket", 1, 0, missing),
@@ -584,385 +587,72 @@ public class ScriptCoreMod implements IScriptLoader {
 
         GTModHandler
                 .addSmeltingRecipe(CustomItemList.UnfiredCokeOvenBrick.get(1L), CustomItemList.CokeOvenBrick.get(1L));
-
-        Smeltery.addMelting(
-                NHItemList.ShapeBolt.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeHoeHead.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeGear.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapePlate.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormAnvil.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormPlate.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormLeggings.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormBaguette.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormGear.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormRotor.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeBottle.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeRotor.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeTurbineBlade.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeSmallGear.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormBoots.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeLargePipe.getIS(),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormSmallGear.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormCasing.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeWire.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormChestplate.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeShovelHead.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormBread.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeIngot.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormIngot.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeFileHead.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeRod.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeHugePipe.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeSwordBlade.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeRing.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeCasing.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormNuggets.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeSmallPipe.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormName.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeHammerHead.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeTinyPipe.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormCylinder.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormBottle.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeAxeHead.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeSawBlade.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormBlock.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeCell.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormArrowHead.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeBoat.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormCoinage.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormBall.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeBlock.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormHelmet.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapePickaxeHead.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormBuns.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.ShapeNormalPipe.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                CustomItemList.MarshmallowFormMold.get(1L),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormStick.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormStickLong.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormScrew.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormRing.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormBolt.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormRound.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormTurbineBlade.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormPipeTiny.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormPipeSmall.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormPipeMedium.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormPipeLarge.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
-        Smeltery.addMelting(
-                NHItemList.MoldFormPipeHuge.getIS(1),
-                GameRegistry.findBlock("TConstruct", "MetalBlock"),
-                7,
-                500,
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 72));
+        TConstructHelper.getMeltingAdder(FluidType.getFluidType(getMoltenPatternFluidTypeName()), 150, 72)
+                .add(
+                        Stream.of(
+                                NHItemList.ShapeBolt,
+                                NHItemList.ShapeHoeHead,
+                                NHItemList.ShapeGear,
+                                NHItemList.ShapePlate,
+                                NHItemList.MoldFormAnvil,
+                                NHItemList.MoldFormPlate,
+                                NHItemList.MoldFormLeggings,
+                                NHItemList.MoldFormBaguette,
+                                NHItemList.MoldFormGear,
+                                NHItemList.MoldFormRotor,
+                                NHItemList.ShapeBottle,
+                                NHItemList.ShapeRotor,
+                                NHItemList.ShapeTurbineBlade,
+                                NHItemList.ShapeSmallGear,
+                                NHItemList.MoldFormBoots,
+                                NHItemList.ShapeLargePipe,
+                                NHItemList.MoldFormSmallGear,
+                                NHItemList.MoldFormCasing,
+                                NHItemList.ShapeWire,
+                                NHItemList.MoldFormChestplate,
+                                NHItemList.ShapeShovelHead,
+                                NHItemList.MoldFormBread,
+                                NHItemList.ShapeIngot,
+                                NHItemList.MoldFormIngot,
+                                NHItemList.ShapeFileHead,
+                                NHItemList.ShapeRod,
+                                NHItemList.ShapeHugePipe,
+                                NHItemList.ShapeSwordBlade,
+                                NHItemList.ShapeRing,
+                                NHItemList.ShapeCasing,
+                                NHItemList.MoldFormNuggets,
+                                NHItemList.ShapeSmallPipe,
+                                NHItemList.MoldFormName,
+                                NHItemList.ShapeHammerHead,
+                                NHItemList.ShapeTinyPipe,
+                                NHItemList.MoldFormCylinder,
+                                NHItemList.MoldFormBottle,
+                                NHItemList.ShapeAxeHead,
+                                NHItemList.ShapeSawBlade,
+                                NHItemList.MoldFormBlock,
+                                NHItemList.ShapeCell,
+                                NHItemList.MoldFormArrowHead,
+                                NHItemList.ShapeBoat,
+                                NHItemList.MoldFormCoinage,
+                                NHItemList.MoldFormBall,
+                                NHItemList.ShapeBlock,
+                                NHItemList.MoldFormHelmet,
+                                NHItemList.ShapePickaxeHead,
+                                NHItemList.MoldFormBuns,
+                                NHItemList.ShapeNormalPipe,
+                                NHItemList.MoldFormStick,
+                                NHItemList.MoldFormStickLong,
+                                NHItemList.MoldFormScrew,
+                                NHItemList.MoldFormRing,
+                                NHItemList.MoldFormBolt,
+                                NHItemList.MoldFormRound,
+                                NHItemList.MoldFormTurbineBlade,
+                                NHItemList.MoldFormPipeTiny,
+                                NHItemList.MoldFormPipeSmall,
+                                NHItemList.MoldFormPipeMedium,
+                                NHItemList.MoldFormPipeLarge,
+                                NHItemList.MoldFormPipeHuge).map(NHItemList::getIS))
+                .add(CustomItemList.MarshmallowFormMold.get(1L));
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(Railcraft.ID, "machine.alpha", 1, 7, missing))
                 .itemOutputs(CustomItemList.CokeOvenBrick.get(4L)).duration(15 * SECONDS).eut(2)
@@ -1020,13 +710,13 @@ public class ScriptCoreMod implements IScriptLoader {
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 new ItemStack(CustomPatterns.BowFletchingCast, 1),
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
+                FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144),
                 getModItem(TinkerConstruct.ID, "fletching", 1, wildcard, missing),
                 true,
                 100);
         TConstructRegistry.getTableCasting().addCastingRecipe(
                 new ItemStack(CustomPatterns.BowStringCast, 1),
-                FluidRegistry.getFluidStack("aluminumbrass.molten", 144),
+                FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144),
                 getModItem(TinkerConstruct.ID, "bowstring", 1, wildcard, missing),
                 true,
                 100);

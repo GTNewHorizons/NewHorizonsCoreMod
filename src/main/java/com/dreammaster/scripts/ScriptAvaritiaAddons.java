@@ -3,7 +3,9 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.AvaritiaAddons;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.EternalSingularity;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.GregTech;
 import static gregtech.api.enums.Mods.IronChests;
 import static gregtech.api.enums.Mods.UniversalSingularities;
@@ -38,7 +40,6 @@ import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import vazkii.botania.common.item.ModItems;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
-import vazkii.botania.common.lib.LibBlockNames;
 
 public class ScriptAvaritiaAddons implements IScriptLoader {
 
@@ -132,47 +133,49 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
         // Asgardandelion
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 ItemBlockSpecialFlower.ofType("asgardandelion"),
-                "R0D0G0E0M",
-                "000iii000",
-                "d0i876i0n",
-                "00iAZai00",
-                "T0i5B4i0r",
-                "010iii010",
+                "RXDXGXEXM",
+                "X009i900X",
+                "d0957490n",
+                "X0iAZai0X",
+                "T098B690r",
+                "X109i901X",
                 "t1102011H",
-                "001121100",
-                "e0K131S0m",
+                "X0112110X",
+                "eXK131SXm",
                 'R',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_ARCANE_ROSE),
+                getModItem(Botania.ID, "corporeaSpark", 1, 1),
                 'D',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_DANDELIFEON),
+                getModItem(Botania.ID, "rune", 1, 10),
                 'G',
-                ItemBlockSpecialFlower.ofType("beegonia"),
+                getModItem(Botania.ID, "rune", 1, 9),
                 'E',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_ENTROPINNYUM),
+                getModItem(Botania.ID, "rune", 1, 11),
                 'M',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_MUNCHDEW),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 11),
                 'd',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_DAYBLOOM),
+                getModItem(Botania.ID, "rune", 1, 12),
                 'n',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_NIGHTSHADE),
+                getModItem(Botania.ID, "rune", 1, 13),
                 'T',
-                ItemBlockSpecialFlower.ofType("soarleander"),
+                getModItem(Botania.ID, "rune", 1, 14),
                 'r',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_RAFFLOWSIA),
+                getModItem(Botania.ID, "rune", 1, 15),
                 't',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_THERMALILY),
+                getModItem(Botania.ID, "rune", 1, 3),
                 'H',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_HYDROANGEAS),
+                getModItem(Botania.ID, "rune", 1, 6),
                 'e',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_ENDOFLAME),
+                getModItem(ForbiddenMagic.ID, "WandCores", 1, 7),
                 'K',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_KEKIMURUS),
+                getModItem(Botania.ID, "rune", 1, 5),
+                'X',
+                getModItem(Botania.ID, "bifrostPermPane", 1, 0),
                 '3',
                 new ItemStack(ModItems.blackLotus, 1, 1),
                 'S',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_SPECTROLUS),
+                getModItem(Botania.ID, "rune", 1, 4),
                 'm',
-                ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_NARSLIMMUS),
+                getModItem(Botania.ID, "lightRelay", 1, 1),
                 'Z',
                 new ItemStack(LudicrousBlocks.infinitato),
                 '1',
@@ -192,11 +195,13 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 '5',
                 "plateLivingrock",
                 '6',
-                "plateElvenElementium",
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5),
                 '7',
-                "plateManasteel",
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 3),
                 '8',
-                "plateTerrasteel");
+                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2),
+                '9',
+                "nuggetInfinity");
         // Infinity Egg (Witchery)
         if (Config.witch) {
 

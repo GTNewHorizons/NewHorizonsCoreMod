@@ -15,6 +15,7 @@ import net.minecraftforge.fluids.FluidStack;
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.item.NHItemList;
+import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 
 import bartworks.common.loaders.ItemRegistry;
 import gregtech.api.enums.GTValues;
@@ -131,8 +132,8 @@ public class FluidSolidifierRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(1))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "blankPattern", 1L, 1))
-                    .fluidInputs(FluidRegistry.getFluidStack("aluminumbrass.molten", 144)).duration(20 * TICKS).eut(48)
-                    .addTo(fluidSolidifierRecipes);
+                    .fluidInputs(FluidRegistry.getFluidStack(SmelteryFluidTypes.getMoltenPatternFluidName(), 144))
+                    .duration(20 * TICKS).eut(48).addTo(fluidSolidifierRecipes);
 
             GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.gravel, 1, 0))
                     .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "SpeedBlock", 1, 0))
