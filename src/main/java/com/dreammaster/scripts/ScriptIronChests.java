@@ -338,6 +338,40 @@ public class ScriptIronChests implements IScriptLoader {
                 "craftingToolHardHammer",
                 GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
                 "craftingToolScrewdriver");
+        addShapedRecipe(
+                getModItem(IronChests.ID, "crystalDarkSteelUpgrade", 1, 0, missing),
+                "screwDarkSteel",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                "screwDarkSteel",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                "craftingToolHardHammer",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                "craftingToolScrewdriver");
+        addShapedRecipe(
+                getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0, missing),
+                "screwDarkSteel",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                "screwDarkSteel",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                "craftingToolHardHammer",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                "craftingToolScrewdriver");
+        addShapedRecipe(
+                getModItem(IronChests.ID, "ironSteelUpgrade", 1, 0, missing),
+                "screwDarkSteel",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                "screwDarkSteel",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                "craftingToolHardHammer",
+                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                "craftingToolScrewdriver");
+
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1345,6 +1379,13 @@ public class ScriptIronChests implements IScriptLoader {
                 .eut(30).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Steel, 1L),
+                        GTUtility.getIntegratedCircuit(2))
+                .itemOutputs(getModItem(IronChests.ID, "ironSteelUpgrade", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(30).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 3L))
                 .itemOutputs(getModItem(IronChests.ID, "BlockIronChest", 1, 1, missing))
@@ -1416,6 +1457,17 @@ public class ScriptIronChests implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
                 .itemOutputs(getModItem(IronChests.ID, "diamondDarkSteelUpgrade", 1, 0, missing)).duration(40 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
-
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                .itemOutputs(getModItem(IronChests.ID, "crystalDarkSteelUpgrade", 1, 0, missing)).duration(40 * SECONDS)
+                .eut(480).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
+                .itemOutputs(getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0, missing)).duration(40 * SECONDS)
+                .eut(480).addTo(assemblerRecipes);
     }
 }
