@@ -79,12 +79,11 @@ public class TiCoLoader {
     private static void convertAluminumBrassBlock() {
         String targetBlock = "TConstruct:MetalBlock";
         ItemStack brassBlock = GTOreDictUnificator.get(OrePrefixes.block, Materials.Brass, 1L);
-        int brassBlockId = Item.getIdFromItem(brassBlock.getItem());
         int brassBlockMeta = Items.feather.getDamage(brassBlock);
         BlockReplacementManager.addBlockReplacement(targetBlock, (blockConversionInfoOld, world) -> {
             if (blockConversionInfoOld.metadata == 7) {
                 BlockConversionInfo blockConversionInfoNew = new BlockConversionInfo();
-                blockConversionInfoNew.blockID = brassBlockId;
+                blockConversionInfoNew.blockID = Item.getIdFromItem(brassBlock.getItem());
                 blockConversionInfoNew.metadata = brassBlockMeta;
                 return blockConversionInfoNew;
             }
@@ -92,7 +91,7 @@ public class TiCoLoader {
         });
         ItemStackReplacementManager.addItemReplacement(targetBlock, tag -> {
             if (tag.getShort("Damage") == 7) {
-                tag.setShort("id", (short) brassBlockId);
+                tag.setShort("id", (short) Item.getIdFromItem(brassBlock.getItem()));
                 tag.setShort("Damage", (short) brassBlockMeta);
                 return tag;
             }
@@ -156,15 +155,14 @@ public class TiCoLoader {
 
     private static void registerGravelOrePosteaTransformers() {
         String targetBlock = "TConstruct:GravelOre";
-        int zincGravelOreId = Block.getIdFromBlock(NHItems.ZINC_GRAVEL_ORE);
         BlockReplacementManager.addBlockReplacement(targetBlock, (blockConversionInfoOld, world) -> {
             BlockConversionInfo blockConversionInfoNew = new BlockConversionInfo();
-            blockConversionInfoNew.blockID = zincGravelOreId;
+            blockConversionInfoNew.blockID = Block.getIdFromBlock(NHItems.ZINC_GRAVEL_ORE);
             blockConversionInfoNew.metadata = 0;
             return blockConversionInfoNew;
         });
         ItemStackReplacementManager.addItemReplacement(targetBlock, tag -> {
-            tag.setShort("id", (short) zincGravelOreId);
+            tag.setShort("id", (short) Block.getIdFromBlock(NHItems.ZINC_GRAVEL_ORE));
             tag.setShort("Damage", (short) 0);
             return tag;
         });
