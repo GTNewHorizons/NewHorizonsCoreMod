@@ -75,6 +75,7 @@ import com.dreammaster.railcraftStones.NH_QuarryPopulator;
 import com.dreammaster.recipes.RecipeRemover;
 import com.dreammaster.scripts.ScriptLoader;
 import com.dreammaster.thaumcraft.TCLoader;
+import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
 
@@ -311,6 +312,11 @@ public class MainRegistry {
         Logger.warn("==================================================");
 
         MinecraftForge.EVENT_BUS.register(new OvenGlove.EventHandler());
+
+        if (TinkerConstruct.isModLoaded()) {
+            TiCoLoader.doPreInitialization();
+            GregTechAPI.sAfterGTPreload.add(SmelteryFluidTypes::registerGregtechFluidTypes);
+        }
     }
 
     private static boolean RegisterNonEnumItems() {
@@ -366,6 +372,10 @@ public class MainRegistry {
         }
 
         VillagerRegistry.instance().registerVillageTradeHandler(2, new NHTradeHandler());
+
+        if (TinkerConstruct.isModLoaded()) {
+            TiCoLoader.doInitialization();
+        }
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();

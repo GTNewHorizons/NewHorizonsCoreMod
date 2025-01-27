@@ -3,7 +3,6 @@ package com.dreammaster.gthandler.recipes;
 import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
@@ -226,17 +225,6 @@ public class AlloySmelterRecipes implements Runnable {
 
             }
         }
-
-        if (TinkerConstruct.isModLoaded()) {
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Aluminium, 3L),
-                            GTOreDictUnificator.get(OrePrefixes.dust, Materials.Copper, 1L))
-                    .itemOutputs(GTModHandler.getModItem(TinkerConstruct.ID, "materials", 4L, 14)).duration(5 * SECONDS)
-                    .eut(TierEU.RECIPE_MV).addTo(alloySmelterRecipes);
-
-        }
-
     }
 
 }
