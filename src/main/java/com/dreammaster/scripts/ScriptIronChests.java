@@ -341,13 +341,13 @@ public class ScriptIronChests implements IScriptLoader {
         addShapedRecipe(
                 getModItem(IronChests.ID, "crystalDarkSteelUpgrade", 1, 0, missing),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
                 "screwDarkSteel",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Glass, 1L),
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
                 "craftingToolHardHammer",
-                GTOreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 1L),
+                GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0, missing),
@@ -362,9 +362,9 @@ public class ScriptIronChests implements IScriptLoader {
                 "craftingToolScrewdriver");
         addShapedRecipe(
                 getModItem(IronChests.ID, "ironSteelUpgrade", 1, 0, missing),
-                "screwDarkSteel",
+                "screwSteel",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
-                "screwDarkSteel",
+                "screwSteel",
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
