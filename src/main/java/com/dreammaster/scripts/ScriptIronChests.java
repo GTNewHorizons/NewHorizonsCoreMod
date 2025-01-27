@@ -372,7 +372,6 @@ public class ScriptIronChests implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
                 "craftingToolScrewdriver");
 
-
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "chest", 1, 0, missing),
@@ -1467,7 +1466,7 @@ public class ScriptIronChests implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 2L))
-                .itemOutputs(getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0, missing)).duration(40 * SECONDS)
-                .eut(480).addTo(assemblerRecipes);
+                .itemOutputs(getModItem(IronChests.ID, "obsidianDarkSteelUpgrade", 1, 0, missing))
+                .duration(40 * SECONDS).eut(480).addTo(assemblerRecipes);
     }
 }
