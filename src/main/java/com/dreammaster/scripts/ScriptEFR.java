@@ -225,8 +225,8 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(Minecraft.ID, "obsidian", 15L),
-                        getModItem(ThaumicBases.ID, "cryingObsidian", 1L, 0))
+                        getModItem(HardcoreEnderExpansion.ID, "laboratory_obsidian", 16L),
+                        getModItem(HardcoreEnderExpansion.ID, "spectral_tear", 1L, 0))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 4000))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "crying_obsidian", 16L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
