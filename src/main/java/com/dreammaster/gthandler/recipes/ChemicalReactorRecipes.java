@@ -1,7 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Roquesit;
+import static com.dreammaster.scripts.IScriptLoader.missing;
 import static goodgenerator.items.GGMaterial.indiumPhosphate;
+import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
@@ -9,9 +11,11 @@ import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Natura;
+import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
+import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.INGOTS;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -578,6 +582,17 @@ public class ChemicalReactorRecipes implements Runnable {
                 .fluidInputs(Materials.Water.getFluid(16000L)).fluidOutputs(Materials.Hydrogen.getGas(48000L))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(OpenBlocks.ID, "trophy", 16, 0, missing),
+                        getModItem(Avaritia.ID, "Cosmic_Meatballs", 1, 0, missing))
+                .itemOutputs(getModItem(Avaritia.ID, "Resource", 1, 2, missing))
+                .fluidInputs(
+                        new FluidStack(FluidRegistry.getFluid("liquid_nitrationmixture"), 100),
+                        new FluidStack(FluidRegistry.getFluid("potion.wheatyhopsjuice"), 4000))
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("fluid.raw.waste"), 16000))
+                .duration(3 * SECONDS + 4 * TICKS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+
         if (Forestry.isModLoaded()) {
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -616,6 +631,7 @@ public class ChemicalReactorRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 2))
                     .fluidInputs(Materials.PhthalicAcid.getFluid(90)).duration(3 * SECONDS + 4 * TICKS)
                     .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+
         }
     }
 
