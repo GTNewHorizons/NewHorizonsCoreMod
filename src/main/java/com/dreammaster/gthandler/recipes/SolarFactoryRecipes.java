@@ -54,205 +54,209 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Cover_SolarPanel_LV.get(1),
                             CustomItemList.IrradiantReinforcedTitaniumPlate.get(2),
                             ItemList.Circuit_Silicon_Wafer2.get(4),
-                            ItemList.Circuit_Chip_ULPIC.get(4),
+                            ItemList.Circuit_Chip_ULPIC.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.EV), 2))
-                    .itemOutputs(ItemList.Cover_SolarPanel_MV.get(1)).fluidInputs(Materials.Epoxid.getMolten(4 * 144))
+                    .itemOutputs(ItemList.Cover_SolarPanel_MV.get(1)).fluidInputs(Materials.Epoxid.getMolten(2 * 144))
                     .metadata(data, new SolarFactoryRecipeData(2, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_MV.get(1),
-                            CustomItemList.IrradiantReinforcedTungstenPlate.get(4),
+                            CustomItemList.IrradiantReinforcedTungstenPlate.get(2),
                             ItemList.Circuit_Silicon_Wafer2.get(4),
-                            ItemList.Circuit_Chip_LPIC.get(4),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorEV, 8),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.IV), 4),
-                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.IndiumGalliumPhosphide), 8))
-                    .itemOutputs(ItemList.Cover_SolarPanel_HV.get(1)).fluidInputs(Materials.Epoxid.getMolten(8 * 144))
+                            ItemList.Circuit_Chip_LPIC.get(2),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorEV, 4),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.IV), 4))
+                    .itemOutputs(ItemList.Cover_SolarPanel_HV.get(1))
+                    .fluidInputs(Materials.IndiumGalliumPhosphide.getMolten(2 * 144))
                     .metadata(data, new SolarFactoryRecipeData(2, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_HV.get(1),
-                            CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(4),
+                            CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(2),
                             ItemList.Circuit_Silicon_Wafer3.get(4),
-                            ItemList.Circuit_Chip_PIC.get(4),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 8),
+                            ItemList.Circuit_Chip_PIC.get(2),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 6),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 4),
-                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.SiliconSG), 16))
+                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.SiliconSG), 12))
                     .itemOutputs(ItemList.Cover_SolarPanel_EV.get(1))
-                    .fluidInputs(Materials.Polybenzimidazole.getMolten(4 * 144))
+                    .fluidInputs(Materials.Polybenzimidazole.getMolten(2 * 144))
                     .metadata(data, new SolarFactoryRecipeData(3, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_EV.get(1),
-                            CustomItemList.IrradiantReinforcedChromePlate.get(4),
+                            CustomItemList.IrradiantReinforcedChromePlate.get(2),
                             ItemList.Circuit_Silicon_Wafer3.get(8),
-                            ItemList.Circuit_Chip_HPIC.get(4),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 10),
+                            ItemList.Circuit_Chip_HPIC.get(2),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 6),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.ZPM), 4),
-                            GTOreDictUnificator.get(OrePrefixes.block.get(Materials.SiliconSG), 4))
+                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.SiliconSG), 16))
                     .itemOutputs(ItemList.Cover_SolarPanel_IV.get(1))
-                    .fluidInputs(Materials.Polybenzimidazole.getMolten(8 * 144))
+                    .fluidInputs(Materials.Polybenzimidazole.getMolten(4 * 144))
                     .metadata(data, new SolarFactoryRecipeData(3, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_IV.get(1),
-                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 4, 8),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8),
                             // ^ Irradiant Reinforced Iridium Plate
                             ItemList.Circuit_Silicon_Wafer4.get(8),
-                            ItemList.Circuit_Chip_UHPIC.get(8),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 24),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 8),
+                            ItemList.Circuit_Chip_UHPIC.get(2),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 16),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 2),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.ZPM), 4),
                             getModItem(SuperSolarPanels.ID, "solarsplitter", 2),
-                            GTOreDictUnificator.get(OrePrefixes.block.get(Materials.SiliconSG), 8))
+                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.SiliconSG), 20))
                     .itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1))
-                    .fluidInputs(Materials.Polybenzimidazole.getMolten(12 * 144))
+                    .fluidInputs(Materials.Polybenzimidazole.getMolten(6 * 144))
                     .metadata(data, new SolarFactoryRecipeData(4, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_LuV.get(1),
-                            CustomItemList.IrradiantReinforcedNaquadriaPlate.get(8),
+                            CustomItemList.IrradiantReinforcedNaquadriaPlate.get(4),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
-                            ItemList.Circuit_Wafer_QPIC.get(4),
-                            ItemList.Circuit_Chip_NPIC.get(8),
+                            ItemList.Circuit_Wafer_QPIC.get(2),
+                            ItemList.Circuit_Chip_NPIC.get(4),
                             ItemList.Circuit_Wafer_SoC2.get(2),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUV, 32),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 8))
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUV, 24),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 2))
                     .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1))
-                    .fluidInputs(Materials.Polybenzimidazole.getMolten(16 * 144))
+                    .fluidInputs(Materials.Polybenzimidazole.getMolten(8 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_ZPM.get(1),
-                            CustomItemList.IrradiantReinforcedNaquadriaPlate.get(8),
-                            ItemList.Circuit_Silicon_Wafer5.get(8),
-                            CustomItemList.PicoWafer.get(8),
-                            ItemList.Circuit_Chip_PPIC.get(8),
-                            ItemList.Circuit_Chip_CrystalSoC2.get(8),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 12),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 8),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 4))
+                            CustomItemList.IrradiantReinforcedNaquadriaPlate.get(4),
+                            ItemList.Circuit_Silicon_Wafer5.get(4),
+                            CustomItemList.PicoWafer.get(4),
+                            ItemList.Circuit_Chip_PPIC.get(4),
+                            ItemList.Circuit_Chip_CrystalSoC2.get(2),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 36),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 2),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2))
                     .itemOutputs(ItemList.Cover_SolarPanel_UV.get(1))
-                    .fluidInputs(new FluidStack(FluidRegistry.getFluid("molten.indalloy140"), 8 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(5, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV),
+                    .fluidInputs(Materials.Polybenzimidazole.getMolten(18 * 144))
+                    .metadata(data, new SolarFactoryRecipeData(5, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV),
 
             // Non-recursive / skipping recipes
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(2),
-                            ItemList.Circuit_Silicon_Wafer5.get(2),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUV, 16),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 4),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 8))
+                            CustomItemList.IrradiantReinforcedTungstenPlate.get(4),
+                            ItemList.Circuit_Silicon_Wafer2.get(4),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorEV, 8),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.IV), 4),
+                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.StainlessSteel), 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_LV.get(1))
-                    .fluidInputs(Materials.VibrantAlloy.getMolten(4 * 144))
+                    .fluidInputs(
+                            Materials.VibrantAlloy.getMolten(4 * 144),
+                            Materials.IndiumGalliumPhosphide.getMolten(4 * 144))
                     .metadata(data, new SolarFactoryRecipeData(2, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(4),
-                            ItemList.Circuit_Silicon_Wafer5.get(4),
-                            ItemList.Circuit_Wafer_QPIC.get(4),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUV, 16),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 8),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 8))
+                            CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(4),
+                            ItemList.Circuit_Silicon_Wafer3.get(4),
+                            ItemList.Circuit_Wafer_PIC.get(4),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorIV, 8),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.LuV), 4),
+                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.HSSE), 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_MV.get(1))
-                    .fluidInputs(Materials.Barium.getMolten(16 * 144), Materials.MeteoricSteel.getMolten(4 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(2, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV),
+                    .fluidInputs(Materials.Barium.getMolten(2 * 144), Materials.MeteoricSteel.getMolten(4 * 144))
+                    .metadata(data, new SolarFactoryRecipeData(3, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_EV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(6),
-                            ItemList.Circuit_Silicon_Wafer5.get(6),
-                            ItemList.Circuit_Wafer_QPIC.get(4),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUV, 16),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 12),
-                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Tritanium), 8),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 16))
+                            CustomItemList.IrradiantReinforcedChromePlate.get(4),
+                            ItemList.Circuit_Silicon_Wafer3.get(8),
+                            ItemList.Circuit_Wafer_HPIC.get(4),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorLuV, 8),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.ZPM), 4),
+                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Naquadah), 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_HV.get(1))
                     .fluidInputs(Materials.Uranium.getMolten(4 * 144), Materials.Sunnarium.getMolten(8 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(2, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV),
+                    .metadata(data, new SolarFactoryRecipeData(3, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV),
 
-            GTValues.RA.stdBuilder()
-                    .itemInputs(
-                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(8),
-                            ItemList.Circuit_Silicon_Wafer5.get(8),
-                            ItemList.Circuit_Wafer_QPIC.get(4),
-                            ItemList.Circuit_Chip_NPIC.get(4),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUV, 16),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 16),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 16))
+            GTValues.RA.stdBuilder().itemInputs(
+                    getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8),
+                    // ^ Irradiant Reinforced Iridium Plate
+                    ItemList.Circuit_Silicon_Wafer4.get(8),
+                    ItemList.Circuit_Wafer_UHPIC.get(4),
+                    ItemList.Circuit_Chip_NPIC.get(4),
+                    GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 20),
+                    GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 4),
+                    GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.NaquadahAlloy), 16))
                     .itemOutputs(ItemList.Cover_SolarPanel_EV.get(1))
                     .fluidInputs(
                             Materials.Plutonium.getMolten(2 * 144),
                             Materials.Knightmetal.getMolten(4 * 144),
                             Materials.Ultimet.getMolten(8 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(3, 4, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV),
+                    .metadata(data, new SolarFactoryRecipeData(4, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedBedrockiumPlate.get(2),
-                            ItemList.Circuit_Silicon_Wafer5.get(10),
+                            CustomItemList.IrradiantReinforcedNaquadriaPlate.get(2),
+                            ItemList.Circuit_Silicon_Wafer5.get(8),
                             ItemList.Circuit_Wafer_QPIC.get(4),
-                            ItemList.Circuit_Chip_UHPIC.get(4),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 16),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 32))
+                            ItemList.Circuit_Chip_NPIC.get(8),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUV, 16),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2),
+                            GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.Tritanium), 8))
                     .itemOutputs(ItemList.Cover_SolarPanel_IV.get(1))
                     .fluidInputs(
                             Materials.Chrome.getMolten(8 * 144),
                             Materials.NaquadahAlloy.getMolten(4 * 144),
                             Materials.FierySteel.getMolten(2 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(3, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM),
+                    .metadata(data, new SolarFactoryRecipeData(5, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedBedrockiumPlate.get(4),
-                            ItemList.Circuit_Silicon_Wafer5.get(12),
-                            ItemList.Circuit_Chip_UHPIC.get(8),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 16),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 8),
+                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(4),
+                            ItemList.Circuit_Silicon_Wafer5.get(8),
+                            ItemList.Circuit_Chip_UHPIC.get(4),
+                            ItemList.Circuit_Chip_PPIC.get(2),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 32),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 1),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 2),
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Steeleaf), 1),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 32),
-                            getModItem(SuperSolarPanels.ID, "solarsplitter", 8))
+                            getModItem(SuperSolarPanels.ID, "solarsplitter", 4))
                     .itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1))
                     .fluidInputs(
                             new FluidStack(FluidRegistry.getFluid("molten.indalloy140"), 8 * 144),
                             Materials.FierySteel.getMolten(4 * 144),
                             Materials.Knightmetal.getMolten(4 * 144))
-                    .metadata(data, new SolarFactoryRecipeData(4, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV),
+                    .metadata(data, new SolarFactoryRecipeData(5, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_UV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedBedrockiumPlate.get(6),
-                            ItemList.Circuit_Silicon_Wafer5.get(14),
-                            ItemList.Circuit_Wafer_QPIC.get(4),
-                            ItemList.Circuit_Chip_NPIC.get(8),
-                            ItemList.Circuit_Wafer_SoC2.get(16),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 16),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 12),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 64))
+                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(6),
+                            ItemList.Circuit_Silicon_Wafer5.get(8),
+                            ItemList.Circuit_Chip_UHPIC.get(8),
+                            ItemList.Circuit_Chip_PPIC.get(4),
+                            GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorUHV, 32),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 4),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Samarium), 1),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Steeleaf), 1))
                     .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1))
                     .fluidInputs(Materials.Infinity.getMolten(2 * 144), MaterialsKevlar.Kevlar.getMolten(4 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedBedrockiumPlate.get(8),
-                            ItemList.Circuit_Silicon_Wafer5.get(16),
+                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(8),
+                            ItemList.Circuit_Silicon_Wafer5.get(8),
                             CustomItemList.PicoWafer.get(8),
+                            ItemList.Circuit_Chip_UHPIC.get(16),
                             ItemList.Circuit_Chip_PPIC.get(8),
-                            ItemList.Circuit_Chip_CrystalSoC2.get(8),
-                            GTOreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUHV, 16),
-                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 16),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 64),
-                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Steeleaf), 2))
+                            GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 32),
+                            GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 8),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.ElectrumFlux), 2),
+                            GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Steeleaf), 1))
                     .itemOutputs(ItemList.Cover_SolarPanel_UV.get(1))
                     .fluidInputs(
                             Materials.Infinity.getMolten(4 * 144),
