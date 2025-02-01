@@ -95,7 +95,7 @@ public class ScriptAmunRa implements IScriptLoader {
         final Block machines4 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines4");
         final Block msBoosters1 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.msBoosters1");
         final Block airLockFrame = GameRegistry.findBlock(GalacticraftCore.ID, "tile.airLockFrame");
-        final Block machineFrames = GameRegistry.findBlock(GTNHIntergalactic.ID, "machineframes");
+        final Block machineFrames = GameRegistry.findBlock(GTNHIntergalactic.ID, "gassiphoncasing");
 
         final Item baseItem = GameRegistry.findItem(GalacticraftAmunRa.ID, "item.baseItem");
         final Item basicItem = GameRegistry.findItem(GalacticraftCore.ID, "item.basicItem");
