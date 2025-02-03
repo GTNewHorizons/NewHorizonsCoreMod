@@ -54,6 +54,7 @@ public class ScriptAvaritiaAddons implements IScriptLoader {
                 AppliedEnergistics2.ID,
                 AvaritiaAddons.ID,
                 EternalSingularity.ID,
+                ForbiddenMagic.ID,
                 GregTech.ID,
                 Avaritia.ID,
                 IronChests.ID,
