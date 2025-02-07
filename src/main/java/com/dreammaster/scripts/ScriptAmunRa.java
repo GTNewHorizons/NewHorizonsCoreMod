@@ -95,7 +95,7 @@ public class ScriptAmunRa implements IScriptLoader {
         final Block machines4 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines4");
         final Block msBoosters1 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.msBoosters1");
         final Block airLockFrame = GameRegistry.findBlock(GalacticraftCore.ID, "tile.airLockFrame");
-        final Block machineFrames = GameRegistry.findBlock(GTNHIntergalactic.ID, "machineframes");
+        final Block machineFrames = GameRegistry.findBlock(GTNHIntergalactic.ID, "gassiphoncasing");
 
         final Item baseItem = GameRegistry.findItem(GalacticraftAmunRa.ID, "item.baseItem");
         final Item basicItem = GameRegistry.findItem(GalacticraftCore.ID, "item.basicItem");
@@ -518,7 +518,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ARBlocks.blockMothershipController.getMetadata()),
                 1);
         recipe.put(new ItemStack(GregTechAPI.sBlockCasings8, 1, 5), 256);
-        recipe.put(new ItemStack(GameRegistry.findItem(GalaxySpace.ID, "item.DysonSwarmParts"), 1, 3), 64);
+        recipe.put(new ItemStack(GameRegistry.findItem(GTNHIntergalactic.ID, "item.DysonSwarmParts"), 1, 3), 64);
         recipe.put(ItemList.Field_Generator_UHV.get(1), 8);
         recipe.put("circuitInfinite", 32);
 
