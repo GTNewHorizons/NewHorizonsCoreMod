@@ -518,7 +518,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ARBlocks.blockMothershipController.getMetadata()),
                 1);
         recipe.put(new ItemStack(GregTechAPI.sBlockCasings8, 1, 5), 256);
-        recipe.put(new ItemStack(GameRegistry.findItem(GalaxySpace.ID, "item.DysonSwarmParts"), 1, 3), 64);
+        recipe.put(new ItemStack(GameRegistry.findItem(GTNHIntergalactic.ID, "item.DysonSwarmParts"), 1, 3), 64);
         recipe.put(ItemList.Field_Generator_UHV.get(1), 8);
         recipe.put("circuitInfinite", 32);
 
