@@ -2458,6 +2458,17 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(INDALLOY_140.getFluidStack(16000)).itemOutputs(ItemList.Hatch_HeatSensor.get(1))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
 
+        // Black Hole Utility Hatch
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Hull_UIV.get(1),
+                        getModItem(Avaritia.ID, "Singularity", 1L, 3, missing),
+                        ItemList.Sensor_UIV.get(2),
+                        GTOreDictUnificator.get(OrePrefixes.plateSuperdense, Materials.RedstoneAlloy, 16))
+                .fluidInputs(MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(16000))
+                .itemOutputs(ItemList.Hatch_BlackHoleUtility.get(1)).duration(15 * SECONDS).eut(TierEU.RECIPE_UIV)
+                .addTo(assemblerRecipes);
+
         // Reinforced Wooden Casing
         GTValues.RA.stdBuilder()
                 .itemInputs(
