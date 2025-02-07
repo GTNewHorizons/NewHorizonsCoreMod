@@ -726,9 +726,9 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Pants", 1, 0, missing),
-                "aaaaaaaaa",
-                "abcdefgha",
-                "amiijiina",
+                "aaaaeaaaa",
+                "abcdmfgha",
+                "aiiijiiia",
                 "aiaakaaia",
                 "aia---aia",
                 "ala---ala",
@@ -760,9 +760,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'l',
                 getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
                 'm',
-                getModItem(Botania.ID, "terrasteelLegs", 1, 0, missing),
-                'n',
-                getModItem(WitchingGadgets.ID, "item.WG_PrimordialLegs", 1, 0, missing));
+                getModItem(Botania.ID, "terrasteelLegs", 1, 0, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Shoes", 1, 0, missing),
                 "---------",
