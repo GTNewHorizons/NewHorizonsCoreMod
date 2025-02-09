@@ -28,6 +28,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -177,7 +179,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 5), 'G',
                         GTModHandler.getModItem(Thaumcraft.ID, "blockWoodenDevice", 1, 6), });
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "magma_cream", 4, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.magma_cream, 4))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing)).duration(10 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
@@ -187,7 +189,7 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "magma", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "magma_cream", 4, 0, missing))
+                .itemOutputs(new ItemStack(Items.magma_cream, 4))
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("lava"), 1000)).duration(10 * SECONDS).eut(48)
                 .addTo(fluidExtractionRecipes);
 
@@ -195,14 +197,12 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "blue_ice", 1, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(Minecraft.ID, "nether_wart", 9L))
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.nether_wart, 9))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 1L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(Minecraft.ID, "gravel", 4L),
-                        getModItem(TinkerConstruct.ID, "CraftedSoil", 4L, 1))
+                .itemInputs(new ItemStack(Blocks.gravel, 4), getModItem(TinkerConstruct.ID, "CraftedSoil", 4L, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "old_gravel", 8L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
