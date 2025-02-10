@@ -1,10 +1,15 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IScriptLoader.missing;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.fluidHeaterRecipes;
+import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import gregtech.api.enums.GTValues;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.util.minecraft.FluidUtils;
 
 public class FluidHeaterRecipes implements Runnable {
@@ -16,5 +21,13 @@ public class FluidHeaterRecipes implements Runnable {
                 .fluidOutputs(FluidUtils.getSuperHeatedSteam(3840)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .noOptimize().addTo(fluidHeaterRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(24))
+                .fluidInputs(Materials.Water.getFluid(250))
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing)).duration(2 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).noOptimize().addTo(fluidHeaterRecipes);
+        GTValues.RA.stdBuilder().fluidInputs(Materials.Milk.getFluid(250))
+                .itemInputs(GTUtility.getIntegratedCircuit(24))
+                .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing)).duration(2 * SECONDS)
+                .eut(TierEU.RECIPE_ULV).noOptimize().addTo(fluidHeaterRecipes);
     }
 }
