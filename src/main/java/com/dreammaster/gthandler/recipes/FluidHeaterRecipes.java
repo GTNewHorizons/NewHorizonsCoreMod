@@ -22,7 +22,7 @@ public class FluidHeaterRecipes implements Runnable {
         GTValues.RA.stdBuilder().fluidInputs(FluidUtils.getSteam(3840))
                 .fluidOutputs(FluidUtils.getSuperHeatedSteam(3840)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .noOptimize().addTo(fluidHeaterRecipes);
-        if(PamsHarvestCraft.isModLoaded()){
+        if (PamsHarvestCraft.isModLoaded()) {
             GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(24))
                     .fluidInputs(Materials.Water.getFluid(250))
                     .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing)).duration(2 * SECONDS)
@@ -31,11 +31,11 @@ public class FluidHeaterRecipes implements Runnable {
                     .itemInputs(GTUtility.getIntegratedCircuit(24))
                     .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing)).duration(2 * SECONDS)
                     .eut(TierEU.RECIPE_ULV).noOptimize().addTo(fluidHeaterRecipes);
-            if(Automagy.isModLoaded()){
+            if (Automagy.isModLoaded()) {
                 GTValues.RA.stdBuilder().fluidInputs(getFluidStack("fluidmilk", 250))
                         .itemInputs(GTUtility.getIntegratedCircuit(24))
-                        .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing)).duration(2 * SECONDS)
-                        .eut(TierEU.RECIPE_ULV).noOptimize().addTo(fluidHeaterRecipes);
+                        .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing))
+                        .duration(2 * SECONDS).eut(TierEU.RECIPE_ULV).noOptimize().addTo(fluidHeaterRecipes);
             }
         }
 
