@@ -1,6 +1,7 @@
 package com.dreammaster.gthandler.recipes;
 
 import static com.dreammaster.scripts.IScriptLoader.missing;
+import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.recipe.RecipeMaps.fluidHeaterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -30,6 +31,12 @@ public class FluidHeaterRecipes implements Runnable {
                     .itemInputs(GTUtility.getIntegratedCircuit(24))
                     .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing)).duration(2 * SECONDS)
                     .eut(TierEU.RECIPE_ULV).noOptimize().addTo(fluidHeaterRecipes);
+            if(Automagy.isModLoaded()){
+                GTValues.RA.stdBuilder().fluidInputs(getFluidStack("fluidmilk", 250))
+                        .itemInputs(GTUtility.getIntegratedCircuit(24))
+                        .itemOutputs(getModItem(PamsHarvestCraft.ID, "freshmilkItem", 1, 0, missing)).duration(2 * SECONDS)
+                        .eut(TierEU.RECIPE_ULV).noOptimize().addTo(fluidHeaterRecipes);
+            }
         }
 
     }
