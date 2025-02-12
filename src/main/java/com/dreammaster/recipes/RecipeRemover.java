@@ -104,7 +104,6 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.item.ModItems;
 
 public class RecipeRemover {
@@ -1163,7 +1162,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "fences", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Forestry.ID, "cart.beehouse", 1, wildcard, missing));
         removeRecipeByOutputDelayed(new ItemStack(ModItems.itemPersonalCloakingDevice));
-        removeRecipeByOutputDelayed(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 5));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "IndustrialApiary", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "MutagenProducer", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Gendustry.ID, "Mutatron", 1, 0, missing));
