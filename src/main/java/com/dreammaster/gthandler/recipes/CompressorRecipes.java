@@ -42,7 +42,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.recipe.metadata.CompressionTierKey;
 import gregtech.api.util.GTOreDictUnificator;
-import gtPlusPlus.core.block.ModBlocks;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtnhlanth.common.register.WerkstoffMaterialPool;
 
 public class CompressorRecipes implements Runnable {
@@ -298,12 +298,12 @@ public class CompressorRecipes implements Runnable {
     private void makeGTPlusPlusRecipes() {
         // Compressed Glowstone
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.glowstone, 9))
-                .itemOutputs(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 6)).duration(15 * SECONDS).eut(2)
+                .itemOutputs(GregtechItemList.CompressedGlowstone.get(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
         // Double Compressed Glowstone
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(ModBlocks.blockCompressedObsidian, 9, 6))
-                .itemOutputs(new ItemStack(ModBlocks.blockCompressedObsidian, 1, 7)).duration(15 * SECONDS).eut(2)
+        GTValues.RA.stdBuilder().itemInputs(GregtechItemList.CompressedGlowstone.get(9))
+                .itemOutputs(GregtechItemList.DoubleCompressedGlowstone.get(1)).duration(15 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
     }
 
