@@ -21,6 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import cpw.mods.fml.common.Optional;
 import forestry.api.recipes.RecipeManagers;
@@ -34,6 +35,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.item.chemistry.GenericChem;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
@@ -93,6 +95,19 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 MaterialsAlloy.TUMBAGA.getRod(1),
                 MaterialsAlloy.TUMBAGA.getPlate(1),
                 MaterialsAlloy.TUMBAGA.getRod(1));
+
+        // Fish Trap
+        addShapedRecipe(
+                new ItemStack(ModBlocks.blockFishTrap),
+                NHItemList.SteelBars.getIS(),
+                NHItemList.SteelBars.getIS(),
+                NHItemList.SteelBars.getIS(),
+                NHItemList.SteelBars.getIS(),
+                GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1),
+                NHItemList.SteelBars.getIS(),
+                NHItemList.SteelBars.getIS(),
+                NHItemList.SteelBars.getIS(),
+                NHItemList.SteelBars.getIS());
 
         // Shirabon and Eternity
         GTValues.RA.stdBuilder()
