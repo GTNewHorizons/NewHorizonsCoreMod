@@ -21,6 +21,7 @@ import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.util.GTModHandler.getModItem;
 
 import net.minecraft.init.Blocks;
@@ -314,6 +315,8 @@ public class GT_Loader_OreDictionary extends gregtech.loaders.preload.LoaderGTOr
                 OrePrefixes.nugget,
                 Materials.Ichorium,
                 GTModHandler.getModItem(ThaumicTinkerer.ID, "kamiResource", 1L, 3));
+        GTOreDictUnificator
+                .registerOre(OrePrefixes.paneGlass, GTModHandler.getModItem(TinkerConstruct.ID, "GlassPane", 1L, 0));
 
         GTOreDictUnificator.registerOre("dyeLime", GTOreDictUnificator.get(OrePrefixes.dust, Materials.Soapstone, 1L));
 
