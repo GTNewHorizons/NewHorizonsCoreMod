@@ -102,7 +102,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .itemInputs(
                             ItemList.Cover_SolarPanel_IV.get(1),
                             getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8),
-                            // ^ Irradiant Reinforced Iridium Plate
+                            // Irradiant Reinforced Iridium Plate
                             ItemList.Circuit_Silicon_Wafer4.get(8),
                             ItemList.Circuit_Chip_UHPIC.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 16),
@@ -126,7 +126,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 2))
                     .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1))
-                    .fluidInputs(Materials.Polybenzimidazole.getMolten(8 * 144))
+                    .fluidInputs(MaterialsKevlar.Kevlar.getMolten(1 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
 
             GTValues.RA.stdBuilder()
@@ -134,14 +134,14 @@ public class SolarFactoryRecipes implements Runnable {
                             ItemList.Cover_SolarPanel_ZPM.get(1),
                             CustomItemList.IrradiantReinforcedNaquadriaPlate.get(4),
                             ItemList.Circuit_Silicon_Wafer5.get(4),
-                            CustomItemList.PicoWafer.get(4),
+                            CustomItemList.PicoWafer.get(6),
                             ItemList.Circuit_Chip_PPIC.get(4),
                             ItemList.Circuit_Chip_CrystalSoC2.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 36),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 2),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2))
                     .itemOutputs(ItemList.Cover_SolarPanel_UV.get(1))
-                    .fluidInputs(Materials.Polybenzimidazole.getMolten(18 * 144))
+                    .fluidInputs(MaterialsKevlar.Kevlar.getMolten(2 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV),
 
             // Non-recursive / skipping recipes
@@ -184,7 +184,7 @@ public class SolarFactoryRecipes implements Runnable {
 
             GTValues.RA.stdBuilder().itemInputs(
                     getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8),
-                    // ^ Irradiant Reinforced Iridium Plate
+                    // Irradiant Reinforced Iridium Plate
                     ItemList.Circuit_Silicon_Wafer4.get(8),
                     ItemList.Circuit_Wafer_UHPIC.get(4),
                     ItemList.Circuit_Chip_NPIC.get(4),
@@ -250,7 +250,7 @@ public class SolarFactoryRecipes implements Runnable {
                     .itemInputs(
                             CustomItemList.IrradiantReinforcedNeutroniumPlate.get(8),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
-                            CustomItemList.PicoWafer.get(8),
+                            CustomItemList.PicoWafer.get(12),
                             ItemList.Circuit_Chip_UHPIC.get(16),
                             ItemList.Circuit_Chip_PPIC.get(8),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 32),
