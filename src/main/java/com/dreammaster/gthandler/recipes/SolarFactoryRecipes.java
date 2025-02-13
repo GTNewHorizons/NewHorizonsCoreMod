@@ -40,7 +40,7 @@ public class SolarFactoryRecipes implements Runnable {
     SolarFactoryRecipeDataKey data = SolarFactoryRecipeDataKey.INSTANCE;
 
     public GTRecipeBuilder[] SolarFactoryRawRecipes = {
-
+            // Irradiant Reinforced Plates
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             NHItemList.ReinforcedAluminiumIronPlate.getIS(1),
@@ -50,7 +50,8 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                     .itemOutputs(NHItemList.IrradiantReinforcedAluminiumPlate.getIS(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144))
-                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV),
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 1)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV),
+
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -60,9 +61,8 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                     .itemOutputs(NHItemList.IrradiantReinforcedTitaniumPlate.getIS(1))
-                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).duration(30 * SECONDS)
-                    .eut(480).metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS)
-                    .eut(TierEU.RECIPE_HV),
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -73,7 +73,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                     .itemOutputs(NHItemList.IrradiantReinforcedTungstenPlate.getIS(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 576))
-                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_EV),
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 1)).duration(30 * SECONDS).eut(TierEU.RECIPE_EV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -84,7 +84,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                     .itemOutputs(NHItemList.IrradiantReinforcedTungstenSteelPlate.getIS(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 1152))
-                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_IV),
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 1)).duration(30 * SECONDS).eut(TierEU.RECIPE_IV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -95,7 +95,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                     .itemOutputs(NHItemList.IrradiantReinforcedChromePlate.getIS(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 2304))
-                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV),
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 2)).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -106,7 +106,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                     .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 8, missing))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 4608))
-                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM),
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 2)).duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -117,7 +117,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                     .itemOutputs(NHItemList.IrradiantReinforcedNaquadriaPlate.getIS(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216))
-                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV),
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 2)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
@@ -128,7 +128,18 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
                     .itemOutputs(NHItemList.IrradiantReinforcedNeutroniumPlate.getIS(1))
                     .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 18432))
-                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_UHV),
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 3)).duration(30 * SECONDS).eut(TierEU.RECIPE_UHV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedBedrockiumIronPlate.getIS(1),
+                            NHItemList.EnrichedXSunnariumAlloy.getIS(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfinityCatalyst, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(NHItemList.IrradiantReinforcedBedrockiumPlate.getIS(1))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36864))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0, 3)).duration(30 * SECONDS).eut(TierEU.RECIPE_UEV),
 
             // Recursive recipes
             GTValues.RA.stdBuilder()

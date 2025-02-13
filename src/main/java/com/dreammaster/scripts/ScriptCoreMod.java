@@ -914,16 +914,6 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(CustomItemList.LeadNickelPlate.get(2L))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2coolant", 2000)).duration(30 * SECONDS).eut(1024)
                 .addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        CustomItemList.ReinforcedBedrockiumIronPlate.get(1L),
-                        NHItemList.EnrichedXSunnariumAlloy.getIS(1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.DraconiumAwakened, 1L),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfinityCatalyst, 2L),
-                        GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
-                .itemOutputs(CustomItemList.IrradiantReinforcedBedrockiumPlate.get(1L))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 36864)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UEV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.MysteriousCrystal, 1L))
                 .itemOutputs(getModItem(GalaxySpace.ID, "item.UnknowCrystal", 1, 0, missing)).outputChances(10000)
                 .fluidInputs(FluidRegistry.getFluidStack("molten.void", 288)).duration(1 * MINUTES).eut(480)
