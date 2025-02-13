@@ -1,6 +1,9 @@
 package com.dreammaster.gthandler.recipes;
 
+import static com.dreammaster.scripts.IScriptLoader.missing;
 import static gregtech.api.enums.Mods.AdvancedSolarPanel;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
 import static gregtech.api.recipe.RecipeMaps.solarFactoryRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -16,7 +19,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -37,11 +40,101 @@ public class SolarFactoryRecipes implements Runnable {
     SolarFactoryRecipeDataKey data = SolarFactoryRecipeDataKey.INSTANCE;
 
     public GTRecipeBuilder[] SolarFactoryRawRecipes = {
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedAluminiumIronPlate.getIS(1),
+                            getModItem(EnderIO.ID, "itemMaterial", 1, 6, missing),
+                            getModItem(IndustrialCraft2.ID, "itemPartIndustrialDiamond", 1, 0, missing),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.RedAlloy, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(NHItemList.IrradiantReinforcedAluminiumPlate.getIS(1))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 144))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_MV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedTitaniumIronPlate.getIS(1),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 0, missing),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.MeteoricSteel, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Lapis, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(NHItemList.IrradiantReinforcedTitaniumPlate.getIS(1))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 288)).duration(30 * SECONDS)
+                    .eut(480).metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS)
+                    .eut(TierEU.RECIPE_HV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedTungstenIronPlate.getIS(1),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 3, missing),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Uranium, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steeleaf, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(NHItemList.IrradiantReinforcedTungstenPlate.getIS(1))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 576))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_EV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedTungstenSteelIronPlate.getIS(1),
+                            GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Sunnarium, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plutonium, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Knightmetal, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(NHItemList.IrradiantReinforcedTungstenSteelPlate.getIS(1))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 1152))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_IV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedChromeIronPlate.getIS(1),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 1, missing),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.YttriumBariumCuprate, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.FierySteel, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(NHItemList.IrradiantReinforcedChromePlate.getIS(1))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 2304))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_LuV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 7, missing),
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 4, missing),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Osmium, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 1, 8, missing))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 4608))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_ZPM),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedNaquadriaIronPlate.getIS(1),
+                            NHItemList.EnrichedNaquadriaSunnariumAlloy.getIS(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Quantium, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Osmiridium, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(NHItemList.IrradiantReinforcedNaquadriaPlate.getIS(1))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 9216))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV),
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            NHItemList.ReinforcedNeutroniumIronPlate.getIS(1),
+                            NHItemList.EnrichedNaquadriaNeutroniumSunnariumAlloy.getIS(1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.MysteriousCrystal, 1L),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Infinity, 2L),
+                            GTOreDictUnificator.get(OrePrefixes.screw, Materials.RedAlloy, 4L))
+                    .itemOutputs(NHItemList.IrradiantReinforcedNeutroniumPlate.getIS(1))
+                    .fluidInputs(FluidRegistry.getFluidStack("molten.solderingalloy", 18432))
+                    .metadata(data, new SolarFactoryRecipeData(0, 0)).duration(30 * SECONDS).eut(TierEU.RECIPE_UHV),
+
             // Recursive recipes
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_8V.get(1),
-                            CustomItemList.IrradiantReinforcedAluminiumPlate.get(2),
+                            NHItemList.IrradiantReinforcedAluminiumPlate.getIS(2),
                             ItemList.Circuit_Silicon_Wafer2.get(4),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorMV, 4),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.HV), 2))
@@ -52,7 +145,7 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_LV.get(1),
-                            CustomItemList.IrradiantReinforcedTitaniumPlate.get(2),
+                            NHItemList.IrradiantReinforcedTitaniumPlate.getIS(2),
                             ItemList.Circuit_Silicon_Wafer2.get(4),
                             ItemList.Circuit_Chip_ULPIC.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV, 4),
@@ -63,7 +156,7 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_MV.get(1),
-                            CustomItemList.IrradiantReinforcedTungstenPlate.get(2),
+                            NHItemList.IrradiantReinforcedTungstenPlate.getIS(2),
                             ItemList.Circuit_Silicon_Wafer2.get(4),
                             ItemList.Circuit_Chip_LPIC.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorEV, 4),
@@ -75,7 +168,7 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_HV.get(1),
-                            CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(2),
+                            NHItemList.IrradiantReinforcedTungstenSteelPlate.getIS(2),
                             ItemList.Circuit_Silicon_Wafer3.get(4),
                             ItemList.Circuit_Chip_PIC.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorIV, 6),
@@ -88,7 +181,7 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_EV.get(1),
-                            CustomItemList.IrradiantReinforcedChromePlate.get(2),
+                            NHItemList.IrradiantReinforcedChromePlate.getIS(2),
                             ItemList.Circuit_Silicon_Wafer3.get(8),
                             ItemList.Circuit_Chip_HPIC.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorLuV, 6),
@@ -101,14 +194,14 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_IV.get(1),
-                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8),
-                            // ^ Irradiant Reinforced Iridium Plate
+                            getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8, missing),
+                            // Irradiant Reinforced Iridium Plate
                             ItemList.Circuit_Silicon_Wafer4.get(8),
                             ItemList.Circuit_Chip_UHPIC.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorZPM, 16),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 2),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.ZPM), 4),
-                            getModItem(SuperSolarPanels.ID, "solarsplitter", 2),
+                            getModItem(SuperSolarPanels.ID, "solarsplitter", 2, missing),
                             GTOreDictUnificator.get(OrePrefixes.plate.get(Materials.SiliconSG), 20))
                     .itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1))
                     .fluidInputs(Materials.Polybenzimidazole.getMolten(6 * 144))
@@ -117,7 +210,7 @@ public class SolarFactoryRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_LuV.get(1),
-                            CustomItemList.IrradiantReinforcedNaquadriaPlate.get(4),
+                            NHItemList.IrradiantReinforcedNaquadriaPlate.getIS(4),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
                             ItemList.Circuit_Wafer_QPIC.get(2),
                             ItemList.Circuit_Chip_NPIC.get(4),
@@ -126,28 +219,28 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UV), 2))
                     .itemOutputs(ItemList.Cover_SolarPanel_ZPM.get(1))
-                    .fluidInputs(Materials.Polybenzimidazole.getMolten(8 * 144))
+                    .fluidInputs(MaterialsKevlar.Kevlar.getMolten(1 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 8)).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV),
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             ItemList.Cover_SolarPanel_ZPM.get(1),
-                            CustomItemList.IrradiantReinforcedNaquadriaPlate.get(4),
+                            NHItemList.IrradiantReinforcedNaquadriaPlate.getIS(4),
                             ItemList.Circuit_Silicon_Wafer5.get(4),
-                            CustomItemList.PicoWafer.get(4),
+                            NHItemList.PicoWafer.getIS(6),
                             ItemList.Circuit_Chip_PPIC.get(4),
                             ItemList.Circuit_Chip_CrystalSoC2.get(2),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorUHV, 36),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 2),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UHV), 2))
                     .itemOutputs(ItemList.Cover_SolarPanel_UV.get(1))
-                    .fluidInputs(Materials.Polybenzimidazole.getMolten(18 * 144))
+                    .fluidInputs(MaterialsKevlar.Kevlar.getMolten(2 * 144))
                     .metadata(data, new SolarFactoryRecipeData(5, 4)).duration(10 * SECONDS).eut(TierEU.RECIPE_UEV),
 
             // Non-recursive / skipping recipes
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedTungstenPlate.get(4),
+                            NHItemList.IrradiantReinforcedTungstenPlate.getIS(4),
                             ItemList.Circuit_Silicon_Wafer2.get(4),
                             GTOreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorEV, 8),
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.IV), 4),
@@ -160,7 +253,7 @@ public class SolarFactoryRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedTungstenSteelPlate.get(4),
+                            NHItemList.IrradiantReinforcedTungstenSteelPlate.getIS(4),
                             ItemList.Circuit_Silicon_Wafer3.get(4),
                             ItemList.Circuit_Wafer_PIC.get(4),
                             GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.SuperconductorIV, 8),
@@ -172,7 +265,7 @@ public class SolarFactoryRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedChromePlate.get(4),
+                            NHItemList.IrradiantReinforcedChromePlate.getIS(4),
                             ItemList.Circuit_Silicon_Wafer3.get(8),
                             ItemList.Circuit_Wafer_HPIC.get(4),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorLuV, 8),
@@ -183,8 +276,8 @@ public class SolarFactoryRecipes implements Runnable {
                     .metadata(data, new SolarFactoryRecipeData(3, 8, 2)).duration(10 * SECONDS).eut(TierEU.RECIPE_IV),
 
             GTValues.RA.stdBuilder().itemInputs(
-                    getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8),
-                    // ^ Irradiant Reinforced Iridium Plate
+                    getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 2, 8, missing),
+                    // Irradiant Reinforced Iridium Plate
                     ItemList.Circuit_Silicon_Wafer4.get(8),
                     ItemList.Circuit_Wafer_UHPIC.get(4),
                     ItemList.Circuit_Chip_NPIC.get(4),
@@ -200,7 +293,7 @@ public class SolarFactoryRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedNaquadriaPlate.get(2),
+                            NHItemList.IrradiantReinforcedNaquadriaPlate.getIS(2),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
                             ItemList.Circuit_Wafer_QPIC.get(4),
                             ItemList.Circuit_Chip_NPIC.get(8),
@@ -216,7 +309,7 @@ public class SolarFactoryRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(4),
+                            NHItemList.IrradiantReinforcedNeutroniumPlate.getIS(4),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
                             ItemList.Circuit_Chip_UHPIC.get(4),
                             ItemList.Circuit_Chip_PPIC.get(2),
@@ -224,7 +317,7 @@ public class SolarFactoryRecipes implements Runnable {
                             GTOreDictUnificator.get(OrePrefixes.circuit.get(Materials.UEV), 1),
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.SiliconSG), 2),
                             GTOreDictUnificator.get(OrePrefixes.plateSuperdense.get(Materials.Steeleaf), 1),
-                            getModItem(SuperSolarPanels.ID, "solarsplitter", 4))
+                            getModItem(SuperSolarPanels.ID, "solarsplitter", 4, missing))
                     .itemOutputs(ItemList.Cover_SolarPanel_LuV.get(1))
                     .fluidInputs(
                             new FluidStack(FluidRegistry.getFluid("molten.indalloy140"), 8 * 144),
@@ -234,7 +327,7 @@ public class SolarFactoryRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(6),
+                            NHItemList.IrradiantReinforcedNeutroniumPlate.getIS(6),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
                             ItemList.Circuit_Chip_UHPIC.get(8),
                             ItemList.Circuit_Chip_PPIC.get(4),
@@ -248,9 +341,9 @@ public class SolarFactoryRecipes implements Runnable {
 
             GTValues.RA.stdBuilder()
                     .itemInputs(
-                            CustomItemList.IrradiantReinforcedNeutroniumPlate.get(8),
+                            NHItemList.IrradiantReinforcedNeutroniumPlate.getIS(8),
                             ItemList.Circuit_Silicon_Wafer5.get(8),
-                            CustomItemList.PicoWafer.get(8),
+                            NHItemList.PicoWafer.getIS(12),
                             ItemList.Circuit_Chip_UHPIC.get(16),
                             ItemList.Circuit_Chip_PPIC.get(8),
                             GTOreDictUnificator.get(OrePrefixes.wireGt04, Materials.SuperconductorUHV, 32),
