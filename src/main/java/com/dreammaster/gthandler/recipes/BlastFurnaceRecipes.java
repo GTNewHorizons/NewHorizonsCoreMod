@@ -1493,8 +1493,8 @@ public class BlastFurnaceRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.RawNeutronium.get(1L), GTUtility.getIntegratedCircuit(11))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Neutronium, 1L))
-                .fluidInputs(Materials.Radon.getGas(1000L)).duration(4 * MINUTES + 28 * SECONDS + 8 * TICKS).eut(TierEU.RECIPE_UV)
-                .metadata(COIL_HEAT, 9000).addTo(blastFurnaceRecipes);
+                .fluidInputs(Materials.Radon.getGas(1000L)).duration(4 * MINUTES + 28 * SECONDS + 8 * TICKS)
+                .eut(TierEU.RECIPE_UV).metadata(COIL_HEAT, 9000).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(Materials.Sapphire.getDust(3), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(Materials.Aluminiumoxide.getDust(1)).duration(60 * SECONDS).eut(TierEU.RECIPE_MV)
