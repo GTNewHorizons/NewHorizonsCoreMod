@@ -54,8 +54,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.block.ModBlocks;
-import gtPlusPlus.core.item.ModItems;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -1016,7 +1015,7 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         getModItem(ExtraUtilities.ID, "extractor_base", 1, 12, missing)));
         EnderConstructorRecipesHandler.registerRecipe(
                 new ShapedOreRecipe(
-                        new ItemStack(ModBlocks.blockCompressedObsidian, 1, 5),
+                        GregtechItemList.InvertedObsidian.get(1),
                         "abc",
                         "def",
                         "ghi",
@@ -1414,12 +1413,10 @@ public class ScriptExtraUtilities implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.screw, Materials.Tritanium, 1L),
                         NHItemList.EngravedGoldChip.getIS(1),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
-                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
-                        new ItemStack(ModItems.itemMagicFeather),
+                        getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing), GregtechItemList.MagicFeather.get(1),
                         getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
                         getModItem(Avaritia.ID, "big_pearl", 1, 0, missing),
-                        getModItem(Minecraft.ID, "nether_star", 1, 0, missing),
-                        new ItemStack(ModItems.itemMagicFeather),
+                        getModItem(Minecraft.ID, "nether_star", 1, 0, missing), GregtechItemList.MagicFeather.get(1),
                         getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing),
                         getModItem(ExtraUtilities.ID, "angelBlock", 1, 0, missing),
                         NHItemList.EngravedGoldChip.getIS(1),

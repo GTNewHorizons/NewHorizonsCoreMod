@@ -11,7 +11,6 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeBuilder.WILDCARD;
-import static gtPlusPlus.core.block.ModBlocks.blockFishTrap;
 import static gtPlusPlus.core.material.MaterialsAlloy.AQUATIC_STEEL;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_W;
@@ -1602,7 +1601,7 @@ public class AssemblerRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.WroughtIron, 1L),
                         CustomItemList.SteelBars.get(6L),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(new ItemStack(blockFishTrap, 1, 0)).duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .itemOutputs(GregtechItemList.FishTrap.get(1)).duration(10 * SECONDS).eut(64).addTo(assemblerRecipes);
 
         if (ExtraBees.isModLoaded()) {
             ItemStack alveary = GTModHandler.getModItem(Forestry.ID, "alveary", 1L, 0);
