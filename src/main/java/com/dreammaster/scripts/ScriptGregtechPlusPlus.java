@@ -35,10 +35,10 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.block.ModBlocks;
 import gtPlusPlus.core.item.chemistry.GenericChem;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
 
@@ -98,7 +98,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
 
         // Fish Trap
         addShapedRecipe(
-                new ItemStack(ModBlocks.blockFishTrap),
+                GregtechItemList.FishTrap.get(1),
                 NHItemList.SteelBars.getIS(),
                 NHItemList.SteelBars.getIS(),
                 NHItemList.SteelBars.getIS(),
