@@ -14,7 +14,7 @@ public class FluidHeaterRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().fluidInputs(FluidUtils.getSteam(3840))
                 .fluidOutputs(FluidUtils.getSuperHeatedSteam(3840)).duration(5 * SECONDS).eut(TierEU.RECIPE_LuV)
-                .noOptimize().addTo(fluidHeaterRecipes);
+                .addTo(fluidHeaterRecipes);
 
     }
 }
