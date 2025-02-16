@@ -3,15 +3,19 @@ package com.dreammaster.scripts;
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botany;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.RandomThings;
+import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
+import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
@@ -300,6 +304,13 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .addTo(mixerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(TinkerConstruct.ID, "CraftedSoil", 2L, 6),
+                        getModItem(Chisel.ID, "hempcretesand", 2L, 0))
+                .itemOutputs(GTModHandler.getModItem(BiomesOPlenty.ID, "mud", 4L, 1))
+                .fluidInputs(FluidRegistry.getFluidStack("glue", 1000)).duration(15 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(mixerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Salt, 1L),
                         getModItem(PamsHarvestCraft.ID, "seaweedItem", 32L),
                         getModItem(Botany.ID, "misc", 1L, 7))
@@ -312,6 +323,17 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(NHItemList.MushroomPowder.getIS(1), GTUtility.getIntegratedCircuit(16))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "food", 1, 1, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(BiomesOPlenty.ID, "hive", 1, 3, missing), GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "hive", 1, 2, missing)).eut(30).duration(2 * MINUTES)
+                .addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(Railcraft.ID, "cube", 1, 0, missing), GTUtility.getIntegratedCircuit(11))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "misc", 1, 1, missing)).eut(30).duration(15 * SECONDS)
+                .addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "misc", 9, 1, missing))
+                .itemOutputs(getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing)).eut(30).duration(15 * SECONDS)
+                .addTo(compressorRecipes);
 
     }
 }

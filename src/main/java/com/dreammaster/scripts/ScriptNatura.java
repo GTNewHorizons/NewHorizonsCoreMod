@@ -9,6 +9,7 @@ import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.extractorRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
@@ -16,6 +17,8 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.chisel.ChiselHelper;
@@ -3367,6 +3370,23 @@ public class ScriptNatura implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 6L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Wood, 1L))
                 .outputChances(10000, 8000).duration(20 * SECONDS).eut(2).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.snow, 4), GTUtility.getIntegratedCircuit(4))
+                .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 0))
+                .fluidInputs(FluidRegistry.getFluidStack("cloud_seed", 1000)).duration(20 * TICKS).eut(16)
+                .addTo(mixerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 0), GTUtility.getIntegratedCircuit(4))
+                .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 1))
+                .fluidInputs(FluidRegistry.getFluidStack("cloud_seed_concentrated", 1000)).duration(20 * TICKS).eut(16)
+                .addTo(mixerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1), GTUtility.getIntegratedCircuit(4))
+                .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 2))
+                .fluidInputs(FluidRegistry.getFluidStack("woodtar", 2000)).duration(20 * TICKS).eut(16)
+                .addTo(mixerRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Natura.ID, "Cloud", 4, 1), GTUtility.getIntegratedCircuit(4))
+                .itemOutputs(getModItem(Natura.ID, "Cloud", 4, 3))
+                .fluidInputs(FluidRegistry.getFluidStack("sulfurdioxide", 4000)).duration(20 * TICKS).eut(16)
+                .addTo(mixerRecipes);
+
         Module_CustomFuels
                 .registerCustomFuelValue(getModItem(Natura.ID, "NetherPressurePlate", 1, 0, missing), (short) 75);
         Module_CustomFuels
