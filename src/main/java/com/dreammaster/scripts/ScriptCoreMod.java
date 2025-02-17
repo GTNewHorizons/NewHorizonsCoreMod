@@ -1180,8 +1180,8 @@ public class ScriptCoreMod implements IScriptLoader {
                 .itemOutputs(NHItemList.EngravedGoldChip.getIS(1)).duration(5 * SECONDS).eut(120)
                 .addTo(laserEngraverRecipes);
         GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(3))
-                .fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 100))
-                .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 10)).duration(30 * SECONDS).eut(1920)
+                .fluidInputs(FluidRegistry.getFluidStack("fermentedbacterialsludge", 10))
+                .fluidOutputs(FluidRegistry.getFluidStack("mutagen", 1)).duration(3 * SECONDS).eut(1920)
                 .addTo(distilleryRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
