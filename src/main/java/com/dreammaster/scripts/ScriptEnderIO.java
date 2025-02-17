@@ -1641,7 +1641,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Polytetrafluoroethylene, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.CrystallineAlloy, 1L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemLiquidConduit", 1, 3, missing))
-                .fluidInputs(FluidRegistry.getFluidStack("molten.epoxid", 144)).duration(5 * SECONDS).eut(960)
+                .fluidInputs(FluidRegistry.getFluidStack("molten.plastic", 144)).duration(5 * SECONDS).eut(960)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
