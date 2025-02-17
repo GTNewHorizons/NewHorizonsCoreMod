@@ -2167,14 +2167,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(Minecraft.ID, "glass", 4, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).noOptimize()
-                .addTo(blastFurnaceRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass", 4, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0, missing))
-                .duration(20 * SECONDS).eut(16).noOptimize().addTo(alloySmelterRecipes);
+                .duration(20 * SECONDS).eut(16).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing))
                 .itemOutputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockTinyTNT", 1, 0, missing),
