@@ -5,6 +5,7 @@ import static com.dreammaster.scripts.IScriptLoader.wildcard;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
@@ -47,6 +48,19 @@ public class ShapelessUniversalRecipe extends ShapelessOreRecipe {
                 }
                 this.recipe.add(oresHashes);
                 this.recipeXY.add(ores);
+            } else if (value instanceof List<?>list) {
+                List<ItemStack> items = new ArrayList<>();
+                HashSet<GTUtility.ItemId> itemHash = new HashSet<>();
+                for (Object o : list) {
+                    if (!(o instanceof ItemStack itemStack)) {
+                        throw new IllegalArgumentException("Invalid item stack: " + o);
+                    }
+                    ItemStack i = itemStack.copy();
+                    items.add(i);
+                    itemHash.add(GTUtility.ItemId.createNoCopy(i));
+                }
+                this.recipe.add(itemHash);
+                this.recipeXY.add(items);
             } else if (value instanceof ItemStack) {
                 ItemStack i = ((ItemStack) value).copy();
                 this.recipe.add(i);
