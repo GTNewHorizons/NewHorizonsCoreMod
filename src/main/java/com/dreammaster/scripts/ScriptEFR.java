@@ -217,8 +217,7 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(TinkerConstruct.ID, "slime.gel", 4L, 1),
-                        getModItem(TinkerConstruct.ID, "GlueBlock", 4L, 0),
-                        getModItem(TinkerConstruct.ID, "materials", 1L, 1))
+                        getModItem(TinkerConstruct.ID, "GlueBlock", 4L, 0))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("steam"), 4000))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "slime", 16, 0, missing)).duration(40 * SECONDS).eut(2)
                 .addTo(mixerRecipes);
