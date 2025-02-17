@@ -132,13 +132,13 @@ public class BioItemLoader {
                 .special(BioItemList.getPetriDish(CultureSet.get("TcetiEBac")))
                 .fluidInputs(new FluidStack(BIOFLUIDS[2], 50)).fluidOutputs(new FluidStack(BIOFLUIDS[3], 50))
                 .duration(1 * MINUTES).eut(TierEU.RECIPE_UV).metadata(GLASS, 8)
-                .metadata(SIEVERT, new Sievert(100, false)).noOptimize().addTo(bacterialVatRecipes);
+                .metadata(SIEVERT, new Sievert(100, false)).addTo(bacterialVatRecipes);
 
         for (int i = 0; i < OreDictionary.getOres("cropTcetiESeaweed").size(); i++) {
             GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(i + 1))
                     .itemOutputs(OreDictionary.getOres("cropTcetiESeaweed").get(i).copy().splitStack(64))
                     .fluidInputs(new FluidStack(BIOFLUIDS[3], 1000)).duration(2 * SECONDS).eut(TierEU.RECIPE_UV)
-                    .noOptimize().addTo(centrifugeRecipes);
+                    .addTo(centrifugeRecipes);
         }
 
         GTValues.RA.stdBuilder()
@@ -150,7 +150,7 @@ public class BioItemLoader {
                 .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
                 .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(1)).duration(1 * MINUTES).eut(TierEU.RECIPE_IV)
-                .metadata(GLASS, 5).metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false)).noOptimize()
+                .metadata(GLASS, 5).metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Uranium), false))
                 .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
@@ -162,7 +162,7 @@ public class BioItemLoader {
                 .special(BioItemList.getPetriDish(CultureSet.get("OvumBac")))
                 .fluidInputs(FluidRegistry.getFluidStack("bacterialsludge", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(2)).duration(1 * MINUTES).eut(TierEU.RECIPE_LuV)
-                .metadata(GLASS, 6).metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false)).noOptimize()
+                .metadata(GLASS, 6).metadata(SIEVERT, new Sievert(BWUtil.calculateSv(Plutonium), false))
                 .addTo(bacterialVatRecipes);
 
         GTValues.RA.stdBuilder()
@@ -175,6 +175,6 @@ public class BioItemLoader {
                 .fluidInputs(FluidRegistry.getFluidStack("mutagen", 4))
                 .fluidOutputs(Materials.GrowthMediumRaw.getFluid(4)).duration(1 * MINUTES).eut(TierEU.RECIPE_ZPM)
                 .metadata(GLASS, 7).metadata(SIEVERT, new Sievert(BWUtil.calculateSv(NaquadahEnriched), true))
-                .noOptimize().addTo(bacterialVatRecipes);
+                .addTo(bacterialVatRecipes);
     }
 }
