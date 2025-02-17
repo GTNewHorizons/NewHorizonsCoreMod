@@ -34,11 +34,14 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
@@ -115,10 +118,16 @@ public class ScriptGregtech implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.dustSmall, Materials.Glass, 1L),
                 "craftingToolMortar",
                 getModItem(TinkerConstruct.ID, "GlassPane", 1, 0, missing));
+        List<ItemStack> meatItems = new ArrayList<>(OreDictionary.getOres("listAllmeatraw")).stream()
+                .filter(
+                        itemStack -> !ItemStack.areItemStacksEqual(
+                                itemStack,
+                                GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L)))
+                .collect(Collectors.toList());
         addShapelessRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L),
                 "craftingToolMortar",
-                "listAllmeatraw");
+                meatItems);
         addShapelessRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatRaw, 1L),
                 "craftingToolMortar",
@@ -127,10 +136,16 @@ public class ScriptGregtech implements IScriptLoader {
                 getModItem(Minecraft.ID, "sugar", 4, 0, missing),
                 "craftingToolMortar",
                 getModItem(CropsPlusPlus.ID, "foodBerries", 1, 1, missing));
+        List<ItemStack> cookedMeatItems = new ArrayList<>(OreDictionary.getOres("listAllmeatcooked")).stream()
+                .filter(
+                        itemStack -> !ItemStack.areItemStacksEqual(
+                                itemStack,
+                                GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L)))
+                .collect(Collectors.toList());
         addShapelessRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L),
                 "craftingToolMortar",
-                "listAllmeatcooked");
+                cookedMeatItems);
         addShapelessRecipe(
                 GTOreDictUnificator.get(OrePrefixes.dust, Materials.MeatCooked, 1L),
                 "craftingToolMortar",

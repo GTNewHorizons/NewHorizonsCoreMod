@@ -37,7 +37,7 @@ public class LaserEngraverRecipes implements Runnable {
         GTValues.RA.stdBuilder().itemInputs(ItemList.Tesseract.get(1), GregtechItemList.Laser_Lens_Special.get(0))
                 .itemOutputs(ItemList.EnergisedTesseract.get(1))
                 .fluidOutputs(MaterialsUEVplus.ExcitedDTEC.getFluid(100)).requiresCleanRoom().duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_UIV).noOptimize().addTo(laserEngraverRecipes);
+                .eut(TierEU.RECIPE_UIV).addTo(laserEngraverRecipes);
 
         // Mysterious crystal upgrading
 
@@ -246,15 +246,15 @@ public class LaserEngraverRecipes implements Runnable {
         // Protomatter recipes
         GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(100L))
                 .duration(10 * SECONDS).eut(TierEU.RECIPE_UIV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(100L))
-                .requiresCleanRoom().noOptimize().addTo(laserEngraverRecipes);
+                .requiresCleanRoom().addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.SpaceTime.getMolten(100L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_UMV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(1000L)).requiresCleanRoom()
-                .noOptimize().addTo(laserEngraverRecipes);
+                .addTo(laserEngraverRecipes);
 
         GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(100L)).duration(10 * SECONDS)
                 .eut(TierEU.RECIPE_UXV).fluidOutputs(MaterialsUEVplus.Protomatter.getFluid(10000L)).requiresCleanRoom()
-                .noOptimize().addTo(laserEngraverRecipes);
+                .addTo(laserEngraverRecipes);
 
         // Bootstrap antimatter recipe
         GTValues.RA.stdBuilder()
