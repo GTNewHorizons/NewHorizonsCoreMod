@@ -85,6 +85,7 @@ public class ScriptLoader {
                         new ScriptLogisticPipes(),
                         new ScriptMagicBees(),
                         new ScriptMalisDoors(),
+                        new ScriptMatterManipulator(),
                         new ScriptMechworks(),
                         new ScriptMinecraft(),
                         new ScriptNatura(),
