@@ -4,6 +4,7 @@ import static com.dreammaster.scripts.GameRegistryProxy.shapedRecipes;
 import static com.dreammaster.scripts.GameRegistryProxy.shapelessRecipes;
 import static com.dreammaster.tinkersConstruct.SmelteryFluidTypes.getMoltenPatternFluidTypeName;
 import static gregtech.api.enums.Mods.Backpack;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BuildCraftCore;
 import static gregtech.api.enums.Mods.ElectroMagicTools;
@@ -2470,6 +2471,12 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 .addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        getModItem(TinkerConstruct.ID, "slime.gel", 1, 0, missing),
+                        getModItem(BiomesOPlenty.ID, "mud", 1, 1, missing))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "CraftedSoil", 1, 5, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(alloySmelterRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         getModItem(ForgeMicroblocks.ID, "stoneRod", 7, 0, missing),
                         getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing),
                         GTUtility.getIntegratedCircuit(6))
@@ -2493,6 +2500,9 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(16))
                 .itemOutputs(getModItem(TinkerConstruct.ID, "jerky", 1, 3, missing)).eut(30).duration(2 * MINUTES)
                 .addTo(chemicalDehydratorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.SnowQueenBlood.getIS(16), GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(getModItem(TinkerConstruct.ID, "strangeFood", 16, 1, missing)).eut(30)
+                .duration(2 * MINUTES).addTo(chemicalDehydratorRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Thaumcraft.ID, "ItemZombieBrain", 1, 0, missing),
