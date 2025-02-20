@@ -17,7 +17,6 @@ import static gtPlusPlus.api.recipe.GTPPRecipeMaps.quantumForceTransformerRecipe
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -34,10 +33,7 @@ import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.item.chemistry.GenericChem;
 import gtPlusPlus.core.material.MaterialsAlloy;
-import gtPlusPlus.xmod.forestry.bees.items.FRItemRegistry;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptGregtechPlusPlus implements IScriptLoader {
@@ -117,9 +113,8 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 .itemOutputs(GTOreDictUnificator.get("dustShirabon", 64), ItemList.Timepiece.get(1))
                 .fluidInputs(MaterialsUEVplus.PrimordialMatter.getFluid(1152))
                 .fluidOutputs(MaterialsUEVplus.Eternity.getMolten(9216), MaterialsUEVplus.Time.getMolten(18432))
-                .metadata(QFT_CATALYST, GTUtility.copyAmount(0, GenericChem.TemporalHarmonyCatalyst))
-                .metadata(QFT_FOCUS_TIER, 4).duration(20 * SECONDS).eut(TierEU.RECIPE_UMV)
-                .addTo(quantumForceTransformerRecipes);
+                .metadata(QFT_CATALYST, GregtechItemList.TemporalHarmonyCatalyst.get(0)).metadata(QFT_FOCUS_TIER, 4)
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_UMV).addTo(quantumForceTransformerRecipes);
         addForestryRecipes();
     }
 
@@ -133,9 +128,8 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.WoodSealed, 4),
                         GTModHandler.getModItem(Minecraft.ID, "paper", 1, 0, missing),
                         GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
-                .fluidInputs(Materials.Redstone.getMolten(576))
-                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameArborist)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(GregtechItemList.HiveFrameArborist.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Stabilization Frame
         GTValues.RA.stdBuilder()
@@ -144,9 +138,8 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Osmiridium, 4),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Osmiridium, 1),
                         GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
-                .fluidInputs(Materials.Redstone.getMolten(576))
-                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameStalilize)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(GregtechItemList.HiveFrameStabilize.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Slowing Frame
         GTValues.RA.stdBuilder()
@@ -155,9 +148,8 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         MaterialsAlloy.TUMBAGA.getRod(4),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1),
                         GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
-                .fluidInputs(Materials.Redstone.getMolten(576))
-                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameSlow, 1, 0)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(GregtechItemList.HiveFrameSlow.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Decaying Frame
         GTValues.RA.stdBuilder()
@@ -166,9 +158,8 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.WroughtIron, 4),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.WroughtIron, 1),
                         GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
-                .fluidInputs(Materials.Redstone.getMolten(576))
-                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameDecay)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
-                .addTo(assemblerRecipes);
+                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(GregtechItemList.HiveFrameDecay.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Working Frame
         GTValues.RA.stdBuilder()
@@ -177,7 +168,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.BlueSteel, 4),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.NetherStar, 1),
                         GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
-                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(new ItemStack(FRItemRegistry.hiveFrameBusy))
+                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(GregtechItemList.HiveFrameBusy.get(1))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Mutagenic Frame
@@ -187,9 +178,8 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plutonium241, 4),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Plutonium241, 1),
                         GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
-                .fluidInputs(Materials.Redstone.getMolten(576))
-                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameMutagenic)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .fluidInputs(Materials.Redstone.getMolten(576)).itemOutputs(GregtechItemList.HiveFrameMutagenic.get(1))
+                .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
 
         // Accelerated Frame
         GTValues.RA.stdBuilder()
@@ -199,15 +189,15 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Electrum, 1),
                         GTModHandler.getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing))
                 .fluidInputs(Materials.Redstone.getMolten(576))
-                .itemOutputs(new ItemStack(FRItemRegistry.hiveFrameAccelerated)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
+                .itemOutputs(GregtechItemList.HiveFrameAccelerated.get(1)).duration(30 * SECONDS).eut(TierEU.RECIPE_HV)
+                .addTo(assemblerRecipes);
 
-        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), new ItemStack(FRItemRegistry.hiveFrameVoid));
+        addShapelessRecipe(CustomItemList.CoinBeesI.get(16L), GregtechItemList.HiveFrameVoid.get(1));
         RecipeManagers.carpenterManager.addRecipe(
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FRItemRegistry.hiveFrameAccelerated, 1, 0),
+                GregtechItemList.HiveFrameAccelerated.get(1),
                 "abc",
                 "def",
                 "ghi",
@@ -233,7 +223,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FRItemRegistry.hiveFrameMutagenic, 1, 0),
+                GregtechItemList.HiveFrameMutagenic.get(1),
                 "abc",
                 "def",
                 "ghi",
@@ -259,7 +249,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FRItemRegistry.hiveFrameBusy),
+                GregtechItemList.HiveFrameBusy.get(1),
                 "abc",
                 "def",
                 "ghi",
@@ -285,7 +275,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FRItemRegistry.hiveFrameDecay),
+                GregtechItemList.HiveFrameDecay.get(1),
                 "abc",
                 "def",
                 "ghi",
@@ -311,7 +301,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FRItemRegistry.hiveFrameSlow),
+                GregtechItemList.HiveFrameSlow.get(1),
                 "abc",
                 "def",
                 "ghi",
@@ -337,7 +327,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FRItemRegistry.hiveFrameStalilize),
+                GregtechItemList.HiveFrameStabilize.get(1),
                 "abc",
                 "def",
                 "ghi",
@@ -363,7 +353,7 @@ public class ScriptGregtechPlusPlus implements IScriptLoader {
                 60,
                 FluidRegistry.getFluidStack("molten.redstone", 576),
                 getModItem(Forestry.ID, "frameImpregnated", 1, 0, missing),
-                new ItemStack(FRItemRegistry.hiveFrameArborist),
+                GregtechItemList.HiveFrameArborist.get(1),
                 "abc",
                 "def",
                 "ghi",
