@@ -4,6 +4,7 @@ import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.CarpentersBlocks;
 import static gregtech.api.enums.Mods.ExtraTrees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -42,6 +43,7 @@ import static net.minecraftforge.fluids.FluidRegistry.getFluidStack;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -2159,6 +2161,25 @@ public class ScriptMinecraft implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Minecraft.ID, "saddle", 1, 0, missing)).duration(5 * SECONDS).eut(24)
                 .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.dirt, 16),
+                        getModItem(Botania.ID, "grassSeeds", 1, 0, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(new ItemStack(Blocks.grass, 16)).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.dirt, 16),
+                        getModItem(Botania.ID, "grassSeeds", 1, 1, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(new ItemStack(Blocks.dirt, 16, 2)).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.dirt, 16),
+                        getModItem(Botania.ID, "grassSeeds", 1, 2, missing),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(new ItemStack(Blocks.mycelium, 16)).duration(5 * SECONDS).eut(24).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CustomItemList.ArtificialLeather.get(4L),
