@@ -439,8 +439,9 @@ public class ScriptAE2FC implements IScriptLoader {
                 .addTo(assemblerRecipes);
 
         // preconfigurated priorities for storage buses
-        ItemStack preconfiguredStorageBus = AE2FC_FLUID_STORAGE_BUS.copy();
+
         for (int i = 1; i < 25; i++) {
+            ItemStack preconfiguredStorageBus = AE2FC_FLUID_STORAGE_BUS.copy();
             NBTTagCompound tag = new NBTTagCompound();
             tag.setInteger("priority", i);
             preconfiguredStorageBus.setTagCompound(tag);
