@@ -1,5 +1,30 @@
 package com.dreammaster.scripts;
 
+import com.dreammaster.recipes.CustomItem;
+import com.dreammaster.thaumcraft.TCHelper;
+import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.research.ResearchItem;
+import thaumcraft.api.research.ResearchPage;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
 import static gregtech.api.enums.Mods.AdventureBackpack;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
@@ -17,39 +42,15 @@ import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
+import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fluids.FluidStack;
-
-import com.dreammaster.recipes.CustomItem;
-import com.dreammaster.thaumcraft.TCHelper;
-
-import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.enums.TierEU;
-import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.aspects.AspectList;
-import thaumcraft.api.research.ResearchItem;
-import thaumcraft.api.research.ResearchPage;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
 public class ScriptEFR implements IScriptLoader {
 
@@ -136,6 +137,14 @@ public class ScriptEFR implements IScriptLoader {
                 new Object[] { "PPP", "PFP", "SSS", 'S', getModItem(EtFuturumRequiem.ID, "smooth_stone", 1, 0, missing),
                         'F', getModItem(Minecraft.ID, "furnace", 1, 0, missing), 'P', "plateIron" });
 
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 5L),
+                        getModItem(EtFuturumRequiem.ID, "smooth_stone", 3, 0, missing),
+                        new ItemStack(Blocks.furnace, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         GTModHandler.addCraftingRecipe(
                 getModItem(Minecraft.ID, "leather", 1, 0, missing),
                 bits,
@@ -208,6 +217,16 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        GTUtility.getIntegratedCircuit(20),
+                        new ItemStack(Blocks.stone_slab, 1),
+                        new ItemStack(Items.stick, 5),
+                        GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 3L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 2L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "wooden_armorstand", 1L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "old_gravel", 4L),
                         getModItem(BiomesOPlenty.ID, "driedDirt", 4L))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("steam"), 400))
@@ -224,19 +243,71 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
+                        new ItemStack(Blocks.netherrack, 16),
+                        getModItem(EtFuturumRequiem.ID, "nether_wart", 1, 1, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("blood"), 1000))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "nylium", 16, 1, missing)).duration(40 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        new ItemStack(Blocks.netherrack, 16),
+                        getModItem(EtFuturumRequiem.ID, "nether_wart", 1, 0, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("blood"), 1000))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "nylium", 16, 0, missing)).duration(40 * SECONDS).eut(2)
+                .addTo(mixerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "laboratory_obsidian", 16L),
                         getModItem(HardcoreEnderExpansion.ID, "spectral_tear", 1L, 0))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 4000))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "crying_obsidian", 16L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 16L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("steam"), 1000))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "honey_block", 16L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 9L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "moss", 9, 0, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "moss_block", 1, 0, missing)).duration(8 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "honeycomb", 4, 0, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "honeycomb_block", 1, 0, missing)).duration(8 * SECONDS)
+                .eut(2).addTo(compressorRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 9L)).duration(8 * SECONDS)
                 .eut(2).addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "leaves", 1, 1, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "pink_petals", 4, 0, missing)).duration(8 * SECONDS).eut(2)
+                .addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing), GTUtility.getIntegratedCircuit(16))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "honeycomb", 1, 0, missing)).eut(30).duration(10 * SECONDS)
+                .addTo(chemicalDehydratorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "honey_block", 1, 0, missing))
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(2 * MINUTES).eut(20)
+                .addTo(fluidExtractionRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "honey_bottle", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("for.honey", 250)).duration(1).eut(1)
+                .addTo(fluidCannerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "honey_bottle", 1, 0, missing))
+                .itemOutputs(new ItemStack(Items.glass_bottle, 1)).outputChances(10000)
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 250)).duration(2 * SECONDS).eut(2)
+                .addTo(fluidExtractionRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -249,6 +320,19 @@ public class ScriptEFR implements IScriptLoader {
                         new FluidStack(FluidRegistry.getFluid("endergoo"), 4000),
                         new FluidStack(FluidRegistry.getFluid("ender"), 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "azalea", 1, 0, missing),
+                        getModItem(BiomesOPlenty.ID, "petals", 1, 0, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "azalea", 1, 1, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("mutagen"), 100)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sapling, 1), new ItemStack(Blocks.leaves, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "azalea", 1, 0, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("mutagen"), 100)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
         new ResearchItem(
                 "UNDYINGTOTEM",
