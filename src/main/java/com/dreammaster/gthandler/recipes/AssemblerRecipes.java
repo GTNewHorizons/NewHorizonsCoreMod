@@ -57,6 +57,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaGeneratedTool01;
+import gtPlusPlus.core.material.MaterialMisc;
 import gtPlusPlus.core.material.MaterialsAlloy;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
@@ -5645,36 +5646,40 @@ public class AssemblerRecipes implements Runnable {
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(transposer.get(1, 2_560), ItemList.FluidRegulator_LuV.get(1L))
-                .itemOutputs(transposer.get(1, 655_360)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .itemOutputs(transposer.get(1, 655_360)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(transposer.get(1, 2_560), ItemList.FluidRegulator_ZPM.get(1L))
-                .itemOutputs(transposer.get(1, 2_621_440)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .itemOutputs(transposer.get(1, 2_621_440)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(transposer.get(1, 2_560), ItemList.FluidRegulator_UV.get(1L))
-                .itemOutputs(transposer.get(1, 10_485_760)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .itemOutputs(transposer.get(1, 10_485_760)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(transposer.get(1, 2_560), ItemList.FluidRegulator_UHV.get(1L))
-                .itemOutputs(transposer.get(1, 20_971_520)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .itemOutputs(transposer.get(1, 20_971_520)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
                 .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(transposer.get(1, 2_560), ItemList.FluidRegulator_UEV.get(1L))
-                .itemOutputs(transposer.get(1, 41_943_040)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(transposer.get(1, 41_943_040))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(transposer.get(1, 2_560), ItemList.FluidRegulator_UIV.get(1L))
-                .itemOutputs(transposer.get(1, 83_886_080)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(transposer.get(1, 83_886_080))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(transposer.get(1, 2_560), ItemList.FluidRegulator_UMV.get(1L))
-                .itemOutputs(transposer.get(1, 167_772_160)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(transposer.get(1, 167_772_160))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(transposer.get(1, 2_560), ItemList.FluidRegulator_UXV.get(1L))
-                .itemOutputs(transposer.get(1, 335_544_320)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
-                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+                .itemOutputs(transposer.get(1, 335_544_320))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
 
         // waypoint
 
