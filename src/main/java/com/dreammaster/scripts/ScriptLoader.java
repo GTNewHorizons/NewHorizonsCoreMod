@@ -103,7 +103,6 @@ public class ScriptLoader {
                         new ScriptSpiceOfLife(),
                         new ScriptStevesCarts(),
                         new ScriptStevesFactoryManager(),
-                        new ScriptSuperSolarPanels(),
                         new ScriptTaintedMagic(),
                         new ScriptTCCoreMod(),
                         new ScriptThaumcraft(),
