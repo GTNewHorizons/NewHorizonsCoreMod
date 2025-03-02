@@ -14,17 +14,21 @@ import static gregtech.api.enums.Mods.ProjectRedExploration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
+import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.cricketcraft.chisel.api.carving.CarvingUtils;
 import com.dreammaster.chisel.ChiselHelper;
 
 import gregtech.api.GregTechAPI;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -201,6 +205,14 @@ public class ScriptChisel implements IScriptLoader {
                 getModItem(Chisel.ID, "voidstone", 1, 0, missing),
                 getModItem(Chisel.ID, "voidstone", 1, 0, missing),
                 getModItem(Chisel.ID, "voidstone", 1, 0, missing));
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Natura.ID, "Cloud", 64, 0, missing),
+                        getModItem(Botania.ID, "manaBottle", 1, 0, missing),
+                        new ItemStack(Blocks.wooden_button, 1))
+                .itemOutputs(getModItem(Chisel.ID, "cloudinabottle", 1, 0, missing)).duration(10 * SECONDS).eut(2)
+                .addTo(formingPressRecipes);
 
         ChiselHelper.addGroup("glasswork");
         CarvingUtils.getChiselRegistry().removeGroup("cobblestone");

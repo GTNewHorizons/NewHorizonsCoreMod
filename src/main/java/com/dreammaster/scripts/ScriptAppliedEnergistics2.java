@@ -98,8 +98,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         final ItemStack storageBus = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing);
 
         // preconfigurated priorities for storage buses
-        ItemStack preconfiguredStorageBus = storageBus.copy();
+
         for (int i = 1; i < 25; i++) {
+            ItemStack preconfiguredStorageBus = storageBus.copy();
             NBTTagCompound tag = new NBTTagCompound();
             tag.setInteger("priority", i);
             preconfiguredStorageBus.setTagCompound(tag);
@@ -2167,14 +2168,13 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                         getModItem(Minecraft.ID, "glass", 4, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0, missing))
-                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).noOptimize()
-                .addTo(blastFurnaceRecipes);
+                .duration(10 * SECONDS).eut(TierEU.RECIPE_MV).specialValue(1000).addTo(blastFurnaceRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "glass", 4, 0, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.CertusQuartz, 4))
                 .itemOutputs(getModItem(AppliedEnergistics2.ID, "tile.BlockQuartzGlass", 4, 0, missing))
-                .duration(20 * SECONDS).eut(16).noOptimize().addTo(alloySmelterRecipes);
+                .duration(20 * SECONDS).eut(16).addTo(alloySmelterRecipes);
         GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "blockITNT", 1, 0, missing))
                 .itemOutputs(
                         getModItem(AppliedEnergistics2.ID, "tile.BlockTinyTNT", 1, 0, missing),
