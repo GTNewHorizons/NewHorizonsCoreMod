@@ -8,9 +8,13 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import java.util.Arrays;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Mods;
+import gregtech.api.util.GTModHandler;
 
 public class ScriptOpenComputers implements IScriptLoader {
 
@@ -22,6 +26,13 @@ public class ScriptOpenComputers implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(Mods.OpenComputers.ID, HardcoreEnderExpansion.ID, IndustrialCraft2.ID);
+    }
+
+    public static ItemStack getTransposer(int aAmount, int rate) {
+        ItemStack transposer = GTModHandler.getModItem(OpenComputers.ID, "transposer", aAmount, 0);
+        transposer.setTagCompound(new NBTTagCompound());
+        transposer.getTagCompound().setInteger("oc:fluidTransferRate", rate);
+        return transposer;
     }
 
     @Override
