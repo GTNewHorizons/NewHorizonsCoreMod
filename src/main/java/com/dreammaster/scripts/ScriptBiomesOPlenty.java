@@ -31,7 +31,6 @@ import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 import java.util.Arrays;
 import java.util.List;
 
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.item.NHItemList;
@@ -44,7 +43,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
-import gtPlusPlus.core.item.chemistry.AgriculturalChem;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 
 public class ScriptBiomesOPlenty implements IScriptLoader {
 
@@ -131,7 +130,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 "dustGlowstone");
         addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 15, missing),
-                new ItemStack(AgriculturalChem.mAgrichemItem1, 1, 1),
+                GregtechItemList.GreenAlgaeBiomass.get(1),
                 "dustGlowstone");
         addShapelessRecipe(
                 getModItem(BiomesOPlenty.ID, "coral1", 1, 12, missing),
