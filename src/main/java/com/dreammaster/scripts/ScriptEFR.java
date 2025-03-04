@@ -25,7 +25,6 @@ import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
-import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
 import java.util.Arrays;
@@ -284,9 +283,9 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "honeycomb_block", 1, 0, missing)).duration(8 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 9L))
-                .fluidInputs(FluidRegistry.getFluidStack("lava", 100)).itemOutputs(new ItemStack(Blocks.netherrack, 1))
-                .duration(8 * SECONDS).eut(20).addTo(compressorRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "moss_carpet", 9, 0, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "moss_block", 1, 0, missing)).duration(8 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 9L)).duration(8 * SECONDS)
@@ -327,18 +326,18 @@ public class ScriptEFR implements IScriptLoader {
                         new FluidStack(FluidRegistry.getFluid("ender"), 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "azalea", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "pink_petals", 4, 0, missing))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "azalea", 1, 1, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("biomass"), 100)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
-
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sapling, 1), new ItemStack(Blocks.leaves, 1))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "azalea", 1, 0, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("biomass"), 100)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
+        GTModHandler.addCraftingRecipe(
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "azalea", 1L, 1),
+                bits,
+                new Object[] { "AAA", "ABA", "AAA", 'A',
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, "pink_petals", 1L, 0), 'B',
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, "azalea", 1L, 0) });
+        GTModHandler.addCraftingRecipe(
+                GTModHandler.getModItem(EtFuturumRequiem.ID, "azalea", 1L, 0),
+                bits,
+                new Object[] { "AAA", "ABA", "AAA", 'A',
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, "moss_block", 1L, 0), 'B',
+                        new ItemStack(Blocks.sapling, 1) });
 
         new ResearchItem(
                 "UNDYINGTOTEM",
