@@ -284,6 +284,10 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "honeycomb_block", 1, 0, missing)).duration(8 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 9L))
+                .fluidInputs(FluidRegistry.getFluidStack("lava", 100)).itemOutputs(new ItemStack(Blocks.netherrack, 1))
+                .duration(8 * SECONDS).eut(20).addTo(compressorRecipes);
+
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 9L)).duration(8 * SECONDS)
                 .eut(2).addTo(hammerRecipes);
