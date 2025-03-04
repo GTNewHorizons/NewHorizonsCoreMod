@@ -25,6 +25,7 @@ import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
 import java.util.Arrays;
@@ -37,6 +38,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -267,10 +269,8 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "crying_obsidian", 16L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "honeyBlock", 16L))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("steam"), 1000))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "honey_block", 16L)).duration(5 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+        ChiselHelper.addVariationFromStack("EFRHoneyBlock", getModItem(BiomesOPlenty.ID, "honeyBlock", 1L));
+        ChiselHelper.addVariationFromStack("EFRHoneyBlock", getModItem(EtFuturumRequiem.ID, "honey_block", 1L));
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 9L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0, missing)).duration(8 * SECONDS).eut(2)
@@ -298,7 +298,7 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(chemicalDehydratorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "honey_block", 1, 0, missing))
-                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(2 * MINUTES).eut(20)
+                .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 1000)).duration(1 * MINUTES).eut(40)
                 .addTo(fluidExtractionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Items.glass_bottle, 1))
@@ -307,9 +307,9 @@ public class ScriptEFR implements IScriptLoader {
                 .addTo(fluidCannerRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "honey_bottle", 1, 0, missing))
-                .itemOutputs(new ItemStack(Items.glass_bottle, 1)).outputChances(10000)
+                .itemOutputs(new ItemStack(Items.glass_bottle, 1))
                 .fluidOutputs(FluidRegistry.getFluidStack("for.honey", 250)).duration(2 * SECONDS).eut(2)
-                .addTo(fluidExtractionRecipes);
+                .addTo(fluidCannerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -326,15 +326,15 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(EtFuturumRequiem.ID, "azalea", 1, 0, missing),
-                        getModItem(BiomesOPlenty.ID, "petals", 1, 0, missing))
+                        getModItem(EtFuturumRequiem.ID, "pink_petals", 4, 0, missing))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "azalea", 1, 1, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("mutagen"), 100)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("biomass"), 100)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.sapling, 1), new ItemStack(Blocks.leaves, 1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "azalea", 1, 0, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("mutagen"), 100)).duration(30 * SECONDS)
-                .eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("biomass"), 100)).duration(30 * SECONDS)
+                .eut(TierEU.RECIPE_HV).addTo(UniversalChemical);
 
         new ResearchItem(
                 "UNDYINGTOTEM",
