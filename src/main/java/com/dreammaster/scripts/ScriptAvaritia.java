@@ -552,13 +552,13 @@ public class ScriptAvaritia implements IScriptLoader {
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 createItemStack(Thaumcraft.ID, "WandCasting", 1, 9000, "{cap:\"matrix\",rod:\"infinity\"}", missing),
                 "--a------",
-                "-nba-----",
-                "aodef----",
+                "-oba-----",
+                "acdef----",
                 "-aegeh---",
                 "--iegej--",
                 "---kegea-",
                 "----ledma",
-                "-----abc-",
+                "-----abo-",
                 "------a--",
                 'a',
                 "plateInfinity",
@@ -591,9 +591,7 @@ public class ScriptAvaritia implements IScriptLoader {
                 'l',
                 getModItem(BloodMagic.ID, "earthScribeTool", 1, 0, missing),
                 'm',
-                getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2, missing),
-                'n',
-                getModItem(Avaritia.ID, "Akashic_Record", 1, 0, missing),
+                getModItem(TaintedMagic.ID, "ItemFocusTime", 1, 0, missing),
                 'o',
                 getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
