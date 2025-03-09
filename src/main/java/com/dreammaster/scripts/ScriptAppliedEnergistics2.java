@@ -98,8 +98,9 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
         final ItemStack storageBus = getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 220, missing);
 
         // preconfigurated priorities for storage buses
-        ItemStack preconfiguredStorageBus = storageBus.copy();
+
         for (int i = 1; i < 25; i++) {
+            ItemStack preconfiguredStorageBus = storageBus.copy();
             NBTTagCompound tag = new NBTTagCompound();
             tag.setInteger("priority", i);
             preconfiguredStorageBus.setTagCompound(tag);
