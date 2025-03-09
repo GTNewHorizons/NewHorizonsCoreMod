@@ -328,6 +328,10 @@ public class RecipeRemover {
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "end_crystal", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "cherry_trapdoor", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "smithing_table", 1, 0));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_ingot", 1, 0));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_block", 1, 0));
+            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "moss_block", 1, 0));
             for (int i = 0; i < 16; i++) {
                 removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "banner", 1, i));
             }
