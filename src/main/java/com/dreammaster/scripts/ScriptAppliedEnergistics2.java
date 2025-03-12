@@ -1860,6 +1860,11 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 120, missing), // Cable Anchor
                 getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing),
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiPart", 1, 140, missing)); // Quartz Fiber
+        // Creative Controller
+        addShapedRecipe(
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyController", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, 0, missing),
+                getModItem(AppliedEnergistics2.ID, "tile.BlockCreativeEnergyCell", 1, 0, missing));
         // Fake Crafting Card
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 66, missing),
