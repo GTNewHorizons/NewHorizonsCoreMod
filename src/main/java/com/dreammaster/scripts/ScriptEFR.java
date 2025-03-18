@@ -414,9 +414,7 @@ public class ScriptEFR implements IScriptLoader {
         TCHelper.addResearchPage(
                 "SHULKER",
                 new ResearchPage(
-                        Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
-                                        getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)))));
+                        TCHelper.findInfusionRecipe(getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("SHULKER", 3);
         // Netherite gear
         new ResearchItem(
