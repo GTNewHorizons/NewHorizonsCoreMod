@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -17,6 +18,7 @@ import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
 import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
@@ -51,6 +53,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -417,7 +420,7 @@ public class ScriptEFR implements IScriptLoader {
                         Objects.requireNonNull(
                                 TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)))));
-        ThaumcraftApi.addWarpToResearch("SHULKER", 3);
+
         // Netherite gear
         new ResearchItem(
                 "NetheriteArmour",
@@ -721,6 +724,40 @@ public class ScriptEFR implements IScriptLoader {
                                 TCHelper.findInfusionRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_axe", 1, 0, missing)))));
         ThaumcraftApi.addWarpToResearch("NetheriteArmour", 3);
+        // Elytra
+        new ResearchItem(
+                "ELYTRA",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("lucrum"), 12)
+                        .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
+                        .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("tempestas"), 3),
+                -6,
+                5,
+                3,
+                getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing)).setParents("FeatherWings").setConcealed()
+                        .setPages(new ResearchPage("EtFuturumRequiem.research_page.ELYTRA.1")).registerResearchItem();
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "ELYTRA",
+                getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing),
+                15,
+                new AspectList().add(Aspect.getAspect("aer"), 100).add(Aspect.getAspect("praecantatio"), 150)
+                        .add(Aspect.getAspect("motus"), 150).add(Aspect.getAspect("tempestas"), 200)
+                        .add(Aspect.getAspect("praecantatio"), 200),
+                getModItem(WitchingGadgets.ID, "item.WG_Kama", 1, 4, missing),
+                new ItemStack[] { getModItem(EnderIO.ID, "itemGliderWing", 1, 1, missing),
+                        GregtechItemList.MagicFeather.get(1),
+                        getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing),
+                        getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
+                        getModItem(Botania.ID, "manaBeacon", 1, 10, missing),
+                        getModItem(StevesCarts2.ID, "CartModule", 1, 59, missing),
+                        getModItem(ElectroMagicTools.ID, "EMTItems", 1, 14, missing),
+                        GregtechItemList.MagicFeather.get(1), });
+        TCHelper.addResearchPage(
+                "ELYTRA",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findInfusionRecipe(
+                                        getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing)))));
 
     }
 }
