@@ -388,8 +388,8 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
                         .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
                         .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("corpus"), 3),
-                -4,
-                0,
+                -6,
+                6,
                 3,
                 getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing)).setParents("ENDERPOUCHE").setConcealed()
                         .setRound().setPages(new ResearchPage("EtFuturumRequiem.research_page.SHULKER.1"))
@@ -425,8 +425,8 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
                         .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
                         .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("ignis"), 3),
-                4,
-                0,
+                6,
+                6,
                 3,
                 getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing)).setParents("ELDRITCHMINOR")
                         .setConcealed().setRound()
