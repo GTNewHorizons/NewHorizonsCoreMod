@@ -731,8 +731,8 @@ public class ScriptEFR implements IScriptLoader {
                 new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("lucrum"), 12)
                         .add(Aspect.getAspect("praecantatio"), 12).add(Aspect.getAspect("spiritus"), 9)
                         .add(Aspect.getAspect("motus"), 12).add(Aspect.getAspect("tempestas"), 3),
-                -6,
-                5,
+                -4,
+                6,
                 3,
                 getModItem(EtFuturumRequiem.ID, "elytra", 1, 0, missing)).setParents("FeatherWings").setConcealed()
                         .setPages(new ResearchPage("EtFuturumRequiem.research_page.ELYTRA.1")).registerResearchItem();
