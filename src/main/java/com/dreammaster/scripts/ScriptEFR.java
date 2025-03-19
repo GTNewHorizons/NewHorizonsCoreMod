@@ -107,6 +107,87 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel", 1L)).duration(5 * SECONDS).eut(TierEU.RECIPE_LV)
                 .addTo(assemblerRecipes);
 
+        // Barrel Upgrades
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 0, missing)).duration(15 * SECONDS)
+                .eut(16).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 1, missing)).duration(15 * SECONDS)
+                .eut(8).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Iron, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 2, missing)).duration(25 * SECONDS)
+                .eut(64).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Gold, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 3, missing)).duration(30 * SECONDS)
+                .eut(120).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Steel, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 4, missing)).duration(25 * SECONDS)
+                .eut(64).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Diamond, 1L),
+                        getModItem(IndustrialCraft2.ID, "itemDensePlates", 1, 7, missing),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 5, missing)).duration(30 * SECONDS)
+                .eut(256).addTo(assemblerRecipes);
+        // GTValues.RA.stdBuilder()
+        // .itemInputs(
+        // GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+        // GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Netherite, 1L),
+        // GTUtility.getIntegratedCircuit(3))
+        // .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 6, missing))
+        // .duration(5 * SECONDS).eut(64)
+        // .addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.DarkSteel, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 7, missing)).duration(20 * SECONDS)
+                .eut(480).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 8, missing))
+                .duration(7 * SECONDS + 10 * TICKS).eut(120).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Copper, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Silver, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 9, missing)).duration(20 * SECONDS)
+                .eut(30).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Silver, 1L),
+                        GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Gold, 1L),
+                        GTUtility.getIntegratedCircuit(3))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 10, missing)).duration(10 * SECONDS)
+                .eut(64).addTo(assemblerRecipes);
+
+        // Iron Barrels
         addShapedRecipe(
                 getModItem(EtFuturumRequiem.ID, "copper_barrel", 1, 0, missing),
                 "screwCopper",
