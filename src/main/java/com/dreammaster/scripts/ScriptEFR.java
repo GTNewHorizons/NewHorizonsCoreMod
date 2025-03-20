@@ -681,9 +681,9 @@ public class ScriptEFR implements IScriptLoader {
         ThaumcraftApi.addArcaneCraftingRecipe(
                 "SHULKER",
                 getModItem(EtFuturumRequiem.ID, "shulker_box", 1, 0, missing),
-                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
-                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
-                        .add(Aspect.getAspect("ordo"), 25).add(Aspect.getAspect("perditio"), 25),
+                new AspectList().add(Aspect.getAspect("aer"), 5).add(Aspect.getAspect("ignis"), 5)
+                        .add(Aspect.getAspect("terra"), 5).add(Aspect.getAspect("aqua"), 5)
+                        .add(Aspect.getAspect("ordo"), 5).add(Aspect.getAspect("perditio"), 5),
                 "aba",
                 "cdc",
                 "aba",
@@ -717,292 +717,292 @@ public class ScriptEFR implements IScriptLoader {
                         .setPages(new ResearchPage("EtFuturumRequiem.research_page.NetheriteArmour.1"))
                         .registerResearchItem();
         // Helmet
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_helmet", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
-                getModItem(Botania.ID, "manasteelHelm", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
+                getModItem(Botania.ID, "manaweaveHelm", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         // Chestplate
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_chestplate", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
-                getModItem(Botania.ID, "manasteelChest", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
+                getModItem(Botania.ID, "manaweaveChest", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         // Leggins
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_leggings", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
-                getModItem(Botania.ID, "manasteelLegs", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
+                getModItem(Botania.ID, "manaweaveLegs", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         // Boots
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_boots", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
-                getModItem(Botania.ID, "manasteelBoots", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
+                getModItem(Botania.ID, "manaweaveBoots", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         // Pickaxe
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_pickaxe", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
                 getModItem(Botania.ID, "manasteelPick", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         // Hoe
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_hoe", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
-                getModItem(ExtraUtilities.ID, "temporalHoe", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
+                getModItem(PamsHarvestTheNether.ID, "Quartz Hoe", 1, 0, missing),
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         // Shovel
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_spade", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
                 getModItem(Botania.ID, "manasteelShovel", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         // Sword
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_sword", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
                 getModItem(Botania.ID, "manasteelSword", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         // Axe
-        ThaumcraftApi.addInfusionCraftingRecipe(
+        ThaumcraftApi.addArcaneCraftingRecipe(
                 "NetheriteArmour",
                 getModItem(EtFuturumRequiem.ID, "netherite_axe", 1, 0, missing),
-                15,
-                new AspectList().add(Aspect.getAspect("infernus"), 16).add(Aspect.getAspect("ignis"), 32)
-                        .add(Aspect.getAspect("lucrum"), 64).add(Aspect.getAspect("tutamen"), 64)
-                        .add(Aspect.getAspect("vitreus"), 64).add(Aspect.getAspect("metallum"), 32)
-                        .add(Aspect.getAspect("ordo"), 32).add(Aspect.getAspect("praecantatio"), 16),
+                new AspectList().add(Aspect.getAspect("aer"), 15).add(Aspect.getAspect("ignis"), 15)
+                        .add(Aspect.getAspect("terra"), 15).add(Aspect.getAspect("aqua"), 15)
+                        .add(Aspect.getAspect("ordo"), 15).add(Aspect.getAspect("perditio"), 15),
+                "aba",
+                "cdc",
+                "aea",
+                'a',
+                getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0, missing),
+                'b',
+                createItemStack(
+                        TinkersGregworks.ID,
+                        "tGregToolPartLargePlate",
+                        1,
+                        1505,
+                        "{material:\"Gold\"}",
+                        missing),
+                'c',
+                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                'd',
                 getModItem(Botania.ID, "manasteelAxe", 1, 0, missing),
-                new ItemStack[] { getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        GTOreDictUnificator.get("plateManaDiamond", 1),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(Railcraft.ID, "firestone.refined", 1, 0, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.InfusedGold, 1L),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        getModItem(EtFuturumRequiem.ID, "ancient_debris", 1, 0, missing),
-                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.RoseGold, 1L),
-                        GTOreDictUnificator.get("plateManaDiamond", 1), });
+                'e',
+                GTOreDictUnificator.get("plateManaDiamond", 1));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_helmet", 1, 0, missing)))));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_chestplate", 1, 0, missing)))));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_leggings", 1, 0, missing)))));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_boots", 1, 0, missing)))));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_pickaxe", 1, 0, missing)))));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_hoe", 1, 0, missing)))));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_spade", 1, 0, missing)))));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_sword", 1, 0, missing)))));
         TCHelper.addResearchPage(
                 "NetheriteArmour",
                 new ResearchPage(
                         Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
+                                TCHelper.findArcaneRecipe(
                                         getModItem(EtFuturumRequiem.ID, "netherite_axe", 1, 0, missing)))));
         ThaumcraftApi.addWarpToResearch("NetheriteArmour", 3);
         // Elytra
