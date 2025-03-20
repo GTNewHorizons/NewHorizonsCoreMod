@@ -1,33 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.Avaritia;
-import static gregtech.api.enums.Mods.BiomesOPlenty;
-import static gregtech.api.enums.Mods.BloodArsenal;
-import static gregtech.api.enums.Mods.BloodMagic;
-import static gregtech.api.enums.Mods.BuildCraftFactory;
-import static gregtech.api.enums.Mods.DraconicEvolution;
-import static gregtech.api.enums.Mods.ElectroMagicTools;
-import static gregtech.api.enums.Mods.EnderIO;
-import static gregtech.api.enums.Mods.EnderStorage;
-import static gregtech.api.enums.Mods.EnderZoo;
-import static gregtech.api.enums.Mods.ExtraUtilities;
-import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.enums.Mods.Genetics;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.IronChests;
-import static gregtech.api.enums.Mods.IronTanks;
-import static gregtech.api.enums.Mods.MineAndBladeBattleGear2;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.Railcraft;
-import static gregtech.api.enums.Mods.StevesCarts2;
-import static gregtech.api.enums.Mods.Thaumcraft;
-import static gregtech.api.enums.Mods.ThaumicBases;
-import static gregtech.api.enums.Mods.ThaumicTinkerer;
-import static gregtech.api.enums.Mods.TinkerConstruct;
-import static gregtech.api.enums.Mods.TinkersGregworks;
-import static gregtech.api.enums.Mods.TwilightForest;
-import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -80,9 +53,9 @@ public class ScriptBloodMagic implements IScriptLoader {
                 Thaumcraft.ID,
                 Witchery.ID,
                 ExtraUtilities.ID,
+                Botania.ID,
                 EnderIO.ID,
                 TinkerConstruct.ID,
-                MineAndBladeBattleGear2.ID,
                 Railcraft.ID,
                 IndustrialCraft2.ID,
                 BuildCraftFactory.ID,
@@ -627,7 +600,7 @@ public class ScriptBloodMagic implements IScriptLoader {
                 'd',
                 "plateAluminium",
                 'e',
-                getModItem(MineAndBladeBattleGear2.ID, "dagger.diamond", 1, 0, missing),
+                getModItem(Botania.ID, "enderDagger", 1, 0, missing),
                 'f',
                 getModItem(TinkerConstruct.ID, "strangeFood", 1, 1, missing),
                 'g',
