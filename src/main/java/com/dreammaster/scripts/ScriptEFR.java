@@ -110,14 +110,14 @@ public class ScriptEFR implements IScriptLoader {
         // Barrel Upgrades
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Iron, 2L),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 0, missing)).duration(15 * SECONDS)
                 .eut(16).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "barrel", 1, 0, missing),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Wood, 1L),
                         GTOreDictUnificator.get(OrePrefixes.plateDouble, Materials.Copper, 2L),
                         GTUtility.getIntegratedCircuit(3))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "barrel_upgrade", 1, 1, missing)).duration(15 * SECONDS)
