@@ -764,6 +764,17 @@ public class ScriptBiblioCraft implements IScriptLoader {
                     "plateIron",
                     "blockIron",
                     "plateIron");
+            addShapedRecipe(
+                    Pedestals[i],
+                    null,
+                    null,
+                    null,
+                    "plateIron",
+                    "ringIron",
+                    "plateIron",
+                    "slabStone",
+                    cwool16[i],
+                    "slabStone");
             if (i < 7) {
                 addShapedRecipe(
                         FClockB[i],
@@ -831,17 +842,6 @@ public class ScriptBiblioCraft implements IScriptLoader {
                         "stickWood",
                         "stickWood",
                         "stickWood");
-                addShapedRecipe(
-                        Pedestals[i],
-                        null,
-                        null,
-                        null,
-                        "plateIron",
-                        "ringIron",
-                        "plateIron",
-                        "slabStone",
-                        cwool16[i],
-                        "slabStone");
                 addShapedRecipe(
                         LableB[i],
                         "stickWood",
