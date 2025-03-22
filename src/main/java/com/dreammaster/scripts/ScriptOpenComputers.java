@@ -3,7 +3,9 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.OpenComputers;
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,9 +14,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
+import gtPlusPlus.core.material.MaterialMisc;
+import gtPlusPlus.core.material.MaterialsAlloy;
 
 public class ScriptOpenComputers implements IScriptLoader {
 
@@ -28,7 +38,7 @@ public class ScriptOpenComputers implements IScriptLoader {
         return Arrays.asList(Mods.OpenComputers.ID, HardcoreEnderExpansion.ID, IndustrialCraft2.ID);
     }
 
-    public static ItemStack getTransposer(int aAmount, int rate) {
+    private static ItemStack getTransposer(int aAmount, int rate) {
         ItemStack transposer = GTModHandler.getModItem(OpenComputers.ID, "transposer", aAmount, 0);
         transposer.setTagCompound(new NBTTagCompound());
         transposer.getTagCompound().setInteger("oc:fluidTransferRate", rate);
@@ -37,6 +47,66 @@ public class ScriptOpenComputers implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        // Transposers
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ItemList.Automation_ChestBuffer_LV.get(1L),
+                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 61),
+                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 77),
+                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2),
+                        GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
+                        GTUtility.getIntegratedCircuit(1))
+                .itemOutputs(getTransposer(2, 2_560)).fluidInputs(Materials.Plastic.getMolten(72L))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_HV.get(1L))
+                .itemOutputs(getTransposer(1, 10_240)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_EV.get(1L))
+                .itemOutputs(getTransposer(1, 40_960)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_IV.get(1L))
+                .itemOutputs(getTransposer(1, 163_840)).fluidInputs(Materials.SolderingAlloy.getMolten(72L))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_LuV.get(1L))
+                .itemOutputs(getTransposer(1, 655_360)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_ZPM.get(1L))
+                .itemOutputs(getTransposer(1, 2_621_440)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UV.get(1L))
+                .itemOutputs(getTransposer(1, 10_485_760)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UHV.get(1L))
+                .itemOutputs(getTransposer(1, 20_971_520)).fluidInputs(MaterialsAlloy.INDALLOY_140.getFluidStack(72))
+                .duration(20 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UEV.get(1L))
+                .itemOutputs(getTransposer(1, 41_943_040))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UIV.get(1L))
+                .itemOutputs(getTransposer(1, 83_886_080))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UMV.get(1L))
+                .itemOutputs(getTransposer(1, 167_772_160))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getTransposer(1, 2_560), ItemList.FluidRegulator_UXV.get(1L))
+                .itemOutputs(getTransposer(1, 335_544_320))
+                .fluidInputs(MaterialMisc.MUTATED_LIVING_SOLDER.getFluidStack(72)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
         addShapelessRecipe(
                 getModItem(OpenComputers.ID, "item", 1, 23, missing),
                 ItemList.Circuit_Parts_Transistor.get(1));
