@@ -5607,19 +5607,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "relay", 1L, 0))
                 .fluidInputs(Materials.Plastic.getMolten(72L)).duration(10 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
-        // transposer
 
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        ItemList.Automation_ChestBuffer_LV.get(1L),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 61),
-                        GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 77),
-                        GTOreDictUnificator.get(OrePrefixes.plate, Materials.Plastic, 2),
-                        GTModHandler.getModItem(OpenComputers.ID, "cable", 2L, 0),
-                        GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(GTModHandler.getModItem(OpenComputers.ID, "transposer", 2L, 0))
-                .fluidInputs(Materials.Plastic.getMolten(72L)).duration(20 * SECONDS).eut(TierEU.RECIPE_MV)
-                .addTo(assemblerRecipes);
         // waypoint
 
         GTValues.RA.stdBuilder()
