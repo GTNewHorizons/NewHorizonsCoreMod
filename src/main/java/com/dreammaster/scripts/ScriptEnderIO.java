@@ -1877,23 +1877,6 @@ public class ScriptEnderIO implements IScriptLoader {
                         GregtechItemList.Battery_RE_EV_Lithium.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
-        // SPAWNER
-        /*
-         * ThaumcraftApi.addInfusionCraftingRecipe( "CrucsoulGTNH", getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0,
-         * missing), 8, new AspectList().add(Aspect.getAspect("exanimis"), 34).add(Aspect.getAspect("fames"), 18)
-         * .add(Aspect.getAspect("spiritus"), 62).add(Aspect.getAspect("mortuus"), 64) .add(Aspect.getAspect("telum"),
-         * 24).add(Aspect.getAspect("vinculum"), 46) .add(Aspect.getAspect("alienis"), 28),
-         * getModItem(ThaumicExploration.ID, "crucibleSouls", 1, 0, missing), new ItemStack[] { getModItem(Botania.ID,
-         * "cocoon", 1, 0, missing), getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing), getModItem(EnderIO.ID,
-         * "itemMaterial", 1, 17, missing), GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Shadow, 1L),
-         * getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing), getModItem(EnderIO.ID, "itemMaterial", 1, 9,
-         * missing), getModItem(Botania.ID, "cocoon", 1, 0, missing), getModItem(EnderIO.ID, "itemMaterial", 1, 9,
-         * missing), getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing),
-         * GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Shadow, 1L), getModItem(EnderIO.ID,
-         * "itemFrankenSkull", 1, 4, missing), getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing), });
-         * TCHelper.addResearchPage( "CrucsoulGTNH", new ResearchPage( Objects.requireNonNull(
-         * TCHelper.findInfusionRecipe( getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0, missing)))));
-         */
 
     }
 }
