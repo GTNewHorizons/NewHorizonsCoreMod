@@ -13,7 +13,9 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
 import static gregtech.api.enums.Mods.GTPlusPlus;
 import static gregtech.api.enums.Mods.GraviSuite;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
@@ -25,6 +27,7 @@ import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +43,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
@@ -1828,6 +1832,13 @@ public class ScriptEnderIO implements IScriptLoader {
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing))
                 .outputChances(10000, 1000, 100, 10).duration(15 * SECONDS).eut(480).addTo(maceratorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(HardcoreEnderExpansion.ID, "enderman_head", 1L, 0),
+                        GTModHandler.getModItem(MagicBees.ID, "wax", 4L, 1))
+                .itemOutputs(getModItem(EnderIO.ID, "blockEndermanSkull", 1, 0, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("endergoo", 1000)).duration(15 * SECONDS).eut(256)
+                .addTo(UniversalChemical);
 
         // Vibrant Capacitor Bank
         ItemStack vibrantCapacitor = createItemStack(
