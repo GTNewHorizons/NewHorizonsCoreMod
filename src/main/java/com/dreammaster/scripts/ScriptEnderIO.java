@@ -18,6 +18,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
@@ -60,8 +61,11 @@ public class ScriptEnderIO implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 EnderIO.ID,
+                Thaumcraft.ID,
+                ThaumicExploration.ID,
                 AppliedEnergistics2.ID,
                 Avaritia.ID,
+                Botania.ID,
                 Backpack.ID,
                 BartWorks.ID,
                 BuildCraftFactory.ID,
@@ -1902,6 +1906,7 @@ public class ScriptEnderIO implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Shadow, 1L),
                         getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
                         getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing), });
+        TCHelper.refreshResearchPages("CrucsoulGTNH");
         TCHelper.addResearchPage(
                 "CrucsoulGTNH",
                 new ResearchPage(
