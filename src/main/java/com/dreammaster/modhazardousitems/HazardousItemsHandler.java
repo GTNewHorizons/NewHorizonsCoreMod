@@ -32,7 +32,7 @@ import cpw.mods.fml.common.registry.GameRegistry.UniqueIdentifier;
 import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.gameregistry.PotionHelper;
-import gregtech.api.util.GTUtility;
+import gregtech.api.hazards.HazardProtection;
 
 /**
  * Eventhandler to apply configured Damage Values to player, if they have certain items in their inventory
@@ -72,7 +72,7 @@ public class HazardousItemsHandler {
             return;
         }
 
-        if (GTUtility.isWearingFullGasHazmat(event.player)) {
+        if (HazardProtection.isWearingFullGasHazmat(event.player)) {
             // Ideally we should check against individual potion effect / damage effect, as this method
             // checks only for GregTechAPI.sGasHazmatList. But actually almost all the hazmat protection armors
             // can protect against all kinds of sXXXHazmatList.
