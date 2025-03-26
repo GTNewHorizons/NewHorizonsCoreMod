@@ -1,5 +1,6 @@
 package com.dreammaster.gthandler.recipes;
 
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.SuperSolarPanels;
@@ -242,6 +243,30 @@ public class LaserEngraverRecipes implements Runnable {
                         GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1)))
                 .itemOutputs(ItemList.Circuit_Wafer_NPIC.get(32)).requiresCleanRoom().duration(60 * 20)
                 .eut(TierEU.RECIPE_UV).addTo(WaferEngravingRecipes);
+
+        // Bifrost laser recipes
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
+                        GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0))
+                .itemOutputs(GTModHandler.getModItem(Botania.ID, "bifrostPerm", 1L, 0)).duration(2 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(Botania.ID, "livingrock", 1L, 0),
+                        GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
+                        GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0))
+                .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerrock", 1L, 0)).duration(2 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(Botania.ID, "dreamwood", 1L, 1),
+                        GTModHandler.getModItem(Botania.ID, "elfGlass", 1L, 0),
+                        GTModHandler.getModItem(Botania.ID, "rainbowRod", 0L, 0))
+                .itemOutputs(GTModHandler.getModItem(Botania.ID, "shimmerwoodPlanks", 1L, 0)).duration(2 * SECONDS)
+                .eut(TierEU.RECIPE_IV).addTo(laserEngraverRecipes);
 
         // Protomatter recipes
         GTValues.RA.stdBuilder().fluidInputs(MaterialsUEVplus.DimensionallyTranscendentResidue.getFluid(100L))
