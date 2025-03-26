@@ -18,6 +18,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
+import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
@@ -27,13 +28,11 @@ import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.thaumcraft.TCHelper;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import gregtech.api.enums.GTValues;
@@ -44,10 +43,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.aspects.AspectList;
-import thaumcraft.api.research.ResearchPage;
 
 public class ScriptEnderIO implements IScriptLoader {
 
@@ -60,8 +55,11 @@ public class ScriptEnderIO implements IScriptLoader {
     public List<String> getDependencies() {
         return Arrays.asList(
                 EnderIO.ID,
+                Thaumcraft.ID,
+                ThaumicExploration.ID,
                 AppliedEnergistics2.ID,
                 Avaritia.ID,
+                Botania.ID,
                 Backpack.ID,
                 BartWorks.ID,
                 BuildCraftFactory.ID,
@@ -1879,34 +1877,6 @@ public class ScriptEnderIO implements IScriptLoader {
                         GregtechItemList.Battery_RE_EV_Lithium.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
-        // SPAWNER
 
-        ThaumcraftApi.addInfusionCraftingRecipe(
-                "CrucsoulGTNH",
-                getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0, missing),
-                8,
-                new AspectList().add(Aspect.getAspect("exanimis"), 34).add(Aspect.getAspect("fames"), 18)
-                        .add(Aspect.getAspect("spiritus"), 62).add(Aspect.getAspect("mortuus"), 64)
-                        .add(Aspect.getAspect("telum"), 24).add(Aspect.getAspect("vinculum"), 46)
-                        .add(Aspect.getAspect("alienis"), 28),
-                getModItem(ThaumicExploration.ID, "crucibleSouls", 1, 0, missing),
-                new ItemStack[] { getModItem(Botania.ID, "cocoon", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 17, missing),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Shadow, 1L),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing),
-                        getModItem(Botania.ID, "cocoon", 1, 0, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 16, missing),
-                        GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.Shadow, 1L),
-                        getModItem(EnderIO.ID, "itemFrankenSkull", 1, 4, missing),
-                        getModItem(EnderIO.ID, "itemMaterial", 1, 9, missing), });
-        TCHelper.addResearchPage(
-                "CrucsoulGTNH",
-                new ResearchPage(
-                        Objects.requireNonNull(
-                                TCHelper.findInfusionRecipe(
-                                        getModItem(EnderIO.ID, "itemBrokenSpawner", 1, 0, missing)))));
     }
 }
