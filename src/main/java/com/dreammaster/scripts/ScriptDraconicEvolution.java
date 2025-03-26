@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
@@ -10,7 +11,6 @@ import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.NEIOrePlugin;
 import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
@@ -1232,7 +1232,10 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 .eut(480).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(NEIOrePlugin.ID, "blockDimensionDisplay_Ow", 1, 0),
+                        getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 3),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 11),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 13),
                         getModItem(OpenComputers.ID, "hologram2", 1, 0, missing),
                         createItemStack(
                                 ExtraUtilities.ID,
