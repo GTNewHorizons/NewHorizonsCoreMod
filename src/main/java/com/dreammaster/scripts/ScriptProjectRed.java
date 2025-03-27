@@ -2018,55 +2018,55 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.redstone", 144)).duration(10 * SECONDS).eut(16)
-                .addTo(assemblerRecipes);
+                .addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
-                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing))
+                        getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 2, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2, missing))
-                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(15 * SECONDS).eut(30).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         GTOreDictUnificator.get(OrePrefixes.wireGt02, Materials.RedAlloy, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 2, missing))
-                .duration(15 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(15 * SECONDS).eut(30).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 17, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 3, missing))
-                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         getModItem(Minecraft.ID, "redstone", 3, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 4, missing))
-                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 1, missing),
                         getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing))
-                .duration(20 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(20 * SECONDS).eut(30).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.Ruby, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing))
-                .duration(25 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(25 * SECONDS).eut(30).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 5, missing),
                         GTOreDictUnificator.get(OrePrefixes.lens, Materials.FoolsRuby, 1L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 6, missing))
-                .duration(25 * SECONDS).eut(30).addTo(assemblerRecipes);
+                .duration(25 * SECONDS).eut(30).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(ProjectRedCore.ID, "projectred.core.part", 4, 2, missing),
                         GTOreDictUnificator.get(OrePrefixes.stick, Materials.Plastic, 4L))
                 .itemOutputs(getModItem(ProjectRedCore.ID, "projectred.core.part", 1, 9, missing))
-                .duration(15 * SECONDS).eut(64).addTo(assemblerRecipes);
+                .duration(15 * SECONDS).eut(64).addTo(circuitAssemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.plateQuadruple, Materials.Paper, 1L),
