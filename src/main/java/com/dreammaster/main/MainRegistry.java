@@ -14,17 +14,7 @@ import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 
-import java.io.File;
-import java.util.Random;
-
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fluids.FluidContainerRegistry;
-
+import bartworks.system.material.WerkstoffLoader;
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
@@ -43,6 +33,8 @@ import com.dreammaster.command.CustomDropsCommand;
 import com.dreammaster.command.CustomFuelsCommand;
 import com.dreammaster.command.CustomToolTipsCommand;
 import com.dreammaster.command.HazardousItemsCommand;
+import com.dreammaster.common.block.BlockGlobe;
+import com.dreammaster.common.tile.TileGlobe;
 import com.dreammaster.config.CoreModConfig;
 import com.dreammaster.creativetab.ModTabList;
 import com.dreammaster.detrav.ScannerTools;
@@ -77,8 +69,6 @@ import com.dreammaster.thaumcraft.TCLoader;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 import com.dreammaster.tinkersConstruct.TiCoLoader;
 import com.dreammaster.witchery.WitcheryPlugin;
-
-import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -105,6 +95,15 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
 import gregtech.api.util.GTLanguageManager;
 import gregtech.common.items.MetaGeneratedItem01;
+import java.io.File;
+import java.util.Random;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 
 @Mod(
         modid = Refstrings.MODID,
@@ -141,6 +140,8 @@ public class MainRegistry {
     public static Random Rnd;
     public static LogHelper Logger = new LogHelper(Refstrings.MODID);
     private static BacteriaRegistry BacteriaRegistry;
+
+    public static BlockGlobe globeBlock;
 
     public static void AddLoginError(String pMessage) {
         if (Module_AdminErrorLogs != null) {
@@ -230,6 +231,10 @@ public class MainRegistry {
             Logger.warn("Some blocks failed to register. Check the logfile for details");
             AddLoginError("[CoreMod-Blocks] Some blocks failed to register. Check the logfile for details");
         }
+
+        globeBlock = new BlockGlobe();
+        GameRegistry.registerBlock(globeBlock, Refstrings.MODID + ":globe");
+        GameRegistry.registerTileEntity(TileGlobe.class, "globe");
         // ------------------------------------------------------------
 
         // ------------------------------------------------------------
