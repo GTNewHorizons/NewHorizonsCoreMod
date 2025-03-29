@@ -2,6 +2,7 @@ package com.dreammaster.gthandler.recipes;
 
 import static bartworks.system.material.WerkstoffLoader.Roquesit;
 import static goodgenerator.items.GGMaterial.indiumPhosphate;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.Gendustry;
@@ -326,6 +327,14 @@ public class ChemicalReactorRecipes implements Runnable {
             GTValues.RA.stdBuilder()
                     .itemInputs(
                             new ItemStack(Items.spawn_egg, 1, GTValues.W),
+                            GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
+                    .itemOutputs(CustomItemList.TheBigEgg.get(1L))
+                    .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()
+                    .duration(60 * MINUTES).eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(Botania.ID, "cocoon", 1L, 0),
                             GTModHandler.getModItem(Genetics.ID, "misc", 64L, 4))
                     .itemOutputs(CustomItemList.TheBigEgg.get(1L))
                     .fluidInputs(FluidRegistry.getFluidStack("binnie.bacteria", 1000)).requiresCleanRoom()

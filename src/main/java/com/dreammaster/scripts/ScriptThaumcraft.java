@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BartWorks;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
@@ -41,6 +42,7 @@ import static gregtech.common.items.IDMetaTool01.KNIFE;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -3982,6 +3984,75 @@ public class ScriptThaumcraft implements IScriptLoader {
                 getModItem(Minecraft.ID, "bone", 1, 0, missing),
                 'i',
                 "screwThaumium");
+
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "ENCHFABRIC",
+                getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
+                        .add(Aspect.getAspect("terra"), 2),
+                "aba",
+                "cde",
+                "aba",
+                'a',
+                new ItemStack(Items.gold_nugget, 1),
+                'b',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 7, missing),
+                'c',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'd',
+                new ItemStack(Items.writable_book, 1),
+                'e',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 9, missing));
+        TCHelper.addResearchPage(
+                "ENCHFABRIC",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(Thaumcraft.ID, "ItemThaumonomicon", 1, 0, missing)))));
+
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "BASICARTIFACE",
+                getModItem(Thaumcraft.ID, "blockTable", 1, 15, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
+                        .add(Aspect.getAspect("terra"), 2),
+                "aba",
+                "aca",
+                "ada",
+                'b',
+                getModItem(Chisel.ID, "carpet", 1, 13, missing),
+                'c',
+                getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
+                'd',
+                getModItem(Thaumcraft.ID, "blockTable", 1, 0, missing));
+        TCHelper.addResearchPage(
+                "BASICARTIFACE",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(getModItem(Thaumcraft.ID, "blockTable", 1, 15, missing)))));
+
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "BASICARTIFACE",
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("perditio"), 2)
+                        .add(Aspect.getAspect("ignis"), 2),
+                "aba",
+                "cdc",
+                "ccc",
+                'a',
+                getModItem(Thaumcraft.ID, "ItemResource", 1, 14, missing),
+                'b',
+                "screwAnyIron",
+                'c',
+                "plateThaumium",
+                'd',
+                "gemFlawlessAmber");
+        TCHelper.addResearchPage(
+                "BASICARTIFACE",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(
+                                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing)))));
+
         TCHelper.setResearchAspects(
                 "BONEBOW",
                 new AspectList().add(Aspect.getAspect("telum"), 12).add(Aspect.getAspect("motus"), 9)
