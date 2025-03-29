@@ -28,7 +28,6 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
-import com.dreammaster.bartworksHandler.BWGlassAdder;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
@@ -363,8 +362,6 @@ public class MainRegistry {
         if (TwilightForest.isModLoaded()) {
             TF_Loot_Chests.init();
         }
-
-        BWGlassAdder.registerGlasses();
 
         if (CoreConfig.gtnhPauseMenuButtons && event.getSide().isClient()) {
             MinecraftForge.EVENT_BUS.register(new GTNHPauseScreen());
