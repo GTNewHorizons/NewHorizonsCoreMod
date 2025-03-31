@@ -12,6 +12,7 @@ import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
@@ -554,7 +555,7 @@ public class ScriptEFR implements IScriptLoader {
                 .itemInputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.NetherStar, 2L),
                         new ItemStack(Blocks.red_flower, 1, 0),
-                        new ItemStack(Blocks.skull, 3, 1),
+                        getModItem(MagicBees.ID, "miscResources", 1, 4, missing),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "wither_rose", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
