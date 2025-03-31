@@ -15,7 +15,6 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -483,7 +482,7 @@ public class ScriptEFR implements IScriptLoader {
                 getModItem(EtFuturumRequiem.ID, "purple_glazed_terracotta", 1, 0, missing));
         GTModHandler.addSmeltingRecipe(
                 new ItemStack(Blocks.stained_hardened_clay, 1, 11),
-                getModItem(EtFuturumRequiem.ID, "purple_glazed_terracotta", 1, 0, missing));
+                getModItem(EtFuturumRequiem.ID, "blue_glazed_terracotta", 1, 0, missing));
         GTModHandler.addSmeltingRecipe(
                 new ItemStack(Blocks.stained_hardened_clay, 1, 2),
                 getModItem(EtFuturumRequiem.ID, "magenta_glazed_terracotta", 1, 0, missing));
@@ -802,7 +801,8 @@ public class ScriptEFR implements IScriptLoader {
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "sapling", 1L, 1),
                 bits,
                 new Object[] { "AAA", "ABA", "AAA", 'A', GTModHandler.getModItem(Botania.ID, "petal", 1L, 6), 'B',
-                        GTModHandler.getModItem(PamsHarvestTheNether.ID, "pamcherrySapling", 1L, 0) });
+                        GTModHandler.getModItem(PamsHarvestCraft.ID, "pamcherrySapling", 1L, 0) });
+
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "sapling", 1L, 0),
                 bits,
