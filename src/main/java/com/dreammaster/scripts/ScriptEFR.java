@@ -561,11 +561,10 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(TaintedMagic.ID, "BlockWarpwoodLeaves", 16, 0, missing),
-                        getModItem(EtFuturumRequiem.ID, "nether_wart", 16, 0, missing),
-                        getModItem(TaintedMagic.ID, "ItemMaterial", 1, 3, missing),
+                        getModItem(TaintedMagic.ID, "BlockWarpwoodLeaves", 4, 0, missing),
+                        getModItem(EtFuturumRequiem.ID, "nether_wart", 4, 0, missing),
                         GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 4, 1, missing)).duration(20 * SECONDS)
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "nether_wart", 2, 1, missing)).duration(20 * SECONDS)
                 .eut(28).addTo(formingPressRecipes);
 
         GTModHandler.addCraftingRecipe(
@@ -726,7 +725,9 @@ public class ScriptEFR implements IScriptLoader {
         ChiselHelper.addVariationFromStack("EFRAmethystBlock", getModItem(EtFuturumRequiem.ID, "amethyst_block", 1L));
 
         GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(Blocks.glass, 2), getModItem(EtFuturumRequiem.ID, "amethyst_block", 1L))
+                .itemInputs(
+                        new ItemStack(Blocks.glass, 2),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 4L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "tinted_glass", 2L)).duration(20 * SECONDS).eut(15)
                 .addTo(alloySmelterRecipes);
 
