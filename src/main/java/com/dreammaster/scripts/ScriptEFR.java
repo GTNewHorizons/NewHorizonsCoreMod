@@ -859,7 +859,7 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing),
                         getModItem(Botania.ID, "stone", 1, 1, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 0L))
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2pahoehoelava"), 3000))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
