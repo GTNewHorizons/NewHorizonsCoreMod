@@ -29,12 +29,16 @@ import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.centrifugeRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.extruderRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
+import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
+import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
@@ -761,6 +765,58 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "pink_petals", 4, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0, missing))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 9L)).duration(8 * SECONDS)
+                .eut(2).addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 3L)).duration(8 * SECONDS)
+                .eut(2).addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "amethyst_block", 1, 0, missing))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 9L)).duration(13 * SECONDS)
+                .eut(4).addTo(maceratorRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 13L),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
+                .fluidInputs(Materials.VibrantAlloy.getMolten(576L)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 0, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        getModItem(EtFuturumRequiem.ID, "amethyst_cluster_1", 1, 6, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 3L),
+                        getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 0, missing))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 576)).duration(1 * MINUTES)
+                .eut(TierEU.RECIPE_MV).addTo(autoclaveRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(getModItem(BiomesOPlenty.ID, "misc", 1, 2, missing), GTUtility.getIntegratedCircuit(16))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "honeycomb", 1, 0, missing)).eut(30).duration(10 * SECONDS)
@@ -791,6 +847,28 @@ public class ScriptEFR implements IScriptLoader {
                         new FluidStack(FluidRegistry.getFluid("endergoo"), 4000),
                         new FluidStack(FluidRegistry.getFluid("ender"), 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 36, 0, missing))
+                .itemOutputs(
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.VolcanicAsh, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.QuartzSand, 9L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Pumice, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.PotassiumFeldspar, 4L),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.GraniteBlack, 4L))
+                .outputChances(5000, 2000, 1000, 750, 500, 250).duration(2 * MINUTES)
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
+                .addTo(centrifugeRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing),
+                        getModItem(Botania.ID, "stone", 1, 1, missing),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 64L),
+                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 0L))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2pahoehoelava"), 3000))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing)).duration(20 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
 
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "azalea", 1L, 1),
