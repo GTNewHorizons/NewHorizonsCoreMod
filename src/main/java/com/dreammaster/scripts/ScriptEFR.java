@@ -670,6 +670,10 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "old_gravel", 8L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.grass, 64), new ItemStack(Items.wooden_shovel, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "grass_path", 64L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.getIntegratedCircuit(20),
