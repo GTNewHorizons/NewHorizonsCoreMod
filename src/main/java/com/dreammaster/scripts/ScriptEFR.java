@@ -676,6 +676,10 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "old_gravel", 8L)).duration(5 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
+        GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.grass, 64), new ItemStack(Items.wooden_shovel, 1))
+                .itemOutputs(getModItem(EtFuturumRequiem.ID, "grass_path", 64L)).duration(5 * SECONDS)
+                .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
+
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTUtility.getIntegratedCircuit(20),
@@ -865,7 +869,7 @@ public class ScriptEFR implements IScriptLoader {
                         getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing),
                         getModItem(Botania.ID, "stone", 1, 1, missing),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 64L),
-                        GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 0L))
+                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2pahoehoelava"), 3000))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing)).duration(20 * SECONDS)
                 .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
