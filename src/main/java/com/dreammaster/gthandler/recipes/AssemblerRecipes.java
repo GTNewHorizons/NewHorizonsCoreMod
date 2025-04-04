@@ -2418,6 +2418,89 @@ public class AssemblerRecipes implements Runnable {
 
         }
 
+        if (Botania.isModLoaded()) {
+            // Hand of Ender
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(Botania.ID, "enderEyeBlock", 1L, 0),
+                            GTModHandler.getModItem(Witchery.ID, "witchhand", 1L, 0),
+                            GTModHandler.getModItem(Botania.ID, "manaResource", 5L, 22),
+                            GTModHandler.getModItem(Botania.ID, "manaBeacon", 1L, 5),
+                            new ItemStack(Blocks.ender_chest, 1),
+                            GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "enderHand", 1L, 0))
+                    .fluidInputs(MaterialsBotania.Terrasteel.getMolten(1296)).duration(12 * SECONDS + 10 * TICKS)
+                    .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
+
+            // Botania seeds grass
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 3, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 0, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 4, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 1, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 5, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 2, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 6, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 3, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 7, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 4, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Blocks.grass, 16),
+                            getModItem(Botania.ID, "grassSeeds", 1, 8, missing),
+                            GTUtility.getIntegratedCircuit(1))
+                    .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 5, missing)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            getModItem(Botania.ID, "altGrass", 2, 0, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 1, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 2, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 3, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 4, missing),
+                            getModItem(Botania.ID, "altGrass", 2, 5, missing),
+                            getModItem(Botania.ID, "overgrowthSeed", 1, 0, missing),
+                            getModItem(Botania.ID, "worldSeed", 1, 0, missing),
+                            GTUtility.getIntegratedCircuit(10))
+                    .itemOutputs(getModItem(Botania.ID, "enchantedSoil", 12, 0, missing)).duration(50 * SECONDS)
+                    .eut(240).addTo(assemblerRecipes);
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            new ItemStack(Items.wheat, 16),
+                            new ItemStack(Items.wheat_seeds, 1),
+                            getModItem(Botania.ID, "fertilizer", 1, 0, missing),
+                            GTUtility.getIntegratedCircuit(10))
+                    .itemOutputs(new ItemStack(Blocks.tallgrass, 16, 1)).duration(5 * SECONDS).eut(24)
+                    .addTo(assemblerRecipes);
+        }
+
         // 16A Zpm to LuV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -10477,88 +10560,6 @@ public class AssemblerRecipes implements Runnable {
                         .itemOutputs(GTModHandler.getModItem(Computronics.ID, "computronics.dockingUpgrade", 1L, 0))
                         .fluidInputs(tMat.getMolten(144L * tMultiplier / 2L)).duration(12 * SECONDS + 10 * TICKS)
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
-
-                // Hand of Ender
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                GTModHandler.getModItem(Botania.ID, "enderEyeBlock", 1L, 0),
-                                GTModHandler.getModItem(Witchery.ID, "witchhand", 1L, 0),
-                                GTModHandler.getModItem(Botania.ID, "manaResource", 5L, 22),
-                                GTModHandler.getModItem(Botania.ID, "manaBeacon", 1L, 5),
-                                new ItemStack(Blocks.ender_chest, 1),
-                                GTOreDictUnificator.get(OrePrefixes.plate, Materials.Obsidian, 2L),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(GTModHandler.getModItem(Botania.ID, "enderHand", 1L, 0))
-                        .fluidInputs(MaterialsBotania.Terrasteel.getMolten(1296)).duration(12 * SECONDS + 10 * TICKS)
-                        .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
-
-                // Botania seeds grass
-
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.grass, 16),
-                                getModItem(Botania.ID, "grassSeeds", 1, 3, missing),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 0, missing)).duration(5 * SECONDS).eut(24)
-                        .addTo(assemblerRecipes);
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.grass, 16),
-                                getModItem(Botania.ID, "grassSeeds", 1, 4, missing),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 1, missing)).duration(5 * SECONDS).eut(24)
-                        .addTo(assemblerRecipes);
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.grass, 16),
-                                getModItem(Botania.ID, "grassSeeds", 1, 5, missing),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 2, missing)).duration(5 * SECONDS).eut(24)
-                        .addTo(assemblerRecipes);
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.grass, 16),
-                                getModItem(Botania.ID, "grassSeeds", 1, 6, missing),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 3, missing)).duration(5 * SECONDS).eut(24)
-                        .addTo(assemblerRecipes);
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.grass, 16),
-                                getModItem(Botania.ID, "grassSeeds", 1, 7, missing),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 4, missing)).duration(5 * SECONDS).eut(24)
-                        .addTo(assemblerRecipes);
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Blocks.grass, 16),
-                                getModItem(Botania.ID, "grassSeeds", 1, 8, missing),
-                                GTUtility.getIntegratedCircuit(1))
-                        .itemOutputs(getModItem(Botania.ID, "altGrass", 16, 5, missing)).duration(5 * SECONDS).eut(24)
-                        .addTo(assemblerRecipes);
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                getModItem(Botania.ID, "altGrass", 2, 0, missing),
-                                getModItem(Botania.ID, "altGrass", 2, 1, missing),
-                                getModItem(Botania.ID, "altGrass", 2, 2, missing),
-                                getModItem(Botania.ID, "altGrass", 2, 3, missing),
-                                getModItem(Botania.ID, "altGrass", 2, 4, missing),
-                                getModItem(Botania.ID, "altGrass", 2, 5, missing),
-                                getModItem(Botania.ID, "overgrowthSeed", 1, 0, missing),
-                                getModItem(Botania.ID, "worldSeed", 1, 0, missing),
-                                GTUtility.getIntegratedCircuit(10))
-                        .itemOutputs(getModItem(Botania.ID, "enchantedSoil", 12, 0, missing)).duration(50 * SECONDS)
-                        .eut(240).addTo(assemblerRecipes);
-                GTValues.RA.stdBuilder()
-                        .itemInputs(
-                                new ItemStack(Items.wheat, 16),
-                                new ItemStack(Items.wheat_seeds, 1),
-                                getModItem(Botania.ID, "fertilizer", 1, 0, missing),
-                                GTUtility.getIntegratedCircuit(10))
-                        .itemOutputs(new ItemStack(Blocks.tallgrass, 16, 1)).duration(5 * SECONDS).eut(24)
-                        .addTo(assemblerRecipes);
-
             }
         }
     }
