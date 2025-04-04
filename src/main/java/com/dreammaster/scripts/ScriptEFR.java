@@ -32,7 +32,6 @@ import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.formingPressRecipes;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
-import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
@@ -857,16 +856,6 @@ public class ScriptEFR implements IScriptLoader {
                 .outputChances(5000, 2000, 1000, 750, 500, 250).duration(2 * MINUTES)
                 .fluidOutputs(new FluidStack(FluidRegistry.getFluid("sulfurtrioxide"), 3600)).eut(TierEU.RECIPE_MV)
                 .addTo(centrifugeRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(BiomesOPlenty.ID, "ash", 1, 0, missing),
-                        getModItem(Botania.ID, "stone", 1, 1, missing),
-                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.Netherrack, 64L),
-                        GTUtility.copyAmount(0, GTOreDictUnificator.get(OrePrefixes.lens, Materials.NetherStar, 1)))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2pahoehoelava"), 3000))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 0, missing)).duration(20 * SECONDS)
-                .eut(TierEU.RECIPE_LV).addTo(laserEngraverRecipes);
 
         GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "azalea", 1L, 1),
