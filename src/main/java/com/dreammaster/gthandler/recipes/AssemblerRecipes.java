@@ -23,6 +23,10 @@ import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TRINIUM_NAQUADAH_CARBON;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
+import static tectech.thing.CustomItemList.DATApipe;
+import static tectech.thing.CustomItemList.Machine_Multi_Switch;
+import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
+import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -96,6 +100,7 @@ public class AssemblerRecipes implements Runnable {
         makeSolderingAlloyRecipes();
         makeElectricMachinePartRecipes();
         makeCircuitPartRecipes();
+        makeMachineRecipes();
 
         // --- Advanced Solar Panel
         if (AdvancedSolarPanel.isModLoaded()) {
@@ -10427,5 +10432,24 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
             }
         }
+    }
+
+    private void makeMachineRecipes() {
+
+        // Advanced Network Switch
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        Machine_Multi_Transformer.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Cobalt, 64),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 64),
+                        DATApipe.get(4))
+                .fluidInputs(Materials.Iridium.getMolten(1296)).itemOutputs(Machine_Multi_Switch_Adv.get(1))
+                .eut(TierEU.RECIPE_ZPM).duration(40 * SECONDS).addTo(assemblerRecipes);
+
+        // Temporary Conversion Recipe
+        GTModHandler.addShapelessCraftingRecipe(
+                Machine_Multi_Switch_Adv.get(1),
+                new Object[] { Machine_Multi_Switch.get(1) });
     }
 }
