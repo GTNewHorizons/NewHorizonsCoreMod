@@ -409,6 +409,18 @@ public class ChemicalReactorRecipes implements Runnable {
 
         }
 
+        if (Botania.isModLoaded()) {
+
+            GTValues.RA.stdBuilder()
+                    .itemInputs(
+                            GTModHandler.getModItem(Botania.ID, "manaBottle", 1L, 0),
+                            GTModHandler.getModItem(HardcoreEnderExpansion.ID, "essence", 1L, 0))
+                    .itemOutputs(GTModHandler.getModItem(Botania.ID, "manaResource", 1L, 15))
+                    .fluidInputs(FluidRegistry.getFluidStack("liquidair", 1000)).duration(1 * MINUTES)
+                    .eut(TierEU.RECIPE_MV).addTo(UniversalChemical);
+
+        }
+
     }
 
     public static void singleBlockOnly() {

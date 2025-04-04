@@ -14,6 +14,7 @@ import static gregtech.api.enums.Mods.GalacticraftCore;
 import static gregtech.api.enums.Mods.GalacticraftMars;
 import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.MalisisDoors;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Natura;
@@ -34,6 +35,7 @@ import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
+import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -47,6 +49,7 @@ import java.util.Objects;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.chisel.ChiselHelper;
 import com.dreammaster.gthandler.CustomItemList;
@@ -2500,6 +2503,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                         GGMaterial.orundum.get(OrePrefixes.lens, 0))
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 7, missing)).duration(30 * SECONDS)
                 .eut(120).addTo(laserEngraverRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Thaumcraft.ID, "blockStoneDevice", 0, 12, missing),
+                        getModItem(Thaumcraft.ID, "ItemBathSalts", 1, 0, missing),
+                        getModItem(MagicBees.ID, "wax", 1, 0, missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 4000))
+                .fluidOutputs(new FluidStack(FluidRegistry.getFluid("fluidpure"), 4000)).duration(50 * SECONDS).eut(48)
+                .addTo(mixerRecipes);
 
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemGoggles", 1, 0, missing));
         TCHelper.removeArcaneRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 15, missing));
