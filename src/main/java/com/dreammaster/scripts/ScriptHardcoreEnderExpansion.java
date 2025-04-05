@@ -19,6 +19,7 @@ import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -785,6 +786,12 @@ public class ScriptHardcoreEnderExpansion implements IScriptLoader {
             ChiselHelper.addVariationFromStack(
                     "HEEPersegrit",
                     getModItem(HardcoreEnderExpansion.ID, "persegrit", 1, meta, missing));
+
+            // Death flower
         }
+        GTValues.RA.stdBuilder().itemInputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 0, missing))
+                .itemOutputs(getModItem(HardcoreEnderExpansion.ID, "death_flower", 1, 15, missing)).eut(480)
+                .duration(10 * MINUTES).addTo(chemicalDehydratorRecipes);
+
     }
 }
