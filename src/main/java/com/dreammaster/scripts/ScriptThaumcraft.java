@@ -32,13 +32,16 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
+import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.cutterRecipes;
+import static gregtech.api.recipe.RecipeMaps.fluidExtractionRecipes;
 import static gregtech.api.recipe.RecipeMaps.laserEngraverRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.common.items.IDMetaTool01.BUTCHERYKNIFE;
 import static gregtech.common.items.IDMetaTool01.KNIFE;
 
@@ -1715,6 +1718,14 @@ public class ScriptThaumcraft implements IScriptLoader {
                 .itemOutputs(getModItem(Thaumcraft.ID, "blockCosmeticSlabStone", 4, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 32)).duration(20 * SECONDS).eut(30)
                 .addTo(cutterRecipes);
+
+        // Quicksilver Drop Fixes
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 1, 5, missing))
+                .fluidOutputs(Materials.Mercury.getFluid(100)).duration(13 * TICKS).eut(4)
+                .addTo(fluidExtractionRecipes);
+        GTValues.RA.stdBuilder().itemInputs(getModItem(Thaumcraft.ID, "ItemNugget", 9, 5, missing))
+                .itemOutputs(getModItem(Thaumcraft.ID, "ItemResource", 1, 3, missing)).duration(15 * SECONDS).eut(2)
+                .addTo(compressorRecipes);
 
         TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 4, missing));
         TCHelper.removeCrucibleRecipe(getModItem(Thaumcraft.ID, "ItemResource", 1, 0, missing));
