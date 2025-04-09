@@ -2419,6 +2419,7 @@ public class AssemblerRecipes implements Runnable {
         }
 
         if (Botania.isModLoaded()) {
+
             // Hand of Ender
 
             GTValues.RA.stdBuilder()
