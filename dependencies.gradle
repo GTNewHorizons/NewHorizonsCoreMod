@@ -5,7 +5,7 @@ dependencies {
     api("com.github.GTNewHorizons:Yamcl:0.7.0:dev")
     api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
 
-    implementation("com.github.GTNewHorizons:GTNHLib:0.6.18:dev")
+    implementation("com.github.GTNewHorizons:GTNHLib:0.6.19:dev")
 
     compileOnly("com.github.GTNewHorizons:AkashicTome:1.2.1:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Avaritia:1.62:dev") { transitive = false }
