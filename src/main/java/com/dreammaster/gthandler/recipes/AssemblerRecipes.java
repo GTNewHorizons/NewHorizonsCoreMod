@@ -2916,7 +2916,7 @@ public class AssemblerRecipes implements Runnable {
                     .itemOutputs(new ItemStack(Blocks.tallgrass, 16, 1)).duration(5 * SECONDS).eut(24)
                     .addTo(assemblerRecipes);
         }
-      
+
         // 16A Zpm to LuV transformer
         GTValues.RA.stdBuilder()
                 .itemInputs(
