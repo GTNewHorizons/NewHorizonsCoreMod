@@ -160,27 +160,26 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Sunnarium, 32L),
                         getModItem(IndustrialCraft2.ID, "itemPartIridium", 64, 0, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 1, missing))
-                .duration(40 * SECONDS).eut(TierEU.RECIPE_LuV).addTo(alloySmelterRecipes);
+                .duration(40 * SECONDS).eut(245760).addTo(alloySmelterRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 1, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 3, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 8, 4, missing))
-                .duration(80 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(alloySmelterRecipes);
+                .duration(80 * SECONDS).eut(983040).addTo(alloySmelterRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 32, 2, missing))
-                .itemOutputs(
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 3, missing),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 3, missing),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 3, missing),
-                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 3, missing))
-                .fluidInputs(Materials.Sunnarium.getMolten(4608L)).duration(2 * MINUTES).eut(TierEU.RECIPE_IV)
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing),
+                        getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing))
+                .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 16, 3, missing))
+                .fluidInputs(Materials.Sunnarium.getMolten(2304L)).duration(2 * MINUTES).eut(122880)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 64L))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing))
-                .fluidInputs(Materials.Sunnarium.getMolten(9216L)).duration(1 * MINUTES).eut(TierEU.RECIPE_EV)
+                .fluidInputs(Materials.Sunnarium.getMolten(9216L)).duration(2 * MINUTES).eut(122880)
                 .addTo(autoclaveRecipes);
 
     }

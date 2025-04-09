@@ -1895,17 +1895,17 @@ public class ScriptEnderIO implements IScriptLoader {
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 64))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 64, 5, missing))
-                .fluidInputs(Materials.PulsatingIron.getMolten(8192)).duration(2 * MINUTES).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.PulsatingIron.getMolten(8192)).duration(2 * MINUTES).eut(7680)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Emerald, 64))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 64, 6, missing))
-                .fluidInputs(Materials.VibrantAlloy.getMolten(8192)).duration(2 * MINUTES).eut(TierEU.RECIPE_MV)
+                .fluidInputs(Materials.VibrantAlloy.getMolten(8192)).duration(2 * MINUTES).eut(7680)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.ManyullynCrystal.get(16L))
                 .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 16, 10, missing))
-                .fluidInputs(Materials.Enderium.getMolten(2048)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV)
+                .fluidInputs(Materials.Enderium.getMolten(2048)).duration(1 * MINUTES).eut(4096)
                 .addTo(autoclaveRecipes);
 
     }
