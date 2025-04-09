@@ -174,12 +174,12 @@ public class ScriptAdvancedSolarPanel implements IScriptLoader {
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing),
                         getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 16, 3, missing))
-                .fluidInputs(Materials.Sunnarium.getMolten(2304L)).duration(2 * MINUTES).eut(122880)
+                .fluidInputs(Materials.Sunnarium.getMolten(2304L)).duration(2 * MINUTES).eut(TierEU.RECIPE_ZPM)
                 .addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Uranium, 64L))
                 .itemOutputs(getModItem(AdvancedSolarPanel.ID, "asp_crafting_items", 64, 2, missing))
-                .fluidInputs(Materials.Sunnarium.getMolten(9216L)).duration(2 * MINUTES).eut(122880)
+                .fluidInputs(Materials.Sunnarium.getMolten(9216L)).duration(2 * MINUTES).eut(TierEU.RECIPE_ZPM)
                 .addTo(autoclaveRecipes);
 
     }
