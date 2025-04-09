@@ -19,6 +19,7 @@ import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.Computronics;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EnhancedLootBags;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.FloodLights;
@@ -5012,7 +5013,7 @@ public class AssemblerRecipes implements Runnable {
                         GGMaterial.extremelyUnstableNaquadah.get(OrePrefixes.bolt, 4),
                         GTOreDictUnificator.get(OrePrefixes.foil, Materials.Manganese, 4),
                         ItemList.Gravistar.get(1L),
-                        GTModHandler.getModItem(EnderIO.ID, "itemFrankenSkull", 1L, 5),
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1L, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 2),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "itemBasicCapacitor", 1L, 6))
@@ -5023,7 +5024,7 @@ public class AssemblerRecipes implements Runnable {
                 .itemInputs(
                         GTModHandler.getModItem(EnderIO.ID, "itemBasicCapacitor", 1L, 5),
                         ItemList.Gravistar.get(1L),
-                        GTModHandler.getModItem(EnderIO.ID, "itemFrankenSkull", 1L, 5),
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, "totem_of_undying", 1L, 0),
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.StellarAlloy, 2))
                 .itemOutputs(GTModHandler.getModItem(EnderIO.ID, "itemBasicCapacitor", 1L, 6))
                 .fluidInputs(Materials.Neutronium.getMolten(1152)).duration(10 * SECONDS).eut(TierEU.RECIPE_ZPM)

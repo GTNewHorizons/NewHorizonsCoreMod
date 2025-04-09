@@ -23,9 +23,11 @@ import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicExploration;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidSolidifierRecipes;
 import static gregtech.api.recipe.RecipeMaps.maceratorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
 
@@ -1888,6 +1890,23 @@ public class ScriptEnderIO implements IScriptLoader {
                         GregtechItemList.Battery_RE_EV_Lithium.get(1))
                 .itemOutputs(vibrantCapacitor.copy()).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
+
+        // Bulk crystals
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Diamond, 64))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 64, 5, missing))
+                .fluidInputs(Materials.PulsatingIron.getMolten(8192)).duration(2 * MINUTES).eut(TierEU.RECIPE_MV)
+                .addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(OrePrefixes.gem, Materials.Emerald, 64))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 64, 6, missing))
+                .fluidInputs(Materials.VibrantAlloy.getMolten(8192)).duration(2 * MINUTES).eut(TierEU.RECIPE_MV)
+                .addTo(autoclaveRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(CustomItemList.ManyullynCrystal.get(16L))
+                .itemOutputs(getModItem(EnderIO.ID, "itemMaterial", 16, 10, missing))
+                .fluidInputs(Materials.Enderium.getMolten(2048)).duration(1 * MINUTES).eut(TierEU.RECIPE_HV)
+                .addTo(autoclaveRecipes);
 
     }
 }
