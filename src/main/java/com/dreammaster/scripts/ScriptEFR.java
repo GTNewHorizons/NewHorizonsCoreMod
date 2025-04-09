@@ -871,7 +871,7 @@ public class ScriptEFR implements IScriptLoader {
                         GTModHandler.getModItem(EtFuturumRequiem.ID, "moss_block", 1L, 0), 'B',
                         new ItemStack(Blocks.sapling, 1) });
 
-GTModHandler.addCraftingRecipe(
+        GTModHandler.addCraftingRecipe(
                 GTModHandler.getModItem(EtFuturumRequiem.ID, "sapling", 1L, 1),
                 bits,
                 new Object[] { "AAA", "ABA", "AAA", 'A', GTModHandler.getModItem(Botania.ID, "petal", 1L, 6), 'B',
@@ -882,7 +882,7 @@ GTModHandler.addCraftingRecipe(
                 bits,
                 new Object[] { "AAA", "ABA", "AAA", 'A', GTModHandler.getModItem(Botania.ID, "petal", 1L, 5), 'B',
                         GTModHandler.getModItem(TwilightForest.ID, "tile.TFSapling", 1L, 2) });
-         // Totem
+        // Totem
         new ResearchItem(
                 "UNDYINGTOTEM",
                 "NEWHORIZONS",
