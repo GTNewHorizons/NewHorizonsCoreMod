@@ -81,6 +81,7 @@ public class ScriptLoader {
                         new ScriptIndustrialCraft(),
                         new ScriptIronChests(),
                         new ScriptIronChestsMinecarts(),
+                        new ScriptIronTankMinecarts(),
                         new ScriptJABBA(),
                         new ScriptLogisticPipes(),
                         new ScriptMagicBees(),
