@@ -27,7 +27,7 @@ public class ScriptIronTankMinecarts implements IScriptLoader {
 
     @Override
     public List<String> getDependencies() {
-        return Arrays.asList(Railcraft.ID, IronTanks.ID);
+        return Arrays.asList(Railcraft.ID, IronTanks.ID, IronTankMinecarts.ID);
     }
 
     @Override
