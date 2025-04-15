@@ -16,6 +16,7 @@ public class CoreModConfig extends ConfigManager {
     public boolean OreDictItems_Enabled;
     public static boolean ModLoginMessage_Enabled;
     public boolean gtnhPauseMenuButtons;
+    public boolean confirmExit;
     public static String ModPackVersion = Refstrings.MODPACKPACK_VERSION;
 
     public boolean ModHazardousItems_Enabled;
@@ -58,6 +59,7 @@ public class CoreModConfig extends ConfigManager {
     protected void PreInit() {
         ModLoginMessage_Enabled = true;
         gtnhPauseMenuButtons = true;
+        confirmExit = true;
         ModDebugVersionDisplay_Enabled = true;
         ModHazardousItems_Enabled = false;
         ModCustomToolTips_Enabled = false;
@@ -104,6 +106,11 @@ public class CoreModConfig extends ConfigManager {
                 "Modules",
                 gtnhPauseMenuButtons,
                 "Set to true to display GTNH buttons in the pause menu");
+        confirmExit = _mainConfig.getBoolean(
+                "ConfirmExit",
+                "Modules",
+                confirmExit,
+                "Set to false to exit without confirming");
         ModPackVersion = _mainConfig.getString("ModPackVersion", "Modules", ModPackVersion, "Version of the Modpack");
         ModDebugVersionDisplay_Enabled = _mainConfig.getBoolean(
                 "DebugVersionDisplay",

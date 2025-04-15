@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import com.dreammaster.main.MainRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.StatCollector;
 
@@ -40,28 +41,33 @@ public abstract class MixinMinecraft_ConfirmExit {
         if (!this.dreamcraft$waitingDialogQuit) {
             this.dreamcraft$waitingDialogQuit = true;
             new Thread(() -> {
-                final JFrame frame = new JFrame();
-                frame.setAlwaysOnTop(true);
-                final URL resource = IconLoader.class.getClassLoader()
-                        .getResource("assets/dreamcraft/textures/icon/GTNH_42x42.png");
-                final ImageIcon imageIcon = resource == null ? null : new ImageIcon(resource);
-                final int result = JOptionPane.showConfirmDialog(
-                        frame,
-                        // When FML encounters an error, the only way to close the window is through the close button,
-                        // which will show this message, unfortunately at this point, no localisations will have been
-                        // loaded, so we add a hardcoded fallback message here.
-                        StatCollector.canTranslate("dreamcraft.gui.quitmessage")
-                                ? StatCollector.translateToLocal("dreamcraft.gui.quitmessage")
-                                : "Are you sure you want to exit the game?",
-                        Refstrings.NAME,
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE,
-                        imageIcon);
-                if (result == JOptionPane.YES_OPTION) {
+                if(MainRegistry.CoreConfig.confirmExit) {
+                    final JFrame frame = new JFrame();
+                    frame.setAlwaysOnTop(true);
+                    final URL resource = IconLoader.class.getClassLoader()
+                            .getResource("assets/dreamcraft/textures/icon/GTNH_42x42.png");
+                    final ImageIcon imageIcon = resource == null ? null : new ImageIcon(resource);
+                    final int result = JOptionPane.showConfirmDialog(
+                            frame,
+                            // When FML encounters an error, the only way to close the window is through the close button,
+                            // which will show this message, unfortunately at this point, no localisations will have been
+                            // loaded, so we add a hardcoded fallback message here.
+                            StatCollector.canTranslate("dreamcraft.gui.quitmessage")
+                                    ? StatCollector.translateToLocal("dreamcraft.gui.quitmessage")
+                                    : "Are you sure you want to exit the game?",
+                            Refstrings.NAME,
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE,
+                            imageIcon);
+                    if (result == JOptionPane.YES_OPTION) {
+                        this.dreamcraft$isCloseRequested = true;
+                        this.shutdown();
+                    }
+                    this.dreamcraft$waitingDialogQuit = false;
+                } else {
                     this.dreamcraft$isCloseRequested = true;
                     this.shutdown();
                 }
-                this.dreamcraft$waitingDialogQuit = false;
             }).start();
         }
         ci.cancel();
