@@ -29,6 +29,7 @@ import forestry.factory.recipes.CarpenterRecipe;
 import gregtech.GTMod;
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Mods;
 import gregtech.api.util.GTRecipe;
 import gregtech.api.util.GTUtility;
 
@@ -51,7 +52,7 @@ public class ScriptZZClientOnly implements IScriptLoader {
     Object[] stamps = null;
     ArrayList<GTRecipe> coins = new ArrayList<>();
 
-    @Optional.Method(modid = "Forestry")
+    @Optional.Method(modid = Mods.Names.FORESTRY)
     void stamps(boolean enabled) {
         if (stamps == null) {
             stamps = new CarpenterRecipe[] {
