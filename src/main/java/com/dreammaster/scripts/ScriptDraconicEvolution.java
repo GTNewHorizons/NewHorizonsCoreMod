@@ -3,13 +3,16 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
+import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.OpenBlocks;
+import static gregtech.api.enums.Mods.OpenComputers;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -30,6 +33,7 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.item.NHItemList;
@@ -1226,6 +1230,23 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.plate, Materials.Draconium, 1L))
                 .itemOutputs(getModItem(DraconicEvolution.ID, "rainSensor", 1, 0, missing)).duration(10 * SECONDS)
                 .eut(480).addTo(assemblerRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(Botania.ID, "tinyPlanetBlock", 1, 0),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 3),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 11),
+                        getModItem(ExtraUtilities.ID, "greenscreen", 64, 13),
+                        getModItem(OpenComputers.ID, "hologram2", 1, 0, missing),
+                        createItemStack(
+                                ExtraUtilities.ID,
+                                "microblocks",
+                                1,
+                                3,
+                                "{mat:\"tile.extrautils:decorativeBlock1_5\"}",
+                                missing))
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("water"), 10000))
+                .itemOutputs(getModItem(DraconicEvolution.ID, "earth", 1, 0, missing)).duration(6 * SECONDS).eut(200)
+                .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "obsidian", 1, 0, missing),
