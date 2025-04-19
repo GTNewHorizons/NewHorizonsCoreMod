@@ -244,7 +244,7 @@ public class BacteriaRegistry {
         // Ti & O Plasma Recipes
         GTValues.RA.stdBuilder().fluidInputs(Aluminium.getMolten(144), Fluorine.getGas(144))
                 .fluidOutputs(Titanium.getPlasma(144)).duration(8 * SECONDS).eut(49_152)
-                .metadata(FUSION_THRESHOLD, 100_000_000L).addTo(fusionRecipes);
+                .metadata(FUSION_THRESHOLD, 180_000_000L).addTo(fusionRecipes);
 
         GTValues.RA.stdBuilder().fluidInputs(Helium.getPlasma(144), Lithium.getMolten(144))
                 .fluidOutputs(Boron.getPlasma(144)).duration(12 * SECONDS).eut(10_240)
@@ -252,7 +252,7 @@ public class BacteriaRegistry {
 
         GTValues.RA.stdBuilder().fluidInputs(Boron.getPlasma(144), Lithium.getMolten(144))
                 .fluidOutputs(Oxygen.getPlasma(144)).duration(12 * SECONDS).eut(49_152)
-                .metadata(FUSION_THRESHOLD, 100_000_000L).addTo(fusionRecipes);
+                .metadata(FUSION_THRESHOLD, 180_000_000L).addTo(fusionRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(GTUtility.getIntegratedCircuit(2))
                 .fluidInputs(RadoxGas.getGas(2160), Oxygen.getPlasma(7500L), Titanium.getPlasma(100L))
