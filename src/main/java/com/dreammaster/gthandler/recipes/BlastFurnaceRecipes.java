@@ -139,7 +139,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(11))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.CrystallineAlloy, 1L))
                 .duration(60 * SECONDS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 4500).metadata(ADDITIVE_AMOUNT, 1000)
-                .metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);;
+                .metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -157,7 +157,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.MelodicAlloy, 1L))
                 .duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 5400)
                 .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
-                .addTo(BlastFurnaceWithGas);;
+                .addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -166,7 +166,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.StellarAlloy, 1L))
                 .duration(3 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_LuV).metadata(COIL_HEAT, 7200)
                 .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
-                .addTo(BlastFurnaceWithGas);;
+                .addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -205,7 +205,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(11))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Soularium, 1L)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1000).metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true)
-                .metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);;
+                .metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -229,7 +229,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(11))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.EndSteel, 1L)).duration(60 * SECONDS)
                 .eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 4500).metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true)
-                .metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);;
+                .metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -238,7 +238,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.EnderiumBase, 1L))
                 .duration(2 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 3300)
                 .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
-                .addTo(BlastFurnaceWithGas);;
+                .addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -247,7 +247,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Enderium, 1L))
                 .duration(2 * MINUTES + 55 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 4500)
                 .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
-                .addTo(BlastFurnaceWithGas);;
+                .addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -295,7 +295,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTUtility.getIntegratedCircuit(11))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Draconium, 1L))
                 .duration(3 * MINUTES + 20 * SECONDS).eut(TierEU.RECIPE_LuV).metadata(COIL_HEAT, 7200)
-                .metadata(ADDITIVE_AMOUNT, 1000).addTo(BlastFurnaceWithGas);;
+                .metadata(ADDITIVE_AMOUNT, 1000).addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -312,7 +312,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Cobalt, 1L))
                 .duration(1 * MINUTES + 10 * SECONDS).eut(TierEU.RECIPE_MV).metadata(COIL_HEAT, 1700)
                 .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
-                .addTo(BlastFurnaceWithGas);;
+                .addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -391,7 +391,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Sunnarium, 1L))
                 .duration(1 * MINUTES + 30 * SECONDS).eut(TierEU.RECIPE_EV).metadata(COIL_HEAT, 4500)
                 .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
-                .addTo(BlastFurnaceWithGas);;
+                .addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
