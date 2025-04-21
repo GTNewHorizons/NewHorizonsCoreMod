@@ -1081,7 +1081,9 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Infinity, 1L),
                         GTUtility.getIntegratedCircuit(11))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.ingotHot, Materials.Infinity, 1L))
-                .duration(30 * MINUTES).eut(TierEU.RECIPE_UHV).metadata(COIL_HEAT, 10800).addTo(blastFurnaceRecipes);
+                .duration(30 * MINUTES).eut(TierEU.RECIPE_UHV).metadata(COIL_HEAT, 10800)
+                .metadata(ADDITIVE_AMOUNT, 1000).metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1)
+                .addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
