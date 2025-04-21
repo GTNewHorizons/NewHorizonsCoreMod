@@ -2756,7 +2756,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "blood.channel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "slime.pad", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "rail.wood", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing));
