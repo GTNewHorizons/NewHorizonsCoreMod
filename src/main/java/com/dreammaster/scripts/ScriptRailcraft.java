@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.ForgeMicroblocks;
@@ -64,6 +65,7 @@ public class ScriptRailcraft implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                BuildCraftFactory.ID,
                 Railcraft.ID,
                 Thaumcraft.ID,
                 Backpack.ID,
@@ -1004,7 +1006,7 @@ public class ScriptRailcraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Railcraft.ID, "cart.tank", 1, 0, missing),
                 "craftingToolHardHammer",
-                getModItem(Railcraft.ID, "machine.beta", 1, 1, missing),
+                getModItem(BuildCraftFactory.ID, "tankBlock", 1, 1, missing),
                 "craftingToolWrench",
                 null,
                 getModItem(Minecraft.ID, "minecart", 1, 0, missing),
@@ -2070,7 +2072,7 @@ public class ScriptRailcraft implements IScriptLoader {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "minecart", 1, 0, missing),
-                        getModItem(Railcraft.ID, "machine.beta", 1, 1, missing),
+                        getModItem(BuildCraftFactory.ID, "tankBlock", 1, 1, missing),
                         GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getModItem(Railcraft.ID, "cart.tank", 1, 0, missing)).duration(5 * SECONDS).eut(16)
                 .addTo(assemblerRecipes);
