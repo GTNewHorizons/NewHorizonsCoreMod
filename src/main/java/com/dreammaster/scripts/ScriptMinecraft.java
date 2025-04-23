@@ -23,6 +23,7 @@ import static gregtech.api.enums.Mods.Natura;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.Railcraft;
+import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
@@ -46,7 +47,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
@@ -5004,7 +5004,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 bits,
                 new Object[] { "ABA", "ACA", "ADA", 'A', "plateObsidian", 'B', "plateDenseEnderium", 'C',
                         GTModHandler.getModItem(EnderStorage.ID, "enderChest", 1L, 0), 'D',
-                        new ItemStack(Items.ender_eye, 1) });
+                        GTModHandler.getModItem(StevesCarts2.ID, "ModuleComponents", 1L, 45) });
 
     }
 }
