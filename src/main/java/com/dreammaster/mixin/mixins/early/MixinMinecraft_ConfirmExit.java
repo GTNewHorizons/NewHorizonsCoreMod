@@ -2,7 +2,9 @@ package com.dreammaster.mixin.mixins.early;
 
 import java.net.URL;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.StatCollector;
