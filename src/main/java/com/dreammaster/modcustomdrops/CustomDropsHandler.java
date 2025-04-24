@@ -41,10 +41,11 @@ import eu.usrv.yamcore.auxiliary.ItemDescriptor;
 import eu.usrv.yamcore.auxiliary.LogHelper;
 import eu.usrv.yamcore.auxiliary.PlayerChatHelper;
 import eu.usrv.yamcore.persisteddata.PersistedDataBase;
+import gregtech.api.enums.Mods;
 import io.netty.buffer.ByteBuf;
 import thaumcraft.common.lib.FakeThaumcraftPlayer;
 
-@Optional.Interface(iface = "com.kuba6000.mobsinfo.api.IMobExtraInfoProvider", modid = "mobsinfo")
+@Optional.Interface(iface = "com.kuba6000.mobsinfo.api.IMobExtraInfoProvider", modid = Mods.Names.MOBS_INFO)
 public class CustomDropsHandler implements IMobExtraInfoProvider {
 
     private LogHelper _mLogger = MainRegistry.Logger;
@@ -220,7 +221,7 @@ public class CustomDropsHandler implements IMobExtraInfoProvider {
         }
     }
 
-    @Optional.Method(modid = "mobsinfo")
+    @Optional.Method(modid = Mods.Names.MOBS_INFO)
     @Override
     public void provideExtraDropsInformation(@NotNull String entityString, @NotNull ArrayList<MobDrop> drops,
             @NotNull MobRecipe recipe) {

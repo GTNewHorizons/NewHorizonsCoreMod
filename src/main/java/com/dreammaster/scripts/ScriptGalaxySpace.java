@@ -33,7 +33,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
-import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.GregTechAPI;
@@ -46,6 +45,7 @@ import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
+import gtnhintergalactic.item.IGItems;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.asteroids.items.AsteroidsItems;
@@ -79,7 +79,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(getGSItem("futureglass", 1, 0)).duration(10 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(GCItems.battery, 1, W), GTUtility.getIntegratedCircuit(1))
-                .itemOutputs(getGSItem("item.LeadBattery", 1, 100)).fluidInputs(Materials.Lead.getMolten(6000))
+                .itemOutputs(getGSItem("item.LeadBattery", 1, 100)).fluidInputs(Materials.Lead.getMolten(6 * 144))
                 .duration(5 * SECONDS).eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         GTValues.RA.stdBuilder().itemInputs(getGSItem("item.ThermalPaddingT2", 1, 0), GTUtility.getIntegratedCircuit(1))
                 .itemOutputs(getGSItem("item.ThermalClothT2", 5, 0)).duration(18 * SECONDS).eut(1024)
