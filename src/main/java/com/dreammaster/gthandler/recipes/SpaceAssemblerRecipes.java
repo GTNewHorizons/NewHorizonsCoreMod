@@ -23,8 +23,6 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.gtnewhorizons.gtnhintergalactic.recipe.IGRecipeMaps;
-
 import goodgenerator.items.GGMaterial;
 import goodgenerator.loader.Loaders;
 import gregtech.api.enums.GTValues;
@@ -36,6 +34,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gtPlusPlus.core.material.MaterialsElements;
+import gtnhintergalactic.recipe.IGRecipeMaps;
 import tectech.thing.CustomItemList;
 import tectech.thing.casing.TTCasingsContainer;
 
