@@ -28,6 +28,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     public static Logger logger = LogManager.getLogger("DreamCoreMod");
     static Properties coremodConfig = new Properties();
+    static File coremodConfigFile;
     public static File debugOutputDir;
     public static boolean deobf;
 
@@ -62,6 +63,7 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         // noinspection ResultOfMethodCallIgnored
         configDir.mkdir();
         File config = new File(configDir, "DreamCoreMod.properties");
+        coremodConfigFile = config;
         try (Reader r = new FileReader(config)) {
             coremodConfig.load(r);
         } catch (FileNotFoundException ignored) {
@@ -111,6 +113,19 @@ public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
         }
         mixins.add("MixinTileEntityBeacon");
         return mixins;
+    }
+
+    /**
+     * Disable to show the confirm exit window, and save it to the config.
+     */
+    public static void disableShowConfirmExitWindow() {
+        showConfirmExitWindow = false;
+        coremodConfig.setProperty("showConfirmExitWindow", "false");
+        try (Writer w = new FileWriter(coremodConfigFile)) {
+            coremodConfig.store(w, "Config file for the ASM part of GTNHCoreMod");
+        } catch (IOException e) {
+            logger.warn("Can't save coremod config.", e);
+        }
     }
 
 }
