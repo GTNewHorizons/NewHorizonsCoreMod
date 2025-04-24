@@ -7,6 +7,7 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.ElectroMagicTools;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraUtilities;
@@ -15,13 +16,17 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.PamsHarvestTheNether;
 import static gregtech.api.enums.Mods.StevesCarts2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TinkersGregworks;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.enums.Mods.Witchery;
+import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.autoclaveRecipes;
@@ -881,7 +886,6 @@ public class ScriptEFR implements IScriptLoader {
                 bits,
                 new Object[] { "AAA", "ABA", "AAA", 'A', GTModHandler.getModItem(Botania.ID, "petal", 1L, 5), 'B',
                         GTModHandler.getModItem(TwilightForest.ID, "tile.TFSapling", 1L, 2) });
-
 
         // Totem
         new ResearchItem(
