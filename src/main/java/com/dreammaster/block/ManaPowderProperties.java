@@ -12,11 +12,11 @@ import eu.usrv.yamcore.iface.IExtendedBlockProperties;
  * @author Namikon
  *
  */
-public class ManaPearlBlockProperties implements IExtendedBlockProperties {
+public class ManaPowderProperties implements IExtendedBlockProperties {
 
     @Override
     public Material getMaterial() {
-        return Material.glass;
+        return Material.sand;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class ManaPearlBlockProperties implements IExtendedBlockProperties {
 
     @Override
     public int getHarvestLevel() {
-        return 1;
+        return 3;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class ManaPearlBlockProperties implements IExtendedBlockProperties {
 
     @Override
     public float getLightLevel() {
-        return 2;
+        return 0;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ManaPearlBlockProperties implements IExtendedBlockProperties {
 
     @Override
     public String getBlockName() {
-        return "ManaPearl";
+        return "ManaPowder";
     }
 
     @Override
@@ -61,12 +61,12 @@ public class ManaPearlBlockProperties implements IExtendedBlockProperties {
 
     @Override
     public String getHarvestToolClass() {
-        return "pickaxe";
+        return "shovel";
     }
 
     @Override
     public Block.SoundType getStepSound() {
-        return Block.soundTypeGlass;
+        return Block.soundTypeSand;
     }
 
     @Override

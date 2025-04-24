@@ -12,11 +12,11 @@ import eu.usrv.yamcore.iface.IExtendedBlockProperties;
  * @author Namikon
  *
  */
-public class GaiaBlockProperties implements IExtendedBlockProperties {
+public class ManaPearlProperties implements IExtendedBlockProperties {
 
     @Override
     public Material getMaterial() {
-        return Material.rock;
+        return Material.glass;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class GaiaBlockProperties implements IExtendedBlockProperties {
 
     @Override
     public int getHarvestLevel() {
-        return 6;
+        return 1;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class GaiaBlockProperties implements IExtendedBlockProperties {
 
     @Override
     public float getLightLevel() {
-        return 8;
+        return 2;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class GaiaBlockProperties implements IExtendedBlockProperties {
 
     @Override
     public String getBlockName() {
-        return "Gaia";
+        return "ManaPearl";
     }
 
     @Override
@@ -66,7 +66,7 @@ public class GaiaBlockProperties implements IExtendedBlockProperties {
 
     @Override
     public Block.SoundType getStepSound() {
-        return Block.soundTypeMetal;
+        return Block.soundTypeGlass;
     }
 
     @Override

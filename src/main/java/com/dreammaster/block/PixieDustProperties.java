@@ -12,7 +12,7 @@ import eu.usrv.yamcore.iface.IExtendedBlockProperties;
  * @author Namikon
  *
  */
-public class PixieDustBlockProperties implements IExtendedBlockProperties {
+public class PixieDustProperties implements IExtendedBlockProperties {
 
     @Override
     public Material getMaterial() {
