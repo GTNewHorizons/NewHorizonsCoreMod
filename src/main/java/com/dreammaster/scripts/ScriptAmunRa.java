@@ -56,7 +56,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
-import gtnhintergalactic.item.IGItems;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import tectech.recipe.TTRecipeAdder;
 
@@ -96,11 +95,9 @@ public class ScriptAmunRa implements IScriptLoader {
         final Block machines4 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines4");
         final Block msBoosters1 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.msBoosters1");
         final Block airLockFrame = GameRegistry.findBlock(GalacticraftCore.ID, "tile.airLockFrame");
-        final Block machineFrames = GameRegistry.findBlock(GTNHIntergalactic.ID, "gassiphoncasing");
 
         final Item baseItem = GameRegistry.findItem(GalacticraftAmunRa.ID, "item.baseItem");
         final Item basicItem = GameRegistry.findItem(GalacticraftCore.ID, "item.basicItem");
-        final Item dysonSwarmParts = IGItems.DysonSwarmItems;
         final Item advancedRadiationProtectionPlate = GameRegistry
                 .findItem(GoodGenerator.ID, "advancedRadiationProtectionPlate");
         final Item simpleItem = GameRegistry.findItem(GraviSuite.ID, "itemSimpleItem");
@@ -173,7 +170,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'C',
                 "circuitInfinite",
                 'F',
-                new ItemStack(machineFrames),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 'K',
                 "oc:keyboard");
         addShapedOredictRecipe(
@@ -186,7 +183,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'P',
                 "compressedAluminium",
                 'F',
-                new ItemStack(machineFrames),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 'W',
                 "springTungstenSteel",
                 'D',
@@ -226,7 +223,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'C',
                 "circuitData",
                 'F',
-                new ItemStack(machineFrames),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 'P',
                 ItemList.Pump_HV.get(1));
         addShapedOredictRecipe(
@@ -401,8 +398,8 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
-                        new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
+                new Object[] { ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
+                        ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
                         NHItemList.HeavyDutyRocketEngineTier4.getIS(64),
                         new Object[] { OrePrefixes.pipeHuge.get(Materials.Infinity), 8 },
                         ItemList.Electric_Pump_UHV.get(16), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 8 },
@@ -436,7 +433,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { new ItemStack(dysonSwarmParts, 64, 3), ItemList.Quantum_Tank_EV.get(2),
+                new Object[] { ItemList.UHTResistantMesh.get(64), ItemList.Quantum_Tank_EV.get(2),
                         ItemList.Electric_Pump_UHV.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2 },
                         new ItemStack(baseItem, 1, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(50 * INGOTS),
@@ -515,7 +512,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ARBlocks.blockMothershipController.getMetadata()),
                 1);
         recipe.put(new ItemStack(GregTechAPI.sBlockCasings8, 1, 5), 256);
-        recipe.put(new ItemStack(GameRegistry.findItem(GTNHIntergalactic.ID, "item.DysonSwarmParts"), 1, 3), 64);
+        recipe.put(ItemList.UHTResistantMesh.get(1), 64);
         recipe.put(ItemList.Field_Generator_UHV.get(1), 8);
         recipe.put("circuitInfinite", 32);
 

@@ -24,8 +24,6 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
-import gtnhintergalactic.item.IGItems;
-import gtnhintergalactic.item.ItemMiningDrones;
 
 public class ScriptSGCraft implements IScriptLoader {
 
@@ -145,7 +143,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'e', tectech.thing.CustomItemList.Godforge_GravitonFlowModulatorTier3.get(1L),
                 'f', magmatterSuperdensePlate,
                 'g', CustomItemList.StargateShieldingFoil.get(1L),
-                'h', new ItemStack(IGItems.MiningDrones, 1, ItemMiningDrones.DroneTiers.UXV.ordinal()),
+                'h', ItemList.MiningDroneUXV.get(1),
                 'i', ItemList.ZPM6.get(1L),
                 'j', universeCell,
                 'k', tectech.thing.CustomItemList.astralArrayFabricator.get(1L),
@@ -153,7 +151,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'm', chevronBlock,
                 'n', universeFluidCell,
                 'o', stargateCrystal,
-                'p', IGItems.SpaceElevatorModuleAssemblerT3);
+                'p', ItemList.SpaceElevatorModuleAssemblerT3.get(1));
 
         // Ridiculously Large Capacitor
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
