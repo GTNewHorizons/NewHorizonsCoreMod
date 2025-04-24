@@ -27,8 +27,8 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 public class DreamCoreMod implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     public static Logger logger = LogManager.getLogger("DreamCoreMod");
-    static Properties coremodConfig = new Properties();
-    static File coremodConfigFile;
+    public static Properties coremodConfig = new Properties();
+    public static File coremodConfigFile;
     public static File debugOutputDir;
     public static boolean deobf;
 
