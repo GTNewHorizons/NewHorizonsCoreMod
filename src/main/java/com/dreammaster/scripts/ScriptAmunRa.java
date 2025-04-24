@@ -40,7 +40,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.item.NHItemList;
-import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -56,6 +55,7 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTRecipeConstants;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.recipe.Scanning;
+import gtnhintergalactic.item.IGItems;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import tectech.recipe.TTRecipeAdder;
 
