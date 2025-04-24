@@ -1,6 +1,7 @@
 package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
+import static gregtech.api.enums.Mods.AmazingTrophies;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DetravScannerMod;
@@ -79,7 +80,6 @@ import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -510,7 +510,7 @@ public class MainRegistry {
         BW_RadHatchMaterial.runRadHatchAdder();
 
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
-        if (Loader.isModLoaded("amazingtrophies") && BloodMagic.isModLoaded()
+        if (AmazingTrophies.isModLoaded() && BloodMagic.isModLoaded()
                 && Avaritia.isModLoaded()
                 && SGCraft.isModLoaded()
                 && TinkerConstruct.isModLoaded()) {

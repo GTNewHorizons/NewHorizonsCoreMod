@@ -50,6 +50,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsKevlar;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTRecipeConstants;
@@ -503,7 +504,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 .eut(TierEU.RECIPE_UEV).addTo(GTRecipeConstants.AssemblyLine);
     }
 
-    @Optional.Method(modid = "GalacticraftAmunRa")
+    @Optional.Method(modid = Mods.Names.GALACTICRAFT_AMUN_RA)
     private static void setMothershipRecipe() {
         final HashMap<Object, Integer> recipe = new HashMap<>();
 
