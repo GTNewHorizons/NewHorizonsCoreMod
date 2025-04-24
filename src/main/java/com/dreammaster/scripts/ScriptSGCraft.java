@@ -17,8 +17,6 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
-import com.gtnewhorizons.gtnhintergalactic.item.ItemMiningDrones;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import goodgenerator.loader.Loaders;
@@ -26,6 +24,8 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTOreDictUnificator;
+import gtnhintergalactic.item.IGItems;
+import gtnhintergalactic.item.ItemMiningDrones;
 
 public class ScriptSGCraft implements IScriptLoader {
 
