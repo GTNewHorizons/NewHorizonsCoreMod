@@ -1,6 +1,7 @@
 package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
+import static gregtech.api.enums.Mods.AmazingTrophies;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DetravScannerMod;
@@ -28,7 +29,6 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import com.dreammaster.NHTradeHandler.NHTradeHandler;
 import com.dreammaster.TwilightForest.TF_Loot_Chests;
 import com.dreammaster.amazingtrophies.AchievementHandler;
-import com.dreammaster.bartworksHandler.BWGlassAdder;
 import com.dreammaster.bartworksHandler.BW_RadHatchMaterial;
 import com.dreammaster.bartworksHandler.BacteriaRegistry;
 import com.dreammaster.bartworksHandler.BioItemLoader;
@@ -80,7 +80,6 @@ import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -364,8 +363,6 @@ public class MainRegistry {
             TF_Loot_Chests.init();
         }
 
-        BWGlassAdder.registerGlasses();
-
         if (CoreConfig.gtnhPauseMenuButtons && event.getSide().isClient()) {
             MinecraftForge.EVENT_BUS.register(new GTNHPauseScreen());
         }
@@ -513,7 +510,7 @@ public class MainRegistry {
         BW_RadHatchMaterial.runRadHatchAdder();
 
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
-        if (Loader.isModLoaded("amazingtrophies") && BloodMagic.isModLoaded()
+        if (AmazingTrophies.isModLoaded() && BloodMagic.isModLoaded()
                 && Avaritia.isModLoaded()
                 && SGCraft.isModLoaded()
                 && TinkerConstruct.isModLoaded()) {

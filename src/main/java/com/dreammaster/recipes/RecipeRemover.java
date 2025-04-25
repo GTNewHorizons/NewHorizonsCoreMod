@@ -38,6 +38,7 @@ import static gregtech.api.enums.Mods.GraviSuiteNEO;
 import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IC2NuclearControl;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.IronTanksMinecarts;
 import static gregtech.api.enums.Mods.MCFrames;
 import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.MalisisDoors;
@@ -86,6 +87,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Function;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -2754,7 +2756,6 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "slime.channel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "blood.channel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "slime.pad", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "rail.wood", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing));
@@ -3292,6 +3293,15 @@ public class RecipeRemover {
         removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.magnifying.glass", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.signal.tuner", 1, 0, missing));
         removeRecipeShapedDelayed(getModItem(Railcraft.ID, "tool.surveyor", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_iron", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_gold", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_steel", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_copper", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_diamond", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_aluminium", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_stainlesssteel", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_titanium", 1, 0, missing));
+        removeRecipeShapedDelayed(getModItem(IronTanksMinecarts.ID, "minecart_tank_tungstensteel", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem(Thaumcraft.ID, "ItemResource", 1, 6, missing),
                 new Object[] { getModItem(Thaumcraft.ID, "blockCosmeticOpaque", 1, 0, missing) },
