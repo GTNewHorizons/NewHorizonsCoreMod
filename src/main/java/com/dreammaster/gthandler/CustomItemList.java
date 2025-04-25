@@ -282,6 +282,7 @@ public enum CustomItemList implements IItemContainer {
     BarnardaFStoneDust,
     TCetiEStoneDust,
     MirandaStoneDust,
+    TuffDust,
     WaferTier3,
     IndustryFrame,
     AdsorptionFilterCasing,
