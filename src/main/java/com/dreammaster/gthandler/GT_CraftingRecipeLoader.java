@@ -28,6 +28,8 @@ import static gtPlusPlus.core.material.MaterialsAlloy.NITINOL_60;
 import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 import net.minecraft.init.Blocks;
@@ -36,6 +38,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
+import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.main.NHItems;
@@ -593,12 +596,6 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "PPP", "SSS", "MFV", 'P', CustomItemList.SteelBars.get(1, o), 'F',
                         OrePrefixes.frameGt.get(Materials.StainlessSteel), 'M', ItemList.Electric_Motor_MV, 'V',
                         OrePrefixes.rotor.get(Materials.Aluminium), 'S', ItemList.Component_Filter });
-
-        GTModHandler.addCraftingRecipe(
-                ItemList.Casing_Firebricks.get(1L),
-                tBitMask,
-                new Object[] { "BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C',
-                        OrePrefixes.dust.get(Materials.Gypsum), 'W', ItemBucketList.Concrete.get(1) });
 
         // Air filter multi blocks
         GTModHandler.addCraftingRecipe(
@@ -1168,32 +1165,36 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { "PGP", " P ", 'P', new ItemStack(Items.paper, 1, 0), 'G',
                         new ItemStack(Items.slime_ball, 1, 0) });
 
-        GTModHandler.addCraftingRecipe(
-                ItemBucketList.Concrete.get(1),
-                bits4,
-                new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
-                        OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
-                        OrePrefixes.dust.get(Materials.QuartzSand), 'W', new ItemStack(Items.water_bucket, 1, 0), 'B',
-                        new ItemStack(Items.bucket, 1, 0) });
-        GTModHandler.addCraftingRecipe(
-                new ItemStack(Items.clay_ball, 3, 0),
-                GTProxy.tBits,
-                new Object[] { "CCC", "CBC", "CCC", 'C', OrePrefixes.dustSmall.get(Materials.Clay), 'B',
-                        new ItemStack(Items.water_bucket, 1, 0) });
+        List<ItemStack> waterBuckets = new ArrayList<>();
+        waterBuckets.add(new ItemStack(Items.water_bucket, 1, 0));
+        List<ItemStack> concreteBuckets = new ArrayList<>();
+        concreteBuckets.add(ItemBucketList.Concrete.get(1));
         if (IguanaTweaksTinkerConstruct.isModLoaded()) {
+            waterBuckets.add(GTModHandler.getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0));
+            concreteBuckets.add(new ItemStack(IguanaProxy.clayBucketConcrete, 1));
+        }
+        for (ItemStack concreteBucket : concreteBuckets) {
             GTModHandler.addCraftingRecipe(
-                    ItemBucketList.Concrete.get(1),
-                    bits4,
-                    new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
-                            OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
-                            OrePrefixes.dust.get(Materials.QuartzSand), 'W',
-                            GTModHandler.getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0), 'B',
-                            new ItemStack(Items.bucket, 1, 0) });
+                    ItemList.Casing_Firebricks.get(1L),
+                    tBitMask,
+                    new Object[] { "BCB", "BWB", "BCB", 'B', ItemList.Firebrick.get(1), 'C',
+                            OrePrefixes.dust.get(Materials.Gypsum), 'W', concreteBucket });
+        }
+        for (ItemStack waterBucket : waterBuckets) {
+            for (ItemStack concreteBucket : concreteBuckets) {
+                ItemStack emptyBucket = concreteBucket.getItem().getContainerItem(concreteBucket);
+                GTModHandler.addCraftingRecipe(
+                        concreteBucket,
+                        bits4,
+                        new Object[] { "CBS", "CWA", " Y ", 'C', OrePrefixes.dust.get(Materials.Calcite), 'S',
+                                OrePrefixes.dust.get(Materials.Stone), 'Y', OrePrefixes.dust.get(Materials.Clay), 'A',
+                                OrePrefixes.dust.get(Materials.QuartzSand), 'W', waterBucket, 'B', emptyBucket });
+            }
             GTModHandler.addCraftingRecipe(
                     new ItemStack(Items.clay_ball, 3, 0),
                     GTProxy.tBits,
                     new Object[] { "CCC", "CBC", "CCC", 'C', OrePrefixes.dustSmall.get(Materials.Clay), 'B',
-                            GTModHandler.getModItem(IguanaTweaksTinkerConstruct.ID, "clayBucketWater", 1, 0) });
+                            waterBucket });
         }
 
         if (Forestry.isModLoaded()) {
