@@ -33,7 +33,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
-import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import bartworks.system.material.WerkstoffLoader;
 import gregtech.api.GregTechAPI;
@@ -276,12 +275,11 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemInputs(
                         BlockList.NeutroniumPlatedReinforcedStone.getIS(),
                         WerkstoffLoader.HDCS.get(OrePrefixes.plate, 8))
-                .itemOutputs(getIGItem("dysonswarmparts", 1, 9))
+                .itemOutputs(ItemList.UltraHighStrengthConcrete.get(9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(new ItemStack(IGItems.DysonSwarmItems, 4, 1), new ItemStack(IGItems.DysonSwarmItems, 4, 2))
-                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 3)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
+        GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(1), ItemList.NtNanofibers.get(4))
+                .itemOutputs(ItemList.UHTResistantMesh.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
         // Chemical Reactor
@@ -319,12 +317,11 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(getGSItem("item.UnknowCrystal", 1, 0))
                 .fluidInputs(FluidRegistry.getFluidStack("ic2distilledwater", 1000)).duration(2 * MINUTES)
                 .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(IGItems.DysonSwarmItems, 1, 4))
-                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 5, 1))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfNanoparticles.get(1))
+                .itemOutputs(ItemList.TaHfCNanofibers.get(5))
                 .fluidInputs(WerkstoffLoader.TantalumHafniumCarbide.getMolten(576)).duration(50 * SECONDS)
                 .eut(TierEU.RECIPE_IV).addTo(autoclaveRecipes);
-        GTValues.RA.stdBuilder().itemInputs(new ItemStack(IGItems.DysonSwarmItems, 1, 5))
-                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 5, 2))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.NtNanoparticles.get(1)).itemOutputs(ItemList.NtNanofibers.get(5))
                 .fluidInputs(Materials.Neutronium.getMolten(576)).duration(50 * SECONDS).eut(TierEU.RECIPE_IV)
                 .addTo(autoclaveRecipes);
 
@@ -421,10 +418,10 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(getGSItem("item.GlowstoneDusts", 4, 4)).duration(15 * SECONDS).eut(2)
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(WerkstoffLoader.TantalumHafniumCarbide.get(OrePrefixes.dust))
-                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 4)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.TaHfNanoparticles.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(maceratorRecipes);
         GTValues.RA.stdBuilder().itemInputs(Materials.Neutronium.getDust(1))
-                .itemOutputs(new ItemStack(IGItems.DysonSwarmItems, 1, 5)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
+                .itemOutputs(ItemList.NtNanoparticles.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_HV)
                 .addTo(maceratorRecipes);
 
         // Shaped Crafting
@@ -454,7 +451,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
         addDecorativeMetalBlockRecipe(8, getGSItem("item.CompressedPlates", 1, 9));
 
         addShapedRecipe(
-                getIGItem("gassiphoncasing", 1, 0),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 "MWM",
                 "CTC",
                 "MWM",
@@ -479,7 +476,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'W',
                 CustomItemList.WaferTier3.get(1),
                 'F',
-                getIGItem("gassiphoncasing", 1, 0));
+                ItemList.PlanetaryGasSiphonCasing.get(1));
 
         addShapedRecipe(
                 getGSItem("oxstoragemoduleT2", 1, 0),
@@ -493,7 +490,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'P',
                 new ItemStack(GCBlocks.oxygenPipe),
                 'F',
-                getIGItem("gassiphoncasing", 1, 0),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 'W',
                 CustomItemList.WaferTier3.get(1));
 
@@ -529,7 +526,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 'A',
                 new ItemStack(GCBlocks.aluminumWire, 1, 1),
                 'F',
-                getIGItem("gassiphoncasing", 1, 0),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 'M',
                 ItemList.Electric_Motor_MV.get(1),
                 'W',
@@ -831,9 +828,5 @@ public class ScriptGalaxySpace implements IScriptLoader {
 
     private static ItemStack getGSItem(String name, int amount, int meta) {
         return getModItem(GalaxySpace.ID, name, amount, meta, missing);
-    }
-
-    private static ItemStack getIGItem(String name, int amount, int meta) {
-        return getModItem(GTNHIntergalactic.ID, name, amount, meta, missing);
     }
 }
