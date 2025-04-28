@@ -26,6 +26,7 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:Galacticraft:3.3.5-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:ForestryMC:4.10.7:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:MatterManipulator:0.0.25-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:IguanaTweaksTConstruct:2.6.2:dev") { transitive = false }
     compileOnlyApi("com.github.GTNewHorizons:Mobs-Info:0.5.2-GTNH:dev")
     //compileOnly("com.github.Roadhog360:Et-Futurum-Requiem:2.6.2:dev") { transitive = false }
 
