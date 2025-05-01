@@ -75,39 +75,6 @@ public class ScriptGraviSuite implements IScriptLoader {
                 getModItem(IndustrialCraft2.ID, "reactorHeatSwitchDiamond", 1, 1, missing),
                 getModItem(IndustrialCraft2.ID, "reactorPlatingHeat", 1, 0, missing));
         addShapedRecipe(
-                getModItem(GraviSuite.ID, "itemSimpleItem", 1, 4, missing),
-                "plateDenseNeodymiumMagnetic",
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                "plateDenseNeodymiumMagnetic",
-                "plateDenseCopper",
-                GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorIV, 1L),
-                "plateDenseCopper",
-                "plateDenseNeodymiumMagnetic",
-                getModItem(IndustrialCraft2.ID, "itemRecipePart", 1, 0, missing),
-                "plateDenseNeodymiumMagnetic");
-        addShapedRecipe(
-                getModItem(GraviSuite.ID, "itemSimpleItem", 1, 5, missing),
-                "craftingToolWrench",
-                "plateCopper",
-                "craftingToolHardHammer",
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                getModItem(IndustrialCraft2.ID, "blockMachine2", 1, 1, missing),
-                getModItem(IndustrialCraft2.ID, "itemPartIridium", 1, 0, missing),
-                GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorIV, 1L),
-                ItemList.Transformer_EV_HV.get(1L),
-                GTOreDictUnificator.get(OrePrefixes.wireGt12, Materials.SuperconductorIV, 1L));
-        addShapedRecipe(
-                getModItem(GraviSuite.ID, "vajra", 1, 27, missing),
-                CustomItemList.EngravedEnergyChip.get(1L),
-                getModItem(GraviSuite.ID, "itemSimpleItem", 1, 4, missing),
-                "lensReinforcedGlass",
-                "plateAlloyCarbon",
-                getModItem(GraviSuite.ID, "itemSimpleItem", 1, 5, missing),
-                "plateAlloyCarbon",
-                "plateAlloyIridium",
-                "batteryElite",
-                "plateAlloyIridium");
-        addShapedRecipe(
                 getModItem(GraviSuite.ID, "itemSimpleItem", 1, 6, missing),
                 "itemCasingAluminium",
                 getModItem(IndustrialCraft2.ID, "itemPartAlloy", 1, 0, missing),
