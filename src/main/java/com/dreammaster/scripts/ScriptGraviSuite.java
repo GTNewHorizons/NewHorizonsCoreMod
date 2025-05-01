@@ -129,6 +129,7 @@ public class ScriptGraviSuite implements IScriptLoader {
                 "plateAlloyIridium",
                 "batteryData",
                 "plateAlloyIridium");
+        addShapelessRecipe(ItemList.Tool_Vajra.get(1), getModItem(GraviSuite.ID, "vajra", 1, wildcard, missing));
 
     }
 }
