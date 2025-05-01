@@ -63,6 +63,8 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
+        // Gaps in this map are from lootbags which gain no benefit from being enchanted.
+        // This is because the only effect of enchanting lootbags is to remove their "trash" drops.
         HashMap<Integer, ItemStack> metaExtraItemMap = new HashMap<>();
         metaExtraItemMap.put(1, new ItemStack(Items.clay_ball));
         metaExtraItemMap.put(2, getModItem(IndustrialCraft2.ID, "itemHarz", 1, 0, missing));
@@ -74,34 +76,21 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(9, getModItem(Thaumcraft.ID, "ItemResource", 1, 1, missing));
         metaExtraItemMap.put(10, getModItem(Thaumcraft.ID, "ItemBathSalts", 1, 0, missing));
         metaExtraItemMap.put(11, getModItem(Thaumcraft.ID, "WandCap", 1, 7, missing));
-        metaExtraItemMap.put(12, getModItem(Thaumcraft.ID, "ItemEldritchObject", 1, 0, missing));
-        metaExtraItemMap.put(13, getModItem(ThaumicTinkerer.ID, "warpGate", 1, 0, missing));
-        metaExtraItemMap.put(14, getModItem(DraconicEvolution.ID, "draconicCore", 1, 0, missing));
-        metaExtraItemMap.put(15, new ItemStack(Blocks.dragon_egg));
         metaExtraItemMap.put(16, getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing));
         metaExtraItemMap.put(17, getModItem(BloodMagic.ID, "imbuedSlate", 1, 0, missing));
         metaExtraItemMap.put(18, getModItem(BloodMagic.ID, "blockTeleposer", 1, 0, missing));
         metaExtraItemMap.put(19, getModItem(Forestry.ID, "waxCapsule", 1, 0, missing));
         metaExtraItemMap.put(20, getModItem(Forestry.ID, "craftingMaterial", 1, 6, missing));
         metaExtraItemMap.put(21, getModItem(Forestry.ID, "hardenedMachine", 1, 0, missing));
-        metaExtraItemMap.put(22, getModItem(GalacticraftCore.ID, "item.airFan", 1, 0, missing));
-        metaExtraItemMap.put(23, getModItem(GalacticraftMars.ID, "item.itemBasicAsteroids", 1, 7, missing));
-        metaExtraItemMap.put(24, CustomItemList.WaferTier3.get(1L));
         metaExtraItemMap.put(25, getModItem(Forestry.ID, "propolis", 1, 3, missing));
         metaExtraItemMap.put(26, getModItem(Forestry.ID, "royalJelly", 1, 0, missing));
         metaExtraItemMap.put(27, getModItem(Gendustry.ID, "MutagenBucket", 1, 0, missing));
         metaExtraItemMap.put(28, getModItem(Minecraft.ID, "cake", 1, 0, missing));
         metaExtraItemMap.put(29, ItemList.Food_Large_Sandwich_Bacon.get(1L));
         metaExtraItemMap.put(30, getModItem(PamsHarvestCraft.ID, "delightedmealItem", 1, 0, missing));
-        metaExtraItemMap.put(31, getModItem(DraconicEvolution.ID, "dezilsMarshmallow", 1, 0, missing));
         metaExtraItemMap.put(32, new ItemStack(Items.minecart));
         metaExtraItemMap
                 .put(33, createItemStack(Railcraft.ID, "track", 1, 816, "{track:\"railcraft:track.speed\"}", missing));
-        metaExtraItemMap.put(
-                34,
-                createItemStack(Railcraft.ID, "cart.loco.electric", 1, 0, "{model:\"railcraft:default\"}", missing));
-        metaExtraItemMap.put(35, getModItem(IndustrialCraft2.ID, "itemCropSeed", 1, wildcard, missing));
-        metaExtraItemMap.put(36, getModItem(PamsHarvestCraft.ID, "beefwellingtonItem", 1, 0, missing));
         metaExtraItemMap.put(37, CustomItemList.LogicProcessorItemGoldCore.get(1L));
         metaExtraItemMap.put(38, CustomItemList.EngineeringProcessorItemDiamondCore.get(1L));
         metaExtraItemMap.put(39, CustomItemList.EngineeringProcessorItemEmeraldCore.get(1L));
@@ -110,7 +99,6 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
         metaExtraItemMap.put(42, ItemList.Electric_Motor_ZPM.get(1L));
         metaExtraItemMap.put(43, ItemList.Electric_Motor_UV.get(1L));
         metaExtraItemMap.put(44, ItemList.ZPM3.get(1L));
-        metaExtraItemMap.put(45, getModItem(OpenComputers.ID, "eeprom", 1, 0, missing));
         metaExtraItemMap.put(46, getModItem(OpenComputers.ID, "item", 1, 1, missing));
         metaExtraItemMap.put(47, getModItem(OpenComputers.ID, "item", 1, 2, missing));
         metaExtraItemMap.put(48, getModItem(OpenComputers.ID, "item", 1, 38, missing));
