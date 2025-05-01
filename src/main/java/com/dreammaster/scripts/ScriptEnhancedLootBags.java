@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -63,7 +62,7 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
 
     @Override
     public void loadRecipes() {
-        // Gaps in this map are from lootbags which gain no benefit from being enchanted.
+        // Gaps in this map are from lootbags which gain no benefit from being enchanted or deleted lootbags.
         // This is because the only effect of enchanting lootbags is to remove their "trash" drops.
         HashMap<Integer, ItemStack> metaExtraItemMap = new HashMap<>();
         metaExtraItemMap.put(1, new ItemStack(Items.clay_ball));
@@ -93,17 +92,11 @@ public class ScriptEnhancedLootBags implements IScriptLoader {
                 .put(33, createItemStack(Railcraft.ID, "track", 1, 816, "{track:\"railcraft:track.speed\"}", missing));
         metaExtraItemMap.put(37, CustomItemList.LogicProcessorItemGoldCore.get(1L));
         metaExtraItemMap.put(38, CustomItemList.EngineeringProcessorItemDiamondCore.get(1L));
-        metaExtraItemMap.put(39, CustomItemList.EngineeringProcessorItemEmeraldCore.get(1L));
-        metaExtraItemMap.put(40, CustomItemList.EngineeringProcessorItemAdvEmeraldCore.get(1L));
         metaExtraItemMap.put(41, ItemList.Electric_Motor_LuV.get(1L));
         metaExtraItemMap.put(42, ItemList.Electric_Motor_ZPM.get(1L));
         metaExtraItemMap.put(43, ItemList.Electric_Motor_UV.get(1L));
         metaExtraItemMap.put(44, ItemList.ZPM3.get(1L));
         metaExtraItemMap.put(46, getModItem(OpenComputers.ID, "item", 1, 1, missing));
-        metaExtraItemMap.put(47, getModItem(OpenComputers.ID, "item", 1, 2, missing));
-        metaExtraItemMap.put(48, getModItem(OpenComputers.ID, "item", 1, 38, missing));
-        metaExtraItemMap.put(49, getModItem(OpenComputers.ID, "item", 1, 39, missing));
-        metaExtraItemMap.put(50, getModItem(OpenComputers.ID, "item", 1, 69, missing));
         metaExtraItemMap.put(51, ItemList.Machine_LV_Scanner.get(1L));
         metaExtraItemMap.put(52, getModItem(Witchery.ID, "witchleaves", 1, 0, missing));
         metaExtraItemMap.put(53, getModItem(Witchery.ID, "ingredient", 1, 95, missing));
