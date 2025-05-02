@@ -1297,6 +1297,7 @@ public class ScriptTCCoreMod implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 64))
                 .fluidInputs(Materials.Thaumium.getMolten(64 * 144))
                 .fluidOutputs(Materials.HellishMetal.getMolten(64 * 144)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
+                .metadata(DEFC_CASING_TIER, 1)
                 .addTo(fusionCraftingRecipes);
     }
 }
