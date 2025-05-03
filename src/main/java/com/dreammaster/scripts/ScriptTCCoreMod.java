@@ -19,9 +19,13 @@ import static gregtech.api.enums.Mods.OpenBlocks;
 import static gregtech.api.enums.Mods.PamsHarvestCraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicTinkerer;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GTModHandler.getModItem;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gtPlusPlus.api.recipe.GTPPRecipeMaps.electrolyzerNonCellRecipes;
+import static kubatech.loaders.DEFCRecipes.fusionCraftingRecipes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,10 +36,13 @@ import com.dreammaster.gthandler.CustomItemList;
 import com.dreammaster.main.NHItems;
 import com.dreammaster.thaumcraft.TCHelper;
 
+import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTOreDictUnificator;
+import gtPlusPlus.core.material.MaterialsElements;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -71,7 +78,8 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 HardcoreEnderExpansion.ID,
                 Avaritia.ID,
                 ForgeMicroblocks.ID,
-                IronTanks.ID);
+                IronTanks.ID,
+                ThaumicTinkerer.ID);
     }
 
     @Override
@@ -1246,5 +1254,49 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 new ResearchPage(
                         TCHelper.findInfusionRecipe(getModItem(Thaumcraft.ID, "blockCosmeticSolid", 1, 0, missing))));
         ThaumcraftApi.addWarpToResearch("MAGICOBSIDIAN", 1);
+
+        new ResearchItem(
+                "HELLISHMETAL",
+                "NEWHORIZONS",
+                new AspectList().add(Aspect.getAspect("infernus"), 15).add(Aspect.getAspect("lucrum"), 12)
+                        .add(Aspect.getAspect("fames"), 6).add(Aspect.getAspect("ignis"), 3),
+                0,
+                6,
+                3,
+                GTOreDictUnificator.get(OrePrefixes.ingot, Materials.HellishMetal, 1)).setConcealed().setRound()
+                        .setPages(new ResearchPage("TConstruct.research_page.HELLISHMETAL.1")).registerResearchItem();
+        ThaumcraftApi.addInfusionCraftingRecipe(
+                "HELLISHMETAL",
+                GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1),
+                1,
+                new AspectList().add(Aspect.getAspect("ignis"), 8),
+                MaterialsElements.getInstance().RHODIUM.getBlock(1),
+                new ItemStack[] { getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 1),
+                        getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                        GTOreDictUnificator.get(OrePrefixes.ingot, Materials.Thaumium, 1), });
+        TCHelper.addResearchPage(
+                "HELLISHMETAL",
+                new ResearchPage(
+                        TCHelper.findInfusionRecipe(
+                                GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1))));
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialsElements.getInstance().RHODIUM.getBlock(1),
+                        getModItem(ThaumicTinkerer.ID, "kamiResource", 8, 6, missing),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 8))
+                .fluidInputs(Materials.Thaumium.getMolten(8 * 144))
+                .itemOutputs(GTOreDictUnificator.get(OrePrefixes.block, Materials.HellishMetal, 1))
+                .duration(60 * SECONDS).eut(TierEU.RECIPE_ZPM).addTo(electrolyzerNonCellRecipes);
+
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        MaterialsElements.getInstance().RHODIUM.getDust(64),
+                        getModItem(ThaumicTinkerer.ID, "kamiResource", 64, 6, missing),
+                        GTOreDictUnificator.get(OrePrefixes.dust, Materials.InfusedFire, 64))
+                .fluidInputs(Materials.Thaumium.getMolten(64 * 144))
+                .fluidOutputs(Materials.HellishMetal.getMolten(64 * 144)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
+                .metadata(DEFC_CASING_TIER, 1).addTo(fusionCraftingRecipes);
     }
 }
