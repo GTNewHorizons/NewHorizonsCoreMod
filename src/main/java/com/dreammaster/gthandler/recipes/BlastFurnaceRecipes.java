@@ -1309,7 +1309,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(
                         GTOreDictUnificator
                                 .get(OrePrefixes.ingotHot, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L))
-                .duration(5 * MINUTES).eut(TierEU.RECIPE_IV).metadata(COIL_HEAT, 9000).addTo(blastFurnaceRecipes);
+                .duration(5 * MINUTES).eut(TierEU.RECIPE_IV).metadata(COIL_HEAT, 8100).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -1320,7 +1320,7 @@ public class BlastFurnaceRecipes implements Runnable {
                         GTOreDictUnificator
                                 .get(OrePrefixes.ingotHot, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L))
                 .fluidInputs(Materials.Radon.getGas(1000L)).duration(2 * MINUTES + 48 * SECONDS).eut(TierEU.RECIPE_IV)
-                .metadata(COIL_HEAT, 9000).addTo(blastFurnaceRecipes);
+                .metadata(COIL_HEAT, 8100).addTo(blastFurnaceRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
