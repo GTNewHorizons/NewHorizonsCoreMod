@@ -19,6 +19,7 @@ import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -292,6 +293,23 @@ public class ScriptWitchery implements IScriptLoader {
                 2,
                 getModItem(Witchery.ID, "ingredient", 1, 153, missing))
                         .setPages(new ResearchPage("Witchery.research_page.ANOINTINGPASTE.1")).registerResearchItem();
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "ANOINTINGPASTE",
+                getModItem(Witchery.ID, "cauldron", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("ordo"), 2).add(Aspect.getAspect("ignis"), 2)
+                        .add(Aspect.getAspect("terra"), 2),
+                "aba",
+                "aca",
+                "aaa",
+                'b',
+                getModItem(Witchery.ID, "ingredient", 1, 153, missing),
+                'c',
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing));
+        TCHelper.addResearchPage(
+                "ANOINTINGPASTE",
+                new ResearchPage(
+                        Objects.requireNonNull(
+                                TCHelper.findArcaneRecipe(getModItem(Witchery.ID, "cauldron", 1, 0, missing)))));
         new ResearchItem(
                 "OVEN",
                 "WITCHERY",
