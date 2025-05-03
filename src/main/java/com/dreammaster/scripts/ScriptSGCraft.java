@@ -17,8 +17,6 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
-import com.gtnewhorizons.gtnhintergalactic.item.ItemMiningDrones;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import goodgenerator.loader.Loaders;
@@ -145,7 +143,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'e', tectech.thing.CustomItemList.Godforge_GravitonFlowModulatorTier3.get(1L),
                 'f', magmatterSuperdensePlate,
                 'g', CustomItemList.StargateShieldingFoil.get(1L),
-                'h', new ItemStack(IGItems.MiningDrones, 1, ItemMiningDrones.DroneTiers.UXV.ordinal()),
+                'h', ItemList.MiningDroneUXV.get(1),
                 'i', ItemList.ZPM6.get(1L),
                 'j', universeCell,
                 'k', tectech.thing.CustomItemList.astralArrayFabricator.get(1L),
@@ -153,7 +151,7 @@ public class ScriptSGCraft implements IScriptLoader {
                 'm', chevronBlock,
                 'n', universeFluidCell,
                 'o', stargateCrystal,
-                'p', IGItems.SpaceElevatorModuleAssemblerT3);
+                'p', ItemList.SpaceElevatorModuleAssemblerT3.get(1));
 
         // Ridiculously Large Capacitor
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
