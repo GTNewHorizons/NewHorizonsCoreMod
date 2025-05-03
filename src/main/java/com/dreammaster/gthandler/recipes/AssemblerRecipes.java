@@ -6370,22 +6370,18 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 94),
-                        ItemList.Color_00.get(1L),
-                        ItemList.Color_00.get(1L),
-                        ItemList.Color_00.get(1L),
+                        ItemList.Color_00.get(3L),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W))
+                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, 0))
                 .fluidInputs(Materials.Water.getFluid(1000L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W),
-                        ItemList.Color_00.get(1L),
-                        ItemList.Color_00.get(1L),
-                        ItemList.Color_00.get(1L),
+                        ItemList.Color_00.get(3L),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W))
+                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, 0))
                 .fluidInputs(Materials.Water.getFluid(1000L)).duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Color Ink Cartridge
@@ -6393,22 +6389,22 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 94),
-                        ItemList.Color_01.get(1L),
-                        ItemList.Color_02.get(1L),
-                        ItemList.Color_04.get(1L),
+                        ItemList.Color_06.get(1L),
+                        ItemList.Color_11.get(1L),
+                        ItemList.Color_13.get(1L),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W))
+                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, 0))
                 .fluidInputs(Materials.Water.getFluid(1000L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W),
-                        ItemList.Color_01.get(1L),
-                        ItemList.Color_02.get(1L),
-                        ItemList.Color_04.get(1L),
+                        ItemList.Color_06.get(1L),
+                        ItemList.Color_11.get(1L),
+                        ItemList.Color_13.get(1L),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W))
+                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, 0))
                 .fluidInputs(Materials.Water.getFluid(1000L)).duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Open Security
