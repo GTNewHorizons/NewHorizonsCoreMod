@@ -1003,7 +1003,7 @@ public class BlastFurnaceRecipes implements Runnable {
                 .itemOutputs(
                         GTOreDictUnificator
                                 .get(OrePrefixes.ingotHot, Materials.Tetranaquadahdiindiumhexaplatiumosminid, 1L))
-                .duration(4 * MINUTES).eut(TierEU.RECIPE_IV).metadata(COIL_HEAT, 9000).metadata(ADDITIVE_AMOUNT, 1000)
+                .duration(4 * MINUTES).eut(TierEU.RECIPE_IV).metadata(COIL_HEAT, 8100).metadata(ADDITIVE_AMOUNT, 1000)
                 .metadata(NO_GAS, true).metadata(NO_GAS_CIRCUIT_CONFIG, 1).addTo(BlastFurnaceWithGas);
 
         GTValues.RA.stdBuilder()
