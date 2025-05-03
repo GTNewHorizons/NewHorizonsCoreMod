@@ -22,7 +22,7 @@ import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_C276;
 import static gtPlusPlus.core.material.MaterialsAlloy.HASTELLOY_X;
 import static tectech.thing.CustomItemList.DATApipe;
 import static tectech.thing.CustomItemList.Machine_Multi_DataBank;
-import static tectech.thing.CustomItemList.Machine_Multi_Switch;
+import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
 import static tectech.thing.CustomItemList.dataInAss_Hatch;
 import static tectech.thing.CustomItemList.dataInAss_Wireless_Hatch;
 import static tectech.thing.CustomItemList.dataIn_Hatch;
@@ -206,7 +206,7 @@ public class AssemblingLineRecipes implements Runnable {
                         // Regular slave connector
                         dataIn_Hatch.get(1),
                         // Network Switch With QoS
-                        Machine_Multi_Switch.get(1),
+                        Machine_Multi_Switch_Adv.get(1),
                         // Data pipe
                         DATApipe.get(64),
                         // Internet card
@@ -237,7 +237,7 @@ public class AssemblingLineRecipes implements Runnable {
                         // Regular master connector
                         dataOut_Hatch.get(1),
                         // Network Switch With QoS
-                        Machine_Multi_Switch.get(1),
+                        Machine_Multi_Switch_Adv.get(1),
                         // Data pipe
                         DATApipe.get(64),
                         // Internet card
