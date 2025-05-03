@@ -25,6 +25,7 @@ import static gregtech.api.enums.Mods.TwilightForest;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.electrolyzerNonCellRecipes;
+import static gregtech.api.util.GTRecipeConstants.DEFC_CASING_TIER;
 import static kubatech.loaders.DEFCRecipes.fusionCraftingRecipes;
 
 import java.util.Arrays;
@@ -1298,5 +1299,6 @@ public class ScriptTCCoreMod implements IScriptLoader {
                 .fluidInputs(Materials.Thaumium.getMolten(64 * 144))
                 .fluidOutputs(Materials.HellishMetal.getMolten(64 * 144)).duration(30 * SECONDS).eut(TierEU.RECIPE_UV)
                 .metadata(DEFC_CASING_TIER, 1).addTo(fusionCraftingRecipes);
+
     }
 }
