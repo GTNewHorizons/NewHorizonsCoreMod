@@ -1768,6 +1768,9 @@ block.ore.gravel.zinc.name=Zinc Gravel Ore
 
 dreamcraft.mobsinfocompat.limitedropcount=Drops only %s times per person
 dreamcraft.gui.quitmessage=Are you sure you want to exit the game?
+dreamcraft.gui.quitmessage.yes=Yes
+dreamcraft.gui.quitmessage.no=No
+dreamcraft.gui.quitmessage.never=Don't Show Again!
 
 dreamcraft.welcome.welcome=Welcome to Gregtech: New Horizons
 dreamcraft.welcome.questbook=The Quest Book has a shortcut key, check your keybindings.
