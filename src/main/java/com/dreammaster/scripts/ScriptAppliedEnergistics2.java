@@ -1498,8 +1498,6 @@ public class ScriptAppliedEnergistics2 implements IScriptLoader {
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L),
                 ItemList.Electric_Piston_LV.get(1L),
                 GTOreDictUnificator.get(OrePrefixes.plate, Materials.NetherQuartz, 1L));
-        // Clear storage bus NBT
-        addShapelessRecipe(storageBus, storageBus);
         // 1k storage cell
         addShapedRecipe(
                 getModItem(AppliedEnergistics2.ID, "item.ItemBasicStorageCell.1k", 1, 0, missing),
