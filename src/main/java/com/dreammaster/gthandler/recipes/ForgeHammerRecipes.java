@@ -1,23 +1,16 @@
 package com.dreammaster.gthandler.recipes;
 
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.enums.Mods.ZTones;
 import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
-import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.dreammaster.block.BlockList;
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.item.NHItemList;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
@@ -26,8 +19,6 @@ import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTModHandler;
 
 public class ForgeHammerRecipes implements Runnable {
-
-    ItemStack missing = new ItemStack(Blocks.fire);
 
     @Override
     public void run() {
@@ -45,61 +36,6 @@ public class ForgeHammerRecipes implements Runnable {
 
         GTValues.RA.stdBuilder().itemInputs(CustomItemList.ChromaticGemFlawless.get(1))
                 .itemOutputs(CustomItemList.ChromaticGem.get(2)).duration(2 * SECONDS).eut(TierEU.RECIPE_LV)
-                .addTo(hammerRecipes);
-
-        // Uncompressed coal variants
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCharcoal.getIS(1))
-                .itemOutputs(Materials.Charcoal.getGems(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoal.getIS(1)).itemOutputs(Materials.Coal.getGems(9))
-                .duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.CompressedCoalCoke.getIS(1))
-                .itemOutputs(getModItem(Railcraft.ID, "cube", 9, 0, missing)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCharcoal.getIS(1))
-                .itemOutputs(BlockList.CompressedCharcoal.getIS(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCoal.getIS(1))
-                .itemOutputs(BlockList.CompressedCoal.getIS(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.DoubleCompressedCoalCoke.getIS(1))
-                .itemOutputs(BlockList.CompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCharcoal.getIS(1))
-                .itemOutputs(BlockList.DoubleCompressedCharcoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCoal.getIS(1))
-                .itemOutputs(BlockList.DoubleCompressedCoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.TripleCompressedCoalCoke.getIS(1))
-                .itemOutputs(BlockList.DoubleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCharcoal.getIS(1))
-                .itemOutputs(BlockList.TripleCompressedCharcoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCoal.getIS(1))
-                .itemOutputs(BlockList.TripleCompressedCoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuadrupleCompressedCoalCoke.getIS(1))
-                .itemOutputs(BlockList.TripleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCharcoal.getIS(1))
-                .itemOutputs(BlockList.QuadrupleCompressedCharcoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCoal.getIS(1))
-                .itemOutputs(BlockList.QuadrupleCompressedCoal.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(BlockList.QuintupleCompressedCoalCoke.getIS(1))
-                .itemOutputs(BlockList.QuadrupleCompressedCoalCoke.getIS(9)).duration(15 * SECONDS).eut(2)
-                .addTo(hammerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.CompressedBioBall.getIS(1))
-                .itemOutputs(CustomItemList.BioBall.get(1L)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(NHItemList.BioCarbonPlate.getIS(1))
-                .itemOutputs(NHItemList.BioOrganicMesh.getIS(1)).duration(15 * SECONDS).eut(2).addTo(hammerRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getModItem(IndustrialCraft2.ID, "itemFuelPlantBall", 1, 0, missing))
-                .itemOutputs(getModItem(Minecraft.ID, "reeds", 8, 0, missing)).duration(15 * SECONDS).eut(2)
                 .addTo(hammerRecipes);
 
         if (TinkerConstruct.isModLoaded()) {
