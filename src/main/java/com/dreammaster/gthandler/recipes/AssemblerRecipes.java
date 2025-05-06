@@ -10840,9 +10840,13 @@ public class AssemblerRecipes implements Runnable {
                 .fluidInputs(Materials.Iridium.getMolten(1296)).itemOutputs(Machine_Multi_Switch_Adv.get(1))
                 .eut(TierEU.RECIPE_ZPM).duration(40 * SECONDS).addTo(assemblerRecipes);
 
-        // Temporary Conversion Recipe
+        // Static Switch <-> Weighted Switch Conversion Recipes
         GTModHandler.addShapelessCraftingRecipe(
                 Machine_Multi_Switch_Adv.get(1),
                 new Object[] { Machine_Multi_Switch.get(1) });
+
+        GTModHandler.addShapelessCraftingRecipe(
+                Machine_Multi_Switch.get(1),
+                new Object[] { Machine_Multi_Switch_Adv.get(1) });
     }
 }
