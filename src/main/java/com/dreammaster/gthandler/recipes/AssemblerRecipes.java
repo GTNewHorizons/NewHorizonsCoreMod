@@ -3257,7 +3257,7 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         ItemList.Hull_EV.get(1),
-                        GTOreDictUnificator.get(OrePrefixes.cableGt16, Materials.Aluminium, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireGt16, Materials.Aluminium, 4),
                         new ItemStack(Blocks.chest))
                 .itemOutputs(ItemList.Battery_Buffer_4by4_EV.get(1)).duration(5 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
