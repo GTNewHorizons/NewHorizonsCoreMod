@@ -9,6 +9,7 @@ import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.TaintedMagic;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.enums.Mods.ThaumicEnergistics;
+import static gregtech.api.enums.Mods.ThaumicInsurgence;
 import static gregtech.api.enums.Mods.TinkerConstruct;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.circuitAssemblerRecipes;
@@ -89,7 +90,7 @@ public class ScriptThaumicEnergistics implements IScriptLoader {
         final ItemStack CalcProcessor = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 23, missing);
         final ItemStack EngProcessor = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 1, 24, missing);
 
-        final ItemStack InfusionIntercepter = getModItem("thaumicinsurgence", "infusionIntercepter", 1, 0);
+        final ItemStack InfusionIntercepter = getModItem(ThaumicInsurgence.ID, "infusionIntercepter", 1, 0);
 
         final ItemStack ZPMEmitter = ItemList.Emitter_ZPM.get(1);
         final ItemStack ZPMSensor = ItemList.Sensor_ZPM.get(1);
