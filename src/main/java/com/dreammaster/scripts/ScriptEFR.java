@@ -512,30 +512,6 @@ public class ScriptEFR implements IScriptLoader {
         GTValues.RA.stdBuilder().itemInputs(new ItemStack(Blocks.log, 1, 1), ItemList.Shape_Extruder_Block.get(0L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "log_stripped", 1, 1, missing)).duration(6 * SECONDS)
                 .eut(80).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "mangrove_log", 1, 0, missing),
-                        ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "mangrove_log", 1, 2, missing)).duration(6 * SECONDS)
-                .eut(80).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "crimson_stem", 1, 0, missing),
-                        ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "crimson_stem", 1, 2, missing)).duration(6 * SECONDS)
-                .eut(80).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "warped_stem", 1, 0, missing),
-                        ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "warped_stem", 1, 2, missing)).duration(6 * SECONDS)
-                .eut(80).addTo(extruderRecipes);
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 0, missing),
-                        ItemList.Shape_Extruder_Block.get(0L))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "cherry_log", 1, 2, missing)).duration(6 * SECONDS).eut(80)
-                .addTo(extruderRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
