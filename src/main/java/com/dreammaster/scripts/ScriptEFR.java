@@ -588,7 +588,6 @@ public class ScriptEFR implements IScriptLoader {
                         new FluidStack(FluidRegistry.getFluid("ender"), 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
-
         // Totem
 
         new ResearchItem(
