@@ -51,6 +51,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.chisel.ChiselHelper;
+import com.dreammaster.item.NHItemList;
 import com.dreammaster.recipes.CustomItem;
 import com.dreammaster.thaumcraft.TCHelper;
 
@@ -754,8 +755,8 @@ public class ScriptEFR implements IScriptLoader {
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.Amethyst, 13L),
                         GTOreDictUnificator.get(OrePrefixes.gem, Materials.Amethyst, 1L))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "amethyst_cluster_2", 1, 6, missing))
-                .fluidInputs(Materials.VibrantAlloy.getMolten(576L)).duration(2 * MINUTES).eut(TierEU.RECIPE_HV)
-                .addTo(autoclaveRecipes);
+                .fluidInputs(new FluidStack(FluidRegistry.getFluid("potion.mineralwater"), 2880)).duration(2 * MINUTES)
+                .eut(TierEU.RECIPE_HV).addTo(autoclaveRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
@@ -820,7 +821,10 @@ public class ScriptEFR implements IScriptLoader {
                         new FluidStack(FluidRegistry.getFluid("ender"), 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 36, 0, missing))
+        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "tuff", 1, 1, missing))
+                .itemOutputs(NHItemList.TuffDust.getIS(1)).duration(8 * SECONDS).eut(2).addTo(hammerRecipes);
+
+        GTValues.RA.stdBuilder().itemInputs(NHItemList.TuffDust.getIS(36))
                 .itemOutputs(
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.VolcanicAsh, 9L),
                         GTOreDictUnificator.get(OrePrefixes.dust, Materials.DarkAsh, 9L),
