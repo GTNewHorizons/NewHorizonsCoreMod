@@ -829,9 +829,4 @@ public class ScriptGalaxySpace implements IScriptLoader {
     private static ItemStack getGSItem(String name, int amount, int meta) {
         return getModItem(GalaxySpace.ID, name, amount, meta, missing);
     }
-
-    @Override
-    public boolean addShapedRecipe(ItemStack aOutput, Object... inputs) {
-        return GTModHandler.addCraftingRecipe(aOutput, GTModHandler.RecipeBits.NOT_REMOVABLE, inputs);
-    }
 }
