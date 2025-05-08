@@ -40,6 +40,7 @@ public class ScriptAutomagy implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 Thaumcraft.ID,
                 Automagy.ID,
                 Genetics.ID,

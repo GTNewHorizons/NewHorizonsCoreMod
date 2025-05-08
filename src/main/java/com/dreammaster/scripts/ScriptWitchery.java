@@ -51,6 +51,7 @@ public class ScriptWitchery implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 Witchery.ID,
                 Thaumcraft.ID,
                 IndustrialCraft2.ID,

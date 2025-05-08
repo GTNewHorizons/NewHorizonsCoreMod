@@ -60,6 +60,7 @@ public class ScriptStevesCarts implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 StevesCarts2.ID,
                 ProjectRedExploration.ID,
                 Backpack.ID,

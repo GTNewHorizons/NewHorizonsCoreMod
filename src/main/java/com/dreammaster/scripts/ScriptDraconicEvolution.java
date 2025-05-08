@@ -55,6 +55,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 DraconicEvolution.ID,
                 AvaritiaAddons.ID,
                 BloodArsenal.ID,
