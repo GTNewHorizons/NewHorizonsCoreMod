@@ -1,8 +1,25 @@
 package com.dreammaster.scripts;
 
+import com.dreammaster.thaumcraft.TCHelper;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTOreDictUnificator;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.item.ItemStack;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.research.ResearchItem;
+import thaumcraft.api.research.ResearchPage;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -10,24 +27,6 @@ import static gregtech.api.enums.Mods.ProjectRedIntegration;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
 import static gregtech.api.util.GTModHandler.getModItem;
-
-import java.util.Arrays;
-import java.util.List;
-
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.item.ItemStack;
-
-import com.dreammaster.thaumcraft.TCHelper;
-
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.aspects.AspectList;
-import thaumcraft.api.research.ResearchItem;
-import thaumcraft.api.research.ResearchPage;
 
 public class ScriptAutomagy implements IScriptLoader {
 
@@ -93,7 +92,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 'A',
                 getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
                 'F',
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 'B',
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 'S',

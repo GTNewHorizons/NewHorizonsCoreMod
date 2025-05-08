@@ -1,11 +1,26 @@
 package com.dreammaster.scripts;
 
+import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
+import net.minecraftforge.fluids.FluidRegistry;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
@@ -32,22 +47,6 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
-
-import java.util.Arrays;
-import java.util.List;
-
-import net.minecraftforge.fluids.FluidRegistry;
-
-import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.item.NHItemList;
-
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
 
 public class ScriptStevesCarts implements IScriptLoader {
 
@@ -1790,7 +1789,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                        getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 91, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
