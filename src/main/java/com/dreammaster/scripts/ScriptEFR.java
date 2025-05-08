@@ -1,6 +1,26 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.*;
+import static gregtech.api.enums.Mods.AdventureBackpack;
+import static gregtech.api.enums.Mods.AppliedEnergistics2;
+import static gregtech.api.enums.Mods.BiomesOPlenty;
+import static gregtech.api.enums.Mods.Botania;
+import static gregtech.api.enums.Mods.DraconicEvolution;
+import static gregtech.api.enums.Mods.ElectroMagicTools;
+import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
+import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.ForbiddenMagic;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
+import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.Minecraft;
+import static gregtech.api.enums.Mods.PamsHarvestCraft;
+import static gregtech.api.enums.Mods.PamsHarvestTheNether;
+import static gregtech.api.enums.Mods.StevesCarts2;
+import static gregtech.api.enums.Mods.Thaumcraft;
+import static gregtech.api.enums.Mods.ThaumicBases;
+import static gregtech.api.enums.Mods.TinkerConstruct;
+import static gregtech.api.enums.Mods.TinkersGregworks;
+import static gregtech.api.enums.Mods.WitchingGadgets;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.compressorRecipes;
 import static gregtech.api.recipe.RecipeMaps.fluidCannerRecipes;
@@ -9,7 +29,9 @@ import static gregtech.api.recipe.RecipeMaps.hammerRecipes;
 import static gregtech.api.recipe.RecipeMaps.mixerRecipes;
 import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
-import static gregtech.api.util.GTRecipeBuilder.*;
+import static gregtech.api.util.GTRecipeBuilder.MINUTES;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtPlusPlus.api.recipe.GTPPRecipeMaps.chemicalDehydratorRecipes;
 
 import java.util.Arrays;
@@ -702,7 +724,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(Botania.ID, "manaweaveHelm", 1, 0, missing),
                 'e',
@@ -728,7 +750,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(Botania.ID, "manaweaveChest", 1, 0, missing),
                 'e',
@@ -754,7 +776,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(Botania.ID, "manaweaveLegs", 1, 0, missing),
                 'e',
@@ -780,7 +802,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(Botania.ID, "manaweaveBoots", 1, 0, missing),
                 'e',
@@ -806,7 +828,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(Botania.ID, "manasteelPick", 1, 0, missing),
                 'e',
@@ -832,7 +854,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(PamsHarvestTheNether.ID, "Quartz Hoe", 1, 0, missing),
                 'e',
@@ -858,7 +880,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(Botania.ID, "manasteelShovel", 1, 0, missing),
                 'e',
@@ -884,7 +906,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(Botania.ID, "manasteelSword", 1, 0, missing),
                 'e',
@@ -910,7 +932,7 @@ public class ScriptEFR implements IScriptLoader {
                         "{material:\"Gold\"}",
                         missing),
                 'c',
-                getModItem(ThaumicTinkerer.ID, "kamiResource", 1, 6, missing),
+                getModItem(ForbiddenMagic.ID, "NetherShard", 1, 0, missing),
                 'd',
                 getModItem(Botania.ID, "manasteelAxe", 1, 0, missing),
                 'e',
