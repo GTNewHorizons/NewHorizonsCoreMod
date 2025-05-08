@@ -412,9 +412,9 @@ public class ScriptAvaritia implements IScriptLoader {
                 getModItem(EternalSingularity.ID, "combined_singularity", 1, 6, missing));
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Orb_Armok", 1, 0, missing),
-                "---aaa---",
+                "---aia---",
                 "--ababa--",
-                "--aacaa--",
+                "--jacaj--",
                 "-dababad-",
                 "ddeafagdd",
                 "-dddhddd-",
@@ -436,7 +436,11 @@ public class ScriptAvaritia implements IScriptLoader {
                 'g',
                 getModItem(TaintedMagic.ID, "ItemFocusEldritch", 1, 0, missing),
                 'h',
-                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId));
+                new ItemStack(TinkerTools.largePlate, 1, Tonkers.neutroniumId),
+                'i',
+                getModItem(Botania.ID, "blackHoleTalisman", 1, 0, missing),
+                'j',
+                getModItem(BloodMagic.ID, "sigilOfElementalAffinity", 1, 0, missing));
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(Avaritia.ID, "Infinity_Sword", 1, 0, missing),
