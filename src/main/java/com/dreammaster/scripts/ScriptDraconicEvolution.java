@@ -1,22 +1,5 @@
 package com.dreammaster.scripts;
 
-import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.item.NHItemList;
-import fox.spiteful.avaritia.compat.ticon.Tonkers;
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTModHandler;
-import gregtech.api.util.GTOreDictUnificator;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidRegistry;
-import tconstruct.tools.TinkerTools;
-
-import java.util.Arrays;
-import java.util.List;
-
 import static gregtech.api.enums.Mods.AvaritiaAddons;
 import static gregtech.api.enums.Mods.BloodArsenal;
 import static gregtech.api.enums.Mods.BloodMagic;
@@ -42,6 +25,25 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gtPlusPlus.core.recipe.common.CI.bits;
+
+import java.util.Arrays;
+import java.util.List;
+
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+
+import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
+
+import fox.spiteful.avaritia.compat.ticon.Tonkers;
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTModHandler;
+import gregtech.api.util.GTOreDictUnificator;
+import tconstruct.tools.TinkerTools;
 
 public class ScriptDraconicEvolution implements IScriptLoader {
 

@@ -1,19 +1,5 @@
 package com.dreammaster.scripts;
 
-import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.item.NHItemList;
-import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
-import gregtech.api.enums.GTValues;
-import gregtech.api.enums.ItemList;
-import gregtech.api.enums.Materials;
-import gregtech.api.enums.OrePrefixes;
-import gregtech.api.util.GTOreDictUnificator;
-import gregtech.api.util.GTUtility;
-import net.minecraftforge.fluids.FluidRegistry;
-
-import java.util.Arrays;
-import java.util.List;
-
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botany;
@@ -47,6 +33,22 @@ import static gregtech.api.util.GTRecipeBuilder.MINUTES;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
 import static gregtech.api.util.GTRecipeBuilder.TICKS;
 import static gregtech.api.util.GTRecipeConstants.UniversalChemical;
+
+import java.util.Arrays;
+import java.util.List;
+
+import net.minecraftforge.fluids.FluidRegistry;
+
+import com.dreammaster.gthandler.CustomItemList;
+import com.dreammaster.item.NHItemList;
+
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.Materials;
+import gregtech.api.enums.OrePrefixes;
+import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 
 public class ScriptStevesCarts implements IScriptLoader {
 
