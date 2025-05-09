@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.51.263:dev")
+    api("com.github.GTNewHorizons:GT5-Unofficial:5.09.51.266:dev")
     api("com.github.GTNewHorizons:Yamcl:0.7.0:dev")
     api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
 
@@ -13,13 +13,13 @@ dependencies {
     compileOnly("secondderivative.irontankminecarts:IronTankMinecarts:1.0.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:twilightforest:2.7.5:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Mantle:0.5.0:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.13.21-GTNH:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:TinkersConstruct:1.13.23-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:WitcheryExtras:1.3.0:dev") { transitive = false }
     compileOnly("thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:witchery-69673:2234410")
     compileOnly("com.github.GTNewHorizons:Chisel:2.16.2-GTNH:dev") { transitive = false }
     compileOnly("com.github.GTNewHorizons:Botania:1.12.6-GTNH:dev") { transitive = false }
-    compileOnly("com.github.GTNewHorizons:BloodMagic:1.7.11:dev") { transitive = false }
+    compileOnly("com.github.GTNewHorizons:BloodMagic:1.7.17:dev") { transitive = false }
     compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2264384")
     compileOnly("TGregworks:TGregworks:1.7.10-GTNH-1.0.26:deobf") { transitive = false }
     compileOnly("com.github.GTNewHorizons:amunra:0.8.1:dev") { transitive = false }
