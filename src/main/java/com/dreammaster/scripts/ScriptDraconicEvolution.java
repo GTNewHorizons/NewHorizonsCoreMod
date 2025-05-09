@@ -8,6 +8,7 @@ import static gregtech.api.enums.Mods.BuildCraftTransport;
 import static gregtech.api.enums.Mods.DraconicEvolution;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraUtilities;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.Forestry;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -58,6 +59,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 DraconicEvolution.ID,
                 AvaritiaAddons.ID,
                 BloodArsenal.ID,
@@ -91,7 +93,7 @@ public class ScriptDraconicEvolution implements IScriptLoader {
                 "plateObsidian",
                 getModItem(EnderIO.ID, "blockCapBank", 1, 1, missing),
                 "plateObsidian",
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 getModItem(AvaritiaAddons.ID, "CompressedChest", 1, 0, missing),
                 ItemList.Cover_Crafting.get(1L),
                 "plateObsidian",

@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BloodArsenal;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.Railcraft;
@@ -51,6 +52,7 @@ public class ScriptWitchery implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 Witchery.ID,
                 Thaumcraft.ID,
                 IndustrialCraft2.ID,
@@ -346,7 +348,7 @@ public class ScriptWitchery implements IScriptLoader {
                 'g',
                 getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0, missing),
                 'h',
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 'i',
                 getModItem(IndustrialCraft2.ID, "blockFenceIron", 1, 0, missing));
         TCHelper.addResearchPage(
