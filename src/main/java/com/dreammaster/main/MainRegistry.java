@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.AmazingTrophies;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DetravScannerMod;
+import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -49,6 +50,7 @@ import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
+import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
@@ -371,6 +373,10 @@ public class MainRegistry {
 
         if (TinkerConstruct.isModLoaded()) {
             TiCoLoader.doInitialization();
+        }
+
+        if (IguanaTweaksTinkerConstruct.isModLoaded()) {
+            IguanaProxy.doInitialization();
         }
     }
 
