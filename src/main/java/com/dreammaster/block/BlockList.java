@@ -57,6 +57,11 @@ public enum BlockList {
     BloodyThaumium(new ModSimpleBaseBlock(new BloodyThaumiumProperties(), ModTabList.ModBlocksTab)),
     BloodyVoid(new ModSimpleBaseBlock(new BloodyVoidProperties(), ModTabList.ModBlocksTab)),
     BloodyIchorium(new ModSimpleBaseBlock(new BloodyIchoriumProperties(), ModTabList.ModBlocksTab)),
+
+    Gaia(new ModSimpleBaseBlock(new GaiaProperties(), ModTabList.ModBlocksTab)),
+    ManaPowder(new ModSimpleBaseBlock(new ManaPowderProperties(), ModTabList.ModBlocksTab)),
+    ManaPearl(new ModSimpleBaseBlock(new ManaPearlProperties(), ModTabList.ModBlocksTab)),
+    PixieDust(new ModSimpleBaseBlock(new PixieDustProperties(), ModTabList.ModBlocksTab)),
     // A simple basic block. Not enabled, as it doesn't have a texture
     // BoringDefaultBlock(new ModSimpleBaseBlock(Material.rock, "BoringBlock", ModTabList.ModBlocksTab)),
 
