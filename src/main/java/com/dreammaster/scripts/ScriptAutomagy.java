@@ -3,6 +3,7 @@ package com.dreammaster.scripts;
 import static gregtech.api.enums.Mods.AppliedEnergistics2;
 import static gregtech.api.enums.Mods.Automagy;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.Genetics;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
 import static gregtech.api.enums.Mods.Minecraft;
@@ -39,6 +40,7 @@ public class ScriptAutomagy implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 Thaumcraft.ID,
                 Automagy.ID,
                 Genetics.ID,
@@ -93,7 +95,7 @@ public class ScriptAutomagy implements IScriptLoader {
                 'A',
                 getModItem(Railcraft.ID, "machine.beta", 1, 4, missing),
                 'F',
-                getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                 'B',
                 getModItem(BuildCraftFactory.ID, "tankBlock", 1, 0, missing),
                 'S',

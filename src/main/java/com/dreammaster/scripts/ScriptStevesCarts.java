@@ -6,6 +6,7 @@ import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
 import static gregtech.api.enums.Mods.BuildCraftSilicon;
 import static gregtech.api.enums.Mods.EnderIO;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
@@ -59,6 +60,7 @@ public class ScriptStevesCarts implements IScriptLoader {
     @Override
     public List<String> getDependencies() {
         return Arrays.asList(
+                EtFuturumRequiem.ID,
                 StevesCarts2.ID,
                 ProjectRedExploration.ID,
                 Backpack.ID,
@@ -1790,7 +1792,7 @@ public class ScriptStevesCarts implements IScriptLoader {
                 .addTo(assemblerRecipes);
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        getModItem(IndustrialCraft2.ID, "blockMachine", 1, 1, missing),
+                        getModItem(EtFuturumRequiem.ID, "blast_furnace", 1, 0, missing),
                         getModItem(StevesCarts2.ID, "ModuleComponents", 2, 9, missing))
                 .itemOutputs(getModItem(StevesCarts2.ID, "CartModule", 1, 91, missing)).duration(15 * SECONDS).eut(30)
                 .addTo(assemblerRecipes);
