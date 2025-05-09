@@ -1,6 +1,5 @@
 package com.dreammaster.scripts;
 
-import static com.dreammaster.main.MainRegistry.Module_CustomFuels;
 import static gregtech.api.enums.Mods.Backpack;
 import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
@@ -2015,9 +2014,6 @@ public class ScriptRailcraft implements IScriptLoader {
                         getModItem(Minecraft.ID, "stone_slab", 2, 0, missing))
                 .itemOutputs(getModItem(Railcraft.ID, "lantern.stone", 1, 9, missing)).duration(10 * SECONDS).eut(2)
                 .addTo(assemblerRecipes);
-        Module_CustomFuels.registerCustomFuelValue(
-                getModItem(Railcraft.ID, "fluid.creosote.bucket", 1, 0, missing),
-                (short) 6400);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         getModItem(Minecraft.ID, "stone", 5, 0, missing),

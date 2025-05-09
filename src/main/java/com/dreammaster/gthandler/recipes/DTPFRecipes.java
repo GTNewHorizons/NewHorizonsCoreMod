@@ -576,7 +576,7 @@ public class DTPFRecipes implements Runnable {
                     GTValues.RA.stdBuilder()
                             .itemInputs(
                                     GTModHandler.getModItem(Avaritia.ID, "Resource", 1L, 5),
-                                    GTUtility.getIntegratedCircuit(1))
+                                    GTUtility.getIntegratedCircuit(5))
                             .fluidInputs(MaterialsUEVplus.ExcitedDTRC.getFluid(infinity.getCatalystAmount(2)))
                             .fluidOutputs(
                                     MaterialsUEVplus.DimensionallyTranscendentResidue

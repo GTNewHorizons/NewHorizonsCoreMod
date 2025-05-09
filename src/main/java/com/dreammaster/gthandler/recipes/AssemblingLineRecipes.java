@@ -1040,7 +1040,7 @@ public class AssemblingLineRecipes implements Runnable {
                             Materials.Americium.getPlasma(2880L),
                             Materials.Enderium.getMolten(5760L))
                     .itemOutputs(GTModHandler.getModItem(GraviSuite.ID, "relocator", 1, 26)).eut(TierEU.RECIPE_UV)
-                    .duration(50 * MINUTES).addTo(AssemblyLine);
+                    .duration(3 * MINUTES).addTo(AssemblyLine);
         }
 
         // Electromagnets
@@ -1636,7 +1636,7 @@ public class AssemblingLineRecipes implements Runnable {
                 60 * SECONDS,
                 (int) TierEU.RECIPE_UEV);
 
-        // Antimatter Forge
+        // Antimatter Forge - Antimatter Sequencer - SSASS
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 ItemRefer.Naquadah_Fuel_Refinery.get(1),
                 512000,
@@ -1657,10 +1657,10 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsUEVplus.TranscendentMetal.getMolten(9216),
                         MaterialsUEVplus.DimensionallyShiftedSuperfluid.getFluid(10000) },
                 ItemRefer.AntimatterForge.get(1),
-                1800 * SECONDS,
-                (int) TierEU.RECIPE_UIV);
+                6 * MINUTES,
+                (int) TierEU.RECIPE_UMV);
 
-        // Antimatter Generator
+        // Antimatter Generator - SLAM
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 ItemRefer.Large_Naquadah_Reactor.get(1),
                 512000,
@@ -1682,8 +1682,8 @@ public class AssemblingLineRecipes implements Runnable {
                         MaterialsUEVplus.TranscendentMetal.getMolten(9216),
                         Materials.SuperconductorUMVBase.getMolten(9216) },
                 ItemRefer.AntimatterGenerator.get(1),
-                1800 * SECONDS,
-                (int) TierEU.RECIPE_UIV);
+                6 * MINUTES,
+                (int) TierEU.RECIPE_UMV);
 
         // Antimatter Hatch
         TTRecipeAdder.addResearchableAssemblylineRecipe(

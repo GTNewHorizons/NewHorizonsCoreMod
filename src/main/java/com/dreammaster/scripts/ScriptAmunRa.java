@@ -375,6 +375,7 @@ public class ScriptAmunRa implements IScriptLoader {
          * Assembly Line *
          *****************/
 
+        // Mothership Navigation Console
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(GameRegistry.findBlock(GalacticraftMars.ID, "tile.marsMachine"), 1, 8),
                 64000,
@@ -390,8 +391,9 @@ public class ScriptAmunRa implements IScriptLoader {
                         FluidRegistry.getFluidStack("molten.enriched naquadah alloy", 256 * INGOTS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(machines1, 1, 2),
-                15 * MINUTES,
-                (int) TierEU.RECIPE_UHV);
+                4 * MINUTES,
+                (int) TierEU.RECIPE_UEV);
+        // Rocket Engine Jet
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 NHItemList.HeavyDutyRocketEngineTier4.getIS(),
                 64000,
@@ -410,6 +412,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(machines2),
                 5 * MINUTES,
                 (int) TierEU.RECIPE_UHV);
+        // Ion Thruster Jet
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(machines2),
                 80000,
@@ -425,8 +428,9 @@ public class ScriptAmunRa implements IScriptLoader {
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(machines2, 1, 1),
-                10 * MINUTES,
+                6 * MINUTES,
                 2500000);
+        // Rocket Engine Base
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 NHItemList.Tier4Booster.getIS(),
                 64000,
@@ -440,26 +444,25 @@ public class ScriptAmunRa implements IScriptLoader {
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(msBoosters1),
-                5 * MINUTES,
+                50 * SECONDS,
                 (int) TierEU.RECIPE_UHV);
+        // Ion Thruster Base
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(msBoosters1),
                 80000,
                 64,
                 2500000,
                 10,
-                new Object[] { new ItemStack(advancedRadiationProtectionPlate, 4),
-                        new ItemStack(advancedRadiationProtectionPlate, 4),
-                        new ItemStack(advancedRadiationProtectionPlate, 4),
-                        new ItemStack(advancedRadiationProtectionPlate, 4), ItemList.Battery_Buffer_4by4_UHV.get(2),
-                        ItemList.Emitter_UHV.get(4), ItemList.Field_Generator_UHV.get(2),
-                        new ItemStack(baseItem, 1, 27) },
+                new Object[] { new ItemStack(advancedRadiationProtectionPlate, 16),
+                        ItemList.Battery_Buffer_4by4_UHV.get(2), ItemList.Emitter_UHV.get(4),
+                        ItemList.Field_Generator_UHV.get(2), new ItemStack(baseItem, 1, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(50 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(msBoosters1, 1, 1),
-                10 * MINUTES,
+                60 * SECONDS,
                 2500000);
+        // Shuttle Schematic
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 GameRegistry.findItemStack(GalaxySpace.ID, "item.SchematicTier8", 1),
                 64000,
@@ -484,8 +487,8 @@ public class ScriptAmunRa implements IScriptLoader {
                         FluidRegistry.getFluidStack("molten.octiron", 64 * INGOTS),
                         FluidRegistry.getFluidStack("molten.astraltitanium", 64 * INGOTS) },
                 GameRegistry.findItemStack(GalacticraftAmunRa.ID, "item.schematic", 1),
-                15 * MINUTES,
-                (int) TierEU.RECIPE_UHV);
+                6 * MINUTES,
+                (int) TierEU.RECIPE_UEV);
 
         // Lightweight Alloy Ingot
         GTValues.RA.stdBuilder()
