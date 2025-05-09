@@ -13,7 +13,6 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.dreammaster.gthandler.CustomItemList;
-import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.item.NHItemList;
 import com.dreammaster.tinkersConstruct.SmelteryFluidTypes;
 
@@ -105,8 +104,7 @@ public class FluidSolidifierRecipes implements Runnable {
                 .eut(16).addTo(fluidSolidifierRecipes);
 
         // Electron-permeable neutronium-coated glass
-        GTValues.RA.stdBuilder()
-                .itemInputs(GTOreDictUnificator.get(GT_CustomLoader.AdvancedGTMaterials.UHV.getGlass(), 1))
+        GTValues.RA.stdBuilder().itemInputs(GTOreDictUnificator.get(new ItemStack(ItemRegistry.bw_glasses[0], 1, 13)))
                 .fluidInputs(Materials.Helium.getPlasma(4 * 144)).itemOutputs(ItemList.GlassUVResistant.get(1))
                 .eut(TierEU.RECIPE_UV).duration(5 * SECONDS).addTo(fluidSolidifierRecipes);
 
