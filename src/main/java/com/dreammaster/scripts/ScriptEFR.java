@@ -531,22 +531,6 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        new ItemStack(Blocks.netherrack, 16),
-                        getModItem(EtFuturumRequiem.ID, "nether_wart", 1, 1, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("blood"), 1000))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "nylium", 16, 1, missing)).duration(40 * SECONDS).eut(2)
-                .addTo(mixerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
-                        new ItemStack(Blocks.netherrack, 16),
-                        getModItem(EtFuturumRequiem.ID, "nether_wart", 1, 0, missing))
-                .fluidInputs(new FluidStack(FluidRegistry.getFluid("blood"), 1000))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "nylium", 16, 0, missing)).duration(40 * SECONDS).eut(2)
-                .addTo(mixerRecipes);
-
-        GTValues.RA.stdBuilder()
-                .itemInputs(
                         getModItem(HardcoreEnderExpansion.ID, "laboratory_obsidian", 16L),
                         getModItem(HardcoreEnderExpansion.ID, "spectral_tear", 1L, 0))
                 .fluidInputs(new FluidStack(FluidRegistry.getFluid("ic2distilledwater"), 4000))
@@ -560,17 +544,9 @@ public class ScriptEFR implements IScriptLoader {
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0, missing)).duration(8 * SECONDS).eut(2)
                 .addTo(compressorRecipes);
 
-        GTValues.RA.stdBuilder().itemInputs(getModItem(BiomesOPlenty.ID, "moss", 9, 0, missing))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "moss_block", 1, 0, missing)).duration(8 * SECONDS).eut(2)
-                .addTo(compressorRecipes);
-
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "honeycomb", 4, 0, missing))
                 .itemOutputs(getModItem(EtFuturumRequiem.ID, "honeycomb_block", 1, 0, missing)).duration(8 * SECONDS)
                 .eut(2).addTo(compressorRecipes);
-
-        GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "moss_carpet", 9, 0, missing))
-                .itemOutputs(getModItem(EtFuturumRequiem.ID, "moss_block", 1, 0, missing)).duration(8 * SECONDS).eut(2)
-                .addTo(compressorRecipes);
 
         GTValues.RA.stdBuilder().itemInputs(getModItem(EtFuturumRequiem.ID, "calcite", 1, 0, missing))
                 .itemOutputs(GTOreDictUnificator.get(OrePrefixes.dust, Materials.Calcite, 9L)).duration(8 * SECONDS)
@@ -610,19 +586,6 @@ public class ScriptEFR implements IScriptLoader {
                         new FluidStack(FluidRegistry.getFluid("endergoo"), 4000),
                         new FluidStack(FluidRegistry.getFluid("ender"), 1000))
                 .duration(30 * SECONDS).eut(TierEU.RECIPE_HV).addTo(multiblockChemicalReactorRecipes);
-
-        GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(EtFuturumRequiem.ID, "azalea", 1L, 1),
-                bits,
-                new Object[] { "AAA", "ABA", "AAA", 'A',
-                        GTModHandler.getModItem(EtFuturumRequiem.ID, "pink_petals", 1L, 0), 'B',
-                        GTModHandler.getModItem(EtFuturumRequiem.ID, "azalea", 1L, 0) });
-        GTModHandler.addCraftingRecipe(
-                GTModHandler.getModItem(EtFuturumRequiem.ID, "azalea", 1L, 0),
-                bits,
-                new Object[] { "AAA", "ABA", "AAA", 'A',
-                        GTModHandler.getModItem(EtFuturumRequiem.ID, "moss_block", 1L, 0), 'B',
-                        new ItemStack(Blocks.sapling, 1) });
 
         new ResearchItem(
                 "UNDYINGTOTEM",

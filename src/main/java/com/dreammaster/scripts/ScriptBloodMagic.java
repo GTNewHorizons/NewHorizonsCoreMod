@@ -23,6 +23,7 @@ import com.dreammaster.thaumcraft.TCHelper;
 import WayofTime.alchemicalWizardry.api.alchemy.AlchemyRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.altarRecipeRegistry.AltarRecipeRegistry;
 import WayofTime.alchemicalWizardry.api.bindingRegistry.BindingRegistry;
+import WayofTime.alchemicalWizardry.api.bindingRegistry.UnbindingRegistry;
 import WayofTime.alchemicalWizardry.api.items.ShapedBloodOrbRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import gregtech.api.enums.GTValues;
@@ -4663,6 +4664,10 @@ public class ScriptBloodMagic implements IScriptLoader {
         BindingRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "bloodMagicBaseItems", 1, 0, missing),
                 GTOreDictUnificator.get(OrePrefixes.stick, Materials.Quartzite, 1L));
+
+        UnbindingRegistry.unbindingRecipes.clear();
+        UnbindingRegistry.addAllUnbindingRecipesFromBinding();
+
         AlchemyRecipeRegistry.registerRecipe(
                 getModItem(BloodMagic.ID, "largeBloodStoneBrick", 4, 0, missing),
                 25,
