@@ -75,6 +75,10 @@ import static gtPlusPlus.core.material.MaterialsAlloy.STELLITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TALONITE;
 import static gtPlusPlus.core.material.MaterialsAlloy.TRINIUM_NAQUADAH_CARBON;
 import static gtPlusPlus.core.material.MaterialsElements.STANDALONE.CHRONOMATIC_GLASS;
+import static tectech.thing.CustomItemList.DATApipe;
+import static tectech.thing.CustomItemList.Machine_Multi_Switch;
+import static tectech.thing.CustomItemList.Machine_Multi_Switch_Adv;
+import static tectech.thing.CustomItemList.Machine_Multi_Transformer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -149,6 +153,7 @@ public class AssemblerRecipes implements Runnable {
         makeSolderingAlloyRecipes();
         makeElectricMachinePartRecipes();
         makeCircuitPartRecipes();
+        makeMachineRecipes();
 
         // --- Advanced Solar Panel
         if (AdvancedSolarPanel.isModLoaded()) {
@@ -6365,22 +6370,18 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 94),
-                        ItemList.Color_00.get(1L),
-                        ItemList.Color_00.get(1L),
-                        ItemList.Color_00.get(1L),
+                        ItemList.Color_00.get(3L),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W))
+                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, 0))
                 .fluidInputs(Materials.Water.getFluid(1000L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W),
-                        ItemList.Color_00.get(1L),
-                        ItemList.Color_00.get(1L),
-                        ItemList.Color_00.get(1L),
+                        ItemList.Color_00.get(3L),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, W))
+                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkBlack", 1L, 0))
                 .fluidInputs(Materials.Water.getFluid(1000L)).duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Color Ink Cartridge
@@ -6388,22 +6389,22 @@ public class AssemblerRecipes implements Runnable {
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenComputers.ID, "item", 1L, 94),
-                        ItemList.Color_01.get(1L),
-                        ItemList.Color_02.get(1L),
-                        ItemList.Color_04.get(1L),
+                        ItemList.Color_06.get(1L),
+                        ItemList.Color_11.get(1L),
+                        ItemList.Color_13.get(1L),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W))
+                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, 0))
                 .fluidInputs(Materials.Water.getFluid(1000L)).duration(15 * SECONDS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W),
-                        ItemList.Color_01.get(1L),
-                        ItemList.Color_02.get(1L),
-                        ItemList.Color_04.get(1L),
+                        ItemList.Color_06.get(1L),
+                        ItemList.Color_11.get(1L),
+                        ItemList.Color_13.get(1L),
                         GTUtility.getIntegratedCircuit(2))
-                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, W))
+                .itemOutputs(GTModHandler.getModItem(OpenPrinters.ID, "openprinter.printerInkColor", 1L, 0))
                 .fluidInputs(Materials.Water.getFluid(1000L)).duration(7 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_MV)
                 .addTo(assemblerRecipes);
         // Open Security
@@ -10979,5 +10980,28 @@ public class AssemblerRecipes implements Runnable {
                         .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
             }
         }
+    }
+
+    private void makeMachineRecipes() {
+
+        // Advanced Network Switch
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        Machine_Multi_Transformer.get(1),
+                        GTOreDictUnificator.get(OrePrefixes.circuit, Materials.LuV, 4),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Cobalt, 64),
+                        GTOreDictUnificator.get(OrePrefixes.wireFine, Materials.Copper, 64),
+                        DATApipe.get(4))
+                .fluidInputs(Materials.Iridium.getMolten(1296)).itemOutputs(Machine_Multi_Switch_Adv.get(1))
+                .eut(TierEU.RECIPE_ZPM).duration(40 * SECONDS).addTo(assemblerRecipes);
+
+        // Static Switch <-> Weighted Switch Conversion Recipes
+        GTModHandler.addShapelessCraftingRecipe(
+                Machine_Multi_Switch_Adv.get(1),
+                new Object[] { Machine_Multi_Switch.get(1) });
+
+        GTModHandler.addShapelessCraftingRecipe(
+                Machine_Multi_Switch.get(1),
+                new Object[] { Machine_Multi_Switch_Adv.get(1) });
     }
 }
