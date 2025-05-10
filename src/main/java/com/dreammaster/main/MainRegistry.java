@@ -1,9 +1,11 @@
 package com.dreammaster.main;
 
 import static gregtech.api.enums.Dyes.MACHINE_METAL;
+import static gregtech.api.enums.Mods.AmazingTrophies;
 import static gregtech.api.enums.Mods.Avaritia;
 import static gregtech.api.enums.Mods.BloodMagic;
 import static gregtech.api.enums.Mods.DetravScannerMod;
+import static gregtech.api.enums.Mods.IguanaTweaksTinkerConstruct;
 import static gregtech.api.enums.Mods.Railcraft;
 import static gregtech.api.enums.Mods.SGCraft;
 import static gregtech.api.enums.Mods.Thaumcraft;
@@ -48,6 +50,7 @@ import com.dreammaster.detrav.ScannerTools;
 import com.dreammaster.fluids.FluidList;
 import com.dreammaster.gthandler.GT_CustomLoader;
 import com.dreammaster.gthandler.recipes.DTPFRecipes;
+import com.dreammaster.iguana.IguanaProxy;
 import com.dreammaster.item.CustomPatterns;
 import com.dreammaster.item.ItemBucketList;
 import com.dreammaster.item.NHItemList;
@@ -79,7 +82,6 @@ import com.dreammaster.witchery.WitcheryPlugin;
 
 import bartworks.system.material.WerkstoffLoader;
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -372,6 +374,10 @@ public class MainRegistry {
         if (TinkerConstruct.isModLoaded()) {
             TiCoLoader.doInitialization();
         }
+
+        if (IguanaTweaksTinkerConstruct.isModLoaded()) {
+            IguanaProxy.doInitialization();
+        }
     }
 
     public static Block _mBlockBabyChest = new BlockBabyChest();
@@ -510,7 +516,7 @@ public class MainRegistry {
         BW_RadHatchMaterial.runRadHatchAdder();
 
         if (Thaumcraft.isModLoaded()) TCLoader.checkRecipeProblems();
-        if (Loader.isModLoaded("amazingtrophies") && BloodMagic.isModLoaded()
+        if (AmazingTrophies.isModLoaded() && BloodMagic.isModLoaded()
                 && Avaritia.isModLoaded()
                 && SGCraft.isModLoaded()
                 && TinkerConstruct.isModLoaded()) {

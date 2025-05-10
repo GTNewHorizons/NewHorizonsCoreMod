@@ -40,7 +40,6 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.dreammaster.item.NHItemList;
-import com.gtnewhorizons.gtnhintergalactic.item.IGItems;
 
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -51,6 +50,7 @@ import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.MaterialsKevlar;
+import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
 import gregtech.api.util.GTRecipeConstants;
@@ -95,11 +95,9 @@ public class ScriptAmunRa implements IScriptLoader {
         final Block machines4 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.machines4");
         final Block msBoosters1 = GameRegistry.findBlock(GalacticraftAmunRa.ID, "tile.msBoosters1");
         final Block airLockFrame = GameRegistry.findBlock(GalacticraftCore.ID, "tile.airLockFrame");
-        final Block machineFrames = GameRegistry.findBlock(GTNHIntergalactic.ID, "gassiphoncasing");
 
         final Item baseItem = GameRegistry.findItem(GalacticraftAmunRa.ID, "item.baseItem");
         final Item basicItem = GameRegistry.findItem(GalacticraftCore.ID, "item.basicItem");
-        final Item dysonSwarmParts = IGItems.DysonSwarmItems;
         final Item advancedRadiationProtectionPlate = GameRegistry
                 .findItem(GoodGenerator.ID, "advancedRadiationProtectionPlate");
         final Item simpleItem = GameRegistry.findItem(GraviSuite.ID, "itemSimpleItem");
@@ -172,7 +170,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'C',
                 "circuitInfinite",
                 'F',
-                new ItemStack(machineFrames),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 'K',
                 "oc:keyboard");
         addShapedOredictRecipe(
@@ -185,7 +183,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'P',
                 "compressedAluminium",
                 'F',
-                new ItemStack(machineFrames),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 'W',
                 "springTungstenSteel",
                 'D',
@@ -225,7 +223,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 'C',
                 "circuitData",
                 'F',
-                new ItemStack(machineFrames),
+                ItemList.PlanetaryGasSiphonCasing.get(1),
                 'P',
                 ItemList.Pump_HV.get(1));
         addShapedOredictRecipe(
@@ -377,6 +375,7 @@ public class ScriptAmunRa implements IScriptLoader {
          * Assembly Line *
          *****************/
 
+        // Mothership Navigation Console
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(GameRegistry.findBlock(GalacticraftMars.ID, "tile.marsMachine"), 1, 8),
                 64000,
@@ -392,16 +391,17 @@ public class ScriptAmunRa implements IScriptLoader {
                         FluidRegistry.getFluidStack("molten.enriched naquadah alloy", 256 * INGOTS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(machines1, 1, 2),
-                15 * MINUTES,
-                (int) TierEU.RECIPE_UHV);
+                4 * MINUTES,
+                (int) TierEU.RECIPE_UEV);
+        // Rocket Engine Jet
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 NHItemList.HeavyDutyRocketEngineTier4.getIS(),
                 64000,
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
-                        new ItemStack(dysonSwarmParts, 64, 3), new ItemStack(dysonSwarmParts, 64, 3),
+                new Object[] { ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
+                        ItemList.UHTResistantMesh.get(64), ItemList.UHTResistantMesh.get(64),
                         NHItemList.HeavyDutyRocketEngineTier4.getIS(64),
                         new Object[] { OrePrefixes.pipeHuge.get(Materials.Infinity), 8 },
                         ItemList.Electric_Pump_UHV.get(16), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 8 },
@@ -412,6 +412,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 new ItemStack(machines2),
                 5 * MINUTES,
                 (int) TierEU.RECIPE_UHV);
+        // Ion Thruster Jet
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(machines2),
                 80000,
@@ -427,41 +428,41 @@ public class ScriptAmunRa implements IScriptLoader {
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(machines2, 1, 1),
-                10 * MINUTES,
+                6 * MINUTES,
                 2500000);
+        // Rocket Engine Base
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 NHItemList.Tier4Booster.getIS(),
                 64000,
                 64,
                 (int) TierEU.RECIPE_UHV,
                 8,
-                new Object[] { new ItemStack(dysonSwarmParts, 64, 3), ItemList.Quantum_Tank_EV.get(2),
+                new Object[] { ItemList.UHTResistantMesh.get(64), ItemList.Quantum_Tank_EV.get(2),
                         ItemList.Electric_Pump_UHV.get(4), new Object[] { OrePrefixes.circuit.get(Materials.UHV), 2 },
                         new ItemStack(baseItem, 1, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(50 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(msBoosters1),
-                5 * MINUTES,
+                50 * SECONDS,
                 (int) TierEU.RECIPE_UHV);
+        // Ion Thruster Base
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 new ItemStack(msBoosters1),
                 80000,
                 64,
                 2500000,
                 10,
-                new Object[] { new ItemStack(advancedRadiationProtectionPlate, 4),
-                        new ItemStack(advancedRadiationProtectionPlate, 4),
-                        new ItemStack(advancedRadiationProtectionPlate, 4),
-                        new ItemStack(advancedRadiationProtectionPlate, 4), ItemList.Battery_Buffer_4by4_UHV.get(2),
-                        ItemList.Emitter_UHV.get(4), ItemList.Field_Generator_UHV.get(2),
-                        new ItemStack(baseItem, 1, 27) },
+                new Object[] { new ItemStack(advancedRadiationProtectionPlate, 16),
+                        ItemList.Battery_Buffer_4by4_UHV.get(2), ItemList.Emitter_UHV.get(4),
+                        ItemList.Field_Generator_UHV.get(2), new ItemStack(baseItem, 1, 27) },
                 new FluidStack[] { Materials.Infinity.getMolten(50 * INGOTS),
                         Materials.SuperCoolant.getFluid(64 * BUCKETS),
                         new FluidStack(mutatedLivingSolder, 64 * INGOTS) },
                 new ItemStack(msBoosters1, 1, 1),
-                10 * MINUTES,
+                60 * SECONDS,
                 2500000);
+        // Shuttle Schematic
         TTRecipeAdder.addResearchableAssemblylineRecipe(
                 GameRegistry.findItemStack(GalaxySpace.ID, "item.SchematicTier8", 1),
                 64000,
@@ -486,8 +487,8 @@ public class ScriptAmunRa implements IScriptLoader {
                         FluidRegistry.getFluidStack("molten.octiron", 64 * INGOTS),
                         FluidRegistry.getFluidStack("molten.astraltitanium", 64 * INGOTS) },
                 GameRegistry.findItemStack(GalacticraftAmunRa.ID, "item.schematic", 1),
-                15 * MINUTES,
-                (int) TierEU.RECIPE_UHV);
+                6 * MINUTES,
+                (int) TierEU.RECIPE_UEV);
 
         // Lightweight Alloy Ingot
         GTValues.RA.stdBuilder()
@@ -503,7 +504,7 @@ public class ScriptAmunRa implements IScriptLoader {
                 .eut(TierEU.RECIPE_UEV).addTo(GTRecipeConstants.AssemblyLine);
     }
 
-    @Optional.Method(modid = "GalacticraftAmunRa")
+    @Optional.Method(modid = Mods.Names.GALACTICRAFT_AMUN_RA)
     private static void setMothershipRecipe() {
         final HashMap<Object, Integer> recipe = new HashMap<>();
 
@@ -514,7 +515,7 @@ public class ScriptAmunRa implements IScriptLoader {
                         ARBlocks.blockMothershipController.getMetadata()),
                 1);
         recipe.put(new ItemStack(GregTechAPI.sBlockCasings8, 1, 5), 256);
-        recipe.put(new ItemStack(GameRegistry.findItem(GTNHIntergalactic.ID, "item.DysonSwarmParts"), 1, 3), 64);
+        recipe.put(ItemList.UHTResistantMesh.get(1), 64);
         recipe.put(ItemList.Field_Generator_UHV.get(1), 8);
         recipe.put("circuitInfinite", 32);
 
