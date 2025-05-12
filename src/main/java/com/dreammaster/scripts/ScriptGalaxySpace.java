@@ -278,7 +278,7 @@ public class ScriptGalaxySpace implements IScriptLoader {
                 .itemOutputs(ItemList.UltraHighStrengthConcrete.get(9))
                 .fluidInputs(FluidRegistry.getFluidStack("molten.adamantium alloy", 144)).duration(25 * SECONDS)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
-        GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(1), ItemList.NtNanofibers.get(4))
+        GTValues.RA.stdBuilder().itemInputs(ItemList.TaHfCNanofibers.get(4), ItemList.NtNanofibers.get(4))
                 .itemOutputs(ItemList.UHTResistantMesh.get(1)).duration(10 * SECONDS).eut(TierEU.RECIPE_LuV)
                 .addTo(assemblerRecipes);
 
