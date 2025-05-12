@@ -563,6 +563,7 @@ item.LapotronDust.name=Lapotron Dust
 item.RawLapotronCrystal.name=Raw Lapotron Crystal
 tile.Concrete.name=Concrete
 item.Concrete_bucket.name=Bucket of Concrete
+item.clayBucketConcrete.name=Concrete Clay Bucket
 item.PrimordialPearlFragment.name=Inert Pearl Fragment
 item.TCetiESeaweedExtract.name=TCetiE-Seaweed Extract
 item.StargateCrystalDust.name=Stargate-Crystal Dust
