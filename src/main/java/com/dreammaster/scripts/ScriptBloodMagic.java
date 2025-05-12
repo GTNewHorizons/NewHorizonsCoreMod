@@ -3559,6 +3559,46 @@ public class ScriptBloodMagic implements IScriptLoader {
         ThaumcraftApi.addWarpToResearch("RODBLOODWOODSTAFF", 7);
         TCHelper.refreshResearchPages("CAP_blood_iron");
         TCHelper.refreshResearchPages("ROD_blood_wood");
+        new ResearchItem(
+                "INCENSECRUCIBLE",
+                "BLOODMAGIC",
+                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("victus"), 18)
+                        .add(Aspect.getAspect("potentia"), 6),
+                6,
+                -2,
+                3,
+                getModItem(BloodMagic.ID, "blockCrucible", 1, 0, missing)).setParents("SACRIFICIALKNIFE").setConcealed()
+                        .setPages(new ResearchPage("tc.research_page.INCENSECRUCIBLE")).registerResearchItem();
+        ThaumcraftApi.addArcaneCraftingRecipe(
+                "INCENSECRUCIBLE",
+                getModItem(BloodMagic.ID, "blockCrucible", 1, 0, missing),
+                new AspectList().add(Aspect.getAspect("ignis"), 15).add(Aspect.getAspect("aer"), 15)
+                        .add(Aspect.getAspect("ordo"), 15),
+                "abc",
+                "def",
+                "ghi",
+                'a',
+                "plateAluminium",
+                'b',
+                getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing),
+                'c',
+                "plateAluminium",
+                'd',
+                "plateAluminium",
+                'e',
+                getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
+                'f',
+                "plateAluminium",
+                'g',
+                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                'h',
+                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
+                'i',
+                getModItem(Minecraft.ID, "stone_slab", 1, 0, missing));
+        TCHelper.addResearchPage(
+                "INCENSECRUCIBLE",
+                new ResearchPage(TCHelper.findArcaneRecipe(getModItem(BloodMagic.ID, "blockCrucible", 1, 0, missing))));
+        ThaumcraftApi.addWarpToResearch("INCENSECRUCIBLE", 2);
     }
 
     private void orbRecipes() {
@@ -4262,30 +4302,6 @@ public class ScriptBloodMagic implements IScriptLoader {
                         getModItem(BloodMagic.ID, "simpleCatalyst", 1, 0, missing),
                         'i',
                         getModItem(BloodMagic.ID, "blankSlate", 1, 0, missing)));
-        GameRegistry.addRecipe(
-                new ShapedBloodOrbRecipe(
-                        getModItem(BloodMagic.ID, "blockCrucible", 1, 0, missing),
-                        "abc",
-                        "def",
-                        "ghi",
-                        'a',
-                        "plateAluminium",
-                        'b',
-                        getModItem(BloodMagic.ID, "apprenticeBloodOrb", 1, 0, missing),
-                        'c',
-                        "plateAluminium",
-                        'd',
-                        "plateAluminium",
-                        'e',
-                        getModItem(Thaumcraft.ID, "blockMetalDevice", 1, 0, missing),
-                        'f',
-                        "plateAluminium",
-                        'g',
-                        getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
-                        'h',
-                        getModItem(Minecraft.ID, "stone_slab", 1, 0, missing),
-                        'i',
-                        getModItem(Minecraft.ID, "stone_slab", 1, 0, missing)));
         GameRegistry.addRecipe(
                 new ShapedBloodOrbRecipe(
                         getModItem(BloodMagic.ID, "blockConduit", 1, 0, missing),
