@@ -3,7 +3,7 @@
 dependencies {
     api("com.github.GTNewHorizons:GT5-Unofficial:5.09.51.282:dev")
     api("com.github.GTNewHorizons:Yamcl:0.7.0:dev")
-    api("com.github.GTNewHorizons:Baubles:1.0.4:dev")
+    api("com.github.GTNewHorizons:Baubles-Expanded:2.1.7-GTNH:dev")
 
     implementation("com.github.GTNewHorizons:GTNHLib:0.6.21:dev")
 
@@ -42,3 +42,14 @@ dependencies {
     testImplementation('org.mockito:mockito-core:5.+')
     testImplementation('org.mockito:mockito-junit-jupiter:5.+')
 }
+
+// deps may transitively add Baubles, so we replace it
+project.getConfigurations()
+    .all(c -> {
+        final DependencySubstitutions ds = c.getResolutionStrategy()
+            .getDependencySubstitution();
+        ds.substitute(ds.module("com.github.GTNewHorizons:Baubles"))
+            .using(ds.module("com.github.GTNewHorizons:Baubles-Expanded:2.1.7-GTNH"))
+            .withClassifier("dev")
+            .because("Baubles-Expanded replaces Baubles");
+    });
