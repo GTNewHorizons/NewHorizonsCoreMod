@@ -316,6 +316,7 @@ public class RecipeRemover {
      * @author kuba6000
      */
     private static void removeRecipeByOutputDelayed(Object aOutput) {
+        if (aOutput == null) return;
         addToBuffer(getItemsHashed(aOutput, false), r -> true);
     }
 
