@@ -191,6 +191,7 @@ public class RecipeRemover {
      * @author kuba6000
      */
     private static void removeRecipeShapelessDelayed(Object aOutput, Object... aRecipe) {
+        if (aOutput == null) return;
         ArrayList<Object> aRecipeList = new ArrayList<>(Arrays.asList(aRecipe));
         addToBuffer(getItemsHashed(aOutput, false), r -> {
             if (!(r instanceof ShapelessOreRecipe) && !(r instanceof ShapelessRecipes)) return false;
@@ -243,6 +244,7 @@ public class RecipeRemover {
      * @author kuba6000
      */
     private static void removeRecipeShapedDelayed(Object aOutput, Object[] row1, Object[] row2, Object[] row3) {
+        if (aOutput == null) return;
         if (recipeWidthField == null) {
             try {
                 recipeWidthField = ShapedOreRecipe.class.getDeclaredField("width");
@@ -307,6 +309,7 @@ public class RecipeRemover {
      * @author kuba6000
      */
     private static void removeRecipeShapedDelayed(Object aOutput) {
+        if (aOutput == null) return;
         addToBuffer(getItemsHashed(aOutput, false), r -> r instanceof ShapedOreRecipe || r instanceof ShapedRecipes);
     }
 
