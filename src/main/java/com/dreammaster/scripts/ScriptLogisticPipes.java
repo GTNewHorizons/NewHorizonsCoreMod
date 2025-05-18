@@ -37,6 +37,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 
@@ -1418,7 +1419,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
                 "craftingToolFile",
                 "screwAluminium",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet,
                 null,
                 "craftingToolScrewdriver",
                 null);

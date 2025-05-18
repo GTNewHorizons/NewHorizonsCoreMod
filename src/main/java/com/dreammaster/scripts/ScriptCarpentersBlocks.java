@@ -20,6 +20,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.Mods;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptCarpentersBlocks implements IScriptLoader {
@@ -166,7 +167,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing),
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet,
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersTorch", 2, 0, missing),
