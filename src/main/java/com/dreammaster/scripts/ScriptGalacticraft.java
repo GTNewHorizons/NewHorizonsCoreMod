@@ -1,19 +1,6 @@
 package com.dreammaster.scripts;
 
-import static gregtech.api.enums.Mods.AE2FluidCraft;
-import static gregtech.api.enums.Mods.AppliedEnergistics2;
-import static gregtech.api.enums.Mods.BuildCraftTransport;
-import static gregtech.api.enums.Mods.CarpentersBlocks;
-import static gregtech.api.enums.Mods.GalacticraftCore;
-import static gregtech.api.enums.Mods.GalacticraftMars;
-import static gregtech.api.enums.Mods.GalaxySpace;
-import static gregtech.api.enums.Mods.GraviSuite;
-import static gregtech.api.enums.Mods.IndustrialCraft2;
-import static gregtech.api.enums.Mods.IronChests;
-import static gregtech.api.enums.Mods.Minecraft;
-import static gregtech.api.enums.Mods.PamsHarvestCraft;
-import static gregtech.api.enums.Mods.ProjectRedIllumination;
-import static gregtech.api.enums.Mods.TinkersGregworks;
+import static gregtech.api.enums.Mods.*;
 import static gregtech.api.recipe.RecipeMaps.arcFurnaceRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.blastFurnaceRecipes;
@@ -1259,11 +1246,30 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, 0, missing),
                 getModItem(GalacticraftMars.ID, "item.itemTier3Rocket", 1, wildcard, missing));
         addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier4Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier4Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier5Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier5Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier6Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier6Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier7Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier7Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, 0, missing),
+                getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, wildcard, missing));
+        addShapelessRecipe(
+                getModItem(GalaxySpace.ID, "item.itemShuttle", 1, 0, missing),
+                getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, wildcard, missing));
+        addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 12, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing));
+
 
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(GalacticraftCore.ID, "item.infiniteOxygen", 1, 0, missing),
