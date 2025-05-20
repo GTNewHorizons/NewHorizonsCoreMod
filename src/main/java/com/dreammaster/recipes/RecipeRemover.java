@@ -181,7 +181,7 @@ public class RecipeRemover {
                     hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
                 }
             }
-        } else throw new IllegalArgumentException("Invalid input");
+        } else throw new IllegalArgumentException("Invalid input " + item.toString());
         return hashedItems;
     }
 
