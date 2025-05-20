@@ -1274,7 +1274,7 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, 0, missing),
                 getModItem(GalaxySpace.ID, "item.itemTier8Rocket", 1, wildcard, missing));
         addShapelessRecipe(
-                getModItem(GalaxySpace.ID, "item.itemShuttle", 1, 0, missing),
+                getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, 0, missing),
                 getModItem(GalacticraftAmunRa.ID, "item.itemShuttle", 1, wildcard, missing));
         addShapelessRecipe(
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
