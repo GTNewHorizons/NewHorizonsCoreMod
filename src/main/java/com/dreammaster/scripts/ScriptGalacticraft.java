@@ -1283,7 +1283,6 @@ public class ScriptGalacticraft implements IScriptLoader {
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 11, missing),
                 getModItem(GalacticraftMars.ID, "item.spaceshipTier2", 1, 13, missing));
 
-
         ExtremeCraftingManager.getInstance().addExtremeShapedOreRecipe(
                 getModItem(GalacticraftCore.ID, "item.infiniteOxygen", 1, 0, missing),
                 "--abbba--",
