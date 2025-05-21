@@ -506,7 +506,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 8000),
                         FluidRegistry.getFluidStack("fluiddeath", 8000))
-                .itemInputs(getModItem(ThaumicBases.ID, "goldenOakSapling", 1, 3, missing))
+                .itemInputs(getModItem(ThaumicBases.ID, "goldenOakSapling", 1, 2, missing))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 3960))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers2", 1, 2, missing)).eut(TierEU.RECIPE_EV).duration(80)
                 .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
@@ -514,7 +514,7 @@ public class ScriptBiomesOPlenty implements IScriptLoader {
                 .fluidInputs(
                         FluidRegistry.getFluidStack("fluidpure", 8000),
                         FluidRegistry.getFluidStack("fluiddeath", 8000))
-                .itemInputs(getModItem(ThaumicBases.ID, "goldenOakSapling", 1, 2, missing))
+                .itemInputs(getModItem(ThaumicBases.ID, "goldenOakSapling", 1, 3, missing))
                 .fluidOutputs(FluidRegistry.getFluidStack("mcguffium", 3960))
                 .itemOutputs(getModItem(BiomesOPlenty.ID, "flowers", 1, 11, missing)).eut(TierEU.RECIPE_EV).duration(80)
                 .metadata(DISSOLUTION_TANK_RATIO, 1).addTo(dissolutionTankRecipes);
