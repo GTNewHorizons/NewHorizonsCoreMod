@@ -181,7 +181,7 @@ public class RecipeRemover {
                     hashedItems.add(GTUtility.ItemId.createNoCopy(iCopy));
                 }
             }
-        } else throw new IllegalArgumentException("Invalid input");
+        } else throw new IllegalArgumentException("Invalid input " + item.toString());
         return hashedItems;
     }
 
@@ -333,7 +333,6 @@ public class RecipeRemover {
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_scrap", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_ingot", 1, 0));
             removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "netherite_block", 1, 0));
-            removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "moss_block", 1, 0));
             for (int i = 0; i < 16; i++) {
                 removeRecipeByOutputDelayed(getModItem(EtFuturumRequiem.ID, "banner", 1, i));
             }
