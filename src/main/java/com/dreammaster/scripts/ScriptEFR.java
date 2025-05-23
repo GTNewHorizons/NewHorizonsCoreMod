@@ -505,7 +505,7 @@ public class ScriptEFR implements IScriptLoader {
 
         GTValues.RA.stdBuilder()
                 .itemInputs(
-                        GTUtility.getIntegratedCircuit(20),
+                        GTUtility.getIntegratedCircuit(21),
                         new ItemStack(Blocks.stone_slab, 1),
                         new ItemStack(Items.stick, 5),
                         GTOreDictUnificator.get(OrePrefixes.bolt, Materials.Iron, 3L),
