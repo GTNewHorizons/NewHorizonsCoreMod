@@ -4,7 +4,9 @@ import static gregtech.api.enums.Mods.Chisel;
 import static gregtech.api.enums.Mods.EnderIO;
 import static gregtech.api.enums.Mods.ExtraUtilities;
 import static gregtech.api.enums.Mods.Forestry;
+import static gregtech.api.enums.Mods.HardcoreEnderExpansion;
 import static gregtech.api.enums.Mods.IndustrialCraft2;
+import static gregtech.api.enums.Mods.MagicBees;
 import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.enums.Mods.ProjectRedIllumination;
 import static gregtech.api.enums.Mods.ProjectRedIntegration;
@@ -270,6 +272,13 @@ public class ScriptRandomThings implements IScriptLoader {
                         getModItem(IndustrialCraft2.ID, "itemFertilizer", 2, 0, missing))
                 .itemOutputs(getModItem(RandomThings.ID, "fertilizedDirt", 1, 0, missing))
                 .fluidInputs(FluidRegistry.getFluidStack("water", 1000)).duration(5 * SECONDS).eut(30)
+                .addTo(UniversalChemical);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        getModItem(HardcoreEnderExpansion.ID, "endoplasm", 1, 0, missing),
+                        getModItem(MagicBees.ID, "wax", 1, 1, missing))
+                .itemOutputs(getModItem(RandomThings.ID, "ingredient", 1, 3, missing))
+                .fluidInputs(FluidRegistry.getFluidStack("cadaverine", 100)).duration(5 * SECONDS).eut(30)
                 .addTo(UniversalChemical);
 
     }
