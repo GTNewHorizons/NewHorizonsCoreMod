@@ -12,6 +12,7 @@ import java.util.List;
 
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTOreDictUnificator;
 
 public class ScriptBattleGear implements IScriptLoader {
@@ -221,7 +222,7 @@ public class ScriptBattleGear implements IScriptLoader {
         addShapedRecipe(
                 getModItem(MineAndBladeBattleGear2.ID, "waraxe.wood", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing),
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet,
                 getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing),
                 "stickWood",
@@ -306,7 +307,7 @@ public class ScriptBattleGear implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing),
                 "stickWood",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet,
                 null);
         addShapedRecipe(
                 getModItem(MineAndBladeBattleGear2.ID, "mace.stone", 1, 0, missing),

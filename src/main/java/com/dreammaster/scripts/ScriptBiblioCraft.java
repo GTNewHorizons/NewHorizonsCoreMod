@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.Materials;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 
 public class ScriptBiblioCraft implements IScriptLoader {
@@ -615,7 +616,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "wireFineGold",
                 "wireFineGold",
                 "lensGlass",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet,
                 "wireFineGold",
                 null,
                 "wireFineGold",
@@ -627,7 +628,7 @@ public class ScriptBiblioCraft implements IScriptLoader {
                 "wireFineSteel",
                 "wireFineSteel",
                 "plateLead",
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet,
                 "wireFineSteel",
                 "roundLead",
                 null,
