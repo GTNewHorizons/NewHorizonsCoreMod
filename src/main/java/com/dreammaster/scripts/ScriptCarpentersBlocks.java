@@ -167,7 +167,7 @@ public class ScriptCarpentersBlocks implements IScriptLoader {
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBlock", 1, 0, missing),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing),
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 getModItem(CarpentersBlocks.ID, "blockCarpentersBarrier", 1, 0, missing));
         addShapedRecipe(
                 getModItem(CarpentersBlocks.ID, "blockCarpentersTorch", 2, 0, missing),

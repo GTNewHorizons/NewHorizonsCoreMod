@@ -533,7 +533,7 @@ public class ScriptForbiddenMagic implements IScriptLoader {
                 'h',
                 "stickWood",
                 'i',
-                ToolDictNames.craftingToolSoftMallet);
+                ToolDictNames.craftingToolSoftMallet.name());
         TCHelper.addResearchPage(
                 "RIDINGCROP",
                 new ResearchPage(

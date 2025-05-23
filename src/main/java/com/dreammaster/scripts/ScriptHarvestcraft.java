@@ -672,7 +672,7 @@ public class ScriptHarvestcraft implements IScriptLoader {
                 getModItem(PamsHarvestCraft.ID, "freshwaterItem", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "firmtofuItem", 1, 0, missing),
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 CustomItemList.WetTofu.get(1L));
         addShapelessRecipe(
                 getModItem(PamsHarvestCraft.ID, "silkentofuItem", 1, 0, missing),

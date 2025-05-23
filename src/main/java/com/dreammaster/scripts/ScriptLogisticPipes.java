@@ -1419,7 +1419,7 @@ public class ScriptLogisticPipes implements IScriptLoader {
                 getModItem(BuildCraftSilicon.ID, "redstoneChipset", 1, 3, missing),
                 "craftingToolFile",
                 "screwAluminium",
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null,
                 "craftingToolScrewdriver",
                 null);

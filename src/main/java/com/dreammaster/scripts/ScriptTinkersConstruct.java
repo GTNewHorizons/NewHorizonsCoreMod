@@ -528,7 +528,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
                 "stickWood",
                 null,
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("toolstation"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
@@ -543,7 +543,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "stickWood",
                 getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing),
                 null,
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("partcrafter"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
@@ -594,7 +594,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "chest", 1, 0, missing),
                 "stickWood",
                 null,
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("patternchest"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 4, missing),
@@ -613,7 +613,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "stickWood",
                 Blocks.fence,
                 null,
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null).provideTo(MANTLE.manualShapedCraftingRecipeNamed("stenciltable"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
