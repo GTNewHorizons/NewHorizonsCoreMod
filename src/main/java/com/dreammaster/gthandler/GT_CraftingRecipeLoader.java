@@ -2261,7 +2261,8 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
         GTModHandler.addShapelessCraftingRecipe(
                 GregtechItemList.Hatch_Input_Bus_Steam.get(1),
                 bits,
-                new Object[] { GregtechItemList.Hatch_Output_Bus_Steam.get(1), ToolDictNames.craftingToolScrewdriver, });
+                new Object[] { GregtechItemList.Hatch_Output_Bus_Steam.get(1),
+                        ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_ULV.get(1),
