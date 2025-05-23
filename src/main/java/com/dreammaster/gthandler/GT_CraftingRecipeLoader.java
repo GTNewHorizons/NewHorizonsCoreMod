@@ -62,6 +62,7 @@ import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gregtech.common.GTProxy;
+import gtPlusPlus.xmod.gregtech.api.enums.GregtechItemList;
 import gtneioreplugin.plugin.block.ModBlocks;
 import gtneioreplugin.util.DimensionHelper;
 import ic2.core.Ic2Items;
@@ -2201,6 +2202,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
 
         // Bus and Hatch Conversion
         // Input bus to Output bus
+        GTModHandler.addShapelessCraftingRecipe(
+                GregtechItemList.Hatch_Output_Bus_Steam.get(1),
+                bits,
+                new Object[] { GregtechItemList.Hatch_Input_Bus_Steam.get(1), ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Output_Bus_ULV.get(1),
@@ -2253,6 +2258,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.CraftingR
                 new Object[] { ItemList.Hatch_Input_Bus_MAX, ToolDictNames.craftingToolScrewdriver, });
 
         // Output bus to Input bus
+        GTModHandler.addShapelessCraftingRecipe(
+                GregtechItemList.Hatch_Input_Bus_Steam.get(1),
+                bits,
+                new Object[] { GregtechItemList.Hatch_Output_Bus_Steam.get(1), ToolDictNames.craftingToolScrewdriver, });
 
         GTModHandler.addShapelessCraftingRecipe(
                 ItemList.Hatch_Input_Bus_ULV.get(1),
