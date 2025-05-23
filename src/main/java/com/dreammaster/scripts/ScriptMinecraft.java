@@ -2314,7 +2314,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing),
                 null,
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null,
                 null,
                 "slimeball",
@@ -2493,7 +2493,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwWood",
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 "stickWood",
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "stickWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "ladder", 4, 0, missing),
@@ -2504,7 +2504,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwAnyIron",
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 "stickWood",
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "stickWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "ladder", 8, 0, missing),
@@ -2515,7 +2515,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "screwSteel",
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 "stickWood",
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "stickWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "fence", 1, 0, missing),
@@ -4237,7 +4237,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "pumpkin_seeds", 2, 0, missing),
                 getModItem(Minecraft.ID, "pumpkin", 1, 0, missing),
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 getModItem(Minecraft.ID, "pumpkin", 1, 0, missing));
         addShapedRecipe(
                 getModItem(Minecraft.ID, "melon_seeds", 1, 0, missing),
@@ -4246,7 +4246,7 @@ public class ScriptMinecraft implements IScriptLoader {
         addShapedRecipe(
                 getModItem(Minecraft.ID, "melon_seeds", 1, 0, missing),
                 getModItem(Minecraft.ID, "melon", 1, 0, missing),
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 getModItem(Minecraft.ID, "melon", 1, 0, missing));
         addShapelessRecipe(
                 getModItem(Minecraft.ID, "melon", 6, 0, missing),
@@ -4401,7 +4401,7 @@ public class ScriptMinecraft implements IScriptLoader {
                 "plankWood",
                 "plankWood",
                 "fenceWood",
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 "fenceWood");
         addShapedRecipe(
                 getModItem(Minecraft.ID, "fishing_rod", 1, 0, missing),

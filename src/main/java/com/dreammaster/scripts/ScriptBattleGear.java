@@ -222,7 +222,7 @@ public class ScriptBattleGear implements IScriptLoader {
         addShapedRecipe(
                 getModItem(MineAndBladeBattleGear2.ID, "waraxe.wood", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing),
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "hatchetHead", 1, 0, missing),
                 "stickWood",
@@ -307,7 +307,7 @@ public class ScriptBattleGear implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing),
                 getModItem(TinkerConstruct.ID, "heavyPlate", 1, 0, missing),
                 "stickWood",
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null);
         addShapedRecipe(
                 getModItem(MineAndBladeBattleGear2.ID, "mace.stone", 1, 0, missing),

@@ -112,7 +112,7 @@ public class ScriptRailcraft implements IScriptLoader {
                 getModItem(Railcraft.ID, "part.tie", 1, 0, missing),
                 getModItem(Railcraft.ID, "part.tie", 1, 0, missing),
                 null,
-                ToolDictNames.craftingToolSoftMallet,
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null);
         addShapedRecipe(
                 getModItem(Railcraft.ID, "part.railbed", 1, 1, missing),
