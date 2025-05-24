@@ -5,6 +5,7 @@ import static gregtech.api.enums.Mods.BiomesOPlenty;
 import static gregtech.api.enums.Mods.Botania;
 import static gregtech.api.enums.Mods.Botany;
 import static gregtech.api.enums.Mods.BuildCraftFactory;
+import static gregtech.api.enums.Mods.EtFuturumRequiem;
 import static gregtech.api.enums.Mods.ExtraBees;
 import static gregtech.api.enums.Mods.ForbiddenMagic;
 import static gregtech.api.enums.Mods.Forestry;
@@ -63,6 +64,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.SubTag;
 import gregtech.api.enums.TierEU;
+import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
 import gtPlusPlus.core.material.MaterialsAlloy;
@@ -3802,6 +3804,13 @@ public class ScriptProjectRed implements IScriptLoader {
                         GTUtility.getIntegratedCircuit(2))
                 .itemOutputs(getModItem(ProjectRedTransmission.ID, "projectred.transmission.wire", 1, 0, missing))
                 .duration(SECONDS).eut(8).addTo(wiremillRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        GTModHandler.getModItem(EtFuturumRequiem.ID, "barrel", 1L, 0),
+                        GTOreDictUnificator.get(OrePrefixes.itemCasing, Materials.WoodSealed, 4L),
+                        GTUtility.getIntegratedCircuit(5))
+                .itemOutputs(GTModHandler.getModItem(ProjectRedExploration.ID, "projectred.exploration.barrel", 1L, 0))
+                .duration(12 * SECONDS + 10 * TICKS).eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
 
     }
 }

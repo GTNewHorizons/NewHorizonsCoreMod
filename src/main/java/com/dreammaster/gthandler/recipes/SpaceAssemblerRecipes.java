@@ -457,6 +457,25 @@ public class SpaceAssemblerRecipes implements Runnable {
                         .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UHV)
                         .addTo(IGRecipeMaps.spaceAssemblerRecipes);
             }
+            // Pseudo-Inversion Sigil Ritual
+            /*
+             * if (ExtraUtilities.isModLoaded()) { GTValues.RA.stdBuilder() .itemInputs(
+             * getModItem(UniversalSingularities.ID, "universal.vanilla.singularity", 1, 2), getModItem(Avaritia.ID,
+             * "Singularity", 1, 0), getModItem(UniversalSingularities.ID, "universal.general.singularity", 1, 24),
+             * getModItem(Avaritia.ID, "Singularity", 1, 3), getModItem(Avaritia.ID, "Resource", 64, 7),
+             * getModItem(Avaritia.ID, "Ultimate_Stew", 1, 0), getModItem(Avaritia.ID, "Cosmic_Meatballs", 1, 0),
+             * getModItem(StevesCarts2.ID, "CartModule", 1, 82), getModItem(ExtraUtilities.ID, "decorativeBlock1", 16,
+             * 12), getModItem(BiomesOPlenty.ID, "petals", 64, 0), getModItem(Witchery.ID, "ingredient", 64, 56),
+             * getModItem(Avaritia.ID, "Endest_Pearl", 16, 0), getModItem(EtFuturumRequiem.ID, "chorus_flower", 64, 0),
+             * getModItem(Witchery.ID, "cauldronbook", 1, 0), getModItem(AvaritiaAddons.ID, "CompressedChest", 4, 0),
+             * getModItem(ExtraUtilities.ID, "block_bedrockium", 16, 0)) .fluidInputs( new
+             * FluidStack(FluidRegistry.getFluid("ender"), 16000), new FluidStack(FluidRegistry.getFluid("endergoo"),
+             * 8000), new FluidStack(FluidRegistry.getFluid("radon"), 4000), new
+             * FluidStack(FluidRegistry.getFluid("potion.diablosauce.strong"), 2000)) .itemOutputs( new
+             * NBTItem(getModItem(ExtraUtilities.ID, "divisionSigil", 1, 0)) .setNBT("{stable:1b}"))
+             * .metadata(IGRecipeMaps.MODULE_TIER, 1).duration(10 * SECONDS).eut(TierEU.RECIPE_UV)
+             * .addTo(IGRecipeMaps.spaceAssemblerRecipes); }
+             */
         }
     }
 }
