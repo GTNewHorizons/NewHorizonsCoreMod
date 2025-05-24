@@ -8399,99 +8399,99 @@ public class AssemblerRecipes implements Runnable {
         }
         // Basic -> Steam Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 1, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 2, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 2, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Steam -> LV Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 2, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 4, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 4, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // LV -> MV Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 4, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 5, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 5, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // MV -> HV Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 5, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 6, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 6, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // HV -> EV Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 6, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 7, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 7, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         // EV -> IV Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 7, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 8, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 8, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_IV).addTo(assemblerRecipes);
         // IV -> LuV Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 8, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 41, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 41, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LuV).addTo(assemblerRecipes);
         // Forest Ranger Basic -> Forest Ranger Advanced Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 19, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 20, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 20, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Forest Ranger Advanced -> Forest Ranger Expert Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 20, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 21, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 21, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // BM Novice -> BM Adept Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 16, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 17, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 17, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // BM Adept -> BM Master Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 17, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 18, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 18, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Bees Basic -> Bees Advanced Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 25, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 26, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 26, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Bees Advanced -> Bees Expert Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 26, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 27, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 27, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_HV).addTo(assemblerRecipes);
         // Space Invaders Moon -> Space Invaders Mars Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 22, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 23, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 23, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         // Space Invaders Mars -> Space Invaders Asteroids Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 23, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 24, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 24, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_EV).addTo(assemblerRecipes);
         // Fast Food -> Slow Food Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 28, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 29, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 29, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Slow Food -> Haute Cuisine Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 29, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 30, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 30, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Haute Cuisine -> Dessert Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 30, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 31, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 31, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Transportation 3 -> 2 Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 32, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 33, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 33, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Transportation 2 -> 1 Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 33, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 34, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 34, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Magic Novice -> Magic Adept Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 9, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 10, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 10, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_LV).addTo(assemblerRecipes);
         // Magic Adept -> Magic Master Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 10, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 11, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 11, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Magic Master -> Magic Grandmaster Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 3, 11, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 12, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 12, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
         // Magic Grandmaster -> Magic Grandmaster Unique Lootbags
         GTValues.RA.stdBuilder().itemInputs(getModItem(EnhancedLootBags.ID, "lootbag", 16, 12, missing))
-                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 13, missing)).duration(SECONDS * 30)
+                .itemOutputs(getModItem(EnhancedLootBags.ID, "lootbag", 1, 13, missing)).duration(SECONDS * 10)
                 .eut(TierEU.RECIPE_MV).addTo(assemblerRecipes);
     }
 
