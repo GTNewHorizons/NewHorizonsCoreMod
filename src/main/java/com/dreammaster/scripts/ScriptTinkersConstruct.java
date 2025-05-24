@@ -58,6 +58,7 @@ import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.enums.TierEU;
+import gregtech.api.enums.ToolDictNames;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
 import gregtech.api.util.GTUtility;
@@ -365,50 +366,18 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing),
                 "glassReinforced",
                 getModItem(TinkerConstruct.ID, "SmelteryNether", 1, 2, missing));
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "helmetWood", 1, 0, missing),
-                "logWood",
-                "logWood",
-                "logWood",
-                "logWood",
-                "craftingToolSoftHammer",
-                "logWood",
-                null,
-                null,
-                null);
-        addShapedRecipe(
+                new Object[] { "LLL", "LrL", "   ", 'L', "logWood" });
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "chestplateWood", 1, 0, missing),
-                "logWood",
-                "craftingToolSoftHammer",
-                "logWood",
-                "logWood",
-                "logWood",
-                "logWood",
-                "logWood",
-                "logWood",
-                "logWood");
-        addShapedRecipe(
+                new Object[] { "LrL", "LLL", "LLL", 'L', "logWood" });
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "leggingsWood", 1, 0, missing),
-                "logWood",
-                "logWood",
-                "logWood",
-                "logWood",
-                "craftingToolSoftHammer",
-                "logWood",
-                "logWood",
-                null,
-                "logWood");
-        addShapedRecipe(
+                new Object[] { "LLL", "LrL", "L L", 'L', "logWood" });
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "bootsWood", 1, 0, missing),
-                "logWood",
-                "craftingToolSoftHammer",
-                "logWood",
-                "logWood",
-                null,
-                "logWood",
-                null,
-                null,
-                null);
+                new Object[] { "LrL", "L L", "   ", 'L', "logWood" });
         addShapedRecipe(
                 getModItem(TinkerConstruct.ID, "GlassPane", 2, 0, missing),
                 "craftingToolSaw",
@@ -545,17 +514,11 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 0, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing));
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                "stickWood",
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing),
-                "stickWood",
-                null,
-                "craftingToolSoftHammer",
-                null);
+                new Object[] { "SPS", "SCS", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), 'C',
+                        getModItem(TinkerConstruct.ID, "CraftingStation", 1, 0, missing) });
         Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 0, missing),
                 "stickWood",
@@ -565,7 +528,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "crafting_table", 1, 0, missing),
                 "stickWood",
                 null,
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("toolstation"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 1, missing),
@@ -580,7 +543,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "stickWood",
                 getModItem(TinkerConstruct.ID, "trap.barricade.oak", 1, 0, missing),
                 null,
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("partcrafter"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
@@ -591,39 +554,21 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 1, missing),
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 4, missing));
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 2, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing),
-                null,
-                "craftingToolSoftHammer",
-                null);
-        addShapedRecipe(
+                new Object[] { "SPS", "BSB", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), 'B',
+                        getModItem(TinkerConstruct.ID, "trap.barricade.spruce", 1, 0, missing) });
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 3, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "trap.barricade.birch", 1, 0, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "trap.barricade.birch", 1, 0, missing),
-                null,
-                "craftingToolSoftHammer",
-                null);
-        addShapedRecipe(
+                new Object[] { "SPS", "BSB", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), 'B',
+                        getModItem(TinkerConstruct.ID, "trap.barricade.birch", 1, 0, missing) });
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 4, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "trap.barricade.jungle", 1, 0, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "trap.barricade.jungle", 1, 0, missing),
-                null,
-                "craftingToolSoftHammer",
-                null);
+                new Object[] { "SPS", "BSB", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), 'B',
+                        getModItem(TinkerConstruct.ID, "trap.barricade.jungle", 1, 0, missing) });
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 2, missing),
                 "craftingToolSaw",
@@ -649,23 +594,16 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 getModItem(Minecraft.ID, "chest", 1, 0, missing),
                 "stickWood",
                 null,
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null).provideTo(shapedRecipes()).provideTo(MANTLE.manualShapedCraftingRecipeNamed("patternchest"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 4, missing),
                 "craftingToolSaw",
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 5, missing));
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                "stickWood",
-                "fenceWood",
-                "stickWood",
-                "fenceWood",
-                null,
-                "craftingToolSoftHammer",
-                null);
+                new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), 'F', "fenceWood" });
         Recipe.of(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
                 "stickWood",
@@ -675,7 +613,7 @@ public class ScriptTinkersConstruct implements IScriptLoader {
                 "stickWood",
                 Blocks.fence,
                 null,
-                "craftingToolSoftHammer",
+                ToolDictNames.craftingToolSoftMallet.name(),
                 null).provideTo(MANTLE.manualShapedCraftingRecipeNamed("stenciltable"));
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
@@ -686,39 +624,21 @@ public class ScriptTinkersConstruct implements IScriptLoader {
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 10, missing),
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13, missing));
-        addShapedRecipe(
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 11, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                "stickWood",
-                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}", missing),
-                "stickWood",
-                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}", missing),
-                null,
-                "craftingToolSoftHammer",
-                null);
-        addShapedRecipe(
+                new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), 'F',
+                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:65537}", missing) });
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 12, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                "stickWood",
-                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}", missing),
-                "stickWood",
-                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}", missing),
-                null,
-                "craftingToolSoftHammer",
-                null);
-        addShapedRecipe(
+                new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), 'F',
+                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:131074}", missing) });
+        GTModHandler.addCraftingRecipe(
                 getModItem(TinkerConstruct.ID, "ToolStationBlock", 1, 13, missing),
-                "stickWood",
-                getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing),
-                "stickWood",
-                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}", missing),
-                "stickWood",
-                createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}", missing),
-                null,
-                "craftingToolSoftHammer",
-                null);
+                new Object[] { "SPS", "FSF", " r ", 'S', "stickWood", 'P',
+                        getModItem(TinkerConstruct.ID, "blankPattern", 1, 0, missing), 'F',
+                        createItemStack(ExtraTrees.ID, "multifence", 1, 16387, "{meta:196611}", missing) });
         addShapelessRecipe(
                 getModItem(TinkerConstruct.ID, "CraftingSlab", 1, 3, missing),
                 "craftingToolSaw",
