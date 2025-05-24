@@ -4909,7 +4909,7 @@ public class ScriptForestry implements IScriptLoader {
                 'd',
                 getModItem(Forestry.ID, "peat", 1, 0, missing),
                 'e',
-                getModItem(ExtraBees.ID, "propolis", 1, 7, missing),
+                getModItem(ExtraBees.ID, "propolis", 1, 0, missing),
                 'f',
                 getModItem(Forestry.ID, "peat", 1, 0, missing),
                 'h',
